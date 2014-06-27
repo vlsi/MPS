@@ -1,132 +1,150 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:89786d43-32a1-4385-8533-b5c4e52f0201(jetbrains.mps.lang.quotation.pluginSolution.plugin)/5487985028841901770">
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="25" startPosition="33" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="26" startPosition="48" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="27" startPosition="35" endLine="28" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="32" startPosition="32" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="40" startPosition="42" endLine="41" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="42" startPosition="7" endLine="43" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="48" startPosition="53" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="51" startPosition="5" endLine="52" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="54" startPosition="101" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="57" startPosition="7" endLine="58" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="60" startPosition="66" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="64" startPosition="64" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841901779" fileName="ShowMetaLevel_Action.java" startLine="71" startPosition="9" endLine="72" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841901787" fileName="ShowMetaLevel_Action.java" startLine="72" startPosition="188" endLine="73" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="75" startPosition="42" endLine="76" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="81" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="47" startPosition="95" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="53" startPosition="25" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="59" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="63" startPosition="101" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowMetaLevel_Action#()V" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="52" startPosition="57" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="36" startPosition="89" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="70" startPosition="96" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="50" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="36" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="70" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="50" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="47" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="32" startPosition="32" endLine="33" endPosition="16" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="37" startPosition="9" endLine="38" endPosition="43" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="40" startPosition="42" endLine="41" endPosition="88" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="48" startPosition="53" endLine="49" endPosition="19" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="54" startPosition="101" endLine="55" endPosition="22" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="60" startPosition="66" endLine="61" endPosition="19" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="64" startPosition="64" endLine="65" endPosition="19" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="75" startPosition="42" endLine="76" endPosition="87" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="71" startPosition="9" endLine="73" endPosition="108">
-      <varInfo nodeId="5487985028841901780" varName="metaLevel" />
-    </scopeInfo>
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="25" startPosition="33" endLine="28" endPosition="41" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="39" startPosition="27" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="53" startPosition="25" endLine="56" endPosition="9" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="74" startPosition="0" endLine="77" endPosition="7">
-      <varInfo nodeId="5487985028841901770" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="74" startPosition="27" endLine="77" endPosition="7" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="44">
-      <varInfo nodeId="5487985028841901770" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="39" startPosition="27" endLine="43" endPosition="44" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="51" startPosition="5" endLine="58" endPosition="60">
-      <varInfo nodeId="5487985028841901770" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="36" startPosition="89" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="70" startPosition="96" endLine="78" endPosition="5" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="36" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="5487985028841901770" varName="_params" />
-      <varInfo nodeId="5487985028841901770" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="70" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="5487985028841901770" varName="_params" />
-      <varInfo nodeId="5487985028841901770" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="50" startPosition="5" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="47" startPosition="95" endLine="67" endPosition="16" />
-    <scopeInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="47" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="5487985028841901770" varName="_params" />
-      <varInfo nodeId="5487985028841901770" varName="event" />
-    </scopeInfo>
-    <unitInfo nodeId="5487985028841901770" fileName="ShowMetaLevel_Action.java" startLine="22" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.lang.quotation.pluginSolution.plugin.ShowMetaLevel_Action" />
+    <file name="ShowMetaLevel_Action.java">
+      <node id="5487985028841901770" at="23,0,24,0" concept="9" trace="ICON" />
+      <node id="5487985028841901770" at="25,33,26,48" concept="10" />
+      <node id="5487985028841901770" at="26,48,27,35" concept="2" />
+      <node id="5487985028841901770" at="27,35,28,41" concept="2" />
+      <node id="5487985028841901770" at="32,32,33,16" concept="7" />
+      <node id="5487985028841901770" at="37,9,38,43" concept="0" />
+      <node id="5487985028841901770" at="37,9,38,43" concept="2" />
+      <node id="5487985028841901770" at="40,42,41,88" concept="2" />
+      <node id="5487985028841901770" at="42,7,43,44" concept="2" />
+      <node id="5487985028841901770" at="48,53,49,19" concept="7" />
+      <node id="5487985028841901770" at="51,5,52,57" concept="6" />
+      <node id="5487985028841901770" at="54,101,55,22" concept="2" />
+      <node id="5487985028841901770" at="57,7,58,60" concept="2" />
+      <node id="5487985028841901770" at="60,66,61,19" concept="7" />
+      <node id="5487985028841901770" at="62,5,63,101" concept="2" />
+      <node id="5487985028841901770" at="64,64,65,19" concept="7" />
+      <node id="5487985028841901770" at="66,5,67,16" concept="7" />
+      <node id="5487985028841901779" at="71,9,72,188" concept="6" />
+      <node id="5487985028841901787" at="72,188,73,108" concept="2" />
+      <node id="5487985028841901770" at="75,42,76,87" concept="2" />
+      <node id="5487985028841901770" at="81,0,82,0" concept="9" trace="LOG" />
+      <node id="5487985028841901770" at="39,27,42,7" concept="0" />
+      <node id="5487985028841901770" at="39,27,42,7" concept="4" />
+      <node id="5487985028841901770" at="47,95,50,5" concept="4" />
+      <node id="5487985028841901770" at="53,25,56,9" concept="4" />
+      <node id="5487985028841901770" at="59,5,62,5" concept="4" />
+      <node id="5487985028841901770" at="63,101,66,5" concept="4" />
+      <node id="5487985028841901770" at="74,27,77,7" concept="0" />
+      <node id="5487985028841901770" at="74,27,77,7" concept="4" />
+      <node id="5487985028841901770" at="31,0,35,0" concept="5" trace="isDumbAware#()Z" />
+      <node id="5487985028841901770" at="62,5,66,5" concept="0" />
+      <node id="5487985028841901770" at="25,0,30,0" concept="1" trace="ShowMetaLevel_Action#()V" />
+      <node id="5487985028841901770" at="52,57,57,7" concept="4" />
+      <node id="5487985028841901770" at="36,89,44,5" concept="11" />
+      <node id="5487985028841901770" at="70,96,78,5" concept="11" />
+      <node id="5487985028841901770" at="50,5,59,5" concept="0" />
+      <node id="5487985028841901770" at="36,0,46,0" concept="5" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="5487985028841901770" at="70,0,80,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="5487985028841901770" at="50,5,62,5" concept="0" />
+      <node id="5487985028841901770" at="47,0,69,0" concept="5" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <scope id="5487985028841901770" at="32,32,33,16" />
+      <scope id="5487985028841901770" at="37,9,38,43" />
+      <scope id="5487985028841901770" at="40,42,41,88" />
+      <scope id="5487985028841901770" at="48,53,49,19" />
+      <scope id="5487985028841901770" at="54,101,55,22" />
+      <scope id="5487985028841901770" at="60,66,61,19" />
+      <scope id="5487985028841901770" at="64,64,65,19" />
+      <scope id="5487985028841901770" at="75,42,76,87" />
+      <scope id="5487985028841901770" at="71,9,73,108">
+        <var name="metaLevel" id="5487985028841901780" />
+      </scope>
+      <scope id="5487985028841901770" at="25,33,28,41" />
+      <scope id="5487985028841901770" at="39,27,42,7" />
+      <scope id="5487985028841901770" at="53,25,56,9" />
+      <scope id="5487985028841901770" at="74,0,77,7">
+        <var name="t" id="5487985028841901770" />
+      </scope>
+      <scope id="5487985028841901770" at="74,27,77,7" />
+      <scope id="5487985028841901770" at="31,0,35,0" />
+      <scope id="5487985028841901770" at="39,0,43,44">
+        <var name="t" id="5487985028841901770" />
+      </scope>
+      <scope id="5487985028841901770" at="39,27,43,44" />
+      <scope id="5487985028841901770" at="62,5,66,5" />
+      <scope id="5487985028841901770" at="25,0,30,0" />
+      <scope id="5487985028841901770" at="51,5,58,60">
+        <var name="node" id="5487985028841901770" />
+      </scope>
+      <scope id="5487985028841901770" at="36,89,44,5" />
+      <scope id="5487985028841901770" at="70,96,78,5" />
+      <scope id="5487985028841901770" at="36,0,46,0">
+        <var name="_params" id="5487985028841901770" />
+        <var name="event" id="5487985028841901770" />
+      </scope>
+      <scope id="5487985028841901770" at="70,0,80,0">
+        <var name="_params" id="5487985028841901770" />
+        <var name="event" id="5487985028841901770" />
+      </scope>
+      <scope id="5487985028841901770" at="50,5,62,5" />
+      <scope id="5487985028841901770" at="47,95,67,16" />
+      <scope id="5487985028841901770" at="47,0,69,0">
+        <var name="_params" id="5487985028841901770" />
+        <var name="event" id="5487985028841901770" />
+      </scope>
+      <unit id="5487985028841901770" at="22,0,83,0" name="jetbrains.mps.lang.quotation.pluginSolution.plugin.ShowMetaLevel_Action" />
+    </file>
   </root>
   <root nodeRef="r:89786d43-32a1-4385-8533-b5c4e52f0201(jetbrains.mps.lang.quotation.pluginSolution.plugin)/5487985028841901793">
-    <nodeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
-    <nodeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="13" startPosition="41" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="14" startPosition="34" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="15" startPosition="30" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901796" fileName="MetaLevelActions_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="16" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MetaLevelActions_ActionGroup#()V" />
-    <scopeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="125" />
-    <scopeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
-      <varInfo nodeId="5487985028841901793" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
-    <scopeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="13" startPosition="41" endLine="21" endPosition="5" />
-    <scopeInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" />
-    <unitInfo nodeId="5487985028841901793" fileName="MetaLevelActions_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.quotation.pluginSolution.plugin.MetaLevelActions_ActionGroup" />
+    <file name="MetaLevelActions_ActionGroup.java">
+      <node id="5487985028841901793" at="10,0,11,0" concept="9" trace="LOG" />
+      <node id="5487985028841901793" at="11,0,12,0" concept="9" trace="ID" />
+      <node id="5487985028841901793" at="13,41,14,34" concept="10" />
+      <node id="5487985028841901793" at="14,34,15,30" concept="2" />
+      <node id="5487985028841901793" at="15,30,16,25" concept="2" />
+      <node id="5487985028841901796" at="17,9,18,125" concept="2" />
+      <node id="5487985028841901793" at="19,27,20,39" concept="2" />
+      <node id="5487985028841901793" at="16,25,21,5" concept="11" />
+      <node id="5487985028841901793" at="13,0,23,0" concept="1" trace="MetaLevelActions_ActionGroup#()V" />
+      <scope id="5487985028841901793" at="17,9,18,125" />
+      <scope id="5487985028841901793" at="19,0,20,39">
+        <var name="t" id="5487985028841901793" />
+      </scope>
+      <scope id="5487985028841901793" at="19,27,20,39" />
+      <scope id="5487985028841901793" at="13,41,21,5" />
+      <scope id="5487985028841901793" at="13,0,23,0" />
+      <unit id="5487985028841901793" at="9,0,24,0" name="jetbrains.mps.lang.quotation.pluginSolution.plugin.MetaLevelActions_ActionGroup" />
+    </file>
   </root>
   <root nodeRef="r:89786d43-32a1-4385-8533-b5c4e52f0201(jetbrains.mps.lang.quotation.pluginSolution.plugin)/7162597690967660606">
-    <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
-    <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="30" endLine="21" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="42" endLine="22" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="14" endLine="23" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="26" startPosition="37" endLine="27" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
-    <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-    <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
-    <nodeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
-    <scopeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="45" endLine="12" endPosition="45" />
-    <scopeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="27" endLine="16" endPosition="16" />
-    <scopeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="26" startPosition="37" endLine="27" endPosition="95" />
-    <scopeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="23" endPosition="49" />
-    <scopeInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="0" endLine="25" endPosition="0" />
-    <unitInfo nodeId="7162597690967660606" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.quotation.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+    <file name="PluginSolution_ApplicationPlugin.java">
+      <node id="7162597690967660606" at="10,0,11,0" concept="3" trace="myId" />
+      <node id="7162597690967660606" at="15,27,16,16" concept="7" />
+      <node id="7162597690967660606" at="19,30,20,30" concept="8" />
+      <node id="7162597690967660606" at="20,30,21,42" concept="2" />
+      <node id="7162597690967660606" at="21,42,22,14" concept="8" />
+      <node id="7162597690967660606" at="22,14,23,49" concept="2" />
+      <node id="7162597690967660606" at="26,37,27,95" concept="2" />
+      <node id="7162597690967660606" at="12,0,14,0" concept="1" trace="PluginSolution_ApplicationPlugin#()V" />
+      <node id="7162597690967660606" at="15,0,18,0" concept="5" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+      <node id="7162597690967660606" at="26,0,29,0" concept="5" trace="adjustRegularGroups#()V" />
+      <node id="7162597690967660606" at="19,0,25,0" concept="5" trace="createGroups#()V" />
+      <scope id="7162597690967660606" at="12,45,12,45" />
+      <scope id="7162597690967660606" at="15,27,16,16" />
+      <scope id="7162597690967660606" at="26,37,27,95" />
+      <scope id="7162597690967660606" at="12,0,14,0" />
+      <scope id="7162597690967660606" at="15,0,18,0" />
+      <scope id="7162597690967660606" at="26,0,29,0" />
+      <scope id="7162597690967660606" at="19,30,23,49" />
+      <scope id="7162597690967660606" at="19,0,25,0" />
+      <unit id="7162597690967660606" at="9,0,30,0" name="jetbrains.mps.lang.quotation.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

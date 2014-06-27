@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590520(jetbrains.mps.regexp.sandbox)/1174921457453">
-    <nodeInfo nodeId="1175254959727" fileName="YYY.java" startLine="12" startPosition="24" endLine="13" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1175254972364" fileName="YYY.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_y3g_b0a0b" />
-    <nodeInfo nodeId="5324518929218979365" fileName="YYY.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="YYY#()V" />
-    <nodeInfo nodeId="1174921462032" fileName="YYY.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="m#()V" />
-    <nodeInfo nodeId="1175254978382" fileName="_Replacer_y3g_a0a0a1.java" startLine="9" startPosition="42" endLine="10" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1175254963247" fileName="_Replacer_y3g_a0a0a1.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />
-    <nodeInfo nodeId="1175254963247" fileName="_Replacer_y3g_a0a0a1.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_closureContext" />
-    <nodeInfo nodeId="1175254963247" fileName="_Replacer_y3g_a0a0a1.java" startLine="16" startPosition="74" endLine="17" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1175254963247" fileName="_Replacer_y3g_a0a0a1.java" startLine="17" startPosition="42" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1175254963247" fileName="_Replacer_y3g_a0a0a1.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1175254963247" fileName="_Replacer_y3g_a0a0a1.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Replacer_y3g_a0a0a1#(Ljetbrains/mps/regexp/sandbox/YYY;Ljava/lang/Object;)V" />
-    <scopeInfo nodeId="5324518929218979367" fileName="YYY.java" startLine="9" startPosition="16" endLine="9" endPosition="16" />
-    <scopeInfo nodeId="1174921462034" fileName="YYY.java" startLine="12" startPosition="24" endLine="13" endPosition="93" />
-    <scopeInfo nodeId="5324518929218979365" fileName="YYY.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="1174921462032" fileName="YYY.java" startLine="12" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="1175254963248" fileName="_Replacer_y3g_a0a0a1.java" startLine="9" startPosition="42" endLine="10" endPosition="18" />
-    <scopeInfo nodeId="1175254963247" fileName="_Replacer_y3g_a0a0a1.java" startLine="16" startPosition="74" endLine="18" endPosition="51" />
-    <scopeInfo nodeId="1175254963247" fileName="_Replacer_y3g_a0a0a1.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="1175254963247" varName="matcher" />
-    </scopeInfo>
-    <scopeInfo nodeId="1175254963247" fileName="_Replacer_y3g_a0a0a1.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="1175254963247" varName="closureContext" />
-      <varInfo nodeId="1175254963247" varName="enclosingClass" />
-    </scopeInfo>
-    <unitInfo nodeId="1174921457453" fileName="YYY.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.regexp.sandbox.YYY" />
-    <unitInfo nodeId="1175254963247" fileName="_Replacer_y3g_a0a0a1.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.regexp.sandbox._Replacer_y3g_a0a0a1" />
+    <file name="YYY.java">
+      <node id="1175254959727" at="12,24,13,93" concept="1" />
+      <node id="1175254972364" at="16,0,17,0" concept="5" trace="REGEXP_y3g_b0a0b" />
+      <node id="5324518929218979365" at="9,0,11,0" concept="0" trace="YYY#()V" />
+      <node id="1174921462032" at="12,0,15,0" concept="3" trace="m#()V" />
+      <scope id="5324518929218979367" at="9,16,9,16" />
+      <scope id="1174921462034" at="12,24,13,93" />
+      <scope id="5324518929218979365" at="9,0,11,0" />
+      <scope id="1174921462032" at="12,0,15,0" />
+      <unit id="1174921457453" at="8,0,18,0" name="jetbrains.mps.regexp.sandbox.YYY" />
+    </file>
+    <file name="_Replacer_y3g_a0a0a1.java">
+      <node id="1175254978382" at="9,42,10,18" concept="4" />
+      <node id="1175254963247" at="13,0,14,0" concept="2" trace="_enclosingClass" />
+      <node id="1175254963247" at="14,0,15,0" concept="2" trace="_closureContext" />
+      <node id="1175254963247" at="16,74,17,42" concept="1" />
+      <node id="1175254963247" at="17,42,18,51" concept="1" />
+      <node id="1175254963247" at="9,0,12,0" concept="3" trace="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
+      <node id="1175254963247" at="16,0,20,0" concept="0" trace="_Replacer_y3g_a0a0a1#(Ljetbrains/mps/regexp/sandbox/YYY;Ljava/lang/Object;)V" />
+      <scope id="1175254963248" at="9,42,10,18" />
+      <scope id="1175254963247" at="16,74,18,51" />
+      <scope id="1175254963247" at="9,0,12,0">
+        <var name="matcher" id="1175254963247" />
+      </scope>
+      <scope id="1175254963247" at="16,0,20,0">
+        <var name="closureContext" id="1175254963247" />
+        <var name="enclosingClass" id="1175254963247" />
+      </scope>
+      <unit id="1175254963247" at="8,0,21,0" name="jetbrains.mps.regexp.sandbox._Replacer_y3g_a0a0a1" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

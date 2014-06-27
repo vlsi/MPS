@@ -1,358 +1,375 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/6374750171056867477">
-    <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="24" startPosition="51" endLine="25" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="25" startPosition="191" endLine="26" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056867521" fileName="ClosureLiteraltargetFunType_Test.java" startLine="31" startPosition="53" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056867521" fileName="ClosureLiteraltargetFunType_Test.java" startLine="32" startPosition="46" endLine="33" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056867524" fileName="ClosureLiteraltargetFunType_Test.java" startLine="33" startPosition="46" endLine="34" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374750171056867530" fileName="ClosureLiteraltargetFunType_Test.java" startLine="34" startPosition="58" endLine="35" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374750171056867760" fileName="ClosureLiteraltargetFunType_Test.java" startLine="35" startPosition="148" endLine="36" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374750171056867534" fileName="ClosureLiteraltargetFunType_Test.java" startLine="36" startPosition="146" endLine="37" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056867549" fileName="ClosureLiteraltargetFunType_Test.java" startLine="37" startPosition="139" endLine="38" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056867481" fileName="ClosureLiteraltargetFunType_Test.java" startLine="41" startPosition="46" endLine="42" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374750171056867499" fileName="ClosureLiteraltargetFunType_Test.java" startLine="45" startPosition="101" endLine="46" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374750171056867516" fileName="ClosureLiteraltargetFunType_Test.java" startLine="46" startPosition="76" endLine="47" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="50" startPosition="64" endLine="51" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="51" startPosition="65" endLine="52" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="52" startPosition="32" endLine="53" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="53" startPosition="32" endLine="54" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="54" startPosition="32" endLine="55" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="55" startPosition="140" endLine="56" endPosition="334" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="56" startPosition="334" endLine="57" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="57" startPosition="140" endLine="58" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="58" startPosition="257" endLine="59" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="59" startPosition="55" endLine="60" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="60" startPosition="140" endLine="61" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="61" startPosition="255" endLine="62" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="62" startPosition="55" endLine="63" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/generator/template/TemplateQueryContext;" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="56" startPosition="334" endLine="59" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="56" startPosition="334" endLine="59" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="59" startPosition="55" endLine="62" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="59" startPosition="55" endLine="62" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertLiteralTarget#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_throwsOrder#()V" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="54" startPosition="32" endLine="62" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="54" startPosition="32" endLine="62" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6374750171056867521" fileName="ClosureLiteraltargetFunType_Test.java" startLine="31" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_throwsOrder#()V" />
-    <nodeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="50" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_as9vne_c0a4a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="41" startPosition="46" endLine="42" endPosition="67" />
-    <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="24" startPosition="51" endLine="26" endPosition="123" />
-    <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="45" startPosition="101" endLine="47" endPosition="67">
-      <varInfo nodeId="6374750171056867500" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="56" startPosition="334" endLine="59" endPosition="55" />
-    <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="59" startPosition="55" endLine="62" endPosition="55" />
-    <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="45" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="6374750171056867495" varName="expected" />
-      <varInfo nodeId="6374750171056867491" varName="gencontext" />
-      <varInfo nodeId="6374750171056867493" varName="literal" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="23" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="6374750171056867521" fileName="ClosureLiteraltargetFunType_Test.java" startLine="31" startPosition="53" endLine="38" endPosition="91">
-      <varInfo nodeId="6374750171056867761" varName="funtype" />
-      <varInfo nodeId="6374750171056867525" varName="genContext" />
-      <varInfo nodeId="6374750171056867531" varName="literal" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="54" startPosition="32" endLine="62" endPosition="55" />
-    <scopeInfo nodeId="6374750171056867521" fileName="ClosureLiteraltargetFunType_Test.java" startLine="31" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="50" startPosition="64" endLine="63" endPosition="26">
-      <varInfo nodeId="6374750171056899811" varName="facade" />
-      <varInfo nodeId="6374750171056899811" varName="quotedNode_1" />
-      <varInfo nodeId="6374750171056899811" varName="quotedNode_2" />
-      <varInfo nodeId="6374750171056899811" varName="quotedNode_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374750171056899811" fileName="ClosureLiteraltargetFunType_Test.java" startLine="50" startPosition="0" endLine="65" endPosition="0" />
-    <unitInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="29" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test$TestBody" />
-    <unitInfo nodeId="6374750171056867477" fileName="ClosureLiteraltargetFunType_Test.java" startLine="21" startPosition="0" endLine="67" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test" />
+    <file name="ClosureLiteraltargetFunType_Test.java">
+      <node id="6374750171056867477" at="24,51,25,191" concept="2" />
+      <node id="6374750171056867477" at="25,191,26,123" concept="2" />
+      <node id="6374750171056867521" at="31,53,32,46" concept="2" />
+      <node id="6374750171056867521" at="32,46,33,46" concept="2" />
+      <node id="6374750171056867524" at="33,46,34,58" concept="5" />
+      <node id="6374750171056867530" at="34,58,35,148" concept="5" />
+      <node id="6374750171056867760" at="35,148,36,146" concept="5" />
+      <node id="6374750171056867534" at="36,146,37,139" concept="2" />
+      <node id="6374750171056867549" at="37,139,38,91" concept="2" />
+      <node id="6374750171056867481" at="41,46,42,67" concept="6" />
+      <node id="6374750171056867499" at="45,101,46,76" concept="5" />
+      <node id="6374750171056867516" at="46,76,47,67" concept="2" />
+      <node id="6374750171056899811" at="50,64,51,65" concept="5" />
+      <node id="6374750171056899811" at="51,65,52,32" concept="5" />
+      <node id="6374750171056899811" at="52,32,53,32" concept="5" />
+      <node id="6374750171056899811" at="53,32,54,32" concept="5" />
+      <node id="6374750171056899811" at="54,32,55,140" concept="2" />
+      <node id="6374750171056899811" at="55,140,56,334" concept="2" />
+      <node id="6374750171056899811" at="56,334,57,140" concept="2" />
+      <node id="6374750171056899811" at="57,140,58,257" concept="2" />
+      <node id="6374750171056899811" at="58,257,59,55" concept="2" />
+      <node id="6374750171056899811" at="59,55,60,140" concept="2" />
+      <node id="6374750171056899811" at="60,140,61,255" concept="2" />
+      <node id="6374750171056899811" at="61,255,62,55" concept="2" />
+      <node id="6374750171056899811" at="62,55,63,26" concept="6" />
+      <node id="6374750171056867477" at="41,0,44,0" concept="4" trace="getContext#()Ljetbrains/mps/generator/template/TemplateQueryContext;" />
+      <node id="6374750171056899811" at="56,334,59,55" concept="0" />
+      <node id="6374750171056899811" at="56,334,59,55" concept="0" />
+      <node id="6374750171056899811" at="59,55,62,55" concept="0" />
+      <node id="6374750171056899811" at="59,55,62,55" concept="0" />
+      <node id="6374750171056867477" at="45,0,49,0" concept="4" trace="assertLiteralTarget#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6374750171056867477" at="23,0,28,0" concept="4" trace="test_throwsOrder#()V" />
+      <node id="6374750171056899811" at="54,32,62,55" concept="0" />
+      <node id="6374750171056899811" at="54,32,62,55" concept="0" />
+      <node id="6374750171056867521" at="31,0,40,0" concept="4" trace="test_throwsOrder#()V" />
+      <node id="6374750171056899811" at="50,0,65,0" concept="7" trace="_quotation_createNode_as9vne_c0a4a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="6374750171056867477" at="41,46,42,67" />
+      <scope id="6374750171056867477" at="24,51,26,123" />
+      <scope id="6374750171056867477" at="45,101,47,67">
+        <var name="target" id="6374750171056867500" />
+      </scope>
+      <scope id="6374750171056867477" at="41,0,44,0" />
+      <scope id="6374750171056899811" at="56,334,59,55" />
+      <scope id="6374750171056899811" at="59,55,62,55" />
+      <scope id="6374750171056867477" at="45,0,49,0">
+        <var name="expected" id="6374750171056867495" />
+        <var name="gencontext" id="6374750171056867491" />
+        <var name="literal" id="6374750171056867493" />
+      </scope>
+      <scope id="6374750171056867477" at="23,0,28,0" />
+      <scope id="6374750171056867521" at="31,53,38,91">
+        <var name="funtype" id="6374750171056867761" />
+        <var name="genContext" id="6374750171056867525" />
+        <var name="literal" id="6374750171056867531" />
+      </scope>
+      <scope id="6374750171056899811" at="54,32,62,55" />
+      <scope id="6374750171056867521" at="31,0,40,0" />
+      <scope id="6374750171056899811" at="50,64,63,26">
+        <var name="facade" id="6374750171056899811" />
+        <var name="quotedNode_1" id="6374750171056899811" />
+        <var name="quotedNode_2" id="6374750171056899811" />
+        <var name="quotedNode_3" id="6374750171056899811" />
+      </scope>
+      <scope id="6374750171056899811" at="50,0,65,0" />
+      <unit id="6374750171056867477" at="29,0,66,0" name="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test$TestBody" />
+      <unit id="6374750171056867477" at="21,0,67,0" name="jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test" />
+    </file>
   </root>
   <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/7178287329507395260">
-    <nodeInfo nodeId="7178287329507546914" fileName="MockTemplateQueryContext.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="sessionObjects" />
-    <nodeInfo nodeId="7178287329507396063" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="37" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7178287329507551690" fileName="MockTemplateQueryContext.java" startLine="26" startPosition="60" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507551715" fileName="MockTemplateQueryContext.java" startLine="27" startPosition="35" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507551717" fileName="MockTemplateQueryContext.java" startLine="32" startPosition="46" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507395262" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MockTemplateQueryContext#()V" />
-    <nodeInfo nodeId="7178287329507395267" fileName="MockTemplateQueryContext.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showWarningMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7178287329507395280" fileName="MockTemplateQueryContext.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showErrorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7178287329507400239" fileName="MockTemplateQueryContext.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSessionObject#(Ljava/lang/Object;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="7178287329507400224" fileName="MockTemplateQueryContext.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="putSessionObject#(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" />
-    <scopeInfo nodeId="7178287329507395274" fileName="MockTemplateQueryContext.java" startLine="18" startPosition="61" endLine="18" endPosition="61" />
-    <scopeInfo nodeId="7178287329507395287" fileName="MockTemplateQueryContext.java" startLine="22" startPosition="59" endLine="22" endPosition="59" />
-    <scopeInfo nodeId="7178287329507395265" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="37" endLine="14" endPosition="34" />
-    <scopeInfo nodeId="7178287329507400244" fileName="MockTemplateQueryContext.java" startLine="32" startPosition="46" endLine="33" endPosition="35" />
-    <scopeInfo nodeId="7178287329507400231" fileName="MockTemplateQueryContext.java" startLine="26" startPosition="60" endLine="28" endPosition="17" />
-    <scopeInfo nodeId="7178287329507395262" fileName="MockTemplateQueryContext.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="7178287329507395267" fileName="MockTemplateQueryContext.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="7178287329507395270" varName="node" />
-      <varInfo nodeId="7178287329507395272" varName="string" />
-    </scopeInfo>
-    <scopeInfo nodeId="7178287329507395280" fileName="MockTemplateQueryContext.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="7178287329507395283" varName="node" />
-      <varInfo nodeId="7178287329507395285" varName="string" />
-    </scopeInfo>
-    <scopeInfo nodeId="7178287329507400239" fileName="MockTemplateQueryContext.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="7178287329507400242" varName="key" />
-    </scopeInfo>
-    <scopeInfo nodeId="7178287329507400224" fileName="MockTemplateQueryContext.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="7178287329507400227" varName="key" />
-      <varInfo nodeId="7178287329507400229" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="7178287329507395260" fileName="MockTemplateQueryContext.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.closures.test.helper.MockTemplateQueryContext" />
+    <file name="MockTemplateQueryContext.java">
+      <node id="7178287329507546914" at="11,0,12,0" concept="3" trace="sessionObjects" />
+      <node id="7178287329507396063" at="13,37,14,34" concept="8" />
+      <node id="7178287329507551690" at="26,60,27,35" concept="2" />
+      <node id="7178287329507551715" at="27,35,28,17" concept="6" />
+      <node id="7178287329507551717" at="32,46,33,35" concept="6" />
+      <node id="7178287329507395262" at="13,0,16,0" concept="1" trace="MockTemplateQueryContext#()V" />
+      <node id="7178287329507395267" at="17,0,20,0" concept="4" trace="showWarningMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+      <node id="7178287329507395280" at="21,0,24,0" concept="4" trace="showErrorMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+      <node id="7178287329507400239" at="31,0,35,0" concept="4" trace="getSessionObject#(Ljava/lang/Object;)Ljava/lang/Object;" />
+      <node id="7178287329507400224" at="25,0,30,0" concept="4" trace="putSessionObject#(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;" />
+      <scope id="7178287329507395274" at="18,61,18,61" />
+      <scope id="7178287329507395287" at="22,59,22,59" />
+      <scope id="7178287329507395265" at="13,37,14,34" />
+      <scope id="7178287329507400244" at="32,46,33,35" />
+      <scope id="7178287329507400231" at="26,60,28,17" />
+      <scope id="7178287329507395262" at="13,0,16,0" />
+      <scope id="7178287329507395267" at="17,0,20,0">
+        <var name="node" id="7178287329507395270" />
+        <var name="string" id="7178287329507395272" />
+      </scope>
+      <scope id="7178287329507395280" at="21,0,24,0">
+        <var name="node" id="7178287329507395283" />
+        <var name="string" id="7178287329507395285" />
+      </scope>
+      <scope id="7178287329507400239" at="31,0,35,0">
+        <var name="key" id="7178287329507400242" />
+      </scope>
+      <scope id="7178287329507400224" at="25,0,30,0">
+        <var name="key" id="7178287329507400227" />
+        <var name="value" id="7178287329507400229" />
+      </scope>
+      <unit id="7178287329507395260" at="10,0,36,0" name="jetbrains.mps.closures.test.helper.MockTemplateQueryContext" />
+    </file>
   </root>
   <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/7178287329507546162">
-    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="23" startPosition="43" endLine="24" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="24" startPosition="191" endLine="25" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="29" startPosition="44" endLine="30" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="30" startPosition="191" endLine="31" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507546203" fileName="ClosureLiteraltargetIface_Test.java" startLine="36" startPosition="45" endLine="37" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507546203" fileName="ClosureLiteraltargetIface_Test.java" startLine="37" startPosition="46" endLine="38" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507546210" fileName="ClosureLiteraltargetIface_Test.java" startLine="38" startPosition="46" endLine="39" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507551974" fileName="ClosureLiteraltargetIface_Test.java" startLine="39" startPosition="58" endLine="40" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507546220" fileName="ClosureLiteraltargetIface_Test.java" startLine="40" startPosition="148" endLine="41" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579476" fileName="ClosureLiteraltargetIface_Test.java" startLine="41" startPosition="101" endLine="42" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581133" fileName="ClosureLiteraltargetIface_Test.java" startLine="45" startPosition="46" endLine="46" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581133" fileName="ClosureLiteraltargetIface_Test.java" startLine="46" startPosition="46" endLine="47" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581136" fileName="ClosureLiteraltargetIface_Test.java" startLine="47" startPosition="46" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507581142" fileName="ClosureLiteraltargetIface_Test.java" startLine="48" startPosition="58" endLine="49" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507581146" fileName="ClosureLiteraltargetIface_Test.java" startLine="49" startPosition="148" endLine="50" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581158" fileName="ClosureLiteraltargetIface_Test.java" startLine="50" startPosition="101" endLine="51" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507571068" fileName="ClosureLiteraltargetIface_Test.java" startLine="54" startPosition="46" endLine="55" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507579314" fileName="ClosureLiteraltargetIface_Test.java" startLine="58" startPosition="101" endLine="59" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507580445" fileName="ClosureLiteraltargetIface_Test.java" startLine="59" startPosition="76" endLine="60" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="63" startPosition="64" endLine="64" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="64" startPosition="65" endLine="65" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="65" startPosition="32" endLine="66" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="66" startPosition="32" endLine="67" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="67" startPosition="32" endLine="68" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="68" startPosition="32" endLine="69" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="69" startPosition="32" endLine="70" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="70" startPosition="32" endLine="71" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="71" startPosition="32" endLine="72" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="72" startPosition="140" endLine="73" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="73" startPosition="250" endLine="74" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="74" startPosition="140" endLine="75" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="75" startPosition="140" endLine="76" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="76" startPosition="140" endLine="77" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="77" startPosition="241" endLine="78" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="78" startPosition="51" endLine="79" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="79" startPosition="51" endLine="80" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="80" startPosition="55" endLine="81" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="81" startPosition="140" endLine="82" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="82" startPosition="140" endLine="83" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="83" startPosition="140" endLine="84" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="84" startPosition="242" endLine="85" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="85" startPosition="51" endLine="86" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="86" startPosition="51" endLine="87" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="87" startPosition="55" endLine="88" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="91" startPosition="64" endLine="92" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="92" startPosition="65" endLine="93" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="93" startPosition="32" endLine="94" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="94" startPosition="32" endLine="95" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="95" startPosition="32" endLine="96" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="96" startPosition="32" endLine="97" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="97" startPosition="32" endLine="98" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="98" startPosition="32" endLine="99" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="99" startPosition="32" endLine="100" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="100" startPosition="140" endLine="101" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="101" startPosition="250" endLine="102" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="102" startPosition="140" endLine="103" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="103" startPosition="140" endLine="104" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="104" startPosition="140" endLine="105" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="105" startPosition="241" endLine="106" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="106" startPosition="51" endLine="107" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="107" startPosition="51" endLine="108" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="108" startPosition="55" endLine="109" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="109" startPosition="140" endLine="110" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="110" startPosition="140" endLine="111" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="111" startPosition="140" endLine="112" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="112" startPosition="242" endLine="113" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="113" startPosition="51" endLine="114" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="114" startPosition="51" endLine="115" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="115" startPosition="55" endLine="116" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="119" startPosition="64" endLine="120" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="120" startPosition="65" endLine="121" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="121" startPosition="32" endLine="122" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="122" startPosition="32" endLine="123" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="123" startPosition="32" endLine="124" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="124" startPosition="32" endLine="125" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="125" startPosition="140" endLine="126" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="126" startPosition="250" endLine="127" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="127" startPosition="140" endLine="128" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="128" startPosition="140" endLine="129" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="129" startPosition="241" endLine="130" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="130" startPosition="51" endLine="131" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="131" startPosition="55" endLine="132" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="132" startPosition="140" endLine="133" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="133" startPosition="242" endLine="134" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="134" startPosition="55" endLine="135" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="138" startPosition="64" endLine="139" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="139" startPosition="65" endLine="140" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="140" startPosition="32" endLine="141" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="141" startPosition="32" endLine="142" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="142" startPosition="32" endLine="143" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="143" startPosition="140" endLine="144" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="144" startPosition="250" endLine="145" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="145" startPosition="140" endLine="146" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="146" startPosition="241" endLine="147" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="147" startPosition="55" endLine="148" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="148" startPosition="140" endLine="149" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="149" startPosition="242" endLine="150" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="150" startPosition="55" endLine="151" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getContext#()Ljetbrains/mps/generator/template/TemplateQueryContext;" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="75" startPosition="140" endLine="78" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="75" startPosition="140" endLine="78" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="82" startPosition="140" endLine="85" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="82" startPosition="140" endLine="85" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="103" startPosition="140" endLine="106" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="103" startPosition="140" endLine="106" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="110" startPosition="140" endLine="113" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="110" startPosition="140" endLine="113" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="127" startPosition="140" endLine="130" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="127" startPosition="140" endLine="130" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="131" startPosition="55" endLine="134" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="131" startPosition="55" endLine="134" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="144" startPosition="250" endLine="147" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="144" startPosition="250" endLine="147" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="147" startPosition="55" endLine="150" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="147" startPosition="55" endLine="150" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertLiteralTarget#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baz#()V" />
-    <nodeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baz2#()V" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="74" startPosition="140" endLine="79" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="74" startPosition="140" endLine="79" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="81" startPosition="140" endLine="86" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="81" startPosition="140" endLine="86" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="102" startPosition="140" endLine="107" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="102" startPosition="140" endLine="107" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="109" startPosition="140" endLine="114" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="109" startPosition="140" endLine="114" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="126" startPosition="250" endLine="131" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="126" startPosition="250" endLine="131" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="73" startPosition="250" endLine="80" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="73" startPosition="250" endLine="80" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="80" startPosition="55" endLine="87" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="80" startPosition="55" endLine="87" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="101" startPosition="250" endLine="108" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="101" startPosition="250" endLine="108" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="108" startPosition="55" endLine="115" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="108" startPosition="55" endLine="115" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507546203" fileName="ClosureLiteraltargetIface_Test.java" startLine="36" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baz#()V" />
-    <nodeInfo nodeId="7178287329507581133" fileName="ClosureLiteraltargetIface_Test.java" startLine="45" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baz2#()V" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="142" startPosition="32" endLine="150" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="142" startPosition="32" endLine="150" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="124" startPosition="32" endLine="134" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="124" startPosition="32" endLine="134" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="138" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_d9e2q8_c0a3a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="71" startPosition="32" endLine="87" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="71" startPosition="32" endLine="87" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="99" startPosition="32" endLine="115" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="99" startPosition="32" endLine="115" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="119" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_d9e2q8_b0a2a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="63" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_d9e2q8_b0a2a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="91" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_d9e2q8_c0a3a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="54" startPosition="46" endLine="55" endPosition="67" />
-    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="23" startPosition="43" endLine="25" endPosition="113" />
-    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="29" startPosition="44" endLine="31" endPosition="114" />
-    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="58" startPosition="101" endLine="60" endPosition="67">
-      <varInfo nodeId="7178287329507579315" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="75" startPosition="140" endLine="78" endPosition="51" />
-    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="82" startPosition="140" endLine="85" endPosition="51" />
-    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="103" startPosition="140" endLine="106" endPosition="51" />
-    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="110" startPosition="140" endLine="113" endPosition="51" />
-    <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="127" startPosition="140" endLine="130" endPosition="51" />
-    <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="131" startPosition="55" endLine="134" endPosition="55" />
-    <scopeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="144" startPosition="250" endLine="147" endPosition="55" />
-    <scopeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="147" startPosition="55" endLine="150" endPosition="55" />
-    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="7178287329507579310" varName="expected" />
-      <varInfo nodeId="7178287329507579303" varName="gencontext" />
-      <varInfo nodeId="7178287329507579307" varName="literal" />
-    </scopeInfo>
-    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="28" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="74" startPosition="140" endLine="79" endPosition="51" />
-    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="81" startPosition="140" endLine="86" endPosition="51" />
-    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="102" startPosition="140" endLine="107" endPosition="51" />
-    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="109" startPosition="140" endLine="114" endPosition="51" />
-    <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="126" startPosition="250" endLine="131" endPosition="55" />
-    <scopeInfo nodeId="7178287329507546203" fileName="ClosureLiteraltargetIface_Test.java" startLine="36" startPosition="45" endLine="42" endPosition="91">
-      <varInfo nodeId="7178287329507546211" varName="genContext" />
-      <varInfo nodeId="7178287329507551975" varName="literal" />
-    </scopeInfo>
-    <scopeInfo nodeId="7178287329507581133" fileName="ClosureLiteraltargetIface_Test.java" startLine="45" startPosition="46" endLine="51" endPosition="91">
-      <varInfo nodeId="7178287329507581137" varName="genContext" />
-      <varInfo nodeId="7178287329507581143" varName="literal" />
-    </scopeInfo>
-    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="73" startPosition="250" endLine="80" endPosition="55" />
-    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="80" startPosition="55" endLine="87" endPosition="55" />
-    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="101" startPosition="250" endLine="108" endPosition="55" />
-    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="108" startPosition="55" endLine="115" endPosition="55" />
-    <scopeInfo nodeId="7178287329507546203" fileName="ClosureLiteraltargetIface_Test.java" startLine="36" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="7178287329507581133" fileName="ClosureLiteraltargetIface_Test.java" startLine="45" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="142" startPosition="32" endLine="150" endPosition="55" />
-    <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="124" startPosition="32" endLine="134" endPosition="55" />
-    <scopeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="138" startPosition="64" endLine="151" endPosition="26">
-      <varInfo nodeId="7178287329507581164" varName="facade" />
-      <varInfo nodeId="7178287329507581164" varName="quotedNode_1" />
-      <varInfo nodeId="7178287329507581164" varName="quotedNode_2" />
-      <varInfo nodeId="7178287329507581164" varName="quotedNode_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="7178287329507581164" fileName="ClosureLiteraltargetIface_Test.java" startLine="138" startPosition="0" endLine="153" endPosition="0" />
-    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="71" startPosition="32" endLine="87" endPosition="55" />
-    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="99" startPosition="32" endLine="115" endPosition="55" />
-    <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="119" startPosition="64" endLine="135" endPosition="26">
-      <varInfo nodeId="7178287329507581150" varName="facade" />
-      <varInfo nodeId="7178287329507581150" varName="quotedNode_1" />
-      <varInfo nodeId="7178287329507581150" varName="quotedNode_2" />
-      <varInfo nodeId="7178287329507581150" varName="quotedNode_3" />
-      <varInfo nodeId="7178287329507581150" varName="quotedNode_4" />
-    </scopeInfo>
-    <scopeInfo nodeId="7178287329507581150" fileName="ClosureLiteraltargetIface_Test.java" startLine="119" startPosition="0" endLine="137" endPosition="0" />
-    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="63" startPosition="64" endLine="88" endPosition="26">
-      <varInfo nodeId="7178287329507578907" varName="facade" />
-      <varInfo nodeId="7178287329507578907" varName="quotedNode_1" />
-      <varInfo nodeId="7178287329507578907" varName="quotedNode_2" />
-      <varInfo nodeId="7178287329507578907" varName="quotedNode_3" />
-      <varInfo nodeId="7178287329507578907" varName="quotedNode_4" />
-      <varInfo nodeId="7178287329507578907" varName="quotedNode_5" />
-      <varInfo nodeId="7178287329507578907" varName="quotedNode_6" />
-      <varInfo nodeId="7178287329507578907" varName="quotedNode_7" />
-    </scopeInfo>
-    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="91" startPosition="64" endLine="116" endPosition="26">
-      <varInfo nodeId="7178287329507579485" varName="facade" />
-      <varInfo nodeId="7178287329507579485" varName="quotedNode_1" />
-      <varInfo nodeId="7178287329507579485" varName="quotedNode_2" />
-      <varInfo nodeId="7178287329507579485" varName="quotedNode_3" />
-      <varInfo nodeId="7178287329507579485" varName="quotedNode_4" />
-      <varInfo nodeId="7178287329507579485" varName="quotedNode_5" />
-      <varInfo nodeId="7178287329507579485" varName="quotedNode_6" />
-      <varInfo nodeId="7178287329507579485" varName="quotedNode_7" />
-    </scopeInfo>
-    <scopeInfo nodeId="7178287329507578907" fileName="ClosureLiteraltargetIface_Test.java" startLine="63" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="7178287329507579485" fileName="ClosureLiteraltargetIface_Test.java" startLine="91" startPosition="0" endLine="118" endPosition="0" />
-    <unitInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="34" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody" />
-    <unitInfo nodeId="7178287329507546162" fileName="ClosureLiteraltargetIface_Test.java" startLine="20" startPosition="0" endLine="155" endPosition="0" unitName="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test" />
+    <file name="ClosureLiteraltargetIface_Test.java">
+      <node id="7178287329507546162" at="23,43,24,191" concept="2" />
+      <node id="7178287329507546162" at="24,191,25,113" concept="2" />
+      <node id="7178287329507546162" at="29,44,30,191" concept="2" />
+      <node id="7178287329507546162" at="30,191,31,114" concept="2" />
+      <node id="7178287329507546203" at="36,45,37,46" concept="2" />
+      <node id="7178287329507546203" at="37,46,38,46" concept="2" />
+      <node id="7178287329507546210" at="38,46,39,58" concept="5" />
+      <node id="7178287329507551974" at="39,58,40,148" concept="5" />
+      <node id="7178287329507546220" at="40,148,41,101" concept="2" />
+      <node id="7178287329507579476" at="41,101,42,91" concept="2" />
+      <node id="7178287329507581133" at="45,46,46,46" concept="2" />
+      <node id="7178287329507581133" at="46,46,47,46" concept="2" />
+      <node id="7178287329507581136" at="47,46,48,58" concept="5" />
+      <node id="7178287329507581142" at="48,58,49,148" concept="5" />
+      <node id="7178287329507581146" at="49,148,50,101" concept="2" />
+      <node id="7178287329507581158" at="50,101,51,91" concept="2" />
+      <node id="7178287329507571068" at="54,46,55,67" concept="6" />
+      <node id="7178287329507579314" at="58,101,59,76" concept="5" />
+      <node id="7178287329507580445" at="59,76,60,67" concept="2" />
+      <node id="7178287329507578907" at="63,64,64,65" concept="5" />
+      <node id="7178287329507578907" at="64,65,65,32" concept="5" />
+      <node id="7178287329507578907" at="65,32,66,32" concept="5" />
+      <node id="7178287329507578907" at="66,32,67,32" concept="5" />
+      <node id="7178287329507578907" at="67,32,68,32" concept="5" />
+      <node id="7178287329507578907" at="68,32,69,32" concept="5" />
+      <node id="7178287329507578907" at="69,32,70,32" concept="5" />
+      <node id="7178287329507578907" at="70,32,71,32" concept="5" />
+      <node id="7178287329507578907" at="71,32,72,140" concept="2" />
+      <node id="7178287329507578907" at="72,140,73,250" concept="2" />
+      <node id="7178287329507578907" at="73,250,74,140" concept="2" />
+      <node id="7178287329507578907" at="74,140,75,140" concept="2" />
+      <node id="7178287329507578907" at="75,140,76,140" concept="2" />
+      <node id="7178287329507578907" at="76,140,77,241" concept="2" />
+      <node id="7178287329507578907" at="77,241,78,51" concept="2" />
+      <node id="7178287329507578907" at="78,51,79,51" concept="2" />
+      <node id="7178287329507578907" at="79,51,80,55" concept="2" />
+      <node id="7178287329507578907" at="80,55,81,140" concept="2" />
+      <node id="7178287329507578907" at="81,140,82,140" concept="2" />
+      <node id="7178287329507578907" at="82,140,83,140" concept="2" />
+      <node id="7178287329507578907" at="83,140,84,242" concept="2" />
+      <node id="7178287329507578907" at="84,242,85,51" concept="2" />
+      <node id="7178287329507578907" at="85,51,86,51" concept="2" />
+      <node id="7178287329507578907" at="86,51,87,55" concept="2" />
+      <node id="7178287329507578907" at="87,55,88,26" concept="6" />
+      <node id="7178287329507579485" at="91,64,92,65" concept="5" />
+      <node id="7178287329507579485" at="92,65,93,32" concept="5" />
+      <node id="7178287329507579485" at="93,32,94,32" concept="5" />
+      <node id="7178287329507579485" at="94,32,95,32" concept="5" />
+      <node id="7178287329507579485" at="95,32,96,32" concept="5" />
+      <node id="7178287329507579485" at="96,32,97,32" concept="5" />
+      <node id="7178287329507579485" at="97,32,98,32" concept="5" />
+      <node id="7178287329507579485" at="98,32,99,32" concept="5" />
+      <node id="7178287329507579485" at="99,32,100,140" concept="2" />
+      <node id="7178287329507579485" at="100,140,101,250" concept="2" />
+      <node id="7178287329507579485" at="101,250,102,140" concept="2" />
+      <node id="7178287329507579485" at="102,140,103,140" concept="2" />
+      <node id="7178287329507579485" at="103,140,104,140" concept="2" />
+      <node id="7178287329507579485" at="104,140,105,241" concept="2" />
+      <node id="7178287329507579485" at="105,241,106,51" concept="2" />
+      <node id="7178287329507579485" at="106,51,107,51" concept="2" />
+      <node id="7178287329507579485" at="107,51,108,55" concept="2" />
+      <node id="7178287329507579485" at="108,55,109,140" concept="2" />
+      <node id="7178287329507579485" at="109,140,110,140" concept="2" />
+      <node id="7178287329507579485" at="110,140,111,140" concept="2" />
+      <node id="7178287329507579485" at="111,140,112,242" concept="2" />
+      <node id="7178287329507579485" at="112,242,113,51" concept="2" />
+      <node id="7178287329507579485" at="113,51,114,51" concept="2" />
+      <node id="7178287329507579485" at="114,51,115,55" concept="2" />
+      <node id="7178287329507579485" at="115,55,116,26" concept="6" />
+      <node id="7178287329507581150" at="119,64,120,65" concept="5" />
+      <node id="7178287329507581150" at="120,65,121,32" concept="5" />
+      <node id="7178287329507581150" at="121,32,122,32" concept="5" />
+      <node id="7178287329507581150" at="122,32,123,32" concept="5" />
+      <node id="7178287329507581150" at="123,32,124,32" concept="5" />
+      <node id="7178287329507581150" at="124,32,125,140" concept="2" />
+      <node id="7178287329507581150" at="125,140,126,250" concept="2" />
+      <node id="7178287329507581150" at="126,250,127,140" concept="2" />
+      <node id="7178287329507581150" at="127,140,128,140" concept="2" />
+      <node id="7178287329507581150" at="128,140,129,241" concept="2" />
+      <node id="7178287329507581150" at="129,241,130,51" concept="2" />
+      <node id="7178287329507581150" at="130,51,131,55" concept="2" />
+      <node id="7178287329507581150" at="131,55,132,140" concept="2" />
+      <node id="7178287329507581150" at="132,140,133,242" concept="2" />
+      <node id="7178287329507581150" at="133,242,134,55" concept="2" />
+      <node id="7178287329507581150" at="134,55,135,26" concept="6" />
+      <node id="7178287329507581164" at="138,64,139,65" concept="5" />
+      <node id="7178287329507581164" at="139,65,140,32" concept="5" />
+      <node id="7178287329507581164" at="140,32,141,32" concept="5" />
+      <node id="7178287329507581164" at="141,32,142,32" concept="5" />
+      <node id="7178287329507581164" at="142,32,143,140" concept="2" />
+      <node id="7178287329507581164" at="143,140,144,250" concept="2" />
+      <node id="7178287329507581164" at="144,250,145,140" concept="2" />
+      <node id="7178287329507581164" at="145,140,146,241" concept="2" />
+      <node id="7178287329507581164" at="146,241,147,55" concept="2" />
+      <node id="7178287329507581164" at="147,55,148,140" concept="2" />
+      <node id="7178287329507581164" at="148,140,149,242" concept="2" />
+      <node id="7178287329507581164" at="149,242,150,55" concept="2" />
+      <node id="7178287329507581164" at="150,55,151,26" concept="6" />
+      <node id="7178287329507546162" at="54,0,57,0" concept="4" trace="getContext#()Ljetbrains/mps/generator/template/TemplateQueryContext;" />
+      <node id="7178287329507578907" at="75,140,78,51" concept="0" />
+      <node id="7178287329507578907" at="75,140,78,51" concept="0" />
+      <node id="7178287329507578907" at="82,140,85,51" concept="0" />
+      <node id="7178287329507578907" at="82,140,85,51" concept="0" />
+      <node id="7178287329507579485" at="103,140,106,51" concept="0" />
+      <node id="7178287329507579485" at="103,140,106,51" concept="0" />
+      <node id="7178287329507579485" at="110,140,113,51" concept="0" />
+      <node id="7178287329507579485" at="110,140,113,51" concept="0" />
+      <node id="7178287329507581150" at="127,140,130,51" concept="0" />
+      <node id="7178287329507581150" at="127,140,130,51" concept="0" />
+      <node id="7178287329507581150" at="131,55,134,55" concept="0" />
+      <node id="7178287329507581150" at="131,55,134,55" concept="0" />
+      <node id="7178287329507581164" at="144,250,147,55" concept="0" />
+      <node id="7178287329507581164" at="144,250,147,55" concept="0" />
+      <node id="7178287329507581164" at="147,55,150,55" concept="0" />
+      <node id="7178287329507581164" at="147,55,150,55" concept="0" />
+      <node id="7178287329507546162" at="58,0,62,0" concept="4" trace="assertLiteralTarget#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7178287329507546162" at="22,0,27,0" concept="4" trace="test_baz#()V" />
+      <node id="7178287329507546162" at="28,0,33,0" concept="4" trace="test_baz2#()V" />
+      <node id="7178287329507578907" at="74,140,79,51" concept="0" />
+      <node id="7178287329507578907" at="74,140,79,51" concept="0" />
+      <node id="7178287329507578907" at="81,140,86,51" concept="0" />
+      <node id="7178287329507578907" at="81,140,86,51" concept="0" />
+      <node id="7178287329507579485" at="102,140,107,51" concept="0" />
+      <node id="7178287329507579485" at="102,140,107,51" concept="0" />
+      <node id="7178287329507579485" at="109,140,114,51" concept="0" />
+      <node id="7178287329507579485" at="109,140,114,51" concept="0" />
+      <node id="7178287329507581150" at="126,250,131,55" concept="0" />
+      <node id="7178287329507581150" at="126,250,131,55" concept="0" />
+      <node id="7178287329507578907" at="73,250,80,55" concept="0" />
+      <node id="7178287329507578907" at="73,250,80,55" concept="0" />
+      <node id="7178287329507578907" at="80,55,87,55" concept="0" />
+      <node id="7178287329507578907" at="80,55,87,55" concept="0" />
+      <node id="7178287329507579485" at="101,250,108,55" concept="0" />
+      <node id="7178287329507579485" at="101,250,108,55" concept="0" />
+      <node id="7178287329507579485" at="108,55,115,55" concept="0" />
+      <node id="7178287329507579485" at="108,55,115,55" concept="0" />
+      <node id="7178287329507546203" at="36,0,44,0" concept="4" trace="test_baz#()V" />
+      <node id="7178287329507581133" at="45,0,53,0" concept="4" trace="test_baz2#()V" />
+      <node id="7178287329507581164" at="142,32,150,55" concept="0" />
+      <node id="7178287329507581164" at="142,32,150,55" concept="0" />
+      <node id="7178287329507581150" at="124,32,134,55" concept="0" />
+      <node id="7178287329507581150" at="124,32,134,55" concept="0" />
+      <node id="7178287329507581164" at="138,0,153,0" concept="7" trace="_quotation_createNode_d9e2q8_c0a3a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7178287329507578907" at="71,32,87,55" concept="0" />
+      <node id="7178287329507578907" at="71,32,87,55" concept="0" />
+      <node id="7178287329507579485" at="99,32,115,55" concept="0" />
+      <node id="7178287329507579485" at="99,32,115,55" concept="0" />
+      <node id="7178287329507581150" at="119,0,137,0" concept="7" trace="_quotation_createNode_d9e2q8_b0a2a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7178287329507578907" at="63,0,90,0" concept="7" trace="_quotation_createNode_d9e2q8_b0a2a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7178287329507579485" at="91,0,118,0" concept="7" trace="_quotation_createNode_d9e2q8_c0a3a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="7178287329507546162" at="54,46,55,67" />
+      <scope id="7178287329507546162" at="23,43,25,113" />
+      <scope id="7178287329507546162" at="29,44,31,114" />
+      <scope id="7178287329507546162" at="58,101,60,67">
+        <var name="target" id="7178287329507579315" />
+      </scope>
+      <scope id="7178287329507546162" at="54,0,57,0" />
+      <scope id="7178287329507578907" at="75,140,78,51" />
+      <scope id="7178287329507578907" at="82,140,85,51" />
+      <scope id="7178287329507579485" at="103,140,106,51" />
+      <scope id="7178287329507579485" at="110,140,113,51" />
+      <scope id="7178287329507581150" at="127,140,130,51" />
+      <scope id="7178287329507581150" at="131,55,134,55" />
+      <scope id="7178287329507581164" at="144,250,147,55" />
+      <scope id="7178287329507581164" at="147,55,150,55" />
+      <scope id="7178287329507546162" at="58,0,62,0">
+        <var name="expected" id="7178287329507579310" />
+        <var name="gencontext" id="7178287329507579303" />
+        <var name="literal" id="7178287329507579307" />
+      </scope>
+      <scope id="7178287329507546162" at="22,0,27,0" />
+      <scope id="7178287329507546162" at="28,0,33,0" />
+      <scope id="7178287329507578907" at="74,140,79,51" />
+      <scope id="7178287329507578907" at="81,140,86,51" />
+      <scope id="7178287329507579485" at="102,140,107,51" />
+      <scope id="7178287329507579485" at="109,140,114,51" />
+      <scope id="7178287329507581150" at="126,250,131,55" />
+      <scope id="7178287329507546203" at="36,45,42,91">
+        <var name="genContext" id="7178287329507546211" />
+        <var name="literal" id="7178287329507551975" />
+      </scope>
+      <scope id="7178287329507581133" at="45,46,51,91">
+        <var name="genContext" id="7178287329507581137" />
+        <var name="literal" id="7178287329507581143" />
+      </scope>
+      <scope id="7178287329507578907" at="73,250,80,55" />
+      <scope id="7178287329507578907" at="80,55,87,55" />
+      <scope id="7178287329507579485" at="101,250,108,55" />
+      <scope id="7178287329507579485" at="108,55,115,55" />
+      <scope id="7178287329507546203" at="36,0,44,0" />
+      <scope id="7178287329507581133" at="45,0,53,0" />
+      <scope id="7178287329507581164" at="142,32,150,55" />
+      <scope id="7178287329507581150" at="124,32,134,55" />
+      <scope id="7178287329507581164" at="138,64,151,26">
+        <var name="facade" id="7178287329507581164" />
+        <var name="quotedNode_1" id="7178287329507581164" />
+        <var name="quotedNode_2" id="7178287329507581164" />
+        <var name="quotedNode_3" id="7178287329507581164" />
+      </scope>
+      <scope id="7178287329507581164" at="138,0,153,0" />
+      <scope id="7178287329507578907" at="71,32,87,55" />
+      <scope id="7178287329507579485" at="99,32,115,55" />
+      <scope id="7178287329507581150" at="119,64,135,26">
+        <var name="facade" id="7178287329507581150" />
+        <var name="quotedNode_1" id="7178287329507581150" />
+        <var name="quotedNode_2" id="7178287329507581150" />
+        <var name="quotedNode_3" id="7178287329507581150" />
+        <var name="quotedNode_4" id="7178287329507581150" />
+      </scope>
+      <scope id="7178287329507581150" at="119,0,137,0" />
+      <scope id="7178287329507578907" at="63,64,88,26">
+        <var name="facade" id="7178287329507578907" />
+        <var name="quotedNode_1" id="7178287329507578907" />
+        <var name="quotedNode_2" id="7178287329507578907" />
+        <var name="quotedNode_3" id="7178287329507578907" />
+        <var name="quotedNode_4" id="7178287329507578907" />
+        <var name="quotedNode_5" id="7178287329507578907" />
+        <var name="quotedNode_6" id="7178287329507578907" />
+        <var name="quotedNode_7" id="7178287329507578907" />
+      </scope>
+      <scope id="7178287329507579485" at="91,64,116,26">
+        <var name="facade" id="7178287329507579485" />
+        <var name="quotedNode_1" id="7178287329507579485" />
+        <var name="quotedNode_2" id="7178287329507579485" />
+        <var name="quotedNode_3" id="7178287329507579485" />
+        <var name="quotedNode_4" id="7178287329507579485" />
+        <var name="quotedNode_5" id="7178287329507579485" />
+        <var name="quotedNode_6" id="7178287329507579485" />
+        <var name="quotedNode_7" id="7178287329507579485" />
+      </scope>
+      <scope id="7178287329507578907" at="63,0,90,0" />
+      <scope id="7178287329507579485" at="91,0,118,0" />
+      <unit id="7178287329507546162" at="34,0,154,0" name="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody" />
+      <unit id="7178287329507546162" at="20,0,155,0" name="jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test" />
+    </file>
   </root>
   <root nodeRef="r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)/7289865355732881079">
-    <nodeInfo nodeId="7289865355732881079" fileName="Generics_Test.java" startLine="16" startPosition="77" endLine="17" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7289865355732881079" fileName="Generics_Test.java" startLine="17" startPosition="191" endLine="18" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7289865355732881079" fileName="Generics_Test.java" startLine="23" startPosition="79" endLine="24" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7289865355732881079" fileName="Generics_Test.java" startLine="24" startPosition="146" endLine="25" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7289865355732881079" fileName="Generics_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck5419091611223712729#()V" />
-    <nodeInfo nodeId="7289865355732881079" fileName="Generics_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck5419091611223712729#()V" />
-    <scopeInfo nodeId="7289865355732881079" fileName="Generics_Test.java" startLine="16" startPosition="77" endLine="18" endPosition="130" />
-    <scopeInfo nodeId="7289865355732881079" fileName="Generics_Test.java" startLine="23" startPosition="79" endLine="25" endPosition="159">
-      <varInfo nodeId="7289865355732881079" varName="operation" />
-    </scopeInfo>
-    <scopeInfo nodeId="7289865355732881079" fileName="Generics_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7289865355732881079" fileName="Generics_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
-    <unitInfo nodeId="7289865355732881079" fileName="Generics_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.closures.test.helper.Generics_Test$TestBody" />
-    <unitInfo nodeId="7289865355732881079" fileName="Generics_Test.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.closures.test.helper.Generics_Test" />
+    <file name="Generics_Test.java">
+      <node id="7289865355732881079" at="16,77,17,191" concept="2" />
+      <node id="7289865355732881079" at="17,191,18,130" concept="2" />
+      <node id="7289865355732881079" at="23,79,24,146" concept="5" />
+      <node id="7289865355732881079" at="24,146,25,159" concept="2" />
+      <node id="7289865355732881079" at="23,0,27,0" concept="4" trace="test_ErrorMessagesCheck5419091611223712729#()V" />
+      <node id="7289865355732881079" at="15,0,20,0" concept="4" trace="test_ErrorMessagesCheck5419091611223712729#()V" />
+      <scope id="7289865355732881079" at="16,77,18,130" />
+      <scope id="7289865355732881079" at="23,79,25,159">
+        <var name="operation" id="7289865355732881079" />
+      </scope>
+      <scope id="7289865355732881079" at="23,0,27,0" />
+      <scope id="7289865355732881079" at="15,0,20,0" />
+      <unit id="7289865355732881079" at="21,0,28,0" name="jetbrains.mps.closures.test.helper.Generics_Test$TestBody" />
+      <unit id="7289865355732881079" at="13,0,29,0" name="jetbrains.mps.closures.test.helper.Generics_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

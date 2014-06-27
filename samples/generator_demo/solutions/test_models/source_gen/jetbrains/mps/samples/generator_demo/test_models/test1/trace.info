@@ -1,42 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:ad2e53c5-6695-4bcf-8f03-833364651c72(jetbrains.mps.samples.generator_demo.test_models.test1)/1228437239252">
-    <nodeInfo nodeId="1228437239252" fileName="Button.java" startLine="11" startPosition="42" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228437239252" fileName="Button.java" startLine="12" startPosition="38" endLine="13" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228437239252" fileName="Button.java" startLine="13" startPosition="57" endLine="14" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228437239252" fileName="Button.java" startLine="14" startPosition="49" endLine="15" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228437239252" fileName="Button.java" startLine="15" startPosition="42" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228437239252" fileName="Button.java" startLine="16" startPosition="33" endLine="17" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228437239252" fileName="Button.java" startLine="17" startPosition="17" endLine="18" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228437239252" fileName="Button.java" startLine="18" startPosition="38" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228437239252" fileName="Button.java" startLine="11" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <scopeInfo nodeId="1228437239252" fileName="Button.java" startLine="11" startPosition="42" endLine="19" endPosition="27">
-      <varInfo nodeId="1228437239252" varName="container" />
-      <varInfo nodeId="1228437239252" varName="frame" />
-    </scopeInfo>
-    <scopeInfo nodeId="1228437239252" fileName="Button.java" startLine="11" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="1228437239252" varName="args" />
-    </scopeInfo>
-    <unitInfo nodeId="1228437239252" fileName="Button.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.generator_demo.test_models.test1.Button" />
+    <file name="Button.java">
+      <node id="1228437239252" at="11,42,12,38" concept="1" />
+      <node id="1228437239252" at="12,38,13,57" concept="0" />
+      <node id="1228437239252" at="13,57,14,49" concept="1" />
+      <node id="1228437239252" at="14,49,15,42" concept="0" />
+      <node id="1228437239252" at="15,42,16,33" concept="0" />
+      <node id="1228437239252" at="16,33,17,17" concept="0" />
+      <node id="1228437239252" at="17,17,18,38" concept="0" />
+      <node id="1228437239252" at="18,38,19,27" concept="0" />
+      <node id="1228437239252" at="11,0,21,0" concept="2" trace="main#([Ljava/lang/String;)V" />
+      <scope id="1228437239252" at="11,42,19,27">
+        <var name="container" id="1228437239252" />
+        <var name="frame" id="1228437239252" />
+      </scope>
+      <scope id="1228437239252" at="11,0,21,0">
+        <var name="args" id="1228437239252" />
+      </scope>
+      <unit id="1228437239252" at="10,0,22,0" name="jetbrains.mps.samples.generator_demo.test_models.test1.Button" />
+    </file>
   </root>
   <root nodeRef="r:ad2e53c5-6695-4bcf-8f03-833364651c72(jetbrains.mps.samples.generator_demo.test_models.test1)/1228437250754">
-    <nodeInfo nodeId="1228437250754" fileName="Label.java" startLine="11" startPosition="42" endLine="12" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228437250754" fileName="Label.java" startLine="12" startPosition="38" endLine="13" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228437250754" fileName="Label.java" startLine="13" startPosition="57" endLine="14" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228437250754" fileName="Label.java" startLine="14" startPosition="49" endLine="15" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228437250754" fileName="Label.java" startLine="15" startPosition="42" endLine="16" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228437250754" fileName="Label.java" startLine="16" startPosition="32" endLine="17" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228437250754" fileName="Label.java" startLine="17" startPosition="17" endLine="18" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228437250754" fileName="Label.java" startLine="18" startPosition="38" endLine="19" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228437250754" fileName="Label.java" startLine="11" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <scopeInfo nodeId="1228437250754" fileName="Label.java" startLine="11" startPosition="42" endLine="19" endPosition="27">
-      <varInfo nodeId="1228437250754" varName="container" />
-      <varInfo nodeId="1228437250754" varName="frame" />
-    </scopeInfo>
-    <scopeInfo nodeId="1228437250754" fileName="Label.java" startLine="11" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="1228437250754" varName="args" />
-    </scopeInfo>
-    <unitInfo nodeId="1228437250754" fileName="Label.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.generator_demo.test_models.test1.Label" />
+    <file name="Label.java">
+      <node id="1228437250754" at="11,42,12,38" concept="1" />
+      <node id="1228437250754" at="12,38,13,57" concept="0" />
+      <node id="1228437250754" at="13,57,14,49" concept="1" />
+      <node id="1228437250754" at="14,49,15,42" concept="0" />
+      <node id="1228437250754" at="15,42,16,32" concept="0" />
+      <node id="1228437250754" at="16,32,17,17" concept="0" />
+      <node id="1228437250754" at="17,17,18,38" concept="0" />
+      <node id="1228437250754" at="18,38,19,27" concept="0" />
+      <node id="1228437250754" at="11,0,21,0" concept="2" trace="main#([Ljava/lang/String;)V" />
+      <scope id="1228437250754" at="11,42,19,27">
+        <var name="container" id="1228437250754" />
+        <var name="frame" id="1228437250754" />
+      </scope>
+      <scope id="1228437250754" at="11,0,21,0">
+        <var name="args" id="1228437250754" />
+      </scope>
+      <unit id="1228437250754" at="10,0,22,0" name="jetbrains.mps.samples.generator_demo.test_models.test1.Label" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

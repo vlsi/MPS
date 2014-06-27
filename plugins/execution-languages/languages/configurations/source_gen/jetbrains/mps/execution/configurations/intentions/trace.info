@@ -1,227 +1,244 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.execution.configurations.intentions.IntentionsDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="IntentionsDescriptor.java">
+      <unit at="10,0,20,0" name="jetbrains.mps.execution.configurations.intentions.IntentionsDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:35b5b700-0b3d-462f-8dd7-537dfc6a7ae6(jetbrains.mps.execution.configurations.intentions)/2557661505909760572">
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="32" startPosition="30" endLine="33" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="36" startPosition="35" endLine="37" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="40" startPosition="41" endLine="41" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="44" startPosition="37" endLine="45" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="48" startPosition="34" endLine="49" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="52" startPosition="44" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="57" startPosition="53" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="59" startPosition="5" endLine="60" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909816240" fileName="AddProducer_Intention.java" startLine="63" startPosition="91" endLine="64" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8401208354348486289" fileName="AddProducer_Intention.java" startLine="66" startPosition="39" endLine="67" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="72" startPosition="53" endLine="73" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="76" startPosition="35" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="81" startPosition="37" endLine="82" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="83" startPosition="5" endLine="84" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909855527" fileName="AddProducer_Intention.java" startLine="91" startPosition="87" endLine="92" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8401208354348535500" fileName="AddProducer_Intention.java" startLine="95" startPosition="78" endLine="96" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8401208354348535506" fileName="AddProducer_Intention.java" startLine="96" startPosition="143" endLine="97" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557661505912560462" fileName="AddProducer_Intention.java" startLine="97" startPosition="119" endLine="98" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8401208354348535512" fileName="AddProducer_Intention.java" startLine="98" startPosition="113" endLine="99" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557661505913298395" fileName="AddProducer_Intention.java" startLine="99" startPosition="77" endLine="100" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="103" startPosition="48" endLine="104" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8401208354348601310" fileName="AddProducer_Intention.java" startLine="108" startPosition="82" endLine="109" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8401208354348601310" fileName="AddProducer_Intention.java" startLine="109" startPosition="63" endLine="110" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8401208354348601310" fileName="AddProducer_Intention.java" startLine="110" startPosition="147" endLine="111" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8401208354348601310" fileName="AddProducer_Intention.java" startLine="110" startPosition="147" endLine="111" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8401208354348601310" fileName="AddProducer_Intention.java" startLine="111" startPosition="65" endLine="112" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddProducer_Intention#()V" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="88" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="56" startPosition="84" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8401208354348486287" fileName="AddProducer_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="80" startPosition="99" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="2557661505909812376" fileName="AddProducer_Intention.java" startLine="64" startPosition="33" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="56" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="80" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="8401208354348601310" fileName="AddProducer_Intention.java" startLine="108" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPersistentConfigurationType_wy7zix_a0b0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="95" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="63" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="29" startPosition="34" endLine="29" endPosition="34" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="88" startPosition="38" endLine="88" endPosition="38" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="32" startPosition="30" endLine="33" endPosition="79" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="36" startPosition="35" endLine="37" endPosition="25" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="40" startPosition="41" endLine="41" endPosition="85" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="44" startPosition="37" endLine="45" endPosition="52" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="48" startPosition="34" endLine="49" endPosition="32" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="52" startPosition="44" endLine="53" endPosition="16" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="57" startPosition="53" endLine="58" endPosition="19" />
-    <scopeInfo nodeId="8401208354348486288" fileName="AddProducer_Intention.java" startLine="66" startPosition="39" endLine="67" endPosition="142" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="72" startPosition="53" endLine="73" endPosition="144" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="76" startPosition="35" endLine="77" endPosition="17" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="81" startPosition="37" endLine="82" endPosition="127" />
-    <scopeInfo nodeId="2557661505909760574" fileName="AddProducer_Intention.java" startLine="91" startPosition="87" endLine="92" endPosition="82" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="103" startPosition="48" endLine="104" endPosition="40" />
-    <scopeInfo nodeId="8401208354348601310" fileName="AddProducer_Intention.java" startLine="110" startPosition="147" endLine="111" endPosition="65" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="88" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="8401208354348486287" fileName="AddProducer_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="8401208354348486287" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0">
-      <varInfo nodeId="2557661505909760572" varName="editorContext" />
-      <varInfo nodeId="2557661505909760572" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="103" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="56" startPosition="84" endLine="60" endPosition="16" />
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="80" startPosition="99" endLine="84" endPosition="30" />
-    <scopeInfo nodeId="8401208354348601310" fileName="AddProducer_Intention.java" startLine="108" startPosition="82" endLine="112" endPosition="14">
-      <varInfo nodeId="8401208354348601310" varName="facade" />
-      <varInfo nodeId="8401208354348601310" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909760576" fileName="AddProducer_Intention.java" startLine="95" startPosition="78" endLine="100" endPosition="107">
-      <varInfo nodeId="8401208354348535501" varName="producer" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="56" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="2557661505909760572" varName="editorContext" />
-      <varInfo nodeId="2557661505909760572" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909793101" fileName="AddProducer_Intention.java" startLine="63" startPosition="91" endLine="69" endPosition="17">
-      <varInfo nodeId="2557661505909816243" varName="nodeFinal" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="80" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="2557661505909760572" varName="context" />
-      <varInfo nodeId="2557661505909760572" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="8401208354348601310" fileName="AddProducer_Intention.java" startLine="108" startPosition="0" endLine="114" endPosition="0">
-      <varInfo nodeId="8401208354348601310" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="95" startPosition="0" endLine="102" endPosition="0">
-      <varInfo nodeId="2557661505909760572" varName="editorContext" />
-      <varInfo nodeId="2557661505909760572" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="63" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="2557661505909760572" varName="editorContext" />
-      <varInfo nodeId="2557661505909760572" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="8401208354348486287" fileName="AddProducer_Intention.java" startLine="65" startPosition="179" endLine="69" endPosition="5" unitName="jetbrains.mps.execution.configurations.intentions.AddProducer_Intention$1" />
-    <unitInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="87" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.execution.configurations.intentions.AddProducer_Intention$IntentionImplementation" />
-    <unitInfo nodeId="2557661505909760572" fileName="AddProducer_Intention.java" startLine="26" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.execution.configurations.intentions.AddProducer_Intention" />
+    <file name="AddProducer_Intention.java">
+      <node id="2557661505909760572" at="27,0,28,0" concept="3" trace="myCachedExecutable" />
+      <node id="2557661505909760572" at="32,30,33,79" concept="7" />
+      <node id="2557661505909760572" at="36,35,37,25" concept="7" />
+      <node id="2557661505909760572" at="40,41,41,85" concept="7" />
+      <node id="2557661505909760572" at="44,37,45,52" concept="7" />
+      <node id="2557661505909760572" at="48,34,49,32" concept="7" />
+      <node id="2557661505909760572" at="52,44,53,16" concept="7" />
+      <node id="2557661505909760572" at="57,53,58,19" concept="7" />
+      <node id="2557661505909760572" at="59,5,60,16" concept="7" />
+      <node id="2557661505909816240" at="63,91,64,33" concept="6" />
+      <node id="8401208354348486289" at="66,39,67,142" concept="7" />
+      <node id="2557661505909760572" at="72,53,73,144" concept="7" />
+      <node id="2557661505909760572" at="76,35,77,17" concept="7" />
+      <node id="2557661505909760572" at="81,37,82,127" concept="2" />
+      <node id="2557661505909760572" at="83,5,84,30" concept="7" />
+      <node id="2557661505909855527" at="91,87,92,82" concept="7" />
+      <node id="8401208354348535500" at="95,78,96,143" concept="6" />
+      <node id="8401208354348535506" at="96,143,97,119" concept="2" />
+      <node id="2557661505912560462" at="97,119,98,113" concept="2" />
+      <node id="8401208354348535512" at="98,113,99,77" concept="2" />
+      <node id="2557661505913298395" at="99,77,100,107" concept="2" />
+      <node id="2557661505909760572" at="103,48,104,40" concept="7" />
+      <node id="8401208354348601310" at="108,82,109,63" concept="6" />
+      <node id="8401208354348601310" at="109,63,110,147" concept="6" />
+      <node id="8401208354348601310" at="110,147,111,65" concept="0" />
+      <node id="8401208354348601310" at="110,147,111,65" concept="2" />
+      <node id="8401208354348601310" at="111,65,112,14" concept="7" />
+      <node id="2557661505909760572" at="29,0,31,0" concept="1" trace="AddProducer_Intention#()V" />
+      <node id="2557661505909760572" at="88,0,90,0" concept="1" trace="IntentionImplementation#()V" />
+      <node id="2557661505909760572" at="32,0,35,0" concept="5" trace="getConcept#()Ljava/lang/String;" />
+      <node id="2557661505909760572" at="36,0,39,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="2557661505909760572" at="40,0,43,0" concept="5" trace="getPersistentStateKey#()Ljava/lang/String;" />
+      <node id="2557661505909760572" at="44,0,47,0" concept="5" trace="getLanguageFqName#()Ljava/lang/String;" />
+      <node id="2557661505909760572" at="48,0,51,0" concept="5" trace="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+      <node id="2557661505909760572" at="52,0,55,0" concept="5" trace="isAvailableInChildNodes#()Z" />
+      <node id="2557661505909760572" at="56,84,59,5" concept="4" />
+      <node id="8401208354348486287" at="66,0,69,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2557661505909760572" at="72,0,75,0" concept="5" trace="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="2557661505909760572" at="76,0,79,0" concept="5" trace="isSurroundWith#()Z" />
+      <node id="2557661505909760572" at="80,99,83,5" concept="4" />
+      <node id="2557661505909760572" at="91,0,94,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="2557661505909760572" at="103,0,106,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="2557661505909812376" at="64,33,69,17" concept="7" />
+      <node id="2557661505909760572" at="56,0,62,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="2557661505909760572" at="80,0,86,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <node id="8401208354348601310" at="108,0,114,0" concept="8" trace="createPersistentConfigurationType_wy7zix_a0b0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2557661505909760572" at="95,0,102,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="2557661505909760572" at="63,0,71,0" concept="5" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <scope id="2557661505909760572" at="29,34,29,34" />
+      <scope id="2557661505909760572" at="88,38,88,38" />
+      <scope id="2557661505909760572" at="32,30,33,79" />
+      <scope id="2557661505909760572" at="36,35,37,25" />
+      <scope id="2557661505909760572" at="40,41,41,85" />
+      <scope id="2557661505909760572" at="44,37,45,52" />
+      <scope id="2557661505909760572" at="48,34,49,32" />
+      <scope id="2557661505909760572" at="52,44,53,16" />
+      <scope id="2557661505909760572" at="57,53,58,19" />
+      <scope id="8401208354348486288" at="66,39,67,142" />
+      <scope id="2557661505909760572" at="72,53,73,144" />
+      <scope id="2557661505909760572" at="76,35,77,17" />
+      <scope id="2557661505909760572" at="81,37,82,127" />
+      <scope id="2557661505909760574" at="91,87,92,82" />
+      <scope id="2557661505909760572" at="103,48,104,40" />
+      <scope id="8401208354348601310" at="110,147,111,65" />
+      <scope id="2557661505909760572" at="29,0,31,0" />
+      <scope id="2557661505909760572" at="88,0,90,0" />
+      <scope id="2557661505909760572" at="32,0,35,0" />
+      <scope id="2557661505909760572" at="36,0,39,0" />
+      <scope id="2557661505909760572" at="40,0,43,0" />
+      <scope id="2557661505909760572" at="44,0,47,0" />
+      <scope id="2557661505909760572" at="48,0,51,0" />
+      <scope id="2557661505909760572" at="52,0,55,0" />
+      <scope id="8401208354348486287" at="66,0,69,0">
+        <var name="it" id="8401208354348486287" />
+      </scope>
+      <scope id="2557661505909760572" at="72,0,75,0" />
+      <scope id="2557661505909760572" at="76,0,79,0" />
+      <scope id="2557661505909760572" at="91,0,94,0">
+        <var name="editorContext" id="2557661505909760572" />
+        <var name="node" id="2557661505909760572" />
+      </scope>
+      <scope id="2557661505909760572" at="103,0,106,0" />
+      <scope id="2557661505909760572" at="56,84,60,16" />
+      <scope id="2557661505909760572" at="80,99,84,30" />
+      <scope id="8401208354348601310" at="108,82,112,14">
+        <var name="facade" id="8401208354348601310" />
+        <var name="n1" id="8401208354348601310" />
+      </scope>
+      <scope id="2557661505909760576" at="95,78,100,107">
+        <var name="producer" id="8401208354348535501" />
+      </scope>
+      <scope id="2557661505909760572" at="56,0,62,0">
+        <var name="editorContext" id="2557661505909760572" />
+        <var name="node" id="2557661505909760572" />
+      </scope>
+      <scope id="2557661505909793101" at="63,91,69,17">
+        <var name="nodeFinal" id="2557661505909816243" />
+      </scope>
+      <scope id="2557661505909760572" at="80,0,86,0">
+        <var name="context" id="2557661505909760572" />
+        <var name="node" id="2557661505909760572" />
+      </scope>
+      <scope id="8401208354348601310" at="108,0,114,0">
+        <var name="p0" id="8401208354348601310" />
+      </scope>
+      <scope id="2557661505909760572" at="95,0,102,0">
+        <var name="editorContext" id="2557661505909760572" />
+        <var name="node" id="2557661505909760572" />
+      </scope>
+      <scope id="2557661505909760572" at="63,0,71,0">
+        <var name="editorContext" id="2557661505909760572" />
+        <var name="node" id="2557661505909760572" />
+      </scope>
+      <unit id="8401208354348486287" at="65,179,69,5" name="jetbrains.mps.execution.configurations.intentions.AddProducer_Intention$1" />
+      <unit id="2557661505909760572" at="87,0,107,0" name="jetbrains.mps.execution.configurations.intentions.AddProducer_Intention$IntentionImplementation" />
+      <unit id="2557661505909760572" at="26,0,115,0" name="jetbrains.mps.execution.configurations.intentions.AddProducer_Intention" />
+    </file>
   </root>
   <root nodeRef="r:35b5b700-0b3d-462f-8dd7-537dfc6a7ae6(jetbrains.mps.execution.configurations.intentions)/2557661505909893922">
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="34" startPosition="35" endLine="35" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="38" startPosition="41" endLine="39" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="42" startPosition="37" endLine="43" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="46" startPosition="34" endLine="47" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="50" startPosition="44" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="57" startPosition="5" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841950869" fileName="AddExecutor_Intention.java" startLine="61" startPosition="91" endLine="62" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2557661505909996647" fileName="AddExecutor_Intention.java" startLine="64" startPosition="39" endLine="65" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="70" startPosition="53" endLine="71" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="74" startPosition="35" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="79" startPosition="37" endLine="80" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="81" startPosition="5" endLine="82" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909910384" fileName="AddExecutor_Intention.java" startLine="89" startPosition="87" endLine="90" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5487985028841950916" fileName="AddExecutor_Intention.java" startLine="93" startPosition="78" endLine="94" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841950922" fileName="AddExecutor_Intention.java" startLine="94" startPosition="143" endLine="95" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557661505912529065" fileName="AddExecutor_Intention.java" startLine="95" startPosition="72" endLine="96" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841950928" fileName="AddExecutor_Intention.java" startLine="96" startPosition="113" endLine="97" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557661505912632822" fileName="AddExecutor_Intention.java" startLine="97" startPosition="77" endLine="98" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="101" startPosition="48" endLine="102" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddExecutor_Intention#()V" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="86" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="54" startPosition="84" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2557661505909996074" fileName="AddExecutor_Intention.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="78" startPosition="99" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="5487985028841950873" fileName="AddExecutor_Intention.java" startLine="62" startPosition="33" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="54" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="78" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="93" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="61" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="27" startPosition="34" endLine="27" endPosition="34" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="86" startPosition="38" endLine="86" endPosition="38" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="79" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="34" startPosition="35" endLine="35" endPosition="25" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="38" startPosition="41" endLine="39" endPosition="85" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="42" startPosition="37" endLine="43" endPosition="52" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="46" startPosition="34" endLine="47" endPosition="32" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="50" startPosition="44" endLine="51" endPosition="16" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="19" />
-    <scopeInfo nodeId="2557661505909996075" fileName="AddExecutor_Intention.java" startLine="64" startPosition="39" endLine="65" endPosition="82" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="70" startPosition="53" endLine="71" endPosition="144" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="74" startPosition="35" endLine="75" endPosition="17" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="79" startPosition="37" endLine="80" endPosition="127" />
-    <scopeInfo nodeId="2557661505909893924" fileName="AddExecutor_Intention.java" startLine="89" startPosition="87" endLine="90" endPosition="82" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="101" startPosition="48" endLine="102" endPosition="40" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="86" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="2557661505909996074" fileName="AddExecutor_Intention.java" startLine="64" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="2557661505909996074" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="89" startPosition="0" endLine="92" endPosition="0">
-      <varInfo nodeId="2557661505909893922" varName="editorContext" />
-      <varInfo nodeId="2557661505909893922" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="101" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="54" startPosition="84" endLine="58" endPosition="16" />
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="78" startPosition="99" endLine="82" endPosition="30" />
-    <scopeInfo nodeId="2557661505909893926" fileName="AddExecutor_Intention.java" startLine="93" startPosition="78" endLine="98" endPosition="107">
-      <varInfo nodeId="5487985028841950917" varName="executor" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="54" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="2557661505909893922" varName="editorContext" />
-      <varInfo nodeId="2557661505909893922" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909921770" fileName="AddExecutor_Intention.java" startLine="61" startPosition="91" endLine="67" endPosition="17">
-      <varInfo nodeId="5487985028841950870" varName="nodeFinal" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="78" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="2557661505909893922" varName="context" />
-      <varInfo nodeId="2557661505909893922" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="93" startPosition="0" endLine="100" endPosition="0">
-      <varInfo nodeId="2557661505909893922" varName="editorContext" />
-      <varInfo nodeId="2557661505909893922" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="61" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="2557661505909893922" varName="editorContext" />
-      <varInfo nodeId="2557661505909893922" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="2557661505909996074" fileName="AddExecutor_Intention.java" startLine="63" startPosition="187" endLine="67" endPosition="5" unitName="jetbrains.mps.execution.configurations.intentions.AddExecutor_Intention$1" />
-    <unitInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="85" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.execution.configurations.intentions.AddExecutor_Intention$IntentionImplementation" />
-    <unitInfo nodeId="2557661505909893922" fileName="AddExecutor_Intention.java" startLine="24" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.execution.configurations.intentions.AddExecutor_Intention" />
+    <file name="AddExecutor_Intention.java">
+      <node id="2557661505909893922" at="25,0,26,0" concept="3" trace="myCachedExecutable" />
+      <node id="2557661505909893922" at="30,30,31,79" concept="7" />
+      <node id="2557661505909893922" at="34,35,35,25" concept="7" />
+      <node id="2557661505909893922" at="38,41,39,85" concept="7" />
+      <node id="2557661505909893922" at="42,37,43,52" concept="7" />
+      <node id="2557661505909893922" at="46,34,47,32" concept="7" />
+      <node id="2557661505909893922" at="50,44,51,16" concept="7" />
+      <node id="2557661505909893922" at="55,53,56,19" concept="7" />
+      <node id="2557661505909893922" at="57,5,58,16" concept="7" />
+      <node id="5487985028841950869" at="61,91,62,33" concept="6" />
+      <node id="2557661505909996647" at="64,39,65,82" concept="7" />
+      <node id="2557661505909893922" at="70,53,71,144" concept="7" />
+      <node id="2557661505909893922" at="74,35,75,17" concept="7" />
+      <node id="2557661505909893922" at="79,37,80,127" concept="2" />
+      <node id="2557661505909893922" at="81,5,82,30" concept="7" />
+      <node id="2557661505909910384" at="89,87,90,82" concept="7" />
+      <node id="5487985028841950916" at="93,78,94,143" concept="6" />
+      <node id="5487985028841950922" at="94,143,95,72" concept="2" />
+      <node id="2557661505912529065" at="95,72,96,113" concept="2" />
+      <node id="5487985028841950928" at="96,113,97,77" concept="2" />
+      <node id="2557661505912632822" at="97,77,98,107" concept="2" />
+      <node id="2557661505909893922" at="101,48,102,40" concept="7" />
+      <node id="2557661505909893922" at="27,0,29,0" concept="1" trace="AddExecutor_Intention#()V" />
+      <node id="2557661505909893922" at="86,0,88,0" concept="1" trace="IntentionImplementation#()V" />
+      <node id="2557661505909893922" at="30,0,33,0" concept="5" trace="getConcept#()Ljava/lang/String;" />
+      <node id="2557661505909893922" at="34,0,37,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="2557661505909893922" at="38,0,41,0" concept="5" trace="getPersistentStateKey#()Ljava/lang/String;" />
+      <node id="2557661505909893922" at="42,0,45,0" concept="5" trace="getLanguageFqName#()Ljava/lang/String;" />
+      <node id="2557661505909893922" at="46,0,49,0" concept="5" trace="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+      <node id="2557661505909893922" at="50,0,53,0" concept="5" trace="isAvailableInChildNodes#()Z" />
+      <node id="2557661505909893922" at="54,84,57,5" concept="4" />
+      <node id="2557661505909996074" at="64,0,67,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2557661505909893922" at="70,0,73,0" concept="5" trace="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="2557661505909893922" at="74,0,77,0" concept="5" trace="isSurroundWith#()Z" />
+      <node id="2557661505909893922" at="78,99,81,5" concept="4" />
+      <node id="2557661505909893922" at="89,0,92,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="2557661505909893922" at="101,0,104,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="5487985028841950873" at="62,33,67,17" concept="7" />
+      <node id="2557661505909893922" at="54,0,60,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="2557661505909893922" at="78,0,84,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <node id="2557661505909893922" at="93,0,100,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="2557661505909893922" at="61,0,69,0" concept="5" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <scope id="2557661505909893922" at="27,34,27,34" />
+      <scope id="2557661505909893922" at="86,38,86,38" />
+      <scope id="2557661505909893922" at="30,30,31,79" />
+      <scope id="2557661505909893922" at="34,35,35,25" />
+      <scope id="2557661505909893922" at="38,41,39,85" />
+      <scope id="2557661505909893922" at="42,37,43,52" />
+      <scope id="2557661505909893922" at="46,34,47,32" />
+      <scope id="2557661505909893922" at="50,44,51,16" />
+      <scope id="2557661505909893922" at="55,53,56,19" />
+      <scope id="2557661505909996075" at="64,39,65,82" />
+      <scope id="2557661505909893922" at="70,53,71,144" />
+      <scope id="2557661505909893922" at="74,35,75,17" />
+      <scope id="2557661505909893922" at="79,37,80,127" />
+      <scope id="2557661505909893924" at="89,87,90,82" />
+      <scope id="2557661505909893922" at="101,48,102,40" />
+      <scope id="2557661505909893922" at="27,0,29,0" />
+      <scope id="2557661505909893922" at="86,0,88,0" />
+      <scope id="2557661505909893922" at="30,0,33,0" />
+      <scope id="2557661505909893922" at="34,0,37,0" />
+      <scope id="2557661505909893922" at="38,0,41,0" />
+      <scope id="2557661505909893922" at="42,0,45,0" />
+      <scope id="2557661505909893922" at="46,0,49,0" />
+      <scope id="2557661505909893922" at="50,0,53,0" />
+      <scope id="2557661505909996074" at="64,0,67,0">
+        <var name="it" id="2557661505909996074" />
+      </scope>
+      <scope id="2557661505909893922" at="70,0,73,0" />
+      <scope id="2557661505909893922" at="74,0,77,0" />
+      <scope id="2557661505909893922" at="89,0,92,0">
+        <var name="editorContext" id="2557661505909893922" />
+        <var name="node" id="2557661505909893922" />
+      </scope>
+      <scope id="2557661505909893922" at="101,0,104,0" />
+      <scope id="2557661505909893922" at="54,84,58,16" />
+      <scope id="2557661505909893922" at="78,99,82,30" />
+      <scope id="2557661505909893926" at="93,78,98,107">
+        <var name="executor" id="5487985028841950917" />
+      </scope>
+      <scope id="2557661505909893922" at="54,0,60,0">
+        <var name="editorContext" id="2557661505909893922" />
+        <var name="node" id="2557661505909893922" />
+      </scope>
+      <scope id="2557661505909921770" at="61,91,67,17">
+        <var name="nodeFinal" id="5487985028841950870" />
+      </scope>
+      <scope id="2557661505909893922" at="78,0,84,0">
+        <var name="context" id="2557661505909893922" />
+        <var name="node" id="2557661505909893922" />
+      </scope>
+      <scope id="2557661505909893922" at="93,0,100,0">
+        <var name="editorContext" id="2557661505909893922" />
+        <var name="node" id="2557661505909893922" />
+      </scope>
+      <scope id="2557661505909893922" at="61,0,69,0">
+        <var name="editorContext" id="2557661505909893922" />
+        <var name="node" id="2557661505909893922" />
+      </scope>
+      <unit id="2557661505909996074" at="63,187,67,5" name="jetbrains.mps.execution.configurations.intentions.AddExecutor_Intention$1" />
+      <unit id="2557661505909893922" at="85,0,105,0" name="jetbrains.mps.execution.configurations.intentions.AddExecutor_Intention$IntentionImplementation" />
+      <unit id="2557661505909893922" at="24,0,106,0" name="jetbrains.mps.execution.configurations.intentions.AddExecutor_Intention" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

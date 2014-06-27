@@ -1,144 +1,191 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="Applicability_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.Applicability_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="ChangeEvent_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.ChangeEvent_BehaviorDescriptor" />
-  <unitInfo fileName="DailyPlanReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.DailyPlanReference_BehaviorDescriptor" />
-  <unitInfo fileName="DailyPlan_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.DailyPlan_BehaviorDescriptor" />
-  <unitInfo fileName="DayRange_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.DayRange_BehaviorDescriptor" />
-  <unitInfo fileName="HeatingPlan_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.HeatingPlan_BehaviorDescriptor" />
-  <unitInfo fileName="NotSpecified_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.NotSpecified_BehaviorDescriptor" />
-  <unitInfo fileName="Slot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.Slot_BehaviorDescriptor" />
-  <unitInfo fileName="SpecificDay_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.SpecificDay_BehaviorDescriptor" />
-  <unitInfo fileName="WeekDays_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.WeekDays_BehaviorDescriptor" />
-  <unitInfo fileName="WeekendDay_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.WeekendDay_BehaviorDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root>
+    <file name="DayRange_BehaviorDescriptor.java">
+      <unit at="7,0,20,0" name="jetbrains.mps.samples.heating.behavior.DayRange_BehaviorDescriptor" />
+    </file>
+    <file name="NotSpecified_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.samples.heating.behavior.NotSpecified_BehaviorDescriptor" />
+    </file>
+    <file name="HeatingPlan_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.samples.heating.behavior.HeatingPlan_BehaviorDescriptor" />
+    </file>
+    <file name="DailyPlanReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.heating.behavior.DailyPlanReference_BehaviorDescriptor" />
+    </file>
+    <file name="Applicability_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.heating.behavior.Applicability_BehaviorDescriptor" />
+    </file>
+    <file name="Slot_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.heating.behavior.Slot_BehaviorDescriptor" />
+    </file>
+    <file name="DailyPlan_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.samples.heating.behavior.DailyPlan_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,42,0" name="jetbrains.mps.samples.heating.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="WeekDays_BehaviorDescriptor.java">
+      <unit at="7,0,20,0" name="jetbrains.mps.samples.heating.behavior.WeekDays_BehaviorDescriptor" />
+    </file>
+    <file name="WeekendDay_BehaviorDescriptor.java">
+      <unit at="7,0,20,0" name="jetbrains.mps.samples.heating.behavior.WeekendDay_BehaviorDescriptor" />
+    </file>
+    <file name="SpecificDay_BehaviorDescriptor.java">
+      <unit at="7,0,20,0" name="jetbrains.mps.samples.heating.behavior.SpecificDay_BehaviorDescriptor" />
+    </file>
+    <file name="ChangeEvent_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.heating.behavior.ChangeEvent_BehaviorDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/2161719505004719341">
-    <nodeInfo nodeId="2161719505004719670" fileName="WeekendDay_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2161719505004719341" fileName="WeekendDay_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2161719505004719341" fileName="WeekendDay_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="2161719505004719343" fileName="WeekendDay_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="2161719505004719562" fileName="WeekendDay_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="26" />
-    <scopeInfo nodeId="2161719505004719341" fileName="WeekendDay_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="2161719505004719341" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2161719505004719341" fileName="WeekendDay_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="2161719505004719341" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2161719505004719341" fileName="WeekendDay_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.WeekendDay_Behavior" />
+    <file name="WeekendDay_Behavior.java">
+      <node id="2161719505004719670" at="11,78,12,26" concept="4" />
+      <node id="2161719505004719341" at="8,0,10,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2161719505004719341" at="11,0,14,0" concept="5" trace="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="2161719505004719343" at="8,43,8,43" />
+      <scope id="2161719505004719562" at="11,78,12,26" />
+      <scope id="2161719505004719341" at="8,0,10,0">
+        <var name="thisNode" id="2161719505004719341" />
+      </scope>
+      <scope id="2161719505004719341" at="11,0,14,0">
+        <var name="thisNode" id="2161719505004719341" />
+      </scope>
+      <unit id="2161719505004719341" at="7,0,15,0" name="jetbrains.mps.samples.heating.behavior.WeekendDay_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/2161719505004728208">
-    <nodeInfo nodeId="2161719505004728397" fileName="SpecificDay_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2161719505004728208" fileName="SpecificDay_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2161719505004728208" fileName="SpecificDay_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="2161719505004728210" fileName="SpecificDay_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="2161719505004728284" fileName="SpecificDay_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="72" />
-    <scopeInfo nodeId="2161719505004728208" fileName="SpecificDay_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="2161719505004728208" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2161719505004728208" fileName="SpecificDay_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="2161719505004728208" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2161719505004728208" fileName="SpecificDay_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.SpecificDay_Behavior" />
+    <file name="SpecificDay_Behavior.java">
+      <node id="2161719505004728397" at="12,78,13,72" concept="4" />
+      <node id="2161719505004728208" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2161719505004728208" at="12,0,15,0" concept="5" trace="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="2161719505004728210" at="9,43,9,43" />
+      <scope id="2161719505004728284" at="12,78,13,72" />
+      <scope id="2161719505004728208" at="9,0,11,0">
+        <var name="thisNode" id="2161719505004728208" />
+      </scope>
+      <scope id="2161719505004728208" at="12,0,15,0">
+        <var name="thisNode" id="2161719505004728208" />
+      </scope>
+      <unit id="2161719505004728208" at="8,0,16,0" name="jetbrains.mps.samples.heating.behavior.SpecificDay_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/3409470686615095301">
-    <nodeInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="3409470686615095454" fileName="HeatingPlan_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="3409470686615095301" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="3409470686615095301" fileName="HeatingPlan_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.HeatingPlan_Behavior" />
+    <file name="HeatingPlan_Behavior.java">
+      <node id="3409470686615095301" at="8,0,10,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="3409470686615095454" at="8,43,8,43" />
+      <scope id="3409470686615095301" at="8,0,10,0">
+        <var name="thisNode" id="3409470686615095301" />
+      </scope>
+      <unit id="3409470686615095301" at="7,0,11,0" name="jetbrains.mps.samples.heating.behavior.HeatingPlan_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/3409470686615450423">
-    <nodeInfo nodeId="3409470686615467518" fileName="DailyPlan_Behavior.java" startLine="17" startPosition="39" endLine="18" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3409470686615450423" fileName="DailyPlan_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3409470686615466954" fileName="DailyPlan_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3409470686615450483" fileName="DailyPlan_Behavior.java" startLine="15" startPosition="101" endLine="20" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3409470686615450423" fileName="DailyPlan_Behavior.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_slotByStartTime_3409470686615450426#(Lorg/jetbrains/mps/openapi/model/SNode;I)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="3409470686615450425" fileName="DailyPlan_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="3409470686615466955" fileName="DailyPlan_Behavior.java" startLine="17" startPosition="39" endLine="18" endPosition="72" />
-    <scopeInfo nodeId="3409470686615450423" fileName="DailyPlan_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="3409470686615450423" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3409470686615466954" fileName="DailyPlan_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="3409470686615466954" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="3409470686615450429" fileName="DailyPlan_Behavior.java" startLine="15" startPosition="101" endLine="20" endPosition="7" />
-    <scopeInfo nodeId="3409470686615450423" fileName="DailyPlan_Behavior.java" startLine="15" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="3409470686615450438" varName="startTime" />
-      <varInfo nodeId="3409470686615450423" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="3409470686615466954" fileName="DailyPlan_Behavior.java" startLine="16" startPosition="100" endLine="20" endPosition="5" unitName="jetbrains.mps.samples.heating.behavior.DailyPlan_Behavior$1" />
-    <unitInfo nodeId="3409470686615450423" fileName="DailyPlan_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.DailyPlan_Behavior" />
+    <file name="DailyPlan_Behavior.java">
+      <node id="3409470686615467518" at="17,39,18,72" concept="4" />
+      <node id="3409470686615450423" at="12,0,14,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3409470686615466954" at="17,0,20,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3409470686615450483" at="15,101,20,7" concept="4" />
+      <node id="3409470686615450423" at="15,0,22,0" concept="5" trace="call_slotByStartTime_3409470686615450426#(Lorg/jetbrains/mps/openapi/model/SNode;I)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3409470686615450425" at="12,43,12,43" />
+      <scope id="3409470686615466955" at="17,39,18,72" />
+      <scope id="3409470686615450423" at="12,0,14,0">
+        <var name="thisNode" id="3409470686615450423" />
+      </scope>
+      <scope id="3409470686615466954" at="17,0,20,0">
+        <var name="it" id="3409470686615466954" />
+      </scope>
+      <scope id="3409470686615450429" at="15,101,20,7" />
+      <scope id="3409470686615450423" at="15,0,22,0">
+        <var name="startTime" id="3409470686615450438" />
+        <var name="thisNode" id="3409470686615450423" />
+      </scope>
+      <unit id="3409470686615466954" at="16,100,20,5" name="jetbrains.mps.samples.heating.behavior.DailyPlan_Behavior$1" />
+      <unit id="3409470686615450423" at="11,0,23,0" name="jetbrains.mps.samples.heating.behavior.DailyPlan_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/4664795093170895833">
-    <nodeInfo nodeId="2161719505004735105" fileName="DayRange_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4664795093170895833" fileName="DayRange_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4664795093170895833" fileName="DayRange_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="4664795093170895986" fileName="DayRange_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="2161719505004734997" fileName="DayRange_Behavior.java" startLine="12" startPosition="78" endLine="13" endPosition="156" />
-    <scopeInfo nodeId="4664795093170895833" fileName="DayRange_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="4664795093170895833" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4664795093170895833" fileName="DayRange_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="4664795093170895833" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="4664795093170895833" fileName="DayRange_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.DayRange_Behavior" />
+    <file name="DayRange_Behavior.java">
+      <node id="2161719505004735105" at="12,78,13,156" concept="4" />
+      <node id="4664795093170895833" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4664795093170895833" at="12,0,15,0" concept="5" trace="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="4664795093170895986" at="9,43,9,43" />
+      <scope id="2161719505004734997" at="12,78,13,156" />
+      <scope id="4664795093170895833" at="9,0,11,0">
+        <var name="thisNode" id="4664795093170895833" />
+      </scope>
+      <scope id="4664795093170895833" at="12,0,15,0">
+        <var name="thisNode" id="4664795093170895833" />
+      </scope>
+      <unit id="4664795093170895833" at="8,0,16,0" name="jetbrains.mps.samples.heating.behavior.DayRange_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/935069066463259013">
-    <nodeInfo nodeId="935069066463259693" fileName="WeekDays_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935069066463259013" fileName="WeekDays_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="935069066463259013" fileName="WeekDays_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="935069066463259166" fileName="WeekDays_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="935069066463259585" fileName="WeekDays_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="23" />
-    <scopeInfo nodeId="935069066463259013" fileName="WeekDays_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="935069066463259013" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="935069066463259013" fileName="WeekDays_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="935069066463259013" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="935069066463259013" fileName="WeekDays_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.WeekDays_Behavior" />
+    <file name="WeekDays_Behavior.java">
+      <node id="935069066463259693" at="11,78,12,23" concept="4" />
+      <node id="935069066463259013" at="8,0,10,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="935069066463259013" at="11,0,14,0" concept="5" trace="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="935069066463259166" at="8,43,8,43" />
+      <scope id="935069066463259585" at="11,78,12,23" />
+      <scope id="935069066463259013" at="8,0,10,0">
+        <var name="thisNode" id="935069066463259013" />
+      </scope>
+      <scope id="935069066463259013" at="11,0,14,0">
+        <var name="thisNode" id="935069066463259013" />
+      </scope>
+      <unit id="935069066463259013" at="7,0,15,0" name="jetbrains.mps.samples.heating.behavior.WeekDays_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:61ff6c47-7c6d-4ce6-a7b0-ee72cdbbea37(jetbrains.mps.samples.heating.behavior)/935069066463578464">
-    <nodeInfo nodeId="935069066463587515" fileName="Slot_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="935069066463611761" fileName="Slot_Behavior.java" startLine="19" startPosition="133" endLine="20" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2161719505004057826" fileName="Slot_Behavior.java" startLine="20" startPosition="23" endLine="21" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2161719505004067452" fileName="Slot_Behavior.java" startLine="22" startPosition="97" endLine="23" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935069066463649131" fileName="Slot_Behavior.java" startLine="23" startPosition="64" endLine="24" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2161719505004103748" fileName="Slot_Behavior.java" startLine="25" startPosition="68" endLine="26" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935069066463649118" fileName="Slot_Behavior.java" startLine="29" startPosition="41" endLine="30" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935069066463661494" fileName="Slot_Behavior.java" startLine="33" startPosition="5" endLine="34" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935069066463663244" fileName="Slot_Behavior.java" startLine="37" startPosition="79" endLine="38" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="935069066463578464" fileName="Slot_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2161719505004085600" fileName="Slot_Behavior.java" startLine="24" startPosition="119" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="935069066463649116" fileName="Slot_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="935069066463578464" fileName="Slot_Behavior.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_isCustomizing_935069066463662362#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="935069066463649105" fileName="Slot_Behavior.java" startLine="27" startPosition="7" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935069066463649102" fileName="Slot_Behavior.java" startLine="21" startPosition="54" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="935069066463578464" fileName="Slot_Behavior.java" startLine="18" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getCustomizedSlot_935069066463578518#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="935069066463578466" fileName="Slot_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="2161719505004085603" fileName="Slot_Behavior.java" startLine="25" startPosition="68" endLine="26" endPosition="20" />
-    <scopeInfo nodeId="935069066463649117" fileName="Slot_Behavior.java" startLine="29" startPosition="41" endLine="30" endPosition="114" />
-    <scopeInfo nodeId="935069066463662365" fileName="Slot_Behavior.java" startLine="37" startPosition="79" endLine="38" endPosition="87" />
-    <scopeInfo nodeId="935069066463578464" fileName="Slot_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="935069066463578464" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="935069066463649116" fileName="Slot_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="935069066463649116" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="935069066463578464" fileName="Slot_Behavior.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="935069066463578464" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="935069066463649170" fileName="Slot_Behavior.java" startLine="22" startPosition="97" endLine="32" endPosition="9" />
-    <scopeInfo nodeId="935069066463578521" fileName="Slot_Behavior.java" startLine="18" startPosition="87" endLine="34" endPosition="17">
-      <varInfo nodeId="935069066463587516" varName="dailyPlan" />
-      <varInfo nodeId="935069066463611762" varName="found" />
-      <varInfo nodeId="2161719505004057829" varName="visitedPlans" />
-    </scopeInfo>
-    <scopeInfo nodeId="935069066463578464" fileName="Slot_Behavior.java" startLine="18" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="935069066463578464" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="935069066463649116" fileName="Slot_Behavior.java" startLine="28" startPosition="104" endLine="32" endPosition="7" unitName="jetbrains.mps.samples.heating.behavior.Slot_Behavior$1" />
-    <unitInfo nodeId="935069066463578464" fileName="Slot_Behavior.java" startLine="14" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.samples.heating.behavior.Slot_Behavior" />
+    <file name="Slot_Behavior.java">
+      <node id="935069066463587515" at="18,87,19,133" concept="3" />
+      <node id="935069066463611761" at="19,133,20,23" concept="3" />
+      <node id="2161719505004057826" at="20,23,21,54" concept="3" />
+      <node id="2161719505004067452" at="22,97,23,64" concept="0" />
+      <node id="935069066463649131" at="23,64,24,119" concept="0" />
+      <node id="2161719505004103748" at="25,68,26,20" concept="4" />
+      <node id="935069066463649118" at="29,41,30,114" concept="4" />
+      <node id="935069066463661494" at="33,5,34,17" concept="4" />
+      <node id="935069066463663244" at="37,79,38,87" concept="4" />
+      <node id="935069066463578464" at="15,0,17,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2161719505004085600" at="24,119,27,7" concept="1" />
+      <node id="935069066463649116" at="29,0,32,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="935069066463578464" at="37,0,40,0" concept="5" trace="call_isCustomizing_935069066463662362#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="935069066463649105" at="27,7,32,9" concept="0" />
+      <node id="935069066463649102" at="21,54,33,5" concept="6" />
+      <node id="935069066463578464" at="18,0,36,0" concept="5" trace="call_getCustomizedSlot_935069066463578518#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="935069066463578466" at="15,43,15,43" />
+      <scope id="2161719505004085603" at="25,68,26,20" />
+      <scope id="935069066463649117" at="29,41,30,114" />
+      <scope id="935069066463662365" at="37,79,38,87" />
+      <scope id="935069066463578464" at="15,0,17,0">
+        <var name="thisNode" id="935069066463578464" />
+      </scope>
+      <scope id="935069066463649116" at="29,0,32,0">
+        <var name="it" id="935069066463649116" />
+      </scope>
+      <scope id="935069066463578464" at="37,0,40,0">
+        <var name="thisNode" id="935069066463578464" />
+      </scope>
+      <scope id="935069066463649170" at="22,97,32,9" />
+      <scope id="935069066463578521" at="18,87,34,17">
+        <var name="dailyPlan" id="935069066463587516" />
+        <var name="found" id="935069066463611762" />
+        <var name="visitedPlans" id="2161719505004057829" />
+      </scope>
+      <scope id="935069066463578464" at="18,0,36,0">
+        <var name="thisNode" id="935069066463578464" />
+      </scope>
+      <unit id="935069066463649116" at="28,104,32,7" name="jetbrains.mps.samples.heating.behavior.Slot_Behavior$1" />
+      <unit id="935069066463578464" at="14,0,41,0" name="jetbrains.mps.samples.heating.behavior.Slot_Behavior" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

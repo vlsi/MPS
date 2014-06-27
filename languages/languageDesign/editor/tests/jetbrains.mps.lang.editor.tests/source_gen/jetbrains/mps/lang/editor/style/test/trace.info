@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:e796bc79-24a8-4433-8903-c71c59526bf7(jetbrains.mps.lang.editor.style.test)/6609104295326585615">
-    <nodeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="18" startPosition="58" endLine="19" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="19" startPosition="113" endLine="20" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6609104295326686089" fileName="StyleAttributeTest_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StyleAttributeTest_Test#()V" />
-    <nodeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_StyleAttributeTest#()V" />
-    <nodeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="14" startPosition="36" endLine="14" endPosition="36" />
-    <scopeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="18" startPosition="58" endLine="20" endPosition="111" />
-    <scopeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="133">
-      <varInfo nodeId="6609104295326585615" varName="editor" />
-      <varInfo nodeId="6609104295326585615" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.style.test.StyleAttributeTest_Test$TestBody" />
-    <unitInfo nodeId="6609104295326585615" fileName="StyleAttributeTest_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.style.test.StyleAttributeTest_Test" />
+    <file name="StyleAttributeTest_Test.java">
+      <node id="6609104295326585615" at="18,58,19,113" concept="1" />
+      <node id="6609104295326585615" at="19,113,20,111" concept="1" />
+      <node id="6609104295326585615" at="29,51,30,99" concept="3" />
+      <node id="6609104295326585615" at="30,99,31,93" concept="3" />
+      <node id="6609104295326686089" at="31,93,32,133" concept="1" />
+      <node id="6609104295326585615" at="14,0,16,0" concept="0" trace="StyleAttributeTest_Test#()V" />
+      <node id="6609104295326585615" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="6609104295326585615" at="17,0,22,0" concept="2" trace="test_StyleAttributeTest#()V" />
+      <node id="6609104295326585615" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="6609104295326585615" at="14,36,14,36" />
+      <scope id="6609104295326585615" at="25,23,25,23" />
+      <scope id="6609104295326585615" at="14,0,16,0" />
+      <scope id="6609104295326585615" at="18,58,20,111" />
+      <scope id="6609104295326585615" at="25,0,27,0" />
+      <scope id="6609104295326585615" at="29,51,32,133">
+        <var name="editor" id="6609104295326585615" />
+        <var name="editorComponent" id="6609104295326585615" />
+      </scope>
+      <scope id="6609104295326585615" at="17,0,22,0" />
+      <scope id="6609104295326585615" at="28,0,34,0" />
+      <unit id="6609104295326585615" at="23,0,35,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeTest_Test$TestBody" />
+      <unit id="6609104295326585615" at="12,0,36,0" name="jetbrains.mps.lang.editor.style.test.StyleAttributeTest_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root nodeRef="r:72d64ad3-3ff4-48cf-ad25-2f545520d9c5(jetbrains.mps.ide.hierarchy.icons)/5797068448049410884">
-    <nodeInfo nodeId="5797068448049415570" fileName="Icons.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="CHILDREN_ICON" />
-    <nodeInfo nodeId="5797068448049415579" fileName="Icons.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PARENT_ICON" />
-    <nodeInfo nodeId="5797068448049415588" fileName="Icons.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ZOOM_IN_ICON" />
-    <nodeInfo nodeId="5797068448049415597" fileName="Icons.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ZOOM_OUT_ICON" />
-    <nodeInfo nodeId="5797068448049415606" fileName="Icons.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ACTUAL_ZOOM_ICON" />
-    <nodeInfo nodeId="5797068448049415624" fileName="Icons.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="THIS_MODEL_ICON" />
-    <nodeInfo nodeId="5797068448049415628" fileName="Icons.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="GENERATOR_ICON" />
-    <nodeInfo nodeId="5797068448049415637" fileName="Icons.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Icons#()V" />
-    <scopeInfo nodeId="5797068448049415640" fileName="Icons.java" startLine="19" startPosition="18" endLine="19" endPosition="18" />
-    <scopeInfo nodeId="5797068448049415637" fileName="Icons.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
-    <unitInfo nodeId="5797068448049410884" fileName="Icons.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.ide.hierarchy.icons.Icons" />
+    <file name="Icons.java">
+      <node id="5797068448049415570" at="11,0,12,0" concept="1" trace="CHILDREN_ICON" />
+      <node id="5797068448049415579" at="12,0,13,0" concept="1" trace="PARENT_ICON" />
+      <node id="5797068448049415588" at="13,0,14,0" concept="1" trace="ZOOM_IN_ICON" />
+      <node id="5797068448049415597" at="14,0,15,0" concept="1" trace="ZOOM_OUT_ICON" />
+      <node id="5797068448049415606" at="15,0,16,0" concept="1" trace="ACTUAL_ZOOM_ICON" />
+      <node id="5797068448049415624" at="16,0,17,0" concept="1" trace="THIS_MODEL_ICON" />
+      <node id="5797068448049415628" at="17,0,18,0" concept="1" trace="GENERATOR_ICON" />
+      <node id="5797068448049415637" at="19,0,21,0" concept="0" trace="Icons#()V" />
+      <scope id="5797068448049415640" at="19,18,19,18" />
+      <scope id="5797068448049415637" at="19,0,21,0" />
+      <unit id="5797068448049410884" at="10,0,22,0" name="jetbrains.mps.ide.hierarchy.icons.Icons" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

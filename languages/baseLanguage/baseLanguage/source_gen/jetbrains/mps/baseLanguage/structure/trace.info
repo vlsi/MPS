@@ -1,223 +1,253 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="11" startPosition="0" endLine="584" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root>
+    <file name="StructureAspectDescriptor.java">
+      <unit at="11,0,584,0" name="jetbrains.mps.baseLanguage.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/1083065718921">
-    <nodeInfo nodeId="1083065718921" fileName="_Identifier_String_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1083065718921" fileName="_Identifier_String_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1083065718921" fileName="_Identifier_String_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1083065718921" fileName="_Identifier_String_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1083065718921" fileName="_Identifier_String_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1083065718921" fileName="_Identifier_String_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1083065718921" fileName="_Identifier_String_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="1083065718921" fileName="_Identifier_String_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
-    <scopeInfo nodeId="1083065718921" fileName="_Identifier_String_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="1083065718921" fileName="_Identifier_String_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="59">
-      <varInfo nodeId="1083065718921" varName="testValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="1083065718921" fileName="_Identifier_String_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1083065718921" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="1083065718921" fileName="_Identifier_String_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure._Identifier_String_PropertySupport" />
+    <file name="_Identifier_String_PropertySupport.java">
+      <node id="1083065718921" at="8,44,9,28" concept="6" />
+      <node id="1083065718921" at="10,24,11,21" concept="2" />
+      <node id="1083065718921" at="12,12,13,24" concept="2" />
+      <node id="1083065718921" at="14,5,15,59" concept="7" />
+      <node id="1083065718921" at="12,10,14,5" concept="0" />
+      <node id="1083065718921" at="9,28,14,5" concept="4" />
+      <node id="1083065718921" at="8,0,17,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <scope id="1083065718921" at="10,24,11,21" />
+      <scope id="1083065718921" at="12,12,13,24" />
+      <scope id="1083065718921" at="8,44,15,59">
+        <var name="testValue" id="1083065718921" />
+      </scope>
+      <scope id="1083065718921" at="8,0,17,0">
+        <var name="value" id="1083065718921" />
+      </scope>
+      <unit id="1083065718921" at="7,0,18,0" name="jetbrains.mps.baseLanguage.structure._Identifier_String_PropertySupport" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/1113006251687">
-    <nodeInfo nodeId="1113006251687" fileName="_FPNumber_String_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1113006251687" fileName="_FPNumber_String_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1113006251687" fileName="_FPNumber_String_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1113006251687" fileName="_FPNumber_String_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1113006251687" fileName="_FPNumber_String_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1113006251687" fileName="_FPNumber_String_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1113006251687" fileName="_FPNumber_String_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="1113006251687" fileName="_FPNumber_String_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
-    <scopeInfo nodeId="1113006251687" fileName="_FPNumber_String_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="1113006251687" fileName="_FPNumber_String_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="79">
-      <varInfo nodeId="1113006251687" varName="testValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="1113006251687" fileName="_FPNumber_String_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1113006251687" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="1113006251687" fileName="_FPNumber_String_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure._FPNumber_String_PropertySupport" />
+    <file name="_FPNumber_String_PropertySupport.java">
+      <node id="1113006251687" at="8,44,9,28" concept="6" />
+      <node id="1113006251687" at="10,24,11,21" concept="2" />
+      <node id="1113006251687" at="12,12,13,24" concept="2" />
+      <node id="1113006251687" at="14,5,15,79" concept="7" />
+      <node id="1113006251687" at="12,10,14,5" concept="0" />
+      <node id="1113006251687" at="9,28,14,5" concept="4" />
+      <node id="1113006251687" at="8,0,17,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <scope id="1113006251687" at="10,24,11,21" />
+      <scope id="1113006251687" at="12,12,13,24" />
+      <scope id="1113006251687" at="8,44,15,79">
+        <var name="testValue" id="1113006251687" />
+      </scope>
+      <scope id="1113006251687" at="8,0,17,0">
+        <var name="value" id="1113006251687" />
+      </scope>
+      <unit id="1113006251687" at="7,0,18,0" name="jetbrains.mps.baseLanguage.structure._FPNumber_String_PropertySupport" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/1200397549879">
-    <nodeInfo nodeId="1200397549879" fileName="_CharConstant_String_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1200397549879" fileName="_CharConstant_String_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200397549879" fileName="_CharConstant_String_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1200397549879" fileName="_CharConstant_String_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1200397549879" fileName="_CharConstant_String_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1200397549879" fileName="_CharConstant_String_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1200397549879" fileName="_CharConstant_String_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="1200397549879" fileName="_CharConstant_String_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
-    <scopeInfo nodeId="1200397549879" fileName="_CharConstant_String_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="1200397549879" fileName="_CharConstant_String_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="103">
-      <varInfo nodeId="1200397549879" varName="testValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="1200397549879" fileName="_CharConstant_String_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1200397549879" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="1200397549879" fileName="_CharConstant_String_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure._CharConstant_String_PropertySupport" />
+    <file name="_CharConstant_String_PropertySupport.java">
+      <node id="1200397549879" at="8,44,9,28" concept="6" />
+      <node id="1200397549879" at="10,24,11,21" concept="2" />
+      <node id="1200397549879" at="12,12,13,24" concept="2" />
+      <node id="1200397549879" at="14,5,15,103" concept="7" />
+      <node id="1200397549879" at="12,10,14,5" concept="0" />
+      <node id="1200397549879" at="9,28,14,5" concept="4" />
+      <node id="1200397549879" at="8,0,17,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <scope id="1200397549879" at="10,24,11,21" />
+      <scope id="1200397549879" at="12,12,13,24" />
+      <scope id="1200397549879" at="8,44,15,103">
+        <var name="testValue" id="1200397549879" />
+      </scope>
+      <scope id="1200397549879" at="8,0,17,0">
+        <var name="value" id="1200397549879" />
+      </scope>
+      <unit id="1200397549879" at="7,0,18,0" name="jetbrains.mps.baseLanguage.structure._CharConstant_String_PropertySupport" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/1225271514374">
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="24" startPosition="47" endLine="25" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="25" startPosition="76" endLine="26" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="26" startPosition="58" endLine="27" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="27" startPosition="61" endLine="28" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="28" startPosition="62" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="32" startPosition="39" endLine="33" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="37" startPosition="24" endLine="38" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="40" startPosition="57" endLine="41" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="43" startPosition="60" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="46" startPosition="61" endLine="47" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="48" startPosition="5" endLine="49" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="54" startPosition="39" endLine="55" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="55" startPosition="23" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="59" startPosition="28" endLine="60" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/baseLanguage/structure/TrimKind;" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="36" startPosition="51" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="39" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="42" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="45" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TrimKind#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="36" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/structure/TrimKind;" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="20" startPosition="5" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="27" startPosition="5" endLine="28" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="29" startPosition="33" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="38" startPosition="49" endLine="39" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="42" startPosition="5" endLine="43" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="10" startPosition="44" endLine="13" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="16" startPosition="43" endLine="19" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="24" startPosition="47" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="30" startPosition="43" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="39" startPosition="51" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="14" startPosition="93" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="28" startPosition="93" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="16" startPosition="27" endLine="17" endPosition="23" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="20" startPosition="36" endLine="21" endPosition="24" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="32" startPosition="39" endLine="33" endPosition="25" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="37" startPosition="24" endLine="38" endPosition="35" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="40" startPosition="57" endLine="41" endPosition="27" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="43" startPosition="60" endLine="44" endPosition="30" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="46" startPosition="61" endLine="47" endPosition="31" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="59" startPosition="28" endLine="60" endPosition="24" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="54" startPosition="39" endLine="56" endPosition="25" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="1225271514374" varName="name" />
-      <varInfo nodeId="1225271514374" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="24" startPosition="47" endLine="29" endPosition="16">
-      <varInfo nodeId="1225271514374" varName="list" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="36" startPosition="51" endLine="49" endPosition="33" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="36" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="1225271514374" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" />
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7">
-      <varInfo nodeId="1225271514374" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7">
-      <varInfo nodeId="1225271514374" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
-      <varInfo nodeId="1225271514374" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="1225271514374" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
-      <varInfo nodeId="1225271514374" varName="constants" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
-      <varInfo nodeId="1225271514374" varName="constants" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="1225271514374" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="1225271514374" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="1225271514374" fileName="TrimKind.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TrimKind" />
-    <unitInfo nodeId="1225271514374" fileName="TrimKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure.TrimKind_PropertySupport" />
+    <file name="TrimKind.java">
+      <node id="1225271514374" at="14,0,15,0" concept="3" trace="myName" />
+      <node id="1225271514374" at="16,27,17,23" concept="7" />
+      <node id="1225271514374" at="20,36,21,24" concept="7" />
+      <node id="1225271514374" at="24,47,25,76" concept="6" />
+      <node id="1225271514374" at="25,76,26,58" concept="2" />
+      <node id="1225271514374" at="26,58,27,61" concept="2" />
+      <node id="1225271514374" at="27,61,28,62" concept="2" />
+      <node id="1225271514374" at="28,62,29,16" concept="7" />
+      <node id="1225271514374" at="32,39,33,25" concept="7" />
+      <node id="1225271514374" at="37,24,38,35" concept="7" />
+      <node id="1225271514374" at="40,57,41,27" concept="7" />
+      <node id="1225271514374" at="43,60,44,30" concept="7" />
+      <node id="1225271514374" at="46,61,47,31" concept="7" />
+      <node id="1225271514374" at="48,5,49,33" concept="7" />
+      <node id="1225271514374" at="52,0,53,0" concept="3" trace="myValue" />
+      <node id="1225271514374" at="54,39,55,23" concept="2" />
+      <node id="1225271514374" at="55,23,56,25" concept="2" />
+      <node id="1225271514374" at="59,28,60,24" concept="7" />
+      <node id="1225271514374" at="16,0,19,0" concept="5" trace="getName#()Ljava/lang/String;" />
+      <node id="1225271514374" at="20,0,23,0" concept="5" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="1225271514374" at="32,0,35,0" concept="8" trace="getDefault#()Ljetbrains/mps/baseLanguage/structure/TrimKind;" />
+      <node id="1225271514374" at="36,51,39,5" concept="4" />
+      <node id="1225271514374" at="39,5,42,5" concept="4" />
+      <node id="1225271514374" at="42,5,45,5" concept="4" />
+      <node id="1225271514374" at="45,5,48,5" concept="4" />
+      <node id="1225271514374" at="59,0,62,0" concept="5" trace="getValue#()Ljava/lang/String;" />
+      <node id="1225271514374" at="54,0,58,0" concept="1" trace="TrimKind#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="1225271514374" at="24,0,31,0" concept="8" trace="getConstants#()Ljava/util/List;" />
+      <node id="1225271514374" at="36,0,51,0" concept="8" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/structure/TrimKind;" />
+      <scope id="1225271514374" at="16,27,17,23" />
+      <scope id="1225271514374" at="20,36,21,24" />
+      <scope id="1225271514374" at="32,39,33,25" />
+      <scope id="1225271514374" at="37,24,38,35" />
+      <scope id="1225271514374" at="40,57,41,27" />
+      <scope id="1225271514374" at="43,60,44,30" />
+      <scope id="1225271514374" at="46,61,47,31" />
+      <scope id="1225271514374" at="59,28,60,24" />
+      <scope id="1225271514374" at="54,39,56,25" />
+      <scope id="1225271514374" at="16,0,19,0" />
+      <scope id="1225271514374" at="20,0,23,0" />
+      <scope id="1225271514374" at="32,0,35,0" />
+      <scope id="1225271514374" at="59,0,62,0" />
+      <scope id="1225271514374" at="54,0,58,0">
+        <var name="name" id="1225271514374" />
+        <var name="value" id="1225271514374" />
+      </scope>
+      <scope id="1225271514374" at="24,47,29,16">
+        <var name="list" id="1225271514374" />
+      </scope>
+      <scope id="1225271514374" at="24,0,31,0" />
+      <scope id="1225271514374" at="36,51,49,33" />
+      <scope id="1225271514374" at="36,0,51,0">
+        <var name="value" id="1225271514374" />
+      </scope>
+      <unit id="1225271514374" at="9,0,63,0" name="jetbrains.mps.baseLanguage.structure.TrimKind" />
+    </file>
+    <file name="TrimKind_PropertySupport.java">
+      <node id="1225271514374" at="11,24,12,18" concept="7" />
+      <node id="1225271514374" at="13,5,14,93" concept="6" />
+      <node id="1225271514374" at="15,33,16,43" concept="6" />
+      <node id="1225271514374" at="17,45,18,20" concept="7" />
+      <node id="1225271514374" at="20,5,21,17" concept="7" />
+      <node id="1225271514374" at="25,24,26,18" concept="7" />
+      <node id="1225271514374" at="27,5,28,93" concept="6" />
+      <node id="1225271514374" at="29,33,30,43" concept="6" />
+      <node id="1225271514374" at="31,45,32,43" concept="7" />
+      <node id="1225271514374" at="34,5,35,16" concept="7" />
+      <node id="1225271514374" at="38,49,39,51" concept="6" />
+      <node id="1225271514374" at="40,27,41,32" concept="7" />
+      <node id="1225271514374" at="42,5,43,14" concept="7" />
+      <node id="1225271514374" at="10,44,13,5" concept="4" />
+      <node id="1225271514374" at="16,43,19,7" concept="4" />
+      <node id="1225271514374" at="24,47,27,5" concept="4" />
+      <node id="1225271514374" at="30,43,33,7" concept="4" />
+      <node id="1225271514374" at="39,51,42,5" concept="4" />
+      <node id="1225271514374" at="14,93,20,5" concept="9" />
+      <node id="1225271514374" at="28,93,34,5" concept="9" />
+      <node id="1225271514374" at="38,0,45,0" concept="5" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1225271514374" at="10,0,23,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="1225271514374" at="24,0,37,0" concept="5" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="1225271514374" at="11,24,12,18" />
+      <scope id="1225271514374" at="17,45,18,20" />
+      <scope id="1225271514374" at="25,24,26,18" />
+      <scope id="1225271514374" at="31,45,32,43" />
+      <scope id="1225271514374" at="40,27,41,32" />
+      <scope id="1225271514374" at="15,33,19,7">
+        <var name="constant" id="1225271514374" />
+      </scope>
+      <scope id="1225271514374" at="29,33,33,7">
+        <var name="constant" id="1225271514374" />
+      </scope>
+      <scope id="1225271514374" at="38,49,43,14">
+        <var name="constant" id="1225271514374" />
+      </scope>
+      <scope id="1225271514374" at="38,0,45,0">
+        <var name="value" id="1225271514374" />
+      </scope>
+      <scope id="1225271514374" at="10,44,21,17">
+        <var name="constants" id="1225271514374" />
+      </scope>
+      <scope id="1225271514374" at="24,47,35,16">
+        <var name="constants" id="1225271514374" />
+      </scope>
+      <scope id="1225271514374" at="10,0,23,0">
+        <var name="value" id="1225271514374" />
+      </scope>
+      <scope id="1225271514374" at="24,0,37,0">
+        <var name="value" id="1225271514374" />
+      </scope>
+      <unit id="1225271514374" at="9,0,46,0" name="jetbrains.mps.baseLanguage.structure.TrimKind_PropertySupport" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/4269842503726207818">
-    <nodeInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
-    <scopeInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="46">
-      <varInfo nodeId="4269842503726207818" varName="testValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="4269842503726207818" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="4269842503726207818" fileName="_LongType_String_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure._LongType_String_PropertySupport" />
+    <file name="_LongType_String_PropertySupport.java">
+      <node id="4269842503726207818" at="8,44,9,28" concept="6" />
+      <node id="4269842503726207818" at="10,24,11,21" concept="2" />
+      <node id="4269842503726207818" at="12,12,13,24" concept="2" />
+      <node id="4269842503726207818" at="14,5,15,46" concept="7" />
+      <node id="4269842503726207818" at="12,10,14,5" concept="0" />
+      <node id="4269842503726207818" at="9,28,14,5" concept="4" />
+      <node id="4269842503726207818" at="8,0,17,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <scope id="4269842503726207818" at="10,24,11,21" />
+      <scope id="4269842503726207818" at="12,12,13,24" />
+      <scope id="4269842503726207818" at="8,44,15,46">
+        <var name="testValue" id="4269842503726207818" />
+      </scope>
+      <scope id="4269842503726207818" at="8,0,17,0">
+        <var name="value" id="4269842503726207818" />
+      </scope>
+      <unit id="4269842503726207818" at="7,0,18,0" name="jetbrains.mps.baseLanguage.structure._LongType_String_PropertySupport" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/5279705229678483898">
-    <nodeInfo nodeId="5279705229678483898" fileName="_FloatNumberValue_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5279705229678483898" fileName="_FloatNumberValue_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5279705229678483898" fileName="_FloatNumberValue_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5279705229678483898" fileName="_FloatNumberValue_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5279705229678483898" fileName="_FloatNumberValue_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5279705229678483898" fileName="_FloatNumberValue_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5279705229678483898" fileName="_FloatNumberValue_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="5279705229678483898" fileName="_FloatNumberValue_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
-    <scopeInfo nodeId="5279705229678483898" fileName="_FloatNumberValue_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="5279705229678483898" fileName="_FloatNumberValue_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="55">
-      <varInfo nodeId="5279705229678483898" varName="testValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="5279705229678483898" fileName="_FloatNumberValue_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="5279705229678483898" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="5279705229678483898" fileName="_FloatNumberValue_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure._FloatNumberValue_PropertySupport" />
+    <file name="_FloatNumberValue_PropertySupport.java">
+      <node id="5279705229678483898" at="8,44,9,28" concept="6" />
+      <node id="5279705229678483898" at="10,24,11,21" concept="2" />
+      <node id="5279705229678483898" at="12,12,13,24" concept="2" />
+      <node id="5279705229678483898" at="14,5,15,55" concept="7" />
+      <node id="5279705229678483898" at="12,10,14,5" concept="0" />
+      <node id="5279705229678483898" at="9,28,14,5" concept="4" />
+      <node id="5279705229678483898" at="8,0,17,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <scope id="5279705229678483898" at="10,24,11,21" />
+      <scope id="5279705229678483898" at="12,12,13,24" />
+      <scope id="5279705229678483898" at="8,44,15,55">
+        <var name="testValue" id="5279705229678483898" />
+      </scope>
+      <scope id="5279705229678483898" at="8,0,17,0">
+        <var name="value" id="5279705229678483898" />
+      </scope>
+      <unit id="5279705229678483898" at="7,0,18,0" name="jetbrains.mps.baseLanguage.structure._FloatNumberValue_PropertySupport" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)/6734604082923916973">
-    <nodeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
-    <scopeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="45">
-      <varInfo nodeId="6734604082923916973" varName="testValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="6734604082923916973" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="6734604082923916973" fileName="_HexNumberValue_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.structure._HexNumberValue_PropertySupport" />
+    <file name="_HexNumberValue_PropertySupport.java">
+      <node id="6734604082923916973" at="8,44,9,28" concept="6" />
+      <node id="6734604082923916973" at="10,24,11,21" concept="2" />
+      <node id="6734604082923916973" at="12,12,13,24" concept="2" />
+      <node id="6734604082923916973" at="14,5,15,45" concept="7" />
+      <node id="6734604082923916973" at="12,10,14,5" concept="0" />
+      <node id="6734604082923916973" at="9,28,14,5" concept="4" />
+      <node id="6734604082923916973" at="8,0,17,0" concept="5" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <scope id="6734604082923916973" at="10,24,11,21" />
+      <scope id="6734604082923916973" at="12,12,13,24" />
+      <scope id="6734604082923916973" at="8,44,15,45">
+        <var name="testValue" id="6734604082923916973" />
+      </scope>
+      <scope id="6734604082923916973" at="8,0,17,0">
+        <var name="value" id="6734604082923916973" />
+      </scope>
+      <unit id="6734604082923916973" at="7,0,18,0" name="jetbrains.mps.baseLanguage.structure._HexNumberValue_PropertySupport" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

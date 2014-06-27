@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:6132de52-2cd3-4096-82d5-65abfdbf1b20(jetbrains.mps.workbench.dialogs.project.components.parts.validators)/1560298786499493318">
-    <nodeInfo nodeId="1560298786499493320" fileName="Validator.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBrokenValue#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="1560298786499493320" fileName="Validator.java" startLine="7" startPosition="0" endLine="8" endPosition="0">
-      <varInfo nodeId="1560298786499493323" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="1560298786499493318" fileName="Validator.java" startLine="6" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator" />
+    <file name="Validator.java">
+      <node id="1560298786499493320" at="7,0,8,0" concept="0" trace="isBrokenValue#(Ljava/lang/Object;)Z" />
+      <scope id="1560298786499493320" at="7,0,8,0">
+        <var name="value" id="1560298786499493323" />
+      </scope>
+      <unit id="1560298786499493318" at="6,0,9,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.validators.Validator" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

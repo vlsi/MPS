@@ -1,49 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="ComponentSet_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_BehaviorDescriptor" />
-  <unitInfo fileName="Component_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.Component_BehaviorDescriptor" />
-  <unitInfo fileName="Dependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.Dependency_BehaviorDescriptor" />
-  <unitInfo fileName="InPort_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.InPort_BehaviorDescriptor" />
-  <unitInfo fileName="OutPort_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.OutPort_BehaviorDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="Dependency_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.componentDependencies.behavior.Dependency_BehaviorDescriptor" />
+    </file>
+    <file name="ComponentSet_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_BehaviorDescriptor" />
+    </file>
+    <file name="Component_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.samples.componentDependencies.behavior.Component_BehaviorDescriptor" />
+    </file>
+    <file name="OutPort_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.samples.componentDependencies.behavior.OutPort_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,32,0" name="jetbrains.mps.samples.componentDependencies.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="InPort_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.samples.componentDependencies.behavior.InPort_BehaviorDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)/9095678365528900259">
-    <nodeInfo nodeId="9095678365528919653" fileName="ComponentSet_Behavior.java" startLine="16" startPosition="50" endLine="17" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9095678365528900259" fileName="ComponentSet_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="9095678365528919651" fileName="ComponentSet_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="9095678365528918751" fileName="ComponentSet_Behavior.java" startLine="14" startPosition="95" endLine="19" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9095678365528900259" fileName="ComponentSet_Behavior.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_retrieveDependencies_9095678365528900313#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="9095678365528900261" fileName="ComponentSet_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="9095678365528919652" fileName="ComponentSet_Behavior.java" startLine="16" startPosition="50" endLine="17" endPosition="59" />
-    <scopeInfo nodeId="9095678365528900259" fileName="ComponentSet_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="9095678365528900259" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="9095678365528919651" fileName="ComponentSet_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="9095678365528919651" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="9095678365528900316" fileName="ComponentSet_Behavior.java" startLine="14" startPosition="95" endLine="19" endPosition="7" />
-    <scopeInfo nodeId="9095678365528900259" fileName="ComponentSet_Behavior.java" startLine="14" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="9095678365528900259" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="9095678365528919651" fileName="ComponentSet_Behavior.java" startLine="15" startPosition="104" endLine="19" endPosition="5" unitName="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_Behavior$1" />
-    <unitInfo nodeId="9095678365528900259" fileName="ComponentSet_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_Behavior" />
+    <file name="ComponentSet_Behavior.java">
+      <node id="9095678365528919653" at="16,50,17,59" concept="2" />
+      <node id="9095678365528900259" at="11,0,13,0" concept="3" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="9095678365528919651" at="16,0,19,0" concept="1" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="9095678365528918751" at="14,95,19,7" concept="2" />
+      <node id="9095678365528900259" at="14,0,21,0" concept="3" trace="call_retrieveDependencies_9095678365528900313#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <scope id="9095678365528900261" at="11,43,11,43" />
+      <scope id="9095678365528919652" at="16,50,17,59" />
+      <scope id="9095678365528900259" at="11,0,13,0">
+        <var name="thisNode" id="9095678365528900259" />
+      </scope>
+      <scope id="9095678365528919651" at="16,0,19,0">
+        <var name="it" id="9095678365528919651" />
+      </scope>
+      <scope id="9095678365528900316" at="14,95,19,7" />
+      <scope id="9095678365528900259" at="14,0,21,0">
+        <var name="thisNode" id="9095678365528900259" />
+      </scope>
+      <unit id="9095678365528919651" at="15,104,19,5" name="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_Behavior$1" />
+      <unit id="9095678365528900259" at="10,0,22,0" name="jetbrains.mps.samples.componentDependencies.behavior.ComponentSet_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)/9095678365529689048">
-    <nodeInfo nodeId="9095678365529689048" fileName="Dependency_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="9095678365529689050" fileName="Dependency_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="9095678365529689048" fileName="Dependency_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="9095678365529689048" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="9095678365529689048" fileName="Dependency_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.Dependency_Behavior" />
+    <file name="Dependency_Behavior.java">
+      <node id="9095678365529689048" at="8,0,10,0" concept="3" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="9095678365529689050" at="8,43,8,43" />
+      <scope id="9095678365529689048" at="8,0,10,0">
+        <var name="thisNode" id="9095678365529689048" />
+      </scope>
+      <unit id="9095678365529689048" at="7,0,11,0" name="jetbrains.mps.samples.componentDependencies.behavior.Dependency_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:2b855002-fb92-4fa1-acaa-ec457490e763(jetbrains.mps.samples.componentDependencies.behavior)/9095678365530118209">
-    <nodeInfo nodeId="650270285023760663" fileName="Component_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="650270285023765500" fileName="Component_Behavior.java" startLine="10" startPosition="55" endLine="11" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9095678365530118209" fileName="Component_Behavior.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="9095678365530118211" fileName="Component_Behavior.java" startLine="9" startPosition="43" endLine="11" endPosition="55" />
-    <scopeInfo nodeId="9095678365530118209" fileName="Component_Behavior.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="9095678365530118209" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="9095678365530118209" fileName="Component_Behavior.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.behavior.Component_Behavior" />
+    <file name="Component_Behavior.java">
+      <node id="650270285023760663" at="9,43,10,55" concept="0" />
+      <node id="650270285023765500" at="10,55,11,55" concept="0" />
+      <node id="9095678365530118209" at="9,0,13,0" concept="3" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="9095678365530118211" at="9,43,11,55" />
+      <scope id="9095678365530118209" at="9,0,13,0">
+        <var name="thisNode" id="9095678365530118209" />
+      </scope>
+      <unit id="9095678365530118209" at="8,0,14,0" name="jetbrains.mps.samples.componentDependencies.behavior.Component_Behavior" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

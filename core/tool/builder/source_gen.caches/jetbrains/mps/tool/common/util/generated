@@ -23,7 +23,6 @@
     <file name="ClasspathCache.java" />
   </source>
   <source id="5198178184416561107" name="FileLoader" hash="7pkkrj2kbkv0gwe24ou0g24t8kibfxh">
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="FileLoader.java" />
   </source>
   <source id="5198178184416572441" name="JarLoader" hash="-ax3gya010qd8cg32l5xrvxh1l80d309">

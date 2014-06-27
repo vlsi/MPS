@@ -1,32 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.execution.util.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="IMainClass_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.execution.util.behavior.IMainClass_BehaviorDescriptor" />
-  <root nodeRef="r:7f489494-339f-481c-be61-2af4deb51551(jetbrains.mps.execution.util.behavior)/4666195181811081430">
-    <nodeInfo nodeId="5618154074607535757" fileName="IMainClass_Behavior.java" startLine="14" startPosition="80" endLine="15" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6494122940871944847" fileName="IMainClass_Behavior.java" startLine="18" startPosition="84" endLine="19" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6494122940871960275" fileName="IMainClass_Behavior.java" startLine="22" startPosition="55" endLine="23" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getUnitName_4666195181811081431#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isNodeRunnable_4666195181811081448#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6494122940871960275" fileName="IMainClass_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="4666195181811081455" fileName="IMainClass_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="4666195181811081434" fileName="IMainClass_Behavior.java" startLine="14" startPosition="80" endLine="15" endPosition="93" />
-    <scopeInfo nodeId="4666195181811081450" fileName="IMainClass_Behavior.java" startLine="18" startPosition="84" endLine="19" endPosition="145" />
-    <scopeInfo nodeId="6494122940871960275" fileName="IMainClass_Behavior.java" startLine="22" startPosition="55" endLine="23" endPosition="43" />
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="4666195181811081430" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="4666195181811081430" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="4666195181811081430" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6494122940871960275" fileName="IMainClass_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="6494122940871960275" varName="str" />
-    </scopeInfo>
-    <unitInfo nodeId="4666195181811081430" fileName="IMainClass_Behavior.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.util.behavior.IMainClass_Behavior" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="IMainClass_BehaviorDescriptor.java">
+      <unit at="7,0,11,0" name="jetbrains.mps.execution.util.behavior.IMainClass_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,22,0" name="jetbrains.mps.execution.util.behavior.BehaviorAspectDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:7f489494-339f-481c-be61-2af4deb51551(jetbrains.mps.execution.util.behavior)/4666195181811081430">
+    <file name="IMainClass_Behavior.java">
+      <node id="5618154074607535757" at="14,80,15,93" concept="0" />
+      <node id="6494122940871944847" at="18,84,19,145" concept="0" />
+      <node id="6494122940871960275" at="22,55,23,43" concept="0" />
+      <node id="4666195181811081430" at="11,0,13,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4666195181811081430" at="14,0,17,0" concept="1" trace="virtual_getUnitName_4666195181811081431#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="4666195181811081430" at="18,0,21,0" concept="1" trace="virtual_isNodeRunnable_4666195181811081448#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6494122940871960275" at="22,0,25,0" concept="1" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <scope id="4666195181811081455" at="11,43,11,43" />
+      <scope id="4666195181811081434" at="14,80,15,93" />
+      <scope id="4666195181811081450" at="18,84,19,145" />
+      <scope id="6494122940871960275" at="22,55,23,43" />
+      <scope id="4666195181811081430" at="11,0,13,0">
+        <var name="thisNode" id="4666195181811081430" />
+      </scope>
+      <scope id="4666195181811081430" at="14,0,17,0">
+        <var name="thisNode" id="4666195181811081430" />
+      </scope>
+      <scope id="4666195181811081430" at="18,0,21,0">
+        <var name="thisNode" id="4666195181811081430" />
+      </scope>
+      <scope id="6494122940871960275" at="22,0,25,0">
+        <var name="str" id="6494122940871960275" />
+      </scope>
+      <unit id="4666195181811081430" at="10,0,26,0" name="jetbrains.mps.execution.util.behavior.IMainClass_Behavior" />
+    </file>
+  </root>
+</debug-info>
 

@@ -20,6 +20,7 @@
     <file name="NodesMatcher.java" />
   </source>
   <source id="8984393347190228267" name="PropertyDifferense" hash="-8cq7lz2el3gejsfa0zf9pny9pbeqbxx">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="PropertyDifferense.java" />
   </source>
   <source id="8984393347190228335" name="ReferenceDifferense" hash="-1cxm1t9wvtqozv5ucujj5qo74o3dxn">

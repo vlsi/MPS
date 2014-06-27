@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.vcs.modelmetadata.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="Model_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.vcs.modelmetadata.behavior.Model_BehaviorDescriptor" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="Model_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.Model_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,24,0" name="jetbrains.mps.ide.vcs.modelmetadata.behavior.BehaviorAspectDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

@@ -28,10 +28,10 @@
   <source id="144575100359734006" name="JavaConsoleCreator" hash="-dwg06duiunwi1j6h7l673e8f91imaug">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="JavaConsoleCreator.java" />
   </source>
   <source id="8606486054003576517" name="LayoutUtil" hash="-4jjbinkdfstesm1ayvmxgvh0mlgtuao">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="LayoutUtil.java" />
   </source>
   <source id="4251154893541678687" name="ReadComboBoxEditor" hash="-d1ia0t4eifz5eh5uwl9qfjx2nw1bf1d">

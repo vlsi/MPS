@@ -1,603 +1,626 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:36bec8f9-6cb9-42f4-a517-ea58c11993b3(jetbrains.mps.testbench.util)/5294483648489409095">
-    <nodeInfo nodeId="5294483648489409507" fileName="ThreadWatcher.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="base" />
-    <nodeInfo nodeId="5294483648489409511" fileName="ThreadWatcher.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="errors" />
-    <nodeInfo nodeId="5294483648489409515" fileName="ThreadWatcher.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="desc" />
-    <nodeInfo nodeId="5294483648489409101" fileName="ThreadWatcher.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IGNORED_THREAD" />
-    <nodeInfo nodeId="5294483648489409107" fileName="ThreadWatcher.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="allThreads" />
-    <nodeInfo nodeId="5294483648489409114" fileName="ThreadWatcher.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="runningThreads" />
-    <nodeInfo nodeId="5294483648489409127" fileName="ThreadWatcher.java" startLine="27" startPosition="33" endLine="28" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409130" fileName="ThreadWatcher.java" startLine="28" startPosition="25" endLine="29" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409134" fileName="ThreadWatcher.java" startLine="29" startPosition="29" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409141" fileName="ThreadWatcher.java" startLine="30" startPosition="48" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409183" fileName="ThreadWatcher.java" startLine="33" startPosition="214" endLine="34" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409199" fileName="ThreadWatcher.java" startLine="35" startPosition="63" endLine="36" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409221" fileName="ThreadWatcher.java" startLine="42" startPosition="53" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409227" fileName="ThreadWatcher.java" startLine="44" startPosition="45" endLine="45" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409253" fileName="ThreadWatcher.java" startLine="45" startPosition="147" endLine="46" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409272" fileName="ThreadWatcher.java" startLine="49" startPosition="45" endLine="50" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409298" fileName="ThreadWatcher.java" startLine="50" startPosition="146" endLine="51" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409314" fileName="ThreadWatcher.java" startLine="56" startPosition="81" endLine="57" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409318" fileName="ThreadWatcher.java" startLine="57" startPosition="74" endLine="58" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409333" fileName="ThreadWatcher.java" startLine="60" startPosition="55" endLine="61" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409353" fileName="ThreadWatcher.java" startLine="62" startPosition="52" endLine="63" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409386" fileName="ThreadWatcher.java" startLine="68" startPosition="51" endLine="69" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409402" fileName="ThreadWatcher.java" startLine="70" startPosition="56" endLine="71" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409429" fileName="ThreadWatcher.java" startLine="76" startPosition="59" endLine="77" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409440" fileName="ThreadWatcher.java" startLine="77" startPosition="70" endLine="78" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409473" fileName="ThreadWatcher.java" startLine="82" startPosition="55" endLine="83" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409482" fileName="ThreadWatcher.java" startLine="83" startPosition="74" endLine="84" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409497" fileName="ThreadWatcher.java" startLine="86" startPosition="7" endLine="87" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489409529" fileName="ThreadWatcher.java" startLine="92" startPosition="18" endLine="93" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409535" fileName="ThreadWatcher.java" startLine="93" startPosition="50" endLine="94" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409542" fileName="ThreadWatcher.java" startLine="99" startPosition="31" endLine="100" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489409551" fileName="ThreadWatcher.java" startLine="104" startPosition="34" endLine="105" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489409558" fileName="ThreadWatcher.java" startLine="109" startPosition="27" endLine="110" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489409570" fileName="ThreadWatcher.java" startLine="114" startPosition="23" endLine="115" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489409579" fileName="ThreadWatcher.java" startLine="117" startPosition="25" endLine="118" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5294483648489409582" fileName="ThreadWatcher.java" startLine="119" startPosition="5" endLine="120" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409586" fileName="ThreadWatcher.java" startLine="120" startPosition="72" endLine="121" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409590" fileName="ThreadWatcher.java" startLine="121" startPosition="37" endLine="122" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409594" fileName="ThreadWatcher.java" startLine="122" startPosition="20" endLine="123" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409602" fileName="ThreadWatcher.java" startLine="124" startPosition="8" endLine="125" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409605" fileName="ThreadWatcher.java" startLine="125" startPosition="29" endLine="126" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409627" fileName="ThreadWatcher.java" startLine="127" startPosition="73" endLine="128" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489409638" fileName="ThreadWatcher.java" startLine="130" startPosition="41" endLine="131" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5294483648489409642" fileName="ThreadWatcher.java" startLine="133" startPosition="11" endLine="134" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409653" fileName="ThreadWatcher.java" startLine="136" startPosition="7" endLine="137" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409659" fileName="ThreadWatcher.java" startLine="138" startPosition="30" endLine="139" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409662" fileName="ThreadWatcher.java" startLine="139" startPosition="43" endLine="140" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409673" fileName="ThreadWatcher.java" startLine="140" startPosition="59" endLine="141" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409677" fileName="ThreadWatcher.java" startLine="141" startPosition="44" endLine="142" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409681" fileName="ThreadWatcher.java" startLine="142" startPosition="21" endLine="143" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489409695" fileName="ThreadWatcher.java" startLine="144" startPosition="42" endLine="145" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409710" fileName="ThreadWatcher.java" startLine="145" startPosition="75" endLine="146" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409714" fileName="ThreadWatcher.java" startLine="146" startPosition="18" endLine="147" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409718" fileName="ThreadWatcher.java" startLine="147" startPosition="15" endLine="148" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409722" fileName="ThreadWatcher.java" startLine="148" startPosition="28" endLine="149" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409730" fileName="ThreadWatcher.java" startLine="149" startPosition="31" endLine="150" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409745" fileName="ThreadWatcher.java" startLine="152" startPosition="42" endLine="153" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409763" fileName="ThreadWatcher.java" startLine="153" startPosition="91" endLine="154" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409767" fileName="ThreadWatcher.java" startLine="154" startPosition="15" endLine="155" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409771" fileName="ThreadWatcher.java" startLine="155" startPosition="31" endLine="156" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409779" fileName="ThreadWatcher.java" startLine="156" startPosition="31" endLine="157" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409783" fileName="ThreadWatcher.java" startLine="158" startPosition="5" endLine="159" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409790" fileName="ThreadWatcher.java" startLine="159" startPosition="39" endLine="160" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409797" fileName="ThreadWatcher.java" startLine="160" startPosition="31" endLine="161" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489409804" fileName="ThreadWatcher.java" startLine="161" startPosition="32" endLine="162" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489409121" fileName="ThreadWatcher.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThreadState#()V" />
-    <nodeInfo nodeId="5294483648489409189" fileName="ThreadWatcher.java" startLine="34" startPosition="51" endLine="37" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409344" fileName="ThreadWatcher.java" startLine="61" startPosition="62" endLine="64" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409395" fileName="ThreadWatcher.java" startLine="69" startPosition="66" endLine="72" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409566" fileName="ThreadWatcher.java" startLine="113" startPosition="48" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409573" fileName="ThreadWatcher.java" startLine="116" startPosition="5" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409611" fileName="ThreadWatcher.java" startLine="126" startPosition="32" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409630" fileName="ThreadWatcher.java" startLine="129" startPosition="7" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409224" fileName="ThreadWatcher.java" startLine="43" startPosition="22" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489409265" fileName="ThreadWatcher.java" startLine="48" startPosition="41" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409420" fileName="ThreadWatcher.java" startLine="75" startPosition="50" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409462" fileName="ThreadWatcher.java" startLine="81" startPosition="54" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409525" fileName="ThreadWatcher.java" startLine="91" startPosition="41" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409539" fileName="ThreadWatcher.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNotEmpty#()Z" />
-    <nodeInfo nodeId="5294483648489409548" fileName="ThreadWatcher.java" startLine="103" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5294483648489409555" fileName="ThreadWatcher.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5294483648489409651" fileName="ThreadWatcher.java" startLine="132" startPosition="7" endLine="136" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5294483648489409148" fileName="ThreadWatcher.java" startLine="32" startPosition="74" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409262" fileName="ThreadWatcher.java" startLine="47" startPosition="7" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489409324" fileName="ThreadWatcher.java" startLine="59" startPosition="46" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409375" fileName="ThreadWatcher.java" startLine="67" startPosition="50" endLine="73" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409417" fileName="ThreadWatcher.java" startLine="74" startPosition="7" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489409459" fileName="ThreadWatcher.java" startLine="80" startPosition="7" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489409520" fileName="ThreadWatcher.java" startLine="91" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThreadWatcher#(Z)V" />
-    <nodeInfo nodeId="5294483648489409734" fileName="ThreadWatcher.java" startLine="151" startPosition="5" endLine="158" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409145" fileName="ThreadWatcher.java" startLine="31" startPosition="62" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489409321" fileName="ThreadWatcher.java" startLine="58" startPosition="74" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489409372" fileName="ThreadWatcher.java" startLine="66" startPosition="7" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489409684" fileName="ThreadWatcher.java" startLine="143" startPosition="22" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489409214" fileName="ThreadWatcher.java" startLine="42" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dump#(Ljava/lang/StringBuilder;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5294483648489409125" fileName="ThreadWatcher.java" startLine="27" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="captureState#()V" />
-    <nodeInfo nodeId="5294483648489409657" fileName="ThreadWatcher.java" startLine="123" startPosition="29" endLine="138" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="5294483648489409309" fileName="ThreadWatcher.java" startLine="56" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="diff#(Ljetbrains/mps/testbench/util/ThreadWatcher/ThreadState;)[Ljetbrains/mps/testbench/util/ThreadWatcher/ThreadState;" />
-    <nodeInfo nodeId="5294483648489409562" fileName="ThreadWatcher.java" startLine="113" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="waitUntilSettled#(J)Z" />
-    <scopeInfo nodeId="5294483648489409123" fileName="ThreadWatcher.java" startLine="24" startPosition="27" endLine="24" endPosition="27" />
-    <scopeInfo nodeId="5294483648489409652" fileName="ThreadWatcher.java" startLine="135" startPosition="0" endLine="135" endPosition="45">
-      <varInfo nodeId="5294483648489409646" varName="ignore" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409650" fileName="ThreadWatcher.java" startLine="135" startPosition="45" endLine="135" endPosition="45" />
-    <scopeInfo nodeId="5294483648489409198" fileName="ThreadWatcher.java" startLine="35" startPosition="63" endLine="36" endPosition="57" />
-    <scopeInfo nodeId="5294483648489409352" fileName="ThreadWatcher.java" startLine="62" startPosition="52" endLine="63" endPosition="72" />
-    <scopeInfo nodeId="5294483648489409401" fileName="ThreadWatcher.java" startLine="70" startPosition="56" endLine="71" endPosition="76" />
-    <scopeInfo nodeId="5294483648489409541" fileName="ThreadWatcher.java" startLine="99" startPosition="31" endLine="100" endPosition="26" />
-    <scopeInfo nodeId="5294483648489409550" fileName="ThreadWatcher.java" startLine="104" startPosition="34" endLine="105" endPosition="16" />
-    <scopeInfo nodeId="5294483648489409557" fileName="ThreadWatcher.java" startLine="109" startPosition="27" endLine="110" endPosition="18" />
-    <scopeInfo nodeId="5294483648489409572" fileName="ThreadWatcher.java" startLine="114" startPosition="23" endLine="115" endPosition="18" />
-    <scopeInfo nodeId="5294483648489409580" fileName="ThreadWatcher.java" startLine="117" startPosition="25" endLine="118" endPosition="57" />
-    <scopeInfo nodeId="5294483648489409629" fileName="ThreadWatcher.java" startLine="127" startPosition="73" endLine="128" endPosition="20" />
-    <scopeInfo nodeId="5294483648489409639" fileName="ThreadWatcher.java" startLine="130" startPosition="41" endLine="131" endPosition="14" />
-    <scopeInfo nodeId="5294483648489409641" fileName="ThreadWatcher.java" startLine="133" startPosition="11" endLine="134" endPosition="27" />
-    <scopeInfo nodeId="5294483648489409121" fileName="ThreadWatcher.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="5294483648489409226" fileName="ThreadWatcher.java" startLine="44" startPosition="45" endLine="46" endPosition="19" />
-    <scopeInfo nodeId="5294483648489409271" fileName="ThreadWatcher.java" startLine="49" startPosition="45" endLine="51" endPosition="21" />
-    <scopeInfo nodeId="5294483648489409428" fileName="ThreadWatcher.java" startLine="76" startPosition="59" endLine="78" endPosition="62" />
-    <scopeInfo nodeId="5294483648489409472" fileName="ThreadWatcher.java" startLine="82" startPosition="55" endLine="84" endPosition="66" />
-    <scopeInfo nodeId="5294483648489409528" fileName="ThreadWatcher.java" startLine="92" startPosition="18" endLine="94" endPosition="26" />
-    <scopeInfo nodeId="5294483648489409182" fileName="ThreadWatcher.java" startLine="33" startPosition="214" endLine="37" endPosition="11" />
-    <scopeInfo nodeId="5294483648489409224" fileName="ThreadWatcher.java" startLine="43" startPosition="22" endLine="47" endPosition="7">
-      <varInfo nodeId="5294483648489409257" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409264" fileName="ThreadWatcher.java" startLine="48" startPosition="41" endLine="52" endPosition="9" />
-    <scopeInfo nodeId="5294483648489409332" fileName="ThreadWatcher.java" startLine="60" startPosition="55" endLine="64" endPosition="11" />
-    <scopeInfo nodeId="5294483648489409385" fileName="ThreadWatcher.java" startLine="68" startPosition="51" endLine="72" endPosition="11" />
-    <scopeInfo nodeId="5294483648489409419" fileName="ThreadWatcher.java" startLine="75" startPosition="50" endLine="79" endPosition="9" />
-    <scopeInfo nodeId="5294483648489409461" fileName="ThreadWatcher.java" startLine="81" startPosition="54" endLine="85" endPosition="9" />
-    <scopeInfo nodeId="5294483648489409524" fileName="ThreadWatcher.java" startLine="91" startPosition="41" endLine="95" endPosition="5" />
-    <scopeInfo nodeId="5294483648489409539" fileName="ThreadWatcher.java" startLine="98" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="5294483648489409548" fileName="ThreadWatcher.java" startLine="103" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="5294483648489409555" fileName="ThreadWatcher.java" startLine="108" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="5294483648489409744" fileName="ThreadWatcher.java" startLine="152" startPosition="42" endLine="157" endPosition="22" />
-    <scopeInfo nodeId="5294483648489409147" fileName="ThreadWatcher.java" startLine="32" startPosition="74" endLine="38" endPosition="9" />
-    <scopeInfo nodeId="5294483648489409262" fileName="ThreadWatcher.java" startLine="47" startPosition="7" endLine="53" endPosition="7">
-      <varInfo nodeId="5294483648489409302" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409323" fileName="ThreadWatcher.java" startLine="59" startPosition="46" endLine="65" endPosition="9" />
-    <scopeInfo nodeId="5294483648489409374" fileName="ThreadWatcher.java" startLine="67" startPosition="50" endLine="73" endPosition="9" />
-    <scopeInfo nodeId="5294483648489409417" fileName="ThreadWatcher.java" startLine="74" startPosition="7" endLine="80" endPosition="7">
-      <varInfo nodeId="5294483648489409451" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409459" fileName="ThreadWatcher.java" startLine="80" startPosition="7" endLine="86" endPosition="7">
-      <varInfo nodeId="5294483648489409491" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409520" fileName="ThreadWatcher.java" startLine="91" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="5294483648489409522" varName="capture" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409694" fileName="ThreadWatcher.java" startLine="144" startPosition="42" endLine="150" endPosition="22" />
-    <scopeInfo nodeId="5294483648489409145" fileName="ThreadWatcher.java" startLine="31" startPosition="62" endLine="39" endPosition="7">
-      <varInfo nodeId="5294483648489409205" varName="info" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409321" fileName="ThreadWatcher.java" startLine="58" startPosition="74" endLine="66" endPosition="7">
-      <varInfo nodeId="5294483648489409364" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409372" fileName="ThreadWatcher.java" startLine="66" startPosition="7" endLine="74" endPosition="7">
-      <varInfo nodeId="5294483648489409411" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409219" fileName="ThreadWatcher.java" startLine="42" startPosition="53" endLine="53" endPosition="7">
-      <varInfo nodeId="5294483648489409220" varName="sep" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409126" fileName="ThreadWatcher.java" startLine="27" startPosition="33" endLine="39" endPosition="7">
-      <varInfo nodeId="5294483648489409140" varName="bean" />
-      <varInfo nodeId="5294483648489409133" varName="cid" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409214" fileName="ThreadWatcher.java" startLine="42" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="5294483648489409217" varName="pref" />
-      <varInfo nodeId="5294483648489409215" varName="sb" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409601" fileName="ThreadWatcher.java" startLine="124" startPosition="8" endLine="137" endPosition="25" />
-    <scopeInfo nodeId="5294483648489409125" fileName="ThreadWatcher.java" startLine="27" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="5294483648489409312" fileName="ThreadWatcher.java" startLine="56" startPosition="81" endLine="87" endPosition="63">
-      <varInfo nodeId="5294483648489409313" varName="newDiff" />
-      <varInfo nodeId="5294483648489409317" varName="oldDiff" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409309" fileName="ThreadWatcher.java" startLine="56" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="5294483648489409310" varName="baseLine" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409565" fileName="ThreadWatcher.java" startLine="113" startPosition="48" endLine="162" endPosition="17">
-      <varInfo nodeId="5294483648489409581" varName="current" />
-      <varInfo nodeId="5294483648489409585" varName="diff" />
-      <varInfo nodeId="5294483648489409593" varName="leftMillis" />
-      <varInfo nodeId="5294483648489409680" varName="pr2" />
-      <varInfo nodeId="5294483648489409658" varName="sb" />
-      <varInfo nodeId="5294483648489409672" varName="sb2" />
-      <varInfo nodeId="5294483648489409676" varName="sep2" />
-      <varInfo nodeId="5294483648489409589" varName="step" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489409562" fileName="ThreadWatcher.java" startLine="113" startPosition="0" endLine="164" endPosition="0">
-      <varInfo nodeId="5294483648489409563" varName="millis" />
-    </scopeInfo>
-    <unitInfo nodeId="5294483648489409098" fileName="ThreadWatcher.java" startLine="19" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.testbench.util.ThreadWatcher$ThreadState" />
-    <unitInfo nodeId="5294483648489409095" fileName="ThreadWatcher.java" startLine="11" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.testbench.util.ThreadWatcher" />
+    <file name="ThreadWatcher.java">
+      <node id="5294483648489409507" at="15,0,16,0" concept="4" trace="base" />
+      <node id="5294483648489409511" at="16,0,17,0" concept="4" trace="errors" />
+      <node id="5294483648489409515" at="17,0,18,0" concept="4" trace="desc" />
+      <node id="5294483648489409101" at="20,0,21,0" concept="10" trace="IGNORED_THREAD" />
+      <node id="5294483648489409107" at="21,0,22,0" concept="4" trace="allThreads" />
+      <node id="5294483648489409114" at="22,0,23,0" concept="4" trace="runningThreads" />
+      <node id="5294483648489409127" at="27,33,28,25" concept="3" />
+      <node id="5294483648489409130" at="28,25,29,29" concept="3" />
+      <node id="5294483648489409134" at="29,29,30,48" concept="8" />
+      <node id="5294483648489409141" at="30,48,31,62" concept="8" />
+      <node id="5294483648489409183" at="33,214,34,51" concept="3" />
+      <node id="5294483648489409199" at="35,63,36,57" concept="3" />
+      <node id="5294483648489409221" at="42,53,43,22" concept="8" />
+      <node id="5294483648489409227" at="44,45,45,147" concept="3" />
+      <node id="5294483648489409253" at="45,147,46,19" concept="3" />
+      <node id="5294483648489409272" at="49,45,50,146" concept="3" />
+      <node id="5294483648489409298" at="50,146,51,21" concept="3" />
+      <node id="5294483648489409314" at="56,81,57,74" concept="8" />
+      <node id="5294483648489409318" at="57,74,58,74" concept="8" />
+      <node id="5294483648489409333" at="60,55,61,62" concept="3" />
+      <node id="5294483648489409353" at="62,52,63,72" concept="3" />
+      <node id="5294483648489409386" at="68,51,69,66" concept="3" />
+      <node id="5294483648489409402" at="70,56,71,76" concept="3" />
+      <node id="5294483648489409429" at="76,59,77,70" concept="3" />
+      <node id="5294483648489409440" at="77,70,78,62" concept="3" />
+      <node id="5294483648489409473" at="82,55,83,74" concept="3" />
+      <node id="5294483648489409482" at="83,74,84,66" concept="3" />
+      <node id="5294483648489409497" at="86,7,87,63" concept="9" />
+      <node id="5294483648489409529" at="92,18,93,50" concept="3" />
+      <node id="5294483648489409535" at="93,50,94,26" concept="3" />
+      <node id="5294483648489409542" at="99,31,100,26" concept="9" />
+      <node id="5294483648489409551" at="104,34,105,16" concept="9" />
+      <node id="5294483648489409558" at="109,27,110,18" concept="9" />
+      <node id="5294483648489409570" at="114,23,115,18" concept="9" />
+      <node id="5294483648489409579" at="117,25,118,57" concept="13" />
+      <node id="5294483648489409582" at="119,5,120,72" concept="8" />
+      <node id="5294483648489409586" at="120,72,121,37" concept="8" />
+      <node id="5294483648489409590" at="121,37,122,20" concept="8" />
+      <node id="5294483648489409594" at="122,20,123,29" concept="8" />
+      <node id="5294483648489409602" at="124,8,125,29" concept="3" />
+      <node id="5294483648489409605" at="125,29,126,32" concept="3" />
+      <node id="5294483648489409627" at="127,73,128,20" concept="9" />
+      <node id="5294483648489409638" at="130,41,131,14" concept="0" />
+      <node id="5294483648489409642" at="133,11,134,27" concept="3" />
+      <node id="5294483648489409653" at="136,7,137,25" concept="3" />
+      <node id="5294483648489409659" at="138,30,139,43" concept="8" />
+      <node id="5294483648489409662" at="139,43,140,59" concept="3" />
+      <node id="5294483648489409673" at="140,59,141,44" concept="8" />
+      <node id="5294483648489409677" at="141,44,142,21" concept="8" />
+      <node id="5294483648489409681" at="142,21,143,22" concept="8" />
+      <node id="5294483648489409695" at="144,42,145,75" concept="3" />
+      <node id="5294483648489409710" at="145,75,146,18" concept="3" />
+      <node id="5294483648489409714" at="146,18,147,15" concept="3" />
+      <node id="5294483648489409718" at="147,15,148,28" concept="3" />
+      <node id="5294483648489409722" at="148,28,149,31" concept="3" />
+      <node id="5294483648489409730" at="149,31,150,22" concept="3" />
+      <node id="5294483648489409745" at="152,42,153,91" concept="3" />
+      <node id="5294483648489409763" at="153,91,154,15" concept="3" />
+      <node id="5294483648489409767" at="154,15,155,31" concept="3" />
+      <node id="5294483648489409771" at="155,31,156,31" concept="3" />
+      <node id="5294483648489409779" at="156,31,157,22" concept="3" />
+      <node id="5294483648489409783" at="158,5,159,39" concept="3" />
+      <node id="5294483648489409790" at="159,39,160,31" concept="3" />
+      <node id="5294483648489409797" at="160,31,161,32" concept="3" />
+      <node id="5294483648489409804" at="161,32,162,17" concept="9" />
+      <node id="5294483648489409121" at="24,0,26,0" concept="1" trace="ThreadState#()V" />
+      <node id="5294483648489409189" at="34,51,37,11" concept="6" />
+      <node id="5294483648489409344" at="61,62,64,11" concept="6" />
+      <node id="5294483648489409395" at="69,66,72,11" concept="6" />
+      <node id="5294483648489409566" at="113,48,116,5" concept="6" />
+      <node id="5294483648489409573" at="116,5,119,5" concept="6" />
+      <node id="5294483648489409611" at="126,32,129,7" concept="6" />
+      <node id="5294483648489409630" at="129,7,132,7" concept="6" />
+      <node id="5294483648489409224" at="43,22,47,7" concept="5" />
+      <node id="5294483648489409265" at="48,41,52,9" concept="6" />
+      <node id="5294483648489409420" at="75,50,79,9" concept="6" />
+      <node id="5294483648489409462" at="81,54,85,9" concept="6" />
+      <node id="5294483648489409525" at="91,41,95,5" concept="6" />
+      <node id="5294483648489409539" at="98,0,102,0" concept="7" trace="isNotEmpty#()Z" />
+      <node id="5294483648489409548" at="103,0,107,0" concept="7" trace="getDescription#()Ljava/lang/String;" />
+      <node id="5294483648489409555" at="108,0,112,0" concept="7" trace="getText#()Ljava/lang/String;" />
+      <node id="5294483648489409651" at="132,7,136,7" concept="14" />
+      <node id="5294483648489409148" at="32,74,38,9" concept="6" />
+      <node id="5294483648489409262" at="47,7,53,7" concept="5" />
+      <node id="5294483648489409324" at="59,46,65,9" concept="6" />
+      <node id="5294483648489409375" at="67,50,73,9" concept="6" />
+      <node id="5294483648489409417" at="74,7,80,7" concept="5" />
+      <node id="5294483648489409459" at="80,7,86,7" concept="5" />
+      <node id="5294483648489409520" at="91,0,97,0" concept="1" trace="ThreadWatcher#(Z)V" />
+      <node id="5294483648489409734" at="151,5,158,5" concept="6" />
+      <node id="5294483648489409145" at="31,62,39,7" concept="5" />
+      <node id="5294483648489409321" at="58,74,66,7" concept="5" />
+      <node id="5294483648489409372" at="66,7,74,7" concept="5" />
+      <node id="5294483648489409684" at="143,22,151,5" concept="6" />
+      <node id="5294483648489409214" at="42,0,55,0" concept="7" trace="dump#(Ljava/lang/StringBuilder;Ljava/lang/String;)V" />
+      <node id="5294483648489409125" at="27,0,41,0" concept="7" trace="captureState#()V" />
+      <node id="5294483648489409657" at="123,29,138,30" concept="2" />
+      <node id="5294483648489409309" at="56,0,89,0" concept="7" trace="diff#(Ljetbrains/mps/testbench/util/ThreadWatcher/ThreadState;)[Ljetbrains/mps/testbench/util/ThreadWatcher/ThreadState;" />
+      <node id="5294483648489409562" at="113,0,164,0" concept="7" trace="waitUntilSettled#(J)Z" />
+      <scope id="5294483648489409123" at="24,27,24,27" />
+      <scope id="5294483648489409652" at="135,0,135,45">
+        <var name="ignore" id="5294483648489409646" />
+      </scope>
+      <scope id="5294483648489409650" at="135,45,135,45" />
+      <scope id="5294483648489409198" at="35,63,36,57" />
+      <scope id="5294483648489409352" at="62,52,63,72" />
+      <scope id="5294483648489409401" at="70,56,71,76" />
+      <scope id="5294483648489409541" at="99,31,100,26" />
+      <scope id="5294483648489409550" at="104,34,105,16" />
+      <scope id="5294483648489409557" at="109,27,110,18" />
+      <scope id="5294483648489409572" at="114,23,115,18" />
+      <scope id="5294483648489409580" at="117,25,118,57" />
+      <scope id="5294483648489409629" at="127,73,128,20" />
+      <scope id="5294483648489409639" at="130,41,131,14" />
+      <scope id="5294483648489409641" at="133,11,134,27" />
+      <scope id="5294483648489409121" at="24,0,26,0" />
+      <scope id="5294483648489409226" at="44,45,46,19" />
+      <scope id="5294483648489409271" at="49,45,51,21" />
+      <scope id="5294483648489409428" at="76,59,78,62" />
+      <scope id="5294483648489409472" at="82,55,84,66" />
+      <scope id="5294483648489409528" at="92,18,94,26" />
+      <scope id="5294483648489409182" at="33,214,37,11" />
+      <scope id="5294483648489409224" at="43,22,47,7">
+        <var name="id" id="5294483648489409257" />
+      </scope>
+      <scope id="5294483648489409264" at="48,41,52,9" />
+      <scope id="5294483648489409332" at="60,55,64,11" />
+      <scope id="5294483648489409385" at="68,51,72,11" />
+      <scope id="5294483648489409419" at="75,50,79,9" />
+      <scope id="5294483648489409461" at="81,54,85,9" />
+      <scope id="5294483648489409524" at="91,41,95,5" />
+      <scope id="5294483648489409539" at="98,0,102,0" />
+      <scope id="5294483648489409548" at="103,0,107,0" />
+      <scope id="5294483648489409555" at="108,0,112,0" />
+      <scope id="5294483648489409744" at="152,42,157,22" />
+      <scope id="5294483648489409147" at="32,74,38,9" />
+      <scope id="5294483648489409262" at="47,7,53,7">
+        <var name="id" id="5294483648489409302" />
+      </scope>
+      <scope id="5294483648489409323" at="59,46,65,9" />
+      <scope id="5294483648489409374" at="67,50,73,9" />
+      <scope id="5294483648489409417" at="74,7,80,7">
+        <var name="id" id="5294483648489409451" />
+      </scope>
+      <scope id="5294483648489409459" at="80,7,86,7">
+        <var name="id" id="5294483648489409491" />
+      </scope>
+      <scope id="5294483648489409520" at="91,0,97,0">
+        <var name="capture" id="5294483648489409522" />
+      </scope>
+      <scope id="5294483648489409694" at="144,42,150,22" />
+      <scope id="5294483648489409145" at="31,62,39,7">
+        <var name="info" id="5294483648489409205" />
+      </scope>
+      <scope id="5294483648489409321" at="58,74,66,7">
+        <var name="id" id="5294483648489409364" />
+      </scope>
+      <scope id="5294483648489409372" at="66,7,74,7">
+        <var name="id" id="5294483648489409411" />
+      </scope>
+      <scope id="5294483648489409219" at="42,53,53,7">
+        <var name="sep" id="5294483648489409220" />
+      </scope>
+      <scope id="5294483648489409126" at="27,33,39,7">
+        <var name="bean" id="5294483648489409140" />
+        <var name="cid" id="5294483648489409133" />
+      </scope>
+      <scope id="5294483648489409214" at="42,0,55,0">
+        <var name="pref" id="5294483648489409217" />
+        <var name="sb" id="5294483648489409215" />
+      </scope>
+      <scope id="5294483648489409601" at="124,8,137,25" />
+      <scope id="5294483648489409125" at="27,0,41,0" />
+      <scope id="5294483648489409312" at="56,81,87,63">
+        <var name="newDiff" id="5294483648489409313" />
+        <var name="oldDiff" id="5294483648489409317" />
+      </scope>
+      <scope id="5294483648489409309" at="56,0,89,0">
+        <var name="baseLine" id="5294483648489409310" />
+      </scope>
+      <scope id="5294483648489409565" at="113,48,162,17">
+        <var name="current" id="5294483648489409581" />
+        <var name="diff" id="5294483648489409585" />
+        <var name="leftMillis" id="5294483648489409593" />
+        <var name="pr2" id="5294483648489409680" />
+        <var name="sb" id="5294483648489409658" />
+        <var name="sb2" id="5294483648489409672" />
+        <var name="sep2" id="5294483648489409676" />
+        <var name="step" id="5294483648489409589" />
+      </scope>
+      <scope id="5294483648489409562" at="113,0,164,0">
+        <var name="millis" id="5294483648489409563" />
+      </scope>
+      <unit id="5294483648489409098" at="19,0,90,0" name="jetbrains.mps.testbench.util.ThreadWatcher$ThreadState" />
+      <unit id="5294483648489409095" at="11,0,165,0" name="jetbrains.mps.testbench.util.ThreadWatcher" />
+    </file>
   </root>
   <root nodeRef="r:36bec8f9-6cb9-42f4-a517-ea58c11993b3(jetbrains.mps.testbench.util)/5294483648489409912">
-    <nodeInfo nodeId="5294483648489409915" fileName="Output.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNotEmpty#()Z" />
-    <nodeInfo nodeId="5294483648489409919" fileName="Output.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5294483648489409923" fileName="Output.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <scopeInfo nodeId="5294483648489409915" fileName="Output.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
-    <scopeInfo nodeId="5294483648489409919" fileName="Output.java" startLine="8" startPosition="0" endLine="9" endPosition="0" />
-    <scopeInfo nodeId="5294483648489409923" fileName="Output.java" startLine="9" startPosition="0" endLine="10" endPosition="0" />
-    <unitInfo nodeId="5294483648489409912" fileName="Output.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.testbench.util.Output" />
+    <file name="Output.java">
+      <node id="5294483648489409915" at="7,0,8,0" concept="7" trace="isNotEmpty#()Z" />
+      <node id="5294483648489409919" at="8,0,9,0" concept="7" trace="getDescription#()Ljava/lang/String;" />
+      <node id="5294483648489409923" at="9,0,10,0" concept="7" trace="getText#()Ljava/lang/String;" />
+      <scope id="5294483648489409915" at="7,0,8,0" />
+      <scope id="5294483648489409919" at="8,0,9,0" />
+      <scope id="5294483648489409923" at="9,0,10,0" />
+      <unit id="5294483648489409912" at="6,0,11,0" name="jetbrains.mps.testbench.util.Output" />
+    </file>
   </root>
   <root nodeRef="r:36bec8f9-6cb9-42f4-a517-ea58c11993b3(jetbrains.mps.testbench.util)/5294483648489410428">
-    <nodeInfo nodeId="5294483648489410433" fileName="CachingAppender.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="events" />
-    <nodeInfo nodeId="5294483648489410437" fileName="CachingAppender.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="messages" />
-    <nodeInfo nodeId="5294483648489410444" fileName="CachingAppender.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="expectedEvents" />
-    <nodeInfo nodeId="5294483648489410455" fileName="CachingAppender.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="receivedExpectedEvents" />
-    <nodeInfo nodeId="5294483648489410481" fileName="CachingAppender.java" startLine="27" startPosition="38" endLine="28" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410484" fileName="CachingAppender.java" startLine="28" startPosition="15" endLine="29" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410490" fileName="CachingAppender.java" startLine="29" startPosition="54" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489410501" fileName="CachingAppender.java" startLine="31" startPosition="31" endLine="32" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410505" fileName="CachingAppender.java" startLine="32" startPosition="67" endLine="33" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410511" fileName="CachingAppender.java" startLine="33" startPosition="51" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410549" fileName="CachingAppender.java" startLine="42" startPosition="80" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410553" fileName="CachingAppender.java" startLine="43" startPosition="41" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410561" fileName="CachingAppender.java" startLine="47" startPosition="5" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410568" fileName="CachingAppender.java" startLine="52" startPosition="31" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410577" fileName="CachingAppender.java" startLine="57" startPosition="34" endLine="58" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410587" fileName="CachingAppender.java" startLine="62" startPosition="27" endLine="63" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489410591" fileName="CachingAppender.java" startLine="63" startPosition="43" endLine="64" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489410597" fileName="CachingAppender.java" startLine="65" startPosition="31" endLine="66" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410601" fileName="CachingAppender.java" startLine="66" startPosition="21" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410605" fileName="CachingAppender.java" startLine="67" startPosition="17" endLine="68" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410613" fileName="CachingAppender.java" startLine="69" startPosition="5" endLine="70" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410617" fileName="CachingAppender.java" startLine="70" startPosition="20" endLine="71" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410630" fileName="CachingAppender.java" startLine="79" startPosition="35" endLine="80" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410637" fileName="CachingAppender.java" startLine="83" startPosition="28" endLine="84" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489410647" fileName="CachingAppender.java" startLine="84" startPosition="92" endLine="85" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410654" fileName="CachingAppender.java" startLine="86" startPosition="43" endLine="87" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410657" fileName="CachingAppender.java" startLine="87" startPosition="15" endLine="88" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410679" fileName="CachingAppender.java" startLine="92" startPosition="51" endLine="93" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410466" fileName="CachingAppender.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CachingAppender#()V" />
-    <nodeInfo nodeId="5294483648489410622" fileName="CachingAppender.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" />
-    <nodeInfo nodeId="5294483648489410673" fileName="CachingAppender.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectEvent#(ILjava/lang/String;)V" />
-    <nodeInfo nodeId="5294483648489410535" fileName="CachingAppender.java" startLine="41" startPosition="72" endLine="45" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410565" fileName="CachingAppender.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNotEmpty#()Z" />
-    <nodeInfo nodeId="5294483648489410574" fileName="CachingAppender.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5294483648489410627" fileName="CachingAppender.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresLayout#()Z" />
-    <nodeInfo nodeId="5294483648489410651" fileName="CachingAppender.java" startLine="85" startPosition="43" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489410495" fileName="CachingAppender.java" startLine="30" startPosition="62" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410594" fileName="CachingAppender.java" startLine="64" startPosition="20" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489410524" fileName="CachingAppender.java" startLine="40" startPosition="53" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410521" fileName="CachingAppender.java" startLine="39" startPosition="50" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489410634" fileName="CachingAppender.java" startLine="83" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="sealEvents#()V" />
-    <nodeInfo nodeId="5294483648489410475" fileName="CachingAppender.java" startLine="26" startPosition="52" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410517" fileName="CachingAppender.java" startLine="39" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isExpected#(Lorg/apache/log4j/spi/LoggingEvent;)Z" />
-    <nodeInfo nodeId="5294483648489410583" fileName="CachingAppender.java" startLine="61" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5294483648489410470" fileName="CachingAppender.java" startLine="25" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="append#(Lorg/apache/log4j/spi/LoggingEvent;)V" />
-    <scopeInfo nodeId="5294483648489410468" fileName="CachingAppender.java" startLine="22" startPosition="28" endLine="22" endPosition="28" />
-    <scopeInfo nodeId="5294483648489410624" fileName="CachingAppender.java" startLine="75" startPosition="23" endLine="75" endPosition="23" />
-    <scopeInfo nodeId="5294483648489410567" fileName="CachingAppender.java" startLine="52" startPosition="31" endLine="53" endPosition="22" />
-    <scopeInfo nodeId="5294483648489410576" fileName="CachingAppender.java" startLine="57" startPosition="34" endLine="58" endPosition="30" />
-    <scopeInfo nodeId="5294483648489410629" fileName="CachingAppender.java" startLine="79" startPosition="35" endLine="80" endPosition="17" />
-    <scopeInfo nodeId="5294483648489410678" fileName="CachingAppender.java" startLine="92" startPosition="51" endLine="93" endPosition="63" />
-    <scopeInfo nodeId="5294483648489410466" fileName="CachingAppender.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410548" fileName="CachingAppender.java" startLine="42" startPosition="80" endLine="44" endPosition="22" />
-    <scopeInfo nodeId="5294483648489410653" fileName="CachingAppender.java" startLine="86" startPosition="43" endLine="88" endPosition="44" />
-    <scopeInfo nodeId="5294483648489410500" fileName="CachingAppender.java" startLine="31" startPosition="31" endLine="34" endPosition="67" />
-    <scopeInfo nodeId="5294483648489410596" fileName="CachingAppender.java" startLine="65" startPosition="31" endLine="68" endPosition="19" />
-    <scopeInfo nodeId="5294483648489410622" fileName="CachingAppender.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410673" fileName="CachingAppender.java" startLine="92" startPosition="0" endLine="95" endPosition="0">
-      <varInfo nodeId="5294483648489410674" varName="level" />
-      <varInfo nodeId="5294483648489410676" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410534" fileName="CachingAppender.java" startLine="41" startPosition="72" endLine="45" endPosition="9" />
-    <scopeInfo nodeId="5294483648489410565" fileName="CachingAppender.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410574" fileName="CachingAppender.java" startLine="56" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410627" fileName="CachingAppender.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410651" fileName="CachingAppender.java" startLine="85" startPosition="43" endLine="89" endPosition="5">
-      <varInfo nodeId="5294483648489410665" varName="pr" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410594" fileName="CachingAppender.java" startLine="64" startPosition="20" endLine="69" endPosition="5">
-      <varInfo nodeId="5294483648489410609" varName="s" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410523" fileName="CachingAppender.java" startLine="40" startPosition="53" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="5294483648489410635" fileName="CachingAppender.java" startLine="83" startPosition="28" endLine="89" endPosition="5">
-      <varInfo nodeId="5294483648489410636" varName="list" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410480" fileName="CachingAppender.java" startLine="27" startPosition="38" endLine="35" endPosition="7">
-      <varInfo nodeId="5294483648489410489" varName="stackTrace" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410521" fileName="CachingAppender.java" startLine="39" startPosition="50" endLine="47" endPosition="5">
-      <varInfo nodeId="5294483648489410555" varName="pr" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410634" fileName="CachingAppender.java" startLine="83" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410520" fileName="CachingAppender.java" startLine="39" startPosition="50" endLine="48" endPosition="17" />
-    <scopeInfo nodeId="5294483648489410585" fileName="CachingAppender.java" startLine="62" startPosition="27" endLine="71" endPosition="25">
-      <varInfo nodeId="5294483648489410586" varName="sb" />
-      <varInfo nodeId="5294483648489410590" varName="sep" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410474" fileName="CachingAppender.java" startLine="26" startPosition="52" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="5294483648489410517" fileName="CachingAppender.java" startLine="39" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="5294483648489410518" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410583" fileName="CachingAppender.java" startLine="61" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410470" fileName="CachingAppender.java" startLine="25" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="5294483648489410472" varName="loggingEvent" />
-    </scopeInfo>
-    <unitInfo nodeId="5294483648489410428" fileName="CachingAppender.java" startLine="13" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.testbench.util.CachingAppender" />
+    <file name="CachingAppender.java">
+      <node id="5294483648489410433" at="17,0,18,0" concept="4" trace="events" />
+      <node id="5294483648489410437" at="18,0,19,0" concept="4" trace="messages" />
+      <node id="5294483648489410444" at="19,0,20,0" concept="4" trace="expectedEvents" />
+      <node id="5294483648489410455" at="20,0,21,0" concept="4" trace="receivedExpectedEvents" />
+      <node id="5294483648489410481" at="27,38,28,15" concept="3" />
+      <node id="5294483648489410484" at="28,15,29,54" concept="3" />
+      <node id="5294483648489410490" at="29,54,30,62" concept="8" />
+      <node id="5294483648489410501" at="31,31,32,67" concept="3" />
+      <node id="5294483648489410505" at="32,67,33,51" concept="3" />
+      <node id="5294483648489410511" at="33,51,34,67" concept="3" />
+      <node id="5294483648489410549" at="42,80,43,41" concept="3" />
+      <node id="5294483648489410553" at="43,41,44,22" concept="9" />
+      <node id="5294483648489410561" at="47,5,48,17" concept="9" />
+      <node id="5294483648489410568" at="52,31,53,22" concept="9" />
+      <node id="5294483648489410577" at="57,34,58,30" concept="9" />
+      <node id="5294483648489410587" at="62,27,63,43" concept="8" />
+      <node id="5294483648489410591" at="63,43,64,20" concept="8" />
+      <node id="5294483648489410597" at="65,31,66,21" concept="3" />
+      <node id="5294483648489410601" at="66,21,67,17" concept="3" />
+      <node id="5294483648489410605" at="67,17,68,19" concept="3" />
+      <node id="5294483648489410613" at="69,5,70,20" concept="3" />
+      <node id="5294483648489410617" at="70,20,71,25" concept="9" />
+      <node id="5294483648489410630" at="79,35,80,17" concept="9" />
+      <node id="5294483648489410637" at="83,28,84,92" concept="8" />
+      <node id="5294483648489410647" at="84,92,85,43" concept="3" />
+      <node id="5294483648489410654" at="86,43,87,15" concept="3" />
+      <node id="5294483648489410657" at="87,15,88,44" concept="3" />
+      <node id="5294483648489410679" at="92,51,93,63" concept="3" />
+      <node id="5294483648489410466" at="22,0,24,0" concept="1" trace="CachingAppender#()V" />
+      <node id="5294483648489410622" at="74,0,77,0" concept="7" trace="close#()V" />
+      <node id="5294483648489410673" at="92,0,95,0" concept="7" trace="expectEvent#(ILjava/lang/String;)V" />
+      <node id="5294483648489410535" at="41,72,45,9" concept="6" />
+      <node id="5294483648489410565" at="51,0,55,0" concept="7" trace="isNotEmpty#()Z" />
+      <node id="5294483648489410574" at="56,0,60,0" concept="7" trace="getDescription#()Ljava/lang/String;" />
+      <node id="5294483648489410627" at="78,0,82,0" concept="7" trace="requiresLayout#()Z" />
+      <node id="5294483648489410651" at="85,43,89,5" concept="5" />
+      <node id="5294483648489410495" at="30,62,35,7" concept="6" />
+      <node id="5294483648489410594" at="64,20,69,5" concept="5" />
+      <node id="5294483648489410524" at="40,53,46,7" concept="6" />
+      <node id="5294483648489410521" at="39,50,47,5" concept="5" />
+      <node id="5294483648489410634" at="83,0,91,0" concept="7" trace="sealEvents#()V" />
+      <node id="5294483648489410475" at="26,52,36,5" concept="6" />
+      <node id="5294483648489410517" at="39,0,50,0" concept="7" trace="isExpected#(Lorg/apache/log4j/spi/LoggingEvent;)Z" />
+      <node id="5294483648489410583" at="61,0,73,0" concept="7" trace="getText#()Ljava/lang/String;" />
+      <node id="5294483648489410470" at="25,0,38,0" concept="7" trace="append#(Lorg/apache/log4j/spi/LoggingEvent;)V" />
+      <scope id="5294483648489410468" at="22,28,22,28" />
+      <scope id="5294483648489410624" at="75,23,75,23" />
+      <scope id="5294483648489410567" at="52,31,53,22" />
+      <scope id="5294483648489410576" at="57,34,58,30" />
+      <scope id="5294483648489410629" at="79,35,80,17" />
+      <scope id="5294483648489410678" at="92,51,93,63" />
+      <scope id="5294483648489410466" at="22,0,24,0" />
+      <scope id="5294483648489410548" at="42,80,44,22" />
+      <scope id="5294483648489410653" at="86,43,88,44" />
+      <scope id="5294483648489410500" at="31,31,34,67" />
+      <scope id="5294483648489410596" at="65,31,68,19" />
+      <scope id="5294483648489410622" at="74,0,77,0" />
+      <scope id="5294483648489410673" at="92,0,95,0">
+        <var name="level" id="5294483648489410674" />
+        <var name="text" id="5294483648489410676" />
+      </scope>
+      <scope id="5294483648489410534" at="41,72,45,9" />
+      <scope id="5294483648489410565" at="51,0,55,0" />
+      <scope id="5294483648489410574" at="56,0,60,0" />
+      <scope id="5294483648489410627" at="78,0,82,0" />
+      <scope id="5294483648489410651" at="85,43,89,5">
+        <var name="pr" id="5294483648489410665" />
+      </scope>
+      <scope id="5294483648489410594" at="64,20,69,5">
+        <var name="s" id="5294483648489410609" />
+      </scope>
+      <scope id="5294483648489410523" at="40,53,46,7" />
+      <scope id="5294483648489410635" at="83,28,89,5">
+        <var name="list" id="5294483648489410636" />
+      </scope>
+      <scope id="5294483648489410480" at="27,38,35,7">
+        <var name="stackTrace" id="5294483648489410489" />
+      </scope>
+      <scope id="5294483648489410521" at="39,50,47,5">
+        <var name="pr" id="5294483648489410555" />
+      </scope>
+      <scope id="5294483648489410634" at="83,0,91,0" />
+      <scope id="5294483648489410520" at="39,50,48,17" />
+      <scope id="5294483648489410585" at="62,27,71,25">
+        <var name="sb" id="5294483648489410586" />
+        <var name="sep" id="5294483648489410590" />
+      </scope>
+      <scope id="5294483648489410474" at="26,52,36,5" />
+      <scope id="5294483648489410517" at="39,0,50,0">
+        <var name="event" id="5294483648489410518" />
+      </scope>
+      <scope id="5294483648489410583" at="61,0,73,0" />
+      <scope id="5294483648489410470" at="25,0,38,0">
+        <var name="loggingEvent" id="5294483648489410472" />
+      </scope>
+      <unit id="5294483648489410428" at="13,0,96,0" name="jetbrains.mps.testbench.util.CachingAppender" />
+    </file>
   </root>
   <root nodeRef="r:36bec8f9-6cb9-42f4-a517-ea58c11993b3(jetbrains.mps.testbench.util)/5294483648489410732">
-    <nodeInfo nodeId="5294483648489410737" fileName="CachingPrintStream.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="LS_BYTES" />
-    <nodeInfo nodeId="1623579106308380595" fileName="CachingPrintStream.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIgnoredOutputPatterns" />
-    <nodeInfo nodeId="5294483648489410741" fileName="CachingPrintStream.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="bytes" />
-    <nodeInfo nodeId="5294483648489410746" fileName="CachingPrintStream.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="buffer" />
-    <nodeInfo nodeId="5294483648489410751" fileName="CachingPrintStream.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="5294483648489410755" fileName="CachingPrintStream.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="caching" />
-    <nodeInfo nodeId="4480898598412082866" fileName="CachingPrintStream.java" startLine="21" startPosition="60" endLine="22" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5294483648489410766" fileName="CachingPrintStream.java" startLine="22" startPosition="15" endLine="23" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410772" fileName="CachingPrintStream.java" startLine="23" startPosition="21" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1623579106308512332" fileName="CachingPrintStream.java" startLine="27" startPosition="93" endLine="28" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="1623579106308500029" fileName="CachingPrintStream.java" startLine="28" startPosition="20" endLine="29" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410787" fileName="CachingPrintStream.java" startLine="32" startPosition="31" endLine="33" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410799" fileName="CachingPrintStream.java" startLine="37" startPosition="18" endLine="38" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5294483648489410801" fileName="CachingPrintStream.java" startLine="39" startPosition="5" endLine="40" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410816" fileName="CachingPrintStream.java" startLine="44" startPosition="21" endLine="45" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5294483648489410818" fileName="CachingPrintStream.java" startLine="46" startPosition="5" endLine="47" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410832" fileName="CachingPrintStream.java" startLine="51" startPosition="18" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5294483648489410834" fileName="CachingPrintStream.java" startLine="53" startPosition="5" endLine="54" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410841" fileName="CachingPrintStream.java" startLine="54" startPosition="29" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1623579106309278804" fileName="CachingPrintStream.java" startLine="60" startPosition="55" endLine="61" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1623579106310490624" fileName="CachingPrintStream.java" startLine="63" startPosition="60" endLine="64" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1623579106311494463" fileName="CachingPrintStream.java" startLine="67" startPosition="5" endLine="68" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410861" fileName="CachingPrintStream.java" startLine="72" startPosition="47" endLine="73" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410872" fileName="CachingPrintStream.java" startLine="77" startPosition="40" endLine="78" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410879" fileName="CachingPrintStream.java" startLine="81" startPosition="43" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410885" fileName="CachingPrintStream.java" startLine="85" startPosition="42" endLine="86" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489410893" fileName="CachingPrintStream.java" startLine="90" startPosition="36" endLine="91" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410900" fileName="CachingPrintStream.java" startLine="95" startPosition="36" endLine="96" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410913" fileName="CachingPrintStream.java" startLine="101" startPosition="18" endLine="102" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410916" fileName="CachingPrintStream.java" startLine="102" startPosition="14" endLine="103" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410922" fileName="CachingPrintStream.java" startLine="104" startPosition="5" endLine="105" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410938" fileName="CachingPrintStream.java" startLine="110" startPosition="18" endLine="111" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410942" fileName="CachingPrintStream.java" startLine="111" startPosition="24" endLine="112" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410947" fileName="CachingPrintStream.java" startLine="113" startPosition="5" endLine="114" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410966" fileName="CachingPrintStream.java" startLine="119" startPosition="18" endLine="120" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410970" fileName="CachingPrintStream.java" startLine="120" startPosition="19" endLine="121" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410977" fileName="CachingPrintStream.java" startLine="122" startPosition="5" endLine="123" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410991" fileName="CachingPrintStream.java" startLine="128" startPosition="18" endLine="129" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411002" fileName="CachingPrintStream.java" startLine="130" startPosition="5" endLine="131" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411014" fileName="CachingPrintStream.java" startLine="136" startPosition="18" endLine="137" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411025" fileName="CachingPrintStream.java" startLine="138" startPosition="5" endLine="139" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411037" fileName="CachingPrintStream.java" startLine="144" startPosition="18" endLine="145" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411048" fileName="CachingPrintStream.java" startLine="146" startPosition="5" endLine="147" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411060" fileName="CachingPrintStream.java" startLine="152" startPosition="18" endLine="153" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411071" fileName="CachingPrintStream.java" startLine="154" startPosition="5" endLine="155" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411083" fileName="CachingPrintStream.java" startLine="160" startPosition="18" endLine="161" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411094" fileName="CachingPrintStream.java" startLine="162" startPosition="5" endLine="163" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411106" fileName="CachingPrintStream.java" startLine="168" startPosition="18" endLine="169" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411117" fileName="CachingPrintStream.java" startLine="170" startPosition="5" endLine="171" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411130" fileName="CachingPrintStream.java" startLine="176" startPosition="18" endLine="177" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411141" fileName="CachingPrintStream.java" startLine="178" startPosition="5" endLine="179" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411153" fileName="CachingPrintStream.java" startLine="184" startPosition="18" endLine="185" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411164" fileName="CachingPrintStream.java" startLine="186" startPosition="5" endLine="187" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411176" fileName="CachingPrintStream.java" startLine="192" startPosition="18" endLine="193" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411187" fileName="CachingPrintStream.java" startLine="194" startPosition="5" endLine="195" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411197" fileName="CachingPrintStream.java" startLine="200" startPosition="18" endLine="201" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411202" fileName="CachingPrintStream.java" startLine="202" startPosition="5" endLine="203" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411213" fileName="CachingPrintStream.java" startLine="208" startPosition="18" endLine="209" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411218" fileName="CachingPrintStream.java" startLine="210" startPosition="5" endLine="211" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411230" fileName="CachingPrintStream.java" startLine="216" startPosition="18" endLine="217" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411235" fileName="CachingPrintStream.java" startLine="218" startPosition="5" endLine="219" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411247" fileName="CachingPrintStream.java" startLine="224" startPosition="18" endLine="225" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411252" fileName="CachingPrintStream.java" startLine="226" startPosition="5" endLine="227" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411264" fileName="CachingPrintStream.java" startLine="232" startPosition="18" endLine="233" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411269" fileName="CachingPrintStream.java" startLine="234" startPosition="5" endLine="235" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411281" fileName="CachingPrintStream.java" startLine="240" startPosition="18" endLine="241" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411286" fileName="CachingPrintStream.java" startLine="242" startPosition="5" endLine="243" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411298" fileName="CachingPrintStream.java" startLine="248" startPosition="18" endLine="249" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411303" fileName="CachingPrintStream.java" startLine="250" startPosition="5" endLine="251" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411316" fileName="CachingPrintStream.java" startLine="256" startPosition="18" endLine="257" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411321" fileName="CachingPrintStream.java" startLine="258" startPosition="5" endLine="259" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411333" fileName="CachingPrintStream.java" startLine="264" startPosition="18" endLine="265" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411338" fileName="CachingPrintStream.java" startLine="266" startPosition="5" endLine="267" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411350" fileName="CachingPrintStream.java" startLine="272" startPosition="18" endLine="273" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411355" fileName="CachingPrintStream.java" startLine="274" startPosition="5" endLine="275" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489410785" fileName="CachingPrintStream.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOut#()Ljava/io/PrintStream;" />
-    <nodeInfo nodeId="5294483648489410795" fileName="CachingPrintStream.java" startLine="36" startPosition="30" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410811" fileName="CachingPrintStream.java" startLine="43" startPosition="29" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410828" fileName="CachingPrintStream.java" startLine="50" startPosition="23" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1623579106310042626" fileName="CachingPrintStream.java" startLine="62" startPosition="59" endLine="65" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410877" fileName="CachingPrintStream.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBytesCount#()I" />
-    <nodeInfo nodeId="5294483648489410883" fileName="CachingPrintStream.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBuffer#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5294483648489410989" fileName="CachingPrintStream.java" startLine="127" startPosition="45" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411012" fileName="CachingPrintStream.java" startLine="135" startPosition="42" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411035" fileName="CachingPrintStream.java" startLine="143" startPosition="41" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411058" fileName="CachingPrintStream.java" startLine="151" startPosition="43" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411081" fileName="CachingPrintStream.java" startLine="159" startPosition="43" endLine="162" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411104" fileName="CachingPrintStream.java" startLine="167" startPosition="44" endLine="170" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411128" fileName="CachingPrintStream.java" startLine="175" startPosition="44" endLine="178" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411151" fileName="CachingPrintStream.java" startLine="183" startPosition="44" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411174" fileName="CachingPrintStream.java" startLine="191" startPosition="46" endLine="194" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411195" fileName="CachingPrintStream.java" startLine="199" startPosition="38" endLine="202" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411211" fileName="CachingPrintStream.java" startLine="207" startPosition="47" endLine="210" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411228" fileName="CachingPrintStream.java" startLine="215" startPosition="44" endLine="218" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411245" fileName="CachingPrintStream.java" startLine="223" startPosition="43" endLine="226" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411262" fileName="CachingPrintStream.java" startLine="231" startPosition="44" endLine="234" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411279" fileName="CachingPrintStream.java" startLine="239" startPosition="45" endLine="242" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411296" fileName="CachingPrintStream.java" startLine="247" startPosition="46" endLine="250" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411314" fileName="CachingPrintStream.java" startLine="255" startPosition="46" endLine="258" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411331" fileName="CachingPrintStream.java" startLine="263" startPosition="46" endLine="266" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489411348" fileName="CachingPrintStream.java" startLine="271" startPosition="46" endLine="274" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1623579106307770594" fileName="CachingPrintStream.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CachingPrintStream#(Ljava/io/OutputStream;Ljava/lang/String;[Ljava/util/regex/Pattern;)V" />
-    <nodeInfo nodeId="5294483648489410858" fileName="CachingPrintStream.java" startLine="71" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5294483648489410869" fileName="CachingPrintStream.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5294483648489410890" fileName="CachingPrintStream.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flush#()V" />
-    <nodeInfo nodeId="5294483648489410897" fileName="CachingPrintStream.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="close#()V" />
-    <nodeInfo nodeId="5294483648489410909" fileName="CachingPrintStream.java" startLine="100" startPosition="43" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410934" fileName="CachingPrintStream.java" startLine="109" startPosition="65" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410962" fileName="CachingPrintStream.java" startLine="118" startPosition="64" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410759" fileName="CachingPrintStream.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CachingPrintStream#(Ljava/io/OutputStream;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1623579106309505808" fileName="CachingPrintStream.java" startLine="61" startPosition="40" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489410793" fileName="CachingPrintStream.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startCaching#()V" />
-    <nodeInfo nodeId="5294483648489410809" fileName="CachingPrintStream.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="stopCaching#()V" />
-    <nodeInfo nodeId="5294483648489410826" fileName="CachingPrintStream.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
-    <nodeInfo nodeId="5294483648489410984" fileName="CachingPrintStream.java" startLine="126" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(Z)V" />
-    <nodeInfo nodeId="5294483648489411007" fileName="CachingPrintStream.java" startLine="134" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(C)V" />
-    <nodeInfo nodeId="5294483648489411030" fileName="CachingPrintStream.java" startLine="142" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(I)V" />
-    <nodeInfo nodeId="5294483648489411053" fileName="CachingPrintStream.java" startLine="150" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(J)V" />
-    <nodeInfo nodeId="5294483648489411076" fileName="CachingPrintStream.java" startLine="158" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(F)V" />
-    <nodeInfo nodeId="5294483648489411099" fileName="CachingPrintStream.java" startLine="166" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(D)V" />
-    <nodeInfo nodeId="5294483648489411122" fileName="CachingPrintStream.java" startLine="174" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#([C)V" />
-    <nodeInfo nodeId="5294483648489411146" fileName="CachingPrintStream.java" startLine="182" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5294483648489411169" fileName="CachingPrintStream.java" startLine="190" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="print#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="5294483648489411192" fileName="CachingPrintStream.java" startLine="198" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#()V" />
-    <nodeInfo nodeId="5294483648489411206" fileName="CachingPrintStream.java" startLine="206" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(Z)V" />
-    <nodeInfo nodeId="5294483648489411223" fileName="CachingPrintStream.java" startLine="214" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(C)V" />
-    <nodeInfo nodeId="5294483648489411240" fileName="CachingPrintStream.java" startLine="222" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(I)V" />
-    <nodeInfo nodeId="5294483648489411257" fileName="CachingPrintStream.java" startLine="230" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(J)V" />
-    <nodeInfo nodeId="5294483648489411274" fileName="CachingPrintStream.java" startLine="238" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(F)V" />
-    <nodeInfo nodeId="5294483648489411291" fileName="CachingPrintStream.java" startLine="246" startPosition="0" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(D)V" />
-    <nodeInfo nodeId="5294483648489411308" fileName="CachingPrintStream.java" startLine="254" startPosition="0" endLine="261" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#([C)V" />
-    <nodeInfo nodeId="5294483648489411326" fileName="CachingPrintStream.java" startLine="262" startPosition="0" endLine="269" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5294483648489411343" fileName="CachingPrintStream.java" startLine="270" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="println#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="1623579106310727267" fileName="CachingPrintStream.java" startLine="59" startPosition="44" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489410904" fileName="CachingPrintStream.java" startLine="99" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#(I)V" />
-    <nodeInfo nodeId="5294483648489410927" fileName="CachingPrintStream.java" startLine="108" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#([B)V" />
-    <nodeInfo nodeId="5294483648489410952" fileName="CachingPrintStream.java" startLine="117" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="write#([BII)V" />
-    <nodeInfo nodeId="5294483648489410849" fileName="CachingPrintStream.java" startLine="58" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNotEmpty#()Z" />
-    <scopeInfo nodeId="5294483648489410786" fileName="CachingPrintStream.java" startLine="32" startPosition="31" endLine="33" endPosition="29" />
-    <scopeInfo nodeId="5294483648489410800" fileName="CachingPrintStream.java" startLine="37" startPosition="18" endLine="38" endPosition="57" />
-    <scopeInfo nodeId="5294483648489410817" fileName="CachingPrintStream.java" startLine="44" startPosition="21" endLine="45" endPosition="53" />
-    <scopeInfo nodeId="5294483648489410833" fileName="CachingPrintStream.java" startLine="51" startPosition="18" endLine="52" endPosition="59" />
-    <scopeInfo nodeId="1623579106310042627" fileName="CachingPrintStream.java" startLine="63" startPosition="60" endLine="64" endPosition="23" />
-    <scopeInfo nodeId="5294483648489410860" fileName="CachingPrintStream.java" startLine="72" startPosition="47" endLine="73" endPosition="39" />
-    <scopeInfo nodeId="5294483648489410871" fileName="CachingPrintStream.java" startLine="77" startPosition="40" endLine="78" endPosition="29" />
-    <scopeInfo nodeId="5294483648489410878" fileName="CachingPrintStream.java" startLine="81" startPosition="43" endLine="82" endPosition="17" />
-    <scopeInfo nodeId="5294483648489410884" fileName="CachingPrintStream.java" startLine="85" startPosition="42" endLine="86" endPosition="29" />
-    <scopeInfo nodeId="5294483648489410892" fileName="CachingPrintStream.java" startLine="90" startPosition="36" endLine="91" endPosition="18" />
-    <scopeInfo nodeId="5294483648489410899" fileName="CachingPrintStream.java" startLine="95" startPosition="36" endLine="96" endPosition="18" />
-    <scopeInfo nodeId="5294483648489411001" fileName="CachingPrintStream.java" startLine="128" startPosition="18" endLine="129" endPosition="51" />
-    <scopeInfo nodeId="5294483648489411024" fileName="CachingPrintStream.java" startLine="136" startPosition="18" endLine="137" endPosition="51" />
-    <scopeInfo nodeId="5294483648489411047" fileName="CachingPrintStream.java" startLine="144" startPosition="18" endLine="145" endPosition="51" />
-    <scopeInfo nodeId="5294483648489411070" fileName="CachingPrintStream.java" startLine="152" startPosition="18" endLine="153" endPosition="52" />
-    <scopeInfo nodeId="5294483648489411093" fileName="CachingPrintStream.java" startLine="160" startPosition="18" endLine="161" endPosition="51" />
-    <scopeInfo nodeId="5294483648489411116" fileName="CachingPrintStream.java" startLine="168" startPosition="18" endLine="169" endPosition="51" />
-    <scopeInfo nodeId="5294483648489411140" fileName="CachingPrintStream.java" startLine="176" startPosition="18" endLine="177" endPosition="55" />
-    <scopeInfo nodeId="5294483648489411163" fileName="CachingPrintStream.java" startLine="184" startPosition="18" endLine="185" endPosition="51" />
-    <scopeInfo nodeId="5294483648489411186" fileName="CachingPrintStream.java" startLine="192" startPosition="18" endLine="193" endPosition="53" />
-    <scopeInfo nodeId="5294483648489411201" fileName="CachingPrintStream.java" startLine="200" startPosition="18" endLine="201" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411217" fileName="CachingPrintStream.java" startLine="208" startPosition="18" endLine="209" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411234" fileName="CachingPrintStream.java" startLine="216" startPosition="18" endLine="217" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411251" fileName="CachingPrintStream.java" startLine="224" startPosition="18" endLine="225" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411268" fileName="CachingPrintStream.java" startLine="232" startPosition="18" endLine="233" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411285" fileName="CachingPrintStream.java" startLine="240" startPosition="18" endLine="241" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411302" fileName="CachingPrintStream.java" startLine="248" startPosition="18" endLine="249" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411320" fileName="CachingPrintStream.java" startLine="256" startPosition="18" endLine="257" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411337" fileName="CachingPrintStream.java" startLine="264" startPosition="18" endLine="265" endPosition="24" />
-    <scopeInfo nodeId="5294483648489411354" fileName="CachingPrintStream.java" startLine="272" startPosition="18" endLine="273" endPosition="24" />
-    <scopeInfo nodeId="1623579106307770598" fileName="CachingPrintStream.java" startLine="27" startPosition="93" endLine="29" endPosition="52" />
-    <scopeInfo nodeId="5294483648489410912" fileName="CachingPrintStream.java" startLine="101" startPosition="18" endLine="103" endPosition="32" />
-    <scopeInfo nodeId="5294483648489410937" fileName="CachingPrintStream.java" startLine="110" startPosition="18" endLine="112" endPosition="37" />
-    <scopeInfo nodeId="5294483648489410965" fileName="CachingPrintStream.java" startLine="119" startPosition="18" endLine="121" endPosition="47" />
-    <scopeInfo nodeId="5294483648489410765" fileName="CachingPrintStream.java" startLine="21" startPosition="60" endLine="24" endPosition="75" />
-    <scopeInfo nodeId="5294483648489410785" fileName="CachingPrintStream.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1623579106309505811" fileName="CachingPrintStream.java" startLine="62" startPosition="59" endLine="65" endPosition="9" />
-    <scopeInfo nodeId="5294483648489410877" fileName="CachingPrintStream.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410883" fileName="CachingPrintStream.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1623579106307770594" fileName="CachingPrintStream.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="1623579106307883782" varName="ignoredOutputPatterns" />
-      <varInfo nodeId="1623579106307883800" varName="name" />
-      <varInfo nodeId="1623579106307883798" varName="out" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410794" fileName="CachingPrintStream.java" startLine="36" startPosition="30" endLine="40" endPosition="24" />
-    <scopeInfo nodeId="5294483648489410810" fileName="CachingPrintStream.java" startLine="43" startPosition="29" endLine="47" endPosition="25" />
-    <scopeInfo nodeId="5294483648489410858" fileName="CachingPrintStream.java" startLine="71" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410869" fileName="CachingPrintStream.java" startLine="76" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410890" fileName="CachingPrintStream.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410897" fileName="CachingPrintStream.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410988" fileName="CachingPrintStream.java" startLine="127" startPosition="45" endLine="131" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411011" fileName="CachingPrintStream.java" startLine="135" startPosition="42" endLine="139" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411034" fileName="CachingPrintStream.java" startLine="143" startPosition="41" endLine="147" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411057" fileName="CachingPrintStream.java" startLine="151" startPosition="43" endLine="155" endPosition="20" />
-    <scopeInfo nodeId="5294483648489411080" fileName="CachingPrintStream.java" startLine="159" startPosition="43" endLine="163" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411103" fileName="CachingPrintStream.java" startLine="167" startPosition="44" endLine="171" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411127" fileName="CachingPrintStream.java" startLine="175" startPosition="44" endLine="179" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411150" fileName="CachingPrintStream.java" startLine="183" startPosition="44" endLine="187" endPosition="19" />
-    <scopeInfo nodeId="5294483648489411173" fileName="CachingPrintStream.java" startLine="191" startPosition="46" endLine="195" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411194" fileName="CachingPrintStream.java" startLine="199" startPosition="38" endLine="203" endPosition="20" />
-    <scopeInfo nodeId="5294483648489411210" fileName="CachingPrintStream.java" startLine="207" startPosition="47" endLine="211" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411227" fileName="CachingPrintStream.java" startLine="215" startPosition="44" endLine="219" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411244" fileName="CachingPrintStream.java" startLine="223" startPosition="43" endLine="227" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411261" fileName="CachingPrintStream.java" startLine="231" startPosition="44" endLine="235" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411278" fileName="CachingPrintStream.java" startLine="239" startPosition="45" endLine="243" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411295" fileName="CachingPrintStream.java" startLine="247" startPosition="46" endLine="251" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411313" fileName="CachingPrintStream.java" startLine="255" startPosition="46" endLine="259" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411330" fileName="CachingPrintStream.java" startLine="263" startPosition="46" endLine="267" endPosition="21" />
-    <scopeInfo nodeId="5294483648489411347" fileName="CachingPrintStream.java" startLine="271" startPosition="46" endLine="275" endPosition="21" />
-    <scopeInfo nodeId="5294483648489410759" fileName="CachingPrintStream.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="5294483648489410763" varName="name" />
-      <varInfo nodeId="5294483648489410761" varName="out" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410827" fileName="CachingPrintStream.java" startLine="50" startPosition="23" endLine="55" endPosition="19" />
-    <scopeInfo nodeId="1623579106309505808" fileName="CachingPrintStream.java" startLine="61" startPosition="40" endLine="66" endPosition="7">
-      <varInfo nodeId="1623579106309505814" varName="nextPattern" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410908" fileName="CachingPrintStream.java" startLine="100" startPosition="43" endLine="105" endPosition="21" />
-    <scopeInfo nodeId="5294483648489410933" fileName="CachingPrintStream.java" startLine="109" startPosition="65" endLine="114" endPosition="21" />
-    <scopeInfo nodeId="5294483648489410961" fileName="CachingPrintStream.java" startLine="118" startPosition="64" endLine="123" endPosition="31" />
-    <scopeInfo nodeId="5294483648489410793" fileName="CachingPrintStream.java" startLine="36" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410809" fileName="CachingPrintStream.java" startLine="43" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1623579106310727270" fileName="CachingPrintStream.java" startLine="60" startPosition="55" endLine="66" endPosition="7">
-      <varInfo nodeId="1623579106309278805" varName="bufferContents" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410826" fileName="CachingPrintStream.java" startLine="50" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="5294483648489410984" fileName="CachingPrintStream.java" startLine="126" startPosition="0" endLine="133" endPosition="0">
-      <varInfo nodeId="5294483648489410986" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411007" fileName="CachingPrintStream.java" startLine="134" startPosition="0" endLine="141" endPosition="0">
-      <varInfo nodeId="5294483648489411009" varName="c" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411030" fileName="CachingPrintStream.java" startLine="142" startPosition="0" endLine="149" endPosition="0">
-      <varInfo nodeId="5294483648489411032" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411053" fileName="CachingPrintStream.java" startLine="150" startPosition="0" endLine="157" endPosition="0">
-      <varInfo nodeId="5294483648489411055" varName="lo" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411076" fileName="CachingPrintStream.java" startLine="158" startPosition="0" endLine="165" endPosition="0">
-      <varInfo nodeId="5294483648489411078" varName="f" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411099" fileName="CachingPrintStream.java" startLine="166" startPosition="0" endLine="173" endPosition="0">
-      <varInfo nodeId="5294483648489411101" varName="d" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411122" fileName="CachingPrintStream.java" startLine="174" startPosition="0" endLine="181" endPosition="0">
-      <varInfo nodeId="5294483648489411124" varName="s" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411146" fileName="CachingPrintStream.java" startLine="182" startPosition="0" endLine="189" endPosition="0">
-      <varInfo nodeId="5294483648489411148" varName="s" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411169" fileName="CachingPrintStream.java" startLine="190" startPosition="0" endLine="197" endPosition="0">
-      <varInfo nodeId="5294483648489411171" varName="obj" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411192" fileName="CachingPrintStream.java" startLine="198" startPosition="0" endLine="205" endPosition="0" />
-    <scopeInfo nodeId="5294483648489411206" fileName="CachingPrintStream.java" startLine="206" startPosition="0" endLine="213" endPosition="0">
-      <varInfo nodeId="5294483648489411208" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411223" fileName="CachingPrintStream.java" startLine="214" startPosition="0" endLine="221" endPosition="0">
-      <varInfo nodeId="5294483648489411225" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411240" fileName="CachingPrintStream.java" startLine="222" startPosition="0" endLine="229" endPosition="0">
-      <varInfo nodeId="5294483648489411242" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411257" fileName="CachingPrintStream.java" startLine="230" startPosition="0" endLine="237" endPosition="0">
-      <varInfo nodeId="5294483648489411259" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411274" fileName="CachingPrintStream.java" startLine="238" startPosition="0" endLine="245" endPosition="0">
-      <varInfo nodeId="5294483648489411276" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411291" fileName="CachingPrintStream.java" startLine="246" startPosition="0" endLine="253" endPosition="0">
-      <varInfo nodeId="5294483648489411293" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411308" fileName="CachingPrintStream.java" startLine="254" startPosition="0" endLine="261" endPosition="0">
-      <varInfo nodeId="5294483648489411310" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411326" fileName="CachingPrintStream.java" startLine="262" startPosition="0" endLine="269" endPosition="0">
-      <varInfo nodeId="5294483648489411328" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411343" fileName="CachingPrintStream.java" startLine="270" startPosition="0" endLine="277" endPosition="0">
-      <varInfo nodeId="5294483648489411345" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410904" fileName="CachingPrintStream.java" startLine="99" startPosition="0" endLine="107" endPosition="0">
-      <varInfo nodeId="5294483648489410906" varName="buf" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410927" fileName="CachingPrintStream.java" startLine="108" startPosition="0" endLine="116" endPosition="0">
-      <varInfo nodeId="5294483648489410929" varName="buf" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410952" fileName="CachingPrintStream.java" startLine="117" startPosition="0" endLine="125" endPosition="0">
-      <varInfo nodeId="5294483648489410954" varName="buf" />
-      <varInfo nodeId="5294483648489410959" varName="len" />
-      <varInfo nodeId="5294483648489410957" varName="off" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489410851" fileName="CachingPrintStream.java" startLine="59" startPosition="44" endLine="68" endPosition="21" />
-    <scopeInfo nodeId="5294483648489410849" fileName="CachingPrintStream.java" startLine="58" startPosition="0" endLine="70" endPosition="0" />
-    <unitInfo nodeId="5294483648489410732" fileName="CachingPrintStream.java" startLine="10" startPosition="0" endLine="278" endPosition="0" unitName="jetbrains.mps.testbench.util.CachingPrintStream" />
+    <file name="CachingPrintStream.java">
+      <node id="5294483648489410737" at="14,0,15,0" concept="4" trace="LS_BYTES" />
+      <node id="1623579106308380595" at="15,0,16,0" concept="4" trace="myIgnoredOutputPatterns" />
+      <node id="5294483648489410741" at="16,0,17,0" concept="4" trace="bytes" />
+      <node id="5294483648489410746" at="17,0,18,0" concept="4" trace="buffer" />
+      <node id="5294483648489410751" at="18,0,19,0" concept="4" trace="name" />
+      <node id="5294483648489410755" at="19,0,20,0" concept="4" trace="caching" />
+      <node id="4480898598412082866" at="21,60,22,15" concept="11" />
+      <node id="5294483648489410766" at="22,15,23,21" concept="3" />
+      <node id="5294483648489410772" at="23,21,24,75" concept="3" />
+      <node id="1623579106308512332" at="27,93,28,20" concept="12" />
+      <node id="1623579106308500029" at="28,20,29,52" concept="3" />
+      <node id="5294483648489410787" at="32,31,33,29" concept="9" />
+      <node id="5294483648489410799" at="37,18,38,57" concept="13" />
+      <node id="5294483648489410801" at="39,5,40,24" concept="3" />
+      <node id="5294483648489410816" at="44,21,45,53" concept="13" />
+      <node id="5294483648489410818" at="46,5,47,25" concept="3" />
+      <node id="5294483648489410832" at="51,18,52,59" concept="13" />
+      <node id="5294483648489410834" at="53,5,54,29" concept="3" />
+      <node id="5294483648489410841" at="54,29,55,19" concept="3" />
+      <node id="1623579106309278804" at="60,55,61,40" concept="8" />
+      <node id="1623579106310490624" at="63,60,64,23" concept="9" />
+      <node id="1623579106311494463" at="67,5,68,21" concept="9" />
+      <node id="5294483648489410861" at="72,47,73,39" concept="9" />
+      <node id="5294483648489410872" at="77,40,78,29" concept="9" />
+      <node id="5294483648489410879" at="81,43,82,17" concept="9" />
+      <node id="5294483648489410885" at="85,42,86,29" concept="9" />
+      <node id="5294483648489410893" at="90,36,91,18" concept="3" />
+      <node id="5294483648489410900" at="95,36,96,18" concept="3" />
+      <node id="5294483648489410913" at="101,18,102,14" concept="3" />
+      <node id="5294483648489410916" at="102,14,103,32" concept="3" />
+      <node id="5294483648489410922" at="104,5,105,21" concept="3" />
+      <node id="5294483648489410938" at="110,18,111,24" concept="3" />
+      <node id="5294483648489410942" at="111,24,112,37" concept="3" />
+      <node id="5294483648489410947" at="113,5,114,21" concept="3" />
+      <node id="5294483648489410966" at="119,18,120,19" concept="3" />
+      <node id="5294483648489410970" at="120,19,121,47" concept="3" />
+      <node id="5294483648489410977" at="122,5,123,31" concept="3" />
+      <node id="5294483648489410991" at="128,18,129,51" concept="3" />
+      <node id="5294483648489411002" at="130,5,131,19" concept="3" />
+      <node id="5294483648489411014" at="136,18,137,51" concept="3" />
+      <node id="5294483648489411025" at="138,5,139,19" concept="3" />
+      <node id="5294483648489411037" at="144,18,145,51" concept="3" />
+      <node id="5294483648489411048" at="146,5,147,19" concept="3" />
+      <node id="5294483648489411060" at="152,18,153,52" concept="3" />
+      <node id="5294483648489411071" at="154,5,155,20" concept="3" />
+      <node id="5294483648489411083" at="160,18,161,51" concept="3" />
+      <node id="5294483648489411094" at="162,5,163,19" concept="3" />
+      <node id="5294483648489411106" at="168,18,169,51" concept="3" />
+      <node id="5294483648489411117" at="170,5,171,19" concept="3" />
+      <node id="5294483648489411130" at="176,18,177,55" concept="3" />
+      <node id="5294483648489411141" at="178,5,179,19" concept="3" />
+      <node id="5294483648489411153" at="184,18,185,51" concept="3" />
+      <node id="5294483648489411164" at="186,5,187,19" concept="3" />
+      <node id="5294483648489411176" at="192,18,193,53" concept="3" />
+      <node id="5294483648489411187" at="194,5,195,21" concept="3" />
+      <node id="5294483648489411197" at="200,18,201,24" concept="3" />
+      <node id="5294483648489411202" at="202,5,203,20" concept="3" />
+      <node id="5294483648489411213" at="208,18,209,24" concept="3" />
+      <node id="5294483648489411218" at="210,5,211,21" concept="3" />
+      <node id="5294483648489411230" at="216,18,217,24" concept="3" />
+      <node id="5294483648489411235" at="218,5,219,21" concept="3" />
+      <node id="5294483648489411247" at="224,18,225,24" concept="3" />
+      <node id="5294483648489411252" at="226,5,227,21" concept="3" />
+      <node id="5294483648489411264" at="232,18,233,24" concept="3" />
+      <node id="5294483648489411269" at="234,5,235,21" concept="3" />
+      <node id="5294483648489411281" at="240,18,241,24" concept="3" />
+      <node id="5294483648489411286" at="242,5,243,21" concept="3" />
+      <node id="5294483648489411298" at="248,18,249,24" concept="3" />
+      <node id="5294483648489411303" at="250,5,251,21" concept="3" />
+      <node id="5294483648489411316" at="256,18,257,24" concept="3" />
+      <node id="5294483648489411321" at="258,5,259,21" concept="3" />
+      <node id="5294483648489411333" at="264,18,265,24" concept="3" />
+      <node id="5294483648489411338" at="266,5,267,21" concept="3" />
+      <node id="5294483648489411350" at="272,18,273,24" concept="3" />
+      <node id="5294483648489411355" at="274,5,275,21" concept="3" />
+      <node id="5294483648489410785" at="32,0,35,0" concept="7" trace="getOut#()Ljava/io/PrintStream;" />
+      <node id="5294483648489410795" at="36,30,39,5" concept="6" />
+      <node id="5294483648489410811" at="43,29,46,5" concept="6" />
+      <node id="5294483648489410828" at="50,23,53,5" concept="6" />
+      <node id="1623579106310042626" at="62,59,65,9" concept="6" />
+      <node id="5294483648489410877" at="81,0,84,0" concept="7" trace="getBytesCount#()I" />
+      <node id="5294483648489410883" at="85,0,88,0" concept="7" trace="getBuffer#()Ljava/lang/String;" />
+      <node id="5294483648489410989" at="127,45,130,5" concept="6" />
+      <node id="5294483648489411012" at="135,42,138,5" concept="6" />
+      <node id="5294483648489411035" at="143,41,146,5" concept="6" />
+      <node id="5294483648489411058" at="151,43,154,5" concept="6" />
+      <node id="5294483648489411081" at="159,43,162,5" concept="6" />
+      <node id="5294483648489411104" at="167,44,170,5" concept="6" />
+      <node id="5294483648489411128" at="175,44,178,5" concept="6" />
+      <node id="5294483648489411151" at="183,44,186,5" concept="6" />
+      <node id="5294483648489411174" at="191,46,194,5" concept="6" />
+      <node id="5294483648489411195" at="199,38,202,5" concept="6" />
+      <node id="5294483648489411211" at="207,47,210,5" concept="6" />
+      <node id="5294483648489411228" at="215,44,218,5" concept="6" />
+      <node id="5294483648489411245" at="223,43,226,5" concept="6" />
+      <node id="5294483648489411262" at="231,44,234,5" concept="6" />
+      <node id="5294483648489411279" at="239,45,242,5" concept="6" />
+      <node id="5294483648489411296" at="247,46,250,5" concept="6" />
+      <node id="5294483648489411314" at="255,46,258,5" concept="6" />
+      <node id="5294483648489411331" at="263,46,266,5" concept="6" />
+      <node id="5294483648489411348" at="271,46,274,5" concept="6" />
+      <node id="1623579106307770594" at="27,0,31,0" concept="1" trace="CachingPrintStream#(Ljava/io/OutputStream;Ljava/lang/String;[Ljava/util/regex/Pattern;)V" />
+      <node id="5294483648489410858" at="71,0,75,0" concept="7" trace="getDescription#()Ljava/lang/String;" />
+      <node id="5294483648489410869" at="76,0,80,0" concept="7" trace="getText#()Ljava/lang/String;" />
+      <node id="5294483648489410890" at="89,0,93,0" concept="7" trace="flush#()V" />
+      <node id="5294483648489410897" at="94,0,98,0" concept="7" trace="close#()V" />
+      <node id="5294483648489410909" at="100,43,104,5" concept="6" />
+      <node id="5294483648489410934" at="109,65,113,5" concept="6" />
+      <node id="5294483648489410962" at="118,64,122,5" concept="6" />
+      <node id="5294483648489410759" at="21,0,26,0" concept="1" trace="CachingPrintStream#(Ljava/io/OutputStream;Ljava/lang/String;)V" />
+      <node id="1623579106309505808" at="61,40,66,7" concept="5" />
+      <node id="5294483648489410793" at="36,0,42,0" concept="7" trace="startCaching#()V" />
+      <node id="5294483648489410809" at="43,0,49,0" concept="7" trace="stopCaching#()V" />
+      <node id="5294483648489410826" at="50,0,57,0" concept="7" trace="clear#()V" />
+      <node id="5294483648489410984" at="126,0,133,0" concept="7" trace="print#(Z)V" />
+      <node id="5294483648489411007" at="134,0,141,0" concept="7" trace="print#(C)V" />
+      <node id="5294483648489411030" at="142,0,149,0" concept="7" trace="print#(I)V" />
+      <node id="5294483648489411053" at="150,0,157,0" concept="7" trace="print#(J)V" />
+      <node id="5294483648489411076" at="158,0,165,0" concept="7" trace="print#(F)V" />
+      <node id="5294483648489411099" at="166,0,173,0" concept="7" trace="print#(D)V" />
+      <node id="5294483648489411122" at="174,0,181,0" concept="7" trace="print#([C)V" />
+      <node id="5294483648489411146" at="182,0,189,0" concept="7" trace="print#(Ljava/lang/String;)V" />
+      <node id="5294483648489411169" at="190,0,197,0" concept="7" trace="print#(Ljava/lang/Object;)V" />
+      <node id="5294483648489411192" at="198,0,205,0" concept="7" trace="println#()V" />
+      <node id="5294483648489411206" at="206,0,213,0" concept="7" trace="println#(Z)V" />
+      <node id="5294483648489411223" at="214,0,221,0" concept="7" trace="println#(C)V" />
+      <node id="5294483648489411240" at="222,0,229,0" concept="7" trace="println#(I)V" />
+      <node id="5294483648489411257" at="230,0,237,0" concept="7" trace="println#(J)V" />
+      <node id="5294483648489411274" at="238,0,245,0" concept="7" trace="println#(F)V" />
+      <node id="5294483648489411291" at="246,0,253,0" concept="7" trace="println#(D)V" />
+      <node id="5294483648489411308" at="254,0,261,0" concept="7" trace="println#([C)V" />
+      <node id="5294483648489411326" at="262,0,269,0" concept="7" trace="println#(Ljava/lang/String;)V" />
+      <node id="5294483648489411343" at="270,0,277,0" concept="7" trace="println#(Ljava/lang/Object;)V" />
+      <node id="1623579106310727267" at="59,44,67,5" concept="6" />
+      <node id="5294483648489410904" at="99,0,107,0" concept="7" trace="write#(I)V" />
+      <node id="5294483648489410927" at="108,0,116,0" concept="7" trace="write#([B)V" />
+      <node id="5294483648489410952" at="117,0,125,0" concept="7" trace="write#([BII)V" />
+      <node id="5294483648489410849" at="58,0,70,0" concept="7" trace="isNotEmpty#()Z" />
+      <scope id="5294483648489410786" at="32,31,33,29" />
+      <scope id="5294483648489410800" at="37,18,38,57" />
+      <scope id="5294483648489410817" at="44,21,45,53" />
+      <scope id="5294483648489410833" at="51,18,52,59" />
+      <scope id="1623579106310042627" at="63,60,64,23" />
+      <scope id="5294483648489410860" at="72,47,73,39" />
+      <scope id="5294483648489410871" at="77,40,78,29" />
+      <scope id="5294483648489410878" at="81,43,82,17" />
+      <scope id="5294483648489410884" at="85,42,86,29" />
+      <scope id="5294483648489410892" at="90,36,91,18" />
+      <scope id="5294483648489410899" at="95,36,96,18" />
+      <scope id="5294483648489411001" at="128,18,129,51" />
+      <scope id="5294483648489411024" at="136,18,137,51" />
+      <scope id="5294483648489411047" at="144,18,145,51" />
+      <scope id="5294483648489411070" at="152,18,153,52" />
+      <scope id="5294483648489411093" at="160,18,161,51" />
+      <scope id="5294483648489411116" at="168,18,169,51" />
+      <scope id="5294483648489411140" at="176,18,177,55" />
+      <scope id="5294483648489411163" at="184,18,185,51" />
+      <scope id="5294483648489411186" at="192,18,193,53" />
+      <scope id="5294483648489411201" at="200,18,201,24" />
+      <scope id="5294483648489411217" at="208,18,209,24" />
+      <scope id="5294483648489411234" at="216,18,217,24" />
+      <scope id="5294483648489411251" at="224,18,225,24" />
+      <scope id="5294483648489411268" at="232,18,233,24" />
+      <scope id="5294483648489411285" at="240,18,241,24" />
+      <scope id="5294483648489411302" at="248,18,249,24" />
+      <scope id="5294483648489411320" at="256,18,257,24" />
+      <scope id="5294483648489411337" at="264,18,265,24" />
+      <scope id="5294483648489411354" at="272,18,273,24" />
+      <scope id="1623579106307770598" at="27,93,29,52" />
+      <scope id="5294483648489410912" at="101,18,103,32" />
+      <scope id="5294483648489410937" at="110,18,112,37" />
+      <scope id="5294483648489410965" at="119,18,121,47" />
+      <scope id="5294483648489410765" at="21,60,24,75" />
+      <scope id="5294483648489410785" at="32,0,35,0" />
+      <scope id="1623579106309505811" at="62,59,65,9" />
+      <scope id="5294483648489410877" at="81,0,84,0" />
+      <scope id="5294483648489410883" at="85,0,88,0" />
+      <scope id="1623579106307770594" at="27,0,31,0">
+        <var name="ignoredOutputPatterns" id="1623579106307883782" />
+        <var name="name" id="1623579106307883800" />
+        <var name="out" id="1623579106307883798" />
+      </scope>
+      <scope id="5294483648489410794" at="36,30,40,24" />
+      <scope id="5294483648489410810" at="43,29,47,25" />
+      <scope id="5294483648489410858" at="71,0,75,0" />
+      <scope id="5294483648489410869" at="76,0,80,0" />
+      <scope id="5294483648489410890" at="89,0,93,0" />
+      <scope id="5294483648489410897" at="94,0,98,0" />
+      <scope id="5294483648489410988" at="127,45,131,19" />
+      <scope id="5294483648489411011" at="135,42,139,19" />
+      <scope id="5294483648489411034" at="143,41,147,19" />
+      <scope id="5294483648489411057" at="151,43,155,20" />
+      <scope id="5294483648489411080" at="159,43,163,19" />
+      <scope id="5294483648489411103" at="167,44,171,19" />
+      <scope id="5294483648489411127" at="175,44,179,19" />
+      <scope id="5294483648489411150" at="183,44,187,19" />
+      <scope id="5294483648489411173" at="191,46,195,21" />
+      <scope id="5294483648489411194" at="199,38,203,20" />
+      <scope id="5294483648489411210" at="207,47,211,21" />
+      <scope id="5294483648489411227" at="215,44,219,21" />
+      <scope id="5294483648489411244" at="223,43,227,21" />
+      <scope id="5294483648489411261" at="231,44,235,21" />
+      <scope id="5294483648489411278" at="239,45,243,21" />
+      <scope id="5294483648489411295" at="247,46,251,21" />
+      <scope id="5294483648489411313" at="255,46,259,21" />
+      <scope id="5294483648489411330" at="263,46,267,21" />
+      <scope id="5294483648489411347" at="271,46,275,21" />
+      <scope id="5294483648489410759" at="21,0,26,0">
+        <var name="name" id="5294483648489410763" />
+        <var name="out" id="5294483648489410761" />
+      </scope>
+      <scope id="5294483648489410827" at="50,23,55,19" />
+      <scope id="1623579106309505808" at="61,40,66,7">
+        <var name="nextPattern" id="1623579106309505814" />
+      </scope>
+      <scope id="5294483648489410908" at="100,43,105,21" />
+      <scope id="5294483648489410933" at="109,65,114,21" />
+      <scope id="5294483648489410961" at="118,64,123,31" />
+      <scope id="5294483648489410793" at="36,0,42,0" />
+      <scope id="5294483648489410809" at="43,0,49,0" />
+      <scope id="1623579106310727270" at="60,55,66,7">
+        <var name="bufferContents" id="1623579106309278805" />
+      </scope>
+      <scope id="5294483648489410826" at="50,0,57,0" />
+      <scope id="5294483648489410984" at="126,0,133,0">
+        <var name="b" id="5294483648489410986" />
+      </scope>
+      <scope id="5294483648489411007" at="134,0,141,0">
+        <var name="c" id="5294483648489411009" />
+      </scope>
+      <scope id="5294483648489411030" at="142,0,149,0">
+        <var name="i" id="5294483648489411032" />
+      </scope>
+      <scope id="5294483648489411053" at="150,0,157,0">
+        <var name="lo" id="5294483648489411055" />
+      </scope>
+      <scope id="5294483648489411076" at="158,0,165,0">
+        <var name="f" id="5294483648489411078" />
+      </scope>
+      <scope id="5294483648489411099" at="166,0,173,0">
+        <var name="d" id="5294483648489411101" />
+      </scope>
+      <scope id="5294483648489411122" at="174,0,181,0">
+        <var name="s" id="5294483648489411124" />
+      </scope>
+      <scope id="5294483648489411146" at="182,0,189,0">
+        <var name="s" id="5294483648489411148" />
+      </scope>
+      <scope id="5294483648489411169" at="190,0,197,0">
+        <var name="obj" id="5294483648489411171" />
+      </scope>
+      <scope id="5294483648489411192" at="198,0,205,0" />
+      <scope id="5294483648489411206" at="206,0,213,0">
+        <var name="x" id="5294483648489411208" />
+      </scope>
+      <scope id="5294483648489411223" at="214,0,221,0">
+        <var name="x" id="5294483648489411225" />
+      </scope>
+      <scope id="5294483648489411240" at="222,0,229,0">
+        <var name="x" id="5294483648489411242" />
+      </scope>
+      <scope id="5294483648489411257" at="230,0,237,0">
+        <var name="x" id="5294483648489411259" />
+      </scope>
+      <scope id="5294483648489411274" at="238,0,245,0">
+        <var name="x" id="5294483648489411276" />
+      </scope>
+      <scope id="5294483648489411291" at="246,0,253,0">
+        <var name="x" id="5294483648489411293" />
+      </scope>
+      <scope id="5294483648489411308" at="254,0,261,0">
+        <var name="x" id="5294483648489411310" />
+      </scope>
+      <scope id="5294483648489411326" at="262,0,269,0">
+        <var name="x" id="5294483648489411328" />
+      </scope>
+      <scope id="5294483648489411343" at="270,0,277,0">
+        <var name="x" id="5294483648489411345" />
+      </scope>
+      <scope id="5294483648489410904" at="99,0,107,0">
+        <var name="buf" id="5294483648489410906" />
+      </scope>
+      <scope id="5294483648489410927" at="108,0,116,0">
+        <var name="buf" id="5294483648489410929" />
+      </scope>
+      <scope id="5294483648489410952" at="117,0,125,0">
+        <var name="buf" id="5294483648489410954" />
+        <var name="len" id="5294483648489410959" />
+        <var name="off" id="5294483648489410957" />
+      </scope>
+      <scope id="5294483648489410851" at="59,44,68,21" />
+      <scope id="5294483648489410849" at="58,0,70,0" />
+      <unit id="5294483648489410732" at="10,0,278,0" name="jetbrains.mps.testbench.util.CachingPrintStream" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

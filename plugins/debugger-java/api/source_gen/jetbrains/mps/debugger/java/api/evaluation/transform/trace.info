@@ -1,45 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
   <root nodeRef="r:9e383f3b-cf02-4e9f-861b-72b030ba5e68(jetbrains.mps.debugger.java.api.evaluation.transform)/4871586248217809898">
-    <nodeInfo nodeId="4871586248217809912" fileName="TransformatorBuilder.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="7494124042451449896" fileName="TransformatorBuilder.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOCK" />
-    <nodeInfo nodeId="8321799582438650785" fileName="TransformatorBuilder.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljetbrains/mps/debugger/java/api/evaluation/transform/TransformatorBuilder/Transformator;" />
-    <nodeInfo nodeId="2176810104473232861" fileName="TransformatorBuilder.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJniSignatureFromType#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2176810104473232867" fileName="TransformatorBuilder.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProxyTypeFromType#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7157912897227122364" fileName="TransformatorBuilder.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="7157912897227122368" fileName="TransformatorBuilder.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="7494124042451491863" fileName="TransformatorBuilder.java" startLine="26" startPosition="25" endLine="27" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321799582438650762" fileName="TransformatorBuilder.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="transform#()V" />
-    <nodeInfo nodeId="8321799582438670187" fileName="TransformatorBuilder.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="transformEvaluator#()V" />
-    <nodeInfo nodeId="6778494138741517016" fileName="TransformatorBuilder.java" startLine="40" startPosition="10" endLine="41" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4871586248217809900" fileName="TransformatorBuilder.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransformatorBuilder#()V" />
-    <nodeInfo nodeId="8321799582438650766" fileName="TransformatorBuilder.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Transformator#()V" />
-    <nodeInfo nodeId="7494124042451491859" fileName="TransformatorBuilder.java" startLine="25" startPosition="52" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4871586248217809907" fileName="TransformatorBuilder.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/debugger/java/api/evaluation/transform/TransformatorBuilder;" />
-    <scopeInfo nodeId="4871586248217809903" fileName="TransformatorBuilder.java" startLine="12" startPosition="33" endLine="12" endPosition="33" />
-    <scopeInfo nodeId="8321799582438650768" fileName="TransformatorBuilder.java" startLine="32" startPosition="28" endLine="32" endPosition="28" />
-    <scopeInfo nodeId="8321799582438650785" fileName="TransformatorBuilder.java" startLine="15" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="8321799582438650792" varName="insideTransformation" />
-      <varInfo nodeId="8321799582438650790" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2176810104473232861" fileName="TransformatorBuilder.java" startLine="17" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="2176810104473232865" varName="type" />
-    </scopeInfo>
-    <scopeInfo nodeId="2176810104473232867" fileName="TransformatorBuilder.java" startLine="19" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="2176810104473232871" varName="type" />
-    </scopeInfo>
-    <scopeInfo nodeId="7157912897227122364" fileName="TransformatorBuilder.java" startLine="21" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7157912897227122368" fileName="TransformatorBuilder.java" startLine="23" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="7494124042451491861" fileName="TransformatorBuilder.java" startLine="26" startPosition="25" endLine="27" endPosition="22" />
-    <scopeInfo nodeId="8321799582438650762" fileName="TransformatorBuilder.java" startLine="35" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8321799582438670187" fileName="TransformatorBuilder.java" startLine="37" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6778494138741515965" fileName="TransformatorBuilder.java" startLine="40" startPosition="10" endLine="41" endPosition="42" />
-    <scopeInfo nodeId="4871586248217809900" fileName="TransformatorBuilder.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="8321799582438650766" fileName="TransformatorBuilder.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="4871586248217809910" fileName="TransformatorBuilder.java" startLine="25" startPosition="52" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="4871586248217809907" fileName="TransformatorBuilder.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="8321799582438650756" fileName="TransformatorBuilder.java" startLine="31" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder$Transformator" />
-    <unitInfo nodeId="4871586248217809898" fileName="TransformatorBuilder.java" startLine="8" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder" />
+    <file name="TransformatorBuilder.java">
+      <node id="4871586248217809912" at="9,0,10,0" concept="4" trace="INSTANCE" />
+      <node id="7494124042451449896" at="10,0,11,0" concept="4" trace="LOCK" />
+      <node id="8321799582438650785" at="15,0,16,0" concept="2" trace="build#(Lorg/jetbrains/mps/openapi/model/SNode;Z)Ljetbrains/mps/debugger/java/api/evaluation/transform/TransformatorBuilder/Transformator;" />
+      <node id="2176810104473232861" at="17,0,18,0" concept="2" trace="getJniSignatureFromType#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="2176810104473232867" at="19,0,20,0" concept="2" trace="getProxyTypeFromType#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7157912897227122364" at="21,0,22,0" concept="2" trace="init#()V" />
+      <node id="7157912897227122368" at="23,0,24,0" concept="2" trace="dispose#()V" />
+      <node id="7494124042451491863" at="26,25,27,22" concept="3" />
+      <node id="8321799582438650762" at="35,0,36,0" concept="2" trace="transform#()V" />
+      <node id="8321799582438670187" at="37,0,38,0" concept="2" trace="transformEvaluator#()V" />
+      <node id="6778494138741517016" at="40,10,41,42" concept="1" />
+      <node id="4871586248217809900" at="12,0,14,0" concept="0" trace="TransformatorBuilder#()V" />
+      <node id="8321799582438650766" at="32,0,34,0" concept="0" trace="Transformator#()V" />
+      <node id="7494124042451491859" at="25,52,28,5" concept="6" />
+      <node id="4871586248217809907" at="25,0,30,0" concept="5" trace="getInstance#()Ljetbrains/mps/debugger/java/api/evaluation/transform/TransformatorBuilder;" />
+      <scope id="4871586248217809903" at="12,33,12,33" />
+      <scope id="8321799582438650768" at="32,28,32,28" />
+      <scope id="8321799582438650785" at="15,0,16,0">
+        <var name="insideTransformation" id="8321799582438650792" />
+        <var name="node" id="8321799582438650790" />
+      </scope>
+      <scope id="2176810104473232861" at="17,0,18,0">
+        <var name="type" id="2176810104473232865" />
+      </scope>
+      <scope id="2176810104473232867" at="19,0,20,0">
+        <var name="type" id="2176810104473232871" />
+      </scope>
+      <scope id="7157912897227122364" at="21,0,22,0" />
+      <scope id="7157912897227122368" at="23,0,24,0" />
+      <scope id="7494124042451491861" at="26,25,27,22" />
+      <scope id="8321799582438650762" at="35,0,36,0" />
+      <scope id="8321799582438670187" at="37,0,38,0" />
+      <scope id="6778494138741515965" at="40,10,41,42" />
+      <scope id="4871586248217809900" at="12,0,14,0" />
+      <scope id="8321799582438650766" at="32,0,34,0" />
+      <scope id="4871586248217809910" at="25,52,28,5" />
+      <scope id="4871586248217809907" at="25,0,30,0" />
+      <unit id="8321799582438650756" at="31,0,39,0" name="jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder$Transformator" />
+      <unit id="4871586248217809898" at="8,0,44,0" name="jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

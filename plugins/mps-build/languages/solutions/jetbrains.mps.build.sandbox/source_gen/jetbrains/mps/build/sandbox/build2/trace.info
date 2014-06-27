@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
   <root nodeRef="r:d8eea393-bbca-41b6-92f2-0f366b881ba8(jetbrains.mps.build.sandbox.build2)/2769948622284624385">
-    <unitInfo nodeId="2769948622284624385" fileName="myCore.properties" startLine="1" startPosition="0" endLine="3" endPosition="0" unitName="jetbrains.mps.build.sandbox.build2.myCore" />
-    <unitInfo nodeId="2769948622284624385" fileName="myCore.xml" startLine="1" startPosition="0" endLine="153" endPosition="10" unitName="jetbrains.mps.build.sandbox.build2.myCore" />
+    <file name="myCore.xml">
+      <unit id="2769948622284624385" at="1,0,153,10" name="jetbrains.mps.build.sandbox.build2.myCore" />
+    </file>
+    <file name="myCore.properties">
+      <unit id="2769948622284624385" at="1,0,3,0" name="jetbrains.mps.build.sandbox.build2.myCore" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

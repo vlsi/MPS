@@ -1,14 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="MultipleEditorsTestChild_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestChild_BehaviorDescriptor" />
-  <unitInfo fileName="MultipleEditorsTestEditorComponentChildSubconcept_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestEditorComponentChildSubconcept_BehaviorDescriptor" />
-  <unitInfo fileName="MultipleEditorsTestEditorComponentChild_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestEditorComponentChild_BehaviorDescriptor" />
-  <unitInfo fileName="MultipleEditorsTestEditorComponentRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestEditorComponentRoot_BehaviorDescriptor" />
-  <unitInfo fileName="MultipleEditorsTestMostSpecificChild_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestMostSpecificChild_BehaviorDescriptor" />
-  <unitInfo fileName="MultipleEditorsTestMostSpecificRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestMostSpecificRoot_BehaviorDescriptor" />
-  <unitInfo fileName="MultipleEditorsTestRefNodeListRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestRefNodeListRoot_BehaviorDescriptor" />
-  <unitInfo fileName="MultipleEditorsTestRefNodeRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestRefNodeRoot_BehaviorDescriptor" />
-  <unitInfo fileName="MultipleEditorsTestRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestRoot_BehaviorDescriptor" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="MultipleEditorsTestEditorComponentChildSubconcept_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestEditorComponentChildSubconcept_BehaviorDescriptor" />
+    </file>
+    <file name="MultipleEditorsTestMostSpecificChild_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestMostSpecificChild_BehaviorDescriptor" />
+    </file>
+    <file name="MultipleEditorsTestChild_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestChild_BehaviorDescriptor" />
+    </file>
+    <file name="MultipleEditorsTestRefNodeListRoot_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestRefNodeListRoot_BehaviorDescriptor" />
+    </file>
+    <file name="MultipleEditorsTestEditorComponentRoot_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestEditorComponentRoot_BehaviorDescriptor" />
+    </file>
+    <file name="MultipleEditorsTestRefNodeRoot_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestRefNodeRoot_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,40,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="MultipleEditorsTestRoot_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestRoot_BehaviorDescriptor" />
+    </file>
+    <file name="MultipleEditorsTestMostSpecificRoot_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestMostSpecificRoot_BehaviorDescriptor" />
+    </file>
+    <file name="MultipleEditorsTestEditorComponentChild_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.behavior.MultipleEditorsTestEditorComponentChild_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

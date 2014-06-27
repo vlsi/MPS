@@ -170,9 +170,7 @@
     <dep root="4914935534438618871" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>
-  <source id="1167163238171" name="TLB_main" hash="9l9j7bb49r70o05xuw30zhetyqgkt8p">
-    <dep root="4914935534438618871" />
-  </source>
+  <source id="1167163238171" name="TLB_main" hash="9l9j7bb49r70o05xuw30zhetyqgkt8p" />
   <source id="1184374857687" name="insert_TemplateFragment_ContextNodeQuery" hash="-d3ys3y5s0ok61pazocybfgxdho42bhv" />
   <source id="1199965771119" name="AddTypeHints" hash="-a284o0xd0pw4u4q4agn5gvixjh1zka3" />
   <source id="1217270660170" name="ReduceReferenceToText" hash="uir510tqrl0uqmjbcg6oarrz0oi4ae" />

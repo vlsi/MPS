@@ -1,70 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="ListValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.ListValue_BehaviorDescriptor" />
-  <unitInfo fileName="PatternTest_BehaviorDescriptor.java" startLine="14" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_BehaviorDescriptor" />
-  <unitInfo fileName="PropertyValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.PropertyValue_BehaviorDescriptor" />
-  <unitInfo fileName="TestListReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.TestListReference_BehaviorDescriptor" />
-  <unitInfo fileName="TestPropertyVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.TestPropertyVariableReference_BehaviorDescriptor" />
-  <unitInfo fileName="TestVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.TestVariableReference_BehaviorDescriptor" />
-  <unitInfo fileName="VariableValue_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.VariableValue_BehaviorDescriptor" />
-  <root nodeRef="r:d2b7cfed-de53-404b-aa28-8afd6d7632e0(jetbrains.mps.lang.pattern.testLang.behavior)/394224946578869061">
-    <nodeInfo nodeId="394224946578905096" fileName="PatternTest_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7885114646737405087" fileName="PatternTest_Behavior.java" startLine="19" startPosition="78" endLine="20" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7885114646737405094" fileName="PatternTest_Behavior.java" startLine="20" startPosition="49" endLine="21" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7885114646737405103" fileName="PatternTest_Behavior.java" startLine="21" startPosition="26" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2433982077498361212" fileName="PatternTest_Behavior.java" startLine="25" startPosition="75" endLine="26" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7885114646737540818" fileName="PatternTest_Behavior.java" startLine="29" startPosition="88" endLine="30" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7885114646737540824" fileName="PatternTest_Behavior.java" startLine="30" startPosition="49" endLine="31" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7885114646737540829" fileName="PatternTest_Behavior.java" startLine="31" startPosition="26" endLine="32" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7885114646737405105" fileName="PatternTest_Behavior.java" startLine="35" startPosition="73" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7885114646737405107" fileName="PatternTest_Behavior.java" startLine="39" startPosition="74" endLine="40" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3403446150498856037" fileName="PatternTest_Behavior.java" startLine="43" startPosition="88" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPatternTestName_394224946578869064#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClassName_1216136193905#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTestCase_1216134500045#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTestName_1216136419751#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isMpsStartRequired_3310779261129403089#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTestSet_1216130724401#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTestMethods_2148145109766218395#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <scopeInfo nodeId="394224946578869063" fileName="PatternTest_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="394224946578869067" fileName="PatternTest_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="81" />
-    <scopeInfo nodeId="7885114646737540794" fileName="PatternTest_Behavior.java" startLine="25" startPosition="75" endLine="26" endPosition="147" />
-    <scopeInfo nodeId="7885114646737405075" fileName="PatternTest_Behavior.java" startLine="35" startPosition="73" endLine="36" endPosition="20" />
-    <scopeInfo nodeId="7885114646737405071" fileName="PatternTest_Behavior.java" startLine="39" startPosition="74" endLine="40" endPosition="24" />
-    <scopeInfo nodeId="3403446150498856035" fileName="PatternTest_Behavior.java" startLine="43" startPosition="88" endLine="44" endPosition="16" />
-    <scopeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="394224946578869061" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="394224946578869061" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7885114646737405065" fileName="PatternTest_Behavior.java" startLine="19" startPosition="78" endLine="22" endPosition="19">
-      <varInfo nodeId="7885114646737405088" varName="methods" />
-    </scopeInfo>
-    <scopeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="394224946578869061" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7885114646737540811" fileName="PatternTest_Behavior.java" startLine="29" startPosition="88" endLine="32" endPosition="19">
-      <varInfo nodeId="7885114646737540819" varName="methods" />
-    </scopeInfo>
-    <scopeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="394224946578869061" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="394224946578869061" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="394224946578869061" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="19" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="394224946578869061" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="29" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="394224946578869061" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="394224946578869061" fileName="PatternTest_Behavior.java" startLine="11" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="TestPropertyVariableReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestPropertyVariableReference_BehaviorDescriptor" />
+    </file>
+    <file name="TestListReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestListReference_BehaviorDescriptor" />
+    </file>
+    <file name="PropertyValue_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PropertyValue_BehaviorDescriptor" />
+    </file>
+    <file name="PatternTest_BehaviorDescriptor.java">
+      <unit at="14,0,55,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_BehaviorDescriptor" />
+    </file>
+    <file name="VariableValue_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.pattern.testLang.behavior.VariableValue_BehaviorDescriptor" />
+    </file>
+    <file name="ListValue_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.pattern.testLang.behavior.ListValue_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,36,0" name="jetbrains.mps.lang.pattern.testLang.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="TestVariableReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.pattern.testLang.behavior.TestVariableReference_BehaviorDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:d2b7cfed-de53-404b-aa28-8afd6d7632e0(jetbrains.mps.lang.pattern.testLang.behavior)/394224946578869061">
+    <file name="PatternTest_Behavior.java">
+      <node id="394224946578905096" at="15,83,16,81" concept="2" />
+      <node id="7885114646737405087" at="19,78,20,49" concept="1" />
+      <node id="7885114646737405094" at="20,49,21,26" concept="0" />
+      <node id="7885114646737405103" at="21,26,22,19" concept="2" />
+      <node id="2433982077498361212" at="25,75,26,147" concept="2" />
+      <node id="7885114646737540818" at="29,88,30,49" concept="1" />
+      <node id="7885114646737540824" at="30,49,31,26" concept="0" />
+      <node id="7885114646737540829" at="31,26,32,19" concept="2" />
+      <node id="7885114646737405105" at="35,73,36,20" concept="2" />
+      <node id="7885114646737405107" at="39,74,40,24" concept="2" />
+      <node id="3403446150498856037" at="43,88,44,16" concept="2" />
+      <node id="394224946578869061" at="12,0,14,0" concept="3" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="394224946578869061" at="15,0,18,0" concept="3" trace="call_getPatternTestName_394224946578869064#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="394224946578869061" at="25,0,28,0" concept="3" trace="virtual_getClassName_1216136193905#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="394224946578869061" at="35,0,38,0" concept="3" trace="virtual_getTestCase_1216134500045#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="394224946578869061" at="39,0,42,0" concept="3" trace="virtual_getTestName_1216136419751#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="394224946578869061" at="43,0,46,0" concept="3" trace="virtual_isMpsStartRequired_3310779261129403089#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="394224946578869061" at="19,0,24,0" concept="3" trace="virtual_getTestSet_1216130724401#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="394224946578869061" at="29,0,34,0" concept="3" trace="virtual_getTestMethods_2148145109766218395#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <scope id="394224946578869063" at="12,43,12,43" />
+      <scope id="394224946578869067" at="15,83,16,81" />
+      <scope id="7885114646737540794" at="25,75,26,147" />
+      <scope id="7885114646737405075" at="35,73,36,20" />
+      <scope id="7885114646737405071" at="39,74,40,24" />
+      <scope id="3403446150498856035" at="43,88,44,16" />
+      <scope id="394224946578869061" at="12,0,14,0">
+        <var name="thisNode" id="394224946578869061" />
+      </scope>
+      <scope id="394224946578869061" at="15,0,18,0">
+        <var name="thisNode" id="394224946578869061" />
+      </scope>
+      <scope id="7885114646737405065" at="19,78,22,19">
+        <var name="methods" id="7885114646737405088" />
+      </scope>
+      <scope id="394224946578869061" at="25,0,28,0">
+        <var name="thisNode" id="394224946578869061" />
+      </scope>
+      <scope id="7885114646737540811" at="29,88,32,19">
+        <var name="methods" id="7885114646737540819" />
+      </scope>
+      <scope id="394224946578869061" at="35,0,38,0">
+        <var name="thisNode" id="394224946578869061" />
+      </scope>
+      <scope id="394224946578869061" at="39,0,42,0">
+        <var name="thisNode" id="394224946578869061" />
+      </scope>
+      <scope id="394224946578869061" at="43,0,46,0">
+        <var name="thisNode" id="394224946578869061" />
+      </scope>
+      <scope id="394224946578869061" at="19,0,24,0">
+        <var name="thisNode" id="394224946578869061" />
+      </scope>
+      <scope id="394224946578869061" at="29,0,34,0">
+        <var name="thisNode" id="394224946578869061" />
+      </scope>
+      <unit id="394224946578869061" at="11,0,47,0" name="jetbrains.mps.lang.pattern.testLang.behavior.PatternTest_Behavior" />
+    </file>
+  </root>
+</debug-info>
 

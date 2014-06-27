@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:567e1961-8569-4966-8d8a-ba7c02fdcb28(jetbrains.mps.lang.editor.diagram.generator.template.util)/8082246476500401936">
-    <nodeInfo nodeId="8082246476500752005" fileName="FigureUtils.java" startLine="13" startPosition="58" endLine="14" endPosition="612" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8082246476500660468" fileName="FigureUtils.java" startLine="19" startPosition="60" endLine="20" endPosition="612" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8082246476500752003" fileName="FigureUtils.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMovable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8082246476500575376" fileName="FigureUtils.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isResizable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="8082246476500752004" fileName="FigureUtils.java" startLine="13" startPosition="58" endLine="14" endPosition="612" />
-    <scopeInfo nodeId="8082246476500575365" fileName="FigureUtils.java" startLine="19" startPosition="60" endLine="20" endPosition="612" />
-    <scopeInfo nodeId="8082246476500752003" fileName="FigureUtils.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="8082246476500752024" varName="figureReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="8082246476500575376" fileName="FigureUtils.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="8082246476500575391" varName="figureReference" />
-    </scopeInfo>
-    <unitInfo nodeId="8082246476500401936" fileName="FigureUtils.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.generator.template.util.FigureUtils" />
+    <file name="FigureUtils.java">
+      <node id="8082246476500752005" at="13,58,14,612" concept="0" />
+      <node id="8082246476500660468" at="19,60,20,612" concept="0" />
+      <node id="8082246476500752003" at="13,0,16,0" concept="1" trace="isMovable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8082246476500575376" at="19,0,22,0" concept="1" trace="isResizable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="8082246476500752004" at="13,58,14,612" />
+      <scope id="8082246476500575365" at="19,60,20,612" />
+      <scope id="8082246476500752003" at="13,0,16,0">
+        <var name="figureReference" id="8082246476500752024" />
+      </scope>
+      <scope id="8082246476500575376" at="19,0,22,0">
+        <var name="figureReference" id="8082246476500575391" />
+      </scope>
+      <unit id="8082246476500401936" at="12,0,23,0" name="jetbrains.mps.lang.editor.diagram.generator.template.util.FigureUtils" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

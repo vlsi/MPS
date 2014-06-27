@@ -1,115 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.structure.StructureAspectDescriptor" />
-  <root nodeRef="r:eb859fb0-1cb5-4829-a090-c7f47391d585(jetbrains.mps.lang.editor.multiple.testLanguage.structure)/7687090409437208772">
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="24" startPosition="53" endLine="25" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="25" startPosition="88" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="26" startPosition="73" endLine="27" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="27" startPosition="64" endLine="28" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="28" startPosition="67" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="32" startPosition="45" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="37" startPosition="24" endLine="38" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="40" startPosition="72" endLine="41" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="43" startPosition="63" endLine="44" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="46" startPosition="66" endLine="47" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="48" startPosition="5" endLine="49" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="54" startPosition="45" endLine="55" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="55" startPosition="23" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="59" startPosition="28" endLine="60" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/editor/multiple/testLanguage/structure/ProjectionType;" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="36" startPosition="57" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="39" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="42" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="45" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectionType#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="36" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/editor/multiple/testLanguage/structure/ProjectionType;" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="20" startPosition="5" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="27" startPosition="5" endLine="28" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="29" startPosition="33" endLine="30" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="38" startPosition="49" endLine="39" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="42" startPosition="5" endLine="43" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="10" startPosition="44" endLine="13" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="16" startPosition="49" endLine="19" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="24" startPosition="47" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="30" startPosition="49" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="39" startPosition="63" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="14" startPosition="105" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="28" startPosition="105" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="16" startPosition="27" endLine="17" endPosition="23" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="20" startPosition="36" endLine="21" endPosition="24" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="32" startPosition="45" endLine="33" endPosition="40" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="37" startPosition="24" endLine="38" endPosition="41" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="40" startPosition="72" endLine="41" endPosition="42" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="43" startPosition="63" endLine="44" endPosition="33" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="46" startPosition="66" endLine="47" endPosition="36" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="59" startPosition="28" endLine="60" endPosition="24" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="54" startPosition="45" endLine="56" endPosition="25" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="7687090409437208772" varName="name" />
-      <varInfo nodeId="7687090409437208772" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="24" startPosition="53" endLine="29" endPosition="16">
-      <varInfo nodeId="7687090409437208772" varName="list" />
-    </scopeInfo>
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="36" startPosition="57" endLine="49" endPosition="39" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="36" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="7687090409437208772" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" />
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7">
-      <varInfo nodeId="7687090409437208772" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7">
-      <varInfo nodeId="7687090409437208772" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
-      <varInfo nodeId="7687090409437208772" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="7687090409437208772" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
-      <varInfo nodeId="7687090409437208772" varName="constants" />
-    </scopeInfo>
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
-      <varInfo nodeId="7687090409437208772" varName="constants" />
-    </scopeInfo>
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="7687090409437208772" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="7687090409437208772" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="7687090409437208772" fileName="ProjectionType.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.structure.ProjectionType" />
-    <unitInfo nodeId="7687090409437208772" fileName="ProjectionType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.testLanguage.structure.ProjectionType_PropertySupport" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root>
+    <file name="StructureAspectDescriptor.java">
+      <unit at="10,0,41,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.StructureAspectDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:eb859fb0-1cb5-4829-a090-c7f47391d585(jetbrains.mps.lang.editor.multiple.testLanguage.structure)/7687090409437208772">
+    <file name="ProjectionType.java">
+      <node id="7687090409437208772" at="14,0,15,0" concept="2" trace="myName" />
+      <node id="7687090409437208772" at="16,27,17,23" concept="6" />
+      <node id="7687090409437208772" at="20,36,21,24" concept="6" />
+      <node id="7687090409437208772" at="24,53,25,88" concept="5" />
+      <node id="7687090409437208772" at="25,88,26,73" concept="1" />
+      <node id="7687090409437208772" at="26,73,27,64" concept="1" />
+      <node id="7687090409437208772" at="27,64,28,67" concept="1" />
+      <node id="7687090409437208772" at="28,67,29,16" concept="6" />
+      <node id="7687090409437208772" at="32,45,33,40" concept="6" />
+      <node id="7687090409437208772" at="37,24,38,41" concept="6" />
+      <node id="7687090409437208772" at="40,72,41,42" concept="6" />
+      <node id="7687090409437208772" at="43,63,44,33" concept="6" />
+      <node id="7687090409437208772" at="46,66,47,36" concept="6" />
+      <node id="7687090409437208772" at="48,5,49,39" concept="6" />
+      <node id="7687090409437208772" at="52,0,53,0" concept="2" trace="myValue" />
+      <node id="7687090409437208772" at="54,45,55,23" concept="1" />
+      <node id="7687090409437208772" at="55,23,56,25" concept="1" />
+      <node id="7687090409437208772" at="59,28,60,24" concept="6" />
+      <node id="7687090409437208772" at="16,0,19,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="7687090409437208772" at="20,0,23,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="7687090409437208772" at="32,0,35,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/editor/multiple/testLanguage/structure/ProjectionType;" />
+      <node id="7687090409437208772" at="36,57,39,5" concept="3" />
+      <node id="7687090409437208772" at="39,5,42,5" concept="3" />
+      <node id="7687090409437208772" at="42,5,45,5" concept="3" />
+      <node id="7687090409437208772" at="45,5,48,5" concept="3" />
+      <node id="7687090409437208772" at="59,0,62,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="7687090409437208772" at="54,0,58,0" concept="0" trace="ProjectionType#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="7687090409437208772" at="24,0,31,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="7687090409437208772" at="36,0,51,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/editor/multiple/testLanguage/structure/ProjectionType;" />
+      <scope id="7687090409437208772" at="16,27,17,23" />
+      <scope id="7687090409437208772" at="20,36,21,24" />
+      <scope id="7687090409437208772" at="32,45,33,40" />
+      <scope id="7687090409437208772" at="37,24,38,41" />
+      <scope id="7687090409437208772" at="40,72,41,42" />
+      <scope id="7687090409437208772" at="43,63,44,33" />
+      <scope id="7687090409437208772" at="46,66,47,36" />
+      <scope id="7687090409437208772" at="59,28,60,24" />
+      <scope id="7687090409437208772" at="54,45,56,25" />
+      <scope id="7687090409437208772" at="16,0,19,0" />
+      <scope id="7687090409437208772" at="20,0,23,0" />
+      <scope id="7687090409437208772" at="32,0,35,0" />
+      <scope id="7687090409437208772" at="59,0,62,0" />
+      <scope id="7687090409437208772" at="54,0,58,0">
+        <var name="name" id="7687090409437208772" />
+        <var name="value" id="7687090409437208772" />
+      </scope>
+      <scope id="7687090409437208772" at="24,53,29,16">
+        <var name="list" id="7687090409437208772" />
+      </scope>
+      <scope id="7687090409437208772" at="24,0,31,0" />
+      <scope id="7687090409437208772" at="36,57,49,39" />
+      <scope id="7687090409437208772" at="36,0,51,0">
+        <var name="value" id="7687090409437208772" />
+      </scope>
+      <unit id="7687090409437208772" at="9,0,63,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.ProjectionType" />
+    </file>
+    <file name="ProjectionType_PropertySupport.java">
+      <node id="7687090409437208772" at="11,24,12,18" concept="6" />
+      <node id="7687090409437208772" at="13,5,14,105" concept="5" />
+      <node id="7687090409437208772" at="15,33,16,49" concept="5" />
+      <node id="7687090409437208772" at="17,45,18,20" concept="6" />
+      <node id="7687090409437208772" at="20,5,21,17" concept="6" />
+      <node id="7687090409437208772" at="25,24,26,18" concept="6" />
+      <node id="7687090409437208772" at="27,5,28,105" concept="5" />
+      <node id="7687090409437208772" at="29,33,30,49" concept="5" />
+      <node id="7687090409437208772" at="31,45,32,43" concept="6" />
+      <node id="7687090409437208772" at="34,5,35,16" concept="6" />
+      <node id="7687090409437208772" at="38,49,39,63" concept="5" />
+      <node id="7687090409437208772" at="40,27,41,32" concept="6" />
+      <node id="7687090409437208772" at="42,5,43,14" concept="6" />
+      <node id="7687090409437208772" at="10,44,13,5" concept="3" />
+      <node id="7687090409437208772" at="16,49,19,7" concept="3" />
+      <node id="7687090409437208772" at="24,47,27,5" concept="3" />
+      <node id="7687090409437208772" at="30,49,33,7" concept="3" />
+      <node id="7687090409437208772" at="39,63,42,5" concept="3" />
+      <node id="7687090409437208772" at="14,105,20,5" concept="8" />
+      <node id="7687090409437208772" at="28,105,34,5" concept="8" />
+      <node id="7687090409437208772" at="38,0,45,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="7687090409437208772" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="7687090409437208772" at="24,0,37,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="7687090409437208772" at="11,24,12,18" />
+      <scope id="7687090409437208772" at="17,45,18,20" />
+      <scope id="7687090409437208772" at="25,24,26,18" />
+      <scope id="7687090409437208772" at="31,45,32,43" />
+      <scope id="7687090409437208772" at="40,27,41,32" />
+      <scope id="7687090409437208772" at="15,33,19,7">
+        <var name="constant" id="7687090409437208772" />
+      </scope>
+      <scope id="7687090409437208772" at="29,33,33,7">
+        <var name="constant" id="7687090409437208772" />
+      </scope>
+      <scope id="7687090409437208772" at="38,49,43,14">
+        <var name="constant" id="7687090409437208772" />
+      </scope>
+      <scope id="7687090409437208772" at="38,0,45,0">
+        <var name="value" id="7687090409437208772" />
+      </scope>
+      <scope id="7687090409437208772" at="10,44,21,17">
+        <var name="constants" id="7687090409437208772" />
+      </scope>
+      <scope id="7687090409437208772" at="24,47,35,16">
+        <var name="constants" id="7687090409437208772" />
+      </scope>
+      <scope id="7687090409437208772" at="10,0,23,0">
+        <var name="value" id="7687090409437208772" />
+      </scope>
+      <scope id="7687090409437208772" at="24,0,37,0">
+        <var name="value" id="7687090409437208772" />
+      </scope>
+      <unit id="7687090409437208772" at="9,0,46,0" name="jetbrains.mps.lang.editor.multiple.testLanguage.structure.ProjectionType_PropertySupport" />
+    </file>
+  </root>
+</debug-info>
 

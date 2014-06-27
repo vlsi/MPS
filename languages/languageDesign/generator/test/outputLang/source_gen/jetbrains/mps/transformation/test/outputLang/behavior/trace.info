@@ -1,20 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="CustomRoot_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.CustomRoot_BehaviorDescriptor" />
-  <unitInfo fileName="CustomStatementRef_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.CustomStatementRef_BehaviorDescriptor" />
-  <unitInfo fileName="CustomStatement_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.CustomStatement_BehaviorDescriptor" />
-  <unitInfo fileName="OutputNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.OutputNode_BehaviorDescriptor" />
-  <unitInfo fileName="OutputNode_forDontApplyReductionTwice_test_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.OutputNode_forDontApplyReductionTwice_test_BehaviorDescriptor" />
-  <unitInfo fileName="OutputRoot_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.OutputRoot_BehaviorDescriptor" />
-  <unitInfo fileName="TwoVarStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.TwoVarStatement_BehaviorDescriptor" />
-  <root nodeRef="r:6403882d-ffad-429a-8b59-eb2f29334fb1(jetbrains.mps.transformation.test.outputLang.behavior)/2511103526757027810">
-    <nodeInfo nodeId="2511103526757027810" fileName="CustomRoot_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="2511103526757027812" fileName="CustomRoot_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="2511103526757027810" fileName="CustomRoot_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="2511103526757027810" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2511103526757027810" fileName="CustomRoot_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.behavior.CustomRoot_Behavior" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="OutputNode_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.transformation.test.outputLang.behavior.OutputNode_BehaviorDescriptor" />
+    </file>
+    <file name="TwoVarStatement_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.transformation.test.outputLang.behavior.TwoVarStatement_BehaviorDescriptor" />
+    </file>
+    <file name="CustomStatementRef_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.transformation.test.outputLang.behavior.CustomStatementRef_BehaviorDescriptor" />
+    </file>
+    <file name="OutputNode_forDontApplyReductionTwice_test_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.transformation.test.outputLang.behavior.OutputNode_forDontApplyReductionTwice_test_BehaviorDescriptor" />
+    </file>
+    <file name="OutputRoot_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.transformation.test.outputLang.behavior.OutputRoot_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,36,0" name="jetbrains.mps.transformation.test.outputLang.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="CustomStatement_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.transformation.test.outputLang.behavior.CustomStatement_BehaviorDescriptor" />
+    </file>
+    <file name="CustomRoot_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.transformation.test.outputLang.behavior.CustomRoot_BehaviorDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:6403882d-ffad-429a-8b59-eb2f29334fb1(jetbrains.mps.transformation.test.outputLang.behavior)/2511103526757027810">
+    <file name="CustomRoot_Behavior.java">
+      <node id="2511103526757027810" at="8,0,10,0" concept="0" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="2511103526757027812" at="8,43,8,43" />
+      <scope id="2511103526757027810" at="8,0,10,0">
+        <var name="thisNode" id="2511103526757027810" />
+      </scope>
+      <unit id="2511103526757027810" at="7,0,11,0" name="jetbrains.mps.transformation.test.outputLang.behavior.CustomRoot_Behavior" />
+    </file>
+  </root>
+</debug-info>
 

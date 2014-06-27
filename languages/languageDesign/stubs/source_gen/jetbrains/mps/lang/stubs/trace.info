@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="Language.java" startLine="15" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.stubs.Language" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="Language.java">
+      <unit at="15,0,60,0" name="jetbrains.mps.lang.stubs.Language" />
+    </file>
+  </root>
+</debug-info>
 

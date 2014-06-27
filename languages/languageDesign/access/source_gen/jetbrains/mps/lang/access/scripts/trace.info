@@ -1,361 +1,372 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:3eb5eddb-ad6b-4cf1-b4d8-9984f01ec37b(jetbrains.mps.lang.access.scripts)/2034046503360381622">
-    <nodeInfo nodeId="2034046503360381622" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="17" startPosition="92" endLine="18" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503360585965" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="36" startPosition="52" endLine="37" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="40" startPosition="42" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="45" startPosition="31" endLine="46" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="49" startPosition="41" endLine="50" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="53" startPosition="59" endLine="54" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="57" startPosition="59" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503372957235" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="61" startPosition="52" endLine="62" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="65" startPosition="42" endLine="66" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="70" startPosition="31" endLine="71" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="74" startPosition="41" endLine="75" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="78" startPosition="59" endLine="79" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="82" startPosition="59" endLine="83" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503372974312" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="86" startPosition="52" endLine="87" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="90" startPosition="42" endLine="91" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="95" startPosition="31" endLine="96" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="99" startPosition="41" endLine="100" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="103" startPosition="59" endLine="104" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="107" startPosition="59" endLine="108" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503381267270" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="111" startPosition="52" endLine="112" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="115" startPosition="42" endLine="116" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="121" startPosition="81" endLine="122" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="122" startPosition="63" endLine="123" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="123" startPosition="30" endLine="124" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="124" startPosition="30" endLine="125" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="125" startPosition="30" endLine="126" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="126" startPosition="30" endLine="127" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="127" startPosition="30" endLine="128" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="128" startPosition="30" endLine="129" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="129" startPosition="143" endLine="130" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="130" startPosition="137" endLine="131" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="131" startPosition="140" endLine="132" endPosition="337" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="132" startPosition="337" endLine="133" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="133" startPosition="275" endLine="134" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="134" startPosition="51" endLine="135" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="135" startPosition="151" endLine="136" endPosition="341" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="136" startPosition="341" endLine="137" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="137" startPosition="147" endLine="138" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="139" startPosition="31" endLine="140" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="141" startPosition="5" endLine="142" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="142" startPosition="58" endLine="143" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="143" startPosition="53" endLine="144" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="144" startPosition="54" endLine="145" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="148" startPosition="81" endLine="149" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="149" startPosition="63" endLine="150" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="150" startPosition="30" endLine="151" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="151" startPosition="30" endLine="152" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="152" startPosition="30" endLine="153" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="153" startPosition="30" endLine="154" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="154" startPosition="30" endLine="155" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="155" startPosition="30" endLine="156" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="156" startPosition="143" endLine="157" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="157" startPosition="137" endLine="158" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="158" startPosition="140" endLine="159" endPosition="337" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="159" startPosition="337" endLine="160" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="160" startPosition="275" endLine="161" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="161" startPosition="51" endLine="162" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="162" startPosition="151" endLine="163" endPosition="342" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="163" startPosition="342" endLine="164" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="164" startPosition="147" endLine="165" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="166" startPosition="31" endLine="167" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="168" startPosition="5" endLine="169" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="169" startPosition="58" endLine="170" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="170" startPosition="53" endLine="171" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="171" startPosition="54" endLine="172" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="175" startPosition="81" endLine="176" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="176" startPosition="63" endLine="177" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="177" startPosition="30" endLine="178" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="178" startPosition="30" endLine="179" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="179" startPosition="30" endLine="180" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="180" startPosition="30" endLine="181" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="181" startPosition="30" endLine="182" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="182" startPosition="30" endLine="183" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="183" startPosition="143" endLine="184" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="184" startPosition="137" endLine="185" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="185" startPosition="140" endLine="186" endPosition="337" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="186" startPosition="337" endLine="187" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="187" startPosition="275" endLine="188" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="188" startPosition="51" endLine="189" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="189" startPosition="151" endLine="190" endPosition="351" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="190" startPosition="351" endLine="191" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="191" startPosition="147" endLine="192" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="193" startPosition="31" endLine="194" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="195" startPosition="5" endLine="196" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="196" startPosition="58" endLine="197" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="197" startPosition="53" endLine="198" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="198" startPosition="54" endLine="199" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="202" startPosition="81" endLine="203" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="203" startPosition="63" endLine="204" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="204" startPosition="30" endLine="205" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="205" startPosition="30" endLine="206" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="206" startPosition="30" endLine="207" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="207" startPosition="30" endLine="208" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="208" startPosition="30" endLine="209" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="209" startPosition="30" endLine="210" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="210" startPosition="143" endLine="211" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="211" startPosition="137" endLine="212" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="212" startPosition="140" endLine="213" endPosition="337" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="213" startPosition="337" endLine="214" endPosition="275" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="214" startPosition="275" endLine="215" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="215" startPosition="51" endLine="216" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="216" startPosition="151" endLine="217" endPosition="353" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="217" startPosition="353" endLine="218" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="218" startPosition="147" endLine="219" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="220" startPosition="31" endLine="221" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="222" startPosition="5" endLine="223" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="223" startPosition="58" endLine="224" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="224" startPosition="53" endLine="225" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="225" startPosition="54" endLine="226" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="99" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="111" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="115" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="138" startPosition="39" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="165" startPosition="39" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="192" startPosition="39" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="219" startPosition="39" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="130" startPosition="137" endLine="134" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="130" startPosition="137" endLine="134" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="137" startPosition="147" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="137" startPosition="147" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="157" startPosition="137" endLine="161" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="157" startPosition="137" endLine="161" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="164" startPosition="147" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="164" startPosition="147" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="184" startPosition="137" endLine="188" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="184" startPosition="137" endLine="188" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="191" startPosition="147" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="191" startPosition="147" endLine="195" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="211" startPosition="137" endLine="215" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="211" startPosition="137" endLine="215" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="218" startPosition="147" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="218" startPosition="147" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="136" startPosition="341" endLine="142" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="136" startPosition="341" endLine="142" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="163" startPosition="342" endLine="169" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="163" startPosition="342" endLine="169" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="190" startPosition="351" endLine="196" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="190" startPosition="351" endLine="196" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="217" startPosition="353" endLine="223" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="217" startPosition="353" endLine="223" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="134" startPosition="51" endLine="143" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="134" startPosition="51" endLine="143" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="161" startPosition="51" endLine="170" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="161" startPosition="51" endLine="170" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="188" startPosition="51" endLine="197" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="188" startPosition="51" endLine="197" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="215" startPosition="51" endLine="224" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="215" startPosition="51" endLine="224" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="129" startPosition="143" endLine="144" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="129" startPosition="143" endLine="144" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="156" startPosition="143" endLine="171" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="156" startPosition="143" endLine="171" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="183" startPosition="143" endLine="198" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="183" startPosition="143" endLine="198" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="210" startPosition="143" endLine="225" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="210" startPosition="143" endLine="225" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="128" startPosition="30" endLine="144" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="128" startPosition="30" endLine="144" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="155" startPosition="30" endLine="171" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="155" startPosition="30" endLine="171" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="182" startPosition="30" endLine="198" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="182" startPosition="30" endLine="198" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="209" startPosition="30" endLine="225" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="209" startPosition="30" endLine="225" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360381622" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="18" startPosition="46" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="18" startPosition="46" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360381622" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="43" startPosition="7" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="43" startPosition="7" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360381622" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="68" startPosition="7" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="68" startPosition="7" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360381622" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="93" startPosition="7" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="93" startPosition="7" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="121" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_7jihir_a0a0a0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="148" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_7jihir_a0a0a0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="175" startPosition="0" endLine="201" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_7jihir_a0a0a0c#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="202" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_7jihir_a0a0a0d#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2034046503360381622" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="17" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubstituteGenericAccessBlocks_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <scopeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="20" startPosition="31" endLine="21" endPosition="33" />
-    <scopeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="24" startPosition="41" endLine="25" endPosition="33" />
-    <scopeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="88" />
-    <scopeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="32" startPosition="59" endLine="33" endPosition="20" />
-    <scopeInfo nodeId="2034046503360381677" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="36" startPosition="52" endLine="37" endPosition="192" />
-    <scopeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="40" startPosition="42" endLine="41" endPosition="21" />
-    <scopeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="45" startPosition="31" endLine="46" endPosition="34" />
-    <scopeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="49" startPosition="41" endLine="50" endPosition="34" />
-    <scopeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="53" startPosition="59" endLine="54" endPosition="81" />
-    <scopeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="57" startPosition="59" endLine="58" endPosition="20" />
-    <scopeInfo nodeId="2034046503372957234" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="61" startPosition="52" endLine="62" endPosition="192" />
-    <scopeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="65" startPosition="42" endLine="66" endPosition="21" />
-    <scopeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="70" startPosition="31" endLine="71" endPosition="36" />
-    <scopeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="74" startPosition="41" endLine="75" endPosition="36" />
-    <scopeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="78" startPosition="59" endLine="79" endPosition="77" />
-    <scopeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="82" startPosition="59" endLine="83" endPosition="20" />
-    <scopeInfo nodeId="2034046503372974311" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="86" startPosition="52" endLine="87" endPosition="192" />
-    <scopeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="90" startPosition="42" endLine="91" endPosition="21" />
-    <scopeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="95" startPosition="31" endLine="96" endPosition="53" />
-    <scopeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="99" startPosition="41" endLine="100" endPosition="53" />
-    <scopeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="103" startPosition="59" endLine="104" endPosition="88" />
-    <scopeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="107" startPosition="59" endLine="108" endPosition="20" />
-    <scopeInfo nodeId="2034046503381267269" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="111" startPosition="52" endLine="112" endPosition="192" />
-    <scopeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="115" startPosition="42" endLine="116" endPosition="21" />
-    <scopeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="139" startPosition="31" endLine="140" endPosition="73" />
-    <scopeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="166" startPosition="31" endLine="167" endPosition="73" />
-    <scopeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="193" startPosition="31" endLine="194" endPosition="73" />
-    <scopeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="220" startPosition="31" endLine="221" endPosition="73" />
-    <scopeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="2034046503360381675" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="2034046503360381675" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="2034046503372957232" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="2034046503372957232" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
-      <varInfo nodeId="2034046503372974309" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="86" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="2034046503372974309" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="95" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="99" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="103" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="107" startPosition="0" endLine="110" endPosition="0">
-      <varInfo nodeId="2034046503381267267" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="111" startPosition="0" endLine="114" endPosition="0">
-      <varInfo nodeId="2034046503381267267" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="115" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="130" startPosition="137" endLine="134" endPosition="51" />
-    <scopeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="137" startPosition="147" endLine="141" endPosition="5" />
-    <scopeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="157" startPosition="137" endLine="161" endPosition="51" />
-    <scopeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="164" startPosition="147" endLine="168" endPosition="5" />
-    <scopeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="184" startPosition="137" endLine="188" endPosition="51" />
-    <scopeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="191" startPosition="147" endLine="195" endPosition="5" />
-    <scopeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="211" startPosition="137" endLine="215" endPosition="51" />
-    <scopeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="218" startPosition="147" endLine="222" endPosition="5" />
-    <scopeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="136" startPosition="341" endLine="142" endPosition="58" />
-    <scopeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="163" startPosition="342" endLine="169" endPosition="58" />
-    <scopeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="190" startPosition="351" endLine="196" endPosition="58" />
-    <scopeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="217" startPosition="353" endLine="223" endPosition="58" />
-    <scopeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="134" startPosition="51" endLine="143" endPosition="53" />
-    <scopeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="161" startPosition="51" endLine="170" endPosition="53" />
-    <scopeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="188" startPosition="51" endLine="197" endPosition="53" />
-    <scopeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="215" startPosition="51" endLine="224" endPosition="53" />
-    <scopeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="129" startPosition="143" endLine="144" endPosition="54" />
-    <scopeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="156" startPosition="143" endLine="171" endPosition="54" />
-    <scopeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="183" startPosition="143" endLine="198" endPosition="54" />
-    <scopeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="210" startPosition="143" endLine="225" endPosition="54" />
-    <scopeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="128" startPosition="30" endLine="144" endPosition="54" />
-    <scopeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="155" startPosition="30" endLine="171" endPosition="54" />
-    <scopeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="182" startPosition="30" endLine="198" endPosition="54" />
-    <scopeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="209" startPosition="30" endLine="225" endPosition="54" />
-    <scopeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="121" startPosition="81" endLine="145" endPosition="24">
-      <varInfo nodeId="2034046503360601029" varName="facade" />
-      <varInfo nodeId="2034046503360601029" varName="quotedNode_2" />
-      <varInfo nodeId="2034046503360601029" varName="quotedNode_3" />
-      <varInfo nodeId="2034046503360601029" varName="quotedNode_4" />
-      <varInfo nodeId="2034046503360601029" varName="quotedNode_5" />
-      <varInfo nodeId="2034046503360601029" varName="quotedNode_6" />
-      <varInfo nodeId="2034046503360601029" varName="quotedNode_7" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="148" startPosition="81" endLine="172" endPosition="24">
-      <varInfo nodeId="2034046503372957239" varName="facade" />
-      <varInfo nodeId="2034046503372957239" varName="quotedNode_2" />
-      <varInfo nodeId="2034046503372957239" varName="quotedNode_3" />
-      <varInfo nodeId="2034046503372957239" varName="quotedNode_4" />
-      <varInfo nodeId="2034046503372957239" varName="quotedNode_5" />
-      <varInfo nodeId="2034046503372957239" varName="quotedNode_6" />
-      <varInfo nodeId="2034046503372957239" varName="quotedNode_7" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="175" startPosition="81" endLine="199" endPosition="24">
-      <varInfo nodeId="2034046503372974316" varName="facade" />
-      <varInfo nodeId="2034046503372974316" varName="quotedNode_2" />
-      <varInfo nodeId="2034046503372974316" varName="quotedNode_3" />
-      <varInfo nodeId="2034046503372974316" varName="quotedNode_4" />
-      <varInfo nodeId="2034046503372974316" varName="quotedNode_5" />
-      <varInfo nodeId="2034046503372974316" varName="quotedNode_6" />
-      <varInfo nodeId="2034046503372974316" varName="quotedNode_7" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="202" startPosition="81" endLine="226" endPosition="24">
-      <varInfo nodeId="2034046503381267274" varName="facade" />
-      <varInfo nodeId="2034046503381267274" varName="quotedNode_2" />
-      <varInfo nodeId="2034046503381267274" varName="quotedNode_3" />
-      <varInfo nodeId="2034046503381267274" varName="quotedNode_4" />
-      <varInfo nodeId="2034046503381267274" varName="quotedNode_5" />
-      <varInfo nodeId="2034046503381267274" varName="quotedNode_6" />
-      <varInfo nodeId="2034046503381267274" varName="quotedNode_7" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="18" startPosition="46" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="43" startPosition="7" endLine="68" endPosition="7" />
-    <scopeInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="68" startPosition="7" endLine="93" endPosition="7" />
-    <scopeInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="93" startPosition="7" endLine="118" endPosition="7" />
-    <scopeInfo nodeId="2034046503360601029" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="121" startPosition="0" endLine="147" endPosition="0">
-      <varInfo nodeId="2034046503360601029" varName="parameter_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503372957239" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="148" startPosition="0" endLine="174" endPosition="0">
-      <varInfo nodeId="2034046503372957239" varName="parameter_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503372974316" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="175" startPosition="0" endLine="201" endPosition="0">
-      <varInfo nodeId="2034046503372974316" varName="parameter_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503381267274" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="202" startPosition="0" endLine="228" endPosition="0">
-      <varInfo nodeId="2034046503381267274" varName="parameter_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503360381622" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="17" startPosition="92" endLine="118" endPosition="7" />
-    <scopeInfo nodeId="2034046503360381622" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="17" startPosition="0" endLine="120" endPosition="0">
-      <varInfo nodeId="2034046503360381622" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="2034046503360381675" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="19" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.lang.access.scripts.SubstituteGenericAccessBlocks_MigrationScript$1" />
-    <unitInfo nodeId="2034046503372957232" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="44" startPosition="28" endLine="68" endPosition="5" unitName="jetbrains.mps.lang.access.scripts.SubstituteGenericAccessBlocks_MigrationScript$2" />
-    <unitInfo nodeId="2034046503372974309" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="69" startPosition="28" endLine="93" endPosition="5" unitName="jetbrains.mps.lang.access.scripts.SubstituteGenericAccessBlocks_MigrationScript$3" />
-    <unitInfo nodeId="2034046503381267267" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="94" startPosition="28" endLine="118" endPosition="5" unitName="jetbrains.mps.lang.access.scripts.SubstituteGenericAccessBlocks_MigrationScript$4" />
-    <unitInfo nodeId="2034046503360381622" fileName="SubstituteGenericAccessBlocks_MigrationScript.java" startLine="16" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.lang.access.scripts.SubstituteGenericAccessBlocks_MigrationScript" />
+    <file name="SubstituteGenericAccessBlocks_MigrationScript.java">
+      <node id="2034046503360381622" at="17,92,18,46" concept="8" />
+      <node id="2034046503360381675" at="20,31,21,33" concept="6" />
+      <node id="2034046503360381675" at="24,41,25,33" concept="6" />
+      <node id="2034046503360381675" at="28,59,29,88" concept="6" />
+      <node id="2034046503360381675" at="32,59,33,20" concept="6" />
+      <node id="2034046503360585965" at="36,52,37,192" concept="2" />
+      <node id="2034046503360381675" at="40,42,41,21" concept="6" />
+      <node id="2034046503372957232" at="45,31,46,34" concept="6" />
+      <node id="2034046503372957232" at="49,41,50,34" concept="6" />
+      <node id="2034046503372957232" at="53,59,54,81" concept="6" />
+      <node id="2034046503372957232" at="57,59,58,20" concept="6" />
+      <node id="2034046503372957235" at="61,52,62,192" concept="2" />
+      <node id="2034046503372957232" at="65,42,66,21" concept="6" />
+      <node id="2034046503372974309" at="70,31,71,36" concept="6" />
+      <node id="2034046503372974309" at="74,41,75,36" concept="6" />
+      <node id="2034046503372974309" at="78,59,79,77" concept="6" />
+      <node id="2034046503372974309" at="82,59,83,20" concept="6" />
+      <node id="2034046503372974312" at="86,52,87,192" concept="2" />
+      <node id="2034046503372974309" at="90,42,91,21" concept="6" />
+      <node id="2034046503381267267" at="95,31,96,53" concept="6" />
+      <node id="2034046503381267267" at="99,41,100,53" concept="6" />
+      <node id="2034046503381267267" at="103,59,104,88" concept="6" />
+      <node id="2034046503381267267" at="107,59,108,20" concept="6" />
+      <node id="2034046503381267270" at="111,52,112,192" concept="2" />
+      <node id="2034046503381267267" at="115,42,116,21" concept="6" />
+      <node id="2034046503360601029" at="121,81,122,63" concept="5" />
+      <node id="2034046503360601029" at="122,63,123,30" concept="5" />
+      <node id="2034046503360601029" at="123,30,124,30" concept="5" />
+      <node id="2034046503360601029" at="124,30,125,30" concept="5" />
+      <node id="2034046503360601029" at="125,30,126,30" concept="5" />
+      <node id="2034046503360601029" at="126,30,127,30" concept="5" />
+      <node id="2034046503360601029" at="127,30,128,30" concept="5" />
+      <node id="2034046503360601029" at="128,30,129,143" concept="2" />
+      <node id="2034046503360601029" at="129,143,130,137" concept="2" />
+      <node id="2034046503360601029" at="130,137,131,140" concept="2" />
+      <node id="2034046503360601029" at="131,140,132,337" concept="2" />
+      <node id="2034046503360601029" at="132,337,133,275" concept="2" />
+      <node id="2034046503360601029" at="133,275,134,51" concept="2" />
+      <node id="2034046503360601029" at="134,51,135,151" concept="2" />
+      <node id="2034046503360601029" at="135,151,136,341" concept="2" />
+      <node id="2034046503360601029" at="136,341,137,147" concept="2" />
+      <node id="2034046503360601029" at="137,147,138,39" concept="2" />
+      <node id="2034046503360601029" at="139,31,140,73" concept="2" />
+      <node id="2034046503360601029" at="141,5,142,58" concept="2" />
+      <node id="2034046503360601029" at="142,58,143,53" concept="2" />
+      <node id="2034046503360601029" at="143,53,144,54" concept="2" />
+      <node id="2034046503360601029" at="144,54,145,24" concept="6" />
+      <node id="2034046503372957239" at="148,81,149,63" concept="5" />
+      <node id="2034046503372957239" at="149,63,150,30" concept="5" />
+      <node id="2034046503372957239" at="150,30,151,30" concept="5" />
+      <node id="2034046503372957239" at="151,30,152,30" concept="5" />
+      <node id="2034046503372957239" at="152,30,153,30" concept="5" />
+      <node id="2034046503372957239" at="153,30,154,30" concept="5" />
+      <node id="2034046503372957239" at="154,30,155,30" concept="5" />
+      <node id="2034046503372957239" at="155,30,156,143" concept="2" />
+      <node id="2034046503372957239" at="156,143,157,137" concept="2" />
+      <node id="2034046503372957239" at="157,137,158,140" concept="2" />
+      <node id="2034046503372957239" at="158,140,159,337" concept="2" />
+      <node id="2034046503372957239" at="159,337,160,275" concept="2" />
+      <node id="2034046503372957239" at="160,275,161,51" concept="2" />
+      <node id="2034046503372957239" at="161,51,162,151" concept="2" />
+      <node id="2034046503372957239" at="162,151,163,342" concept="2" />
+      <node id="2034046503372957239" at="163,342,164,147" concept="2" />
+      <node id="2034046503372957239" at="164,147,165,39" concept="2" />
+      <node id="2034046503372957239" at="166,31,167,73" concept="2" />
+      <node id="2034046503372957239" at="168,5,169,58" concept="2" />
+      <node id="2034046503372957239" at="169,58,170,53" concept="2" />
+      <node id="2034046503372957239" at="170,53,171,54" concept="2" />
+      <node id="2034046503372957239" at="171,54,172,24" concept="6" />
+      <node id="2034046503372974316" at="175,81,176,63" concept="5" />
+      <node id="2034046503372974316" at="176,63,177,30" concept="5" />
+      <node id="2034046503372974316" at="177,30,178,30" concept="5" />
+      <node id="2034046503372974316" at="178,30,179,30" concept="5" />
+      <node id="2034046503372974316" at="179,30,180,30" concept="5" />
+      <node id="2034046503372974316" at="180,30,181,30" concept="5" />
+      <node id="2034046503372974316" at="181,30,182,30" concept="5" />
+      <node id="2034046503372974316" at="182,30,183,143" concept="2" />
+      <node id="2034046503372974316" at="183,143,184,137" concept="2" />
+      <node id="2034046503372974316" at="184,137,185,140" concept="2" />
+      <node id="2034046503372974316" at="185,140,186,337" concept="2" />
+      <node id="2034046503372974316" at="186,337,187,275" concept="2" />
+      <node id="2034046503372974316" at="187,275,188,51" concept="2" />
+      <node id="2034046503372974316" at="188,51,189,151" concept="2" />
+      <node id="2034046503372974316" at="189,151,190,351" concept="2" />
+      <node id="2034046503372974316" at="190,351,191,147" concept="2" />
+      <node id="2034046503372974316" at="191,147,192,39" concept="2" />
+      <node id="2034046503372974316" at="193,31,194,73" concept="2" />
+      <node id="2034046503372974316" at="195,5,196,58" concept="2" />
+      <node id="2034046503372974316" at="196,58,197,53" concept="2" />
+      <node id="2034046503372974316" at="197,53,198,54" concept="2" />
+      <node id="2034046503372974316" at="198,54,199,24" concept="6" />
+      <node id="2034046503381267274" at="202,81,203,63" concept="5" />
+      <node id="2034046503381267274" at="203,63,204,30" concept="5" />
+      <node id="2034046503381267274" at="204,30,205,30" concept="5" />
+      <node id="2034046503381267274" at="205,30,206,30" concept="5" />
+      <node id="2034046503381267274" at="206,30,207,30" concept="5" />
+      <node id="2034046503381267274" at="207,30,208,30" concept="5" />
+      <node id="2034046503381267274" at="208,30,209,30" concept="5" />
+      <node id="2034046503381267274" at="209,30,210,143" concept="2" />
+      <node id="2034046503381267274" at="210,143,211,137" concept="2" />
+      <node id="2034046503381267274" at="211,137,212,140" concept="2" />
+      <node id="2034046503381267274" at="212,140,213,337" concept="2" />
+      <node id="2034046503381267274" at="213,337,214,275" concept="2" />
+      <node id="2034046503381267274" at="214,275,215,51" concept="2" />
+      <node id="2034046503381267274" at="215,51,216,151" concept="2" />
+      <node id="2034046503381267274" at="216,151,217,353" concept="2" />
+      <node id="2034046503381267274" at="217,353,218,147" concept="2" />
+      <node id="2034046503381267274" at="218,147,219,39" concept="2" />
+      <node id="2034046503381267274" at="220,31,221,73" concept="2" />
+      <node id="2034046503381267274" at="222,5,223,58" concept="2" />
+      <node id="2034046503381267274" at="223,58,224,53" concept="2" />
+      <node id="2034046503381267274" at="224,53,225,54" concept="2" />
+      <node id="2034046503381267274" at="225,54,226,24" concept="6" />
+      <node id="2034046503360381675" at="20,0,23,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="2034046503360381675" at="24,0,27,0" concept="4" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="2034046503360381675" at="28,0,31,0" concept="4" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="2034046503360381675" at="32,0,35,0" concept="4" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2034046503360381675" at="36,0,39,0" concept="4" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2034046503360381675" at="40,0,43,0" concept="4" trace="isShowAsIntention#()Z" />
+      <node id="2034046503372957232" at="45,0,48,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="2034046503372957232" at="49,0,52,0" concept="4" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="2034046503372957232" at="53,0,56,0" concept="4" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="2034046503372957232" at="57,0,60,0" concept="4" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2034046503372957232" at="61,0,64,0" concept="4" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2034046503372957232" at="65,0,68,0" concept="4" trace="isShowAsIntention#()Z" />
+      <node id="2034046503372974309" at="70,0,73,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="2034046503372974309" at="74,0,77,0" concept="4" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="2034046503372974309" at="78,0,81,0" concept="4" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="2034046503372974309" at="82,0,85,0" concept="4" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2034046503372974309" at="86,0,89,0" concept="4" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2034046503372974309" at="90,0,93,0" concept="4" trace="isShowAsIntention#()Z" />
+      <node id="2034046503381267267" at="95,0,98,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="2034046503381267267" at="99,0,102,0" concept="4" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="2034046503381267267" at="103,0,106,0" concept="4" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="2034046503381267267" at="107,0,110,0" concept="4" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="2034046503381267267" at="111,0,114,0" concept="4" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2034046503381267267" at="115,0,118,0" concept="4" trace="isShowAsIntention#()Z" />
+      <node id="2034046503360601029" at="138,39,141,5" concept="3" />
+      <node id="2034046503372957239" at="165,39,168,5" concept="3" />
+      <node id="2034046503372974316" at="192,39,195,5" concept="3" />
+      <node id="2034046503381267274" at="219,39,222,5" concept="3" />
+      <node id="2034046503360601029" at="130,137,134,51" concept="0" />
+      <node id="2034046503360601029" at="130,137,134,51" concept="0" />
+      <node id="2034046503360601029" at="137,147,141,5" concept="0" />
+      <node id="2034046503360601029" at="137,147,141,5" concept="0" />
+      <node id="2034046503372957239" at="157,137,161,51" concept="0" />
+      <node id="2034046503372957239" at="157,137,161,51" concept="0" />
+      <node id="2034046503372957239" at="164,147,168,5" concept="0" />
+      <node id="2034046503372957239" at="164,147,168,5" concept="0" />
+      <node id="2034046503372974316" at="184,137,188,51" concept="0" />
+      <node id="2034046503372974316" at="184,137,188,51" concept="0" />
+      <node id="2034046503372974316" at="191,147,195,5" concept="0" />
+      <node id="2034046503372974316" at="191,147,195,5" concept="0" />
+      <node id="2034046503381267274" at="211,137,215,51" concept="0" />
+      <node id="2034046503381267274" at="211,137,215,51" concept="0" />
+      <node id="2034046503381267274" at="218,147,222,5" concept="0" />
+      <node id="2034046503381267274" at="218,147,222,5" concept="0" />
+      <node id="2034046503360601029" at="136,341,142,58" concept="0" />
+      <node id="2034046503360601029" at="136,341,142,58" concept="0" />
+      <node id="2034046503372957239" at="163,342,169,58" concept="0" />
+      <node id="2034046503372957239" at="163,342,169,58" concept="0" />
+      <node id="2034046503372974316" at="190,351,196,58" concept="0" />
+      <node id="2034046503372974316" at="190,351,196,58" concept="0" />
+      <node id="2034046503381267274" at="217,353,223,58" concept="0" />
+      <node id="2034046503381267274" at="217,353,223,58" concept="0" />
+      <node id="2034046503360601029" at="134,51,143,53" concept="0" />
+      <node id="2034046503360601029" at="134,51,143,53" concept="0" />
+      <node id="2034046503372957239" at="161,51,170,53" concept="0" />
+      <node id="2034046503372957239" at="161,51,170,53" concept="0" />
+      <node id="2034046503372974316" at="188,51,197,53" concept="0" />
+      <node id="2034046503372974316" at="188,51,197,53" concept="0" />
+      <node id="2034046503381267274" at="215,51,224,53" concept="0" />
+      <node id="2034046503381267274" at="215,51,224,53" concept="0" />
+      <node id="2034046503360601029" at="129,143,144,54" concept="0" />
+      <node id="2034046503360601029" at="129,143,144,54" concept="0" />
+      <node id="2034046503372957239" at="156,143,171,54" concept="0" />
+      <node id="2034046503372957239" at="156,143,171,54" concept="0" />
+      <node id="2034046503372974316" at="183,143,198,54" concept="0" />
+      <node id="2034046503372974316" at="183,143,198,54" concept="0" />
+      <node id="2034046503381267274" at="210,143,225,54" concept="0" />
+      <node id="2034046503381267274" at="210,143,225,54" concept="0" />
+      <node id="2034046503360601029" at="128,30,144,54" concept="0" />
+      <node id="2034046503360601029" at="128,30,144,54" concept="0" />
+      <node id="2034046503372957239" at="155,30,171,54" concept="0" />
+      <node id="2034046503372957239" at="155,30,171,54" concept="0" />
+      <node id="2034046503372974316" at="182,30,198,54" concept="0" />
+      <node id="2034046503372974316" at="182,30,198,54" concept="0" />
+      <node id="2034046503381267274" at="209,30,225,54" concept="0" />
+      <node id="2034046503381267274" at="209,30,225,54" concept="0" />
+      <node id="2034046503360381622" at="18,46,43,7" concept="0" />
+      <node id="2034046503360381675" at="18,46,43,7" concept="2" />
+      <node id="2034046503360381622" at="43,7,68,7" concept="0" />
+      <node id="2034046503372957232" at="43,7,68,7" concept="2" />
+      <node id="2034046503360381622" at="68,7,93,7" concept="0" />
+      <node id="2034046503372974309" at="68,7,93,7" concept="2" />
+      <node id="2034046503360381622" at="93,7,118,7" concept="0" />
+      <node id="2034046503381267267" at="93,7,118,7" concept="2" />
+      <node id="2034046503360601029" at="121,0,147,0" concept="7" trace="_quotation_createNode_7jihir_a0a0a0a#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2034046503372957239" at="148,0,174,0" concept="7" trace="_quotation_createNode_7jihir_a0a0a0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2034046503372974316" at="175,0,201,0" concept="7" trace="_quotation_createNode_7jihir_a0a0a0c#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2034046503381267274" at="202,0,228,0" concept="7" trace="_quotation_createNode_7jihir_a0a0a0d#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2034046503360381622" at="17,0,120,0" concept="1" trace="SubstituteGenericAccessBlocks_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <scope id="2034046503360381675" at="20,31,21,33" />
+      <scope id="2034046503360381675" at="24,41,25,33" />
+      <scope id="2034046503360381675" at="28,59,29,88" />
+      <scope id="2034046503360381675" at="32,59,33,20" />
+      <scope id="2034046503360381677" at="36,52,37,192" />
+      <scope id="2034046503360381675" at="40,42,41,21" />
+      <scope id="2034046503372957232" at="45,31,46,34" />
+      <scope id="2034046503372957232" at="49,41,50,34" />
+      <scope id="2034046503372957232" at="53,59,54,81" />
+      <scope id="2034046503372957232" at="57,59,58,20" />
+      <scope id="2034046503372957234" at="61,52,62,192" />
+      <scope id="2034046503372957232" at="65,42,66,21" />
+      <scope id="2034046503372974309" at="70,31,71,36" />
+      <scope id="2034046503372974309" at="74,41,75,36" />
+      <scope id="2034046503372974309" at="78,59,79,77" />
+      <scope id="2034046503372974309" at="82,59,83,20" />
+      <scope id="2034046503372974311" at="86,52,87,192" />
+      <scope id="2034046503372974309" at="90,42,91,21" />
+      <scope id="2034046503381267267" at="95,31,96,53" />
+      <scope id="2034046503381267267" at="99,41,100,53" />
+      <scope id="2034046503381267267" at="103,59,104,88" />
+      <scope id="2034046503381267267" at="107,59,108,20" />
+      <scope id="2034046503381267269" at="111,52,112,192" />
+      <scope id="2034046503381267267" at="115,42,116,21" />
+      <scope id="2034046503360601029" at="139,31,140,73" />
+      <scope id="2034046503372957239" at="166,31,167,73" />
+      <scope id="2034046503372974316" at="193,31,194,73" />
+      <scope id="2034046503381267274" at="220,31,221,73" />
+      <scope id="2034046503360381675" at="20,0,23,0" />
+      <scope id="2034046503360381675" at="24,0,27,0" />
+      <scope id="2034046503360381675" at="28,0,31,0" />
+      <scope id="2034046503360381675" at="32,0,35,0">
+        <var name="node" id="2034046503360381675" />
+      </scope>
+      <scope id="2034046503360381675" at="36,0,39,0">
+        <var name="node" id="2034046503360381675" />
+      </scope>
+      <scope id="2034046503360381675" at="40,0,43,0" />
+      <scope id="2034046503372957232" at="45,0,48,0" />
+      <scope id="2034046503372957232" at="49,0,52,0" />
+      <scope id="2034046503372957232" at="53,0,56,0" />
+      <scope id="2034046503372957232" at="57,0,60,0">
+        <var name="node" id="2034046503372957232" />
+      </scope>
+      <scope id="2034046503372957232" at="61,0,64,0">
+        <var name="node" id="2034046503372957232" />
+      </scope>
+      <scope id="2034046503372957232" at="65,0,68,0" />
+      <scope id="2034046503372974309" at="70,0,73,0" />
+      <scope id="2034046503372974309" at="74,0,77,0" />
+      <scope id="2034046503372974309" at="78,0,81,0" />
+      <scope id="2034046503372974309" at="82,0,85,0">
+        <var name="node" id="2034046503372974309" />
+      </scope>
+      <scope id="2034046503372974309" at="86,0,89,0">
+        <var name="node" id="2034046503372974309" />
+      </scope>
+      <scope id="2034046503372974309" at="90,0,93,0" />
+      <scope id="2034046503381267267" at="95,0,98,0" />
+      <scope id="2034046503381267267" at="99,0,102,0" />
+      <scope id="2034046503381267267" at="103,0,106,0" />
+      <scope id="2034046503381267267" at="107,0,110,0">
+        <var name="node" id="2034046503381267267" />
+      </scope>
+      <scope id="2034046503381267267" at="111,0,114,0">
+        <var name="node" id="2034046503381267267" />
+      </scope>
+      <scope id="2034046503381267267" at="115,0,118,0" />
+      <scope id="2034046503360601029" at="130,137,134,51" />
+      <scope id="2034046503360601029" at="137,147,141,5" />
+      <scope id="2034046503372957239" at="157,137,161,51" />
+      <scope id="2034046503372957239" at="164,147,168,5" />
+      <scope id="2034046503372974316" at="184,137,188,51" />
+      <scope id="2034046503372974316" at="191,147,195,5" />
+      <scope id="2034046503381267274" at="211,137,215,51" />
+      <scope id="2034046503381267274" at="218,147,222,5" />
+      <scope id="2034046503360601029" at="136,341,142,58" />
+      <scope id="2034046503372957239" at="163,342,169,58" />
+      <scope id="2034046503372974316" at="190,351,196,58" />
+      <scope id="2034046503381267274" at="217,353,223,58" />
+      <scope id="2034046503360601029" at="134,51,143,53" />
+      <scope id="2034046503372957239" at="161,51,170,53" />
+      <scope id="2034046503372974316" at="188,51,197,53" />
+      <scope id="2034046503381267274" at="215,51,224,53" />
+      <scope id="2034046503360601029" at="129,143,144,54" />
+      <scope id="2034046503372957239" at="156,143,171,54" />
+      <scope id="2034046503372974316" at="183,143,198,54" />
+      <scope id="2034046503381267274" at="210,143,225,54" />
+      <scope id="2034046503360601029" at="128,30,144,54" />
+      <scope id="2034046503372957239" at="155,30,171,54" />
+      <scope id="2034046503372974316" at="182,30,198,54" />
+      <scope id="2034046503381267274" at="209,30,225,54" />
+      <scope id="2034046503360601029" at="121,81,145,24">
+        <var name="facade" id="2034046503360601029" />
+        <var name="quotedNode_2" id="2034046503360601029" />
+        <var name="quotedNode_3" id="2034046503360601029" />
+        <var name="quotedNode_4" id="2034046503360601029" />
+        <var name="quotedNode_5" id="2034046503360601029" />
+        <var name="quotedNode_6" id="2034046503360601029" />
+        <var name="quotedNode_7" id="2034046503360601029" />
+      </scope>
+      <scope id="2034046503372957239" at="148,81,172,24">
+        <var name="facade" id="2034046503372957239" />
+        <var name="quotedNode_2" id="2034046503372957239" />
+        <var name="quotedNode_3" id="2034046503372957239" />
+        <var name="quotedNode_4" id="2034046503372957239" />
+        <var name="quotedNode_5" id="2034046503372957239" />
+        <var name="quotedNode_6" id="2034046503372957239" />
+        <var name="quotedNode_7" id="2034046503372957239" />
+      </scope>
+      <scope id="2034046503372974316" at="175,81,199,24">
+        <var name="facade" id="2034046503372974316" />
+        <var name="quotedNode_2" id="2034046503372974316" />
+        <var name="quotedNode_3" id="2034046503372974316" />
+        <var name="quotedNode_4" id="2034046503372974316" />
+        <var name="quotedNode_5" id="2034046503372974316" />
+        <var name="quotedNode_6" id="2034046503372974316" />
+        <var name="quotedNode_7" id="2034046503372974316" />
+      </scope>
+      <scope id="2034046503381267274" at="202,81,226,24">
+        <var name="facade" id="2034046503381267274" />
+        <var name="quotedNode_2" id="2034046503381267274" />
+        <var name="quotedNode_3" id="2034046503381267274" />
+        <var name="quotedNode_4" id="2034046503381267274" />
+        <var name="quotedNode_5" id="2034046503381267274" />
+        <var name="quotedNode_6" id="2034046503381267274" />
+        <var name="quotedNode_7" id="2034046503381267274" />
+      </scope>
+      <scope id="2034046503360381675" at="18,46,43,7" />
+      <scope id="2034046503372957232" at="43,7,68,7" />
+      <scope id="2034046503372974309" at="68,7,93,7" />
+      <scope id="2034046503381267267" at="93,7,118,7" />
+      <scope id="2034046503360601029" at="121,0,147,0">
+        <var name="parameter_1" id="2034046503360601029" />
+      </scope>
+      <scope id="2034046503372957239" at="148,0,174,0">
+        <var name="parameter_1" id="2034046503372957239" />
+      </scope>
+      <scope id="2034046503372974316" at="175,0,201,0">
+        <var name="parameter_1" id="2034046503372974316" />
+      </scope>
+      <scope id="2034046503381267274" at="202,0,228,0">
+        <var name="parameter_1" id="2034046503381267274" />
+      </scope>
+      <scope id="2034046503360381622" at="17,92,118,7" />
+      <scope id="2034046503360381622" at="17,0,120,0">
+        <var name="operationContext" id="2034046503360381622" />
+      </scope>
+      <unit id="2034046503360381675" at="19,28,43,5" name="jetbrains.mps.lang.access.scripts.SubstituteGenericAccessBlocks_MigrationScript$1" />
+      <unit id="2034046503372957232" at="44,28,68,5" name="jetbrains.mps.lang.access.scripts.SubstituteGenericAccessBlocks_MigrationScript$2" />
+      <unit id="2034046503372974309" at="69,28,93,5" name="jetbrains.mps.lang.access.scripts.SubstituteGenericAccessBlocks_MigrationScript$3" />
+      <unit id="2034046503381267267" at="94,28,118,5" name="jetbrains.mps.lang.access.scripts.SubstituteGenericAccessBlocks_MigrationScript$4" />
+      <unit id="2034046503360381622" at="16,0,229,0" name="jetbrains.mps.lang.access.scripts.SubstituteGenericAccessBlocks_MigrationScript" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

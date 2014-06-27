@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:50b262dd-a4ec-4590-840b-ad3be9b20f9c(org.jetbrains.mps.samples.Money.generator.main.util)/2864272256649704726">
-    <nodeInfo nodeId="2864272256649705445" fileName="MoneyUtil.java" startLine="14" startPosition="54" endLine="15" endPosition="537" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2864272256649704728" fileName="MoneyUtil.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyUtil#()V" />
-    <nodeInfo nodeId="2864272256649704791" fileName="MoneyUtil.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMoneyOperation#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="2864272256649704731" fileName="MoneyUtil.java" startLine="11" startPosition="22" endLine="11" endPosition="22" />
-    <scopeInfo nodeId="2864272256649704794" fileName="MoneyUtil.java" startLine="14" startPosition="54" endLine="15" endPosition="537" />
-    <scopeInfo nodeId="2864272256649704728" fileName="MoneyUtil.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="2864272256649704791" fileName="MoneyUtil.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="2864272256649704804" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="2864272256649704726" fileName="MoneyUtil.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="org.jetbrains.mps.samples.Money.generator.main.util.MoneyUtil" />
+    <file name="MoneyUtil.java">
+      <node id="2864272256649705445" at="14,54,15,537" concept="1" />
+      <node id="2864272256649704728" at="11,0,13,0" concept="0" trace="MoneyUtil#()V" />
+      <node id="2864272256649704791" at="14,0,17,0" concept="2" trace="isMoneyOperation#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="2864272256649704731" at="11,22,11,22" />
+      <scope id="2864272256649704794" at="14,54,15,537" />
+      <scope id="2864272256649704728" at="11,0,13,0" />
+      <scope id="2864272256649704791" at="14,0,17,0">
+        <var name="node" id="2864272256649704804" />
+      </scope>
+      <unit id="2864272256649704726" at="10,0,18,0" name="org.jetbrains.mps.samples.Money.generator.main.util.MoneyUtil" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

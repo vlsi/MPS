@@ -20,6 +20,7 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="8574284199674286561" name="NonFocusablePolyLineView" hash="-531fusgpi2i07xy8ps0d7vv1c77ylbg">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="NonFocusablePolyLineView.java" />
   </source>
   <source id="4287318874984049021" name="AbstractDecoratorView" hash="afrxzr3lvrp8rzhvgqpqv3typq0sihn">

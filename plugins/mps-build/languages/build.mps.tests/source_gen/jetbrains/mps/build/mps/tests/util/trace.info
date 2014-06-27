@@ -1,67 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <root nodeRef="r:3726dcc0-b53e-48d5-a1a1-933a30016b1b(jetbrains.mps.build.mps.tests.util)/3944198881073100736">
-    <nodeInfo nodeId="5905179409467957754" fileName="ModulePlugins.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="KEY" />
-    <nodeInfo nodeId="8301447434615549848" fileName="ModulePlugins.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContext" />
-    <nodeInfo nodeId="3944198881074588439" fileName="ModulePlugins.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitialProject" />
-    <nodeInfo nodeId="8301447434615549943" fileName="ModulePlugins.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependency" />
-    <nodeInfo nodeId="3944198881073240844" fileName="ModulePlugins.java" startLine="26" startPosition="76" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3944198881074588720" fileName="ModulePlugins.java" startLine="27" startPosition="24" endLine="28" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5905179409467662078" fileName="ModulePlugins.java" startLine="28" startPosition="38" endLine="29" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3944198881077507970" fileName="ModulePlugins.java" startLine="32" startPosition="50" endLine="33" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3944198881077846992" fileName="ModulePlugins.java" startLine="34" startPosition="79" endLine="35" endPosition="257" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3944198881077880974" fileName="ModulePlugins.java" startLine="38" startPosition="43" endLine="39" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3944198881077880985" fileName="ModulePlugins.java" startLine="41" startPosition="21" endLine="42" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3944198881077880990" fileName="ModulePlugins.java" startLine="42" startPosition="67" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3944198881077489510" fileName="ModulePlugins.java" startLine="46" startPosition="5" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3944198881081561869" fileName="ModulePlugins.java" startLine="47" startPosition="0" endLine="48" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3944198881081605413" fileName="ModulePlugins.java" startLine="48" startPosition="40" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5905179409467643442" fileName="ModulePlugins.java" startLine="49" startPosition="0" endLine="50" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3944198881080772478" fileName="ModulePlugins.java" startLine="51" startPosition="86" endLine="52" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3944198881080872245" fileName="ModulePlugins.java" startLine="56" startPosition="42" endLine="57" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3944198881077880972" fileName="ModulePlugins.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3944198881080699778" fileName="ModulePlugins.java" startLine="50" startPosition="103" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3944198881080868096" fileName="ModulePlugins.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDependency#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="3944198881073119399" fileName="ModulePlugins.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModulePlugins#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
-    <nodeInfo nodeId="3944198881077880967" fileName="ModulePlugins.java" startLine="36" startPosition="66" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3944198881077867177" fileName="ModulePlugins.java" startLine="35" startPosition="257" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3944198881077501110" fileName="ModulePlugins.java" startLine="33" startPosition="79" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3944198881073126700" fileName="ModulePlugins.java" startLine="32" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collect#(Ljetbrains/mps/build/mps/util/MPSModulesClosure;)V" />
-    <scopeInfo nodeId="3944198881077880973" fileName="ModulePlugins.java" startLine="38" startPosition="43" endLine="39" endPosition="131" />
-    <scopeInfo nodeId="3944198881080699784" fileName="ModulePlugins.java" startLine="51" startPosition="86" endLine="52" endPosition="31" />
-    <scopeInfo nodeId="3944198881080868099" fileName="ModulePlugins.java" startLine="56" startPosition="42" endLine="57" endPosition="24" />
-    <scopeInfo nodeId="3944198881077880984" fileName="ModulePlugins.java" startLine="41" startPosition="21" endLine="43" endPosition="16" />
-    <scopeInfo nodeId="3944198881073119402" fileName="ModulePlugins.java" startLine="26" startPosition="76" endLine="29" endPosition="99" />
-    <scopeInfo nodeId="3944198881077880972" fileName="ModulePlugins.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="3944198881077880972" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="3944198881080699778" fileName="ModulePlugins.java" startLine="50" startPosition="103" endLine="53" endPosition="5">
-      <varInfo nodeId="3944198881080699780" varName="plugin" />
-    </scopeInfo>
-    <scopeInfo nodeId="3944198881080868096" fileName="ModulePlugins.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="3944198881073119399" fileName="ModulePlugins.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="3944198881073119412" varName="context" />
-      <varInfo nodeId="3944198881074588072" varName="initialProject" />
-    </scopeInfo>
-    <scopeInfo nodeId="3944198881077867183" fileName="ModulePlugins.java" startLine="36" startPosition="66" endLine="44" endPosition="9" />
-    <scopeInfo nodeId="3944198881077867177" fileName="ModulePlugins.java" startLine="35" startPosition="257" endLine="45" endPosition="7">
-      <varInfo nodeId="3944198881077867179" varName="plugin" />
-    </scopeInfo>
-    <scopeInfo nodeId="3944198881077501116" fileName="ModulePlugins.java" startLine="34" startPosition="79" endLine="45" endPosition="7">
-      <varInfo nodeId="3944198881077846993" varName="projectPlugins" />
-    </scopeInfo>
-    <scopeInfo nodeId="3944198881077501110" fileName="ModulePlugins.java" startLine="33" startPosition="79" endLine="46" endPosition="5">
-      <varInfo nodeId="3944198881077501112" varName="module" />
-    </scopeInfo>
-    <scopeInfo nodeId="3944198881073126703" fileName="ModulePlugins.java" startLine="32" startPosition="50" endLine="53" endPosition="5">
-      <varInfo nodeId="3944198881077507973" varName="initialPlugins" />
-      <varInfo nodeId="5905179409467643443" varName="requiredPlugins" />
-    </scopeInfo>
-    <scopeInfo nodeId="3944198881073126700" fileName="ModulePlugins.java" startLine="32" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="3944198881080601224" varName="closure" />
-    </scopeInfo>
-    <unitInfo nodeId="3944198881077880972" fileName="ModulePlugins.java" startLine="37" startPosition="101" endLine="41" endPosition="9" unitName="jetbrains.mps.build.mps.tests.util.ModulePlugins$1" />
-    <unitInfo nodeId="3944198881073100736" fileName="ModulePlugins.java" startLine="20" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.build.mps.tests.util.ModulePlugins" />
+    <file name="ModulePlugins.java">
+      <node id="5905179409467957754" at="21,0,22,0" concept="10" trace="KEY" />
+      <node id="8301447434615549848" at="22,0,23,0" concept="3" trace="myContext" />
+      <node id="3944198881074588439" at="23,0,24,0" concept="3" trace="myInitialProject" />
+      <node id="8301447434615549943" at="24,0,25,0" concept="3" trace="myDependency" />
+      <node id="3944198881073240844" at="26,76,27,24" concept="2" />
+      <node id="3944198881074588720" at="27,24,28,38" concept="2" />
+      <node id="5905179409467662078" at="28,38,29,99" concept="2" />
+      <node id="3944198881077507970" at="32,50,33,79" concept="7" />
+      <node id="3944198881077846992" at="34,79,35,257" concept="7" />
+      <node id="3944198881077880974" at="38,43,39,131" concept="8" />
+      <node id="3944198881077880985" at="41,21,42,67" concept="2" />
+      <node id="3944198881077880990" at="42,67,43,16" concept="0" />
+      <node id="3944198881077489510" at="46,5,47,0" concept="9" />
+      <node id="3944198881081561869" at="47,0,48,40" concept="2" />
+      <node id="3944198881081605413" at="48,40,49,0" concept="9" />
+      <node id="5905179409467643442" at="49,0,50,103" concept="7" />
+      <node id="3944198881080772478" at="51,86,52,31" concept="2" />
+      <node id="3944198881080872245" at="56,42,57,24" concept="8" />
+      <node id="3944198881077880972" at="38,0,41,0" concept="6" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3944198881080699778" at="50,103,53,5" concept="4" />
+      <node id="3944198881080868096" at="56,0,59,0" concept="6" trace="getDependency#()Ljava/lang/Iterable;" />
+      <node id="3944198881073119399" at="26,0,31,0" concept="1" trace="ModulePlugins#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
+      <node id="3944198881077880967" at="36,66,44,9" concept="5" />
+      <node id="3944198881077867177" at="35,257,45,7" concept="4" />
+      <node id="3944198881077501110" at="33,79,46,5" concept="4" />
+      <node id="3944198881073126700" at="32,0,55,0" concept="6" trace="collect#(Ljetbrains/mps/build/mps/util/MPSModulesClosure;)V" />
+      <scope id="3944198881077880973" at="38,43,39,131" />
+      <scope id="3944198881080699784" at="51,86,52,31" />
+      <scope id="3944198881080868099" at="56,42,57,24" />
+      <scope id="3944198881077880984" at="41,21,43,16" />
+      <scope id="3944198881073119402" at="26,76,29,99" />
+      <scope id="3944198881077880972" at="38,0,41,0">
+        <var name="it" id="3944198881077880972" />
+      </scope>
+      <scope id="3944198881080699778" at="50,103,53,5">
+        <var name="plugin" id="3944198881080699780" />
+      </scope>
+      <scope id="3944198881080868096" at="56,0,59,0" />
+      <scope id="3944198881073119399" at="26,0,31,0">
+        <var name="context" id="3944198881073119412" />
+        <var name="initialProject" id="3944198881074588072" />
+      </scope>
+      <scope id="3944198881077867183" at="36,66,44,9" />
+      <scope id="3944198881077867177" at="35,257,45,7">
+        <var name="plugin" id="3944198881077867179" />
+      </scope>
+      <scope id="3944198881077501116" at="34,79,45,7">
+        <var name="projectPlugins" id="3944198881077846993" />
+      </scope>
+      <scope id="3944198881077501110" at="33,79,46,5">
+        <var name="module" id="3944198881077501112" />
+      </scope>
+      <scope id="3944198881073126703" at="32,50,53,5">
+        <var name="initialPlugins" id="3944198881077507973" />
+        <var name="requiredPlugins" id="5905179409467643443" />
+      </scope>
+      <scope id="3944198881073126700" at="32,0,55,0">
+        <var name="closure" id="3944198881080601224" />
+      </scope>
+      <unit id="3944198881077880972" at="37,101,41,9" name="jetbrains.mps.build.mps.tests.util.ModulePlugins$1" />
+      <unit id="3944198881073100736" at="20,0,60,0" name="jetbrains.mps.build.mps.tests.util.ModulePlugins" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

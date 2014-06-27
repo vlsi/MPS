@@ -1,649 +1,667 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root nodeRef="r:ee4e3a40-94e5-448b-94ee-afa0fd22e4ed(jetbrains.mps.smodel.persistence.def.refactoring)/4224832660979881712">
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_ARRAY" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="historyhandler" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="elementhandler" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dependencieshandler" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="modelhandler" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="MoveNodehandler" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="RenameNodehandler" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="RenameModelhandler" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHandlersStack" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChildHandlersStack" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValues" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocator" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="fieldhelper" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="40" startPosition="47" endLine="41" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="45" startPosition="51" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="50" startPosition="80" endLine="51" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="52" startPosition="26" endLine="53" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="58" startPosition="90" endLine="59" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="59" startPosition="72" endLine="60" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="60" startPosition="39" endLine="61" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="62" startPosition="39" endLine="63" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="64" startPosition="12" endLine="65" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="66" startPosition="23" endLine="67" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="73" startPosition="115" endLine="74" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="75" startPosition="26" endLine="76" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="76" startPosition="14" endLine="77" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="78" startPosition="12" endLine="79" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="80" startPosition="5" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="81" startPosition="0" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="84" startPosition="46" endLine="85" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="87" startPosition="5" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="88" startPosition="0" endLine="89" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="90" startPosition="34" endLine="91" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="92" startPosition="5" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="93" startPosition="0" endLine="94" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="95" startPosition="54" endLine="96" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="96" startPosition="43" endLine="97" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="97" startPosition="44" endLine="98" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="99" startPosition="5" endLine="100" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="100" startPosition="34" endLine="101" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="105" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="112" startPosition="73" endLine="113" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="119" startPosition="138" endLine="120" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="124" startPosition="39" endLine="125" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="126" startPosition="7" endLine="127" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="130" startPosition="45" endLine="131" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="139" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
-    <nodeInfo nodeId="4224832660979881719" fileName="HistoryReaderHandler.java" startLine="145" startPosition="91" endLine="146" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="154" startPosition="84" endLine="155" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="157" startPosition="11" endLine="158" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="159" startPosition="7" endLine="160" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="163" startPosition="105" endLine="164" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="164" startPosition="80" endLine="165" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881725" fileName="HistoryReaderHandler.java" startLine="165" startPosition="66" endLine="166" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="171" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
-    <nodeInfo nodeId="4224832660979881774" fileName="HistoryReaderHandler.java" startLine="177" startPosition="88" endLine="178" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881780" fileName="HistoryReaderHandler.java" startLine="178" startPosition="41" endLine="179" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="187" startPosition="84" endLine="188" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="190" startPosition="11" endLine="191" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="196" startPosition="84" endLine="197" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="199" startPosition="11" endLine="200" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="205" startPosition="84" endLine="206" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="208" startPosition="11" endLine="209" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="214" startPosition="84" endLine="215" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="217" startPosition="11" endLine="218" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="219" startPosition="7" endLine="220" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="223" startPosition="105" endLine="224" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="224" startPosition="74" endLine="225" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881736" fileName="HistoryReaderHandler.java" startLine="225" startPosition="82" endLine="226" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="229" startPosition="105" endLine="230" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="230" startPosition="74" endLine="231" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881744" fileName="HistoryReaderHandler.java" startLine="231" startPosition="84" endLine="232" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="235" startPosition="105" endLine="236" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="236" startPosition="74" endLine="237" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881754" fileName="HistoryReaderHandler.java" startLine="237" startPosition="88" endLine="238" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="241" startPosition="105" endLine="242" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="242" startPosition="74" endLine="243" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881764" fileName="HistoryReaderHandler.java" startLine="243" startPosition="90" endLine="244" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="249" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
-    <nodeInfo nodeId="4224832660979881816" fileName="HistoryReaderHandler.java" startLine="255" startPosition="96" endLine="256" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="264" startPosition="84" endLine="265" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="267" startPosition="11" endLine="268" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="269" startPosition="7" endLine="270" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="273" startPosition="105" endLine="274" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="274" startPosition="90" endLine="275" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881787" fileName="HistoryReaderHandler.java" startLine="275" startPosition="40" endLine="276" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881794" fileName="HistoryReaderHandler.java" startLine="276" startPosition="96" endLine="277" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881803" fileName="HistoryReaderHandler.java" startLine="277" startPosition="76" endLine="278" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="283" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
-    <nodeInfo nodeId="4224832660979881829" fileName="HistoryReaderHandler.java" startLine="289" startPosition="75" endLine="290" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="294" startPosition="45" endLine="295" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="299" startPosition="104" endLine="300" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="301" startPosition="33" endLine="302" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="304" startPosition="36" endLine="305" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="307" startPosition="35" endLine="308" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="309" startPosition="7" endLine="310" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="315" startPosition="0" endLine="316" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
-    <nodeInfo nodeId="4224832660979881842" fileName="HistoryReaderHandler.java" startLine="321" startPosition="97" endLine="322" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="326" startPosition="45" endLine="327" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="331" startPosition="104" endLine="332" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="333" startPosition="30" endLine="334" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="336" startPosition="30" endLine="337" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="338" startPosition="7" endLine="339" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="344" startPosition="0" endLine="345" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
-    <nodeInfo nodeId="4224832660979881869" fileName="HistoryReaderHandler.java" startLine="350" startPosition="99" endLine="351" endPosition="201" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="355" startPosition="45" endLine="356" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="360" startPosition="104" endLine="361" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="362" startPosition="30" endLine="363" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="365" startPosition="32" endLine="366" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881859" fileName="HistoryReaderHandler.java" startLine="368" startPosition="32" endLine="369" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="369" startPosition="32" endLine="370" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="372" startPosition="30" endLine="373" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="374" startPosition="7" endLine="375" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="380" startPosition="0" endLine="381" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="requiredAttributes" />
-    <nodeInfo nodeId="4224832660979881884" fileName="HistoryReaderHandler.java" startLine="386" startPosition="100" endLine="387" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="391" startPosition="45" endLine="392" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="396" startPosition="104" endLine="397" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="398" startPosition="36" endLine="399" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="401" startPosition="36" endLine="402" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="403" startPosition="7" endLine="404" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="37" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HistoryReaderHandler#()V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="78" startPosition="10" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="109" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ElementHandler#()V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="116" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="134" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validate#(Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="141" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HistoryElementHandler#()V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="173" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ElementElementHandler#()V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="251" startPosition="0" endLine="253" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependenciesElementHandler#()V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="285" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelElementHandler#()V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="317" startPosition="0" endLine="319" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoveNodeElementHandler#()V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="346" startPosition="0" endLine="348" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameNodeElementHandler#()V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="382" startPosition="0" endLine="384" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RenameModelElementHandler#()V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljetbrains/mps/refactoring/StructureModificationLog;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="51" startPosition="146" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="65" startPosition="72" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="83" startPosition="54" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="89" startPosition="53" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="119" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/smodel/persistence/def/refactoring/HistoryReaderHandler/ElementHandler;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="123" startPosition="86" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="130" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiredAttributes#()[Ljava/lang/String;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="300" startPosition="48" endLine="303" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="303" startPosition="7" endLine="306" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="306" startPosition="7" endLine="309" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="332" startPosition="92" endLine="335" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="335" startPosition="7" endLine="338" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="361" startPosition="96" endLine="364" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="364" startPosition="7" endLine="367" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="371" startPosition="7" endLine="374" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="397" startPosition="98" endLine="400" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="400" startPosition="7" endLine="403" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDocumentLocator#(Lorg/xml/sax/Locator;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="144" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/refactoring/StructureModificationLog;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="153" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="186" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="195" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="204" startPosition="0" endLine="208" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="213" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="254" startPosition="0" endLine="258" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljava/util/Map;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="263" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="288" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)[Ljava/lang/String;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="293" startPosition="0" endLine="297" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiredAttributes#()[Ljava/lang/String;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="320" startPosition="0" endLine="324" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/refactoring/StructureModification/MoveNode;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="325" startPosition="0" endLine="329" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiredAttributes#()[Ljava/lang/String;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="349" startPosition="0" endLine="353" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/refactoring/StructureModification/RenameNode;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="354" startPosition="0" endLine="358" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiredAttributes#()[Ljava/lang/String;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="367" startPosition="7" endLine="371" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="385" startPosition="0" endLine="389" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/refactoring/StructureModification/RenameModel;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="390" startPosition="0" endLine="394" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiredAttributes#()[Ljava/lang/String;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="64" startPosition="10" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="82" startPosition="22" endLine="87" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="94" startPosition="25" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="163" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleChild_4224832660979881723#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="176" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/refactoring/StructureModification;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="223" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleChild_4224832660979881734#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="229" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleChild_4224832660979881742#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="235" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleChild_4224832660979881752#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="241" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleChild_4224832660979881762#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="74" startPosition="146" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="123" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleText#(Ljava/lang/Object;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="151" startPosition="52" endLine="157" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="184" startPosition="43" endLine="190" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="193" startPosition="35" endLine="199" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="202" startPosition="37" endLine="208" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="211" startPosition="42" endLine="217" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="261" startPosition="36" endLine="267" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="49" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="characters#([CII)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="273" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleChild_4224832660979881785#(Ljava/lang/Object;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="61" startPosition="33" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="150" startPosition="138" endLine="159" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="183" startPosition="138" endLine="192" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="192" startPosition="7" endLine="201" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="201" startPosition="7" endLine="210" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="210" startPosition="7" endLine="219" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="260" startPosition="138" endLine="269" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="330" startPosition="0" endLine="341" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="395" startPosition="0" endLine="406" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="149" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/smodel/persistence/def/refactoring/HistoryReaderHandler/ElementHandler;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="259" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/smodel/persistence/def/refactoring/HistoryReaderHandler/ElementHandler;" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="57" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="endElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="298" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="359" startPosition="0" endLine="377" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="72" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="startElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V" />
-    <nodeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="182" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/smodel/persistence/def/refactoring/HistoryReaderHandler/ElementHandler;" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="37" startPosition="33" endLine="37" endPosition="33" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="109" startPosition="30" endLine="109" endPosition="30" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="116" startPosition="104" endLine="116" endPosition="104" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="134" startPosition="70" endLine="134" endPosition="70" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="141" startPosition="36" endLine="141" endPosition="36" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="173" startPosition="36" endLine="173" endPosition="36" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="251" startPosition="41" endLine="251" endPosition="41" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="285" startPosition="34" endLine="285" endPosition="34" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="317" startPosition="37" endLine="317" endPosition="37" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="346" startPosition="39" endLine="346" endPosition="39" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="382" startPosition="40" endLine="382" endPosition="40" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="40" startPosition="47" endLine="41" endPosition="20" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="45" startPosition="51" endLine="46" endPosition="24" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="52" startPosition="26" endLine="53" endPosition="73" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="62" startPosition="39" endLine="63" endPosition="55" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="66" startPosition="23" endLine="67" endPosition="46" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="78" startPosition="12" endLine="79" endPosition="72" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="84" startPosition="46" endLine="85" endPosition="78" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="90" startPosition="34" endLine="91" endPosition="51" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="105" startPosition="0" endLine="106" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="112" startPosition="73" endLine="113" endPosition="18" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="119" startPosition="138" endLine="120" endPosition="67" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="124" startPosition="39" endLine="125" endPosition="15" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="130" startPosition="45" endLine="131" endPosition="46" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="145" startPosition="91" endLine="146" endPosition="44" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="154" startPosition="84" endLine="155" endPosition="65" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="187" startPosition="84" endLine="188" endPosition="65" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="196" startPosition="84" endLine="197" endPosition="65" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="205" startPosition="84" endLine="206" endPosition="65" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="214" startPosition="84" endLine="215" endPosition="65" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="255" startPosition="96" endLine="256" endPosition="74" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="264" startPosition="84" endLine="265" endPosition="65" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="289" startPosition="75" endLine="290" endPosition="106" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="294" startPosition="45" endLine="295" endPosition="32" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="301" startPosition="33" endLine="302" endPosition="15" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="304" startPosition="36" endLine="305" endPosition="15" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="307" startPosition="35" endLine="308" endPosition="15" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="321" startPosition="97" endLine="322" endPosition="140" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="326" startPosition="45" endLine="327" endPosition="32" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="333" startPosition="30" endLine="334" endPosition="15" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="336" startPosition="30" endLine="337" endPosition="15" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="350" startPosition="99" endLine="351" endPosition="201" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="355" startPosition="45" endLine="356" endPosition="32" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="362" startPosition="30" endLine="363" endPosition="15" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="365" startPosition="32" endLine="366" endPosition="15" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="372" startPosition="30" endLine="373" endPosition="15" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="386" startPosition="100" endLine="387" endPosition="215" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="391" startPosition="45" endLine="392" endPosition="32" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="398" startPosition="36" endLine="399" endPosition="15" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="401" startPosition="36" endLine="402" endPosition="15" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="37" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="75" startPosition="26" endLine="77" endPosition="31" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="109" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="116" startPosition="0" endLine="118" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="name" />
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="134" startPosition="0" endLine="136" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="141" startPosition="0" endLine="143" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="173" startPosition="0" endLine="175" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="177" startPosition="88" endLine="179" endPosition="41" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="251" startPosition="0" endLine="253" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="285" startPosition="0" endLine="287" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="317" startPosition="0" endLine="319" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="346" startPosition="0" endLine="348" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="368" startPosition="32" endLine="370" endPosition="15" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="382" startPosition="0" endLine="384" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="83" startPosition="54" endLine="86" endPosition="7" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="95" startPosition="54" endLine="98" endPosition="51">
-      <varInfo nodeId="4224832660979881712" varName="name" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="112" startPosition="0" endLine="115" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attrs" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="119" startPosition="0" endLine="122" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attrs" />
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="tagName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="130" startPosition="0" endLine="133" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="163" startPosition="105" endLine="166" endPosition="67">
-      <varInfo nodeId="4224832660979881712" varName="child" />
-      <varInfo nodeId="4224832660979881712" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="223" startPosition="105" endLine="226" endPosition="36">
-      <varInfo nodeId="4224832660979881712" varName="child" />
-      <varInfo nodeId="4224832660979881712" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="229" startPosition="105" endLine="232" endPosition="64">
-      <varInfo nodeId="4224832660979881712" varName="child" />
-      <varInfo nodeId="4224832660979881712" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="235" startPosition="105" endLine="238" endPosition="64">
-      <varInfo nodeId="4224832660979881712" varName="child" />
-      <varInfo nodeId="4224832660979881712" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="241" startPosition="105" endLine="244" endPosition="64">
-      <varInfo nodeId="4224832660979881712" varName="child" />
-      <varInfo nodeId="4224832660979881712" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="locator" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="50" startPosition="80" endLine="54" endPosition="5">
-      <varInfo nodeId="4224832660979881712" varName="current" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="64" startPosition="12" endLine="68" endPosition="7">
-      <varInfo nodeId="4224832660979881712" varName="ch" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="123" startPosition="86" endLine="127" endPosition="81" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="144" startPosition="0" endLine="148" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attrs" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="153" startPosition="0" endLine="157" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="186" startPosition="0" endLine="190" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="195" startPosition="0" endLine="199" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="204" startPosition="0" endLine="208" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="213" startPosition="0" endLine="217" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="254" startPosition="0" endLine="258" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attrs" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="263" startPosition="0" endLine="267" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="288" startPosition="0" endLine="292" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attrs" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="293" startPosition="0" endLine="297" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="320" startPosition="0" endLine="324" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attrs" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="325" startPosition="0" endLine="329" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="349" startPosition="0" endLine="353" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attrs" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="354" startPosition="0" endLine="358" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="385" startPosition="0" endLine="389" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attrs" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="390" startPosition="0" endLine="394" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="82" startPosition="22" endLine="87" endPosition="5">
-      <varInfo nodeId="4224832660979881712" varName="attr" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="94" startPosition="25" endLine="99" endPosition="5">
-      <varInfo nodeId="4224832660979881712" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="163" startPosition="0" endLine="168" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="176" startPosition="0" endLine="181" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attrs" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="223" startPosition="0" endLine="228" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="229" startPosition="0" endLine="234" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="235" startPosition="0" endLine="240" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="241" startPosition="0" endLine="246" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="273" startPosition="105" endLine="278" endPosition="50">
-      <varInfo nodeId="4224832660979881712" varName="child" />
-      <varInfo nodeId="4224832660979881788" varName="modelRef" />
-      <varInfo nodeId="4224832660979881712" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="123" startPosition="0" endLine="129" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="49" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="array" />
-      <varInfo nodeId="4224832660979881712" varName="len" />
-      <varInfo nodeId="4224832660979881712" varName="start" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="151" startPosition="52" endLine="158" endPosition="30" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="184" startPosition="43" endLine="191" endPosition="35" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="193" startPosition="35" endLine="200" endPosition="31" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="202" startPosition="37" endLine="209" endPosition="33" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="211" startPosition="42" endLine="218" endPosition="34" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="261" startPosition="36" endLine="268" endPosition="28" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="273" startPosition="0" endLine="280" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="331" startPosition="104" endLine="339" endPosition="55">
-      <varInfo nodeId="4224832660979881712" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="396" startPosition="104" endLine="404" endPosition="55">
-      <varInfo nodeId="4224832660979881712" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="150" startPosition="138" endLine="160" endPosition="61" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="260" startPosition="138" endLine="270" endPosition="61" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="58" startPosition="90" endLine="69" endPosition="5">
-      <varInfo nodeId="4224832660979881712" varName="childValue" />
-      <varInfo nodeId="4224832660979881712" varName="current" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="299" startPosition="104" endLine="310" endPosition="55">
-      <varInfo nodeId="4224832660979881712" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="330" startPosition="0" endLine="341" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="name" />
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="395" startPosition="0" endLine="406" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="name" />
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="149" startPosition="0" endLine="162" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attrs" />
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="tagName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="259" startPosition="0" endLine="272" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attrs" />
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="tagName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="57" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="localName" />
-      <varInfo nodeId="4224832660979881712" varName="qName" />
-      <varInfo nodeId="4224832660979881712" varName="uri" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="298" startPosition="0" endLine="312" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="name" />
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="360" startPosition="104" endLine="375" endPosition="55">
-      <varInfo nodeId="4224832660979881712" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="359" startPosition="0" endLine="377" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="name" />
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="73" startPosition="115" endLine="101" endPosition="26">
-      <varInfo nodeId="4224832660979881712" varName="current" />
-      <varInfo nodeId="4224832660979881712" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="72" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attributes" />
-      <varInfo nodeId="4224832660979881712" varName="localName" />
-      <varInfo nodeId="4224832660979881712" varName="qName" />
-      <varInfo nodeId="4224832660979881712" varName="uri" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="183" startPosition="138" endLine="220" endPosition="61" />
-    <scopeInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="182" startPosition="0" endLine="222" endPosition="0">
-      <varInfo nodeId="4224832660979881712" varName="attrs" />
-      <varInfo nodeId="4224832660979881712" varName="resultObject" />
-      <varInfo nodeId="4224832660979881712" varName="tagName" />
-    </scopeInfo>
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="104" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$ChildHandler" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="152" startPosition="38" endLine="157" endPosition="9" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$1" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="185" startPosition="38" endLine="190" endPosition="9" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$1" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="194" startPosition="38" endLine="199" endPosition="9" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$2" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="203" startPosition="38" endLine="208" endPosition="9" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$3" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="212" startPosition="38" endLine="217" endPosition="9" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$4" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="262" startPosition="38" endLine="267" endPosition="9" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$1" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="314" startPosition="0" endLine="342" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$MoveNodeElementHandler" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="379" startPosition="0" endLine="407" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$RenameModelElementHandler" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="108" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$ElementHandler" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="138" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$HistoryElementHandler" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="282" startPosition="0" endLine="313" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$ModelElementHandler" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="248" startPosition="0" endLine="281" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$DependenciesElementHandler" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="343" startPosition="0" endLine="378" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$RenameNodeElementHandler" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="170" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$ElementElementHandler" />
-    <unitInfo nodeId="4224832660979881712" fileName="HistoryReaderHandler.java" startLine="21" startPosition="0" endLine="408" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler" />
+    <file name="HistoryReaderHandler.java">
+      <node id="4224832660979881712" at="22,0,23,0" concept="12" trace="EMPTY_ARRAY" />
+      <node id="4224832660979881712" at="23,0,24,0" concept="3" trace="historyhandler" />
+      <node id="4224832660979881712" at="24,0,25,0" concept="3" trace="elementhandler" />
+      <node id="4224832660979881712" at="25,0,26,0" concept="3" trace="dependencieshandler" />
+      <node id="4224832660979881712" at="26,0,27,0" concept="3" trace="modelhandler" />
+      <node id="4224832660979881712" at="27,0,28,0" concept="3" trace="MoveNodehandler" />
+      <node id="4224832660979881712" at="28,0,29,0" concept="3" trace="RenameNodehandler" />
+      <node id="4224832660979881712" at="29,0,30,0" concept="3" trace="RenameModelhandler" />
+      <node id="4224832660979881712" at="30,0,31,0" concept="3" trace="myHandlersStack" />
+      <node id="4224832660979881712" at="31,0,32,0" concept="3" trace="myChildHandlersStack" />
+      <node id="4224832660979881712" at="32,0,33,0" concept="3" trace="myValues" />
+      <node id="4224832660979881712" at="33,0,34,0" concept="3" trace="myLocator" />
+      <node id="4224832660979881712" at="34,0,35,0" concept="3" trace="myResult" />
+      <node id="4224832660979881712" at="35,0,36,0" concept="3" trace="fieldhelper" />
+      <node id="4224832660979881712" at="40,47,41,20" concept="9" />
+      <node id="4224832660979881712" at="45,51,46,24" concept="2" />
+      <node id="4224832660979881712" at="50,80,51,146" concept="8" />
+      <node id="4224832660979881712" at="52,26,53,73" concept="2" />
+      <node id="4224832660979881712" at="58,90,59,72" concept="8" />
+      <node id="4224832660979881712" at="59,72,60,39" concept="8" />
+      <node id="4224832660979881712" at="60,39,61,33" concept="2" />
+      <node id="4224832660979881712" at="62,39,63,55" concept="2" />
+      <node id="4224832660979881712" at="64,12,65,72" concept="8" />
+      <node id="4224832660979881712" at="66,23,67,46" concept="2" />
+      <node id="4224832660979881712" at="73,115,74,146" concept="8" />
+      <node id="4224832660979881712" at="75,26,76,14" concept="10" />
+      <node id="4224832660979881712" at="76,14,77,31" concept="2" />
+      <node id="4224832660979881712" at="78,12,79,72" concept="2" />
+      <node id="4224832660979881712" at="80,5,81,0" concept="11" />
+      <node id="4224832660979881712" at="81,0,82,22" concept="10" />
+      <node id="4224832660979881712" at="84,46,85,78" concept="13" />
+      <node id="4224832660979881712" at="87,5,88,0" concept="11" />
+      <node id="4224832660979881712" at="88,0,89,53" concept="8" />
+      <node id="4224832660979881712" at="90,34,91,51" concept="2" />
+      <node id="4224832660979881712" at="92,5,93,0" concept="11" />
+      <node id="4224832660979881712" at="93,0,94,25" concept="10" />
+      <node id="4224832660979881712" at="95,54,96,43" concept="8" />
+      <node id="4224832660979881712" at="96,43,97,44" concept="8" />
+      <node id="4224832660979881712" at="97,44,98,51" concept="2" />
+      <node id="4224832660979881712" at="99,5,100,34" concept="2" />
+      <node id="4224832660979881712" at="100,34,101,26" concept="2" />
+      <node id="4224832660979881712" at="105,0,106,0" concept="7" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="112,73,113,18" concept="9" />
+      <node id="4224832660979881712" at="119,138,120,67" concept="13" />
+      <node id="4224832660979881712" at="124,39,125,15" concept="9" />
+      <node id="4224832660979881712" at="126,7,127,81" concept="13" />
+      <node id="4224832660979881712" at="130,45,131,46" concept="9" />
+      <node id="4224832660979881712" at="139,0,140,0" concept="3" trace="requiredAttributes" />
+      <node id="4224832660979881719" at="145,91,146,44" concept="9" />
+      <node id="4224832660979881712" at="154,84,155,65" concept="2" />
+      <node id="4224832660979881712" at="157,11,158,30" concept="9" />
+      <node id="4224832660979881712" at="159,7,160,61" concept="9" />
+      <node id="4224832660979881712" at="163,105,164,80" concept="8" />
+      <node id="4224832660979881712" at="164,80,165,66" concept="8" />
+      <node id="4224832660979881725" at="165,66,166,67" concept="2" />
+      <node id="4224832660979881712" at="171,0,172,0" concept="3" trace="requiredAttributes" />
+      <node id="4224832660979881774" at="177,88,178,41" concept="2" />
+      <node id="4224832660979881780" at="178,41,179,41" concept="9" />
+      <node id="4224832660979881712" at="187,84,188,65" concept="2" />
+      <node id="4224832660979881712" at="190,11,191,35" concept="9" />
+      <node id="4224832660979881712" at="196,84,197,65" concept="2" />
+      <node id="4224832660979881712" at="199,11,200,31" concept="9" />
+      <node id="4224832660979881712" at="205,84,206,65" concept="2" />
+      <node id="4224832660979881712" at="208,11,209,33" concept="9" />
+      <node id="4224832660979881712" at="214,84,215,65" concept="2" />
+      <node id="4224832660979881712" at="217,11,218,34" concept="9" />
+      <node id="4224832660979881712" at="219,7,220,61" concept="9" />
+      <node id="4224832660979881712" at="223,105,224,74" concept="8" />
+      <node id="4224832660979881712" at="224,74,225,82" concept="8" />
+      <node id="4224832660979881736" at="225,82,226,36" concept="2" />
+      <node id="4224832660979881712" at="229,105,230,74" concept="8" />
+      <node id="4224832660979881712" at="230,74,231,84" concept="8" />
+      <node id="4224832660979881744" at="231,84,232,64" concept="2" />
+      <node id="4224832660979881712" at="235,105,236,74" concept="8" />
+      <node id="4224832660979881712" at="236,74,237,88" concept="8" />
+      <node id="4224832660979881754" at="237,88,238,64" concept="2" />
+      <node id="4224832660979881712" at="241,105,242,74" concept="8" />
+      <node id="4224832660979881712" at="242,74,243,90" concept="8" />
+      <node id="4224832660979881764" at="243,90,244,64" concept="2" />
+      <node id="4224832660979881712" at="249,0,250,0" concept="3" trace="requiredAttributes" />
+      <node id="4224832660979881816" at="255,96,256,74" concept="9" />
+      <node id="4224832660979881712" at="264,84,265,65" concept="2" />
+      <node id="4224832660979881712" at="267,11,268,28" concept="9" />
+      <node id="4224832660979881712" at="269,7,270,61" concept="9" />
+      <node id="4224832660979881712" at="273,105,274,90" concept="8" />
+      <node id="4224832660979881712" at="274,90,275,40" concept="8" />
+      <node id="4224832660979881787" at="275,40,276,96" concept="8" />
+      <node id="4224832660979881794" at="276,96,277,76" concept="2" />
+      <node id="4224832660979881803" at="277,76,278,50" concept="2" />
+      <node id="4224832660979881712" at="283,0,284,0" concept="3" trace="requiredAttributes" />
+      <node id="4224832660979881829" at="289,75,290,106" concept="9" />
+      <node id="4224832660979881712" at="294,45,295,32" concept="9" />
+      <node id="4224832660979881712" at="299,104,300,48" concept="8" />
+      <node id="4224832660979881712" at="301,33,302,15" concept="9" />
+      <node id="4224832660979881712" at="304,36,305,15" concept="9" />
+      <node id="4224832660979881712" at="307,35,308,15" concept="9" />
+      <node id="4224832660979881712" at="309,7,310,55" concept="2" />
+      <node id="4224832660979881712" at="315,0,316,0" concept="3" trace="requiredAttributes" />
+      <node id="4224832660979881842" at="321,97,322,140" concept="9" />
+      <node id="4224832660979881712" at="326,45,327,32" concept="9" />
+      <node id="4224832660979881712" at="331,104,332,92" concept="8" />
+      <node id="4224832660979881712" at="333,30,334,15" concept="9" />
+      <node id="4224832660979881712" at="336,30,337,15" concept="9" />
+      <node id="4224832660979881712" at="338,7,339,55" concept="2" />
+      <node id="4224832660979881712" at="344,0,345,0" concept="3" trace="requiredAttributes" />
+      <node id="4224832660979881869" at="350,99,351,201" concept="9" />
+      <node id="4224832660979881712" at="355,45,356,32" concept="9" />
+      <node id="4224832660979881712" at="360,104,361,96" concept="8" />
+      <node id="4224832660979881712" at="362,30,363,15" concept="9" />
+      <node id="4224832660979881712" at="365,32,366,15" concept="9" />
+      <node id="4224832660979881859" at="368,32,369,32" concept="2" />
+      <node id="4224832660979881712" at="369,32,370,15" concept="9" />
+      <node id="4224832660979881712" at="372,30,373,15" concept="9" />
+      <node id="4224832660979881712" at="374,7,375,55" concept="2" />
+      <node id="4224832660979881712" at="380,0,381,0" concept="3" trace="requiredAttributes" />
+      <node id="4224832660979881884" at="386,100,387,215" concept="9" />
+      <node id="4224832660979881712" at="391,45,392,32" concept="9" />
+      <node id="4224832660979881712" at="396,104,397,98" concept="8" />
+      <node id="4224832660979881712" at="398,36,399,15" concept="9" />
+      <node id="4224832660979881712" at="401,36,402,15" concept="9" />
+      <node id="4224832660979881712" at="403,7,404,55" concept="2" />
+      <node id="4224832660979881712" at="37,0,39,0" concept="1" trace="HistoryReaderHandler#()V" />
+      <node id="4224832660979881712" at="78,10,80,5" concept="0" />
+      <node id="4224832660979881712" at="109,0,111,0" concept="1" trace="ElementHandler#()V" />
+      <node id="4224832660979881712" at="116,0,118,0" concept="7" trace="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="4224832660979881712" at="134,0,136,0" concept="7" trace="validate#(Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="141,0,143,0" concept="1" trace="HistoryElementHandler#()V" />
+      <node id="4224832660979881712" at="173,0,175,0" concept="1" trace="ElementElementHandler#()V" />
+      <node id="4224832660979881712" at="251,0,253,0" concept="1" trace="DependenciesElementHandler#()V" />
+      <node id="4224832660979881712" at="285,0,287,0" concept="1" trace="ModelElementHandler#()V" />
+      <node id="4224832660979881712" at="317,0,319,0" concept="1" trace="MoveNodeElementHandler#()V" />
+      <node id="4224832660979881712" at="346,0,348,0" concept="1" trace="RenameNodeElementHandler#()V" />
+      <node id="4224832660979881712" at="382,0,384,0" concept="1" trace="RenameModelElementHandler#()V" />
+      <node id="4224832660979881712" at="40,0,43,0" concept="7" trace="getResult#()Ljetbrains/mps/refactoring/StructureModificationLog;" />
+      <node id="4224832660979881712" at="51,146,54,5" concept="6" />
+      <node id="4224832660979881712" at="65,72,68,7" concept="6" />
+      <node id="4224832660979881712" at="83,54,86,7" concept="6" />
+      <node id="4224832660979881712" at="89,53,92,5" concept="6" />
+      <node id="4224832660979881712" at="112,0,115,0" concept="7" trace="createObject#(Lorg/xml/sax/Attributes;)Ljava/lang/Object;" />
+      <node id="4224832660979881712" at="119,0,122,0" concept="7" trace="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/smodel/persistence/def/refactoring/HistoryReaderHandler/ElementHandler;" />
+      <node id="4224832660979881712" at="123,86,126,7" concept="6" />
+      <node id="4224832660979881712" at="130,0,133,0" concept="7" trace="requiredAttributes#()[Ljava/lang/String;" />
+      <node id="4224832660979881712" at="300,48,303,7" concept="6" />
+      <node id="4224832660979881712" at="303,7,306,7" concept="6" />
+      <node id="4224832660979881712" at="306,7,309,7" concept="6" />
+      <node id="4224832660979881712" at="332,92,335,7" concept="6" />
+      <node id="4224832660979881712" at="335,7,338,7" concept="6" />
+      <node id="4224832660979881712" at="361,96,364,7" concept="6" />
+      <node id="4224832660979881712" at="364,7,367,7" concept="6" />
+      <node id="4224832660979881712" at="371,7,374,7" concept="6" />
+      <node id="4224832660979881712" at="397,98,400,7" concept="6" />
+      <node id="4224832660979881712" at="400,7,403,7" concept="6" />
+      <node id="4224832660979881712" at="44,0,48,0" concept="7" trace="setDocumentLocator#(Lorg/xml/sax/Locator;)V" />
+      <node id="4224832660979881712" at="144,0,148,0" concept="7" trace="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/refactoring/StructureModificationLog;" />
+      <node id="4224832660979881712" at="153,0,157,0" concept="7" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="186,0,190,0" concept="7" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="195,0,199,0" concept="7" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="204,0,208,0" concept="7" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="213,0,217,0" concept="7" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="254,0,258,0" concept="7" trace="createObject#(Lorg/xml/sax/Attributes;)Ljava/util/Map;" />
+      <node id="4224832660979881712" at="263,0,267,0" concept="7" trace="apply#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="288,0,292,0" concept="7" trace="createObject#(Lorg/xml/sax/Attributes;)[Ljava/lang/String;" />
+      <node id="4224832660979881712" at="293,0,297,0" concept="7" trace="requiredAttributes#()[Ljava/lang/String;" />
+      <node id="4224832660979881712" at="320,0,324,0" concept="7" trace="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/refactoring/StructureModification/MoveNode;" />
+      <node id="4224832660979881712" at="325,0,329,0" concept="7" trace="requiredAttributes#()[Ljava/lang/String;" />
+      <node id="4224832660979881712" at="349,0,353,0" concept="7" trace="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/refactoring/StructureModification/RenameNode;" />
+      <node id="4224832660979881712" at="354,0,358,0" concept="7" trace="requiredAttributes#()[Ljava/lang/String;" />
+      <node id="4224832660979881712" at="367,7,371,7" concept="6" />
+      <node id="4224832660979881712" at="385,0,389,0" concept="7" trace="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/refactoring/StructureModification/RenameModel;" />
+      <node id="4224832660979881712" at="390,0,394,0" concept="7" trace="requiredAttributes#()[Ljava/lang/String;" />
+      <node id="4224832660979881712" at="64,10,69,5" concept="0" />
+      <node id="4224832660979881712" at="82,22,87,5" concept="5" />
+      <node id="4224832660979881712" at="94,25,99,5" concept="4" />
+      <node id="4224832660979881712" at="163,0,168,0" concept="7" trace="handleChild_4224832660979881723#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="176,0,181,0" concept="7" trace="createObject#(Lorg/xml/sax/Attributes;)Ljetbrains/mps/refactoring/StructureModification;" />
+      <node id="4224832660979881712" at="223,0,228,0" concept="7" trace="handleChild_4224832660979881734#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="229,0,234,0" concept="7" trace="handleChild_4224832660979881742#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="235,0,240,0" concept="7" trace="handleChild_4224832660979881752#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="241,0,246,0" concept="7" trace="handleChild_4224832660979881762#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="74,146,80,5" concept="6" />
+      <node id="4224832660979881712" at="123,0,129,0" concept="7" trace="handleText#(Ljava/lang/Object;Ljava/lang/String;)V" />
+      <node id="4224832660979881712" at="151,52,157,11" concept="2" />
+      <node id="4224832660979881712" at="184,43,190,11" concept="2" />
+      <node id="4224832660979881712" at="193,35,199,11" concept="2" />
+      <node id="4224832660979881712" at="202,37,208,11" concept="2" />
+      <node id="4224832660979881712" at="211,42,217,11" concept="2" />
+      <node id="4224832660979881712" at="261,36,267,11" concept="2" />
+      <node id="4224832660979881712" at="49,0,56,0" concept="7" trace="characters#([CII)V" />
+      <node id="4224832660979881712" at="273,0,280,0" concept="7" trace="handleChild_4224832660979881785#(Ljava/lang/Object;Ljava/lang/Object;)V" />
+      <node id="4224832660979881712" at="61,33,69,5" concept="6" />
+      <node id="4224832660979881712" at="150,138,159,7" concept="6" />
+      <node id="4224832660979881712" at="183,138,192,7" concept="6" />
+      <node id="4224832660979881712" at="192,7,201,7" concept="6" />
+      <node id="4224832660979881712" at="201,7,210,7" concept="6" />
+      <node id="4224832660979881712" at="210,7,219,7" concept="6" />
+      <node id="4224832660979881712" at="260,138,269,7" concept="6" />
+      <node id="4224832660979881712" at="330,0,341,0" concept="7" trace="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="4224832660979881712" at="395,0,406,0" concept="7" trace="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="4224832660979881712" at="149,0,162,0" concept="7" trace="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/smodel/persistence/def/refactoring/HistoryReaderHandler/ElementHandler;" />
+      <node id="4224832660979881712" at="259,0,272,0" concept="7" trace="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/smodel/persistence/def/refactoring/HistoryReaderHandler/ElementHandler;" />
+      <node id="4224832660979881712" at="57,0,71,0" concept="7" trace="endElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="4224832660979881712" at="298,0,312,0" concept="7" trace="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="4224832660979881712" at="359,0,377,0" concept="7" trace="handleAttribute#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="4224832660979881712" at="72,0,103,0" concept="7" trace="startElement#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lorg/xml/sax/Attributes;)V" />
+      <node id="4224832660979881712" at="182,0,222,0" concept="7" trace="createChild#(Ljava/lang/Object;Ljava/lang/String;Lorg/xml/sax/Attributes;)Ljetbrains/mps/smodel/persistence/def/refactoring/HistoryReaderHandler/ElementHandler;" />
+      <scope id="4224832660979881712" at="37,33,37,33" />
+      <scope id="4224832660979881712" at="109,30,109,30" />
+      <scope id="4224832660979881712" at="116,104,116,104" />
+      <scope id="4224832660979881712" at="134,70,134,70" />
+      <scope id="4224832660979881712" at="141,36,141,36" />
+      <scope id="4224832660979881712" at="173,36,173,36" />
+      <scope id="4224832660979881712" at="251,41,251,41" />
+      <scope id="4224832660979881712" at="285,34,285,34" />
+      <scope id="4224832660979881712" at="317,37,317,37" />
+      <scope id="4224832660979881712" at="346,39,346,39" />
+      <scope id="4224832660979881712" at="382,40,382,40" />
+      <scope id="4224832660979881712" at="40,47,41,20" />
+      <scope id="4224832660979881712" at="45,51,46,24" />
+      <scope id="4224832660979881712" at="52,26,53,73" />
+      <scope id="4224832660979881712" at="62,39,63,55" />
+      <scope id="4224832660979881712" at="66,23,67,46" />
+      <scope id="4224832660979881712" at="78,12,79,72" />
+      <scope id="4224832660979881712" at="84,46,85,78" />
+      <scope id="4224832660979881712" at="90,34,91,51" />
+      <scope id="4224832660979881712" at="105,0,106,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="112,73,113,18" />
+      <scope id="4224832660979881712" at="119,138,120,67" />
+      <scope id="4224832660979881712" at="124,39,125,15" />
+      <scope id="4224832660979881712" at="130,45,131,46" />
+      <scope id="4224832660979881712" at="145,91,146,44" />
+      <scope id="4224832660979881712" at="154,84,155,65" />
+      <scope id="4224832660979881712" at="187,84,188,65" />
+      <scope id="4224832660979881712" at="196,84,197,65" />
+      <scope id="4224832660979881712" at="205,84,206,65" />
+      <scope id="4224832660979881712" at="214,84,215,65" />
+      <scope id="4224832660979881712" at="255,96,256,74" />
+      <scope id="4224832660979881712" at="264,84,265,65" />
+      <scope id="4224832660979881712" at="289,75,290,106" />
+      <scope id="4224832660979881712" at="294,45,295,32" />
+      <scope id="4224832660979881712" at="301,33,302,15" />
+      <scope id="4224832660979881712" at="304,36,305,15" />
+      <scope id="4224832660979881712" at="307,35,308,15" />
+      <scope id="4224832660979881712" at="321,97,322,140" />
+      <scope id="4224832660979881712" at="326,45,327,32" />
+      <scope id="4224832660979881712" at="333,30,334,15" />
+      <scope id="4224832660979881712" at="336,30,337,15" />
+      <scope id="4224832660979881712" at="350,99,351,201" />
+      <scope id="4224832660979881712" at="355,45,356,32" />
+      <scope id="4224832660979881712" at="362,30,363,15" />
+      <scope id="4224832660979881712" at="365,32,366,15" />
+      <scope id="4224832660979881712" at="372,30,373,15" />
+      <scope id="4224832660979881712" at="386,100,387,215" />
+      <scope id="4224832660979881712" at="391,45,392,32" />
+      <scope id="4224832660979881712" at="398,36,399,15" />
+      <scope id="4224832660979881712" at="401,36,402,15" />
+      <scope id="4224832660979881712" at="37,0,39,0" />
+      <scope id="4224832660979881712" at="75,26,77,31" />
+      <scope id="4224832660979881712" at="109,0,111,0" />
+      <scope id="4224832660979881712" at="116,0,118,0">
+        <var name="name" id="4224832660979881712" />
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="134,0,136,0">
+        <var name="resultObject" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="141,0,143,0" />
+      <scope id="4224832660979881712" at="173,0,175,0" />
+      <scope id="4224832660979881712" at="177,88,179,41" />
+      <scope id="4224832660979881712" at="251,0,253,0" />
+      <scope id="4224832660979881712" at="285,0,287,0" />
+      <scope id="4224832660979881712" at="317,0,319,0" />
+      <scope id="4224832660979881712" at="346,0,348,0" />
+      <scope id="4224832660979881712" at="368,32,370,15" />
+      <scope id="4224832660979881712" at="382,0,384,0" />
+      <scope id="4224832660979881712" at="40,0,43,0" />
+      <scope id="4224832660979881712" at="83,54,86,7" />
+      <scope id="4224832660979881712" at="95,54,98,51">
+        <var name="name" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="112,0,115,0">
+        <var name="attrs" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="119,0,122,0">
+        <var name="attrs" id="4224832660979881712" />
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="tagName" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="130,0,133,0" />
+      <scope id="4224832660979881712" at="163,105,166,67">
+        <var name="child" id="4224832660979881712" />
+        <var name="result" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="223,105,226,36">
+        <var name="child" id="4224832660979881712" />
+        <var name="result" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="229,105,232,64">
+        <var name="child" id="4224832660979881712" />
+        <var name="result" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="235,105,238,64">
+        <var name="child" id="4224832660979881712" />
+        <var name="result" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="241,105,244,64">
+        <var name="child" id="4224832660979881712" />
+        <var name="result" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="44,0,48,0">
+        <var name="locator" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="50,80,54,5">
+        <var name="current" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="64,12,68,7">
+        <var name="ch" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="123,86,127,81" />
+      <scope id="4224832660979881712" at="144,0,148,0">
+        <var name="attrs" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="153,0,157,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="186,0,190,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="195,0,199,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="204,0,208,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="213,0,217,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="254,0,258,0">
+        <var name="attrs" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="263,0,267,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="288,0,292,0">
+        <var name="attrs" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="293,0,297,0" />
+      <scope id="4224832660979881712" at="320,0,324,0">
+        <var name="attrs" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="325,0,329,0" />
+      <scope id="4224832660979881712" at="349,0,353,0">
+        <var name="attrs" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="354,0,358,0" />
+      <scope id="4224832660979881712" at="385,0,389,0">
+        <var name="attrs" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="390,0,394,0" />
+      <scope id="4224832660979881712" at="82,22,87,5">
+        <var name="attr" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="94,25,99,5">
+        <var name="i" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="163,0,168,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="176,0,181,0">
+        <var name="attrs" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="223,0,228,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="229,0,234,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="235,0,240,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="241,0,246,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="273,105,278,50">
+        <var name="child" id="4224832660979881712" />
+        <var name="modelRef" id="4224832660979881788" />
+        <var name="result" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="123,0,129,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="49,0,56,0">
+        <var name="array" id="4224832660979881712" />
+        <var name="len" id="4224832660979881712" />
+        <var name="start" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="151,52,158,30" />
+      <scope id="4224832660979881712" at="184,43,191,35" />
+      <scope id="4224832660979881712" at="193,35,200,31" />
+      <scope id="4224832660979881712" at="202,37,209,33" />
+      <scope id="4224832660979881712" at="211,42,218,34" />
+      <scope id="4224832660979881712" at="261,36,268,28" />
+      <scope id="4224832660979881712" at="273,0,280,0">
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="331,104,339,55">
+        <var name="result" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="396,104,404,55">
+        <var name="result" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="150,138,160,61" />
+      <scope id="4224832660979881712" at="260,138,270,61" />
+      <scope id="4224832660979881712" at="58,90,69,5">
+        <var name="childValue" id="4224832660979881712" />
+        <var name="current" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="299,104,310,55">
+        <var name="result" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="330,0,341,0">
+        <var name="name" id="4224832660979881712" />
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="395,0,406,0">
+        <var name="name" id="4224832660979881712" />
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="149,0,162,0">
+        <var name="attrs" id="4224832660979881712" />
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="tagName" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="259,0,272,0">
+        <var name="attrs" id="4224832660979881712" />
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="tagName" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="57,0,71,0">
+        <var name="localName" id="4224832660979881712" />
+        <var name="qName" id="4224832660979881712" />
+        <var name="uri" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="298,0,312,0">
+        <var name="name" id="4224832660979881712" />
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="360,104,375,55">
+        <var name="result" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="359,0,377,0">
+        <var name="name" id="4224832660979881712" />
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="value" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="73,115,101,26">
+        <var name="current" id="4224832660979881712" />
+        <var name="result" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="72,0,103,0">
+        <var name="attributes" id="4224832660979881712" />
+        <var name="localName" id="4224832660979881712" />
+        <var name="qName" id="4224832660979881712" />
+        <var name="uri" id="4224832660979881712" />
+      </scope>
+      <scope id="4224832660979881712" at="183,138,220,61" />
+      <scope id="4224832660979881712" at="182,0,222,0">
+        <var name="attrs" id="4224832660979881712" />
+        <var name="resultObject" id="4224832660979881712" />
+        <var name="tagName" id="4224832660979881712" />
+      </scope>
+      <unit id="4224832660979881712" at="104,0,107,0" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$ChildHandler" />
+      <unit id="4224832660979881712" at="152,38,157,9" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$1" />
+      <unit id="4224832660979881712" at="185,38,190,9" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$1" />
+      <unit id="4224832660979881712" at="194,38,199,9" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$2" />
+      <unit id="4224832660979881712" at="203,38,208,9" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$3" />
+      <unit id="4224832660979881712" at="212,38,217,9" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$4" />
+      <unit id="4224832660979881712" at="262,38,267,9" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$1" />
+      <unit id="4224832660979881712" at="314,0,342,0" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$MoveNodeElementHandler" />
+      <unit id="4224832660979881712" at="379,0,407,0" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$RenameModelElementHandler" />
+      <unit id="4224832660979881712" at="108,0,137,0" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$ElementHandler" />
+      <unit id="4224832660979881712" at="138,0,169,0" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$HistoryElementHandler" />
+      <unit id="4224832660979881712" at="282,0,313,0" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$ModelElementHandler" />
+      <unit id="4224832660979881712" at="248,0,281,0" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$DependenciesElementHandler" />
+      <unit id="4224832660979881712" at="343,0,378,0" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$RenameNodeElementHandler" />
+      <unit id="4224832660979881712" at="170,0,247,0" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler$ElementElementHandler" />
+      <unit id="4224832660979881712" at="21,0,408,0" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryReaderHandler" />
+    </file>
   </root>
   <root nodeRef="r:ee4e3a40-94e5-448b-94ee-afa0fd22e4ed(jetbrains.mps.smodel.persistence.def.refactoring)/4224832660979881893">
-    <nodeInfo nodeId="4224832660979882225" fileName="HistoryWriter.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODIFICATION_HISTORY" />
-    <nodeInfo nodeId="4224832660979882229" fileName="HistoryWriter.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODIFICATION_ELEMENT" />
-    <nodeInfo nodeId="4224832660979882233" fileName="HistoryWriter.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPENDENCIES" />
-    <nodeInfo nodeId="4224832660979882237" fileName="HistoryWriter.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEPEND_MODEL" />
-    <nodeInfo nodeId="4224832660979882241" fileName="HistoryWriter.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODEL_INDEX" />
-    <nodeInfo nodeId="4224832660979882245" fileName="HistoryWriter.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODEL_UID" />
-    <nodeInfo nodeId="4224832660979882249" fileName="HistoryWriter.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODEL_VERSION" />
-    <nodeInfo nodeId="4224832660979882253" fileName="HistoryWriter.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODIFICATION_ENTRIES" />
-    <nodeInfo nodeId="4224832660979882257" fileName="HistoryWriter.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MOVE_NODE" />
-    <nodeInfo nodeId="4224832660979882261" fileName="HistoryWriter.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RENAME_NODE" />
-    <nodeInfo nodeId="4224832660979882265" fileName="HistoryWriter.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NODE_ID" />
-    <nodeInfo nodeId="4224832660979882269" fileName="HistoryWriter.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NEW_ID" />
-    <nodeInfo nodeId="4224832660979882273" fileName="HistoryWriter.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="RENAME_TYPE" />
-    <nodeInfo nodeId="4224832660979882277" fileName="HistoryWriter.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OLD_VALUE" />
-    <nodeInfo nodeId="4224832660979882281" fileName="HistoryWriter.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NEW_VALUE" />
-    <nodeInfo nodeId="4224832660979882222" fileName="HistoryWriter.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHelper" />
-    <nodeInfo nodeId="4224832660979881898" fileName="HistoryWriter.java" startLine="38" startPosition="65" endLine="39" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881912" fileName="HistoryWriter.java" startLine="41" startPosition="51" endLine="42" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881920" fileName="HistoryWriter.java" startLine="44" startPosition="7" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979881930" fileName="HistoryWriter.java" startLine="48" startPosition="71" endLine="49" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881936" fileName="HistoryWriter.java" startLine="49" startPosition="37" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4224832660979881937" fileName="HistoryWriter.java" startLine="50" startPosition="0" endLine="51" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881943" fileName="HistoryWriter.java" startLine="51" startPosition="59" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4224832660979881944" fileName="HistoryWriter.java" startLine="52" startPosition="0" endLine="53" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881950" fileName="HistoryWriter.java" startLine="53" startPosition="53" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881961" fileName="HistoryWriter.java" startLine="55" startPosition="111" endLine="56" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881968" fileName="HistoryWriter.java" startLine="56" startPosition="51" endLine="57" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979881974" fileName="HistoryWriter.java" startLine="57" startPosition="48" endLine="58" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881985" fileName="HistoryWriter.java" startLine="58" startPosition="81" endLine="59" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979881995" fileName="HistoryWriter.java" startLine="59" startPosition="65" endLine="60" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882004" fileName="HistoryWriter.java" startLine="60" startPosition="78" endLine="61" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882009" fileName="HistoryWriter.java" startLine="62" startPosition="5" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4224832660979882018" fileName="HistoryWriter.java" startLine="65" startPosition="57" endLine="66" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882026" fileName="HistoryWriter.java" startLine="68" startPosition="7" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4224832660979882027" fileName="HistoryWriter.java" startLine="69" startPosition="0" endLine="70" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979882035" fileName="HistoryWriter.java" startLine="73" startPosition="44" endLine="74" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979882056" fileName="HistoryWriter.java" startLine="78" startPosition="57" endLine="79" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979882066" fileName="HistoryWriter.java" startLine="80" startPosition="66" endLine="81" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979882076" fileName="HistoryWriter.java" startLine="82" startPosition="67" endLine="83" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979882081" fileName="HistoryWriter.java" startLine="84" startPosition="5" endLine="85" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979882089" fileName="HistoryWriter.java" startLine="88" startPosition="68" endLine="89" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979882095" fileName="HistoryWriter.java" startLine="89" startPosition="42" endLine="90" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882104" fileName="HistoryWriter.java" startLine="90" startPosition="50" endLine="91" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882115" fileName="HistoryWriter.java" startLine="92" startPosition="35" endLine="93" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882128" fileName="HistoryWriter.java" startLine="94" startPosition="5" endLine="95" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979882136" fileName="HistoryWriter.java" startLine="98" startPosition="72" endLine="99" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979882142" fileName="HistoryWriter.java" startLine="99" startPosition="44" endLine="100" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882151" fileName="HistoryWriter.java" startLine="100" startPosition="50" endLine="101" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882163" fileName="HistoryWriter.java" startLine="102" startPosition="32" endLine="103" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882176" fileName="HistoryWriter.java" startLine="104" startPosition="5" endLine="105" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882184" fileName="HistoryWriter.java" startLine="105" startPosition="48" endLine="106" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979882192" fileName="HistoryWriter.java" startLine="109" startPosition="74" endLine="110" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4224832660979882198" fileName="HistoryWriter.java" startLine="110" startPosition="46" endLine="111" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882208" fileName="HistoryWriter.java" startLine="111" startPosition="60" endLine="112" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882218" fileName="HistoryWriter.java" startLine="112" startPosition="60" endLine="113" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4224832660979882286" fileName="HistoryWriter.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HistoryWriter#()V" />
-    <nodeInfo nodeId="4224832660979881910" fileName="HistoryWriter.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/refactoring/StructureModification;)V" />
-    <nodeInfo nodeId="4224832660979882016" fileName="HistoryWriter.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/refactoring/StructureModification/Entry;)V" />
-    <nodeInfo nodeId="4224832660979882031" fileName="HistoryWriter.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="genId#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4224832660979882113" fileName="HistoryWriter.java" startLine="91" startPosition="49" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979882161" fileName="HistoryWriter.java" startLine="101" startPosition="53" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881904" fileName="HistoryWriter.java" startLine="39" startPosition="59" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882010" fileName="HistoryWriter.java" startLine="63" startPosition="0" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4224832660979882188" fileName="HistoryWriter.java" startLine="109" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveRenameModel#(Ljetbrains/mps/refactoring/StructureModification/RenameModel;)Lorg/jdom/Element;" />
-    <nodeInfo nodeId="4224832660979882051" fileName="HistoryWriter.java" startLine="77" startPosition="61" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4224832660979881955" fileName="HistoryWriter.java" startLine="54" startPosition="34" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4224832660979881894" fileName="HistoryWriter.java" startLine="38" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveHistory#(Ljetbrains/mps/refactoring/StructureModificationLog;)Lorg/jdom/Document;" />
-    <nodeInfo nodeId="4224832660979882085" fileName="HistoryWriter.java" startLine="88" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveMoveNode#(Ljetbrains/mps/refactoring/StructureModification/MoveNode;)Lorg/jdom/Element;" />
-    <nodeInfo nodeId="4224832660979882047" fileName="HistoryWriter.java" startLine="77" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveData#(Ljetbrains/mps/refactoring/StructureModification/Entry;)Lorg/jdom/Element;" />
-    <nodeInfo nodeId="4224832660979882132" fileName="HistoryWriter.java" startLine="98" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveRenameNode#(Ljetbrains/mps/refactoring/StructureModification/RenameNode;)Lorg/jdom/Element;" />
-    <nodeInfo nodeId="4224832660979881926" fileName="HistoryWriter.java" startLine="48" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveModification#(Ljetbrains/mps/refactoring/StructureModification;)Lorg/jdom/Element;" />
-    <scopeInfo nodeId="4224832660979882289" fileName="HistoryWriter.java" startLine="35" startPosition="26" endLine="35" endPosition="26" />
-    <scopeInfo nodeId="4224832660979881911" fileName="HistoryWriter.java" startLine="41" startPosition="51" endLine="42" endPosition="46" />
-    <scopeInfo nodeId="4224832660979882017" fileName="HistoryWriter.java" startLine="65" startPosition="57" endLine="66" endPosition="38" />
-    <scopeInfo nodeId="4224832660979882034" fileName="HistoryWriter.java" startLine="73" startPosition="44" endLine="74" endPosition="40" />
-    <scopeInfo nodeId="4224832660979882055" fileName="HistoryWriter.java" startLine="78" startPosition="57" endLine="79" endPosition="65" />
-    <scopeInfo nodeId="4224832660979882065" fileName="HistoryWriter.java" startLine="80" startPosition="66" endLine="81" endPosition="69" />
-    <scopeInfo nodeId="4224832660979882075" fileName="HistoryWriter.java" startLine="82" startPosition="67" endLine="83" endPosition="71" />
-    <scopeInfo nodeId="4224832660979882114" fileName="HistoryWriter.java" startLine="92" startPosition="35" endLine="93" endPosition="57" />
-    <scopeInfo nodeId="4224832660979882162" fileName="HistoryWriter.java" startLine="102" startPosition="32" endLine="103" endPosition="50" />
-    <scopeInfo nodeId="4224832660979882286" fileName="HistoryWriter.java" startLine="35" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="4224832660979881910" fileName="HistoryWriter.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="4224832660979881910" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979882016" fileName="HistoryWriter.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="4224832660979882016" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979882031" fileName="HistoryWriter.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="4224832660979882045" varName="ptr" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979882191" fileName="HistoryWriter.java" startLine="109" startPosition="74" endLine="113" endPosition="16">
-      <varInfo nodeId="4224832660979882193" varName="elem" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881960" fileName="HistoryWriter.java" startLine="55" startPosition="111" endLine="61" endPosition="37">
-      <varInfo nodeId="4224832660979881969" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979882188" fileName="HistoryWriter.java" startLine="109" startPosition="0" endLine="115" endPosition="0">
-      <varInfo nodeId="4224832660979882220" varName="data" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881897" fileName="HistoryWriter.java" startLine="38" startPosition="65" endLine="45" endPosition="30">
-      <varInfo nodeId="4224832660979881899" varName="root" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979882088" fileName="HistoryWriter.java" startLine="88" startPosition="68" endLine="95" endPosition="16">
-      <varInfo nodeId="4224832660979882090" varName="elem" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881955" fileName="HistoryWriter.java" startLine="54" startPosition="34" endLine="62" endPosition="5">
-      <varInfo nodeId="4224832660979881956" varName="dependency" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979882050" fileName="HistoryWriter.java" startLine="77" startPosition="61" endLine="85" endPosition="16" />
-    <scopeInfo nodeId="4224832660979882135" fileName="HistoryWriter.java" startLine="98" startPosition="72" endLine="106" endPosition="16">
-      <varInfo nodeId="4224832660979882137" varName="elem" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881894" fileName="HistoryWriter.java" startLine="38" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="4224832660979881924" varName="history" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979882085" fileName="HistoryWriter.java" startLine="88" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="4224832660979882130" varName="data" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979882047" fileName="HistoryWriter.java" startLine="77" startPosition="0" endLine="87" endPosition="0">
-      <varInfo nodeId="4224832660979882083" varName="data" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979882132" fileName="HistoryWriter.java" startLine="98" startPosition="0" endLine="108" endPosition="0">
-      <varInfo nodeId="4224832660979882186" varName="data" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881929" fileName="HistoryWriter.java" startLine="48" startPosition="71" endLine="70" endPosition="16">
-      <varInfo nodeId="4224832660979881945" varName="dependencies" />
-      <varInfo nodeId="4224832660979881938" varName="elem" />
-    </scopeInfo>
-    <scopeInfo nodeId="4224832660979881926" fileName="HistoryWriter.java" startLine="48" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="4224832660979882029" varName="modification" />
-    </scopeInfo>
-    <unitInfo nodeId="4224832660979881910" fileName="HistoryWriter.java" startLine="40" startPosition="61" endLine="44" endPosition="5" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryWriter$1" />
-    <unitInfo nodeId="4224832660979882016" fileName="HistoryWriter.java" startLine="64" startPosition="63" endLine="68" endPosition="5" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryWriter$2" />
-    <unitInfo nodeId="4224832660979881893" fileName="HistoryWriter.java" startLine="17" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.smodel.persistence.def.refactoring.HistoryWriter" />
+    <file name="HistoryWriter.java">
+      <node id="4224832660979882225" at="18,0,19,0" concept="12" trace="MODIFICATION_HISTORY" />
+      <node id="4224832660979882229" at="19,0,20,0" concept="12" trace="MODIFICATION_ELEMENT" />
+      <node id="4224832660979882233" at="20,0,21,0" concept="12" trace="DEPENDENCIES" />
+      <node id="4224832660979882237" at="21,0,22,0" concept="12" trace="DEPEND_MODEL" />
+      <node id="4224832660979882241" at="22,0,23,0" concept="12" trace="MODEL_INDEX" />
+      <node id="4224832660979882245" at="23,0,24,0" concept="12" trace="MODEL_UID" />
+      <node id="4224832660979882249" at="24,0,25,0" concept="12" trace="MODEL_VERSION" />
+      <node id="4224832660979882253" at="25,0,26,0" concept="12" trace="MODIFICATION_ENTRIES" />
+      <node id="4224832660979882257" at="26,0,27,0" concept="12" trace="MOVE_NODE" />
+      <node id="4224832660979882261" at="27,0,28,0" concept="12" trace="RENAME_NODE" />
+      <node id="4224832660979882265" at="28,0,29,0" concept="12" trace="NODE_ID" />
+      <node id="4224832660979882269" at="29,0,30,0" concept="12" trace="NEW_ID" />
+      <node id="4224832660979882273" at="30,0,31,0" concept="12" trace="RENAME_TYPE" />
+      <node id="4224832660979882277" at="31,0,32,0" concept="12" trace="OLD_VALUE" />
+      <node id="4224832660979882281" at="32,0,33,0" concept="12" trace="NEW_VALUE" />
+      <node id="4224832660979882222" at="33,0,34,0" concept="3" trace="myHelper" />
+      <node id="4224832660979881898" at="38,65,39,59" concept="8" />
+      <node id="4224832660979881912" at="41,51,42,46" concept="2" />
+      <node id="4224832660979881920" at="44,7,45,30" concept="9" />
+      <node id="4224832660979881930" at="48,71,49,37" concept="2" />
+      <node id="4224832660979881936" at="49,37,50,0" concept="11" />
+      <node id="4224832660979881937" at="50,0,51,59" concept="8" />
+      <node id="4224832660979881943" at="51,59,52,0" concept="11" />
+      <node id="4224832660979881944" at="52,0,53,53" concept="8" />
+      <node id="4224832660979881950" at="53,53,54,34" concept="2" />
+      <node id="4224832660979881961" at="55,111,56,51" concept="2" />
+      <node id="4224832660979881968" at="56,51,57,48" concept="8" />
+      <node id="4224832660979881974" at="57,48,58,81" concept="2" />
+      <node id="4224832660979881985" at="58,81,59,65" concept="2" />
+      <node id="4224832660979881995" at="59,65,60,78" concept="2" />
+      <node id="4224832660979882004" at="60,78,61,37" concept="2" />
+      <node id="4224832660979882009" at="62,5,63,0" concept="11" />
+      <node id="4224832660979882018" at="65,57,66,38" concept="2" />
+      <node id="4224832660979882026" at="68,7,69,0" concept="11" />
+      <node id="4224832660979882027" at="69,0,70,16" concept="9" />
+      <node id="4224832660979882035" at="73,44,74,40" concept="9" />
+      <node id="4224832660979882056" at="78,57,79,65" concept="9" />
+      <node id="4224832660979882066" at="80,66,81,69" concept="9" />
+      <node id="4224832660979882076" at="82,67,83,71" concept="9" />
+      <node id="4224832660979882081" at="84,5,85,16" concept="9" />
+      <node id="4224832660979882089" at="88,68,89,42" concept="8" />
+      <node id="4224832660979882095" at="89,42,90,50" concept="2" />
+      <node id="4224832660979882104" at="90,50,91,49" concept="2" />
+      <node id="4224832660979882115" at="92,35,93,57" concept="2" />
+      <node id="4224832660979882128" at="94,5,95,16" concept="9" />
+      <node id="4224832660979882136" at="98,72,99,44" concept="8" />
+      <node id="4224832660979882142" at="99,44,100,50" concept="2" />
+      <node id="4224832660979882151" at="100,50,101,53" concept="2" />
+      <node id="4224832660979882163" at="102,32,103,50" concept="2" />
+      <node id="4224832660979882176" at="104,5,105,48" concept="2" />
+      <node id="4224832660979882184" at="105,48,106,16" concept="9" />
+      <node id="4224832660979882192" at="109,74,110,46" concept="8" />
+      <node id="4224832660979882198" at="110,46,111,60" concept="2" />
+      <node id="4224832660979882208" at="111,60,112,60" concept="2" />
+      <node id="4224832660979882218" at="112,60,113,16" concept="9" />
+      <node id="4224832660979882286" at="35,0,37,0" concept="1" trace="HistoryWriter#()V" />
+      <node id="4224832660979881910" at="41,0,44,0" concept="7" trace="visit#(Ljetbrains/mps/refactoring/StructureModification;)V" />
+      <node id="4224832660979882016" at="65,0,68,0" concept="7" trace="visit#(Ljetbrains/mps/refactoring/StructureModification/Entry;)V" />
+      <node id="4224832660979882031" at="73,0,76,0" concept="7" trace="genId#(Lorg/jetbrains/mps/openapi/model/SNodeReference;)Ljava/lang/String;" />
+      <node id="4224832660979882113" at="91,49,94,5" concept="6" />
+      <node id="4224832660979882161" at="101,53,104,5" concept="6" />
+      <node id="4224832660979881904" at="39,59,44,7" concept="2" />
+      <node id="4224832660979882010" at="63,0,68,7" concept="2" />
+      <node id="4224832660979882188" at="109,0,115,0" concept="7" trace="saveRenameModel#(Ljetbrains/mps/refactoring/StructureModification/RenameModel;)Lorg/jdom/Element;" />
+      <node id="4224832660979882051" at="77,61,84,5" concept="6" />
+      <node id="4224832660979881955" at="54,34,62,5" concept="5" />
+      <node id="4224832660979881894" at="38,0,47,0" concept="7" trace="saveHistory#(Ljetbrains/mps/refactoring/StructureModificationLog;)Lorg/jdom/Document;" />
+      <node id="4224832660979882085" at="88,0,97,0" concept="7" trace="saveMoveNode#(Ljetbrains/mps/refactoring/StructureModification/MoveNode;)Lorg/jdom/Element;" />
+      <node id="4224832660979882047" at="77,0,87,0" concept="7" trace="saveData#(Ljetbrains/mps/refactoring/StructureModification/Entry;)Lorg/jdom/Element;" />
+      <node id="4224832660979882132" at="98,0,108,0" concept="7" trace="saveRenameNode#(Ljetbrains/mps/refactoring/StructureModification/RenameNode;)Lorg/jdom/Element;" />
+      <node id="4224832660979881926" at="48,0,72,0" concept="7" trace="saveModification#(Ljetbrains/mps/refactoring/StructureModification;)Lorg/jdom/Element;" />
+      <scope id="4224832660979882289" at="35,26,35,26" />
+      <scope id="4224832660979881911" at="41,51,42,46" />
+      <scope id="4224832660979882017" at="65,57,66,38" />
+      <scope id="4224832660979882034" at="73,44,74,40" />
+      <scope id="4224832660979882055" at="78,57,79,65" />
+      <scope id="4224832660979882065" at="80,66,81,69" />
+      <scope id="4224832660979882075" at="82,67,83,71" />
+      <scope id="4224832660979882114" at="92,35,93,57" />
+      <scope id="4224832660979882162" at="102,32,103,50" />
+      <scope id="4224832660979882286" at="35,0,37,0" />
+      <scope id="4224832660979881910" at="41,0,44,0">
+        <var name="it" id="4224832660979881910" />
+      </scope>
+      <scope id="4224832660979882016" at="65,0,68,0">
+        <var name="it" id="4224832660979882016" />
+      </scope>
+      <scope id="4224832660979882031" at="73,0,76,0">
+        <var name="ptr" id="4224832660979882045" />
+      </scope>
+      <scope id="4224832660979882191" at="109,74,113,16">
+        <var name="elem" id="4224832660979882193" />
+      </scope>
+      <scope id="4224832660979881960" at="55,111,61,37">
+        <var name="model" id="4224832660979881969" />
+      </scope>
+      <scope id="4224832660979882188" at="109,0,115,0">
+        <var name="data" id="4224832660979882220" />
+      </scope>
+      <scope id="4224832660979881897" at="38,65,45,30">
+        <var name="root" id="4224832660979881899" />
+      </scope>
+      <scope id="4224832660979882088" at="88,68,95,16">
+        <var name="elem" id="4224832660979882090" />
+      </scope>
+      <scope id="4224832660979881955" at="54,34,62,5">
+        <var name="dependency" id="4224832660979881956" />
+      </scope>
+      <scope id="4224832660979882050" at="77,61,85,16" />
+      <scope id="4224832660979882135" at="98,72,106,16">
+        <var name="elem" id="4224832660979882137" />
+      </scope>
+      <scope id="4224832660979881894" at="38,0,47,0">
+        <var name="history" id="4224832660979881924" />
+      </scope>
+      <scope id="4224832660979882085" at="88,0,97,0">
+        <var name="data" id="4224832660979882130" />
+      </scope>
+      <scope id="4224832660979882047" at="77,0,87,0">
+        <var name="data" id="4224832660979882083" />
+      </scope>
+      <scope id="4224832660979882132" at="98,0,108,0">
+        <var name="data" id="4224832660979882186" />
+      </scope>
+      <scope id="4224832660979881929" at="48,71,70,16">
+        <var name="dependencies" id="4224832660979881945" />
+        <var name="elem" id="4224832660979881938" />
+      </scope>
+      <scope id="4224832660979881926" at="48,0,72,0">
+        <var name="modification" id="4224832660979882029" />
+      </scope>
+      <unit id="4224832660979881910" at="40,61,44,5" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryWriter$1" />
+      <unit id="4224832660979882016" at="64,63,68,5" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryWriter$2" />
+      <unit id="4224832660979881893" at="17,0,116,0" name="jetbrains.mps.smodel.persistence.def.refactoring.HistoryWriter" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

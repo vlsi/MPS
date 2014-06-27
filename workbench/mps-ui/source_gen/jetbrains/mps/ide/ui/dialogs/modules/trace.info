@@ -1,310 +1,328 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
   <root nodeRef="r:47803144-d0ed-4800-ae84-e83a292e3adb(jetbrains.mps.ide.ui.dialogs.modules)/3978024352671960228">
-    <nodeInfo nodeId="3978024352673371663" fileName="NewSolutionSettings.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectPath" />
-    <nodeInfo nodeId="3926595287075119202" fileName="NewSolutionSettings.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySolutionName" />
-    <nodeInfo nodeId="3926595287075245567" fileName="NewSolutionSettings.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySolutionLocation" />
-    <nodeInfo nodeId="5729690357937717903" fileName="NewSolutionSettings.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySolutionLocationChangedByUser" />
-    <nodeInfo nodeId="5729690357937717907" fileName="NewSolutionSettings.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySolutionLocationDocListenerEnabled" />
-    <nodeInfo nodeId="5729690357938290783" fileName="NewSolutionSettings.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListener" />
-    <nodeInfo nodeId="3978024352673655229" fileName="NewSolutionSettings.java" startLine="36" startPosition="32" endLine="37" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="3978024352672002327" fileName="NewSolutionSettings.java" startLine="40" startPosition="50" endLine="41" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3978024352673663924" fileName="NewSolutionSettings.java" startLine="41" startPosition="71" endLine="42" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3926595287075575842" fileName="NewSolutionSettings.java" startLine="42" startPosition="32" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3926595287075576934" fileName="NewSolutionSettings.java" startLine="43" startPosition="0" endLine="44" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3926595287076204074" fileName="NewSolutionSettings.java" startLine="44" startPosition="71" endLine="45" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2026993721488023709" fileName="NewSolutionSettings.java" startLine="45" startPosition="51" endLine="46" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5729690357937907880" fileName="NewSolutionSettings.java" startLine="49" startPosition="69" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5729690357937907884" fileName="NewSolutionSettings.java" startLine="51" startPosition="9" endLine="52" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5729690357937907901" fileName="NewSolutionSettings.java" startLine="52" startPosition="84" endLine="53" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5729690357937907911" fileName="NewSolutionSettings.java" startLine="54" startPosition="73" endLine="55" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5729690357937907919" fileName="NewSolutionSettings.java" startLine="57" startPosition="49" endLine="58" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3926595287076304704" fileName="NewSolutionSettings.java" startLine="61" startPosition="7" endLine="62" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3926595287076120824" fileName="NewSolutionSettings.java" startLine="62" startPosition="57" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3926595287076397214" fileName="NewSolutionSettings.java" startLine="63" startPosition="0" endLine="64" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2026993721488078091" fileName="NewSolutionSettings.java" startLine="64" startPosition="42" endLine="65" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5729690357937959669" fileName="NewSolutionSettings.java" startLine="68" startPosition="51" endLine="69" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3926595287076445160" fileName="NewSolutionSettings.java" startLine="72" startPosition="7" endLine="73" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3926595287076507955" fileName="NewSolutionSettings.java" startLine="73" startPosition="105" endLine="74" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3926595287076674077" fileName="NewSolutionSettings.java" startLine="74" startPosition="59" endLine="75" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3926595287076928549" fileName="NewSolutionSettings.java" startLine="75" startPosition="130" endLine="76" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3926595287077136974" fileName="NewSolutionSettings.java" startLine="76" startPosition="130" endLine="77" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3926595287077294504" fileName="NewSolutionSettings.java" startLine="77" startPosition="111" endLine="78" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="760049304607688098" fileName="NewSolutionSettings.java" startLine="78" startPosition="53" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="760049304607702022" fileName="NewSolutionSettings.java" startLine="79" startPosition="0" endLine="80" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2211691605905593643" fileName="NewSolutionSettings.java" startLine="80" startPosition="51" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5729690357937984483" fileName="NewSolutionSettings.java" startLine="82" startPosition="32" endLine="83" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4059357193371591016" fileName="NewSolutionSettings.java" startLine="87" startPosition="35" endLine="88" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6929542275387487770" fileName="NewSolutionSettings.java" startLine="91" startPosition="52" endLine="92" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="22296216606352947" fileName="NewSolutionSettings.java" startLine="92" startPosition="41" endLine="93" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4059357193371721239" fileName="NewSolutionSettings.java" startLine="96" startPosition="39" endLine="97" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5729690357938045800" fileName="NewSolutionSettings.java" startLine="100" startPosition="60" endLine="101" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6929542275387567750" fileName="NewSolutionSettings.java" startLine="101" startPosition="49" endLine="102" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5729690357938057845" fileName="NewSolutionSettings.java" startLine="102" startPosition="49" endLine="103" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="22296216606337896" fileName="NewSolutionSettings.java" startLine="103" startPosition="48" endLine="104" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5729690357938083655" fileName="NewSolutionSettings.java" startLine="107" startPosition="50" endLine="108" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5729690357938083659" fileName="NewSolutionSettings.java" startLine="108" startPosition="42" endLine="109" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5729690357938083665" fileName="NewSolutionSettings.java" startLine="110" startPosition="123" endLine="111" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5729690357938083686" fileName="NewSolutionSettings.java" startLine="112" startPosition="12" endLine="113" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="22296216606345445" fileName="NewSolutionSettings.java" startLine="114" startPosition="5" endLine="115" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5729690357938427975" fileName="NewSolutionSettings.java" startLine="120" startPosition="89" endLine="121" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="22296216606322291" fileName="NewSolutionSettings.java" startLine="125" startPosition="29" endLine="126" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3978024352677897060" fileName="NewSolutionSettings.java" startLine="133" startPosition="52" endLine="134" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5729690357938240762" fileName="NewSolutionSettings.java" startLine="140" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changed#()V" />
-    <nodeInfo nodeId="5729690357938083684" fileName="NewSolutionSettings.java" startLine="112" startPosition="10" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3978024352673627175" fileName="NewSolutionSettings.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewSolutionSettings#()V" />
-    <nodeInfo nodeId="5729690357937907878" fileName="NewSolutionSettings.java" startLine="48" startPosition="52" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5729690357937907905" fileName="NewSolutionSettings.java" startLine="53" startPosition="54" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5729690357937907915" fileName="NewSolutionSettings.java" startLine="56" startPosition="9" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5729690357937959666" fileName="NewSolutionSettings.java" startLine="67" startPosition="52" endLine="70" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5729690357937959929" fileName="NewSolutionSettings.java" startLine="81" startPosition="0" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4059357193371580526" fileName="NewSolutionSettings.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSolutionName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4059357193371710626" fileName="NewSolutionSettings.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSolutionLocation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5729690357938427560" fileName="NewSolutionSettings.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setListener#(Ljetbrains/mps/ide/ui/dialogs/modules/NewSolutionSettings/SolutionSettingsChangedListener;)V" />
-    <nodeInfo nodeId="22296216606322289" fileName="NewSolutionSettings.java" startLine="124" startPosition="29" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3978024352677887925" fileName="NewSolutionSettings.java" startLine="133" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="6929542275387466037" fileName="NewSolutionSettings.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSolutionName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5729690357937950685" fileName="NewSolutionSettings.java" startLine="67" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="textChanged#(Ljavax/swing/event/DocumentEvent;)V" />
-    <nodeInfo nodeId="5729690357938083663" fileName="NewSolutionSettings.java" startLine="109" startPosition="32" endLine="114" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="22296216606322287" fileName="NewSolutionSettings.java" startLine="124" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireChaged#()V" />
-    <nodeInfo nodeId="6929542275387545748" fileName="NewSolutionSettings.java" startLine="100" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSolutionLocation#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5729690357937921037" fileName="NewSolutionSettings.java" startLine="65" startPosition="39" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5574157111634768520" fileName="NewSolutionSettings.java" startLine="107" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setProjectPath#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5729690357937907713" fileName="NewSolutionSettings.java" startLine="48" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="textChanged#(Ljavax/swing/event/DocumentEvent;)V" />
-    <nodeInfo nodeId="3978024352672806030" fileName="NewSolutionSettings.java" startLine="46" startPosition="35" endLine="61" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3978024352672002131" fileName="NewSolutionSettings.java" startLine="40" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewSolutionSettings#(Ljava/lang/String;)V" />
-    <scopeInfo nodeId="3978024352673627179" fileName="NewSolutionSettings.java" startLine="36" startPosition="32" endLine="37" endPosition="15" />
-    <scopeInfo nodeId="5729690357937907879" fileName="NewSolutionSettings.java" startLine="49" startPosition="69" endLine="50" endPosition="17" />
-    <scopeInfo nodeId="5729690357937907910" fileName="NewSolutionSettings.java" startLine="54" startPosition="73" endLine="55" endPosition="31" />
-    <scopeInfo nodeId="5729690357937907918" fileName="NewSolutionSettings.java" startLine="57" startPosition="49" endLine="58" endPosition="36" />
-    <scopeInfo nodeId="5729690357937959668" fileName="NewSolutionSettings.java" startLine="68" startPosition="51" endLine="69" endPosition="49" />
-    <scopeInfo nodeId="5729690357937959932" fileName="NewSolutionSettings.java" startLine="82" startPosition="32" endLine="83" endPosition="109" />
-    <scopeInfo nodeId="4059357193371580529" fileName="NewSolutionSettings.java" startLine="87" startPosition="35" endLine="88" endPosition="43" />
-    <scopeInfo nodeId="4059357193371710629" fileName="NewSolutionSettings.java" startLine="96" startPosition="39" endLine="97" endPosition="47" />
-    <scopeInfo nodeId="5729690357938083664" fileName="NewSolutionSettings.java" startLine="110" startPosition="123" endLine="111" endPosition="95" />
-    <scopeInfo nodeId="5729690357938083685" fileName="NewSolutionSettings.java" startLine="112" startPosition="12" endLine="113" endPosition="113" />
-    <scopeInfo nodeId="5729690357938427564" fileName="NewSolutionSettings.java" startLine="120" startPosition="89" endLine="121" endPosition="26" />
-    <scopeInfo nodeId="22296216606322290" fileName="NewSolutionSettings.java" startLine="125" startPosition="29" endLine="126" endPosition="27" />
-    <scopeInfo nodeId="3978024352677887928" fileName="NewSolutionSettings.java" startLine="133" startPosition="52" endLine="134" endPosition="26" />
-    <scopeInfo nodeId="5729690357938240762" fileName="NewSolutionSettings.java" startLine="140" startPosition="0" endLine="141" endPosition="0" />
-    <scopeInfo nodeId="6929542275387466040" fileName="NewSolutionSettings.java" startLine="91" startPosition="52" endLine="93" endPosition="17" />
-    <scopeInfo nodeId="3978024352673627175" fileName="NewSolutionSettings.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5729690357937950691" fileName="NewSolutionSettings.java" startLine="67" startPosition="52" endLine="70" endPosition="9" />
-    <scopeInfo nodeId="4059357193371580526" fileName="NewSolutionSettings.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="4059357193371710626" fileName="NewSolutionSettings.java" startLine="96" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="5729690357938427560" fileName="NewSolutionSettings.java" startLine="120" startPosition="0" endLine="123" endPosition="0">
-      <varInfo nodeId="5729690357938427946" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="22296216606322288" fileName="NewSolutionSettings.java" startLine="124" startPosition="29" endLine="127" endPosition="5" />
-    <scopeInfo nodeId="3978024352677887925" fileName="NewSolutionSettings.java" startLine="133" startPosition="0" endLine="136" endPosition="0" />
-    <scopeInfo nodeId="6929542275387466037" fileName="NewSolutionSettings.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
-      <varInfo nodeId="6929542275387477066" varName="solutionName" />
-    </scopeInfo>
-    <scopeInfo nodeId="6929542275387545751" fileName="NewSolutionSettings.java" startLine="100" startPosition="60" endLine="104" endPosition="17" />
-    <scopeInfo nodeId="5729690357937950685" fileName="NewSolutionSettings.java" startLine="67" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="5729690357937950689" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="22296216606322287" fileName="NewSolutionSettings.java" startLine="124" startPosition="0" endLine="129" endPosition="0" />
-    <scopeInfo nodeId="6929542275387545748" fileName="NewSolutionSettings.java" startLine="100" startPosition="0" endLine="106" endPosition="0">
-      <varInfo nodeId="6929542275387556911" varName="solutionLocation" />
-    </scopeInfo>
-    <scopeInfo nodeId="5574157111634768523" fileName="NewSolutionSettings.java" startLine="107" startPosition="50" endLine="115" endPosition="17">
-      <varInfo nodeId="5729690357938083656" varName="oldProjectPath" />
-    </scopeInfo>
-    <scopeInfo nodeId="5574157111634768520" fileName="NewSolutionSettings.java" startLine="107" startPosition="0" endLine="117" endPosition="0">
-      <varInfo nodeId="5574157111634768770" varName="projectPath" />
-    </scopeInfo>
-    <scopeInfo nodeId="5729690357937907719" fileName="NewSolutionSettings.java" startLine="48" startPosition="52" endLine="59" endPosition="9">
-      <varInfo nodeId="5729690357937907885" varName="path" />
-      <varInfo nodeId="5729690357937907902" varName="solutionName" />
-    </scopeInfo>
-    <scopeInfo nodeId="5729690357937907713" fileName="NewSolutionSettings.java" startLine="48" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="5729690357937907717" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="3978024352672002134" fileName="NewSolutionSettings.java" startLine="40" startPosition="50" endLine="84" endPosition="5">
-      <varInfo nodeId="3926595287076445158" varName="descriptor" />
-      <varInfo nodeId="3926595287076928550" varName="fieldPanel" />
-      <varInfo nodeId="3926595287076674078" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="3978024352672002131" fileName="NewSolutionSettings.java" startLine="40" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="3978024352673648615" varName="projectPath" />
-    </scopeInfo>
-    <unitInfo nodeId="5729690357938239621" fileName="NewSolutionSettings.java" startLine="139" startPosition="0" endLine="142" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings$SolutionSettingsChangedListener" />
-    <unitInfo nodeId="5729690357937950683" fileName="NewSolutionSettings.java" startLine="66" startPosition="61" endLine="72" endPosition="5" unitName="jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings$2" />
-    <unitInfo nodeId="5729690357937907711" fileName="NewSolutionSettings.java" startLine="47" startPosition="57" endLine="61" endPosition="5" unitName="jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings$1" />
-    <unitInfo nodeId="3978024352671960228" fileName="NewSolutionSettings.java" startLine="24" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings" />
+    <file name="NewSolutionSettings.java">
+      <node id="3978024352673371663" at="26,0,27,0" concept="3" trace="myProjectPath" />
+      <node id="3926595287075119202" at="27,0,28,0" concept="3" trace="mySolutionName" />
+      <node id="3926595287075245567" at="28,0,29,0" concept="3" trace="mySolutionLocation" />
+      <node id="5729690357937717903" at="30,0,31,0" concept="3" trace="mySolutionLocationChangedByUser" />
+      <node id="5729690357937717907" at="31,0,32,0" concept="3" trace="mySolutionLocationDocListenerEnabled" />
+      <node id="5729690357938290783" at="33,0,34,0" concept="3" trace="myListener" />
+      <node id="3978024352673655229" at="36,32,37,15" concept="11" />
+      <node id="3978024352672002327" at="40,50,41,71" concept="10" />
+      <node id="3978024352673663924" at="41,71,42,32" concept="2" />
+      <node id="3926595287075575842" at="42,32,43,0" concept="8" />
+      <node id="3926595287075576934" at="43,0,44,71" concept="2" />
+      <node id="3926595287076204074" at="44,71,45,51" concept="2" />
+      <node id="2026993721488023709" at="45,51,46,35" concept="2" />
+      <node id="5729690357937907880" at="49,69,50,17" concept="7" />
+      <node id="5729690357937907884" at="51,9,52,84" concept="6" />
+      <node id="5729690357937907901" at="52,84,53,54" concept="6" />
+      <node id="5729690357937907911" at="54,73,55,31" concept="2" />
+      <node id="5729690357937907919" at="57,49,58,36" concept="2" />
+      <node id="3926595287076304704" at="61,7,62,57" concept="2" />
+      <node id="3926595287076120824" at="62,57,63,0" concept="8" />
+      <node id="3926595287076397214" at="63,0,64,42" concept="2" />
+      <node id="2026993721488078091" at="64,42,65,39" concept="2" />
+      <node id="5729690357937959669" at="68,51,69,49" concept="2" />
+      <node id="3926595287076445160" at="72,7,73,105" concept="6" />
+      <node id="3926595287076507955" at="73,105,74,59" concept="2" />
+      <node id="3926595287076674077" at="74,59,75,130" concept="6" />
+      <node id="3926595287076928549" at="75,130,76,130" concept="6" />
+      <node id="3926595287077136974" at="76,130,77,111" concept="2" />
+      <node id="3926595287077294504" at="77,111,78,53" concept="2" />
+      <node id="760049304607688098" at="78,53,79,0" concept="8" />
+      <node id="760049304607702022" at="79,0,80,51" concept="2" />
+      <node id="2211691605905593643" at="80,51,81,0" concept="8" />
+      <node id="5729690357937984483" at="82,32,83,109" concept="2" />
+      <node id="4059357193371591016" at="87,35,88,43" concept="7" />
+      <node id="6929542275387487770" at="91,52,92,41" concept="2" />
+      <node id="22296216606352947" at="92,41,93,17" concept="2" />
+      <node id="4059357193371721239" at="96,39,97,47" concept="7" />
+      <node id="5729690357938045800" at="100,60,101,49" concept="2" />
+      <node id="6929542275387567750" at="101,49,102,49" concept="2" />
+      <node id="5729690357938057845" at="102,49,103,48" concept="2" />
+      <node id="22296216606337896" at="103,48,104,17" concept="2" />
+      <node id="5729690357938083655" at="107,50,108,42" concept="6" />
+      <node id="5729690357938083659" at="108,42,109,32" concept="2" />
+      <node id="5729690357938083665" at="110,123,111,95" concept="2" />
+      <node id="5729690357938083686" at="112,12,113,113" concept="2" />
+      <node id="22296216606345445" at="114,5,115,17" concept="2" />
+      <node id="5729690357938427975" at="120,89,121,26" concept="2" />
+      <node id="22296216606322291" at="125,29,126,27" concept="2" />
+      <node id="3978024352677897060" at="133,52,134,26" concept="7" />
+      <node id="5729690357938240762" at="140,0,141,0" concept="5" trace="changed#()V" />
+      <node id="5729690357938083684" at="112,10,114,5" concept="0" />
+      <node id="3978024352673627175" at="36,0,39,0" concept="1" trace="NewSolutionSettings#()V" />
+      <node id="5729690357937907878" at="48,52,51,9" concept="4" />
+      <node id="5729690357937907905" at="53,54,56,9" concept="4" />
+      <node id="5729690357937907915" at="56,9,59,9" concept="4" />
+      <node id="5729690357937959666" at="67,52,70,9" concept="4" />
+      <node id="5729690357937959929" at="81,0,84,5" concept="4" />
+      <node id="4059357193371580526" at="87,0,90,0" concept="5" trace="getSolutionName#()Ljava/lang/String;" />
+      <node id="4059357193371710626" at="96,0,99,0" concept="5" trace="getSolutionLocation#()Ljava/lang/String;" />
+      <node id="5729690357938427560" at="120,0,123,0" concept="5" trace="setListener#(Ljetbrains/mps/ide/ui/dialogs/modules/NewSolutionSettings/SolutionSettingsChangedListener;)V" />
+      <node id="22296216606322289" at="124,29,127,5" concept="4" />
+      <node id="3978024352677887925" at="133,0,136,0" concept="5" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+      <node id="6929542275387466037" at="91,0,95,0" concept="5" trace="setSolutionName#(Ljava/lang/String;)V" />
+      <node id="5729690357937950685" at="67,0,72,0" concept="5" trace="textChanged#(Ljavax/swing/event/DocumentEvent;)V" />
+      <node id="5729690357938083663" at="109,32,114,5" concept="4" />
+      <node id="22296216606322287" at="124,0,129,0" concept="5" trace="fireChaged#()V" />
+      <node id="6929542275387545748" at="100,0,106,0" concept="5" trace="setSolutionLocation#(Ljava/lang/String;)V" />
+      <node id="5729690357937921037" at="65,39,72,7" concept="2" />
+      <node id="5574157111634768520" at="107,0,117,0" concept="5" trace="setProjectPath#(Ljava/lang/String;)V" />
+      <node id="5729690357937907713" at="48,0,61,0" concept="5" trace="textChanged#(Ljavax/swing/event/DocumentEvent;)V" />
+      <node id="3978024352672806030" at="46,35,61,7" concept="2" />
+      <node id="3978024352672002131" at="40,0,86,0" concept="1" trace="NewSolutionSettings#(Ljava/lang/String;)V" />
+      <scope id="3978024352673627179" at="36,32,37,15" />
+      <scope id="5729690357937907879" at="49,69,50,17" />
+      <scope id="5729690357937907910" at="54,73,55,31" />
+      <scope id="5729690357937907918" at="57,49,58,36" />
+      <scope id="5729690357937959668" at="68,51,69,49" />
+      <scope id="5729690357937959932" at="82,32,83,109" />
+      <scope id="4059357193371580529" at="87,35,88,43" />
+      <scope id="4059357193371710629" at="96,39,97,47" />
+      <scope id="5729690357938083664" at="110,123,111,95" />
+      <scope id="5729690357938083685" at="112,12,113,113" />
+      <scope id="5729690357938427564" at="120,89,121,26" />
+      <scope id="22296216606322290" at="125,29,126,27" />
+      <scope id="3978024352677887928" at="133,52,134,26" />
+      <scope id="5729690357938240762" at="140,0,141,0" />
+      <scope id="6929542275387466040" at="91,52,93,17" />
+      <scope id="3978024352673627175" at="36,0,39,0" />
+      <scope id="5729690357937950691" at="67,52,70,9" />
+      <scope id="4059357193371580526" at="87,0,90,0" />
+      <scope id="4059357193371710626" at="96,0,99,0" />
+      <scope id="5729690357938427560" at="120,0,123,0">
+        <var name="listener" id="5729690357938427946" />
+      </scope>
+      <scope id="22296216606322288" at="124,29,127,5" />
+      <scope id="3978024352677887925" at="133,0,136,0" />
+      <scope id="6929542275387466037" at="91,0,95,0">
+        <var name="solutionName" id="6929542275387477066" />
+      </scope>
+      <scope id="6929542275387545751" at="100,60,104,17" />
+      <scope id="5729690357937950685" at="67,0,72,0">
+        <var name="p0" id="5729690357937950689" />
+      </scope>
+      <scope id="22296216606322287" at="124,0,129,0" />
+      <scope id="6929542275387545748" at="100,0,106,0">
+        <var name="solutionLocation" id="6929542275387556911" />
+      </scope>
+      <scope id="5574157111634768523" at="107,50,115,17">
+        <var name="oldProjectPath" id="5729690357938083656" />
+      </scope>
+      <scope id="5574157111634768520" at="107,0,117,0">
+        <var name="projectPath" id="5574157111634768770" />
+      </scope>
+      <scope id="5729690357937907719" at="48,52,59,9">
+        <var name="path" id="5729690357937907885" />
+        <var name="solutionName" id="5729690357937907902" />
+      </scope>
+      <scope id="5729690357937907713" at="48,0,61,0">
+        <var name="p0" id="5729690357937907717" />
+      </scope>
+      <scope id="3978024352672002134" at="40,50,84,5">
+        <var name="descriptor" id="3926595287076445158" />
+        <var name="fieldPanel" id="3926595287076928550" />
+        <var name="listener" id="3926595287076674078" />
+      </scope>
+      <scope id="3978024352672002131" at="40,0,86,0">
+        <var name="projectPath" id="3978024352673648615" />
+      </scope>
+      <unit id="5729690357938239621" at="139,0,142,0" name="jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings$SolutionSettingsChangedListener" />
+      <unit id="5729690357937950683" at="66,61,72,5" name="jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings$2" />
+      <unit id="5729690357937907711" at="47,57,61,5" name="jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings$1" />
+      <unit id="3978024352671960228" at="24,0,143,0" name="jetbrains.mps.ide.ui.dialogs.modules.NewSolutionSettings" />
+    </file>
   </root>
   <root nodeRef="r:47803144-d0ed-4800-ae84-e83a292e3adb(jetbrains.mps.ide.ui.dialogs.modules)/8412685000764658714">
-    <nodeInfo nodeId="8412685000764769930" fileName="NewLanguageSettings.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProjectPath" />
-    <nodeInfo nodeId="8412685000764769223" fileName="NewLanguageSettings.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguageName" />
-    <nodeInfo nodeId="8412685000764769674" fileName="NewLanguageSettings.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguageLocation" />
-    <nodeInfo nodeId="8412685000765679273" fileName="NewLanguageSettings.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRuntimeSolution" />
-    <nodeInfo nodeId="8412685000765687852" fileName="NewLanguageSettings.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySandboxSolution" />
-    <nodeInfo nodeId="8254550093254116768" fileName="NewLanguageSettings.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLangLocationChangedByUser" />
-    <nodeInfo nodeId="8254550093254159361" fileName="NewLanguageSettings.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLangLocationDocListenerEnabled" />
-    <nodeInfo nodeId="5729690357938399029" fileName="NewLanguageSettings.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListener" />
-    <nodeInfo nodeId="8412685000764797840" fileName="NewLanguageSettings.java" startLine="39" startPosition="32" endLine="40" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="8412685000764739090" fileName="NewLanguageSettings.java" startLine="45" startPosition="50" endLine="46" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8412685000764796219" fileName="NewLanguageSettings.java" startLine="46" startPosition="71" endLine="47" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000764798171" fileName="NewLanguageSettings.java" startLine="47" startPosition="32" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8412685000764804354" fileName="NewLanguageSettings.java" startLine="48" startPosition="0" endLine="49" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000764804363" fileName="NewLanguageSettings.java" startLine="49" startPosition="71" endLine="50" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2026993721487537323" fileName="NewLanguageSettings.java" startLine="50" startPosition="51" endLine="51" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8254550093253876878" fileName="NewLanguageSettings.java" startLine="54" startPosition="69" endLine="55" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8254550093253671761" fileName="NewLanguageSettings.java" startLine="56" startPosition="9" endLine="57" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8254550093253671766" fileName="NewLanguageSettings.java" startLine="57" startPosition="84" endLine="58" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8254550093253671783" fileName="NewLanguageSettings.java" startLine="59" startPosition="69" endLine="60" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8254550093253671814" fileName="NewLanguageSettings.java" startLine="62" startPosition="45" endLine="63" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3528973105712576480" fileName="NewLanguageSettings.java" startLine="64" startPosition="9" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000764804385" fileName="NewLanguageSettings.java" startLine="67" startPosition="7" endLine="68" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000764804392" fileName="NewLanguageSettings.java" startLine="68" startPosition="57" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8412685000764804393" fileName="NewLanguageSettings.java" startLine="69" startPosition="0" endLine="70" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2026993721487615238" fileName="NewLanguageSettings.java" startLine="70" startPosition="42" endLine="71" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8254550093254333394" fileName="NewLanguageSettings.java" startLine="74" startPosition="47" endLine="75" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000764804398" fileName="NewLanguageSettings.java" startLine="78" startPosition="7" endLine="79" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8412685000764804402" fileName="NewLanguageSettings.java" startLine="79" startPosition="105" endLine="80" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000764804406" fileName="NewLanguageSettings.java" startLine="80" startPosition="59" endLine="81" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8412685000764804415" fileName="NewLanguageSettings.java" startLine="81" startPosition="130" endLine="82" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8412685000764804425" fileName="NewLanguageSettings.java" startLine="82" startPosition="130" endLine="83" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000764804435" fileName="NewLanguageSettings.java" startLine="83" startPosition="111" endLine="84" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000765705458" fileName="NewLanguageSettings.java" startLine="84" startPosition="53" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8412685000765712283" fileName="NewLanguageSettings.java" startLine="85" startPosition="0" endLine="86" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3678080938080161802" fileName="NewLanguageSettings.java" startLine="86" startPosition="72" endLine="87" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3678080938080152965" fileName="NewLanguageSettings.java" startLine="87" startPosition="60" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8412685000765839944" fileName="NewLanguageSettings.java" startLine="88" startPosition="0" endLine="89" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3678080938080183604" fileName="NewLanguageSettings.java" startLine="89" startPosition="72" endLine="90" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000764804442" fileName="NewLanguageSettings.java" startLine="90" startPosition="60" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8412685000764804443" fileName="NewLanguageSettings.java" startLine="91" startPosition="0" endLine="92" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8640064647707210948" fileName="NewLanguageSettings.java" startLine="92" startPosition="51" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8640064647707432123" fileName="NewLanguageSettings.java" startLine="94" startPosition="32" endLine="95" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000765914602" fileName="NewLanguageSettings.java" startLine="101" startPosition="35" endLine="102" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8412685000765914610" fileName="NewLanguageSettings.java" startLine="105" startPosition="52" endLine="106" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="22296216606303406" fileName="NewLanguageSettings.java" startLine="106" startPosition="41" endLine="107" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000765914623" fileName="NewLanguageSettings.java" startLine="110" startPosition="39" endLine="111" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8254550093254169222" fileName="NewLanguageSettings.java" startLine="114" startPosition="60" endLine="115" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000765914631" fileName="NewLanguageSettings.java" startLine="115" startPosition="45" endLine="116" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8254550093254179531" fileName="NewLanguageSettings.java" startLine="116" startPosition="49" endLine="117" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="22296216606294280" fileName="NewLanguageSettings.java" startLine="117" startPosition="44" endLine="118" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766265966" fileName="NewLanguageSettings.java" startLine="121" startPosition="44" endLine="122" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8412685000766304429" fileName="NewLanguageSettings.java" startLine="125" startPosition="56" endLine="126" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766286704" fileName="NewLanguageSettings.java" startLine="129" startPosition="44" endLine="130" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8412685000766329213" fileName="NewLanguageSettings.java" startLine="133" startPosition="56" endLine="134" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8254550093254530563" fileName="NewLanguageSettings.java" startLine="137" startPosition="50" endLine="138" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5574157111634875725" fileName="NewLanguageSettings.java" startLine="138" startPosition="42" endLine="139" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5729690357937695607" fileName="NewLanguageSettings.java" startLine="140" startPosition="123" endLine="141" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5729690357937686025" fileName="NewLanguageSettings.java" startLine="142" startPosition="12" endLine="143" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="22296216606312531" fileName="NewLanguageSettings.java" startLine="144" startPosition="5" endLine="145" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5729690357938458765" fileName="NewLanguageSettings.java" startLine="150" startPosition="85" endLine="151" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="22296216606275020" fileName="NewLanguageSettings.java" startLine="155" startPosition="29" endLine="156" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000766848296" fileName="NewLanguageSettings.java" startLine="162" startPosition="52" endLine="163" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5729690357938396054" fileName="NewLanguageSettings.java" startLine="169" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changed#()V" />
-    <nodeInfo nodeId="8254550093254625326" fileName="NewLanguageSettings.java" startLine="142" startPosition="10" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8412685000764794304" fileName="NewLanguageSettings.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewLanguageSettings#()V" />
-    <nodeInfo nodeId="8254550093253858288" fileName="NewLanguageSettings.java" startLine="53" startPosition="52" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8254550093253671769" fileName="NewLanguageSettings.java" startLine="58" startPosition="50" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8254550093253671809" fileName="NewLanguageSettings.java" startLine="61" startPosition="9" endLine="64" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8254550093254333390" fileName="NewLanguageSettings.java" startLine="73" startPosition="52" endLine="76" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8640064647707258876" fileName="NewLanguageSettings.java" startLine="93" startPosition="0" endLine="96" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8412685000765914600" fileName="NewLanguageSettings.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8412685000765914621" fileName="NewLanguageSettings.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageLocation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8412685000766073856" fileName="NewLanguageSettings.java" startLine="121" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRuntimeSolutionNeeded#()Z" />
-    <nodeInfo nodeId="8412685000766129138" fileName="NewLanguageSettings.java" startLine="125" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setRuntimeSolutionNeeded#(Z)V" />
-    <nodeInfo nodeId="8412685000766085295" fileName="NewLanguageSettings.java" startLine="129" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSandboxSolutionNeeded#()Z" />
-    <nodeInfo nodeId="8412685000766181932" fileName="NewLanguageSettings.java" startLine="133" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSandboxSolutionNeeded#(Z)V" />
-    <nodeInfo nodeId="5729690357938458291" fileName="NewLanguageSettings.java" startLine="150" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setListener#(Ljetbrains/mps/ide/ui/dialogs/modules/NewLanguageSettings/LangSettingsChangedListener;)V" />
-    <nodeInfo nodeId="22296216606256713" fileName="NewLanguageSettings.java" startLine="154" startPosition="34" endLine="157" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8412685000766848294" fileName="NewLanguageSettings.java" startLine="162" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="8412685000765914608" fileName="NewLanguageSettings.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLanguageName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8254550093254332583" fileName="NewLanguageSettings.java" startLine="73" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="textChanged#(Ljavax/swing/event/DocumentEvent;)V" />
-    <nodeInfo nodeId="8254550093254545403" fileName="NewLanguageSettings.java" startLine="139" startPosition="32" endLine="144" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="22296216606246938" fileName="NewLanguageSettings.java" startLine="154" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireChanged#()V" />
-    <nodeInfo nodeId="8412685000765914629" fileName="NewLanguageSettings.java" startLine="114" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLanguageLocation#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8254550093254296989" fileName="NewLanguageSettings.java" startLine="71" startPosition="39" endLine="78" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5574157111634869357" fileName="NewLanguageSettings.java" startLine="137" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setProjectPath#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8254550093253670999" fileName="NewLanguageSettings.java" startLine="53" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="textChanged#(Ljavax/swing/event/DocumentEvent;)V" />
-    <nodeInfo nodeId="8254550093253431947" fileName="NewLanguageSettings.java" startLine="51" startPosition="35" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8412685000764738872" fileName="NewLanguageSettings.java" startLine="45" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NewLanguageSettings#(Ljava/lang/String;)V" />
-    <scopeInfo nodeId="8412685000764794308" fileName="NewLanguageSettings.java" startLine="39" startPosition="32" endLine="40" endPosition="15" />
-    <scopeInfo nodeId="8254550093253858291" fileName="NewLanguageSettings.java" startLine="54" startPosition="69" endLine="55" endPosition="17" />
-    <scopeInfo nodeId="8254550093253671782" fileName="NewLanguageSettings.java" startLine="59" startPosition="69" endLine="60" endPosition="27" />
-    <scopeInfo nodeId="8254550093253671813" fileName="NewLanguageSettings.java" startLine="62" startPosition="45" endLine="63" endPosition="36" />
-    <scopeInfo nodeId="8254550093254333393" fileName="NewLanguageSettings.java" startLine="74" startPosition="47" endLine="75" endPosition="45" />
-    <scopeInfo nodeId="8640064647707258879" fileName="NewLanguageSettings.java" startLine="94" startPosition="32" endLine="95" endPosition="109" />
-    <scopeInfo nodeId="8412685000765914601" fileName="NewLanguageSettings.java" startLine="101" startPosition="35" endLine="102" endPosition="43" />
-    <scopeInfo nodeId="8412685000765914622" fileName="NewLanguageSettings.java" startLine="110" startPosition="39" endLine="111" endPosition="47" />
-    <scopeInfo nodeId="8412685000766073859" fileName="NewLanguageSettings.java" startLine="121" startPosition="44" endLine="122" endPosition="42" />
-    <scopeInfo nodeId="8412685000766129139" fileName="NewLanguageSettings.java" startLine="125" startPosition="56" endLine="126" endPosition="42" />
-    <scopeInfo nodeId="8412685000766085296" fileName="NewLanguageSettings.java" startLine="129" startPosition="44" endLine="130" endPosition="42" />
-    <scopeInfo nodeId="8412685000766181933" fileName="NewLanguageSettings.java" startLine="133" startPosition="56" endLine="134" endPosition="42" />
-    <scopeInfo nodeId="8254550093254545406" fileName="NewLanguageSettings.java" startLine="140" startPosition="123" endLine="141" endPosition="95" />
-    <scopeInfo nodeId="8254550093254625327" fileName="NewLanguageSettings.java" startLine="142" startPosition="12" endLine="143" endPosition="109" />
-    <scopeInfo nodeId="5729690357938458295" fileName="NewLanguageSettings.java" startLine="150" startPosition="85" endLine="151" endPosition="26" />
-    <scopeInfo nodeId="22296216606256714" fileName="NewLanguageSettings.java" startLine="155" startPosition="29" endLine="156" endPosition="27" />
-    <scopeInfo nodeId="8412685000766848295" fileName="NewLanguageSettings.java" startLine="162" startPosition="52" endLine="163" endPosition="26" />
-    <scopeInfo nodeId="5729690357938396054" fileName="NewLanguageSettings.java" startLine="169" startPosition="0" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="8412685000765914609" fileName="NewLanguageSettings.java" startLine="105" startPosition="52" endLine="107" endPosition="18" />
-    <scopeInfo nodeId="8412685000764794304" fileName="NewLanguageSettings.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="8254550093254332589" fileName="NewLanguageSettings.java" startLine="73" startPosition="52" endLine="76" endPosition="9" />
-    <scopeInfo nodeId="8412685000765914600" fileName="NewLanguageSettings.java" startLine="101" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="8412685000765914621" fileName="NewLanguageSettings.java" startLine="110" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="8412685000766073856" fileName="NewLanguageSettings.java" startLine="121" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="8412685000766129138" fileName="NewLanguageSettings.java" startLine="125" startPosition="0" endLine="128" endPosition="0">
-      <varInfo nodeId="8412685000766159709" varName="needed" />
-    </scopeInfo>
-    <scopeInfo nodeId="8412685000766085295" fileName="NewLanguageSettings.java" startLine="129" startPosition="0" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="8412685000766181932" fileName="NewLanguageSettings.java" startLine="133" startPosition="0" endLine="136" endPosition="0">
-      <varInfo nodeId="8412685000766239509" varName="needed" />
-    </scopeInfo>
-    <scopeInfo nodeId="5729690357938458291" fileName="NewLanguageSettings.java" startLine="150" startPosition="0" endLine="153" endPosition="0">
-      <varInfo nodeId="5729690357938485781" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="22296216606246941" fileName="NewLanguageSettings.java" startLine="154" startPosition="34" endLine="157" endPosition="5" />
-    <scopeInfo nodeId="8412685000766848294" fileName="NewLanguageSettings.java" startLine="162" startPosition="0" endLine="165" endPosition="0" />
-    <scopeInfo nodeId="8412685000765914608" fileName="NewLanguageSettings.java" startLine="105" startPosition="0" endLine="109" endPosition="0">
-      <varInfo nodeId="8412685000765914619" varName="languageName" />
-    </scopeInfo>
-    <scopeInfo nodeId="8412685000765914630" fileName="NewLanguageSettings.java" startLine="114" startPosition="60" endLine="118" endPosition="18" />
-    <scopeInfo nodeId="8254550093254332583" fileName="NewLanguageSettings.java" startLine="73" startPosition="0" endLine="78" endPosition="0">
-      <varInfo nodeId="8254550093254332587" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="22296216606246938" fileName="NewLanguageSettings.java" startLine="154" startPosition="0" endLine="159" endPosition="0" />
-    <scopeInfo nodeId="8412685000765914629" fileName="NewLanguageSettings.java" startLine="114" startPosition="0" endLine="120" endPosition="0">
-      <varInfo nodeId="8412685000765914640" varName="languageLocation" />
-    </scopeInfo>
-    <scopeInfo nodeId="5574157111634869361" fileName="NewLanguageSettings.java" startLine="137" startPosition="50" endLine="145" endPosition="18">
-      <varInfo nodeId="8254550093254530566" varName="oldProjectPath" />
-    </scopeInfo>
-    <scopeInfo nodeId="5574157111634869357" fileName="NewLanguageSettings.java" startLine="137" startPosition="0" endLine="147" endPosition="0">
-      <varInfo nodeId="5574157111634869684" varName="projectPath" />
-    </scopeInfo>
-    <scopeInfo nodeId="8254550093253671005" fileName="NewLanguageSettings.java" startLine="53" startPosition="52" endLine="65" endPosition="22">
-      <varInfo nodeId="8254550093253671765" varName="langName" />
-      <varInfo nodeId="8254550093253671760" varName="path" />
-    </scopeInfo>
-    <scopeInfo nodeId="8254550093253670999" fileName="NewLanguageSettings.java" startLine="53" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="8254550093253671003" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="8412685000764738876" fileName="NewLanguageSettings.java" startLine="45" startPosition="50" endLine="96" endPosition="5">
-      <varInfo nodeId="8412685000764804399" varName="descriptor" />
-      <varInfo nodeId="8412685000764804416" varName="fieldPanel" />
-      <varInfo nodeId="8412685000764804407" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="8412685000764738872" fileName="NewLanguageSettings.java" startLine="45" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="8412685000764795380" varName="projectPath" />
-    </scopeInfo>
-    <unitInfo nodeId="5729690357938396053" fileName="NewLanguageSettings.java" startLine="168" startPosition="0" endLine="171" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings$LangSettingsChangedListener" />
-    <unitInfo nodeId="8254550093254332581" fileName="NewLanguageSettings.java" startLine="72" startPosition="61" endLine="78" endPosition="5" unitName="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings$2" />
-    <unitInfo nodeId="8254550093253670991" fileName="NewLanguageSettings.java" startLine="52" startPosition="57" endLine="67" endPosition="5" unitName="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings$1" />
-    <unitInfo nodeId="8412685000764658714" fileName="NewLanguageSettings.java" startLine="25" startPosition="0" endLine="172" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings" />
+    <file name="NewLanguageSettings.java">
+      <node id="8412685000764769930" at="27,0,28,0" concept="3" trace="myProjectPath" />
+      <node id="8412685000764769223" at="28,0,29,0" concept="3" trace="myLanguageName" />
+      <node id="8412685000764769674" at="29,0,30,0" concept="3" trace="myLanguageLocation" />
+      <node id="8412685000765679273" at="30,0,31,0" concept="3" trace="myRuntimeSolution" />
+      <node id="8412685000765687852" at="31,0,32,0" concept="3" trace="mySandboxSolution" />
+      <node id="8254550093254116768" at="33,0,34,0" concept="3" trace="myLangLocationChangedByUser" />
+      <node id="8254550093254159361" at="34,0,35,0" concept="3" trace="myLangLocationDocListenerEnabled" />
+      <node id="5729690357938399029" at="36,0,37,0" concept="3" trace="myListener" />
+      <node id="8412685000764797840" at="39,32,40,15" concept="11" />
+      <node id="8412685000764739090" at="45,50,46,71" concept="10" />
+      <node id="8412685000764796219" at="46,71,47,32" concept="2" />
+      <node id="8412685000764798171" at="47,32,48,0" concept="8" />
+      <node id="8412685000764804354" at="48,0,49,71" concept="2" />
+      <node id="8412685000764804363" at="49,71,50,51" concept="2" />
+      <node id="2026993721487537323" at="50,51,51,35" concept="2" />
+      <node id="8254550093253876878" at="54,69,55,17" concept="7" />
+      <node id="8254550093253671761" at="56,9,57,84" concept="6" />
+      <node id="8254550093253671766" at="57,84,58,50" concept="6" />
+      <node id="8254550093253671783" at="59,69,60,27" concept="2" />
+      <node id="8254550093253671814" at="62,45,63,36" concept="2" />
+      <node id="3528973105712576480" at="64,9,65,22" concept="2" />
+      <node id="8412685000764804385" at="67,7,68,57" concept="2" />
+      <node id="8412685000764804392" at="68,57,69,0" concept="8" />
+      <node id="8412685000764804393" at="69,0,70,42" concept="2" />
+      <node id="2026993721487615238" at="70,42,71,39" concept="2" />
+      <node id="8254550093254333394" at="74,47,75,45" concept="2" />
+      <node id="8412685000764804398" at="78,7,79,105" concept="6" />
+      <node id="8412685000764804402" at="79,105,80,59" concept="2" />
+      <node id="8412685000764804406" at="80,59,81,130" concept="6" />
+      <node id="8412685000764804415" at="81,130,82,130" concept="6" />
+      <node id="8412685000764804425" at="82,130,83,111" concept="2" />
+      <node id="8412685000764804435" at="83,111,84,53" concept="2" />
+      <node id="8412685000765705458" at="84,53,85,0" concept="8" />
+      <node id="8412685000765712283" at="85,0,86,72" concept="2" />
+      <node id="3678080938080161802" at="86,72,87,60" concept="2" />
+      <node id="3678080938080152965" at="87,60,88,0" concept="8" />
+      <node id="8412685000765839944" at="88,0,89,72" concept="2" />
+      <node id="3678080938080183604" at="89,72,90,60" concept="2" />
+      <node id="8412685000764804442" at="90,60,91,0" concept="8" />
+      <node id="8412685000764804443" at="91,0,92,51" concept="2" />
+      <node id="8640064647707210948" at="92,51,93,0" concept="8" />
+      <node id="8640064647707432123" at="94,32,95,109" concept="2" />
+      <node id="8412685000765914602" at="101,35,102,43" concept="7" />
+      <node id="8412685000765914610" at="105,52,106,41" concept="2" />
+      <node id="22296216606303406" at="106,41,107,18" concept="2" />
+      <node id="8412685000765914623" at="110,39,111,47" concept="7" />
+      <node id="8254550093254169222" at="114,60,115,45" concept="2" />
+      <node id="8412685000765914631" at="115,45,116,49" concept="2" />
+      <node id="8254550093254179531" at="116,49,117,44" concept="2" />
+      <node id="22296216606294280" at="117,44,118,18" concept="2" />
+      <node id="8412685000766265966" at="121,44,122,42" concept="7" />
+      <node id="8412685000766304429" at="125,56,126,42" concept="2" />
+      <node id="8412685000766286704" at="129,44,130,42" concept="7" />
+      <node id="8412685000766329213" at="133,56,134,42" concept="2" />
+      <node id="8254550093254530563" at="137,50,138,42" concept="6" />
+      <node id="5574157111634875725" at="138,42,139,32" concept="2" />
+      <node id="5729690357937695607" at="140,123,141,95" concept="2" />
+      <node id="5729690357937686025" at="142,12,143,109" concept="2" />
+      <node id="22296216606312531" at="144,5,145,18" concept="2" />
+      <node id="5729690357938458765" at="150,85,151,26" concept="2" />
+      <node id="22296216606275020" at="155,29,156,27" concept="2" />
+      <node id="8412685000766848296" at="162,52,163,26" concept="7" />
+      <node id="5729690357938396054" at="169,0,170,0" concept="5" trace="changed#()V" />
+      <node id="8254550093254625326" at="142,10,144,5" concept="0" />
+      <node id="8412685000764794304" at="39,0,42,0" concept="1" trace="NewLanguageSettings#()V" />
+      <node id="8254550093253858288" at="53,52,56,9" concept="4" />
+      <node id="8254550093253671769" at="58,50,61,9" concept="4" />
+      <node id="8254550093253671809" at="61,9,64,9" concept="4" />
+      <node id="8254550093254333390" at="73,52,76,9" concept="4" />
+      <node id="8640064647707258876" at="93,0,96,5" concept="4" />
+      <node id="8412685000765914600" at="101,0,104,0" concept="5" trace="getLanguageName#()Ljava/lang/String;" />
+      <node id="8412685000765914621" at="110,0,113,0" concept="5" trace="getLanguageLocation#()Ljava/lang/String;" />
+      <node id="8412685000766073856" at="121,0,124,0" concept="5" trace="isRuntimeSolutionNeeded#()Z" />
+      <node id="8412685000766129138" at="125,0,128,0" concept="5" trace="setRuntimeSolutionNeeded#(Z)V" />
+      <node id="8412685000766085295" at="129,0,132,0" concept="5" trace="isSandboxSolutionNeeded#()Z" />
+      <node id="8412685000766181932" at="133,0,136,0" concept="5" trace="setSandboxSolutionNeeded#(Z)V" />
+      <node id="5729690357938458291" at="150,0,153,0" concept="5" trace="setListener#(Ljetbrains/mps/ide/ui/dialogs/modules/NewLanguageSettings/LangSettingsChangedListener;)V" />
+      <node id="22296216606256713" at="154,34,157,5" concept="4" />
+      <node id="8412685000766848294" at="162,0,165,0" concept="5" trace="getPreferredFocusedComponent#()Ljavax/swing/JComponent;" />
+      <node id="8412685000765914608" at="105,0,109,0" concept="5" trace="setLanguageName#(Ljava/lang/String;)V" />
+      <node id="8254550093254332583" at="73,0,78,0" concept="5" trace="textChanged#(Ljavax/swing/event/DocumentEvent;)V" />
+      <node id="8254550093254545403" at="139,32,144,5" concept="4" />
+      <node id="22296216606246938" at="154,0,159,0" concept="5" trace="fireChanged#()V" />
+      <node id="8412685000765914629" at="114,0,120,0" concept="5" trace="setLanguageLocation#(Ljava/lang/String;)V" />
+      <node id="8254550093254296989" at="71,39,78,7" concept="2" />
+      <node id="5574157111634869357" at="137,0,147,0" concept="5" trace="setProjectPath#(Ljava/lang/String;)V" />
+      <node id="8254550093253670999" at="53,0,67,0" concept="5" trace="textChanged#(Ljavax/swing/event/DocumentEvent;)V" />
+      <node id="8254550093253431947" at="51,35,67,7" concept="2" />
+      <node id="8412685000764738872" at="45,0,98,0" concept="1" trace="NewLanguageSettings#(Ljava/lang/String;)V" />
+      <scope id="8412685000764794308" at="39,32,40,15" />
+      <scope id="8254550093253858291" at="54,69,55,17" />
+      <scope id="8254550093253671782" at="59,69,60,27" />
+      <scope id="8254550093253671813" at="62,45,63,36" />
+      <scope id="8254550093254333393" at="74,47,75,45" />
+      <scope id="8640064647707258879" at="94,32,95,109" />
+      <scope id="8412685000765914601" at="101,35,102,43" />
+      <scope id="8412685000765914622" at="110,39,111,47" />
+      <scope id="8412685000766073859" at="121,44,122,42" />
+      <scope id="8412685000766129139" at="125,56,126,42" />
+      <scope id="8412685000766085296" at="129,44,130,42" />
+      <scope id="8412685000766181933" at="133,56,134,42" />
+      <scope id="8254550093254545406" at="140,123,141,95" />
+      <scope id="8254550093254625327" at="142,12,143,109" />
+      <scope id="5729690357938458295" at="150,85,151,26" />
+      <scope id="22296216606256714" at="155,29,156,27" />
+      <scope id="8412685000766848295" at="162,52,163,26" />
+      <scope id="5729690357938396054" at="169,0,170,0" />
+      <scope id="8412685000765914609" at="105,52,107,18" />
+      <scope id="8412685000764794304" at="39,0,42,0" />
+      <scope id="8254550093254332589" at="73,52,76,9" />
+      <scope id="8412685000765914600" at="101,0,104,0" />
+      <scope id="8412685000765914621" at="110,0,113,0" />
+      <scope id="8412685000766073856" at="121,0,124,0" />
+      <scope id="8412685000766129138" at="125,0,128,0">
+        <var name="needed" id="8412685000766159709" />
+      </scope>
+      <scope id="8412685000766085295" at="129,0,132,0" />
+      <scope id="8412685000766181932" at="133,0,136,0">
+        <var name="needed" id="8412685000766239509" />
+      </scope>
+      <scope id="5729690357938458291" at="150,0,153,0">
+        <var name="listener" id="5729690357938485781" />
+      </scope>
+      <scope id="22296216606246941" at="154,34,157,5" />
+      <scope id="8412685000766848294" at="162,0,165,0" />
+      <scope id="8412685000765914608" at="105,0,109,0">
+        <var name="languageName" id="8412685000765914619" />
+      </scope>
+      <scope id="8412685000765914630" at="114,60,118,18" />
+      <scope id="8254550093254332583" at="73,0,78,0">
+        <var name="p0" id="8254550093254332587" />
+      </scope>
+      <scope id="22296216606246938" at="154,0,159,0" />
+      <scope id="8412685000765914629" at="114,0,120,0">
+        <var name="languageLocation" id="8412685000765914640" />
+      </scope>
+      <scope id="5574157111634869361" at="137,50,145,18">
+        <var name="oldProjectPath" id="8254550093254530566" />
+      </scope>
+      <scope id="5574157111634869357" at="137,0,147,0">
+        <var name="projectPath" id="5574157111634869684" />
+      </scope>
+      <scope id="8254550093253671005" at="53,52,65,22">
+        <var name="langName" id="8254550093253671765" />
+        <var name="path" id="8254550093253671760" />
+      </scope>
+      <scope id="8254550093253670999" at="53,0,67,0">
+        <var name="p0" id="8254550093253671003" />
+      </scope>
+      <scope id="8412685000764738876" at="45,50,96,5">
+        <var name="descriptor" id="8412685000764804399" />
+        <var name="fieldPanel" id="8412685000764804416" />
+        <var name="listener" id="8412685000764804407" />
+      </scope>
+      <scope id="8412685000764738872" at="45,0,98,0">
+        <var name="projectPath" id="8412685000764795380" />
+      </scope>
+      <unit id="5729690357938396053" at="168,0,171,0" name="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings$LangSettingsChangedListener" />
+      <unit id="8254550093254332581" at="72,61,78,5" name="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings$2" />
+      <unit id="8254550093253670991" at="52,57,67,5" name="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings$1" />
+      <unit id="8412685000764658714" at="25,0,172,0" name="jetbrains.mps.ide.ui.dialogs.modules.NewLanguageSettings" />
+    </file>
   </root>
   <root nodeRef="r:47803144-d0ed-4800-ae84-e83a292e3adb(jetbrains.mps.ide.ui.dialogs.modules)/8412685000764838330">
-    <nodeInfo nodeId="8412685000764853219" fileName="Util.java" startLine="8" startPosition="66" endLine="9" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8412685000764853214" fileName="Util.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getGridConstraints#(I)Lcom/intellij/uiDesigner/core/GridConstraints;" />
-    <scopeInfo nodeId="8412685000764853218" fileName="Util.java" startLine="8" startPosition="66" endLine="9" endPosition="241" />
-    <scopeInfo nodeId="8412685000764853214" fileName="Util.java" startLine="8" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="8412685000764853216" varName="row" />
-    </scopeInfo>
-    <unitInfo nodeId="8412685000764838330" fileName="Util.java" startLine="7" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.modules.Util" />
+    <file name="Util.java">
+      <node id="8412685000764853219" at="8,66,9,241" concept="7" />
+      <node id="8412685000764853214" at="8,0,11,0" concept="9" trace="getGridConstraints#(I)Lcom/intellij/uiDesigner/core/GridConstraints;" />
+      <scope id="8412685000764853218" at="8,66,9,241" />
+      <scope id="8412685000764853214" at="8,0,11,0">
+        <var name="row" id="8412685000764853216" />
+      </scope>
+      <unit id="8412685000764838330" at="7,0,14,0" name="jetbrains.mps.ide.ui.dialogs.modules.Util" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -1,22 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="AccountType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.AccountType_BehaviorDescriptor" />
-  <unitInfo fileName="AgreementDeclarations_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.AgreementDeclarations_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="Date_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.Date_BehaviorDescriptor" />
-  <unitInfo fileName="Date_Future_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.Date_Future_BehaviorDescriptor" />
-  <unitInfo fileName="Date_Past_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.Date_Past_BehaviorDescriptor" />
-  <unitInfo fileName="EventType_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.EventType_BehaviorDescriptor" />
-  <unitInfo fileName="EventVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.EventVariableReference_BehaviorDescriptor" />
-  <unitInfo fileName="EventVariable_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.EventVariable_BehaviorDescriptor" />
-  <unitInfo fileName="Event_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.Event_BehaviorDescriptor" />
-  <unitInfo fileName="Plan_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.Plan_BehaviorDescriptor" />
-  <unitInfo fileName="PostingRuleTemporalProperty_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.PostingRuleTemporalProperty_BehaviorDescriptor" />
-  <unitInfo fileName="PostingRule_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.PostingRule_BehaviorDescriptor" />
-  <unitInfo fileName="QuantityTemporalProperty_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.QuantityTemporalProperty_BehaviorDescriptor" />
-  <unitInfo fileName="Quantity_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.Quantity_BehaviorDescriptor" />
-  <unitInfo fileName="TemporalProperty_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.TemporalProperty_BehaviorDescriptor" />
-  <unitInfo fileName="ValueReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.ValueReference_BehaviorDescriptor" />
-  <unitInfo fileName="Value_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.samples.agreementLanguage.behavior.Value_BehaviorDescriptor" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="Date_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.agreementLanguage.behavior.Date_BehaviorDescriptor" />
+    </file>
+    <file name="Date_Future_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.samples.agreementLanguage.behavior.Date_Future_BehaviorDescriptor" />
+    </file>
+    <file name="PostingRuleTemporalProperty_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.samples.agreementLanguage.behavior.PostingRuleTemporalProperty_BehaviorDescriptor" />
+    </file>
+    <file name="EventType_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.samples.agreementLanguage.behavior.EventType_BehaviorDescriptor" />
+    </file>
+    <file name="Plan_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.samples.agreementLanguage.behavior.Plan_BehaviorDescriptor" />
+    </file>
+    <file name="TemporalProperty_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.agreementLanguage.behavior.TemporalProperty_BehaviorDescriptor" />
+    </file>
+    <file name="PostingRule_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.agreementLanguage.behavior.PostingRule_BehaviorDescriptor" />
+    </file>
+    <file name="ValueReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.agreementLanguage.behavior.ValueReference_BehaviorDescriptor" />
+    </file>
+    <file name="AgreementDeclarations_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.agreementLanguage.behavior.AgreementDeclarations_BehaviorDescriptor" />
+    </file>
+    <file name="Event_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.agreementLanguage.behavior.Event_BehaviorDescriptor" />
+    </file>
+    <file name="AccountType_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.samples.agreementLanguage.behavior.AccountType_BehaviorDescriptor" />
+    </file>
+    <file name="EventVariableReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.agreementLanguage.behavior.EventVariableReference_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,54,0" name="jetbrains.mps.samples.agreementLanguage.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="Value_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.samples.agreementLanguage.behavior.Value_BehaviorDescriptor" />
+    </file>
+    <file name="QuantityTemporalProperty_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.samples.agreementLanguage.behavior.QuantityTemporalProperty_BehaviorDescriptor" />
+    </file>
+    <file name="EventVariable_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.samples.agreementLanguage.behavior.EventVariable_BehaviorDescriptor" />
+    </file>
+    <file name="Quantity_BehaviorDescriptor.java">
+      <unit at="8,0,17,0" name="jetbrains.mps.samples.agreementLanguage.behavior.Quantity_BehaviorDescriptor" />
+    </file>
+    <file name="Date_Past_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.samples.agreementLanguage.behavior.Date_Past_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

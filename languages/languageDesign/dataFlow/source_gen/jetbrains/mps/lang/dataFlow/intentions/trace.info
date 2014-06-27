@@ -1,187 +1,202 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.intentions.IntentionsDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root>
+    <file name="IntentionsDescriptor.java">
+      <unit at="10,0,20,0" name="jetbrains.mps.lang.dataFlow.intentions.IntentionsDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)/1206534526647">
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="32" startPosition="41" endLine="33" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="40" startPosition="34" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="44" startPosition="44" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="51" startPosition="5" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534751520" fileName="RemoveMayBeUnreachable_Intention.java" startLine="55" startPosition="91" endLine="56" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="59" startPosition="53" endLine="60" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="63" startPosition="35" endLine="64" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="68" startPosition="37" endLine="69" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="70" startPosition="5" endLine="71" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534561687" fileName="RemoveMayBeUnreachable_Intention.java" startLine="78" startPosition="87" endLine="79" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534762483" fileName="RemoveMayBeUnreachable_Intention.java" startLine="82" startPosition="78" endLine="83" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206534922507" fileName="RemoveMayBeUnreachable_Intention.java" startLine="83" startPosition="80" endLine="84" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="87" startPosition="48" endLine="88" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveMayBeUnreachable_Intention#()V" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="75" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="48" startPosition="84" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="67" startPosition="99" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="67" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="21" startPosition="45" endLine="21" endPosition="45" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="75" startPosition="38" endLine="75" endPosition="38" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="24" startPosition="30" endLine="25" endPosition="65" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="28" startPosition="35" endLine="29" endPosition="36" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="32" startPosition="41" endLine="33" endPosition="85" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="36" startPosition="37" endLine="37" endPosition="41" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="40" startPosition="34" endLine="41" endPosition="32" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="44" startPosition="44" endLine="45" endPosition="17" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
-    <scopeInfo nodeId="1206534749441" fileName="RemoveMayBeUnreachable_Intention.java" startLine="55" startPosition="91" endLine="56" endPosition="135" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="59" startPosition="53" endLine="60" endPosition="127" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="63" startPosition="35" endLine="64" endPosition="17" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="68" startPosition="37" endLine="69" endPosition="138" />
-    <scopeInfo nodeId="1206534526649" fileName="RemoveMayBeUnreachable_Intention.java" startLine="78" startPosition="87" endLine="79" endPosition="41" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="87" startPosition="48" endLine="88" endPosition="51" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="75" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="1206534526651" fileName="RemoveMayBeUnreachable_Intention.java" startLine="82" startPosition="78" endLine="84" endPosition="52" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="1206534526647" varName="editorContext" />
-      <varInfo nodeId="1206534526647" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
-      <varInfo nodeId="1206534526647" varName="editorContext" />
-      <varInfo nodeId="1206534526647" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="48" startPosition="84" endLine="52" endPosition="16" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="67" startPosition="99" endLine="71" endPosition="30" />
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="1206534526647" varName="editorContext" />
-      <varInfo nodeId="1206534526647" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="48" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="1206534526647" varName="editorContext" />
-      <varInfo nodeId="1206534526647" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="67" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="1206534526647" varName="context" />
-      <varInfo nodeId="1206534526647" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="74" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.intentions.RemoveMayBeUnreachable_Intention$IntentionImplementation" />
-    <unitInfo nodeId="1206534526647" fileName="RemoveMayBeUnreachable_Intention.java" startLine="18" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.intentions.RemoveMayBeUnreachable_Intention" />
+    <file name="RemoveMayBeUnreachable_Intention.java">
+      <node id="1206534526647" at="19,0,20,0" concept="2" trace="myCachedExecutable" />
+      <node id="1206534526647" at="24,30,25,65" concept="6" />
+      <node id="1206534526647" at="28,35,29,36" concept="6" />
+      <node id="1206534526647" at="32,41,33,85" concept="6" />
+      <node id="1206534526647" at="36,37,37,41" concept="6" />
+      <node id="1206534526647" at="40,34,41,32" concept="6" />
+      <node id="1206534526647" at="44,44,45,17" concept="6" />
+      <node id="1206534526647" at="49,53,50,19" concept="6" />
+      <node id="1206534526647" at="51,5,52,16" concept="6" />
+      <node id="1206534751520" at="55,91,56,135" concept="6" />
+      <node id="1206534526647" at="59,53,60,127" concept="6" />
+      <node id="1206534526647" at="63,35,64,17" concept="6" />
+      <node id="1206534526647" at="68,37,69,138" concept="1" />
+      <node id="1206534526647" at="70,5,71,30" concept="6" />
+      <node id="1206534561687" at="78,87,79,41" concept="6" />
+      <node id="1206534762483" at="82,78,83,80" concept="1" />
+      <node id="1206534922507" at="83,80,84,52" concept="1" />
+      <node id="1206534526647" at="87,48,88,51" concept="6" />
+      <node id="1206534526647" at="21,0,23,0" concept="0" trace="RemoveMayBeUnreachable_Intention#()V" />
+      <node id="1206534526647" at="75,0,77,0" concept="0" trace="IntentionImplementation#()V" />
+      <node id="1206534526647" at="24,0,27,0" concept="4" trace="getConcept#()Ljava/lang/String;" />
+      <node id="1206534526647" at="28,0,31,0" concept="4" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="1206534526647" at="32,0,35,0" concept="4" trace="getPersistentStateKey#()Ljava/lang/String;" />
+      <node id="1206534526647" at="36,0,39,0" concept="4" trace="getLanguageFqName#()Ljava/lang/String;" />
+      <node id="1206534526647" at="40,0,43,0" concept="4" trace="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+      <node id="1206534526647" at="44,0,47,0" concept="4" trace="isAvailableInChildNodes#()Z" />
+      <node id="1206534526647" at="48,84,51,5" concept="3" />
+      <node id="1206534526647" at="55,0,58,0" concept="4" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="1206534526647" at="59,0,62,0" concept="4" trace="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="1206534526647" at="63,0,66,0" concept="4" trace="isSurroundWith#()Z" />
+      <node id="1206534526647" at="67,99,70,5" concept="3" />
+      <node id="1206534526647" at="78,0,81,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="1206534526647" at="87,0,90,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="1206534526647" at="82,0,86,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="1206534526647" at="48,0,54,0" concept="4" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="1206534526647" at="67,0,73,0" concept="4" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <scope id="1206534526647" at="21,45,21,45" />
+      <scope id="1206534526647" at="75,38,75,38" />
+      <scope id="1206534526647" at="24,30,25,65" />
+      <scope id="1206534526647" at="28,35,29,36" />
+      <scope id="1206534526647" at="32,41,33,85" />
+      <scope id="1206534526647" at="36,37,37,41" />
+      <scope id="1206534526647" at="40,34,41,32" />
+      <scope id="1206534526647" at="44,44,45,17" />
+      <scope id="1206534526647" at="49,53,50,19" />
+      <scope id="1206534749441" at="55,91,56,135" />
+      <scope id="1206534526647" at="59,53,60,127" />
+      <scope id="1206534526647" at="63,35,64,17" />
+      <scope id="1206534526647" at="68,37,69,138" />
+      <scope id="1206534526649" at="78,87,79,41" />
+      <scope id="1206534526647" at="87,48,88,51" />
+      <scope id="1206534526647" at="21,0,23,0" />
+      <scope id="1206534526647" at="75,0,77,0" />
+      <scope id="1206534526651" at="82,78,84,52" />
+      <scope id="1206534526647" at="24,0,27,0" />
+      <scope id="1206534526647" at="28,0,31,0" />
+      <scope id="1206534526647" at="32,0,35,0" />
+      <scope id="1206534526647" at="36,0,39,0" />
+      <scope id="1206534526647" at="40,0,43,0" />
+      <scope id="1206534526647" at="44,0,47,0" />
+      <scope id="1206534526647" at="55,0,58,0">
+        <var name="editorContext" id="1206534526647" />
+        <var name="node" id="1206534526647" />
+      </scope>
+      <scope id="1206534526647" at="59,0,62,0" />
+      <scope id="1206534526647" at="63,0,66,0" />
+      <scope id="1206534526647" at="78,0,81,0">
+        <var name="editorContext" id="1206534526647" />
+        <var name="node" id="1206534526647" />
+      </scope>
+      <scope id="1206534526647" at="87,0,90,0" />
+      <scope id="1206534526647" at="48,84,52,16" />
+      <scope id="1206534526647" at="67,99,71,30" />
+      <scope id="1206534526647" at="82,0,86,0">
+        <var name="editorContext" id="1206534526647" />
+        <var name="node" id="1206534526647" />
+      </scope>
+      <scope id="1206534526647" at="48,0,54,0">
+        <var name="editorContext" id="1206534526647" />
+        <var name="node" id="1206534526647" />
+      </scope>
+      <scope id="1206534526647" at="67,0,73,0">
+        <var name="context" id="1206534526647" />
+        <var name="node" id="1206534526647" />
+      </scope>
+      <unit id="1206534526647" at="74,0,91,0" name="jetbrains.mps.lang.dataFlow.intentions.RemoveMayBeUnreachable_Intention$IntentionImplementation" />
+      <unit id="1206534526647" at="18,0,92,0" name="jetbrains.mps.lang.dataFlow.intentions.RemoveMayBeUnreachable_Intention" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959037b(jetbrains.mps.lang.dataFlow.intentions)/1206534589230">
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="34" startPosition="41" endLine="35" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="42" startPosition="34" endLine="43" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="46" startPosition="44" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="53" startPosition="5" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534844298" fileName="AddMayBeUnreachable_Intention.java" startLine="57" startPosition="91" endLine="58" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="61" startPosition="53" endLine="62" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="65" startPosition="35" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="72" startPosition="5" endLine="73" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534596328" fileName="AddMayBeUnreachable_Intention.java" startLine="80" startPosition="87" endLine="81" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534605708" fileName="AddMayBeUnreachable_Intention.java" startLine="84" startPosition="78" endLine="85" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1206534614825" fileName="AddMayBeUnreachable_Intention.java" startLine="85" startPosition="126" endLine="86" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206534623039" fileName="AddMayBeUnreachable_Intention.java" startLine="86" startPosition="55" endLine="87" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206535017668" fileName="AddMayBeUnreachable_Intention.java" startLine="87" startPosition="69" endLine="88" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="91" startPosition="48" endLine="92" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddMayBeUnreachable_Intention#()V" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="77" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="50" startPosition="84" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="69" startPosition="99" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="84" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="23" startPosition="42" endLine="23" endPosition="42" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="77" startPosition="38" endLine="77" endPosition="38" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="65" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="33" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="34" startPosition="41" endLine="35" endPosition="82" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="41" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="42" startPosition="34" endLine="43" endPosition="32" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="46" startPosition="44" endLine="47" endPosition="17" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" />
-    <scopeInfo nodeId="1206534842671" fileName="AddMayBeUnreachable_Intention.java" startLine="57" startPosition="91" endLine="58" endPosition="138" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="61" startPosition="53" endLine="62" endPosition="127" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="65" startPosition="35" endLine="66" endPosition="17" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="135" />
-    <scopeInfo nodeId="1206534589232" fileName="AddMayBeUnreachable_Intention.java" startLine="80" startPosition="87" endLine="81" endPosition="38" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="91" startPosition="48" endLine="92" endPosition="48" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="77" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="1206534589230" varName="editorContext" />
-      <varInfo nodeId="1206534589230" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="80" startPosition="0" endLine="83" endPosition="0">
-      <varInfo nodeId="1206534589230" varName="editorContext" />
-      <varInfo nodeId="1206534589230" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="50" startPosition="84" endLine="54" endPosition="16" />
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="69" startPosition="99" endLine="73" endPosition="30" />
-    <scopeInfo nodeId="1206534589234" fileName="AddMayBeUnreachable_Intention.java" startLine="84" startPosition="78" endLine="88" endPosition="52">
-      <varInfo nodeId="1206534605709" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="50" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="1206534589230" varName="editorContext" />
-      <varInfo nodeId="1206534589230" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="1206534589230" varName="context" />
-      <varInfo nodeId="1206534589230" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="84" startPosition="0" endLine="90" endPosition="0">
-      <varInfo nodeId="1206534589230" varName="editorContext" />
-      <varInfo nodeId="1206534589230" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="76" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.intentions.AddMayBeUnreachable_Intention$IntentionImplementation" />
-    <unitInfo nodeId="1206534589230" fileName="AddMayBeUnreachable_Intention.java" startLine="20" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.intentions.AddMayBeUnreachable_Intention" />
+    <file name="AddMayBeUnreachable_Intention.java">
+      <node id="1206534589230" at="21,0,22,0" concept="2" trace="myCachedExecutable" />
+      <node id="1206534589230" at="26,30,27,65" concept="6" />
+      <node id="1206534589230" at="30,35,31,33" concept="6" />
+      <node id="1206534589230" at="34,41,35,82" concept="6" />
+      <node id="1206534589230" at="38,37,39,41" concept="6" />
+      <node id="1206534589230" at="42,34,43,32" concept="6" />
+      <node id="1206534589230" at="46,44,47,17" concept="6" />
+      <node id="1206534589230" at="51,53,52,19" concept="6" />
+      <node id="1206534589230" at="53,5,54,16" concept="6" />
+      <node id="1206534844298" at="57,91,58,138" concept="6" />
+      <node id="1206534589230" at="61,53,62,127" concept="6" />
+      <node id="1206534589230" at="65,35,66,17" concept="6" />
+      <node id="1206534589230" at="70,37,71,135" concept="1" />
+      <node id="1206534589230" at="72,5,73,30" concept="6" />
+      <node id="1206534596328" at="80,87,81,38" concept="6" />
+      <node id="1206534605708" at="84,78,85,126" concept="5" />
+      <node id="1206534614825" at="85,126,86,55" concept="1" />
+      <node id="1206534623039" at="86,55,87,69" concept="1" />
+      <node id="1206535017668" at="87,69,88,52" concept="1" />
+      <node id="1206534589230" at="91,48,92,48" concept="6" />
+      <node id="1206534589230" at="23,0,25,0" concept="0" trace="AddMayBeUnreachable_Intention#()V" />
+      <node id="1206534589230" at="77,0,79,0" concept="0" trace="IntentionImplementation#()V" />
+      <node id="1206534589230" at="26,0,29,0" concept="4" trace="getConcept#()Ljava/lang/String;" />
+      <node id="1206534589230" at="30,0,33,0" concept="4" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="1206534589230" at="34,0,37,0" concept="4" trace="getPersistentStateKey#()Ljava/lang/String;" />
+      <node id="1206534589230" at="38,0,41,0" concept="4" trace="getLanguageFqName#()Ljava/lang/String;" />
+      <node id="1206534589230" at="42,0,45,0" concept="4" trace="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+      <node id="1206534589230" at="46,0,49,0" concept="4" trace="isAvailableInChildNodes#()Z" />
+      <node id="1206534589230" at="50,84,53,5" concept="3" />
+      <node id="1206534589230" at="57,0,60,0" concept="4" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="1206534589230" at="61,0,64,0" concept="4" trace="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="1206534589230" at="65,0,68,0" concept="4" trace="isSurroundWith#()Z" />
+      <node id="1206534589230" at="69,99,72,5" concept="3" />
+      <node id="1206534589230" at="80,0,83,0" concept="4" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="1206534589230" at="91,0,94,0" concept="4" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="1206534589230" at="50,0,56,0" concept="4" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="1206534589230" at="69,0,75,0" concept="4" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <node id="1206534589230" at="84,0,90,0" concept="4" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <scope id="1206534589230" at="23,42,23,42" />
+      <scope id="1206534589230" at="77,38,77,38" />
+      <scope id="1206534589230" at="26,30,27,65" />
+      <scope id="1206534589230" at="30,35,31,33" />
+      <scope id="1206534589230" at="34,41,35,82" />
+      <scope id="1206534589230" at="38,37,39,41" />
+      <scope id="1206534589230" at="42,34,43,32" />
+      <scope id="1206534589230" at="46,44,47,17" />
+      <scope id="1206534589230" at="51,53,52,19" />
+      <scope id="1206534842671" at="57,91,58,138" />
+      <scope id="1206534589230" at="61,53,62,127" />
+      <scope id="1206534589230" at="65,35,66,17" />
+      <scope id="1206534589230" at="70,37,71,135" />
+      <scope id="1206534589232" at="80,87,81,38" />
+      <scope id="1206534589230" at="91,48,92,48" />
+      <scope id="1206534589230" at="23,0,25,0" />
+      <scope id="1206534589230" at="77,0,79,0" />
+      <scope id="1206534589230" at="26,0,29,0" />
+      <scope id="1206534589230" at="30,0,33,0" />
+      <scope id="1206534589230" at="34,0,37,0" />
+      <scope id="1206534589230" at="38,0,41,0" />
+      <scope id="1206534589230" at="42,0,45,0" />
+      <scope id="1206534589230" at="46,0,49,0" />
+      <scope id="1206534589230" at="57,0,60,0">
+        <var name="editorContext" id="1206534589230" />
+        <var name="node" id="1206534589230" />
+      </scope>
+      <scope id="1206534589230" at="61,0,64,0" />
+      <scope id="1206534589230" at="65,0,68,0" />
+      <scope id="1206534589230" at="80,0,83,0">
+        <var name="editorContext" id="1206534589230" />
+        <var name="node" id="1206534589230" />
+      </scope>
+      <scope id="1206534589230" at="91,0,94,0" />
+      <scope id="1206534589230" at="50,84,54,16" />
+      <scope id="1206534589230" at="69,99,73,30" />
+      <scope id="1206534589234" at="84,78,88,52">
+        <var name="result" id="1206534605709" />
+      </scope>
+      <scope id="1206534589230" at="50,0,56,0">
+        <var name="editorContext" id="1206534589230" />
+        <var name="node" id="1206534589230" />
+      </scope>
+      <scope id="1206534589230" at="69,0,75,0">
+        <var name="context" id="1206534589230" />
+        <var name="node" id="1206534589230" />
+      </scope>
+      <scope id="1206534589230" at="84,0,90,0">
+        <var name="editorContext" id="1206534589230" />
+        <var name="node" id="1206534589230" />
+      </scope>
+      <unit id="1206534589230" at="76,0,95,0" name="jetbrains.mps.lang.dataFlow.intentions.AddMayBeUnreachable_Intention$IntentionImplementation" />
+      <unit id="1206534589230" at="20,0,96,0" name="jetbrains.mps.lang.dataFlow.intentions.AddMayBeUnreachable_Intention" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -1,124 +1,132 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:e318478c-edb7-4caf-bafe-2e5906944dde(jetbrains.mps.baseLanguage.math.tests)/1650644170366801770">
-    <nodeInfo nodeId="1650644170366801780" fileName="IntervalTest.java" startLine="17" startPosition="32" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1650644170366801789" fileName="IntervalTest.java" startLine="18" startPosition="62" endLine="19" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801795" fileName="IntervalTest.java" startLine="19" startPosition="44" endLine="20" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801801" fileName="IntervalTest.java" startLine="20" startPosition="44" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801807" fileName="IntervalTest.java" startLine="21" startPosition="45" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801814" fileName="IntervalTest.java" startLine="22" startPosition="46" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801825" fileName="IntervalTest.java" startLine="27" startPosition="33" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1650644170366801836" fileName="IntervalTest.java" startLine="28" startPosition="75" endLine="29" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801842" fileName="IntervalTest.java" startLine="29" startPosition="44" endLine="30" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801848" fileName="IntervalTest.java" startLine="30" startPosition="45" endLine="31" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801859" fileName="IntervalTest.java" startLine="35" startPosition="34" endLine="36" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1650644170366801870" fileName="IntervalTest.java" startLine="36" startPosition="75" endLine="37" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801876" fileName="IntervalTest.java" startLine="37" startPosition="44" endLine="38" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801882" fileName="IntervalTest.java" startLine="38" startPosition="44" endLine="39" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801893" fileName="IntervalTest.java" startLine="43" startPosition="30" endLine="44" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1650644170366801904" fileName="IntervalTest.java" startLine="44" startPosition="78" endLine="45" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801911" fileName="IntervalTest.java" startLine="45" startPosition="48" endLine="46" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801917" fileName="IntervalTest.java" startLine="46" startPosition="45" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801928" fileName="IntervalTest.java" startLine="51" startPosition="31" endLine="52" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1650644170366801939" fileName="IntervalTest.java" startLine="52" startPosition="77" endLine="53" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801945" fileName="IntervalTest.java" startLine="53" startPosition="44" endLine="54" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801951" fileName="IntervalTest.java" startLine="54" startPosition="47" endLine="55" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801963" fileName="IntervalTest.java" startLine="59" startPosition="45" endLine="60" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1650644170366801972" fileName="IntervalTest.java" startLine="60" startPosition="61" endLine="61" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366801985" fileName="IntervalTest.java" startLine="65" startPosition="49" endLine="66" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1650644170366801996" fileName="IntervalTest.java" startLine="66" startPosition="74" endLine="67" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366802008" fileName="IntervalTest.java" startLine="71" startPosition="50" endLine="72" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1650644170366802019" fileName="IntervalTest.java" startLine="72" startPosition="74" endLine="73" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366802031" fileName="IntervalTest.java" startLine="77" startPosition="45" endLine="78" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1650644170366802040" fileName="IntervalTest.java" startLine="78" startPosition="61" endLine="79" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366802051" fileName="IntervalTest.java" startLine="83" startPosition="31" endLine="84" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366802064" fileName="IntervalTest.java" startLine="88" startPosition="39" endLine="89" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366802079" fileName="IntervalTest.java" startLine="93" startPosition="38" endLine="94" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366802094" fileName="IntervalTest.java" startLine="98" startPosition="31" endLine="99" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366802133" fileName="IntervalTest.java" startLine="108" startPosition="73" endLine="109" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1650644170366802145" fileName="IntervalTest.java" startLine="110" startPosition="26" endLine="111" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650644170366802150" fileName="IntervalTest.java" startLine="112" startPosition="5" endLine="113" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1650644170366801772" fileName="IntervalTest.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntervalTest#()V" />
-    <nodeInfo nodeId="1650644170366802109" fileName="IntervalTest.java" startLine="103" startPosition="39" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1650644170366802140" fileName="IntervalTest.java" startLine="109" startPosition="40" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1650644170366802047" fileName="IntervalTest.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="endBeforStart#()V" />
-    <nodeInfo nodeId="1650644170366802060" fileName="IntervalTest.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="minusInfinityIncluded#()V" />
-    <nodeInfo nodeId="1650644170366802075" fileName="IntervalTest.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="plusInfinityIncluded#()V" />
-    <nodeInfo nodeId="1650644170366802090" fileName="IntervalTest.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="emptyInterval#()V" />
-    <nodeInfo nodeId="1650644170366801959" fileName="IntervalTest.java" startLine="58" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="integerIterationAllIncluded#()V" />
-    <nodeInfo nodeId="1650644170366801981" fileName="IntervalTest.java" startLine="64" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="integerIterationLeftNotIncluded#()V" />
-    <nodeInfo nodeId="1650644170366802004" fileName="IntervalTest.java" startLine="70" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="integerIterationRightNotIncluded#()V" />
-    <nodeInfo nodeId="1650644170366802027" fileName="IntervalTest.java" startLine="76" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="oneElementIntervalIteration#()V" />
-    <nodeInfo nodeId="1650644170366802105" fileName="IntervalTest.java" startLine="102" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterationFromInfinity#()V" />
-    <nodeInfo nodeId="1650644170366801821" fileName="IntervalTest.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="leftNotIncluded#()V" />
-    <nodeInfo nodeId="1650644170366801855" fileName="IntervalTest.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rightNotIncluded#()V" />
-    <nodeInfo nodeId="1650644170366801889" fileName="IntervalTest.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="leftInfinity#()V" />
-    <nodeInfo nodeId="1650644170366801924" fileName="IntervalTest.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rightInfinity#()V" />
-    <nodeInfo nodeId="1650644170366802123" fileName="IntervalTest.java" startLine="108" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="elements#(Ljetbrains/mps/baseLanguage/math/runtime/Interval;)Ljava/util/List;" />
-    <nodeInfo nodeId="1650644170366801776" fileName="IntervalTest.java" startLine="16" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="simpleInterval#()V" />
-    <scopeInfo nodeId="1650644170366801775" fileName="IntervalTest.java" startLine="13" startPosition="25" endLine="13" endPosition="25" />
-    <scopeInfo nodeId="1650644170366802119" fileName="IntervalTest.java" startLine="104" startPosition="69" endLine="104" endPosition="69" />
-    <scopeInfo nodeId="1650644170366802050" fileName="IntervalTest.java" startLine="83" startPosition="31" endLine="84" endPosition="34" />
-    <scopeInfo nodeId="1650644170366802063" fileName="IntervalTest.java" startLine="88" startPosition="39" endLine="89" endPosition="48" />
-    <scopeInfo nodeId="1650644170366802078" fileName="IntervalTest.java" startLine="93" startPosition="38" endLine="94" endPosition="47" />
-    <scopeInfo nodeId="1650644170366802093" fileName="IntervalTest.java" startLine="98" startPosition="31" endLine="99" endPosition="49" />
-    <scopeInfo nodeId="1650644170366802144" fileName="IntervalTest.java" startLine="110" startPosition="26" endLine="111" endPosition="20" />
-    <scopeInfo nodeId="1650644170366801772" fileName="IntervalTest.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="1650644170366801962" fileName="IntervalTest.java" startLine="59" startPosition="45" endLine="61" endPosition="68">
-      <varInfo nodeId="1650644170366801964" varName="interval" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366801984" fileName="IntervalTest.java" startLine="65" startPosition="49" endLine="67" endPosition="65">
-      <varInfo nodeId="1650644170366801986" varName="interval" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366802007" fileName="IntervalTest.java" startLine="71" startPosition="50" endLine="73" endPosition="65">
-      <varInfo nodeId="1650644170366802009" varName="interval" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366802030" fileName="IntervalTest.java" startLine="77" startPosition="45" endLine="79" endPosition="62">
-      <varInfo nodeId="1650644170366802032" varName="interval" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366802108" fileName="IntervalTest.java" startLine="103" startPosition="39" endLine="105" endPosition="5" />
-    <scopeInfo nodeId="1650644170366802109" fileName="IntervalTest.java" startLine="103" startPosition="39" endLine="105" endPosition="5">
-      <varInfo nodeId="1650644170366802117" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366802140" fileName="IntervalTest.java" startLine="109" startPosition="40" endLine="112" endPosition="5">
-      <varInfo nodeId="1650644170366802142" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366801824" fileName="IntervalTest.java" startLine="27" startPosition="33" endLine="31" endPosition="45">
-      <varInfo nodeId="1650644170366801826" varName="interval" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366801858" fileName="IntervalTest.java" startLine="35" startPosition="34" endLine="39" endPosition="46">
-      <varInfo nodeId="1650644170366801860" varName="interval" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366801892" fileName="IntervalTest.java" startLine="43" startPosition="30" endLine="47" endPosition="47">
-      <varInfo nodeId="1650644170366801894" varName="interval" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366801927" fileName="IntervalTest.java" startLine="51" startPosition="31" endLine="55" endPosition="46">
-      <varInfo nodeId="1650644170366801929" varName="interval" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366802047" fileName="IntervalTest.java" startLine="82" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1650644170366802060" fileName="IntervalTest.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1650644170366802075" fileName="IntervalTest.java" startLine="92" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="1650644170366802090" fileName="IntervalTest.java" startLine="97" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="1650644170366801959" fileName="IntervalTest.java" startLine="58" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1650644170366801981" fileName="IntervalTest.java" startLine="64" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1650644170366802004" fileName="IntervalTest.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1650644170366802027" fileName="IntervalTest.java" startLine="76" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="1650644170366802105" fileName="IntervalTest.java" startLine="102" startPosition="0" endLine="107" endPosition="0" />
-    <scopeInfo nodeId="1650644170366802132" fileName="IntervalTest.java" startLine="108" startPosition="73" endLine="113" endPosition="18">
-      <varInfo nodeId="1650644170366802134" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366801779" fileName="IntervalTest.java" startLine="17" startPosition="32" endLine="23" endPosition="46">
-      <varInfo nodeId="1650644170366801781" varName="interval" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366801821" fileName="IntervalTest.java" startLine="26" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1650644170366801855" fileName="IntervalTest.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1650644170366801889" fileName="IntervalTest.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1650644170366801924" fileName="IntervalTest.java" startLine="50" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1650644170366802123" fileName="IntervalTest.java" startLine="108" startPosition="0" endLine="115" endPosition="0">
-      <varInfo nodeId="1650644170366802129" varName="interval" />
-    </scopeInfo>
-    <scopeInfo nodeId="1650644170366801776" fileName="IntervalTest.java" startLine="16" startPosition="0" endLine="25" endPosition="0" />
-    <unitInfo nodeId="1650644170366801770" fileName="IntervalTest.java" startLine="12" startPosition="0" endLine="116" endPosition="0" unitName="jetbrains.mps.baseLanguage.math.tests.IntervalTest" />
+    <file name="IntervalTest.java">
+      <node id="1650644170366801780" at="17,32,18,62" concept="4" />
+      <node id="1650644170366801789" at="18,62,19,44" concept="1" />
+      <node id="1650644170366801795" at="19,44,20,44" concept="1" />
+      <node id="1650644170366801801" at="20,44,21,45" concept="1" />
+      <node id="1650644170366801807" at="21,45,22,46" concept="1" />
+      <node id="1650644170366801814" at="22,46,23,46" concept="1" />
+      <node id="1650644170366801825" at="27,33,28,75" concept="4" />
+      <node id="1650644170366801836" at="28,75,29,44" concept="1" />
+      <node id="1650644170366801842" at="29,44,30,45" concept="1" />
+      <node id="1650644170366801848" at="30,45,31,45" concept="1" />
+      <node id="1650644170366801859" at="35,34,36,75" concept="4" />
+      <node id="1650644170366801870" at="36,75,37,44" concept="1" />
+      <node id="1650644170366801876" at="37,44,38,44" concept="1" />
+      <node id="1650644170366801882" at="38,44,39,46" concept="1" />
+      <node id="1650644170366801893" at="43,30,44,78" concept="4" />
+      <node id="1650644170366801904" at="44,78,45,48" concept="1" />
+      <node id="1650644170366801911" at="45,48,46,45" concept="1" />
+      <node id="1650644170366801917" at="46,45,47,47" concept="1" />
+      <node id="1650644170366801928" at="51,31,52,77" concept="4" />
+      <node id="1650644170366801939" at="52,77,53,44" concept="1" />
+      <node id="1650644170366801945" at="53,44,54,47" concept="1" />
+      <node id="1650644170366801951" at="54,47,55,46" concept="1" />
+      <node id="1650644170366801963" at="59,45,60,61" concept="4" />
+      <node id="1650644170366801972" at="60,61,61,68" concept="1" />
+      <node id="1650644170366801985" at="65,49,66,74" concept="4" />
+      <node id="1650644170366801996" at="66,74,67,65" concept="1" />
+      <node id="1650644170366802008" at="71,50,72,74" concept="4" />
+      <node id="1650644170366802019" at="72,74,73,65" concept="1" />
+      <node id="1650644170366802031" at="77,45,78,61" concept="4" />
+      <node id="1650644170366802040" at="78,61,79,62" concept="1" />
+      <node id="1650644170366802051" at="83,31,84,34" concept="1" />
+      <node id="1650644170366802064" at="88,39,89,48" concept="1" />
+      <node id="1650644170366802079" at="93,38,94,47" concept="1" />
+      <node id="1650644170366802094" at="98,31,99,49" concept="1" />
+      <node id="1650644170366802133" at="108,73,109,40" concept="4" />
+      <node id="1650644170366802145" at="110,26,111,20" concept="1" />
+      <node id="1650644170366802150" at="112,5,113,18" concept="5" />
+      <node id="1650644170366801772" at="13,0,15,0" concept="0" trace="IntervalTest#()V" />
+      <node id="1650644170366802109" at="103,39,105,5" concept="2" />
+      <node id="1650644170366802140" at="109,40,112,5" concept="2" />
+      <node id="1650644170366802047" at="82,0,86,0" concept="3" trace="endBeforStart#()V" />
+      <node id="1650644170366802060" at="87,0,91,0" concept="3" trace="minusInfinityIncluded#()V" />
+      <node id="1650644170366802075" at="92,0,96,0" concept="3" trace="plusInfinityIncluded#()V" />
+      <node id="1650644170366802090" at="97,0,101,0" concept="3" trace="emptyInterval#()V" />
+      <node id="1650644170366801959" at="58,0,63,0" concept="3" trace="integerIterationAllIncluded#()V" />
+      <node id="1650644170366801981" at="64,0,69,0" concept="3" trace="integerIterationLeftNotIncluded#()V" />
+      <node id="1650644170366802004" at="70,0,75,0" concept="3" trace="integerIterationRightNotIncluded#()V" />
+      <node id="1650644170366802027" at="76,0,81,0" concept="3" trace="oneElementIntervalIteration#()V" />
+      <node id="1650644170366802105" at="102,0,107,0" concept="3" trace="iterationFromInfinity#()V" />
+      <node id="1650644170366801821" at="26,0,33,0" concept="3" trace="leftNotIncluded#()V" />
+      <node id="1650644170366801855" at="34,0,41,0" concept="3" trace="rightNotIncluded#()V" />
+      <node id="1650644170366801889" at="42,0,49,0" concept="3" trace="leftInfinity#()V" />
+      <node id="1650644170366801924" at="50,0,57,0" concept="3" trace="rightInfinity#()V" />
+      <node id="1650644170366802123" at="108,0,115,0" concept="3" trace="elements#(Ljetbrains/mps/baseLanguage/math/runtime/Interval;)Ljava/util/List;" />
+      <node id="1650644170366801776" at="16,0,25,0" concept="3" trace="simpleInterval#()V" />
+      <scope id="1650644170366801775" at="13,25,13,25" />
+      <scope id="1650644170366802119" at="104,69,104,69" />
+      <scope id="1650644170366802050" at="83,31,84,34" />
+      <scope id="1650644170366802063" at="88,39,89,48" />
+      <scope id="1650644170366802078" at="93,38,94,47" />
+      <scope id="1650644170366802093" at="98,31,99,49" />
+      <scope id="1650644170366802144" at="110,26,111,20" />
+      <scope id="1650644170366801772" at="13,0,15,0" />
+      <scope id="1650644170366801962" at="59,45,61,68">
+        <var name="interval" id="1650644170366801964" />
+      </scope>
+      <scope id="1650644170366801984" at="65,49,67,65">
+        <var name="interval" id="1650644170366801986" />
+      </scope>
+      <scope id="1650644170366802007" at="71,50,73,65">
+        <var name="interval" id="1650644170366802009" />
+      </scope>
+      <scope id="1650644170366802030" at="77,45,79,62">
+        <var name="interval" id="1650644170366802032" />
+      </scope>
+      <scope id="1650644170366802108" at="103,39,105,5" />
+      <scope id="1650644170366802109" at="103,39,105,5">
+        <var name="i" id="1650644170366802117" />
+      </scope>
+      <scope id="1650644170366802140" at="109,40,112,5">
+        <var name="t" id="1650644170366802142" />
+      </scope>
+      <scope id="1650644170366801824" at="27,33,31,45">
+        <var name="interval" id="1650644170366801826" />
+      </scope>
+      <scope id="1650644170366801858" at="35,34,39,46">
+        <var name="interval" id="1650644170366801860" />
+      </scope>
+      <scope id="1650644170366801892" at="43,30,47,47">
+        <var name="interval" id="1650644170366801894" />
+      </scope>
+      <scope id="1650644170366801927" at="51,31,55,46">
+        <var name="interval" id="1650644170366801929" />
+      </scope>
+      <scope id="1650644170366802047" at="82,0,86,0" />
+      <scope id="1650644170366802060" at="87,0,91,0" />
+      <scope id="1650644170366802075" at="92,0,96,0" />
+      <scope id="1650644170366802090" at="97,0,101,0" />
+      <scope id="1650644170366801959" at="58,0,63,0" />
+      <scope id="1650644170366801981" at="64,0,69,0" />
+      <scope id="1650644170366802004" at="70,0,75,0" />
+      <scope id="1650644170366802027" at="76,0,81,0" />
+      <scope id="1650644170366802105" at="102,0,107,0" />
+      <scope id="1650644170366802132" at="108,73,113,18">
+        <var name="result" id="1650644170366802134" />
+      </scope>
+      <scope id="1650644170366801779" at="17,32,23,46">
+        <var name="interval" id="1650644170366801781" />
+      </scope>
+      <scope id="1650644170366801821" at="26,0,33,0" />
+      <scope id="1650644170366801855" at="34,0,41,0" />
+      <scope id="1650644170366801889" at="42,0,49,0" />
+      <scope id="1650644170366801924" at="50,0,57,0" />
+      <scope id="1650644170366802123" at="108,0,115,0">
+        <var name="interval" id="1650644170366802129" />
+      </scope>
+      <scope id="1650644170366801776" at="16,0,25,0" />
+      <unit id="1650644170366801770" at="12,0,116,0" name="jetbrains.mps.baseLanguage.math.tests.IntervalTest" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

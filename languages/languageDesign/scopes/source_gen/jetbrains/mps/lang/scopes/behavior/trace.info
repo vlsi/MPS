@@ -1,34 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="ComeFromExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.ComeFromExpression_BehaviorDescriptor" />
-  <unitInfo fileName="CompositeWithParentScopeExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.CompositeWithParentScopeExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ParentScope_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.ParentScope_BehaviorDescriptor" />
-  <unitInfo fileName="UniformScopeProvider_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.UniformScopeProvider_BehaviorDescriptor" />
-  <root nodeRef="r:82bd480c-456f-4470-ab12-9f4f3dd67824(jetbrains.mps.lang.scopes.behavior)/2995585510566823813">
-    <nodeInfo nodeId="2995585510566833899" fileName="UniformScopeProvider_Behavior.java" startLine="14" startPosition="103" endLine="15" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2995585510566833907" fileName="UniformScopeProvider_Behavior.java" startLine="18" startPosition="112" endLine="19" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_7722139651431880752#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;I)Ljetbrains/mps/scope/Scope;" />
-    <scopeInfo nodeId="2995585510566823815" fileName="UniformScopeProvider_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="2995585510566823818" fileName="UniformScopeProvider_Behavior.java" startLine="14" startPosition="103" endLine="15" endPosition="171" />
-    <scopeInfo nodeId="2995585510566823834" fileName="UniformScopeProvider_Behavior.java" startLine="18" startPosition="112" endLine="19" endPosition="183" />
-    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="2995585510566823813" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="2995585510566823821" varName="context" />
-      <varInfo nodeId="2995585510566823819" varName="kind" />
-      <varInfo nodeId="2995585510566823813" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="2995585510566823839" varName="index" />
-      <varInfo nodeId="2995585510566823835" varName="kind" />
-      <varInfo nodeId="2995585510566823837" varName="role" />
-      <varInfo nodeId="2995585510566823813" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2995585510566823813" fileName="UniformScopeProvider_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.scopes.behavior.UniformScopeProvider_Behavior" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="ParentScope_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.scopes.behavior.ParentScope_BehaviorDescriptor" />
+    </file>
+    <file name="CompositeWithParentScopeExpression_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.scopes.behavior.CompositeWithParentScopeExpression_BehaviorDescriptor" />
+    </file>
+    <file name="ComeFromExpression_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.scopes.behavior.ComeFromExpression_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,28,0" name="jetbrains.mps.lang.scopes.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="UniformScopeProvider_BehaviorDescriptor.java">
+      <unit at="10,0,13,0" name="jetbrains.mps.lang.scopes.behavior.UniformScopeProvider_BehaviorDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:82bd480c-456f-4470-ab12-9f4f3dd67824(jetbrains.mps.lang.scopes.behavior)/2995585510566823813">
+    <file name="UniformScopeProvider_Behavior.java">
+      <node id="2995585510566833899" at="14,103,15,171" concept="0" />
+      <node id="2995585510566833907" at="18,112,19,183" concept="0" />
+      <node id="2995585510566823813" at="11,0,13,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2995585510566823813" at="14,0,17,0" concept="1" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <node id="2995585510566823813" at="18,0,21,0" concept="1" trace="virtual_getScope_7722139651431880752#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;I)Ljetbrains/mps/scope/Scope;" />
+      <scope id="2995585510566823815" at="11,43,11,43" />
+      <scope id="2995585510566823818" at="14,103,15,171" />
+      <scope id="2995585510566823834" at="18,112,19,183" />
+      <scope id="2995585510566823813" at="11,0,13,0">
+        <var name="thisNode" id="2995585510566823813" />
+      </scope>
+      <scope id="2995585510566823813" at="14,0,17,0">
+        <var name="context" id="2995585510566823821" />
+        <var name="kind" id="2995585510566823819" />
+        <var name="thisNode" id="2995585510566823813" />
+      </scope>
+      <scope id="2995585510566823813" at="18,0,21,0">
+        <var name="index" id="2995585510566823839" />
+        <var name="kind" id="2995585510566823835" />
+        <var name="role" id="2995585510566823837" />
+        <var name="thisNode" id="2995585510566823813" />
+      </scope>
+      <unit id="2995585510566823813" at="10,0,22,0" name="jetbrains.mps.lang.scopes.behavior.UniformScopeProvider_Behavior" />
+    </file>
+  </root>
+</debug-info>
 

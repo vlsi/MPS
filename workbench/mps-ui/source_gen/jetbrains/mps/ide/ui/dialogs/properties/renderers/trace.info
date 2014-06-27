@@ -1,152 +1,167 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:ebb14179-d192-43be-86ee-73001bbf35b0(jetbrains.mps.ide.ui.dialogs.properties.renderers)/3995997045458515128">
-    <nodeInfo nodeId="3995997045458515129" fileName="RuleOperandRenderer.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRenderersCache" />
-    <nodeInfo nodeId="7093733149214777667" fileName="RuleOperandRenderer.java" startLine="43" startPosition="24" endLine="44" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6466271953722286428" fileName="RuleOperandRenderer.java" startLine="46" startPosition="53" endLine="47" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6466271953722322961" fileName="RuleOperandRenderer.java" startLine="49" startPosition="54" endLine="50" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7093733149214777801" fileName="RuleOperandRenderer.java" startLine="52" startPosition="51" endLine="53" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7093733149214777807" fileName="RuleOperandRenderer.java" startLine="53" startPosition="69" endLine="54" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7093733149214777814" fileName="RuleOperandRenderer.java" startLine="54" startPosition="106" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7093733149214777925" fileName="RuleOperandRenderer.java" startLine="56" startPosition="41" endLine="57" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7093733149214777826" fileName="RuleOperandRenderer.java" startLine="58" startPosition="14" endLine="59" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7093733149214777851" fileName="RuleOperandRenderer.java" startLine="62" startPosition="35" endLine="63" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7093733149214777857" fileName="RuleOperandRenderer.java" startLine="63" startPosition="87" endLine="64" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7093733149214777872" fileName="RuleOperandRenderer.java" startLine="65" startPosition="48" endLine="66" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7093733149214777874" fileName="RuleOperandRenderer.java" startLine="67" startPosition="13" endLine="68" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7093733149214777881" fileName="RuleOperandRenderer.java" startLine="68" startPosition="103" endLine="69" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7093733149214777894" fileName="RuleOperandRenderer.java" startLine="72" startPosition="31" endLine="73" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6466271953722344543" fileName="RuleOperandRenderer.java" startLine="73" startPosition="60" endLine="74" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6466271953722368019" fileName="RuleOperandRenderer.java" startLine="76" startPosition="7" endLine="77" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7093733149214777717" fileName="RuleOperandRenderer.java" startLine="79" startPosition="53" endLine="80" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7093733149214777723" fileName="RuleOperandRenderer.java" startLine="80" startPosition="73" endLine="81" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6466271953722407391" fileName="RuleOperandRenderer.java" startLine="82" startPosition="39" endLine="83" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7093733149214777744" fileName="RuleOperandRenderer.java" startLine="84" startPosition="7" endLine="85" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7093733149214777748" fileName="RuleOperandRenderer.java" startLine="85" startPosition="54" endLine="86" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7093733149214777762" fileName="RuleOperandRenderer.java" startLine="87" startPosition="30" endLine="88" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6466271953722444248" fileName="RuleOperandRenderer.java" startLine="88" startPosition="62" endLine="89" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6466271953722540178" fileName="RuleOperandRenderer.java" startLine="90" startPosition="7" endLine="91" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6466271953722557122" fileName="RuleOperandRenderer.java" startLine="91" startPosition="54" endLine="92" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6466271953722458776" fileName="RuleOperandRenderer.java" startLine="92" startPosition="98" endLine="93" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6466271953722454877" fileName="RuleOperandRenderer.java" startLine="93" startPosition="19" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6466271953722713094" fileName="RuleOperandRenderer.java" startLine="96" startPosition="48" endLine="97" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6466271953722748137" fileName="RuleOperandRenderer.java" startLine="98" startPosition="103" endLine="99" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7093733149214777714" fileName="RuleOperandRenderer.java" startLine="100" startPosition="7" endLine="101" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7093733149214777966" fileName="RuleOperandRenderer.java" startLine="102" startPosition="5" endLine="103" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458515140" fileName="RuleOperandRenderer.java" startLine="38" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuleOperandRenderer#()V" />
-    <nodeInfo nodeId="7093733149214777662" fileName="RuleOperandRenderer.java" startLine="42" startPosition="143" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7093733149214777863" fileName="RuleOperandRenderer.java" startLine="64" startPosition="70" endLine="67" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7093733149214777729" fileName="RuleOperandRenderer.java" startLine="81" startPosition="64" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7093733149214777694" fileName="RuleOperandRenderer.java" startLine="97" startPosition="53" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7093733149214777889" fileName="RuleOperandRenderer.java" startLine="71" startPosition="11" endLine="75" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7093733149214777757" fileName="RuleOperandRenderer.java" startLine="86" startPosition="95" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7093733149214777685" fileName="RuleOperandRenderer.java" startLine="95" startPosition="10" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7093733149214777847" fileName="RuleOperandRenderer.java" startLine="61" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7093733149214777837" fileName="RuleOperandRenderer.java" startLine="59" startPosition="88" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7093733149214777824" fileName="RuleOperandRenderer.java" startLine="58" startPosition="12" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7093733149214777817" fileName="RuleOperandRenderer.java" startLine="55" startPosition="22" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7093733149214777681" fileName="RuleOperandRenderer.java" startLine="78" startPosition="10" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7093733149214777677" fileName="RuleOperandRenderer.java" startLine="51" startPosition="10" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7093733149214777673" fileName="RuleOperandRenderer.java" startLine="48" startPosition="10" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7093733149214777669" fileName="RuleOperandRenderer.java" startLine="45" startPosition="5" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3995997045458515143" fileName="RuleOperandRenderer.java" startLine="41" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
-    <scopeInfo nodeId="3995997045458515142" fileName="RuleOperandRenderer.java" startLine="38" startPosition="32" endLine="38" endPosition="32" />
-    <scopeInfo nodeId="7093733149214777666" fileName="RuleOperandRenderer.java" startLine="43" startPosition="24" endLine="44" endPosition="33" />
-    <scopeInfo nodeId="7093733149214777955" fileName="RuleOperandRenderer.java" startLine="46" startPosition="53" endLine="47" endPosition="29" />
-    <scopeInfo nodeId="7093733149214777944" fileName="RuleOperandRenderer.java" startLine="49" startPosition="54" endLine="50" endPosition="31" />
-    <scopeInfo nodeId="7093733149214777924" fileName="RuleOperandRenderer.java" startLine="56" startPosition="41" endLine="57" endPosition="118" />
-    <scopeInfo nodeId="7093733149214777871" fileName="RuleOperandRenderer.java" startLine="65" startPosition="48" endLine="66" endPosition="26" />
-    <scopeInfo nodeId="7093733149214777733" fileName="RuleOperandRenderer.java" startLine="82" startPosition="39" endLine="83" endPosition="66" />
-    <scopeInfo nodeId="7093733149214777703" fileName="RuleOperandRenderer.java" startLine="98" startPosition="103" endLine="99" endPosition="87" />
-    <scopeInfo nodeId="3995997045458515140" fileName="RuleOperandRenderer.java" startLine="38" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="7093733149214777893" fileName="RuleOperandRenderer.java" startLine="72" startPosition="31" endLine="74" endPosition="56">
-      <varInfo nodeId="7093733149214777895" varName="nodeString" />
-    </scopeInfo>
-    <scopeInfo nodeId="7093733149214777761" fileName="RuleOperandRenderer.java" startLine="87" startPosition="30" endLine="89" endPosition="53">
-      <varInfo nodeId="7093733149214777763" varName="genString" />
-    </scopeInfo>
-    <scopeInfo nodeId="7093733149214777694" fileName="RuleOperandRenderer.java" startLine="97" startPosition="53" endLine="100" endPosition="7">
-      <varInfo nodeId="7093733149214777701" varName="mappingRef" />
-    </scopeInfo>
-    <scopeInfo nodeId="7093733149214777689" fileName="RuleOperandRenderer.java" startLine="96" startPosition="48" endLine="101" endPosition="19">
-      <varInfo nodeId="6466271953722713095" varName="panel" />
-    </scopeInfo>
-    <scopeInfo nodeId="7093733149214777850" fileName="RuleOperandRenderer.java" startLine="62" startPosition="35" endLine="69" endPosition="52">
-      <varInfo nodeId="7093733149214777852" varName="model" />
-      <varInfo nodeId="7093733149214777875" varName="modelName" />
-      <varInfo nodeId="7093733149214777858" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7093733149214777847" fileName="RuleOperandRenderer.java" startLine="61" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="7093733149214777716" fileName="RuleOperandRenderer.java" startLine="79" startPosition="53" endLine="94" endPosition="0">
-      <varInfo nodeId="7093733149214777749" varName="generator" />
-      <varInfo nodeId="7093733149214777724" varName="generatorReference" />
-      <varInfo nodeId="6466271953722540179" varName="label" />
-      <varInfo nodeId="7093733149214777745" varName="moduleRef" />
-      <varInfo nodeId="7093733149214777718" varName="refC" />
-    </scopeInfo>
-    <scopeInfo nodeId="7093733149214777825" fileName="RuleOperandRenderer.java" startLine="58" startPosition="14" endLine="75" endPosition="9">
-      <varInfo nodeId="7093733149214777827" varName="p" />
-    </scopeInfo>
-    <scopeInfo nodeId="7093733149214777800" fileName="RuleOperandRenderer.java" startLine="52" startPosition="51" endLine="77" endPosition="34">
-      <varInfo nodeId="7093733149214777808" varName="modelRef" />
-      <varInfo nodeId="7093733149214777815" varName="nodeName" />
-      <varInfo nodeId="7093733149214777802" varName="refC" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458515158" fileName="RuleOperandRenderer.java" startLine="42" startPosition="143" endLine="103" endPosition="26" />
-    <scopeInfo nodeId="3995997045458515143" fileName="RuleOperandRenderer.java" startLine="41" startPosition="0" endLine="105" endPosition="0">
-      <varInfo nodeId="3995997045458515156" varName="column" />
-      <varInfo nodeId="3995997045458515152" varName="hasFocus" />
-      <varInfo nodeId="3995997045458515150" varName="isSelected" />
-      <varInfo nodeId="3995997045458515154" varName="row" />
-      <varInfo nodeId="3995997045458515146" varName="table" />
-      <varInfo nodeId="3995997045458515148" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="7093733149214777845" fileName="RuleOperandRenderer.java" startLine="60" startPosition="60" endLine="71" endPosition="9" unitName="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer$1" />
-    <unitInfo nodeId="3995997045458515128" fileName="RuleOperandRenderer.java" startLine="35" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer" />
+    <file name="RuleOperandRenderer.java">
+      <node id="3995997045458515129" at="36,0,37,0" concept="3" trace="myRenderersCache" />
+      <node id="7093733149214777667" at="43,24,44,33" concept="8" />
+      <node id="6466271953722286428" at="46,53,47,29" concept="8" />
+      <node id="6466271953722322961" at="49,54,50,31" concept="8" />
+      <node id="7093733149214777801" at="52,51,53,69" concept="7" />
+      <node id="7093733149214777807" at="53,69,54,106" concept="7" />
+      <node id="7093733149214777814" at="54,106,55,22" concept="7" />
+      <node id="7093733149214777925" at="56,41,57,118" concept="2" />
+      <node id="7093733149214777826" at="58,14,59,88" concept="7" />
+      <node id="7093733149214777851" at="62,35,63,87" concept="7" />
+      <node id="7093733149214777857" at="63,87,64,70" concept="7" />
+      <node id="7093733149214777872" at="65,48,66,26" concept="8" />
+      <node id="7093733149214777874" at="67,13,68,103" concept="7" />
+      <node id="7093733149214777881" at="68,103,69,52" concept="8" />
+      <node id="7093733149214777894" at="72,31,73,60" concept="7" />
+      <node id="6466271953722344543" at="73,60,74,56" concept="8" />
+      <node id="6466271953722368019" at="76,7,77,34" concept="8" />
+      <node id="7093733149214777717" at="79,53,80,73" concept="7" />
+      <node id="7093733149214777723" at="80,73,81,64" concept="7" />
+      <node id="6466271953722407391" at="82,39,83,66" concept="8" />
+      <node id="7093733149214777744" at="84,7,85,54" concept="7" />
+      <node id="7093733149214777748" at="85,54,86,95" concept="7" />
+      <node id="7093733149214777762" at="87,30,88,62" concept="7" />
+      <node id="6466271953722444248" at="88,62,89,53" concept="8" />
+      <node id="6466271953722540178" at="90,7,91,54" concept="7" />
+      <node id="6466271953722557122" at="91,54,92,98" concept="2" />
+      <node id="6466271953722458776" at="92,98,93,19" concept="8" />
+      <node id="6466271953722454877" at="93,19,94,0" concept="9" />
+      <node id="6466271953722713094" at="96,48,97,53" concept="7" />
+      <node id="6466271953722748137" at="98,103,99,87" concept="2" />
+      <node id="7093733149214777714" at="100,7,101,19" concept="8" />
+      <node id="7093733149214777966" at="102,5,103,26" concept="8" />
+      <node id="3995997045458515140" at="38,0,40,0" concept="1" trace="RuleOperandRenderer#()V" />
+      <node id="7093733149214777662" at="42,143,45,5" concept="5" />
+      <node id="7093733149214777863" at="64,70,67,13" concept="5" />
+      <node id="7093733149214777729" at="81,64,84,7" concept="5" />
+      <node id="7093733149214777694" at="97,53,100,7" concept="4" />
+      <node id="7093733149214777889" at="71,11,75,9" concept="5" />
+      <node id="7093733149214777757" at="86,95,90,7" concept="5" />
+      <node id="7093733149214777685" at="95,10,102,5" concept="5" />
+      <node id="7093733149214777847" at="61,0,71,0" concept="6" trace="compute#()Ljava/lang/String;" />
+      <node id="7093733149214777837" at="59,88,71,11" concept="2" />
+      <node id="7093733149214777824" at="58,12,76,7" concept="0" />
+      <node id="7093733149214777817" at="55,22,76,7" concept="5" />
+      <node id="7093733149214777681" at="78,10,102,5" concept="5" />
+      <node id="7093733149214777677" at="51,10,102,5" concept="5" />
+      <node id="7093733149214777673" at="48,10,102,5" concept="5" />
+      <node id="7093733149214777669" at="45,5,102,5" concept="5" />
+      <node id="3995997045458515143" at="41,0,105,0" concept="6" trace="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
+      <scope id="3995997045458515142" at="38,32,38,32" />
+      <scope id="7093733149214777666" at="43,24,44,33" />
+      <scope id="7093733149214777955" at="46,53,47,29" />
+      <scope id="7093733149214777944" at="49,54,50,31" />
+      <scope id="7093733149214777924" at="56,41,57,118" />
+      <scope id="7093733149214777871" at="65,48,66,26" />
+      <scope id="7093733149214777733" at="82,39,83,66" />
+      <scope id="7093733149214777703" at="98,103,99,87" />
+      <scope id="3995997045458515140" at="38,0,40,0" />
+      <scope id="7093733149214777893" at="72,31,74,56">
+        <var name="nodeString" id="7093733149214777895" />
+      </scope>
+      <scope id="7093733149214777761" at="87,30,89,53">
+        <var name="genString" id="7093733149214777763" />
+      </scope>
+      <scope id="7093733149214777694" at="97,53,100,7">
+        <var name="mappingRef" id="7093733149214777701" />
+      </scope>
+      <scope id="7093733149214777689" at="96,48,101,19">
+        <var name="panel" id="6466271953722713095" />
+      </scope>
+      <scope id="7093733149214777850" at="62,35,69,52">
+        <var name="model" id="7093733149214777852" />
+        <var name="modelName" id="7093733149214777875" />
+        <var name="node" id="7093733149214777858" />
+      </scope>
+      <scope id="7093733149214777847" at="61,0,71,0" />
+      <scope id="7093733149214777716" at="79,53,94,0">
+        <var name="generator" id="7093733149214777749" />
+        <var name="generatorReference" id="7093733149214777724" />
+        <var name="label" id="6466271953722540179" />
+        <var name="moduleRef" id="7093733149214777745" />
+        <var name="refC" id="7093733149214777718" />
+      </scope>
+      <scope id="7093733149214777825" at="58,14,75,9">
+        <var name="p" id="7093733149214777827" />
+      </scope>
+      <scope id="7093733149214777800" at="52,51,77,34">
+        <var name="modelRef" id="7093733149214777808" />
+        <var name="nodeName" id="7093733149214777815" />
+        <var name="refC" id="7093733149214777802" />
+      </scope>
+      <scope id="3995997045458515158" at="42,143,103,26" />
+      <scope id="3995997045458515143" at="41,0,105,0">
+        <var name="column" id="3995997045458515156" />
+        <var name="hasFocus" id="3995997045458515152" />
+        <var name="isSelected" id="3995997045458515150" />
+        <var name="row" id="3995997045458515154" />
+        <var name="table" id="3995997045458515146" />
+        <var name="value" id="3995997045458515148" />
+      </scope>
+      <unit id="7093733149214777845" at="60,60,71,9" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer$1" />
+      <unit id="3995997045458515128" at="35,0,106,0" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleOperandRenderer" />
+    </file>
   </root>
   <root nodeRef="r:ebb14179-d192-43be-86ee-73001bbf35b0(jetbrains.mps.ide.ui.dialogs.properties.renderers)/3995997045458515690">
-    <nodeInfo nodeId="3995997045458515712" fileName="RuleTypeRenderer.java" startLine="22" startPosition="155" endLine="23" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3995997045458515726" fileName="RuleTypeRenderer.java" startLine="23" startPosition="97" endLine="24" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6464687090063707171" fileName="RuleTypeRenderer.java" startLine="28" startPosition="27" endLine="29" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458515738" fileName="RuleTypeRenderer.java" startLine="32" startPosition="5" endLine="33" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458515748" fileName="RuleTypeRenderer.java" startLine="36" startPosition="73" endLine="37" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3995997045458515755" fileName="RuleTypeRenderer.java" startLine="37" startPosition="55" endLine="38" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3995997045458515776" fileName="RuleTypeRenderer.java" startLine="38" startPosition="160" endLine="39" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458515782" fileName="RuleTypeRenderer.java" startLine="39" startPosition="37" endLine="40" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458515789" fileName="RuleTypeRenderer.java" startLine="40" startPosition="50" endLine="41" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458515799" fileName="RuleTypeRenderer.java" startLine="41" startPosition="53" endLine="42" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458515693" fileName="RuleTypeRenderer.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuleTypeRenderer#()V" />
-    <nodeInfo nodeId="6464687090063239371" fileName="RuleTypeRenderer.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6464687090063120754" fileName="RuleTypeRenderer.java" startLine="25" startPosition="47" endLine="31" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6464687090063239734" fileName="RuleTypeRenderer.java" startLine="24" startPosition="122" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3995997045458515742" fileName="RuleTypeRenderer.java" startLine="36" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createCenterAlignmentInCell#(Ljavax/swing/JComponent;)Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="3995997045458515696" fileName="RuleTypeRenderer.java" startLine="21" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
-    <scopeInfo nodeId="3995997045458515695" fileName="RuleTypeRenderer.java" startLine="18" startPosition="29" endLine="18" endPosition="29" />
-    <scopeInfo nodeId="6464687090063239375" fileName="RuleTypeRenderer.java" startLine="28" startPosition="27" endLine="29" endPosition="40" />
-    <scopeInfo nodeId="3995997045458515693" fileName="RuleTypeRenderer.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="6464687090063239371" fileName="RuleTypeRenderer.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="6464687090063239737" fileName="RuleTypeRenderer.java" startLine="25" startPosition="47" endLine="31" endPosition="9" />
-    <scopeInfo nodeId="3995997045458515747" fileName="RuleTypeRenderer.java" startLine="36" startPosition="73" endLine="42" endPosition="21">
-      <varInfo nodeId="3995997045458515749" varName="compPanel" />
-      <varInfo nodeId="3995997045458515756" varName="constraints" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458515742" fileName="RuleTypeRenderer.java" startLine="36" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="3995997045458515745" varName="comp" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458515711" fileName="RuleTypeRenderer.java" startLine="22" startPosition="155" endLine="33" endPosition="62">
-      <varInfo nodeId="3995997045458515713" varName="caption" />
-      <varInfo nodeId="3995997045458515727" varName="comp" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458515696" fileName="RuleTypeRenderer.java" startLine="21" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="3995997045458515709" varName="column" />
-      <varInfo nodeId="3995997045458515705" varName="hasFocus" />
-      <varInfo nodeId="3995997045458515703" varName="isSelected" />
-      <varInfo nodeId="3995997045458515707" varName="row" />
-      <varInfo nodeId="3995997045458515699" varName="table" />
-      <varInfo nodeId="3995997045458515701" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="6464687090063239369" fileName="RuleTypeRenderer.java" startLine="26" startPosition="37" endLine="31" endPosition="7" unitName="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer$1" />
-    <unitInfo nodeId="3995997045458515690" fileName="RuleTypeRenderer.java" startLine="17" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer" />
+    <file name="RuleTypeRenderer.java">
+      <node id="3995997045458515712" at="22,155,23,97" concept="7" />
+      <node id="3995997045458515726" at="23,97,24,122" concept="7" />
+      <node id="6464687090063707171" at="28,27,29,40" concept="2" />
+      <node id="3995997045458515738" at="32,5,33,62" concept="8" />
+      <node id="3995997045458515748" at="36,73,37,55" concept="7" />
+      <node id="3995997045458515755" at="37,55,38,160" concept="7" />
+      <node id="3995997045458515776" at="38,160,39,37" concept="2" />
+      <node id="3995997045458515782" at="39,37,40,50" concept="2" />
+      <node id="3995997045458515789" at="40,50,41,53" concept="2" />
+      <node id="3995997045458515799" at="41,53,42,21" concept="8" />
+      <node id="3995997045458515693" at="18,0,20,0" concept="1" trace="RuleTypeRenderer#()V" />
+      <node id="6464687090063239371" at="27,0,31,0" concept="6" trace="run#()V" />
+      <node id="6464687090063120754" at="25,47,31,9" concept="2" />
+      <node id="6464687090063239734" at="24,122,32,5" concept="5" />
+      <node id="3995997045458515742" at="36,0,44,0" concept="10" trace="createCenterAlignmentInCell#(Ljavax/swing/JComponent;)Ljavax/swing/JComponent;" />
+      <node id="3995997045458515696" at="21,0,35,0" concept="6" trace="getTableCellRendererComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZZII)Ljava/awt/Component;" />
+      <scope id="3995997045458515695" at="18,29,18,29" />
+      <scope id="6464687090063239375" at="28,27,29,40" />
+      <scope id="3995997045458515693" at="18,0,20,0" />
+      <scope id="6464687090063239371" at="27,0,31,0" />
+      <scope id="6464687090063239737" at="25,47,31,9" />
+      <scope id="3995997045458515747" at="36,73,42,21">
+        <var name="compPanel" id="3995997045458515749" />
+        <var name="constraints" id="3995997045458515756" />
+      </scope>
+      <scope id="3995997045458515742" at="36,0,44,0">
+        <var name="comp" id="3995997045458515745" />
+      </scope>
+      <scope id="3995997045458515711" at="22,155,33,62">
+        <var name="caption" id="3995997045458515713" />
+        <var name="comp" id="3995997045458515727" />
+      </scope>
+      <scope id="3995997045458515696" at="21,0,35,0">
+        <var name="column" id="3995997045458515709" />
+        <var name="hasFocus" id="3995997045458515705" />
+        <var name="isSelected" id="3995997045458515703" />
+        <var name="row" id="3995997045458515707" />
+        <var name="table" id="3995997045458515699" />
+        <var name="value" id="3995997045458515701" />
+      </scope>
+      <unit id="6464687090063239369" at="26,37,31,7" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer$1" />
+      <unit id="3995997045458515690" at="17,0,45,0" name="jetbrains.mps.ide.ui.dialogs.properties.renderers.RuleTypeRenderer" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

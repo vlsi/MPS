@@ -15,7 +15,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="cnx949enbtq83q3c9nmfsmlg7t37kd4" />
   <dep model="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" hash="-5wji5678xobkpuyz8gjkkh3dsickrsw" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-cutl1gzr9dg15fyqfded9grvaa6dxqc" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="attjt7f9xsijagk72ems4fgf26chod2" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="-1v3m18b1x9woekeugtiqv3rth92288z" dependsOnNodes="true">
     <dep root="2248628811136262597" />
@@ -43,7 +43,9 @@
   <source id="4079382982702692311" name="checkedDotExpression" hash="cs6dy3zhyr64kdq5thbed25xnwly1w1">
     <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="7404423900570111859" name="IOperation_LeftTransform" hash="-a707lmjhykvvn2tofvw4pijsfvziqmw" />
+  <source id="7404423900570111859" name="IOperation_LeftTransform" hash="-a707lmjhykvvn2tofvw4pijsfvziqmw">
+    <dep model="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="2248628811136262597" name="QuestionMarkAction" hash="2p2yxafrb35fyhxp6c5wpioo3wsxbda" />
 </dependencies>
 

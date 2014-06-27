@@ -1,96 +1,111 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:983279f4-89a9-45ad-aeeb-5621fd5cbb63(jetbrains.mps.baseLnaguage.extensionMethods.sandbox)/3097384118511823189">
-    <nodeInfo nodeId="3097384118511826155" fileName="Test.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="d" />
-    <nodeInfo nodeId="7517860079983491600" fileName="Test.java" startLine="13" startPosition="21" endLine="14" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7517860079983491638" fileName="Test.java" startLine="14" startPosition="55" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3097384118511826162" fileName="Test.java" startLine="15" startPosition="16" endLine="16" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3097384118511823191" fileName="Test.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Test#()V" />
-    <nodeInfo nodeId="3097384118511823195" fileName="Test.java" startLine="13" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="foo#()V" />
-    <scopeInfo nodeId="3097384118511823194" fileName="Test.java" startLine="10" startPosition="17" endLine="10" endPosition="17" />
-    <scopeInfo nodeId="3097384118511823191" fileName="Test.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="3097384118511823198" fileName="Test.java" startLine="13" startPosition="21" endLine="16" endPosition="10">
-      <varInfo nodeId="7517860079983491601" varName="fl" />
-    </scopeInfo>
-    <scopeInfo nodeId="3097384118511823195" fileName="Test.java" startLine="13" startPosition="0" endLine="18" endPosition="0" />
-    <unitInfo nodeId="3097384118511823189" fileName="Test.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.Test" />
+    <file name="Test.java">
+      <node id="3097384118511826155" at="8,0,9,0" concept="7" trace="d" />
+      <node id="7517860079983491600" at="13,21,14,55" concept="4" />
+      <node id="7517860079983491638" at="14,55,15,16" concept="1" />
+      <node id="3097384118511826162" at="15,16,16,10" concept="1" />
+      <node id="3097384118511823191" at="10,0,12,0" concept="0" trace="Test#()V" />
+      <node id="3097384118511823195" at="13,0,18,0" concept="3" trace="foo#()V" />
+      <scope id="3097384118511823194" at="10,17,10,17" />
+      <scope id="3097384118511823191" at="10,0,12,0" />
+      <scope id="3097384118511823198" at="13,21,16,10">
+        <var name="fl" id="7517860079983491601" />
+      </scope>
+      <scope id="3097384118511823195" at="13,0,18,0" />
+      <unit id="3097384118511823189" at="7,0,19,0" name="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.Test" />
+    </file>
   </root>
   <root nodeRef="r:983279f4-89a9-45ad-aeeb-5621fd5cbb63(jetbrains.mps.baseLnaguage.extensionMethods.sandbox)/6791353716095480383">
-    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="str" />
-    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="a" />
-    <nodeInfo nodeId="7685333756920163917" fileName="StringExtensionMethods.java" startLine="14" startPosition="48" endLine="15" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7685333756920172843" fileName="StringExtensionMethods.java" startLine="15" startPosition="20" endLine="16" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7685333756920232198" fileName="StringExtensionMethods.java" startLine="16" startPosition="20" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7685333756920232202" fileName="StringExtensionMethods.java" startLine="17" startPosition="20" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7685333756920232211" fileName="StringExtensionMethods.java" startLine="18" startPosition="23" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7685333756920232217" fileName="StringExtensionMethods.java" startLine="19" startPosition="23" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7517860079983474761" fileName="StringExtensionMethods.java" startLine="20" startPosition="25" endLine="21" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="688031995686448475" fileName="StringExtensionMethods.java" startLine="21" startPosition="20" endLine="22" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791353716095480405" fileName="StringExtensionMethods.java" startLine="22" startPosition="20" endLine="23" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7685333756920172853" fileName="StringExtensionMethods.java" startLine="26" startPosition="53" endLine="27" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4525411394273860990" fileName="StringExtensionMethods.java" startLine="30" startPosition="94" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4525411394273861105" fileName="StringExtensionMethods.java" startLine="34" startPosition="51" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4525411394273871078" fileName="StringExtensionMethods.java" startLine="35" startPosition="29" endLine="36" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4525411394273992103" fileName="StringExtensionMethods.java" startLine="36" startPosition="79" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringExtensionMethods#()V" />
-    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="foo2#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="safeCast#(Ljava/lang/String;Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="34" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="testFoo3#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="14" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="foo#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="11" startPosition="35" endLine="11" endPosition="35" />
-    <scopeInfo nodeId="7685333756920172851" fileName="StringExtensionMethods.java" startLine="26" startPosition="53" endLine="27" endPosition="45" />
-    <scopeInfo nodeId="4525411394273860982" fileName="StringExtensionMethods.java" startLine="30" startPosition="94" endLine="31" endPosition="16" />
-    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="6791353716095480383" varName="_this" />
-    </scopeInfo>
-    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="6791353716095480383" varName="_this" />
-      <varInfo nodeId="4525411394273860986" varName="iterable" />
-    </scopeInfo>
-    <scopeInfo nodeId="4525411394273860995" fileName="StringExtensionMethods.java" startLine="34" startPosition="51" endLine="37" endPosition="18">
-      <varInfo nodeId="4525411394273861106" varName="list" />
-      <varInfo nodeId="4525411394273871079" varName="my" />
-    </scopeInfo>
-    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="34" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="6791353716095480383" varName="_this" />
-    </scopeInfo>
-    <scopeInfo nodeId="6791353716095480392" fileName="StringExtensionMethods.java" startLine="14" startPosition="48" endLine="23" endPosition="23" />
-    <scopeInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="14" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="6791353716095480383" varName="_this" />
-    </scopeInfo>
-    <unitInfo nodeId="6791353716095480383" fileName="StringExtensionMethods.java" startLine="7" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.StringExtensionMethods" />
+    <file name="StringExtensionMethods.java">
+      <node id="6791353716095480383" at="8,0,9,0" concept="7" trace="str" />
+      <node id="6791353716095480383" at="9,0,10,0" concept="7" trace="a" />
+      <node id="7685333756920163917" at="14,48,15,20" concept="1" />
+      <node id="7685333756920172843" at="15,20,16,20" concept="1" />
+      <node id="7685333756920232198" at="16,20,17,20" concept="1" />
+      <node id="7685333756920232202" at="17,20,18,23" concept="1" />
+      <node id="7685333756920232211" at="18,23,19,23" concept="1" />
+      <node id="7685333756920232217" at="19,23,20,25" concept="1" />
+      <node id="7517860079983474761" at="20,25,21,20" concept="1" />
+      <node id="688031995686448475" at="21,20,22,20" concept="1" />
+      <node id="6791353716095480405" at="22,20,23,23" concept="5" />
+      <node id="7685333756920172853" at="26,53,27,45" concept="5" />
+      <node id="4525411394273860990" at="30,94,31,16" concept="5" />
+      <node id="4525411394273861105" at="34,51,35,29" concept="4" />
+      <node id="4525411394273871078" at="35,29,36,79" concept="4" />
+      <node id="4525411394273992103" at="36,79,37,18" concept="1" />
+      <node id="6791353716095480383" at="11,0,13,0" concept="0" trace="StringExtensionMethods#()V" />
+      <node id="6791353716095480383" at="26,0,29,0" concept="8" trace="foo2#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="6791353716095480383" at="30,0,33,0" concept="8" trace="safeCast#(Ljava/lang/String;Ljava/lang/Iterable;)Ljava/lang/Iterable;" />
+      <node id="6791353716095480383" at="34,0,39,0" concept="8" trace="testFoo3#(Ljava/lang/String;)V" />
+      <node id="6791353716095480383" at="14,0,25,0" concept="8" trace="foo#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="6791353716095480383" at="11,35,11,35" />
+      <scope id="7685333756920172851" at="26,53,27,45" />
+      <scope id="4525411394273860982" at="30,94,31,16" />
+      <scope id="6791353716095480383" at="11,0,13,0" />
+      <scope id="6791353716095480383" at="26,0,29,0">
+        <var name="_this" id="6791353716095480383" />
+      </scope>
+      <scope id="6791353716095480383" at="30,0,33,0">
+        <var name="_this" id="6791353716095480383" />
+        <var name="iterable" id="4525411394273860986" />
+      </scope>
+      <scope id="4525411394273860995" at="34,51,37,18">
+        <var name="list" id="4525411394273861106" />
+        <var name="my" id="4525411394273871079" />
+      </scope>
+      <scope id="6791353716095480383" at="34,0,39,0">
+        <var name="_this" id="6791353716095480383" />
+      </scope>
+      <scope id="6791353716095480392" at="14,48,23,23" />
+      <scope id="6791353716095480383" at="14,0,25,0">
+        <var name="_this" id="6791353716095480383" />
+      </scope>
+      <unit id="6791353716095480383" at="7,0,40,0" name="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.StringExtensionMethods" />
+    </file>
   </root>
   <root nodeRef="r:983279f4-89a9-45ad-aeeb-5621fd5cbb63(jetbrains.mps.baseLnaguage.extensionMethods.sandbox)/6791353716095480385">
-    <nodeInfo nodeId="6791353716095480385" fileName="Abc.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="b" />
-    <nodeInfo nodeId="3097384118512197977" fileName="Abc.java" startLine="13" startPosition="48" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7517860079983491575" fileName="Abc.java" startLine="17" startPosition="58" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7517860079983491588" fileName="Abc.java" startLine="19" startPosition="25" endLine="20" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7517860079983492017" fileName="Abc.java" startLine="21" startPosition="5" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7517860079983491595" fileName="Abc.java" startLine="22" startPosition="0" endLine="23" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6791353716095480385" fileName="Abc.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Abc#()V" />
-    <nodeInfo nodeId="6791353716095480385" fileName="Abc.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="foo#(I)V" />
-    <nodeInfo nodeId="7517860079983491581" fileName="Abc.java" startLine="18" startPosition="16" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6791353716095480385" fileName="Abc.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="sum#(Ljava/util/LinkedList;)I" />
-    <scopeInfo nodeId="6791353716095480385" fileName="Abc.java" startLine="10" startPosition="16" endLine="10" endPosition="16" />
-    <scopeInfo nodeId="3097384118512197975" fileName="Abc.java" startLine="13" startPosition="48" endLine="14" endPosition="18">
-      <varInfo nodeId="3097384118512197978" varName="a" />
-    </scopeInfo>
-    <scopeInfo nodeId="7517860079983491583" fileName="Abc.java" startLine="19" startPosition="25" endLine="20" endPosition="15" />
-    <scopeInfo nodeId="6791353716095480385" fileName="Abc.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="6791353716095480385" fileName="Abc.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="6791353716095480385" varName="_this" />
-    </scopeInfo>
-    <scopeInfo nodeId="7517860079983491581" fileName="Abc.java" startLine="18" startPosition="16" endLine="21" endPosition="5">
-      <varInfo nodeId="7517860079983491582" varName="a" />
-    </scopeInfo>
-    <scopeInfo nodeId="7517860079983491570" fileName="Abc.java" startLine="17" startPosition="58" endLine="23" endPosition="15">
-      <varInfo nodeId="7517860079983491576" varName="res" />
-    </scopeInfo>
-    <scopeInfo nodeId="6791353716095480385" fileName="Abc.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="6791353716095480385" varName="_this" />
-    </scopeInfo>
-    <unitInfo nodeId="6791353716095480385" fileName="Abc.java" startLine="7" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.Abc" />
+    <file name="Abc.java">
+      <node id="6791353716095480385" at="8,0,9,0" concept="7" trace="b" />
+      <node id="3097384118512197977" at="13,48,14,18" concept="4" />
+      <node id="7517860079983491575" at="17,58,18,16" concept="4" />
+      <node id="7517860079983491588" at="19,25,20,15" concept="1" />
+      <node id="7517860079983492017" at="21,5,22,0" concept="6" />
+      <node id="7517860079983491595" at="22,0,23,15" concept="5" />
+      <node id="6791353716095480385" at="10,0,12,0" concept="0" trace="Abc#()V" />
+      <node id="6791353716095480385" at="13,0,16,0" concept="8" trace="foo#(I)V" />
+      <node id="7517860079983491581" at="18,16,21,5" concept="2" />
+      <node id="6791353716095480385" at="17,0,25,0" concept="8" trace="sum#(Ljava/util/LinkedList;)I" />
+      <scope id="6791353716095480385" at="10,16,10,16" />
+      <scope id="3097384118512197975" at="13,48,14,18">
+        <var name="a" id="3097384118512197978" />
+      </scope>
+      <scope id="7517860079983491583" at="19,25,20,15" />
+      <scope id="6791353716095480385" at="10,0,12,0" />
+      <scope id="6791353716095480385" at="13,0,16,0">
+        <var name="_this" id="6791353716095480385" />
+      </scope>
+      <scope id="7517860079983491581" at="18,16,21,5">
+        <var name="a" id="7517860079983491582" />
+      </scope>
+      <scope id="7517860079983491570" at="17,58,23,15">
+        <var name="res" id="7517860079983491576" />
+      </scope>
+      <scope id="6791353716095480385" at="17,0,25,0">
+        <var name="_this" id="6791353716095480385" />
+      </scope>
+      <unit id="6791353716095480385" at="7,0,26,0" name="jetbrains.mps.baseLnaguage.extensionMethods.sandbox.Abc" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

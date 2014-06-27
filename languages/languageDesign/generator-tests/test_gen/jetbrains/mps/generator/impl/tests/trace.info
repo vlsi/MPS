@@ -1,242 +1,252 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:a8dd08c8-d222-4842-87dd-546039cb1959(jetbrains.mps.generator.impl.tests@tests)/9030062148735499870">
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="34" startPosition="49" endLine="35" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="35" startPosition="117" endLine="36" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="40" startPosition="57" endLine="41" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="41" startPosition="117" endLine="42" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="46" startPosition="54" endLine="47" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="47" startPosition="117" endLine="48" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="52" startPosition="55" endLine="53" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="53" startPosition="117" endLine="54" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="58" startPosition="57" endLine="59" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="59" startPosition="117" endLine="60" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="64" startPosition="58" endLine="65" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="65" startPosition="117" endLine="66" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="70" startPosition="54" endLine="71" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="71" startPosition="117" endLine="72" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="76" startPosition="61" endLine="77" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="77" startPosition="117" endLine="78" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="82" startPosition="70" endLine="83" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="83" startPosition="117" endLine="84" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="88" startPosition="64" endLine="89" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="89" startPosition="117" endLine="90" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499874" fileName="FileSwapOwnerTests_Test.java" startLine="95" startPosition="51" endLine="96" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1732396662099673596" fileName="FileSwapOwnerTests_Test.java" startLine="98" startPosition="9" endLine="99" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1732396662099673596" fileName="FileSwapOwnerTests_Test.java" startLine="99" startPosition="227" endLine="100" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1732396662099673596" fileName="FileSwapOwnerTests_Test.java" startLine="100" startPosition="258" endLine="101" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5966718925804118985" fileName="FileSwapOwnerTests_Test.java" startLine="103" startPosition="31" endLine="104" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1732396662099676931" fileName="FileSwapOwnerTests_Test.java" startLine="104" startPosition="28" endLine="105" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3677173588536186248" fileName="FileSwapOwnerTests_Test.java" startLine="109" startPosition="59" endLine="110" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3677173588536240822" fileName="FileSwapOwnerTests_Test.java" startLine="110" startPosition="46" endLine="111" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3677173588536314286" fileName="FileSwapOwnerTests_Test.java" startLine="111" startPosition="91" endLine="112" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3677173588536314301" fileName="FileSwapOwnerTests_Test.java" startLine="112" startPosition="53" endLine="113" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139435" fileName="FileSwapOwnerTests_Test.java" startLine="113" startPosition="53" endLine="114" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3186742424690914944" fileName="FileSwapOwnerTests_Test.java" startLine="117" startPosition="56" endLine="118" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3186742424690914949" fileName="FileSwapOwnerTests_Test.java" startLine="118" startPosition="46" endLine="119" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3186742424690914964" fileName="FileSwapOwnerTests_Test.java" startLine="119" startPosition="120" endLine="120" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3186742424690916891" fileName="FileSwapOwnerTests_Test.java" startLine="120" startPosition="51" endLine="121" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3186742424690916905" fileName="FileSwapOwnerTests_Test.java" startLine="121" startPosition="51" endLine="122" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139429" fileName="FileSwapOwnerTests_Test.java" startLine="122" startPosition="49" endLine="123" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139239" fileName="FileSwapOwnerTests_Test.java" startLine="126" startPosition="57" endLine="127" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139244" fileName="FileSwapOwnerTests_Test.java" startLine="127" startPosition="46" endLine="128" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3541188775018139253" fileName="FileSwapOwnerTests_Test.java" startLine="128" startPosition="120" endLine="129" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139340" fileName="FileSwapOwnerTests_Test.java" startLine="129" startPosition="53" endLine="130" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139346" fileName="FileSwapOwnerTests_Test.java" startLine="130" startPosition="53" endLine="131" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139423" fileName="FileSwapOwnerTests_Test.java" startLine="131" startPosition="53" endLine="132" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139440" fileName="FileSwapOwnerTests_Test.java" startLine="135" startPosition="59" endLine="136" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139443" fileName="FileSwapOwnerTests_Test.java" startLine="136" startPosition="46" endLine="137" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3541188775018139452" fileName="FileSwapOwnerTests_Test.java" startLine="137" startPosition="120" endLine="138" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139489" fileName="FileSwapOwnerTests_Test.java" startLine="138" startPosition="53" endLine="139" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139517" fileName="FileSwapOwnerTests_Test.java" startLine="139" startPosition="73" endLine="140" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139533" fileName="FileSwapOwnerTests_Test.java" startLine="140" startPosition="67" endLine="141" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139547" fileName="FileSwapOwnerTests_Test.java" startLine="141" startPosition="69" endLine="142" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139470" fileName="FileSwapOwnerTests_Test.java" startLine="142" startPosition="75" endLine="143" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139577" fileName="FileSwapOwnerTests_Test.java" startLine="146" startPosition="60" endLine="147" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139580" fileName="FileSwapOwnerTests_Test.java" startLine="147" startPosition="46" endLine="148" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3541188775018139589" fileName="FileSwapOwnerTests_Test.java" startLine="148" startPosition="120" endLine="149" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139645" fileName="FileSwapOwnerTests_Test.java" startLine="149" startPosition="57" endLine="150" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139651" fileName="FileSwapOwnerTests_Test.java" startLine="150" startPosition="56" endLine="151" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139657" fileName="FileSwapOwnerTests_Test.java" startLine="151" startPosition="56" endLine="152" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139637" fileName="FileSwapOwnerTests_Test.java" startLine="152" startPosition="55" endLine="153" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139668" fileName="FileSwapOwnerTests_Test.java" startLine="156" startPosition="56" endLine="157" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139671" fileName="FileSwapOwnerTests_Test.java" startLine="157" startPosition="46" endLine="158" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3541188775018139680" fileName="FileSwapOwnerTests_Test.java" startLine="158" startPosition="120" endLine="159" endPosition="353" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139686" fileName="FileSwapOwnerTests_Test.java" startLine="159" startPosition="353" endLine="160" endPosition="334" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139692" fileName="FileSwapOwnerTests_Test.java" startLine="160" startPosition="334" endLine="161" endPosition="347" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139698" fileName="FileSwapOwnerTests_Test.java" startLine="161" startPosition="347" endLine="162" endPosition="397" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139704" fileName="FileSwapOwnerTests_Test.java" startLine="162" startPosition="397" endLine="163" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1781648286300234882" fileName="FileSwapOwnerTests_Test.java" startLine="166" startPosition="63" endLine="167" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1781648286300234885" fileName="FileSwapOwnerTests_Test.java" startLine="167" startPosition="46" endLine="168" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1781648286300234889" fileName="FileSwapOwnerTests_Test.java" startLine="168" startPosition="142" endLine="169" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1781648286300234895" fileName="FileSwapOwnerTests_Test.java" startLine="169" startPosition="99" endLine="170" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1781648286300234906" fileName="FileSwapOwnerTests_Test.java" startLine="170" startPosition="161" endLine="171" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759291420779681407" fileName="FileSwapOwnerTests_Test.java" startLine="174" startPosition="72" endLine="175" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759291420779681410" fileName="FileSwapOwnerTests_Test.java" startLine="175" startPosition="46" endLine="176" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759291420779681414" fileName="FileSwapOwnerTests_Test.java" startLine="176" startPosition="164" endLine="177" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759291420779681420" fileName="FileSwapOwnerTests_Test.java" startLine="177" startPosition="99" endLine="178" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759291420779681431" fileName="FileSwapOwnerTests_Test.java" startLine="178" startPosition="161" endLine="179" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759291420779681437" fileName="FileSwapOwnerTests_Test.java" startLine="182" startPosition="66" endLine="183" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759291420779681440" fileName="FileSwapOwnerTests_Test.java" startLine="183" startPosition="46" endLine="184" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759291420779681449" fileName="FileSwapOwnerTests_Test.java" startLine="184" startPosition="120" endLine="185" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759291420779681459" fileName="FileSwapOwnerTests_Test.java" startLine="185" startPosition="53" endLine="186" endPosition="317" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759291420779681662" fileName="FileSwapOwnerTests_Test.java" startLine="186" startPosition="317" endLine="187" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759291420779681670" fileName="FileSwapOwnerTests_Test.java" startLine="187" startPosition="53" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="759291420779681673" fileName="FileSwapOwnerTests_Test.java" startLine="188" startPosition="0" endLine="189" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="759291420779681688" fileName="FileSwapOwnerTests_Test.java" startLine="189" startPosition="126" endLine="190" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759291420779681671" fileName="FileSwapOwnerTests_Test.java" startLine="190" startPosition="323" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="759291420779681500" fileName="FileSwapOwnerTests_Test.java" startLine="191" startPosition="0" endLine="192" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="195" startPosition="112" endLine="196" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3541188775018139366" fileName="FileSwapOwnerTests_Test.java" startLine="197" startPosition="11" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3541188775018139370" fileName="FileSwapOwnerTests_Test.java" startLine="199" startPosition="82" endLine="200" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139381" fileName="FileSwapOwnerTests_Test.java" startLine="201" startPosition="9" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3541188775018139382" fileName="FileSwapOwnerTests_Test.java" startLine="202" startPosition="0" endLine="203" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3541188775018139386" fileName="FileSwapOwnerTests_Test.java" startLine="204" startPosition="9" endLine="205" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3541188775018139386" fileName="FileSwapOwnerTests_Test.java" startLine="205" startPosition="227" endLine="206" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3541188775018139386" fileName="FileSwapOwnerTests_Test.java" startLine="206" startPosition="99" endLine="207" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139389" fileName="FileSwapOwnerTests_Test.java" startLine="208" startPosition="9" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="759291420779681226" fileName="FileSwapOwnerTests_Test.java" startLine="211" startPosition="73" endLine="212" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139393" fileName="FileSwapOwnerTests_Test.java" startLine="213" startPosition="18" endLine="214" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139410" fileName="FileSwapOwnerTests_Test.java" startLine="216" startPosition="9" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3541188775018139414" fileName="FileSwapOwnerTests_Test.java" startLine="218" startPosition="31" endLine="219" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3541188775018139418" fileName="FileSwapOwnerTests_Test.java" startLine="219" startPosition="28" endLine="220" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759291420779681380" fileName="FileSwapOwnerTests_Test.java" startLine="224" startPosition="72" endLine="225" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="759291420779681281" fileName="FileSwapOwnerTests_Test.java" startLine="213" startPosition="16" endLine="215" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3541188775018139367" fileName="FileSwapOwnerTests_Test.java" startLine="198" startPosition="0" endLine="201" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="224" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testUserObjectsSaving#(Ljava/util/Map;)V" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_justWrite#()V" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_stringUserObjects#()V" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_intUserObjects#()V" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="51" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_charUserObjects#()V" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_numberUserObjects#()V" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="63" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_booleanUserObjects#()V" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="69" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mpsUserObjects#()V" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="75" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baseLanguageStructure#()V" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testOverloadedOperatorsSandbox#()V" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="87" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testSkipNodesWhileSaving#()V" />
-    <nodeInfo nodeId="1732396662099673596" fileName="FileSwapOwnerTests_Test.java" startLine="97" startPosition="11" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3541188775018139386" fileName="FileSwapOwnerTests_Test.java" startLine="203" startPosition="193" endLine="208" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="759291420779681191" fileName="FileSwapOwnerTests_Test.java" startLine="210" startPosition="82" endLine="215" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3677173588536186248" fileName="FileSwapOwnerTests_Test.java" startLine="109" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_stringUserObjects#()V" />
-    <nodeInfo nodeId="1781648286300234882" fileName="FileSwapOwnerTests_Test.java" startLine="166" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_baseLanguageStructure#()V" />
-    <nodeInfo nodeId="759291420779681407" fileName="FileSwapOwnerTests_Test.java" startLine="174" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testOverloadedOperatorsSandbox#()V" />
-    <nodeInfo nodeId="3541188775018139390" fileName="FileSwapOwnerTests_Test.java" startLine="209" startPosition="0" endLine="216" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3186742424690914944" fileName="FileSwapOwnerTests_Test.java" startLine="117" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_intUserObjects#()V" />
-    <nodeInfo nodeId="3541188775018139239" fileName="FileSwapOwnerTests_Test.java" startLine="126" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_charUserObjects#()V" />
-    <nodeInfo nodeId="3541188775018139577" fileName="FileSwapOwnerTests_Test.java" startLine="146" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_booleanUserObjects#()V" />
-    <nodeInfo nodeId="3541188775018139668" fileName="FileSwapOwnerTests_Test.java" startLine="156" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mpsUserObjects#()V" />
-    <nodeInfo nodeId="1732396662099676922" fileName="FileSwapOwnerTests_Test.java" startLine="96" startPosition="46" endLine="106" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3541188775018139440" fileName="FileSwapOwnerTests_Test.java" startLine="135" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_numberUserObjects#()V" />
-    <nodeInfo nodeId="759291420779681437" fileName="FileSwapOwnerTests_Test.java" startLine="182" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testSkipNodesWhileSaving#()V" />
-    <nodeInfo nodeId="9030062148735499874" fileName="FileSwapOwnerTests_Test.java" startLine="95" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_justWrite#()V" />
-    <nodeInfo nodeId="3541188775018139364" fileName="FileSwapOwnerTests_Test.java" startLine="196" startPosition="77" endLine="221" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="195" startPosition="0" endLine="223" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testUserObjectsSaving#(Ljava/util/Map;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="3541188775018139369" fileName="FileSwapOwnerTests_Test.java" startLine="199" startPosition="82" endLine="200" endPosition="190" />
-    <scopeInfo nodeId="759291420779681192" fileName="FileSwapOwnerTests_Test.java" startLine="211" startPosition="73" endLine="212" endPosition="121" />
-    <scopeInfo nodeId="759291420779681282" fileName="FileSwapOwnerTests_Test.java" startLine="213" startPosition="18" endLine="214" endPosition="126" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="224" startPosition="72" endLine="225" endPosition="98" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="34" startPosition="49" endLine="36" endPosition="112" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="40" startPosition="57" endLine="42" endPosition="120" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="46" startPosition="54" endLine="48" endPosition="117" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="52" startPosition="55" endLine="54" endPosition="118" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="58" startPosition="57" endLine="60" endPosition="120" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="64" startPosition="58" endLine="66" endPosition="121" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="70" startPosition="54" endLine="72" endPosition="117" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="76" startPosition="61" endLine="78" endPosition="124" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="82" startPosition="70" endLine="84" endPosition="133" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="88" startPosition="64" endLine="90" endPosition="127" />
-    <scopeInfo nodeId="1732396662099676925" fileName="FileSwapOwnerTests_Test.java" startLine="103" startPosition="0" endLine="105" endPosition="46">
-      <varInfo nodeId="1732396662099676926" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1732396662099676928" fileName="FileSwapOwnerTests_Test.java" startLine="103" startPosition="31" endLine="105" endPosition="46" />
-    <scopeInfo nodeId="3541188775018139411" fileName="FileSwapOwnerTests_Test.java" startLine="218" startPosition="0" endLine="220" endPosition="46">
-      <varInfo nodeId="3541188775018139355" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="3541188775018139413" fileName="FileSwapOwnerTests_Test.java" startLine="218" startPosition="31" endLine="220" endPosition="46" />
-    <scopeInfo nodeId="1732396662099673596" fileName="FileSwapOwnerTests_Test.java" startLine="98" startPosition="9" endLine="101" endPosition="148">
-      <varInfo nodeId="1732396662099673596" varName="nodesAfter" />
-      <varInfo nodeId="1732396662099673596" varName="nodesBefore" />
-    </scopeInfo>
-    <scopeInfo nodeId="3541188775018139367" fileName="FileSwapOwnerTests_Test.java" startLine="198" startPosition="0" endLine="201" endPosition="9">
-      <varInfo nodeId="3541188775018139352" varName="object" />
-    </scopeInfo>
-    <scopeInfo nodeId="3541188775018139386" fileName="FileSwapOwnerTests_Test.java" startLine="204" startPosition="9" endLine="207" endPosition="148">
-      <varInfo nodeId="3541188775018139386" varName="nodesAfter" />
-      <varInfo nodeId="3541188775018139386" varName="nodesBefore" />
-    </scopeInfo>
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="224" startPosition="0" endLine="227" endPosition="0">
-      <varInfo nodeId="759291420779681286" varName="userObjects" />
-    </scopeInfo>
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="51" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="57" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="63" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="69" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="75" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="81" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="87" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1732396662099676923" fileName="FileSwapOwnerTests_Test.java" startLine="97" startPosition="11" endLine="102" endPosition="9" />
-    <scopeInfo nodeId="3677173588536186248" fileName="FileSwapOwnerTests_Test.java" startLine="109" startPosition="59" endLine="114" endPosition="46">
-      <varInfo nodeId="3677173588536240823" varName="userObjects" />
-    </scopeInfo>
-    <scopeInfo nodeId="1781648286300234882" fileName="FileSwapOwnerTests_Test.java" startLine="166" startPosition="63" endLine="171" endPosition="36">
-      <varInfo nodeId="1781648286300234896" varName="matchNodes" />
-      <varInfo nodeId="1781648286300234890" varName="resultModel" />
-      <varInfo nodeId="1781648286300234886" varName="sampleModel" />
-    </scopeInfo>
-    <scopeInfo nodeId="759291420779681407" fileName="FileSwapOwnerTests_Test.java" startLine="174" startPosition="72" endLine="179" endPosition="36">
-      <varInfo nodeId="759291420779681421" varName="matchNodes" />
-      <varInfo nodeId="759291420779681415" varName="resultModel" />
-      <varInfo nodeId="759291420779681411" varName="sampleModel" />
-    </scopeInfo>
-    <scopeInfo nodeId="3541188775018139392" fileName="FileSwapOwnerTests_Test.java" startLine="210" startPosition="82" endLine="215" endPosition="11" />
-    <scopeInfo nodeId="3186742424690914944" fileName="FileSwapOwnerTests_Test.java" startLine="117" startPosition="56" endLine="123" endPosition="46">
-      <varInfo nodeId="3186742424690914950" varName="userObjects" />
-    </scopeInfo>
-    <scopeInfo nodeId="3541188775018139239" fileName="FileSwapOwnerTests_Test.java" startLine="126" startPosition="57" endLine="132" endPosition="46">
-      <varInfo nodeId="3541188775018139245" varName="userObjects" />
-    </scopeInfo>
-    <scopeInfo nodeId="3677173588536186248" fileName="FileSwapOwnerTests_Test.java" startLine="109" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="3541188775018139577" fileName="FileSwapOwnerTests_Test.java" startLine="146" startPosition="60" endLine="153" endPosition="46">
-      <varInfo nodeId="3541188775018139581" varName="userObjects" />
-    </scopeInfo>
-    <scopeInfo nodeId="3541188775018139668" fileName="FileSwapOwnerTests_Test.java" startLine="156" startPosition="56" endLine="163" endPosition="46">
-      <varInfo nodeId="3541188775018139672" varName="userObjects" />
-    </scopeInfo>
-    <scopeInfo nodeId="1781648286300234882" fileName="FileSwapOwnerTests_Test.java" startLine="166" startPosition="0" endLine="173" endPosition="0" />
-    <scopeInfo nodeId="759291420779681407" fileName="FileSwapOwnerTests_Test.java" startLine="174" startPosition="0" endLine="181" endPosition="0" />
-    <scopeInfo nodeId="3541188775018139390" fileName="FileSwapOwnerTests_Test.java" startLine="209" startPosition="0" endLine="216" endPosition="9">
-      <varInfo nodeId="3541188775018139354" varName="object" />
-    </scopeInfo>
-    <scopeInfo nodeId="3186742424690914944" fileName="FileSwapOwnerTests_Test.java" startLine="117" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="3541188775018139239" fileName="FileSwapOwnerTests_Test.java" startLine="126" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="3541188775018139440" fileName="FileSwapOwnerTests_Test.java" startLine="135" startPosition="59" endLine="143" endPosition="46">
-      <varInfo nodeId="3541188775018139444" varName="userObjects" />
-    </scopeInfo>
-    <scopeInfo nodeId="3541188775018139577" fileName="FileSwapOwnerTests_Test.java" startLine="146" startPosition="0" endLine="155" endPosition="0" />
-    <scopeInfo nodeId="3541188775018139668" fileName="FileSwapOwnerTests_Test.java" startLine="156" startPosition="0" endLine="165" endPosition="0" />
-    <scopeInfo nodeId="3541188775018139440" fileName="FileSwapOwnerTests_Test.java" startLine="135" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="759291420779681437" fileName="FileSwapOwnerTests_Test.java" startLine="182" startPosition="66" endLine="192" endPosition="65">
-      <varInfo nodeId="759291420779681441" varName="userObjects" />
-      <varInfo nodeId="759291420779681674" varName="userObjectsToSkip" />
-    </scopeInfo>
-    <scopeInfo nodeId="9030062148735499874" fileName="FileSwapOwnerTests_Test.java" startLine="95" startPosition="51" endLine="106" endPosition="7" />
-    <scopeInfo nodeId="759291420779681437" fileName="FileSwapOwnerTests_Test.java" startLine="182" startPosition="0" endLine="194" endPosition="0" />
-    <scopeInfo nodeId="9030062148735499874" fileName="FileSwapOwnerTests_Test.java" startLine="95" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="3541188775018139365" fileName="FileSwapOwnerTests_Test.java" startLine="197" startPosition="11" endLine="217" endPosition="0">
-      <varInfo nodeId="3541188775018139353" varName="readNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="195" startPosition="112" endLine="221" endPosition="7">
-      <varInfo nodeId="9030062148735499870" varName="var1732396662099564454" />
-    </scopeInfo>
-    <scopeInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="195" startPosition="0" endLine="223" endPosition="0">
-      <varInfo nodeId="3541188775018139356" varName="userObjects" />
-      <varInfo nodeId="759291420779681183" varName="userObjectsToLoose" />
-    </scopeInfo>
-    <unitInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="93" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody" />
-    <unitInfo nodeId="9030062148735499870" fileName="FileSwapOwnerTests_Test.java" startLine="31" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test" />
+    <file name="FileSwapOwnerTests_Test.java">
+      <node id="9030062148735499870" at="34,49,35,117" concept="1" />
+      <node id="9030062148735499870" at="35,117,36,112" concept="1" />
+      <node id="9030062148735499870" at="40,57,41,117" concept="1" />
+      <node id="9030062148735499870" at="41,117,42,120" concept="1" />
+      <node id="9030062148735499870" at="46,54,47,117" concept="1" />
+      <node id="9030062148735499870" at="47,117,48,117" concept="1" />
+      <node id="9030062148735499870" at="52,55,53,117" concept="1" />
+      <node id="9030062148735499870" at="53,117,54,118" concept="1" />
+      <node id="9030062148735499870" at="58,57,59,117" concept="1" />
+      <node id="9030062148735499870" at="59,117,60,120" concept="1" />
+      <node id="9030062148735499870" at="64,58,65,117" concept="1" />
+      <node id="9030062148735499870" at="65,117,66,121" concept="1" />
+      <node id="9030062148735499870" at="70,54,71,117" concept="1" />
+      <node id="9030062148735499870" at="71,117,72,117" concept="1" />
+      <node id="9030062148735499870" at="76,61,77,117" concept="1" />
+      <node id="9030062148735499870" at="77,117,78,124" concept="1" />
+      <node id="9030062148735499870" at="82,70,83,117" concept="1" />
+      <node id="9030062148735499870" at="83,117,84,133" concept="1" />
+      <node id="9030062148735499870" at="88,64,89,117" concept="1" />
+      <node id="9030062148735499870" at="89,117,90,127" concept="1" />
+      <node id="9030062148735499874" at="95,51,96,46" concept="1" />
+      <node id="1732396662099673596" at="98,9,99,227" concept="5" />
+      <node id="1732396662099673596" at="99,227,100,258" concept="5" />
+      <node id="1732396662099673596" at="100,258,101,148" concept="1" />
+      <node id="5966718925804118985" at="103,31,104,28" concept="1" />
+      <node id="1732396662099676931" at="104,28,105,46" concept="1" />
+      <node id="3677173588536186248" at="109,59,110,46" concept="1" />
+      <node id="3677173588536240822" at="110,46,111,91" concept="5" />
+      <node id="3677173588536314286" at="111,91,112,53" concept="1" />
+      <node id="3677173588536314301" at="112,53,113,53" concept="1" />
+      <node id="3541188775018139435" at="113,53,114,46" concept="1" />
+      <node id="3186742424690914944" at="117,56,118,46" concept="1" />
+      <node id="3186742424690914949" at="118,46,119,120" concept="5" />
+      <node id="3186742424690914964" at="119,120,120,51" concept="1" />
+      <node id="3186742424690916891" at="120,51,121,51" concept="1" />
+      <node id="3186742424690916905" at="121,51,122,49" concept="1" />
+      <node id="3541188775018139429" at="122,49,123,46" concept="1" />
+      <node id="3541188775018139239" at="126,57,127,46" concept="1" />
+      <node id="3541188775018139244" at="127,46,128,120" concept="5" />
+      <node id="3541188775018139253" at="128,120,129,53" concept="1" />
+      <node id="3541188775018139340" at="129,53,130,53" concept="1" />
+      <node id="3541188775018139346" at="130,53,131,53" concept="1" />
+      <node id="3541188775018139423" at="131,53,132,46" concept="1" />
+      <node id="3541188775018139440" at="135,59,136,46" concept="1" />
+      <node id="3541188775018139443" at="136,46,137,120" concept="5" />
+      <node id="3541188775018139452" at="137,120,138,53" concept="1" />
+      <node id="3541188775018139489" at="138,53,139,73" concept="1" />
+      <node id="3541188775018139517" at="139,73,140,67" concept="1" />
+      <node id="3541188775018139533" at="140,67,141,69" concept="1" />
+      <node id="3541188775018139547" at="141,69,142,75" concept="1" />
+      <node id="3541188775018139470" at="142,75,143,46" concept="1" />
+      <node id="3541188775018139577" at="146,60,147,46" concept="1" />
+      <node id="3541188775018139580" at="147,46,148,120" concept="5" />
+      <node id="3541188775018139589" at="148,120,149,57" concept="1" />
+      <node id="3541188775018139645" at="149,57,150,56" concept="1" />
+      <node id="3541188775018139651" at="150,56,151,56" concept="1" />
+      <node id="3541188775018139657" at="151,56,152,55" concept="1" />
+      <node id="3541188775018139637" at="152,55,153,46" concept="1" />
+      <node id="3541188775018139668" at="156,56,157,46" concept="1" />
+      <node id="3541188775018139671" at="157,46,158,120" concept="5" />
+      <node id="3541188775018139680" at="158,120,159,353" concept="1" />
+      <node id="3541188775018139686" at="159,353,160,334" concept="1" />
+      <node id="3541188775018139692" at="160,334,161,347" concept="1" />
+      <node id="3541188775018139698" at="161,347,162,397" concept="1" />
+      <node id="3541188775018139704" at="162,397,163,46" concept="1" />
+      <node id="1781648286300234882" at="166,63,167,46" concept="1" />
+      <node id="1781648286300234885" at="167,46,168,142" concept="5" />
+      <node id="1781648286300234889" at="168,142,169,99" concept="5" />
+      <node id="1781648286300234895" at="169,99,170,161" concept="5" />
+      <node id="1781648286300234906" at="170,161,171,36" concept="1" />
+      <node id="759291420779681407" at="174,72,175,46" concept="1" />
+      <node id="759291420779681410" at="175,46,176,164" concept="5" />
+      <node id="759291420779681414" at="176,164,177,99" concept="5" />
+      <node id="759291420779681420" at="177,99,178,161" concept="5" />
+      <node id="759291420779681431" at="178,161,179,36" concept="1" />
+      <node id="759291420779681437" at="182,66,183,46" concept="1" />
+      <node id="759291420779681440" at="183,46,184,120" concept="5" />
+      <node id="759291420779681449" at="184,120,185,53" concept="1" />
+      <node id="759291420779681459" at="185,53,186,317" concept="1" />
+      <node id="759291420779681662" at="186,317,187,53" concept="1" />
+      <node id="759291420779681670" at="187,53,188,0" concept="6" />
+      <node id="759291420779681673" at="188,0,189,126" concept="5" />
+      <node id="759291420779681688" at="189,126,190,323" concept="1" />
+      <node id="759291420779681671" at="190,323,191,0" concept="6" />
+      <node id="759291420779681500" at="191,0,192,65" concept="1" />
+      <node id="9030062148735499870" at="195,112,196,77" concept="5" />
+      <node id="3541188775018139366" at="197,11,198,0" concept="6" />
+      <node id="3541188775018139370" at="199,82,200,190" concept="1" />
+      <node id="3541188775018139381" at="201,9,202,0" concept="6" />
+      <node id="3541188775018139382" at="202,0,203,193" concept="5" />
+      <node id="3541188775018139386" at="204,9,205,227" concept="5" />
+      <node id="3541188775018139386" at="205,227,206,99" concept="5" />
+      <node id="3541188775018139386" at="206,99,207,148" concept="1" />
+      <node id="3541188775018139389" at="208,9,209,0" concept="6" />
+      <node id="759291420779681226" at="211,73,212,121" concept="1" />
+      <node id="3541188775018139393" at="213,18,214,126" concept="1" />
+      <node id="3541188775018139410" at="216,9,217,0" concept="6" />
+      <node id="3541188775018139414" at="218,31,219,28" concept="1" />
+      <node id="3541188775018139418" at="219,28,220,46" concept="1" />
+      <node id="759291420779681380" at="224,72,225,98" concept="1" />
+      <node id="759291420779681281" at="213,16,215,11" concept="0" />
+      <node id="3541188775018139367" at="198,0,201,9" concept="2" />
+      <node id="9030062148735499870" at="224,0,227,0" concept="4" trace="testUserObjectsSaving#(Ljava/util/Map;)V" />
+      <node id="9030062148735499870" at="33,0,38,0" concept="4" trace="test_justWrite#()V" />
+      <node id="9030062148735499870" at="39,0,44,0" concept="4" trace="test_stringUserObjects#()V" />
+      <node id="9030062148735499870" at="45,0,50,0" concept="4" trace="test_intUserObjects#()V" />
+      <node id="9030062148735499870" at="51,0,56,0" concept="4" trace="test_charUserObjects#()V" />
+      <node id="9030062148735499870" at="57,0,62,0" concept="4" trace="test_numberUserObjects#()V" />
+      <node id="9030062148735499870" at="63,0,68,0" concept="4" trace="test_booleanUserObjects#()V" />
+      <node id="9030062148735499870" at="69,0,74,0" concept="4" trace="test_mpsUserObjects#()V" />
+      <node id="9030062148735499870" at="75,0,80,0" concept="4" trace="test_baseLanguageStructure#()V" />
+      <node id="9030062148735499870" at="81,0,86,0" concept="4" trace="test_testOverloadedOperatorsSandbox#()V" />
+      <node id="9030062148735499870" at="87,0,92,0" concept="4" trace="test_testSkipNodesWhileSaving#()V" />
+      <node id="1732396662099673596" at="97,11,102,9" concept="0" />
+      <node id="3541188775018139386" at="203,193,208,9" concept="0" />
+      <node id="759291420779681191" at="210,82,215,11" concept="3" />
+      <node id="3677173588536186248" at="109,0,116,0" concept="4" trace="test_stringUserObjects#()V" />
+      <node id="1781648286300234882" at="166,0,173,0" concept="4" trace="test_baseLanguageStructure#()V" />
+      <node id="759291420779681407" at="174,0,181,0" concept="4" trace="test_testOverloadedOperatorsSandbox#()V" />
+      <node id="3541188775018139390" at="209,0,216,9" concept="2" />
+      <node id="3186742424690914944" at="117,0,125,0" concept="4" trace="test_intUserObjects#()V" />
+      <node id="3541188775018139239" at="126,0,134,0" concept="4" trace="test_charUserObjects#()V" />
+      <node id="3541188775018139577" at="146,0,155,0" concept="4" trace="test_booleanUserObjects#()V" />
+      <node id="3541188775018139668" at="156,0,165,0" concept="4" trace="test_mpsUserObjects#()V" />
+      <node id="1732396662099676922" at="96,46,106,7" concept="7" />
+      <node id="3541188775018139440" at="135,0,145,0" concept="4" trace="test_numberUserObjects#()V" />
+      <node id="759291420779681437" at="182,0,194,0" concept="4" trace="test_testSkipNodesWhileSaving#()V" />
+      <node id="9030062148735499874" at="95,0,108,0" concept="4" trace="test_justWrite#()V" />
+      <node id="3541188775018139364" at="196,77,221,7" concept="7" />
+      <node id="9030062148735499870" at="195,0,223,0" concept="4" trace="testUserObjectsSaving#(Ljava/util/Map;Ljava/util/Map;)V" />
+      <scope id="3541188775018139369" at="199,82,200,190" />
+      <scope id="759291420779681192" at="211,73,212,121" />
+      <scope id="759291420779681282" at="213,18,214,126" />
+      <scope id="9030062148735499870" at="224,72,225,98" />
+      <scope id="9030062148735499870" at="34,49,36,112" />
+      <scope id="9030062148735499870" at="40,57,42,120" />
+      <scope id="9030062148735499870" at="46,54,48,117" />
+      <scope id="9030062148735499870" at="52,55,54,118" />
+      <scope id="9030062148735499870" at="58,57,60,120" />
+      <scope id="9030062148735499870" at="64,58,66,121" />
+      <scope id="9030062148735499870" at="70,54,72,117" />
+      <scope id="9030062148735499870" at="76,61,78,124" />
+      <scope id="9030062148735499870" at="82,70,84,133" />
+      <scope id="9030062148735499870" at="88,64,90,127" />
+      <scope id="1732396662099676925" at="103,0,105,46">
+        <var name="e" id="1732396662099676926" />
+      </scope>
+      <scope id="1732396662099676928" at="103,31,105,46" />
+      <scope id="3541188775018139411" at="218,0,220,46">
+        <var name="e" id="3541188775018139355" />
+      </scope>
+      <scope id="3541188775018139413" at="218,31,220,46" />
+      <scope id="1732396662099673596" at="98,9,101,148">
+        <var name="nodesAfter" id="1732396662099673596" />
+        <var name="nodesBefore" id="1732396662099673596" />
+      </scope>
+      <scope id="3541188775018139367" at="198,0,201,9">
+        <var name="object" id="3541188775018139352" />
+      </scope>
+      <scope id="3541188775018139386" at="204,9,207,148">
+        <var name="nodesAfter" id="3541188775018139386" />
+        <var name="nodesBefore" id="3541188775018139386" />
+      </scope>
+      <scope id="9030062148735499870" at="224,0,227,0">
+        <var name="userObjects" id="759291420779681286" />
+      </scope>
+      <scope id="9030062148735499870" at="33,0,38,0" />
+      <scope id="9030062148735499870" at="39,0,44,0" />
+      <scope id="9030062148735499870" at="45,0,50,0" />
+      <scope id="9030062148735499870" at="51,0,56,0" />
+      <scope id="9030062148735499870" at="57,0,62,0" />
+      <scope id="9030062148735499870" at="63,0,68,0" />
+      <scope id="9030062148735499870" at="69,0,74,0" />
+      <scope id="9030062148735499870" at="75,0,80,0" />
+      <scope id="9030062148735499870" at="81,0,86,0" />
+      <scope id="9030062148735499870" at="87,0,92,0" />
+      <scope id="1732396662099676923" at="97,11,102,9" />
+      <scope id="3677173588536186248" at="109,59,114,46">
+        <var name="userObjects" id="3677173588536240823" />
+      </scope>
+      <scope id="1781648286300234882" at="166,63,171,36">
+        <var name="matchNodes" id="1781648286300234896" />
+        <var name="resultModel" id="1781648286300234890" />
+        <var name="sampleModel" id="1781648286300234886" />
+      </scope>
+      <scope id="759291420779681407" at="174,72,179,36">
+        <var name="matchNodes" id="759291420779681421" />
+        <var name="resultModel" id="759291420779681415" />
+        <var name="sampleModel" id="759291420779681411" />
+      </scope>
+      <scope id="3541188775018139392" at="210,82,215,11" />
+      <scope id="3186742424690914944" at="117,56,123,46">
+        <var name="userObjects" id="3186742424690914950" />
+      </scope>
+      <scope id="3541188775018139239" at="126,57,132,46">
+        <var name="userObjects" id="3541188775018139245" />
+      </scope>
+      <scope id="3677173588536186248" at="109,0,116,0" />
+      <scope id="3541188775018139577" at="146,60,153,46">
+        <var name="userObjects" id="3541188775018139581" />
+      </scope>
+      <scope id="3541188775018139668" at="156,56,163,46">
+        <var name="userObjects" id="3541188775018139672" />
+      </scope>
+      <scope id="1781648286300234882" at="166,0,173,0" />
+      <scope id="759291420779681407" at="174,0,181,0" />
+      <scope id="3541188775018139390" at="209,0,216,9">
+        <var name="object" id="3541188775018139354" />
+      </scope>
+      <scope id="3186742424690914944" at="117,0,125,0" />
+      <scope id="3541188775018139239" at="126,0,134,0" />
+      <scope id="3541188775018139440" at="135,59,143,46">
+        <var name="userObjects" id="3541188775018139444" />
+      </scope>
+      <scope id="3541188775018139577" at="146,0,155,0" />
+      <scope id="3541188775018139668" at="156,0,165,0" />
+      <scope id="3541188775018139440" at="135,0,145,0" />
+      <scope id="759291420779681437" at="182,66,192,65">
+        <var name="userObjects" id="759291420779681441" />
+        <var name="userObjectsToSkip" id="759291420779681674" />
+      </scope>
+      <scope id="9030062148735499874" at="95,51,106,7" />
+      <scope id="759291420779681437" at="182,0,194,0" />
+      <scope id="9030062148735499874" at="95,0,108,0" />
+      <scope id="3541188775018139365" at="197,11,217,0">
+        <var name="readNode" id="3541188775018139353" />
+      </scope>
+      <scope id="9030062148735499870" at="195,112,221,7">
+        <var name="var1732396662099564454" id="9030062148735499870" />
+      </scope>
+      <scope id="9030062148735499870" at="195,0,223,0">
+        <var name="userObjects" id="3541188775018139356" />
+        <var name="userObjectsToLoose" id="759291420779681183" />
+      </scope>
+      <unit id="9030062148735499870" at="93,0,228,0" name="jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test$TestBody" />
+      <unit id="9030062148735499870" at="31,0,229,0" name="jetbrains.mps.generator.impl.tests.FileSwapOwnerTests_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

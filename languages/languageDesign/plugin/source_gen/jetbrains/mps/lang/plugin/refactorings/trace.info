@@ -1,71 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:1f77f547-8d39-49b3-a638-0476f0430bcb(jetbrains.mps.lang.plugin.refactorings)/6237653430913268254">
-    <nodeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="21" startPosition="52" endLine="22" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="25" startPosition="39" endLine="26" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6237653430913421403" fileName="SortKeymapMembers.java" startLine="29" startPosition="69" endLine="30" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6237653430913421416" fileName="SortKeymapMembers.java" startLine="30" startPosition="54" endLine="31" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6237653430913421368" fileName="SortKeymapMembers.java" startLine="31" startPosition="137" endLine="32" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6237653430913464483" fileName="SortKeymapMembers.java" startLine="34" startPosition="39" endLine="35" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6237653430913464565" fileName="SortKeymapMembers.java" startLine="38" startPosition="38" endLine="39" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortKeymapMembers#()V" />
-    <nodeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
-    <nodeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserFriendlyName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6237653430913463681" fileName="SortKeymapMembers.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
-    <nodeInfo nodeId="6237653430913464560" fileName="SortKeymapMembers.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6237653430913463662" fileName="SortKeymapMembers.java" startLine="32" startPosition="92" endLine="41" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="29" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
-    <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="13" startPosition="52" endLine="14" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="28" startPosition="5" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SortKeymapMembers_Target#()V" />
-    <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
-    <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allowMultipleTargets#()Z" />
-    <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="25" startPosition="52" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="25" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="18" startPosition="30" endLine="18" endPosition="30" />
-    <scopeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="21" startPosition="52" endLine="22" endPosition="42" />
-    <scopeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="25" startPosition="39" endLine="26" endPosition="26" />
-    <scopeInfo nodeId="6237653430913463682" fileName="SortKeymapMembers.java" startLine="34" startPosition="39" endLine="35" endPosition="115" />
-    <scopeInfo nodeId="6237653430913464561" fileName="SortKeymapMembers.java" startLine="38" startPosition="38" endLine="39" endPosition="101" />
-    <scopeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="6237653430913463681" fileName="SortKeymapMembers.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="6237653430913463681" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6237653430913464560" fileName="SortKeymapMembers.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="6237653430913464560" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6237653430913268257" fileName="SortKeymapMembers.java" startLine="29" startPosition="69" endLine="41" endPosition="14">
-      <varInfo nodeId="6237653430913421417" varName="copy" />
-      <varInfo nodeId="6237653430913421404" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="29" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="6237653430913268254" varName="refactoringContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="10" startPosition="37" endLine="10" endPosition="37" />
-    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="13" startPosition="52" endLine="14" endPosition="46" />
-    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="17" startPosition="41" endLine="18" endPosition="17" />
-    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="21" startPosition="64" endLine="22" endPosition="122" />
-    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="26" startPosition="51" endLine="27" endPosition="19" />
-    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="6237653430913268258" varName="entity" />
-    </scopeInfo>
-    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="25" startPosition="52" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="25" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="6237653430913268258" varName="entity" />
-    </scopeInfo>
-    <unitInfo nodeId="6237653430913463681" fileName="SortKeymapMembers.java" startLine="33" startPosition="133" endLine="37" endPosition="5" unitName="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers$1" />
-    <unitInfo nodeId="6237653430913464560" fileName="SortKeymapMembers.java" startLine="37" startPosition="26" endLine="41" endPosition="5" unitName="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers$2" />
-    <unitInfo nodeId="6237653430913268254" fileName="SortKeymapMembers.java" startLine="17" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers" />
-    <unitInfo nodeId="6237653430913268258" fileName="SortKeymapMembers_Target.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers_Target" />
+    <file name="SortKeymapMembers.java">
+      <node id="6237653430913268254" at="21,52,22,42" concept="5" />
+      <node id="6237653430913268254" at="25,39,26,26" concept="5" />
+      <node id="6237653430913421403" at="29,69,30,54" concept="4" />
+      <node id="6237653430913421416" at="30,54,31,137" concept="4" />
+      <node id="6237653430913421368" at="31,137,32,92" concept="1" />
+      <node id="6237653430913464483" at="34,39,35,115" concept="5" />
+      <node id="6237653430913464565" at="38,38,39,101" concept="5" />
+      <node id="6237653430913268254" at="18,0,20,0" concept="0" trace="SortKeymapMembers#()V" />
+      <node id="6237653430913268254" at="21,0,24,0" concept="3" trace="getRefactoringTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget;" />
+      <node id="6237653430913268254" at="25,0,28,0" concept="3" trace="getUserFriendlyName#()Ljava/lang/String;" />
+      <node id="6237653430913463681" at="34,0,37,0" concept="3" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Boolean;" />
+      <node id="6237653430913464560" at="38,0,41,0" concept="3" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="6237653430913463662" at="32,92,41,14" concept="1" />
+      <node id="6237653430913268254" at="29,0,43,0" concept="3" trace="refactor#(Ljetbrains/mps/refactoring/framework/RefactoringContext;)V" />
+      <scope id="6237653430913268254" at="18,30,18,30" />
+      <scope id="6237653430913268254" at="21,52,22,42" />
+      <scope id="6237653430913268254" at="25,39,26,26" />
+      <scope id="6237653430913463682" at="34,39,35,115" />
+      <scope id="6237653430913464561" at="38,38,39,101" />
+      <scope id="6237653430913268254" at="18,0,20,0" />
+      <scope id="6237653430913268254" at="21,0,24,0" />
+      <scope id="6237653430913268254" at="25,0,28,0" />
+      <scope id="6237653430913463681" at="34,0,37,0">
+        <var name="it" id="6237653430913463681" />
+      </scope>
+      <scope id="6237653430913464560" at="38,0,41,0">
+        <var name="it" id="6237653430913464560" />
+      </scope>
+      <scope id="6237653430913268257" at="29,69,41,14">
+        <var name="copy" id="6237653430913421417" />
+        <var name="node" id="6237653430913421404" />
+      </scope>
+      <scope id="6237653430913268254" at="29,0,43,0">
+        <var name="refactoringContext" id="6237653430913268254" />
+      </scope>
+      <unit id="6237653430913463681" at="33,133,37,5" name="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers$1" />
+      <unit id="6237653430913464560" at="37,26,41,5" name="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers$2" />
+      <unit id="6237653430913268254" at="17,0,44,0" name="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers" />
+    </file>
+    <file name="SortKeymapMembers_Target.java">
+      <node id="6237653430913268258" at="13,52,14,46" concept="5" />
+      <node id="6237653430913268258" at="17,41,18,17" concept="5" />
+      <node id="6237653430913268258" at="21,64,22,122" concept="5" />
+      <node id="6237653430913268258" at="26,51,27,19" concept="5" />
+      <node id="6237653430913268258" at="28,5,29,16" concept="5" />
+      <node id="6237653430913268258" at="10,0,12,0" concept="0" trace="SortKeymapMembers_Target#()V" />
+      <node id="6237653430913268258" at="13,0,16,0" concept="3" trace="getTarget#()Ljetbrains/mps/refactoring/framework/IRefactoringTarget/TargetType;" />
+      <node id="6237653430913268258" at="17,0,20,0" concept="3" trace="allowMultipleTargets#()Z" />
+      <node id="6237653430913268258" at="21,0,24,0" concept="3" trace="isApplicableToEntityType#(Ljava/lang/Object;)Z" />
+      <node id="6237653430913268258" at="25,52,28,5" concept="2" />
+      <node id="6237653430913268258" at="25,0,31,0" concept="3" trace="isApplicable#(Ljava/lang/Object;)Z" />
+      <scope id="6237653430913268258" at="10,37,10,37" />
+      <scope id="6237653430913268258" at="13,52,14,46" />
+      <scope id="6237653430913268258" at="17,41,18,17" />
+      <scope id="6237653430913268258" at="21,64,22,122" />
+      <scope id="6237653430913268258" at="26,51,27,19" />
+      <scope id="6237653430913268258" at="10,0,12,0" />
+      <scope id="6237653430913268258" at="13,0,16,0" />
+      <scope id="6237653430913268258" at="17,0,20,0" />
+      <scope id="6237653430913268258" at="21,0,24,0">
+        <var name="entity" id="6237653430913268258" />
+      </scope>
+      <scope id="6237653430913268258" at="25,52,29,16" />
+      <scope id="6237653430913268258" at="25,0,31,0">
+        <var name="entity" id="6237653430913268258" />
+      </scope>
+      <unit id="6237653430913268258" at="9,0,32,0" name="jetbrains.mps.lang.plugin.refactorings.SortKeymapMembers_Target" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -1,70 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:dc013bd4-6bcf-44c3-9e08-a65e07c88df7(jetbrains.mps.internal.make.cfg)/6705512905415971354">
-    <nodeInfo nodeId="6705512905416286305" fileName="JavaCompileFacetInitializer.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySkipCompilation" />
-    <nodeInfo nodeId="6705512905416286309" fileName="JavaCompileFacetInitializer.java" startLine="16" startPosition="68" endLine="17" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6705512905416301062" fileName="JavaCompileFacetInitializer.java" startLine="17" startPosition="29" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8092479555022511299" fileName="JavaCompileFacetInitializer.java" startLine="21" startPosition="47" endLine="22" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8092479555022511317" fileName="JavaCompileFacetInitializer.java" startLine="23" startPosition="31" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6705512905416263623" fileName="JavaCompileFacetInitializer.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaCompileFacetInitializer#()V" />
-    <nodeInfo nodeId="8092479555022511315" fileName="JavaCompileFacetInitializer.java" startLine="22" startPosition="175" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6705512905416263735" fileName="JavaCompileFacetInitializer.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="skipCompilation#(Ljava/lang/Boolean;)Ljetbrains/mps/internal/make/cfg/JavaCompileFacetInitializer;" />
-    <nodeInfo nodeId="6705512905415971441" fileName="JavaCompileFacetInitializer.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="populate#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <scopeInfo nodeId="6705512905416263627" fileName="JavaCompileFacetInitializer.java" startLine="13" startPosition="40" endLine="13" endPosition="40" />
-    <scopeInfo nodeId="8092479555022511316" fileName="JavaCompileFacetInitializer.java" startLine="23" startPosition="31" endLine="24" endPosition="41" />
-    <scopeInfo nodeId="6705512905416263623" fileName="JavaCompileFacetInitializer.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="6705512905416263739" fileName="JavaCompileFacetInitializer.java" startLine="16" startPosition="68" endLine="18" endPosition="16" />
-    <scopeInfo nodeId="6705512905416263735" fileName="JavaCompileFacetInitializer.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="6705512905416286274" varName="skip" />
-    </scopeInfo>
-    <scopeInfo nodeId="6705512905415971444" fileName="JavaCompileFacetInitializer.java" startLine="21" startPosition="47" endLine="25" endPosition="5">
-      <varInfo nodeId="8092479555022511300" varName="compileProps" />
-    </scopeInfo>
-    <scopeInfo nodeId="6705512905415971441" fileName="JavaCompileFacetInitializer.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="6705512905415971455" varName="ppool" />
-    </scopeInfo>
-    <unitInfo nodeId="6705512905415971354" fileName="JavaCompileFacetInitializer.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer" />
+    <file name="JavaCompileFacetInitializer.java">
+      <node id="6705512905416286305" at="10,0,11,0" concept="2" trace="mySkipCompilation" />
+      <node id="6705512905416286309" at="16,68,17,29" concept="1" />
+      <node id="6705512905416301062" at="17,29,18,16" concept="6" />
+      <node id="8092479555022511299" at="21,47,22,175" concept="5" />
+      <node id="8092479555022511317" at="23,31,24,41" concept="1" />
+      <node id="6705512905416263623" at="13,0,15,0" concept="0" trace="JavaCompileFacetInitializer#()V" />
+      <node id="8092479555022511315" at="22,175,25,5" concept="3" />
+      <node id="6705512905416263735" at="16,0,20,0" concept="4" trace="skipCompilation#(Ljava/lang/Boolean;)Ljetbrains/mps/internal/make/cfg/JavaCompileFacetInitializer;" />
+      <node id="6705512905415971441" at="21,0,27,0" concept="4" trace="populate#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+      <scope id="6705512905416263627" at="13,40,13,40" />
+      <scope id="8092479555022511316" at="23,31,24,41" />
+      <scope id="6705512905416263623" at="13,0,15,0" />
+      <scope id="6705512905416263739" at="16,68,18,16" />
+      <scope id="6705512905416263735" at="16,0,20,0">
+        <var name="skip" id="6705512905416286274" />
+      </scope>
+      <scope id="6705512905415971444" at="21,47,25,5">
+        <var name="compileProps" id="8092479555022511300" />
+      </scope>
+      <scope id="6705512905415971441" at="21,0,27,0">
+        <var name="ppool" id="6705512905415971455" />
+      </scope>
+      <unit id="6705512905415971354" at="9,0,28,0" name="jetbrains.mps.internal.make.cfg.JavaCompileFacetInitializer" />
+    </file>
   </root>
   <root nodeRef="r:dc013bd4-6bcf-44c3-9e08-a65e07c88df7(jetbrains.mps.internal.make.cfg)/6705512905416012324">
-    <nodeInfo nodeId="6705512905416075247" fileName="MakeFacetInitializer.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPathToFile" />
-    <nodeInfo nodeId="6705512905416644381" fileName="MakeFacetInitializer.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySkipReconcile" />
-    <nodeInfo nodeId="6705512905416090075" fileName="MakeFacetInitializer.java" startLine="18" startPosition="110" endLine="19" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6705512905416093055" fileName="MakeFacetInitializer.java" startLine="19" startPosition="21" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6705512905416627124" fileName="MakeFacetInitializer.java" startLine="23" startPosition="59" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6705512905416627128" fileName="MakeFacetInitializer.java" startLine="24" startPosition="27" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294074698114021970" fileName="MakeFacetInitializer.java" startLine="29" startPosition="31" endLine="30" endPosition="255" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294074698114021990" fileName="MakeFacetInitializer.java" startLine="31" startPosition="31" endLine="32" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8092479555022511385" fileName="MakeFacetInitializer.java" startLine="35" startPosition="34" endLine="36" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8092479555022511399" fileName="MakeFacetInitializer.java" startLine="36" startPosition="155" endLine="37" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6705512905416096491" fileName="MakeFacetInitializer.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeFacetInitializer#()V" />
-    <nodeInfo nodeId="6705512905416076433" fileName="MakeFacetInitializer.java" startLine="30" startPosition="255" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6705512905416071918" fileName="MakeFacetInitializer.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setPathToFile#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/internal/make/cfg/MakeFacetInitializer;" />
-    <nodeInfo nodeId="6705512905416627120" fileName="MakeFacetInitializer.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="skipReconcile#(Ljava/lang/Boolean;)Ljetbrains/mps/internal/make/cfg/MakeFacetInitializer;" />
-    <nodeInfo nodeId="6705512905416649775" fileName="MakeFacetInitializer.java" startLine="34" startPosition="5" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6705512905416079323" fileName="MakeFacetInitializer.java" startLine="28" startPosition="47" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6705512905416012354" fileName="MakeFacetInitializer.java" startLine="28" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="populate#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <scopeInfo nodeId="6705512905416096495" fileName="MakeFacetInitializer.java" startLine="15" startPosition="33" endLine="15" endPosition="33" />
-    <scopeInfo nodeId="6705512905416076436" fileName="MakeFacetInitializer.java" startLine="31" startPosition="31" endLine="32" endPosition="36" />
-    <scopeInfo nodeId="6705512905416096491" fileName="MakeFacetInitializer.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="6705512905416071922" fileName="MakeFacetInitializer.java" startLine="18" startPosition="110" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="6705512905416627123" fileName="MakeFacetInitializer.java" startLine="23" startPosition="59" endLine="25" endPosition="16" />
-    <scopeInfo nodeId="6705512905416649778" fileName="MakeFacetInitializer.java" startLine="35" startPosition="34" endLine="37" endPosition="40">
-      <varInfo nodeId="8092479555022511386" varName="skipReconcile" />
-    </scopeInfo>
-    <scopeInfo nodeId="6705512905416071918" fileName="MakeFacetInitializer.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="6705512905416074032" varName="f" />
-    </scopeInfo>
-    <scopeInfo nodeId="6705512905416627120" fileName="MakeFacetInitializer.java" startLine="23" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="6705512905416627130" varName="skip" />
-    </scopeInfo>
-    <scopeInfo nodeId="6705512905416079326" fileName="MakeFacetInitializer.java" startLine="29" startPosition="31" endLine="33" endPosition="7">
-      <varInfo nodeId="5294074698114021971" varName="makeparams" />
-    </scopeInfo>
-    <scopeInfo nodeId="6705512905416012358" fileName="MakeFacetInitializer.java" startLine="28" startPosition="47" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="6705512905416012354" fileName="MakeFacetInitializer.java" startLine="28" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="6705512905416012375" varName="ppool" />
-    </scopeInfo>
-    <unitInfo nodeId="6705512905416012324" fileName="MakeFacetInitializer.java" startLine="11" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.internal.make.cfg.MakeFacetInitializer" />
+    <file name="MakeFacetInitializer.java">
+      <node id="6705512905416075247" at="12,0,13,0" concept="2" trace="myPathToFile" />
+      <node id="6705512905416644381" at="13,0,14,0" concept="2" trace="mySkipReconcile" />
+      <node id="6705512905416090075" at="18,110,19,21" concept="1" />
+      <node id="6705512905416093055" at="19,21,20,16" concept="6" />
+      <node id="6705512905416627124" at="23,59,24,27" concept="1" />
+      <node id="6705512905416627128" at="24,27,25,16" concept="6" />
+      <node id="5294074698114021970" at="29,31,30,255" concept="5" />
+      <node id="5294074698114021990" at="31,31,32,36" concept="1" />
+      <node id="8092479555022511385" at="35,34,36,155" concept="5" />
+      <node id="8092479555022511399" at="36,155,37,40" concept="1" />
+      <node id="6705512905416096491" at="15,0,17,0" concept="0" trace="MakeFacetInitializer#()V" />
+      <node id="6705512905416076433" at="30,255,33,7" concept="3" />
+      <node id="6705512905416071918" at="18,0,22,0" concept="4" trace="setPathToFile#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P1_E0;)Ljetbrains/mps/internal/make/cfg/MakeFacetInitializer;" />
+      <node id="6705512905416627120" at="23,0,27,0" concept="4" trace="skipReconcile#(Ljava/lang/Boolean;)Ljetbrains/mps/internal/make/cfg/MakeFacetInitializer;" />
+      <node id="6705512905416649775" at="34,5,38,5" concept="3" />
+      <node id="6705512905416079323" at="28,47,34,5" concept="3" />
+      <node id="6705512905416012354" at="28,0,40,0" concept="4" trace="populate#(Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+      <scope id="6705512905416096495" at="15,33,15,33" />
+      <scope id="6705512905416076436" at="31,31,32,36" />
+      <scope id="6705512905416096491" at="15,0,17,0" />
+      <scope id="6705512905416071922" at="18,110,20,16" />
+      <scope id="6705512905416627123" at="23,59,25,16" />
+      <scope id="6705512905416649778" at="35,34,37,40">
+        <var name="skipReconcile" id="8092479555022511386" />
+      </scope>
+      <scope id="6705512905416071918" at="18,0,22,0">
+        <var name="f" id="6705512905416074032" />
+      </scope>
+      <scope id="6705512905416627120" at="23,0,27,0">
+        <var name="skip" id="6705512905416627130" />
+      </scope>
+      <scope id="6705512905416079326" at="29,31,33,7">
+        <var name="makeparams" id="5294074698114021971" />
+      </scope>
+      <scope id="6705512905416012358" at="28,47,38,5" />
+      <scope id="6705512905416012354" at="28,0,40,0">
+        <var name="ppool" id="6705512905416012375" />
+      </scope>
+      <unit id="6705512905416012324" at="11,0,41,0" name="jetbrains.mps.internal.make.cfg.MakeFacetInitializer" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

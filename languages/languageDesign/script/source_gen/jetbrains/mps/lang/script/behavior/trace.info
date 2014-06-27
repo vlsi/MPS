@@ -1,181 +1,242 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="AbstractClassifierSpecification_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.AbstractClassifierSpecification_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractMethodSpecification_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.AbstractMethodSpecification_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="CommentMigrationScriptPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.CommentMigrationScriptPart_BehaviorDescriptor" />
-  <unitInfo fileName="DirectClassifierSpecification_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.DirectClassifierSpecification_BehaviorDescriptor" />
-  <unitInfo fileName="DirectMethodSpecification_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.DirectMethodSpecification_BehaviorDescriptor" />
-  <unitInfo fileName="ExtractInterfaceMigration_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.ExtractInterfaceMigration_BehaviorDescriptor" />
-  <unitInfo fileName="FQNameClassifierSpecification_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.FQNameClassifierSpecification_BehaviorDescriptor" />
-  <unitInfo fileName="FQNameMethodSpecification_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.FQNameMethodSpecification_BehaviorDescriptor" />
-  <unitInfo fileName="FactoryMigrationScriptPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.FactoryMigrationScriptPart_BehaviorDescriptor" />
-  <unitInfo fileName="MigrationScriptPart_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_BehaviorDescriptor" />
-  <unitInfo fileName="MigrationScriptPart_Instance_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_BehaviorDescriptor" />
-  <unitInfo fileName="MigrationScriptPart_Instance_Predicate_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Predicate_BehaviorDescriptor" />
-  <unitInfo fileName="MigrationScriptPart_Instance_Updater_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Updater_BehaviorDescriptor" />
-  <unitInfo fileName="MigrationScriptPart_node_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_node_BehaviorDescriptor" />
-  <unitInfo fileName="MigrationScript_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScript_BehaviorDescriptor" />
-  <unitInfo fileName="PullUpMethod_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.PullUpMethod_BehaviorDescriptor" />
-  <unitInfo fileName="WhitespaceMigrationScriptPart_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.WhitespaceMigrationScriptPart_BehaviorDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="DirectMethodSpecification_BehaviorDescriptor.java">
+      <unit at="7,0,20,0" name="jetbrains.mps.lang.script.behavior.DirectMethodSpecification_BehaviorDescriptor" />
+    </file>
+    <file name="MigrationScriptPart_node_BehaviorDescriptor.java">
+      <unit at="8,0,17,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_node_BehaviorDescriptor" />
+    </file>
+    <file name="FQNameMethodSpecification_BehaviorDescriptor.java">
+      <unit at="7,0,20,0" name="jetbrains.mps.lang.script.behavior.FQNameMethodSpecification_BehaviorDescriptor" />
+    </file>
+    <file name="FactoryMigrationScriptPart_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.script.behavior.FactoryMigrationScriptPart_BehaviorDescriptor" />
+    </file>
+    <file name="MigrationScriptPart_Instance_Predicate_BehaviorDescriptor.java">
+      <unit at="10,0,27,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Predicate_BehaviorDescriptor" />
+    </file>
+    <file name="DirectClassifierSpecification_BehaviorDescriptor.java">
+      <unit at="7,0,24,0" name="jetbrains.mps.lang.script.behavior.DirectClassifierSpecification_BehaviorDescriptor" />
+    </file>
+    <file name="MigrationScriptPart_Instance_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_BehaviorDescriptor" />
+    </file>
+    <file name="MigrationScript_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.script.behavior.MigrationScript_BehaviorDescriptor" />
+    </file>
+    <file name="ExtractInterfaceMigration_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.script.behavior.ExtractInterfaceMigration_BehaviorDescriptor" />
+    </file>
+    <file name="WhitespaceMigrationScriptPart_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.script.behavior.WhitespaceMigrationScriptPart_BehaviorDescriptor" />
+    </file>
+    <file name="AbstractMethodSpecification_BehaviorDescriptor.java">
+      <unit at="8,0,19,0" name="jetbrains.mps.lang.script.behavior.AbstractMethodSpecification_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,50,0" name="jetbrains.mps.lang.script.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="AbstractClassifierSpecification_BehaviorDescriptor.java">
+      <unit at="8,0,21,0" name="jetbrains.mps.lang.script.behavior.AbstractClassifierSpecification_BehaviorDescriptor" />
+    </file>
+    <file name="FQNameClassifierSpecification_BehaviorDescriptor.java">
+      <unit at="7,0,24,0" name="jetbrains.mps.lang.script.behavior.FQNameClassifierSpecification_BehaviorDescriptor" />
+    </file>
+    <file name="PullUpMethod_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.script.behavior.PullUpMethod_BehaviorDescriptor" />
+    </file>
+    <file name="MigrationScriptPart_Instance_Updater_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Updater_BehaviorDescriptor" />
+    </file>
+    <file name="CommentMigrationScriptPart_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.script.behavior.CommentMigrationScriptPart_BehaviorDescriptor" />
+    </file>
+    <file name="MigrationScriptPart_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_BehaviorDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/2291767839160328141">
-    <nodeInfo nodeId="2291767839160330467" fileName="AbstractMethodSpecification_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2291767839160328141" fileName="AbstractMethodSpecification_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2291767839160328141" fileName="AbstractMethodSpecification_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPullUpMethod_2291767839160328420#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="2291767839160328303" fileName="AbstractMethodSpecification_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="2291767839160328423" fileName="AbstractMethodSpecification_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="121" />
-    <scopeInfo nodeId="2291767839160328141" fileName="AbstractMethodSpecification_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="2291767839160328141" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2291767839160328141" fileName="AbstractMethodSpecification_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="2291767839160328141" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2291767839160328141" fileName="AbstractMethodSpecification_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.AbstractMethodSpecification_Behavior" />
+    <file name="AbstractMethodSpecification_Behavior.java">
+      <node id="2291767839160330467" at="12,80,13,121" concept="3" />
+      <node id="2291767839160328141" at="9,0,11,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2291767839160328141" at="12,0,15,0" concept="4" trace="call_getPullUpMethod_2291767839160328420#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="2291767839160328303" at="9,43,9,43" />
+      <scope id="2291767839160328423" at="12,80,13,121" />
+      <scope id="2291767839160328141" at="9,0,11,0">
+        <var name="thisNode" id="2291767839160328141" />
+      </scope>
+      <scope id="2291767839160328141" at="12,0,15,0">
+        <var name="thisNode" id="2291767839160328141" />
+      </scope>
+      <unit id="2291767839160328141" at="8,0,16,0" name="jetbrains.mps.lang.script.behavior.AbstractMethodSpecification_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/3044950653914717773">
-    <nodeInfo nodeId="3044950653914717752" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="16" startPosition="125" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914717767" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717771" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="18" startPosition="166" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914717773" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3044950653914717773" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="3044950653914717775" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="3044950653914717773" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="3044950653914717773" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914717751" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="16" startPosition="125" endLine="19" endPosition="18">
-      <varInfo nodeId="3044950653914717753" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914717773" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="3044950653914717773" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="3044950653914717773" fileName="MigrationScriptPart_Instance_Updater_Behavior.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Updater_Behavior" />
+    <file name="MigrationScriptPart_Instance_Updater_Behavior.java">
+      <node id="3044950653914717752" at="16,125,17,261" concept="2" />
+      <node id="3044950653914717767" at="17,261,18,166" concept="1" />
+      <node id="3044950653914717771" at="18,166,19,18" concept="3" />
+      <node id="3044950653914717773" at="13,0,15,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3044950653914717773" at="16,0,21,0" concept="4" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <scope id="3044950653914717775" at="13,43,13,43" />
+      <scope id="3044950653914717773" at="13,0,15,0">
+        <var name="thisNode" id="3044950653914717773" />
+      </scope>
+      <scope id="3044950653914717751" at="16,125,19,18">
+        <var name="result" id="3044950653914717753" />
+      </scope>
+      <scope id="3044950653914717773" at="16,0,21,0">
+        <var name="thisConcept" id="3044950653914717773" />
+      </scope>
+      <unit id="3044950653914717773" at="12,0,22,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Updater_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/3044950653914725604">
-    <nodeInfo nodeId="3044950653914725583" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="18" startPosition="125" endLine="19" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914725598" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="19" startPosition="261" endLine="20" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914725602" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="20" startPosition="166" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="658365993681975429" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="658365993681975271" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="28" startPosition="60" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="658365993681975271" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="29" startPosition="63" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="658365993681975271" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="30" startPosition="30" endLine="31" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="658365993681975271" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="30" startPosition="30" endLine="31" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="658365993681975271" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="30" startPosition="30" endLine="31" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="658365993681975271" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="31" startPosition="135" endLine="32" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914725604" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3044950653914725604" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3044950653914725604" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <nodeInfo nodeId="658365993681975271" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_uvheco_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="3044950653914725606" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="658365993681975428" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="24" startPosition="83" endLine="25" endPosition="47" />
-    <scopeInfo nodeId="658365993681975271" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="30" startPosition="30" endLine="31" endPosition="135" />
-    <scopeInfo nodeId="3044950653914725604" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="3044950653914725604" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914725582" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="18" startPosition="125" endLine="21" endPosition="18">
-      <varInfo nodeId="3044950653914725584" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914725604" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="3044950653914725604" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="658365993681975271" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="28" startPosition="60" endLine="32" endPosition="24">
-      <varInfo nodeId="658365993681975271" varName="facade" />
-      <varInfo nodeId="658365993681975271" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914725604" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="18" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="3044950653914725604" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="658365993681975271" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="3044950653914725604" fileName="MigrationScriptPart_Instance_Predicate_Behavior.java" startLine="14" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Predicate_Behavior" />
+    <file name="MigrationScriptPart_Instance_Predicate_Behavior.java">
+      <node id="3044950653914725583" at="18,125,19,261" concept="2" />
+      <node id="3044950653914725598" at="19,261,20,166" concept="1" />
+      <node id="3044950653914725602" at="20,166,21,18" concept="3" />
+      <node id="658365993681975429" at="24,83,25,47" concept="3" />
+      <node id="658365993681975271" at="28,60,29,63" concept="2" />
+      <node id="658365993681975271" at="29,63,30,30" concept="2" />
+      <node id="658365993681975271" at="30,30,31,135" concept="0" />
+      <node id="658365993681975271" at="30,30,31,135" concept="0" />
+      <node id="658365993681975271" at="30,30,31,135" concept="1" />
+      <node id="658365993681975271" at="31,135,32,24" concept="3" />
+      <node id="3044950653914725604" at="15,0,17,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3044950653914725604" at="24,0,27,0" concept="4" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3044950653914725604" at="18,0,23,0" concept="4" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <node id="658365993681975271" at="28,0,34,0" concept="4" trace="_quotation_createNode_uvheco_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3044950653914725606" at="15,43,15,43" />
+      <scope id="658365993681975428" at="24,83,25,47" />
+      <scope id="658365993681975271" at="30,30,31,135" />
+      <scope id="3044950653914725604" at="15,0,17,0">
+        <var name="thisNode" id="3044950653914725604" />
+      </scope>
+      <scope id="3044950653914725582" at="18,125,21,18">
+        <var name="result" id="3044950653914725584" />
+      </scope>
+      <scope id="3044950653914725604" at="24,0,27,0">
+        <var name="thisNode" id="3044950653914725604" />
+      </scope>
+      <scope id="658365993681975271" at="28,60,32,24">
+        <var name="facade" id="658365993681975271" />
+        <var name="quotedNode_1" id="658365993681975271" />
+      </scope>
+      <scope id="3044950653914725604" at="18,0,23,0">
+        <var name="thisConcept" id="3044950653914725604" />
+      </scope>
+      <scope id="658365993681975271" at="28,0,34,0" />
+      <unit id="3044950653914725604" at="14,0,35,0" name="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Predicate_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/5166971494091017143">
-    <nodeInfo nodeId="5166971494091017150" fileName="PullUpMethod_Behavior.java" startLine="12" startPosition="77" endLine="13" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getMigration_5166971494091017146#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="5166971494091017145" fileName="PullUpMethod_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="5166971494091017149" fileName="PullUpMethod_Behavior.java" startLine="12" startPosition="77" endLine="13" endPosition="134" />
-    <scopeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="5166971494091017143" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="5166971494091017143" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="5166971494091017143" fileName="PullUpMethod_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.PullUpMethod_Behavior" />
+    <file name="PullUpMethod_Behavior.java">
+      <node id="5166971494091017150" at="12,77,13,134" concept="3" />
+      <node id="5166971494091017143" at="9,0,11,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5166971494091017143" at="12,0,15,0" concept="4" trace="call_getMigration_5166971494091017146#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="5166971494091017145" at="9,43,9,43" />
+      <scope id="5166971494091017149" at="12,77,13,134" />
+      <scope id="5166971494091017143" at="9,0,11,0">
+        <var name="thisNode" id="5166971494091017143" />
+      </scope>
+      <scope id="5166971494091017143" at="12,0,15,0">
+        <var name="thisNode" id="5166971494091017143" />
+      </scope>
+      <unit id="5166971494091017143" at="8,0,16,0" name="jetbrains.mps.lang.script.behavior.PullUpMethod_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/5434557751112920986">
-    <nodeInfo nodeId="5434557751112920986" fileName="AbstractClassifierSpecification_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="5434557751112920988" fileName="AbstractClassifierSpecification_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="5434557751112920986" fileName="AbstractClassifierSpecification_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="5434557751112920986" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="5434557751112920986" fileName="AbstractClassifierSpecification_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.AbstractClassifierSpecification_Behavior" />
+    <file name="AbstractClassifierSpecification_Behavior.java">
+      <node id="5434557751112920986" at="8,0,10,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="5434557751112920988" at="8,43,8,43" />
+      <scope id="5434557751112920986" at="8,0,10,0">
+        <var name="thisNode" id="5434557751112920986" />
+      </scope>
+      <unit id="5434557751112920986" at="7,0,11,0" name="jetbrains.mps.lang.script.behavior.AbstractClassifierSpecification_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/5434557751112931020">
-    <nodeInfo nodeId="5434557751112932611" fileName="DirectClassifierSpecification_Behavior.java" startLine="14" startPosition="88" endLine="15" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5434557751113449151" fileName="DirectClassifierSpecification_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5434557751112931020" fileName="DirectClassifierSpecification_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5434557751112931020" fileName="DirectClassifierSpecification_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClassifierFqName_5434557751112930827#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5434557751112931020" fileName="DirectClassifierSpecification_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSModelReference_5434557751113441014#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="5434557751112931022" fileName="DirectClassifierSpecification_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="5434557751112932606" fileName="DirectClassifierSpecification_Behavior.java" startLine="14" startPosition="88" endLine="15" endPosition="167" />
-    <scopeInfo nodeId="5434557751113449103" fileName="DirectClassifierSpecification_Behavior.java" startLine="18" startPosition="87" endLine="19" endPosition="120" />
-    <scopeInfo nodeId="5434557751112931020" fileName="DirectClassifierSpecification_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="5434557751112931020" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5434557751112931020" fileName="DirectClassifierSpecification_Behavior.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="5434557751112931020" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5434557751112931020" fileName="DirectClassifierSpecification_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="5434557751112931020" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="5434557751112931020" fileName="DirectClassifierSpecification_Behavior.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.DirectClassifierSpecification_Behavior" />
+    <file name="DirectClassifierSpecification_Behavior.java">
+      <node id="5434557751112932611" at="14,88,15,167" concept="3" />
+      <node id="5434557751113449151" at="18,87,19,120" concept="3" />
+      <node id="5434557751112931020" at="11,0,13,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5434557751112931020" at="14,0,17,0" concept="4" trace="virtual_getClassifierFqName_5434557751112930827#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5434557751112931020" at="18,0,21,0" concept="4" trace="virtual_getSModelReference_5434557751113441014#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="5434557751112931022" at="11,43,11,43" />
+      <scope id="5434557751112932606" at="14,88,15,167" />
+      <scope id="5434557751113449103" at="18,87,19,120" />
+      <scope id="5434557751112931020" at="11,0,13,0">
+        <var name="thisNode" id="5434557751112931020" />
+      </scope>
+      <scope id="5434557751112931020" at="14,0,17,0">
+        <var name="thisNode" id="5434557751112931020" />
+      </scope>
+      <scope id="5434557751112931020" at="18,0,21,0">
+        <var name="thisNode" id="5434557751112931020" />
+      </scope>
+      <unit id="5434557751112931020" at="10,0,22,0" name="jetbrains.mps.lang.script.behavior.DirectClassifierSpecification_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/5434557751112931023">
-    <nodeInfo nodeId="5434557751112931035" fileName="FQNameClassifierSpecification_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5434557751113469079" fileName="FQNameClassifierSpecification_Behavior.java" startLine="16" startPosition="87" endLine="17" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5434557751112931023" fileName="FQNameClassifierSpecification_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5434557751112931023" fileName="FQNameClassifierSpecification_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClassifierFqName_5434557751112930827#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5434557751112931023" fileName="FQNameClassifierSpecification_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getSModelReference_5434557751113441014#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="5434557751112931025" fileName="FQNameClassifierSpecification_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="5434557751112931030" fileName="FQNameClassifierSpecification_Behavior.java" startLine="12" startPosition="88" endLine="13" endPosition="71" />
-    <scopeInfo nodeId="5434557751113469048" fileName="FQNameClassifierSpecification_Behavior.java" startLine="16" startPosition="87" endLine="17" endPosition="70" />
-    <scopeInfo nodeId="5434557751112931023" fileName="FQNameClassifierSpecification_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="5434557751112931023" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5434557751112931023" fileName="FQNameClassifierSpecification_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="5434557751112931023" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5434557751112931023" fileName="FQNameClassifierSpecification_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="5434557751112931023" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="5434557751112931023" fileName="FQNameClassifierSpecification_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.FQNameClassifierSpecification_Behavior" />
+    <file name="FQNameClassifierSpecification_Behavior.java">
+      <node id="5434557751112931035" at="12,88,13,71" concept="3" />
+      <node id="5434557751113469079" at="16,87,17,70" concept="3" />
+      <node id="5434557751112931023" at="9,0,11,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5434557751112931023" at="12,0,15,0" concept="4" trace="virtual_getClassifierFqName_5434557751112930827#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5434557751112931023" at="16,0,19,0" concept="4" trace="virtual_getSModelReference_5434557751113441014#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="5434557751112931025" at="9,43,9,43" />
+      <scope id="5434557751112931030" at="12,88,13,71" />
+      <scope id="5434557751113469048" at="16,87,17,70" />
+      <scope id="5434557751112931023" at="9,0,11,0">
+        <var name="thisNode" id="5434557751112931023" />
+      </scope>
+      <scope id="5434557751112931023" at="12,0,15,0">
+        <var name="thisNode" id="5434557751112931023" />
+      </scope>
+      <scope id="5434557751112931023" at="16,0,19,0">
+        <var name="thisNode" id="5434557751112931023" />
+      </scope>
+      <unit id="5434557751112931023" at="8,0,20,0" name="jetbrains.mps.lang.script.behavior.FQNameClassifierSpecification_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/7941431147614164684">
-    <nodeInfo nodeId="4126624587000519435" fileName="DirectMethodSpecification_Behavior.java" startLine="13" startPosition="84" endLine="14" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7941431147614164684" fileName="DirectMethodSpecification_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7941431147614164684" fileName="DirectMethodSpecification_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_7941431147614164371#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="7941431147614164686" fileName="DirectMethodSpecification_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="7941431147614164691" fileName="DirectMethodSpecification_Behavior.java" startLine="13" startPosition="84" endLine="14" endPosition="180" />
-    <scopeInfo nodeId="7941431147614164684" fileName="DirectMethodSpecification_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="7941431147614164684" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7941431147614164684" fileName="DirectMethodSpecification_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="7941431147614164684" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="7941431147614164684" fileName="DirectMethodSpecification_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.DirectMethodSpecification_Behavior" />
+    <file name="DirectMethodSpecification_Behavior.java">
+      <node id="4126624587000519435" at="13,84,14,180" concept="3" />
+      <node id="7941431147614164684" at="10,0,12,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7941431147614164684" at="13,0,16,0" concept="4" trace="virtual_getPresentation_7941431147614164371#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="7941431147614164686" at="10,43,10,43" />
+      <scope id="7941431147614164691" at="13,84,14,180" />
+      <scope id="7941431147614164684" at="10,0,12,0">
+        <var name="thisNode" id="7941431147614164684" />
+      </scope>
+      <scope id="7941431147614164684" at="13,0,16,0">
+        <var name="thisNode" id="7941431147614164684" />
+      </scope>
+      <unit id="7941431147614164684" at="9,0,17,0" name="jetbrains.mps.lang.script.behavior.DirectMethodSpecification_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:517c56ca-40bd-411e-9f43-d0d0e622b0d9(jetbrains.mps.lang.script.behavior)/7941431147614173189">
-    <nodeInfo nodeId="7941431147614173202" fileName="FQNameMethodSpecification_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7941431147614173189" fileName="FQNameMethodSpecification_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7941431147614173189" fileName="FQNameMethodSpecification_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_7941431147614164371#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="7941431147614173191" fileName="FQNameMethodSpecification_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="7941431147614173196" fileName="FQNameMethodSpecification_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="62" />
-    <scopeInfo nodeId="7941431147614173189" fileName="FQNameMethodSpecification_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="7941431147614173189" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7941431147614173189" fileName="FQNameMethodSpecification_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="7941431147614173189" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="7941431147614173189" fileName="FQNameMethodSpecification_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.script.behavior.FQNameMethodSpecification_Behavior" />
+    <file name="FQNameMethodSpecification_Behavior.java">
+      <node id="7941431147614173202" at="12,84,13,62" concept="3" />
+      <node id="7941431147614173189" at="9,0,11,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7941431147614173189" at="12,0,15,0" concept="4" trace="virtual_getPresentation_7941431147614164371#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="7941431147614173191" at="9,43,9,43" />
+      <scope id="7941431147614173196" at="12,84,13,62" />
+      <scope id="7941431147614173189" at="9,0,11,0">
+        <var name="thisNode" id="7941431147614173189" />
+      </scope>
+      <scope id="7941431147614173189" at="12,0,15,0">
+        <var name="thisNode" id="7941431147614173189" />
+      </scope>
+      <unit id="7941431147614173189" at="8,0,16,0" name="jetbrains.mps.lang.script.behavior.FQNameMethodSpecification_Behavior" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

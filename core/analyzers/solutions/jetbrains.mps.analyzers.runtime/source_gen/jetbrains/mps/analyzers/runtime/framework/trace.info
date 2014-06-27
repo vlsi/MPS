@@ -1,65 +1,77 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:fc94574f-a075-45e6-9927-48e7e87153e6(jetbrains.mps.analyzers.runtime.framework)/178770917832659559">
-    <nodeInfo nodeId="178770917832659582" fileName="CustomAnalyzerRunner.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="178770917832659574" fileName="CustomAnalyzerRunner.java" startLine="13" startPosition="78" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="178770917832664363" fileName="CustomAnalyzerRunner.java" startLine="17" startPosition="33" endLine="18" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1535655005093792793" fileName="CustomAnalyzerRunner.java" startLine="21" startPosition="31" endLine="22" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="178770917832659570" fileName="CustomAnalyzerRunner.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomAnalyzerRunner#(Ljetbrains/mps/lang/dataFlow/framework/Program;Ljetbrains/mps/lang/dataFlow/framework/DataFlowAnalyzer;)V" />
-    <nodeInfo nodeId="178770917832664359" fileName="CustomAnalyzerRunner.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomAnalyzerRunner#()V" />
-    <nodeInfo nodeId="1535655005093792789" fileName="CustomAnalyzerRunner.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProgram#()Ljetbrains/mps/lang/dataFlow/framework/Program;" />
-    <scopeInfo nodeId="178770917832659573" fileName="CustomAnalyzerRunner.java" startLine="13" startPosition="78" endLine="14" endPosition="29" />
-    <scopeInfo nodeId="178770917832664362" fileName="CustomAnalyzerRunner.java" startLine="17" startPosition="33" endLine="18" endPosition="22" />
-    <scopeInfo nodeId="1535655005093792792" fileName="CustomAnalyzerRunner.java" startLine="21" startPosition="31" endLine="22" endPosition="21" />
-    <scopeInfo nodeId="178770917832659570" fileName="CustomAnalyzerRunner.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="178770917832659579" varName="analyzer" />
-      <varInfo nodeId="178770917832659577" varName="program" />
-    </scopeInfo>
-    <scopeInfo nodeId="178770917832664359" fileName="CustomAnalyzerRunner.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1535655005093792789" fileName="CustomAnalyzerRunner.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <unitInfo nodeId="178770917832659559" fileName="CustomAnalyzerRunner.java" startLine="10" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner" />
+    <file name="CustomAnalyzerRunner.java">
+      <node id="178770917832659582" at="11,0,12,0" concept="2" trace="myNode" />
+      <node id="178770917832659574" at="13,78,14,29" concept="5" />
+      <node id="178770917832664363" at="17,33,18,22" concept="5" />
+      <node id="1535655005093792793" at="21,31,22,21" concept="4" />
+      <node id="178770917832659570" at="13,0,16,0" concept="0" trace="CustomAnalyzerRunner#(Ljetbrains/mps/lang/dataFlow/framework/Program;Ljetbrains/mps/lang/dataFlow/framework/DataFlowAnalyzer;)V" />
+      <node id="178770917832664359" at="17,0,20,0" concept="0" trace="CustomAnalyzerRunner#()V" />
+      <node id="1535655005093792789" at="21,0,24,0" concept="3" trace="getProgram#()Ljetbrains/mps/lang/dataFlow/framework/Program;" />
+      <scope id="178770917832659573" at="13,78,14,29" />
+      <scope id="178770917832664362" at="17,33,18,22" />
+      <scope id="1535655005093792792" at="21,31,22,21" />
+      <scope id="178770917832659570" at="13,0,16,0">
+        <var name="analyzer" id="178770917832659579" />
+        <var name="program" id="178770917832659577" />
+      </scope>
+      <scope id="178770917832664359" at="17,0,20,0" />
+      <scope id="1535655005093792789" at="21,0,24,0" />
+      <unit id="178770917832659559" at="10,0,25,0" name="jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner" />
+    </file>
   </root>
   <root nodeRef="r:fc94574f-a075-45e6-9927-48e7e87153e6(jetbrains.mps.analyzers.runtime.framework)/752944717341761987">
-    <nodeInfo nodeId="752944717341761993" fileName="DataFlowConstructor.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7685333756920132846" fileName="DataFlowConstructor.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljetbrains/mps/lang/dataFlow/framework/Program;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="752944717341761989" fileName="DataFlowConstructor.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DataFlowConstructor#()V" />
-    <scopeInfo nodeId="752944717341761992" fileName="DataFlowConstructor.java" startLine="9" startPosition="32" endLine="9" endPosition="32" />
-    <scopeInfo nodeId="752944717341761993" fileName="DataFlowConstructor.java" startLine="12" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="7685333756920032268" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7685333756920132846" fileName="DataFlowConstructor.java" startLine="14" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="4943044633102141038" varName="node" />
-      <varInfo nodeId="7685333756920132850" varName="program" />
-    </scopeInfo>
-    <scopeInfo nodeId="752944717341761989" fileName="DataFlowConstructor.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <unitInfo nodeId="752944717341761987" fileName="DataFlowConstructor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
+    <file name="DataFlowConstructor.java">
+      <node id="752944717341761993" at="12,0,13,0" concept="3" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7685333756920132846" at="14,0,15,0" concept="3" trace="performActions#(Ljetbrains/mps/lang/dataFlow/framework/Program;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="752944717341761989" at="9,0,11,0" concept="0" trace="DataFlowConstructor#()V" />
+      <scope id="752944717341761992" at="9,32,9,32" />
+      <scope id="752944717341761993" at="12,0,13,0">
+        <var name="node" id="7685333756920032268" />
+      </scope>
+      <scope id="7685333756920132846" at="14,0,15,0">
+        <var name="node" id="4943044633102141038" />
+        <var name="program" id="7685333756920132850" />
+      </scope>
+      <scope id="752944717341761989" at="9,0,11,0" />
+      <unit id="752944717341761987" at="8,0,16,0" name="jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor" />
+    </file>
   </root>
   <root nodeRef="r:fc94574f-a075-45e6-9927-48e7e87153e6(jetbrains.mps.analyzers.runtime.framework)/7801926404027364448">
-    <nodeInfo nodeId="7801926404027364455" fileName="GeneratedInstruction.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameters" />
-    <nodeInfo nodeId="7801926404027364468" fileName="GeneratedInstruction.java" startLine="15" startPosition="31" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7801926404027364492" fileName="GeneratedInstruction.java" startLine="19" startPosition="41" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7801926404027364505" fileName="GeneratedInstruction.java" startLine="23" startPosition="32" endLine="24" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7801926404027364475" fileName="GeneratedInstruction.java" startLine="27" startPosition="38" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7801926404027364450" fileName="GeneratedInstruction.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratedInstruction#()V" />
-    <nodeInfo nodeId="7801926404027364463" fileName="GeneratedInstruction.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameters#()Ljava/util/List;" />
-    <nodeInfo nodeId="7801926404027364485" fileName="GeneratedInstruction.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameter#(I)Ljava/lang/Object;" />
-    <nodeInfo nodeId="7801926404027364500" fileName="GeneratedInstruction.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameter#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="7801926404027364470" fileName="GeneratedInstruction.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addParameter#(Ljava/lang/Object;)V" />
-    <scopeInfo nodeId="7801926404027364453" fileName="GeneratedInstruction.java" startLine="12" startPosition="33" endLine="12" endPosition="33" />
-    <scopeInfo nodeId="7801926404027364466" fileName="GeneratedInstruction.java" startLine="15" startPosition="31" endLine="16" endPosition="24" />
-    <scopeInfo nodeId="7801926404027364488" fileName="GeneratedInstruction.java" startLine="19" startPosition="41" endLine="20" endPosition="35" />
-    <scopeInfo nodeId="7801926404027364503" fileName="GeneratedInstruction.java" startLine="23" startPosition="32" endLine="24" endPosition="27" />
-    <scopeInfo nodeId="7801926404027364473" fileName="GeneratedInstruction.java" startLine="27" startPosition="38" endLine="28" endPosition="24" />
-    <scopeInfo nodeId="7801926404027364450" fileName="GeneratedInstruction.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="7801926404027364463" fileName="GeneratedInstruction.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="7801926404027364485" fileName="GeneratedInstruction.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="7801926404027364490" varName="index" />
-    </scopeInfo>
-    <scopeInfo nodeId="7801926404027364500" fileName="GeneratedInstruction.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="7801926404027364470" fileName="GeneratedInstruction.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="7801926404027364481" varName="p" />
-    </scopeInfo>
-    <unitInfo nodeId="7801926404027364448" fileName="GeneratedInstruction.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction" />
+    <file name="GeneratedInstruction.java">
+      <node id="7801926404027364455" at="10,0,11,0" concept="2" trace="myParameters" />
+      <node id="7801926404027364468" at="15,31,16,24" concept="4" />
+      <node id="7801926404027364492" at="19,41,20,35" concept="4" />
+      <node id="7801926404027364505" at="23,32,24,27" concept="4" />
+      <node id="7801926404027364475" at="27,38,28,24" concept="1" />
+      <node id="7801926404027364450" at="12,0,14,0" concept="0" trace="GeneratedInstruction#()V" />
+      <node id="7801926404027364463" at="15,0,18,0" concept="3" trace="getParameters#()Ljava/util/List;" />
+      <node id="7801926404027364485" at="19,0,22,0" concept="3" trace="getParameter#(I)Ljava/lang/Object;" />
+      <node id="7801926404027364500" at="23,0,26,0" concept="3" trace="getParameter#()Ljava/lang/Object;" />
+      <node id="7801926404027364470" at="27,0,30,0" concept="3" trace="addParameter#(Ljava/lang/Object;)V" />
+      <scope id="7801926404027364453" at="12,33,12,33" />
+      <scope id="7801926404027364466" at="15,31,16,24" />
+      <scope id="7801926404027364488" at="19,41,20,35" />
+      <scope id="7801926404027364503" at="23,32,24,27" />
+      <scope id="7801926404027364473" at="27,38,28,24" />
+      <scope id="7801926404027364450" at="12,0,14,0" />
+      <scope id="7801926404027364463" at="15,0,18,0" />
+      <scope id="7801926404027364485" at="19,0,22,0">
+        <var name="index" id="7801926404027364490" />
+      </scope>
+      <scope id="7801926404027364500" at="23,0,26,0" />
+      <scope id="7801926404027364470" at="27,0,30,0">
+        <var name="p" id="7801926404027364481" />
+      </scope>
+      <unit id="7801926404027364448" at="9,0,31,0" name="jetbrains.mps.analyzers.runtime.framework.GeneratedInstruction" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

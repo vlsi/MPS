@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:92932ea9-7c1a-42ec-ba50-b485e2406f2b(jetbrains.mps.ide.ui.util)/4744614252206716878">
-    <nodeInfo nodeId="4744614252206717045" fileName="NodeAttributesUtil.java" startLine="11" startPosition="54" endLine="12" endPosition="357" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4744614252206717004" fileName="NodeAttributesUtil.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isDeprecatedNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="4744614252206717007" fileName="NodeAttributesUtil.java" startLine="11" startPosition="54" endLine="12" endPosition="357" />
-    <scopeInfo nodeId="4744614252206717004" fileName="NodeAttributesUtil.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="4744614252206717018" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="4744614252206716878" fileName="NodeAttributesUtil.java" startLine="10" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ide.ui.util.NodeAttributesUtil" />
+    <file name="NodeAttributesUtil.java">
+      <node id="4744614252206717045" at="11,54,12,357" concept="0" />
+      <node id="4744614252206717004" at="11,0,14,0" concept="1" trace="isDeprecatedNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="4744614252206717007" at="11,54,12,357" />
+      <scope id="4744614252206717004" at="11,0,14,0">
+        <var name="node" id="4744614252206717018" />
+      </scope>
+      <unit id="4744614252206716878" at="10,0,15,0" name="jetbrains.mps.ide.ui.util.NodeAttributesUtil" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

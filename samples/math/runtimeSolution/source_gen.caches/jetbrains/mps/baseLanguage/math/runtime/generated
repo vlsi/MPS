@@ -23,13 +23,13 @@
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="Matrix.java" />
   </source>
   <source id="877422884702758832" name="MatrixScalarOperations" hash="6gx5hspjfzjc88y5zu8r3v3lzp2ylw">
     <file name="MatrixScalarOperations.java" />
   </source>
   <source id="877422884702771039" name="Complex" hash="161qqiz57z57dlvftacomilyzpkek92">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Complex.java" />
   </source>
   <source id="877422884702865830" name="BigComplexScalarOperations" hash="7ixlupwl0ukt8pcrcyh89t0hb058l8m">

@@ -1,399 +1,421 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)/2974008768272253139">
-    <nodeInfo nodeId="4454107004198491243" fileName="IdeaJavaCompiler.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValid#()Z" />
-    <nodeInfo nodeId="4652478519508015231" fileName="IdeaJavaCompiler.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compileModules#([Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/make/MPSCompilationResult;" />
-    <scopeInfo nodeId="4454107004198491243" fileName="IdeaJavaCompiler.java" startLine="9" startPosition="0" endLine="10" endPosition="0" />
-    <scopeInfo nodeId="4652478519508015231" fileName="IdeaJavaCompiler.java" startLine="10" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="4652478519508016215" varName="modules" />
-    </scopeInfo>
-    <unitInfo nodeId="2974008768272253139" fileName="IdeaJavaCompiler.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler" />
+    <file name="IdeaJavaCompiler.java">
+      <node id="4454107004198491243" at="9,0,10,0" concept="6" trace="isValid#()Z" />
+      <node id="4652478519508015231" at="10,0,11,0" concept="6" trace="compileModules#([Lorg/jetbrains/mps/openapi/module/SModule;)Ljetbrains/mps/make/MPSCompilationResult;" />
+      <scope id="4454107004198491243" at="9,0,10,0" />
+      <scope id="4652478519508015231" at="10,0,11,0">
+        <var name="modules" id="4652478519508016215" />
+      </scope>
+      <unit id="2974008768272253139" at="8,0,12,0" name="jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler" />
+    </file>
   </root>
   <root nodeRef="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)/4101850974336562102">
-    <nodeInfo nodeId="4101850974336643771" fileName="FileDeltaCollector.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDelta" />
-    <nodeInfo nodeId="4101850974336661839" fileName="FileDeltaCollector.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOutputDir" />
-    <nodeInfo nodeId="4101850974336746541" fileName="FileDeltaCollector.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessor" />
-    <nodeInfo nodeId="4101850974336643775" fileName="FileDeltaCollector.java" startLine="16" startPosition="102" endLine="17" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4101850974336662902" fileName="FileDeltaCollector.java" startLine="17" startPosition="29" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4101850974336749028" fileName="FileDeltaCollector.java" startLine="18" startPosition="28" endLine="19" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4101850974336825637" fileName="FileDeltaCollector.java" startLine="23" startPosition="55" endLine="24" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4101850974336814553" fileName="FileDeltaCollector.java" startLine="25" startPosition="49" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4101850974336814566" fileName="FileDeltaCollector.java" startLine="27" startPosition="12" endLine="28" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4101850974336850572" fileName="FileDeltaCollector.java" startLine="33" startPosition="56" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4101850974336850579" fileName="FileDeltaCollector.java" startLine="35" startPosition="49" endLine="36" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4101850974336850591" fileName="FileDeltaCollector.java" startLine="37" startPosition="12" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4101850974336851672" fileName="FileDeltaCollector.java" startLine="43" startPosition="55" endLine="44" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4101850974336851679" fileName="FileDeltaCollector.java" startLine="45" startPosition="49" endLine="46" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4101850974336851691" fileName="FileDeltaCollector.java" startLine="47" startPosition="12" endLine="48" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4101850974336844431" fileName="FileDeltaCollector.java" startLine="53" startPosition="37" endLine="54" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4101850974336844437" fileName="FileDeltaCollector.java" startLine="54" startPosition="31" endLine="55" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4101850974336844443" fileName="FileDeltaCollector.java" startLine="55" startPosition="23" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4101850974336738548" fileName="FileDeltaCollector.java" startLine="59" startPosition="38" endLine="60" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4101850974336814564" fileName="FileDeltaCollector.java" startLine="27" startPosition="10" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4101850974336850589" fileName="FileDeltaCollector.java" startLine="37" startPosition="10" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4101850974336851689" fileName="FileDeltaCollector.java" startLine="47" startPosition="10" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4101850974336738532" fileName="FileDeltaCollector.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="4101850974336568679" fileName="FileDeltaCollector.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FileDeltaCollector#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/internal/make/runtime/util/FilesDelta;Ljetbrains/mps/internal/make/runtime/java/FileProcessor;)V" />
-    <nodeInfo nodeId="4101850974336814551" fileName="FileDeltaCollector.java" startLine="24" startPosition="31" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4101850974336850577" fileName="FileDeltaCollector.java" startLine="34" startPosition="31" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4101850974336851677" fileName="FileDeltaCollector.java" startLine="44" startPosition="31" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4101850974336563175" fileName="FileDeltaCollector.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="touch#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="4101850974336562989" fileName="FileDeltaCollector.java" startLine="22" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveStream#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4101850974336563156" fileName="FileDeltaCollector.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveStream#(Ljava/lang/String;Lorg/jdom/Element;)V" />
-    <nodeInfo nodeId="4101850974336563165" fileName="FileDeltaCollector.java" startLine="42" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveStream#(Ljava/lang/String;[B)V" />
-    <scopeInfo nodeId="4101850974336814552" fileName="FileDeltaCollector.java" startLine="25" startPosition="49" endLine="26" endPosition="28" />
-    <scopeInfo nodeId="4101850974336814565" fileName="FileDeltaCollector.java" startLine="27" startPosition="12" endLine="28" endPosition="25" />
-    <scopeInfo nodeId="4101850974336850578" fileName="FileDeltaCollector.java" startLine="35" startPosition="49" endLine="36" endPosition="28" />
-    <scopeInfo nodeId="4101850974336850590" fileName="FileDeltaCollector.java" startLine="37" startPosition="12" endLine="38" endPosition="25" />
-    <scopeInfo nodeId="4101850974336851678" fileName="FileDeltaCollector.java" startLine="45" startPosition="49" endLine="46" endPosition="28" />
-    <scopeInfo nodeId="4101850974336851690" fileName="FileDeltaCollector.java" startLine="47" startPosition="12" endLine="48" endPosition="25" />
-    <scopeInfo nodeId="4101850974336738539" fileName="FileDeltaCollector.java" startLine="59" startPosition="38" endLine="60" endPosition="43" />
-    <scopeInfo nodeId="4101850974336568682" fileName="FileDeltaCollector.java" startLine="16" startPosition="102" endLine="19" endPosition="32" />
-    <scopeInfo nodeId="4101850974336563181" fileName="FileDeltaCollector.java" startLine="53" startPosition="37" endLine="56" endPosition="25">
-      <varInfo nodeId="4101850974336844432" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4101850974336738532" fileName="FileDeltaCollector.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="4101850974336738535" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="4101850974336568679" fileName="FileDeltaCollector.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="4101850974336643320" varName="deltaCollector" />
-      <varInfo nodeId="4101850974336748071" varName="fileProcessor" />
-      <varInfo nodeId="4101850974336658856" varName="outputDir" />
-    </scopeInfo>
-    <scopeInfo nodeId="4101850974336562997" fileName="FileDeltaCollector.java" startLine="23" startPosition="55" endLine="29" endPosition="5">
-      <varInfo nodeId="4101850974336825638" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4101850974336563164" fileName="FileDeltaCollector.java" startLine="33" startPosition="56" endLine="39" endPosition="5">
-      <varInfo nodeId="4101850974336850573" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4101850974336563174" fileName="FileDeltaCollector.java" startLine="43" startPosition="55" endLine="49" endPosition="5">
-      <varInfo nodeId="4101850974336851673" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4101850974336563175" fileName="FileDeltaCollector.java" startLine="52" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="4101850974336563179" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="4101850974336562989" fileName="FileDeltaCollector.java" startLine="22" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="4101850974336562995" varName="content" />
-      <varInfo nodeId="4101850974336562993" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="4101850974336563156" fileName="FileDeltaCollector.java" startLine="32" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="4101850974336563162" varName="element" />
-      <varInfo nodeId="4101850974336563160" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="4101850974336563165" fileName="FileDeltaCollector.java" startLine="42" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="4101850974336563171" varName="content" />
-      <varInfo nodeId="4101850974336563169" varName="name" />
-    </scopeInfo>
-    <unitInfo nodeId="4101850974336562102" fileName="FileDeltaCollector.java" startLine="10" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileDeltaCollector" />
+    <file name="FileDeltaCollector.java">
+      <node id="4101850974336643771" at="11,0,12,0" concept="3" trace="myDelta" />
+      <node id="4101850974336661839" at="12,0,13,0" concept="3" trace="myOutputDir" />
+      <node id="4101850974336746541" at="13,0,14,0" concept="3" trace="myProcessor" />
+      <node id="4101850974336643775" at="16,102,17,29" concept="2" />
+      <node id="4101850974336662902" at="17,29,18,28" concept="2" />
+      <node id="4101850974336749028" at="18,28,19,32" concept="2" />
+      <node id="4101850974336825637" at="23,55,24,31" concept="7" />
+      <node id="4101850974336814553" at="25,49,26,28" concept="2" />
+      <node id="4101850974336814566" at="27,12,28,25" concept="2" />
+      <node id="4101850974336850572" at="33,56,34,31" concept="7" />
+      <node id="4101850974336850579" at="35,49,36,28" concept="2" />
+      <node id="4101850974336850591" at="37,12,38,25" concept="2" />
+      <node id="4101850974336851672" at="43,55,44,31" concept="7" />
+      <node id="4101850974336851679" at="45,49,46,28" concept="2" />
+      <node id="4101850974336851691" at="47,12,48,25" concept="2" />
+      <node id="4101850974336844431" at="53,37,54,31" concept="7" />
+      <node id="4101850974336844437" at="54,31,55,23" concept="2" />
+      <node id="4101850974336844443" at="55,23,56,25" concept="8" />
+      <node id="4101850974336738548" at="59,38,60,43" concept="8" />
+      <node id="4101850974336814564" at="27,10,29,5" concept="0" />
+      <node id="4101850974336850589" at="37,10,39,5" concept="0" />
+      <node id="4101850974336851689" at="47,10,49,5" concept="0" />
+      <node id="4101850974336738532" at="59,0,62,0" concept="6" trace="getFile#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
+      <node id="4101850974336568679" at="16,0,21,0" concept="1" trace="FileDeltaCollector#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/internal/make/runtime/util/FilesDelta;Ljetbrains/mps/internal/make/runtime/java/FileProcessor;)V" />
+      <node id="4101850974336814551" at="24,31,29,5" concept="5" />
+      <node id="4101850974336850577" at="34,31,39,5" concept="5" />
+      <node id="4101850974336851677" at="44,31,49,5" concept="5" />
+      <node id="4101850974336563175" at="52,0,58,0" concept="6" trace="touch#(Ljava/lang/String;)Z" />
+      <node id="4101850974336562989" at="22,0,31,0" concept="6" trace="saveStream#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="4101850974336563156" at="32,0,41,0" concept="6" trace="saveStream#(Ljava/lang/String;Lorg/jdom/Element;)V" />
+      <node id="4101850974336563165" at="42,0,51,0" concept="6" trace="saveStream#(Ljava/lang/String;[B)V" />
+      <scope id="4101850974336814552" at="25,49,26,28" />
+      <scope id="4101850974336814565" at="27,12,28,25" />
+      <scope id="4101850974336850578" at="35,49,36,28" />
+      <scope id="4101850974336850590" at="37,12,38,25" />
+      <scope id="4101850974336851678" at="45,49,46,28" />
+      <scope id="4101850974336851690" at="47,12,48,25" />
+      <scope id="4101850974336738539" at="59,38,60,43" />
+      <scope id="4101850974336568682" at="16,102,19,32" />
+      <scope id="4101850974336563181" at="53,37,56,25">
+        <var name="file" id="4101850974336844432" />
+      </scope>
+      <scope id="4101850974336738532" at="59,0,62,0">
+        <var name="name" id="4101850974336738535" />
+      </scope>
+      <scope id="4101850974336568679" at="16,0,21,0">
+        <var name="deltaCollector" id="4101850974336643320" />
+        <var name="fileProcessor" id="4101850974336748071" />
+        <var name="outputDir" id="4101850974336658856" />
+      </scope>
+      <scope id="4101850974336562997" at="23,55,29,5">
+        <var name="file" id="4101850974336825638" />
+      </scope>
+      <scope id="4101850974336563164" at="33,56,39,5">
+        <var name="file" id="4101850974336850573" />
+      </scope>
+      <scope id="4101850974336563174" at="43,55,49,5">
+        <var name="file" id="4101850974336851673" />
+      </scope>
+      <scope id="4101850974336563175" at="52,0,58,0">
+        <var name="name" id="4101850974336563179" />
+      </scope>
+      <scope id="4101850974336562989" at="22,0,31,0">
+        <var name="content" id="4101850974336562995" />
+        <var name="name" id="4101850974336562993" />
+      </scope>
+      <scope id="4101850974336563156" at="32,0,41,0">
+        <var name="element" id="4101850974336563162" />
+        <var name="name" id="4101850974336563160" />
+      </scope>
+      <scope id="4101850974336563165" at="42,0,51,0">
+        <var name="content" id="4101850974336563171" />
+        <var name="name" id="4101850974336563169" />
+      </scope>
+      <unit id="4101850974336562102" at="10,0,63,0" name="jetbrains.mps.internal.make.runtime.java.FileDeltaCollector" />
+    </file>
   </root>
   <root nodeRef="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)/4328738523548225887">
-    <nodeInfo nodeId="4328738523548225948" fileName="FileProcessor.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4328738523548225953" fileName="FileProcessor.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModels" />
-    <nodeInfo nodeId="4328738523548225960" fileName="FileProcessor.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFilesAndContents" />
-    <nodeInfo nodeId="4328738523548225967" fileName="FileProcessor.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFilesToDelete" />
-    <nodeInfo nodeId="4328738523548225974" fileName="FileProcessor.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="LOCK" />
-    <nodeInfo nodeId="4328738523548225991" fileName="FileProcessor.java" startLine="37" startPosition="25" endLine="38" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226004" fileName="FileProcessor.java" startLine="42" startPosition="58" endLine="43" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548226020" fileName="FileProcessor.java" startLine="46" startPosition="59" endLine="47" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4145682539058277854" fileName="FileProcessor.java" startLine="50" startPosition="58" endLine="51" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548226034" fileName="FileProcessor.java" startLine="54" startPosition="76" endLine="55" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2813163484575228077" fileName="FileProcessor.java" startLine="55" startPosition="43" endLine="56" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548226046" fileName="FileProcessor.java" startLine="59" startPosition="54" endLine="60" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226060" fileName="FileProcessor.java" startLine="64" startPosition="76" endLine="65" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226069" fileName="FileProcessor.java" startLine="67" startPosition="40" endLine="68" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226073" fileName="FileProcessor.java" startLine="69" startPosition="5" endLine="70" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4572289200694418578" fileName="FileProcessor.java" startLine="73" startPosition="41" endLine="74" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4572289200694494544" fileName="FileProcessor.java" startLine="75" startPosition="76" endLine="76" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4572289200694577503" fileName="FileProcessor.java" startLine="77" startPosition="5" endLine="78" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548225890" fileName="FileProcessor.java" startLine="82" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFile" />
-    <nodeInfo nodeId="4328738523548225893" fileName="FileProcessor.java" startLine="83" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContent" />
-    <nodeInfo nodeId="4328738523548226079" fileName="FileProcessor.java" startLine="85" startPosition="75" endLine="86" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226083" fileName="FileProcessor.java" startLine="86" startPosition="20" endLine="87" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226088" fileName="FileProcessor.java" startLine="90" startPosition="25" endLine="91" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226094" fileName="FileProcessor.java" startLine="95" startPosition="30" endLine="96" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2813163484575224645" fileName="FileProcessor.java" startLine="101" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isUnchanged#(Ljetbrains/mps/vfs/IFile;)Z" />
-    <nodeInfo nodeId="4328738523548225911" fileName="FileProcessor.java" startLine="102" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveToFile#(Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="4572289200694547115" fileName="FileProcessor.java" startLine="103" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calcApproximateSize#()I" />
-    <nodeInfo nodeId="4328738523548225919" fileName="FileProcessor.java" startLine="107" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContent" />
-    <nodeInfo nodeId="4328738523548226101" fileName="FileProcessor.java" startLine="109" startPosition="47" endLine="110" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226106" fileName="FileProcessor.java" startLine="114" startPosition="40" endLine="115" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4328738523548226137" fileName="FileProcessor.java" startLine="116" startPosition="11" endLine="117" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226147" fileName="FileProcessor.java" startLine="117" startPosition="117" endLine="118" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226113" fileName="FileProcessor.java" startLine="119" startPosition="31" endLine="120" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226132" fileName="FileProcessor.java" startLine="123" startPosition="15" endLine="124" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2813163484575235539" fileName="FileProcessor.java" startLine="133" startPosition="29" endLine="134" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="798733910009222269" fileName="FileProcessor.java" startLine="135" startPosition="7" endLine="136" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="798733910009230593" fileName="FileProcessor.java" startLine="136" startPosition="35" endLine="137" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="798733910009230551" fileName="FileProcessor.java" startLine="138" startPosition="11" endLine="139" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="798733910009230601" fileName="FileProcessor.java" startLine="139" startPosition="109" endLine="140" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="798733910009264614" fileName="FileProcessor.java" startLine="141" startPosition="52" endLine="142" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="798733910009264633" fileName="FileProcessor.java" startLine="143" startPosition="9" endLine="144" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="798733910009230582" fileName="FileProcessor.java" startLine="145" startPosition="32" endLine="146" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="798733910009230536" fileName="FileProcessor.java" startLine="149" startPosition="31" endLine="150" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="798733910009230586" fileName="FileProcessor.java" startLine="152" startPosition="34" endLine="153" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4572289200694599568" fileName="FileProcessor.java" startLine="159" startPosition="38" endLine="160" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4145682539058277873" fileName="FileProcessor.java" startLine="165" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContent" />
-    <nodeInfo nodeId="4145682539058277884" fileName="FileProcessor.java" startLine="167" startPosition="47" endLine="168" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4145682539058277894" fileName="FileProcessor.java" startLine="172" startPosition="40" endLine="173" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4145682539058277925" fileName="FileProcessor.java" startLine="174" startPosition="11" endLine="175" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4145682539058277931" fileName="FileProcessor.java" startLine="175" startPosition="41" endLine="176" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4145682539058277901" fileName="FileProcessor.java" startLine="177" startPosition="31" endLine="178" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4145682539058277920" fileName="FileProcessor.java" startLine="181" startPosition="15" endLine="182" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2813163484575235132" fileName="FileProcessor.java" startLine="191" startPosition="29" endLine="192" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="798733910009264676" fileName="FileProcessor.java" startLine="193" startPosition="7" endLine="194" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="798733910009264704" fileName="FileProcessor.java" startLine="195" startPosition="36" endLine="196" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="798733910009264708" fileName="FileProcessor.java" startLine="197" startPosition="7" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="798733910009264710" fileName="FileProcessor.java" startLine="198" startPosition="0" endLine="199" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="798733910009264727" fileName="FileProcessor.java" startLine="199" startPosition="46" endLine="200" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="798733910009264771" fileName="FileProcessor.java" startLine="201" startPosition="11" endLine="202" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="798733910009264805" fileName="FileProcessor.java" startLine="203" startPosition="38" endLine="204" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="798733910009264821" fileName="FileProcessor.java" startLine="205" startPosition="9" endLine="206" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="798733910009264741" fileName="FileProcessor.java" startLine="207" startPosition="32" endLine="208" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="798733910009264760" fileName="FileProcessor.java" startLine="211" startPosition="15" endLine="212" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="798733910009264768" fileName="FileProcessor.java" startLine="213" startPosition="36" endLine="214" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4572289200694629057" fileName="FileProcessor.java" startLine="221" startPosition="38" endLine="222" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548225935" fileName="FileProcessor.java" startLine="227" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDocument" />
-    <nodeInfo nodeId="4328738523548226154" fileName="FileProcessor.java" startLine="229" startPosition="45" endLine="230" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226170" fileName="FileProcessor.java" startLine="235" startPosition="11" endLine="236" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4328738523548226162" fileName="FileProcessor.java" startLine="237" startPosition="31" endLine="238" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4572289200694849045" fileName="FileProcessor.java" startLine="246" startPosition="11" endLine="247" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4572289200694818317" fileName="FileProcessor.java" startLine="248" startPosition="29" endLine="249" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2813163484575227454" fileName="FileProcessor.java" startLine="254" startPosition="44" endLine="255" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4328738523548225979" fileName="FileProcessor.java" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FileProcessor#()V" />
-    <nodeInfo nodeId="4328738523548225988" fileName="FileProcessor.java" startLine="36" startPosition="55" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="4328738523548225996" fileName="FileProcessor.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveContent#(Ljetbrains/mps/vfs/IFile;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="4328738523548226012" fileName="FileProcessor.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveContent#(Ljetbrains/mps/vfs/IFile;Lorg/jdom/Element;)Z" />
-    <nodeInfo nodeId="4145682539058277846" fileName="FileProcessor.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveContent#(Ljetbrains/mps/vfs/IFile;[B)Z" />
-    <nodeInfo nodeId="4328738523548226039" fileName="FileProcessor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="filesToDelete#(Ljava/util/Collection;)V" />
-    <nodeInfo nodeId="4328738523548226055" fileName="FileProcessor.java" startLine="63" startPosition="30" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4328738523548226064" fileName="FileProcessor.java" startLine="66" startPosition="5" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4572289200694441110" fileName="FileProcessor.java" startLine="74" startPosition="17" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4328738523548225903" fileName="FileProcessor.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="save#()V" />
-    <nodeInfo nodeId="4328738523548225922" fileName="FileProcessor.java" startLine="109" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringFileContent#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2813163484575235533" fileName="FileProcessor.java" startLine="132" startPosition="44" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="798733910009230605" fileName="FileProcessor.java" startLine="140" startPosition="20" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="798733910009222284" fileName="FileProcessor.java" startLine="148" startPosition="13" endLine="151" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4145682539058277877" fileName="FileProcessor.java" startLine="167" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BinaryFileContent#([B)V" />
-    <nodeInfo nodeId="2813163484575233346" fileName="FileProcessor.java" startLine="190" startPosition="44" endLine="193" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="798733910009264685" fileName="FileProcessor.java" startLine="194" startPosition="31" endLine="197" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="798733910009264792" fileName="FileProcessor.java" startLine="202" startPosition="40" endLine="205" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4328738523548225938" fileName="FileProcessor.java" startLine="229" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XMLFileContent#(Lorg/jdom/Element;)V" />
-    <nodeInfo nodeId="4328738523548226028" fileName="FileProcessor.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveContent#(Ljetbrains/mps/internal/make/runtime/java/FileProcessor/FileAndContent;)Z" />
-    <nodeInfo nodeId="4328738523548225896" fileName="FileProcessor.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FileAndContent#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/internal/make/runtime/java/FileProcessor/FileContent;)V" />
-    <nodeInfo nodeId="4328738523548225906" fileName="FileProcessor.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4328738523548226126" fileName="FileProcessor.java" startLine="122" startPosition="29" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4572289200694594305" fileName="FileProcessor.java" startLine="158" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calcApproximateSize#()I" />
-    <nodeInfo nodeId="4145682539058277914" fileName="FileProcessor.java" startLine="180" startPosition="29" endLine="184" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4572289200694623655" fileName="FileProcessor.java" startLine="220" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calcApproximateSize#()I" />
-    <nodeInfo nodeId="2813163484575227446" fileName="FileProcessor.java" startLine="253" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isUnchanged#(Ljetbrains/mps/vfs/IFile;)Z" />
-    <nodeInfo nodeId="4328738523548225982" fileName="FileProcessor.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invalidateModel#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="798733910009264754" fileName="FileProcessor.java" startLine="210" startPosition="29" endLine="215" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4328738523548226159" fileName="FileProcessor.java" startLine="234" startPosition="40" endLine="239" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4572289200694735235" fileName="FileProcessor.java" startLine="245" startPosition="38" endLine="250" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4328738523548226121" fileName="FileProcessor.java" startLine="121" startPosition="17" endLine="127" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4145682539058277909" fileName="FileProcessor.java" startLine="179" startPosition="17" endLine="185" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4572289200694388864" fileName="FileProcessor.java" startLine="73" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calcApproximateSize#()I" />
-    <nodeInfo nodeId="798733910009230544" fileName="FileProcessor.java" startLine="147" startPosition="17" endLine="154" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="798733910009264746" fileName="FileProcessor.java" startLine="209" startPosition="17" endLine="216" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4328738523548225943" fileName="FileProcessor.java" startLine="233" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveToFile#(Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="4572289200694645593" fileName="FileProcessor.java" startLine="244" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calcApproximateSize#()I" />
-    <nodeInfo nodeId="4328738523548226051" fileName="FileProcessor.java" startLine="63" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flushChanges#()V" />
-    <nodeInfo nodeId="4328738523548226110" fileName="FileProcessor.java" startLine="115" startPosition="39" endLine="128" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4145682539058277898" fileName="FileProcessor.java" startLine="173" startPosition="33" endLine="186" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4328738523548225927" fileName="FileProcessor.java" startLine="113" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveToFile#(Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="4145682539058277888" fileName="FileProcessor.java" startLine="171" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="saveToFile#(Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="798733910009264744" fileName="FileProcessor.java" startLine="200" startPosition="32" endLine="217" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="798733910009222282" fileName="FileProcessor.java" startLine="137" startPosition="46" endLine="155" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="798733910009222239" fileName="FileProcessor.java" startLine="131" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isUnchanged#(Ljetbrains/mps/vfs/IFile;)Z" />
-    <nodeInfo nodeId="798733910009264651" fileName="FileProcessor.java" startLine="189" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isUnchanged#(Ljetbrains/mps/vfs/IFile;)Z" />
-    <scopeInfo nodeId="4328738523548225981" fileName="FileProcessor.java" startLine="33" startPosition="26" endLine="33" endPosition="26" />
-    <scopeInfo nodeId="4328738523548226127" fileName="FileProcessor.java" startLine="125" startPosition="0" endLine="125" endPosition="41">
-      <varInfo nodeId="4328738523548226129" varName="ignored" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548226128" fileName="FileProcessor.java" startLine="125" startPosition="41" endLine="125" endPosition="41" />
-    <scopeInfo nodeId="4145682539058277915" fileName="FileProcessor.java" startLine="183" startPosition="0" endLine="183" endPosition="41">
-      <varInfo nodeId="4145682539058277917" varName="ignored" />
-    </scopeInfo>
-    <scopeInfo nodeId="4145682539058277916" fileName="FileProcessor.java" startLine="183" startPosition="41" endLine="183" endPosition="41" />
-    <scopeInfo nodeId="4328738523548225990" fileName="FileProcessor.java" startLine="37" startPosition="25" endLine="38" endPosition="36" />
-    <scopeInfo nodeId="4328738523548226003" fileName="FileProcessor.java" startLine="42" startPosition="58" endLine="43" endPosition="109" />
-    <scopeInfo nodeId="4328738523548226019" fileName="FileProcessor.java" startLine="46" startPosition="59" endLine="47" endPosition="106" />
-    <scopeInfo nodeId="4145682539058277853" fileName="FileProcessor.java" startLine="50" startPosition="58" endLine="51" endPosition="109" />
-    <scopeInfo nodeId="4328738523548226045" fileName="FileProcessor.java" startLine="59" startPosition="54" endLine="60" endPosition="34" />
-    <scopeInfo nodeId="4328738523548226059" fileName="FileProcessor.java" startLine="64" startPosition="76" endLine="65" endPosition="28" />
-    <scopeInfo nodeId="4328738523548226068" fileName="FileProcessor.java" startLine="67" startPosition="40" endLine="68" endPosition="20" />
-    <scopeInfo nodeId="4572289200694441112" fileName="FileProcessor.java" startLine="75" startPosition="76" endLine="76" endPosition="61" />
-    <scopeInfo nodeId="4328738523548226087" fileName="FileProcessor.java" startLine="90" startPosition="25" endLine="91" endPosition="35" />
-    <scopeInfo nodeId="4328738523548226093" fileName="FileProcessor.java" startLine="95" startPosition="30" endLine="96" endPosition="31" />
-    <scopeInfo nodeId="2813163484575224645" fileName="FileProcessor.java" startLine="101" startPosition="0" endLine="102" endPosition="0">
-      <varInfo nodeId="2813163484575226428" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548225911" fileName="FileProcessor.java" startLine="102" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="4328738523548225914" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4572289200694547115" fileName="FileProcessor.java" startLine="103" startPosition="0" endLine="104" endPosition="0" />
-    <scopeInfo nodeId="4328738523548226100" fileName="FileProcessor.java" startLine="109" startPosition="47" endLine="110" endPosition="26" />
-    <scopeInfo nodeId="4328738523548226111" fileName="FileProcessor.java" startLine="119" startPosition="0" endLine="120" endPosition="41">
-      <varInfo nodeId="4328738523548226118" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548226112" fileName="FileProcessor.java" startLine="119" startPosition="31" endLine="120" endPosition="41" />
-    <scopeInfo nodeId="4328738523548226131" fileName="FileProcessor.java" startLine="123" startPosition="15" endLine="124" endPosition="27" />
-    <scopeInfo nodeId="2813163484575235538" fileName="FileProcessor.java" startLine="133" startPosition="29" endLine="134" endPosition="21" />
-    <scopeInfo nodeId="798733910009230607" fileName="FileProcessor.java" startLine="141" startPosition="52" endLine="142" endPosition="40" />
-    <scopeInfo nodeId="798733910009222277" fileName="FileProcessor.java" startLine="145" startPosition="0" endLine="146" endPosition="21">
-      <varInfo nodeId="798733910009222278" varName="ex" />
-    </scopeInfo>
-    <scopeInfo nodeId="798733910009222280" fileName="FileProcessor.java" startLine="145" startPosition="32" endLine="146" endPosition="21" />
-    <scopeInfo nodeId="798733910009222286" fileName="FileProcessor.java" startLine="149" startPosition="31" endLine="150" endPosition="27" />
-    <scopeInfo nodeId="798733910009230547" fileName="FileProcessor.java" startLine="152" startPosition="0" endLine="153" endPosition="23">
-      <varInfo nodeId="798733910009230548" varName="ex" />
-    </scopeInfo>
-    <scopeInfo nodeId="798733910009230550" fileName="FileProcessor.java" startLine="152" startPosition="34" endLine="153" endPosition="23" />
-    <scopeInfo nodeId="4572289200694594309" fileName="FileProcessor.java" startLine="159" startPosition="38" endLine="160" endPosition="41" />
-    <scopeInfo nodeId="4145682539058277883" fileName="FileProcessor.java" startLine="167" startPosition="47" endLine="168" endPosition="26" />
-    <scopeInfo nodeId="4145682539058277899" fileName="FileProcessor.java" startLine="177" startPosition="0" endLine="178" endPosition="41">
-      <varInfo nodeId="4145682539058277906" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4145682539058277900" fileName="FileProcessor.java" startLine="177" startPosition="31" endLine="178" endPosition="41" />
-    <scopeInfo nodeId="4145682539058277919" fileName="FileProcessor.java" startLine="181" startPosition="15" endLine="182" endPosition="27" />
-    <scopeInfo nodeId="2813163484575233348" fileName="FileProcessor.java" startLine="191" startPosition="29" endLine="192" endPosition="21" />
-    <scopeInfo nodeId="798733910009264686" fileName="FileProcessor.java" startLine="195" startPosition="36" endLine="196" endPosition="21" />
-    <scopeInfo nodeId="798733910009264793" fileName="FileProcessor.java" startLine="203" startPosition="38" endLine="204" endPosition="23" />
-    <scopeInfo nodeId="798733910009264736" fileName="FileProcessor.java" startLine="207" startPosition="0" endLine="208" endPosition="21">
-      <varInfo nodeId="798733910009264737" varName="ex" />
-    </scopeInfo>
-    <scopeInfo nodeId="798733910009264739" fileName="FileProcessor.java" startLine="207" startPosition="32" endLine="208" endPosition="21" />
-    <scopeInfo nodeId="798733910009264755" fileName="FileProcessor.java" startLine="211" startPosition="15" endLine="212" endPosition="27" />
-    <scopeInfo nodeId="798733910009264756" fileName="FileProcessor.java" startLine="213" startPosition="0" endLine="214" endPosition="25">
-      <varInfo nodeId="798733910009264757" varName="ex" />
-    </scopeInfo>
-    <scopeInfo nodeId="798733910009264759" fileName="FileProcessor.java" startLine="213" startPosition="36" endLine="214" endPosition="25" />
-    <scopeInfo nodeId="4572289200694623659" fileName="FileProcessor.java" startLine="221" startPosition="38" endLine="222" endPosition="30" />
-    <scopeInfo nodeId="4328738523548226153" fileName="FileProcessor.java" startLine="229" startPosition="45" endLine="230" endPosition="41" />
-    <scopeInfo nodeId="4328738523548226169" fileName="FileProcessor.java" startLine="235" startPosition="11" endLine="236" endPosition="49" />
-    <scopeInfo nodeId="4328738523548226160" fileName="FileProcessor.java" startLine="237" startPosition="0" endLine="238" endPosition="41">
-      <varInfo nodeId="4328738523548226167" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548226161" fileName="FileProcessor.java" startLine="237" startPosition="31" endLine="238" endPosition="41" />
-    <scopeInfo nodeId="4572289200694735237" fileName="FileProcessor.java" startLine="246" startPosition="11" endLine="247" endPosition="57" />
-    <scopeInfo nodeId="4572289200694735238" fileName="FileProcessor.java" startLine="248" startPosition="0" endLine="249" endPosition="38">
-      <varInfo nodeId="4572289200694735240" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4572289200694735244" fileName="FileProcessor.java" startLine="248" startPosition="29" endLine="249" endPosition="38" />
-    <scopeInfo nodeId="2813163484575227452" fileName="FileProcessor.java" startLine="254" startPosition="44" endLine="255" endPosition="19" />
-    <scopeInfo nodeId="4328738523548225979" fileName="FileProcessor.java" startLine="33" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="4328738523548226033" fileName="FileProcessor.java" startLine="54" startPosition="76" endLine="56" endPosition="74" />
-    <scopeInfo nodeId="4328738523548226078" fileName="FileProcessor.java" startLine="85" startPosition="75" endLine="87" endPosition="26" />
-    <scopeInfo nodeId="4328738523548226136" fileName="FileProcessor.java" startLine="116" startPosition="11" endLine="118" endPosition="32" />
-    <scopeInfo nodeId="4145682539058277924" fileName="FileProcessor.java" startLine="174" startPosition="11" endLine="176" endPosition="32" />
-    <scopeInfo nodeId="4328738523548225987" fileName="FileProcessor.java" startLine="36" startPosition="55" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="4328738523548225996" fileName="FileProcessor.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="4328738523548226001" varName="content" />
-      <varInfo nodeId="4328738523548225999" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548226012" fileName="FileProcessor.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="4328738523548226017" varName="content" />
-      <varInfo nodeId="4328738523548226015" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4145682539058277846" fileName="FileProcessor.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="4145682539058277851" varName="content" />
-      <varInfo nodeId="4145682539058277849" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548226039" fileName="FileProcessor.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="4328738523548226042" varName="files" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548226055" fileName="FileProcessor.java" startLine="63" startPosition="30" endLine="66" endPosition="5">
-      <varInfo nodeId="4328738523548226057" varName="fileAndContent" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548226064" fileName="FileProcessor.java" startLine="66" startPosition="5" endLine="69" endPosition="5">
-      <varInfo nodeId="4328738523548226066" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4572289200694441110" fileName="FileProcessor.java" startLine="74" startPosition="17" endLine="77" endPosition="5">
-      <varInfo nodeId="4572289200694441113" varName="fileAndContent" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548225903" fileName="FileProcessor.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="4328738523548225922" fileName="FileProcessor.java" startLine="109" startPosition="0" endLine="112" endPosition="0">
-      <varInfo nodeId="4328738523548225925" varName="content" />
-    </scopeInfo>
-    <scopeInfo nodeId="798733910009230545" fileName="FileProcessor.java" startLine="148" startPosition="13" endLine="151" endPosition="11" />
-    <scopeInfo nodeId="4145682539058277877" fileName="FileProcessor.java" startLine="167" startPosition="0" endLine="170" endPosition="0">
-      <varInfo nodeId="4145682539058277880" varName="content" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548225938" fileName="FileProcessor.java" startLine="229" startPosition="0" endLine="232" endPosition="0">
-      <varInfo nodeId="4328738523548225941" varName="element" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548226028" fileName="FileProcessor.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="4328738523548226031" varName="fileAndContent" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548225896" fileName="FileProcessor.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="4328738523548225901" varName="content" />
-      <varInfo nodeId="4328738523548225899" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548225906" fileName="FileProcessor.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="4328738523548226125" fileName="FileProcessor.java" startLine="122" startPosition="29" endLine="126" endPosition="11" />
-    <scopeInfo nodeId="4572289200694594305" fileName="FileProcessor.java" startLine="158" startPosition="0" endLine="162" endPosition="0" />
-    <scopeInfo nodeId="4145682539058277913" fileName="FileProcessor.java" startLine="180" startPosition="29" endLine="184" endPosition="11" />
-    <scopeInfo nodeId="4572289200694623655" fileName="FileProcessor.java" startLine="220" startPosition="0" endLine="224" endPosition="0" />
-    <scopeInfo nodeId="2813163484575227446" fileName="FileProcessor.java" startLine="253" startPosition="0" endLine="257" endPosition="0">
-      <varInfo nodeId="2813163484575227450" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548225982" fileName="FileProcessor.java" startLine="36" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="4328738523548225985" varName="modelDescriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="4572289200694388866" fileName="FileProcessor.java" startLine="73" startPosition="41" endLine="78" endPosition="16">
-      <varInfo nodeId="4572289200694418581" varName="size" />
-    </scopeInfo>
-    <scopeInfo nodeId="798733910009264734" fileName="FileProcessor.java" startLine="201" startPosition="11" endLine="206" endPosition="45" />
-    <scopeInfo nodeId="798733910009264748" fileName="FileProcessor.java" startLine="210" startPosition="29" endLine="215" endPosition="11" />
-    <scopeInfo nodeId="4328738523548226158" fileName="FileProcessor.java" startLine="234" startPosition="40" endLine="239" endPosition="7" />
-    <scopeInfo nodeId="4572289200694645597" fileName="FileProcessor.java" startLine="245" startPosition="38" endLine="250" endPosition="7" />
-    <scopeInfo nodeId="4328738523548226120" fileName="FileProcessor.java" startLine="121" startPosition="17" endLine="127" endPosition="9" />
-    <scopeInfo nodeId="798733910009222275" fileName="FileProcessor.java" startLine="138" startPosition="11" endLine="144" endPosition="48">
-      <varInfo nodeId="798733910009230602" varName="line" />
-    </scopeInfo>
-    <scopeInfo nodeId="4145682539058277908" fileName="FileProcessor.java" startLine="179" startPosition="17" endLine="185" endPosition="9" />
-    <scopeInfo nodeId="4328738523548226054" fileName="FileProcessor.java" startLine="63" startPosition="30" endLine="70" endPosition="72" />
-    <scopeInfo nodeId="4572289200694388864" fileName="FileProcessor.java" startLine="73" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="798733910009222283" fileName="FileProcessor.java" startLine="147" startPosition="17" endLine="154" endPosition="9" />
-    <scopeInfo nodeId="798733910009264745" fileName="FileProcessor.java" startLine="209" startPosition="17" endLine="216" endPosition="9" />
-    <scopeInfo nodeId="4328738523548225943" fileName="FileProcessor.java" startLine="233" startPosition="0" endLine="241" endPosition="0">
-      <varInfo nodeId="4328738523548225946" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4572289200694645593" fileName="FileProcessor.java" startLine="244" startPosition="0" endLine="252" endPosition="0" />
-    <scopeInfo nodeId="4328738523548226051" fileName="FileProcessor.java" startLine="63" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="4328738523548226105" fileName="FileProcessor.java" startLine="114" startPosition="40" endLine="128" endPosition="7">
-      <varInfo nodeId="4328738523548226107" varName="writer" />
-    </scopeInfo>
-    <scopeInfo nodeId="4145682539058277893" fileName="FileProcessor.java" startLine="172" startPosition="40" endLine="186" endPosition="7">
-      <varInfo nodeId="4145682539058277895" varName="stream" />
-    </scopeInfo>
-    <scopeInfo nodeId="4328738523548225927" fileName="FileProcessor.java" startLine="113" startPosition="0" endLine="130" endPosition="0">
-      <varInfo nodeId="4328738523548225930" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4145682539058277888" fileName="FileProcessor.java" startLine="171" startPosition="0" endLine="188" endPosition="0">
-      <varInfo nodeId="4145682539058277891" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="798733910009222242" fileName="FileProcessor.java" startLine="132" startPosition="44" endLine="155" endPosition="7">
-      <varInfo nodeId="798733910009222270" varName="reader" />
-      <varInfo nodeId="798733910009230594" varName="res" />
-    </scopeInfo>
-    <scopeInfo nodeId="798733910009222239" fileName="FileProcessor.java" startLine="131" startPosition="0" endLine="157" endPosition="0">
-      <varInfo nodeId="798733910009222251" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="798733910009264654" fileName="FileProcessor.java" startLine="190" startPosition="44" endLine="217" endPosition="7">
-      <varInfo nodeId="798733910009264677" varName="len" />
-      <varInfo nodeId="798733910009264711" varName="res" />
-      <varInfo nodeId="798733910009264728" varName="stream" />
-    </scopeInfo>
-    <scopeInfo nodeId="798733910009264651" fileName="FileProcessor.java" startLine="189" startPosition="0" endLine="219" endPosition="0">
-      <varInfo nodeId="798733910009264656" varName="file" />
-    </scopeInfo>
-    <unitInfo nodeId="4328738523548225909" fileName="FileProcessor.java" startLine="100" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$FileContent" />
-    <unitInfo nodeId="4328738523548225888" fileName="FileProcessor.java" startLine="81" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$FileAndContent" />
-    <unitInfo nodeId="4328738523548225932" fileName="FileProcessor.java" startLine="226" startPosition="0" endLine="258" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$XMLFileContent" />
-    <unitInfo nodeId="4328738523548225916" fileName="FileProcessor.java" startLine="106" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$StringFileContent" />
-    <unitInfo nodeId="4145682539058277870" fileName="FileProcessor.java" startLine="164" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor$BinaryFileContent" />
-    <unitInfo nodeId="4328738523548225887" fileName="FileProcessor.java" startLine="26" startPosition="0" endLine="259" endPosition="0" unitName="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
+    <file name="FileProcessor.java">
+      <node id="4328738523548225948" at="27,0,28,0" concept="10" trace="LOG" />
+      <node id="4328738523548225953" at="28,0,29,0" concept="3" trace="myModels" />
+      <node id="4328738523548225960" at="29,0,30,0" concept="3" trace="myFilesAndContents" />
+      <node id="4328738523548225967" at="30,0,31,0" concept="3" trace="myFilesToDelete" />
+      <node id="4328738523548225974" at="31,0,32,0" concept="3" trace="LOCK" />
+      <node id="4328738523548225991" at="37,25,38,36" concept="2" />
+      <node id="4328738523548226004" at="42,58,43,109" concept="8" />
+      <node id="4328738523548226020" at="46,59,47,106" concept="8" />
+      <node id="4145682539058277854" at="50,58,51,109" concept="8" />
+      <node id="4328738523548226034" at="54,76,55,43" concept="2" />
+      <node id="2813163484575228077" at="55,43,56,74" concept="8" />
+      <node id="4328738523548226046" at="59,54,60,34" concept="2" />
+      <node id="4328738523548226060" at="64,76,65,28" concept="2" />
+      <node id="4328738523548226069" at="67,40,68,20" concept="2" />
+      <node id="4328738523548226073" at="69,5,70,72" concept="2" />
+      <node id="4572289200694418578" at="73,41,74,17" concept="7" />
+      <node id="4572289200694494544" at="75,76,76,61" concept="2" />
+      <node id="4572289200694577503" at="77,5,78,16" concept="8" />
+      <node id="4328738523548225890" at="82,0,83,0" concept="3" trace="myFile" />
+      <node id="4328738523548225893" at="83,0,84,0" concept="3" trace="myContent" />
+      <node id="4328738523548226079" at="85,75,86,20" concept="2" />
+      <node id="4328738523548226083" at="86,20,87,26" concept="2" />
+      <node id="4328738523548226088" at="90,25,91,35" concept="2" />
+      <node id="4328738523548226094" at="95,30,96,31" concept="8" />
+      <node id="2813163484575224645" at="101,0,102,0" concept="6" trace="isUnchanged#(Ljetbrains/mps/vfs/IFile;)Z" />
+      <node id="4328738523548225911" at="102,0,103,0" concept="6" trace="saveToFile#(Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="4572289200694547115" at="103,0,104,0" concept="6" trace="calcApproximateSize#()I" />
+      <node id="4328738523548225919" at="107,0,108,0" concept="3" trace="myContent" />
+      <node id="4328738523548226101" at="109,47,110,26" concept="2" />
+      <node id="4328738523548226106" at="114,40,115,39" concept="7" />
+      <node id="4328738523548226137" at="116,11,117,117" concept="2" />
+      <node id="4328738523548226147" at="117,117,118,32" concept="2" />
+      <node id="4328738523548226113" at="119,31,120,41" concept="2" />
+      <node id="4328738523548226132" at="123,15,124,27" concept="2" />
+      <node id="2813163484575235539" at="133,29,134,21" concept="8" />
+      <node id="798733910009222269" at="135,7,136,35" concept="7" />
+      <node id="798733910009230593" at="136,35,137,46" concept="7" />
+      <node id="798733910009230551" at="138,11,139,109" concept="2" />
+      <node id="798733910009230601" at="139,109,140,20" concept="7" />
+      <node id="798733910009264614" at="141,52,142,40" concept="2" />
+      <node id="798733910009264633" at="143,9,144,48" concept="8" />
+      <node id="798733910009230582" at="145,32,146,21" concept="8" />
+      <node id="798733910009230536" at="149,31,150,27" concept="2" />
+      <node id="798733910009230586" at="152,34,153,23" concept="8" />
+      <node id="4572289200694599568" at="159,38,160,41" concept="8" />
+      <node id="4145682539058277873" at="165,0,166,0" concept="3" trace="myContent" />
+      <node id="4145682539058277884" at="167,47,168,26" concept="2" />
+      <node id="4145682539058277894" at="172,40,173,33" concept="7" />
+      <node id="4145682539058277925" at="174,11,175,41" concept="2" />
+      <node id="4145682539058277931" at="175,41,176,32" concept="2" />
+      <node id="4145682539058277901" at="177,31,178,41" concept="2" />
+      <node id="4145682539058277920" at="181,15,182,27" concept="2" />
+      <node id="2813163484575235132" at="191,29,192,21" concept="8" />
+      <node id="798733910009264676" at="193,7,194,31" concept="7" />
+      <node id="798733910009264704" at="195,36,196,21" concept="8" />
+      <node id="798733910009264708" at="197,7,198,0" concept="9" />
+      <node id="798733910009264710" at="198,0,199,46" concept="7" />
+      <node id="798733910009264727" at="199,46,200,32" concept="7" />
+      <node id="798733910009264771" at="201,11,202,40" concept="2" />
+      <node id="798733910009264805" at="203,38,204,23" concept="8" />
+      <node id="798733910009264821" at="205,9,206,45" concept="8" />
+      <node id="798733910009264741" at="207,32,208,21" concept="8" />
+      <node id="798733910009264760" at="211,15,212,27" concept="2" />
+      <node id="798733910009264768" at="213,36,214,25" concept="8" />
+      <node id="4572289200694629057" at="221,38,222,30" concept="8" />
+      <node id="4328738523548225935" at="227,0,228,0" concept="3" trace="myDocument" />
+      <node id="4328738523548226154" at="229,45,230,41" concept="2" />
+      <node id="4328738523548226170" at="235,11,236,49" concept="2" />
+      <node id="4328738523548226162" at="237,31,238,41" concept="2" />
+      <node id="4572289200694849045" at="246,11,247,57" concept="8" />
+      <node id="4572289200694818317" at="248,29,249,38" concept="12" />
+      <node id="2813163484575227454" at="254,44,255,19" concept="8" />
+      <node id="4328738523548225979" at="33,0,35,0" concept="1" trace="FileProcessor#()V" />
+      <node id="4328738523548225988" at="36,55,39,5" concept="11" />
+      <node id="4328738523548225996" at="42,0,45,0" concept="6" trace="saveContent#(Ljetbrains/mps/vfs/IFile;Ljava/lang/String;)Z" />
+      <node id="4328738523548226012" at="46,0,49,0" concept="6" trace="saveContent#(Ljetbrains/mps/vfs/IFile;Lorg/jdom/Element;)Z" />
+      <node id="4145682539058277846" at="50,0,53,0" concept="6" trace="saveContent#(Ljetbrains/mps/vfs/IFile;[B)Z" />
+      <node id="4328738523548226039" at="59,0,62,0" concept="6" trace="filesToDelete#(Ljava/util/Collection;)V" />
+      <node id="4328738523548226055" at="63,30,66,5" concept="4" />
+      <node id="4328738523548226064" at="66,5,69,5" concept="4" />
+      <node id="4572289200694441110" at="74,17,77,5" concept="4" />
+      <node id="4328738523548225903" at="90,0,93,0" concept="6" trace="save#()V" />
+      <node id="4328738523548225922" at="109,0,112,0" concept="1" trace="StringFileContent#(Ljava/lang/String;)V" />
+      <node id="2813163484575235533" at="132,44,135,7" concept="5" />
+      <node id="798733910009230605" at="140,20,143,9" concept="15" />
+      <node id="798733910009222284" at="148,13,151,11" concept="5" />
+      <node id="4145682539058277877" at="167,0,170,0" concept="1" trace="BinaryFileContent#([B)V" />
+      <node id="2813163484575233346" at="190,44,193,7" concept="5" />
+      <node id="798733910009264685" at="194,31,197,7" concept="5" />
+      <node id="798733910009264792" at="202,40,205,9" concept="5" />
+      <node id="4328738523548225938" at="229,0,232,0" concept="1" trace="XMLFileContent#(Lorg/jdom/Element;)V" />
+      <node id="4328738523548226028" at="54,0,58,0" concept="6" trace="saveContent#(Ljetbrains/mps/internal/make/runtime/java/FileProcessor/FileAndContent;)Z" />
+      <node id="4328738523548225896" at="85,0,89,0" concept="1" trace="FileAndContent#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/internal/make/runtime/java/FileProcessor/FileContent;)V" />
+      <node id="4328738523548225906" at="94,0,98,0" concept="6" trace="toString#()Ljava/lang/String;" />
+      <node id="4328738523548226126" at="122,29,126,11" concept="13" />
+      <node id="4572289200694594305" at="158,0,162,0" concept="6" trace="calcApproximateSize#()I" />
+      <node id="4145682539058277914" at="180,29,184,11" concept="13" />
+      <node id="4572289200694623655" at="220,0,224,0" concept="6" trace="calcApproximateSize#()I" />
+      <node id="2813163484575227446" at="253,0,257,0" concept="6" trace="isUnchanged#(Ljetbrains/mps/vfs/IFile;)Z" />
+      <node id="4328738523548225982" at="36,0,41,0" concept="6" trace="invalidateModel#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="798733910009264754" at="210,29,215,11" concept="13" />
+      <node id="4328738523548226159" at="234,40,239,7" concept="13" />
+      <node id="4572289200694735235" at="245,38,250,7" concept="13" />
+      <node id="4328738523548226121" at="121,17,127,9" concept="5" />
+      <node id="4145682539058277909" at="179,17,185,9" concept="5" />
+      <node id="4572289200694388864" at="73,0,80,0" concept="6" trace="calcApproximateSize#()I" />
+      <node id="798733910009230544" at="147,17,154,9" concept="13" />
+      <node id="798733910009264746" at="209,17,216,9" concept="5" />
+      <node id="4328738523548225943" at="233,0,241,0" concept="6" trace="saveToFile#(Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="4572289200694645593" at="244,0,252,0" concept="6" trace="calcApproximateSize#()I" />
+      <node id="4328738523548226051" at="63,0,72,0" concept="6" trace="flushChanges#()V" />
+      <node id="4328738523548226110" at="115,39,128,7" concept="14" />
+      <node id="4145682539058277898" at="173,33,186,7" concept="14" />
+      <node id="4328738523548225927" at="113,0,130,0" concept="6" trace="saveToFile#(Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="4145682539058277888" at="171,0,188,0" concept="6" trace="saveToFile#(Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="798733910009264744" at="200,32,217,7" concept="14" />
+      <node id="798733910009222282" at="137,46,155,7" concept="14" />
+      <node id="798733910009222239" at="131,0,157,0" concept="6" trace="isUnchanged#(Ljetbrains/mps/vfs/IFile;)Z" />
+      <node id="798733910009264651" at="189,0,219,0" concept="6" trace="isUnchanged#(Ljetbrains/mps/vfs/IFile;)Z" />
+      <scope id="4328738523548225981" at="33,26,33,26" />
+      <scope id="4328738523548226127" at="125,0,125,41">
+        <var name="ignored" id="4328738523548226129" />
+      </scope>
+      <scope id="4328738523548226128" at="125,41,125,41" />
+      <scope id="4145682539058277915" at="183,0,183,41">
+        <var name="ignored" id="4145682539058277917" />
+      </scope>
+      <scope id="4145682539058277916" at="183,41,183,41" />
+      <scope id="4328738523548225990" at="37,25,38,36" />
+      <scope id="4328738523548226003" at="42,58,43,109" />
+      <scope id="4328738523548226019" at="46,59,47,106" />
+      <scope id="4145682539058277853" at="50,58,51,109" />
+      <scope id="4328738523548226045" at="59,54,60,34" />
+      <scope id="4328738523548226059" at="64,76,65,28" />
+      <scope id="4328738523548226068" at="67,40,68,20" />
+      <scope id="4572289200694441112" at="75,76,76,61" />
+      <scope id="4328738523548226087" at="90,25,91,35" />
+      <scope id="4328738523548226093" at="95,30,96,31" />
+      <scope id="2813163484575224645" at="101,0,102,0">
+        <var name="file" id="2813163484575226428" />
+      </scope>
+      <scope id="4328738523548225911" at="102,0,103,0">
+        <var name="file" id="4328738523548225914" />
+      </scope>
+      <scope id="4572289200694547115" at="103,0,104,0" />
+      <scope id="4328738523548226100" at="109,47,110,26" />
+      <scope id="4328738523548226111" at="119,0,120,41">
+        <var name="e" id="4328738523548226118" />
+      </scope>
+      <scope id="4328738523548226112" at="119,31,120,41" />
+      <scope id="4328738523548226131" at="123,15,124,27" />
+      <scope id="2813163484575235538" at="133,29,134,21" />
+      <scope id="798733910009230607" at="141,52,142,40" />
+      <scope id="798733910009222277" at="145,0,146,21">
+        <var name="ex" id="798733910009222278" />
+      </scope>
+      <scope id="798733910009222280" at="145,32,146,21" />
+      <scope id="798733910009222286" at="149,31,150,27" />
+      <scope id="798733910009230547" at="152,0,153,23">
+        <var name="ex" id="798733910009230548" />
+      </scope>
+      <scope id="798733910009230550" at="152,34,153,23" />
+      <scope id="4572289200694594309" at="159,38,160,41" />
+      <scope id="4145682539058277883" at="167,47,168,26" />
+      <scope id="4145682539058277899" at="177,0,178,41">
+        <var name="e" id="4145682539058277906" />
+      </scope>
+      <scope id="4145682539058277900" at="177,31,178,41" />
+      <scope id="4145682539058277919" at="181,15,182,27" />
+      <scope id="2813163484575233348" at="191,29,192,21" />
+      <scope id="798733910009264686" at="195,36,196,21" />
+      <scope id="798733910009264793" at="203,38,204,23" />
+      <scope id="798733910009264736" at="207,0,208,21">
+        <var name="ex" id="798733910009264737" />
+      </scope>
+      <scope id="798733910009264739" at="207,32,208,21" />
+      <scope id="798733910009264755" at="211,15,212,27" />
+      <scope id="798733910009264756" at="213,0,214,25">
+        <var name="ex" id="798733910009264757" />
+      </scope>
+      <scope id="798733910009264759" at="213,36,214,25" />
+      <scope id="4572289200694623659" at="221,38,222,30" />
+      <scope id="4328738523548226153" at="229,45,230,41" />
+      <scope id="4328738523548226169" at="235,11,236,49" />
+      <scope id="4328738523548226160" at="237,0,238,41">
+        <var name="e" id="4328738523548226167" />
+      </scope>
+      <scope id="4328738523548226161" at="237,31,238,41" />
+      <scope id="4572289200694735237" at="246,11,247,57" />
+      <scope id="4572289200694735238" at="248,0,249,38">
+        <var name="e" id="4572289200694735240" />
+      </scope>
+      <scope id="4572289200694735244" at="248,29,249,38" />
+      <scope id="2813163484575227452" at="254,44,255,19" />
+      <scope id="4328738523548225979" at="33,0,35,0" />
+      <scope id="4328738523548226033" at="54,76,56,74" />
+      <scope id="4328738523548226078" at="85,75,87,26" />
+      <scope id="4328738523548226136" at="116,11,118,32" />
+      <scope id="4145682539058277924" at="174,11,176,32" />
+      <scope id="4328738523548225987" at="36,55,39,5" />
+      <scope id="4328738523548225996" at="42,0,45,0">
+        <var name="content" id="4328738523548226001" />
+        <var name="file" id="4328738523548225999" />
+      </scope>
+      <scope id="4328738523548226012" at="46,0,49,0">
+        <var name="content" id="4328738523548226017" />
+        <var name="file" id="4328738523548226015" />
+      </scope>
+      <scope id="4145682539058277846" at="50,0,53,0">
+        <var name="content" id="4145682539058277851" />
+        <var name="file" id="4145682539058277849" />
+      </scope>
+      <scope id="4328738523548226039" at="59,0,62,0">
+        <var name="files" id="4328738523548226042" />
+      </scope>
+      <scope id="4328738523548226055" at="63,30,66,5">
+        <var name="fileAndContent" id="4328738523548226057" />
+      </scope>
+      <scope id="4328738523548226064" at="66,5,69,5">
+        <var name="file" id="4328738523548226066" />
+      </scope>
+      <scope id="4572289200694441110" at="74,17,77,5">
+        <var name="fileAndContent" id="4572289200694441113" />
+      </scope>
+      <scope id="4328738523548225903" at="90,0,93,0" />
+      <scope id="4328738523548225922" at="109,0,112,0">
+        <var name="content" id="4328738523548225925" />
+      </scope>
+      <scope id="798733910009230545" at="148,13,151,11" />
+      <scope id="4145682539058277877" at="167,0,170,0">
+        <var name="content" id="4145682539058277880" />
+      </scope>
+      <scope id="4328738523548225938" at="229,0,232,0">
+        <var name="element" id="4328738523548225941" />
+      </scope>
+      <scope id="4328738523548226028" at="54,0,58,0">
+        <var name="fileAndContent" id="4328738523548226031" />
+      </scope>
+      <scope id="4328738523548225896" at="85,0,89,0">
+        <var name="content" id="4328738523548225901" />
+        <var name="file" id="4328738523548225899" />
+      </scope>
+      <scope id="4328738523548225906" at="94,0,98,0" />
+      <scope id="4328738523548226125" at="122,29,126,11" />
+      <scope id="4572289200694594305" at="158,0,162,0" />
+      <scope id="4145682539058277913" at="180,29,184,11" />
+      <scope id="4572289200694623655" at="220,0,224,0" />
+      <scope id="2813163484575227446" at="253,0,257,0">
+        <var name="file" id="2813163484575227450" />
+      </scope>
+      <scope id="4328738523548225982" at="36,0,41,0">
+        <var name="modelDescriptor" id="4328738523548225985" />
+      </scope>
+      <scope id="4572289200694388866" at="73,41,78,16">
+        <var name="size" id="4572289200694418581" />
+      </scope>
+      <scope id="798733910009264734" at="201,11,206,45" />
+      <scope id="798733910009264748" at="210,29,215,11" />
+      <scope id="4328738523548226158" at="234,40,239,7" />
+      <scope id="4572289200694645597" at="245,38,250,7" />
+      <scope id="4328738523548226120" at="121,17,127,9" />
+      <scope id="798733910009222275" at="138,11,144,48">
+        <var name="line" id="798733910009230602" />
+      </scope>
+      <scope id="4145682539058277908" at="179,17,185,9" />
+      <scope id="4328738523548226054" at="63,30,70,72" />
+      <scope id="4572289200694388864" at="73,0,80,0" />
+      <scope id="798733910009222283" at="147,17,154,9" />
+      <scope id="798733910009264745" at="209,17,216,9" />
+      <scope id="4328738523548225943" at="233,0,241,0">
+        <var name="file" id="4328738523548225946" />
+      </scope>
+      <scope id="4572289200694645593" at="244,0,252,0" />
+      <scope id="4328738523548226051" at="63,0,72,0" />
+      <scope id="4328738523548226105" at="114,40,128,7">
+        <var name="writer" id="4328738523548226107" />
+      </scope>
+      <scope id="4145682539058277893" at="172,40,186,7">
+        <var name="stream" id="4145682539058277895" />
+      </scope>
+      <scope id="4328738523548225927" at="113,0,130,0">
+        <var name="file" id="4328738523548225930" />
+      </scope>
+      <scope id="4145682539058277888" at="171,0,188,0">
+        <var name="file" id="4145682539058277891" />
+      </scope>
+      <scope id="798733910009222242" at="132,44,155,7">
+        <var name="reader" id="798733910009222270" />
+        <var name="res" id="798733910009230594" />
+      </scope>
+      <scope id="798733910009222239" at="131,0,157,0">
+        <var name="file" id="798733910009222251" />
+      </scope>
+      <scope id="798733910009264654" at="190,44,217,7">
+        <var name="len" id="798733910009264677" />
+        <var name="res" id="798733910009264711" />
+        <var name="stream" id="798733910009264728" />
+      </scope>
+      <scope id="798733910009264651" at="189,0,219,0">
+        <var name="file" id="798733910009264656" />
+      </scope>
+      <unit id="4328738523548225909" at="100,0,105,0" name="jetbrains.mps.internal.make.runtime.java.FileProcessor$FileContent" />
+      <unit id="4328738523548225888" at="81,0,99,0" name="jetbrains.mps.internal.make.runtime.java.FileProcessor$FileAndContent" />
+      <unit id="4328738523548225932" at="226,0,258,0" name="jetbrains.mps.internal.make.runtime.java.FileProcessor$XMLFileContent" />
+      <unit id="4328738523548225916" at="106,0,163,0" name="jetbrains.mps.internal.make.runtime.java.FileProcessor$StringFileContent" />
+      <unit id="4145682539058277870" at="164,0,225,0" name="jetbrains.mps.internal.make.runtime.java.FileProcessor$BinaryFileContent" />
+      <unit id="4328738523548225887" at="26,0,259,0" name="jetbrains.mps.internal.make.runtime.java.FileProcessor" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

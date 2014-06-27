@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)/1227886714745">
-    <nodeInfo nodeId="1227886714745" fileName="ClosureDataFlow_Test.java" startLine="15" startPosition="55" endLine="16" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227886714745" fileName="ClosureDataFlow_Test.java" startLine="16" startPosition="123" endLine="17" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227886714778" fileName="ClosureDataFlow_Test.java" startLine="22" startPosition="57" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227886714781" fileName="ClosureDataFlow_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227886714778" fileName="ClosureDataFlow_Test.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ClosureDataFlow#()V" />
-    <nodeInfo nodeId="1227886714745" fileName="ClosureDataFlow_Test.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ClosureDataFlow#()V" />
-    <scopeInfo nodeId="1227886714745" fileName="ClosureDataFlow_Test.java" startLine="15" startPosition="55" endLine="17" endPosition="121" />
-    <scopeInfo nodeId="1227886714778" fileName="ClosureDataFlow_Test.java" startLine="22" startPosition="57" endLine="24" endPosition="182" />
-    <scopeInfo nodeId="1227886714778" fileName="ClosureDataFlow_Test.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1227886714745" fileName="ClosureDataFlow_Test.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="1227886714745" fileName="ClosureDataFlow_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test$TestBody" />
-    <unitInfo nodeId="1227886714745" fileName="ClosureDataFlow_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test" />
+    <file name="ClosureDataFlow_Test.java">
+      <node id="1227886714745" at="15,55,16,123" concept="0" />
+      <node id="1227886714745" at="16,123,17,121" concept="0" />
+      <node id="1227886714778" at="22,57,23,40" concept="0" />
+      <node id="1227886714781" at="23,40,24,182" concept="0" />
+      <node id="1227886714778" at="22,0,26,0" concept="1" trace="test_ClosureDataFlow#()V" />
+      <node id="1227886714745" at="14,0,19,0" concept="1" trace="test_ClosureDataFlow#()V" />
+      <scope id="1227886714745" at="15,55,17,121" />
+      <scope id="1227886714778" at="22,57,24,182" />
+      <scope id="1227886714778" at="22,0,26,0" />
+      <scope id="1227886714745" at="14,0,19,0" />
+      <unit id="1227886714745" at="20,0,27,0" name="jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test$TestBody" />
+      <unit id="1227886714745" at="12,0,28,0" name="jetbrains.mps.baseLanguage.closures.test.ClosureDataFlow_Test" />
+    </file>
   </root>
   <root nodeRef="r:3d6db45f-d7e0-45ba-9835-ff824ffe21a1(jetbrains.mps.baseLanguage.closures.test@tests)/1227886714783">
-    <nodeInfo nodeId="1227886714783" fileName="ClosureLiteralDataFlow_Test.java" startLine="15" startPosition="62" endLine="16" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227886714783" fileName="ClosureLiteralDataFlow_Test.java" startLine="16" startPosition="123" endLine="17" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227886714803" fileName="ClosureLiteralDataFlow_Test.java" startLine="22" startPosition="64" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227886714806" fileName="ClosureLiteralDataFlow_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227886714803" fileName="ClosureLiteralDataFlow_Test.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ClosureLiteralDataFlow#()V" />
-    <nodeInfo nodeId="1227886714783" fileName="ClosureLiteralDataFlow_Test.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ClosureLiteralDataFlow#()V" />
-    <scopeInfo nodeId="1227886714783" fileName="ClosureLiteralDataFlow_Test.java" startLine="15" startPosition="62" endLine="17" endPosition="135" />
-    <scopeInfo nodeId="1227886714803" fileName="ClosureLiteralDataFlow_Test.java" startLine="22" startPosition="64" endLine="24" endPosition="182" />
-    <scopeInfo nodeId="1227886714803" fileName="ClosureLiteralDataFlow_Test.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1227886714783" fileName="ClosureLiteralDataFlow_Test.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="1227886714783" fileName="ClosureLiteralDataFlow_Test.java" startLine="20" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test$TestBody" />
-    <unitInfo nodeId="1227886714783" fileName="ClosureLiteralDataFlow_Test.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test" />
+    <file name="ClosureLiteralDataFlow_Test.java">
+      <node id="1227886714783" at="15,62,16,123" concept="0" />
+      <node id="1227886714783" at="16,123,17,135" concept="0" />
+      <node id="1227886714803" at="22,64,23,40" concept="0" />
+      <node id="1227886714806" at="23,40,24,182" concept="0" />
+      <node id="1227886714803" at="22,0,26,0" concept="1" trace="test_ClosureLiteralDataFlow#()V" />
+      <node id="1227886714783" at="14,0,19,0" concept="1" trace="test_ClosureLiteralDataFlow#()V" />
+      <scope id="1227886714783" at="15,62,17,135" />
+      <scope id="1227886714803" at="22,64,24,182" />
+      <scope id="1227886714803" at="22,0,26,0" />
+      <scope id="1227886714783" at="14,0,19,0" />
+      <unit id="1227886714783" at="20,0,27,0" name="jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test$TestBody" />
+      <unit id="1227886714783" at="12,0,28,0" name="jetbrains.mps.baseLanguage.closures.test.ClosureLiteralDataFlow_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

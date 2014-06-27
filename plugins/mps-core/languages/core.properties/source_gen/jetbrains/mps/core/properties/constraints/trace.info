@@ -1,166 +1,182 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <root nodeRef="r:2b3a069e-e3c3-42b0-a488-e42c2c3e5ae0(jetbrains.mps.core.properties.constraints)/6896005762093561042">
-    <nodeInfo nodeId="6896005762093561423" fileName="PropEscapeUtil.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="hexDigit" />
-    <nodeInfo nodeId="6896005762093561585" fileName="PropEscapeUtil.java" startLine="12" startPosition="47" endLine="13" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6896005762093561623" fileName="PropEscapeUtil.java" startLine="16" startPosition="49" endLine="17" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6896005762093561062" fileName="PropEscapeUtil.java" startLine="20" startPosition="89" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6896005762093561068" fileName="PropEscapeUtil.java" startLine="21" startPosition="28" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6896005762093561079" fileName="PropEscapeUtil.java" startLine="23" startPosition="21" endLine="24" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561083" fileName="PropEscapeUtil.java" startLine="25" startPosition="5" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6896005762093561099" fileName="PropEscapeUtil.java" startLine="27" startPosition="35" endLine="28" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6896005762093561106" fileName="PropEscapeUtil.java" startLine="28" startPosition="34" endLine="29" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6896005762093561108" fileName="PropEscapeUtil.java" startLine="29" startPosition="65" endLine="30" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6896005762093561126" fileName="PropEscapeUtil.java" startLine="32" startPosition="28" endLine="33" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561131" fileName="PropEscapeUtil.java" startLine="33" startPosition="33" endLine="34" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561136" fileName="PropEscapeUtil.java" startLine="34" startPosition="33" endLine="35" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6896005762093561137" fileName="PropEscapeUtil.java" startLine="36" startPosition="9" endLine="37" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561142" fileName="PropEscapeUtil.java" startLine="37" startPosition="32" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="6896005762093561228" fileName="PropEscapeUtil.java" startLine="42" startPosition="38" endLine="43" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561233" fileName="PropEscapeUtil.java" startLine="44" startPosition="11" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561238" fileName="PropEscapeUtil.java" startLine="45" startPosition="32" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6896005762093561242" fileName="PropEscapeUtil.java" startLine="47" startPosition="18" endLine="48" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561247" fileName="PropEscapeUtil.java" startLine="48" startPosition="33" endLine="49" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561252" fileName="PropEscapeUtil.java" startLine="49" startPosition="32" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6896005762093561256" fileName="PropEscapeUtil.java" startLine="51" startPosition="18" endLine="52" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561261" fileName="PropEscapeUtil.java" startLine="52" startPosition="33" endLine="53" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561266" fileName="PropEscapeUtil.java" startLine="53" startPosition="32" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6896005762093561270" fileName="PropEscapeUtil.java" startLine="55" startPosition="18" endLine="56" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561275" fileName="PropEscapeUtil.java" startLine="56" startPosition="33" endLine="57" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561280" fileName="PropEscapeUtil.java" startLine="57" startPosition="32" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6896005762093561284" fileName="PropEscapeUtil.java" startLine="59" startPosition="18" endLine="60" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561289" fileName="PropEscapeUtil.java" startLine="60" startPosition="33" endLine="61" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561294" fileName="PropEscapeUtil.java" startLine="61" startPosition="32" endLine="62" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6896005762093561298" fileName="PropEscapeUtil.java" startLine="63" startPosition="17" endLine="64" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6896005762093561303" fileName="PropEscapeUtil.java" startLine="65" startPosition="17" endLine="66" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6896005762093561308" fileName="PropEscapeUtil.java" startLine="67" startPosition="17" endLine="68" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6896005762093561313" fileName="PropEscapeUtil.java" startLine="69" startPosition="17" endLine="70" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561318" fileName="PropEscapeUtil.java" startLine="70" startPosition="33" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561323" fileName="PropEscapeUtil.java" startLine="71" startPosition="34" endLine="72" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6896005762093561167" fileName="PropEscapeUtil.java" startLine="74" startPosition="64" endLine="75" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561172" fileName="PropEscapeUtil.java" startLine="75" startPosition="35" endLine="76" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561492" fileName="PropEscapeUtil.java" startLine="76" startPosition="34" endLine="77" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561508" fileName="PropEscapeUtil.java" startLine="77" startPosition="56" endLine="78" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561516" fileName="PropEscapeUtil.java" startLine="78" startPosition="55" endLine="79" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561524" fileName="PropEscapeUtil.java" startLine="79" startPosition="55" endLine="80" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561523" fileName="PropEscapeUtil.java" startLine="80" startPosition="48" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6896005762093561161" fileName="PropEscapeUtil.java" startLine="82" startPosition="18" endLine="83" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093561324" fileName="PropEscapeUtil.java" startLine="86" startPosition="5" endLine="87" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6896005762093561416" fileName="PropEscapeUtil.java" startLine="90" startPosition="41" endLine="91" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6896005762093568112" fileName="PropEscapeUtil.java" startLine="94" startPosition="51" endLine="95" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6896005762093568118" fileName="PropEscapeUtil.java" startLine="95" startPosition="28" endLine="96" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6896005762093568129" fileName="PropEscapeUtil.java" startLine="97" startPosition="21" endLine="98" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568133" fileName="PropEscapeUtil.java" startLine="99" startPosition="5" endLine="100" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6896005762093568149" fileName="PropEscapeUtil.java" startLine="101" startPosition="35" endLine="102" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6896005762093568406" fileName="PropEscapeUtil.java" startLine="104" startPosition="18" endLine="105" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568411" fileName="PropEscapeUtil.java" startLine="105" startPosition="33" endLine="106" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568416" fileName="PropEscapeUtil.java" startLine="106" startPosition="33" endLine="107" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6896005762093568307" fileName="PropEscapeUtil.java" startLine="108" startPosition="18" endLine="109" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568312" fileName="PropEscapeUtil.java" startLine="109" startPosition="33" endLine="110" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568317" fileName="PropEscapeUtil.java" startLine="110" startPosition="32" endLine="111" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6896005762093568321" fileName="PropEscapeUtil.java" startLine="112" startPosition="18" endLine="113" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568326" fileName="PropEscapeUtil.java" startLine="113" startPosition="33" endLine="114" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568331" fileName="PropEscapeUtil.java" startLine="114" startPosition="32" endLine="115" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6896005762093568335" fileName="PropEscapeUtil.java" startLine="116" startPosition="18" endLine="117" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568340" fileName="PropEscapeUtil.java" startLine="117" startPosition="33" endLine="118" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568345" fileName="PropEscapeUtil.java" startLine="118" startPosition="32" endLine="119" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6896005762093568217" fileName="PropEscapeUtil.java" startLine="121" startPosition="48" endLine="122" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568222" fileName="PropEscapeUtil.java" startLine="122" startPosition="35" endLine="123" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568227" fileName="PropEscapeUtil.java" startLine="123" startPosition="34" endLine="124" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568238" fileName="PropEscapeUtil.java" startLine="124" startPosition="56" endLine="125" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568249" fileName="PropEscapeUtil.java" startLine="125" startPosition="55" endLine="126" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568260" fileName="PropEscapeUtil.java" startLine="126" startPosition="55" endLine="127" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568268" fileName="PropEscapeUtil.java" startLine="127" startPosition="48" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6896005762093568211" fileName="PropEscapeUtil.java" startLine="129" startPosition="18" endLine="130" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6896005762093568375" fileName="PropEscapeUtil.java" startLine="133" startPosition="5" endLine="134" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6896005762093561044" fileName="PropEscapeUtil.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropEscapeUtil#()V" />
-    <nodeInfo nodeId="6896005762093561159" fileName="PropEscapeUtil.java" startLine="82" startPosition="16" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6896005762093568209" fileName="PropEscapeUtil.java" startLine="129" startPosition="16" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6896005762093561578" fileName="PropEscapeUtil.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="escapeKey#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6896005762093561616" fileName="PropEscapeUtil.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="escapeValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6896005762093561074" fileName="PropEscapeUtil.java" startLine="22" startPosition="25" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6896005762093561221" fileName="PropEscapeUtil.java" startLine="41" startPosition="17" endLine="44" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6896005762093561410" fileName="PropEscapeUtil.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toHex#(I)C" />
-    <nodeInfo nodeId="6896005762093568124" fileName="PropEscapeUtil.java" startLine="96" startPosition="25" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6896005762093561121" fileName="PropEscapeUtil.java" startLine="31" startPosition="42" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6896005762093561110" fileName="PropEscapeUtil.java" startLine="30" startPosition="36" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6896005762093561146" fileName="PropEscapeUtil.java" startLine="73" startPosition="16" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6896005762093568196" fileName="PropEscapeUtil.java" startLine="120" startPosition="16" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6896005762093568193" fileName="PropEscapeUtil.java" startLine="102" startPosition="34" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="6896005762093568139" fileName="PropEscapeUtil.java" startLine="100" startPosition="56" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6896005762093567755" fileName="PropEscapeUtil.java" startLine="94" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="escapeComment#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6896005762093561143" fileName="PropEscapeUtil.java" startLine="39" startPosition="7" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="6896005762093561089" fileName="PropEscapeUtil.java" startLine="26" startPosition="56" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6896005762093561048" fileName="PropEscapeUtil.java" startLine="20" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="escape#(Ljava/lang/String;ZZ)Ljava/lang/String;" />
-    <scopeInfo nodeId="6896005762093561047" fileName="PropEscapeUtil.java" startLine="9" startPosition="27" endLine="9" endPosition="27" />
-    <scopeInfo nodeId="6896005762093561581" fileName="PropEscapeUtil.java" startLine="12" startPosition="47" endLine="13" endPosition="58" />
-    <scopeInfo nodeId="6896005762093561619" fileName="PropEscapeUtil.java" startLine="16" startPosition="49" endLine="17" endPosition="59" />
-    <scopeInfo nodeId="6896005762093561078" fileName="PropEscapeUtil.java" startLine="23" startPosition="21" endLine="24" endPosition="33" />
-    <scopeInfo nodeId="6896005762093561227" fileName="PropEscapeUtil.java" startLine="42" startPosition="38" endLine="43" endPosition="35" />
-    <scopeInfo nodeId="6896005762093561297" fileName="PropEscapeUtil.java" startLine="63" startPosition="17" endLine="64" endPosition="27" />
-    <scopeInfo nodeId="6896005762093561302" fileName="PropEscapeUtil.java" startLine="65" startPosition="17" endLine="66" endPosition="27" />
-    <scopeInfo nodeId="6896005762093561307" fileName="PropEscapeUtil.java" startLine="67" startPosition="17" endLine="68" endPosition="27" />
-    <scopeInfo nodeId="6896005762093561160" fileName="PropEscapeUtil.java" startLine="82" startPosition="18" endLine="83" endPosition="36" />
-    <scopeInfo nodeId="6896005762093561415" fileName="PropEscapeUtil.java" startLine="90" startPosition="41" endLine="91" endPosition="35" />
-    <scopeInfo nodeId="6896005762093568128" fileName="PropEscapeUtil.java" startLine="97" startPosition="21" endLine="98" endPosition="33" />
-    <scopeInfo nodeId="6896005762093568210" fileName="PropEscapeUtil.java" startLine="129" startPosition="18" endLine="130" endPosition="36" />
-    <scopeInfo nodeId="6896005762093561044" fileName="PropEscapeUtil.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="6896005762093561578" fileName="PropEscapeUtil.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="6896005762093561583" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="6896005762093561616" fileName="PropEscapeUtil.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="6896005762093561621" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="6896005762093561125" fileName="PropEscapeUtil.java" startLine="32" startPosition="28" endLine="35" endPosition="19" />
-    <scopeInfo nodeId="6896005762093561241" fileName="PropEscapeUtil.java" startLine="47" startPosition="18" endLine="50" endPosition="16" />
-    <scopeInfo nodeId="6896005762093561255" fileName="PropEscapeUtil.java" startLine="51" startPosition="18" endLine="54" endPosition="16" />
-    <scopeInfo nodeId="6896005762093561269" fileName="PropEscapeUtil.java" startLine="55" startPosition="18" endLine="58" endPosition="16" />
-    <scopeInfo nodeId="6896005762093561283" fileName="PropEscapeUtil.java" startLine="59" startPosition="18" endLine="62" endPosition="16" />
-    <scopeInfo nodeId="6896005762093561312" fileName="PropEscapeUtil.java" startLine="69" startPosition="17" endLine="72" endPosition="16" />
-    <scopeInfo nodeId="6896005762093561410" fileName="PropEscapeUtil.java" startLine="90" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="6896005762093561413" varName="nibble" />
-    </scopeInfo>
-    <scopeInfo nodeId="6896005762093568404" fileName="PropEscapeUtil.java" startLine="104" startPosition="18" endLine="107" endPosition="16" />
-    <scopeInfo nodeId="6896005762093568306" fileName="PropEscapeUtil.java" startLine="108" startPosition="18" endLine="111" endPosition="16" />
-    <scopeInfo nodeId="6896005762093568320" fileName="PropEscapeUtil.java" startLine="112" startPosition="18" endLine="115" endPosition="16" />
-    <scopeInfo nodeId="6896005762093568334" fileName="PropEscapeUtil.java" startLine="116" startPosition="18" endLine="119" endPosition="16" />
-    <scopeInfo nodeId="6896005762093561220" fileName="PropEscapeUtil.java" startLine="41" startPosition="17" endLine="46" endPosition="16" />
-    <scopeInfo nodeId="6896005762093561120" fileName="PropEscapeUtil.java" startLine="31" startPosition="42" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="6896005762093561166" fileName="PropEscapeUtil.java" startLine="74" startPosition="64" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="6896005762093568216" fileName="PropEscapeUtil.java" startLine="121" startPosition="48" endLine="128" endPosition="0" />
-    <scopeInfo nodeId="6896005762093561145" fileName="PropEscapeUtil.java" startLine="73" startPosition="16" endLine="84" endPosition="11" />
-    <scopeInfo nodeId="6896005762093568195" fileName="PropEscapeUtil.java" startLine="120" startPosition="16" endLine="131" endPosition="11" />
-    <scopeInfo nodeId="6896005762093568148" fileName="PropEscapeUtil.java" startLine="101" startPosition="35" endLine="132" endPosition="7">
-      <varInfo nodeId="6896005762093568150" varName="aChar" />
-    </scopeInfo>
-    <scopeInfo nodeId="6896005762093568139" fileName="PropEscapeUtil.java" startLine="100" startPosition="56" endLine="133" endPosition="5">
-      <varInfo nodeId="6896005762093568140" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="6896005762093567762" fileName="PropEscapeUtil.java" startLine="94" startPosition="51" endLine="134" endPosition="32">
-      <varInfo nodeId="6896005762093568119" varName="bufLen" />
-      <varInfo nodeId="6896005762093568113" varName="len" />
-      <varInfo nodeId="6896005762093568134" varName="outBuffer" />
-    </scopeInfo>
-    <scopeInfo nodeId="6896005762093567755" fileName="PropEscapeUtil.java" startLine="94" startPosition="0" endLine="136" endPosition="0">
-      <varInfo nodeId="6896005762093567760" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="6896005762093561098" fileName="PropEscapeUtil.java" startLine="27" startPosition="35" endLine="85" endPosition="7">
-      <varInfo nodeId="6896005762093561100" varName="aChar" />
-    </scopeInfo>
-    <scopeInfo nodeId="6896005762093561089" fileName="PropEscapeUtil.java" startLine="26" startPosition="56" endLine="86" endPosition="5">
-      <varInfo nodeId="6896005762093561090" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="6896005762093561051" fileName="PropEscapeUtil.java" startLine="20" startPosition="89" endLine="87" endPosition="32">
-      <varInfo nodeId="6896005762093561069" varName="bufLen" />
-      <varInfo nodeId="6896005762093561063" varName="len" />
-      <varInfo nodeId="6896005762093561084" varName="outBuffer" />
-    </scopeInfo>
-    <scopeInfo nodeId="6896005762093561048" fileName="PropEscapeUtil.java" startLine="20" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="6896005762093561056" varName="escapeSpace" />
-      <varInfo nodeId="6896005762093561059" varName="escapeUnicode" />
-      <varInfo nodeId="6896005762093561053" varName="text" />
-    </scopeInfo>
-    <unitInfo nodeId="6896005762093561042" fileName="PropEscapeUtil.java" startLine="6" startPosition="0" endLine="137" endPosition="0" unitName="jetbrains.mps.core.properties.constraints.PropEscapeUtil" />
+    <file name="PropEscapeUtil.java">
+      <node id="6896005762093561423" at="7,0,8,0" concept="11" trace="hexDigit" />
+      <node id="6896005762093561585" at="12,47,13,58" concept="8" />
+      <node id="6896005762093561623" at="16,49,17,59" concept="8" />
+      <node id="6896005762093561062" at="20,89,21,28" concept="7" />
+      <node id="6896005762093561068" at="21,28,22,25" concept="7" />
+      <node id="6896005762093561079" at="23,21,24,33" concept="4" />
+      <node id="6896005762093561083" at="25,5,26,56" concept="7" />
+      <node id="6896005762093561099" at="27,35,28,34" concept="7" />
+      <node id="6896005762093561106" at="28,34,29,65" concept="9" />
+      <node id="6896005762093561108" at="29,65,30,36" concept="9" />
+      <node id="6896005762093561126" at="32,28,33,33" concept="4" />
+      <node id="6896005762093561131" at="33,33,34,33" concept="4" />
+      <node id="6896005762093561136" at="34,33,35,19" concept="3" />
+      <node id="6896005762093561137" at="36,9,37,32" concept="4" />
+      <node id="6896005762093561142" at="37,32,38,17" concept="3" />
+      <node id="6896005762093561228" at="42,38,43,35" concept="4" />
+      <node id="6896005762093561233" at="44,11,45,32" concept="4" />
+      <node id="6896005762093561238" at="45,32,46,16" concept="1" />
+      <node id="6896005762093561242" at="47,18,48,33" concept="4" />
+      <node id="6896005762093561247" at="48,33,49,32" concept="4" />
+      <node id="6896005762093561252" at="49,32,50,16" concept="1" />
+      <node id="6896005762093561256" at="51,18,52,33" concept="4" />
+      <node id="6896005762093561261" at="52,33,53,32" concept="4" />
+      <node id="6896005762093561266" at="53,32,54,16" concept="1" />
+      <node id="6896005762093561270" at="55,18,56,33" concept="4" />
+      <node id="6896005762093561275" at="56,33,57,32" concept="4" />
+      <node id="6896005762093561280" at="57,32,58,16" concept="1" />
+      <node id="6896005762093561284" at="59,18,60,33" concept="4" />
+      <node id="6896005762093561289" at="60,33,61,32" concept="4" />
+      <node id="6896005762093561294" at="61,32,62,16" concept="1" />
+      <node id="6896005762093561298" at="63,17,64,27" concept="9" />
+      <node id="6896005762093561303" at="65,17,66,27" concept="9" />
+      <node id="6896005762093561308" at="67,17,68,27" concept="9" />
+      <node id="6896005762093561313" at="69,17,70,33" concept="4" />
+      <node id="6896005762093561318" at="70,33,71,34" concept="4" />
+      <node id="6896005762093561323" at="71,34,72,16" concept="1" />
+      <node id="6896005762093561167" at="74,64,75,35" concept="4" />
+      <node id="6896005762093561172" at="75,35,76,34" concept="4" />
+      <node id="6896005762093561492" at="76,34,77,56" concept="4" />
+      <node id="6896005762093561508" at="77,56,78,55" concept="4" />
+      <node id="6896005762093561516" at="78,55,79,55" concept="4" />
+      <node id="6896005762093561524" at="79,55,80,48" concept="4" />
+      <node id="6896005762093561523" at="80,48,81,0" concept="10" />
+      <node id="6896005762093561161" at="82,18,83,36" concept="4" />
+      <node id="6896005762093561324" at="86,5,87,32" concept="8" />
+      <node id="6896005762093561416" at="90,41,91,35" concept="8" />
+      <node id="6896005762093568112" at="94,51,95,28" concept="7" />
+      <node id="6896005762093568118" at="95,28,96,25" concept="7" />
+      <node id="6896005762093568129" at="97,21,98,33" concept="4" />
+      <node id="6896005762093568133" at="99,5,100,56" concept="7" />
+      <node id="6896005762093568149" at="101,35,102,34" concept="7" />
+      <node id="6896005762093568406" at="104,18,105,33" concept="4" />
+      <node id="6896005762093568411" at="105,33,106,33" concept="4" />
+      <node id="6896005762093568416" at="106,33,107,16" concept="1" />
+      <node id="6896005762093568307" at="108,18,109,33" concept="4" />
+      <node id="6896005762093568312" at="109,33,110,32" concept="4" />
+      <node id="6896005762093568317" at="110,32,111,16" concept="1" />
+      <node id="6896005762093568321" at="112,18,113,33" concept="4" />
+      <node id="6896005762093568326" at="113,33,114,32" concept="4" />
+      <node id="6896005762093568331" at="114,32,115,16" concept="1" />
+      <node id="6896005762093568335" at="116,18,117,33" concept="4" />
+      <node id="6896005762093568340" at="117,33,118,32" concept="4" />
+      <node id="6896005762093568345" at="118,32,119,16" concept="1" />
+      <node id="6896005762093568217" at="121,48,122,35" concept="4" />
+      <node id="6896005762093568222" at="122,35,123,34" concept="4" />
+      <node id="6896005762093568227" at="123,34,124,56" concept="4" />
+      <node id="6896005762093568238" at="124,56,125,55" concept="4" />
+      <node id="6896005762093568249" at="125,55,126,55" concept="4" />
+      <node id="6896005762093568260" at="126,55,127,48" concept="4" />
+      <node id="6896005762093568268" at="127,48,128,0" concept="10" />
+      <node id="6896005762093568211" at="129,18,130,36" concept="4" />
+      <node id="6896005762093568375" at="133,5,134,32" concept="8" />
+      <node id="6896005762093561044" at="9,0,11,0" concept="2" trace="PropEscapeUtil#()V" />
+      <node id="6896005762093561159" at="82,16,84,11" concept="0" />
+      <node id="6896005762093568209" at="129,16,131,11" concept="0" />
+      <node id="6896005762093561578" at="12,0,15,0" concept="12" trace="escapeKey#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="6896005762093561616" at="16,0,19,0" concept="12" trace="escapeValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="6896005762093561074" at="22,25,25,5" concept="6" />
+      <node id="6896005762093561221" at="41,17,44,11" concept="6" />
+      <node id="6896005762093561410" at="90,0,93,0" concept="12" trace="toHex#(I)C" />
+      <node id="6896005762093568124" at="96,25,99,5" concept="6" />
+      <node id="6896005762093561121" at="31,42,36,9" concept="6" />
+      <node id="6896005762093561110" at="30,36,39,7" concept="6" />
+      <node id="6896005762093561146" at="73,16,84,11" concept="6" />
+      <node id="6896005762093568196" at="120,16,131,11" concept="6" />
+      <node id="6896005762093568193" at="102,34,132,7" concept="13" />
+      <node id="6896005762093568139" at="100,56,133,5" concept="5" />
+      <node id="6896005762093567755" at="94,0,136,0" concept="12" trace="escapeComment#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="6896005762093561143" at="39,7,85,7" concept="13" />
+      <node id="6896005762093561089" at="26,56,86,5" concept="5" />
+      <node id="6896005762093561048" at="20,0,89,0" concept="12" trace="escape#(Ljava/lang/String;ZZ)Ljava/lang/String;" />
+      <scope id="6896005762093561047" at="9,27,9,27" />
+      <scope id="6896005762093561581" at="12,47,13,58" />
+      <scope id="6896005762093561619" at="16,49,17,59" />
+      <scope id="6896005762093561078" at="23,21,24,33" />
+      <scope id="6896005762093561227" at="42,38,43,35" />
+      <scope id="6896005762093561297" at="63,17,64,27" />
+      <scope id="6896005762093561302" at="65,17,66,27" />
+      <scope id="6896005762093561307" at="67,17,68,27" />
+      <scope id="6896005762093561160" at="82,18,83,36" />
+      <scope id="6896005762093561415" at="90,41,91,35" />
+      <scope id="6896005762093568128" at="97,21,98,33" />
+      <scope id="6896005762093568210" at="129,18,130,36" />
+      <scope id="6896005762093561044" at="9,0,11,0" />
+      <scope id="6896005762093561578" at="12,0,15,0">
+        <var name="text" id="6896005762093561583" />
+      </scope>
+      <scope id="6896005762093561616" at="16,0,19,0">
+        <var name="text" id="6896005762093561621" />
+      </scope>
+      <scope id="6896005762093561125" at="32,28,35,19" />
+      <scope id="6896005762093561241" at="47,18,50,16" />
+      <scope id="6896005762093561255" at="51,18,54,16" />
+      <scope id="6896005762093561269" at="55,18,58,16" />
+      <scope id="6896005762093561283" at="59,18,62,16" />
+      <scope id="6896005762093561312" at="69,17,72,16" />
+      <scope id="6896005762093561410" at="90,0,93,0">
+        <var name="nibble" id="6896005762093561413" />
+      </scope>
+      <scope id="6896005762093568404" at="104,18,107,16" />
+      <scope id="6896005762093568306" at="108,18,111,16" />
+      <scope id="6896005762093568320" at="112,18,115,16" />
+      <scope id="6896005762093568334" at="116,18,119,16" />
+      <scope id="6896005762093561220" at="41,17,46,16" />
+      <scope id="6896005762093561120" at="31,42,38,17" />
+      <scope id="6896005762093561166" at="74,64,81,0" />
+      <scope id="6896005762093568216" at="121,48,128,0" />
+      <scope id="6896005762093561145" at="73,16,84,11" />
+      <scope id="6896005762093568195" at="120,16,131,11" />
+      <scope id="6896005762093568148" at="101,35,132,7">
+        <var name="aChar" id="6896005762093568150" />
+      </scope>
+      <scope id="6896005762093568139" at="100,56,133,5">
+        <var name="x" id="6896005762093568140" />
+      </scope>
+      <scope id="6896005762093567762" at="94,51,134,32">
+        <var name="bufLen" id="6896005762093568119" />
+        <var name="len" id="6896005762093568113" />
+        <var name="outBuffer" id="6896005762093568134" />
+      </scope>
+      <scope id="6896005762093567755" at="94,0,136,0">
+        <var name="text" id="6896005762093567760" />
+      </scope>
+      <scope id="6896005762093561098" at="27,35,85,7">
+        <var name="aChar" id="6896005762093561100" />
+      </scope>
+      <scope id="6896005762093561089" at="26,56,86,5">
+        <var name="x" id="6896005762093561090" />
+      </scope>
+      <scope id="6896005762093561051" at="20,89,87,32">
+        <var name="bufLen" id="6896005762093561069" />
+        <var name="len" id="6896005762093561063" />
+        <var name="outBuffer" id="6896005762093561084" />
+      </scope>
+      <scope id="6896005762093561048" at="20,0,89,0">
+        <var name="escapeSpace" id="6896005762093561056" />
+        <var name="escapeUnicode" id="6896005762093561059" />
+        <var name="text" id="6896005762093561053" />
+      </scope>
+      <unit id="6896005762093561042" at="6,0,137,0" name="jetbrains.mps.core.properties.constraints.PropEscapeUtil" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

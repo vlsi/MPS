@@ -1,200 +1,226 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="ExtensionDescriptor.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.ExtensionDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <root>
+    <file name="ExtensionDescriptor.java">
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.core.pluginSolution.plugin.ExtensionDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)/2222556283720140738">
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="30" startPosition="40" endLine="31" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="31" startPosition="46" endLine="32" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="32" startPosition="35" endLine="33" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="37" startPosition="32" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209385276369" fileName="AddMissingDependency_Action.java" startLine="42" startPosition="103" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1222430244831" fileName="AddMissingDependency_Action.java" startLine="44" startPosition="23" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7830859934979715500" fileName="AddMissingDependency_Action.java" startLine="46" startPosition="7" endLine="47" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7830859934979729011" fileName="AddMissingDependency_Action.java" startLine="48" startPosition="26" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7830859934979811710" fileName="AddMissingDependency_Action.java" startLine="51" startPosition="195" endLine="52" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209385293184" fileName="AddMissingDependency_Action.java" startLine="54" startPosition="5" endLine="55" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="60" startPosition="7" endLine="61" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="61" startPosition="60" endLine="62" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="65" startPosition="42" endLine="66" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="67" startPosition="7" endLine="68" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="73" startPosition="53" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="76" startPosition="5" endLine="77" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="79" startPosition="7" endLine="80" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="82" startPosition="67" endLine="83" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="84" startPosition="5" endLine="85" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="86" startPosition="61" endLine="87" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="88" startPosition="5" endLine="89" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="90" startPosition="68" endLine="91" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="92" startPosition="5" endLine="93" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209385300990" fileName="AddMissingDependency_Action.java" startLine="98" startPosition="105" endLine="99" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7830859934979823146" fileName="AddMissingDependency_Action.java" startLine="100" startPosition="25" endLine="101" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7830859934979824582" fileName="AddMissingDependency_Action.java" startLine="102" startPosition="9" endLine="103" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7830859934979824591" fileName="AddMissingDependency_Action.java" startLine="104" startPosition="28" endLine="105" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1209385306059" fileName="AddMissingDependency_Action.java" startLine="107" startPosition="197" endLine="108" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2724756130234264101" fileName="AddMissingDependency_Action.java" startLine="110" startPosition="7" endLine="111" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="113" startPosition="42" endLine="114" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="119" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="77" startPosition="57" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1222430227713" fileName="AddMissingDependency_Action.java" startLine="43" startPosition="58" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7830859934979720944" fileName="AddMissingDependency_Action.java" startLine="47" startPosition="67" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7830859934979804811" fileName="AddMissingDependency_Action.java" startLine="50" startPosition="7" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="72" startPosition="95" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="81" startPosition="5" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="85" startPosition="96" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="89" startPosition="103" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7830859934979823144" fileName="AddMissingDependency_Action.java" startLine="99" startPosition="60" endLine="102" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7830859934979824589" fileName="AddMissingDependency_Action.java" startLine="103" startPosition="69" endLine="106" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7830859934979824595" fileName="AddMissingDependency_Action.java" startLine="106" startPosition="9" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="112" startPosition="27" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="112" startPosition="27" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="59" startPosition="9" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="84" startPosition="5" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="88" startPosition="5" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddMissingDependency_Action#()V" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="75" startPosition="5" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="75" startPosition="5" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="58" startPosition="89" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1209385276361" fileName="AddMissingDependency_Action.java" startLine="41" startPosition="87" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="58" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="1209385300982" fileName="AddMissingDependency_Action.java" startLine="97" startPosition="9" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="41" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="96" startPosition="96" endLine="116" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="96" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="72" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="78" startPosition="25" endLine="78" endPosition="25" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="37" startPosition="32" endLine="38" endPosition="16" />
-    <scopeInfo nodeId="1222430227714" fileName="AddMissingDependency_Action.java" startLine="44" startPosition="23" endLine="45" endPosition="17" />
-    <scopeInfo nodeId="7830859934979720947" fileName="AddMissingDependency_Action.java" startLine="48" startPosition="26" endLine="49" endPosition="17" />
-    <scopeInfo nodeId="7830859934979804814" fileName="AddMissingDependency_Action.java" startLine="51" startPosition="195" endLine="52" endPosition="20" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="65" startPosition="42" endLine="66" endPosition="95" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="73" startPosition="53" endLine="74" endPosition="19" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="82" startPosition="67" endLine="83" endPosition="19" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="86" startPosition="61" endLine="87" endPosition="19" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="90" startPosition="68" endLine="91" endPosition="19" />
-    <scopeInfo nodeId="7830859934979823145" fileName="AddMissingDependency_Action.java" startLine="100" startPosition="25" endLine="101" endPosition="19" />
-    <scopeInfo nodeId="7830859934979824590" fileName="AddMissingDependency_Action.java" startLine="104" startPosition="28" endLine="105" endPosition="19" />
-    <scopeInfo nodeId="7830859934979824596" fileName="AddMissingDependency_Action.java" startLine="107" startPosition="197" endLine="108" endPosition="145" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="113" startPosition="42" endLine="114" endPosition="94" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="60" startPosition="7" endLine="62" endPosition="63">
-      <varInfo nodeId="2222556283720140738" varName="enabled" />
-    </scopeInfo>
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="30" startPosition="40" endLine="33" endPosition="41" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="64" startPosition="27" endLine="67" endPosition="7" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="112" startPosition="0" endLine="115" endPosition="7">
-      <varInfo nodeId="2222556283720140738" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="112" startPosition="27" endLine="115" endPosition="7" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="59" startPosition="9" endLine="63" endPosition="7" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="64" startPosition="0" endLine="68" endPosition="44">
-      <varInfo nodeId="2222556283720140738" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="64" startPosition="27" endLine="68" endPosition="44" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="76" startPosition="5" endLine="80" endPosition="61">
-      <varInfo nodeId="2222556283720140738" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="84" startPosition="5" endLine="88" endPosition="5" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="88" startPosition="5" endLine="92" endPosition="5" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="30" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="75" startPosition="5" endLine="84" endPosition="5" />
-    <scopeInfo nodeId="1209385276368" fileName="AddMissingDependency_Action.java" startLine="42" startPosition="103" endLine="53" endPosition="7">
-      <varInfo nodeId="7830859934979715501" varName="model" />
-      <varInfo nodeId="1209385276370" varName="mr" />
-    </scopeInfo>
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="58" startPosition="89" endLine="69" endPosition="5" />
-    <scopeInfo nodeId="1209385300989" fileName="AddMissingDependency_Action.java" startLine="98" startPosition="105" endLine="109" endPosition="9">
-      <varInfo nodeId="7830859934979824583" varName="model" />
-      <varInfo nodeId="1209385300991" varName="mr" />
-    </scopeInfo>
-    <scopeInfo nodeId="1209385276361" fileName="AddMissingDependency_Action.java" startLine="41" startPosition="87" endLine="54" endPosition="5">
-      <varInfo nodeId="1209385276366" varName="ref" />
-    </scopeInfo>
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="58" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="2222556283720140738" varName="_params" />
-      <varInfo nodeId="2222556283720140738" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="1209385300982" fileName="AddMissingDependency_Action.java" startLine="97" startPosition="9" endLine="110" endPosition="7">
-      <varInfo nodeId="1209385300987" varName="ref" />
-    </scopeInfo>
-    <scopeInfo nodeId="2222556283720352729" fileName="AddMissingDependency_Action.java" startLine="41" startPosition="87" endLine="55" endPosition="17" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="97" startPosition="9" endLine="111" endPosition="77" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="41" startPosition="0" endLine="57" endPosition="0">
-      <varInfo nodeId="2222556283720140738" varName="_params" />
-      <varInfo nodeId="2222556283720140738" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="96" startPosition="96" endLine="116" endPosition="5" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="72" startPosition="95" endLine="93" endPosition="16" />
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="96" startPosition="0" endLine="118" endPosition="0">
-      <varInfo nodeId="2222556283720140738" varName="_params" />
-      <varInfo nodeId="2222556283720140738" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="72" startPosition="0" endLine="95" endPosition="0">
-      <varInfo nodeId="2222556283720140738" varName="_params" />
-      <varInfo nodeId="2222556283720140738" varName="event" />
-    </scopeInfo>
-    <unitInfo nodeId="2222556283720140738" fileName="AddMissingDependency_Action.java" startLine="27" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.AddMissingDependency_Action" />
+    <file name="AddMissingDependency_Action.java">
+      <node id="2222556283720140738" at="28,0,29,0" concept="11" trace="ICON" />
+      <node id="2222556283720140738" at="30,40,31,46" concept="12" />
+      <node id="2222556283720140738" at="31,46,32,35" concept="3" />
+      <node id="2222556283720140738" at="32,35,33,41" concept="3" />
+      <node id="2222556283720140738" at="37,32,38,16" concept="9" />
+      <node id="1209385276369" at="42,103,43,58" concept="8" />
+      <node id="1222430244831" at="44,23,45,17" concept="2" />
+      <node id="7830859934979715500" at="46,7,47,67" concept="8" />
+      <node id="7830859934979729011" at="48,26,49,17" concept="2" />
+      <node id="7830859934979811710" at="51,195,52,20" concept="9" />
+      <node id="1209385293184" at="54,5,55,17" concept="9" />
+      <node id="2222556283720140738" at="60,7,61,60" concept="8" />
+      <node id="2222556283720140738" at="61,60,62,63" concept="3" />
+      <node id="2222556283720140738" at="65,42,66,95" concept="3" />
+      <node id="2222556283720140738" at="67,7,68,44" concept="3" />
+      <node id="2222556283720140738" at="73,53,74,19" concept="9" />
+      <node id="2222556283720140738" at="76,5,77,57" concept="8" />
+      <node id="2222556283720140738" at="79,7,80,61" concept="3" />
+      <node id="2222556283720140738" at="82,67,83,19" concept="9" />
+      <node id="2222556283720140738" at="84,5,85,96" concept="3" />
+      <node id="2222556283720140738" at="86,61,87,19" concept="9" />
+      <node id="2222556283720140738" at="88,5,89,103" concept="3" />
+      <node id="2222556283720140738" at="90,68,91,19" concept="9" />
+      <node id="2222556283720140738" at="92,5,93,16" concept="9" />
+      <node id="1209385300990" at="98,105,99,60" concept="8" />
+      <node id="7830859934979823146" at="100,25,101,19" concept="2" />
+      <node id="7830859934979824582" at="102,9,103,69" concept="8" />
+      <node id="7830859934979824591" at="104,28,105,19" concept="2" />
+      <node id="1209385306059" at="107,197,108,145" concept="3" />
+      <node id="2724756130234264101" at="110,7,111,77" concept="3" />
+      <node id="2222556283720140738" at="113,42,114,94" concept="3" />
+      <node id="2222556283720140738" at="119,0,120,0" concept="11" trace="LOG" />
+      <node id="2222556283720140738" at="77,57,79,7" concept="6" />
+      <node id="1222430227713" at="43,58,46,7" concept="6" />
+      <node id="7830859934979720944" at="47,67,50,7" concept="6" />
+      <node id="7830859934979804811" at="50,7,53,7" concept="6" />
+      <node id="2222556283720140738" at="64,27,67,7" concept="0" />
+      <node id="2222556283720140738" at="64,27,67,7" concept="6" />
+      <node id="2222556283720140738" at="72,95,75,5" concept="6" />
+      <node id="2222556283720140738" at="81,5,84,5" concept="6" />
+      <node id="2222556283720140738" at="85,96,88,5" concept="6" />
+      <node id="2222556283720140738" at="89,103,92,5" concept="6" />
+      <node id="7830859934979823144" at="99,60,102,9" concept="6" />
+      <node id="7830859934979824589" at="103,69,106,9" concept="6" />
+      <node id="7830859934979824595" at="106,9,109,9" concept="6" />
+      <node id="2222556283720140738" at="112,27,115,7" concept="0" />
+      <node id="2222556283720140738" at="112,27,115,7" concept="6" />
+      <node id="2222556283720140738" at="36,0,40,0" concept="7" trace="isDumbAware#()Z" />
+      <node id="2222556283720140738" at="59,9,63,7" concept="0" />
+      <node id="2222556283720140738" at="84,5,88,5" concept="0" />
+      <node id="2222556283720140738" at="88,5,92,5" concept="0" />
+      <node id="2222556283720140738" at="30,0,35,0" concept="1" trace="AddMissingDependency_Action#()V" />
+      <node id="2222556283720140738" at="75,5,81,5" concept="0" />
+      <node id="2222556283720140738" at="75,5,84,5" concept="0" />
+      <node id="2222556283720140738" at="58,89,69,5" concept="13" />
+      <node id="1209385276361" at="41,87,54,5" concept="5" />
+      <node id="2222556283720140738" at="58,0,71,0" concept="7" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="1209385300982" at="97,9,110,7" concept="5" />
+      <node id="2222556283720140738" at="41,0,57,0" concept="7" trace="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <node id="2222556283720140738" at="96,96,116,5" concept="13" />
+      <node id="2222556283720140738" at="96,0,118,0" concept="7" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="2222556283720140738" at="72,0,95,0" concept="7" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <scope id="2222556283720140738" at="78,25,78,25" />
+      <scope id="2222556283720140738" at="37,32,38,16" />
+      <scope id="1222430227714" at="44,23,45,17" />
+      <scope id="7830859934979720947" at="48,26,49,17" />
+      <scope id="7830859934979804814" at="51,195,52,20" />
+      <scope id="2222556283720140738" at="65,42,66,95" />
+      <scope id="2222556283720140738" at="73,53,74,19" />
+      <scope id="2222556283720140738" at="82,67,83,19" />
+      <scope id="2222556283720140738" at="86,61,87,19" />
+      <scope id="2222556283720140738" at="90,68,91,19" />
+      <scope id="7830859934979823145" at="100,25,101,19" />
+      <scope id="7830859934979824590" at="104,28,105,19" />
+      <scope id="7830859934979824596" at="107,197,108,145" />
+      <scope id="2222556283720140738" at="113,42,114,94" />
+      <scope id="2222556283720140738" at="60,7,62,63">
+        <var name="enabled" id="2222556283720140738" />
+      </scope>
+      <scope id="2222556283720140738" at="30,40,33,41" />
+      <scope id="2222556283720140738" at="64,27,67,7" />
+      <scope id="2222556283720140738" at="112,0,115,7">
+        <var name="t" id="2222556283720140738" />
+      </scope>
+      <scope id="2222556283720140738" at="112,27,115,7" />
+      <scope id="2222556283720140738" at="36,0,40,0" />
+      <scope id="2222556283720140738" at="59,9,63,7" />
+      <scope id="2222556283720140738" at="64,0,68,44">
+        <var name="t" id="2222556283720140738" />
+      </scope>
+      <scope id="2222556283720140738" at="64,27,68,44" />
+      <scope id="2222556283720140738" at="76,5,80,61">
+        <var name="node" id="2222556283720140738" />
+      </scope>
+      <scope id="2222556283720140738" at="84,5,88,5" />
+      <scope id="2222556283720140738" at="88,5,92,5" />
+      <scope id="2222556283720140738" at="30,0,35,0" />
+      <scope id="2222556283720140738" at="75,5,84,5" />
+      <scope id="1209385276368" at="42,103,53,7">
+        <var name="model" id="7830859934979715501" />
+        <var name="mr" id="1209385276370" />
+      </scope>
+      <scope id="2222556283720140738" at="58,89,69,5" />
+      <scope id="1209385300989" at="98,105,109,9">
+        <var name="model" id="7830859934979824583" />
+        <var name="mr" id="1209385300991" />
+      </scope>
+      <scope id="1209385276361" at="41,87,54,5">
+        <var name="ref" id="1209385276366" />
+      </scope>
+      <scope id="2222556283720140738" at="58,0,71,0">
+        <var name="_params" id="2222556283720140738" />
+        <var name="event" id="2222556283720140738" />
+      </scope>
+      <scope id="1209385300982" at="97,9,110,7">
+        <var name="ref" id="1209385300987" />
+      </scope>
+      <scope id="2222556283720352729" at="41,87,55,17" />
+      <scope id="2222556283720140738" at="97,9,111,77" />
+      <scope id="2222556283720140738" at="41,0,57,0">
+        <var name="_params" id="2222556283720140738" />
+        <var name="event" id="2222556283720140738" />
+      </scope>
+      <scope id="2222556283720140738" at="96,96,116,5" />
+      <scope id="2222556283720140738" at="72,95,93,16" />
+      <scope id="2222556283720140738" at="96,0,118,0">
+        <var name="_params" id="2222556283720140738" />
+        <var name="event" id="2222556283720140738" />
+      </scope>
+      <scope id="2222556283720140738" at="72,0,95,0">
+        <var name="_params" id="2222556283720140738" />
+        <var name="event" id="2222556283720140738" />
+      </scope>
+      <unit id="2222556283720140738" at="27,0,121,0" name="jetbrains.mps.lang.core.pluginSolution.plugin.AddMissingDependency_Action" />
+    </file>
   </root>
   <root nodeRef="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)/2724756130234264123">
-    <nodeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
-    <nodeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="13" startPosition="41" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="14" startPosition="34" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="15" startPosition="30" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2724756130234277482" fileName="ShowAsIntentions_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="16" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowAsIntentions_ActionGroup#()V" />
-    <scopeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="127" />
-    <scopeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
-      <varInfo nodeId="2724756130234264123" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
-    <scopeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="13" startPosition="41" endLine="21" endPosition="5" />
-    <scopeInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" />
-    <unitInfo nodeId="2724756130234264123" fileName="ShowAsIntentions_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.ShowAsIntentions_ActionGroup" />
+    <file name="ShowAsIntentions_ActionGroup.java">
+      <node id="2724756130234264123" at="10,0,11,0" concept="11" trace="LOG" />
+      <node id="2724756130234264123" at="11,0,12,0" concept="11" trace="ID" />
+      <node id="2724756130234264123" at="13,41,14,34" concept="12" />
+      <node id="2724756130234264123" at="14,34,15,30" concept="3" />
+      <node id="2724756130234264123" at="15,30,16,25" concept="3" />
+      <node id="2724756130234277482" at="17,9,18,127" concept="3" />
+      <node id="2724756130234264123" at="19,27,20,39" concept="3" />
+      <node id="2724756130234264123" at="16,25,21,5" concept="13" />
+      <node id="2724756130234264123" at="13,0,23,0" concept="1" trace="ShowAsIntentions_ActionGroup#()V" />
+      <scope id="2724756130234264123" at="17,9,18,127" />
+      <scope id="2724756130234264123" at="19,0,20,39">
+        <var name="t" id="2724756130234264123" />
+      </scope>
+      <scope id="2724756130234264123" at="19,27,20,39" />
+      <scope id="2724756130234264123" at="13,41,21,5" />
+      <scope id="2724756130234264123" at="13,0,23,0" />
+      <unit id="2724756130234264123" at="9,0,24,0" name="jetbrains.mps.lang.core.pluginSolution.plugin.ShowAsIntentions_ActionGroup" />
+    </file>
   </root>
   <root nodeRef="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)/6905339732004138486">
-    <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="11" startPosition="57" endLine="12" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1162302692985202025" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="16" startPosition="54" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8181622299284464455" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="19" startPosition="59" endLine="20" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8181622299284464193" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="20" startPosition="120" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6905339732004138985" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="22" startPosition="5" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_GeneratorCache6905339732004138486_#()V" />
-    <nodeInfo nodeId="1162302692985198019" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="15" startPosition="41" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8181622299284447810" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="18" startPosition="5" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="15" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/generator/GenerationCacheContainer;" />
-    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="11" startPosition="57" endLine="12" endPosition="52" />
-    <scopeInfo nodeId="1162302692985198020" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="16" startPosition="54" endLine="17" endPosition="18" />
-    <scopeInfo nodeId="8181622299284447813" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="19" startPosition="59" endLine="21" endPosition="18" />
-    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="11" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="15" startPosition="41" endLine="23" endPosition="60" />
-    <scopeInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="15" startPosition="0" endLine="25" endPosition="0" />
-    <unitInfo nodeId="6905339732004138486" fileName="Extension_GeneratorCache6905339732004138486_.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache6905339732004138486_" />
+    <file name="Extension_GeneratorCache6905339732004138486_.java">
+      <node id="6905339732004138486" at="11,57,12,52" concept="12" />
+      <node id="1162302692985202025" at="16,54,17,18" concept="9" />
+      <node id="8181622299284464455" at="19,59,20,120" concept="10" />
+      <node id="8181622299284464193" at="20,120,21,18" concept="9" />
+      <node id="6905339732004138985" at="22,5,23,60" concept="9" />
+      <node id="6905339732004138486" at="11,0,14,0" concept="1" trace="Extension_GeneratorCache6905339732004138486_#()V" />
+      <node id="1162302692985198019" at="15,41,18,5" concept="6" />
+      <node id="8181622299284447810" at="18,5,22,5" concept="6" />
+      <node id="6905339732004138486" at="15,0,25,0" concept="7" trace="get#()Ljetbrains/mps/generator/GenerationCacheContainer;" />
+      <scope id="6905339732004138486" at="11,57,12,52" />
+      <scope id="1162302692985198020" at="16,54,17,18" />
+      <scope id="8181622299284447813" at="19,59,21,18" />
+      <scope id="6905339732004138486" at="11,0,14,0" />
+      <scope id="6905339732004138486" at="15,41,23,60" />
+      <scope id="6905339732004138486" at="15,0,25,0" />
+      <unit id="6905339732004138486" at="10,0,26,0" name="jetbrains.mps.lang.core.pluginSolution.plugin.Extension_GeneratorCache6905339732004138486_" />
+    </file>
   </root>
   <root nodeRef="r:58b9acd8-db32-428c-ac80-a2787e2bcd96(jetbrains.mps.lang.core.pluginSolution.plugin)/8437874342968954378">
-    <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
-    <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="27" endLine="15" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="30" endLine="19" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="19" startPosition="30" endLine="20" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="49" endLine="21" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="14" endLine="22" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="37" endLine="26" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
-    <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-    <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
-    <nodeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
-    <scopeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="45" endLine="11" endPosition="45" />
-    <scopeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="27" endLine="15" endPosition="16" />
-    <scopeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="37" endLine="26" endPosition="134" />
-    <scopeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="30" endLine="22" endPosition="49" />
-    <scopeInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
-    <unitInfo nodeId="8437874342968954378" fileName="PluginSolution_ApplicationPlugin.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.core.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+    <file name="PluginSolution_ApplicationPlugin.java">
+      <node id="8437874342968954378" at="9,0,10,0" concept="4" trace="myId" />
+      <node id="8437874342968954378" at="14,27,15,16" concept="9" />
+      <node id="8437874342968954378" at="18,30,19,30" concept="10" />
+      <node id="8437874342968954378" at="19,30,20,49" concept="3" />
+      <node id="8437874342968954378" at="20,49,21,14" concept="10" />
+      <node id="8437874342968954378" at="21,14,22,49" concept="3" />
+      <node id="8437874342968954378" at="25,37,26,134" concept="3" />
+      <node id="8437874342968954378" at="11,0,13,0" concept="1" trace="PluginSolution_ApplicationPlugin#()V" />
+      <node id="8437874342968954378" at="14,0,17,0" concept="7" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+      <node id="8437874342968954378" at="25,0,28,0" concept="7" trace="adjustRegularGroups#()V" />
+      <node id="8437874342968954378" at="18,0,24,0" concept="7" trace="createGroups#()V" />
+      <scope id="8437874342968954378" at="11,45,11,45" />
+      <scope id="8437874342968954378" at="14,27,15,16" />
+      <scope id="8437874342968954378" at="25,37,26,134" />
+      <scope id="8437874342968954378" at="11,0,13,0" />
+      <scope id="8437874342968954378" at="14,0,17,0" />
+      <scope id="8437874342968954378" at="25,0,28,0" />
+      <scope id="8437874342968954378" at="18,30,22,49" />
+      <scope id="8437874342968954378" at="18,0,24,0" />
+      <unit id="8437874342968954378" at="8,0,29,0" name="jetbrains.mps.lang.core.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

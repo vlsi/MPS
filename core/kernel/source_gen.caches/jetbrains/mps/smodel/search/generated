@@ -32,7 +32,6 @@
   </source>
   <source id="4642948870877886822" name="ModelNodesSearchScope" hash="eqxdbjtn42fz6nfph3yro7ygtnnyomg">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="ModelNodesSearchScope.java" />
   </source>
   <source id="4642948870877886852" name="SubnodesSearchScope" hash="-8hf9bytssmqsvqm12ccphdy4bx4szr6">

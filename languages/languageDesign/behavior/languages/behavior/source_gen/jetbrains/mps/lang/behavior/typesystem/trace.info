@@ -1,349 +1,374 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.TypesystemDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="TypesystemDescriptor.java">
+      <unit at="9,0,29,0" name="jetbrains.mps.lang.behavior.typesystem.TypesystemDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)/1225195203269">
-    <nodeInfo nodeId="1225195203271" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="25" startPosition="124" endLine="26" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203282" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="27" startPosition="111" endLine="28" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225195203290" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="30" startPosition="167" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225195203299" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="33" startPosition="65" endLine="34" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203310" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="36" startPosition="109" endLine="37" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225195203323" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="41" startPosition="9" endLine="42" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203323" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="42" startPosition="62" endLine="43" endPosition="370" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203345" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="49" startPosition="9" endLine="50" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203345" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="50" startPosition="62" endLine="51" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="57" startPosition="46" endLine="58" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="62" startPosition="5" endLine="63" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="63" startPosition="130" endLine="64" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="68" startPosition="30" endLine="69" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_ConceptBehavior_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="1225195203280" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="26" startPosition="182" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225195203288" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="29" startPosition="5" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225195203308" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="35" startPosition="43" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1225195203323" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="40" startPosition="34" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225195203345" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="48" startPosition="99" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="61" startPosition="68" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225195203303" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="34" startPosition="44" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1225195203321" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="39" startPosition="7" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225195203343" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="47" startPosition="79" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1225195203341" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="46" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1225195203297" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="32" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="22" startPosition="52" endLine="22" endPosition="52" />
-    <scopeInfo nodeId="1225195203281" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="27" startPosition="111" endLine="28" endPosition="13" />
-    <scopeInfo nodeId="1225195203289" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="30" startPosition="167" endLine="31" endPosition="13" />
-    <scopeInfo nodeId="1225195203309" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="36" startPosition="109" endLine="37" endPosition="39" />
-    <scopeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="57" startPosition="46" endLine="58" endPosition="67" />
-    <scopeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="68" startPosition="30" endLine="69" endPosition="17" />
-    <scopeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1225195203323" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="41" startPosition="9" endLine="43" endPosition="370">
-      <varInfo nodeId="1225195203323" varName="_reporter_2309309498" />
-      <varInfo nodeId="1225195203323" varName="errorTarget" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195203345" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="49" startPosition="9" endLine="51" endPosition="250">
-      <varInfo nodeId="1225195203345" varName="_reporter_2309309498" />
-      <varInfo nodeId="1225195203345" varName="errorTarget" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="62" startPosition="5" endLine="64" endPosition="45">
-      <varInfo nodeId="1225195203269" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195203307" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="35" startPosition="43" endLine="38" endPosition="9" />
-    <scopeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1225195203322" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="40" startPosition="34" endLine="44" endPosition="9" />
-    <scopeInfo nodeId="1225195203344" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="48" startPosition="99" endLine="52" endPosition="9" />
-    <scopeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="61" startPosition="68" endLine="65" endPosition="5" />
-    <scopeInfo nodeId="1225195203303" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="34" startPosition="44" endLine="39" endPosition="7">
-      <varInfo nodeId="1225195203305" varName="cm" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195203342" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="47" startPosition="79" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="1225195203269" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195203341" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="46" startPosition="5" endLine="54" endPosition="5">
-      <varInfo nodeId="1225195203354" varName="cmd" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195203298" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="33" startPosition="65" endLine="45" endPosition="7">
-      <varInfo nodeId="1225195203300" varName="notImplementedMethods" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195203270" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="25" startPosition="124" endLine="54" endPosition="5">
-      <varInfo nodeId="1225195203272" varName="methodDeclarations" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="25" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="1225195203269" varName="nodeToCheck" />
-      <varInfo nodeId="1225195203269" varName="status" />
-      <varInfo nodeId="1225195203269" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1225195203269" fileName="check_ConceptBehavior_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.check_ConceptBehavior_NonTypesystemRule" />
+    <file name="check_ConceptBehavior_NonTypesystemRule.java">
+      <node id="1225195203271" at="25,124,26,182" concept="8" />
+      <node id="1225195203282" at="27,111,28,13" concept="9" />
+      <node id="1225195203290" at="30,167,31,13" concept="9" />
+      <node id="1225195203299" at="33,65,34,44" concept="8" />
+      <node id="1225195203310" at="36,109,37,39" concept="3" />
+      <node id="1225195203323" at="41,9,42,62" concept="8" />
+      <node id="1225195203323" at="42,62,43,370" concept="8" />
+      <node id="1225195203345" at="49,9,50,62" concept="8" />
+      <node id="1225195203345" at="50,62,51,250" concept="8" />
+      <node id="1225195203269" at="57,46,58,67" concept="9" />
+      <node id="1225195203269" at="62,5,63,130" concept="8" />
+      <node id="1225195203269" at="63,130,64,45" concept="9" />
+      <node id="1225195203269" at="68,30,69,17" concept="9" />
+      <node id="1225195203269" at="22,0,24,0" concept="2" trace="check_ConceptBehavior_NonTypesystemRule#()V" />
+      <node id="1225195203280" at="26,182,29,5" concept="6" />
+      <node id="1225195203288" at="29,5,32,5" concept="6" />
+      <node id="1225195203308" at="35,43,38,9" concept="6" />
+      <node id="1225195203269" at="57,0,60,0" concept="7" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1225195203269" at="68,0,71,0" concept="7" trace="overrides#()Z" />
+      <node id="1225195203323" at="40,34,44,9" concept="0" />
+      <node id="1225195203345" at="48,99,52,9" concept="0" />
+      <node id="1225195203269" at="61,68,65,5" concept="0" />
+      <node id="1225195203303" at="34,44,39,7" concept="5" />
+      <node id="1225195203321" at="39,7,45,7" concept="6" />
+      <node id="1225195203343" at="47,79,53,7" concept="6" />
+      <node id="1225195203269" at="61,0,67,0" concept="7" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1225195203341" at="46,5,54,5" concept="5" />
+      <node id="1225195203297" at="32,5,46,5" concept="6" />
+      <node id="1225195203269" at="25,0,56,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1225195203269" at="22,52,22,52" />
+      <scope id="1225195203281" at="27,111,28,13" />
+      <scope id="1225195203289" at="30,167,31,13" />
+      <scope id="1225195203309" at="36,109,37,39" />
+      <scope id="1225195203269" at="57,46,58,67" />
+      <scope id="1225195203269" at="68,30,69,17" />
+      <scope id="1225195203269" at="22,0,24,0" />
+      <scope id="1225195203323" at="41,9,43,370">
+        <var name="_reporter_2309309498" id="1225195203323" />
+        <var name="errorTarget" id="1225195203323" />
+      </scope>
+      <scope id="1225195203345" at="49,9,51,250">
+        <var name="_reporter_2309309498" id="1225195203345" />
+        <var name="errorTarget" id="1225195203345" />
+      </scope>
+      <scope id="1225195203269" at="62,5,64,45">
+        <var name="b" id="1225195203269" />
+      </scope>
+      <scope id="1225195203307" at="35,43,38,9" />
+      <scope id="1225195203269" at="57,0,60,0" />
+      <scope id="1225195203269" at="68,0,71,0" />
+      <scope id="1225195203322" at="40,34,44,9" />
+      <scope id="1225195203344" at="48,99,52,9" />
+      <scope id="1225195203269" at="61,68,65,5" />
+      <scope id="1225195203303" at="34,44,39,7">
+        <var name="cm" id="1225195203305" />
+      </scope>
+      <scope id="1225195203342" at="47,79,53,7" />
+      <scope id="1225195203269" at="61,0,67,0">
+        <var name="argument" id="1225195203269" />
+      </scope>
+      <scope id="1225195203341" at="46,5,54,5">
+        <var name="cmd" id="1225195203354" />
+      </scope>
+      <scope id="1225195203298" at="33,65,45,7">
+        <var name="notImplementedMethods" id="1225195203300" />
+      </scope>
+      <scope id="1225195203270" at="25,124,54,5">
+        <var name="methodDeclarations" id="1225195203272" />
+      </scope>
+      <scope id="1225195203269" at="25,0,56,0">
+        <var name="nodeToCheck" id="1225195203269" />
+        <var name="status" id="1225195203269" />
+        <var name="typeCheckingContext" id="1225195203269" />
+      </scope>
+      <unit id="1225195203269" at="21,0,72,0" name="jetbrains.mps.lang.behavior.typesystem.check_ConceptBehavior_NonTypesystemRule" />
+    </file>
   </root>
   <root nodeRef="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)/1225195239759">
-    <nodeInfo nodeId="1225195239776" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="20" startPosition="124" endLine="21" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5527038142169120625" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="23" startPosition="7" endLine="24" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5527038142169120625" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="24" startPosition="55" endLine="25" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5527038142169120625" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="25" startPosition="206" endLine="26" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225195239813" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="29" startPosition="7" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195239813" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="30" startPosition="55" endLine="31" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195239813" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="31" startPosition="200" endLine="32" endPosition="292" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="37" startPosition="46" endLine="38" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="42" startPosition="5" endLine="43" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="43" startPosition="130" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="48" startPosition="30" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5527038142169120915" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="52" startPosition="81" endLine="53" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5527038142169120915" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="53" startPosition="63" endLine="54" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5527038142169120915" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="54" startPosition="30" endLine="55" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5527038142169120915" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="55" startPosition="135" endLine="56" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5527038142169120915" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="56" startPosition="95" endLine="57" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225195239818" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="60" startPosition="82" endLine="61" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195239818" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="61" startPosition="63" endLine="62" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225195239818" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="62" startPosition="30" endLine="63" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225195239818" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="63" startPosition="132" endLine="64" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225195239818" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="64" startPosition="85" endLine="65" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_SuperNodeExpression_InferenceRule#()V" />
-    <nodeInfo nodeId="5527038142169120915" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="54" startPosition="30" endLine="56" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5527038142169120915" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="54" startPosition="30" endLine="56" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225195239818" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="62" startPosition="30" endLine="64" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225195239818" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="62" startPosition="30" endLine="64" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="41" startPosition="68" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5527038142169120625" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="22" startPosition="97" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225195239813" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="28" startPosition="12" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5527038142169225923" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="28" startPosition="10" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="5527038142169120915" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="52" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ts3rwu_a0a0b0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1225195239818" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="60" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ts3rwu_a0a0a1a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5527038142168946470" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="21" startPosition="108" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="17" startPosition="53" endLine="17" endPosition="53" />
-    <scopeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="37" startPosition="46" endLine="38" endPosition="71" />
-    <scopeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="48" startPosition="30" endLine="49" endPosition="17" />
-    <scopeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="42" startPosition="5" endLine="44" endPosition="45">
-      <varInfo nodeId="1225195239759" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="5527038142169120915" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="54" startPosition="30" endLine="56" endPosition="95" />
-    <scopeInfo nodeId="1225195239818" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="62" startPosition="30" endLine="64" endPosition="85" />
-    <scopeInfo nodeId="5527038142169120625" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="23" startPosition="7" endLine="26" endPosition="297">
-      <varInfo nodeId="5527038142169120625" varName="_info_12389875345" />
-      <varInfo nodeId="5527038142169120625" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195239813" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="29" startPosition="7" endLine="32" endPosition="292">
-      <varInfo nodeId="1225195239813" varName="_info_12389875345" />
-      <varInfo nodeId="1225195239813" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="41" startPosition="68" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="5527038142168946472" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="22" startPosition="97" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="5527038142169225924" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="28" startPosition="12" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="5527038142169120915" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="52" startPosition="81" endLine="57" endPosition="24">
-      <varInfo nodeId="5527038142169120915" varName="facade" />
-      <varInfo nodeId="5527038142169120915" varName="quotedNode_2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195239818" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="60" startPosition="82" endLine="65" endPosition="24">
-      <varInfo nodeId="1225195239818" varName="facade" />
-      <varInfo nodeId="1225195239818" varName="quotedNode_2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="1225195239759" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="5527038142169120915" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="52" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="5527038142169120915" varName="parameter_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195239818" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="60" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="1225195239818" varName="parameter_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195239760" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="20" startPosition="124" endLine="34" endPosition="5">
-      <varInfo nodeId="1225195239777" varName="superConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1225195239759" varName="nodeToCheck" />
-      <varInfo nodeId="1225195239759" varName="status" />
-      <varInfo nodeId="1225195239759" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1225195239759" fileName="typeof_SuperNodeExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.typeof_SuperNodeExpression_InferenceRule" />
+    <file name="typeof_SuperNodeExpression_InferenceRule.java">
+      <node id="1225195239776" at="20,124,21,108" concept="8" />
+      <node id="5527038142169120625" at="23,7,24,55" concept="8" />
+      <node id="5527038142169120625" at="24,55,25,206" concept="8" />
+      <node id="5527038142169120625" at="25,206,26,297" concept="3" />
+      <node id="1225195239813" at="29,7,30,55" concept="8" />
+      <node id="1225195239813" at="30,55,31,200" concept="8" />
+      <node id="1225195239813" at="31,200,32,292" concept="3" />
+      <node id="1225195239759" at="37,46,38,71" concept="9" />
+      <node id="1225195239759" at="42,5,43,130" concept="8" />
+      <node id="1225195239759" at="43,130,44,45" concept="9" />
+      <node id="1225195239759" at="48,30,49,17" concept="9" />
+      <node id="5527038142169120915" at="52,81,53,63" concept="8" />
+      <node id="5527038142169120915" at="53,63,54,30" concept="8" />
+      <node id="5527038142169120915" at="54,30,55,135" concept="3" />
+      <node id="5527038142169120915" at="55,135,56,95" concept="3" />
+      <node id="5527038142169120915" at="56,95,57,24" concept="9" />
+      <node id="1225195239818" at="60,82,61,63" concept="8" />
+      <node id="1225195239818" at="61,63,62,30" concept="8" />
+      <node id="1225195239818" at="62,30,63,132" concept="3" />
+      <node id="1225195239818" at="63,132,64,85" concept="3" />
+      <node id="1225195239818" at="64,85,65,24" concept="9" />
+      <node id="1225195239759" at="17,0,19,0" concept="2" trace="typeof_SuperNodeExpression_InferenceRule#()V" />
+      <node id="5527038142169120915" at="54,30,56,95" concept="0" />
+      <node id="5527038142169120915" at="54,30,56,95" concept="0" />
+      <node id="1225195239818" at="62,30,64,85" concept="0" />
+      <node id="1225195239818" at="62,30,64,85" concept="0" />
+      <node id="1225195239759" at="37,0,40,0" concept="7" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1225195239759" at="48,0,51,0" concept="7" trace="overrides#()Z" />
+      <node id="1225195239759" at="41,68,45,5" concept="0" />
+      <node id="5527038142169120625" at="22,97,27,7" concept="0" />
+      <node id="1225195239813" at="28,12,33,7" concept="0" />
+      <node id="5527038142169225923" at="28,10,34,5" concept="0" />
+      <node id="1225195239759" at="41,0,47,0" concept="7" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="5527038142169120915" at="52,0,59,0" concept="10" trace="_quotation_createNode_ts3rwu_a0a0b0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1225195239818" at="60,0,67,0" concept="10" trace="_quotation_createNode_ts3rwu_a0a0a1a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5527038142168946470" at="21,108,34,5" concept="6" />
+      <node id="1225195239759" at="20,0,36,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1225195239759" at="17,53,17,53" />
+      <scope id="1225195239759" at="37,46,38,71" />
+      <scope id="1225195239759" at="48,30,49,17" />
+      <scope id="1225195239759" at="17,0,19,0" />
+      <scope id="1225195239759" at="42,5,44,45">
+        <var name="b" id="1225195239759" />
+      </scope>
+      <scope id="5527038142169120915" at="54,30,56,95" />
+      <scope id="1225195239818" at="62,30,64,85" />
+      <scope id="5527038142169120625" at="23,7,26,297">
+        <var name="_info_12389875345" id="5527038142169120625" />
+        <var name="_nodeToCheck_1029348928467" id="5527038142169120625" />
+      </scope>
+      <scope id="1225195239813" at="29,7,32,292">
+        <var name="_info_12389875345" id="1225195239813" />
+        <var name="_nodeToCheck_1029348928467" id="1225195239813" />
+      </scope>
+      <scope id="1225195239759" at="37,0,40,0" />
+      <scope id="1225195239759" at="48,0,51,0" />
+      <scope id="1225195239759" at="41,68,45,5" />
+      <scope id="5527038142168946472" at="22,97,27,7" />
+      <scope id="5527038142169225924" at="28,12,33,7" />
+      <scope id="5527038142169120915" at="52,81,57,24">
+        <var name="facade" id="5527038142169120915" />
+        <var name="quotedNode_2" id="5527038142169120915" />
+      </scope>
+      <scope id="1225195239818" at="60,82,65,24">
+        <var name="facade" id="1225195239818" />
+        <var name="quotedNode_2" id="1225195239818" />
+      </scope>
+      <scope id="1225195239759" at="41,0,47,0">
+        <var name="argument" id="1225195239759" />
+      </scope>
+      <scope id="5527038142169120915" at="52,0,59,0">
+        <var name="parameter_1" id="5527038142169120915" />
+      </scope>
+      <scope id="1225195239818" at="60,0,67,0">
+        <var name="parameter_1" id="1225195239818" />
+      </scope>
+      <scope id="1225195239760" at="20,124,34,5">
+        <var name="superConcept" id="1225195239777" />
+      </scope>
+      <scope id="1225195239759" at="20,0,36,0">
+        <var name="nodeToCheck" id="1225195239759" />
+        <var name="status" id="1225195239759" />
+        <var name="typeCheckingContext" id="1225195239759" />
+      </scope>
+      <unit id="1225195239759" at="16,0,68,0" name="jetbrains.mps.lang.behavior.typesystem.typeof_SuperNodeExpression_InferenceRule" />
+    </file>
   </root>
   <root nodeRef="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)/1225196556158">
-    <nodeInfo nodeId="1225196556160" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="22" startPosition="121" endLine="23" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113798979053126540" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="23" startPosition="130" endLine="24" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113798979053291868" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="26" startPosition="7" endLine="27" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113798979053291868" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="27" startPosition="52" endLine="28" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113798979053291868" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="28" startPosition="205" endLine="29" endPosition="338" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225196556169" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="32" startPosition="7" endLine="33" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225196556169" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="33" startPosition="52" endLine="34" endPosition="200" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225196556169" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="34" startPosition="200" endLine="35" endPosition="334" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="40" startPosition="46" endLine="41" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="45" startPosition="5" endLine="46" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="46" startPosition="130" endLine="47" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="51" startPosition="30" endLine="52" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="113798979053291873" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="55" startPosition="81" endLine="56" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113798979053291873" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="56" startPosition="63" endLine="57" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="113798979053291873" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="57" startPosition="30" endLine="58" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="113798979053291873" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="58" startPosition="135" endLine="59" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="113798979053291873" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="59" startPosition="95" endLine="60" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225196556174" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="63" startPosition="82" endLine="64" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225196556174" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="64" startPosition="63" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1225196556174" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="65" startPosition="30" endLine="66" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225196556174" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="66" startPosition="132" endLine="67" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225196556174" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="67" startPosition="85" endLine="68" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_ThisNodeExpression_InferenceRule#()V" />
-    <nodeInfo nodeId="113798979053291873" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="57" startPosition="30" endLine="59" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="113798979053291873" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="57" startPosition="30" endLine="59" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225196556174" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="65" startPosition="30" endLine="67" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225196556174" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="65" startPosition="30" endLine="67" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="44" startPosition="68" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="113798979053291868" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="25" startPosition="61" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225196556169" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="31" startPosition="12" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="113798979053290431" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="31" startPosition="10" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="113798979053291873" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_b2r2xa_a0a0c0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1225196556174" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="63" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_b2r2xa_a0a0a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="113798979053134322" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="24" startPosition="137" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="22" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="19" startPosition="52" endLine="19" endPosition="52" />
-    <scopeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="40" startPosition="46" endLine="41" endPosition="70" />
-    <scopeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="51" startPosition="30" endLine="52" endPosition="17" />
-    <scopeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="45" startPosition="5" endLine="47" endPosition="45">
-      <varInfo nodeId="1225196556158" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="113798979053291873" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="57" startPosition="30" endLine="59" endPosition="95" />
-    <scopeInfo nodeId="1225196556174" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="65" startPosition="30" endLine="67" endPosition="85" />
-    <scopeInfo nodeId="113798979053291868" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="26" startPosition="7" endLine="29" endPosition="338">
-      <varInfo nodeId="113798979053291868" varName="_info_12389875345" />
-      <varInfo nodeId="113798979053291868" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225196556169" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="32" startPosition="7" endLine="35" endPosition="334">
-      <varInfo nodeId="1225196556169" varName="_info_12389875345" />
-      <varInfo nodeId="1225196556169" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="44" startPosition="68" endLine="48" endPosition="5" />
-    <scopeInfo nodeId="113798979053134324" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="25" startPosition="61" endLine="30" endPosition="7" />
-    <scopeInfo nodeId="113798979053290432" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="31" startPosition="12" endLine="36" endPosition="7" />
-    <scopeInfo nodeId="113798979053291873" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="55" startPosition="81" endLine="60" endPosition="24">
-      <varInfo nodeId="113798979053291873" varName="facade" />
-      <varInfo nodeId="113798979053291873" varName="quotedNode_2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225196556174" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="63" startPosition="82" endLine="68" endPosition="24">
-      <varInfo nodeId="1225196556174" varName="facade" />
-      <varInfo nodeId="1225196556174" varName="quotedNode_2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="44" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="1225196556158" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="113798979053291873" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="55" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="113798979053291873" varName="parameter_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225196556174" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="63" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="1225196556174" varName="parameter_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225196556159" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="22" startPosition="121" endLine="37" endPosition="5">
-      <varInfo nodeId="1225196556161" varName="behaviour" />
-      <varInfo nodeId="113798979053126543" varName="method" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="22" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="1225196556158" varName="status" />
-      <varInfo nodeId="1225196556158" varName="thisNode" />
-      <varInfo nodeId="1225196556158" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1225196556158" fileName="typeof_ThisNodeExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.typeof_ThisNodeExpression_InferenceRule" />
+    <file name="typeof_ThisNodeExpression_InferenceRule.java">
+      <node id="1225196556160" at="22,121,23,130" concept="8" />
+      <node id="113798979053126540" at="23,130,24,137" concept="8" />
+      <node id="113798979053291868" at="26,7,27,52" concept="8" />
+      <node id="113798979053291868" at="27,52,28,205" concept="8" />
+      <node id="113798979053291868" at="28,205,29,338" concept="3" />
+      <node id="1225196556169" at="32,7,33,52" concept="8" />
+      <node id="1225196556169" at="33,52,34,200" concept="8" />
+      <node id="1225196556169" at="34,200,35,334" concept="3" />
+      <node id="1225196556158" at="40,46,41,70" concept="9" />
+      <node id="1225196556158" at="45,5,46,130" concept="8" />
+      <node id="1225196556158" at="46,130,47,45" concept="9" />
+      <node id="1225196556158" at="51,30,52,17" concept="9" />
+      <node id="113798979053291873" at="55,81,56,63" concept="8" />
+      <node id="113798979053291873" at="56,63,57,30" concept="8" />
+      <node id="113798979053291873" at="57,30,58,135" concept="3" />
+      <node id="113798979053291873" at="58,135,59,95" concept="3" />
+      <node id="113798979053291873" at="59,95,60,24" concept="9" />
+      <node id="1225196556174" at="63,82,64,63" concept="8" />
+      <node id="1225196556174" at="64,63,65,30" concept="8" />
+      <node id="1225196556174" at="65,30,66,132" concept="3" />
+      <node id="1225196556174" at="66,132,67,85" concept="3" />
+      <node id="1225196556174" at="67,85,68,24" concept="9" />
+      <node id="1225196556158" at="19,0,21,0" concept="2" trace="typeof_ThisNodeExpression_InferenceRule#()V" />
+      <node id="113798979053291873" at="57,30,59,95" concept="0" />
+      <node id="113798979053291873" at="57,30,59,95" concept="0" />
+      <node id="1225196556174" at="65,30,67,85" concept="0" />
+      <node id="1225196556174" at="65,30,67,85" concept="0" />
+      <node id="1225196556158" at="40,0,43,0" concept="7" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1225196556158" at="51,0,54,0" concept="7" trace="overrides#()Z" />
+      <node id="1225196556158" at="44,68,48,5" concept="0" />
+      <node id="113798979053291868" at="25,61,30,7" concept="0" />
+      <node id="1225196556169" at="31,12,36,7" concept="0" />
+      <node id="113798979053290431" at="31,10,37,5" concept="0" />
+      <node id="1225196556158" at="44,0,50,0" concept="7" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="113798979053291873" at="55,0,62,0" concept="10" trace="_quotation_createNode_b2r2xa_a0a0c0b#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1225196556174" at="63,0,70,0" concept="10" trace="_quotation_createNode_b2r2xa_a0a0a2a1#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="113798979053134322" at="24,137,37,5" concept="6" />
+      <node id="1225196556158" at="22,0,39,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1225196556158" at="19,52,19,52" />
+      <scope id="1225196556158" at="40,46,41,70" />
+      <scope id="1225196556158" at="51,30,52,17" />
+      <scope id="1225196556158" at="19,0,21,0" />
+      <scope id="1225196556158" at="45,5,47,45">
+        <var name="b" id="1225196556158" />
+      </scope>
+      <scope id="113798979053291873" at="57,30,59,95" />
+      <scope id="1225196556174" at="65,30,67,85" />
+      <scope id="113798979053291868" at="26,7,29,338">
+        <var name="_info_12389875345" id="113798979053291868" />
+        <var name="_nodeToCheck_1029348928467" id="113798979053291868" />
+      </scope>
+      <scope id="1225196556169" at="32,7,35,334">
+        <var name="_info_12389875345" id="1225196556169" />
+        <var name="_nodeToCheck_1029348928467" id="1225196556169" />
+      </scope>
+      <scope id="1225196556158" at="40,0,43,0" />
+      <scope id="1225196556158" at="51,0,54,0" />
+      <scope id="1225196556158" at="44,68,48,5" />
+      <scope id="113798979053134324" at="25,61,30,7" />
+      <scope id="113798979053290432" at="31,12,36,7" />
+      <scope id="113798979053291873" at="55,81,60,24">
+        <var name="facade" id="113798979053291873" />
+        <var name="quotedNode_2" id="113798979053291873" />
+      </scope>
+      <scope id="1225196556174" at="63,82,68,24">
+        <var name="facade" id="1225196556174" />
+        <var name="quotedNode_2" id="1225196556174" />
+      </scope>
+      <scope id="1225196556158" at="44,0,50,0">
+        <var name="argument" id="1225196556158" />
+      </scope>
+      <scope id="113798979053291873" at="55,0,62,0">
+        <var name="parameter_1" id="113798979053291873" />
+      </scope>
+      <scope id="1225196556174" at="63,0,70,0">
+        <var name="parameter_1" id="1225196556174" />
+      </scope>
+      <scope id="1225196556159" at="22,121,37,5">
+        <var name="behaviour" id="1225196556161" />
+        <var name="method" id="113798979053126543" />
+      </scope>
+      <scope id="1225196556158" at="22,0,39,0">
+        <var name="status" id="1225196556158" />
+        <var name="thisNode" id="1225196556158" />
+        <var name="typeCheckingContext" id="1225196556158" />
+      </scope>
+      <unit id="1225196556158" at="18,0,71,0" name="jetbrains.mps.lang.behavior.typesystem.typeof_ThisNodeExpression_InferenceRule" />
+    </file>
   </root>
   <root nodeRef="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)/1227262734777">
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="24" startPosition="60" endLine="25" endPosition="272" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="26" startPosition="9" endLine="27" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="27" startPosition="153" endLine="28" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="28" startPosition="65" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="35" startPosition="46" endLine="36" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="40" startPosition="5" endLine="41" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="41" startPosition="130" endLine="42" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="46" startPosition="30" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_ConceptMethodDeclaration_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="39" startPosition="68" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="25" startPosition="272" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="22" startPosition="95" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1227262761173" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="21" startPosition="119" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="18" startPosition="61" endLine="18" endPosition="61" />
-    <scopeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="35" startPosition="46" endLine="36" endPosition="76" />
-    <scopeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="46" startPosition="30" endLine="47" endPosition="17" />
-    <scopeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="40" startPosition="5" endLine="42" endPosition="45">
-      <varInfo nodeId="1227262734777" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="26" startPosition="9" endLine="29" endPosition="71">
-      <varInfo nodeId="1227262769261" varName="intentionProvider" />
-    </scopeInfo>
-    <scopeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="39" startPosition="68" endLine="43" endPosition="5" />
-    <scopeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="1227262734777" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="1227262769261" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="23" startPosition="7" endLine="30" endPosition="9">
-      <varInfo nodeId="1227262769261" varName="_reporter_2309309498" />
-      <varInfo nodeId="1227262769261" varName="errorTarget" />
-    </scopeInfo>
-    <scopeInfo nodeId="1227262761175" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="22" startPosition="95" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="1227262734778" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="21" startPosition="119" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="1227262734777" varName="method" />
-      <varInfo nodeId="1227262734777" varName="status" />
-      <varInfo nodeId="1227262734777" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1227262734777" fileName="check_ConceptMethodDeclaration_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.check_ConceptMethodDeclaration_NonTypesystemRule" />
+    <file name="check_ConceptMethodDeclaration_NonTypesystemRule.java">
+      <node id="1227262769261" at="23,7,24,60" concept="8" />
+      <node id="1227262769261" at="24,60,25,272" concept="8" />
+      <node id="1227262769261" at="26,9,27,153" concept="8" />
+      <node id="1227262769261" at="27,153,28,65" concept="3" />
+      <node id="1227262769261" at="28,65,29,71" concept="3" />
+      <node id="1227262734777" at="35,46,36,76" concept="9" />
+      <node id="1227262734777" at="40,5,41,130" concept="8" />
+      <node id="1227262734777" at="41,130,42,45" concept="9" />
+      <node id="1227262734777" at="46,30,47,17" concept="9" />
+      <node id="1227262734777" at="18,0,20,0" concept="2" trace="check_ConceptMethodDeclaration_NonTypesystemRule#()V" />
+      <node id="1227262734777" at="35,0,38,0" concept="7" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1227262734777" at="46,0,49,0" concept="7" trace="overrides#()Z" />
+      <node id="1227262734777" at="39,68,43,5" concept="0" />
+      <node id="1227262769261" at="25,272,30,9" concept="0" />
+      <node id="1227262734777" at="39,0,45,0" concept="7" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1227262769261" at="22,95,31,7" concept="0" />
+      <node id="1227262761173" at="21,119,32,5" concept="6" />
+      <node id="1227262734777" at="21,0,34,0" concept="7" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1227262734777" at="18,61,18,61" />
+      <scope id="1227262734777" at="35,46,36,76" />
+      <scope id="1227262734777" at="46,30,47,17" />
+      <scope id="1227262734777" at="18,0,20,0" />
+      <scope id="1227262734777" at="40,5,42,45">
+        <var name="b" id="1227262734777" />
+      </scope>
+      <scope id="1227262769261" at="26,9,29,71">
+        <var name="intentionProvider" id="1227262769261" />
+      </scope>
+      <scope id="1227262734777" at="35,0,38,0" />
+      <scope id="1227262734777" at="46,0,49,0" />
+      <scope id="1227262734777" at="39,68,43,5" />
+      <scope id="1227262734777" at="39,0,45,0">
+        <var name="argument" id="1227262734777" />
+      </scope>
+      <scope id="1227262769261" at="23,7,30,9">
+        <var name="_reporter_2309309498" id="1227262769261" />
+        <var name="errorTarget" id="1227262769261" />
+      </scope>
+      <scope id="1227262761175" at="22,95,31,7" />
+      <scope id="1227262734778" at="21,119,32,5" />
+      <scope id="1227262734777" at="21,0,34,0">
+        <var name="method" id="1227262734777" />
+        <var name="status" id="1227262734777" />
+        <var name="typeCheckingContext" id="1227262734777" />
+      </scope>
+      <unit id="1227262734777" at="17,0,50,0" name="jetbrains.mps.lang.behavior.typesystem.check_ConceptMethodDeclaration_NonTypesystemRule" />
+    </file>
   </root>
   <root nodeRef="r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)/3834658221333152923">
-    <nodeInfo nodeId="3834658221333152931" fileName="FixMethodSignature_QuickFix.java" startLine="15" startPosition="44" endLine="16" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3834658221333152937" fileName="FixMethodSignature_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="323" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3834658221333152950" fileName="FixMethodSignature_QuickFix.java" startLine="20" startPosition="323" endLine="21" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3834658221333152960" fileName="FixMethodSignature_QuickFix.java" startLine="21" startPosition="225" endLine="22" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3834658221333152979" fileName="FixMethodSignature_QuickFix.java" startLine="24" startPosition="52" endLine="25" endPosition="483" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3834658221333153004" fileName="FixMethodSignature_QuickFix.java" startLine="27" startPosition="35" endLine="28" endPosition="398" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3834658221333153030" fileName="FixMethodSignature_QuickFix.java" startLine="31" startPosition="66" endLine="32" endPosition="194" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3834658221333153046" fileName="FixMethodSignature_QuickFix.java" startLine="33" startPosition="9" endLine="34" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="3834658221333152923" fileName="FixMethodSignature_QuickFix.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FixMethodSignature_QuickFix#()V" />
-    <nodeInfo nodeId="3834658221333152923" fileName="FixMethodSignature_QuickFix.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3834658221333152970" fileName="FixMethodSignature_QuickFix.java" startLine="23" startPosition="71" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3834658221333153002" fileName="FixMethodSignature_QuickFix.java" startLine="26" startPosition="7" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3834658221333153025" fileName="FixMethodSignature_QuickFix.java" startLine="30" startPosition="28" endLine="33" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="3834658221333153023" fileName="FixMethodSignature_QuickFix.java" startLine="29" startPosition="7" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3834658221333152968" fileName="FixMethodSignature_QuickFix.java" startLine="22" startPosition="178" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="3834658221333152923" fileName="FixMethodSignature_QuickFix.java" startLine="19" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="3834658221333152923" fileName="FixMethodSignature_QuickFix.java" startLine="12" startPosition="40" endLine="12" endPosition="40" />
-    <scopeInfo nodeId="3834658221333152930" fileName="FixMethodSignature_QuickFix.java" startLine="15" startPosition="44" endLine="16" endPosition="34" />
-    <scopeInfo nodeId="3834658221333152978" fileName="FixMethodSignature_QuickFix.java" startLine="24" startPosition="52" endLine="25" endPosition="483" />
-    <scopeInfo nodeId="3834658221333153003" fileName="FixMethodSignature_QuickFix.java" startLine="27" startPosition="35" endLine="28" endPosition="398" />
-    <scopeInfo nodeId="3834658221333153029" fileName="FixMethodSignature_QuickFix.java" startLine="31" startPosition="66" endLine="32" endPosition="194" />
-    <scopeInfo nodeId="3834658221333152923" fileName="FixMethodSignature_QuickFix.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="3834658221333152923" fileName="FixMethodSignature_QuickFix.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="3834658221333152923" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="3834658221333153025" fileName="FixMethodSignature_QuickFix.java" startLine="30" startPosition="28" endLine="33" endPosition="9">
-      <varInfo nodeId="3834658221333153026" varName="j" />
-    </scopeInfo>
-    <scopeInfo nodeId="3834658221333153024" fileName="FixMethodSignature_QuickFix.java" startLine="30" startPosition="28" endLine="34" endPosition="14" />
-    <scopeInfo nodeId="3834658221333152969" fileName="FixMethodSignature_QuickFix.java" startLine="23" startPosition="71" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="3834658221333152968" fileName="FixMethodSignature_QuickFix.java" startLine="22" startPosition="178" endLine="36" endPosition="5">
-      <varInfo nodeId="3834658221333153050" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="3834658221333152925" fileName="FixMethodSignature_QuickFix.java" startLine="19" startPosition="35" endLine="36" endPosition="5">
-      <varInfo nodeId="3834658221333152961" varName="currentParamCount" />
-      <varInfo nodeId="3834658221333152951" varName="paramCount" />
-    </scopeInfo>
-    <scopeInfo nodeId="3834658221333152923" fileName="FixMethodSignature_QuickFix.java" startLine="19" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="3834658221333152923" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="3834658221333152923" fileName="FixMethodSignature_QuickFix.java" startLine="11" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.behavior.typesystem.FixMethodSignature_QuickFix" />
+    <file name="FixMethodSignature_QuickFix.java">
+      <node id="3834658221333152931" at="15,44,16,34" concept="9" />
+      <node id="3834658221333152937" at="19,35,20,323" concept="3" />
+      <node id="3834658221333152950" at="20,323,21,225" concept="8" />
+      <node id="3834658221333152960" at="21,225,22,178" concept="8" />
+      <node id="3834658221333152979" at="24,52,25,483" concept="3" />
+      <node id="3834658221333153004" at="27,35,28,398" concept="3" />
+      <node id="3834658221333153030" at="31,66,32,194" concept="3" />
+      <node id="3834658221333153046" at="33,9,34,14" concept="1" />
+      <node id="3834658221333152923" at="12,0,14,0" concept="2" trace="FixMethodSignature_QuickFix#()V" />
+      <node id="3834658221333152923" at="15,0,18,0" concept="7" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="3834658221333152970" at="23,71,26,7" concept="6" />
+      <node id="3834658221333153002" at="26,7,29,7" concept="6" />
+      <node id="3834658221333153025" at="30,28,33,9" concept="4" />
+      <node id="3834658221333153023" at="29,7,35,7" concept="6" />
+      <node id="3834658221333152968" at="22,178,36,5" concept="4" />
+      <node id="3834658221333152923" at="19,0,38,0" concept="7" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="3834658221333152923" at="12,40,12,40" />
+      <scope id="3834658221333152930" at="15,44,16,34" />
+      <scope id="3834658221333152978" at="24,52,25,483" />
+      <scope id="3834658221333153003" at="27,35,28,398" />
+      <scope id="3834658221333153029" at="31,66,32,194" />
+      <scope id="3834658221333152923" at="12,0,14,0" />
+      <scope id="3834658221333152923" at="15,0,18,0">
+        <var name="node" id="3834658221333152923" />
+      </scope>
+      <scope id="3834658221333153025" at="30,28,33,9">
+        <var name="j" id="3834658221333153026" />
+      </scope>
+      <scope id="3834658221333153024" at="30,28,34,14" />
+      <scope id="3834658221333152969" at="23,71,35,7" />
+      <scope id="3834658221333152968" at="22,178,36,5">
+        <var name="i" id="3834658221333153050" />
+      </scope>
+      <scope id="3834658221333152925" at="19,35,36,5">
+        <var name="currentParamCount" id="3834658221333152961" />
+        <var name="paramCount" id="3834658221333152951" />
+      </scope>
+      <scope id="3834658221333152923" at="19,0,38,0">
+        <var name="node" id="3834658221333152923" />
+      </scope>
+      <unit id="3834658221333152923" at="11,0,39,0" name="jetbrains.mps.lang.behavior.typesystem.FixMethodSignature_QuickFix" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

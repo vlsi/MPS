@@ -1,140 +1,225 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="AfterPosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.AfterPosition_BehaviorDescriptor" />
-  <unitInfo fileName="BaseEmitJumpStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BaseEmitJumpStatement_BehaviorDescriptor" />
-  <unitInfo fileName="BaseEmitVariableStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BaseEmitVariableStatement_BehaviorDescriptor" />
-  <unitInfo fileName="BaseInstructionOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BaseInstructionOperation_BehaviorDescriptor" />
-  <unitInfo fileName="BeforePosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BeforePosition_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="BooleanInstructionOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BooleanInstructionOperation_BehaviorDescriptor" />
-  <unitInfo fileName="BuilderBlock_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_BehaviorDescriptor" />
-  <unitInfo fileName="DataFlowBuilderDeclaration_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_BehaviorDescriptor" />
-  <unitInfo fileName="EmitCodeForStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitCodeForStatement_BehaviorDescriptor" />
-  <unitInfo fileName="EmitIfJumpStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitIfJumpStatement_BehaviorDescriptor" />
-  <unitInfo fileName="EmitJumpStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitJumpStatement_BehaviorDescriptor" />
-  <unitInfo fileName="EmitLabelStatement_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitLabelStatement_BehaviorDescriptor" />
-  <unitInfo fileName="EmitMayBeUnreachable_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitMayBeUnreachable_BehaviorDescriptor" />
-  <unitInfo fileName="EmitNopStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitNopStatement_BehaviorDescriptor" />
-  <unitInfo fileName="EmitReadStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitReadStatement_BehaviorDescriptor" />
-  <unitInfo fileName="EmitRetStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitRetStatement_BehaviorDescriptor" />
-  <unitInfo fileName="EmitStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitStatement_BehaviorDescriptor" />
-  <unitInfo fileName="EmitTryFinallyStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitTryFinallyStatement_BehaviorDescriptor" />
-  <unitInfo fileName="EmitWriteStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitWriteStatement_BehaviorDescriptor" />
-  <unitInfo fileName="GetCodeForExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.GetCodeForExpression_BehaviorDescriptor" />
-  <unitInfo fileName="InsertAfter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InsertAfter_BehaviorDescriptor" />
-  <unitInfo fileName="InsertBefore_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InsertBefore_BehaviorDescriptor" />
-  <unitInfo fileName="InsertPosition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InsertPosition_BehaviorDescriptor" />
-  <unitInfo fileName="InstructionGetSourceOperation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionGetSourceOperation_BehaviorDescriptor" />
-  <unitInfo fileName="InstructionIsJump_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionIsJump_BehaviorDescriptor" />
-  <unitInfo fileName="InstructionIsNop_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionIsNop_BehaviorDescriptor" />
-  <unitInfo fileName="InstructionIsRet_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionIsRet_BehaviorDescriptor" />
-  <unitInfo fileName="InstructionType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionType_BehaviorDescriptor" />
-  <unitInfo fileName="LabelPosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.LabelPosition_BehaviorDescriptor" />
-  <unitInfo fileName="NodeParameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_BehaviorDescriptor" />
-  <unitInfo fileName="Position_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.Position_BehaviorDescriptor" />
-  <unitInfo fileName="RelativePosition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.RelativePosition_BehaviorDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="InstructionIsJump_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.InstructionIsJump_BehaviorDescriptor" />
+    </file>
+    <file name="BaseEmitVariableStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.BaseEmitVariableStatement_BehaviorDescriptor" />
+    </file>
+    <file name="NodeParameter_BehaviorDescriptor.java">
+      <unit at="8,0,17,0" name="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_BehaviorDescriptor" />
+    </file>
+    <file name="EmitJumpStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitJumpStatement_BehaviorDescriptor" />
+    </file>
+    <file name="InsertBefore_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.InsertBefore_BehaviorDescriptor" />
+    </file>
+    <file name="Position_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.dataFlow.behavior.Position_BehaviorDescriptor" />
+    </file>
+    <file name="EmitNopStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitNopStatement_BehaviorDescriptor" />
+    </file>
+    <file name="DataFlowBuilderDeclaration_BehaviorDescriptor.java">
+      <unit at="13,0,42,0" name="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_BehaviorDescriptor" />
+    </file>
+    <file name="RelativePosition_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.RelativePosition_BehaviorDescriptor" />
+    </file>
+    <file name="EmitLabelStatement_BehaviorDescriptor.java">
+      <unit at="9,0,22,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitLabelStatement_BehaviorDescriptor" />
+    </file>
+    <file name="EmitReadStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitReadStatement_BehaviorDescriptor" />
+    </file>
+    <file name="InstructionIsRet_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.InstructionIsRet_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,70,0" name="jetbrains.mps.lang.dataFlow.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="EmitRetStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitRetStatement_BehaviorDescriptor" />
+    </file>
+    <file name="BaseEmitJumpStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.BaseEmitJumpStatement_BehaviorDescriptor" />
+    </file>
+    <file name="EmitWriteStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitWriteStatement_BehaviorDescriptor" />
+    </file>
+    <file name="InstructionGetSourceOperation_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.InstructionGetSourceOperation_BehaviorDescriptor" />
+    </file>
+    <file name="InsertPosition_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.dataFlow.behavior.InsertPosition_BehaviorDescriptor" />
+    </file>
+    <file name="EmitStatement_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitStatement_BehaviorDescriptor" />
+    </file>
+    <file name="LabelPosition_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.LabelPosition_BehaviorDescriptor" />
+    </file>
+    <file name="EmitCodeForStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitCodeForStatement_BehaviorDescriptor" />
+    </file>
+    <file name="GetCodeForExpression_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.dataFlow.behavior.GetCodeForExpression_BehaviorDescriptor" />
+    </file>
+    <file name="BooleanInstructionOperation_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.BooleanInstructionOperation_BehaviorDescriptor" />
+    </file>
+    <file name="EmitMayBeUnreachable_BehaviorDescriptor.java">
+      <unit at="8,0,17,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitMayBeUnreachable_BehaviorDescriptor" />
+    </file>
+    <file name="InstructionIsNop_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.InstructionIsNop_BehaviorDescriptor" />
+    </file>
+    <file name="InsertAfter_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.InsertAfter_BehaviorDescriptor" />
+    </file>
+    <file name="EmitTryFinallyStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitTryFinallyStatement_BehaviorDescriptor" />
+    </file>
+    <file name="EmitIfJumpStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitIfJumpStatement_BehaviorDescriptor" />
+    </file>
+    <file name="BeforePosition_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.BeforePosition_BehaviorDescriptor" />
+    </file>
+    <file name="AfterPosition_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.AfterPosition_BehaviorDescriptor" />
+    </file>
+    <file name="InstructionType_BehaviorDescriptor.java">
+      <unit at="8,0,21,0" name="jetbrains.mps.lang.dataFlow.behavior.InstructionType_BehaviorDescriptor" />
+    </file>
+    <file name="BaseInstructionOperation_BehaviorDescriptor.java">
+      <unit at="11,0,40,0" name="jetbrains.mps.lang.dataFlow.behavior.BaseInstructionOperation_BehaviorDescriptor" />
+    </file>
+    <file name="BuilderBlock_BehaviorDescriptor.java">
+      <unit at="10,0,31,0" name="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_BehaviorDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877268329">
-    <nodeInfo nodeId="1213877268329" fileName="EmitStatement_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1213877268331" fileName="EmitStatement_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877268329" fileName="EmitStatement_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="1213877268329" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1213877268329" fileName="EmitStatement_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.EmitStatement_Behavior" />
+    <file name="EmitStatement_Behavior.java">
+      <node id="1213877268329" at="8,0,10,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1213877268331" at="8,43,8,43" />
+      <scope id="1213877268329" at="8,0,10,0">
+        <var name="thisNode" id="1213877268329" />
+      </scope>
+      <unit id="1213877268329" at="7,0,11,0" name="jetbrains.mps.lang.dataFlow.behavior.EmitStatement_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877408160">
-    <nodeInfo nodeId="1213877408163" fileName="BuilderBlock_Behavior.java" startLine="18" startPosition="103" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914725245" fileName="BuilderBlock_Behavior.java" startLine="22" startPosition="125" endLine="23" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914725260" fileName="BuilderBlock_Behavior.java" startLine="23" startPosition="261" endLine="24" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914725264" fileName="BuilderBlock_Behavior.java" startLine="24" startPosition="168" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="658365993682017639" fileName="BuilderBlock_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="658365993682017563" fileName="BuilderBlock_Behavior.java" startLine="32" startPosition="60" endLine="33" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="658365993682017563" fileName="BuilderBlock_Behavior.java" startLine="33" startPosition="63" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="658365993682017563" fileName="BuilderBlock_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="658365993682017563" fileName="BuilderBlock_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="658365993682017563" fileName="BuilderBlock_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="658365993682017563" fileName="BuilderBlock_Behavior.java" startLine="35" startPosition="132" endLine="36" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877408160" fileName="BuilderBlock_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1213877408160" fileName="BuilderBlock_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_usesParameterObjectFor_1213877374432#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1213877408160" fileName="BuilderBlock_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1213877408160" fileName="BuilderBlock_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <nodeInfo nodeId="658365993682017563" fileName="BuilderBlock_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_65kp3z_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="1213877408169" fileName="BuilderBlock_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1213877408162" fileName="BuilderBlock_Behavior.java" startLine="18" startPosition="103" endLine="19" endPosition="16" />
-    <scopeInfo nodeId="658365993682017638" fileName="BuilderBlock_Behavior.java" startLine="28" startPosition="83" endLine="29" endPosition="47" />
-    <scopeInfo nodeId="658365993682017563" fileName="BuilderBlock_Behavior.java" startLine="34" startPosition="30" endLine="35" endPosition="132" />
-    <scopeInfo nodeId="1213877408160" fileName="BuilderBlock_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="1213877408160" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877408160" fileName="BuilderBlock_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="1213877408165" varName="parameter" />
-      <varInfo nodeId="1213877408160" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914725244" fileName="BuilderBlock_Behavior.java" startLine="22" startPosition="125" endLine="25" endPosition="18">
-      <varInfo nodeId="3044950653914725246" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877408160" fileName="BuilderBlock_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="1213877408160" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="658365993682017563" fileName="BuilderBlock_Behavior.java" startLine="32" startPosition="60" endLine="36" endPosition="24">
-      <varInfo nodeId="658365993682017563" varName="facade" />
-      <varInfo nodeId="658365993682017563" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877408160" fileName="BuilderBlock_Behavior.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="1213877408160" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="658365993682017563" fileName="BuilderBlock_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0" />
-    <unitInfo nodeId="1213877408160" fileName="BuilderBlock_Behavior.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_Behavior" />
+    <file name="BuilderBlock_Behavior.java">
+      <node id="1213877408163" at="18,103,19,16" concept="3" />
+      <node id="3044950653914725245" at="22,125,23,261" concept="2" />
+      <node id="3044950653914725260" at="23,261,24,168" concept="1" />
+      <node id="3044950653914725264" at="24,168,25,18" concept="3" />
+      <node id="658365993682017639" at="28,83,29,47" concept="3" />
+      <node id="658365993682017563" at="32,60,33,63" concept="2" />
+      <node id="658365993682017563" at="33,63,34,30" concept="2" />
+      <node id="658365993682017563" at="34,30,35,132" concept="0" />
+      <node id="658365993682017563" at="34,30,35,132" concept="0" />
+      <node id="658365993682017563" at="34,30,35,132" concept="1" />
+      <node id="658365993682017563" at="35,132,36,24" concept="3" />
+      <node id="1213877408160" at="15,0,17,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1213877408160" at="18,0,21,0" concept="4" trace="virtual_usesParameterObjectFor_1213877374432#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1213877408160" at="28,0,31,0" concept="4" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1213877408160" at="22,0,27,0" concept="4" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <node id="658365993682017563" at="32,0,38,0" concept="4" trace="_quotation_createNode_65kp3z_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1213877408169" at="15,43,15,43" />
+      <scope id="1213877408162" at="18,103,19,16" />
+      <scope id="658365993682017638" at="28,83,29,47" />
+      <scope id="658365993682017563" at="34,30,35,132" />
+      <scope id="1213877408160" at="15,0,17,0">
+        <var name="thisNode" id="1213877408160" />
+      </scope>
+      <scope id="1213877408160" at="18,0,21,0">
+        <var name="parameter" id="1213877408165" />
+        <var name="thisNode" id="1213877408160" />
+      </scope>
+      <scope id="3044950653914725244" at="22,125,25,18">
+        <var name="result" id="3044950653914725246" />
+      </scope>
+      <scope id="1213877408160" at="28,0,31,0">
+        <var name="thisNode" id="1213877408160" />
+      </scope>
+      <scope id="658365993682017563" at="32,60,36,24">
+        <var name="facade" id="658365993682017563" />
+        <var name="quotedNode_1" id="658365993682017563" />
+      </scope>
+      <scope id="1213877408160" at="22,0,27,0">
+        <var name="thisConcept" id="1213877408160" />
+      </scope>
+      <scope id="658365993682017563" at="32,0,38,0" />
+      <unit id="1213877408160" at="14,0,39,0" name="jetbrains.mps.lang.dataFlow.behavior.BuilderBlock_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877418697">
-    <nodeInfo nodeId="1213877418697" fileName="NodeParameter_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1213877418699" fileName="NodeParameter_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877418697" fileName="NodeParameter_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="1213877418697" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1213877418697" fileName="NodeParameter_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_Behavior" />
+    <file name="NodeParameter_Behavior.java">
+      <node id="1213877418697" at="8,0,10,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1213877418699" at="8,43,8,43" />
+      <scope id="1213877418697" at="8,0,10,0">
+        <var name="thisNode" id="1213877418697" />
+      </scope>
+      <unit id="1213877418697" at="7,0,11,0" name="jetbrains.mps.lang.dataFlow.behavior.NodeParameter_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877439994">
-    <nodeInfo nodeId="8952337903384725416" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6261424444345978720" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="16" startPosition="100" endLine="17" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getBaseConcept_2621449412040133768#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_setBaseConcept_6261424444345963020#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1213877439996" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="8952337903384725406" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="76" />
-    <scopeInfo nodeId="6261424444345978711" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="16" startPosition="100" endLine="17" endPosition="82" />
-    <scopeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="1213877439994" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="1213877439994" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="6261424444345978712" varName="baseConcept" />
-      <varInfo nodeId="1213877439994" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1213877439994" fileName="DataFlowBuilderDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_Behavior" />
+    <file name="DataFlowBuilderDeclaration_Behavior.java">
+      <node id="8952337903384725416" at="12,82,13,76" concept="3" />
+      <node id="6261424444345978720" at="16,100,17,82" concept="1" />
+      <node id="1213877439994" at="9,0,11,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1213877439994" at="12,0,15,0" concept="4" trace="virtual_getBaseConcept_2621449412040133768#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1213877439994" at="16,0,19,0" concept="4" trace="virtual_setBaseConcept_6261424444345963020#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1213877439996" at="9,43,9,43" />
+      <scope id="8952337903384725406" at="12,82,13,76" />
+      <scope id="6261424444345978711" at="16,100,17,82" />
+      <scope id="1213877439994" at="9,0,11,0">
+        <var name="thisNode" id="1213877439994" />
+      </scope>
+      <scope id="1213877439994" at="12,0,15,0">
+        <var name="thisNode" id="1213877439994" />
+      </scope>
+      <scope id="1213877439994" at="16,0,19,0">
+        <var name="baseConcept" id="6261424444345978712" />
+        <var name="thisNode" id="1213877439994" />
+      </scope>
+      <unit id="1213877439994" at="8,0,20,0" name="jetbrains.mps.lang.dataFlow.behavior.DataFlowBuilderDeclaration_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1213877480940">
-    <nodeInfo nodeId="1213877480940" fileName="LabelPosition_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1213877480942" fileName="LabelPosition_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877480940" fileName="LabelPosition_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="1213877480940" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1213877480940" fileName="LabelPosition_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.LabelPosition_Behavior" />
+    <file name="LabelPosition_Behavior.java">
+      <node id="1213877480940" at="8,0,10,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1213877480942" at="8,43,8,43" />
+      <scope id="1213877480940" at="8,0,10,0">
+        <var name="thisNode" id="1213877480940" />
+      </scope>
+      <unit id="1213877480940" at="7,0,11,0" name="jetbrains.mps.lang.dataFlow.behavior.LabelPosition_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590376(jetbrains.mps.lang.dataFlow.behavior)/1823319949748055875">
-    <nodeInfo nodeId="1823319949748055885" fileName="InstructionType_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1823319949748055875" fileName="InstructionType_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1823319949748055875" fileName="InstructionType_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1823319949748055877" fileName="InstructionType_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1823319949748055881" fileName="InstructionType_Behavior.java" startLine="11" startPosition="78" endLine="12" endPosition="25" />
-    <scopeInfo nodeId="1823319949748055875" fileName="InstructionType_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="1823319949748055875" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1823319949748055875" fileName="InstructionType_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="1823319949748055875" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1823319949748055875" fileName="InstructionType_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.behavior.InstructionType_Behavior" />
+    <file name="InstructionType_Behavior.java">
+      <node id="1823319949748055885" at="11,78,12,25" concept="3" />
+      <node id="1823319949748055875" at="8,0,10,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1823319949748055875" at="11,0,14,0" concept="4" trace="virtual_getPresentation_1213877396640#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="1823319949748055877" at="8,43,8,43" />
+      <scope id="1823319949748055881" at="11,78,12,25" />
+      <scope id="1823319949748055875" at="8,0,10,0">
+        <var name="thisNode" id="1823319949748055875" />
+      </scope>
+      <scope id="1823319949748055875" at="11,0,14,0">
+        <var name="thisNode" id="1823319949748055875" />
+      </scope>
+      <unit id="1823319949748055875" at="7,0,15,0" name="jetbrains.mps.lang.dataFlow.behavior.InstructionType_Behavior" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

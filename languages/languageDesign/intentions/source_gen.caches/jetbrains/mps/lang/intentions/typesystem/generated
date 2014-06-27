@@ -39,7 +39,6 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="typeof_ConceptFunctionParameter_parameter_InferenceRule.java" />
   </source>
   <source id="3618415754251192148" name="typeof_ConceptFunctionParameter_childNode" hash="4u87u2pril57wa37n4giq9mhea3s8o4">

@@ -1,675 +1,723 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" />
-  <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
+  <root>
+    <file name="TemplateModelImpl.java">
+      <unit at="19,0,92,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateModelImpl" />
+    </file>
+    <file name="QueriesGenerated.java">
+      <unit at="16,0,44,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.QueriesGenerated" />
+    </file>
+  </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/1892993302480251689">
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="23" startPosition="43" endLine="24" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="27" startPosition="154" endLine="28" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="29" startPosition="9" endLine="30" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="30" startPosition="112" endLine="31" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="33" startPosition="5" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="37" startPosition="154" endLine="38" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="39" startPosition="9" endLine="40" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="40" startPosition="112" endLine="41" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="43" startPosition="5" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="47" startPosition="146" endLine="48" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="51" startPosition="180" endLine="52" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="52" startPosition="56" endLine="53" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="53" startPosition="56" endLine="54" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="54" startPosition="102" endLine="55" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="55" startPosition="56" endLine="56" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="56" startPosition="56" endLine="57" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="57" startPosition="102" endLine="58" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_11yy5k_a0b0f" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_11yy5k_a0e0f" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Templatereduce__InputNode__A__included#()V" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="28" startPosition="123" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="38" startPosition="123" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="27" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="37" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart1#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="51" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="weave#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="20" startPosition="51" endLine="20" endPosition="51" />
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="32" startPosition="15" endLine="32" endPosition="15" />
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="42" startPosition="15" endLine="42" endPosition="15" />
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="23" startPosition="43" endLine="24" endPosition="199" />
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="47" startPosition="146" endLine="48" endPosition="99" />
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="29" startPosition="9" endLine="31" endPosition="71" />
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="39" startPosition="9" endLine="41" endPosition="71" />
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="1892993302480251689" varName="context" />
-      <varInfo nodeId="1892993302480251689" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="27" startPosition="154" endLine="34" endPosition="18">
-      <varInfo nodeId="1892993302480251689" varName="tnode1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="37" startPosition="154" endLine="44" endPosition="18">
-      <varInfo nodeId="1892993302480251689" varName="tnode2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="51" startPosition="180" endLine="58" endPosition="55">
-      <varInfo nodeId="1892993302480251689" varName="tnodepart0" />
-      <varInfo nodeId="1892993302480251689" varName="tnodepart1" />
-      <varInfo nodeId="1892993302480251689" varName="weaveTf0" />
-      <varInfo nodeId="1892993302480251689" varName="weaveTf1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="27" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1892993302480251689" varName="context" />
-      <varInfo nodeId="1892993302480251689" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="37" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="1892993302480251689" varName="context" />
-      <varInfo nodeId="1892993302480251689" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="51" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="1892993302480251689" varName="context" />
-      <varInfo nodeId="1892993302480251689" varName="environment" />
-      <varInfo nodeId="1892993302480251689" varName="outputContextNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1892993302480251689" fileName="Templatereduce__InputNode__A__included.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A__included" />
+    <file name="Templatereduce__InputNode__A__included.java">
+      <node id="1892993302480251689" at="23,43,24,199" concept="9" />
+      <node id="1892993302480251689" at="27,154,28,123" concept="8" />
+      <node id="1892993302480251689" at="29,9,30,112" concept="3" />
+      <node id="1892993302480251689" at="30,112,31,71" concept="3" />
+      <node id="1892993302480251689" at="33,5,34,18" concept="9" />
+      <node id="1892993302480251689" at="37,154,38,123" concept="8" />
+      <node id="1892993302480251689" at="39,9,40,112" concept="3" />
+      <node id="1892993302480251689" at="40,112,41,71" concept="3" />
+      <node id="1892993302480251689" at="43,5,44,18" concept="9" />
+      <node id="1892993302480251689" at="47,146,48,99" concept="9" />
+      <node id="1892993302480251689" at="51,180,52,56" concept="8" />
+      <node id="1892993302480251689" at="52,56,53,56" concept="8" />
+      <node id="1892993302480251689" at="53,56,54,102" concept="3" />
+      <node id="1892993302480251689" at="54,102,55,56" concept="8" />
+      <node id="1892993302480251689" at="55,56,56,56" concept="8" />
+      <node id="1892993302480251689" at="56,56,57,102" concept="3" />
+      <node id="1892993302480251689" at="57,102,58,55" concept="9" />
+      <node id="1892993302480251689" at="61,0,62,0" concept="12" trace="weaveTfConst_11yy5k_a0b0f" />
+      <node id="1892993302480251689" at="62,0,63,0" concept="12" trace="weaveTfConst_11yy5k_a0e0f" />
+      <node id="1892993302480251689" at="20,0,22,0" concept="1" trace="Templatereduce__InputNode__A__included#()V" />
+      <node id="1892993302480251689" at="23,0,26,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="1892993302480251689" at="47,0,50,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="1892993302480251689" at="28,123,33,5" concept="15" />
+      <node id="1892993302480251689" at="38,123,43,5" concept="15" />
+      <node id="1892993302480251689" at="27,0,36,0" concept="7" trace="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1892993302480251689" at="37,0,46,0" concept="7" trace="applyPart1#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1892993302480251689" at="51,0,60,0" concept="7" trace="weave#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Collection;" />
+      <scope id="1892993302480251689" at="20,51,20,51" />
+      <scope id="1892993302480251689" at="32,15,32,15" />
+      <scope id="1892993302480251689" at="42,15,42,15" />
+      <scope id="1892993302480251689" at="23,43,24,199" />
+      <scope id="1892993302480251689" at="47,146,48,99" />
+      <scope id="1892993302480251689" at="20,0,22,0" />
+      <scope id="1892993302480251689" at="29,9,31,71" />
+      <scope id="1892993302480251689" at="39,9,41,71" />
+      <scope id="1892993302480251689" at="23,0,26,0" />
+      <scope id="1892993302480251689" at="47,0,50,0">
+        <var name="context" id="1892993302480251689" />
+        <var name="environment" id="1892993302480251689" />
+      </scope>
+      <scope id="1892993302480251689" at="27,154,34,18">
+        <var name="tnode1" id="1892993302480251689" />
+      </scope>
+      <scope id="1892993302480251689" at="37,154,44,18">
+        <var name="tnode2" id="1892993302480251689" />
+      </scope>
+      <scope id="1892993302480251689" at="51,180,58,55">
+        <var name="tnodepart0" id="1892993302480251689" />
+        <var name="tnodepart1" id="1892993302480251689" />
+        <var name="weaveTf0" id="1892993302480251689" />
+        <var name="weaveTf1" id="1892993302480251689" />
+      </scope>
+      <scope id="1892993302480251689" at="27,0,36,0">
+        <var name="context" id="1892993302480251689" />
+        <var name="environment" id="1892993302480251689" />
+      </scope>
+      <scope id="1892993302480251689" at="37,0,46,0">
+        <var name="context" id="1892993302480251689" />
+        <var name="environment" id="1892993302480251689" />
+      </scope>
+      <scope id="1892993302480251689" at="51,0,60,0">
+        <var name="context" id="1892993302480251689" />
+        <var name="environment" id="1892993302480251689" />
+        <var name="outputContextNode" id="1892993302480251689" />
+      </scope>
+      <unit id="1892993302480251689" at="18,0,64,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A__included" />
+    </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/1892993302480310366">
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rules" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="23" startPosition="39" endLine="24" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="27" startPosition="41" endLine="28" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="31" startPosition="45" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="35" startPosition="62" endLine="36" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="39" startPosition="172" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="47" startPosition="29" endLine="48" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="52" startPosition="108" endLine="53" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="53" startPosition="80" endLine="54" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="54" startPosition="104" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="43" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Switchswitch__InputNode__A#()V" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSwitchNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModifiesSwitch#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReductionRules#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyDefault#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReductionRule0#()V" />
-    <nodeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="43" startPosition="125" endLine="43" endPosition="125" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="23" startPosition="39" endLine="24" endPosition="108" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="27" startPosition="41" endLine="28" endPosition="199" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="31" startPosition="45" endLine="32" endPosition="16" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="35" startPosition="62" endLine="36" endPosition="17" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="39" startPosition="172" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="47" startPosition="29" endLine="48" endPosition="277" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="43" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="1892993302480310366" varName="context" />
-      <varInfo nodeId="1892993302480310366" varName="environment" />
-      <varInfo nodeId="1892993302480310366" varName="templateSwitch" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="1892993302480310366" varName="context" />
-      <varInfo nodeId="1892993302480310366" varName="environment" />
-      <varInfo nodeId="1892993302480310366" varName="mappingLabel" />
-      <varInfo nodeId="1892993302480310366" varName="templateSwitch" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="52" startPosition="108" endLine="55" endPosition="20">
-      <varInfo nodeId="1892993302480310366" varName="environment" />
-      <varInfo nodeId="1892993302480310366" varName="tlist1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="51" startPosition="0" endLine="57" endPosition="0">
-      <varInfo nodeId="1892993302480310366" varName="context" />
-    </scopeInfo>
-    <unitInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="46" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch__InputNode__A$ReductionRule0" />
-    <unitInfo nodeId="1892993302480310366" fileName="Switchswitch__InputNode__A.java" startLine="19" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch__InputNode__A" />
+    <file name="Switchswitch__InputNode__A.java">
+      <node id="1892993302480310366" at="21,0,22,0" concept="4" trace="rules" />
+      <node id="1892993302480310366" at="23,39,24,108" concept="3" />
+      <node id="1892993302480310366" at="27,41,28,199" concept="9" />
+      <node id="1892993302480310366" at="31,45,32,16" concept="9" />
+      <node id="1892993302480310366" at="35,62,36,17" concept="9" />
+      <node id="1892993302480310366" at="39,172,40,16" concept="9" />
+      <node id="1892993302480310366" at="47,29,48,277" concept="13" />
+      <node id="1892993302480310366" at="52,108,53,80" concept="8" />
+      <node id="1892993302480310366" at="53,80,54,104" concept="8" />
+      <node id="1892993302480310366" at="54,104,55,20" concept="9" />
+      <node id="1892993302480310366" at="43,0,45,0" concept="7" trace="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
+      <node id="1892993302480310366" at="23,0,26,0" concept="1" trace="Switchswitch__InputNode__A#()V" />
+      <node id="1892993302480310366" at="27,0,30,0" concept="7" trace="getSwitchNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="1892993302480310366" at="31,0,34,0" concept="7" trace="getModifiesSwitch#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="1892993302480310366" at="35,0,38,0" concept="7" trace="getReductionRules#()Ljava/lang/Iterable;" />
+      <node id="1892993302480310366" at="39,0,42,0" concept="7" trace="applyDefault#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="1892993302480310366" at="47,0,50,0" concept="1" trace="ReductionRule0#()V" />
+      <node id="1892993302480310366" at="51,0,57,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <scope id="1892993302480310366" at="43,125,43,125" />
+      <scope id="1892993302480310366" at="23,39,24,108" />
+      <scope id="1892993302480310366" at="27,41,28,199" />
+      <scope id="1892993302480310366" at="31,45,32,16" />
+      <scope id="1892993302480310366" at="35,62,36,17" />
+      <scope id="1892993302480310366" at="39,172,40,16" />
+      <scope id="1892993302480310366" at="47,29,48,277" />
+      <scope id="1892993302480310366" at="43,0,45,0">
+        <var name="context" id="1892993302480310366" />
+        <var name="environment" id="1892993302480310366" />
+        <var name="templateSwitch" id="1892993302480310366" />
+      </scope>
+      <scope id="1892993302480310366" at="23,0,26,0" />
+      <scope id="1892993302480310366" at="27,0,30,0" />
+      <scope id="1892993302480310366" at="31,0,34,0" />
+      <scope id="1892993302480310366" at="35,0,38,0" />
+      <scope id="1892993302480310366" at="39,0,42,0">
+        <var name="context" id="1892993302480310366" />
+        <var name="environment" id="1892993302480310366" />
+        <var name="mappingLabel" id="1892993302480310366" />
+        <var name="templateSwitch" id="1892993302480310366" />
+      </scope>
+      <scope id="1892993302480310366" at="47,0,50,0" />
+      <scope id="1892993302480310366" at="52,108,55,20">
+        <var name="environment" id="1892993302480310366" />
+        <var name="tlist1" id="1892993302480310366" />
+      </scope>
+      <scope id="1892993302480310366" at="51,0,57,0">
+        <var name="context" id="1892993302480310366" />
+      </scope>
+      <unit id="1892993302480310366" at="46,0,58,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch__InputNode__A$ReductionRule0" />
+      <unit id="1892993302480310366" at="19,0,59,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchswitch__InputNode__A" />
+    </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/1892993302480311955">
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="23" startPosition="43" endLine="24" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="27" startPosition="154" endLine="28" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="29" startPosition="9" endLine="30" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="30" startPosition="112" endLine="31" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="33" startPosition="5" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="37" startPosition="154" endLine="38" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="39" startPosition="9" endLine="40" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="40" startPosition="112" endLine="41" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="43" startPosition="5" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="47" startPosition="146" endLine="48" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="51" startPosition="180" endLine="52" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="52" startPosition="56" endLine="53" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="53" startPosition="56" endLine="54" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="54" startPosition="102" endLine="55" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="55" startPosition="56" endLine="56" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="56" startPosition="56" endLine="57" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="57" startPosition="102" endLine="58" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_mkvwhw_a0b0f" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_mkvwhw_a0e0f" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Templatereduce__InputNode__A__switch#()V" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="28" startPosition="123" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="38" startPosition="123" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="27" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="37" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart1#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="51" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="weave#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="20" startPosition="49" endLine="20" endPosition="49" />
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="32" startPosition="15" endLine="32" endPosition="15" />
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="42" startPosition="15" endLine="42" endPosition="15" />
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="23" startPosition="43" endLine="24" endPosition="199" />
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="47" startPosition="146" endLine="48" endPosition="99" />
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="29" startPosition="9" endLine="31" endPosition="69" />
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="39" startPosition="9" endLine="41" endPosition="69" />
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="1892993302480311955" varName="context" />
-      <varInfo nodeId="1892993302480311955" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="27" startPosition="154" endLine="34" endPosition="18">
-      <varInfo nodeId="1892993302480311955" varName="tnode1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="37" startPosition="154" endLine="44" endPosition="18">
-      <varInfo nodeId="1892993302480311955" varName="tnode2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="51" startPosition="180" endLine="58" endPosition="55">
-      <varInfo nodeId="1892993302480311955" varName="tnodepart0" />
-      <varInfo nodeId="1892993302480311955" varName="tnodepart1" />
-      <varInfo nodeId="1892993302480311955" varName="weaveTf0" />
-      <varInfo nodeId="1892993302480311955" varName="weaveTf1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="27" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1892993302480311955" varName="context" />
-      <varInfo nodeId="1892993302480311955" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="37" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="1892993302480311955" varName="context" />
-      <varInfo nodeId="1892993302480311955" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="51" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="1892993302480311955" varName="context" />
-      <varInfo nodeId="1892993302480311955" varName="environment" />
-      <varInfo nodeId="1892993302480311955" varName="outputContextNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1892993302480311955" fileName="Templatereduce__InputNode__A__switch.java" startLine="18" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A__switch" />
+    <file name="Templatereduce__InputNode__A__switch.java">
+      <node id="1892993302480311955" at="23,43,24,199" concept="9" />
+      <node id="1892993302480311955" at="27,154,28,123" concept="8" />
+      <node id="1892993302480311955" at="29,9,30,112" concept="3" />
+      <node id="1892993302480311955" at="30,112,31,69" concept="3" />
+      <node id="1892993302480311955" at="33,5,34,18" concept="9" />
+      <node id="1892993302480311955" at="37,154,38,123" concept="8" />
+      <node id="1892993302480311955" at="39,9,40,112" concept="3" />
+      <node id="1892993302480311955" at="40,112,41,69" concept="3" />
+      <node id="1892993302480311955" at="43,5,44,18" concept="9" />
+      <node id="1892993302480311955" at="47,146,48,99" concept="9" />
+      <node id="1892993302480311955" at="51,180,52,56" concept="8" />
+      <node id="1892993302480311955" at="52,56,53,56" concept="8" />
+      <node id="1892993302480311955" at="53,56,54,102" concept="3" />
+      <node id="1892993302480311955" at="54,102,55,56" concept="8" />
+      <node id="1892993302480311955" at="55,56,56,56" concept="8" />
+      <node id="1892993302480311955" at="56,56,57,102" concept="3" />
+      <node id="1892993302480311955" at="57,102,58,55" concept="9" />
+      <node id="1892993302480311955" at="61,0,62,0" concept="12" trace="weaveTfConst_mkvwhw_a0b0f" />
+      <node id="1892993302480311955" at="62,0,63,0" concept="12" trace="weaveTfConst_mkvwhw_a0e0f" />
+      <node id="1892993302480311955" at="20,0,22,0" concept="1" trace="Templatereduce__InputNode__A__switch#()V" />
+      <node id="1892993302480311955" at="23,0,26,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="1892993302480311955" at="47,0,50,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="1892993302480311955" at="28,123,33,5" concept="15" />
+      <node id="1892993302480311955" at="38,123,43,5" concept="15" />
+      <node id="1892993302480311955" at="27,0,36,0" concept="7" trace="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1892993302480311955" at="37,0,46,0" concept="7" trace="applyPart1#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1892993302480311955" at="51,0,60,0" concept="7" trace="weave#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Collection;" />
+      <scope id="1892993302480311955" at="20,49,20,49" />
+      <scope id="1892993302480311955" at="32,15,32,15" />
+      <scope id="1892993302480311955" at="42,15,42,15" />
+      <scope id="1892993302480311955" at="23,43,24,199" />
+      <scope id="1892993302480311955" at="47,146,48,99" />
+      <scope id="1892993302480311955" at="20,0,22,0" />
+      <scope id="1892993302480311955" at="29,9,31,69" />
+      <scope id="1892993302480311955" at="39,9,41,69" />
+      <scope id="1892993302480311955" at="23,0,26,0" />
+      <scope id="1892993302480311955" at="47,0,50,0">
+        <var name="context" id="1892993302480311955" />
+        <var name="environment" id="1892993302480311955" />
+      </scope>
+      <scope id="1892993302480311955" at="27,154,34,18">
+        <var name="tnode1" id="1892993302480311955" />
+      </scope>
+      <scope id="1892993302480311955" at="37,154,44,18">
+        <var name="tnode2" id="1892993302480311955" />
+      </scope>
+      <scope id="1892993302480311955" at="51,180,58,55">
+        <var name="tnodepart0" id="1892993302480311955" />
+        <var name="tnodepart1" id="1892993302480311955" />
+        <var name="weaveTf0" id="1892993302480311955" />
+        <var name="weaveTf1" id="1892993302480311955" />
+      </scope>
+      <scope id="1892993302480311955" at="27,0,36,0">
+        <var name="context" id="1892993302480311955" />
+        <var name="environment" id="1892993302480311955" />
+      </scope>
+      <scope id="1892993302480311955" at="37,0,46,0">
+        <var name="context" id="1892993302480311955" />
+        <var name="environment" id="1892993302480311955" />
+      </scope>
+      <scope id="1892993302480311955" at="51,0,60,0">
+        <var name="context" id="1892993302480311955" />
+        <var name="environment" id="1892993302480311955" />
+        <var name="outputContextNode" id="1892993302480311955" />
+      </scope>
+      <unit id="1892993302480311955" at="18,0,64,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A__switch" />
+    </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/3893401255414084744">
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rules" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rootRules" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="36" startPosition="43" endLine="37" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="37" startPosition="25" endLine="38" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="38" startPosition="95" endLine="39" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="42" startPosition="27" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="46" startPosition="35" endLine="47" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="50" startPosition="42" endLine="51" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="54" startPosition="61" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="58" startPosition="64" endLine="59" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="62" startPosition="62" endLine="63" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="66" startPosition="61" endLine="67" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="70" startPosition="60" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="74" startPosition="58" endLine="75" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="78" startPosition="61" endLine="79" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="82" startPosition="60" endLine="83" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="86" startPosition="34" endLine="87" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="91" startPosition="29" endLine="92" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="96" startPosition="131" endLine="97" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="101" startPosition="108" endLine="102" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="102" startPosition="80" endLine="103" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="103" startPosition="96" endLine="104" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="112" startPosition="41" endLine="113" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="116" startPosition="40" endLine="117" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="120" startPosition="42" endLine="121" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="124" startPosition="37" endLine="125" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="129" startPosition="126" endLine="130" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="131" startPosition="7" endLine="132" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="135" startPosition="142" endLine="136" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="136" startPosition="86" endLine="137" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="141" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="rootMappingRule_417xrn_a0a1r" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="109" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootMappingRule0#()V" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModel#()Ljetbrains/mps/generator/runtime/TemplateModel;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMappingNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/generator/template/ITemplateGenerator;)Z" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReductionRules#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCreateRules#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRootRules#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWeavingRules#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDropRules#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPostScripts#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPreScripts#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTopPriority#()Z" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReductionRule0#()V" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRuleNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyToInheritors#()Z" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="124" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keepSourceRoot#()Z" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="128" startPosition="127" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="135" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="36" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Mappingmain#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="100" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="128" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
-    <nodeInfo nodeId="3893401255414132236" fileName="QueriesGenerated.java" startLine="20" startPosition="110" endLine="21" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414131864" fileName="QueriesGenerated.java" startLine="24" startPosition="110" endLine="25" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="109" startPosition="31" endLine="109" endPosition="31" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="42" startPosition="27" endLine="43" endPosition="18" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="46" startPosition="35" endLine="47" endPosition="24" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="50" startPosition="42" endLine="51" endPosition="199" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="54" startPosition="61" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="58" startPosition="64" endLine="59" endPosition="17" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="62" startPosition="62" endLine="63" endPosition="34" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="66" startPosition="61" endLine="67" endPosition="21" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="70" startPosition="60" endLine="71" endPosition="34" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="74" startPosition="58" endLine="75" endPosition="34" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="78" startPosition="61" endLine="79" endPosition="34" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="82" startPosition="60" endLine="83" endPosition="34" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="86" startPosition="34" endLine="87" endPosition="17" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="91" startPosition="29" endLine="92" endPosition="277" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="96" startPosition="131" endLine="97" endPosition="131" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="112" startPosition="41" endLine="113" endPosition="42" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="116" startPosition="40" endLine="117" endPosition="19" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="120" startPosition="42" endLine="121" endPosition="79" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="124" startPosition="37" endLine="125" endPosition="19" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="129" startPosition="126" endLine="130" endPosition="21" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="109" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="135" startPosition="142" endLine="137" endPosition="20">
-      <varInfo nodeId="3893401255414084744" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="36" startPosition="43" endLine="39" endPosition="103" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
-      <varInfo nodeId="3893401255414084744" varName="generator" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="82" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="86" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="101" startPosition="108" endLine="104" endPosition="20">
-      <varInfo nodeId="3893401255414084744" varName="environment" />
-      <varInfo nodeId="3893401255414084744" varName="tlist1" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="112" startPosition="0" endLine="115" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="116" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="120" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="124" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="95" startPosition="0" endLine="99" endPosition="0">
-      <varInfo nodeId="3893401255414084744" varName="context" />
-      <varInfo nodeId="3893401255414084744" varName="env" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="128" startPosition="127" endLine="132" endPosition="18" />
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="135" startPosition="0" endLine="139" endPosition="0">
-      <varInfo nodeId="3893401255414084744" varName="context" />
-      <varInfo nodeId="3893401255414084744" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="36" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="3893401255414084744" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="100" startPosition="0" endLine="106" endPosition="0">
-      <varInfo nodeId="3893401255414084744" varName="context" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="128" startPosition="0" endLine="134" endPosition="0">
-      <varInfo nodeId="3893401255414084744" varName="context" />
-      <varInfo nodeId="3893401255414084744" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414132235" fileName="QueriesGenerated.java" startLine="20" startPosition="110" endLine="21" endPosition="224" />
-    <scopeInfo nodeId="3893401255414129778" fileName="QueriesGenerated.java" startLine="24" startPosition="110" endLine="25" endPosition="100" />
-    <unitInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="90" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$ReductionRule0" />
-    <unitInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="108" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$RootMappingRule0" />
-    <unitInfo nodeId="3893401255414084744" fileName="Mappingmain.java" startLine="30" startPosition="0" endLine="143" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
+    <file name="Mappingmain.java">
+      <node id="3893401255414084744" at="32,0,33,0" concept="4" trace="rules" />
+      <node id="3893401255414084744" at="33,0,34,0" concept="4" trace="rootRules" />
+      <node id="3893401255414084744" at="34,0,35,0" concept="4" trace="myModel" />
+      <node id="3893401255414084744" at="36,43,37,25" concept="3" />
+      <node id="3893401255414084744" at="37,25,38,95" concept="3" />
+      <node id="3893401255414084744" at="38,95,39,103" concept="3" />
+      <node id="3893401255414084744" at="42,27,43,18" concept="9" />
+      <node id="3893401255414084744" at="46,35,47,24" concept="9" />
+      <node id="3893401255414084744" at="50,42,51,199" concept="9" />
+      <node id="3893401255414084744" at="54,61,55,16" concept="9" />
+      <node id="3893401255414084744" at="58,64,59,17" concept="9" />
+      <node id="3893401255414084744" at="62,62,63,34" concept="9" />
+      <node id="3893401255414084744" at="66,61,67,21" concept="9" />
+      <node id="3893401255414084744" at="70,60,71,34" concept="9" />
+      <node id="3893401255414084744" at="74,58,75,34" concept="9" />
+      <node id="3893401255414084744" at="78,61,79,34" concept="9" />
+      <node id="3893401255414084744" at="82,60,83,34" concept="9" />
+      <node id="3893401255414084744" at="86,34,87,17" concept="9" />
+      <node id="3893401255414084744" at="91,29,92,277" concept="13" />
+      <node id="3893401255414084744" at="96,131,97,131" concept="9" />
+      <node id="3893401255414084744" at="101,108,102,80" concept="8" />
+      <node id="3893401255414084744" at="102,80,103,96" concept="8" />
+      <node id="3893401255414084744" at="103,96,104,20" concept="9" />
+      <node id="3893401255414084744" at="112,41,113,42" concept="9" />
+      <node id="3893401255414084744" at="116,40,117,19" concept="9" />
+      <node id="3893401255414084744" at="120,42,121,79" concept="9" />
+      <node id="3893401255414084744" at="124,37,125,19" concept="9" />
+      <node id="3893401255414084744" at="129,126,130,21" concept="9" />
+      <node id="3893401255414084744" at="131,7,132,18" concept="9" />
+      <node id="3893401255414084744" at="135,142,136,86" concept="8" />
+      <node id="3893401255414084744" at="136,86,137,20" concept="9" />
+      <node id="3893401255414084744" at="141,0,142,0" concept="12" trace="rootMappingRule_417xrn_a0a1r" />
+      <node id="3893401255414084744" at="109,0,111,0" concept="1" trace="RootMappingRule0#()V" />
+      <node id="3893401255414084744" at="42,0,45,0" concept="7" trace="getName#()Ljava/lang/String;" />
+      <node id="3893401255414084744" at="46,0,49,0" concept="7" trace="getModel#()Ljetbrains/mps/generator/runtime/TemplateModel;" />
+      <node id="3893401255414084744" at="50,0,53,0" concept="7" trace="getMappingNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="3893401255414084744" at="54,0,57,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/template/ITemplateGenerator;)Z" />
+      <node id="3893401255414084744" at="58,0,61,0" concept="7" trace="getReductionRules#()Ljava/util/Collection;" />
+      <node id="3893401255414084744" at="62,0,65,0" concept="7" trace="getCreateRules#()Ljava/util/Collection;" />
+      <node id="3893401255414084744" at="66,0,69,0" concept="7" trace="getRootRules#()Ljava/util/Collection;" />
+      <node id="3893401255414084744" at="70,0,73,0" concept="7" trace="getWeavingRules#()Ljava/util/Collection;" />
+      <node id="3893401255414084744" at="74,0,77,0" concept="7" trace="getDropRules#()Ljava/util/Collection;" />
+      <node id="3893401255414084744" at="78,0,81,0" concept="7" trace="getPostScripts#()Ljava/util/Collection;" />
+      <node id="3893401255414084744" at="82,0,85,0" concept="7" trace="getPreScripts#()Ljava/util/Collection;" />
+      <node id="3893401255414084744" at="86,0,89,0" concept="7" trace="isTopPriority#()Z" />
+      <node id="3893401255414084744" at="91,0,94,0" concept="1" trace="ReductionRule0#()V" />
+      <node id="3893401255414084744" at="112,0,115,0" concept="7" trace="getRuleNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="3893401255414084744" at="116,0,119,0" concept="7" trace="applyToInheritors#()Z" />
+      <node id="3893401255414084744" at="120,0,123,0" concept="7" trace="getApplicableConcept#()Ljava/lang/String;" />
+      <node id="3893401255414084744" at="124,0,127,0" concept="7" trace="keepSourceRoot#()Z" />
+      <node id="3893401255414084744" at="128,127,131,7" concept="6" />
+      <node id="3893401255414084744" at="95,0,99,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
+      <node id="3893401255414084744" at="135,0,139,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3893401255414084744" at="36,0,41,0" concept="1" trace="Mappingmain#(Ljetbrains/mps/generator/runtime/TemplateModel;)V" />
+      <node id="3893401255414084744" at="100,0,106,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3893401255414084744" at="128,0,134,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
+      <scope id="3893401255414084744" at="109,31,109,31" />
+      <scope id="3893401255414084744" at="42,27,43,18" />
+      <scope id="3893401255414084744" at="46,35,47,24" />
+      <scope id="3893401255414084744" at="50,42,51,199" />
+      <scope id="3893401255414084744" at="54,61,55,16" />
+      <scope id="3893401255414084744" at="58,64,59,17" />
+      <scope id="3893401255414084744" at="62,62,63,34" />
+      <scope id="3893401255414084744" at="66,61,67,21" />
+      <scope id="3893401255414084744" at="70,60,71,34" />
+      <scope id="3893401255414084744" at="74,58,75,34" />
+      <scope id="3893401255414084744" at="78,61,79,34" />
+      <scope id="3893401255414084744" at="82,60,83,34" />
+      <scope id="3893401255414084744" at="86,34,87,17" />
+      <scope id="3893401255414084744" at="91,29,92,277" />
+      <scope id="3893401255414084744" at="96,131,97,131" />
+      <scope id="3893401255414084744" at="112,41,113,42" />
+      <scope id="3893401255414084744" at="116,40,117,19" />
+      <scope id="3893401255414084744" at="120,42,121,79" />
+      <scope id="3893401255414084744" at="124,37,125,19" />
+      <scope id="3893401255414084744" at="129,126,130,21" />
+      <scope id="3893401255414084744" at="109,0,111,0" />
+      <scope id="3893401255414084744" at="135,142,137,20">
+        <var name="result" id="3893401255414084744" />
+      </scope>
+      <scope id="3893401255414084744" at="36,43,39,103" />
+      <scope id="3893401255414084744" at="42,0,45,0" />
+      <scope id="3893401255414084744" at="46,0,49,0" />
+      <scope id="3893401255414084744" at="50,0,53,0" />
+      <scope id="3893401255414084744" at="54,0,57,0">
+        <var name="generator" id="3893401255414084744" />
+      </scope>
+      <scope id="3893401255414084744" at="58,0,61,0" />
+      <scope id="3893401255414084744" at="62,0,65,0" />
+      <scope id="3893401255414084744" at="66,0,69,0" />
+      <scope id="3893401255414084744" at="70,0,73,0" />
+      <scope id="3893401255414084744" at="74,0,77,0" />
+      <scope id="3893401255414084744" at="78,0,81,0" />
+      <scope id="3893401255414084744" at="82,0,85,0" />
+      <scope id="3893401255414084744" at="86,0,89,0" />
+      <scope id="3893401255414084744" at="91,0,94,0" />
+      <scope id="3893401255414084744" at="101,108,104,20">
+        <var name="environment" id="3893401255414084744" />
+        <var name="tlist1" id="3893401255414084744" />
+      </scope>
+      <scope id="3893401255414084744" at="112,0,115,0" />
+      <scope id="3893401255414084744" at="116,0,119,0" />
+      <scope id="3893401255414084744" at="120,0,123,0" />
+      <scope id="3893401255414084744" at="124,0,127,0" />
+      <scope id="3893401255414084744" at="95,0,99,0">
+        <var name="context" id="3893401255414084744" />
+        <var name="env" id="3893401255414084744" />
+      </scope>
+      <scope id="3893401255414084744" at="128,127,132,18" />
+      <scope id="3893401255414084744" at="135,0,139,0">
+        <var name="context" id="3893401255414084744" />
+        <var name="environment" id="3893401255414084744" />
+      </scope>
+      <scope id="3893401255414084744" at="36,0,41,0">
+        <var name="model" id="3893401255414084744" />
+      </scope>
+      <scope id="3893401255414084744" at="100,0,106,0">
+        <var name="context" id="3893401255414084744" />
+      </scope>
+      <scope id="3893401255414084744" at="128,0,134,0">
+        <var name="context" id="3893401255414084744" />
+        <var name="environment" id="3893401255414084744" />
+      </scope>
+      <unit id="3893401255414084744" at="90,0,107,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$ReductionRule0" />
+      <unit id="3893401255414084744" at="108,0,140,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain$RootMappingRule0" />
+      <unit id="3893401255414084744" at="30,0,143,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Mappingmain" />
+    </file>
+    <file name="QueriesGenerated.java">
+      <node id="3893401255414132236" at="20,110,21,224" concept="9" />
+      <node id="3893401255414131864" at="24,110,25,100" concept="9" />
+      <scope id="3893401255414132235" at="20,110,21,224" />
+      <scope id="3893401255414129778" at="24,110,25,100" />
+    </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/3893401255414086886">
-    <nodeInfo nodeId="3893401255414100160" fileName="QueriesGenerated.java" startLine="32" startPosition="120" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="24" startPosition="43" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="28" startPosition="158" endLine="29" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="30" startPosition="9" endLine="31" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="31" startPosition="112" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="32" startPosition="64" endLine="33" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="34" startPosition="7" endLine="35" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="35" startPosition="40" endLine="36" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="36" startPosition="187" endLine="37" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="38" startPosition="61" endLine="39" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="40" startPosition="9" endLine="41" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="44" startPosition="5" endLine="45" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="template_q702qm_a0a1" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="copySrcListMacro_q702qm_b0a0a1a3a1a2" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TemplateOutputRoot#()V" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="37" startPosition="168" endLine="40" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="33" startPosition="111" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="29" startPosition="123" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="28" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="3893401255414086895" fileName="QueriesGenerated.java" startLine="32" startPosition="120" endLine="33" endPosition="59" />
-    <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="21" startPosition="31" endLine="21" endPosition="31" />
-    <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="43" startPosition="15" endLine="43" endPosition="15" />
-    <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="24" startPosition="43" endLine="25" endPosition="32" />
-    <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="38" startPosition="61" endLine="39" endPosition="49" />
-    <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="37" startPosition="168" endLine="40" endPosition="9">
-      <varInfo nodeId="3893401255414086886" varName="child3" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="34" startPosition="7" endLine="41" endPosition="31">
-      <varInfo nodeId="3893401255414086886" varName="copyListInput2" />
-      <varInfo nodeId="3893401255414086886" varName="tlist2" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="30" startPosition="9" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="28" startPosition="158" endLine="45" endPosition="46">
-      <varInfo nodeId="3893401255414086886" varName="tnode1" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="28" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="3893401255414086886" varName="context" />
-      <varInfo nodeId="3893401255414086886" varName="environment" />
-    </scopeInfo>
-    <unitInfo nodeId="3893401255414086886" fileName="TemplateOutputRoot.java" startLine="19" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateOutputRoot" />
+    <file name="TemplateOutputRoot.java">
+      <node id="3893401255414086886" at="24,43,25,32" concept="9" />
+      <node id="3893401255414086886" at="28,158,29,123" concept="8" />
+      <node id="3893401255414086886" at="30,9,31,112" concept="3" />
+      <node id="3893401255414086886" at="31,112,32,64" concept="3" />
+      <node id="3893401255414086886" at="32,64,33,111" concept="3" />
+      <node id="3893401255414086886" at="34,7,35,40" concept="8" />
+      <node id="3893401255414086886" at="35,40,36,187" concept="8" />
+      <node id="3893401255414086886" at="36,187,37,168" concept="3" />
+      <node id="3893401255414086886" at="38,61,39,49" concept="3" />
+      <node id="3893401255414086886" at="40,9,41,31" concept="10" />
+      <node id="3893401255414086886" at="44,5,45,46" concept="9" />
+      <node id="3893401255414086886" at="48,0,49,0" concept="12" trace="template_q702qm_a0a1" />
+      <node id="3893401255414086886" at="49,0,50,0" concept="12" trace="copySrcListMacro_q702qm_b0a0a1a3a1a2" />
+      <node id="3893401255414086886" at="21,0,23,0" concept="1" trace="TemplateOutputRoot#()V" />
+      <node id="3893401255414086886" at="24,0,27,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="3893401255414086886" at="37,168,40,9" concept="5" />
+      <node id="3893401255414086886" at="33,111,42,7" concept="0" />
+      <node id="3893401255414086886" at="29,123,44,5" concept="15" />
+      <node id="3893401255414086886" at="28,0,47,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <scope id="3893401255414086886" at="21,31,21,31" />
+      <scope id="3893401255414086886" at="43,15,43,15" />
+      <scope id="3893401255414086886" at="24,43,25,32" />
+      <scope id="3893401255414086886" at="38,61,39,49" />
+      <scope id="3893401255414086886" at="21,0,23,0" />
+      <scope id="3893401255414086886" at="24,0,27,0" />
+      <scope id="3893401255414086886" at="37,168,40,9">
+        <var name="child3" id="3893401255414086886" />
+      </scope>
+      <scope id="3893401255414086886" at="34,7,41,31">
+        <var name="copyListInput2" id="3893401255414086886" />
+        <var name="tlist2" id="3893401255414086886" />
+      </scope>
+      <scope id="3893401255414086886" at="30,9,42,7" />
+      <scope id="3893401255414086886" at="28,158,45,46">
+        <var name="tnode1" id="3893401255414086886" />
+      </scope>
+      <scope id="3893401255414086886" at="28,0,47,0">
+        <var name="context" id="3893401255414086886" />
+        <var name="environment" id="3893401255414086886" />
+      </scope>
+      <unit id="3893401255414086886" at="19,0,51,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.TemplateOutputRoot" />
+    </file>
+    <file name="QueriesGenerated.java">
+      <node id="3893401255414100160" at="32,120,33,59" concept="9" />
+      <scope id="3893401255414086895" at="32,120,33,59" />
+    </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/3893401255414100167">
-    <nodeInfo nodeId="3893401255414163870" fileName="QueriesGenerated.java" startLine="36" startPosition="120" endLine="37" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="26" startPosition="43" endLine="27" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="30" startPosition="166" endLine="31" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="31" startPosition="54" endLine="32" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="34" startPosition="28" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="36" startPosition="7" endLine="37" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="37" startPosition="67" endLine="38" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="39" startPosition="11" endLine="40" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="40" startPosition="115" endLine="41" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="44" startPosition="27" endLine="45" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="47" startPosition="5" endLine="48" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="51" startPosition="154" endLine="52" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="53" startPosition="9" endLine="54" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="54" startPosition="112" endLine="55" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="57" startPosition="5" endLine="58" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="61" startPosition="166" endLine="62" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="64" startPosition="11" endLine="65" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="67" startPosition="7" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="70" startPosition="5" endLine="71" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="74" startPosition="166" endLine="75" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="77" startPosition="11" endLine="78" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="79" startPosition="29" endLine="80" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="81" startPosition="15" endLine="82" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="85" startPosition="31" endLine="86" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="92" startPosition="5" endLine="93" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="96" startPosition="146" endLine="97" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="100" startPosition="180" endLine="101" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="101" startPosition="68" endLine="102" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="103" startPosition="66" endLine="104" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="105" startPosition="5" endLine="106" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="106" startPosition="56" endLine="107" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="107" startPosition="56" endLine="108" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="108" startPosition="102" endLine="109" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="109" startPosition="68" endLine="110" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="111" startPosition="66" endLine="112" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="113" startPosition="5" endLine="114" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="114" startPosition="68" endLine="115" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="116" startPosition="66" endLine="117" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="118" startPosition="5" endLine="119" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="122" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="loopMacroRef_b8tv7e_b0a0a1a2" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="123" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="templateSwitchNodeNoInput_b8tv7e_a0a0a0a0b0f" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="124" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_b8tv7e_a0b0h" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="125" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_b8tv7e_a0e0h" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="126" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_b8tv7e_a0h0h" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="127" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="weaveTfConst_b8tv7e_a0k0h" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Templatereduce__InputNode__A#()V" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="33" startPosition="37" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="43" startPosition="7" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="84" startPosition="11" endLine="87" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="102" startPosition="56" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="110" startPosition="56" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="115" startPosition="56" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="63" startPosition="9" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="80" startPosition="129" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="38" startPosition="125" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="52" startPosition="123" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="62" startPosition="36" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="51" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart1#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="78" startPosition="94" endLine="88" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="61" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart2#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="76" startPosition="9" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="32" startPosition="170" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="75" startPosition="36" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="30" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="74" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyPart3#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="100" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="weave#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="3893401255414161784" fileName="QueriesGenerated.java" startLine="36" startPosition="120" endLine="37" endPosition="105" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="23" startPosition="41" endLine="23" endPosition="41" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="42" startPosition="17" endLine="42" endPosition="17" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="56" startPosition="15" endLine="56" endPosition="15" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="66" startPosition="17" endLine="66" endPosition="17" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="69" startPosition="15" endLine="69" endPosition="15" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="83" startPosition="21" endLine="83" endPosition="21" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="89" startPosition="17" endLine="89" endPosition="17" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="91" startPosition="15" endLine="91" endPosition="15" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="26" startPosition="43" endLine="27" endPosition="199" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="34" startPosition="28" endLine="35" endPosition="17" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="44" startPosition="27" endLine="45" endPosition="27" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="64" startPosition="11" endLine="65" endPosition="90" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="81" startPosition="15" endLine="82" endPosition="118" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="85" startPosition="31" endLine="86" endPosition="56" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="96" startPosition="146" endLine="97" endPosition="167" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="103" startPosition="66" endLine="104" endPosition="105" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="111" startPosition="66" endLine="112" endPosition="105" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="116" startPosition="66" endLine="117" endPosition="105" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="39" startPosition="11" endLine="41" endPosition="64" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="53" startPosition="9" endLine="55" endPosition="62" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="96" startPosition="0" endLine="99" endPosition="0">
-      <varInfo nodeId="3893401255414100167" varName="context" />
-      <varInfo nodeId="3893401255414100167" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="102" startPosition="56" endLine="105" endPosition="5">
-      <varInfo nodeId="3893401255414100167" varName="nodeToWeave" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="110" startPosition="56" endLine="113" endPosition="5">
-      <varInfo nodeId="3893401255414100167" varName="nodeToWeave" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="115" startPosition="56" endLine="118" endPosition="5">
-      <varInfo nodeId="3893401255414100167" varName="nodeToWeave" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="63" startPosition="9" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="51" startPosition="154" endLine="58" endPosition="18">
-      <varInfo nodeId="3893401255414100167" varName="tnode3" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="79" startPosition="29" endLine="87" endPosition="11">
-      <varInfo nodeId="3893401255414100167" varName="tnode6" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="51" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="3893401255414100167" varName="context" />
-      <varInfo nodeId="3893401255414100167" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="61" startPosition="166" endLine="71" endPosition="18">
-      <varInfo nodeId="3893401255414100167" varName="tlist4" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="77" startPosition="11" endLine="88" endPosition="9" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="61" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="3893401255414100167" varName="context" />
-      <varInfo nodeId="3893401255414100167" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="33" startPosition="37" endLine="46" endPosition="7">
-      <varInfo nodeId="3893401255414100167" varName="context1" />
-      <varInfo nodeId="3893401255414100167" varName="tnode2" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="76" startPosition="9" endLine="90" endPosition="7" />
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="32" startPosition="170" endLine="47" endPosition="5">
-      <varInfo nodeId="3893401255414100167" varName="itnode1" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="30" startPosition="166" endLine="48" endPosition="18">
-      <varInfo nodeId="3893401255414100167" varName="loopList1" />
-      <varInfo nodeId="3893401255414100167" varName="tlist1" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="74" startPosition="166" endLine="93" endPosition="18">
-      <varInfo nodeId="3893401255414100167" varName="tlist5" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="100" startPosition="180" endLine="119" endPosition="79">
-      <varInfo nodeId="3893401255414100167" varName="tlistpart0" />
-      <varInfo nodeId="3893401255414100167" varName="tlistpart2" />
-      <varInfo nodeId="3893401255414100167" varName="tlistpart3" />
-      <varInfo nodeId="3893401255414100167" varName="tnodepart1" />
-      <varInfo nodeId="3893401255414100167" varName="weaveTf0" />
-      <varInfo nodeId="3893401255414100167" varName="weaveTf1" />
-      <varInfo nodeId="3893401255414100167" varName="weaveTf2" />
-      <varInfo nodeId="3893401255414100167" varName="weaveTf3" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="30" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="3893401255414100167" varName="context" />
-      <varInfo nodeId="3893401255414100167" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="74" startPosition="0" endLine="95" endPosition="0">
-      <varInfo nodeId="3893401255414100167" varName="context" />
-      <varInfo nodeId="3893401255414100167" varName="environment" />
-    </scopeInfo>
-    <scopeInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="100" startPosition="0" endLine="121" endPosition="0">
-      <varInfo nodeId="3893401255414100167" varName="context" />
-      <varInfo nodeId="3893401255414100167" varName="environment" />
-      <varInfo nodeId="3893401255414100167" varName="outputContextNode" />
-    </scopeInfo>
-    <unitInfo nodeId="3893401255414100167" fileName="Templatereduce__InputNode__A.java" startLine="21" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A" />
+    <file name="Templatereduce__InputNode__A.java">
+      <node id="3893401255414100167" at="26,43,27,199" concept="9" />
+      <node id="3893401255414100167" at="30,166,31,54" concept="8" />
+      <node id="3893401255414100167" at="31,54,32,170" concept="8" />
+      <node id="3893401255414100167" at="34,28,35,17" concept="2" />
+      <node id="3893401255414100167" at="36,7,37,67" concept="8" />
+      <node id="3893401255414100167" at="37,67,38,125" concept="8" />
+      <node id="3893401255414100167" at="39,11,40,115" concept="3" />
+      <node id="3893401255414100167" at="40,115,41,64" concept="3" />
+      <node id="3893401255414100167" at="44,27,45,27" concept="3" />
+      <node id="3893401255414100167" at="47,5,48,18" concept="9" />
+      <node id="3893401255414100167" at="51,154,52,123" concept="8" />
+      <node id="3893401255414100167" at="53,9,54,112" concept="3" />
+      <node id="3893401255414100167" at="54,112,55,62" concept="3" />
+      <node id="3893401255414100167" at="57,5,58,18" concept="9" />
+      <node id="3893401255414100167" at="61,166,62,36" concept="8" />
+      <node id="3893401255414100167" at="64,11,65,90" concept="3" />
+      <node id="3893401255414100167" at="67,7,68,0" concept="11" />
+      <node id="3893401255414100167" at="70,5,71,18" concept="9" />
+      <node id="3893401255414100167" at="74,166,75,36" concept="8" />
+      <node id="3893401255414100167" at="77,11,78,94" concept="3" />
+      <node id="3893401255414100167" at="79,29,80,129" concept="8" />
+      <node id="3893401255414100167" at="81,15,82,118" concept="3" />
+      <node id="3893401255414100167" at="85,31,86,56" concept="3" />
+      <node id="3893401255414100167" at="92,5,93,18" concept="9" />
+      <node id="3893401255414100167" at="96,146,97,167" concept="9" />
+      <node id="3893401255414100167" at="100,180,101,68" concept="8" />
+      <node id="3893401255414100167" at="101,68,102,56" concept="8" />
+      <node id="3893401255414100167" at="103,66,104,105" concept="3" />
+      <node id="3893401255414100167" at="105,5,106,56" concept="8" />
+      <node id="3893401255414100167" at="106,56,107,56" concept="8" />
+      <node id="3893401255414100167" at="107,56,108,102" concept="3" />
+      <node id="3893401255414100167" at="108,102,109,68" concept="8" />
+      <node id="3893401255414100167" at="109,68,110,56" concept="8" />
+      <node id="3893401255414100167" at="111,66,112,105" concept="3" />
+      <node id="3893401255414100167" at="113,5,114,68" concept="8" />
+      <node id="3893401255414100167" at="114,68,115,56" concept="8" />
+      <node id="3893401255414100167" at="116,66,117,105" concept="3" />
+      <node id="3893401255414100167" at="118,5,119,79" concept="9" />
+      <node id="3893401255414100167" at="122,0,123,0" concept="12" trace="loopMacroRef_b8tv7e_b0a0a1a2" />
+      <node id="3893401255414100167" at="123,0,124,0" concept="12" trace="templateSwitchNodeNoInput_b8tv7e_a0a0a0a0b0f" />
+      <node id="3893401255414100167" at="124,0,125,0" concept="12" trace="weaveTfConst_b8tv7e_a0b0h" />
+      <node id="3893401255414100167" at="125,0,126,0" concept="12" trace="weaveTfConst_b8tv7e_a0e0h" />
+      <node id="3893401255414100167" at="126,0,127,0" concept="12" trace="weaveTfConst_b8tv7e_a0h0h" />
+      <node id="3893401255414100167" at="127,0,128,0" concept="12" trace="weaveTfConst_b8tv7e_a0k0h" />
+      <node id="3893401255414100167" at="23,0,25,0" concept="1" trace="Templatereduce__InputNode__A#()V" />
+      <node id="3893401255414100167" at="26,0,29,0" concept="7" trace="getTemplateNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="3893401255414100167" at="33,37,36,7" concept="6" />
+      <node id="3893401255414100167" at="43,7,46,7" concept="6" />
+      <node id="3893401255414100167" at="84,11,87,11" concept="6" />
+      <node id="3893401255414100167" at="96,0,99,0" concept="7" trace="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3893401255414100167" at="102,56,105,5" concept="5" />
+      <node id="3893401255414100167" at="110,56,113,5" concept="5" />
+      <node id="3893401255414100167" at="115,56,118,5" concept="5" />
+      <node id="3893401255414100167" at="63,9,67,7" concept="15" />
+      <node id="3893401255414100167" at="80,129,84,11" concept="15" />
+      <node id="3893401255414100167" at="38,125,43,7" concept="15" />
+      <node id="3893401255414100167" at="52,123,57,5" concept="15" />
+      <node id="3893401255414100167" at="62,36,70,5" concept="15" />
+      <node id="3893401255414100167" at="51,0,60,0" concept="7" trace="applyPart1#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3893401255414100167" at="78,94,88,9" concept="6" />
+      <node id="3893401255414100167" at="61,0,73,0" concept="7" trace="applyPart2#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3893401255414100167" at="76,9,90,7" concept="15" />
+      <node id="3893401255414100167" at="32,170,47,5" concept="5" />
+      <node id="3893401255414100167" at="75,36,92,5" concept="15" />
+      <node id="3893401255414100167" at="30,0,50,0" concept="7" trace="applyPart0#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3893401255414100167" at="74,0,95,0" concept="7" trace="applyPart3#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="3893401255414100167" at="100,0,121,0" concept="7" trace="weave#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Collection;" />
+      <scope id="3893401255414100167" at="23,41,23,41" />
+      <scope id="3893401255414100167" at="42,17,42,17" />
+      <scope id="3893401255414100167" at="56,15,56,15" />
+      <scope id="3893401255414100167" at="66,17,66,17" />
+      <scope id="3893401255414100167" at="69,15,69,15" />
+      <scope id="3893401255414100167" at="83,21,83,21" />
+      <scope id="3893401255414100167" at="89,17,89,17" />
+      <scope id="3893401255414100167" at="91,15,91,15" />
+      <scope id="3893401255414100167" at="26,43,27,199" />
+      <scope id="3893401255414100167" at="34,28,35,17" />
+      <scope id="3893401255414100167" at="44,27,45,27" />
+      <scope id="3893401255414100167" at="64,11,65,90" />
+      <scope id="3893401255414100167" at="81,15,82,118" />
+      <scope id="3893401255414100167" at="85,31,86,56" />
+      <scope id="3893401255414100167" at="96,146,97,167" />
+      <scope id="3893401255414100167" at="103,66,104,105" />
+      <scope id="3893401255414100167" at="111,66,112,105" />
+      <scope id="3893401255414100167" at="116,66,117,105" />
+      <scope id="3893401255414100167" at="23,0,25,0" />
+      <scope id="3893401255414100167" at="39,11,41,64" />
+      <scope id="3893401255414100167" at="53,9,55,62" />
+      <scope id="3893401255414100167" at="26,0,29,0" />
+      <scope id="3893401255414100167" at="96,0,99,0">
+        <var name="context" id="3893401255414100167" />
+        <var name="environment" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="102,56,105,5">
+        <var name="nodeToWeave" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="110,56,113,5">
+        <var name="nodeToWeave" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="115,56,118,5">
+        <var name="nodeToWeave" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="63,9,68,0" />
+      <scope id="3893401255414100167" at="51,154,58,18">
+        <var name="tnode3" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="79,29,87,11">
+        <var name="tnode6" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="51,0,60,0">
+        <var name="context" id="3893401255414100167" />
+        <var name="environment" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="61,166,71,18">
+        <var name="tlist4" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="77,11,88,9" />
+      <scope id="3893401255414100167" at="61,0,73,0">
+        <var name="context" id="3893401255414100167" />
+        <var name="environment" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="33,37,46,7">
+        <var name="context1" id="3893401255414100167" />
+        <var name="tnode2" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="76,9,90,7" />
+      <scope id="3893401255414100167" at="32,170,47,5">
+        <var name="itnode1" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="30,166,48,18">
+        <var name="loopList1" id="3893401255414100167" />
+        <var name="tlist1" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="74,166,93,18">
+        <var name="tlist5" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="100,180,119,79">
+        <var name="tlistpart0" id="3893401255414100167" />
+        <var name="tlistpart2" id="3893401255414100167" />
+        <var name="tlistpart3" id="3893401255414100167" />
+        <var name="tnodepart1" id="3893401255414100167" />
+        <var name="weaveTf0" id="3893401255414100167" />
+        <var name="weaveTf1" id="3893401255414100167" />
+        <var name="weaveTf2" id="3893401255414100167" />
+        <var name="weaveTf3" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="30,0,50,0">
+        <var name="context" id="3893401255414100167" />
+        <var name="environment" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="74,0,95,0">
+        <var name="context" id="3893401255414100167" />
+        <var name="environment" id="3893401255414100167" />
+      </scope>
+      <scope id="3893401255414100167" at="100,0,121,0">
+        <var name="context" id="3893401255414100167" />
+        <var name="environment" id="3893401255414100167" />
+        <var name="outputContextNode" id="3893401255414100167" />
+      </scope>
+      <unit id="3893401255414100167" at="21,0,129,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Templatereduce__InputNode__A" />
+    </file>
+    <file name="QueriesGenerated.java">
+      <node id="3893401255414163870" at="36,120,37,105" concept="9" />
+      <scope id="3893401255414161784" at="36,120,37,105" />
+    </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/8371596541809066874">
-    <nodeInfo nodeId="8371596541809066881" fileName="QueriesGenerated.java" startLine="28" startPosition="110" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rules" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="26" startPosition="31" endLine="27" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="30" startPosition="41" endLine="31" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="34" startPosition="45" endLine="35" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="38" startPosition="62" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="42" startPosition="199" endLine="43" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="43" startPosition="55" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="47" startPosition="125" endLine="48" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="52" startPosition="29" endLine="53" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="57" startPosition="131" endLine="58" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="62" startPosition="108" endLine="63" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="63" startPosition="80" endLine="64" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="64" startPosition="96" endLine="65" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SwitchbetterSwitch#()V" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSwitchNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModifiesSwitch#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReductionRules#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReductionRule0#()V" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyDefault#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
-    <nodeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="61" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="8371596541809066880" fileName="QueriesGenerated.java" startLine="28" startPosition="110" endLine="29" endPosition="17" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="26" startPosition="31" endLine="27" endPosition="100" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="30" startPosition="41" endLine="31" endPosition="199" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="34" startPosition="45" endLine="35" endPosition="199" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="38" startPosition="62" endLine="39" endPosition="17" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="47" startPosition="125" endLine="48" endPosition="71" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="52" startPosition="29" endLine="53" endPosition="277" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="57" startPosition="131" endLine="58" endPosition="131" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="42" startPosition="199" endLine="44" endPosition="18">
-      <varInfo nodeId="8371596541809066874" varName="tlist1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="8371596541809066874" varName="context" />
-      <varInfo nodeId="8371596541809066874" varName="environment" />
-      <varInfo nodeId="8371596541809066874" varName="templateSwitch" />
-    </scopeInfo>
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="62" startPosition="108" endLine="65" endPosition="20">
-      <varInfo nodeId="8371596541809066874" varName="environment" />
-      <varInfo nodeId="8371596541809066874" varName="tlist1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="8371596541809066874" varName="context" />
-      <varInfo nodeId="8371596541809066874" varName="environment" />
-      <varInfo nodeId="8371596541809066874" varName="mappingLabel" />
-      <varInfo nodeId="8371596541809066874" varName="templateSwitch" />
-    </scopeInfo>
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="8371596541809066874" varName="context" />
-      <varInfo nodeId="8371596541809066874" varName="env" />
-    </scopeInfo>
-    <scopeInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="61" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="8371596541809066874" varName="context" />
-    </scopeInfo>
-    <unitInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="51" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.SwitchbetterSwitch$ReductionRule0" />
-    <unitInfo nodeId="8371596541809066874" fileName="SwitchbetterSwitch.java" startLine="22" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.SwitchbetterSwitch" />
+    <file name="QueriesGenerated.java">
+      <node id="8371596541809066881" at="28,110,29,17" concept="9" />
+      <scope id="8371596541809066880" at="28,110,29,17" />
+    </file>
+    <file name="SwitchbetterSwitch.java">
+      <node id="8371596541809066874" at="24,0,25,0" concept="4" trace="rules" />
+      <node id="8371596541809066874" at="26,31,27,100" concept="3" />
+      <node id="8371596541809066874" at="30,41,31,199" concept="9" />
+      <node id="8371596541809066874" at="34,45,35,199" concept="9" />
+      <node id="8371596541809066874" at="38,62,39,17" concept="9" />
+      <node id="8371596541809066874" at="42,199,43,55" concept="8" />
+      <node id="8371596541809066874" at="43,55,44,18" concept="9" />
+      <node id="8371596541809066874" at="47,125,48,71" concept="3" />
+      <node id="8371596541809066874" at="52,29,53,277" concept="13" />
+      <node id="8371596541809066874" at="57,131,58,131" concept="9" />
+      <node id="8371596541809066874" at="62,108,63,80" concept="8" />
+      <node id="8371596541809066874" at="63,80,64,96" concept="8" />
+      <node id="8371596541809066874" at="64,96,65,20" concept="9" />
+      <node id="8371596541809066874" at="26,0,29,0" concept="1" trace="SwitchbetterSwitch#()V" />
+      <node id="8371596541809066874" at="30,0,33,0" concept="7" trace="getSwitchNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="8371596541809066874" at="34,0,37,0" concept="7" trace="getModifiesSwitch#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="8371596541809066874" at="38,0,41,0" concept="7" trace="getReductionRules#()Ljava/lang/Iterable;" />
+      <node id="8371596541809066874" at="47,0,50,0" concept="7" trace="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
+      <node id="8371596541809066874" at="52,0,55,0" concept="1" trace="ReductionRule0#()V" />
+      <node id="8371596541809066874" at="42,0,46,0" concept="7" trace="applyDefault#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <node id="8371596541809066874" at="56,0,60,0" concept="7" trace="isApplicable#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Z" />
+      <node id="8371596541809066874" at="61,0,67,0" concept="7" trace="doApply#(Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <scope id="8371596541809066874" at="26,31,27,100" />
+      <scope id="8371596541809066874" at="30,41,31,199" />
+      <scope id="8371596541809066874" at="34,45,35,199" />
+      <scope id="8371596541809066874" at="38,62,39,17" />
+      <scope id="8371596541809066874" at="47,125,48,71" />
+      <scope id="8371596541809066874" at="52,29,53,277" />
+      <scope id="8371596541809066874" at="57,131,58,131" />
+      <scope id="8371596541809066874" at="42,199,44,18">
+        <var name="tlist1" id="8371596541809066874" />
+      </scope>
+      <scope id="8371596541809066874" at="26,0,29,0" />
+      <scope id="8371596541809066874" at="30,0,33,0" />
+      <scope id="8371596541809066874" at="34,0,37,0" />
+      <scope id="8371596541809066874" at="38,0,41,0" />
+      <scope id="8371596541809066874" at="47,0,50,0">
+        <var name="context" id="8371596541809066874" />
+        <var name="environment" id="8371596541809066874" />
+        <var name="templateSwitch" id="8371596541809066874" />
+      </scope>
+      <scope id="8371596541809066874" at="52,0,55,0" />
+      <scope id="8371596541809066874" at="62,108,65,20">
+        <var name="environment" id="8371596541809066874" />
+        <var name="tlist1" id="8371596541809066874" />
+      </scope>
+      <scope id="8371596541809066874" at="42,0,46,0">
+        <var name="context" id="8371596541809066874" />
+        <var name="environment" id="8371596541809066874" />
+        <var name="mappingLabel" id="8371596541809066874" />
+        <var name="templateSwitch" id="8371596541809066874" />
+      </scope>
+      <scope id="8371596541809066874" at="56,0,60,0">
+        <var name="context" id="8371596541809066874" />
+        <var name="env" id="8371596541809066874" />
+      </scope>
+      <scope id="8371596541809066874" at="61,0,67,0">
+        <var name="context" id="8371596541809066874" />
+      </scope>
+      <unit id="8371596541809066874" at="51,0,68,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.SwitchbetterSwitch$ReductionRule0" />
+      <unit id="8371596541809066874" at="22,0,69,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.SwitchbetterSwitch" />
+    </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/8371596541809075900">
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="23" startPosition="41" endLine="24" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="27" startPosition="45" endLine="28" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="31" startPosition="62" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="35" startPosition="199" endLine="36" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="37" startPosition="9" endLine="38" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="40" startPosition="5" endLine="41" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Switchbetter__switch2#()V" />
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="44" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSwitchNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModifiesSwitch#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReductionRules#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="36" startPosition="106" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="35" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyDefault#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="20" startPosition="34" endLine="20" endPosition="34" />
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="39" startPosition="15" endLine="39" endPosition="15" />
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="44" startPosition="125" endLine="44" endPosition="125" />
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="23" startPosition="41" endLine="24" endPosition="199" />
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="27" startPosition="45" endLine="28" endPosition="199" />
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="31" startPosition="62" endLine="32" endPosition="34" />
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="37" startPosition="9" endLine="38" endPosition="112" />
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="44" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="8371596541809075900" varName="context" />
-      <varInfo nodeId="8371596541809075900" varName="environment" />
-      <varInfo nodeId="8371596541809075900" varName="templateSwitch" />
-    </scopeInfo>
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="35" startPosition="199" endLine="41" endPosition="46">
-      <varInfo nodeId="8371596541809075900" varName="tnode1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="35" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="8371596541809075900" varName="context" />
-      <varInfo nodeId="8371596541809075900" varName="environment" />
-      <varInfo nodeId="8371596541809075900" varName="mappingLabel" />
-      <varInfo nodeId="8371596541809075900" varName="templateSwitch" />
-    </scopeInfo>
-    <unitInfo nodeId="8371596541809075900" fileName="Switchbetter__switch2.java" startLine="18" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchbetter__switch2" />
+    <file name="Switchbetter__switch2.java">
+      <node id="8371596541809075900" at="23,41,24,199" concept="9" />
+      <node id="8371596541809075900" at="27,45,28,199" concept="9" />
+      <node id="8371596541809075900" at="31,62,32,34" concept="9" />
+      <node id="8371596541809075900" at="35,199,36,106" concept="8" />
+      <node id="8371596541809075900" at="37,9,38,112" concept="3" />
+      <node id="8371596541809075900" at="40,5,41,46" concept="9" />
+      <node id="8371596541809075900" at="20,0,22,0" concept="1" trace="Switchbetter__switch2#()V" />
+      <node id="8371596541809075900" at="44,0,46,0" concept="7" trace="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
+      <node id="8371596541809075900" at="23,0,26,0" concept="7" trace="getSwitchNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="8371596541809075900" at="27,0,30,0" concept="7" trace="getModifiesSwitch#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="8371596541809075900" at="31,0,34,0" concept="7" trace="getReductionRules#()Ljava/lang/Iterable;" />
+      <node id="8371596541809075900" at="36,106,40,5" concept="15" />
+      <node id="8371596541809075900" at="35,0,43,0" concept="7" trace="applyDefault#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <scope id="8371596541809075900" at="20,34,20,34" />
+      <scope id="8371596541809075900" at="39,15,39,15" />
+      <scope id="8371596541809075900" at="44,125,44,125" />
+      <scope id="8371596541809075900" at="23,41,24,199" />
+      <scope id="8371596541809075900" at="27,45,28,199" />
+      <scope id="8371596541809075900" at="31,62,32,34" />
+      <scope id="8371596541809075900" at="37,9,38,112" />
+      <scope id="8371596541809075900" at="20,0,22,0" />
+      <scope id="8371596541809075900" at="44,0,46,0">
+        <var name="context" id="8371596541809075900" />
+        <var name="environment" id="8371596541809075900" />
+        <var name="templateSwitch" id="8371596541809075900" />
+      </scope>
+      <scope id="8371596541809075900" at="23,0,26,0" />
+      <scope id="8371596541809075900" at="27,0,30,0" />
+      <scope id="8371596541809075900" at="31,0,34,0" />
+      <scope id="8371596541809075900" at="35,199,41,46">
+        <var name="tnode1" id="8371596541809075900" />
+      </scope>
+      <scope id="8371596541809075900" at="35,0,43,0">
+        <var name="context" id="8371596541809075900" />
+        <var name="environment" id="8371596541809075900" />
+        <var name="mappingLabel" id="8371596541809075900" />
+        <var name="templateSwitch" id="8371596541809075900" />
+      </scope>
+      <unit id="8371596541809075900" at="18,0,47,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchbetter__switch2" />
+    </file>
   </root>
   <root nodeRef="r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)/8371596541809075904">
-    <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="23" startPosition="41" endLine="24" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="27" startPosition="45" endLine="28" endPosition="199" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="31" startPosition="62" endLine="32" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="35" startPosition="199" endLine="36" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Switchbetter__switch3#()V" />
-    <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="39" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
-    <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSwitchNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModifiesSwitch#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReductionRules#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyDefault#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
-    <scopeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="20" startPosition="34" endLine="20" endPosition="34" />
-    <scopeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="39" startPosition="125" endLine="39" endPosition="125" />
-    <scopeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="23" startPosition="41" endLine="24" endPosition="199" />
-    <scopeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="27" startPosition="45" endLine="28" endPosition="199" />
-    <scopeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="31" startPosition="62" endLine="32" endPosition="34" />
-    <scopeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="35" startPosition="199" endLine="36" endPosition="94" />
-    <scopeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="39" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="8371596541809075904" varName="context" />
-      <varInfo nodeId="8371596541809075904" varName="environment" />
-      <varInfo nodeId="8371596541809075904" varName="templateSwitch" />
-    </scopeInfo>
-    <scopeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="8371596541809075904" varName="context" />
-      <varInfo nodeId="8371596541809075904" varName="environment" />
-      <varInfo nodeId="8371596541809075904" varName="mappingLabel" />
-      <varInfo nodeId="8371596541809075904" varName="templateSwitch" />
-    </scopeInfo>
-    <unitInfo nodeId="8371596541809075904" fileName="Switchbetter__switch3.java" startLine="18" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchbetter__switch3" />
+    <file name="Switchbetter__switch3.java">
+      <node id="8371596541809075904" at="23,41,24,199" concept="9" />
+      <node id="8371596541809075904" at="27,45,28,199" concept="9" />
+      <node id="8371596541809075904" at="31,62,32,34" concept="9" />
+      <node id="8371596541809075904" at="35,199,36,94" concept="14" />
+      <node id="8371596541809075904" at="20,0,22,0" concept="1" trace="Switchbetter__switch3#()V" />
+      <node id="8371596541809075904" at="39,0,41,0" concept="7" trace="processNull#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljetbrains/mps/generator/runtime/TemplateContext;)V" />
+      <node id="8371596541809075904" at="23,0,26,0" concept="7" trace="getSwitchNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="8371596541809075904" at="27,0,30,0" concept="7" trace="getModifiesSwitch#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="8371596541809075904" at="31,0,34,0" concept="7" trace="getReductionRules#()Ljava/lang/Iterable;" />
+      <node id="8371596541809075904" at="35,0,38,0" concept="7" trace="applyDefault#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Lorg/jetbrains/mps/openapi/model/SNodeReference;Ljava/lang/String;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
+      <scope id="8371596541809075904" at="20,34,20,34" />
+      <scope id="8371596541809075904" at="39,125,39,125" />
+      <scope id="8371596541809075904" at="23,41,24,199" />
+      <scope id="8371596541809075904" at="27,45,28,199" />
+      <scope id="8371596541809075904" at="31,62,32,34" />
+      <scope id="8371596541809075904" at="35,199,36,94" />
+      <scope id="8371596541809075904" at="20,0,22,0" />
+      <scope id="8371596541809075904" at="39,0,41,0">
+        <var name="context" id="8371596541809075904" />
+        <var name="environment" id="8371596541809075904" />
+        <var name="templateSwitch" id="8371596541809075904" />
+      </scope>
+      <scope id="8371596541809075904" at="23,0,26,0" />
+      <scope id="8371596541809075904" at="27,0,30,0" />
+      <scope id="8371596541809075904" at="31,0,34,0" />
+      <scope id="8371596541809075904" at="35,0,38,0">
+        <var name="context" id="8371596541809075904" />
+        <var name="environment" id="8371596541809075904" />
+        <var name="mappingLabel" id="8371596541809075904" />
+        <var name="templateSwitch" id="8371596541809075904" />
+      </scope>
+      <unit id="8371596541809075904" at="18,0,42,0" name="jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany.Switchbetter__switch3" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

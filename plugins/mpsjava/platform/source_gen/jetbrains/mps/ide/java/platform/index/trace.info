@@ -1,584 +1,611 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:2ba45a7a-594f-4a4d-be5c-07edf2b58826(jetbrains.mps.ide.java.platform.index)/4183391441819863852">
-    <nodeInfo nodeId="4183391441819863859" fileName="ClassifierSuccessorsFinder.java" startLine="45" startPosition="48" endLine="46" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819863873" fileName="ClassifierSuccessorsFinder.java" startLine="50" startPosition="114" endLine="51" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819863880" fileName="ClassifierSuccessorsFinder.java" startLine="51" startPosition="92" endLine="52" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819863887" fileName="ClassifierSuccessorsFinder.java" startLine="52" startPosition="80" endLine="53" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819863908" fileName="ClassifierSuccessorsFinder.java" startLine="55" startPosition="46" endLine="56" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4183391441819863909" fileName="ClassifierSuccessorsFinder.java" startLine="57" startPosition="7" endLine="58" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6673009040135107701" fileName="ClassifierSuccessorsFinder.java" startLine="58" startPosition="47" endLine="59" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819863915" fileName="ClassifierSuccessorsFinder.java" startLine="59" startPosition="42" endLine="60" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819863926" fileName="ClassifierSuccessorsFinder.java" startLine="61" startPosition="30" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="2834132315319590452" fileName="ClassifierSuccessorsFinder.java" startLine="64" startPosition="28" endLine="65" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2834132315319590478" fileName="ClassifierSuccessorsFinder.java" startLine="65" startPosition="166" endLine="66" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819863933" fileName="ClassifierSuccessorsFinder.java" startLine="67" startPosition="14" endLine="68" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819863976" fileName="ClassifierSuccessorsFinder.java" startLine="70" startPosition="5" endLine="71" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819863982" fileName="ClassifierSuccessorsFinder.java" startLine="71" startPosition="48" endLine="72" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819863989" fileName="ClassifierSuccessorsFinder.java" startLine="72" startPosition="74" endLine="73" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819863994" fileName="ClassifierSuccessorsFinder.java" startLine="73" startPosition="62" endLine="74" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864001" fileName="ClassifierSuccessorsFinder.java" startLine="74" startPosition="124" endLine="75" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864010" fileName="ClassifierSuccessorsFinder.java" startLine="75" startPosition="188" endLine="76" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864022" fileName="ClassifierSuccessorsFinder.java" startLine="77" startPosition="57" endLine="78" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864028" fileName="ClassifierSuccessorsFinder.java" startLine="78" startPosition="81" endLine="79" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864039" fileName="ClassifierSuccessorsFinder.java" startLine="79" startPosition="168" endLine="80" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864044" fileName="ClassifierSuccessorsFinder.java" startLine="81" startPosition="5" endLine="82" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864474" fileName="ClassifierSuccessorsFinder.java" startLine="86" startPosition="31" endLine="87" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864483" fileName="ClassifierSuccessorsFinder.java" startLine="91" startPosition="34" endLine="92" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864494" fileName="ClassifierSuccessorsFinder.java" startLine="98" startPosition="36" endLine="99" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864050" fileName="ClassifierSuccessorsFinder.java" startLine="103" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModifiedClasses" />
-    <nodeInfo nodeId="4183391441819864053" fileName="ClassifierSuccessorsFinder.java" startLine="104" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModifiedInterfaces" />
-    <nodeInfo nodeId="4183391441819864056" fileName="ClassifierSuccessorsFinder.java" startLine="105" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassifiersQueue" />
-    <nodeInfo nodeId="4183391441819864060" fileName="ClassifierSuccessorsFinder.java" startLine="106" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
-    <nodeInfo nodeId="4183391441819864063" fileName="ClassifierSuccessorsFinder.java" startLine="107" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessedNodes" />
-    <nodeInfo nodeId="4183391441819864070" fileName="ClassifierSuccessorsFinder.java" startLine="108" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySuccessorsMap" />
-    <nodeInfo nodeId="4183391441819864079" fileName="ClassifierSuccessorsFinder.java" startLine="109" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInterfacesMapped" />
-    <nodeInfo nodeId="4183391441819864082" fileName="ClassifierSuccessorsFinder.java" startLine="110" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassesMapped" />
-    <nodeInfo nodeId="4183391441819864097" fileName="ClassifierSuccessorsFinder.java" startLine="112" startPosition="153" endLine="113" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864101" fileName="ClassifierSuccessorsFinder.java" startLine="113" startPosition="42" endLine="114" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864105" fileName="ClassifierSuccessorsFinder.java" startLine="114" startPosition="48" endLine="115" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864109" fileName="ClassifierSuccessorsFinder.java" startLine="115" startPosition="44" endLine="116" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864125" fileName="ClassifierSuccessorsFinder.java" startLine="120" startPosition="76" endLine="121" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864126" fileName="ClassifierSuccessorsFinder.java" startLine="122" startPosition="7" endLine="123" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864133" fileName="ClassifierSuccessorsFinder.java" startLine="124" startPosition="108" endLine="125" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864135" fileName="ClassifierSuccessorsFinder.java" startLine="125" startPosition="24" endLine="126" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864147" fileName="ClassifierSuccessorsFinder.java" startLine="127" startPosition="118" endLine="128" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864151" fileName="ClassifierSuccessorsFinder.java" startLine="129" startPosition="14" endLine="130" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864152" fileName="ClassifierSuccessorsFinder.java" startLine="131" startPosition="7" endLine="132" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864167" fileName="ClassifierSuccessorsFinder.java" startLine="134" startPosition="67" endLine="135" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864172" fileName="ClassifierSuccessorsFinder.java" startLine="135" startPosition="64" endLine="136" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864184" fileName="ClassifierSuccessorsFinder.java" startLine="142" startPosition="28" endLine="143" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864185" fileName="ClassifierSuccessorsFinder.java" startLine="144" startPosition="7" endLine="145" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864193" fileName="ClassifierSuccessorsFinder.java" startLine="146" startPosition="69" endLine="147" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864201" fileName="ClassifierSuccessorsFinder.java" startLine="148" startPosition="33" endLine="149" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864212" fileName="ClassifierSuccessorsFinder.java" startLine="151" startPosition="106" endLine="152" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864229" fileName="ClassifierSuccessorsFinder.java" startLine="154" startPosition="132" endLine="155" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864242" fileName="ClassifierSuccessorsFinder.java" startLine="161" startPosition="31" endLine="162" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864243" fileName="ClassifierSuccessorsFinder.java" startLine="163" startPosition="7" endLine="164" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864257" fileName="ClassifierSuccessorsFinder.java" startLine="166" startPosition="131" endLine="167" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864276" fileName="ClassifierSuccessorsFinder.java" startLine="173" startPosition="32" endLine="174" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864277" fileName="ClassifierSuccessorsFinder.java" startLine="175" startPosition="7" endLine="176" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864288" fileName="ClassifierSuccessorsFinder.java" startLine="177" startPosition="31" endLine="178" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864294" fileName="ClassifierSuccessorsFinder.java" startLine="178" startPosition="44" endLine="179" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864300" fileName="ClassifierSuccessorsFinder.java" startLine="180" startPosition="7" endLine="181" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864310" fileName="ClassifierSuccessorsFinder.java" startLine="186" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
-    <nodeInfo nodeId="4183391441819864313" fileName="ClassifierSuccessorsFinder.java" startLine="187" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQueue" />
-    <nodeInfo nodeId="4183391441819864317" fileName="ClassifierSuccessorsFinder.java" startLine="188" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProcessedNodes" />
-    <nodeInfo nodeId="4183391441819864332" fileName="ClassifierSuccessorsFinder.java" startLine="190" startPosition="72" endLine="191" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864336" fileName="ClassifierSuccessorsFinder.java" startLine="191" startPosition="24" endLine="192" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864360" fileName="ClassifierSuccessorsFinder.java" startLine="198" startPosition="70" endLine="199" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="4183391441819864361" fileName="ClassifierSuccessorsFinder.java" startLine="200" startPosition="9" endLine="201" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864366" fileName="ClassifierSuccessorsFinder.java" startLine="201" startPosition="66" endLine="202" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864374" fileName="ClassifierSuccessorsFinder.java" startLine="203" startPosition="100" endLine="204" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864379" fileName="ClassifierSuccessorsFinder.java" startLine="204" startPosition="107" endLine="205" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864384" fileName="ClassifierSuccessorsFinder.java" startLine="205" startPosition="65" endLine="206" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864393" fileName="ClassifierSuccessorsFinder.java" startLine="208" startPosition="7" endLine="209" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864399" fileName="ClassifierSuccessorsFinder.java" startLine="214" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFilesInScope" />
-    <nodeInfo nodeId="4183391441819864409" fileName="ClassifierSuccessorsFinder.java" startLine="216" startPosition="69" endLine="217" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4183391441819864411" fileName="ClassifierSuccessorsFinder.java" startLine="217" startPosition="18" endLine="218" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864421" fileName="ClassifierSuccessorsFinder.java" startLine="222" startPosition="47" endLine="223" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864435" fileName="ClassifierSuccessorsFinder.java" startLine="227" startPosition="62" endLine="228" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864452" fileName="ClassifierSuccessorsFinder.java" startLine="232" startPosition="69" endLine="233" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864459" fileName="ClassifierSuccessorsFinder.java" startLine="237" startPosition="42" endLine="238" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864462" fileName="ClassifierSuccessorsFinder.java" startLine="41" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierSuccessorsFinder#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-    <nodeInfo nodeId="4183391441819863931" fileName="ClassifierSuccessorsFinder.java" startLine="67" startPosition="12" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4183391441819864149" fileName="ClassifierSuccessorsFinder.java" startLine="129" startPosition="12" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4183391441819863901" fileName="ClassifierSuccessorsFinder.java" startLine="54" startPosition="41" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819863921" fileName="ClassifierSuccessorsFinder.java" startLine="60" startPosition="104" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864119" fileName="ClassifierSuccessorsFinder.java" startLine="119" startPosition="48" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864181" fileName="ClassifierSuccessorsFinder.java" startLine="141" startPosition="31" endLine="144" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864199" fileName="ClassifierSuccessorsFinder.java" startLine="147" startPosition="81" endLine="150" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864210" fileName="ClassifierSuccessorsFinder.java" startLine="150" startPosition="9" endLine="153" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864223" fileName="ClassifierSuccessorsFinder.java" startLine="153" startPosition="9" endLine="156" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4183391441819864239" fileName="ClassifierSuccessorsFinder.java" startLine="160" startPosition="34" endLine="163" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864251" fileName="ClassifierSuccessorsFinder.java" startLine="165" startPosition="77" endLine="168" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4183391441819864271" fileName="ClassifierSuccessorsFinder.java" startLine="172" startPosition="62" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864354" fileName="ClassifierSuccessorsFinder.java" startLine="197" startPosition="48" endLine="200" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819863853" fileName="ClassifierSuccessorsFinder.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isIndexReady#(Ljetbrains/mps/project/Project;)Z" />
-    <nodeInfo nodeId="4183391441819864470" fileName="ClassifierSuccessorsFinder.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="4183391441819864479" fileName="ClassifierSuccessorsFinder.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="4183391441819864163" fileName="ClassifierSuccessorsFinder.java" startLine="133" startPosition="31" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4183391441819864283" fileName="ClassifierSuccessorsFinder.java" startLine="176" startPosition="85" endLine="180" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864324" fileName="ClassifierSuccessorsFinder.java" startLine="190" startPosition="0" endLine="194" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ValueProcessor#(Ljava/util/List;Ljava/util/Queue;)V" />
-    <nodeInfo nodeId="4183391441819864403" fileName="ClassifierSuccessorsFinder.java" startLine="216" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SearchScope#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="4183391441819864415" fileName="ClassifierSuccessorsFinder.java" startLine="221" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="contains#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
-    <nodeInfo nodeId="4183391441819864427" fileName="ClassifierSuccessorsFinder.java" startLine="226" startPosition="0" endLine="230" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/vfs/VirtualFile;)I" />
-    <nodeInfo nodeId="4183391441819864445" fileName="ClassifierSuccessorsFinder.java" startLine="231" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSearchInModuleContent#(Lcom/intellij/openapi/module/Module;)Z" />
-    <nodeInfo nodeId="4183391441819864455" fileName="ClassifierSuccessorsFinder.java" startLine="236" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSearchInLibraries#()Z" />
-    <nodeInfo nodeId="4183391441819864016" fileName="ClassifierSuccessorsFinder.java" startLine="76" startPosition="137" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4183391441819864247" fileName="ClassifierSuccessorsFinder.java" startLine="164" startPosition="32" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4183391441819864372" fileName="ClassifierSuccessorsFinder.java" startLine="202" startPosition="39" endLine="207" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819863927" fileName="ClassifierSuccessorsFinder.java" startLine="63" startPosition="7" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864488" fileName="ClassifierSuccessorsFinder.java" startLine="95" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4183391441819864085" fileName="ClassifierSuccessorsFinder.java" startLine="112" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModifiedsuccessorFinder#(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/Queue;)V" />
-    <nodeInfo nodeId="4183391441819864158" fileName="ClassifierSuccessorsFinder.java" startLine="132" startPosition="89" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864131" fileName="ClassifierSuccessorsFinder.java" startLine="123" startPosition="72" endLine="131" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864235" fileName="ClassifierSuccessorsFinder.java" startLine="160" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mapInterfaces#()V" />
-    <nodeInfo nodeId="4183391441819864263" fileName="ClassifierSuccessorsFinder.java" startLine="172" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="safeMap#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4183391441819864189" fileName="ClassifierSuccessorsFinder.java" startLine="145" startPosition="29" endLine="157" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4183391441819864349" fileName="ClassifierSuccessorsFinder.java" startLine="196" startPosition="78" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4183391441819864340" fileName="ClassifierSuccessorsFinder.java" startLine="195" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="process#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/util/List;)Z" />
-    <nodeInfo nodeId="4183391441819863894" fileName="ClassifierSuccessorsFinder.java" startLine="53" startPosition="83" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4183391441819864177" fileName="ClassifierSuccessorsFinder.java" startLine="141" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="mapClasses#()V" />
-    <nodeInfo nodeId="4183391441819864113" fileName="ClassifierSuccessorsFinder.java" startLine="119" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="process#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4183391441819863866" fileName="ClassifierSuccessorsFinder.java" startLine="49" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDerivedClassifiers#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SearchScope;)Ljava/util/List;" />
-    <scopeInfo nodeId="4183391441819864465" fileName="ClassifierSuccessorsFinder.java" startLine="41" startPosition="71" endLine="41" endPosition="71" />
-    <scopeInfo nodeId="4183391441819863858" fileName="ClassifierSuccessorsFinder.java" startLine="45" startPosition="48" endLine="46" endPosition="85" />
-    <scopeInfo nodeId="4183391441819863907" fileName="ClassifierSuccessorsFinder.java" startLine="55" startPosition="46" endLine="56" endPosition="17" />
-    <scopeInfo nodeId="4183391441819863925" fileName="ClassifierSuccessorsFinder.java" startLine="61" startPosition="30" endLine="62" endPosition="17" />
-    <scopeInfo nodeId="4183391441819863932" fileName="ClassifierSuccessorsFinder.java" startLine="67" startPosition="14" endLine="68" endPosition="105" />
-    <scopeInfo nodeId="4183391441819864473" fileName="ClassifierSuccessorsFinder.java" startLine="86" startPosition="31" endLine="87" endPosition="55" />
-    <scopeInfo nodeId="4183391441819864482" fileName="ClassifierSuccessorsFinder.java" startLine="91" startPosition="34" endLine="92" endPosition="55" />
-    <scopeInfo nodeId="4183391441819864493" fileName="ClassifierSuccessorsFinder.java" startLine="98" startPosition="36" endLine="99" endPosition="43" />
-    <scopeInfo nodeId="4183391441819864124" fileName="ClassifierSuccessorsFinder.java" startLine="120" startPosition="76" endLine="121" endPosition="15" />
-    <scopeInfo nodeId="4183391441819864146" fileName="ClassifierSuccessorsFinder.java" startLine="127" startPosition="118" endLine="128" endPosition="21" />
-    <scopeInfo nodeId="4183391441819864150" fileName="ClassifierSuccessorsFinder.java" startLine="129" startPosition="14" endLine="130" endPosition="15" />
-    <scopeInfo nodeId="4183391441819864183" fileName="ClassifierSuccessorsFinder.java" startLine="142" startPosition="28" endLine="143" endPosition="15" />
-    <scopeInfo nodeId="4183391441819864200" fileName="ClassifierSuccessorsFinder.java" startLine="148" startPosition="33" endLine="149" endPosition="86" />
-    <scopeInfo nodeId="4183391441819864211" fileName="ClassifierSuccessorsFinder.java" startLine="151" startPosition="106" endLine="152" endPosition="159" />
-    <scopeInfo nodeId="4183391441819864228" fileName="ClassifierSuccessorsFinder.java" startLine="154" startPosition="132" endLine="155" endPosition="96" />
-    <scopeInfo nodeId="4183391441819864241" fileName="ClassifierSuccessorsFinder.java" startLine="161" startPosition="31" endLine="162" endPosition="15" />
-    <scopeInfo nodeId="4183391441819864256" fileName="ClassifierSuccessorsFinder.java" startLine="166" startPosition="131" endLine="167" endPosition="98" />
-    <scopeInfo nodeId="4183391441819864275" fileName="ClassifierSuccessorsFinder.java" startLine="173" startPosition="32" endLine="174" endPosition="15" />
-    <scopeInfo nodeId="4183391441819864359" fileName="ClassifierSuccessorsFinder.java" startLine="198" startPosition="70" endLine="199" endPosition="19" />
-    <scopeInfo nodeId="4183391441819864420" fileName="ClassifierSuccessorsFinder.java" startLine="222" startPosition="47" endLine="223" endPosition="64" />
-    <scopeInfo nodeId="4183391441819864434" fileName="ClassifierSuccessorsFinder.java" startLine="227" startPosition="62" endLine="228" endPosition="56" />
-    <scopeInfo nodeId="4183391441819864451" fileName="ClassifierSuccessorsFinder.java" startLine="232" startPosition="69" endLine="233" endPosition="18" />
-    <scopeInfo nodeId="4183391441819864458" fileName="ClassifierSuccessorsFinder.java" startLine="237" startPosition="42" endLine="238" endPosition="19" />
-    <scopeInfo nodeId="4183391441819864462" fileName="ClassifierSuccessorsFinder.java" startLine="41" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="4183391441819864466" varName="coreComponents" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819863939" fileName="ClassifierSuccessorsFinder.java" startLine="64" startPosition="28" endLine="66" endPosition="166" />
-    <scopeInfo nodeId="4183391441819864132" fileName="ClassifierSuccessorsFinder.java" startLine="124" startPosition="108" endLine="126" endPosition="21" />
-    <scopeInfo nodeId="4183391441819864166" fileName="ClassifierSuccessorsFinder.java" startLine="134" startPosition="67" endLine="136" endPosition="80" />
-    <scopeInfo nodeId="4183391441819864287" fileName="ClassifierSuccessorsFinder.java" startLine="177" startPosition="31" endLine="179" endPosition="74" />
-    <scopeInfo nodeId="4183391441819864331" fileName="ClassifierSuccessorsFinder.java" startLine="190" startPosition="72" endLine="192" endPosition="22" />
-    <scopeInfo nodeId="4183391441819864408" fileName="ClassifierSuccessorsFinder.java" startLine="216" startPosition="69" endLine="218" endPosition="45" />
-    <scopeInfo nodeId="4183391441819864021" fileName="ClassifierSuccessorsFinder.java" startLine="77" startPosition="57" endLine="80" endPosition="54">
-      <varInfo nodeId="4183391441819864023" varName="nextClassifier" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864223" fileName="ClassifierSuccessorsFinder.java" startLine="153" startPosition="9" endLine="156" endPosition="9">
-      <varInfo nodeId="4183391441819864224" varName="implementedInterface" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864250" fileName="ClassifierSuccessorsFinder.java" startLine="165" startPosition="77" endLine="168" endPosition="9" />
-    <scopeInfo nodeId="4183391441819864251" fileName="ClassifierSuccessorsFinder.java" startLine="165" startPosition="77" endLine="168" endPosition="9">
-      <varInfo nodeId="4183391441819864252" varName="extendedInterface" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864373" fileName="ClassifierSuccessorsFinder.java" startLine="203" startPosition="100" endLine="206" endPosition="70">
-      <varInfo nodeId="4183391441819864375" varName="classifier" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819863853" fileName="ClassifierSuccessorsFinder.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="4183391441819863854" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864470" fileName="ClassifierSuccessorsFinder.java" startLine="85" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864479" fileName="ClassifierSuccessorsFinder.java" startLine="90" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864096" fileName="ClassifierSuccessorsFinder.java" startLine="112" startPosition="153" endLine="116" endPosition="24" />
-    <scopeInfo nodeId="4183391441819864162" fileName="ClassifierSuccessorsFinder.java" startLine="133" startPosition="31" endLine="137" endPosition="9" />
-    <scopeInfo nodeId="4183391441819864163" fileName="ClassifierSuccessorsFinder.java" startLine="133" startPosition="31" endLine="137" endPosition="9">
-      <varInfo nodeId="4183391441819864164" varName="successor" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864324" fileName="ClassifierSuccessorsFinder.java" startLine="190" startPosition="0" endLine="194" endPosition="0">
-      <varInfo nodeId="4183391441819864328" varName="queue" />
-      <varInfo nodeId="4183391441819864326" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864403" fileName="ClassifierSuccessorsFinder.java" startLine="216" startPosition="0" endLine="220" endPosition="0">
-      <varInfo nodeId="4183391441819864405" varName="notModifiedModelFiles" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864415" fileName="ClassifierSuccessorsFinder.java" startLine="221" startPosition="0" endLine="225" endPosition="0">
-      <varInfo nodeId="4183391441819864418" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864427" fileName="ClassifierSuccessorsFinder.java" startLine="226" startPosition="0" endLine="230" endPosition="0">
-      <varInfo nodeId="4183391441819864430" varName="file1" />
-      <varInfo nodeId="4183391441819864432" varName="file2" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864445" fileName="ClassifierSuccessorsFinder.java" startLine="231" startPosition="0" endLine="235" endPosition="0">
-      <varInfo nodeId="4183391441819864448" varName="aModule" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864455" fileName="ClassifierSuccessorsFinder.java" startLine="236" startPosition="0" endLine="240" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864247" fileName="ClassifierSuccessorsFinder.java" startLine="164" startPosition="32" endLine="169" endPosition="7">
-      <varInfo nodeId="4183391441819864248" varName="anInterface" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864488" fileName="ClassifierSuccessorsFinder.java" startLine="95" startPosition="0" endLine="101" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864085" fileName="ClassifierSuccessorsFinder.java" startLine="112" startPosition="0" endLine="118" endPosition="0">
-      <varInfo nodeId="4183391441819864093" varName="classifiersQueue" />
-      <varInfo nodeId="4183391441819864087" varName="modifiedClasses" />
-      <varInfo nodeId="4183391441819864089" varName="modifiedInterfaces" />
-      <varInfo nodeId="4183391441819864091" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864238" fileName="ClassifierSuccessorsFinder.java" startLine="160" startPosition="34" endLine="169" endPosition="7" />
-    <scopeInfo nodeId="4183391441819864270" fileName="ClassifierSuccessorsFinder.java" startLine="172" startPosition="62" endLine="181" endPosition="62">
-      <varInfo nodeId="4183391441819864278" varName="successors" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864192" fileName="ClassifierSuccessorsFinder.java" startLine="146" startPosition="69" endLine="156" endPosition="9">
-      <varInfo nodeId="4183391441819864194" varName="superClass" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864353" fileName="ClassifierSuccessorsFinder.java" startLine="197" startPosition="48" endLine="207" endPosition="9">
-      <varInfo nodeId="4183391441819864367" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864235" fileName="ClassifierSuccessorsFinder.java" startLine="160" startPosition="0" endLine="171" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864263" fileName="ClassifierSuccessorsFinder.java" startLine="172" startPosition="0" endLine="183" endPosition="0">
-      <varInfo nodeId="4183391441819864266" varName="predecessor" />
-      <varInfo nodeId="4183391441819864268" varName="successor" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864189" fileName="ClassifierSuccessorsFinder.java" startLine="145" startPosition="29" endLine="157" endPosition="7">
-      <varInfo nodeId="4183391441819864190" varName="aClass" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864349" fileName="ClassifierSuccessorsFinder.java" startLine="196" startPosition="78" endLine="208" endPosition="7">
-      <varInfo nodeId="4183391441819864351" varName="sNodeId" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864348" fileName="ClassifierSuccessorsFinder.java" startLine="196" startPosition="78" endLine="209" endPosition="18" />
-    <scopeInfo nodeId="4183391441819863900" fileName="ClassifierSuccessorsFinder.java" startLine="54" startPosition="41" endLine="69" endPosition="7">
-      <varInfo nodeId="4183391441819863910" varName="emd" />
-      <varInfo nodeId="4183391441819863916" varName="modelFile" />
-      <varInfo nodeId="6673009040135107702" varName="source" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864180" fileName="ClassifierSuccessorsFinder.java" startLine="141" startPosition="31" endLine="157" endPosition="7" />
-    <scopeInfo nodeId="4183391441819864340" fileName="ClassifierSuccessorsFinder.java" startLine="195" startPosition="0" endLine="211" endPosition="0">
-      <varInfo nodeId="4183391441819864343" varName="file" />
-      <varInfo nodeId="4183391441819864345" varName="successors" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819863894" fileName="ClassifierSuccessorsFinder.java" startLine="53" startPosition="83" endLine="70" endPosition="5">
-      <varInfo nodeId="4183391441819863898" varName="md" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864177" fileName="ClassifierSuccessorsFinder.java" startLine="141" startPosition="0" endLine="159" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864118" fileName="ClassifierSuccessorsFinder.java" startLine="119" startPosition="48" endLine="138" endPosition="7">
-      <varInfo nodeId="4183391441819864153" varName="successors" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864113" fileName="ClassifierSuccessorsFinder.java" startLine="119" startPosition="0" endLine="140" endPosition="0">
-      <varInfo nodeId="4183391441819864116" varName="superClassifier" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819863872" fileName="ClassifierSuccessorsFinder.java" startLine="50" startPosition="114" endLine="82" endPosition="18">
-      <varInfo nodeId="4183391441819863881" varName="modifiedClasses" />
-      <varInfo nodeId="4183391441819863888" varName="modifiedInterfaces" />
-      <varInfo nodeId="4183391441819864002" varName="modifiedSuccessorFinder" />
-      <varInfo nodeId="4183391441819863983" varName="queue" />
-      <varInfo nodeId="4183391441819863977" varName="result" />
-      <varInfo nodeId="4183391441819864011" varName="unModifiedFilesSearchScope" />
-      <varInfo nodeId="4183391441819863874" varName="unModifiedModelFiles" />
-      <varInfo nodeId="4183391441819863995" varName="valueProcessor" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819863866" fileName="ClassifierSuccessorsFinder.java" startLine="49" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="4183391441819863867" varName="classifier" />
-      <varInfo nodeId="4183391441819863869" varName="scope" />
-    </scopeInfo>
-    <unitInfo nodeId="4183391441819864305" fileName="ClassifierSuccessorsFinder.java" startLine="185" startPosition="0" endLine="212" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder$ValueProcessor" />
-    <unitInfo nodeId="4183391441819864396" fileName="ClassifierSuccessorsFinder.java" startLine="213" startPosition="0" endLine="241" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder$SearchScope" />
-    <unitInfo nodeId="4183391441819864048" fileName="ClassifierSuccessorsFinder.java" startLine="102" startPosition="0" endLine="184" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder$ModifiedsuccessorFinder" />
-    <unitInfo nodeId="4183391441819863852" fileName="ClassifierSuccessorsFinder.java" startLine="40" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder" />
+    <file name="ClassifierSuccessorsFinder.java">
+      <node id="4183391441819863859" at="45,48,46,85" concept="11" />
+      <node id="4183391441819863873" at="50,114,51,92" concept="10" />
+      <node id="4183391441819863880" at="51,92,52,80" concept="10" />
+      <node id="4183391441819863887" at="52,80,53,83" concept="10" />
+      <node id="4183391441819863908" at="55,46,56,17" concept="3" />
+      <node id="4183391441819863909" at="57,7,58,47" concept="10" />
+      <node id="6673009040135107701" at="58,47,59,42" concept="10" />
+      <node id="4183391441819863915" at="59,42,60,104" concept="10" />
+      <node id="4183391441819863926" at="61,30,62,17" concept="3" />
+      <node id="2834132315319590452" at="64,28,65,166" concept="4" />
+      <node id="2834132315319590478" at="65,166,66,166" concept="4" />
+      <node id="4183391441819863933" at="67,14,68,105" concept="4" />
+      <node id="4183391441819863976" at="70,5,71,48" concept="10" />
+      <node id="4183391441819863982" at="71,48,72,74" concept="10" />
+      <node id="4183391441819863989" at="72,74,73,62" concept="4" />
+      <node id="4183391441819863994" at="73,62,74,124" concept="10" />
+      <node id="4183391441819864001" at="74,124,75,188" concept="10" />
+      <node id="4183391441819864010" at="75,188,76,137" concept="10" />
+      <node id="4183391441819864022" at="77,57,78,81" concept="10" />
+      <node id="4183391441819864028" at="78,81,79,168" concept="4" />
+      <node id="4183391441819864039" at="79,168,80,54" concept="4" />
+      <node id="4183391441819864044" at="81,5,82,18" concept="11" />
+      <node id="4183391441819864474" at="86,31,87,55" concept="4" />
+      <node id="4183391441819864483" at="91,34,92,55" concept="4" />
+      <node id="4183391441819864494" at="98,36,99,43" concept="11" />
+      <node id="4183391441819864050" at="103,0,104,0" concept="5" trace="myModifiedClasses" />
+      <node id="4183391441819864053" at="104,0,105,0" concept="5" trace="myModifiedInterfaces" />
+      <node id="4183391441819864056" at="105,0,106,0" concept="5" trace="myClassifiersQueue" />
+      <node id="4183391441819864060" at="106,0,107,0" concept="5" trace="myResult" />
+      <node id="4183391441819864063" at="107,0,108,0" concept="5" trace="myProcessedNodes" />
+      <node id="4183391441819864070" at="108,0,109,0" concept="5" trace="mySuccessorsMap" />
+      <node id="4183391441819864079" at="109,0,110,0" concept="5" trace="myInterfacesMapped" />
+      <node id="4183391441819864082" at="110,0,111,0" concept="5" trace="myClassesMapped" />
+      <node id="4183391441819864097" at="112,153,113,42" concept="4" />
+      <node id="4183391441819864101" at="113,42,114,48" concept="4" />
+      <node id="4183391441819864105" at="114,48,115,44" concept="4" />
+      <node id="4183391441819864109" at="115,44,116,24" concept="4" />
+      <node id="4183391441819864125" at="120,76,121,15" concept="11" />
+      <node id="4183391441819864126" at="122,7,123,72" concept="4" />
+      <node id="4183391441819864133" at="124,108,125,24" concept="4" />
+      <node id="4183391441819864135" at="125,24,126,21" concept="4" />
+      <node id="4183391441819864147" at="127,118,128,21" concept="4" />
+      <node id="4183391441819864151" at="129,14,130,15" concept="11" />
+      <node id="4183391441819864152" at="131,7,132,89" concept="10" />
+      <node id="4183391441819864167" at="134,67,135,64" concept="4" />
+      <node id="4183391441819864172" at="135,64,136,80" concept="4" />
+      <node id="4183391441819864184" at="142,28,143,15" concept="11" />
+      <node id="4183391441819864185" at="144,7,145,29" concept="4" />
+      <node id="4183391441819864193" at="146,69,147,81" concept="10" />
+      <node id="4183391441819864201" at="148,33,149,86" concept="4" />
+      <node id="4183391441819864212" at="151,106,152,159" concept="4" />
+      <node id="4183391441819864229" at="154,132,155,96" concept="4" />
+      <node id="4183391441819864242" at="161,31,162,15" concept="11" />
+      <node id="4183391441819864243" at="163,7,164,32" concept="4" />
+      <node id="4183391441819864257" at="166,131,167,98" concept="4" />
+      <node id="4183391441819864276" at="173,32,174,15" concept="11" />
+      <node id="4183391441819864277" at="175,7,176,85" concept="10" />
+      <node id="4183391441819864288" at="177,31,178,44" concept="4" />
+      <node id="4183391441819864294" at="178,44,179,74" concept="4" />
+      <node id="4183391441819864300" at="180,7,181,62" concept="4" />
+      <node id="4183391441819864310" at="186,0,187,0" concept="5" trace="myResult" />
+      <node id="4183391441819864313" at="187,0,188,0" concept="5" trace="myQueue" />
+      <node id="4183391441819864317" at="188,0,189,0" concept="5" trace="myProcessedNodes" />
+      <node id="4183391441819864332" at="190,72,191,24" concept="4" />
+      <node id="4183391441819864336" at="191,24,192,22" concept="4" />
+      <node id="4183391441819864360" at="198,70,199,19" concept="3" />
+      <node id="4183391441819864361" at="200,9,201,66" concept="4" />
+      <node id="4183391441819864366" at="201,66,202,39" concept="10" />
+      <node id="4183391441819864374" at="203,100,204,107" concept="10" />
+      <node id="4183391441819864379" at="204,107,205,65" concept="4" />
+      <node id="4183391441819864384" at="205,65,206,70" concept="4" />
+      <node id="4183391441819864393" at="208,7,209,18" concept="11" />
+      <node id="4183391441819864399" at="214,0,215,0" concept="5" trace="myFilesInScope" />
+      <node id="4183391441819864409" at="216,69,217,18" concept="14" />
+      <node id="4183391441819864411" at="217,18,218,45" concept="4" />
+      <node id="4183391441819864421" at="222,47,223,64" concept="11" />
+      <node id="4183391441819864435" at="227,62,228,56" concept="11" />
+      <node id="4183391441819864452" at="232,69,233,18" concept="11" />
+      <node id="4183391441819864459" at="237,42,238,19" concept="11" />
+      <node id="4183391441819864462" at="41,0,43,0" concept="2" trace="ClassifierSuccessorsFinder#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
+      <node id="4183391441819863931" at="67,12,69,7" concept="1" />
+      <node id="4183391441819864149" at="129,12,131,7" concept="1" />
+      <node id="4183391441819863901" at="54,41,57,7" concept="8" />
+      <node id="4183391441819863921" at="60,104,63,7" concept="8" />
+      <node id="4183391441819864119" at="119,48,122,7" concept="8" />
+      <node id="4183391441819864181" at="141,31,144,7" concept="8" />
+      <node id="4183391441819864199" at="147,81,150,9" concept="8" />
+      <node id="4183391441819864210" at="150,9,153,9" concept="8" />
+      <node id="4183391441819864223" at="153,9,156,9" concept="7" />
+      <node id="4183391441819864239" at="160,34,163,7" concept="8" />
+      <node id="4183391441819864251" at="165,77,168,9" concept="7" />
+      <node id="4183391441819864271" at="172,62,175,7" concept="8" />
+      <node id="4183391441819864354" at="197,48,200,9" concept="8" />
+      <node id="4183391441819863853" at="44,0,48,0" concept="9" trace="isIndexReady#(Ljetbrains/mps/project/Project;)Z" />
+      <node id="4183391441819864470" at="85,0,89,0" concept="9" trace="initComponent#()V" />
+      <node id="4183391441819864479" at="90,0,94,0" concept="9" trace="disposeComponent#()V" />
+      <node id="4183391441819864163" at="133,31,137,9" concept="7" />
+      <node id="4183391441819864283" at="176,85,180,7" concept="8" />
+      <node id="4183391441819864324" at="190,0,194,0" concept="2" trace="ValueProcessor#(Ljava/util/List;Ljava/util/Queue;)V" />
+      <node id="4183391441819864403" at="216,0,220,0" concept="2" trace="SearchScope#(Ljava/util/Set;)V" />
+      <node id="4183391441819864415" at="221,0,225,0" concept="9" trace="contains#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
+      <node id="4183391441819864427" at="226,0,230,0" concept="9" trace="compare#(Lcom/intellij/openapi/vfs/VirtualFile;Lcom/intellij/openapi/vfs/VirtualFile;)I" />
+      <node id="4183391441819864445" at="231,0,235,0" concept="9" trace="isSearchInModuleContent#(Lcom/intellij/openapi/module/Module;)Z" />
+      <node id="4183391441819864455" at="236,0,240,0" concept="9" trace="isSearchInLibraries#()Z" />
+      <node id="4183391441819864016" at="76,137,81,5" concept="16" />
+      <node id="4183391441819864247" at="164,32,169,7" concept="7" />
+      <node id="4183391441819864372" at="202,39,207,9" concept="8" />
+      <node id="4183391441819863927" at="63,7,69,7" concept="8" />
+      <node id="4183391441819864488" at="95,0,101,0" concept="9" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="4183391441819864085" at="112,0,118,0" concept="2" trace="ModifiedsuccessorFinder#(Ljava/util/List;Ljava/util/List;Ljava/util/List;Ljava/util/Queue;)V" />
+      <node id="4183391441819864158" at="132,89,138,7" concept="8" />
+      <node id="4183391441819864131" at="123,72,131,7" concept="8" />
+      <node id="4183391441819864235" at="160,0,171,0" concept="9" trace="mapInterfaces#()V" />
+      <node id="4183391441819864263" at="172,0,183,0" concept="9" trace="safeMap#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4183391441819864189" at="145,29,157,7" concept="7" />
+      <node id="4183391441819864349" at="196,78,208,7" concept="7" />
+      <node id="4183391441819864340" at="195,0,211,0" concept="9" trace="process#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/util/List;)Z" />
+      <node id="4183391441819863894" at="53,83,70,5" concept="7" />
+      <node id="4183391441819864177" at="141,0,159,0" concept="9" trace="mapClasses#()V" />
+      <node id="4183391441819864113" at="119,0,140,0" concept="9" trace="process#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4183391441819863866" at="49,0,84,0" concept="9" trace="getDerivedClassifiers#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/module/SearchScope;)Ljava/util/List;" />
+      <scope id="4183391441819864465" at="41,71,41,71" />
+      <scope id="4183391441819863858" at="45,48,46,85" />
+      <scope id="4183391441819863907" at="55,46,56,17" />
+      <scope id="4183391441819863925" at="61,30,62,17" />
+      <scope id="4183391441819863932" at="67,14,68,105" />
+      <scope id="4183391441819864473" at="86,31,87,55" />
+      <scope id="4183391441819864482" at="91,34,92,55" />
+      <scope id="4183391441819864493" at="98,36,99,43" />
+      <scope id="4183391441819864124" at="120,76,121,15" />
+      <scope id="4183391441819864146" at="127,118,128,21" />
+      <scope id="4183391441819864150" at="129,14,130,15" />
+      <scope id="4183391441819864183" at="142,28,143,15" />
+      <scope id="4183391441819864200" at="148,33,149,86" />
+      <scope id="4183391441819864211" at="151,106,152,159" />
+      <scope id="4183391441819864228" at="154,132,155,96" />
+      <scope id="4183391441819864241" at="161,31,162,15" />
+      <scope id="4183391441819864256" at="166,131,167,98" />
+      <scope id="4183391441819864275" at="173,32,174,15" />
+      <scope id="4183391441819864359" at="198,70,199,19" />
+      <scope id="4183391441819864420" at="222,47,223,64" />
+      <scope id="4183391441819864434" at="227,62,228,56" />
+      <scope id="4183391441819864451" at="232,69,233,18" />
+      <scope id="4183391441819864458" at="237,42,238,19" />
+      <scope id="4183391441819864462" at="41,0,43,0">
+        <var name="coreComponents" id="4183391441819864466" />
+      </scope>
+      <scope id="4183391441819863939" at="64,28,66,166" />
+      <scope id="4183391441819864132" at="124,108,126,21" />
+      <scope id="4183391441819864166" at="134,67,136,80" />
+      <scope id="4183391441819864287" at="177,31,179,74" />
+      <scope id="4183391441819864331" at="190,72,192,22" />
+      <scope id="4183391441819864408" at="216,69,218,45" />
+      <scope id="4183391441819864021" at="77,57,80,54">
+        <var name="nextClassifier" id="4183391441819864023" />
+      </scope>
+      <scope id="4183391441819864223" at="153,9,156,9">
+        <var name="implementedInterface" id="4183391441819864224" />
+      </scope>
+      <scope id="4183391441819864250" at="165,77,168,9" />
+      <scope id="4183391441819864251" at="165,77,168,9">
+        <var name="extendedInterface" id="4183391441819864252" />
+      </scope>
+      <scope id="4183391441819864373" at="203,100,206,70">
+        <var name="classifier" id="4183391441819864375" />
+      </scope>
+      <scope id="4183391441819863853" at="44,0,48,0">
+        <var name="project" id="4183391441819863854" />
+      </scope>
+      <scope id="4183391441819864470" at="85,0,89,0" />
+      <scope id="4183391441819864479" at="90,0,94,0" />
+      <scope id="4183391441819864096" at="112,153,116,24" />
+      <scope id="4183391441819864162" at="133,31,137,9" />
+      <scope id="4183391441819864163" at="133,31,137,9">
+        <var name="successor" id="4183391441819864164" />
+      </scope>
+      <scope id="4183391441819864324" at="190,0,194,0">
+        <var name="queue" id="4183391441819864328" />
+        <var name="result" id="4183391441819864326" />
+      </scope>
+      <scope id="4183391441819864403" at="216,0,220,0">
+        <var name="notModifiedModelFiles" id="4183391441819864405" />
+      </scope>
+      <scope id="4183391441819864415" at="221,0,225,0">
+        <var name="file" id="4183391441819864418" />
+      </scope>
+      <scope id="4183391441819864427" at="226,0,230,0">
+        <var name="file1" id="4183391441819864430" />
+        <var name="file2" id="4183391441819864432" />
+      </scope>
+      <scope id="4183391441819864445" at="231,0,235,0">
+        <var name="aModule" id="4183391441819864448" />
+      </scope>
+      <scope id="4183391441819864455" at="236,0,240,0" />
+      <scope id="4183391441819864247" at="164,32,169,7">
+        <var name="anInterface" id="4183391441819864248" />
+      </scope>
+      <scope id="4183391441819864488" at="95,0,101,0" />
+      <scope id="4183391441819864085" at="112,0,118,0">
+        <var name="classifiersQueue" id="4183391441819864093" />
+        <var name="modifiedClasses" id="4183391441819864087" />
+        <var name="modifiedInterfaces" id="4183391441819864089" />
+        <var name="result" id="4183391441819864091" />
+      </scope>
+      <scope id="4183391441819864238" at="160,34,169,7" />
+      <scope id="4183391441819864270" at="172,62,181,62">
+        <var name="successors" id="4183391441819864278" />
+      </scope>
+      <scope id="4183391441819864192" at="146,69,156,9">
+        <var name="superClass" id="4183391441819864194" />
+      </scope>
+      <scope id="4183391441819864353" at="197,48,207,9">
+        <var name="node" id="4183391441819864367" />
+      </scope>
+      <scope id="4183391441819864235" at="160,0,171,0" />
+      <scope id="4183391441819864263" at="172,0,183,0">
+        <var name="predecessor" id="4183391441819864266" />
+        <var name="successor" id="4183391441819864268" />
+      </scope>
+      <scope id="4183391441819864189" at="145,29,157,7">
+        <var name="aClass" id="4183391441819864190" />
+      </scope>
+      <scope id="4183391441819864349" at="196,78,208,7">
+        <var name="sNodeId" id="4183391441819864351" />
+      </scope>
+      <scope id="4183391441819864348" at="196,78,209,18" />
+      <scope id="4183391441819863900" at="54,41,69,7">
+        <var name="emd" id="4183391441819863910" />
+        <var name="modelFile" id="4183391441819863916" />
+        <var name="source" id="6673009040135107702" />
+      </scope>
+      <scope id="4183391441819864180" at="141,31,157,7" />
+      <scope id="4183391441819864340" at="195,0,211,0">
+        <var name="file" id="4183391441819864343" />
+        <var name="successors" id="4183391441819864345" />
+      </scope>
+      <scope id="4183391441819863894" at="53,83,70,5">
+        <var name="md" id="4183391441819863898" />
+      </scope>
+      <scope id="4183391441819864177" at="141,0,159,0" />
+      <scope id="4183391441819864118" at="119,48,138,7">
+        <var name="successors" id="4183391441819864153" />
+      </scope>
+      <scope id="4183391441819864113" at="119,0,140,0">
+        <var name="superClassifier" id="4183391441819864116" />
+      </scope>
+      <scope id="4183391441819863872" at="50,114,82,18">
+        <var name="modifiedClasses" id="4183391441819863881" />
+        <var name="modifiedInterfaces" id="4183391441819863888" />
+        <var name="modifiedSuccessorFinder" id="4183391441819864002" />
+        <var name="queue" id="4183391441819863983" />
+        <var name="result" id="4183391441819863977" />
+        <var name="unModifiedFilesSearchScope" id="4183391441819864011" />
+        <var name="unModifiedModelFiles" id="4183391441819863874" />
+        <var name="valueProcessor" id="4183391441819863995" />
+      </scope>
+      <scope id="4183391441819863866" at="49,0,84,0">
+        <var name="classifier" id="4183391441819863867" />
+        <var name="scope" id="4183391441819863869" />
+      </scope>
+      <unit id="4183391441819864305" at="185,0,212,0" name="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder$ValueProcessor" />
+      <unit id="4183391441819864396" at="213,0,241,0" name="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder$SearchScope" />
+      <unit id="4183391441819864048" at="102,0,184,0" name="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder$ModifiedsuccessorFinder" />
+      <unit id="4183391441819863852" at="40,0,242,0" name="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsFinder" />
+    </file>
   </root>
   <root nodeRef="r:2ba45a7a-594f-4a4d-be5c-07edf2b58826(jetbrains.mps.ide.java.platform.index)/4183391441819864496">
-    <nodeInfo nodeId="4183391441819864788" fileName="ClassifierSuccessorsIndexer.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NAME" />
-    <nodeInfo nodeId="4183391441819864796" fileName="ClassifierSuccessorsIndexer.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInputFilter" />
-    <nodeInfo nodeId="4183391441819864801" fileName="ClassifierSuccessorsIndexer.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myKeyDescriptor" />
-    <nodeInfo nodeId="4183391441819864807" fileName="ClassifierSuccessorsIndexer.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDataExternalizer" />
-    <nodeInfo nodeId="4183391441819864815" fileName="ClassifierSuccessorsIndexer.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIndexer" />
-    <nodeInfo nodeId="4183391441819864835" fileName="ClassifierSuccessorsIndexer.java" startLine="41" startPosition="59" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864841" fileName="ClassifierSuccessorsIndexer.java" startLine="46" startPosition="27" endLine="47" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864847" fileName="ClassifierSuccessorsIndexer.java" startLine="51" startPosition="41" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864853" fileName="ClassifierSuccessorsIndexer.java" startLine="56" startPosition="54" endLine="57" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864860" fileName="ClassifierSuccessorsIndexer.java" startLine="61" startPosition="58" endLine="62" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864868" fileName="ClassifierSuccessorsIndexer.java" startLine="66" startPosition="71" endLine="67" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864878" fileName="ClassifierSuccessorsIndexer.java" startLine="72" startPosition="84" endLine="73" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864515" fileName="ClassifierSuccessorsIndexer.java" startLine="81" startPosition="50" endLine="82" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864542" fileName="ClassifierSuccessorsIndexer.java" startLine="92" startPosition="85" endLine="93" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864564" fileName="ClassifierSuccessorsIndexer.java" startLine="96" startPosition="27" endLine="97" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864579" fileName="ClassifierSuccessorsIndexer.java" startLine="99" startPosition="53" endLine="100" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864587" fileName="ClassifierSuccessorsIndexer.java" startLine="101" startPosition="85" endLine="102" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864604" fileName="ClassifierSuccessorsIndexer.java" startLine="104" startPosition="141" endLine="105" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864610" fileName="ClassifierSuccessorsIndexer.java" startLine="107" startPosition="65" endLine="108" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864628" fileName="ClassifierSuccessorsIndexer.java" startLine="110" startPosition="64" endLine="111" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864637" fileName="ClassifierSuccessorsIndexer.java" startLine="112" startPosition="139" endLine="113" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864652" fileName="ClassifierSuccessorsIndexer.java" startLine="119" startPosition="64" endLine="120" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864668" fileName="ClassifierSuccessorsIndexer.java" startLine="123" startPosition="64" endLine="124" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864678" fileName="ClassifierSuccessorsIndexer.java" startLine="125" startPosition="28" endLine="126" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864679" fileName="ClassifierSuccessorsIndexer.java" startLine="127" startPosition="11" endLine="128" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864691" fileName="ClassifierSuccessorsIndexer.java" startLine="129" startPosition="35" endLine="130" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864697" fileName="ClassifierSuccessorsIndexer.java" startLine="130" startPosition="79" endLine="131" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864703" fileName="ClassifierSuccessorsIndexer.java" startLine="132" startPosition="11" endLine="133" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864715" fileName="ClassifierSuccessorsIndexer.java" startLine="136" startPosition="62" endLine="137" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864722" fileName="ClassifierSuccessorsIndexer.java" startLine="137" startPosition="70" endLine="138" endPosition="430" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864753" fileName="ClassifierSuccessorsIndexer.java" startLine="141" startPosition="71" endLine="142" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864767" fileName="ClassifierSuccessorsIndexer.java" startLine="145" startPosition="66" endLine="146" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864774" fileName="ClassifierSuccessorsIndexer.java" startLine="146" startPosition="70" endLine="147" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864785" fileName="ClassifierSuccessorsIndexer.java" startLine="149" startPosition="9" endLine="150" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864824" fileName="ClassifierSuccessorsIndexer.java" startLine="36" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierSuccessorsIndexer#()V" />
-    <nodeInfo nodeId="4183391441819864505" fileName="ClassifierSuccessorsIndexer.java" startLine="77" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InputFilter#()V" />
-    <nodeInfo nodeId="4183391441819864529" fileName="ClassifierSuccessorsIndexer.java" startLine="87" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Indexer#()V" />
-    <nodeInfo nodeId="4183391441819864585" fileName="ClassifierSuccessorsIndexer.java" startLine="100" startPosition="49" endLine="103" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864598" fileName="ClassifierSuccessorsIndexer.java" startLine="103" startPosition="15" endLine="106" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4183391441819864608" fileName="ClassifierSuccessorsIndexer.java" startLine="106" startPosition="15" endLine="109" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864634" fileName="ClassifierSuccessorsIndexer.java" startLine="111" startPosition="53" endLine="114" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4183391441819864644" fileName="ClassifierSuccessorsIndexer.java" startLine="119" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="safeMap#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4183391441819864673" fileName="ClassifierSuccessorsIndexer.java" startLine="124" startPosition="69" endLine="127" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864748" fileName="ClassifierSuccessorsIndexer.java" startLine="141" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInstanceOfAnonymousClassConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4183391441819864837" fileName="ClassifierSuccessorsIndexer.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVersion#()I" />
-    <nodeInfo nodeId="4183391441819864843" fileName="ClassifierSuccessorsIndexer.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dependsOnFileContent#()Z" />
-    <nodeInfo nodeId="4183391441819864849" fileName="ClassifierSuccessorsIndexer.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInputFilter#()Lcom/intellij/util/indexing/FileBasedIndex/InputFilter;" />
-    <nodeInfo nodeId="4183391441819864855" fileName="ClassifierSuccessorsIndexer.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyDescriptor#()Lcom/intellij/util/io/KeyDescriptor;" />
-    <nodeInfo nodeId="4183391441819864862" fileName="ClassifierSuccessorsIndexer.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueExternalizer#()Lcom/intellij/util/io/DataExternalizer;" />
-    <nodeInfo nodeId="4183391441819864509" fileName="ClassifierSuccessorsIndexer.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="acceptInput#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
-    <nodeInfo nodeId="4183391441819864686" fileName="ClassifierSuccessorsIndexer.java" startLine="128" startPosition="80" endLine="132" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864710" fileName="ClassifierSuccessorsIndexer.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInstanceOfClassConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4183391441819864762" fileName="ClassifierSuccessorsIndexer.java" startLine="145" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInstanceOfInterfaceConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4183391441819864828" fileName="ClassifierSuccessorsIndexer.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Lcom/intellij/util/indexing/ID;" />
-    <nodeInfo nodeId="4183391441819864870" fileName="ClassifierSuccessorsIndexer.java" startLine="70" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIndexer#()Lcom/intellij/util/indexing/DataIndexer;" />
-    <nodeInfo nodeId="4183391441819864660" fileName="ClassifierSuccessorsIndexer.java" startLine="123" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="safeMap#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4183391441819864577" fileName="ClassifierSuccessorsIndexer.java" startLine="98" startPosition="73" endLine="115" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864569" fileName="ClassifierSuccessorsIndexer.java" startLine="97" startPosition="70" endLine="116" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4183391441819864560" fileName="ClassifierSuccessorsIndexer.java" startLine="95" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4183391441819864553" fileName="ClassifierSuccessorsIndexer.java" startLine="93" startPosition="132" endLine="149" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864533" fileName="ClassifierSuccessorsIndexer.java" startLine="90" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="map#(Lcom/intellij/util/indexing/FileContent;)Ljava/util/Map;" />
-    <scopeInfo nodeId="4183391441819864827" fileName="ClassifierSuccessorsIndexer.java" startLine="36" startPosition="40" endLine="36" endPosition="40" />
-    <scopeInfo nodeId="4183391441819864508" fileName="ClassifierSuccessorsIndexer.java" startLine="77" startPosition="27" endLine="77" endPosition="27" />
-    <scopeInfo nodeId="4183391441819864532" fileName="ClassifierSuccessorsIndexer.java" startLine="87" startPosition="23" endLine="87" endPosition="23" />
-    <scopeInfo nodeId="4183391441819864834" fileName="ClassifierSuccessorsIndexer.java" startLine="41" startPosition="59" endLine="42" endPosition="16" />
-    <scopeInfo nodeId="4183391441819864840" fileName="ClassifierSuccessorsIndexer.java" startLine="46" startPosition="27" endLine="47" endPosition="13" />
-    <scopeInfo nodeId="4183391441819864846" fileName="ClassifierSuccessorsIndexer.java" startLine="51" startPosition="41" endLine="52" endPosition="16" />
-    <scopeInfo nodeId="4183391441819864852" fileName="ClassifierSuccessorsIndexer.java" startLine="56" startPosition="54" endLine="57" endPosition="25" />
-    <scopeInfo nodeId="4183391441819864859" fileName="ClassifierSuccessorsIndexer.java" startLine="61" startPosition="58" endLine="62" endPosition="27" />
-    <scopeInfo nodeId="4183391441819864867" fileName="ClassifierSuccessorsIndexer.java" startLine="66" startPosition="71" endLine="67" endPosition="30" />
-    <scopeInfo nodeId="4183391441819864877" fileName="ClassifierSuccessorsIndexer.java" startLine="72" startPosition="84" endLine="73" endPosition="21" />
-    <scopeInfo nodeId="4183391441819864514" fileName="ClassifierSuccessorsIndexer.java" startLine="81" startPosition="50" endLine="82" endPosition="73" />
-    <scopeInfo nodeId="4183391441819864586" fileName="ClassifierSuccessorsIndexer.java" startLine="101" startPosition="85" endLine="102" endPosition="93" />
-    <scopeInfo nodeId="4183391441819864603" fileName="ClassifierSuccessorsIndexer.java" startLine="104" startPosition="141" endLine="105" endPosition="57" />
-    <scopeInfo nodeId="4183391441819864609" fileName="ClassifierSuccessorsIndexer.java" startLine="107" startPosition="65" endLine="108" endPosition="73" />
-    <scopeInfo nodeId="4183391441819864636" fileName="ClassifierSuccessorsIndexer.java" startLine="112" startPosition="139" endLine="113" endPosition="58" />
-    <scopeInfo nodeId="4183391441819864651" fileName="ClassifierSuccessorsIndexer.java" startLine="119" startPosition="64" endLine="120" endPosition="67" />
-    <scopeInfo nodeId="4183391441819864677" fileName="ClassifierSuccessorsIndexer.java" startLine="125" startPosition="28" endLine="126" endPosition="19" />
-    <scopeInfo nodeId="4183391441819864752" fileName="ClassifierSuccessorsIndexer.java" startLine="141" startPosition="71" endLine="142" endPosition="116" />
-    <scopeInfo nodeId="4183391441819864824" fileName="ClassifierSuccessorsIndexer.java" startLine="36" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864505" fileName="ClassifierSuccessorsIndexer.java" startLine="77" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864529" fileName="ClassifierSuccessorsIndexer.java" startLine="87" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864690" fileName="ClassifierSuccessorsIndexer.java" startLine="129" startPosition="35" endLine="131" endPosition="61" />
-    <scopeInfo nodeId="4183391441819864714" fileName="ClassifierSuccessorsIndexer.java" startLine="136" startPosition="62" endLine="138" endPosition="430">
-      <varInfo nodeId="4183391441819864716" varName="conceptFQName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864766" fileName="ClassifierSuccessorsIndexer.java" startLine="145" startPosition="66" endLine="147" endPosition="163">
-      <varInfo nodeId="4183391441819864768" varName="conceptFQName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864598" fileName="ClassifierSuccessorsIndexer.java" startLine="103" startPosition="15" endLine="106" endPosition="15">
-      <varInfo nodeId="4183391441819864599" varName="implementedInterface" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864634" fileName="ClassifierSuccessorsIndexer.java" startLine="111" startPosition="53" endLine="114" endPosition="15">
-      <varInfo nodeId="4183391441819864635" varName="extendedInterface" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864644" fileName="ClassifierSuccessorsIndexer.java" startLine="119" startPosition="0" endLine="122" endPosition="0">
-      <varInfo nodeId="4183391441819864647" varName="classifierType" />
-      <varInfo nodeId="4183391441819864649" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864748" fileName="ClassifierSuccessorsIndexer.java" startLine="141" startPosition="0" endLine="144" endPosition="0">
-      <varInfo nodeId="4183391441819864749" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864837" fileName="ClassifierSuccessorsIndexer.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864843" fileName="ClassifierSuccessorsIndexer.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864849" fileName="ClassifierSuccessorsIndexer.java" startLine="55" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864855" fileName="ClassifierSuccessorsIndexer.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864862" fileName="ClassifierSuccessorsIndexer.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864509" fileName="ClassifierSuccessorsIndexer.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="4183391441819864512" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864627" fileName="ClassifierSuccessorsIndexer.java" startLine="110" startPosition="64" endLine="114" endPosition="15">
-      <varInfo nodeId="4183391441819864629" varName="interfaceNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864710" fileName="ClassifierSuccessorsIndexer.java" startLine="136" startPosition="0" endLine="140" endPosition="0">
-      <varInfo nodeId="4183391441819864711" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864762" fileName="ClassifierSuccessorsIndexer.java" startLine="145" startPosition="0" endLine="149" endPosition="0">
-      <varInfo nodeId="4183391441819864763" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864828" fileName="ClassifierSuccessorsIndexer.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864870" fileName="ClassifierSuccessorsIndexer.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864578" fileName="ClassifierSuccessorsIndexer.java" startLine="99" startPosition="53" endLine="109" endPosition="15">
-      <varInfo nodeId="4183391441819864580" varName="classNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864667" fileName="ClassifierSuccessorsIndexer.java" startLine="123" startPosition="64" endLine="133" endPosition="80">
-      <varInfo nodeId="4183391441819864669" varName="key" />
-      <varInfo nodeId="4183391441819864680" varName="successors" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864660" fileName="ClassifierSuccessorsIndexer.java" startLine="123" startPosition="0" endLine="135" endPosition="0">
-      <varInfo nodeId="4183391441819864665" varName="node" />
-      <varInfo nodeId="4183391441819864663" varName="reference" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864576" fileName="ClassifierSuccessorsIndexer.java" startLine="98" startPosition="73" endLine="115" endPosition="13" />
-    <scopeInfo nodeId="4183391441819864569" fileName="ClassifierSuccessorsIndexer.java" startLine="97" startPosition="70" endLine="116" endPosition="11">
-      <varInfo nodeId="4183391441819864574" varName="nextNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864563" fileName="ClassifierSuccessorsIndexer.java" startLine="96" startPosition="27" endLine="116" endPosition="11">
-      <varInfo nodeId="4183391441819864565" varName="sModel" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864560" fileName="ClassifierSuccessorsIndexer.java" startLine="95" startPosition="0" endLine="118" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864541" fileName="ClassifierSuccessorsIndexer.java" startLine="92" startPosition="85" endLine="150" endPosition="20">
-      <varInfo nodeId="4183391441819864543" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864533" fileName="ClassifierSuccessorsIndexer.java" startLine="90" startPosition="0" endLine="152" endPosition="0">
-      <varInfo nodeId="4183391441819864539" varName="inputData" />
-    </scopeInfo>
-    <unitInfo nodeId="4183391441819864502" fileName="ClassifierSuccessorsIndexer.java" startLine="76" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer$InputFilter" />
-    <unitInfo nodeId="4183391441819864559" fileName="ClassifierSuccessorsIndexer.java" startLine="94" startPosition="45" endLine="149" endPosition="7" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer$1" />
-    <unitInfo nodeId="4183391441819864522" fileName="ClassifierSuccessorsIndexer.java" startLine="86" startPosition="0" endLine="153" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer$Indexer" />
-    <unitInfo nodeId="4183391441819864496" fileName="ClassifierSuccessorsIndexer.java" startLine="29" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer" />
+    <file name="ClassifierSuccessorsIndexer.java">
+      <node id="4183391441819864788" at="30,0,31,0" concept="12" trace="NAME" />
+      <node id="4183391441819864796" at="31,0,32,0" concept="5" trace="myInputFilter" />
+      <node id="4183391441819864801" at="32,0,33,0" concept="5" trace="myKeyDescriptor" />
+      <node id="4183391441819864807" at="33,0,34,0" concept="5" trace="myDataExternalizer" />
+      <node id="4183391441819864815" at="34,0,35,0" concept="5" trace="myIndexer" />
+      <node id="4183391441819864835" at="41,59,42,16" concept="11" />
+      <node id="4183391441819864841" at="46,27,47,13" concept="11" />
+      <node id="4183391441819864847" at="51,41,52,16" concept="11" />
+      <node id="4183391441819864853" at="56,54,57,25" concept="11" />
+      <node id="4183391441819864860" at="61,58,62,27" concept="11" />
+      <node id="4183391441819864868" at="66,71,67,30" concept="11" />
+      <node id="4183391441819864878" at="72,84,73,21" concept="11" />
+      <node id="4183391441819864515" at="81,50,82,73" concept="11" />
+      <node id="4183391441819864542" at="92,85,93,132" concept="10" />
+      <node id="4183391441819864564" at="96,27,97,70" concept="10" />
+      <node id="4183391441819864579" at="99,53,100,49" concept="10" />
+      <node id="4183391441819864587" at="101,85,102,93" concept="4" />
+      <node id="4183391441819864604" at="104,141,105,57" concept="4" />
+      <node id="4183391441819864610" at="107,65,108,73" concept="4" />
+      <node id="4183391441819864628" at="110,64,111,53" concept="10" />
+      <node id="4183391441819864637" at="112,139,113,58" concept="4" />
+      <node id="4183391441819864652" at="119,64,120,67" concept="4" />
+      <node id="4183391441819864668" at="123,64,124,69" concept="10" />
+      <node id="4183391441819864678" at="125,28,126,19" concept="11" />
+      <node id="4183391441819864679" at="127,11,128,80" concept="10" />
+      <node id="4183391441819864691" at="129,35,130,79" concept="4" />
+      <node id="4183391441819864697" at="130,79,131,61" concept="4" />
+      <node id="4183391441819864703" at="132,11,133,80" concept="4" />
+      <node id="4183391441819864715" at="136,62,137,70" concept="10" />
+      <node id="4183391441819864722" at="137,70,138,430" concept="11" />
+      <node id="4183391441819864753" at="141,71,142,116" concept="11" />
+      <node id="4183391441819864767" at="145,66,146,70" concept="10" />
+      <node id="4183391441819864774" at="146,70,147,163" concept="11" />
+      <node id="4183391441819864785" at="149,9,150,20" concept="11" />
+      <node id="4183391441819864824" at="36,0,38,0" concept="2" trace="ClassifierSuccessorsIndexer#()V" />
+      <node id="4183391441819864505" at="77,0,79,0" concept="2" trace="InputFilter#()V" />
+      <node id="4183391441819864529" at="87,0,89,0" concept="2" trace="Indexer#()V" />
+      <node id="4183391441819864585" at="100,49,103,15" concept="8" />
+      <node id="4183391441819864598" at="103,15,106,15" concept="7" />
+      <node id="4183391441819864608" at="106,15,109,15" concept="8" />
+      <node id="4183391441819864634" at="111,53,114,15" concept="7" />
+      <node id="4183391441819864644" at="119,0,122,0" concept="9" trace="safeMap#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4183391441819864673" at="124,69,127,11" concept="8" />
+      <node id="4183391441819864748" at="141,0,144,0" concept="9" trace="isInstanceOfAnonymousClassConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="4183391441819864837" at="45,0,49,0" concept="9" trace="getVersion#()I" />
+      <node id="4183391441819864843" at="50,0,54,0" concept="9" trace="dependsOnFileContent#()Z" />
+      <node id="4183391441819864849" at="55,0,59,0" concept="9" trace="getInputFilter#()Lcom/intellij/util/indexing/FileBasedIndex/InputFilter;" />
+      <node id="4183391441819864855" at="60,0,64,0" concept="9" trace="getKeyDescriptor#()Lcom/intellij/util/io/KeyDescriptor;" />
+      <node id="4183391441819864862" at="65,0,69,0" concept="9" trace="getValueExternalizer#()Lcom/intellij/util/io/DataExternalizer;" />
+      <node id="4183391441819864509" at="80,0,84,0" concept="9" trace="acceptInput#(Lcom/intellij/openapi/vfs/VirtualFile;)Z" />
+      <node id="4183391441819864686" at="128,80,132,11" concept="8" />
+      <node id="4183391441819864710" at="136,0,140,0" concept="9" trace="isInstanceOfClassConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="4183391441819864762" at="145,0,149,0" concept="9" trace="isInstanceOfInterfaceConcept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="4183391441819864828" at="39,0,44,0" concept="9" trace="getName#()Lcom/intellij/util/indexing/ID;" />
+      <node id="4183391441819864870" at="70,0,75,0" concept="9" trace="getIndexer#()Lcom/intellij/util/indexing/DataIndexer;" />
+      <node id="4183391441819864660" at="123,0,135,0" concept="9" trace="safeMap#(Lorg/jetbrains/mps/openapi/model/SReference;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4183391441819864577" at="98,73,115,13" concept="8" />
+      <node id="4183391441819864569" at="97,70,116,11" concept="7" />
+      <node id="4183391441819864560" at="95,0,118,0" concept="9" trace="run#()V" />
+      <node id="4183391441819864553" at="93,132,149,9" concept="4" />
+      <node id="4183391441819864533" at="90,0,152,0" concept="9" trace="map#(Lcom/intellij/util/indexing/FileContent;)Ljava/util/Map;" />
+      <scope id="4183391441819864827" at="36,40,36,40" />
+      <scope id="4183391441819864508" at="77,27,77,27" />
+      <scope id="4183391441819864532" at="87,23,87,23" />
+      <scope id="4183391441819864834" at="41,59,42,16" />
+      <scope id="4183391441819864840" at="46,27,47,13" />
+      <scope id="4183391441819864846" at="51,41,52,16" />
+      <scope id="4183391441819864852" at="56,54,57,25" />
+      <scope id="4183391441819864859" at="61,58,62,27" />
+      <scope id="4183391441819864867" at="66,71,67,30" />
+      <scope id="4183391441819864877" at="72,84,73,21" />
+      <scope id="4183391441819864514" at="81,50,82,73" />
+      <scope id="4183391441819864586" at="101,85,102,93" />
+      <scope id="4183391441819864603" at="104,141,105,57" />
+      <scope id="4183391441819864609" at="107,65,108,73" />
+      <scope id="4183391441819864636" at="112,139,113,58" />
+      <scope id="4183391441819864651" at="119,64,120,67" />
+      <scope id="4183391441819864677" at="125,28,126,19" />
+      <scope id="4183391441819864752" at="141,71,142,116" />
+      <scope id="4183391441819864824" at="36,0,38,0" />
+      <scope id="4183391441819864505" at="77,0,79,0" />
+      <scope id="4183391441819864529" at="87,0,89,0" />
+      <scope id="4183391441819864690" at="129,35,131,61" />
+      <scope id="4183391441819864714" at="136,62,138,430">
+        <var name="conceptFQName" id="4183391441819864716" />
+      </scope>
+      <scope id="4183391441819864766" at="145,66,147,163">
+        <var name="conceptFQName" id="4183391441819864768" />
+      </scope>
+      <scope id="4183391441819864598" at="103,15,106,15">
+        <var name="implementedInterface" id="4183391441819864599" />
+      </scope>
+      <scope id="4183391441819864634" at="111,53,114,15">
+        <var name="extendedInterface" id="4183391441819864635" />
+      </scope>
+      <scope id="4183391441819864644" at="119,0,122,0">
+        <var name="classifierType" id="4183391441819864647" />
+        <var name="node" id="4183391441819864649" />
+      </scope>
+      <scope id="4183391441819864748" at="141,0,144,0">
+        <var name="node" id="4183391441819864749" />
+      </scope>
+      <scope id="4183391441819864837" at="45,0,49,0" />
+      <scope id="4183391441819864843" at="50,0,54,0" />
+      <scope id="4183391441819864849" at="55,0,59,0" />
+      <scope id="4183391441819864855" at="60,0,64,0" />
+      <scope id="4183391441819864862" at="65,0,69,0" />
+      <scope id="4183391441819864509" at="80,0,84,0">
+        <var name="file" id="4183391441819864512" />
+      </scope>
+      <scope id="4183391441819864627" at="110,64,114,15">
+        <var name="interfaceNode" id="4183391441819864629" />
+      </scope>
+      <scope id="4183391441819864710" at="136,0,140,0">
+        <var name="node" id="4183391441819864711" />
+      </scope>
+      <scope id="4183391441819864762" at="145,0,149,0">
+        <var name="node" id="4183391441819864763" />
+      </scope>
+      <scope id="4183391441819864828" at="39,0,44,0" />
+      <scope id="4183391441819864870" at="70,0,75,0" />
+      <scope id="4183391441819864578" at="99,53,109,15">
+        <var name="classNode" id="4183391441819864580" />
+      </scope>
+      <scope id="4183391441819864667" at="123,64,133,80">
+        <var name="key" id="4183391441819864669" />
+        <var name="successors" id="4183391441819864680" />
+      </scope>
+      <scope id="4183391441819864660" at="123,0,135,0">
+        <var name="node" id="4183391441819864665" />
+        <var name="reference" id="4183391441819864663" />
+      </scope>
+      <scope id="4183391441819864576" at="98,73,115,13" />
+      <scope id="4183391441819864569" at="97,70,116,11">
+        <var name="nextNode" id="4183391441819864574" />
+      </scope>
+      <scope id="4183391441819864563" at="96,27,116,11">
+        <var name="sModel" id="4183391441819864565" />
+      </scope>
+      <scope id="4183391441819864560" at="95,0,118,0" />
+      <scope id="4183391441819864541" at="92,85,150,20">
+        <var name="result" id="4183391441819864543" />
+      </scope>
+      <scope id="4183391441819864533" at="90,0,152,0">
+        <var name="inputData" id="4183391441819864539" />
+      </scope>
+      <unit id="4183391441819864502" at="76,0,85,0" name="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer$InputFilter" />
+      <unit id="4183391441819864559" at="94,45,149,7" name="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer$1" />
+      <unit id="4183391441819864522" at="86,0,153,0" name="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer$Indexer" />
+      <unit id="4183391441819864496" at="29,0,154,0" name="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer" />
+    </file>
   </root>
   <root nodeRef="r:2ba45a7a-594f-4a4d-be5c-07edf2b58826(jetbrains.mps.ide.java.platform.index)/4183391441819864880">
-    <nodeInfo nodeId="4183391441819864882" fileName="GlobalSNodeId.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelReference" />
-    <nodeInfo nodeId="4183391441819864885" fileName="GlobalSNodeId.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeId" />
-    <nodeInfo nodeId="4183391441819864942" fileName="GlobalSNodeId.java" startLine="18" startPosition="36" endLine="19" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="4183391441819864965" fileName="GlobalSNodeId.java" startLine="22" startPosition="62" endLine="23" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4183391441819864969" fileName="GlobalSNodeId.java" startLine="23" startPosition="34" endLine="24" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4183391441819864973" fileName="GlobalSNodeId.java" startLine="24" startPosition="26" endLine="25" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864977" fileName="GlobalSNodeId.java" startLine="25" startPosition="38" endLine="26" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864985" fileName="GlobalSNodeId.java" startLine="29" startPosition="26" endLine="30" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864990" fileName="GlobalSNodeId.java" startLine="30" startPosition="112" endLine="31" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864997" fileName="GlobalSNodeId.java" startLine="31" startPosition="97" endLine="32" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865013" fileName="GlobalSNodeId.java" startLine="36" startPosition="25" endLine="37" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865029" fileName="GlobalSNodeId.java" startLine="42" startPosition="41" endLine="43" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819865035" fileName="GlobalSNodeId.java" startLine="43" startPosition="56" endLine="44" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865049" fileName="GlobalSNodeId.java" startLine="45" startPosition="5" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865056" fileName="GlobalSNodeId.java" startLine="49" startPosition="43" endLine="50" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865062" fileName="GlobalSNodeId.java" startLine="53" startPosition="35" endLine="54" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864894" fileName="GlobalSNodeId.java" startLine="57" startPosition="67" endLine="58" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864898" fileName="GlobalSNodeId.java" startLine="58" startPosition="42" endLine="59" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864925" fileName="GlobalSNodeId.java" startLine="60" startPosition="145" endLine="61" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864927" fileName="GlobalSNodeId.java" startLine="62" startPosition="5" endLine="63" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864936" fileName="GlobalSNodeId.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GlobalSNodeId#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4183391441819865052" fileName="GlobalSNodeId.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelReference#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4183391441819865058" fileName="GlobalSNodeId.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeId#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4183391441819864902" fileName="GlobalSNodeId.java" startLine="59" startPosition="58" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819865009" fileName="GlobalSNodeId.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hashCode#()I" />
-    <nodeInfo nodeId="4183391441819865024" fileName="GlobalSNodeId.java" startLine="41" startPosition="39" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864981" fileName="GlobalSNodeId.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4183391441819864957" fileName="GlobalSNodeId.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GlobalSNodeId#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4183391441819865018" fileName="GlobalSNodeId.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4183391441819864888" fileName="GlobalSNodeId.java" startLine="57" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSNodeId#(Lorg/jetbrains/mps/openapi/model/SReference;)Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;" />
-    <scopeInfo nodeId="4183391441819864941" fileName="GlobalSNodeId.java" startLine="18" startPosition="36" endLine="19" endPosition="96" />
-    <scopeInfo nodeId="4183391441819865012" fileName="GlobalSNodeId.java" startLine="36" startPosition="25" endLine="37" endPosition="34" />
-    <scopeInfo nodeId="4183391441819865055" fileName="GlobalSNodeId.java" startLine="49" startPosition="43" endLine="50" endPosition="28" />
-    <scopeInfo nodeId="4183391441819865061" fileName="GlobalSNodeId.java" startLine="53" startPosition="35" endLine="54" endPosition="20" />
-    <scopeInfo nodeId="4183391441819864924" fileName="GlobalSNodeId.java" startLine="60" startPosition="145" endLine="61" endPosition="18" />
-    <scopeInfo nodeId="4183391441819865028" fileName="GlobalSNodeId.java" startLine="42" startPosition="41" endLine="44" endPosition="120">
-      <varInfo nodeId="4183391441819865030" varName="otherNodeId" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864936" fileName="GlobalSNodeId.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="4183391441819864939" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864984" fileName="GlobalSNodeId.java" startLine="29" startPosition="26" endLine="32" endPosition="105">
-      <varInfo nodeId="4183391441819864991" varName="sModelDescriptor" />
-      <varInfo nodeId="4183391441819864986" varName="sModelReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865052" fileName="GlobalSNodeId.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="4183391441819865058" fileName="GlobalSNodeId.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864964" fileName="GlobalSNodeId.java" startLine="22" startPosition="62" endLine="26" endPosition="22" />
-    <scopeInfo nodeId="4183391441819865009" fileName="GlobalSNodeId.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="4183391441819864981" fileName="GlobalSNodeId.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="4183391441819865023" fileName="GlobalSNodeId.java" startLine="41" startPosition="39" endLine="46" endPosition="17" />
-    <scopeInfo nodeId="4183391441819864957" fileName="GlobalSNodeId.java" startLine="22" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="4183391441819864960" varName="modelReference" />
-      <varInfo nodeId="4183391441819864962" varName="nodeId" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864893" fileName="GlobalSNodeId.java" startLine="57" startPosition="67" endLine="63" endPosition="75">
-      <varInfo nodeId="4183391441819864895" varName="modelReference" />
-      <varInfo nodeId="4183391441819864899" varName="nodeId" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865018" fileName="GlobalSNodeId.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="4183391441819865021" varName="other" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819864888" fileName="GlobalSNodeId.java" startLine="57" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="4183391441819864891" varName="reference" />
-    </scopeInfo>
-    <unitInfo nodeId="4183391441819864880" fileName="GlobalSNodeId.java" startLine="14" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.GlobalSNodeId" />
+    <file name="GlobalSNodeId.java">
+      <node id="4183391441819864882" at="15,0,16,0" concept="5" trace="myModelReference" />
+      <node id="4183391441819864885" at="16,0,17,0" concept="5" trace="myNodeId" />
+      <node id="4183391441819864942" at="18,36,19,96" concept="15" />
+      <node id="4183391441819864965" at="22,62,23,34" concept="0" />
+      <node id="4183391441819864969" at="23,34,24,26" concept="0" />
+      <node id="4183391441819864973" at="24,26,25,38" concept="4" />
+      <node id="4183391441819864977" at="25,38,26,22" concept="4" />
+      <node id="4183391441819864985" at="29,26,30,112" concept="10" />
+      <node id="4183391441819864990" at="30,112,31,97" concept="10" />
+      <node id="4183391441819864997" at="31,97,32,105" concept="11" />
+      <node id="4183391441819865013" at="36,25,37,34" concept="11" />
+      <node id="4183391441819865029" at="42,41,43,56" concept="10" />
+      <node id="4183391441819865035" at="43,56,44,120" concept="11" />
+      <node id="4183391441819865049" at="45,5,46,17" concept="11" />
+      <node id="4183391441819865056" at="49,43,50,28" concept="11" />
+      <node id="4183391441819865062" at="53,35,54,20" concept="11" />
+      <node id="4183391441819864894" at="57,67,58,42" concept="10" />
+      <node id="4183391441819864898" at="58,42,59,58" concept="10" />
+      <node id="4183391441819864925" at="60,145,61,18" concept="11" />
+      <node id="4183391441819864927" at="62,5,63,75" concept="11" />
+      <node id="4183391441819864936" at="18,0,21,0" concept="2" trace="GlobalSNodeId#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4183391441819865052" at="49,0,52,0" concept="9" trace="getModelReference#()Ljava/lang/String;" />
+      <node id="4183391441819865058" at="53,0,56,0" concept="9" trace="getNodeId#()Ljava/lang/String;" />
+      <node id="4183391441819864902" at="59,58,62,5" concept="8" />
+      <node id="4183391441819865009" at="35,0,39,0" concept="9" trace="hashCode#()I" />
+      <node id="4183391441819865024" at="41,39,45,5" concept="8" />
+      <node id="4183391441819864981" at="29,0,34,0" concept="9" trace="getNode#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4183391441819864957" at="22,0,28,0" concept="2" trace="GlobalSNodeId#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="4183391441819865018" at="40,0,48,0" concept="9" trace="equals#(Ljava/lang/Object;)Z" />
+      <node id="4183391441819864888" at="57,0,65,0" concept="13" trace="createSNodeId#(Lorg/jetbrains/mps/openapi/model/SReference;)Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;" />
+      <scope id="4183391441819864941" at="18,36,19,96" />
+      <scope id="4183391441819865012" at="36,25,37,34" />
+      <scope id="4183391441819865055" at="49,43,50,28" />
+      <scope id="4183391441819865061" at="53,35,54,20" />
+      <scope id="4183391441819864924" at="60,145,61,18" />
+      <scope id="4183391441819865028" at="42,41,44,120">
+        <var name="otherNodeId" id="4183391441819865030" />
+      </scope>
+      <scope id="4183391441819864936" at="18,0,21,0">
+        <var name="node" id="4183391441819864939" />
+      </scope>
+      <scope id="4183391441819864984" at="29,26,32,105">
+        <var name="sModelDescriptor" id="4183391441819864991" />
+        <var name="sModelReference" id="4183391441819864986" />
+      </scope>
+      <scope id="4183391441819865052" at="49,0,52,0" />
+      <scope id="4183391441819865058" at="53,0,56,0" />
+      <scope id="4183391441819864964" at="22,62,26,22" />
+      <scope id="4183391441819865009" at="35,0,39,0" />
+      <scope id="4183391441819864981" at="29,0,34,0" />
+      <scope id="4183391441819865023" at="41,39,46,17" />
+      <scope id="4183391441819864957" at="22,0,28,0">
+        <var name="modelReference" id="4183391441819864960" />
+        <var name="nodeId" id="4183391441819864962" />
+      </scope>
+      <scope id="4183391441819864893" at="57,67,63,75">
+        <var name="modelReference" id="4183391441819864895" />
+        <var name="nodeId" id="4183391441819864899" />
+      </scope>
+      <scope id="4183391441819865018" at="40,0,48,0">
+        <var name="other" id="4183391441819865021" />
+      </scope>
+      <scope id="4183391441819864888" at="57,0,65,0">
+        <var name="reference" id="4183391441819864891" />
+      </scope>
+      <unit id="4183391441819864880" at="14,0,66,0" name="jetbrains.mps.ide.java.platform.index.GlobalSNodeId" />
+    </file>
   </root>
   <root nodeRef="r:2ba45a7a-594f-4a4d-be5c-07edf2b58826(jetbrains.mps.ide.java.platform.index)/4183391441819865064">
-    <nodeInfo nodeId="4183391441819865080" fileName="GlobalSNodeIdDescriptor.java" startLine="15" startPosition="77" endLine="16" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819865086" fileName="GlobalSNodeIdDescriptor.java" startLine="16" startPosition="73" endLine="17" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819865099" fileName="GlobalSNodeIdDescriptor.java" startLine="21" startPosition="65" endLine="22" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865113" fileName="GlobalSNodeIdDescriptor.java" startLine="26" startPosition="44" endLine="27" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865125" fileName="GlobalSNodeIdDescriptor.java" startLine="31" startPosition="69" endLine="32" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865138" fileName="GlobalSNodeIdDescriptor.java" startLine="35" startPosition="83" endLine="36" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819865145" fileName="GlobalSNodeIdDescriptor.java" startLine="36" startPosition="35" endLine="37" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819865152" fileName="GlobalSNodeIdDescriptor.java" startLine="37" startPosition="31" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819865164" fileName="GlobalSNodeIdDescriptor.java" startLine="41" startPosition="72" endLine="42" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819865170" fileName="GlobalSNodeIdDescriptor.java" startLine="42" startPosition="33" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819865179" fileName="GlobalSNodeIdDescriptor.java" startLine="43" startPosition="36" endLine="44" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819865184" fileName="GlobalSNodeIdDescriptor.java" startLine="44" startPosition="27" endLine="45" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865068" fileName="GlobalSNodeIdDescriptor.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GlobalSNodeIdDescriptor#()V" />
-    <nodeInfo nodeId="4183391441819865093" fileName="GlobalSNodeIdDescriptor.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="read#(Ljava/io/DataInput;)Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;" />
-    <nodeInfo nodeId="4183391441819865107" fileName="GlobalSNodeIdDescriptor.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHashCode#(Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;)I" />
-    <nodeInfo nodeId="4183391441819865117" fileName="GlobalSNodeIdDescriptor.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEqual#(Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;)Z" />
-    <nodeInfo nodeId="4183391441819865072" fileName="GlobalSNodeIdDescriptor.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="save#(Ljava/io/DataOutput;Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;)V" />
-    <nodeInfo nodeId="4183391441819865130" fileName="GlobalSNodeIdDescriptor.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="writeString#(Ljava/io/DataOutput;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4183391441819865158" fileName="GlobalSNodeIdDescriptor.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readString#(Ljava/io/DataInput;)Ljava/lang/String;" />
-    <scopeInfo nodeId="4183391441819865071" fileName="GlobalSNodeIdDescriptor.java" startLine="11" startPosition="36" endLine="11" endPosition="36" />
-    <scopeInfo nodeId="4183391441819865098" fileName="GlobalSNodeIdDescriptor.java" startLine="21" startPosition="65" endLine="22" endPosition="115" />
-    <scopeInfo nodeId="4183391441819865112" fileName="GlobalSNodeIdDescriptor.java" startLine="26" startPosition="44" endLine="27" endPosition="25" />
-    <scopeInfo nodeId="4183391441819865124" fileName="GlobalSNodeIdDescriptor.java" startLine="31" startPosition="69" endLine="32" endPosition="32" />
-    <scopeInfo nodeId="4183391441819865068" fileName="GlobalSNodeIdDescriptor.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="4183391441819865079" fileName="GlobalSNodeIdDescriptor.java" startLine="15" startPosition="77" endLine="17" endPosition="65" />
-    <scopeInfo nodeId="4183391441819865137" fileName="GlobalSNodeIdDescriptor.java" startLine="35" startPosition="83" endLine="38" endPosition="21">
-      <varInfo nodeId="4183391441819865139" varName="bytes" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865093" fileName="GlobalSNodeIdDescriptor.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="4183391441819865096" varName="input" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865107" fileName="GlobalSNodeIdDescriptor.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="4183391441819865110" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865117" fileName="GlobalSNodeIdDescriptor.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="4183391441819865120" varName="first" />
-      <varInfo nodeId="4183391441819865122" varName="second" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865163" fileName="GlobalSNodeIdDescriptor.java" startLine="41" startPosition="72" endLine="45" endPosition="29">
-      <varInfo nodeId="4183391441819865171" varName="bytes" />
-      <varInfo nodeId="4183391441819865165" varName="length" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865072" fileName="GlobalSNodeIdDescriptor.java" startLine="14" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="4183391441819865077" varName="nodeId" />
-      <varInfo nodeId="4183391441819865075" varName="out" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865130" fileName="GlobalSNodeIdDescriptor.java" startLine="35" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="4183391441819865133" varName="out" />
-      <varInfo nodeId="4183391441819865135" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865158" fileName="GlobalSNodeIdDescriptor.java" startLine="41" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="4183391441819865161" varName="input" />
-    </scopeInfo>
-    <unitInfo nodeId="4183391441819865064" fileName="GlobalSNodeIdDescriptor.java" startLine="10" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.GlobalSNodeIdDescriptor" />
+    <file name="GlobalSNodeIdDescriptor.java">
+      <node id="4183391441819865080" at="15,77,16,73" concept="4" />
+      <node id="4183391441819865086" at="16,73,17,65" concept="4" />
+      <node id="4183391441819865099" at="21,65,22,115" concept="11" />
+      <node id="4183391441819865113" at="26,44,27,25" concept="11" />
+      <node id="4183391441819865125" at="31,69,32,32" concept="11" />
+      <node id="4183391441819865138" at="35,83,36,35" concept="10" />
+      <node id="4183391441819865145" at="36,35,37,31" concept="4" />
+      <node id="4183391441819865152" at="37,31,38,21" concept="4" />
+      <node id="4183391441819865164" at="41,72,42,33" concept="10" />
+      <node id="4183391441819865170" at="42,33,43,36" concept="10" />
+      <node id="4183391441819865179" at="43,36,44,27" concept="4" />
+      <node id="4183391441819865184" at="44,27,45,29" concept="11" />
+      <node id="4183391441819865068" at="11,0,13,0" concept="2" trace="GlobalSNodeIdDescriptor#()V" />
+      <node id="4183391441819865093" at="20,0,24,0" concept="9" trace="read#(Ljava/io/DataInput;)Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;" />
+      <node id="4183391441819865107" at="25,0,29,0" concept="9" trace="getHashCode#(Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;)I" />
+      <node id="4183391441819865117" at="30,0,34,0" concept="9" trace="isEqual#(Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;)Z" />
+      <node id="4183391441819865072" at="14,0,19,0" concept="9" trace="save#(Ljava/io/DataOutput;Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;)V" />
+      <node id="4183391441819865130" at="35,0,40,0" concept="13" trace="writeString#(Ljava/io/DataOutput;Ljava/lang/String;)V" />
+      <node id="4183391441819865158" at="41,0,47,0" concept="13" trace="readString#(Ljava/io/DataInput;)Ljava/lang/String;" />
+      <scope id="4183391441819865071" at="11,36,11,36" />
+      <scope id="4183391441819865098" at="21,65,22,115" />
+      <scope id="4183391441819865112" at="26,44,27,25" />
+      <scope id="4183391441819865124" at="31,69,32,32" />
+      <scope id="4183391441819865068" at="11,0,13,0" />
+      <scope id="4183391441819865079" at="15,77,17,65" />
+      <scope id="4183391441819865137" at="35,83,38,21">
+        <var name="bytes" id="4183391441819865139" />
+      </scope>
+      <scope id="4183391441819865093" at="20,0,24,0">
+        <var name="input" id="4183391441819865096" />
+      </scope>
+      <scope id="4183391441819865107" at="25,0,29,0">
+        <var name="id" id="4183391441819865110" />
+      </scope>
+      <scope id="4183391441819865117" at="30,0,34,0">
+        <var name="first" id="4183391441819865120" />
+        <var name="second" id="4183391441819865122" />
+      </scope>
+      <scope id="4183391441819865163" at="41,72,45,29">
+        <var name="bytes" id="4183391441819865171" />
+        <var name="length" id="4183391441819865165" />
+      </scope>
+      <scope id="4183391441819865072" at="14,0,19,0">
+        <var name="nodeId" id="4183391441819865077" />
+        <var name="out" id="4183391441819865075" />
+      </scope>
+      <scope id="4183391441819865130" at="35,0,40,0">
+        <var name="out" id="4183391441819865133" />
+        <var name="text" id="4183391441819865135" />
+      </scope>
+      <scope id="4183391441819865158" at="41,0,47,0">
+        <var name="input" id="4183391441819865161" />
+      </scope>
+      <unit id="4183391441819865064" at="10,0,48,0" name="jetbrains.mps.ide.java.platform.index.GlobalSNodeIdDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:2ba45a7a-594f-4a4d-be5c-07edf2b58826(jetbrains.mps.ide.java.platform.index)/4183391441819865189">
-    <nodeInfo nodeId="4183391441819865195" fileName="ListExternalizer.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInnerExternalizer" />
-    <nodeInfo nodeId="4183391441819865206" fileName="ListExternalizer.java" startLine="16" startPosition="66" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819865219" fileName="ListExternalizer.java" startLine="21" startPosition="76" endLine="22" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819865231" fileName="ListExternalizer.java" startLine="23" startPosition="32" endLine="24" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819865245" fileName="ListExternalizer.java" startLine="29" startPosition="59" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819865264" fileName="ListExternalizer.java" startLine="31" startPosition="47" endLine="32" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819865272" fileName="ListExternalizer.java" startLine="33" startPosition="5" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819865199" fileName="ListExternalizer.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListExternalizer#(Lcom/intellij/util/io/DataExternalizer;)V" />
-    <nodeInfo nodeId="4183391441819865226" fileName="ListExternalizer.java" startLine="22" startPosition="61" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4183391441819865252" fileName="ListExternalizer.java" startLine="30" startPosition="63" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4183391441819865210" fileName="ListExternalizer.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="save#(Ljava/io/DataOutput;Ljava/util/List;)V" />
-    <nodeInfo nodeId="4183391441819865238" fileName="ListExternalizer.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="read#(Ljava/io/DataInput;)Ljava/util/List;" />
-    <scopeInfo nodeId="4183391441819865205" fileName="ListExternalizer.java" startLine="16" startPosition="66" endLine="17" endPosition="44" />
-    <scopeInfo nodeId="4183391441819865230" fileName="ListExternalizer.java" startLine="23" startPosition="32" endLine="24" endPosition="48" />
-    <scopeInfo nodeId="4183391441819865263" fileName="ListExternalizer.java" startLine="31" startPosition="47" endLine="32" endPosition="80" />
-    <scopeInfo nodeId="4183391441819865199" fileName="ListExternalizer.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="4183391441819865202" varName="innerExternalizer" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865226" fileName="ListExternalizer.java" startLine="22" startPosition="61" endLine="25" endPosition="5">
-      <varInfo nodeId="4183391441819865228" varName="element" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865252" fileName="ListExternalizer.java" startLine="30" startPosition="63" endLine="33" endPosition="5">
-      <varInfo nodeId="4183391441819865256" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865218" fileName="ListExternalizer.java" startLine="21" startPosition="76" endLine="25" endPosition="5" />
-    <scopeInfo nodeId="4183391441819865244" fileName="ListExternalizer.java" startLine="29" startPosition="59" endLine="34" endPosition="18">
-      <varInfo nodeId="4183391441819865246" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865210" fileName="ListExternalizer.java" startLine="20" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="4183391441819865215" varName="elements" />
-      <varInfo nodeId="4183391441819865213" varName="output" />
-    </scopeInfo>
-    <scopeInfo nodeId="4183391441819865238" fileName="ListExternalizer.java" startLine="28" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="4183391441819865242" varName="input" />
-    </scopeInfo>
-    <unitInfo nodeId="4183391441819865189" fileName="ListExternalizer.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.ide.java.platform.index.ListExternalizer" />
+    <file name="ListExternalizer.java">
+      <node id="4183391441819865195" at="14,0,15,0" concept="5" trace="myInnerExternalizer" />
+      <node id="4183391441819865206" at="16,66,17,44" concept="4" />
+      <node id="4183391441819865219" at="21,76,22,61" concept="4" />
+      <node id="4183391441819865231" at="23,32,24,48" concept="4" />
+      <node id="4183391441819865245" at="29,59,30,63" concept="10" />
+      <node id="4183391441819865264" at="31,47,32,80" concept="4" />
+      <node id="4183391441819865272" at="33,5,34,18" concept="11" />
+      <node id="4183391441819865199" at="16,0,19,0" concept="2" trace="ListExternalizer#(Lcom/intellij/util/io/DataExternalizer;)V" />
+      <node id="4183391441819865226" at="22,61,25,5" concept="7" />
+      <node id="4183391441819865252" at="30,63,33,5" concept="6" />
+      <node id="4183391441819865210" at="20,0,27,0" concept="9" trace="save#(Ljava/io/DataOutput;Ljava/util/List;)V" />
+      <node id="4183391441819865238" at="28,0,36,0" concept="9" trace="read#(Ljava/io/DataInput;)Ljava/util/List;" />
+      <scope id="4183391441819865205" at="16,66,17,44" />
+      <scope id="4183391441819865230" at="23,32,24,48" />
+      <scope id="4183391441819865263" at="31,47,32,80" />
+      <scope id="4183391441819865199" at="16,0,19,0">
+        <var name="innerExternalizer" id="4183391441819865202" />
+      </scope>
+      <scope id="4183391441819865226" at="22,61,25,5">
+        <var name="element" id="4183391441819865228" />
+      </scope>
+      <scope id="4183391441819865252" at="30,63,33,5">
+        <var name="i" id="4183391441819865256" />
+      </scope>
+      <scope id="4183391441819865218" at="21,76,25,5" />
+      <scope id="4183391441819865244" at="29,59,34,18">
+        <var name="result" id="4183391441819865246" />
+      </scope>
+      <scope id="4183391441819865210" at="20,0,27,0">
+        <var name="elements" id="4183391441819865215" />
+        <var name="output" id="4183391441819865213" />
+      </scope>
+      <scope id="4183391441819865238" at="28,0,36,0">
+        <var name="input" id="4183391441819865242" />
+      </scope>
+      <unit id="4183391441819865189" at="13,0,37,0" name="jetbrains.mps.ide.java.platform.index.ListExternalizer" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

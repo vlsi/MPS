@@ -1,71 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.typesystem.TypesystemDescriptor" />
-  <root nodeRef="r:aa7cee44-7e41-4ff3-b944-4eb707b62ad6(jetbrains.mps.build.workflow.typesystem)/1117643560963218862">
-    <nodeInfo nodeId="1117643560963171485" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="26" startPosition="116" endLine="27" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963267178" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="27" startPosition="52" endLine="28" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963171497" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="29" startPosition="74" endLine="30" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963218870" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="31" startPosition="5" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1117643560963219153" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="32" startPosition="0" endLine="33" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963218991" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="35" startPosition="63" endLine="36" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963219163" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="38" startPosition="11" endLine="39" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963219163" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="39" startPosition="64" endLine="40" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="47" startPosition="46" endLine="48" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="52" startPosition="5" endLine="53" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="53" startPosition="130" endLine="54" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="58" startPosition="30" endLine="59" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_BwfTaskLibrary_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="1117643560963147833" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="28" startPosition="21" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1117643560963219163" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="37" startPosition="88" endLine="41" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="51" startPosition="68" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1117643560963218997" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="36" startPosition="70" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1117643560963218983" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="34" startPosition="51" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963218973" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="33" startPosition="41" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="23" startPosition="51" endLine="23" endPosition="51" />
-    <scopeInfo nodeId="1117643560963147834" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="29" startPosition="74" endLine="30" endPosition="69" />
-    <scopeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="47" startPosition="46" endLine="48" endPosition="67" />
-    <scopeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="58" startPosition="30" endLine="59" endPosition="17" />
-    <scopeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1117643560963219163" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="38" startPosition="11" endLine="40" endPosition="258">
-      <varInfo nodeId="1117643560963219163" varName="_reporter_2309309498" />
-      <varInfo nodeId="1117643560963219163" varName="errorTarget" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="52" startPosition="5" endLine="54" endPosition="45">
-      <varInfo nodeId="1117643560963218862" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963147833" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="28" startPosition="21" endLine="31" endPosition="5">
-      <varInfo nodeId="1117643560963147836" varName="tldep" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="58" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="1117643560963218998" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="37" startPosition="88" endLine="41" endPosition="11" />
-    <scopeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="51" startPosition="68" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="51" startPosition="0" endLine="57" endPosition="0">
-      <varInfo nodeId="1117643560963218862" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218990" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="35" startPosition="63" endLine="42" endPosition="9">
-      <varInfo nodeId="1117643560963218992" varName="targetNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218982" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="34" startPosition="51" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="1117643560963218983" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="34" startPosition="51" endLine="43" endPosition="7">
-      <varInfo nodeId="1117643560963218984" varName="ref" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218973" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="33" startPosition="41" endLine="44" endPosition="5">
-      <varInfo nodeId="1117643560963218974" varName="n" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218863" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="26" startPosition="116" endLine="44" endPosition="5">
-      <varInfo nodeId="1117643560963171486" varName="libsSet" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="1117643560963218862" varName="lib" />
-      <varInfo nodeId="1117643560963218862" varName="status" />
-      <varInfo nodeId="1117643560963218862" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1117643560963218862" fileName="check_BwfTaskLibrary_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.build.workflow.typesystem.check_BwfTaskLibrary_NonTypesystemRule" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <root>
+    <file name="TypesystemDescriptor.java">
+      <unit at="8,0,16,0" name="jetbrains.mps.build.workflow.typesystem.TypesystemDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:aa7cee44-7e41-4ff3-b944-4eb707b62ad6(jetbrains.mps.build.workflow.typesystem)/1117643560963218862">
+    <file name="check_BwfTaskLibrary_NonTypesystemRule.java">
+      <node id="1117643560963171485" at="26,116,27,52" concept="6" />
+      <node id="1117643560963267178" at="27,52,28,21" concept="2" />
+      <node id="1117643560963171497" at="29,74,30,69" concept="2" />
+      <node id="1117643560963218870" at="31,5,32,0" concept="8" />
+      <node id="1117643560963219153" at="32,0,33,41" concept="2" />
+      <node id="1117643560963218991" at="35,63,36,70" concept="6" />
+      <node id="1117643560963219163" at="38,11,39,64" concept="6" />
+      <node id="1117643560963219163" at="39,64,40,258" concept="6" />
+      <node id="1117643560963218862" at="47,46,48,67" concept="7" />
+      <node id="1117643560963218862" at="52,5,53,130" concept="6" />
+      <node id="1117643560963218862" at="53,130,54,45" concept="7" />
+      <node id="1117643560963218862" at="58,30,59,17" concept="7" />
+      <node id="1117643560963218862" at="23,0,25,0" concept="1" trace="check_BwfTaskLibrary_NonTypesystemRule#()V" />
+      <node id="1117643560963147833" at="28,21,31,5" concept="3" />
+      <node id="1117643560963218862" at="47,0,50,0" concept="5" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1117643560963218862" at="58,0,61,0" concept="5" trace="overrides#()Z" />
+      <node id="1117643560963219163" at="37,88,41,11" concept="0" />
+      <node id="1117643560963218862" at="51,68,55,5" concept="0" />
+      <node id="1117643560963218997" at="36,70,42,9" concept="4" />
+      <node id="1117643560963218862" at="51,0,57,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1117643560963218983" at="34,51,43,7" concept="3" />
+      <node id="1117643560963218973" at="33,41,44,5" concept="3" />
+      <node id="1117643560963218862" at="26,0,46,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1117643560963218862" at="23,51,23,51" />
+      <scope id="1117643560963147834" at="29,74,30,69" />
+      <scope id="1117643560963218862" at="47,46,48,67" />
+      <scope id="1117643560963218862" at="58,30,59,17" />
+      <scope id="1117643560963218862" at="23,0,25,0" />
+      <scope id="1117643560963219163" at="38,11,40,258">
+        <var name="_reporter_2309309498" id="1117643560963219163" />
+        <var name="errorTarget" id="1117643560963219163" />
+      </scope>
+      <scope id="1117643560963218862" at="52,5,54,45">
+        <var name="b" id="1117643560963218862" />
+      </scope>
+      <scope id="1117643560963147833" at="28,21,31,5">
+        <var name="tldep" id="1117643560963147836" />
+      </scope>
+      <scope id="1117643560963218862" at="47,0,50,0" />
+      <scope id="1117643560963218862" at="58,0,61,0" />
+      <scope id="1117643560963218998" at="37,88,41,11" />
+      <scope id="1117643560963218862" at="51,68,55,5" />
+      <scope id="1117643560963218862" at="51,0,57,0">
+        <var name="argument" id="1117643560963218862" />
+      </scope>
+      <scope id="1117643560963218990" at="35,63,42,9">
+        <var name="targetNode" id="1117643560963218992" />
+      </scope>
+      <scope id="1117643560963218982" at="34,51,43,7" />
+      <scope id="1117643560963218983" at="34,51,43,7">
+        <var name="ref" id="1117643560963218984" />
+      </scope>
+      <scope id="1117643560963218973" at="33,41,44,5">
+        <var name="n" id="1117643560963218974" />
+      </scope>
+      <scope id="1117643560963218863" at="26,116,44,5">
+        <var name="libsSet" id="1117643560963171486" />
+      </scope>
+      <scope id="1117643560963218862" at="26,0,46,0">
+        <var name="lib" id="1117643560963218862" />
+        <var name="status" id="1117643560963218862" />
+        <var name="typeCheckingContext" id="1117643560963218862" />
+      </scope>
+      <unit id="1117643560963218862" at="22,0,62,0" name="jetbrains.mps.build.workflow.typesystem.check_BwfTaskLibrary_NonTypesystemRule" />
+    </file>
+  </root>
+</debug-info>
 

@@ -1,123 +1,140 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="11" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.StructureAspectDescriptor" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)/1209559274358">
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="18" startPosition="27" endLine="19" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="22" startPosition="36" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="26" startPosition="65" endLine="27" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="27" startPosition="112" endLine="28" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="28" startPosition="76" endLine="29" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="29" startPosition="77" endLine="30" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="30" startPosition="80" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="31" startPosition="80" endLine="32" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="32" startPosition="78" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="36" startPosition="57" endLine="37" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="41" startPosition="24" endLine="42" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="44" startPosition="75" endLine="45" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="47" startPosition="76" endLine="48" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="50" startPosition="79" endLine="51" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="53" startPosition="79" endLine="54" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="56" startPosition="77" endLine="57" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="58" startPosition="5" endLine="59" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="62" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="64" startPosition="57" endLine="65" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="65" startPosition="23" endLine="66" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="69" startPosition="28" endLine="70" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/refactoring/structure/RefactoringTargetKind_Enum;" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="40" startPosition="69" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="43" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="46" startPosition="5" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="49" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="52" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="55" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RefactoringTargetKind_Enum#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="26" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="40" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/refactoring/structure/RefactoringTargetKind_Enum;" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="20" startPosition="5" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="27" startPosition="5" endLine="28" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="29" startPosition="33" endLine="30" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="38" startPosition="49" endLine="39" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="42" startPosition="5" endLine="43" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="10" startPosition="44" endLine="13" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="16" startPosition="61" endLine="19" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="24" startPosition="47" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="30" startPosition="61" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="39" startPosition="87" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="14" startPosition="129" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="28" startPosition="129" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="18" startPosition="27" endLine="19" endPosition="23" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="22" startPosition="36" endLine="23" endPosition="24" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="36" startPosition="57" endLine="37" endPosition="43" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="41" startPosition="24" endLine="42" endPosition="53" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="44" startPosition="75" endLine="45" endPosition="45" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="47" startPosition="76" endLine="48" endPosition="46" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="50" startPosition="79" endLine="51" endPosition="49" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="53" startPosition="79" endLine="54" endPosition="49" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="56" startPosition="77" endLine="57" endPosition="47" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="69" startPosition="28" endLine="70" endPosition="24" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="64" startPosition="57" endLine="66" endPosition="25" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="64" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="1209559274358" varName="name" />
-      <varInfo nodeId="1209559274358" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="26" startPosition="65" endLine="33" endPosition="16">
-      <varInfo nodeId="1209559274358" varName="list" />
-    </scopeInfo>
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="26" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="40" startPosition="69" endLine="59" endPosition="51" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="40" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="1209559274358" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" />
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7">
-      <varInfo nodeId="1209559274358" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7">
-      <varInfo nodeId="1209559274358" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
-      <varInfo nodeId="1209559274358" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="1209559274358" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
-      <varInfo nodeId="1209559274358" varName="constants" />
-    </scopeInfo>
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
-      <varInfo nodeId="1209559274358" varName="constants" />
-    </scopeInfo>
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="1209559274358" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="1209559274358" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum.java" startLine="9" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.RefactoringTargetKind_Enum" />
-    <unitInfo nodeId="1209559274358" fileName="RefactoringTargetKind_Enum_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.refactoring.structure.RefactoringTargetKind_Enum_PropertySupport" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root>
+    <file name="StructureAspectDescriptor.java">
+      <unit at="11,0,132,0" name="jetbrains.mps.lang.refactoring.structure.StructureAspectDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)/1209559274358">
+    <file name="RefactoringTargetKind_Enum.java">
+      <node id="1209559274358" at="16,0,17,0" concept="2" trace="myName" />
+      <node id="1209559274358" at="18,27,19,23" concept="6" />
+      <node id="1209559274358" at="22,36,23,24" concept="6" />
+      <node id="1209559274358" at="26,65,27,112" concept="5" />
+      <node id="1209559274358" at="27,112,28,76" concept="1" />
+      <node id="1209559274358" at="28,76,29,77" concept="1" />
+      <node id="1209559274358" at="29,77,30,80" concept="1" />
+      <node id="1209559274358" at="30,80,31,80" concept="1" />
+      <node id="1209559274358" at="31,80,32,78" concept="1" />
+      <node id="1209559274358" at="32,78,33,16" concept="6" />
+      <node id="1209559274358" at="36,57,37,43" concept="6" />
+      <node id="1209559274358" at="41,24,42,53" concept="6" />
+      <node id="1209559274358" at="44,75,45,45" concept="6" />
+      <node id="1209559274358" at="47,76,48,46" concept="6" />
+      <node id="1209559274358" at="50,79,51,49" concept="6" />
+      <node id="1209559274358" at="53,79,54,49" concept="6" />
+      <node id="1209559274358" at="56,77,57,47" concept="6" />
+      <node id="1209559274358" at="58,5,59,51" concept="6" />
+      <node id="1209559274358" at="62,0,63,0" concept="2" trace="myValue" />
+      <node id="1209559274358" at="64,57,65,23" concept="1" />
+      <node id="1209559274358" at="65,23,66,25" concept="1" />
+      <node id="1209559274358" at="69,28,70,24" concept="6" />
+      <node id="1209559274358" at="18,0,21,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="1209559274358" at="22,0,25,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="1209559274358" at="36,0,39,0" concept="7" trace="getDefault#()Ljetbrains/mps/lang/refactoring/structure/RefactoringTargetKind_Enum;" />
+      <node id="1209559274358" at="40,69,43,5" concept="3" />
+      <node id="1209559274358" at="43,5,46,5" concept="3" />
+      <node id="1209559274358" at="46,5,49,5" concept="3" />
+      <node id="1209559274358" at="49,5,52,5" concept="3" />
+      <node id="1209559274358" at="52,5,55,5" concept="3" />
+      <node id="1209559274358" at="55,5,58,5" concept="3" />
+      <node id="1209559274358" at="69,0,72,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="1209559274358" at="64,0,68,0" concept="0" trace="RefactoringTargetKind_Enum#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="1209559274358" at="26,0,35,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="1209559274358" at="40,0,61,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/refactoring/structure/RefactoringTargetKind_Enum;" />
+      <scope id="1209559274358" at="18,27,19,23" />
+      <scope id="1209559274358" at="22,36,23,24" />
+      <scope id="1209559274358" at="36,57,37,43" />
+      <scope id="1209559274358" at="41,24,42,53" />
+      <scope id="1209559274358" at="44,75,45,45" />
+      <scope id="1209559274358" at="47,76,48,46" />
+      <scope id="1209559274358" at="50,79,51,49" />
+      <scope id="1209559274358" at="53,79,54,49" />
+      <scope id="1209559274358" at="56,77,57,47" />
+      <scope id="1209559274358" at="69,28,70,24" />
+      <scope id="1209559274358" at="64,57,66,25" />
+      <scope id="1209559274358" at="18,0,21,0" />
+      <scope id="1209559274358" at="22,0,25,0" />
+      <scope id="1209559274358" at="36,0,39,0" />
+      <scope id="1209559274358" at="69,0,72,0" />
+      <scope id="1209559274358" at="64,0,68,0">
+        <var name="name" id="1209559274358" />
+        <var name="value" id="1209559274358" />
+      </scope>
+      <scope id="1209559274358" at="26,65,33,16">
+        <var name="list" id="1209559274358" />
+      </scope>
+      <scope id="1209559274358" at="26,0,35,0" />
+      <scope id="1209559274358" at="40,69,59,51" />
+      <scope id="1209559274358" at="40,0,61,0">
+        <var name="value" id="1209559274358" />
+      </scope>
+      <unit id="1209559274358" at="9,0,73,0" name="jetbrains.mps.lang.refactoring.structure.RefactoringTargetKind_Enum" />
+    </file>
+    <file name="RefactoringTargetKind_Enum_PropertySupport.java">
+      <node id="1209559274358" at="11,24,12,18" concept="6" />
+      <node id="1209559274358" at="13,5,14,129" concept="5" />
+      <node id="1209559274358" at="15,33,16,61" concept="5" />
+      <node id="1209559274358" at="17,45,18,20" concept="6" />
+      <node id="1209559274358" at="20,5,21,17" concept="6" />
+      <node id="1209559274358" at="25,24,26,18" concept="6" />
+      <node id="1209559274358" at="27,5,28,129" concept="5" />
+      <node id="1209559274358" at="29,33,30,61" concept="5" />
+      <node id="1209559274358" at="31,45,32,43" concept="6" />
+      <node id="1209559274358" at="34,5,35,16" concept="6" />
+      <node id="1209559274358" at="38,49,39,87" concept="5" />
+      <node id="1209559274358" at="40,27,41,32" concept="6" />
+      <node id="1209559274358" at="42,5,43,14" concept="6" />
+      <node id="1209559274358" at="10,44,13,5" concept="3" />
+      <node id="1209559274358" at="16,61,19,7" concept="3" />
+      <node id="1209559274358" at="24,47,27,5" concept="3" />
+      <node id="1209559274358" at="30,61,33,7" concept="3" />
+      <node id="1209559274358" at="39,87,42,5" concept="3" />
+      <node id="1209559274358" at="14,129,20,5" concept="8" />
+      <node id="1209559274358" at="28,129,34,5" concept="8" />
+      <node id="1209559274358" at="38,0,45,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="1209559274358" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="1209559274358" at="24,0,37,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="1209559274358" at="11,24,12,18" />
+      <scope id="1209559274358" at="17,45,18,20" />
+      <scope id="1209559274358" at="25,24,26,18" />
+      <scope id="1209559274358" at="31,45,32,43" />
+      <scope id="1209559274358" at="40,27,41,32" />
+      <scope id="1209559274358" at="15,33,19,7">
+        <var name="constant" id="1209559274358" />
+      </scope>
+      <scope id="1209559274358" at="29,33,33,7">
+        <var name="constant" id="1209559274358" />
+      </scope>
+      <scope id="1209559274358" at="38,49,43,14">
+        <var name="constant" id="1209559274358" />
+      </scope>
+      <scope id="1209559274358" at="38,0,45,0">
+        <var name="value" id="1209559274358" />
+      </scope>
+      <scope id="1209559274358" at="10,44,21,17">
+        <var name="constants" id="1209559274358" />
+      </scope>
+      <scope id="1209559274358" at="24,47,35,16">
+        <var name="constants" id="1209559274358" />
+      </scope>
+      <scope id="1209559274358" at="10,0,23,0">
+        <var name="value" id="1209559274358" />
+      </scope>
+      <scope id="1209559274358" at="24,0,37,0">
+        <var name="value" id="1209559274358" />
+      </scope>
+      <unit id="1209559274358" at="9,0,46,0" name="jetbrains.mps.lang.refactoring.structure.RefactoringTargetKind_Enum_PropertySupport" />
+    </file>
+  </root>
+</debug-info>
 

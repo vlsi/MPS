@@ -1,269 +1,294 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1182113674817158574">
-    <nodeInfo nodeId="1182113674817443094" fileName="CellUtil.java" startLine="17" startPosition="76" endLine="18" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817443208" fileName="CellUtil.java" startLine="19" startPosition="308" endLine="20" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817443376" fileName="CellUtil.java" startLine="25" startPosition="121" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817443390" fileName="CellUtil.java" startLine="27" startPosition="5" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3425632322555590179" fileName="CellUtil.java" startLine="34" startPosition="71" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3425632322555626907" fileName="CellUtil.java" startLine="38" startPosition="70" endLine="39" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1182113674817158576" fileName="CellUtil.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellUtil#()V" />
-    <nodeInfo nodeId="1182113674817443072" fileName="CellUtil.java" startLine="18" startPosition="101" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1182113674817443366" fileName="CellUtil.java" startLine="24" startPosition="51" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3425632322555626899" fileName="CellUtil.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkDeclarationRole#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1182113674817443063" fileName="CellUtil.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setupIDeprecatableStyles#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
-    <nodeInfo nodeId="1182113674817443333" fileName="CellUtil.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getNodeToDelete#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3425632322555590171" fileName="CellUtil.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLinkDeclarationTarget#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="1182113674817158579" fileName="CellUtil.java" startLine="14" startPosition="21" endLine="14" endPosition="21" />
-    <scopeInfo nodeId="1182113674817443074" fileName="CellUtil.java" startLine="19" startPosition="308" endLine="20" endPosition="60" />
-    <scopeInfo nodeId="1182113674817443368" fileName="CellUtil.java" startLine="25" startPosition="121" endLine="26" endPosition="45" />
-    <scopeInfo nodeId="3425632322555590174" fileName="CellUtil.java" startLine="34" startPosition="71" endLine="35" endPosition="71" />
-    <scopeInfo nodeId="3425632322555626902" fileName="CellUtil.java" startLine="38" startPosition="70" endLine="39" endPosition="66" />
-    <scopeInfo nodeId="1182113674817158576" fileName="CellUtil.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="3425632322555626899" fileName="CellUtil.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="3425632322555626904" varName="linkDeclaration" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817443066" fileName="CellUtil.java" startLine="17" startPosition="76" endLine="21" endPosition="5">
-      <varInfo nodeId="1182113674817443095" varName="deprecatable" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817443336" fileName="CellUtil.java" startLine="24" startPosition="51" endLine="28" endPosition="16" />
-    <scopeInfo nodeId="1182113674817443063" fileName="CellUtil.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="1182113674817443069" varName="cell" />
-      <varInfo nodeId="1182113674817443067" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817443333" fileName="CellUtil.java" startLine="24" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="1182113674817443338" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="3425632322555590171" fileName="CellUtil.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="3425632322555590176" varName="linkDeclaration" />
-    </scopeInfo>
-    <unitInfo nodeId="1182113674817158574" fileName="CellUtil.java" startLine="13" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.CellUtil" />
+    <file name="CellUtil.java">
+      <node id="1182113674817443094" at="17,76,18,101" concept="8" />
+      <node id="1182113674817443208" at="19,308,20,60" concept="3" />
+      <node id="1182113674817443376" at="25,121,26,45" concept="3" />
+      <node id="1182113674817443390" at="27,5,28,16" concept="9" />
+      <node id="3425632322555590179" at="34,71,35,71" concept="9" />
+      <node id="3425632322555626907" at="38,70,39,66" concept="9" />
+      <node id="1182113674817158576" at="14,0,16,0" concept="2" trace="CellUtil#()V" />
+      <node id="1182113674817443072" at="18,101,21,5" concept="6" />
+      <node id="1182113674817443366" at="24,51,27,5" concept="14" />
+      <node id="3425632322555626899" at="38,0,41,0" concept="12" trace="getLinkDeclarationRole#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1182113674817443063" at="17,0,23,0" concept="12" trace="setupIDeprecatableStyles#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;)V" />
+      <node id="1182113674817443333" at="24,0,30,0" concept="12" trace="getNodeToDelete#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3425632322555590171" at="31,0,37,0" concept="12" trace="getLinkDeclarationTarget#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1182113674817158579" at="14,21,14,21" />
+      <scope id="1182113674817443074" at="19,308,20,60" />
+      <scope id="1182113674817443368" at="25,121,26,45" />
+      <scope id="3425632322555590174" at="34,71,35,71" />
+      <scope id="3425632322555626902" at="38,70,39,66" />
+      <scope id="1182113674817158576" at="14,0,16,0" />
+      <scope id="3425632322555626899" at="38,0,41,0">
+        <var name="linkDeclaration" id="3425632322555626904" />
+      </scope>
+      <scope id="1182113674817443066" at="17,76,21,5">
+        <var name="deprecatable" id="1182113674817443095" />
+      </scope>
+      <scope id="1182113674817443336" at="24,51,28,16" />
+      <scope id="1182113674817443063" at="17,0,23,0">
+        <var name="cell" id="1182113674817443069" />
+        <var name="node" id="1182113674817443067" />
+      </scope>
+      <scope id="1182113674817443333" at="24,0,30,0">
+        <var name="node" id="1182113674817443338" />
+      </scope>
+      <scope id="3425632322555590171" at="31,0,37,0">
+        <var name="linkDeclaration" id="3425632322555590176" />
+      </scope>
+      <unit id="1182113674817158574" at="13,0,42,0" name="jetbrains.mps.editor.runtime.impl.CellUtil" />
+    </file>
   </root>
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1182113674817458489">
-    <nodeInfo nodeId="1182113674817458500" fileName="LayoutConstraints.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1182113674817458504" fileName="LayoutConstraints.java" startLine="16" startPosition="34" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817458515" fileName="LayoutConstraints.java" startLine="20" startPosition="27" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1182113674817458491" fileName="LayoutConstraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LayoutConstraints#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1182113674817458510" fileName="LayoutConstraints.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <scopeInfo nodeId="1182113674817458494" fileName="LayoutConstraints.java" startLine="16" startPosition="34" endLine="17" endPosition="18" />
-    <scopeInfo nodeId="1182113674817458513" fileName="LayoutConstraints.java" startLine="20" startPosition="27" endLine="21" endPosition="18" />
-    <scopeInfo nodeId="1182113674817458491" fileName="LayoutConstraints.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1182113674817458498" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817458510" fileName="LayoutConstraints.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
-    <unitInfo nodeId="1182113674817458489" fileName="LayoutConstraints.java" startLine="7" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.LayoutConstraints" />
+    <file name="LayoutConstraints.java">
+      <node id="1182113674817458500" at="14,0,15,0" concept="4" trace="myName" />
+      <node id="1182113674817458504" at="16,34,17,18" concept="3" />
+      <node id="1182113674817458515" at="20,27,21,18" concept="9" />
+      <node id="1182113674817458491" at="16,0,19,0" concept="2" trace="LayoutConstraints#(Ljava/lang/String;)V" />
+      <node id="1182113674817458510" at="20,0,23,0" concept="7" trace="getName#()Ljava/lang/String;" />
+      <scope id="1182113674817458494" at="16,34,17,18" />
+      <scope id="1182113674817458513" at="20,27,21,18" />
+      <scope id="1182113674817458491" at="16,0,19,0">
+        <var name="name" id="1182113674817458498" />
+      </scope>
+      <scope id="1182113674817458510" at="20,0,23,0" />
+      <unit id="1182113674817458489" at="7,0,24,0" name="jetbrains.mps.editor.runtime.impl.LayoutConstraints" />
+    </file>
   </root>
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1182113674817469564">
-    <nodeInfo nodeId="1182113674817469596" fileName="LanguagesKeymapManager.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="1182113674817469611" fileName="LanguagesKeymapManager.java" startLine="38" startPosition="26" endLine="39" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817473378" fileName="LanguagesKeymapManager.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLanguagesToKeyMaps" />
-    <nodeInfo nodeId="1182113674817469624" fileName="LanguagesKeymapManager.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListener" />
-    <nodeInfo nodeId="1182113674817469629" fileName="LanguagesKeymapManager.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRepository" />
-    <nodeInfo nodeId="1182113674817469632" fileName="LanguagesKeymapManager.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClassLoaderManager" />
-    <nodeInfo nodeId="1182113674817469654" fileName="LanguagesKeymapManager.java" startLine="47" startPosition="67" endLine="48" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469658" fileName="LanguagesKeymapManager.java" startLine="48" startPosition="56" endLine="49" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469677" fileName="LanguagesKeymapManager.java" startLine="53" startPosition="70" endLine="54" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469680" fileName="LanguagesKeymapManager.java" startLine="55" startPosition="5" endLine="56" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1182113674817469689" fileName="LanguagesKeymapManager.java" startLine="60" startPosition="31" endLine="61" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469694" fileName="LanguagesKeymapManager.java" startLine="61" startPosition="59" endLine="62" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469703" fileName="LanguagesKeymapManager.java" startLine="68" startPosition="36" endLine="69" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1182113674817469711" fileName="LanguagesKeymapManager.java" startLine="73" startPosition="34" endLine="74" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469716" fileName="LanguagesKeymapManager.java" startLine="74" startPosition="54" endLine="75" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469725" fileName="LanguagesKeymapManager.java" startLine="78" startPosition="30" endLine="79" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469735" fileName="LanguagesKeymapManager.java" startLine="82" startPosition="59" endLine="83" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817540134" fileName="LanguagesKeymapManager.java" startLine="83" startPosition="71" endLine="84" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817538823" fileName="LanguagesKeymapManager.java" startLine="84" startPosition="88" endLine="85" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817538829" fileName="LanguagesKeymapManager.java" startLine="86" startPosition="30" endLine="87" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469792" fileName="LanguagesKeymapManager.java" startLine="89" startPosition="13" endLine="90" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817469803" fileName="LanguagesKeymapManager.java" startLine="91" startPosition="36" endLine="92" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817540166" fileName="LanguagesKeymapManager.java" startLine="93" startPosition="52" endLine="94" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469784" fileName="LanguagesKeymapManager.java" startLine="97" startPosition="31" endLine="98" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469762" fileName="LanguagesKeymapManager.java" startLine="101" startPosition="12" endLine="102" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817538812" fileName="LanguagesKeymapManager.java" startLine="103" startPosition="5" endLine="104" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817540188" fileName="LanguagesKeymapManager.java" startLine="107" startPosition="73" endLine="108" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817469837" fileName="LanguagesKeymapManager.java" startLine="108" startPosition="131" endLine="109" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817469842" fileName="LanguagesKeymapManager.java" startLine="109" startPosition="62" endLine="110" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1182113674817469847" fileName="LanguagesKeymapManager.java" startLine="110" startPosition="41" endLine="111" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817469861" fileName="LanguagesKeymapManager.java" startLine="111" startPosition="95" endLine="112" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1182113674817469875" fileName="LanguagesKeymapManager.java" startLine="113" startPosition="27" endLine="114" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1182113674817469877" fileName="LanguagesKeymapManager.java" startLine="115" startPosition="5" endLine="116" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1182113674817540198" fileName="LanguagesKeymapManager.java" startLine="119" startPosition="61" endLine="120" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469639" fileName="LanguagesKeymapManager.java" startLine="123" startPosition="54" endLine="124" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1182113674817469591" fileName="LanguagesKeymapManager.java" startLine="133" startPosition="39" endLine="134" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1182113674817469760" fileName="LanguagesKeymapManager.java" startLine="101" startPosition="10" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1182113674817469570" fileName="LanguagesKeymapManager.java" startLine="128" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyModuleRepositoryListener#()V" />
-    <nodeInfo nodeId="1182113674817469670" fileName="LanguagesKeymapManager.java" startLine="52" startPosition="66" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1182113674817469721" fileName="LanguagesKeymapManager.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearCaches#()V" />
-    <nodeInfo nodeId="1182113674817469809" fileName="LanguagesKeymapManager.java" startLine="92" startPosition="54" endLine="95" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1182113674817469870" fileName="LanguagesKeymapManager.java" startLine="112" startPosition="106" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1182113674817469882" fileName="LanguagesKeymapManager.java" startLine="119" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unregisterLanguageKeyMaps#(Ljetbrains/mps/smodel/Language;)V" />
-    <nodeInfo nodeId="1182113674817469635" fileName="LanguagesKeymapManager.java" startLine="123" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/editor/runtime/impl/LanguagesKeymapManager;" />
-    <nodeInfo nodeId="1182113674817469586" fileName="LanguagesKeymapManager.java" startLine="132" startPosition="53" endLine="135" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1182113674817469607" fileName="LanguagesKeymapManager.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unload#()V" />
-    <nodeInfo nodeId="1182113674817469644" fileName="LanguagesKeymapManager.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguagesKeymapManager#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
-    <nodeInfo nodeId="1182113674817469685" fileName="LanguagesKeymapManager.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="1182113674817469707" fileName="LanguagesKeymapManager.java" startLine="72" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="1182113674817469601" fileName="LanguagesKeymapManager.java" startLine="36" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadHandler" />
-    <nodeInfo nodeId="1182113674817469662" fileName="LanguagesKeymapManager.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyMapsForLanguage#(Ljetbrains/mps/smodel/Language;)Ljava/util/List;" />
-    <nodeInfo nodeId="1182113674817469699" fileName="LanguagesKeymapManager.java" startLine="65" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1182113674817469798" fileName="LanguagesKeymapManager.java" startLine="90" startPosition="86" endLine="96" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1182113674817469580" fileName="LanguagesKeymapManager.java" startLine="131" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeModuleRemoved#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
-    <nodeInfo nodeId="1182113674817469781" fileName="LanguagesKeymapManager.java" startLine="88" startPosition="162" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1182113674817469825" fileName="LanguagesKeymapManager.java" startLine="107" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="findKeyMapClassByDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Class;" />
-    <nodeInfo nodeId="1182113674817540157" fileName="LanguagesKeymapManager.java" startLine="87" startPosition="63" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1182113674817469756" fileName="LanguagesKeymapManager.java" startLine="85" startPosition="25" endLine="103" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1182113674817469729" fileName="LanguagesKeymapManager.java" startLine="82" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="registerLanguageKeyMaps#(Ljetbrains/mps/smodel/Language;)V" />
-    <scopeInfo nodeId="1182113674817469573" fileName="LanguagesKeymapManager.java" startLine="128" startPosition="42" endLine="128" endPosition="42" />
-    <scopeInfo nodeId="1182113674817469610" fileName="LanguagesKeymapManager.java" startLine="38" startPosition="26" endLine="39" endPosition="20" />
-    <scopeInfo nodeId="1182113674817469676" fileName="LanguagesKeymapManager.java" startLine="53" startPosition="70" endLine="54" endPosition="33" />
-    <scopeInfo nodeId="1182113674817469702" fileName="LanguagesKeymapManager.java" startLine="68" startPosition="36" endLine="69" endPosition="37" />
-    <scopeInfo nodeId="1182113674817469724" fileName="LanguagesKeymapManager.java" startLine="78" startPosition="30" endLine="79" endPosition="54" />
-    <scopeInfo nodeId="1182113674817469813" fileName="LanguagesKeymapManager.java" startLine="93" startPosition="52" endLine="94" endPosition="64" />
-    <scopeInfo nodeId="1182113674817469782" fileName="LanguagesKeymapManager.java" startLine="97" startPosition="0" endLine="98" endPosition="29">
-      <varInfo nodeId="1182113674817469789" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817469783" fileName="LanguagesKeymapManager.java" startLine="97" startPosition="31" endLine="98" endPosition="29" />
-    <scopeInfo nodeId="1182113674817469761" fileName="LanguagesKeymapManager.java" startLine="101" startPosition="12" endLine="102" endPosition="40" />
-    <scopeInfo nodeId="1182113674817469874" fileName="LanguagesKeymapManager.java" startLine="113" startPosition="27" endLine="114" endPosition="18" />
-    <scopeInfo nodeId="1182113674817469887" fileName="LanguagesKeymapManager.java" startLine="119" startPosition="61" endLine="120" endPosition="66" />
-    <scopeInfo nodeId="1182113674817469638" fileName="LanguagesKeymapManager.java" startLine="123" startPosition="54" endLine="124" endPosition="90" />
-    <scopeInfo nodeId="1182113674817469590" fileName="LanguagesKeymapManager.java" startLine="133" startPosition="39" endLine="134" endPosition="53" />
-    <scopeInfo nodeId="1182113674817469653" fileName="LanguagesKeymapManager.java" startLine="47" startPosition="67" endLine="49" endPosition="66" />
-    <scopeInfo nodeId="1182113674817469688" fileName="LanguagesKeymapManager.java" startLine="60" startPosition="31" endLine="62" endPosition="51" />
-    <scopeInfo nodeId="1182113674817469710" fileName="LanguagesKeymapManager.java" startLine="73" startPosition="34" endLine="75" endPosition="62" />
-    <scopeInfo nodeId="1182113674817469570" fileName="LanguagesKeymapManager.java" startLine="128" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="1182113674817469721" fileName="LanguagesKeymapManager.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="1182113674817469882" fileName="LanguagesKeymapManager.java" startLine="119" startPosition="0" endLine="122" endPosition="0">
-      <varInfo nodeId="1182113674817469885" varName="language" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817469635" fileName="LanguagesKeymapManager.java" startLine="123" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="1182113674817469585" fileName="LanguagesKeymapManager.java" startLine="132" startPosition="53" endLine="135" endPosition="7" />
-    <scopeInfo nodeId="1182113674817469607" fileName="LanguagesKeymapManager.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1182113674817469644" fileName="LanguagesKeymapManager.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="2481791643076261667" varName="coreComponents" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817469669" fileName="LanguagesKeymapManager.java" startLine="52" startPosition="66" endLine="56" endPosition="60" />
-    <scopeInfo nodeId="1182113674817469802" fileName="LanguagesKeymapManager.java" startLine="91" startPosition="36" endLine="95" endPosition="13">
-      <varInfo nodeId="1182113674817469804" varName="keyMap" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817469685" fileName="LanguagesKeymapManager.java" startLine="59" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="1182113674817469707" fileName="LanguagesKeymapManager.java" startLine="72" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="1182113674817469662" fileName="LanguagesKeymapManager.java" startLine="52" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="1182113674817469666" varName="l" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817469699" fileName="LanguagesKeymapManager.java" startLine="65" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1182113674817469580" fileName="LanguagesKeymapManager.java" startLine="131" startPosition="0" endLine="137" endPosition="0">
-      <varInfo nodeId="1182113674817469583" varName="module" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817469791" fileName="LanguagesKeymapManager.java" startLine="89" startPosition="13" endLine="96" endPosition="11">
-      <varInfo nodeId="1182113674817469793" varName="keyMapClass" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817469831" fileName="LanguagesKeymapManager.java" startLine="107" startPosition="73" endLine="116" endPosition="59">
-      <varInfo nodeId="1182113674817540189" varName="fqName" />
-      <varInfo nodeId="1182113674817469862" varName="language" />
-      <varInfo nodeId="1182113674817469848" varName="languageNamespace" />
-      <varInfo nodeId="1182113674817469838" varName="namespace" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817540160" fileName="LanguagesKeymapManager.java" startLine="88" startPosition="162" endLine="99" endPosition="9" />
-    <scopeInfo nodeId="1182113674817469825" fileName="LanguagesKeymapManager.java" startLine="107" startPosition="0" endLine="118" endPosition="0">
-      <varInfo nodeId="1182113674817469829" varName="declaration" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817540157" fileName="LanguagesKeymapManager.java" startLine="87" startPosition="63" endLine="100" endPosition="7">
-      <varInfo nodeId="1182113674817540158" varName="keyMapDeclaration" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817469766" fileName="LanguagesKeymapManager.java" startLine="86" startPosition="30" endLine="100" endPosition="7" />
-    <scopeInfo nodeId="1182113674817469734" fileName="LanguagesKeymapManager.java" startLine="82" startPosition="59" endLine="104" endPosition="69">
-      <varInfo nodeId="1182113674817540135" varName="editorModel" />
-      <varInfo nodeId="1182113674817469736" varName="editorModelDescriptor" />
-      <varInfo nodeId="1182113674817538824" varName="keyMaps" />
-    </scopeInfo>
-    <scopeInfo nodeId="1182113674817469729" fileName="LanguagesKeymapManager.java" startLine="82" startPosition="0" endLine="106" endPosition="0">
-      <varInfo nodeId="1182113674817469732" varName="language" />
-    </scopeInfo>
-    <unitInfo nodeId="1182113674817469606" fileName="LanguagesKeymapManager.java" startLine="36" startPosition="46" endLine="41" endPosition="3" unitName="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager$1" />
-    <unitInfo nodeId="1182113674817469567" fileName="LanguagesKeymapManager.java" startLine="127" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager$MyModuleRepositoryListener" />
-    <unitInfo nodeId="1182113674817469564" fileName="LanguagesKeymapManager.java" startLine="34" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager" />
+    <file name="LanguagesKeymapManager.java">
+      <node id="1182113674817469596" at="35,0,36,0" concept="11" trace="LOG" />
+      <node id="1182113674817469611" at="38,26,39,20" concept="3" />
+      <node id="1182113674817473378" at="42,0,43,0" concept="4" trace="myLanguagesToKeyMaps" />
+      <node id="1182113674817469624" at="43,0,44,0" concept="4" trace="myListener" />
+      <node id="1182113674817469629" at="44,0,45,0" concept="4" trace="myRepository" />
+      <node id="1182113674817469632" at="45,0,46,0" concept="4" trace="myClassLoaderManager" />
+      <node id="1182113674817469654" at="47,67,48,56" concept="3" />
+      <node id="1182113674817469658" at="48,56,49,66" concept="3" />
+      <node id="1182113674817469677" at="53,70,54,33" concept="3" />
+      <node id="1182113674817469680" at="55,5,56,60" concept="9" />
+      <node id="1182113674817469689" at="60,31,61,59" concept="3" />
+      <node id="1182113674817469694" at="61,59,62,51" concept="3" />
+      <node id="1182113674817469703" at="68,36,69,37" concept="9" />
+      <node id="1182113674817469711" at="73,34,74,54" concept="3" />
+      <node id="1182113674817469716" at="74,54,75,62" concept="3" />
+      <node id="1182113674817469725" at="78,30,79,54" concept="3" />
+      <node id="1182113674817469735" at="82,59,83,71" concept="8" />
+      <node id="1182113674817540134" at="83,71,84,88" concept="8" />
+      <node id="1182113674817538823" at="84,88,85,25" concept="8" />
+      <node id="1182113674817538829" at="86,30,87,63" concept="3" />
+      <node id="1182113674817469792" at="89,13,90,86" concept="8" />
+      <node id="1182113674817469803" at="91,36,92,54" concept="8" />
+      <node id="1182113674817540166" at="93,52,94,64" concept="3" />
+      <node id="1182113674817469784" at="97,31,98,29" concept="3" />
+      <node id="1182113674817469762" at="101,12,102,40" concept="3" />
+      <node id="1182113674817538812" at="103,5,104,69" concept="3" />
+      <node id="1182113674817540188" at="107,73,108,131" concept="8" />
+      <node id="1182113674817469837" at="108,131,109,62" concept="8" />
+      <node id="1182113674817469842" at="109,62,110,41" concept="0" />
+      <node id="1182113674817469847" at="110,41,111,95" concept="8" />
+      <node id="1182113674817469861" at="111,95,112,106" concept="8" />
+      <node id="1182113674817469875" at="113,27,114,18" concept="9" />
+      <node id="1182113674817469877" at="115,5,116,59" concept="9" />
+      <node id="1182113674817540198" at="119,61,120,66" concept="3" />
+      <node id="1182113674817469639" at="123,54,124,90" concept="9" />
+      <node id="1182113674817469591" at="133,39,134,53" concept="3" />
+      <node id="1182113674817469760" at="101,10,103,5" concept="1" />
+      <node id="1182113674817469570" at="128,0,130,0" concept="2" trace="MyModuleRepositoryListener#()V" />
+      <node id="1182113674817469670" at="52,66,55,5" concept="6" />
+      <node id="1182113674817469721" at="78,0,81,0" concept="7" trace="clearCaches#()V" />
+      <node id="1182113674817469809" at="92,54,95,13" concept="6" />
+      <node id="1182113674817469870" at="112,106,115,5" concept="6" />
+      <node id="1182113674817469882" at="119,0,122,0" concept="7" trace="unregisterLanguageKeyMaps#(Ljetbrains/mps/smodel/Language;)V" />
+      <node id="1182113674817469635" at="123,0,126,0" concept="12" trace="getInstance#()Ljetbrains/mps/editor/runtime/impl/LanguagesKeymapManager;" />
+      <node id="1182113674817469586" at="132,53,135,7" concept="6" />
+      <node id="1182113674817469607" at="37,0,41,0" concept="7" trace="unload#()V" />
+      <node id="1182113674817469644" at="47,0,51,0" concept="2" trace="LanguagesKeymapManager#(Ljetbrains/mps/ide/MPSCoreComponents;)V" />
+      <node id="1182113674817469685" at="59,0,64,0" concept="7" trace="initComponent#()V" />
+      <node id="1182113674817469707" at="72,0,77,0" concept="7" trace="disposeComponent#()V" />
+      <node id="1182113674817469601" at="36,0,42,0" concept="4" trace="myReloadHandler" />
+      <node id="1182113674817469662" at="52,0,58,0" concept="7" trace="getKeyMapsForLanguage#(Ljetbrains/mps/smodel/Language;)Ljava/util/List;" />
+      <node id="1182113674817469699" at="65,0,71,0" concept="7" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="1182113674817469798" at="90,86,96,11" concept="6" />
+      <node id="1182113674817469580" at="131,0,137,0" concept="7" trace="beforeModuleRemoved#(Lorg/jetbrains/mps/openapi/module/SModule;)V" />
+      <node id="1182113674817469781" at="88,162,99,9" concept="13" />
+      <node id="1182113674817469825" at="107,0,118,0" concept="7" trace="findKeyMapClassByDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Class;" />
+      <node id="1182113674817540157" at="87,63,100,7" concept="5" />
+      <node id="1182113674817469756" at="85,25,103,5" concept="6" />
+      <node id="1182113674817469729" at="82,0,106,0" concept="7" trace="registerLanguageKeyMaps#(Ljetbrains/mps/smodel/Language;)V" />
+      <scope id="1182113674817469573" at="128,42,128,42" />
+      <scope id="1182113674817469610" at="38,26,39,20" />
+      <scope id="1182113674817469676" at="53,70,54,33" />
+      <scope id="1182113674817469702" at="68,36,69,37" />
+      <scope id="1182113674817469724" at="78,30,79,54" />
+      <scope id="1182113674817469813" at="93,52,94,64" />
+      <scope id="1182113674817469782" at="97,0,98,29">
+        <var name="t" id="1182113674817469789" />
+      </scope>
+      <scope id="1182113674817469783" at="97,31,98,29" />
+      <scope id="1182113674817469761" at="101,12,102,40" />
+      <scope id="1182113674817469874" at="113,27,114,18" />
+      <scope id="1182113674817469887" at="119,61,120,66" />
+      <scope id="1182113674817469638" at="123,54,124,90" />
+      <scope id="1182113674817469590" at="133,39,134,53" />
+      <scope id="1182113674817469653" at="47,67,49,66" />
+      <scope id="1182113674817469688" at="60,31,62,51" />
+      <scope id="1182113674817469710" at="73,34,75,62" />
+      <scope id="1182113674817469570" at="128,0,130,0" />
+      <scope id="1182113674817469721" at="78,0,81,0" />
+      <scope id="1182113674817469882" at="119,0,122,0">
+        <var name="language" id="1182113674817469885" />
+      </scope>
+      <scope id="1182113674817469635" at="123,0,126,0" />
+      <scope id="1182113674817469585" at="132,53,135,7" />
+      <scope id="1182113674817469607" at="37,0,41,0" />
+      <scope id="1182113674817469644" at="47,0,51,0">
+        <var name="coreComponents" id="2481791643076261667" />
+      </scope>
+      <scope id="1182113674817469669" at="52,66,56,60" />
+      <scope id="1182113674817469802" at="91,36,95,13">
+        <var name="keyMap" id="1182113674817469804" />
+      </scope>
+      <scope id="1182113674817469685" at="59,0,64,0" />
+      <scope id="1182113674817469707" at="72,0,77,0" />
+      <scope id="1182113674817469662" at="52,0,58,0">
+        <var name="l" id="1182113674817469666" />
+      </scope>
+      <scope id="1182113674817469699" at="65,0,71,0" />
+      <scope id="1182113674817469580" at="131,0,137,0">
+        <var name="module" id="1182113674817469583" />
+      </scope>
+      <scope id="1182113674817469791" at="89,13,96,11">
+        <var name="keyMapClass" id="1182113674817469793" />
+      </scope>
+      <scope id="1182113674817469831" at="107,73,116,59">
+        <var name="fqName" id="1182113674817540189" />
+        <var name="language" id="1182113674817469862" />
+        <var name="languageNamespace" id="1182113674817469848" />
+        <var name="namespace" id="1182113674817469838" />
+      </scope>
+      <scope id="1182113674817540160" at="88,162,99,9" />
+      <scope id="1182113674817469825" at="107,0,118,0">
+        <var name="declaration" id="1182113674817469829" />
+      </scope>
+      <scope id="1182113674817540157" at="87,63,100,7">
+        <var name="keyMapDeclaration" id="1182113674817540158" />
+      </scope>
+      <scope id="1182113674817469766" at="86,30,100,7" />
+      <scope id="1182113674817469734" at="82,59,104,69">
+        <var name="editorModel" id="1182113674817540135" />
+        <var name="editorModelDescriptor" id="1182113674817469736" />
+        <var name="keyMaps" id="1182113674817538824" />
+      </scope>
+      <scope id="1182113674817469729" at="82,0,106,0">
+        <var name="language" id="1182113674817469732" />
+      </scope>
+      <unit id="1182113674817469606" at="36,46,41,3" name="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager$1" />
+      <unit id="1182113674817469567" at="127,0,138,0" name="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager$MyModuleRepositoryListener" />
+      <unit id="1182113674817469564" at="34,0,139,0" name="jetbrains.mps.editor.runtime.impl.LanguagesKeymapManager" />
+    </file>
   </root>
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/1482016848005717282">
-    <nodeInfo nodeId="1482016848005719050" fileName="DataTransferUtil.java" startLine="12" startPosition="62" endLine="13" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1482016848005717284" fileName="DataTransferUtil.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DataTransferUtil#()V" />
-    <nodeInfo nodeId="1482016848005719042" fileName="DataTransferUtil.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isAbstract#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="1482016848005717287" fileName="DataTransferUtil.java" startLine="9" startPosition="29" endLine="9" endPosition="29" />
-    <scopeInfo nodeId="1482016848005719045" fileName="DataTransferUtil.java" startLine="12" startPosition="62" endLine="13" endPosition="74" />
-    <scopeInfo nodeId="1482016848005717284" fileName="DataTransferUtil.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="1482016848005719042" fileName="DataTransferUtil.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="1482016848005719047" varName="conceptDeclaration" />
-    </scopeInfo>
-    <unitInfo nodeId="1482016848005717282" fileName="DataTransferUtil.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.DataTransferUtil" />
+    <file name="DataTransferUtil.java">
+      <node id="1482016848005719050" at="12,62,13,74" concept="9" />
+      <node id="1482016848005717284" at="9,0,11,0" concept="2" trace="DataTransferUtil#()V" />
+      <node id="1482016848005719042" at="12,0,15,0" concept="12" trace="isAbstract#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="1482016848005717287" at="9,29,9,29" />
+      <scope id="1482016848005719045" at="12,62,13,74" />
+      <scope id="1482016848005717284" at="9,0,11,0" />
+      <scope id="1482016848005719042" at="12,0,15,0">
+        <var name="conceptDeclaration" id="1482016848005719047" />
+      </scope>
+      <unit id="1482016848005717282" at="8,0,16,0" name="jetbrains.mps.editor.runtime.impl.DataTransferUtil" />
+    </file>
   </root>
   <root nodeRef="r:8095f777-2745-40ce-ad34-6655ef50b7cc(jetbrains.mps.editor.runtime.impl)/444720911773080383">
-    <nodeInfo nodeId="5031719587736552250" fileName="NodeSubstituteActionsComparator.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContainingRoot" />
-    <nodeInfo nodeId="5031719587736552261" fileName="NodeSubstituteActionsComparator.java" startLine="14" startPosition="64" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5031719587736519862" fileName="NodeSubstituteActionsComparator.java" startLine="19" startPosition="74" endLine="20" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5031719587736519868" fileName="NodeSubstituteActionsComparator.java" startLine="20" startPosition="53" endLine="21" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5031719587736552174" fileName="NodeSubstituteActionsComparator.java" startLine="21" startPosition="53" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5031719587736552197" fileName="NodeSubstituteActionsComparator.java" startLine="23" startPosition="38" endLine="24" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5031719587736552194" fileName="NodeSubstituteActionsComparator.java" startLine="25" startPosition="12" endLine="26" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5031719587736552020" fileName="NodeSubstituteActionsComparator.java" startLine="31" startPosition="115" endLine="32" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5031719587736552034" fileName="NodeSubstituteActionsComparator.java" startLine="33" startPosition="122" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5031719587736552040" fileName="NodeSubstituteActionsComparator.java" startLine="35" startPosition="5" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5031719587736560464" fileName="NodeSubstituteActionsComparator.java" startLine="36" startPosition="0" endLine="37" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5031719587736552272" fileName="NodeSubstituteActionsComparator.java" startLine="38" startPosition="60" endLine="39" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5031719587736552303" fileName="NodeSubstituteActionsComparator.java" startLine="40" startPosition="67" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5031719587736552293" fileName="NodeSubstituteActionsComparator.java" startLine="42" startPosition="5" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5031719587736552333" fileName="NodeSubstituteActionsComparator.java" startLine="44" startPosition="71" endLine="45" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5031719587736552361" fileName="NodeSubstituteActionsComparator.java" startLine="46" startPosition="78" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5031719587736552385" fileName="NodeSubstituteActionsComparator.java" startLine="48" startPosition="5" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5031719587736552403" fileName="NodeSubstituteActionsComparator.java" startLine="49" startPosition="0" endLine="50" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5031719587736552413" fileName="NodeSubstituteActionsComparator.java" startLine="50" startPosition="119" endLine="51" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5031719587736552146" fileName="NodeSubstituteActionsComparator.java" startLine="52" startPosition="35" endLine="53" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5031719587736552438" fileName="NodeSubstituteActionsComparator.java" startLine="55" startPosition="32" endLine="56" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5031719587736552167" fileName="NodeSubstituteActionsComparator.java" startLine="57" startPosition="37" endLine="58" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5031719587736552170" fileName="NodeSubstituteActionsComparator.java" startLine="60" startPosition="5" endLine="61" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5031719587736552234" fileName="NodeSubstituteActionsComparator.java" startLine="25" startPosition="10" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="444720911773080385" fileName="NodeSubstituteActionsComparator.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeSubstituteActionsComparator#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5031719587736552141" fileName="NodeSubstituteActionsComparator.java" startLine="51" startPosition="119" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5031719587736552162" fileName="NodeSubstituteActionsComparator.java" startLine="56" startPosition="121" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5031719587736552178" fileName="NodeSubstituteActionsComparator.java" startLine="22" startPosition="0" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5031719587736552018" fileName="NodeSubstituteActionsComparator.java" startLine="30" startPosition="49" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5031719587736552055" fileName="NodeSubstituteActionsComparator.java" startLine="37" startPosition="71" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5031719587736552087" fileName="NodeSubstituteActionsComparator.java" startLine="43" startPosition="0" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5031719587736552148" fileName="NodeSubstituteActionsComparator.java" startLine="54" startPosition="5" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="444720911773120548" fileName="NodeSubstituteActionsComparator.java" startLine="18" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/openapi/editor/cells/SubstituteAction;Ljetbrains/mps/openapi/editor/cells/SubstituteAction;)I" />
-    <nodeInfo nodeId="5031719587736552002" fileName="NodeSubstituteActionsComparator.java" startLine="30" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)I" />
-    <scopeInfo nodeId="444720911773080388" fileName="NodeSubstituteActionsComparator.java" startLine="14" startPosition="64" endLine="15" endPosition="38" />
-    <scopeInfo nodeId="5031719587736552179" fileName="NodeSubstituteActionsComparator.java" startLine="23" startPosition="38" endLine="24" endPosition="98" />
-    <scopeInfo nodeId="5031719587736552235" fileName="NodeSubstituteActionsComparator.java" startLine="25" startPosition="12" endLine="26" endPosition="51" />
-    <scopeInfo nodeId="5031719587736552019" fileName="NodeSubstituteActionsComparator.java" startLine="31" startPosition="115" endLine="32" endPosition="128" />
-    <scopeInfo nodeId="5031719587736552033" fileName="NodeSubstituteActionsComparator.java" startLine="33" startPosition="122" endLine="34" endPosition="16" />
-    <scopeInfo nodeId="5031719587736552073" fileName="NodeSubstituteActionsComparator.java" startLine="38" startPosition="60" endLine="39" endPosition="73" />
-    <scopeInfo nodeId="5031719587736552295" fileName="NodeSubstituteActionsComparator.java" startLine="40" startPosition="67" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="5031719587736552105" fileName="NodeSubstituteActionsComparator.java" startLine="44" startPosition="71" endLine="45" endPosition="84" />
-    <scopeInfo nodeId="5031719587736552353" fileName="NodeSubstituteActionsComparator.java" startLine="46" startPosition="78" endLine="47" endPosition="16" />
-    <scopeInfo nodeId="5031719587736552145" fileName="NodeSubstituteActionsComparator.java" startLine="52" startPosition="35" endLine="53" endPosition="15" />
-    <scopeInfo nodeId="5031719587736552166" fileName="NodeSubstituteActionsComparator.java" startLine="57" startPosition="37" endLine="58" endPosition="18" />
-    <scopeInfo nodeId="444720911773080385" fileName="NodeSubstituteActionsComparator.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="5031719587736552243" varName="containingRoot" />
-    </scopeInfo>
-    <scopeInfo nodeId="5031719587736552152" fileName="NodeSubstituteActionsComparator.java" startLine="55" startPosition="32" endLine="59" endPosition="7" />
-    <scopeInfo nodeId="444720911773120555" fileName="NodeSubstituteActionsComparator.java" startLine="19" startPosition="74" endLine="27" endPosition="5">
-      <varInfo nodeId="5031719587736519863" varName="parameter1" />
-      <varInfo nodeId="5031719587736519869" varName="parameter2" />
-    </scopeInfo>
-    <scopeInfo nodeId="444720911773120548" fileName="NodeSubstituteActionsComparator.java" startLine="18" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="444720911773120551" varName="action1" />
-      <varInfo nodeId="444720911773120553" varName="action2" />
-    </scopeInfo>
-    <scopeInfo nodeId="5031719587736552005" fileName="NodeSubstituteActionsComparator.java" startLine="30" startPosition="49" endLine="61" endPosition="13">
-      <varInfo nodeId="5031719587736552404" varName="container1" />
-      <varInfo nodeId="5031719587736552414" varName="container2" />
-      <varInfo nodeId="5031719587736560465" varName="containigModel" />
-    </scopeInfo>
-    <scopeInfo nodeId="5031719587736552002" fileName="NodeSubstituteActionsComparator.java" startLine="30" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="5031719587736552008" varName="node1" />
-      <varInfo nodeId="5031719587736552010" varName="node2" />
-    </scopeInfo>
-    <unitInfo nodeId="444720911773080383" fileName="NodeSubstituteActionsComparator.java" startLine="11" startPosition="0" endLine="64" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator" />
+    <file name="NodeSubstituteActionsComparator.java">
+      <node id="5031719587736552250" at="12,0,13,0" concept="4" trace="myContainingRoot" />
+      <node id="5031719587736552261" at="14,64,15,38" concept="3" />
+      <node id="5031719587736519862" at="19,74,20,53" concept="8" />
+      <node id="5031719587736519868" at="20,53,21,53" concept="8" />
+      <node id="5031719587736552174" at="21,53,22,0" concept="10" />
+      <node id="5031719587736552197" at="23,38,24,98" concept="9" />
+      <node id="5031719587736552194" at="25,12,26,51" concept="9" />
+      <node id="5031719587736552020" at="31,115,32,128" concept="9" />
+      <node id="5031719587736552034" at="33,122,34,16" concept="9" />
+      <node id="5031719587736552040" at="35,5,36,0" concept="10" />
+      <node id="5031719587736560464" at="36,0,37,71" concept="8" />
+      <node id="5031719587736552272" at="38,60,39,73" concept="9" />
+      <node id="5031719587736552303" at="40,67,41,16" concept="9" />
+      <node id="5031719587736552293" at="42,5,43,0" concept="10" />
+      <node id="5031719587736552333" at="44,71,45,84" concept="9" />
+      <node id="5031719587736552361" at="46,78,47,16" concept="9" />
+      <node id="5031719587736552385" at="48,5,49,0" concept="10" />
+      <node id="5031719587736552403" at="49,0,50,119" concept="8" />
+      <node id="5031719587736552413" at="50,119,51,119" concept="8" />
+      <node id="5031719587736552146" at="52,35,53,15" concept="9" />
+      <node id="5031719587736552438" at="55,32,56,121" concept="3" />
+      <node id="5031719587736552167" at="57,37,58,18" concept="9" />
+      <node id="5031719587736552170" at="60,5,61,13" concept="9" />
+      <node id="5031719587736552234" at="25,10,27,5" concept="1" />
+      <node id="444720911773080385" at="14,0,17,0" concept="2" trace="NodeSubstituteActionsComparator#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5031719587736552141" at="51,119,54,5" concept="6" />
+      <node id="5031719587736552162" at="56,121,59,7" concept="6" />
+      <node id="5031719587736552178" at="22,0,27,5" concept="6" />
+      <node id="5031719587736552018" at="30,49,35,5" concept="6" />
+      <node id="5031719587736552055" at="37,71,42,5" concept="6" />
+      <node id="5031719587736552087" at="43,0,48,5" concept="6" />
+      <node id="5031719587736552148" at="54,5,60,5" concept="14" />
+      <node id="444720911773120548" at="18,0,29,0" concept="7" trace="compare#(Ljetbrains/mps/openapi/editor/cells/SubstituteAction;Ljetbrains/mps/openapi/editor/cells/SubstituteAction;)I" />
+      <node id="5031719587736552002" at="30,0,63,0" concept="7" trace="compare#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)I" />
+      <scope id="444720911773080388" at="14,64,15,38" />
+      <scope id="5031719587736552179" at="23,38,24,98" />
+      <scope id="5031719587736552235" at="25,12,26,51" />
+      <scope id="5031719587736552019" at="31,115,32,128" />
+      <scope id="5031719587736552033" at="33,122,34,16" />
+      <scope id="5031719587736552073" at="38,60,39,73" />
+      <scope id="5031719587736552295" at="40,67,41,16" />
+      <scope id="5031719587736552105" at="44,71,45,84" />
+      <scope id="5031719587736552353" at="46,78,47,16" />
+      <scope id="5031719587736552145" at="52,35,53,15" />
+      <scope id="5031719587736552166" at="57,37,58,18" />
+      <scope id="444720911773080385" at="14,0,17,0">
+        <var name="containingRoot" id="5031719587736552243" />
+      </scope>
+      <scope id="5031719587736552152" at="55,32,59,7" />
+      <scope id="444720911773120555" at="19,74,27,5">
+        <var name="parameter1" id="5031719587736519863" />
+        <var name="parameter2" id="5031719587736519869" />
+      </scope>
+      <scope id="444720911773120548" at="18,0,29,0">
+        <var name="action1" id="444720911773120551" />
+        <var name="action2" id="444720911773120553" />
+      </scope>
+      <scope id="5031719587736552005" at="30,49,61,13">
+        <var name="container1" id="5031719587736552404" />
+        <var name="container2" id="5031719587736552414" />
+        <var name="containigModel" id="5031719587736560465" />
+      </scope>
+      <scope id="5031719587736552002" at="30,0,63,0">
+        <var name="node1" id="5031719587736552008" />
+        <var name="node2" id="5031719587736552010" />
+      </scope>
+      <unit id="444720911773080383" at="11,0,64,0" name="jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

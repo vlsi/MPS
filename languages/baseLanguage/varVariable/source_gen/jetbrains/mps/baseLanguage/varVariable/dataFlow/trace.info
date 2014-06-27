@@ -1,20 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.dataFlow.DFABuilders" />
-  <root nodeRef="r:04eb0d47-e25d-4def-b754-199026c42388(jetbrains.mps.baseLanguage.varVariable.dataFlow)/8067700594454574148">
-    <nodeInfo nodeId="1206990208534" fileName="VarVariableDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8067700594454574165" fileName="VarVariableDeclaration_DataFlow.java" startLine="16" startPosition="139" endLine="17" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8067700594454574178" fileName="VarVariableDeclaration_DataFlow.java" startLine="17" startPosition="108" endLine="18" endPosition="235" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8067700594454574148" fileName="VarVariableDeclaration_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="VarVariableDeclaration_DataFlow#()V" />
-    <nodeInfo nodeId="8067700594454574148" fileName="VarVariableDeclaration_DataFlow.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-    <scopeInfo nodeId="8067700594454574148" fileName="VarVariableDeclaration_DataFlow.java" startLine="12" startPosition="44" endLine="12" endPosition="44" />
-    <scopeInfo nodeId="8067700594454574148" fileName="VarVariableDeclaration_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="8067700594454574150" fileName="VarVariableDeclaration_DataFlow.java" startLine="15" startPosition="102" endLine="18" endPosition="235" />
-    <scopeInfo nodeId="8067700594454574148" fileName="VarVariableDeclaration_DataFlow.java" startLine="15" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="8067700594454574148" varName="_context" />
-      <varInfo nodeId="8067700594454574148" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="8067700594454574148" fileName="VarVariableDeclaration_DataFlow.java" startLine="11" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.varVariable.dataFlow.VarVariableDeclaration_DataFlow" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root>
+    <file name="DFABuilders.java">
+      <unit at="8,0,13,0" name="jetbrains.mps.baseLanguage.varVariable.dataFlow.DFABuilders" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:04eb0d47-e25d-4def-b754-199026c42388(jetbrains.mps.baseLanguage.varVariable.dataFlow)/8067700594454574148">
+    <file name="VarVariableDeclaration_DataFlow.java">
+      <node id="1206990208534" at="15,102,16,139" concept="1" />
+      <node id="8067700594454574165" at="16,139,17,108" concept="1" />
+      <node id="8067700594454574178" at="17,108,18,235" concept="1" />
+      <node id="8067700594454574148" at="12,0,14,0" concept="0" trace="VarVariableDeclaration_DataFlow#()V" />
+      <node id="8067700594454574148" at="15,0,20,0" concept="2" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="8067700594454574148" at="12,44,12,44" />
+      <scope id="8067700594454574148" at="12,0,14,0" />
+      <scope id="8067700594454574150" at="15,102,18,235" />
+      <scope id="8067700594454574148" at="15,0,20,0">
+        <var name="_context" id="8067700594454574148" />
+        <var name="operationContext" id="8067700594454574148" />
+      </scope>
+      <unit id="8067700594454574148" at="11,0,21,0" name="jetbrains.mps.baseLanguage.varVariable.dataFlow.VarVariableDeclaration_DataFlow" />
+    </file>
+  </root>
+</debug-info>
 

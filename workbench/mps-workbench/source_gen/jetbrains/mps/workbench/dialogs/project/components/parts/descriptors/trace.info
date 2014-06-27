@@ -1,126 +1,147 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499489453">
-    <nodeInfo nodeId="1560298786499489465" fileName="EditableStringDescriptor.java" startLine="11" startPosition="74" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499489473" fileName="EditableStringDescriptor.java" startLine="16" startPosition="41" endLine="17" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499489456" fileName="EditableStringDescriptor.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditableStringDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="1560298786499489469" fileName="EditableStringDescriptor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditor#()Ljavax/swing/table/TableCellEditor;" />
-    <scopeInfo nodeId="1560298786499489464" fileName="EditableStringDescriptor.java" startLine="11" startPosition="74" endLine="12" endPosition="31" />
-    <scopeInfo nodeId="1560298786499489472" fileName="EditableStringDescriptor.java" startLine="16" startPosition="41" endLine="17" endPosition="51" />
-    <scopeInfo nodeId="1560298786499489456" fileName="EditableStringDescriptor.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="1560298786499489460" varName="header" />
-      <varInfo nodeId="1560298786499489458" varName="name" />
-      <varInfo nodeId="1560298786499489462" varName="width" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499489469" fileName="EditableStringDescriptor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="1560298786499489453" fileName="EditableStringDescriptor.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.EditableStringDescriptor" />
+    <file name="EditableStringDescriptor.java">
+      <node id="1560298786499489465" at="11,74,12,31" concept="6" />
+      <node id="1560298786499489473" at="16,41,17,51" concept="5" />
+      <node id="1560298786499489456" at="11,0,14,0" concept="0" trace="EditableStringDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
+      <node id="1560298786499489469" at="15,0,19,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
+      <scope id="1560298786499489464" at="11,74,12,31" />
+      <scope id="1560298786499489472" at="16,41,17,51" />
+      <scope id="1560298786499489456" at="11,0,14,0">
+        <var name="header" id="1560298786499489460" />
+        <var name="name" id="1560298786499489458" />
+        <var name="width" id="1560298786499489462" />
+      </scope>
+      <scope id="1560298786499489469" at="15,0,19,0" />
+      <unit id="1560298786499489453" at="10,0,20,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.EditableStringDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499491464">
-    <nodeInfo nodeId="1560298786499491476" fileName="StringPathDescriptor.java" startLine="11" startPosition="70" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499491484" fileName="StringPathDescriptor.java" startLine="16" startPosition="45" endLine="17" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499491467" fileName="StringPathDescriptor.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringPathDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="1560298786499491480" fileName="StringPathDescriptor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-    <scopeInfo nodeId="1560298786499491475" fileName="StringPathDescriptor.java" startLine="11" startPosition="70" endLine="12" endPosition="31" />
-    <scopeInfo nodeId="1560298786499491483" fileName="StringPathDescriptor.java" startLine="16" startPosition="45" endLine="17" endPosition="61" />
-    <scopeInfo nodeId="1560298786499491467" fileName="StringPathDescriptor.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="1560298786499491471" varName="header" />
-      <varInfo nodeId="1560298786499491469" varName="name" />
-      <varInfo nodeId="1560298786499491473" varName="width" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491480" fileName="StringPathDescriptor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="1560298786499491464" fileName="StringPathDescriptor.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor" />
+    <file name="StringPathDescriptor.java">
+      <node id="1560298786499491476" at="11,70,12,31" concept="6" />
+      <node id="1560298786499491484" at="16,45,17,61" concept="5" />
+      <node id="1560298786499491467" at="11,0,14,0" concept="0" trace="StringPathDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
+      <node id="1560298786499491480" at="15,0,19,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <scope id="1560298786499491475" at="11,70,12,31" />
+      <scope id="1560298786499491483" at="16,45,17,61" />
+      <scope id="1560298786499491467" at="11,0,14,0">
+        <var name="header" id="1560298786499491471" />
+        <var name="name" id="1560298786499491469" />
+        <var name="width" id="1560298786499491473" />
+      </scope>
+      <scope id="1560298786499491480" at="15,0,19,0" />
+      <unit id="1560298786499491464" at="10,0,20,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.StringPathDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499491489">
-    <nodeInfo nodeId="1560298786499491501" fileName="BooleanDescriptor.java" startLine="13" startPosition="67" endLine="14" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499491509" fileName="BooleanDescriptor.java" startLine="18" startPosition="45" endLine="19" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499491518" fileName="BooleanDescriptor.java" startLine="23" startPosition="41" endLine="24" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499491492" fileName="BooleanDescriptor.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BooleanDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="1560298786499491505" fileName="BooleanDescriptor.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-    <nodeInfo nodeId="1560298786499491514" fileName="BooleanDescriptor.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditor#()Ljavax/swing/table/TableCellEditor;" />
-    <scopeInfo nodeId="1560298786499491500" fileName="BooleanDescriptor.java" startLine="13" startPosition="67" endLine="14" endPosition="31" />
-    <scopeInfo nodeId="1560298786499491508" fileName="BooleanDescriptor.java" startLine="18" startPosition="45" endLine="19" endPosition="58" />
-    <scopeInfo nodeId="1560298786499491517" fileName="BooleanDescriptor.java" startLine="23" startPosition="41" endLine="24" endPosition="31" />
-    <scopeInfo nodeId="1560298786499491492" fileName="BooleanDescriptor.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="1560298786499491496" varName="header" />
-      <varInfo nodeId="1560298786499491494" varName="name" />
-      <varInfo nodeId="1560298786499491498" varName="width" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491505" fileName="BooleanDescriptor.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="1560298786499491514" fileName="BooleanDescriptor.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <unitInfo nodeId="1560298786499491489" fileName="BooleanDescriptor.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.BooleanDescriptor" />
+    <file name="BooleanDescriptor.java">
+      <node id="1560298786499491501" at="13,67,14,31" concept="6" />
+      <node id="1560298786499491509" at="18,45,19,58" concept="5" />
+      <node id="1560298786499491518" at="23,41,24,31" concept="5" />
+      <node id="1560298786499491492" at="13,0,16,0" concept="0" trace="BooleanDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
+      <node id="1560298786499491505" at="17,0,21,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <node id="1560298786499491514" at="22,0,26,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
+      <scope id="1560298786499491500" at="13,67,14,31" />
+      <scope id="1560298786499491508" at="18,45,19,58" />
+      <scope id="1560298786499491517" at="23,41,24,31" />
+      <scope id="1560298786499491492" at="13,0,16,0">
+        <var name="header" id="1560298786499491496" />
+        <var name="name" id="1560298786499491494" />
+        <var name="width" id="1560298786499491498" />
+      </scope>
+      <scope id="1560298786499491505" at="17,0,21,0" />
+      <scope id="1560298786499491514" at="22,0,26,0" />
+      <unit id="1560298786499491489" at="12,0,27,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.BooleanDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499493471">
-    <nodeInfo nodeId="1560298786499493483" fileName="ModuleDescriptor.java" startLine="11" startPosition="66" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499493491" fileName="ModuleDescriptor.java" startLine="16" startPosition="45" endLine="17" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499493474" fileName="ModuleDescriptor.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="1560298786499493487" fileName="ModuleDescriptor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-    <scopeInfo nodeId="1560298786499493482" fileName="ModuleDescriptor.java" startLine="11" startPosition="66" endLine="12" endPosition="31" />
-    <scopeInfo nodeId="1560298786499493490" fileName="ModuleDescriptor.java" startLine="16" startPosition="45" endLine="17" endPosition="67" />
-    <scopeInfo nodeId="1560298786499493474" fileName="ModuleDescriptor.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="1560298786499493478" varName="header" />
-      <varInfo nodeId="1560298786499493476" varName="name" />
-      <varInfo nodeId="1560298786499493480" varName="width" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499493487" fileName="ModuleDescriptor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="1560298786499493471" fileName="ModuleDescriptor.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleDescriptor" />
+    <file name="ModuleDescriptor.java">
+      <node id="1560298786499493483" at="11,66,12,31" concept="6" />
+      <node id="1560298786499493491" at="16,45,17,67" concept="5" />
+      <node id="1560298786499493474" at="11,0,14,0" concept="0" trace="ModuleDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
+      <node id="1560298786499493487" at="15,0,19,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <scope id="1560298786499493482" at="11,66,12,31" />
+      <scope id="1560298786499493490" at="16,45,17,67" />
+      <scope id="1560298786499493474" at="11,0,14,0">
+        <var name="header" id="1560298786499493478" />
+        <var name="name" id="1560298786499493476" />
+        <var name="width" id="1560298786499493480" />
+      </scope>
+      <scope id="1560298786499493487" at="15,0,19,0" />
+      <unit id="1560298786499493471" at="10,0,20,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModuleDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499494704">
-    <nodeInfo nodeId="1560298786499494707" fileName="ManagerDescriptor.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
-    <nodeInfo nodeId="1560298786499494721" fileName="ManagerDescriptor.java" startLine="16" startPosition="88" endLine="17" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499494725" fileName="ManagerDescriptor.java" startLine="17" startPosition="31" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499494735" fileName="ManagerDescriptor.java" startLine="22" startPosition="41" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499494745" fileName="ManagerDescriptor.java" startLine="27" startPosition="45" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499494710" fileName="ManagerDescriptor.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ManagerDescriptor#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="1560298786499494731" fileName="ManagerDescriptor.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditor#()Ljavax/swing/table/TableCellEditor;" />
-    <nodeInfo nodeId="1560298786499494741" fileName="ManagerDescriptor.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-    <scopeInfo nodeId="1560298786499494734" fileName="ManagerDescriptor.java" startLine="22" startPosition="41" endLine="23" endPosition="40" />
-    <scopeInfo nodeId="1560298786499494744" fileName="ManagerDescriptor.java" startLine="27" startPosition="45" endLine="28" endPosition="58" />
-    <scopeInfo nodeId="1560298786499494720" fileName="ManagerDescriptor.java" startLine="16" startPosition="88" endLine="18" endPosition="20" />
-    <scopeInfo nodeId="1560298786499494710" fileName="ManagerDescriptor.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="1560298786499494716" varName="header" />
-      <varInfo nodeId="1560298786499494714" varName="name" />
-      <varInfo nodeId="1560298786499494712" varName="owner" />
-      <varInfo nodeId="1560298786499494718" varName="width" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499494731" fileName="ManagerDescriptor.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1560298786499494741" fileName="ManagerDescriptor.java" startLine="26" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="1560298786499494704" fileName="ManagerDescriptor.java" startLine="13" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor" />
+    <file name="ManagerDescriptor.java">
+      <node id="1560298786499494707" at="14,0,15,0" concept="2" trace="myOwner" />
+      <node id="1560298786499494721" at="16,88,17,31" concept="6" />
+      <node id="1560298786499494725" at="17,31,18,20" concept="1" />
+      <node id="1560298786499494735" at="22,41,23,40" concept="5" />
+      <node id="1560298786499494745" at="27,45,28,58" concept="5" />
+      <node id="1560298786499494710" at="16,0,20,0" concept="0" trace="ManagerDescriptor#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/lang/String;I)V" />
+      <node id="1560298786499494731" at="21,0,25,0" concept="3" trace="createEditor#()Ljavax/swing/table/TableCellEditor;" />
+      <node id="1560298786499494741" at="26,0,30,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <scope id="1560298786499494734" at="22,41,23,40" />
+      <scope id="1560298786499494744" at="27,45,28,58" />
+      <scope id="1560298786499494720" at="16,88,18,20" />
+      <scope id="1560298786499494710" at="16,0,20,0">
+        <var name="header" id="1560298786499494716" />
+        <var name="name" id="1560298786499494714" />
+        <var name="owner" id="1560298786499494712" />
+        <var name="width" id="1560298786499494718" />
+      </scope>
+      <scope id="1560298786499494731" at="21,0,25,0" />
+      <scope id="1560298786499494741" at="26,0,30,0" />
+      <unit id="1560298786499494704" at="13,0,31,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ManagerDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499495292">
-    <nodeInfo nodeId="1560298786499495295" fileName="DepDescriptor.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
-    <nodeInfo nodeId="1560298786499495309" fileName="DepDescriptor.java" startLine="14" startPosition="84" endLine="15" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499495313" fileName="DepDescriptor.java" startLine="15" startPosition="31" endLine="16" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499495323" fileName="DepDescriptor.java" startLine="20" startPosition="45" endLine="21" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499495338" fileName="DepDescriptor.java" startLine="21" startPosition="92" endLine="22" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499495298" fileName="DepDescriptor.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DepDescriptor#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="1560298786499495319" fileName="DepDescriptor.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-    <scopeInfo nodeId="1560298786499495308" fileName="DepDescriptor.java" startLine="14" startPosition="84" endLine="16" endPosition="20" />
-    <scopeInfo nodeId="1560298786499495322" fileName="DepDescriptor.java" startLine="20" startPosition="45" endLine="22" endPosition="45">
-      <varInfo nodeId="1560298786499495324" varName="renderer" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499495298" fileName="DepDescriptor.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="1560298786499495304" varName="header" />
-      <varInfo nodeId="1560298786499495302" varName="name" />
-      <varInfo nodeId="1560298786499495300" varName="owner" />
-      <varInfo nodeId="1560298786499495306" varName="width" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499495319" fileName="DepDescriptor.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
-    <unitInfo nodeId="1560298786499495292" fileName="DepDescriptor.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.DepDescriptor" />
+    <file name="DepDescriptor.java">
+      <node id="1560298786499495295" at="12,0,13,0" concept="2" trace="myOwner" />
+      <node id="1560298786499495309" at="14,84,15,31" concept="6" />
+      <node id="1560298786499495313" at="15,31,16,20" concept="1" />
+      <node id="1560298786499495323" at="20,45,21,92" concept="4" />
+      <node id="1560298786499495338" at="21,92,22,45" concept="5" />
+      <node id="1560298786499495298" at="14,0,18,0" concept="0" trace="DepDescriptor#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/lang/String;I)V" />
+      <node id="1560298786499495319" at="19,0,24,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <scope id="1560298786499495308" at="14,84,16,20" />
+      <scope id="1560298786499495322" at="20,45,22,45">
+        <var name="renderer" id="1560298786499495324" />
+      </scope>
+      <scope id="1560298786499495298" at="14,0,18,0">
+        <var name="header" id="1560298786499495304" />
+        <var name="name" id="1560298786499495302" />
+        <var name="owner" id="1560298786499495300" />
+        <var name="width" id="1560298786499495306" />
+      </scope>
+      <scope id="1560298786499495319" at="19,0,24,0" />
+      <unit id="1560298786499495292" at="11,0,25,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.DepDescriptor" />
+    </file>
   </root>
   <root nodeRef="r:d62677ed-8479-4ddb-b75f-f00b4df16e4b(jetbrains.mps.workbench.dialogs.project.components.parts.descriptors)/1560298786499497407">
-    <nodeInfo nodeId="1560298786499497419" fileName="ModelDescriptor.java" startLine="11" startPosition="65" endLine="12" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499497427" fileName="ModelDescriptor.java" startLine="16" startPosition="45" endLine="17" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499497410" fileName="ModelDescriptor.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModelDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
-    <nodeInfo nodeId="1560298786499497423" fileName="ModelDescriptor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
-    <scopeInfo nodeId="1560298786499497418" fileName="ModelDescriptor.java" startLine="11" startPosition="65" endLine="12" endPosition="31" />
-    <scopeInfo nodeId="1560298786499497426" fileName="ModelDescriptor.java" startLine="16" startPosition="45" endLine="17" endPosition="66" />
-    <scopeInfo nodeId="1560298786499497410" fileName="ModelDescriptor.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="1560298786499497414" varName="header" />
-      <varInfo nodeId="1560298786499497412" varName="name" />
-      <varInfo nodeId="1560298786499497416" varName="width" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497423" fileName="ModelDescriptor.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <unitInfo nodeId="1560298786499497407" fileName="ModelDescriptor.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModelDescriptor" />
+    <file name="ModelDescriptor.java">
+      <node id="1560298786499497419" at="11,65,12,31" concept="6" />
+      <node id="1560298786499497427" at="16,45,17,66" concept="5" />
+      <node id="1560298786499497410" at="11,0,14,0" concept="0" trace="ModelDescriptor#(Ljava/lang/String;Ljava/lang/String;I)V" />
+      <node id="1560298786499497423" at="15,0,19,0" concept="3" trace="createRenderer#()Ljavax/swing/table/TableCellRenderer;" />
+      <scope id="1560298786499497418" at="11,65,12,31" />
+      <scope id="1560298786499497426" at="16,45,17,66" />
+      <scope id="1560298786499497410" at="11,0,14,0">
+        <var name="header" id="1560298786499497414" />
+        <var name="name" id="1560298786499497412" />
+        <var name="width" id="1560298786499497416" />
+      </scope>
+      <scope id="1560298786499497423" at="15,0,19,0" />
+      <unit id="1560298786499497407" at="10,0,20,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.descriptors.ModelDescriptor" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

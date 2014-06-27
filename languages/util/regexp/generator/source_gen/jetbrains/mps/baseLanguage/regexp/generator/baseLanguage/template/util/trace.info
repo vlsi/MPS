@@ -1,41 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:00000000-0000-4000-0000-011c8959051b(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util)/7048923897762709721">
-    <nodeInfo nodeId="7048923897762709793" fileName="Flags.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="7048923897762709749" fileName="Flags.java" startLine="16" startPosition="32" endLine="17" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7048923897762709760" fileName="Flags.java" startLine="20" startPosition="33" endLine="21" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7048923897762709774" fileName="Flags.java" startLine="24" startPosition="40" endLine="25" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7048923897762709786" fileName="Flags.java" startLine="28" startPosition="28" endLine="29" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7048923897762709733" fileName="Flags.java" startLine="32" startPosition="44" endLine="33" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7048923897762709723" fileName="Flags.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Flags#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7048923897762709743" fileName="Flags.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flag#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7048923897762709756" fileName="Flags.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7048923897762709769" fileName="Flags.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isFlagged#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7048923897762709783" fileName="Flags.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7048923897762709730" fileName="Flags.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="PREFIX#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="7048923897762709726" fileName="Flags.java" startLine="13" startPosition="22" endLine="13" endPosition="22" />
-    <scopeInfo nodeId="7048923897762709748" fileName="Flags.java" startLine="16" startPosition="32" endLine="17" endPosition="35" />
-    <scopeInfo nodeId="7048923897762709759" fileName="Flags.java" startLine="20" startPosition="33" endLine="21" endPosition="35" />
-    <scopeInfo nodeId="7048923897762709773" fileName="Flags.java" startLine="24" startPosition="40" endLine="25" endPosition="44" />
-    <scopeInfo nodeId="7048923897762709785" fileName="Flags.java" startLine="28" startPosition="28" endLine="29" endPosition="21" />
-    <scopeInfo nodeId="7048923897762709732" fileName="Flags.java" startLine="32" startPosition="44" endLine="33" endPosition="64" />
-    <scopeInfo nodeId="7048923897762709723" fileName="Flags.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="7048923897762709727" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="7048923897762709743" fileName="Flags.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="7048923897762709744" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7048923897762709756" fileName="Flags.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="7048923897762709767" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7048923897762709769" fileName="Flags.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="7048923897762709770" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7048923897762709783" fileName="Flags.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="7048923897762709730" fileName="Flags.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="7048923897762709738" varName="str" />
-    </scopeInfo>
-    <unitInfo nodeId="7048923897762709721" fileName="Flags.java" startLine="7" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.Flags" />
+    <file name="Flags.java">
+      <node id="7048923897762709793" at="11,0,12,0" concept="2" trace="name" />
+      <node id="7048923897762709749" at="16,32,17,35" concept="1" />
+      <node id="7048923897762709760" at="20,33,21,35" concept="1" />
+      <node id="7048923897762709774" at="24,40,25,44" concept="4" />
+      <node id="7048923897762709786" at="28,28,29,21" concept="4" />
+      <node id="7048923897762709733" at="32,44,33,64" concept="4" />
+      <node id="7048923897762709723" at="13,0,15,0" concept="0" trace="Flags#(Ljava/lang/String;)V" />
+      <node id="7048923897762709743" at="16,0,19,0" concept="3" trace="flag#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7048923897762709756" at="20,0,23,0" concept="3" trace="clear#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7048923897762709769" at="24,0,27,0" concept="3" trace="isFlagged#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7048923897762709783" at="28,0,31,0" concept="3" trace="toString#()Ljava/lang/String;" />
+      <node id="7048923897762709730" at="32,0,35,0" concept="5" trace="PREFIX#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="7048923897762709726" at="13,22,13,22" />
+      <scope id="7048923897762709748" at="16,32,17,35" />
+      <scope id="7048923897762709759" at="20,33,21,35" />
+      <scope id="7048923897762709773" at="24,40,25,44" />
+      <scope id="7048923897762709785" at="28,28,29,21" />
+      <scope id="7048923897762709732" at="32,44,33,64" />
+      <scope id="7048923897762709723" at="13,0,15,0">
+        <var name="name" id="7048923897762709727" />
+      </scope>
+      <scope id="7048923897762709743" at="16,0,19,0">
+        <var name="node" id="7048923897762709744" />
+      </scope>
+      <scope id="7048923897762709756" at="20,0,23,0">
+        <var name="node" id="7048923897762709767" />
+      </scope>
+      <scope id="7048923897762709769" at="24,0,27,0">
+        <var name="node" id="7048923897762709770" />
+      </scope>
+      <scope id="7048923897762709783" at="28,0,31,0" />
+      <scope id="7048923897762709730" at="32,0,35,0">
+        <var name="str" id="7048923897762709738" />
+      </scope>
+      <unit id="7048923897762709721" at="7,0,36,0" name="jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.util.Flags" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

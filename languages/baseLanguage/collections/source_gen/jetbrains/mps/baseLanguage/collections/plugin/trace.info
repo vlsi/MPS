@@ -1,143 +1,166 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="ExtensionDescriptor.java" startLine="11" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.ExtensionDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+  <root>
+    <file name="ExtensionDescriptor.java">
+      <unit at="11,0,28,0" name="jetbrains.mps.baseLanguage.collections.plugin.ExtensionDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)/5633688998557455304">
-    <nodeInfo nodeId="5633688998557455304" fileName="Extension_customContainers5633688998557455304_.java" startLine="17" startPosition="59" endLine="18" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5633688998557455310" fileName="Extension_customContainers5633688998557455304_.java" startLine="23" startPosition="35" endLine="24" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557455316" fileName="Extension_customContainers5633688998557455304_.java" startLine="24" startPosition="49" endLine="25" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5633688998557455318" fileName="Extension_customContainers5633688998557455304_.java" startLine="25" startPosition="64" endLine="26" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557455326" fileName="Extension_customContainers5633688998557455304_.java" startLine="26" startPosition="146" endLine="27" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557455334" fileName="Extension_customContainers5633688998557455304_.java" startLine="28" startPosition="26" endLine="29" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5633688998557455344" fileName="Extension_customContainers5633688998557455304_.java" startLine="30" startPosition="9" endLine="31" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5633688998557455304" fileName="Extension_customContainers5633688998557455304_.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Extension_customContainers5633688998557455304_#()V" />
-    <nodeInfo nodeId="5633688998557455332" fileName="Extension_customContainers5633688998557455304_.java" startLine="27" startPosition="26" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5633688998557455308" fileName="Extension_customContainers5633688998557455304_.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/util/List;" />
-    <nodeInfo nodeId="5633688998557455307" fileName="Extension_customContainers5633688998557455304_.java" startLine="21" startPosition="68" endLine="33" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5633688998557455304" fileName="Extension_customContainers5633688998557455304_.java" startLine="21" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;" />
-    <scopeInfo nodeId="5633688998557455304" fileName="Extension_customContainers5633688998557455304_.java" startLine="17" startPosition="59" endLine="18" endPosition="69" />
-    <scopeInfo nodeId="5633688998557455333" fileName="Extension_customContainers5633688998557455304_.java" startLine="28" startPosition="26" endLine="29" endPosition="173" />
-    <scopeInfo nodeId="5633688998557455304" fileName="Extension_customContainers5633688998557455304_.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="5633688998557455309" fileName="Extension_customContainers5633688998557455304_.java" startLine="23" startPosition="35" endLine="31" endPosition="19">
-      <varInfo nodeId="5633688998557455319" varName="desc" />
-      <varInfo nodeId="5633688998557455327" varName="mdl" />
-      <varInfo nodeId="5633688998557455311" varName="res" />
-    </scopeInfo>
-    <scopeInfo nodeId="5633688998557455308" fileName="Extension_customContainers5633688998557455304_.java" startLine="23" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="5633688998557455304" fileName="Extension_customContainers5633688998557455304_.java" startLine="21" startPosition="68" endLine="33" endPosition="6" />
-    <scopeInfo nodeId="5633688998557455304" fileName="Extension_customContainers5633688998557455304_.java" startLine="21" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="5633688998557455308" fileName="Extension_customContainers5633688998557455304_.java" startLine="22" startPosition="15" endLine="33" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers5633688998557455304_$1" />
-    <unitInfo nodeId="5633688998557455304" fileName="Extension_customContainers5633688998557455304_.java" startLine="16" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers5633688998557455304_" />
+    <file name="Extension_customContainers5633688998557455304_.java">
+      <node id="5633688998557455304" at="17,59,18,69" concept="11" />
+      <node id="5633688998557455310" at="23,35,24,49" concept="6" />
+      <node id="5633688998557455316" at="24,49,25,64" concept="8" />
+      <node id="5633688998557455318" at="25,64,26,146" concept="6" />
+      <node id="5633688998557455326" at="26,146,27,26" concept="6" />
+      <node id="5633688998557455334" at="28,26,29,173" concept="1" />
+      <node id="5633688998557455344" at="30,9,31,19" concept="7" />
+      <node id="5633688998557455304" at="17,0,20,0" concept="0" trace="Extension_customContainers5633688998557455304_#()V" />
+      <node id="5633688998557455332" at="27,26,30,9" concept="4" />
+      <node id="5633688998557455308" at="23,0,33,0" concept="5" trace="invoke#()Ljava/util/List;" />
+      <node id="5633688998557455307" at="21,68,33,6" concept="7" />
+      <node id="5633688998557455304" at="21,0,35,0" concept="5" trace="get#()Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;" />
+      <scope id="5633688998557455304" at="17,59,18,69" />
+      <scope id="5633688998557455333" at="28,26,29,173" />
+      <scope id="5633688998557455304" at="17,0,20,0" />
+      <scope id="5633688998557455309" at="23,35,31,19">
+        <var name="desc" id="5633688998557455319" />
+        <var name="mdl" id="5633688998557455327" />
+        <var name="res" id="5633688998557455311" />
+      </scope>
+      <scope id="5633688998557455308" at="23,0,33,0" />
+      <scope id="5633688998557455304" at="21,68,33,6" />
+      <scope id="5633688998557455304" at="21,0,35,0" />
+      <unit id="5633688998557455308" at="22,15,33,5" name="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers5633688998557455304_$1" />
+      <unit id="5633688998557455304" at="16,0,36,0" name="jetbrains.mps.baseLanguage.collections.plugin.Extension_customContainers5633688998557455304_" />
+    </file>
   </root>
   <root nodeRef="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)/5633688998557707567">
-    <nodeInfo nodeId="5633688998557707699" fileName="CollectionsLanguage.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="5633688998557707718" fileName="CollectionsLanguage.java" startLine="9" startPosition="33" endLine="10" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5633688998557707571" fileName="CollectionsLanguage.java" startLine="13" startPosition="65" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5633688998557707653" fileName="CollectionsLanguage.java" startLine="17" startPosition="51" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5633688998557707715" fileName="CollectionsLanguage.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CollectionsLanguage#()V" />
-    <nodeInfo nodeId="5633688998557707568" fileName="CollectionsLanguage.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCustomContainersRegistry#()Ljetbrains/mps/baseLanguage/collections/plugin/CustomContainersRegistry;" />
-    <nodeInfo nodeId="5633688998557707628" fileName="CollectionsLanguage.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/baseLanguage/collections/plugin/CollectionsLanguage;" />
-    <scopeInfo nodeId="5633688998557707717" fileName="CollectionsLanguage.java" startLine="9" startPosition="33" endLine="10" endPosition="20" />
-    <scopeInfo nodeId="5633688998557707570" fileName="CollectionsLanguage.java" startLine="13" startPosition="65" endLine="14" endPosition="45" />
-    <scopeInfo nodeId="5633688998557707630" fileName="CollectionsLanguage.java" startLine="17" startPosition="51" endLine="18" endPosition="20" />
-    <scopeInfo nodeId="5633688998557707715" fileName="CollectionsLanguage.java" startLine="9" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="5633688998557707568" fileName="CollectionsLanguage.java" startLine="13" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5633688998557707628" fileName="CollectionsLanguage.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <unitInfo nodeId="5633688998557707567" fileName="CollectionsLanguage.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CollectionsLanguage" />
+    <file name="CollectionsLanguage.java">
+      <node id="5633688998557707699" at="7,0,8,0" concept="9" trace="INSTANCE" />
+      <node id="5633688998557707718" at="9,33,10,20" concept="1" />
+      <node id="5633688998557707571" at="13,65,14,45" concept="7" />
+      <node id="5633688998557707653" at="17,51,18,20" concept="7" />
+      <node id="5633688998557707715" at="9,0,12,0" concept="0" trace="CollectionsLanguage#()V" />
+      <node id="5633688998557707568" at="13,0,16,0" concept="5" trace="getCustomContainersRegistry#()Ljetbrains/mps/baseLanguage/collections/plugin/CustomContainersRegistry;" />
+      <node id="5633688998557707628" at="17,0,20,0" concept="10" trace="getInstance#()Ljetbrains/mps/baseLanguage/collections/plugin/CollectionsLanguage;" />
+      <scope id="5633688998557707717" at="9,33,10,20" />
+      <scope id="5633688998557707570" at="13,65,14,45" />
+      <scope id="5633688998557707630" at="17,51,18,20" />
+      <scope id="5633688998557707715" at="9,0,12,0" />
+      <scope id="5633688998557707568" at="13,0,16,0" />
+      <scope id="5633688998557707628" at="17,0,20,0" />
+      <unit id="5633688998557707567" at="6,0,21,0" name="jetbrains.mps.baseLanguage.collections.plugin.CollectionsLanguage" />
+    </file>
   </root>
   <root nodeRef="r:cf23edd7-256f-4b20-82d2-696c87889d85(jetbrains.mps.baseLanguage.collections.plugin)/5633688998557707726">
-    <nodeInfo nodeId="5633688998557707727" fileName="CustomContainersRegistry.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="5633688998557707731" fileName="CustomContainersRegistry.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="providers" />
-    <nodeInfo nodeId="2674780608612815781" fileName="CustomContainersRegistry.java" startLine="26" startPosition="279" endLine="27" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5633688998557707743" fileName="CustomContainersRegistry.java" startLine="31" startPosition="55" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557707750" fileName="CustomContainersRegistry.java" startLine="32" startPosition="73" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557707765" fileName="CustomContainersRegistry.java" startLine="35" startPosition="50" endLine="36" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5633688998557707771" fileName="CustomContainersRegistry.java" startLine="38" startPosition="8" endLine="39" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5633688998557707779" fileName="CustomContainersRegistry.java" startLine="42" startPosition="78" endLine="43" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557707785" fileName="CustomContainersRegistry.java" startLine="43" startPosition="45" endLine="44" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557707794" fileName="CustomContainersRegistry.java" startLine="45" startPosition="21" endLine="46" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557707803" fileName="CustomContainersRegistry.java" startLine="46" startPosition="150" endLine="47" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557707812" fileName="CustomContainersRegistry.java" startLine="47" startPosition="109" endLine="48" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557707829" fileName="CustomContainersRegistry.java" startLine="50" startPosition="41" endLine="51" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557707838" fileName="CustomContainersRegistry.java" startLine="51" startPosition="102" endLine="52" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5633688998557707860" fileName="CustomContainersRegistry.java" startLine="55" startPosition="52" endLine="56" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5633688998557707869" fileName="CustomContainersRegistry.java" startLine="59" startPosition="5" endLine="60" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5633688998557707909" fileName="CustomContainersRegistry.java" startLine="63" startPosition="48" endLine="64" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557707916" fileName="CustomContainersRegistry.java" startLine="64" startPosition="26" endLine="65" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5633688998557707933" fileName="CustomContainersRegistry.java" startLine="68" startPosition="53" endLine="69" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5633688998557707941" fileName="CustomContainersRegistry.java" startLine="70" startPosition="25" endLine="71" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5633688998557707957" fileName="CustomContainersRegistry.java" startLine="74" startPosition="98" endLine="75" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2674780608612815773" fileName="CustomContainersRegistry.java" startLine="25" startPosition="38" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5633688998557707763" fileName="CustomContainersRegistry.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="5633688998557707858" fileName="CustomContainersRegistry.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="5633688998557707938" fileName="CustomContainersRegistry.java" startLine="69" startPosition="76" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="5633688998557707955" fileName="CustomContainersRegistry.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="5633688998557707827" fileName="CustomContainersRegistry.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="5633688998557707906" fileName="CustomContainersRegistry.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOwningModule#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
-    <nodeInfo nodeId="5633688998557707963" fileName="CustomContainersRegistry.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomContainersRegistry#()V" />
-    <nodeInfo nodeId="5633688998557707756" fileName="CustomContainersRegistry.java" startLine="33" startPosition="45" endLine="38" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5633688998557707951" fileName="CustomContainersRegistry.java" startLine="72" startPosition="5" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5633688998557707740" fileName="CustomContainersRegistry.java" startLine="31" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="allCustomContainerDeclarations#()Ljava/util/List;" />
-    <nodeInfo nodeId="5633688998557707819" fileName="CustomContainersRegistry.java" startLine="48" startPosition="75" endLine="58" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5633688998557707928" fileName="CustomContainersRegistry.java" startLine="68" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="primAllCustomContainers#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="5633688998557707792" fileName="CustomContainersRegistry.java" startLine="44" startPosition="49" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5633688998557707774" fileName="CustomContainersRegistry.java" startLine="42" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accessibleCustomContainerDeclarations#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
-    <scopeInfo nodeId="2674780608612815774" fileName="CustomContainersRegistry.java" startLine="26" startPosition="279" endLine="27" endPosition="60" />
-    <scopeInfo nodeId="5633688998557707764" fileName="CustomContainersRegistry.java" startLine="35" startPosition="50" endLine="36" endPosition="76" />
-    <scopeInfo nodeId="5633688998557707859" fileName="CustomContainersRegistry.java" startLine="55" startPosition="52" endLine="56" endPosition="78" />
-    <scopeInfo nodeId="5633688998557707940" fileName="CustomContainersRegistry.java" startLine="70" startPosition="25" endLine="71" endPosition="140" />
-    <scopeInfo nodeId="5633688998557707956" fileName="CustomContainersRegistry.java" startLine="74" startPosition="98" endLine="75" endPosition="29" />
-    <scopeInfo nodeId="5633688998557707828" fileName="CustomContainersRegistry.java" startLine="50" startPosition="41" endLine="52" endPosition="175">
-      <varInfo nodeId="5633688998557707830" varName="owner" />
-    </scopeInfo>
-    <scopeInfo nodeId="5633688998557707908" fileName="CustomContainersRegistry.java" startLine="63" startPosition="48" endLine="65" endPosition="56">
-      <varInfo nodeId="5633688998557707910" varName="fmdesc" />
-    </scopeInfo>
-    <scopeInfo nodeId="2674780608612815773" fileName="CustomContainersRegistry.java" startLine="25" startPosition="38" endLine="28" endPosition="5">
-      <varInfo nodeId="2674780608612815775" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5633688998557707965" fileName="CustomContainersRegistry.java" startLine="25" startPosition="38" endLine="28" endPosition="5" />
-    <scopeInfo nodeId="5633688998557707763" fileName="CustomContainersRegistry.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="5633688998557707763" varName="cc" />
-    </scopeInfo>
-    <scopeInfo nodeId="5633688998557707858" fileName="CustomContainersRegistry.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="5633688998557707858" varName="cc" />
-    </scopeInfo>
-    <scopeInfo nodeId="5633688998557707955" fileName="CustomContainersRegistry.java" startLine="74" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="5633688998557707955" varName="prov" />
-    </scopeInfo>
-    <scopeInfo nodeId="5633688998557707827" fileName="CustomContainersRegistry.java" startLine="50" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="5633688998557707827" varName="cc" />
-    </scopeInfo>
-    <scopeInfo nodeId="5633688998557707906" fileName="CustomContainersRegistry.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="5633688998557707926" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="5633688998557707963" fileName="CustomContainersRegistry.java" startLine="25" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="5633688998557707742" fileName="CustomContainersRegistry.java" startLine="31" startPosition="55" endLine="39" endPosition="15">
-      <varInfo nodeId="5633688998557707744" varName="allCustomContainers" />
-      <varInfo nodeId="5633688998557707751" varName="res" />
-    </scopeInfo>
-    <scopeInfo nodeId="5633688998557707932" fileName="CustomContainersRegistry.java" startLine="68" startPosition="53" endLine="77" endPosition="7">
-      <varInfo nodeId="5633688998557707934" varName="providersCopy" />
-    </scopeInfo>
-    <scopeInfo nodeId="5633688998557707740" fileName="CustomContainersRegistry.java" startLine="31" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="5633688998557707928" fileName="CustomContainersRegistry.java" startLine="68" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="5633688998557707793" fileName="CustomContainersRegistry.java" startLine="45" startPosition="21" endLine="58" endPosition="10">
-      <varInfo nodeId="5633688998557707813" varName="allCustomContainers" />
-      <varInfo nodeId="5633688998557707804" varName="allUsedLanguages" />
-      <varInfo nodeId="5633688998557707795" varName="allVisibleModules" />
-    </scopeInfo>
-    <scopeInfo nodeId="5633688998557707778" fileName="CustomContainersRegistry.java" startLine="42" startPosition="78" endLine="60" endPosition="15">
-      <varInfo nodeId="5633688998557707786" varName="om" />
-      <varInfo nodeId="5633688998557707780" varName="res" />
-    </scopeInfo>
-    <scopeInfo nodeId="5633688998557707774" fileName="CustomContainersRegistry.java" startLine="42" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="5633688998557707775" varName="fromModel" />
-    </scopeInfo>
-    <unitInfo nodeId="5633688998557707763" fileName="CustomContainersRegistry.java" startLine="34" startPosition="100" endLine="38" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$1" />
-    <unitInfo nodeId="5633688998557707858" fileName="CustomContainersRegistry.java" startLine="54" startPosition="23" endLine="58" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$3" />
-    <unitInfo nodeId="5633688998557707955" fileName="CustomContainersRegistry.java" startLine="73" startPosition="62" endLine="77" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$4" />
-    <unitInfo nodeId="5633688998557707827" fileName="CustomContainersRegistry.java" startLine="49" startPosition="98" endLine="54" endPosition="7" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$2" />
-    <unitInfo nodeId="5633688998557707726" fileName="CustomContainersRegistry.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry" />
+    <file name="CustomContainersRegistry.java">
+      <node id="5633688998557707727" at="22,0,23,0" concept="9" trace="INSTANCE" />
+      <node id="5633688998557707731" at="23,0,24,0" concept="2" trace="providers" />
+      <node id="2674780608612815781" at="26,279,27,60" concept="1" />
+      <node id="5633688998557707743" at="31,55,32,73" concept="6" />
+      <node id="5633688998557707750" at="32,73,33,45" concept="6" />
+      <node id="5633688998557707765" at="35,50,36,76" concept="7" />
+      <node id="5633688998557707771" at="38,8,39,15" concept="7" />
+      <node id="5633688998557707779" at="42,78,43,45" concept="6" />
+      <node id="5633688998557707785" at="43,45,44,49" concept="6" />
+      <node id="5633688998557707794" at="45,21,46,150" concept="6" />
+      <node id="5633688998557707803" at="46,150,47,109" concept="6" />
+      <node id="5633688998557707812" at="47,109,48,75" concept="6" />
+      <node id="5633688998557707829" at="50,41,51,102" concept="6" />
+      <node id="5633688998557707838" at="51,102,52,175" concept="7" />
+      <node id="5633688998557707860" at="55,52,56,78" concept="7" />
+      <node id="5633688998557707869" at="59,5,60,15" concept="7" />
+      <node id="5633688998557707909" at="63,48,64,26" concept="6" />
+      <node id="5633688998557707916" at="64,26,65,56" concept="7" />
+      <node id="5633688998557707933" at="68,53,69,76" concept="6" />
+      <node id="5633688998557707941" at="70,25,71,140" concept="1" />
+      <node id="5633688998557707957" at="74,98,75,29" concept="7" />
+      <node id="2674780608612815773" at="25,38,28,5" concept="3" />
+      <node id="5633688998557707763" at="35,0,38,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="5633688998557707858" at="55,0,58,0" concept="5" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="5633688998557707938" at="69,76,72,5" concept="12" />
+      <node id="5633688998557707955" at="74,0,77,0" concept="5" trace="translate#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)Ljava/lang/Iterable;" />
+      <node id="5633688998557707827" at="50,0,54,0" concept="5" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5633688998557707906" at="63,0,67,0" concept="5" trace="getOwningModule#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+      <node id="5633688998557707963" at="25,0,30,0" concept="0" trace="CustomContainersRegistry#()V" />
+      <node id="5633688998557707756" at="33,45,38,8" concept="1" />
+      <node id="5633688998557707951" at="72,5,77,7" concept="7" />
+      <node id="5633688998557707740" at="31,0,41,0" concept="5" trace="allCustomContainerDeclarations#()Ljava/util/List;" />
+      <node id="5633688998557707819" at="48,75,58,10" concept="1" />
+      <node id="5633688998557707928" at="68,0,79,0" concept="5" trace="primAllCustomContainers#()Ljava/lang/Iterable;" />
+      <node id="5633688998557707792" at="44,49,59,5" concept="4" />
+      <node id="5633688998557707774" at="42,0,62,0" concept="5" trace="accessibleCustomContainerDeclarations#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/util/List;" />
+      <scope id="2674780608612815774" at="26,279,27,60" />
+      <scope id="5633688998557707764" at="35,50,36,76" />
+      <scope id="5633688998557707859" at="55,52,56,78" />
+      <scope id="5633688998557707940" at="70,25,71,140" />
+      <scope id="5633688998557707956" at="74,98,75,29" />
+      <scope id="5633688998557707828" at="50,41,52,175">
+        <var name="owner" id="5633688998557707830" />
+      </scope>
+      <scope id="5633688998557707908" at="63,48,65,56">
+        <var name="fmdesc" id="5633688998557707910" />
+      </scope>
+      <scope id="2674780608612815773" at="25,38,28,5">
+        <var name="provider" id="2674780608612815775" />
+      </scope>
+      <scope id="5633688998557707965" at="25,38,28,5" />
+      <scope id="5633688998557707763" at="35,0,38,0">
+        <var name="cc" id="5633688998557707763" />
+      </scope>
+      <scope id="5633688998557707858" at="55,0,58,0">
+        <var name="cc" id="5633688998557707858" />
+      </scope>
+      <scope id="5633688998557707955" at="74,0,77,0">
+        <var name="prov" id="5633688998557707955" />
+      </scope>
+      <scope id="5633688998557707827" at="50,0,54,0">
+        <var name="cc" id="5633688998557707827" />
+      </scope>
+      <scope id="5633688998557707906" at="63,0,67,0">
+        <var name="model" id="5633688998557707926" />
+      </scope>
+      <scope id="5633688998557707963" at="25,0,30,0" />
+      <scope id="5633688998557707742" at="31,55,39,15">
+        <var name="allCustomContainers" id="5633688998557707744" />
+        <var name="res" id="5633688998557707751" />
+      </scope>
+      <scope id="5633688998557707932" at="68,53,77,7">
+        <var name="providersCopy" id="5633688998557707934" />
+      </scope>
+      <scope id="5633688998557707740" at="31,0,41,0" />
+      <scope id="5633688998557707928" at="68,0,79,0" />
+      <scope id="5633688998557707793" at="45,21,58,10">
+        <var name="allCustomContainers" id="5633688998557707813" />
+        <var name="allUsedLanguages" id="5633688998557707804" />
+        <var name="allVisibleModules" id="5633688998557707795" />
+      </scope>
+      <scope id="5633688998557707778" at="42,78,60,15">
+        <var name="om" id="5633688998557707786" />
+        <var name="res" id="5633688998557707780" />
+      </scope>
+      <scope id="5633688998557707774" at="42,0,62,0">
+        <var name="fromModel" id="5633688998557707775" />
+      </scope>
+      <unit id="5633688998557707763" at="34,100,38,5" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$1" />
+      <unit id="5633688998557707858" at="54,23,58,7" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$3" />
+      <unit id="5633688998557707955" at="73,62,77,5" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$4" />
+      <unit id="5633688998557707827" at="49,98,54,7" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry$2" />
+      <unit id="5633688998557707726" at="21,0,80,0" name="jetbrains.mps.baseLanguage.collections.plugin.CustomContainersRegistry" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

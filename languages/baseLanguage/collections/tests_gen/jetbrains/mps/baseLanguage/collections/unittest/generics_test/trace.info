@@ -1,150 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895903bf(jetbrains.mps.baseLanguage.collections.unittest.generics_test)/1170878927223">
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="55" startPosition="27" endLine="55" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224596674956" fileName="MySequence.java" startLine="58" startPosition="27" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="27" startPosition="28" endLine="28" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="28" startPosition="54" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596674966" fileName="MySequence.java" startLine="31" startPosition="44" endLine="32" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674966" fileName="MySequence.java" startLine="32" startPosition="40" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674966" fileName="MySequence.java" startLine="34" startPosition="23" endLine="35" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674966" fileName="MySequence.java" startLine="35" startPosition="39" endLine="36" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674957" fileName="MySequence.java" startLine="38" startPosition="33" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674957" fileName="MySequence.java" startLine="39" startPosition="40" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674957" fileName="MySequence.java" startLine="41" startPosition="23" endLine="42" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674957" fileName="MySequence.java" startLine="42" startPosition="38" endLine="43" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="45" startPosition="34" endLine="46" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="46" startPosition="40" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="48" startPosition="23" endLine="49" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="49" startPosition="38" endLine="50" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596680384" fileName="MySequence.java" startLine="51" startPosition="28" endLine="52" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596680384" fileName="MySequence.java" startLine="52" startPosition="38" endLine="53" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596680384" fileName="MySequence.java" startLine="53" startPosition="42" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="55" startPosition="27" endLine="56" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="56" startPosition="38" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674956" fileName="MySequence.java" startLine="58" startPosition="27" endLine="59" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674956" fileName="MySequence.java" startLine="59" startPosition="38" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674959" fileName="MySequence.java" startLine="61" startPosition="27" endLine="62" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224596674960" fileName="MySequence.java" startLine="61" startPosition="27" endLine="62" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674959" fileName="MySequence.java" startLine="62" startPosition="63" endLine="63" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596674959" fileName="MySequence.java" startLine="63" startPosition="38" endLine="64" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596680523" fileName="MySequence.java" startLine="65" startPosition="27" endLine="66" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224596680523" fileName="MySequence.java" startLine="66" startPosition="38" endLine="67" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="68" startPosition="28" endLine="69" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="71" startPosition="31" endLine="72" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596674961" fileName="MySequence.java" startLine="75" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_7_next" />
-    <nodeInfo nodeId="1170879079306" fileName="MySequence.java" startLine="83" startPosition="27" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6961198619552942001" fileName="MySequence.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MySequence#()V" />
-    <nodeInfo nodeId="1224596674970" fileName="MySequence.java" startLine="65" startPosition="27" endLine="67" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224596680523" fileName="MySequence.java" startLine="65" startPosition="27" endLine="67" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1170879062052" fileName="MySequence.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNext#()null" />
-    <nodeInfo nodeId="1224596674966" fileName="MySequence.java" startLine="30" startPosition="27" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224596674957" fileName="MySequence.java" startLine="37" startPosition="27" endLine="41" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="44" startPosition="27" endLine="48" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="24" startPosition="20" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="22" startPosition="46" endLine="71" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="22" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="18" startPosition="41" endLine="76" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="18" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="16" startPosition="37" endLine="78" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="16" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1170878998354" fileName="MySequence.java" startLine="14" startPosition="33" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1170878984788" fileName="MySequence.java" startLine="14" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="6961198619552942003" fileName="MySequence.java" startLine="11" startPosition="23" endLine="11" endPosition="23" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="55" startPosition="27" endLine="55" endPosition="27" />
-    <scopeInfo nodeId="1224596674956" fileName="MySequence.java" startLine="58" startPosition="27" endLine="58" endPosition="27" />
-    <scopeInfo nodeId="1224596674959" fileName="MySequence.java" startLine="61" startPosition="27" endLine="62" endPosition="63" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="68" startPosition="28" endLine="69" endPosition="37" />
-    <scopeInfo nodeId="1170879062054" fileName="MySequence.java" startLine="83" startPosition="27" endLine="84" endPosition="16" />
-    <scopeInfo nodeId="6961198619552942001" fileName="MySequence.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="27" startPosition="28" endLine="29" endPosition="35" />
-    <scopeInfo nodeId="1224596674966" fileName="MySequence.java" startLine="31" startPosition="44" endLine="33" endPosition="30" />
-    <scopeInfo nodeId="1224596674957" fileName="MySequence.java" startLine="38" startPosition="33" endLine="40" endPosition="30" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="45" startPosition="34" endLine="47" endPosition="30" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="55" startPosition="27" endLine="57" endPosition="28" />
-    <scopeInfo nodeId="1224596674956" fileName="MySequence.java" startLine="58" startPosition="27" endLine="60" endPosition="28" />
-    <scopeInfo nodeId="1224596674970" fileName="MySequence.java" startLine="65" startPosition="27" endLine="67" endPosition="28" />
-    <scopeInfo nodeId="1224596680523" fileName="MySequence.java" startLine="65" startPosition="27" endLine="67" endPosition="28" />
-    <scopeInfo nodeId="1224596680384" fileName="MySequence.java" startLine="51" startPosition="28" endLine="54" endPosition="34" />
-    <scopeInfo nodeId="1224596674959" fileName="MySequence.java" startLine="61" startPosition="27" endLine="64" endPosition="28" />
-    <scopeInfo nodeId="1170879062052" fileName="MySequence.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1224596674966" fileName="MySequence.java" startLine="30" startPosition="27" endLine="36" endPosition="28" />
-    <scopeInfo nodeId="1224596674957" fileName="MySequence.java" startLine="37" startPosition="27" endLine="43" endPosition="28" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="44" startPosition="27" endLine="50" endPosition="28" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="24" startPosition="20" endLine="70" endPosition="19" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="22" startPosition="46" endLine="72" endPosition="29" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="22" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="18" startPosition="41" endLine="76" endPosition="14" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="18" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="16" startPosition="37" endLine="78" endPosition="10" />
-    <scopeInfo nodeId="1224596674955" fileName="MySequence.java" startLine="16" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="1170878984790" fileName="MySequence.java" startLine="14" startPosition="33" endLine="80" endPosition="7" />
-    <scopeInfo nodeId="1170878984788" fileName="MySequence.java" startLine="14" startPosition="0" endLine="82" endPosition="0" />
-    <unitInfo nodeId="1224596674955" fileName="MySequence.java" startLine="19" startPosition="23" endLine="76" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence$3" />
-    <unitInfo nodeId="1224596674955" fileName="MySequence.java" startLine="17" startPosition="19" endLine="78" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence$2" />
-    <unitInfo nodeId="1224596674955" fileName="MySequence.java" startLine="15" startPosition="36" endLine="80" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence$1" />
-    <unitInfo nodeId="1170878927223" fileName="MySequence.java" startLine="10" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence" />
+    <file name="MySequence.java">
+      <node id="1224596674955" at="55,27,55,27" concept="1" />
+      <node id="1224596674956" at="58,27,58,27" concept="1" />
+      <node id="1224596674955" at="20,0,21,0" concept="6" trace="__CP__" />
+      <node id="1224596674955" at="27,28,28,54" concept="0" />
+      <node id="1224596674955" at="28,54,29,35" concept="11" />
+      <node id="1224596674966" at="31,44,32,40" concept="5" />
+      <node id="1224596674966" at="32,40,33,30" concept="2" />
+      <node id="1224596674966" at="34,23,35,39" concept="5" />
+      <node id="1224596674966" at="35,39,36,28" concept="2" />
+      <node id="1224596674957" at="38,33,39,40" concept="5" />
+      <node id="1224596674957" at="39,40,40,30" concept="2" />
+      <node id="1224596674957" at="41,23,42,38" concept="5" />
+      <node id="1224596674957" at="42,38,43,28" concept="2" />
+      <node id="1224596674955" at="45,34,46,40" concept="5" />
+      <node id="1224596674955" at="46,40,47,30" concept="2" />
+      <node id="1224596674955" at="48,23,49,38" concept="5" />
+      <node id="1224596674955" at="49,38,50,28" concept="2" />
+      <node id="1224596680384" at="51,28,52,38" concept="5" />
+      <node id="1224596680384" at="52,38,53,42" concept="5" />
+      <node id="1224596680384" at="53,42,54,34" concept="11" />
+      <node id="1224596674955" at="55,27,56,38" concept="5" />
+      <node id="1224596674955" at="56,38,57,28" concept="2" />
+      <node id="1224596674956" at="58,27,59,38" concept="5" />
+      <node id="1224596674956" at="59,38,60,28" concept="2" />
+      <node id="1224596674959" at="61,27,62,63" concept="1" />
+      <node id="1224596674960" at="61,27,62,63" concept="5" />
+      <node id="1224596674959" at="62,63,63,38" concept="5" />
+      <node id="1224596674959" at="63,38,64,28" concept="2" />
+      <node id="1224596680523" at="65,27,66,38" concept="5" />
+      <node id="1224596680523" at="66,38,67,28" concept="2" />
+      <node id="1224596674955" at="68,28,69,37" concept="2" />
+      <node id="1224596674955" at="71,31,72,29" concept="11" />
+      <node id="1224596674961" at="75,0,76,0" concept="6" trace="_7_next" />
+      <node id="1170879079306" at="83,27,84,16" concept="11" />
+      <node id="6961198619552942001" at="11,0,13,0" concept="3" trace="MySequence#()V" />
+      <node id="1224596674970" at="65,27,67,28" concept="1" />
+      <node id="1224596680523" at="65,27,67,28" concept="1" />
+      <node id="1170879062052" at="83,0,86,0" concept="9" trace="getNext#()null" />
+      <node id="1224596674966" at="30,27,34,23" concept="8" />
+      <node id="1224596674957" at="37,27,41,23" concept="8" />
+      <node id="1224596674955" at="44,27,48,23" concept="8" />
+      <node id="1224596674955" at="24,20,70,19" concept="12" />
+      <node id="1224596674955" at="22,46,71,31" concept="4" />
+      <node id="1224596674955" at="22,0,74,0" concept="9" trace="moveToNext#()Z" />
+      <node id="1224596674955" at="18,41,76,14" concept="11" />
+      <node id="1224596674955" at="18,0,78,0" concept="9" trace="iterator#()Ljava/util/Iterator;" />
+      <node id="1224596674955" at="16,37,78,10" concept="11" />
+      <node id="1224596674955" at="16,0,80,0" concept="9" trace="iterable#()Ljava/lang/Iterable;" />
+      <node id="1170878998354" at="14,33,80,7" concept="11" />
+      <node id="1170878984788" at="14,0,82,0" concept="9" trace="get#()Ljava/lang/Iterable;" />
+      <scope id="6961198619552942003" at="11,23,11,23" />
+      <scope id="1224596674955" at="55,27,55,27" />
+      <scope id="1224596674956" at="58,27,58,27" />
+      <scope id="1224596674959" at="61,27,62,63" />
+      <scope id="1224596674955" at="68,28,69,37" />
+      <scope id="1170879062054" at="83,27,84,16" />
+      <scope id="6961198619552942001" at="11,0,13,0" />
+      <scope id="1224596674955" at="27,28,29,35" />
+      <scope id="1224596674966" at="31,44,33,30" />
+      <scope id="1224596674957" at="38,33,40,30" />
+      <scope id="1224596674955" at="45,34,47,30" />
+      <scope id="1224596674955" at="55,27,57,28" />
+      <scope id="1224596674956" at="58,27,60,28" />
+      <scope id="1224596674970" at="65,27,67,28" />
+      <scope id="1224596680523" at="65,27,67,28" />
+      <scope id="1224596680384" at="51,28,54,34" />
+      <scope id="1224596674959" at="61,27,64,28" />
+      <scope id="1170879062052" at="83,0,86,0" />
+      <scope id="1224596674966" at="30,27,36,28" />
+      <scope id="1224596674957" at="37,27,43,28" />
+      <scope id="1224596674955" at="44,27,50,28" />
+      <scope id="1224596674955" at="24,20,70,19" />
+      <scope id="1224596674955" at="22,46,72,29" />
+      <scope id="1224596674955" at="22,0,74,0" />
+      <scope id="1224596674955" at="18,41,76,14" />
+      <scope id="1224596674955" at="18,0,78,0" />
+      <scope id="1224596674955" at="16,37,78,10" />
+      <scope id="1224596674955" at="16,0,80,0" />
+      <scope id="1170878984790" at="14,33,80,7" />
+      <scope id="1170878984788" at="14,0,82,0" />
+      <unit id="1224596674955" at="19,23,76,13" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence$3" />
+      <unit id="1224596674955" at="17,19,78,9" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence$2" />
+      <unit id="1224596674955" at="15,36,80,5" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence$1" />
+      <unit id="1170878927223" at="10,0,87,0" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.MySequence" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903bf(jetbrains.mps.baseLanguage.collections.unittest.generics_test)/1170879883276">
-    <nodeInfo nodeId="1170879927240" fileName="BooleanSequence.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCount" />
-    <nodeInfo nodeId="1170880107999" fileName="BooleanSequence.java" startLine="14" startPosition="27" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1170880094711" fileName="BooleanSequence.java" startLine="15" startPosition="38" endLine="16" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1170880188056" fileName="BooleanSequence.java" startLine="17" startPosition="5" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1170879915003" fileName="BooleanSequence.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BooleanSequence#()V" />
-    <nodeInfo nodeId="1170879946355" fileName="BooleanSequence.java" startLine="13" startPosition="33" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1170879903124" fileName="BooleanSequence.java" startLine="12" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNext#()Ljava/lang/Boolean;" />
-    <scopeInfo nodeId="1170879915005" fileName="BooleanSequence.java" startLine="9" startPosition="33" endLine="9" endPosition="33" />
-    <scopeInfo nodeId="1170879915003" fileName="BooleanSequence.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="1170879946357" fileName="BooleanSequence.java" startLine="14" startPosition="27" endLine="16" endPosition="18" />
-    <scopeInfo nodeId="1170879903126" fileName="BooleanSequence.java" startLine="13" startPosition="33" endLine="18" endPosition="16" />
-    <scopeInfo nodeId="1170879903124" fileName="BooleanSequence.java" startLine="12" startPosition="0" endLine="20" endPosition="0" />
-    <unitInfo nodeId="1170879883276" fileName="BooleanSequence.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.BooleanSequence" />
+    <file name="BooleanSequence.java">
+      <node id="1170879927240" at="7,0,8,0" concept="6" trace="myCount" />
+      <node id="1170880107999" at="14,27,15,38" concept="5" />
+      <node id="1170880094711" at="15,38,16,18" concept="11" />
+      <node id="1170880188056" at="17,5,18,16" concept="11" />
+      <node id="1170879915003" at="9,0,11,0" concept="3" trace="BooleanSequence#()V" />
+      <node id="1170879946355" at="13,33,17,5" concept="8" />
+      <node id="1170879903124" at="12,0,20,0" concept="9" trace="getNext#()Ljava/lang/Boolean;" />
+      <scope id="1170879915005" at="9,33,9,33" />
+      <scope id="1170879915003" at="9,0,11,0" />
+      <scope id="1170879946357" at="14,27,16,18" />
+      <scope id="1170879903126" at="13,33,18,16" />
+      <scope id="1170879903124" at="12,0,20,0" />
+      <unit id="1170879883276" at="6,0,21,0" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.BooleanSequence" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903bf(jetbrains.mps.baseLanguage.collections.unittest.generics_test)/1170880204174">
-    <nodeInfo nodeId="1170880204175" fileName="IntegerSequence.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCount" />
-    <nodeInfo nodeId="1170880204190" fileName="IntegerSequence.java" startLine="14" startPosition="27" endLine="15" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1170880204198" fileName="IntegerSequence.java" startLine="15" startPosition="38" endLine="16" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1170880204207" fileName="IntegerSequence.java" startLine="17" startPosition="5" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1170880204178" fileName="IntegerSequence.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntegerSequence#()V" />
-    <nodeInfo nodeId="1170880204184" fileName="IntegerSequence.java" startLine="13" startPosition="33" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1170880204181" fileName="IntegerSequence.java" startLine="12" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNext#()Ljava/lang/Integer;" />
-    <scopeInfo nodeId="1170880204180" fileName="IntegerSequence.java" startLine="9" startPosition="33" endLine="9" endPosition="33" />
-    <scopeInfo nodeId="1170880204178" fileName="IntegerSequence.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="1170880204189" fileName="IntegerSequence.java" startLine="14" startPosition="27" endLine="16" endPosition="26" />
-    <scopeInfo nodeId="1170880204183" fileName="IntegerSequence.java" startLine="13" startPosition="33" endLine="18" endPosition="16" />
-    <scopeInfo nodeId="1170880204181" fileName="IntegerSequence.java" startLine="12" startPosition="0" endLine="20" endPosition="0" />
-    <unitInfo nodeId="1170880204174" fileName="IntegerSequence.java" startLine="6" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.IntegerSequence" />
+    <file name="IntegerSequence.java">
+      <node id="1170880204175" at="7,0,8,0" concept="6" trace="myCount" />
+      <node id="1170880204190" at="14,27,15,38" concept="5" />
+      <node id="1170880204198" at="15,38,16,26" concept="11" />
+      <node id="1170880204207" at="17,5,18,16" concept="11" />
+      <node id="1170880204178" at="9,0,11,0" concept="3" trace="IntegerSequence#()V" />
+      <node id="1170880204184" at="13,33,17,5" concept="8" />
+      <node id="1170880204181" at="12,0,20,0" concept="9" trace="getNext#()Ljava/lang/Integer;" />
+      <scope id="1170880204180" at="9,33,9,33" />
+      <scope id="1170880204178" at="9,0,11,0" />
+      <scope id="1170880204189" at="14,27,16,26" />
+      <scope id="1170880204183" at="13,33,18,16" />
+      <scope id="1170880204181" at="12,0,20,0" />
+      <unit id="1170880204174" at="6,0,21,0" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.IntegerSequence" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903bf(jetbrains.mps.baseLanguage.collections.unittest.generics_test)/1172029167443">
-    <nodeInfo nodeId="1172029188738" fileName="Generics1_Test.java" startLine="10" startPosition="45" endLine="11" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1172029260167" fileName="Generics1_Test.java" startLine="12" startPosition="61" endLine="13" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1172029203862" fileName="Generics1_Test.java" startLine="17" startPosition="45" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1172029203866" fileName="Generics1_Test.java" startLine="18" startPosition="49" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1172029277744" fileName="Generics1_Test.java" startLine="20" startPosition="57" endLine="21" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1172029203880" fileName="Generics1_Test.java" startLine="21" startPosition="47" endLine="22" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1172029188742" fileName="Generics1_Test.java" startLine="11" startPosition="50" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1172029203870" fileName="Generics1_Test.java" startLine="19" startPosition="18" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1172029180836" fileName="Generics1_Test.java" startLine="10" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_test1#()V" />
-    <nodeInfo nodeId="1172029195858" fileName="Generics1_Test.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_test2#()V" />
-    <scopeInfo nodeId="1172029188746" fileName="Generics1_Test.java" startLine="12" startPosition="61" endLine="13" endPosition="45" />
-    <scopeInfo nodeId="1172029203874" fileName="Generics1_Test.java" startLine="20" startPosition="57" endLine="22" endPosition="14" />
-    <scopeInfo nodeId="1172029188742" fileName="Generics1_Test.java" startLine="11" startPosition="50" endLine="14" endPosition="5">
-      <varInfo nodeId="1172029188743" varName="bool" />
-    </scopeInfo>
-    <scopeInfo nodeId="1172029180837" fileName="Generics1_Test.java" startLine="10" startPosition="45" endLine="14" endPosition="5">
-      <varInfo nodeId="1172029188739" varName="bools" />
-    </scopeInfo>
-    <scopeInfo nodeId="1172029203870" fileName="Generics1_Test.java" startLine="19" startPosition="18" endLine="23" endPosition="5">
-      <varInfo nodeId="1172029203871" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="1172029180836" fileName="Generics1_Test.java" startLine="10" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1172029195859" fileName="Generics1_Test.java" startLine="17" startPosition="45" endLine="23" endPosition="5">
-      <varInfo nodeId="1172029203867" varName="count" />
-      <varInfo nodeId="1172029203863" varName="ints" />
-    </scopeInfo>
-    <scopeInfo nodeId="1172029195858" fileName="Generics1_Test.java" startLine="17" startPosition="0" endLine="25" endPosition="0" />
-    <unitInfo nodeId="1172029167443" fileName="Generics1_Test.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.unittest.generics_test.Generics1_Test" />
+    <file name="Generics1_Test.java">
+      <node id="1172029188738" at="10,45,11,50" concept="10" />
+      <node id="1172029260167" at="12,61,13,45" concept="5" />
+      <node id="1172029203862" at="17,45,18,49" concept="10" />
+      <node id="1172029203866" at="18,49,19,18" concept="10" />
+      <node id="1172029277744" at="20,57,21,47" concept="5" />
+      <node id="1172029203880" at="21,47,22,14" concept="5" />
+      <node id="1172029188742" at="11,50,14,5" concept="7" />
+      <node id="1172029203870" at="19,18,23,5" concept="7" />
+      <node id="1172029180836" at="10,0,16,0" concept="9" trace="test_test1#()V" />
+      <node id="1172029195858" at="17,0,25,0" concept="9" trace="test_test2#()V" />
+      <scope id="1172029188746" at="12,61,13,45" />
+      <scope id="1172029203874" at="20,57,22,14" />
+      <scope id="1172029188742" at="11,50,14,5">
+        <var name="bool" id="1172029188743" />
+      </scope>
+      <scope id="1172029180837" at="10,45,14,5">
+        <var name="bools" id="1172029188739" />
+      </scope>
+      <scope id="1172029203870" at="19,18,23,5">
+        <var name="i" id="1172029203871" />
+      </scope>
+      <scope id="1172029180836" at="10,0,16,0" />
+      <scope id="1172029195859" at="17,45,23,5">
+        <var name="count" id="1172029203867" />
+        <var name="ints" id="1172029203863" />
+      </scope>
+      <scope id="1172029195858" at="17,0,25,0" />
+      <unit id="1172029167443" at="9,0,26,0" name="jetbrains.mps.baseLanguage.collections.unittest.generics_test.Generics1_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

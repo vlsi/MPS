@@ -1,46 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:28292228-dd23-49f9-b60b-1b769a5866b8(jetbrains.mps.samples.generator_demo.test_models.test7)/3618324829955935393">
-    <nodeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="13" startPosition="42" endLine="14" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="14" startPosition="38" endLine="15" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="15" startPosition="57" endLine="16" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="16" startPosition="49" endLine="17" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="17" startPosition="42" endLine="18" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="18" startPosition="26" endLine="19" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="19" startPosition="17" endLine="20" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="20" startPosition="38" endLine="21" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3618324829955941167" fileName="DemoApp.java" startLine="24" startPosition="54" endLine="25" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3618324829955941195" fileName="DemoApp.java" startLine="25" startPosition="39" endLine="26" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3618324829955941167" fileName="DemoApp.java" startLine="29" startPosition="47" endLine="30" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3618324829955941167" fileName="DemoApp.java" startLine="30" startPosition="38" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3618324829955941167" fileName="DemoApp.java" startLine="31" startPosition="31" endLine="32" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3618324829955941195" fileName="DemoApp.java" startLine="35" startPosition="47" endLine="36" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3618324829955941195" fileName="DemoApp.java" startLine="36" startPosition="36" endLine="37" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3618324829955941195" fileName="DemoApp.java" startLine="37" startPosition="32" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addContent#(Ljava/awt/Container;)V" />
-    <nodeInfo nodeId="3618324829955941167" fileName="DemoApp.java" startLine="29" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createComponent_a#()Ljava/awt/Component;" />
-    <nodeInfo nodeId="3618324829955941195" fileName="DemoApp.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createComponent_b#()Ljava/awt/Component;" />
-    <nodeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="13" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <scopeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="24" startPosition="54" endLine="26" endPosition="39" />
-    <scopeInfo nodeId="3618324829955941167" fileName="DemoApp.java" startLine="29" startPosition="47" endLine="32" endPosition="21">
-      <varInfo nodeId="3618324829955941167" varName="component" />
-    </scopeInfo>
-    <scopeInfo nodeId="3618324829955941195" fileName="DemoApp.java" startLine="35" startPosition="47" endLine="38" endPosition="21">
-      <varInfo nodeId="3618324829955941195" varName="component" />
-    </scopeInfo>
-    <scopeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="3618324829955935393" varName="container" />
-    </scopeInfo>
-    <scopeInfo nodeId="3618324829955941167" fileName="DemoApp.java" startLine="29" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="3618324829955941195" fileName="DemoApp.java" startLine="35" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="13" startPosition="42" endLine="21" endPosition="27">
-      <varInfo nodeId="3618324829955935393" varName="container" />
-      <varInfo nodeId="3618324829955935393" varName="frame" />
-    </scopeInfo>
-    <scopeInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="13" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="3618324829955935393" varName="args" />
-    </scopeInfo>
-    <unitInfo nodeId="3618324829955935393" fileName="DemoApp.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.samples.generator_demo.test_models.test7.DemoApp" />
+    <file name="DemoApp.java">
+      <node id="3618324829955935393" at="13,42,14,38" concept="1" />
+      <node id="3618324829955935393" at="14,38,15,57" concept="0" />
+      <node id="3618324829955935393" at="15,57,16,49" concept="1" />
+      <node id="3618324829955935393" at="16,49,17,42" concept="0" />
+      <node id="3618324829955935393" at="17,42,18,26" concept="0" />
+      <node id="3618324829955935393" at="18,26,19,17" concept="0" />
+      <node id="3618324829955935393" at="19,17,20,38" concept="0" />
+      <node id="3618324829955935393" at="20,38,21,27" concept="0" />
+      <node id="3618324829955941167" at="24,54,25,39" concept="0" />
+      <node id="3618324829955941195" at="25,39,26,39" concept="0" />
+      <node id="3618324829955941167" at="29,47,30,38" concept="1" />
+      <node id="3618324829955941167" at="30,38,31,31" concept="0" />
+      <node id="3618324829955941167" at="31,31,32,21" concept="2" />
+      <node id="3618324829955941195" at="35,47,36,36" concept="1" />
+      <node id="3618324829955941195" at="36,36,37,32" concept="0" />
+      <node id="3618324829955941195" at="37,32,38,21" concept="2" />
+      <node id="3618324829955935393" at="24,0,28,0" concept="3" trace="addContent#(Ljava/awt/Container;)V" />
+      <node id="3618324829955941167" at="29,0,34,0" concept="3" trace="createComponent_a#()Ljava/awt/Component;" />
+      <node id="3618324829955941195" at="35,0,40,0" concept="3" trace="createComponent_b#()Ljava/awt/Component;" />
+      <node id="3618324829955935393" at="13,0,23,0" concept="3" trace="main#([Ljava/lang/String;)V" />
+      <scope id="3618324829955935393" at="24,54,26,39" />
+      <scope id="3618324829955941167" at="29,47,32,21">
+        <var name="component" id="3618324829955941167" />
+      </scope>
+      <scope id="3618324829955941195" at="35,47,38,21">
+        <var name="component" id="3618324829955941195" />
+      </scope>
+      <scope id="3618324829955935393" at="24,0,28,0">
+        <var name="container" id="3618324829955935393" />
+      </scope>
+      <scope id="3618324829955941167" at="29,0,34,0" />
+      <scope id="3618324829955941195" at="35,0,40,0" />
+      <scope id="3618324829955935393" at="13,42,21,27">
+        <var name="container" id="3618324829955935393" />
+        <var name="frame" id="3618324829955935393" />
+      </scope>
+      <scope id="3618324829955935393" at="13,0,23,0">
+        <var name="args" id="3618324829955935393" />
+      </scope>
+      <unit id="3618324829955935393" at="12,0,41,0" name="jetbrains.mps.samples.generator_demo.test_models.test7.DemoApp" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

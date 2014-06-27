@@ -71,7 +71,9 @@
   <source id="2073504467208093525" name="SimpleMathBooleanType_Editor" hash="3b5jops1uip55v790ogi5czcbbw1vr4">
     <dep root="2073504467207936506" />
     <dep model="r:00000000-0000-4000-0000-011c8959029f(jetbrains.mps.lang.editor.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:5607284d-edb3-4e34-bafc-a3b8fa3360be(jetbrains.mps.samples.Expressions.structure)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="SimpleMathBooleanType_Editor.java" />
   </source>
   <source id="2073504467208335742" name="SimpleMathWrapper_Editor" hash="-4s11e14p5sdp30ty8b7mxyg63yco7fx">

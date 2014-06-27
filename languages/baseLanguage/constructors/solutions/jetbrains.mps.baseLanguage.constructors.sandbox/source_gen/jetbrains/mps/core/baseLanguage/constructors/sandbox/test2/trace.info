@@ -1,44 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:5dd83915-41f7-4078-8c06-e9d19fdeceb5(jetbrains.mps.core.baseLanguage.constructors.sandbox.test2)/3391577739832808340">
-    <nodeInfo nodeId="3391577739832808402" fileName="test.java" startLine="11" startPosition="42" endLine="12" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3391577739832808424" fileName="test.java" startLine="12" startPosition="86" endLine="13" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3391577739832808342" fileName="test.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="test#()V" />
-    <nodeInfo nodeId="3391577739832808354" fileName="test.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <scopeInfo nodeId="3391577739832808345" fileName="test.java" startLine="8" startPosition="17" endLine="8" endPosition="17" />
-    <scopeInfo nodeId="3391577739832808342" fileName="test.java" startLine="8" startPosition="0" endLine="10" endPosition="0" />
-    <scopeInfo nodeId="3391577739832808357" fileName="test.java" startLine="11" startPosition="42" endLine="13" endPosition="26">
-      <varInfo nodeId="3391577739832808403" varName="r" />
-    </scopeInfo>
-    <scopeInfo nodeId="3391577739832808354" fileName="test.java" startLine="11" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="3391577739832809137" varName="args" />
-    </scopeInfo>
-    <unitInfo nodeId="3391577739832808340" fileName="test.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.baseLanguage.constructors.sandbox.test2.test" />
+    <file name="test.java">
+      <node id="3391577739832808402" at="11,42,12,86" concept="2" />
+      <node id="3391577739832808424" at="12,86,13,26" concept="1" />
+      <node id="3391577739832808342" at="8,0,10,0" concept="0" trace="test#()V" />
+      <node id="3391577739832808354" at="11,0,15,0" concept="4" trace="main#([Ljava/lang/String;)V" />
+      <scope id="3391577739832808345" at="8,17,8,17" />
+      <scope id="3391577739832808342" at="8,0,10,0" />
+      <scope id="3391577739832808357" at="11,42,13,26">
+        <var name="r" id="3391577739832808403" />
+      </scope>
+      <scope id="3391577739832808354" at="11,0,15,0">
+        <var name="args" id="3391577739832809137" />
+      </scope>
+      <unit id="3391577739832808340" at="7,0,16,0" name="jetbrains.mps.core.baseLanguage.constructors.sandbox.test2.test" />
+    </file>
   </root>
   <root nodeRef="r:5dd83915-41f7-4078-8c06-e9d19fdeceb5(jetbrains.mps.core.baseLanguage.constructors.sandbox.test2)/4413962600136177711">
-    <nodeInfo nodeId="4413962600136180687" fileName="Rectangle.java" startLine="12" startPosition="51" endLine="13" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4413962600136184983" fileName="Rectangle.java" startLine="16" startPosition="77" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4413962600136184990" fileName="Rectangle.java" startLine="17" startPosition="30" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4413962600136184964" fileName="Rectangle.java" startLine="18" startPosition="30" endLine="19" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4413962600136177711" fileName="Rectangle.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Rectangle#()V" />
-    <nodeInfo nodeId="4413962600136177711" fileName="Rectangle.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="Point#(DD)Ljava/awt/geom/Point2D;" />
-    <nodeInfo nodeId="4413962600136177711" fileName="Rectangle.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="Rectangle#(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Rectangle2D;" />
-    <scopeInfo nodeId="4413962600136177711" fileName="Rectangle.java" startLine="9" startPosition="22" endLine="9" endPosition="22" />
-    <scopeInfo nodeId="4413962600136177715" fileName="Rectangle.java" startLine="12" startPosition="51" endLine="13" endPosition="36" />
-    <scopeInfo nodeId="4413962600136177711" fileName="Rectangle.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="4413962600136177711" fileName="Rectangle.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="4413962600136180681" varName="x" />
-      <varInfo nodeId="4413962600136180683" varName="y" />
-    </scopeInfo>
-    <scopeInfo nodeId="4413962600136184956" fileName="Rectangle.java" startLine="16" startPosition="77" endLine="19" endPosition="88">
-      <varInfo nodeId="4413962600136184984" varName="x" />
-      <varInfo nodeId="4413962600136184991" varName="y" />
-    </scopeInfo>
-    <scopeInfo nodeId="4413962600136177711" fileName="Rectangle.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="4413962600136184960" varName="bottomright" />
-      <varInfo nodeId="4413962600136184958" varName="topleft" />
-    </scopeInfo>
-    <unitInfo nodeId="4413962600136177711" fileName="Rectangle.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.core.baseLanguage.constructors.sandbox.test2.Rectangle" />
+    <file name="Rectangle.java">
+      <node id="4413962600136180687" at="12,51,13,36" concept="3" />
+      <node id="4413962600136184983" at="16,77,17,30" concept="2" />
+      <node id="4413962600136184990" at="17,30,18,30" concept="2" />
+      <node id="4413962600136184964" at="18,30,19,88" concept="3" />
+      <node id="4413962600136177711" at="9,0,11,0" concept="0" trace="Rectangle#()V" />
+      <node id="4413962600136177711" at="12,0,15,0" concept="4" trace="Point#(DD)Ljava/awt/geom/Point2D;" />
+      <node id="4413962600136177711" at="16,0,21,0" concept="4" trace="Rectangle#(Ljava/awt/geom/Point2D;Ljava/awt/geom/Point2D;)Ljava/awt/geom/Rectangle2D;" />
+      <scope id="4413962600136177711" at="9,22,9,22" />
+      <scope id="4413962600136177715" at="12,51,13,36" />
+      <scope id="4413962600136177711" at="9,0,11,0" />
+      <scope id="4413962600136177711" at="12,0,15,0">
+        <var name="x" id="4413962600136180681" />
+        <var name="y" id="4413962600136180683" />
+      </scope>
+      <scope id="4413962600136184956" at="16,77,19,88">
+        <var name="x" id="4413962600136184984" />
+        <var name="y" id="4413962600136184991" />
+      </scope>
+      <scope id="4413962600136177711" at="16,0,21,0">
+        <var name="bottomright" id="4413962600136184960" />
+        <var name="topleft" id="4413962600136184958" />
+      </scope>
+      <unit id="4413962600136177711" at="8,0,22,0" name="jetbrains.mps.core.baseLanguage.constructors.sandbox.test2.Rectangle" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

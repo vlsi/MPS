@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
   <root nodeRef="r:22d2df5f-8d49-41a5-894e-4bb67ea2dfab(jetbrains.mps.build.sandbox.build3)/5253498789149585672">
-    <unitInfo nodeId="5253498789149585672" fileName="buildMpsA.xml" startLine="1" startPosition="0" endLine="113" endPosition="10" unitName="jetbrains.mps.build.sandbox.build3.buildMpsA" />
+    <file name="buildMpsA.xml">
+      <unit id="5253498789149585672" at="1,0,113,10" name="jetbrains.mps.build.sandbox.build3.buildMpsA" />
+    </file>
   </root>
   <root nodeRef="r:22d2df5f-8d49-41a5-894e-4bb67ea2dfab(jetbrains.mps.build.sandbox.build3)/5610619299014495733">
-    <unitInfo nodeId="5610619299014495733" fileName="buildMpsC.xml" startLine="1" startPosition="0" endLine="48" endPosition="10" unitName="jetbrains.mps.build.sandbox.build3.buildMpsC" />
+    <file name="buildMpsC.xml">
+      <unit id="5610619299014495733" at="1,0,48,10" name="jetbrains.mps.build.sandbox.build3.buildMpsC" />
+    </file>
   </root>
   <root nodeRef="r:22d2df5f-8d49-41a5-894e-4bb67ea2dfab(jetbrains.mps.build.sandbox.build3)/6859736767834635843">
-    <unitInfo nodeId="6859736767834635843" fileName="buildMpsB.xml" startLine="1" startPosition="0" endLine="36" endPosition="10" unitName="jetbrains.mps.build.sandbox.build3.buildMpsB" />
+    <file name="buildMpsB.xml">
+      <unit id="6859736767834635843" at="1,0,36,10" name="jetbrains.mps.build.sandbox.build3.buildMpsB" />
+    </file>
   </root>
   <root nodeRef="r:22d2df5f-8d49-41a5-894e-4bb67ea2dfab(jetbrains.mps.build.sandbox.build3)/8775597636506171310">
-    <unitInfo nodeId="8775597636506171310" fileName="buildMpsD.xml" startLine="1" startPosition="0" endLine="49" endPosition="10" unitName="jetbrains.mps.build.sandbox.build3.buildMpsD" />
+    <file name="buildMpsD.xml">
+      <unit id="8775597636506171310" at="1,0,49,10" name="jetbrains.mps.build.sandbox.build3.buildMpsD" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

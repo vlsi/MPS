@@ -1,40 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590433(jetbrains.mps.samples.readerConfigLanguage.readerConfigs)/1127341420738">
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="14" startPosition="40" endLine="15" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="15" startPosition="52" endLine="16" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="19" startPosition="48" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="20" startPosition="74" endLine="21" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="21" startPosition="52" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="22" startPosition="51" endLine="23" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="23" startPosition="53" endLine="24" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="24" startPosition="57" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="28" startPosition="42" endLine="29" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="29" startPosition="68" endLine="30" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="30" startPosition="49" endLine="31" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="31" startPosition="52" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="32" startPosition="46" endLine="33" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="33" startPosition="49" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Config1#()V" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="Configure#(Ljetbrains/mps/samples/readerConfigLanguage/reader/Reader;)V" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="19" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ConfigureServiceCall#()Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;" />
-    <nodeInfo nodeId="1127341420738" fileName="Config1.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ConfigureUsage#()Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;" />
-    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="11" startPosition="20" endLine="11" endPosition="20" />
-    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="14" startPosition="40" endLine="16" endPosition="46" />
-    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="1127341420738" varName="target" />
-    </scopeInfo>
-    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="19" startPosition="48" endLine="25" endPosition="18">
-      <varInfo nodeId="1127341420738" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="28" startPosition="42" endLine="34" endPosition="18">
-      <varInfo nodeId="1127341420738" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="19" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1127341420738" fileName="Config1.java" startLine="28" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1127341420738" fileName="Config1.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
-    <unitInfo nodeId="1127341420738" fileName="Config1.xml" startLine="1" startPosition="0" endLine="14" endPosition="22" unitName="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
+    <file name="Config1.java">
+      <node id="1127341420738" at="14,40,15,52" concept="1" />
+      <node id="1127341420738" at="15,52,16,46" concept="1" />
+      <node id="1127341420738" at="19,48,20,74" concept="3" />
+      <node id="1127341420738" at="20,74,21,52" concept="1" />
+      <node id="1127341420738" at="21,52,22,51" concept="1" />
+      <node id="1127341420738" at="22,51,23,53" concept="1" />
+      <node id="1127341420738" at="23,53,24,57" concept="1" />
+      <node id="1127341420738" at="24,57,25,18" concept="4" />
+      <node id="1127341420738" at="28,42,29,68" concept="3" />
+      <node id="1127341420738" at="29,68,30,49" concept="1" />
+      <node id="1127341420738" at="30,49,31,52" concept="1" />
+      <node id="1127341420738" at="31,52,32,46" concept="1" />
+      <node id="1127341420738" at="32,46,33,49" concept="1" />
+      <node id="1127341420738" at="33,49,34,18" concept="4" />
+      <node id="1127341420738" at="11,0,13,0" concept="0" trace="Config1#()V" />
+      <node id="1127341420738" at="14,0,18,0" concept="2" trace="Configure#(Ljetbrains/mps/samples/readerConfigLanguage/reader/Reader;)V" />
+      <node id="1127341420738" at="19,0,27,0" concept="2" trace="ConfigureServiceCall#()Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;" />
+      <node id="1127341420738" at="28,0,36,0" concept="2" trace="ConfigureUsage#()Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;" />
+      <scope id="1127341420738" at="11,20,11,20" />
+      <scope id="1127341420738" at="11,0,13,0" />
+      <scope id="1127341420738" at="14,40,16,46" />
+      <scope id="1127341420738" at="14,0,18,0">
+        <var name="target" id="1127341420738" />
+      </scope>
+      <scope id="1127341420738" at="19,48,25,18">
+        <var name="result" id="1127341420738" />
+      </scope>
+      <scope id="1127341420738" at="28,42,34,18">
+        <var name="result" id="1127341420738" />
+      </scope>
+      <scope id="1127341420738" at="19,0,27,0" />
+      <scope id="1127341420738" at="28,0,36,0" />
+      <unit id="1127341420738" at="10,0,37,0" name="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
+    </file>
+    <file name="Config1.xml">
+      <unit id="1127341420738" at="1,0,14,22" name="jetbrains.mps.samples.readerConfigLanguage.readerConfigs.Config1" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

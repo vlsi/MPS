@@ -1,76 +1,86 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)/3715568794894753648">
-    <nodeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="18" startPosition="73" endLine="19" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="19" startPosition="147" endLine="20" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3715568794894764092" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="refScopeInInputLang_paramConflict_Test#()V" />
-    <nodeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_refScopeInInputLang_paramConflict#()V" />
-    <nodeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="14" startPosition="51" endLine="14" endPosition="51" />
-    <scopeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="18" startPosition="73" endLine="20" endPosition="160" />
-    <scopeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="58">
-      <varInfo nodeId="3715568794894753648" varName="editor" />
-      <varInfo nodeId="3715568794894753648" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_paramConflict_Test$TestBody" />
-    <unitInfo nodeId="3715568794894753648" fileName="refScopeInInputLang_paramConflict_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_paramConflict_Test" />
+    <file name="refScopeInInputLang_paramConflict_Test.java">
+      <node id="3715568794894753648" at="18,73,19,147" concept="1" />
+      <node id="3715568794894753648" at="19,147,20,160" concept="1" />
+      <node id="3715568794894753648" at="29,51,30,99" concept="3" />
+      <node id="3715568794894753648" at="30,99,31,93" concept="3" />
+      <node id="3715568794894764092" at="31,93,32,58" concept="1" />
+      <node id="3715568794894753648" at="14,0,16,0" concept="0" trace="refScopeInInputLang_paramConflict_Test#()V" />
+      <node id="3715568794894753648" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="3715568794894753648" at="17,0,22,0" concept="2" trace="test_refScopeInInputLang_paramConflict#()V" />
+      <node id="3715568794894753648" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3715568794894753648" at="14,51,14,51" />
+      <scope id="3715568794894753648" at="25,23,25,23" />
+      <scope id="3715568794894753648" at="14,0,16,0" />
+      <scope id="3715568794894753648" at="18,73,20,160" />
+      <scope id="3715568794894753648" at="25,0,27,0" />
+      <scope id="3715568794894753648" at="29,51,32,58">
+        <var name="editor" id="3715568794894753648" />
+        <var name="editorComponent" id="3715568794894753648" />
+      </scope>
+      <scope id="3715568794894753648" at="17,0,22,0" />
+      <scope id="3715568794894753648" at="28,0,34,0" />
+      <unit id="3715568794894753648" at="23,0,35,0" name="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_paramConflict_Test$TestBody" />
+      <unit id="3715568794894753648" at="12,0,36,0" name="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_paramConflict_Test" />
+    </file>
   </root>
   <root nodeRef="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)/3715568794894764093">
-    <nodeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="18" startPosition="69" endLine="19" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="19" startPosition="147" endLine="20" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3715568794894764215" fileName="refScopeInInputLang_superMeth_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="refScopeInInputLang_superMeth_Test#()V" />
-    <nodeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_refScopeInInputLang_superMeth#()V" />
-    <nodeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="14" startPosition="47" endLine="14" endPosition="47" />
-    <scopeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="18" startPosition="69" endLine="20" endPosition="156" />
-    <scopeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="63">
-      <varInfo nodeId="3715568794894764093" varName="editor" />
-      <varInfo nodeId="3715568794894764093" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_superMeth_Test$TestBody" />
-    <unitInfo nodeId="3715568794894764093" fileName="refScopeInInputLang_superMeth_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_superMeth_Test" />
+    <file name="refScopeInInputLang_superMeth_Test.java">
+      <node id="3715568794894764093" at="18,69,19,147" concept="1" />
+      <node id="3715568794894764093" at="19,147,20,156" concept="1" />
+      <node id="3715568794894764093" at="29,51,30,99" concept="3" />
+      <node id="3715568794894764093" at="30,99,31,93" concept="3" />
+      <node id="3715568794894764215" at="31,93,32,63" concept="1" />
+      <node id="3715568794894764093" at="14,0,16,0" concept="0" trace="refScopeInInputLang_superMeth_Test#()V" />
+      <node id="3715568794894764093" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="3715568794894764093" at="17,0,22,0" concept="2" trace="test_refScopeInInputLang_superMeth#()V" />
+      <node id="3715568794894764093" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="3715568794894764093" at="14,47,14,47" />
+      <scope id="3715568794894764093" at="25,23,25,23" />
+      <scope id="3715568794894764093" at="14,0,16,0" />
+      <scope id="3715568794894764093" at="18,69,20,156" />
+      <scope id="3715568794894764093" at="25,0,27,0" />
+      <scope id="3715568794894764093" at="29,51,32,63">
+        <var name="editor" id="3715568794894764093" />
+        <var name="editorComponent" id="3715568794894764093" />
+      </scope>
+      <scope id="3715568794894764093" at="17,0,22,0" />
+      <scope id="3715568794894764093" at="28,0,34,0" />
+      <unit id="3715568794894764093" at="23,0,35,0" name="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_superMeth_Test$TestBody" />
+      <unit id="3715568794894764093" at="12,0,36,0" name="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopeInInputLang_superMeth_Test" />
+    </file>
   </root>
   <root nodeRef="r:2ab484bd-6d9e-44f0-999f-0e78b0351ba4(jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests)/5934496548013480005">
-    <nodeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="18" startPosition="60" endLine="19" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="19" startPosition="147" endLine="20" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5934496548013480021" fileName="refScopesInInputLang_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="refScopesInInputLang_Test#()V" />
-    <nodeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_refScopesInInputLang#()V" />
-    <nodeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="14" startPosition="38" endLine="14" endPosition="38" />
-    <scopeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="18" startPosition="60" endLine="20" endPosition="147" />
-    <scopeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="61">
-      <varInfo nodeId="5934496548013480005" varName="editor" />
-      <varInfo nodeId="5934496548013480005" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopesInInputLang_Test$TestBody" />
-    <unitInfo nodeId="5934496548013480005" fileName="refScopesInInputLang_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopesInInputLang_Test" />
+    <file name="refScopesInInputLang_Test.java">
+      <node id="5934496548013480005" at="18,60,19,147" concept="1" />
+      <node id="5934496548013480005" at="19,147,20,147" concept="1" />
+      <node id="5934496548013480005" at="29,51,30,99" concept="3" />
+      <node id="5934496548013480005" at="30,99,31,93" concept="3" />
+      <node id="5934496548013480021" at="31,93,32,61" concept="1" />
+      <node id="5934496548013480005" at="14,0,16,0" concept="0" trace="refScopesInInputLang_Test#()V" />
+      <node id="5934496548013480005" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="5934496548013480005" at="17,0,22,0" concept="2" trace="test_refScopesInInputLang#()V" />
+      <node id="5934496548013480005" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5934496548013480005" at="14,38,14,38" />
+      <scope id="5934496548013480005" at="25,23,25,23" />
+      <scope id="5934496548013480005" at="14,0,16,0" />
+      <scope id="5934496548013480005" at="18,60,20,147" />
+      <scope id="5934496548013480005" at="25,0,27,0" />
+      <scope id="5934496548013480005" at="29,51,32,61">
+        <var name="editor" id="5934496548013480005" />
+        <var name="editorComponent" id="5934496548013480005" />
+      </scope>
+      <scope id="5934496548013480005" at="17,0,22,0" />
+      <scope id="5934496548013480005" at="28,0,34,0" />
+      <unit id="5934496548013480005" at="23,0,35,0" name="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopesInInputLang_Test$TestBody" />
+      <unit id="5934496548013480005" at="12,0,36,0" name="jetbrains.mps.transformation.test.inputModels.test_refScopeEditorTests.refScopesInInputLang_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

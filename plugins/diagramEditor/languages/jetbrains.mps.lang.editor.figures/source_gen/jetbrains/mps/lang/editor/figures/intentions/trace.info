@@ -1,420 +1,441 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.intentions.IntentionsDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <root>
+    <file name="IntentionsDescriptor.java">
+      <unit at="10,0,22,0" name="jetbrains.mps.lang.editor.figures.intentions.IntentionsDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)/2084788800270642821">
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="34" startPosition="35" endLine="35" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="38" startPosition="41" endLine="39" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="42" startPosition="37" endLine="43" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="46" startPosition="34" endLine="47" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="50" startPosition="44" endLine="51" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="57" startPosition="5" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642866" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="62" startPosition="152" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642875" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="64" startPosition="5" endLine="65" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2084788800270642884" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="66" startPosition="107" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642895" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="68" startPosition="5" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2084788800270642896" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="69" startPosition="0" endLine="70" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2084788800270642907" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="71" startPosition="245" endLine="72" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642926" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="73" startPosition="5" endLine="74" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="77" startPosition="53" endLine="78" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="81" startPosition="35" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="86" startPosition="37" endLine="87" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="88" startPosition="5" endLine="89" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642824" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="96" startPosition="87" endLine="97" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642838" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="101" startPosition="177" endLine="102" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2084788800270642853" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="103" startPosition="14" endLine="104" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="108" startPosition="48" endLine="109" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddRemoveFigureParameterAttributeMethod_Intention#()V" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="93" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="2084788800270642851" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="103" startPosition="12" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="54" startPosition="84" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2084788800270642864" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="61" startPosition="91" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2084788800270642882" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="65" startPosition="154" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2084788800270642905" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="70" startPosition="175" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="85" startPosition="99" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="108" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="2084788800270642836" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="100" startPosition="78" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="54" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="85" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="100" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="61" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="27" startPosition="62" endLine="27" endPosition="62" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="93" startPosition="38" endLine="93" endPosition="38" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="76" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="34" startPosition="35" endLine="35" endPosition="53" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="38" startPosition="41" endLine="39" endPosition="108" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="42" startPosition="37" endLine="43" endPosition="47" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="46" startPosition="34" endLine="47" endPosition="32" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="50" startPosition="44" endLine="51" endPosition="17" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="19" />
-    <scopeInfo nodeId="2084788800270642865" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="62" startPosition="152" endLine="63" endPosition="19" />
-    <scopeInfo nodeId="2084788800270642883" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="66" startPosition="107" endLine="67" endPosition="19" />
-    <scopeInfo nodeId="2084788800270642906" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="71" startPosition="245" endLine="72" endPosition="18" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="77" startPosition="53" endLine="78" endPosition="139" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="81" startPosition="35" endLine="82" endPosition="17" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="86" startPosition="37" endLine="87" endPosition="155" />
-    <scopeInfo nodeId="2084788800270642823" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="96" startPosition="87" endLine="97" endPosition="253" />
-    <scopeInfo nodeId="2084788800270642837" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="101" startPosition="177" endLine="102" endPosition="171" />
-    <scopeInfo nodeId="2084788800270642852" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="103" startPosition="14" endLine="104" endPosition="283" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="108" startPosition="48" endLine="109" endPosition="68" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="93" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="96" startPosition="0" endLine="99" endPosition="0">
-      <varInfo nodeId="2084788800270642821" varName="editorContext" />
-      <varInfo nodeId="2084788800270642821" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="108" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="54" startPosition="84" endLine="58" endPosition="16" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="85" startPosition="99" endLine="89" endPosition="30" />
-    <scopeInfo nodeId="2084788800270642835" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="100" startPosition="78" endLine="105" endPosition="7" />
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="54" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="2084788800270642821" varName="editorContext" />
-      <varInfo nodeId="2084788800270642821" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="85" startPosition="0" endLine="91" endPosition="0">
-      <varInfo nodeId="2084788800270642821" varName="context" />
-      <varInfo nodeId="2084788800270642821" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="100" startPosition="0" endLine="107" endPosition="0">
-      <varInfo nodeId="2084788800270642821" varName="editorContext" />
-      <varInfo nodeId="2084788800270642821" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2084788800270642863" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="61" startPosition="91" endLine="74" endPosition="17">
-      <varInfo nodeId="2084788800270642897" varName="allExtendedClassifiers" />
-      <varInfo nodeId="2084788800270642876" varName="classifierType" />
-    </scopeInfo>
-    <scopeInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="61" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="2084788800270642821" varName="editorContext" />
-      <varInfo nodeId="2084788800270642821" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="92" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeMethod_Intention$IntentionImplementation" />
-    <unitInfo nodeId="2084788800270642821" fileName="AddRemoveFigureParameterAttributeMethod_Intention.java" startLine="24" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeMethod_Intention" />
+    <file name="AddRemoveFigureParameterAttributeMethod_Intention.java">
+      <node id="2084788800270642821" at="25,0,26,0" concept="3" trace="myCachedExecutable" />
+      <node id="2084788800270642821" at="30,30,31,76" concept="7" />
+      <node id="2084788800270642821" at="34,35,35,53" concept="7" />
+      <node id="2084788800270642821" at="38,41,39,108" concept="7" />
+      <node id="2084788800270642821" at="42,37,43,47" concept="7" />
+      <node id="2084788800270642821" at="46,34,47,32" concept="7" />
+      <node id="2084788800270642821" at="50,44,51,17" concept="7" />
+      <node id="2084788800270642821" at="55,53,56,19" concept="7" />
+      <node id="2084788800270642821" at="57,5,58,16" concept="7" />
+      <node id="2084788800270642866" at="62,152,63,19" concept="7" />
+      <node id="2084788800270642875" at="64,5,65,154" concept="6" />
+      <node id="2084788800270642884" at="66,107,67,19" concept="7" />
+      <node id="2084788800270642895" at="68,5,69,0" concept="8" />
+      <node id="2084788800270642896" at="69,0,70,175" concept="6" />
+      <node id="2084788800270642907" at="71,245,72,18" concept="7" />
+      <node id="2084788800270642926" at="73,5,74,17" concept="7" />
+      <node id="2084788800270642821" at="77,53,78,139" concept="7" />
+      <node id="2084788800270642821" at="81,35,82,17" concept="7" />
+      <node id="2084788800270642821" at="86,37,87,155" concept="2" />
+      <node id="2084788800270642821" at="88,5,89,30" concept="7" />
+      <node id="2084788800270642824" at="96,87,97,253" concept="7" />
+      <node id="2084788800270642838" at="101,177,102,171" concept="2" />
+      <node id="2084788800270642853" at="103,14,104,283" concept="2" />
+      <node id="2084788800270642821" at="108,48,109,68" concept="7" />
+      <node id="2084788800270642821" at="27,0,29,0" concept="1" trace="AddRemoveFigureParameterAttributeMethod_Intention#()V" />
+      <node id="2084788800270642821" at="93,0,95,0" concept="1" trace="IntentionImplementation#()V" />
+      <node id="2084788800270642851" at="103,12,105,7" concept="0" />
+      <node id="2084788800270642821" at="30,0,33,0" concept="5" trace="getConcept#()Ljava/lang/String;" />
+      <node id="2084788800270642821" at="34,0,37,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="2084788800270642821" at="38,0,41,0" concept="5" trace="getPersistentStateKey#()Ljava/lang/String;" />
+      <node id="2084788800270642821" at="42,0,45,0" concept="5" trace="getLanguageFqName#()Ljava/lang/String;" />
+      <node id="2084788800270642821" at="46,0,49,0" concept="5" trace="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+      <node id="2084788800270642821" at="50,0,53,0" concept="5" trace="isAvailableInChildNodes#()Z" />
+      <node id="2084788800270642821" at="54,84,57,5" concept="4" />
+      <node id="2084788800270642864" at="61,91,64,5" concept="4" />
+      <node id="2084788800270642882" at="65,154,68,5" concept="4" />
+      <node id="2084788800270642905" at="70,175,73,5" concept="4" />
+      <node id="2084788800270642821" at="77,0,80,0" concept="5" trace="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="2084788800270642821" at="81,0,84,0" concept="5" trace="isSurroundWith#()Z" />
+      <node id="2084788800270642821" at="85,99,88,5" concept="4" />
+      <node id="2084788800270642821" at="96,0,99,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="2084788800270642821" at="108,0,111,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="2084788800270642836" at="100,78,105,7" concept="4" />
+      <node id="2084788800270642821" at="54,0,60,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="2084788800270642821" at="85,0,91,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <node id="2084788800270642821" at="100,0,107,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="2084788800270642821" at="61,0,76,0" concept="5" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <scope id="2084788800270642821" at="27,62,27,62" />
+      <scope id="2084788800270642821" at="93,38,93,38" />
+      <scope id="2084788800270642821" at="30,30,31,76" />
+      <scope id="2084788800270642821" at="34,35,35,53" />
+      <scope id="2084788800270642821" at="38,41,39,108" />
+      <scope id="2084788800270642821" at="42,37,43,47" />
+      <scope id="2084788800270642821" at="46,34,47,32" />
+      <scope id="2084788800270642821" at="50,44,51,17" />
+      <scope id="2084788800270642821" at="55,53,56,19" />
+      <scope id="2084788800270642865" at="62,152,63,19" />
+      <scope id="2084788800270642883" at="66,107,67,19" />
+      <scope id="2084788800270642906" at="71,245,72,18" />
+      <scope id="2084788800270642821" at="77,53,78,139" />
+      <scope id="2084788800270642821" at="81,35,82,17" />
+      <scope id="2084788800270642821" at="86,37,87,155" />
+      <scope id="2084788800270642823" at="96,87,97,253" />
+      <scope id="2084788800270642837" at="101,177,102,171" />
+      <scope id="2084788800270642852" at="103,14,104,283" />
+      <scope id="2084788800270642821" at="108,48,109,68" />
+      <scope id="2084788800270642821" at="27,0,29,0" />
+      <scope id="2084788800270642821" at="93,0,95,0" />
+      <scope id="2084788800270642821" at="30,0,33,0" />
+      <scope id="2084788800270642821" at="34,0,37,0" />
+      <scope id="2084788800270642821" at="38,0,41,0" />
+      <scope id="2084788800270642821" at="42,0,45,0" />
+      <scope id="2084788800270642821" at="46,0,49,0" />
+      <scope id="2084788800270642821" at="50,0,53,0" />
+      <scope id="2084788800270642821" at="77,0,80,0" />
+      <scope id="2084788800270642821" at="81,0,84,0" />
+      <scope id="2084788800270642821" at="96,0,99,0">
+        <var name="editorContext" id="2084788800270642821" />
+        <var name="node" id="2084788800270642821" />
+      </scope>
+      <scope id="2084788800270642821" at="108,0,111,0" />
+      <scope id="2084788800270642821" at="54,84,58,16" />
+      <scope id="2084788800270642821" at="85,99,89,30" />
+      <scope id="2084788800270642835" at="100,78,105,7" />
+      <scope id="2084788800270642821" at="54,0,60,0">
+        <var name="editorContext" id="2084788800270642821" />
+        <var name="node" id="2084788800270642821" />
+      </scope>
+      <scope id="2084788800270642821" at="85,0,91,0">
+        <var name="context" id="2084788800270642821" />
+        <var name="node" id="2084788800270642821" />
+      </scope>
+      <scope id="2084788800270642821" at="100,0,107,0">
+        <var name="editorContext" id="2084788800270642821" />
+        <var name="node" id="2084788800270642821" />
+      </scope>
+      <scope id="2084788800270642863" at="61,91,74,17">
+        <var name="allExtendedClassifiers" id="2084788800270642897" />
+        <var name="classifierType" id="2084788800270642876" />
+      </scope>
+      <scope id="2084788800270642821" at="61,0,76,0">
+        <var name="editorContext" id="2084788800270642821" />
+        <var name="node" id="2084788800270642821" />
+      </scope>
+      <unit id="2084788800270642821" at="92,0,112,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeMethod_Intention$IntentionImplementation" />
+      <unit id="2084788800270642821" at="24,0,113,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeMethod_Intention" />
+    </file>
   </root>
   <root nodeRef="r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)/5422656561926830596">
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="36" startPosition="41" endLine="37" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="44" startPosition="34" endLine="45" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="53" startPosition="53" endLine="54" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561928465234" fileName="AddRemoveFigureAttribute_Intention.java" startLine="59" startPosition="91" endLine="60" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="63" startPosition="53" endLine="64" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="67" startPosition="35" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="72" startPosition="37" endLine="73" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="74" startPosition="5" endLine="75" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561927423543" fileName="AddRemoveFigureAttribute_Intention.java" startLine="82" startPosition="87" endLine="83" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561927871363" fileName="AddRemoveFigureAttribute_Intention.java" startLine="87" startPosition="162" endLine="88" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5422656561927970232" fileName="AddRemoveFigureAttribute_Intention.java" startLine="89" startPosition="14" endLine="90" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="94" startPosition="48" endLine="95" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddRemoveFigureAttribute_Intention#()V" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="5422656561927956017" fileName="AddRemoveFigureAttribute_Intention.java" startLine="89" startPosition="12" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="52" startPosition="84" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="71" startPosition="99" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="5422656561927820724" fileName="AddRemoveFigureAttribute_Intention.java" startLine="86" startPosition="78" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="71" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="86" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="25" startPosition="47" endLine="25" endPosition="47" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="79" startPosition="38" endLine="79" endPosition="38" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="63" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="38" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="36" startPosition="41" endLine="37" endPosition="93" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="40" startPosition="37" endLine="41" endPosition="47" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="44" startPosition="34" endLine="45" endPosition="32" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="48" startPosition="44" endLine="49" endPosition="17" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="53" startPosition="53" endLine="54" endPosition="19" />
-    <scopeInfo nodeId="5422656561928437706" fileName="AddRemoveFigureAttribute_Intention.java" startLine="59" startPosition="91" endLine="60" endPosition="303" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="63" startPosition="53" endLine="64" endPosition="139" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="67" startPosition="35" endLine="68" endPosition="17" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="72" startPosition="37" endLine="73" endPosition="140" />
-    <scopeInfo nodeId="5422656561926830598" fileName="AddRemoveFigureAttribute_Intention.java" startLine="82" startPosition="87" endLine="83" endPosition="218" />
-    <scopeInfo nodeId="5422656561927820727" fileName="AddRemoveFigureAttribute_Intention.java" startLine="87" startPosition="162" endLine="88" endPosition="156" />
-    <scopeInfo nodeId="5422656561927956018" fileName="AddRemoveFigureAttribute_Intention.java" startLine="89" startPosition="14" endLine="90" endPosition="253" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="94" startPosition="48" endLine="95" endPosition="53" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="79" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="5422656561926830596" varName="editorContext" />
-      <varInfo nodeId="5422656561926830596" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="67" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
-      <varInfo nodeId="5422656561926830596" varName="editorContext" />
-      <varInfo nodeId="5422656561926830596" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="94" startPosition="0" endLine="97" endPosition="0" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="52" startPosition="84" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="71" startPosition="99" endLine="75" endPosition="30" />
-    <scopeInfo nodeId="5422656561926830600" fileName="AddRemoveFigureAttribute_Intention.java" startLine="86" startPosition="78" endLine="91" endPosition="7" />
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="5422656561926830596" varName="editorContext" />
-      <varInfo nodeId="5422656561926830596" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="71" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="5422656561926830596" varName="context" />
-      <varInfo nodeId="5422656561926830596" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="86" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="5422656561926830596" varName="editorContext" />
-      <varInfo nodeId="5422656561926830596" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="78" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureAttribute_Intention$IntentionImplementation" />
-    <unitInfo nodeId="5422656561926830596" fileName="AddRemoveFigureAttribute_Intention.java" startLine="22" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureAttribute_Intention" />
+    <file name="AddRemoveFigureAttribute_Intention.java">
+      <node id="5422656561926830596" at="23,0,24,0" concept="3" trace="myCachedExecutable" />
+      <node id="5422656561926830596" at="28,30,29,63" concept="7" />
+      <node id="5422656561926830596" at="32,35,33,38" concept="7" />
+      <node id="5422656561926830596" at="36,41,37,93" concept="7" />
+      <node id="5422656561926830596" at="40,37,41,47" concept="7" />
+      <node id="5422656561926830596" at="44,34,45,32" concept="7" />
+      <node id="5422656561926830596" at="48,44,49,17" concept="7" />
+      <node id="5422656561926830596" at="53,53,54,19" concept="7" />
+      <node id="5422656561926830596" at="55,5,56,16" concept="7" />
+      <node id="5422656561928465234" at="59,91,60,303" concept="7" />
+      <node id="5422656561926830596" at="63,53,64,139" concept="7" />
+      <node id="5422656561926830596" at="67,35,68,17" concept="7" />
+      <node id="5422656561926830596" at="72,37,73,140" concept="2" />
+      <node id="5422656561926830596" at="74,5,75,30" concept="7" />
+      <node id="5422656561927423543" at="82,87,83,218" concept="7" />
+      <node id="5422656561927871363" at="87,162,88,156" concept="2" />
+      <node id="5422656561927970232" at="89,14,90,253" concept="2" />
+      <node id="5422656561926830596" at="94,48,95,53" concept="7" />
+      <node id="5422656561926830596" at="25,0,27,0" concept="1" trace="AddRemoveFigureAttribute_Intention#()V" />
+      <node id="5422656561926830596" at="79,0,81,0" concept="1" trace="IntentionImplementation#()V" />
+      <node id="5422656561927956017" at="89,12,91,7" concept="0" />
+      <node id="5422656561926830596" at="28,0,31,0" concept="5" trace="getConcept#()Ljava/lang/String;" />
+      <node id="5422656561926830596" at="32,0,35,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="5422656561926830596" at="36,0,39,0" concept="5" trace="getPersistentStateKey#()Ljava/lang/String;" />
+      <node id="5422656561926830596" at="40,0,43,0" concept="5" trace="getLanguageFqName#()Ljava/lang/String;" />
+      <node id="5422656561926830596" at="44,0,47,0" concept="5" trace="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+      <node id="5422656561926830596" at="48,0,51,0" concept="5" trace="isAvailableInChildNodes#()Z" />
+      <node id="5422656561926830596" at="52,84,55,5" concept="4" />
+      <node id="5422656561926830596" at="59,0,62,0" concept="5" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="5422656561926830596" at="63,0,66,0" concept="5" trace="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5422656561926830596" at="67,0,70,0" concept="5" trace="isSurroundWith#()Z" />
+      <node id="5422656561926830596" at="71,99,74,5" concept="4" />
+      <node id="5422656561926830596" at="82,0,85,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="5422656561926830596" at="94,0,97,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="5422656561927820724" at="86,78,91,7" concept="4" />
+      <node id="5422656561926830596" at="52,0,58,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="5422656561926830596" at="71,0,77,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <node id="5422656561926830596" at="86,0,93,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <scope id="5422656561926830596" at="25,47,25,47" />
+      <scope id="5422656561926830596" at="79,38,79,38" />
+      <scope id="5422656561926830596" at="28,30,29,63" />
+      <scope id="5422656561926830596" at="32,35,33,38" />
+      <scope id="5422656561926830596" at="36,41,37,93" />
+      <scope id="5422656561926830596" at="40,37,41,47" />
+      <scope id="5422656561926830596" at="44,34,45,32" />
+      <scope id="5422656561926830596" at="48,44,49,17" />
+      <scope id="5422656561926830596" at="53,53,54,19" />
+      <scope id="5422656561928437706" at="59,91,60,303" />
+      <scope id="5422656561926830596" at="63,53,64,139" />
+      <scope id="5422656561926830596" at="67,35,68,17" />
+      <scope id="5422656561926830596" at="72,37,73,140" />
+      <scope id="5422656561926830598" at="82,87,83,218" />
+      <scope id="5422656561927820727" at="87,162,88,156" />
+      <scope id="5422656561927956018" at="89,14,90,253" />
+      <scope id="5422656561926830596" at="94,48,95,53" />
+      <scope id="5422656561926830596" at="25,0,27,0" />
+      <scope id="5422656561926830596" at="79,0,81,0" />
+      <scope id="5422656561926830596" at="28,0,31,0" />
+      <scope id="5422656561926830596" at="32,0,35,0" />
+      <scope id="5422656561926830596" at="36,0,39,0" />
+      <scope id="5422656561926830596" at="40,0,43,0" />
+      <scope id="5422656561926830596" at="44,0,47,0" />
+      <scope id="5422656561926830596" at="48,0,51,0" />
+      <scope id="5422656561926830596" at="59,0,62,0">
+        <var name="editorContext" id="5422656561926830596" />
+        <var name="node" id="5422656561926830596" />
+      </scope>
+      <scope id="5422656561926830596" at="63,0,66,0" />
+      <scope id="5422656561926830596" at="67,0,70,0" />
+      <scope id="5422656561926830596" at="82,0,85,0">
+        <var name="editorContext" id="5422656561926830596" />
+        <var name="node" id="5422656561926830596" />
+      </scope>
+      <scope id="5422656561926830596" at="94,0,97,0" />
+      <scope id="5422656561926830596" at="52,84,56,16" />
+      <scope id="5422656561926830596" at="71,99,75,30" />
+      <scope id="5422656561926830600" at="86,78,91,7" />
+      <scope id="5422656561926830596" at="52,0,58,0">
+        <var name="editorContext" id="5422656561926830596" />
+        <var name="node" id="5422656561926830596" />
+      </scope>
+      <scope id="5422656561926830596" at="71,0,77,0">
+        <var name="context" id="5422656561926830596" />
+        <var name="node" id="5422656561926830596" />
+      </scope>
+      <scope id="5422656561926830596" at="86,0,93,0">
+        <var name="editorContext" id="5422656561926830596" />
+        <var name="node" id="5422656561926830596" />
+      </scope>
+      <unit id="5422656561926830596" at="78,0,98,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureAttribute_Intention$IntentionImplementation" />
+      <unit id="5422656561926830596" at="22,0,99,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureAttribute_Intention" />
+    </file>
   </root>
   <root nodeRef="r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)/5422656561930152815">
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="34" startPosition="35" endLine="35" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="38" startPosition="41" endLine="39" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="42" startPosition="37" endLine="43" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="46" startPosition="34" endLine="47" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="50" startPosition="44" endLine="51" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="57" startPosition="5" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9026300686792688096" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="62" startPosition="152" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930300159" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="64" startPosition="5" endLine="65" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3229274890671554386" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="66" startPosition="107" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3229274890671574633" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="68" startPosition="5" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3229274890671567981" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="69" startPosition="0" endLine="70" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3229274890671603812" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="71" startPosition="245" endLine="72" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3229274890671612965" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="73" startPosition="5" endLine="74" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="77" startPosition="53" endLine="78" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="81" startPosition="35" endLine="82" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="86" startPosition="37" endLine="87" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="88" startPosition="5" endLine="89" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930160589" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="96" startPosition="87" endLine="97" endPosition="252" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930173563" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="101" startPosition="176" endLine="102" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5422656561930173578" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="103" startPosition="14" endLine="104" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="108" startPosition="48" endLine="109" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddRemoveFigureParameterAttributeField_Intention#()V" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="93" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="5422656561930173576" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="103" startPosition="12" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="54" startPosition="84" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9026300686792598477" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="61" startPosition="91" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3229274890671537021" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="65" startPosition="148" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3229274890671564761" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="70" startPosition="175" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="85" startPosition="99" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="108" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="5422656561930173561" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="100" startPosition="78" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="54" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="85" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="100" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="61" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="27" startPosition="61" endLine="27" endPosition="61" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="93" startPosition="38" endLine="93" endPosition="38" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="67" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="34" startPosition="35" endLine="35" endPosition="52" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="38" startPosition="41" endLine="39" endPosition="107" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="42" startPosition="37" endLine="43" endPosition="47" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="46" startPosition="34" endLine="47" endPosition="32" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="50" startPosition="44" endLine="51" endPosition="17" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="19" />
-    <scopeInfo nodeId="9026300686792598480" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="62" startPosition="152" endLine="63" endPosition="19" />
-    <scopeInfo nodeId="3229274890671537024" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="66" startPosition="107" endLine="67" endPosition="19" />
-    <scopeInfo nodeId="3229274890671564764" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="71" startPosition="245" endLine="72" endPosition="18" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="77" startPosition="53" endLine="78" endPosition="139" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="81" startPosition="35" endLine="82" endPosition="17" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="86" startPosition="37" endLine="87" endPosition="154" />
-    <scopeInfo nodeId="5422656561930152817" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="96" startPosition="87" endLine="97" endPosition="252" />
-    <scopeInfo nodeId="5422656561930173562" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="101" startPosition="176" endLine="102" endPosition="170" />
-    <scopeInfo nodeId="5422656561930173577" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="103" startPosition="14" endLine="104" endPosition="281" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="108" startPosition="48" endLine="109" endPosition="67" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="93" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="96" startPosition="0" endLine="99" endPosition="0">
-      <varInfo nodeId="5422656561930152815" varName="editorContext" />
-      <varInfo nodeId="5422656561930152815" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="108" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="54" startPosition="84" endLine="58" endPosition="16" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="85" startPosition="99" endLine="89" endPosition="30" />
-    <scopeInfo nodeId="5422656561930152819" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="100" startPosition="78" endLine="105" endPosition="7" />
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="54" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="5422656561930152815" varName="editorContext" />
-      <varInfo nodeId="5422656561930152815" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="85" startPosition="0" endLine="91" endPosition="0">
-      <varInfo nodeId="5422656561930152815" varName="context" />
-      <varInfo nodeId="5422656561930152815" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="100" startPosition="0" endLine="107" endPosition="0">
-      <varInfo nodeId="5422656561930152815" varName="editorContext" />
-      <varInfo nodeId="5422656561930152815" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561930261792" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="61" startPosition="91" endLine="74" endPosition="17">
-      <varInfo nodeId="3229274890671567982" varName="allExtendedClassifiers" />
-      <varInfo nodeId="5422656561930300160" varName="classifierType" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="61" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="5422656561930152815" varName="editorContext" />
-      <varInfo nodeId="5422656561930152815" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="92" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeField_Intention$IntentionImplementation" />
-    <unitInfo nodeId="5422656561930152815" fileName="AddRemoveFigureParameterAttributeField_Intention.java" startLine="24" startPosition="0" endLine="113" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeField_Intention" />
+    <file name="AddRemoveFigureParameterAttributeField_Intention.java">
+      <node id="5422656561930152815" at="25,0,26,0" concept="3" trace="myCachedExecutable" />
+      <node id="5422656561930152815" at="30,30,31,67" concept="7" />
+      <node id="5422656561930152815" at="34,35,35,52" concept="7" />
+      <node id="5422656561930152815" at="38,41,39,107" concept="7" />
+      <node id="5422656561930152815" at="42,37,43,47" concept="7" />
+      <node id="5422656561930152815" at="46,34,47,32" concept="7" />
+      <node id="5422656561930152815" at="50,44,51,17" concept="7" />
+      <node id="5422656561930152815" at="55,53,56,19" concept="7" />
+      <node id="5422656561930152815" at="57,5,58,16" concept="7" />
+      <node id="9026300686792688096" at="62,152,63,19" concept="7" />
+      <node id="5422656561930300159" at="64,5,65,148" concept="6" />
+      <node id="3229274890671554386" at="66,107,67,19" concept="7" />
+      <node id="3229274890671574633" at="68,5,69,0" concept="8" />
+      <node id="3229274890671567981" at="69,0,70,175" concept="6" />
+      <node id="3229274890671603812" at="71,245,72,18" concept="7" />
+      <node id="3229274890671612965" at="73,5,74,17" concept="7" />
+      <node id="5422656561930152815" at="77,53,78,139" concept="7" />
+      <node id="5422656561930152815" at="81,35,82,17" concept="7" />
+      <node id="5422656561930152815" at="86,37,87,154" concept="2" />
+      <node id="5422656561930152815" at="88,5,89,30" concept="7" />
+      <node id="5422656561930160589" at="96,87,97,252" concept="7" />
+      <node id="5422656561930173563" at="101,176,102,170" concept="2" />
+      <node id="5422656561930173578" at="103,14,104,281" concept="2" />
+      <node id="5422656561930152815" at="108,48,109,67" concept="7" />
+      <node id="5422656561930152815" at="27,0,29,0" concept="1" trace="AddRemoveFigureParameterAttributeField_Intention#()V" />
+      <node id="5422656561930152815" at="93,0,95,0" concept="1" trace="IntentionImplementation#()V" />
+      <node id="5422656561930173576" at="103,12,105,7" concept="0" />
+      <node id="5422656561930152815" at="30,0,33,0" concept="5" trace="getConcept#()Ljava/lang/String;" />
+      <node id="5422656561930152815" at="34,0,37,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="5422656561930152815" at="38,0,41,0" concept="5" trace="getPersistentStateKey#()Ljava/lang/String;" />
+      <node id="5422656561930152815" at="42,0,45,0" concept="5" trace="getLanguageFqName#()Ljava/lang/String;" />
+      <node id="5422656561930152815" at="46,0,49,0" concept="5" trace="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+      <node id="5422656561930152815" at="50,0,53,0" concept="5" trace="isAvailableInChildNodes#()Z" />
+      <node id="5422656561930152815" at="54,84,57,5" concept="4" />
+      <node id="9026300686792598477" at="61,91,64,5" concept="4" />
+      <node id="3229274890671537021" at="65,148,68,5" concept="4" />
+      <node id="3229274890671564761" at="70,175,73,5" concept="4" />
+      <node id="5422656561930152815" at="77,0,80,0" concept="5" trace="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="5422656561930152815" at="81,0,84,0" concept="5" trace="isSurroundWith#()Z" />
+      <node id="5422656561930152815" at="85,99,88,5" concept="4" />
+      <node id="5422656561930152815" at="96,0,99,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="5422656561930152815" at="108,0,111,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="5422656561930173561" at="100,78,105,7" concept="4" />
+      <node id="5422656561930152815" at="54,0,60,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="5422656561930152815" at="85,0,91,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <node id="5422656561930152815" at="100,0,107,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="5422656561930152815" at="61,0,76,0" concept="5" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <scope id="5422656561930152815" at="27,61,27,61" />
+      <scope id="5422656561930152815" at="93,38,93,38" />
+      <scope id="5422656561930152815" at="30,30,31,67" />
+      <scope id="5422656561930152815" at="34,35,35,52" />
+      <scope id="5422656561930152815" at="38,41,39,107" />
+      <scope id="5422656561930152815" at="42,37,43,47" />
+      <scope id="5422656561930152815" at="46,34,47,32" />
+      <scope id="5422656561930152815" at="50,44,51,17" />
+      <scope id="5422656561930152815" at="55,53,56,19" />
+      <scope id="9026300686792598480" at="62,152,63,19" />
+      <scope id="3229274890671537024" at="66,107,67,19" />
+      <scope id="3229274890671564764" at="71,245,72,18" />
+      <scope id="5422656561930152815" at="77,53,78,139" />
+      <scope id="5422656561930152815" at="81,35,82,17" />
+      <scope id="5422656561930152815" at="86,37,87,154" />
+      <scope id="5422656561930152817" at="96,87,97,252" />
+      <scope id="5422656561930173562" at="101,176,102,170" />
+      <scope id="5422656561930173577" at="103,14,104,281" />
+      <scope id="5422656561930152815" at="108,48,109,67" />
+      <scope id="5422656561930152815" at="27,0,29,0" />
+      <scope id="5422656561930152815" at="93,0,95,0" />
+      <scope id="5422656561930152815" at="30,0,33,0" />
+      <scope id="5422656561930152815" at="34,0,37,0" />
+      <scope id="5422656561930152815" at="38,0,41,0" />
+      <scope id="5422656561930152815" at="42,0,45,0" />
+      <scope id="5422656561930152815" at="46,0,49,0" />
+      <scope id="5422656561930152815" at="50,0,53,0" />
+      <scope id="5422656561930152815" at="77,0,80,0" />
+      <scope id="5422656561930152815" at="81,0,84,0" />
+      <scope id="5422656561930152815" at="96,0,99,0">
+        <var name="editorContext" id="5422656561930152815" />
+        <var name="node" id="5422656561930152815" />
+      </scope>
+      <scope id="5422656561930152815" at="108,0,111,0" />
+      <scope id="5422656561930152815" at="54,84,58,16" />
+      <scope id="5422656561930152815" at="85,99,89,30" />
+      <scope id="5422656561930152819" at="100,78,105,7" />
+      <scope id="5422656561930152815" at="54,0,60,0">
+        <var name="editorContext" id="5422656561930152815" />
+        <var name="node" id="5422656561930152815" />
+      </scope>
+      <scope id="5422656561930152815" at="85,0,91,0">
+        <var name="context" id="5422656561930152815" />
+        <var name="node" id="5422656561930152815" />
+      </scope>
+      <scope id="5422656561930152815" at="100,0,107,0">
+        <var name="editorContext" id="5422656561930152815" />
+        <var name="node" id="5422656561930152815" />
+      </scope>
+      <scope id="5422656561930261792" at="61,91,74,17">
+        <var name="allExtendedClassifiers" id="3229274890671567982" />
+        <var name="classifierType" id="5422656561930300160" />
+      </scope>
+      <scope id="5422656561930152815" at="61,0,76,0">
+        <var name="editorContext" id="5422656561930152815" />
+        <var name="node" id="5422656561930152815" />
+      </scope>
+      <unit id="5422656561930152815" at="92,0,112,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeField_Intention$IntentionImplementation" />
+      <unit id="5422656561930152815" at="24,0,113,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributeField_Intention" />
+    </file>
   </root>
   <root nodeRef="r:7a93b815-45a2-464f-95a1-7f27bae853bb(jetbrains.mps.lang.editor.figures.intentions)/7319867929567458791">
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="34" startPosition="35" endLine="35" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="38" startPosition="41" endLine="39" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="42" startPosition="37" endLine="43" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="46" startPosition="34" endLine="47" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="50" startPosition="44" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="57" startPosition="5" endLine="58" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458836" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="62" startPosition="152" endLine="63" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458845" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="64" startPosition="5" endLine="65" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7319867929567458854" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="66" startPosition="107" endLine="67" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458865" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="68" startPosition="5" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7319867929567458866" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="69" startPosition="0" endLine="70" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7319867929567516918" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="70" startPosition="175" endLine="71" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="74" startPosition="53" endLine="75" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="78" startPosition="35" endLine="79" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="83" startPosition="37" endLine="84" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="85" startPosition="5" endLine="86" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458794" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="93" startPosition="87" endLine="94" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567482201" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="94" startPosition="259" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7319867929567458808" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="99" startPosition="183" endLine="100" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7319867929567458823" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="101" startPosition="14" endLine="102" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="106" startPosition="48" endLine="107" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddRemoveFigureParameterAttributePropertySpecification_Intention#()V" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="90" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="7319867929567458821" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="101" startPosition="12" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="54" startPosition="84" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7319867929567458834" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="61" startPosition="91" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7319867929567458852" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="65" startPosition="148" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="82" startPosition="99" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="93" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7319867929567458806" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="98" startPosition="78" endLine="103" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="54" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="82" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="98" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="61" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="27" startPosition="77" endLine="27" endPosition="77" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="90" startPosition="38" endLine="90" endPosition="38" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="73" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="34" startPosition="35" endLine="35" endPosition="68" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="38" startPosition="41" endLine="39" endPosition="123" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="42" startPosition="37" endLine="43" endPosition="47" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="46" startPosition="34" endLine="47" endPosition="32" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="50" startPosition="44" endLine="51" endPosition="16" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="19" />
-    <scopeInfo nodeId="7319867929567458835" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="62" startPosition="152" endLine="63" endPosition="19" />
-    <scopeInfo nodeId="7319867929567458853" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="66" startPosition="107" endLine="67" endPosition="19" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="74" startPosition="53" endLine="75" endPosition="139" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="78" startPosition="35" endLine="79" endPosition="17" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="83" startPosition="37" endLine="84" endPosition="170" />
-    <scopeInfo nodeId="7319867929567458807" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="99" startPosition="183" endLine="100" endPosition="177" />
-    <scopeInfo nodeId="7319867929567458822" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="101" startPosition="14" endLine="102" endPosition="295" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="106" startPosition="48" endLine="107" endPosition="83" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="90" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="7319867929567458793" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="93" startPosition="87" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="106" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="54" startPosition="84" endLine="58" endPosition="16" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="82" startPosition="99" endLine="86" endPosition="30" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="93" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="7319867929567458791" varName="editorContext" />
-      <varInfo nodeId="7319867929567458791" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7319867929567458805" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="98" startPosition="78" endLine="103" endPosition="7" />
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="54" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="7319867929567458791" varName="editorContext" />
-      <varInfo nodeId="7319867929567458791" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="82" startPosition="0" endLine="88" endPosition="0">
-      <varInfo nodeId="7319867929567458791" varName="context" />
-      <varInfo nodeId="7319867929567458791" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="98" startPosition="0" endLine="105" endPosition="0">
-      <varInfo nodeId="7319867929567458791" varName="editorContext" />
-      <varInfo nodeId="7319867929567458791" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7319867929567458833" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="61" startPosition="91" endLine="71" endPosition="260">
-      <varInfo nodeId="7319867929567458867" varName="allExtendedClassifiers" />
-      <varInfo nodeId="7319867929567458846" varName="classifierType" />
-    </scopeInfo>
-    <scopeInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="61" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="7319867929567458791" varName="editorContext" />
-      <varInfo nodeId="7319867929567458791" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="89" startPosition="0" endLine="110" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributePropertySpecification_Intention$IntentionImplementation" />
-    <unitInfo nodeId="7319867929567458791" fileName="AddRemoveFigureParameterAttributePropertySpecification_Intention.java" startLine="24" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributePropertySpecification_Intention" />
+    <file name="AddRemoveFigureParameterAttributePropertySpecification_Intention.java">
+      <node id="7319867929567458791" at="25,0,26,0" concept="3" trace="myCachedExecutable" />
+      <node id="7319867929567458791" at="30,30,31,73" concept="7" />
+      <node id="7319867929567458791" at="34,35,35,68" concept="7" />
+      <node id="7319867929567458791" at="38,41,39,123" concept="7" />
+      <node id="7319867929567458791" at="42,37,43,47" concept="7" />
+      <node id="7319867929567458791" at="46,34,47,32" concept="7" />
+      <node id="7319867929567458791" at="50,44,51,16" concept="7" />
+      <node id="7319867929567458791" at="55,53,56,19" concept="7" />
+      <node id="7319867929567458791" at="57,5,58,16" concept="7" />
+      <node id="7319867929567458836" at="62,152,63,19" concept="7" />
+      <node id="7319867929567458845" at="64,5,65,148" concept="6" />
+      <node id="7319867929567458854" at="66,107,67,19" concept="7" />
+      <node id="7319867929567458865" at="68,5,69,0" concept="8" />
+      <node id="7319867929567458866" at="69,0,70,175" concept="6" />
+      <node id="7319867929567516918" at="70,175,71,260" concept="7" />
+      <node id="7319867929567458791" at="74,53,75,139" concept="7" />
+      <node id="7319867929567458791" at="78,35,79,17" concept="7" />
+      <node id="7319867929567458791" at="83,37,84,170" concept="2" />
+      <node id="7319867929567458791" at="85,5,86,30" concept="7" />
+      <node id="7319867929567458794" at="93,87,94,259" concept="7" />
+      <node id="7319867929567482201" at="94,259,95,0" concept="8" />
+      <node id="7319867929567458808" at="99,183,100,177" concept="2" />
+      <node id="7319867929567458823" at="101,14,102,295" concept="2" />
+      <node id="7319867929567458791" at="106,48,107,83" concept="7" />
+      <node id="7319867929567458791" at="27,0,29,0" concept="1" trace="AddRemoveFigureParameterAttributePropertySpecification_Intention#()V" />
+      <node id="7319867929567458791" at="90,0,92,0" concept="1" trace="IntentionImplementation#()V" />
+      <node id="7319867929567458821" at="101,12,103,7" concept="0" />
+      <node id="7319867929567458791" at="30,0,33,0" concept="5" trace="getConcept#()Ljava/lang/String;" />
+      <node id="7319867929567458791" at="34,0,37,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="7319867929567458791" at="38,0,41,0" concept="5" trace="getPersistentStateKey#()Ljava/lang/String;" />
+      <node id="7319867929567458791" at="42,0,45,0" concept="5" trace="getLanguageFqName#()Ljava/lang/String;" />
+      <node id="7319867929567458791" at="46,0,49,0" concept="5" trace="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+      <node id="7319867929567458791" at="50,0,53,0" concept="5" trace="isAvailableInChildNodes#()Z" />
+      <node id="7319867929567458791" at="54,84,57,5" concept="4" />
+      <node id="7319867929567458834" at="61,91,64,5" concept="4" />
+      <node id="7319867929567458852" at="65,148,68,5" concept="4" />
+      <node id="7319867929567458791" at="74,0,77,0" concept="5" trace="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="7319867929567458791" at="78,0,81,0" concept="5" trace="isSurroundWith#()Z" />
+      <node id="7319867929567458791" at="82,99,85,5" concept="4" />
+      <node id="7319867929567458791" at="106,0,109,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="7319867929567458791" at="93,0,97,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="7319867929567458806" at="98,78,103,7" concept="4" />
+      <node id="7319867929567458791" at="54,0,60,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="7319867929567458791" at="82,0,88,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <node id="7319867929567458791" at="98,0,105,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="7319867929567458791" at="61,0,73,0" concept="5" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <scope id="7319867929567458791" at="27,77,27,77" />
+      <scope id="7319867929567458791" at="90,38,90,38" />
+      <scope id="7319867929567458791" at="30,30,31,73" />
+      <scope id="7319867929567458791" at="34,35,35,68" />
+      <scope id="7319867929567458791" at="38,41,39,123" />
+      <scope id="7319867929567458791" at="42,37,43,47" />
+      <scope id="7319867929567458791" at="46,34,47,32" />
+      <scope id="7319867929567458791" at="50,44,51,16" />
+      <scope id="7319867929567458791" at="55,53,56,19" />
+      <scope id="7319867929567458835" at="62,152,63,19" />
+      <scope id="7319867929567458853" at="66,107,67,19" />
+      <scope id="7319867929567458791" at="74,53,75,139" />
+      <scope id="7319867929567458791" at="78,35,79,17" />
+      <scope id="7319867929567458791" at="83,37,84,170" />
+      <scope id="7319867929567458807" at="99,183,100,177" />
+      <scope id="7319867929567458822" at="101,14,102,295" />
+      <scope id="7319867929567458791" at="106,48,107,83" />
+      <scope id="7319867929567458791" at="27,0,29,0" />
+      <scope id="7319867929567458791" at="90,0,92,0" />
+      <scope id="7319867929567458793" at="93,87,95,0" />
+      <scope id="7319867929567458791" at="30,0,33,0" />
+      <scope id="7319867929567458791" at="34,0,37,0" />
+      <scope id="7319867929567458791" at="38,0,41,0" />
+      <scope id="7319867929567458791" at="42,0,45,0" />
+      <scope id="7319867929567458791" at="46,0,49,0" />
+      <scope id="7319867929567458791" at="50,0,53,0" />
+      <scope id="7319867929567458791" at="74,0,77,0" />
+      <scope id="7319867929567458791" at="78,0,81,0" />
+      <scope id="7319867929567458791" at="106,0,109,0" />
+      <scope id="7319867929567458791" at="54,84,58,16" />
+      <scope id="7319867929567458791" at="82,99,86,30" />
+      <scope id="7319867929567458791" at="93,0,97,0">
+        <var name="editorContext" id="7319867929567458791" />
+        <var name="node" id="7319867929567458791" />
+      </scope>
+      <scope id="7319867929567458805" at="98,78,103,7" />
+      <scope id="7319867929567458791" at="54,0,60,0">
+        <var name="editorContext" id="7319867929567458791" />
+        <var name="node" id="7319867929567458791" />
+      </scope>
+      <scope id="7319867929567458791" at="82,0,88,0">
+        <var name="context" id="7319867929567458791" />
+        <var name="node" id="7319867929567458791" />
+      </scope>
+      <scope id="7319867929567458791" at="98,0,105,0">
+        <var name="editorContext" id="7319867929567458791" />
+        <var name="node" id="7319867929567458791" />
+      </scope>
+      <scope id="7319867929567458833" at="61,91,71,260">
+        <var name="allExtendedClassifiers" id="7319867929567458867" />
+        <var name="classifierType" id="7319867929567458846" />
+      </scope>
+      <scope id="7319867929567458791" at="61,0,73,0">
+        <var name="editorContext" id="7319867929567458791" />
+        <var name="node" id="7319867929567458791" />
+      </scope>
+      <unit id="7319867929567458791" at="89,0,110,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributePropertySpecification_Intention$IntentionImplementation" />
+      <unit id="7319867929567458791" at="24,0,111,0" name="jetbrains.mps.lang.editor.figures.intentions.AddRemoveFigureParameterAttributePropertySpecification_Intention" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

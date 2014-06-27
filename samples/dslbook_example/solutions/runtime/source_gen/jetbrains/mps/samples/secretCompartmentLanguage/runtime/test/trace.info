@@ -1,61 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:43e3e907-f65e-4358-a377-baa3670feacf(jetbrains.mps.samples.secretCompartmentLanguage.runtime.test)/6877931680625740364">
-    <nodeInfo nodeId="6877931680625740375" fileName="Test.java" startLine="13" startPosition="22" endLine="14" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6877931680625740380" fileName="Test.java" startLine="14" startPosition="73" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6877931680625740383" fileName="Test.java" startLine="15" startPosition="30" endLine="16" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6877931680625740388" fileName="Test.java" startLine="16" startPosition="35" endLine="17" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6877931680625740393" fileName="Test.java" startLine="17" startPosition="35" endLine="18" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6877931680625740398" fileName="Test.java" startLine="18" startPosition="35" endLine="19" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6877931680625740367" fileName="Test.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Test#()V" />
-    <nodeInfo nodeId="6877931680625740371" fileName="Test.java" startLine="13" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test#()V" />
-    <scopeInfo nodeId="6877931680625740370" fileName="Test.java" startLine="10" startPosition="17" endLine="10" endPosition="17" />
-    <scopeInfo nodeId="6877931680625740367" fileName="Test.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="6877931680625740374" fileName="Test.java" startLine="13" startPosition="22" endLine="19" endPosition="86">
-      <varInfo nodeId="6877931680625740376" varName="stateMachineFactory" />
-    </scopeInfo>
-    <scopeInfo nodeId="6877931680625740371" fileName="Test.java" startLine="13" startPosition="0" endLine="21" endPosition="0" />
-    <unitInfo nodeId="6877931680625740364" fileName="Test.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.Test" />
+    <file name="Test.java">
+      <node id="6877931680625740375" at="13,22,14,73" concept="3" />
+      <node id="6877931680625740380" at="14,73,15,30" concept="1" />
+      <node id="6877931680625740383" at="15,30,16,35" concept="1" />
+      <node id="6877931680625740388" at="16,35,17,35" concept="1" />
+      <node id="6877931680625740393" at="17,35,18,35" concept="1" />
+      <node id="6877931680625740398" at="18,35,19,86" concept="1" />
+      <node id="6877931680625740367" at="10,0,12,0" concept="0" trace="Test#()V" />
+      <node id="6877931680625740371" at="13,0,21,0" concept="2" trace="test#()V" />
+      <scope id="6877931680625740370" at="10,17,10,17" />
+      <scope id="6877931680625740367" at="10,0,12,0" />
+      <scope id="6877931680625740374" at="13,22,19,86">
+        <var name="stateMachineFactory" id="6877931680625740376" />
+      </scope>
+      <scope id="6877931680625740371" at="13,0,21,0" />
+      <unit id="6877931680625740364" at="9,0,22,0" name="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.Test" />
+    </file>
   </root>
   <root nodeRef="r:43e3e907-f65e-4358-a377-baa3670feacf(jetbrains.mps.samples.secretCompartmentLanguage.runtime.test)/6877931680625741277">
-    <nodeInfo nodeId="6877931680625741288" fileName="HStateMachineFactory.java" startLine="15" startPosition="41" endLine="16" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6877931680625741295" fileName="HStateMachineFactory.java" startLine="16" startPosition="55" endLine="17" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6877931680625741302" fileName="HStateMachineFactory.java" startLine="17" startPosition="55" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6877931680625741309" fileName="HStateMachineFactory.java" startLine="18" startPosition="49" endLine="19" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6877931680625741316" fileName="HStateMachineFactory.java" startLine="19" startPosition="55" endLine="20" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6877931680625741323" fileName="HStateMachineFactory.java" startLine="20" startPosition="57" endLine="21" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6877931680625741329" fileName="HStateMachineFactory.java" startLine="21" startPosition="35" endLine="22" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6877931680625741335" fileName="HStateMachineFactory.java" startLine="22" startPosition="44" endLine="23" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6877931680625741341" fileName="HStateMachineFactory.java" startLine="23" startPosition="62" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6877931680625741347" fileName="HStateMachineFactory.java" startLine="24" startPosition="60" endLine="25" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6877931680625741353" fileName="HStateMachineFactory.java" startLine="25" startPosition="58" endLine="26" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6877931680625741359" fileName="HStateMachineFactory.java" startLine="26" startPosition="50" endLine="27" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6877931680625741365" fileName="HStateMachineFactory.java" startLine="27" startPosition="48" endLine="28" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6877931680625741371" fileName="HStateMachineFactory.java" startLine="28" startPosition="64" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6877931680625741377" fileName="HStateMachineFactory.java" startLine="29" startPosition="60" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6877931680625741383" fileName="HStateMachineFactory.java" startLine="30" startPosition="68" endLine="31" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6877931680625741389" fileName="HStateMachineFactory.java" startLine="31" startPosition="70" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6877931680625741395" fileName="HStateMachineFactory.java" startLine="32" startPosition="56" endLine="33" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6877931680625741400" fileName="HStateMachineFactory.java" startLine="33" startPosition="39" endLine="34" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6877931680625741280" fileName="HStateMachineFactory.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HStateMachineFactory#()V" />
-    <nodeInfo nodeId="6877931680625741284" fileName="HStateMachineFactory.java" startLine="14" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStateMachine#()Ljetbrains/mps/samples/secretCompartmentLanguage/runtime/StateMachine;" />
-    <scopeInfo nodeId="6877931680625741283" fileName="HStateMachineFactory.java" startLine="11" startPosition="33" endLine="11" endPosition="33" />
-    <scopeInfo nodeId="6877931680625741280" fileName="HStateMachineFactory.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="6877931680625741287" fileName="HStateMachineFactory.java" startLine="15" startPosition="41" endLine="34" endPosition="19">
-      <varInfo nodeId="6877931680625741330" varName="activeState" />
-      <varInfo nodeId="6877931680625741289" varName="doorClosed" />
-      <varInfo nodeId="6877931680625741310" varName="doorOpened" />
-      <varInfo nodeId="6877931680625741296" varName="drawOpened" />
-      <varInfo nodeId="6877931680625741324" varName="idle" />
-      <varInfo nodeId="6877931680625741303" varName="lightOn" />
-      <varInfo nodeId="6877931680625741354" varName="machine" />
-      <varInfo nodeId="6877931680625741317" varName="panelClosed" />
-      <varInfo nodeId="6877931680625741348" varName="unlockedPanelState" />
-      <varInfo nodeId="6877931680625741342" varName="waitingForDrawState" />
-      <varInfo nodeId="6877931680625741336" varName="waitingForLightState" />
-    </scopeInfo>
-    <scopeInfo nodeId="6877931680625741284" fileName="HStateMachineFactory.java" startLine="14" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="6877931680625741277" fileName="HStateMachineFactory.java" startLine="10" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.HStateMachineFactory" />
+    <file name="HStateMachineFactory.java">
+      <node id="6877931680625741288" at="15,41,16,55" concept="3" />
+      <node id="6877931680625741295" at="16,55,17,55" concept="3" />
+      <node id="6877931680625741302" at="17,55,18,49" concept="3" />
+      <node id="6877931680625741309" at="18,49,19,55" concept="3" />
+      <node id="6877931680625741316" at="19,55,20,57" concept="3" />
+      <node id="6877931680625741323" at="20,57,21,35" concept="3" />
+      <node id="6877931680625741329" at="21,35,22,44" concept="3" />
+      <node id="6877931680625741335" at="22,44,23,62" concept="3" />
+      <node id="6877931680625741341" at="23,62,24,60" concept="3" />
+      <node id="6877931680625741347" at="24,60,25,58" concept="3" />
+      <node id="6877931680625741353" at="25,58,26,50" concept="3" />
+      <node id="6877931680625741359" at="26,50,27,48" concept="1" />
+      <node id="6877931680625741365" at="27,48,28,64" concept="1" />
+      <node id="6877931680625741371" at="28,64,29,60" concept="1" />
+      <node id="6877931680625741377" at="29,60,30,68" concept="1" />
+      <node id="6877931680625741383" at="30,68,31,70" concept="1" />
+      <node id="6877931680625741389" at="31,70,32,56" concept="1" />
+      <node id="6877931680625741395" at="32,56,33,39" concept="1" />
+      <node id="6877931680625741400" at="33,39,34,19" concept="4" />
+      <node id="6877931680625741280" at="11,0,13,0" concept="0" trace="HStateMachineFactory#()V" />
+      <node id="6877931680625741284" at="14,0,36,0" concept="2" trace="getStateMachine#()Ljetbrains/mps/samples/secretCompartmentLanguage/runtime/StateMachine;" />
+      <scope id="6877931680625741283" at="11,33,11,33" />
+      <scope id="6877931680625741280" at="11,0,13,0" />
+      <scope id="6877931680625741287" at="15,41,34,19">
+        <var name="activeState" id="6877931680625741330" />
+        <var name="doorClosed" id="6877931680625741289" />
+        <var name="doorOpened" id="6877931680625741310" />
+        <var name="drawOpened" id="6877931680625741296" />
+        <var name="idle" id="6877931680625741324" />
+        <var name="lightOn" id="6877931680625741303" />
+        <var name="machine" id="6877931680625741354" />
+        <var name="panelClosed" id="6877931680625741317" />
+        <var name="unlockedPanelState" id="6877931680625741348" />
+        <var name="waitingForDrawState" id="6877931680625741342" />
+        <var name="waitingForLightState" id="6877931680625741336" />
+      </scope>
+      <scope id="6877931680625741284" at="14,0,36,0" />
+      <unit id="6877931680625741277" at="10,0,37,0" name="jetbrains.mps.samples.secretCompartmentLanguage.runtime.test.HStateMachineFactory" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -1,65 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="AbstractConsoleScript_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="ConsoleScript_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.ConsoleScript_BehaviorDescriptor" />
-  <unitInfo fileName="Execute_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.Execute_BehaviorDescriptor" />
-  <unitInfo fileName="RefactorOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.RefactorOperation_BehaviorDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="AbstractConsoleScript_BehaviorDescriptor.java">
+      <unit at="8,0,11,0" name="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_BehaviorDescriptor" />
+    </file>
+    <file name="RefactorOperation_BehaviorDescriptor.java">
+      <unit at="11,0,40,0" name="jetbrains.mps.console.scripts.behavior.RefactorOperation_BehaviorDescriptor" />
+    </file>
+    <file name="ConsoleScript_BehaviorDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.console.scripts.behavior.ConsoleScript_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,28,0" name="jetbrains.mps.console.scripts.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="Execute_BehaviorDescriptor.java">
+      <unit at="8,0,21,0" name="jetbrains.mps.console.scripts.behavior.Execute_BehaviorDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475491235553">
-    <nodeInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1734392475491235560" fileName="AbstractConsoleScript_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="1734392475491235553" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1734392475491235553" fileName="AbstractConsoleScript_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_Behavior" />
+    <file name="AbstractConsoleScript_Behavior.java">
+      <node id="1734392475491235553" at="8,0,10,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1734392475491235560" at="8,43,8,43" />
+      <scope id="1734392475491235553" at="8,0,10,0">
+        <var name="thisNode" id="1734392475491235553" />
+      </scope>
+      <unit id="1734392475491235553" at="7,0,11,0" name="jetbrains.mps.console.scripts.behavior.AbstractConsoleScript_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/1734392475491235576">
-    <nodeInfo nodeId="1734392475491235582" fileName="ConsoleScript_Behavior.java" startLine="12" startPosition="89" endLine="13" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1734392475491235576" fileName="ConsoleScript_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1734392475491235576" fileName="ConsoleScript_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getCommands_1734392475491235554#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="1734392475491235578" fileName="ConsoleScript_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1734392475491235581" fileName="ConsoleScript_Behavior.java" startLine="12" startPosition="89" endLine="13" endPosition="65" />
-    <scopeInfo nodeId="1734392475491235576" fileName="ConsoleScript_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="1734392475491235576" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1734392475491235576" fileName="ConsoleScript_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="1734392475491235576" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1734392475491235576" fileName="ConsoleScript_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.ConsoleScript_Behavior" />
+    <file name="ConsoleScript_Behavior.java">
+      <node id="1734392475491235582" at="12,89,13,65" concept="0" />
+      <node id="1734392475491235576" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1734392475491235576" at="12,0,15,0" concept="1" trace="virtual_getCommands_1734392475491235554#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <scope id="1734392475491235578" at="9,43,9,43" />
+      <scope id="1734392475491235581" at="12,89,13,65" />
+      <scope id="1734392475491235576" at="9,0,11,0">
+        <var name="thisNode" id="1734392475491235576" />
+      </scope>
+      <scope id="1734392475491235576" at="12,0,15,0">
+        <var name="thisNode" id="1734392475491235576" />
+      </scope>
+      <unit id="1734392475491235576" at="8,0,16,0" name="jetbrains.mps.console.scripts.behavior.ConsoleScript_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/2663801026049983654">
-    <nodeInfo nodeId="2663801026050030057" fileName="RefactorOperation_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2663801026050030496" fileName="RefactorOperation_Behavior.java" startLine="16" startPosition="94" endLine="17" endPosition="240" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2663801026049983654" fileName="RefactorOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2663801026049983654" fileName="RefactorOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2663801026049983654" fileName="RefactorOperation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getHelpPage_7006261637493125297#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <scopeInfo nodeId="2663801026049983810" fileName="RefactorOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="2663801026049990430" fileName="RefactorOperation_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="55" />
-    <scopeInfo nodeId="2663801026050030077" fileName="RefactorOperation_Behavior.java" startLine="16" startPosition="94" endLine="17" endPosition="240" />
-    <scopeInfo nodeId="2663801026049983654" fileName="RefactorOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="2663801026049983654" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2663801026049983654" fileName="RefactorOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="2663801026049983654" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="2663801026049983654" fileName="RefactorOperation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="2663801026049983654" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="2663801026049983654" fileName="RefactorOperation_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.RefactorOperation_Behavior" />
+    <file name="RefactorOperation_Behavior.java">
+      <node id="2663801026050030057" at="12,94,13,55" concept="0" />
+      <node id="2663801026050030496" at="16,94,17,240" concept="0" />
+      <node id="2663801026049983654" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2663801026049983654" at="12,0,15,0" concept="1" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="2663801026049983654" at="16,0,19,0" concept="1" trace="virtual_getHelpPage_7006261637493125297#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <scope id="2663801026049983810" at="9,43,9,43" />
+      <scope id="2663801026049990430" at="12,94,13,55" />
+      <scope id="2663801026050030077" at="16,94,17,240" />
+      <scope id="2663801026049983654" at="9,0,11,0">
+        <var name="thisNode" id="2663801026049983654" />
+      </scope>
+      <scope id="2663801026049983654" at="12,0,15,0">
+        <var name="thisConcept" id="2663801026049983654" />
+      </scope>
+      <scope id="2663801026049983654" at="16,0,19,0">
+        <var name="thisConcept" id="2663801026049983654" />
+      </scope>
+      <unit id="2663801026049983654" at="8,0,20,0" name="jetbrains.mps.console.scripts.behavior.RefactorOperation_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:330bc565-6764-4368-b8fa-04f1a782e337(jetbrains.mps.console.scripts.behavior)/748410583119789988">
-    <nodeInfo nodeId="748410583119790123" fileName="Execute_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="748410583119789988" fileName="Execute_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="748410583119789988" fileName="Execute_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <scopeInfo nodeId="748410583119789990" fileName="Execute_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="748410583119790116" fileName="Execute_Behavior.java" startLine="12" startPosition="94" endLine="13" endPosition="28" />
-    <scopeInfo nodeId="748410583119789988" fileName="Execute_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="748410583119789988" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="748410583119789988" fileName="Execute_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="748410583119789988" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="748410583119789988" fileName="Execute_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.console.scripts.behavior.Execute_Behavior" />
+    <file name="Execute_Behavior.java">
+      <node id="748410583119790123" at="12,94,13,28" concept="0" />
+      <node id="748410583119789988" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="748410583119789988" at="12,0,15,0" concept="1" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <scope id="748410583119789990" at="9,43,9,43" />
+      <scope id="748410583119790116" at="12,94,13,28" />
+      <scope id="748410583119789988" at="9,0,11,0">
+        <var name="thisNode" id="748410583119789988" />
+      </scope>
+      <scope id="748410583119789988" at="12,0,15,0">
+        <var name="thisConcept" id="748410583119789988" />
+      </scope>
+      <unit id="748410583119789988" at="8,0,16,0" name="jetbrains.mps.console.scripts.behavior.Execute_Behavior" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

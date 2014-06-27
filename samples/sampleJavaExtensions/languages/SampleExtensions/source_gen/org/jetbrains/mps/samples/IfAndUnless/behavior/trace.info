@@ -1,52 +1,74 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="FalseFlow_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_BehaviorDescriptor" />
-  <unitInfo fileName="Flow_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor" />
-  <unitInfo fileName="MyIfStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.behavior.MyIfStatement_BehaviorDescriptor" />
-  <unitInfo fileName="TrueFlow_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_BehaviorDescriptor" />
-  <unitInfo fileName="UnlessStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.behavior.UnlessStatement_BehaviorDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="TrueFlow_BehaviorDescriptor.java">
+      <unit at="7,0,20,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_BehaviorDescriptor" />
+    </file>
+    <file name="Flow_BehaviorDescriptor.java">
+      <unit at="8,0,21,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,30,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="UnlessStatement_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.UnlessStatement_BehaviorDescriptor" />
+    </file>
+    <file name="MyIfStatement_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.MyIfStatement_BehaviorDescriptor" />
+    </file>
+    <file name="FalseFlow_BehaviorDescriptor.java">
+      <unit at="7,0,20,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_BehaviorDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:59d505ea-267a-4174-bf02-615e0817b24f(org.jetbrains.mps.samples.IfAndUnless.behavior)/1262430001741498059">
-    <nodeInfo nodeId="1262430001741498055" fileName="Flow_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741498059" fileName="Flow_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741498059" fileName="Flow_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTitle_1262430001741498056#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1262430001741498061" fileName="Flow_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741498058" fileName="Flow_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="32" />
-    <scopeInfo nodeId="1262430001741498059" fileName="Flow_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="1262430001741498059" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741498059" fileName="Flow_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="1262430001741498059" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741498059" fileName="Flow_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_Behavior" />
+    <file name="Flow_Behavior.java">
+      <node id="1262430001741498055" at="12,91,13,32" concept="0" />
+      <node id="1262430001741498059" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741498059" at="12,0,15,0" concept="1" trace="virtual_getTitle_1262430001741498056#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <scope id="1262430001741498061" at="9,43,9,43" />
+      <scope id="1262430001741498058" at="12,91,13,32" />
+      <scope id="1262430001741498059" at="9,0,11,0">
+        <var name="thisNode" id="1262430001741498059" />
+      </scope>
+      <scope id="1262430001741498059" at="12,0,15,0">
+        <var name="thisConcept" id="1262430001741498059" />
+      </scope>
+      <unit id="1262430001741498059" at="8,0,16,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.Flow_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:59d505ea-267a-4174-bf02-615e0817b24f(org.jetbrains.mps.samples.IfAndUnless.behavior)/1262430001741702961">
-    <nodeInfo nodeId="1262430001741702960" fileName="TrueFlow_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741702961" fileName="TrueFlow_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741702961" fileName="TrueFlow_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTitle_1262430001741498056#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1262430001741702963" fileName="TrueFlow_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741702958" fileName="TrueFlow_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="16" />
-    <scopeInfo nodeId="1262430001741702961" fileName="TrueFlow_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="1262430001741702961" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741702961" fileName="TrueFlow_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="1262430001741702961" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741702961" fileName="TrueFlow_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_Behavior" />
+    <file name="TrueFlow_Behavior.java">
+      <node id="1262430001741702960" at="12,91,13,16" concept="0" />
+      <node id="1262430001741702961" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741702961" at="12,0,15,0" concept="1" trace="virtual_getTitle_1262430001741498056#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <scope id="1262430001741702963" at="9,43,9,43" />
+      <scope id="1262430001741702958" at="12,91,13,16" />
+      <scope id="1262430001741702961" at="9,0,11,0">
+        <var name="thisNode" id="1262430001741702961" />
+      </scope>
+      <scope id="1262430001741702961" at="12,0,15,0">
+        <var name="thisConcept" id="1262430001741702961" />
+      </scope>
+      <unit id="1262430001741702961" at="8,0,16,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.TrueFlow_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:59d505ea-267a-4174-bf02-615e0817b24f(org.jetbrains.mps.samples.IfAndUnless.behavior)/1262430001741703052">
-    <nodeInfo nodeId="1262430001741703051" fileName="FalseFlow_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741703052" fileName="FalseFlow_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741703052" fileName="FalseFlow_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTitle_1262430001741498056#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1262430001741703054" fileName="FalseFlow_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741703049" fileName="FalseFlow_Behavior.java" startLine="12" startPosition="91" endLine="13" endPosition="23" />
-    <scopeInfo nodeId="1262430001741703052" fileName="FalseFlow_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="1262430001741703052" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741703052" fileName="FalseFlow_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="1262430001741703052" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741703052" fileName="FalseFlow_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_Behavior" />
+    <file name="FalseFlow_Behavior.java">
+      <node id="1262430001741703051" at="12,91,13,23" concept="0" />
+      <node id="1262430001741703052" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741703052" at="12,0,15,0" concept="1" trace="virtual_getTitle_1262430001741498056#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <scope id="1262430001741703054" at="9,43,9,43" />
+      <scope id="1262430001741703049" at="12,91,13,23" />
+      <scope id="1262430001741703052" at="9,0,11,0">
+        <var name="thisNode" id="1262430001741703052" />
+      </scope>
+      <scope id="1262430001741703052" at="12,0,15,0">
+        <var name="thisConcept" id="1262430001741703052" />
+      </scope>
+      <unit id="1262430001741703052" at="8,0,16,0" name="org.jetbrains.mps.samples.IfAndUnless.behavior.FalseFlow_Behavior" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

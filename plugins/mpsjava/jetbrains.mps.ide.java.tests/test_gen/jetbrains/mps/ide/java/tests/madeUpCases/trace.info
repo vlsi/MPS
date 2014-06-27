@@ -1,217 +1,226 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)/4795297196607456968">
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="15" startPosition="46" endLine="16" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="16" startPosition="123" endLine="17" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="21" startPosition="47" endLine="22" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="22" startPosition="123" endLine="23" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="27" startPosition="46" endLine="28" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="28" startPosition="123" endLine="29" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="33" startPosition="48" endLine="34" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="34" startPosition="123" endLine="35" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="39" startPosition="54" endLine="40" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="40" startPosition="123" endLine="41" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="45" startPosition="53" endLine="46" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="46" startPosition="123" endLine="47" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1552508500544136606" fileName="RoundTrip_Test.java" startLine="52" startPosition="48" endLine="53" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1552508500544136606" fileName="RoundTrip_Test.java" startLine="53" startPosition="46" endLine="54" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1552508500544136606" fileName="RoundTrip_Test.java" startLine="54" startPosition="46" endLine="55" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1552508500544136606" fileName="RoundTrip_Test.java" startLine="55" startPosition="46" endLine="56" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1552508500544136606" fileName="RoundTrip_Test.java" startLine="56" startPosition="46" endLine="57" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1552508500544136606" fileName="RoundTrip_Test.java" startLine="57" startPosition="46" endLine="58" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7902967214465805704" fileName="RoundTrip_Test.java" startLine="58" startPosition="46" endLine="59" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8083368042256319464" fileName="RoundTrip_Test.java" startLine="59" startPosition="158" endLine="60" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256319866" fileName="RoundTrip_Test.java" startLine="63" startPosition="49" endLine="64" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256319866" fileName="RoundTrip_Test.java" startLine="64" startPosition="46" endLine="65" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256319866" fileName="RoundTrip_Test.java" startLine="65" startPosition="46" endLine="66" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256319866" fileName="RoundTrip_Test.java" startLine="66" startPosition="46" endLine="67" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256319866" fileName="RoundTrip_Test.java" startLine="67" startPosition="46" endLine="68" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256319866" fileName="RoundTrip_Test.java" startLine="68" startPosition="46" endLine="69" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256319878" fileName="RoundTrip_Test.java" startLine="69" startPosition="46" endLine="70" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8083368042256320290" fileName="RoundTrip_Test.java" startLine="70" startPosition="158" endLine="71" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256344756" fileName="RoundTrip_Test.java" startLine="74" startPosition="48" endLine="75" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256344756" fileName="RoundTrip_Test.java" startLine="75" startPosition="46" endLine="76" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256344756" fileName="RoundTrip_Test.java" startLine="76" startPosition="46" endLine="77" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256344756" fileName="RoundTrip_Test.java" startLine="77" startPosition="46" endLine="78" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256344756" fileName="RoundTrip_Test.java" startLine="78" startPosition="46" endLine="79" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256344756" fileName="RoundTrip_Test.java" startLine="79" startPosition="46" endLine="80" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256344759" fileName="RoundTrip_Test.java" startLine="80" startPosition="46" endLine="81" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8083368042256344764" fileName="RoundTrip_Test.java" startLine="81" startPosition="158" endLine="82" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400121742" fileName="RoundTrip_Test.java" startLine="85" startPosition="50" endLine="86" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400121742" fileName="RoundTrip_Test.java" startLine="86" startPosition="46" endLine="87" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400121742" fileName="RoundTrip_Test.java" startLine="87" startPosition="46" endLine="88" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400121742" fileName="RoundTrip_Test.java" startLine="88" startPosition="46" endLine="89" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400121742" fileName="RoundTrip_Test.java" startLine="89" startPosition="46" endLine="90" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400121742" fileName="RoundTrip_Test.java" startLine="90" startPosition="46" endLine="91" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400121745" fileName="RoundTrip_Test.java" startLine="91" startPosition="46" endLine="92" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7030568040400121754" fileName="RoundTrip_Test.java" startLine="92" startPosition="155" endLine="93" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534307059923" fileName="RoundTrip_Test.java" startLine="96" startPosition="56" endLine="97" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534307059923" fileName="RoundTrip_Test.java" startLine="97" startPosition="46" endLine="98" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534307059923" fileName="RoundTrip_Test.java" startLine="98" startPosition="46" endLine="99" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534307059923" fileName="RoundTrip_Test.java" startLine="99" startPosition="46" endLine="100" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534307059923" fileName="RoundTrip_Test.java" startLine="100" startPosition="46" endLine="101" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534307059923" fileName="RoundTrip_Test.java" startLine="101" startPosition="46" endLine="102" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534307060157" fileName="RoundTrip_Test.java" startLine="102" startPosition="46" endLine="103" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1369191534307060162" fileName="RoundTrip_Test.java" startLine="103" startPosition="158" endLine="104" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534311333612" fileName="RoundTrip_Test.java" startLine="107" startPosition="55" endLine="108" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534311333612" fileName="RoundTrip_Test.java" startLine="108" startPosition="46" endLine="109" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534311333612" fileName="RoundTrip_Test.java" startLine="109" startPosition="46" endLine="110" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534311333612" fileName="RoundTrip_Test.java" startLine="110" startPosition="46" endLine="111" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534311333612" fileName="RoundTrip_Test.java" startLine="111" startPosition="46" endLine="112" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534311333612" fileName="RoundTrip_Test.java" startLine="112" startPosition="46" endLine="113" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1369191534311333615" fileName="RoundTrip_Test.java" startLine="113" startPosition="46" endLine="114" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1369191534311333620" fileName="RoundTrip_Test.java" startLine="114" startPosition="158" endLine="115" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Simple#()V" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Methods#()V" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Fields#()V" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypeVars#()V" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_OuterClassThis#()V" />
-    <nodeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_VarargMethods#()V" />
-    <nodeInfo nodeId="1552508500544136606" fileName="RoundTrip_Test.java" startLine="52" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Simple#()V" />
-    <nodeInfo nodeId="8083368042256319866" fileName="RoundTrip_Test.java" startLine="63" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Methods#()V" />
-    <nodeInfo nodeId="8083368042256344756" fileName="RoundTrip_Test.java" startLine="74" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Fields#()V" />
-    <nodeInfo nodeId="7030568040400121742" fileName="RoundTrip_Test.java" startLine="85" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_TypeVars#()V" />
-    <nodeInfo nodeId="1369191534307059923" fileName="RoundTrip_Test.java" startLine="96" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_OuterClassThis#()V" />
-    <nodeInfo nodeId="1369191534311333612" fileName="RoundTrip_Test.java" startLine="107" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_VarargMethods#()V" />
-    <scopeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="15" startPosition="46" endLine="17" endPosition="106" />
-    <scopeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="21" startPosition="47" endLine="23" endPosition="107" />
-    <scopeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="27" startPosition="46" endLine="29" endPosition="106" />
-    <scopeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="33" startPosition="48" endLine="35" endPosition="108" />
-    <scopeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="39" startPosition="54" endLine="41" endPosition="114" />
-    <scopeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="45" startPosition="53" endLine="47" endPosition="113" />
-    <scopeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1552508500544136606" fileName="RoundTrip_Test.java" startLine="52" startPosition="48" endLine="60" endPosition="154">
-      <varInfo nodeId="4795297196607510319" varName="genCode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8083368042256319866" fileName="RoundTrip_Test.java" startLine="63" startPosition="49" endLine="71" endPosition="154">
-      <varInfo nodeId="8083368042256319879" varName="genCode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8083368042256344756" fileName="RoundTrip_Test.java" startLine="74" startPosition="48" endLine="82" endPosition="154">
-      <varInfo nodeId="8083368042256344760" varName="genCode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7030568040400121742" fileName="RoundTrip_Test.java" startLine="85" startPosition="50" endLine="93" endPosition="151">
-      <varInfo nodeId="7030568040400121746" varName="genCode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1369191534307059923" fileName="RoundTrip_Test.java" startLine="96" startPosition="56" endLine="104" endPosition="156">
-      <varInfo nodeId="1369191534307060158" varName="genCode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1369191534311333612" fileName="RoundTrip_Test.java" startLine="107" startPosition="55" endLine="115" endPosition="156">
-      <varInfo nodeId="1369191534311333616" varName="genCode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1552508500544136606" fileName="RoundTrip_Test.java" startLine="52" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="8083368042256319866" fileName="RoundTrip_Test.java" startLine="63" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="8083368042256344756" fileName="RoundTrip_Test.java" startLine="74" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="7030568040400121742" fileName="RoundTrip_Test.java" startLine="85" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1369191534307059923" fileName="RoundTrip_Test.java" startLine="96" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="1369191534311333612" fileName="RoundTrip_Test.java" startLine="107" startPosition="0" endLine="117" endPosition="0" />
-    <unitInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="50" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody" />
-    <unitInfo nodeId="4795297196607456968" fileName="RoundTrip_Test.java" startLine="12" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test" />
+    <file name="RoundTrip_Test.java">
+      <node id="4795297196607456968" at="15,46,16,123" concept="0" />
+      <node id="4795297196607456968" at="16,123,17,106" concept="0" />
+      <node id="4795297196607456968" at="21,47,22,123" concept="0" />
+      <node id="4795297196607456968" at="22,123,23,107" concept="0" />
+      <node id="4795297196607456968" at="27,46,28,123" concept="0" />
+      <node id="4795297196607456968" at="28,123,29,106" concept="0" />
+      <node id="4795297196607456968" at="33,48,34,123" concept="0" />
+      <node id="4795297196607456968" at="34,123,35,108" concept="0" />
+      <node id="4795297196607456968" at="39,54,40,123" concept="0" />
+      <node id="4795297196607456968" at="40,123,41,114" concept="0" />
+      <node id="4795297196607456968" at="45,53,46,123" concept="0" />
+      <node id="4795297196607456968" at="46,123,47,113" concept="0" />
+      <node id="1552508500544136606" at="52,48,53,46" concept="0" />
+      <node id="1552508500544136606" at="53,46,54,46" concept="0" />
+      <node id="1552508500544136606" at="54,46,55,46" concept="0" />
+      <node id="1552508500544136606" at="55,46,56,46" concept="0" />
+      <node id="1552508500544136606" at="56,46,57,46" concept="0" />
+      <node id="1552508500544136606" at="57,46,58,46" concept="0" />
+      <node id="7902967214465805704" at="58,46,59,158" concept="2" />
+      <node id="8083368042256319464" at="59,158,60,154" concept="0" />
+      <node id="8083368042256319866" at="63,49,64,46" concept="0" />
+      <node id="8083368042256319866" at="64,46,65,46" concept="0" />
+      <node id="8083368042256319866" at="65,46,66,46" concept="0" />
+      <node id="8083368042256319866" at="66,46,67,46" concept="0" />
+      <node id="8083368042256319866" at="67,46,68,46" concept="0" />
+      <node id="8083368042256319866" at="68,46,69,46" concept="0" />
+      <node id="8083368042256319878" at="69,46,70,158" concept="2" />
+      <node id="8083368042256320290" at="70,158,71,154" concept="0" />
+      <node id="8083368042256344756" at="74,48,75,46" concept="0" />
+      <node id="8083368042256344756" at="75,46,76,46" concept="0" />
+      <node id="8083368042256344756" at="76,46,77,46" concept="0" />
+      <node id="8083368042256344756" at="77,46,78,46" concept="0" />
+      <node id="8083368042256344756" at="78,46,79,46" concept="0" />
+      <node id="8083368042256344756" at="79,46,80,46" concept="0" />
+      <node id="8083368042256344759" at="80,46,81,158" concept="2" />
+      <node id="8083368042256344764" at="81,158,82,154" concept="0" />
+      <node id="7030568040400121742" at="85,50,86,46" concept="0" />
+      <node id="7030568040400121742" at="86,46,87,46" concept="0" />
+      <node id="7030568040400121742" at="87,46,88,46" concept="0" />
+      <node id="7030568040400121742" at="88,46,89,46" concept="0" />
+      <node id="7030568040400121742" at="89,46,90,46" concept="0" />
+      <node id="7030568040400121742" at="90,46,91,46" concept="0" />
+      <node id="7030568040400121745" at="91,46,92,155" concept="2" />
+      <node id="7030568040400121754" at="92,155,93,151" concept="0" />
+      <node id="1369191534307059923" at="96,56,97,46" concept="0" />
+      <node id="1369191534307059923" at="97,46,98,46" concept="0" />
+      <node id="1369191534307059923" at="98,46,99,46" concept="0" />
+      <node id="1369191534307059923" at="99,46,100,46" concept="0" />
+      <node id="1369191534307059923" at="100,46,101,46" concept="0" />
+      <node id="1369191534307059923" at="101,46,102,46" concept="0" />
+      <node id="1369191534307060157" at="102,46,103,158" concept="2" />
+      <node id="1369191534307060162" at="103,158,104,156" concept="0" />
+      <node id="1369191534311333612" at="107,55,108,46" concept="0" />
+      <node id="1369191534311333612" at="108,46,109,46" concept="0" />
+      <node id="1369191534311333612" at="109,46,110,46" concept="0" />
+      <node id="1369191534311333612" at="110,46,111,46" concept="0" />
+      <node id="1369191534311333612" at="111,46,112,46" concept="0" />
+      <node id="1369191534311333612" at="112,46,113,46" concept="0" />
+      <node id="1369191534311333615" at="113,46,114,158" concept="2" />
+      <node id="1369191534311333620" at="114,158,115,156" concept="0" />
+      <node id="4795297196607456968" at="14,0,19,0" concept="1" trace="test_Simple#()V" />
+      <node id="4795297196607456968" at="20,0,25,0" concept="1" trace="test_Methods#()V" />
+      <node id="4795297196607456968" at="26,0,31,0" concept="1" trace="test_Fields#()V" />
+      <node id="4795297196607456968" at="32,0,37,0" concept="1" trace="test_TypeVars#()V" />
+      <node id="4795297196607456968" at="38,0,43,0" concept="1" trace="test_OuterClassThis#()V" />
+      <node id="4795297196607456968" at="44,0,49,0" concept="1" trace="test_VarargMethods#()V" />
+      <node id="1552508500544136606" at="52,0,62,0" concept="1" trace="test_Simple#()V" />
+      <node id="8083368042256319866" at="63,0,73,0" concept="1" trace="test_Methods#()V" />
+      <node id="8083368042256344756" at="74,0,84,0" concept="1" trace="test_Fields#()V" />
+      <node id="7030568040400121742" at="85,0,95,0" concept="1" trace="test_TypeVars#()V" />
+      <node id="1369191534307059923" at="96,0,106,0" concept="1" trace="test_OuterClassThis#()V" />
+      <node id="1369191534311333612" at="107,0,117,0" concept="1" trace="test_VarargMethods#()V" />
+      <scope id="4795297196607456968" at="15,46,17,106" />
+      <scope id="4795297196607456968" at="21,47,23,107" />
+      <scope id="4795297196607456968" at="27,46,29,106" />
+      <scope id="4795297196607456968" at="33,48,35,108" />
+      <scope id="4795297196607456968" at="39,54,41,114" />
+      <scope id="4795297196607456968" at="45,53,47,113" />
+      <scope id="4795297196607456968" at="14,0,19,0" />
+      <scope id="4795297196607456968" at="20,0,25,0" />
+      <scope id="4795297196607456968" at="26,0,31,0" />
+      <scope id="4795297196607456968" at="32,0,37,0" />
+      <scope id="4795297196607456968" at="38,0,43,0" />
+      <scope id="4795297196607456968" at="44,0,49,0" />
+      <scope id="1552508500544136606" at="52,48,60,154">
+        <var name="genCode" id="4795297196607510319" />
+      </scope>
+      <scope id="8083368042256319866" at="63,49,71,154">
+        <var name="genCode" id="8083368042256319879" />
+      </scope>
+      <scope id="8083368042256344756" at="74,48,82,154">
+        <var name="genCode" id="8083368042256344760" />
+      </scope>
+      <scope id="7030568040400121742" at="85,50,93,151">
+        <var name="genCode" id="7030568040400121746" />
+      </scope>
+      <scope id="1369191534307059923" at="96,56,104,156">
+        <var name="genCode" id="1369191534307060158" />
+      </scope>
+      <scope id="1369191534311333612" at="107,55,115,156">
+        <var name="genCode" id="1369191534311333616" />
+      </scope>
+      <scope id="1552508500544136606" at="52,0,62,0" />
+      <scope id="8083368042256319866" at="63,0,73,0" />
+      <scope id="8083368042256344756" at="74,0,84,0" />
+      <scope id="7030568040400121742" at="85,0,95,0" />
+      <scope id="1369191534307059923" at="96,0,106,0" />
+      <scope id="1369191534311333612" at="107,0,117,0" />
+      <unit id="4795297196607456968" at="50,0,118,0" name="jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test$TestBody" />
+      <unit id="4795297196607456968" at="12,0,119,0" name="jetbrains.mps.ide.java.tests.madeUpCases.RoundTrip_Test" />
+    </file>
   </root>
   <root nodeRef="r:62acf462-bd7b-40b0-b72a-892ef900fe37(jetbrains.mps.ide.java.tests.madeUpCases@tests)/4795297196607520928">
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="21" startPosition="47" endLine="22" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="22" startPosition="123" endLine="23" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="27" startPosition="59" endLine="28" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="28" startPosition="123" endLine="29" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="33" startPosition="48" endLine="34" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="34" startPosition="123" endLine="35" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="39" startPosition="48" endLine="40" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="40" startPosition="123" endLine="41" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="45" startPosition="48" endLine="46" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="46" startPosition="123" endLine="47" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="51" startPosition="52" endLine="52" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="52" startPosition="123" endLine="53" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="57" startPosition="50" endLine="58" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="58" startPosition="123" endLine="59" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="63" startPosition="52" endLine="64" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="64" startPosition="123" endLine="65" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607521181" fileName="JavaToMps_Test.java" startLine="70" startPosition="49" endLine="71" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607521181" fileName="JavaToMps_Test.java" startLine="71" startPosition="46" endLine="72" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607521181" fileName="JavaToMps_Test.java" startLine="72" startPosition="46" endLine="73" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400118037" fileName="JavaToMps_Test.java" startLine="73" startPosition="46" endLine="74" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1305226844299320516" fileName="JavaToMps_Test.java" startLine="74" startPosition="212" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1218582063869484771" fileName="JavaToMps_Test.java" startLine="78" startPosition="61" endLine="79" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218582063869484771" fileName="JavaToMps_Test.java" startLine="79" startPosition="46" endLine="80" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218582063869484771" fileName="JavaToMps_Test.java" startLine="80" startPosition="46" endLine="81" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1218582063869484774" fileName="JavaToMps_Test.java" startLine="81" startPosition="46" endLine="82" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7902967214465805211" fileName="JavaToMps_Test.java" startLine="85" startPosition="50" endLine="86" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7902967214465805211" fileName="JavaToMps_Test.java" startLine="86" startPosition="46" endLine="87" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7902967214465805211" fileName="JavaToMps_Test.java" startLine="87" startPosition="46" endLine="88" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256393570" fileName="JavaToMps_Test.java" startLine="88" startPosition="46" endLine="89" endPosition="403" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256417953" fileName="JavaToMps_Test.java" startLine="92" startPosition="50" endLine="93" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256417953" fileName="JavaToMps_Test.java" startLine="93" startPosition="46" endLine="94" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256417953" fileName="JavaToMps_Test.java" startLine="94" startPosition="46" endLine="95" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256417956" fileName="JavaToMps_Test.java" startLine="95" startPosition="46" endLine="96" endPosition="403" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256418397" fileName="JavaToMps_Test.java" startLine="99" startPosition="50" endLine="100" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256418397" fileName="JavaToMps_Test.java" startLine="100" startPosition="46" endLine="101" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256418397" fileName="JavaToMps_Test.java" startLine="101" startPosition="46" endLine="102" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8083368042256418400" fileName="JavaToMps_Test.java" startLine="102" startPosition="46" endLine="103" endPosition="403" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400313711" fileName="JavaToMps_Test.java" startLine="106" startPosition="54" endLine="107" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400313711" fileName="JavaToMps_Test.java" startLine="107" startPosition="46" endLine="108" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400313711" fileName="JavaToMps_Test.java" startLine="108" startPosition="46" endLine="109" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400313714" fileName="JavaToMps_Test.java" startLine="109" startPosition="46" endLine="110" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="887121589775270929" fileName="JavaToMps_Test.java" startLine="113" startPosition="52" endLine="114" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="887121589775270929" fileName="JavaToMps_Test.java" startLine="114" startPosition="46" endLine="115" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="887121589775270929" fileName="JavaToMps_Test.java" startLine="115" startPosition="46" endLine="116" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9114761665055225570" fileName="JavaToMps_Test.java" startLine="116" startPosition="46" endLine="117" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8051061021619748495" fileName="JavaToMps_Test.java" startLine="120" startPosition="54" endLine="121" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8051061021619748495" fileName="JavaToMps_Test.java" startLine="121" startPosition="46" endLine="122" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8051061021619748495" fileName="JavaToMps_Test.java" startLine="122" startPosition="46" endLine="123" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8051061021619748498" fileName="JavaToMps_Test.java" startLine="123" startPosition="46" endLine="124" endPosition="233" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_SelfRef#()V" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ClassWInnerInterace#()V" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Imports1#()V" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="38" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Imports2#()V" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="44" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Imports3#()V" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="50" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ClassNesting#()V" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="56" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_FullSource#()V" />
-    <nodeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="62" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_LittleSource#()V" />
-    <nodeInfo nodeId="1218582063869484771" fileName="JavaToMps_Test.java" startLine="78" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ClassWInnerInterace#()V" />
-    <nodeInfo nodeId="7902967214465805211" fileName="JavaToMps_Test.java" startLine="85" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Imports1#()V" />
-    <nodeInfo nodeId="8083368042256417953" fileName="JavaToMps_Test.java" startLine="92" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Imports2#()V" />
-    <nodeInfo nodeId="8083368042256418397" fileName="JavaToMps_Test.java" startLine="99" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Imports3#()V" />
-    <nodeInfo nodeId="7030568040400313711" fileName="JavaToMps_Test.java" startLine="106" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ClassNesting#()V" />
-    <nodeInfo nodeId="887121589775270929" fileName="JavaToMps_Test.java" startLine="113" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_FullSource#()V" />
-    <nodeInfo nodeId="8051061021619748495" fileName="JavaToMps_Test.java" startLine="120" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_LittleSource#()V" />
-    <nodeInfo nodeId="4795297196607521181" fileName="JavaToMps_Test.java" startLine="70" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_SelfRef#()V" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="21" startPosition="47" endLine="23" endPosition="107" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="27" startPosition="59" endLine="29" endPosition="119" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="33" startPosition="48" endLine="35" endPosition="108" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="39" startPosition="48" endLine="41" endPosition="108" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="45" startPosition="48" endLine="47" endPosition="108" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="51" startPosition="52" endLine="53" endPosition="112" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="57" startPosition="50" endLine="59" endPosition="110" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="63" startPosition="52" endLine="65" endPosition="112" />
-    <scopeInfo nodeId="1218582063869484771" fileName="JavaToMps_Test.java" startLine="78" startPosition="61" endLine="82" endPosition="216" />
-    <scopeInfo nodeId="7902967214465805211" fileName="JavaToMps_Test.java" startLine="85" startPosition="50" endLine="89" endPosition="403" />
-    <scopeInfo nodeId="8083368042256417953" fileName="JavaToMps_Test.java" startLine="92" startPosition="50" endLine="96" endPosition="403" />
-    <scopeInfo nodeId="8083368042256418397" fileName="JavaToMps_Test.java" startLine="99" startPosition="50" endLine="103" endPosition="403" />
-    <scopeInfo nodeId="7030568040400313711" fileName="JavaToMps_Test.java" startLine="106" startPosition="54" endLine="110" endPosition="218" />
-    <scopeInfo nodeId="887121589775270929" fileName="JavaToMps_Test.java" startLine="113" startPosition="52" endLine="117" endPosition="16" />
-    <scopeInfo nodeId="8051061021619748495" fileName="JavaToMps_Test.java" startLine="120" startPosition="54" endLine="124" endPosition="233" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="20" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="26" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="32" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="38" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="44" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="50" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="56" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="62" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="4795297196607521181" fileName="JavaToMps_Test.java" startLine="70" startPosition="49" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="1218582063869484771" fileName="JavaToMps_Test.java" startLine="78" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="7902967214465805211" fileName="JavaToMps_Test.java" startLine="85" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="8083368042256417953" fileName="JavaToMps_Test.java" startLine="92" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="8083368042256418397" fileName="JavaToMps_Test.java" startLine="99" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="7030568040400313711" fileName="JavaToMps_Test.java" startLine="106" startPosition="0" endLine="112" endPosition="0" />
-    <scopeInfo nodeId="887121589775270929" fileName="JavaToMps_Test.java" startLine="113" startPosition="0" endLine="119" endPosition="0" />
-    <scopeInfo nodeId="8051061021619748495" fileName="JavaToMps_Test.java" startLine="120" startPosition="0" endLine="126" endPosition="0" />
-    <scopeInfo nodeId="4795297196607521181" fileName="JavaToMps_Test.java" startLine="70" startPosition="0" endLine="77" endPosition="0" />
-    <unitInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="68" startPosition="0" endLine="127" endPosition="0" unitName="jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody" />
-    <unitInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="18" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test" />
+    <file name="JavaToMps_Test.java">
+      <node id="4795297196607520928" at="21,47,22,123" concept="0" />
+      <node id="4795297196607520928" at="22,123,23,107" concept="0" />
+      <node id="4795297196607520928" at="27,59,28,123" concept="0" />
+      <node id="4795297196607520928" at="28,123,29,119" concept="0" />
+      <node id="4795297196607520928" at="33,48,34,123" concept="0" />
+      <node id="4795297196607520928" at="34,123,35,108" concept="0" />
+      <node id="4795297196607520928" at="39,48,40,123" concept="0" />
+      <node id="4795297196607520928" at="40,123,41,108" concept="0" />
+      <node id="4795297196607520928" at="45,48,46,123" concept="0" />
+      <node id="4795297196607520928" at="46,123,47,108" concept="0" />
+      <node id="4795297196607520928" at="51,52,52,123" concept="0" />
+      <node id="4795297196607520928" at="52,123,53,112" concept="0" />
+      <node id="4795297196607520928" at="57,50,58,123" concept="0" />
+      <node id="4795297196607520928" at="58,123,59,110" concept="0" />
+      <node id="4795297196607520928" at="63,52,64,123" concept="0" />
+      <node id="4795297196607520928" at="64,123,65,112" concept="0" />
+      <node id="4795297196607521181" at="70,49,71,46" concept="0" />
+      <node id="4795297196607521181" at="71,46,72,46" concept="0" />
+      <node id="4795297196607521181" at="72,46,73,46" concept="0" />
+      <node id="7030568040400118037" at="73,46,74,212" concept="0" />
+      <node id="1305226844299320516" at="74,212,75,0" concept="4" />
+      <node id="1218582063869484771" at="78,61,79,46" concept="0" />
+      <node id="1218582063869484771" at="79,46,80,46" concept="0" />
+      <node id="1218582063869484771" at="80,46,81,46" concept="0" />
+      <node id="1218582063869484774" at="81,46,82,216" concept="0" />
+      <node id="7902967214465805211" at="85,50,86,46" concept="0" />
+      <node id="7902967214465805211" at="86,46,87,46" concept="0" />
+      <node id="7902967214465805211" at="87,46,88,46" concept="0" />
+      <node id="8083368042256393570" at="88,46,89,403" concept="0" />
+      <node id="8083368042256417953" at="92,50,93,46" concept="0" />
+      <node id="8083368042256417953" at="93,46,94,46" concept="0" />
+      <node id="8083368042256417953" at="94,46,95,46" concept="0" />
+      <node id="8083368042256417956" at="95,46,96,403" concept="0" />
+      <node id="8083368042256418397" at="99,50,100,46" concept="0" />
+      <node id="8083368042256418397" at="100,46,101,46" concept="0" />
+      <node id="8083368042256418397" at="101,46,102,46" concept="0" />
+      <node id="8083368042256418400" at="102,46,103,403" concept="0" />
+      <node id="7030568040400313711" at="106,54,107,46" concept="0" />
+      <node id="7030568040400313711" at="107,46,108,46" concept="0" />
+      <node id="7030568040400313711" at="108,46,109,46" concept="0" />
+      <node id="7030568040400313714" at="109,46,110,218" concept="0" />
+      <node id="887121589775270929" at="113,52,114,46" concept="0" />
+      <node id="887121589775270929" at="114,46,115,46" concept="0" />
+      <node id="887121589775270929" at="115,46,116,46" concept="0" />
+      <node id="9114761665055225570" at="116,46,117,16" concept="3" />
+      <node id="8051061021619748495" at="120,54,121,46" concept="0" />
+      <node id="8051061021619748495" at="121,46,122,46" concept="0" />
+      <node id="8051061021619748495" at="122,46,123,46" concept="0" />
+      <node id="8051061021619748498" at="123,46,124,233" concept="0" />
+      <node id="4795297196607520928" at="20,0,25,0" concept="1" trace="test_SelfRef#()V" />
+      <node id="4795297196607520928" at="26,0,31,0" concept="1" trace="test_ClassWInnerInterace#()V" />
+      <node id="4795297196607520928" at="32,0,37,0" concept="1" trace="test_Imports1#()V" />
+      <node id="4795297196607520928" at="38,0,43,0" concept="1" trace="test_Imports2#()V" />
+      <node id="4795297196607520928" at="44,0,49,0" concept="1" trace="test_Imports3#()V" />
+      <node id="4795297196607520928" at="50,0,55,0" concept="1" trace="test_ClassNesting#()V" />
+      <node id="4795297196607520928" at="56,0,61,0" concept="1" trace="test_FullSource#()V" />
+      <node id="4795297196607520928" at="62,0,67,0" concept="1" trace="test_LittleSource#()V" />
+      <node id="1218582063869484771" at="78,0,84,0" concept="1" trace="test_ClassWInnerInterace#()V" />
+      <node id="7902967214465805211" at="85,0,91,0" concept="1" trace="test_Imports1#()V" />
+      <node id="8083368042256417953" at="92,0,98,0" concept="1" trace="test_Imports2#()V" />
+      <node id="8083368042256418397" at="99,0,105,0" concept="1" trace="test_Imports3#()V" />
+      <node id="7030568040400313711" at="106,0,112,0" concept="1" trace="test_ClassNesting#()V" />
+      <node id="887121589775270929" at="113,0,119,0" concept="1" trace="test_FullSource#()V" />
+      <node id="8051061021619748495" at="120,0,126,0" concept="1" trace="test_LittleSource#()V" />
+      <node id="4795297196607521181" at="70,0,77,0" concept="1" trace="test_SelfRef#()V" />
+      <scope id="4795297196607520928" at="21,47,23,107" />
+      <scope id="4795297196607520928" at="27,59,29,119" />
+      <scope id="4795297196607520928" at="33,48,35,108" />
+      <scope id="4795297196607520928" at="39,48,41,108" />
+      <scope id="4795297196607520928" at="45,48,47,108" />
+      <scope id="4795297196607520928" at="51,52,53,112" />
+      <scope id="4795297196607520928" at="57,50,59,110" />
+      <scope id="4795297196607520928" at="63,52,65,112" />
+      <scope id="1218582063869484771" at="78,61,82,216" />
+      <scope id="7902967214465805211" at="85,50,89,403" />
+      <scope id="8083368042256417953" at="92,50,96,403" />
+      <scope id="8083368042256418397" at="99,50,103,403" />
+      <scope id="7030568040400313711" at="106,54,110,218" />
+      <scope id="887121589775270929" at="113,52,117,16" />
+      <scope id="8051061021619748495" at="120,54,124,233" />
+      <scope id="4795297196607520928" at="20,0,25,0" />
+      <scope id="4795297196607520928" at="26,0,31,0" />
+      <scope id="4795297196607520928" at="32,0,37,0" />
+      <scope id="4795297196607520928" at="38,0,43,0" />
+      <scope id="4795297196607520928" at="44,0,49,0" />
+      <scope id="4795297196607520928" at="50,0,55,0" />
+      <scope id="4795297196607520928" at="56,0,61,0" />
+      <scope id="4795297196607520928" at="62,0,67,0" />
+      <scope id="4795297196607521181" at="70,49,75,0" />
+      <scope id="1218582063869484771" at="78,0,84,0" />
+      <scope id="7902967214465805211" at="85,0,91,0" />
+      <scope id="8083368042256417953" at="92,0,98,0" />
+      <scope id="8083368042256418397" at="99,0,105,0" />
+      <scope id="7030568040400313711" at="106,0,112,0" />
+      <scope id="887121589775270929" at="113,0,119,0" />
+      <scope id="8051061021619748495" at="120,0,126,0" />
+      <scope id="4795297196607521181" at="70,0,77,0" />
+      <unit id="4795297196607520928" at="68,0,127,0" name="jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test$TestBody" />
+      <unit id="4795297196607520928" at="18,0,128,0" name="jetbrains.mps.ide.java.tests.madeUpCases.JavaToMps_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

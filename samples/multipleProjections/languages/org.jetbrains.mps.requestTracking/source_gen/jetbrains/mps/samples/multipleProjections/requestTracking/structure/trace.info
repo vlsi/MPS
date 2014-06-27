@@ -1,111 +1,128 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.requestTracking.structure.StructureAspectDescriptor" />
-  <root nodeRef="r:fa417a98-a00c-4f7c-9ba5-6ec71a5b205a(jetbrains.mps.samples.multipleProjections.requestTracking.structure)/3675491646420867317">
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="19" startPosition="36" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="23" startPosition="59" endLine="24" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="24" startPosition="100" endLine="25" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="25" startPosition="76" endLine="26" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="26" startPosition="73" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="30" startPosition="51" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="35" startPosition="24" endLine="36" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="38" startPosition="75" endLine="39" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="41" startPosition="72" endLine="42" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="43" startPosition="5" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="49" startPosition="51" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="50" startPosition="23" endLine="51" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="54" startPosition="28" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/samples/multipleProjections/requestTracking/structure/WorkflowPresentation;" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="34" startPosition="63" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="37" startPosition="5" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="40" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WorkflowPresentation#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="34" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/multipleProjections/requestTracking/structure/WorkflowPresentation;" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="20" startPosition="5" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="27" startPosition="5" endLine="28" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="29" startPosition="33" endLine="30" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="38" startPosition="49" endLine="39" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="42" startPosition="5" endLine="43" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="10" startPosition="44" endLine="13" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="16" startPosition="55" endLine="19" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="24" startPosition="47" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="30" startPosition="55" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="39" startPosition="75" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="14" startPosition="117" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="28" startPosition="117" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="15" startPosition="27" endLine="16" endPosition="23" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="19" startPosition="36" endLine="20" endPosition="24" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="30" startPosition="51" endLine="31" endPosition="43" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="35" startPosition="24" endLine="36" endPosition="47" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="38" startPosition="75" endLine="39" endPosition="45" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="41" startPosition="72" endLine="42" endPosition="42" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="54" startPosition="28" endLine="55" endPosition="24" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="49" startPosition="51" endLine="51" endPosition="25" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="23" startPosition="59" endLine="27" endPosition="16">
-      <varInfo nodeId="3675491646420867317" varName="list" />
-    </scopeInfo>
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="3675491646420867317" varName="name" />
-      <varInfo nodeId="3675491646420867317" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="23" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="34" startPosition="63" endLine="44" endPosition="45" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="34" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="3675491646420867317" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" />
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7">
-      <varInfo nodeId="3675491646420867317" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7">
-      <varInfo nodeId="3675491646420867317" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
-      <varInfo nodeId="3675491646420867317" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="3675491646420867317" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
-      <varInfo nodeId="3675491646420867317" varName="constants" />
-    </scopeInfo>
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
-      <varInfo nodeId="3675491646420867317" varName="constants" />
-    </scopeInfo>
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="3675491646420867317" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="3675491646420867317" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="3675491646420867317" fileName="WorkflowPresentation.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowPresentation" />
-    <unitInfo nodeId="3675491646420867317" fileName="WorkflowPresentation_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowPresentation_PropertySupport" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root>
+    <file name="StructureAspectDescriptor.java">
+      <unit at="10,0,27,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.StructureAspectDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:fa417a98-a00c-4f7c-9ba5-6ec71a5b205a(jetbrains.mps.samples.multipleProjections.requestTracking.structure)/3675491646420867317">
+    <file name="WorkflowPresentation_PropertySupport.java">
+      <node id="3675491646420867317" at="11,24,12,18" concept="6" />
+      <node id="3675491646420867317" at="13,5,14,117" concept="5" />
+      <node id="3675491646420867317" at="15,33,16,55" concept="5" />
+      <node id="3675491646420867317" at="17,45,18,20" concept="6" />
+      <node id="3675491646420867317" at="20,5,21,17" concept="6" />
+      <node id="3675491646420867317" at="25,24,26,18" concept="6" />
+      <node id="3675491646420867317" at="27,5,28,117" concept="5" />
+      <node id="3675491646420867317" at="29,33,30,55" concept="5" />
+      <node id="3675491646420867317" at="31,45,32,43" concept="6" />
+      <node id="3675491646420867317" at="34,5,35,16" concept="6" />
+      <node id="3675491646420867317" at="38,49,39,75" concept="5" />
+      <node id="3675491646420867317" at="40,27,41,32" concept="6" />
+      <node id="3675491646420867317" at="42,5,43,14" concept="6" />
+      <node id="3675491646420867317" at="10,44,13,5" concept="3" />
+      <node id="3675491646420867317" at="16,55,19,7" concept="3" />
+      <node id="3675491646420867317" at="24,47,27,5" concept="3" />
+      <node id="3675491646420867317" at="30,55,33,7" concept="3" />
+      <node id="3675491646420867317" at="39,75,42,5" concept="3" />
+      <node id="3675491646420867317" at="14,117,20,5" concept="8" />
+      <node id="3675491646420867317" at="28,117,34,5" concept="8" />
+      <node id="3675491646420867317" at="38,0,45,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="3675491646420867317" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="3675491646420867317" at="24,0,37,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="3675491646420867317" at="11,24,12,18" />
+      <scope id="3675491646420867317" at="17,45,18,20" />
+      <scope id="3675491646420867317" at="25,24,26,18" />
+      <scope id="3675491646420867317" at="31,45,32,43" />
+      <scope id="3675491646420867317" at="40,27,41,32" />
+      <scope id="3675491646420867317" at="15,33,19,7">
+        <var name="constant" id="3675491646420867317" />
+      </scope>
+      <scope id="3675491646420867317" at="29,33,33,7">
+        <var name="constant" id="3675491646420867317" />
+      </scope>
+      <scope id="3675491646420867317" at="38,49,43,14">
+        <var name="constant" id="3675491646420867317" />
+      </scope>
+      <scope id="3675491646420867317" at="38,0,45,0">
+        <var name="value" id="3675491646420867317" />
+      </scope>
+      <scope id="3675491646420867317" at="10,44,21,17">
+        <var name="constants" id="3675491646420867317" />
+      </scope>
+      <scope id="3675491646420867317" at="24,47,35,16">
+        <var name="constants" id="3675491646420867317" />
+      </scope>
+      <scope id="3675491646420867317" at="10,0,23,0">
+        <var name="value" id="3675491646420867317" />
+      </scope>
+      <scope id="3675491646420867317" at="24,0,37,0">
+        <var name="value" id="3675491646420867317" />
+      </scope>
+      <unit id="3675491646420867317" at="9,0,46,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowPresentation_PropertySupport" />
+    </file>
+    <file name="WorkflowPresentation.java">
+      <node id="3675491646420867317" at="13,0,14,0" concept="2" trace="myName" />
+      <node id="3675491646420867317" at="15,27,16,23" concept="6" />
+      <node id="3675491646420867317" at="19,36,20,24" concept="6" />
+      <node id="3675491646420867317" at="23,59,24,100" concept="5" />
+      <node id="3675491646420867317" at="24,100,25,76" concept="1" />
+      <node id="3675491646420867317" at="25,76,26,73" concept="1" />
+      <node id="3675491646420867317" at="26,73,27,16" concept="6" />
+      <node id="3675491646420867317" at="30,51,31,43" concept="6" />
+      <node id="3675491646420867317" at="35,24,36,47" concept="6" />
+      <node id="3675491646420867317" at="38,75,39,45" concept="6" />
+      <node id="3675491646420867317" at="41,72,42,42" concept="6" />
+      <node id="3675491646420867317" at="43,5,44,45" concept="6" />
+      <node id="3675491646420867317" at="47,0,48,0" concept="2" trace="myValue" />
+      <node id="3675491646420867317" at="49,51,50,23" concept="1" />
+      <node id="3675491646420867317" at="50,23,51,25" concept="1" />
+      <node id="3675491646420867317" at="54,28,55,24" concept="6" />
+      <node id="3675491646420867317" at="15,0,18,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="3675491646420867317" at="19,0,22,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="3675491646420867317" at="30,0,33,0" concept="7" trace="getDefault#()Ljetbrains/mps/samples/multipleProjections/requestTracking/structure/WorkflowPresentation;" />
+      <node id="3675491646420867317" at="34,63,37,5" concept="3" />
+      <node id="3675491646420867317" at="37,5,40,5" concept="3" />
+      <node id="3675491646420867317" at="40,5,43,5" concept="3" />
+      <node id="3675491646420867317" at="54,0,57,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="3675491646420867317" at="49,0,53,0" concept="0" trace="WorkflowPresentation#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="3675491646420867317" at="23,0,29,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="3675491646420867317" at="34,0,46,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/multipleProjections/requestTracking/structure/WorkflowPresentation;" />
+      <scope id="3675491646420867317" at="15,27,16,23" />
+      <scope id="3675491646420867317" at="19,36,20,24" />
+      <scope id="3675491646420867317" at="30,51,31,43" />
+      <scope id="3675491646420867317" at="35,24,36,47" />
+      <scope id="3675491646420867317" at="38,75,39,45" />
+      <scope id="3675491646420867317" at="41,72,42,42" />
+      <scope id="3675491646420867317" at="54,28,55,24" />
+      <scope id="3675491646420867317" at="49,51,51,25" />
+      <scope id="3675491646420867317" at="15,0,18,0" />
+      <scope id="3675491646420867317" at="19,0,22,0" />
+      <scope id="3675491646420867317" at="30,0,33,0" />
+      <scope id="3675491646420867317" at="54,0,57,0" />
+      <scope id="3675491646420867317" at="23,59,27,16">
+        <var name="list" id="3675491646420867317" />
+      </scope>
+      <scope id="3675491646420867317" at="49,0,53,0">
+        <var name="name" id="3675491646420867317" />
+        <var name="value" id="3675491646420867317" />
+      </scope>
+      <scope id="3675491646420867317" at="23,0,29,0" />
+      <scope id="3675491646420867317" at="34,63,44,45" />
+      <scope id="3675491646420867317" at="34,0,46,0">
+        <var name="value" id="3675491646420867317" />
+      </scope>
+      <unit id="3675491646420867317" at="9,0,58,0" name="jetbrains.mps.samples.multipleProjections.requestTracking.structure.WorkflowPresentation" />
+    </file>
+  </root>
+</debug-info>
 

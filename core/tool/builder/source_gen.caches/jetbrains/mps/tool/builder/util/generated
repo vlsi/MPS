@@ -14,12 +14,11 @@
   </source>
   <source id="5900076103425675110" name="SetLibraryContributor" hash="6xyo8v8nhu2tijcj8v1w4k370rsyjh0">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="SetLibraryContributor.java" />
   </source>
   <source id="878521226300613674" name="MpsPlatform" hash="9sgx0emzxwyida0w851u30efc6ni3pw">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MpsPlatform.java" />
   </source>
   <source id="1365200781785613152" name="ClassloaderUtil" hash="-9hb547434v623eyxvusq3643zt6h75a">

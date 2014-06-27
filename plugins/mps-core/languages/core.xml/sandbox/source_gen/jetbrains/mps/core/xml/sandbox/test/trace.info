@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
   <root nodeRef="r:d31f9592-7619-4098-b4aa-53d9b210c472(jetbrains.mps.core.xml.sandbox.test)/175285232894469943">
-    <unitInfo nodeId="175285232894469943" fileName="test2.xml" startLine="1" startPosition="0" endLine="39" endPosition="7" unitName="jetbrains.mps.core.xml.sandbox.test.test2" />
+    <file name="test2.xml">
+      <unit id="175285232894469943" at="1,0,39,7" name="jetbrains.mps.core.xml.sandbox.test.test2" />
+    </file>
   </root>
   <root nodeRef="r:d31f9592-7619-4098-b4aa-53d9b210c472(jetbrains.mps.core.xml.sandbox.test)/6666499814681526040">
-    <unitInfo nodeId="6666499814681526040" fileName="test1.xml" startLine="1" startPosition="0" endLine="53" endPosition="6" unitName="jetbrains.mps.core.xml.sandbox.test.test1" />
+    <file name="test1.xml">
+      <unit id="6666499814681526040" at="1,0,53,6" name="jetbrains.mps.core.xml.sandbox.test.test1" />
+    </file>
   </root>
   <root nodeRef="r:d31f9592-7619-4098-b4aa-53d9b210c472(jetbrains.mps.core.xml.sandbox.test)/7385586609667787292">
-    <unitInfo nodeId="7385586609667787292" fileName="test3.xml" startLine="1" startPosition="0" endLine="28" endPosition="7" unitName="jetbrains.mps.core.xml.sandbox.test.test3" />
+    <file name="test3.xml">
+      <unit id="7385586609667787292" at="1,0,28,7" name="jetbrains.mps.core.xml.sandbox.test.test3" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

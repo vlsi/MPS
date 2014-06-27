@@ -1,30 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
   <root nodeRef="r:6ff1dacd-2ea5-47a0-9336-2eaecdee8a37(jetbrains.mps.execution.languages.plugin)/6863272677075182370">
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="15" startPosition="43" endLine="16" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="23" startPosition="36" endLine="24" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="24" startPosition="83" endLine="25" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="31" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="create#(Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="12" startPosition="40" endLine="18" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="12" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Languages_PluginInitializer#()V" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="28" startPosition="31" endLine="28" endPosition="31" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="31" startPosition="34" endLine="31" endPosition="34" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="15" startPosition="43" endLine="16" endPosition="20" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="23" startPosition="36" endLine="25" endPosition="37" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="31" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="6863272677075182370" varName="klass" />
-    </scopeInfo>
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="12" startPosition="40" endLine="18" endPosition="7" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="21" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="12" startPosition="0" endLine="20" endPosition="0" />
-    <unitInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="13" startPosition="54" endLine="18" endPosition="5" unitName="jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer$1" />
-    <unitInfo nodeId="6863272677075182370" fileName="Languages_PluginInitializer.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer" />
-    <unitInfo nodeId="6863272677075182370" fileName="plugin.xml" startLine="1" startPosition="0" endLine="24" endPosition="14" unitName="jetbrains.mps.execution.languages.plugin.plugin" />
+    <file name="Languages_PluginInitializer.java">
+      <node id="6863272677075182370" at="15,43,16,20" concept="3" />
+      <node id="6863272677075182370" at="23,36,24,83" concept="4" />
+      <node id="6863272677075182370" at="24,83,25,37" concept="3" />
+      <node id="6863272677075182370" at="28,0,30,0" concept="2" trace="initComponent#()V" />
+      <node id="6863272677075182370" at="31,0,33,0" concept="2" trace="disposeComponent#()V" />
+      <node id="6863272677075182370" at="14,0,18,0" concept="2" trace="create#(Ljava/lang/Class;)null" />
+      <node id="6863272677075182370" at="12,40,18,7" concept="1" />
+      <node id="6863272677075182370" at="21,0,27,0" concept="2" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="6863272677075182370" at="12,0,20,0" concept="0" trace="Languages_PluginInitializer#()V" />
+      <scope id="6863272677075182370" at="28,31,28,31" />
+      <scope id="6863272677075182370" at="31,34,31,34" />
+      <scope id="6863272677075182370" at="15,43,16,20" />
+      <scope id="6863272677075182370" at="23,36,25,37" />
+      <scope id="6863272677075182370" at="28,0,30,0" />
+      <scope id="6863272677075182370" at="31,0,33,0" />
+      <scope id="6863272677075182370" at="14,0,18,0">
+        <var name="klass" id="6863272677075182370" />
+      </scope>
+      <scope id="6863272677075182370" at="12,40,18,7" />
+      <scope id="6863272677075182370" at="21,0,27,0" />
+      <scope id="6863272677075182370" at="12,0,20,0" />
+      <unit id="6863272677075182370" at="13,54,18,5" name="jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer$1" />
+      <unit id="6863272677075182370" at="11,0,34,0" name="jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer" />
+    </file>
+    <file name="plugin.xml">
+      <unit id="6863272677075182370" at="1,0,24,14" name="jetbrains.mps.execution.languages.plugin.plugin" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

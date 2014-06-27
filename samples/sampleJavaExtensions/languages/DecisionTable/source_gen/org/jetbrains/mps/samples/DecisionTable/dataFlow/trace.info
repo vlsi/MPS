@@ -1,42 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.dataFlow.DFABuilders" />
-  <root nodeRef="r:241cf93e-3ab8-4ff2-b162-46fd2d7b00c0(org.jetbrains.mps.samples.DecisionTable.dataFlow)/6590643739750295650">
-    <nodeInfo nodeId="6590643739750295653" fileName="DecisionTable_DataFlow.java" startLine="17" startPosition="102" endLine="18" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6590643739750329919" fileName="DecisionTable_DataFlow.java" startLine="20" startPosition="35" endLine="21" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6590643739750329930" fileName="DecisionTable_DataFlow.java" startLine="25" startPosition="35" endLine="26" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6590643739750329942" fileName="DecisionTable_DataFlow.java" startLine="30" startPosition="35" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6590643739750295650" fileName="DecisionTable_DataFlow.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DecisionTable_DataFlow#()V" />
-    <nodeInfo nodeId="6590643739750329915" fileName="DecisionTable_DataFlow.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6590643739750329928" fileName="DecisionTable_DataFlow.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6590643739750329940" fileName="DecisionTable_DataFlow.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6590643739750329903" fileName="DecisionTable_DataFlow.java" startLine="18" startPosition="109" endLine="23" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6590643739750329922" fileName="DecisionTable_DataFlow.java" startLine="23" startPosition="7" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6590643739750329934" fileName="DecisionTable_DataFlow.java" startLine="28" startPosition="7" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6590643739750295650" fileName="DecisionTable_DataFlow.java" startLine="17" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-    <scopeInfo nodeId="6590643739750295650" fileName="DecisionTable_DataFlow.java" startLine="14" startPosition="35" endLine="14" endPosition="35" />
-    <scopeInfo nodeId="6590643739750329916" fileName="DecisionTable_DataFlow.java" startLine="20" startPosition="35" endLine="21" endPosition="48" />
-    <scopeInfo nodeId="6590643739750329929" fileName="DecisionTable_DataFlow.java" startLine="25" startPosition="35" endLine="26" endPosition="48" />
-    <scopeInfo nodeId="6590643739750329941" fileName="DecisionTable_DataFlow.java" startLine="30" startPosition="35" endLine="31" endPosition="48" />
-    <scopeInfo nodeId="6590643739750295650" fileName="DecisionTable_DataFlow.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="6590643739750329915" fileName="DecisionTable_DataFlow.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="6590643739750329915" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6590643739750329928" fileName="DecisionTable_DataFlow.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="6590643739750329928" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6590643739750329940" fileName="DecisionTable_DataFlow.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="6590643739750329940" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6590643739750295652" fileName="DecisionTable_DataFlow.java" startLine="17" startPosition="102" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="6590643739750295650" fileName="DecisionTable_DataFlow.java" startLine="17" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="6590643739750295650" varName="_context" />
-      <varInfo nodeId="6590643739750295650" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="6590643739750329915" fileName="DecisionTable_DataFlow.java" startLine="19" startPosition="107" endLine="23" endPosition="5" unitName="org.jetbrains.mps.samples.DecisionTable.dataFlow.DecisionTable_DataFlow$1" />
-    <unitInfo nodeId="6590643739750329928" fileName="DecisionTable_DataFlow.java" startLine="24" startPosition="107" endLine="28" endPosition="5" unitName="org.jetbrains.mps.samples.DecisionTable.dataFlow.DecisionTable_DataFlow$2" />
-    <unitInfo nodeId="6590643739750329940" fileName="DecisionTable_DataFlow.java" startLine="29" startPosition="109" endLine="33" endPosition="5" unitName="org.jetbrains.mps.samples.DecisionTable.dataFlow.DecisionTable_DataFlow$3" />
-    <unitInfo nodeId="6590643739750295650" fileName="DecisionTable_DataFlow.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.dataFlow.DecisionTable_DataFlow" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root>
+    <file name="DFABuilders.java">
+      <unit at="8,0,13,0" name="org.jetbrains.mps.samples.DecisionTable.dataFlow.DFABuilders" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:241cf93e-3ab8-4ff2-b162-46fd2d7b00c0(org.jetbrains.mps.samples.DecisionTable.dataFlow)/6590643739750295650">
+    <file name="DecisionTable_DataFlow.java">
+      <node id="6590643739750295653" at="17,102,18,109" concept="1" />
+      <node id="6590643739750329919" at="20,35,21,48" concept="1" />
+      <node id="6590643739750329930" at="25,35,26,48" concept="1" />
+      <node id="6590643739750329942" at="30,35,31,48" concept="1" />
+      <node id="6590643739750295650" at="14,0,16,0" concept="0" trace="DecisionTable_DataFlow#()V" />
+      <node id="6590643739750329915" at="20,0,23,0" concept="2" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6590643739750329928" at="25,0,28,0" concept="2" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6590643739750329940" at="30,0,33,0" concept="2" trace="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6590643739750329903" at="18,109,23,7" concept="1" />
+      <node id="6590643739750329922" at="23,7,28,7" concept="1" />
+      <node id="6590643739750329934" at="28,7,33,7" concept="1" />
+      <node id="6590643739750295650" at="17,0,35,0" concept="2" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="6590643739750295650" at="14,35,14,35" />
+      <scope id="6590643739750329916" at="20,35,21,48" />
+      <scope id="6590643739750329929" at="25,35,26,48" />
+      <scope id="6590643739750329941" at="30,35,31,48" />
+      <scope id="6590643739750295650" at="14,0,16,0" />
+      <scope id="6590643739750329915" at="20,0,23,0">
+        <var name="it" id="6590643739750329915" />
+      </scope>
+      <scope id="6590643739750329928" at="25,0,28,0">
+        <var name="it" id="6590643739750329928" />
+      </scope>
+      <scope id="6590643739750329940" at="30,0,33,0">
+        <var name="it" id="6590643739750329940" />
+      </scope>
+      <scope id="6590643739750295652" at="17,102,33,7" />
+      <scope id="6590643739750295650" at="17,0,35,0">
+        <var name="_context" id="6590643739750295650" />
+        <var name="operationContext" id="6590643739750295650" />
+      </scope>
+      <unit id="6590643739750329915" at="19,107,23,5" name="org.jetbrains.mps.samples.DecisionTable.dataFlow.DecisionTable_DataFlow$1" />
+      <unit id="6590643739750329928" at="24,107,28,5" name="org.jetbrains.mps.samples.DecisionTable.dataFlow.DecisionTable_DataFlow$2" />
+      <unit id="6590643739750329940" at="29,109,33,5" name="org.jetbrains.mps.samples.DecisionTable.dataFlow.DecisionTable_DataFlow$3" />
+      <unit id="6590643739750295650" at="13,0,36,0" name="org.jetbrains.mps.samples.DecisionTable.dataFlow.DecisionTable_DataFlow" />
+    </file>
+  </root>
+</debug-info>
 

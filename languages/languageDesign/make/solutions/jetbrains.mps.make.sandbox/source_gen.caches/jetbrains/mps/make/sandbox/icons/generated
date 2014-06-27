@@ -27,6 +27,7 @@
     <file name="DummyAction_Action.java" />
   </source>
   <source id="3564595993453230683" name="Foo" hash="277c36h0k243xtzdhi86f6sflbkis76">
+    <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" />
     <file name="Foo.java" />
   </source>

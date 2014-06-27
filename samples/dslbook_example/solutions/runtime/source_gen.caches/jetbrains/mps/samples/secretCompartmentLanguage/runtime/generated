@@ -7,6 +7,7 @@
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="6877931680625740132" name="Controller" hash="-2aftt0cn1vyrhpsfdqu5c8djwa97qqk">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Controller.java" />
   </source>
   <source id="6877931680625740198" name="CommandChannel" hash="-2v4dvgws45f3iqpv3n27wo2vqw7j65v">
@@ -16,10 +17,10 @@
     <file name="CommandChannel.java" />
   </source>
   <source id="6877931680625740260" name="AbstractEvent" hash="cjwqhvgkc8jxprfrsac71useaa7f05o">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="AbstractEvent.java" />
   </source>
   <source id="6877931680625740350" name="Event" hash="e4ndt6jjfre1yl11ake1nz1m27sokmu">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Event.java" />
   </source>
   <source id="6877931680625740406" name="State" hash="-2x65efj8nckdcrtcuxxwg4yxn6l1qnl">

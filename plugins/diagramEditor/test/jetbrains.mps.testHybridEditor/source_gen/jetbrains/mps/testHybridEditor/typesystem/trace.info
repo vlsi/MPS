@@ -1,251 +1,274 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.testHybridEditor.typesystem.TypesystemDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="TypesystemDescriptor.java">
+      <unit at="8,0,32,0" name="jetbrains.mps.testHybridEditor.typesystem.TypesystemDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:ad8f2b18-3038-4a9d-ad27-aa5680bf8421(jetbrains.mps.testHybridEditor.typesystem)/2574029987314617115">
-    <nodeInfo nodeId="2574029987314617119" fileName="check_port_NonTypesystemRule.java" startLine="20" startPosition="5" endLine="21" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2574029987314617119" fileName="check_port_NonTypesystemRule.java" startLine="21" startPosition="58" endLine="22" endPosition="238" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="26" startPosition="46" endLine="27" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="31" startPosition="5" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="32" startPosition="130" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_port_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="2574029987314617119" fileName="check_port_NonTypesystemRule.java" startLine="19" startPosition="122" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <nodeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <scopeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="16" startPosition="41" endLine="16" endPosition="41" />
-    <scopeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="26" startPosition="46" endLine="27" endPosition="64" />
-    <scopeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="2574029987314617119" fileName="check_port_NonTypesystemRule.java" startLine="20" startPosition="5" endLine="22" endPosition="238">
-      <varInfo nodeId="2574029987314617119" varName="_reporter_2309309498" />
-      <varInfo nodeId="2574029987314617119" varName="errorTarget" />
-    </scopeInfo>
-    <scopeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
-      <varInfo nodeId="2574029987314617115" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="2574029987314617116" fileName="check_port_NonTypesystemRule.java" startLine="19" startPosition="122" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="2574029987314617115" varName="inputPort" />
-      <varInfo nodeId="2574029987314617115" varName="status" />
-      <varInfo nodeId="2574029987314617115" varName="typeCheckingContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="2574029987314617115" varName="argument" />
-    </scopeInfo>
-    <unitInfo nodeId="2574029987314617115" fileName="check_port_NonTypesystemRule.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.testHybridEditor.typesystem.check_port_NonTypesystemRule" />
+    <file name="check_port_NonTypesystemRule.java">
+      <node id="2574029987314617119" at="20,5,21,58" concept="6" />
+      <node id="2574029987314617119" at="21,58,22,238" concept="6" />
+      <node id="2574029987314617115" at="26,46,27,64" concept="7" />
+      <node id="2574029987314617115" at="31,5,32,130" concept="6" />
+      <node id="2574029987314617115" at="32,130,33,45" concept="7" />
+      <node id="2574029987314617115" at="37,30,38,17" concept="7" />
+      <node id="2574029987314617115" at="16,0,18,0" concept="1" trace="check_port_NonTypesystemRule#()V" />
+      <node id="2574029987314617115" at="26,0,29,0" concept="5" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="2574029987314617115" at="37,0,40,0" concept="5" trace="overrides#()Z" />
+      <node id="2574029987314617119" at="19,122,23,5" concept="0" />
+      <node id="2574029987314617115" at="30,68,34,5" concept="0" />
+      <node id="2574029987314617115" at="19,0,25,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="2574029987314617115" at="30,0,36,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <scope id="2574029987314617115" at="16,41,16,41" />
+      <scope id="2574029987314617115" at="26,46,27,64" />
+      <scope id="2574029987314617115" at="37,30,38,17" />
+      <scope id="2574029987314617115" at="16,0,18,0" />
+      <scope id="2574029987314617119" at="20,5,22,238">
+        <var name="_reporter_2309309498" id="2574029987314617119" />
+        <var name="errorTarget" id="2574029987314617119" />
+      </scope>
+      <scope id="2574029987314617115" at="31,5,33,45">
+        <var name="b" id="2574029987314617115" />
+      </scope>
+      <scope id="2574029987314617115" at="26,0,29,0" />
+      <scope id="2574029987314617115" at="37,0,40,0" />
+      <scope id="2574029987314617116" at="19,122,23,5" />
+      <scope id="2574029987314617115" at="30,68,34,5" />
+      <scope id="2574029987314617115" at="19,0,25,0">
+        <var name="inputPort" id="2574029987314617115" />
+        <var name="status" id="2574029987314617115" />
+        <var name="typeCheckingContext" id="2574029987314617115" />
+      </scope>
+      <scope id="2574029987314617115" at="30,0,36,0">
+        <var name="argument" id="2574029987314617115" />
+      </scope>
+      <unit id="2574029987314617115" at="15,0,41,0" name="jetbrains.mps.testHybridEditor.typesystem.check_port_NonTypesystemRule" />
+    </file>
   </root>
   <root nodeRef="r:ad8f2b18-3038-4a9d-ad27-aa5680bf8421(jetbrains.mps.testHybridEditor.typesystem)/3804439703459446717">
-    <nodeInfo nodeId="3804439703459446719" fileName="check_outputport_NonTypesystemRule.java" startLine="20" startPosition="5" endLine="21" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3804439703459446719" fileName="check_outputport_NonTypesystemRule.java" startLine="21" startPosition="58" endLine="22" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="26" startPosition="46" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="31" startPosition="5" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="32" startPosition="130" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_outputport_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="3804439703459446719" fileName="check_outputport_NonTypesystemRule.java" startLine="19" startPosition="123" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <nodeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <scopeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="16" startPosition="47" endLine="16" endPosition="47" />
-    <scopeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="26" startPosition="46" endLine="27" endPosition="65" />
-    <scopeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="3804439703459446719" fileName="check_outputport_NonTypesystemRule.java" startLine="20" startPosition="5" endLine="22" endPosition="239">
-      <varInfo nodeId="3804439703459446719" varName="_reporter_2309309498" />
-      <varInfo nodeId="3804439703459446719" varName="errorTarget" />
-    </scopeInfo>
-    <scopeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
-      <varInfo nodeId="3804439703459446717" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="3804439703459446718" fileName="check_outputport_NonTypesystemRule.java" startLine="19" startPosition="123" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="3804439703459446717" varName="outputPort" />
-      <varInfo nodeId="3804439703459446717" varName="status" />
-      <varInfo nodeId="3804439703459446717" varName="typeCheckingContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="3804439703459446717" varName="argument" />
-    </scopeInfo>
-    <unitInfo nodeId="3804439703459446717" fileName="check_outputport_NonTypesystemRule.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.testHybridEditor.typesystem.check_outputport_NonTypesystemRule" />
+    <file name="check_outputport_NonTypesystemRule.java">
+      <node id="3804439703459446719" at="20,5,21,58" concept="6" />
+      <node id="3804439703459446719" at="21,58,22,239" concept="6" />
+      <node id="3804439703459446717" at="26,46,27,65" concept="7" />
+      <node id="3804439703459446717" at="31,5,32,130" concept="6" />
+      <node id="3804439703459446717" at="32,130,33,45" concept="7" />
+      <node id="3804439703459446717" at="37,30,38,17" concept="7" />
+      <node id="3804439703459446717" at="16,0,18,0" concept="1" trace="check_outputport_NonTypesystemRule#()V" />
+      <node id="3804439703459446717" at="26,0,29,0" concept="5" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="3804439703459446717" at="37,0,40,0" concept="5" trace="overrides#()Z" />
+      <node id="3804439703459446719" at="19,123,23,5" concept="0" />
+      <node id="3804439703459446717" at="30,68,34,5" concept="0" />
+      <node id="3804439703459446717" at="19,0,25,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="3804439703459446717" at="30,0,36,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <scope id="3804439703459446717" at="16,47,16,47" />
+      <scope id="3804439703459446717" at="26,46,27,65" />
+      <scope id="3804439703459446717" at="37,30,38,17" />
+      <scope id="3804439703459446717" at="16,0,18,0" />
+      <scope id="3804439703459446719" at="20,5,22,239">
+        <var name="_reporter_2309309498" id="3804439703459446719" />
+        <var name="errorTarget" id="3804439703459446719" />
+      </scope>
+      <scope id="3804439703459446717" at="31,5,33,45">
+        <var name="b" id="3804439703459446717" />
+      </scope>
+      <scope id="3804439703459446717" at="26,0,29,0" />
+      <scope id="3804439703459446717" at="37,0,40,0" />
+      <scope id="3804439703459446718" at="19,123,23,5" />
+      <scope id="3804439703459446717" at="30,68,34,5" />
+      <scope id="3804439703459446717" at="19,0,25,0">
+        <var name="outputPort" id="3804439703459446717" />
+        <var name="status" id="3804439703459446717" />
+        <var name="typeCheckingContext" id="3804439703459446717" />
+      </scope>
+      <scope id="3804439703459446717" at="30,0,36,0">
+        <var name="argument" id="3804439703459446717" />
+      </scope>
+      <unit id="3804439703459446717" at="15,0,41,0" name="jetbrains.mps.testHybridEditor.typesystem.check_outputport_NonTypesystemRule" />
+    </file>
   </root>
   <root nodeRef="r:ad8f2b18-3038-4a9d-ad27-aa5680bf8421(jetbrains.mps.testHybridEditor.typesystem)/4883444763024798188">
-    <nodeInfo nodeId="4883444763024798190" fileName="blockInstance_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4883444763024798190" fileName="blockInstance_NonTypesystemRule.java" startLine="23" startPosition="60" endLine="24" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="29" startPosition="46" endLine="30" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="34" startPosition="5" endLine="35" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="35" startPosition="130" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="blockInstance_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="4883444763024798190" fileName="blockInstance_NonTypesystemRule.java" startLine="21" startPosition="67" endLine="25" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4883444763024798461" fileName="blockInstance_NonTypesystemRule.java" startLine="20" startPosition="126" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="17" startPosition="44" endLine="17" endPosition="44" />
-    <scopeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="29" startPosition="46" endLine="30" endPosition="68" />
-    <scopeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" />
-    <scopeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="4883444763024798190" fileName="blockInstance_NonTypesystemRule.java" startLine="22" startPosition="7" endLine="24" endPosition="239">
-      <varInfo nodeId="4883444763024798190" varName="_reporter_2309309498" />
-      <varInfo nodeId="4883444763024798190" varName="errorTarget" />
-    </scopeInfo>
-    <scopeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45">
-      <varInfo nodeId="4883444763024798188" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="4883444763024798464" fileName="blockInstance_NonTypesystemRule.java" startLine="21" startPosition="67" endLine="25" endPosition="7" />
-    <scopeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="4883444763024798189" fileName="blockInstance_NonTypesystemRule.java" startLine="20" startPosition="126" endLine="26" endPosition="5" />
-    <scopeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="4883444763024798188" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="4883444763024798188" varName="blockInstance" />
-      <varInfo nodeId="4883444763024798188" varName="status" />
-      <varInfo nodeId="4883444763024798188" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="4883444763024798188" fileName="blockInstance_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.testHybridEditor.typesystem.blockInstance_NonTypesystemRule" />
+    <file name="blockInstance_NonTypesystemRule.java">
+      <node id="4883444763024798190" at="22,7,23,60" concept="6" />
+      <node id="4883444763024798190" at="23,60,24,239" concept="6" />
+      <node id="4883444763024798188" at="29,46,30,68" concept="7" />
+      <node id="4883444763024798188" at="34,5,35,130" concept="6" />
+      <node id="4883444763024798188" at="35,130,36,45" concept="7" />
+      <node id="4883444763024798188" at="40,30,41,17" concept="7" />
+      <node id="4883444763024798188" at="17,0,19,0" concept="1" trace="blockInstance_NonTypesystemRule#()V" />
+      <node id="4883444763024798188" at="29,0,32,0" concept="5" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="4883444763024798188" at="40,0,43,0" concept="5" trace="overrides#()Z" />
+      <node id="4883444763024798190" at="21,67,25,7" concept="0" />
+      <node id="4883444763024798188" at="33,68,37,5" concept="0" />
+      <node id="4883444763024798461" at="20,126,26,5" concept="4" />
+      <node id="4883444763024798188" at="33,0,39,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="4883444763024798188" at="20,0,28,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="4883444763024798188" at="17,44,17,44" />
+      <scope id="4883444763024798188" at="29,46,30,68" />
+      <scope id="4883444763024798188" at="40,30,41,17" />
+      <scope id="4883444763024798188" at="17,0,19,0" />
+      <scope id="4883444763024798190" at="22,7,24,239">
+        <var name="_reporter_2309309498" id="4883444763024798190" />
+        <var name="errorTarget" id="4883444763024798190" />
+      </scope>
+      <scope id="4883444763024798188" at="34,5,36,45">
+        <var name="b" id="4883444763024798188" />
+      </scope>
+      <scope id="4883444763024798188" at="29,0,32,0" />
+      <scope id="4883444763024798188" at="40,0,43,0" />
+      <scope id="4883444763024798464" at="21,67,25,7" />
+      <scope id="4883444763024798188" at="33,68,37,5" />
+      <scope id="4883444763024798189" at="20,126,26,5" />
+      <scope id="4883444763024798188" at="33,0,39,0">
+        <var name="argument" id="4883444763024798188" />
+      </scope>
+      <scope id="4883444763024798188" at="20,0,28,0">
+        <var name="blockInstance" id="4883444763024798188" />
+        <var name="status" id="4883444763024798188" />
+        <var name="typeCheckingContext" id="4883444763024798188" />
+      </scope>
+      <unit id="4883444763024798188" at="16,0,44,0" name="jetbrains.mps.testHybridEditor.typesystem.blockInstance_NonTypesystemRule" />
+    </file>
   </root>
   <root nodeRef="r:ad8f2b18-3038-4a9d-ad27-aa5680bf8421(jetbrains.mps.testHybridEditor.typesystem)/884514646183009561">
-    <nodeInfo nodeId="884514646183025010" fileName="check_all_ports_NonTypesystemRule.java" startLine="22" startPosition="118" endLine="23" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="884514646184202366" fileName="check_all_ports_NonTypesystemRule.java" startLine="24" startPosition="101" endLine="25" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="884514646183026647" fileName="check_all_ports_NonTypesystemRule.java" startLine="26" startPosition="209" endLine="27" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="884514646184215812" fileName="check_all_ports_NonTypesystemRule.java" startLine="28" startPosition="7" endLine="29" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="884514646184233495" fileName="check_all_ports_NonTypesystemRule.java" startLine="31" startPosition="102" endLine="32" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="884514646184233508" fileName="check_all_ports_NonTypesystemRule.java" startLine="33" startPosition="209" endLine="34" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="884514646184233518" fileName="check_all_ports_NonTypesystemRule.java" startLine="35" startPosition="7" endLine="36" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="884514646183091769" fileName="check_all_ports_NonTypesystemRule.java" startLine="39" startPosition="7" endLine="40" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="884514646183091769" fileName="check_all_ports_NonTypesystemRule.java" startLine="40" startPosition="60" endLine="41" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="46" startPosition="46" endLine="47" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="51" startPosition="5" endLine="52" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="52" startPosition="130" endLine="53" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="57" startPosition="30" endLine="58" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="884514646183073180" fileName="check_all_ports_NonTypesystemRule.java" startLine="61" startPosition="68" endLine="62" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="884514646184233511" fileName="check_all_ports_NonTypesystemRule.java" startLine="65" startPosition="68" endLine="66" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_all_ports_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="884514646183013983" fileName="check_all_ports_NonTypesystemRule.java" startLine="25" startPosition="33" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="884514646184233499" fileName="check_all_ports_NonTypesystemRule.java" startLine="32" startPosition="33" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="884514646183073180" fileName="check_all_ports_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_p42nu0_a0a0a0b0b0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="884514646184233511" fileName="check_all_ports_NonTypesystemRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_p42nu0_a0a0a0b0c0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="884514646183091769" fileName="check_all_ports_NonTypesystemRule.java" startLine="38" startPosition="20" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="50" startPosition="68" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="884514646183088176" fileName="check_all_ports_NonTypesystemRule.java" startLine="37" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="884514646183009636" fileName="check_all_ports_NonTypesystemRule.java" startLine="23" startPosition="26" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="884514646184233489" fileName="check_all_ports_NonTypesystemRule.java" startLine="30" startPosition="5" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="19" startPosition="46" endLine="19" endPosition="46" />
-    <scopeInfo nodeId="884514646183013986" fileName="check_all_ports_NonTypesystemRule.java" startLine="26" startPosition="209" endLine="27" endPosition="121" />
-    <scopeInfo nodeId="884514646184233507" fileName="check_all_ports_NonTypesystemRule.java" startLine="33" startPosition="209" endLine="34" endPosition="122" />
-    <scopeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="46" startPosition="46" endLine="47" endPosition="60" />
-    <scopeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="57" startPosition="30" endLine="58" endPosition="17" />
-    <scopeInfo nodeId="884514646183073180" fileName="check_all_ports_NonTypesystemRule.java" startLine="61" startPosition="68" endLine="62" endPosition="46" />
-    <scopeInfo nodeId="884514646184233511" fileName="check_all_ports_NonTypesystemRule.java" startLine="65" startPosition="68" endLine="66" endPosition="46" />
-    <scopeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="884514646183091769" fileName="check_all_ports_NonTypesystemRule.java" startLine="39" startPosition="7" endLine="41" endPosition="246">
-      <varInfo nodeId="884514646183091769" varName="_reporter_2309309498" />
-      <varInfo nodeId="884514646183091769" varName="errorTarget" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="51" startPosition="5" endLine="53" endPosition="45">
-      <varInfo nodeId="884514646183009561" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646183013983" fileName="check_all_ports_NonTypesystemRule.java" startLine="25" startPosition="33" endLine="28" endPosition="7">
-      <varInfo nodeId="884514646183013984" varName="connector" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646184233499" fileName="check_all_ports_NonTypesystemRule.java" startLine="32" startPosition="33" endLine="35" endPosition="7">
-      <varInfo nodeId="884514646184233500" varName="connector" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="884514646183073180" fileName="check_all_ports_NonTypesystemRule.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="884514646183073180" varName="a" />
-      <varInfo nodeId="884514646183073180" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646184233511" fileName="check_all_ports_NonTypesystemRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="884514646184233511" varName="a" />
-      <varInfo nodeId="884514646184233511" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646183088179" fileName="check_all_ports_NonTypesystemRule.java" startLine="38" startPosition="20" endLine="42" endPosition="7" />
-    <scopeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="50" startPosition="68" endLine="54" endPosition="5" />
-    <scopeInfo nodeId="884514646183009639" fileName="check_all_ports_NonTypesystemRule.java" startLine="24" startPosition="101" endLine="29" endPosition="36">
-      <varInfo nodeId="884514646184202369" varName="portResult" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646184233494" fileName="check_all_ports_NonTypesystemRule.java" startLine="31" startPosition="102" endLine="36" endPosition="36">
-      <varInfo nodeId="884514646184233496" varName="portResult" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="50" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="884514646183009561" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646183009636" fileName="check_all_ports_NonTypesystemRule.java" startLine="23" startPosition="26" endLine="30" endPosition="5">
-      <varInfo nodeId="884514646183009637" varName="port" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646184233489" fileName="check_all_ports_NonTypesystemRule.java" startLine="30" startPosition="5" endLine="37" endPosition="5">
-      <varInfo nodeId="884514646184233490" varName="port" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646183009562" fileName="check_all_ports_NonTypesystemRule.java" startLine="22" startPosition="118" endLine="43" endPosition="5">
-      <varInfo nodeId="884514646183025013" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="884514646183009561" varName="block" />
-      <varInfo nodeId="884514646183009561" varName="status" />
-      <varInfo nodeId="884514646183009561" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="884514646183009561" fileName="check_all_ports_NonTypesystemRule.java" startLine="18" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.testHybridEditor.typesystem.check_all_ports_NonTypesystemRule" />
+    <file name="check_all_ports_NonTypesystemRule.java">
+      <node id="884514646183025010" at="22,118,23,26" concept="6" />
+      <node id="884514646184202366" at="24,101,25,33" concept="6" />
+      <node id="884514646183026647" at="26,209,27,121" concept="2" />
+      <node id="884514646184215812" at="28,7,29,36" concept="2" />
+      <node id="884514646184233495" at="31,102,32,33" concept="6" />
+      <node id="884514646184233508" at="33,209,34,122" concept="2" />
+      <node id="884514646184233518" at="35,7,36,36" concept="2" />
+      <node id="884514646183091769" at="39,7,40,60" concept="6" />
+      <node id="884514646183091769" at="40,60,41,246" concept="6" />
+      <node id="884514646183009561" at="46,46,47,60" concept="7" />
+      <node id="884514646183009561" at="51,5,52,130" concept="6" />
+      <node id="884514646183009561" at="52,130,53,45" concept="7" />
+      <node id="884514646183009561" at="57,30,58,17" concept="7" />
+      <node id="884514646183073180" at="61,68,62,46" concept="7" />
+      <node id="884514646184233511" at="65,68,66,46" concept="7" />
+      <node id="884514646183009561" at="19,0,21,0" concept="1" trace="check_all_ports_NonTypesystemRule#()V" />
+      <node id="884514646183013983" at="25,33,28,7" concept="3" />
+      <node id="884514646184233499" at="32,33,35,7" concept="3" />
+      <node id="884514646183009561" at="46,0,49,0" concept="5" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="884514646183009561" at="57,0,60,0" concept="5" trace="overrides#()Z" />
+      <node id="884514646183073180" at="61,0,64,0" concept="8" trace="eq_p42nu0_a0a0a0b0b0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="884514646184233511" at="65,0,68,0" concept="8" trace="eq_p42nu0_a0a0a0b0c0b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="884514646183091769" at="38,20,42,7" concept="0" />
+      <node id="884514646183009561" at="50,68,54,5" concept="0" />
+      <node id="884514646183088176" at="37,5,43,5" concept="4" />
+      <node id="884514646183009561" at="50,0,56,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="884514646183009636" at="23,26,30,5" concept="3" />
+      <node id="884514646184233489" at="30,5,37,5" concept="3" />
+      <node id="884514646183009561" at="22,0,45,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="884514646183009561" at="19,46,19,46" />
+      <scope id="884514646183013986" at="26,209,27,121" />
+      <scope id="884514646184233507" at="33,209,34,122" />
+      <scope id="884514646183009561" at="46,46,47,60" />
+      <scope id="884514646183009561" at="57,30,58,17" />
+      <scope id="884514646183073180" at="61,68,62,46" />
+      <scope id="884514646184233511" at="65,68,66,46" />
+      <scope id="884514646183009561" at="19,0,21,0" />
+      <scope id="884514646183091769" at="39,7,41,246">
+        <var name="_reporter_2309309498" id="884514646183091769" />
+        <var name="errorTarget" id="884514646183091769" />
+      </scope>
+      <scope id="884514646183009561" at="51,5,53,45">
+        <var name="b" id="884514646183009561" />
+      </scope>
+      <scope id="884514646183013983" at="25,33,28,7">
+        <var name="connector" id="884514646183013984" />
+      </scope>
+      <scope id="884514646184233499" at="32,33,35,7">
+        <var name="connector" id="884514646184233500" />
+      </scope>
+      <scope id="884514646183009561" at="46,0,49,0" />
+      <scope id="884514646183009561" at="57,0,60,0" />
+      <scope id="884514646183073180" at="61,0,64,0">
+        <var name="a" id="884514646183073180" />
+        <var name="b" id="884514646183073180" />
+      </scope>
+      <scope id="884514646184233511" at="65,0,68,0">
+        <var name="a" id="884514646184233511" />
+        <var name="b" id="884514646184233511" />
+      </scope>
+      <scope id="884514646183088179" at="38,20,42,7" />
+      <scope id="884514646183009561" at="50,68,54,5" />
+      <scope id="884514646183009639" at="24,101,29,36">
+        <var name="portResult" id="884514646184202369" />
+      </scope>
+      <scope id="884514646184233494" at="31,102,36,36">
+        <var name="portResult" id="884514646184233496" />
+      </scope>
+      <scope id="884514646183009561" at="50,0,56,0">
+        <var name="argument" id="884514646183009561" />
+      </scope>
+      <scope id="884514646183009636" at="23,26,30,5">
+        <var name="port" id="884514646183009637" />
+      </scope>
+      <scope id="884514646184233489" at="30,5,37,5">
+        <var name="port" id="884514646184233490" />
+      </scope>
+      <scope id="884514646183009562" at="22,118,43,5">
+        <var name="result" id="884514646183025013" />
+      </scope>
+      <scope id="884514646183009561" at="22,0,45,0">
+        <var name="block" id="884514646183009561" />
+        <var name="status" id="884514646183009561" />
+        <var name="typeCheckingContext" id="884514646183009561" />
+      </scope>
+      <unit id="884514646183009561" at="18,0,69,0" name="jetbrains.mps.testHybridEditor.typesystem.check_all_ports_NonTypesystemRule" />
+    </file>
   </root>
   <root nodeRef="r:ad8f2b18-3038-4a9d-ad27-aa5680bf8421(jetbrains.mps.testHybridEditor.typesystem)/884514646186392376">
-    <nodeInfo nodeId="884514646186394469" fileName="connector_NonTypesystemRule.java" startLine="20" startPosition="5" endLine="21" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="884514646186394469" fileName="connector_NonTypesystemRule.java" startLine="21" startPosition="58" endLine="22" endPosition="244" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="26" startPosition="46" endLine="27" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="31" startPosition="5" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="32" startPosition="130" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="connector_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="884514646186394469" fileName="connector_NonTypesystemRule.java" startLine="19" startPosition="130" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <nodeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <scopeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="16" startPosition="40" endLine="16" endPosition="40" />
-    <scopeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="26" startPosition="46" endLine="27" endPosition="72" />
-    <scopeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="884514646186394469" fileName="connector_NonTypesystemRule.java" startLine="20" startPosition="5" endLine="22" endPosition="244">
-      <varInfo nodeId="884514646186394469" varName="_reporter_2309309498" />
-      <varInfo nodeId="884514646186394469" varName="errorTarget" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
-      <varInfo nodeId="884514646186392376" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="884514646186392377" fileName="connector_NonTypesystemRule.java" startLine="19" startPosition="130" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="884514646186392376" varName="connectorInstance" />
-      <varInfo nodeId="884514646186392376" varName="status" />
-      <varInfo nodeId="884514646186392376" varName="typeCheckingContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="884514646186392376" varName="argument" />
-    </scopeInfo>
-    <unitInfo nodeId="884514646186392376" fileName="connector_NonTypesystemRule.java" startLine="15" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.testHybridEditor.typesystem.connector_NonTypesystemRule" />
+    <file name="connector_NonTypesystemRule.java">
+      <node id="884514646186394469" at="20,5,21,58" concept="6" />
+      <node id="884514646186394469" at="21,58,22,244" concept="6" />
+      <node id="884514646186392376" at="26,46,27,72" concept="7" />
+      <node id="884514646186392376" at="31,5,32,130" concept="6" />
+      <node id="884514646186392376" at="32,130,33,45" concept="7" />
+      <node id="884514646186392376" at="37,30,38,17" concept="7" />
+      <node id="884514646186392376" at="16,0,18,0" concept="1" trace="connector_NonTypesystemRule#()V" />
+      <node id="884514646186392376" at="26,0,29,0" concept="5" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="884514646186392376" at="37,0,40,0" concept="5" trace="overrides#()Z" />
+      <node id="884514646186394469" at="19,130,23,5" concept="0" />
+      <node id="884514646186392376" at="30,68,34,5" concept="0" />
+      <node id="884514646186392376" at="19,0,25,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="884514646186392376" at="30,0,36,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <scope id="884514646186392376" at="16,40,16,40" />
+      <scope id="884514646186392376" at="26,46,27,72" />
+      <scope id="884514646186392376" at="37,30,38,17" />
+      <scope id="884514646186392376" at="16,0,18,0" />
+      <scope id="884514646186394469" at="20,5,22,244">
+        <var name="_reporter_2309309498" id="884514646186394469" />
+        <var name="errorTarget" id="884514646186394469" />
+      </scope>
+      <scope id="884514646186392376" at="31,5,33,45">
+        <var name="b" id="884514646186392376" />
+      </scope>
+      <scope id="884514646186392376" at="26,0,29,0" />
+      <scope id="884514646186392376" at="37,0,40,0" />
+      <scope id="884514646186392377" at="19,130,23,5" />
+      <scope id="884514646186392376" at="30,68,34,5" />
+      <scope id="884514646186392376" at="19,0,25,0">
+        <var name="connectorInstance" id="884514646186392376" />
+        <var name="status" id="884514646186392376" />
+        <var name="typeCheckingContext" id="884514646186392376" />
+      </scope>
+      <scope id="884514646186392376" at="30,0,36,0">
+        <var name="argument" id="884514646186392376" />
+      </scope>
+      <unit id="884514646186392376" at="15,0,41,0" name="jetbrains.mps.testHybridEditor.typesystem.connector_NonTypesystemRule" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

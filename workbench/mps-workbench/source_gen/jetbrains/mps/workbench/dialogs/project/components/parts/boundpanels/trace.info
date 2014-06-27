@@ -1,525 +1,546 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:2516a5ea-6626-4511-a78e-b75c007f4fd3(jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels)/1560298786499491521">
-    <nodeInfo nodeId="1560298786499491542" fileName="ValidateableBoundPanel.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOwner" />
-    <nodeInfo nodeId="1560298786499491545" fileName="ValidateableBoundPanel.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCaption" />
-    <nodeInfo nodeId="1560298786499491548" fileName="ValidateableBoundPanel.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myList" />
-    <nodeInfo nodeId="1560298786499491552" fileName="ValidateableBoundPanel.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCanRemoveCondition" />
-    <nodeInfo nodeId="5652969333075988065" fileName="ValidateableBoundPanel.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAllowRemoveAnyway" />
-    <nodeInfo nodeId="1560298786499491557" fileName="ValidateableBoundPanel.java" startLine="41" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCellRenderer" />
-    <nodeInfo nodeId="1560298786499491560" fileName="ValidateableBoundPanel.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTransferHandler" />
-    <nodeInfo nodeId="1560298786499491563" fileName="ValidateableBoundPanel.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myObjectValidator" />
-    <nodeInfo nodeId="1560298786499491567" fileName="ValidateableBoundPanel.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
-    <nodeInfo nodeId="8175648731696755128" fileName="ValidateableBoundPanel.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMultipleChooser" />
-    <nodeInfo nodeId="1560298786499491572" fileName="ValidateableBoundPanel.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAddAction" />
-    <nodeInfo nodeId="1560298786499491575" fileName="ValidateableBoundPanel.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRemoveAction" />
-    <nodeInfo nodeId="1560298786499491578" fileName="ValidateableBoundPanel.java" startLine="48" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEditAction" />
-    <nodeInfo nodeId="1560298786499491585" fileName="ValidateableBoundPanel.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValidator" />
-    <nodeInfo nodeId="1560298786499491590" fileName="ValidateableBoundPanel.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInitialized" />
-    <nodeInfo nodeId="1560298786499491605" fileName="ValidateableBoundPanel.java" startLine="52" startPosition="105" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491611" fileName="ValidateableBoundPanel.java" startLine="53" startPosition="20" endLine="54" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491617" fileName="ValidateableBoundPanel.java" startLine="54" startPosition="24" endLine="55" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672772" fileName="ValidateableBoundPanel.java" startLine="58" startPosition="56" endLine="59" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672371" fileName="ValidateableBoundPanel.java" startLine="59" startPosition="27" endLine="60" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672767" fileName="ValidateableBoundPanel.java" startLine="63" startPosition="59" endLine="64" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672383" fileName="ValidateableBoundPanel.java" startLine="64" startPosition="27" endLine="65" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672753" fileName="ValidateableBoundPanel.java" startLine="68" startPosition="57" endLine="69" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672395" fileName="ValidateableBoundPanel.java" startLine="69" startPosition="27" endLine="70" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672777" fileName="ValidateableBoundPanel.java" startLine="73" startPosition="55" endLine="74" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696755238" fileName="ValidateableBoundPanel.java" startLine="74" startPosition="27" endLine="75" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1587145004899892034" fileName="ValidateableBoundPanel.java" startLine="78" startPosition="32" endLine="79" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1587145004899893170" fileName="ValidateableBoundPanel.java" startLine="80" startPosition="29" endLine="81" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492156" fileName="ValidateableBoundPanel.java" startLine="82" startPosition="9" endLine="83" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8175648731696672844" fileName="ValidateableBoundPanel.java" startLine="88" startPosition="63" endLine="89" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696755245" fileName="ValidateableBoundPanel.java" startLine="89" startPosition="27" endLine="90" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491701" fileName="ValidateableBoundPanel.java" startLine="90" startPosition="29" endLine="91" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672848" fileName="ValidateableBoundPanel.java" startLine="94" startPosition="69" endLine="95" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491718" fileName="ValidateableBoundPanel.java" startLine="95" startPosition="27" endLine="96" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672853" fileName="ValidateableBoundPanel.java" startLine="100" startPosition="67" endLine="101" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491735" fileName="ValidateableBoundPanel.java" startLine="101" startPosition="27" endLine="102" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672861" fileName="ValidateableBoundPanel.java" startLine="105" startPosition="61" endLine="106" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491747" fileName="ValidateableBoundPanel.java" startLine="106" startPosition="27" endLine="107" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672866" fileName="ValidateableBoundPanel.java" startLine="110" startPosition="70" endLine="111" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491765" fileName="ValidateableBoundPanel.java" startLine="111" startPosition="27" endLine="112" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5652969333075988086" fileName="ValidateableBoundPanel.java" startLine="115" startPosition="63" endLine="116" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5652969333075988078" fileName="ValidateableBoundPanel.java" startLine="116" startPosition="27" endLine="117" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491787" fileName="ValidateableBoundPanel.java" startLine="120" startPosition="22" endLine="121" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491793" fileName="ValidateableBoundPanel.java" startLine="121" startPosition="25" endLine="122" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491802" fileName="ValidateableBoundPanel.java" startLine="122" startPosition="43" endLine="123" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491808" fileName="ValidateableBoundPanel.java" startLine="123" startPosition="34" endLine="124" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499491821" fileName="ValidateableBoundPanel.java" startLine="125" startPosition="36" endLine="126" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491828" fileName="ValidateableBoundPanel.java" startLine="127" startPosition="5" endLine="128" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672872" fileName="ValidateableBoundPanel.java" startLine="128" startPosition="40" endLine="129" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491838" fileName="ValidateableBoundPanel.java" startLine="129" startPosition="72" endLine="130" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499491849" fileName="ValidateableBoundPanel.java" startLine="131" startPosition="35" endLine="132" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491855" fileName="ValidateableBoundPanel.java" startLine="133" startPosition="5" endLine="134" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499491861" fileName="ValidateableBoundPanel.java" startLine="134" startPosition="69" endLine="135" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491865" fileName="ValidateableBoundPanel.java" startLine="135" startPosition="20" endLine="136" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491871" fileName="ValidateableBoundPanel.java" startLine="136" startPosition="35" endLine="137" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696755463" fileName="ValidateableBoundPanel.java" startLine="140" startPosition="42" endLine="141" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7648136371139240611" fileName="ValidateableBoundPanel.java" startLine="144" startPosition="46" endLine="145" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7648136371139264649" fileName="ValidateableBoundPanel.java" startLine="145" startPosition="53" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7648136371139264591" fileName="ValidateableBoundPanel.java" startLine="146" startPosition="0" endLine="147" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7648136371139264595" fileName="ValidateableBoundPanel.java" startLine="147" startPosition="41" endLine="148" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7648136371139264862" fileName="ValidateableBoundPanel.java" startLine="148" startPosition="25" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7648136371139264825" fileName="ValidateableBoundPanel.java" startLine="150" startPosition="51" endLine="151" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7648136371139264670" fileName="ValidateableBoundPanel.java" startLine="153" startPosition="41" endLine="154" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7648136371139264675" fileName="ValidateableBoundPanel.java" startLine="155" startPosition="9" endLine="156" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7648136371139264694" fileName="ValidateableBoundPanel.java" startLine="157" startPosition="61" endLine="158" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7648136371139264702" fileName="ValidateableBoundPanel.java" startLine="158" startPosition="85" endLine="159" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7648136371139264688" fileName="ValidateableBoundPanel.java" startLine="160" startPosition="16" endLine="161" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7648136371139264710" fileName="ValidateableBoundPanel.java" startLine="162" startPosition="9" endLine="163" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7648136371139264891" fileName="ValidateableBoundPanel.java" startLine="163" startPosition="36" endLine="164" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7648136371139264894" fileName="ValidateableBoundPanel.java" startLine="165" startPosition="7" endLine="166" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7648136371139240826" fileName="ValidateableBoundPanel.java" startLine="167" startPosition="5" endLine="168" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9033696005695809151" fileName="ValidateableBoundPanel.java" startLine="171" startPosition="35" endLine="172" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9033696005695809156" fileName="ValidateableBoundPanel.java" startLine="172" startPosition="41" endLine="173" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9033696005695809241" fileName="ValidateableBoundPanel.java" startLine="174" startPosition="51" endLine="175" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9033696005695809159" fileName="ValidateableBoundPanel.java" startLine="176" startPosition="5" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8175648731696672569" fileName="ValidateableBoundPanel.java" startLine="182" startPosition="32" endLine="183" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8175648731696672596" fileName="ValidateableBoundPanel.java" startLine="185" startPosition="35" endLine="186" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491906" fileName="ValidateableBoundPanel.java" startLine="188" startPosition="5" endLine="189" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499491920" fileName="ValidateableBoundPanel.java" startLine="190" startPosition="30" endLine="191" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491929" fileName="ValidateableBoundPanel.java" startLine="191" startPosition="44" endLine="192" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491943" fileName="ValidateableBoundPanel.java" startLine="194" startPosition="33" endLine="195" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491952" fileName="ValidateableBoundPanel.java" startLine="195" startPosition="47" endLine="196" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491966" fileName="ValidateableBoundPanel.java" startLine="198" startPosition="31" endLine="199" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491975" fileName="ValidateableBoundPanel.java" startLine="199" startPosition="45" endLine="200" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491982" fileName="ValidateableBoundPanel.java" startLine="201" startPosition="5" endLine="202" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499492003" fileName="ValidateableBoundPanel.java" startLine="203" startPosition="30" endLine="204" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492005" fileName="ValidateableBoundPanel.java" startLine="205" startPosition="5" endLine="206" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499492010" fileName="ValidateableBoundPanel.java" startLine="206" startPosition="69" endLine="207" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499492019" fileName="ValidateableBoundPanel.java" startLine="207" startPosition="112" endLine="208" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8175648731696672809" fileName="ValidateableBoundPanel.java" startLine="211" startPosition="39" endLine="212" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1560298786499492023" fileName="ValidateableBoundPanel.java" startLine="215" startPosition="0" endLine="216" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAddAction#(Ljetbrains/mps/util/Computable;)Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
-    <nodeInfo nodeId="1560298786499492031" fileName="ValidateableBoundPanel.java" startLine="217" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRemoveAction#()Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
-    <nodeInfo nodeId="1560298786499492035" fileName="ValidateableBoundPanel.java" startLine="219" startPosition="0" endLine="220" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initUIComponentAndBinding#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="7648136371139240761" fileName="ValidateableBoundPanel.java" startLine="221" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedIndices#()[I" />
-    <nodeInfo nodeId="1560298786499492048" fileName="ValidateableBoundPanel.java" startLine="229" startPosition="38" endLine="230" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492058" fileName="ValidateableBoundPanel.java" startLine="232" startPosition="81" endLine="233" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492059" fileName="ValidateableBoundPanel.java" startLine="234" startPosition="7" endLine="235" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499492067" fileName="ValidateableBoundPanel.java" startLine="235" startPosition="89" endLine="236" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499492086" fileName="ValidateableBoundPanel.java" startLine="238" startPosition="53" endLine="239" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492090" fileName="ValidateableBoundPanel.java" startLine="239" startPosition="26" endLine="240" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1560298786499492091" fileName="ValidateableBoundPanel.java" startLine="242" startPosition="7" endLine="243" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492099" fileName="ValidateableBoundPanel.java" startLine="243" startPosition="71" endLine="244" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492119" fileName="ValidateableBoundPanel.java" startLine="255" startPosition="34" endLine="256" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492126" fileName="ValidateableBoundPanel.java" startLine="257" startPosition="9" endLine="258" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492144" fileName="ValidateableBoundPanel.java" startLine="261" startPosition="37" endLine="262" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492151" fileName="ValidateableBoundPanel.java" startLine="263" startPosition="9" endLine="264" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7648136371139264686" fileName="ValidateableBoundPanel.java" startLine="160" startPosition="14" endLine="162" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1560298786499491527" fileName="ValidateableBoundPanel.java" startLine="224" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyValidator#()V" />
-    <nodeInfo nodeId="1560298786499491535" fileName="ValidateableBoundPanel.java" startLine="249" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyKeyAdapter#()V" />
-    <nodeInfo nodeId="1587145004899893161" fileName="ValidateableBoundPanel.java" startLine="79" startPosition="37" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499491814" fileName="ValidateableBoundPanel.java" startLine="124" startPosition="55" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499491844" fileName="ValidateableBoundPanel.java" startLine="130" startPosition="59" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8175648731696755433" fileName="ValidateableBoundPanel.java" startLine="140" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="multipleChooserSet#()Z" />
-    <nodeInfo nodeId="7648136371139264663" fileName="ValidateableBoundPanel.java" startLine="152" startPosition="47" endLine="155" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9033696005695809160" fileName="ValidateableBoundPanel.java" startLine="173" startPosition="25" endLine="176" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8175648731696672558" fileName="ValidateableBoundPanel.java" startLine="181" startPosition="36" endLine="184" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8175648731696672585" fileName="ValidateableBoundPanel.java" startLine="184" startPosition="7" endLine="187" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499491996" fileName="ValidateableBoundPanel.java" startLine="202" startPosition="63" endLine="205" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8175648731696672805" fileName="ValidateableBoundPanel.java" startLine="211" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertNotInitialized#()V" />
-    <nodeInfo nodeId="1560298786499492041" fileName="ValidateableBoundPanel.java" startLine="228" startPosition="23" endLine="231" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492049" fileName="ValidateableBoundPanel.java" startLine="231" startPosition="7" endLine="234" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492112" fileName="ValidateableBoundPanel.java" startLine="254" startPosition="49" endLine="257" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492137" fileName="ValidateableBoundPanel.java" startLine="260" startPosition="49" endLine="263" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8175648731696672367" fileName="ValidateableBoundPanel.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAddAction#(Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;)V" />
-    <nodeInfo nodeId="8175648731696672379" fileName="ValidateableBoundPanel.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setRemoveAction#(Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;)V" />
-    <nodeInfo nodeId="8175648731696672391" fileName="ValidateableBoundPanel.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setEditAction#(Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;)V" />
-    <nodeInfo nodeId="1560298786499491707" fileName="ValidateableBoundPanel.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCellRenderer#(Ljavax/swing/DefaultListCellRenderer;)V" />
-    <nodeInfo nodeId="1560298786499491741" fileName="ValidateableBoundPanel.java" startLine="105" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setObjectValidator#(Ljetbrains/mps/workbench/dialogs/project/components/parts/validators/Validator;)V" />
-    <nodeInfo nodeId="1560298786499491753" fileName="ValidateableBoundPanel.java" startLine="110" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCanRemoveCondition#(Lorg/jetbrains/mps/util/Condition;)V" />
-    <nodeInfo nodeId="5652969333075988072" fileName="ValidateableBoundPanel.java" startLine="115" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAllowRemoveAnyway#(Z)V" />
-    <nodeInfo nodeId="1560298786499491913" fileName="ValidateableBoundPanel.java" startLine="189" startPosition="51" endLine="193" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499491936" fileName="ValidateableBoundPanel.java" startLine="193" startPosition="5" endLine="197" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499491959" fileName="ValidateableBoundPanel.java" startLine="197" startPosition="5" endLine="201" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492078" fileName="ValidateableBoundPanel.java" startLine="237" startPosition="30" endLine="241" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499491594" fileName="ValidateableBoundPanel.java" startLine="52" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ValidateableBoundPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1560298786499491688" fileName="ValidateableBoundPanel.java" startLine="88" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setMultipleChooser#(Ljetbrains/mps/util/Computable;)V" />
-    <nodeInfo nodeId="1560298786499491724" fileName="ValidateableBoundPanel.java" startLine="99" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setTransferHandler#(Ljavax/swing/TransferHandler;)V" />
-    <nodeInfo nodeId="7648136371139264680" fileName="ValidateableBoundPanel.java" startLine="156" startPosition="35" endLine="162" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492071" fileName="ValidateableBoundPanel.java" startLine="236" startPosition="31" endLine="242" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1560298786499492105" fileName="ValidateableBoundPanel.java" startLine="253" startPosition="40" endLine="259" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492130" fileName="ValidateableBoundPanel.java" startLine="259" startPosition="7" endLine="265" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499491684" fileName="ValidateableBoundPanel.java" startLine="77" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/util/List;" />
-    <nodeInfo nodeId="9033696005695809146" fileName="ValidateableBoundPanel.java" startLine="171" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeSelected#()V" />
-    <nodeInfo nodeId="1560298786499491881" fileName="ValidateableBoundPanel.java" startLine="180" startPosition="47" endLine="188" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499491674" fileName="ValidateableBoundPanel.java" startLine="75" startPosition="30" endLine="85" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499491662" fileName="ValidateableBoundPanel.java" startLine="73" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setChooser#(Ljetbrains/mps/util/Computable;)V" />
-    <nodeInfo nodeId="7648136371139264652" fileName="ValidateableBoundPanel.java" startLine="151" startPosition="43" endLine="165" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499491537" fileName="ValidateableBoundPanel.java" startLine="252" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyPressed#(Ljava/awt/event/KeyEvent;)V" />
-    <nodeInfo nodeId="7648136371139264598" fileName="ValidateableBoundPanel.java" startLine="149" startPosition="0" endLine="167" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1560298786499491783" fileName="ValidateableBoundPanel.java" startLine="120" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="1560298786499491529" fileName="ValidateableBoundPanel.java" startLine="227" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7648136371139240134" fileName="ValidateableBoundPanel.java" startLine="144" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeSelectedWithCheck#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1560298786499491877" fileName="ValidateableBoundPanel.java" startLine="180" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActionsComponent#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="1560298786499492039" fileName="ValidateableBoundPanel.java" startLine="224" startPosition="27" endLine="224" endPosition="27" />
-    <scopeInfo nodeId="1560298786499492103" fileName="ValidateableBoundPanel.java" startLine="249" startPosition="28" endLine="249" endPosition="28" />
-    <scopeInfo nodeId="1587145004899893162" fileName="ValidateableBoundPanel.java" startLine="80" startPosition="29" endLine="81" endPosition="22" />
-    <scopeInfo nodeId="1560298786499491820" fileName="ValidateableBoundPanel.java" startLine="125" startPosition="36" endLine="126" endPosition="54" />
-    <scopeInfo nodeId="1560298786499491848" fileName="ValidateableBoundPanel.java" startLine="131" startPosition="35" endLine="132" endPosition="47" />
-    <scopeInfo nodeId="8175648731696755436" fileName="ValidateableBoundPanel.java" startLine="140" startPosition="42" endLine="141" endPosition="45" />
-    <scopeInfo nodeId="7648136371139264669" fileName="ValidateableBoundPanel.java" startLine="153" startPosition="41" endLine="154" endPosition="38" />
-    <scopeInfo nodeId="7648136371139264687" fileName="ValidateableBoundPanel.java" startLine="160" startPosition="16" endLine="161" endPosition="37" />
-    <scopeInfo nodeId="9033696005695809173" fileName="ValidateableBoundPanel.java" startLine="174" startPosition="51" endLine="175" endPosition="32" />
-    <scopeInfo nodeId="8175648731696672559" fileName="ValidateableBoundPanel.java" startLine="182" startPosition="32" endLine="183" endPosition="49" />
-    <scopeInfo nodeId="8175648731696672586" fileName="ValidateableBoundPanel.java" startLine="185" startPosition="35" endLine="186" endPosition="46" />
-    <scopeInfo nodeId="1560298786499492002" fileName="ValidateableBoundPanel.java" startLine="203" startPosition="30" endLine="204" endPosition="18" />
-    <scopeInfo nodeId="8175648731696672808" fileName="ValidateableBoundPanel.java" startLine="211" startPosition="39" endLine="212" endPosition="28" />
-    <scopeInfo nodeId="1560298786499492023" fileName="ValidateableBoundPanel.java" startLine="215" startPosition="0" endLine="216" endPosition="0">
-      <varInfo nodeId="1560298786499492026" varName="chooser" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499492031" fileName="ValidateableBoundPanel.java" startLine="217" startPosition="0" endLine="218" endPosition="0" />
-    <scopeInfo nodeId="1560298786499492035" fileName="ValidateableBoundPanel.java" startLine="219" startPosition="0" endLine="220" endPosition="0" />
-    <scopeInfo nodeId="7648136371139240761" fileName="ValidateableBoundPanel.java" startLine="221" startPosition="0" endLine="222" endPosition="0" />
-    <scopeInfo nodeId="1560298786499492047" fileName="ValidateableBoundPanel.java" startLine="229" startPosition="38" endLine="230" endPosition="15" />
-    <scopeInfo nodeId="1560298786499492057" fileName="ValidateableBoundPanel.java" startLine="232" startPosition="81" endLine="233" endPosition="15" />
-    <scopeInfo nodeId="1560298786499492118" fileName="ValidateableBoundPanel.java" startLine="255" startPosition="34" endLine="256" endPosition="86" />
-    <scopeInfo nodeId="1560298786499492143" fileName="ValidateableBoundPanel.java" startLine="261" startPosition="37" endLine="262" endPosition="89" />
-    <scopeInfo nodeId="8175648731696672370" fileName="ValidateableBoundPanel.java" startLine="58" startPosition="56" endLine="60" endPosition="25" />
-    <scopeInfo nodeId="8175648731696672382" fileName="ValidateableBoundPanel.java" startLine="63" startPosition="59" endLine="65" endPosition="28" />
-    <scopeInfo nodeId="8175648731696672394" fileName="ValidateableBoundPanel.java" startLine="68" startPosition="57" endLine="70" endPosition="26" />
-    <scopeInfo nodeId="1560298786499491712" fileName="ValidateableBoundPanel.java" startLine="94" startPosition="69" endLine="96" endPosition="34" />
-    <scopeInfo nodeId="1560298786499491729" fileName="ValidateableBoundPanel.java" startLine="100" startPosition="67" endLine="102" endPosition="40" />
-    <scopeInfo nodeId="1560298786499491746" fileName="ValidateableBoundPanel.java" startLine="105" startPosition="61" endLine="107" endPosition="40" />
-    <scopeInfo nodeId="1560298786499491759" fileName="ValidateableBoundPanel.java" startLine="110" startPosition="70" endLine="112" endPosition="104" />
-    <scopeInfo nodeId="5652969333075988075" fileName="ValidateableBoundPanel.java" startLine="115" startPosition="63" endLine="117" endPosition="44" />
-    <scopeInfo nodeId="7648136371139264693" fileName="ValidateableBoundPanel.java" startLine="157" startPosition="61" endLine="159" endPosition="65">
-      <varInfo nodeId="7648136371139264695" varName="levelRenderer" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491919" fileName="ValidateableBoundPanel.java" startLine="190" startPosition="30" endLine="192" endPosition="27" />
-    <scopeInfo nodeId="1560298786499491942" fileName="ValidateableBoundPanel.java" startLine="194" startPosition="33" endLine="196" endPosition="30" />
-    <scopeInfo nodeId="1560298786499491965" fileName="ValidateableBoundPanel.java" startLine="198" startPosition="31" endLine="200" endPosition="28" />
-    <scopeInfo nodeId="1560298786499491527" fileName="ValidateableBoundPanel.java" startLine="224" startPosition="0" endLine="226" endPosition="0" />
-    <scopeInfo nodeId="1560298786499492085" fileName="ValidateableBoundPanel.java" startLine="238" startPosition="53" endLine="240" endPosition="16" />
-    <scopeInfo nodeId="1560298786499491535" fileName="ValidateableBoundPanel.java" startLine="249" startPosition="0" endLine="251" endPosition="0" />
-    <scopeInfo nodeId="1560298786499491604" fileName="ValidateableBoundPanel.java" startLine="52" startPosition="105" endLine="55" endPosition="18" />
-    <scopeInfo nodeId="1560298786499491695" fileName="ValidateableBoundPanel.java" startLine="88" startPosition="63" endLine="91" endPosition="24" />
-    <scopeInfo nodeId="8175648731696755433" fileName="ValidateableBoundPanel.java" startLine="140" startPosition="0" endLine="143" endPosition="0" />
-    <scopeInfo nodeId="9033696005695809160" fileName="ValidateableBoundPanel.java" startLine="173" startPosition="25" endLine="176" endPosition="5">
-      <varInfo nodeId="9033696005695809164" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="8175648731696672805" fileName="ValidateableBoundPanel.java" startLine="211" startPosition="0" endLine="214" endPosition="0" />
-    <scopeInfo nodeId="8175648731696672367" fileName="ValidateableBoundPanel.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="8175648731696672377" varName="action" />
-    </scopeInfo>
-    <scopeInfo nodeId="8175648731696672379" fileName="ValidateableBoundPanel.java" startLine="63" startPosition="0" endLine="67" endPosition="0">
-      <varInfo nodeId="8175648731696672389" varName="action" />
-    </scopeInfo>
-    <scopeInfo nodeId="8175648731696672391" fileName="ValidateableBoundPanel.java" startLine="68" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="8175648731696672401" varName="action" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491707" fileName="ValidateableBoundPanel.java" startLine="94" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="1560298786499491710" varName="cellRenderer" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491741" fileName="ValidateableBoundPanel.java" startLine="105" startPosition="0" endLine="109" endPosition="0">
-      <varInfo nodeId="1560298786499491744" varName="objectValidator" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491753" fileName="ValidateableBoundPanel.java" startLine="110" startPosition="0" endLine="114" endPosition="0">
-      <varInfo nodeId="1560298786499491756" varName="canRemoveCondition" />
-    </scopeInfo>
-    <scopeInfo nodeId="5652969333075988072" fileName="ValidateableBoundPanel.java" startLine="115" startPosition="0" endLine="119" endPosition="0">
-      <varInfo nodeId="5652969333075988076" varName="allowRemoveAnyway" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499492077" fileName="ValidateableBoundPanel.java" startLine="237" startPosition="30" endLine="241" endPosition="9" />
-    <scopeInfo nodeId="1560298786499492111" fileName="ValidateableBoundPanel.java" startLine="254" startPosition="49" endLine="258" endPosition="20" />
-    <scopeInfo nodeId="1560298786499492136" fileName="ValidateableBoundPanel.java" startLine="260" startPosition="49" endLine="264" endPosition="20" />
-    <scopeInfo nodeId="1560298786499491594" fileName="ValidateableBoundPanel.java" startLine="52" startPosition="0" endLine="57" endPosition="0">
-      <varInfo nodeId="1560298786499491598" varName="caption" />
-      <varInfo nodeId="1560298786499491600" varName="list" />
-      <varInfo nodeId="1560298786499491596" varName="owner" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499492155" fileName="ValidateableBoundPanel.java" startLine="78" startPosition="32" endLine="83" endPosition="49">
-      <varInfo nodeId="1587145004899892035" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491688" fileName="ValidateableBoundPanel.java" startLine="88" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="1560298786499491691" varName="chooser" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491724" fileName="ValidateableBoundPanel.java" startLine="99" startPosition="0" endLine="104" endPosition="0">
-      <varInfo nodeId="1560298786499491727" varName="transferHandler" />
-    </scopeInfo>
-    <scopeInfo nodeId="9033696005695809149" fileName="ValidateableBoundPanel.java" startLine="171" startPosition="35" endLine="177" endPosition="0">
-      <varInfo nodeId="9033696005695809152" varName="indices" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491886" fileName="ValidateableBoundPanel.java" startLine="181" startPosition="36" endLine="187" endPosition="7" />
-    <scopeInfo nodeId="1560298786499492071" fileName="ValidateableBoundPanel.java" startLine="236" startPosition="31" endLine="242" endPosition="7">
-      <varInfo nodeId="1560298786499492075" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491684" fileName="ValidateableBoundPanel.java" startLine="77" startPosition="0" endLine="85" endPosition="0" />
-    <scopeInfo nodeId="9033696005695809146" fileName="ValidateableBoundPanel.java" startLine="171" startPosition="0" endLine="179" endPosition="0" />
-    <scopeInfo nodeId="1560298786499491668" fileName="ValidateableBoundPanel.java" startLine="73" startPosition="55" endLine="85" endPosition="6" />
-    <scopeInfo nodeId="7648136371139264662" fileName="ValidateableBoundPanel.java" startLine="152" startPosition="47" endLine="164" endPosition="17" />
-    <scopeInfo nodeId="1560298786499492104" fileName="ValidateableBoundPanel.java" startLine="253" startPosition="40" endLine="265" endPosition="7" />
-    <scopeInfo nodeId="1560298786499491662" fileName="ValidateableBoundPanel.java" startLine="73" startPosition="0" endLine="87" endPosition="0">
-      <varInfo nodeId="1560298786499491665" varName="chooser" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491537" fileName="ValidateableBoundPanel.java" startLine="252" startPosition="0" endLine="267" endPosition="0">
-      <varInfo nodeId="1560298786499491540" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="7648136371139264611" fileName="ValidateableBoundPanel.java" startLine="150" startPosition="51" endLine="166" endPosition="32">
-      <varInfo nodeId="7648136371139264826" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499492040" fileName="ValidateableBoundPanel.java" startLine="228" startPosition="23" endLine="244" endPosition="44">
-      <varInfo nodeId="1560298786499492068" varName="hasError" />
-      <varInfo nodeId="1560298786499492060" varName="titledBorder" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491786" fileName="ValidateableBoundPanel.java" startLine="120" startPosition="22" endLine="137" endPosition="22">
-      <varInfo nodeId="1560298786499491839" varName="actionsComponent" />
-      <varInfo nodeId="1560298786499491856" varName="comp" />
-      <varInfo nodeId="1560298786499491809" varName="component" />
-    </scopeInfo>
-    <scopeInfo nodeId="7648136371139264598" fileName="ValidateableBoundPanel.java" startLine="149" startPosition="0" endLine="167" endPosition="5">
-      <varInfo nodeId="7648136371139264602" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491783" fileName="ValidateableBoundPanel.java" startLine="120" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="1560298786499491529" fileName="ValidateableBoundPanel.java" startLine="227" startPosition="0" endLine="246" endPosition="0" />
-    <scopeInfo nodeId="7648136371139240137" fileName="ValidateableBoundPanel.java" startLine="144" startPosition="46" endLine="168" endPosition="35">
-      <varInfo nodeId="7648136371139240612" varName="errorMessage" />
-      <varInfo nodeId="7648136371139264592" varName="indices" />
-    </scopeInfo>
-    <scopeInfo nodeId="7648136371139240134" fileName="ValidateableBoundPanel.java" startLine="144" startPosition="0" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="1560298786499491880" fileName="ValidateableBoundPanel.java" startLine="180" startPosition="47" endLine="208" endPosition="34">
-      <varInfo nodeId="1560298786499491907" varName="act" />
-      <varInfo nodeId="1560298786499491983" varName="actions" />
-      <varInfo nodeId="1560298786499492006" varName="group" />
-      <varInfo nodeId="1560298786499492011" varName="toolbar" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499491877" fileName="ValidateableBoundPanel.java" startLine="180" startPosition="0" endLine="210" endPosition="0" />
-    <unitInfo nodeId="1560298786499491681" fileName="ValidateableBoundPanel.java" startLine="76" startPosition="20" endLine="85" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel$1" />
-    <unitInfo nodeId="1560298786499491532" fileName="ValidateableBoundPanel.java" startLine="248" startPosition="0" endLine="268" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel$MyKeyAdapter" />
-    <unitInfo nodeId="1560298786499491524" fileName="ValidateableBoundPanel.java" startLine="223" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel$MyValidator" />
-    <unitInfo nodeId="1560298786499491521" fileName="ValidateableBoundPanel.java" startLine="35" startPosition="0" endLine="269" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel" />
+    <file name="ValidateableBoundPanel.java">
+      <node id="1560298786499491542" at="36,0,37,0" concept="6" trace="myOwner" />
+      <node id="1560298786499491545" at="37,0,38,0" concept="6" trace="myCaption" />
+      <node id="1560298786499491548" at="38,0,39,0" concept="6" trace="myList" />
+      <node id="1560298786499491552" at="39,0,40,0" concept="6" trace="myCanRemoveCondition" />
+      <node id="5652969333075988065" at="40,0,41,0" concept="6" trace="myAllowRemoveAnyway" />
+      <node id="1560298786499491557" at="41,0,42,0" concept="6" trace="myCellRenderer" />
+      <node id="1560298786499491560" at="42,0,43,0" concept="6" trace="myTransferHandler" />
+      <node id="1560298786499491563" at="43,0,44,0" concept="6" trace="myObjectValidator" />
+      <node id="1560298786499491567" at="44,0,45,0" concept="6" trace="myChooser" />
+      <node id="8175648731696755128" at="45,0,46,0" concept="6" trace="myMultipleChooser" />
+      <node id="1560298786499491572" at="46,0,47,0" concept="6" trace="myAddAction" />
+      <node id="1560298786499491575" at="47,0,48,0" concept="6" trace="myRemoveAction" />
+      <node id="1560298786499491578" at="48,0,49,0" concept="6" trace="myEditAction" />
+      <node id="1560298786499491585" at="49,0,50,0" concept="6" trace="myValidator" />
+      <node id="1560298786499491590" at="50,0,51,0" concept="6" trace="myInitialized" />
+      <node id="1560298786499491605" at="52,105,53,20" concept="5" />
+      <node id="1560298786499491611" at="53,20,54,24" concept="5" />
+      <node id="1560298786499491617" at="54,24,55,18" concept="5" />
+      <node id="8175648731696672772" at="58,56,59,27" concept="5" />
+      <node id="8175648731696672371" at="59,27,60,25" concept="5" />
+      <node id="8175648731696672767" at="63,59,64,27" concept="5" />
+      <node id="8175648731696672383" at="64,27,65,28" concept="5" />
+      <node id="8175648731696672753" at="68,57,69,27" concept="5" />
+      <node id="8175648731696672395" at="69,27,70,26" concept="5" />
+      <node id="8175648731696672777" at="73,55,74,27" concept="5" />
+      <node id="8175648731696755238" at="74,27,75,30" concept="5" />
+      <node id="1587145004899892034" at="78,32,79,37" concept="11" />
+      <node id="1587145004899893170" at="80,29,81,22" concept="12" />
+      <node id="1560298786499492156" at="82,9,83,49" concept="12" />
+      <node id="8175648731696672844" at="88,63,89,27" concept="5" />
+      <node id="8175648731696755245" at="89,27,90,29" concept="5" />
+      <node id="1560298786499491701" at="90,29,91,24" concept="5" />
+      <node id="8175648731696672848" at="94,69,95,27" concept="5" />
+      <node id="1560298786499491718" at="95,27,96,34" concept="5" />
+      <node id="8175648731696672853" at="100,67,101,27" concept="5" />
+      <node id="1560298786499491735" at="101,27,102,40" concept="5" />
+      <node id="8175648731696672861" at="105,61,106,27" concept="5" />
+      <node id="1560298786499491747" at="106,27,107,40" concept="5" />
+      <node id="8175648731696672866" at="110,70,111,27" concept="5" />
+      <node id="1560298786499491765" at="111,27,112,104" concept="5" />
+      <node id="5652969333075988086" at="115,63,116,27" concept="5" />
+      <node id="5652969333075988078" at="116,27,117,44" concept="5" />
+      <node id="1560298786499491787" at="120,22,121,25" concept="5" />
+      <node id="1560298786499491793" at="121,25,122,43" concept="5" />
+      <node id="1560298786499491802" at="122,43,123,34" concept="5" />
+      <node id="1560298786499491808" at="123,34,124,55" concept="11" />
+      <node id="1560298786499491821" at="125,36,126,54" concept="5" />
+      <node id="1560298786499491828" at="127,5,128,40" concept="5" />
+      <node id="8175648731696672872" at="128,40,129,72" concept="5" />
+      <node id="1560298786499491838" at="129,72,130,59" concept="11" />
+      <node id="1560298786499491849" at="131,35,132,47" concept="5" />
+      <node id="1560298786499491855" at="133,5,134,69" concept="11" />
+      <node id="1560298786499491861" at="134,69,135,20" concept="5" />
+      <node id="1560298786499491865" at="135,20,136,35" concept="5" />
+      <node id="1560298786499491871" at="136,35,137,22" concept="5" />
+      <node id="8175648731696755463" at="140,42,141,45" concept="12" />
+      <node id="7648136371139240611" at="144,46,145,53" concept="11" />
+      <node id="7648136371139264649" at="145,53,146,0" concept="13" />
+      <node id="7648136371139264591" at="146,0,147,41" concept="11" />
+      <node id="7648136371139264595" at="147,41,148,25" concept="5" />
+      <node id="7648136371139264862" at="148,25,149,0" concept="13" />
+      <node id="7648136371139264825" at="150,51,151,43" concept="11" />
+      <node id="7648136371139264670" at="153,41,154,38" concept="5" />
+      <node id="7648136371139264675" at="155,9,156,35" concept="5" />
+      <node id="7648136371139264694" at="157,61,158,85" concept="11" />
+      <node id="7648136371139264702" at="158,85,159,65" concept="5" />
+      <node id="7648136371139264688" at="160,16,161,37" concept="5" />
+      <node id="7648136371139264710" at="162,9,163,36" concept="5" />
+      <node id="7648136371139264891" at="163,36,164,17" concept="4" />
+      <node id="7648136371139264894" at="165,7,166,32" concept="5" />
+      <node id="7648136371139240826" at="167,5,168,35" concept="12" />
+      <node id="9033696005695809151" at="171,35,172,41" concept="11" />
+      <node id="9033696005695809156" at="172,41,173,25" concept="5" />
+      <node id="9033696005695809241" at="174,51,175,32" concept="5" />
+      <node id="9033696005695809159" at="176,5,177,0" concept="13" />
+      <node id="8175648731696672569" at="182,32,183,49" concept="5" />
+      <node id="8175648731696672596" at="185,35,186,46" concept="5" />
+      <node id="1560298786499491906" at="188,5,189,51" concept="11" />
+      <node id="1560298786499491920" at="190,30,191,44" concept="5" />
+      <node id="1560298786499491929" at="191,44,192,27" concept="5" />
+      <node id="1560298786499491943" at="194,33,195,47" concept="5" />
+      <node id="1560298786499491952" at="195,47,196,30" concept="5" />
+      <node id="1560298786499491966" at="198,31,199,45" concept="5" />
+      <node id="1560298786499491975" at="199,45,200,28" concept="5" />
+      <node id="1560298786499491982" at="201,5,202,63" concept="11" />
+      <node id="1560298786499492003" at="203,30,204,18" concept="12" />
+      <node id="1560298786499492005" at="205,5,206,69" concept="11" />
+      <node id="1560298786499492010" at="206,69,207,112" concept="11" />
+      <node id="1560298786499492019" at="207,112,208,34" concept="12" />
+      <node id="8175648731696672809" at="211,39,212,28" concept="0" />
+      <node id="1560298786499492023" at="215,0,216,0" concept="10" trace="createAddAction#(Ljetbrains/mps/util/Computable;)Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
+      <node id="1560298786499492031" at="217,0,218,0" concept="10" trace="createRemoveAction#()Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
+      <node id="1560298786499492035" at="219,0,220,0" concept="10" trace="initUIComponentAndBinding#()Ljavax/swing/JComponent;" />
+      <node id="7648136371139240761" at="221,0,222,0" concept="10" trace="getSelectedIndices#()[I" />
+      <node id="1560298786499492048" at="229,38,230,15" concept="12" />
+      <node id="1560298786499492058" at="232,81,233,15" concept="12" />
+      <node id="1560298786499492059" at="234,7,235,89" concept="11" />
+      <node id="1560298786499492067" at="235,89,236,31" concept="11" />
+      <node id="1560298786499492086" at="238,53,239,26" concept="5" />
+      <node id="1560298786499492090" at="239,26,240,16" concept="2" />
+      <node id="1560298786499492091" at="242,7,243,71" concept="5" />
+      <node id="1560298786499492099" at="243,71,244,44" concept="5" />
+      <node id="1560298786499492119" at="255,34,256,86" concept="5" />
+      <node id="1560298786499492126" at="257,9,258,20" concept="5" />
+      <node id="1560298786499492144" at="261,37,262,89" concept="5" />
+      <node id="1560298786499492151" at="263,9,264,20" concept="5" />
+      <node id="7648136371139264686" at="160,14,162,9" concept="1" />
+      <node id="1560298786499491527" at="224,0,226,0" concept="3" trace="MyValidator#()V" />
+      <node id="1560298786499491535" at="249,0,251,0" concept="3" trace="MyKeyAdapter#()V" />
+      <node id="1587145004899893161" at="79,37,82,9" concept="9" />
+      <node id="1560298786499491814" at="124,55,127,5" concept="9" />
+      <node id="1560298786499491844" at="130,59,133,5" concept="9" />
+      <node id="8175648731696755433" at="140,0,143,0" concept="10" trace="multipleChooserSet#()Z" />
+      <node id="7648136371139264663" at="152,47,155,9" concept="9" />
+      <node id="9033696005695809160" at="173,25,176,5" concept="7" />
+      <node id="8175648731696672558" at="181,36,184,7" concept="9" />
+      <node id="8175648731696672585" at="184,7,187,7" concept="9" />
+      <node id="1560298786499491996" at="202,63,205,5" concept="9" />
+      <node id="8175648731696672805" at="211,0,214,0" concept="10" trace="assertNotInitialized#()V" />
+      <node id="1560298786499492041" at="228,23,231,7" concept="9" />
+      <node id="1560298786499492049" at="231,7,234,7" concept="9" />
+      <node id="1560298786499492112" at="254,49,257,9" concept="9" />
+      <node id="1560298786499492137" at="260,49,263,9" concept="9" />
+      <node id="8175648731696672367" at="58,0,62,0" concept="10" trace="setAddAction#(Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;)V" />
+      <node id="8175648731696672379" at="63,0,67,0" concept="10" trace="setRemoveAction#(Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;)V" />
+      <node id="8175648731696672391" at="68,0,72,0" concept="10" trace="setEditAction#(Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;)V" />
+      <node id="1560298786499491707" at="94,0,98,0" concept="10" trace="setCellRenderer#(Ljavax/swing/DefaultListCellRenderer;)V" />
+      <node id="1560298786499491741" at="105,0,109,0" concept="10" trace="setObjectValidator#(Ljetbrains/mps/workbench/dialogs/project/components/parts/validators/Validator;)V" />
+      <node id="1560298786499491753" at="110,0,114,0" concept="10" trace="setCanRemoveCondition#(Lorg/jetbrains/mps/util/Condition;)V" />
+      <node id="5652969333075988072" at="115,0,119,0" concept="10" trace="setAllowRemoveAnyway#(Z)V" />
+      <node id="1560298786499491913" at="189,51,193,5" concept="9" />
+      <node id="1560298786499491936" at="193,5,197,5" concept="9" />
+      <node id="1560298786499491959" at="197,5,201,5" concept="9" />
+      <node id="1560298786499492078" at="237,30,241,9" concept="9" />
+      <node id="1560298786499491594" at="52,0,57,0" concept="3" trace="ValidateableBoundPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)V" />
+      <node id="1560298786499491688" at="88,0,93,0" concept="10" trace="setMultipleChooser#(Ljetbrains/mps/util/Computable;)V" />
+      <node id="1560298786499491724" at="99,0,104,0" concept="10" trace="setTransferHandler#(Ljavax/swing/TransferHandler;)V" />
+      <node id="7648136371139264680" at="156,35,162,9" concept="9" />
+      <node id="1560298786499492071" at="236,31,242,7" concept="8" />
+      <node id="1560298786499492105" at="253,40,259,7" concept="9" />
+      <node id="1560298786499492130" at="259,7,265,7" concept="9" />
+      <node id="1560298786499491684" at="77,0,85,0" concept="10" trace="compute#()Ljava/util/List;" />
+      <node id="9033696005695809146" at="171,0,179,0" concept="10" trace="removeSelected#()V" />
+      <node id="1560298786499491881" at="180,47,188,5" concept="9" />
+      <node id="1560298786499491674" at="75,30,85,6" concept="5" />
+      <node id="1560298786499491662" at="73,0,87,0" concept="10" trace="setChooser#(Ljetbrains/mps/util/Computable;)V" />
+      <node id="7648136371139264652" at="151,43,165,7" concept="9" />
+      <node id="1560298786499491537" at="252,0,267,0" concept="10" trace="keyPressed#(Ljava/awt/event/KeyEvent;)V" />
+      <node id="7648136371139264598" at="149,0,167,5" concept="7" />
+      <node id="1560298786499491783" at="120,0,139,0" concept="10" trace="init#()V" />
+      <node id="1560298786499491529" at="227,0,246,0" concept="10" trace="run#()V" />
+      <node id="7648136371139240134" at="144,0,170,0" concept="10" trace="removeSelectedWithCheck#()Ljava/lang/String;" />
+      <node id="1560298786499491877" at="180,0,210,0" concept="10" trace="createActionsComponent#()Ljavax/swing/JComponent;" />
+      <scope id="1560298786499492039" at="224,27,224,27" />
+      <scope id="1560298786499492103" at="249,28,249,28" />
+      <scope id="1587145004899893162" at="80,29,81,22" />
+      <scope id="1560298786499491820" at="125,36,126,54" />
+      <scope id="1560298786499491848" at="131,35,132,47" />
+      <scope id="8175648731696755436" at="140,42,141,45" />
+      <scope id="7648136371139264669" at="153,41,154,38" />
+      <scope id="7648136371139264687" at="160,16,161,37" />
+      <scope id="9033696005695809173" at="174,51,175,32" />
+      <scope id="8175648731696672559" at="182,32,183,49" />
+      <scope id="8175648731696672586" at="185,35,186,46" />
+      <scope id="1560298786499492002" at="203,30,204,18" />
+      <scope id="8175648731696672808" at="211,39,212,28" />
+      <scope id="1560298786499492023" at="215,0,216,0">
+        <var name="chooser" id="1560298786499492026" />
+      </scope>
+      <scope id="1560298786499492031" at="217,0,218,0" />
+      <scope id="1560298786499492035" at="219,0,220,0" />
+      <scope id="7648136371139240761" at="221,0,222,0" />
+      <scope id="1560298786499492047" at="229,38,230,15" />
+      <scope id="1560298786499492057" at="232,81,233,15" />
+      <scope id="1560298786499492118" at="255,34,256,86" />
+      <scope id="1560298786499492143" at="261,37,262,89" />
+      <scope id="8175648731696672370" at="58,56,60,25" />
+      <scope id="8175648731696672382" at="63,59,65,28" />
+      <scope id="8175648731696672394" at="68,57,70,26" />
+      <scope id="1560298786499491712" at="94,69,96,34" />
+      <scope id="1560298786499491729" at="100,67,102,40" />
+      <scope id="1560298786499491746" at="105,61,107,40" />
+      <scope id="1560298786499491759" at="110,70,112,104" />
+      <scope id="5652969333075988075" at="115,63,117,44" />
+      <scope id="7648136371139264693" at="157,61,159,65">
+        <var name="levelRenderer" id="7648136371139264695" />
+      </scope>
+      <scope id="1560298786499491919" at="190,30,192,27" />
+      <scope id="1560298786499491942" at="194,33,196,30" />
+      <scope id="1560298786499491965" at="198,31,200,28" />
+      <scope id="1560298786499491527" at="224,0,226,0" />
+      <scope id="1560298786499492085" at="238,53,240,16" />
+      <scope id="1560298786499491535" at="249,0,251,0" />
+      <scope id="1560298786499491604" at="52,105,55,18" />
+      <scope id="1560298786499491695" at="88,63,91,24" />
+      <scope id="8175648731696755433" at="140,0,143,0" />
+      <scope id="9033696005695809160" at="173,25,176,5">
+        <var name="i" id="9033696005695809164" />
+      </scope>
+      <scope id="8175648731696672805" at="211,0,214,0" />
+      <scope id="8175648731696672367" at="58,0,62,0">
+        <var name="action" id="8175648731696672377" />
+      </scope>
+      <scope id="8175648731696672379" at="63,0,67,0">
+        <var name="action" id="8175648731696672389" />
+      </scope>
+      <scope id="8175648731696672391" at="68,0,72,0">
+        <var name="action" id="8175648731696672401" />
+      </scope>
+      <scope id="1560298786499491707" at="94,0,98,0">
+        <var name="cellRenderer" id="1560298786499491710" />
+      </scope>
+      <scope id="1560298786499491741" at="105,0,109,0">
+        <var name="objectValidator" id="1560298786499491744" />
+      </scope>
+      <scope id="1560298786499491753" at="110,0,114,0">
+        <var name="canRemoveCondition" id="1560298786499491756" />
+      </scope>
+      <scope id="5652969333075988072" at="115,0,119,0">
+        <var name="allowRemoveAnyway" id="5652969333075988076" />
+      </scope>
+      <scope id="1560298786499492077" at="237,30,241,9" />
+      <scope id="1560298786499492111" at="254,49,258,20" />
+      <scope id="1560298786499492136" at="260,49,264,20" />
+      <scope id="1560298786499491594" at="52,0,57,0">
+        <var name="caption" id="1560298786499491598" />
+        <var name="list" id="1560298786499491600" />
+        <var name="owner" id="1560298786499491596" />
+      </scope>
+      <scope id="1560298786499492155" at="78,32,83,49">
+        <var name="result" id="1587145004899892035" />
+      </scope>
+      <scope id="1560298786499491688" at="88,0,93,0">
+        <var name="chooser" id="1560298786499491691" />
+      </scope>
+      <scope id="1560298786499491724" at="99,0,104,0">
+        <var name="transferHandler" id="1560298786499491727" />
+      </scope>
+      <scope id="9033696005695809149" at="171,35,177,0">
+        <var name="indices" id="9033696005695809152" />
+      </scope>
+      <scope id="1560298786499491886" at="181,36,187,7" />
+      <scope id="1560298786499492071" at="236,31,242,7">
+        <var name="value" id="1560298786499492075" />
+      </scope>
+      <scope id="1560298786499491684" at="77,0,85,0" />
+      <scope id="9033696005695809146" at="171,0,179,0" />
+      <scope id="1560298786499491668" at="73,55,85,6" />
+      <scope id="7648136371139264662" at="152,47,164,17" />
+      <scope id="1560298786499492104" at="253,40,265,7" />
+      <scope id="1560298786499491662" at="73,0,87,0">
+        <var name="chooser" id="1560298786499491665" />
+      </scope>
+      <scope id="1560298786499491537" at="252,0,267,0">
+        <var name="e" id="1560298786499491540" />
+      </scope>
+      <scope id="7648136371139264611" at="150,51,166,32">
+        <var name="value" id="7648136371139264826" />
+      </scope>
+      <scope id="1560298786499492040" at="228,23,244,44">
+        <var name="hasError" id="1560298786499492068" />
+        <var name="titledBorder" id="1560298786499492060" />
+      </scope>
+      <scope id="1560298786499491786" at="120,22,137,22">
+        <var name="actionsComponent" id="1560298786499491839" />
+        <var name="comp" id="1560298786499491856" />
+        <var name="component" id="1560298786499491809" />
+      </scope>
+      <scope id="7648136371139264598" at="149,0,167,5">
+        <var name="i" id="7648136371139264602" />
+      </scope>
+      <scope id="1560298786499491783" at="120,0,139,0" />
+      <scope id="1560298786499491529" at="227,0,246,0" />
+      <scope id="7648136371139240137" at="144,46,168,35">
+        <var name="errorMessage" id="7648136371139240612" />
+        <var name="indices" id="7648136371139264592" />
+      </scope>
+      <scope id="7648136371139240134" at="144,0,170,0" />
+      <scope id="1560298786499491880" at="180,47,208,34">
+        <var name="act" id="1560298786499491907" />
+        <var name="actions" id="1560298786499491983" />
+        <var name="group" id="1560298786499492006" />
+        <var name="toolbar" id="1560298786499492011" />
+      </scope>
+      <scope id="1560298786499491877" at="180,0,210,0" />
+      <unit id="1560298786499491681" at="76,20,85,5" name="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel$1" />
+      <unit id="1560298786499491532" at="248,0,268,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel$MyKeyAdapter" />
+      <unit id="1560298786499491524" at="223,0,247,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel$MyValidator" />
+      <unit id="1560298786499491521" at="35,0,269,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.ValidateableBoundPanel" />
+    </file>
   </root>
   <root nodeRef="r:2516a5ea-6626-4511-a78e-b75c007f4fd3(jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels)/1560298786499492437">
-    <nodeInfo nodeId="1560298786499492471" fileName="BoundListPanel.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myUIList" />
-    <nodeInfo nodeId="1560298786499492486" fileName="BoundListPanel.java" startLine="22" startPosition="74" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499492501" fileName="BoundListPanel.java" startLine="28" startPosition="33" endLine="29" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492510" fileName="BoundListPanel.java" startLine="30" startPosition="5" endLine="31" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492524" fileName="BoundListPanel.java" startLine="31" startPosition="114" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492536" fileName="BoundListPanel.java" startLine="36" startPosition="78" endLine="37" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492544" fileName="BoundListPanel.java" startLine="41" startPosition="54" endLine="42" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7648136371139264547" fileName="BoundListPanel.java" startLine="46" startPosition="40" endLine="47" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3416087927885097965" fileName="BoundListPanel.java" startLine="50" startPosition="26" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492445" fileName="BoundListPanel.java" startLine="55" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
-    <nodeInfo nodeId="1560298786499492548" fileName="BoundListPanel.java" startLine="57" startPosition="57" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499492552" fileName="BoundListPanel.java" startLine="58" startPosition="22" endLine="59" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492559" fileName="BoundListPanel.java" startLine="63" startPosition="42" endLine="64" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499492573" fileName="BoundListPanel.java" startLine="65" startPosition="27" endLine="66" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492576" fileName="BoundListPanel.java" startLine="67" startPosition="7" endLine="68" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492583" fileName="BoundListPanel.java" startLine="68" startPosition="48" endLine="69" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492586" fileName="BoundListPanel.java" startLine="69" startPosition="21" endLine="70" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499492599" fileName="BoundListPanel.java" startLine="70" startPosition="60" endLine="71" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499492614" fileName="BoundListPanel.java" startLine="76" startPosition="33" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7648136371139264504" fileName="BoundListPanel.java" startLine="81" startPosition="46" endLine="82" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5652969333075991013" fileName="BoundListPanel.java" startLine="83" startPosition="65" endLine="84" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5652969333075991044" fileName="BoundListPanel.java" startLine="86" startPosition="35" endLine="87" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5652969333075991059" fileName="BoundListPanel.java" startLine="88" startPosition="212" endLine="89" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499492476" fileName="BoundListPanel.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BoundListPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1560298786499492494" fileName="BoundListPanel.java" startLine="27" startPosition="52" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3416087927885097961" fileName="BoundListPanel.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getList#()Ljavax/swing/JList;" />
-    <nodeInfo nodeId="1560298786499492568" fileName="BoundListPanel.java" startLine="64" startPosition="43" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492464" fileName="BoundListPanel.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyListRemoveAction#()V" />
-    <nodeInfo nodeId="5652969333075990998" fileName="BoundListPanel.java" startLine="82" startPosition="74" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492528" fileName="BoundListPanel.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAddAction#(Ljetbrains/mps/util/Computable;)Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
-    <nodeInfo nodeId="1560298786499492540" fileName="BoundListPanel.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRemoveAction#()Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
-    <nodeInfo nodeId="7648136371139241800" fileName="BoundListPanel.java" startLine="45" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedIndices#()[I" />
-    <nodeInfo nodeId="1560298786499492450" fileName="BoundListPanel.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyListAddAction#(Ljetbrains/mps/util/Computable;)V" />
-    <nodeInfo nodeId="5652969333075991021" fileName="BoundListPanel.java" startLine="85" startPosition="7" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499492490" fileName="BoundListPanel.java" startLine="26" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initUIComponentAndBinding#()Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="1560298786499492456" fileName="BoundListPanel.java" startLine="62" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAdd#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)I" />
-    <nodeInfo nodeId="1560298786499492466" fileName="BoundListPanel.java" startLine="80" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <scopeInfo nodeId="1560298786499492485" fileName="BoundListPanel.java" startLine="22" startPosition="74" endLine="23" endPosition="30" />
-    <scopeInfo nodeId="1560298786499492500" fileName="BoundListPanel.java" startLine="28" startPosition="33" endLine="29" endPosition="47" />
-    <scopeInfo nodeId="1560298786499492535" fileName="BoundListPanel.java" startLine="36" startPosition="78" endLine="37" endPosition="55" />
-    <scopeInfo nodeId="1560298786499492543" fileName="BoundListPanel.java" startLine="41" startPosition="54" endLine="42" endPosition="51" />
-    <scopeInfo nodeId="7648136371139241804" fileName="BoundListPanel.java" startLine="46" startPosition="40" endLine="47" endPosition="41" />
-    <scopeInfo nodeId="3416087927885097964" fileName="BoundListPanel.java" startLine="50" startPosition="26" endLine="51" endPosition="20" />
-    <scopeInfo nodeId="1560298786499492572" fileName="BoundListPanel.java" startLine="65" startPosition="27" endLine="66" endPosition="18" />
-    <scopeInfo nodeId="1560298786499492613" fileName="BoundListPanel.java" startLine="76" startPosition="33" endLine="77" endPosition="22" />
-    <scopeInfo nodeId="5652969333075990999" fileName="BoundListPanel.java" startLine="83" startPosition="65" endLine="84" endPosition="15" />
-    <scopeInfo nodeId="5652969333075991022" fileName="BoundListPanel.java" startLine="86" startPosition="35" endLine="87" endPosition="112" />
-    <scopeInfo nodeId="5652969333075991056" fileName="BoundListPanel.java" startLine="88" startPosition="212" endLine="89" endPosition="45" />
-    <scopeInfo nodeId="1560298786499492547" fileName="BoundListPanel.java" startLine="57" startPosition="57" endLine="59" endPosition="26" />
-    <scopeInfo nodeId="1560298786499492476" fileName="BoundListPanel.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1560298786499492480" varName="caption" />
-      <varInfo nodeId="1560298786499492478" varName="owner" />
-      <varInfo nodeId="1560298786499492482" varName="ts" />
-    </scopeInfo>
-    <scopeInfo nodeId="3416087927885097961" fileName="BoundListPanel.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1560298786499492464" fileName="BoundListPanel.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1560298786499492528" fileName="BoundListPanel.java" startLine="35" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="1560298786499492531" varName="chooser" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499492540" fileName="BoundListPanel.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="7648136371139241800" fileName="BoundListPanel.java" startLine="45" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="1560298786499492450" fileName="BoundListPanel.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="1560298786499492452" varName="chooser" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499492493" fileName="BoundListPanel.java" startLine="27" startPosition="52" endLine="32" endPosition="20" />
-    <scopeInfo nodeId="1560298786499492490" fileName="BoundListPanel.java" startLine="26" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1560298786499492558" fileName="BoundListPanel.java" startLine="63" startPosition="42" endLine="71" endPosition="80">
-      <varInfo nodeId="1560298786499492560" varName="chosen" />
-      <varInfo nodeId="1560298786499492587" varName="first" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499492618" fileName="BoundListPanel.java" startLine="81" startPosition="46" endLine="90" endPosition="7">
-      <varInfo nodeId="7648136371139264505" varName="errorMessage" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499492456" fileName="BoundListPanel.java" startLine="62" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="1560298786499492459" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499492466" fileName="BoundListPanel.java" startLine="80" startPosition="0" endLine="92" endPosition="0">
-      <varInfo nodeId="1560298786499492469" varName="e" />
-    </scopeInfo>
-    <unitInfo nodeId="1560298786499492461" fileName="BoundListPanel.java" startLine="75" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel$MyListRemoveAction" />
-    <unitInfo nodeId="1560298786499492442" fileName="BoundListPanel.java" startLine="54" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel$MyListAddAction" />
-    <unitInfo nodeId="1560298786499492437" fileName="BoundListPanel.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel" />
+    <file name="BoundListPanel.java">
+      <node id="1560298786499492471" at="20,0,21,0" concept="6" trace="myUIList" />
+      <node id="1560298786499492486" at="22,74,23,30" concept="14" />
+      <node id="1560298786499492501" at="28,33,29,47" concept="5" />
+      <node id="1560298786499492510" at="30,5,31,114" concept="5" />
+      <node id="1560298786499492524" at="31,114,32,20" concept="12" />
+      <node id="1560298786499492536" at="36,78,37,55" concept="12" />
+      <node id="1560298786499492544" at="41,54,42,51" concept="12" />
+      <node id="7648136371139264547" at="46,40,47,41" concept="12" />
+      <node id="3416087927885097965" at="50,26,51,20" concept="12" />
+      <node id="1560298786499492445" at="55,0,56,0" concept="6" trace="myChooser" />
+      <node id="1560298786499492548" at="57,57,58,22" concept="14" />
+      <node id="1560298786499492552" at="58,22,59,26" concept="5" />
+      <node id="1560298786499492559" at="63,42,64,43" concept="11" />
+      <node id="1560298786499492573" at="65,27,66,18" concept="12" />
+      <node id="1560298786499492576" at="67,7,68,48" concept="5" />
+      <node id="1560298786499492583" at="68,48,69,21" concept="5" />
+      <node id="1560298786499492586" at="69,21,70,60" concept="11" />
+      <node id="1560298786499492599" at="70,60,71,80" concept="12" />
+      <node id="1560298786499492614" at="76,33,77,22" concept="14" />
+      <node id="7648136371139264504" at="81,46,82,74" concept="11" />
+      <node id="5652969333075991013" at="83,65,84,15" concept="12" />
+      <node id="5652969333075991044" at="86,35,87,112" concept="5" />
+      <node id="5652969333075991059" at="88,212,89,45" concept="5" />
+      <node id="1560298786499492476" at="22,0,25,0" concept="3" trace="BoundListPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)V" />
+      <node id="1560298786499492494" at="27,52,30,5" concept="9" />
+      <node id="3416087927885097961" at="50,0,53,0" concept="10" trace="getList#()Ljavax/swing/JList;" />
+      <node id="1560298786499492568" at="64,43,67,7" concept="9" />
+      <node id="1560298786499492464" at="76,0,79,0" concept="3" trace="MyListRemoveAction#()V" />
+      <node id="5652969333075990998" at="82,74,85,7" concept="9" />
+      <node id="1560298786499492528" at="35,0,39,0" concept="10" trace="createAddAction#(Ljetbrains/mps/util/Computable;)Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
+      <node id="1560298786499492540" at="40,0,44,0" concept="10" trace="createRemoveAction#()Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
+      <node id="7648136371139241800" at="45,0,49,0" concept="10" trace="getSelectedIndices#()[I" />
+      <node id="1560298786499492450" at="57,0,61,0" concept="3" trace="MyListAddAction#(Ljetbrains/mps/util/Computable;)V" />
+      <node id="5652969333075991021" at="85,7,90,7" concept="9" />
+      <node id="1560298786499492490" at="26,0,34,0" concept="10" trace="initUIComponentAndBinding#()Ljavax/swing/JComponent;" />
+      <node id="1560298786499492456" at="62,0,73,0" concept="10" trace="doAdd#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)I" />
+      <node id="1560298786499492466" at="80,0,92,0" concept="10" trace="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <scope id="1560298786499492485" at="22,74,23,30" />
+      <scope id="1560298786499492500" at="28,33,29,47" />
+      <scope id="1560298786499492535" at="36,78,37,55" />
+      <scope id="1560298786499492543" at="41,54,42,51" />
+      <scope id="7648136371139241804" at="46,40,47,41" />
+      <scope id="3416087927885097964" at="50,26,51,20" />
+      <scope id="1560298786499492572" at="65,27,66,18" />
+      <scope id="1560298786499492613" at="76,33,77,22" />
+      <scope id="5652969333075990999" at="83,65,84,15" />
+      <scope id="5652969333075991022" at="86,35,87,112" />
+      <scope id="5652969333075991056" at="88,212,89,45" />
+      <scope id="1560298786499492547" at="57,57,59,26" />
+      <scope id="1560298786499492476" at="22,0,25,0">
+        <var name="caption" id="1560298786499492480" />
+        <var name="owner" id="1560298786499492478" />
+        <var name="ts" id="1560298786499492482" />
+      </scope>
+      <scope id="3416087927885097961" at="50,0,53,0" />
+      <scope id="1560298786499492464" at="76,0,79,0" />
+      <scope id="1560298786499492528" at="35,0,39,0">
+        <var name="chooser" id="1560298786499492531" />
+      </scope>
+      <scope id="1560298786499492540" at="40,0,44,0" />
+      <scope id="7648136371139241800" at="45,0,49,0" />
+      <scope id="1560298786499492450" at="57,0,61,0">
+        <var name="chooser" id="1560298786499492452" />
+      </scope>
+      <scope id="1560298786499492493" at="27,52,32,20" />
+      <scope id="1560298786499492490" at="26,0,34,0" />
+      <scope id="1560298786499492558" at="63,42,71,80">
+        <var name="chosen" id="1560298786499492560" />
+        <var name="first" id="1560298786499492587" />
+      </scope>
+      <scope id="1560298786499492618" at="81,46,90,7">
+        <var name="errorMessage" id="7648136371139264505" />
+      </scope>
+      <scope id="1560298786499492456" at="62,0,73,0">
+        <var name="e" id="1560298786499492459" />
+      </scope>
+      <scope id="1560298786499492466" at="80,0,92,0">
+        <var name="e" id="1560298786499492469" />
+      </scope>
+      <unit id="1560298786499492461" at="75,0,93,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel$MyListRemoveAction" />
+      <unit id="1560298786499492442" at="54,0,74,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel$MyListAddAction" />
+      <unit id="1560298786499492437" at="19,0,94,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundListPanel" />
+    </file>
   </root>
   <root nodeRef="r:2516a5ea-6626-4511-a78e-b75c007f4fd3(jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels)/1560298786499497595">
-    <nodeInfo nodeId="1560298786499497635" fileName="BoundTablePanel.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTable" />
-    <nodeInfo nodeId="1560298786499497638" fileName="BoundTablePanel.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDiffRow" />
-    <nodeInfo nodeId="1560298786499497641" fileName="BoundTablePanel.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myColumns" />
-    <nodeInfo nodeId="1560298786499497663" fileName="BoundTablePanel.java" startLine="38" startPosition="84" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499497673" fileName="BoundTablePanel.java" startLine="42" startPosition="45" endLine="43" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497686" fileName="BoundTablePanel.java" startLine="46" startPosition="45" endLine="47" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3416087927885099054" fileName="BoundTablePanel.java" startLine="50" startPosition="28" endLine="51" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499497742" fileName="BoundTablePanel.java" startLine="55" startPosition="84" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499497760" fileName="BoundTablePanel.java" startLine="60" startPosition="54" endLine="61" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7648136371139264525" fileName="BoundTablePanel.java" startLine="65" startPosition="40" endLine="66" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499497770" fileName="BoundTablePanel.java" startLine="70" startPosition="52" endLine="71" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497783" fileName="BoundTablePanel.java" startLine="71" startPosition="63" endLine="72" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499497805" fileName="BoundTablePanel.java" startLine="73" startPosition="48" endLine="74" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497817" fileName="BoundTablePanel.java" startLine="75" startPosition="5" endLine="76" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497821" fileName="BoundTablePanel.java" startLine="76" startPosition="24" endLine="77" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497828" fileName="BoundTablePanel.java" startLine="77" startPosition="37" endLine="78" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499497839" fileName="BoundTablePanel.java" startLine="79" startPosition="48" endLine="80" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499497850" fileName="BoundTablePanel.java" startLine="80" startPosition="65" endLine="81" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497864" fileName="BoundTablePanel.java" startLine="82" startPosition="29" endLine="83" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497871" fileName="BoundTablePanel.java" startLine="83" startPosition="38" endLine="84" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497878" fileName="BoundTablePanel.java" startLine="85" startPosition="7" endLine="86" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497883" fileName="BoundTablePanel.java" startLine="86" startPosition="32" endLine="87" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499497894" fileName="BoundTablePanel.java" startLine="88" startPosition="29" endLine="89" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497899" fileName="BoundTablePanel.java" startLine="90" startPosition="7" endLine="91" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499497940" fileName="BoundTablePanel.java" startLine="92" startPosition="27" endLine="93" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497911" fileName="BoundTablePanel.java" startLine="94" startPosition="14" endLine="95" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499497916" fileName="BoundTablePanel.java" startLine="95" startPosition="43" endLine="96" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497921" fileName="BoundTablePanel.java" startLine="96" startPosition="29" endLine="97" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499498078" fileName="BoundTablePanel.java" startLine="100" startPosition="62" endLine="101" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499497945" fileName="BoundTablePanel.java" startLine="104" startPosition="7" endLine="105" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497948" fileName="BoundTablePanel.java" startLine="106" startPosition="5" endLine="107" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497960" fileName="BoundTablePanel.java" startLine="107" startPosition="149" endLine="108" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499497965" fileName="BoundTablePanel.java" startLine="112" startPosition="46" endLine="113" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7648136371139264566" fileName="BoundTablePanel.java" startLine="117" startPosition="46" endLine="118" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7648136371139264579" fileName="BoundTablePanel.java" startLine="119" startPosition="39" endLine="120" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497619" fileName="BoundTablePanel.java" startLine="126" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChooser" />
-    <nodeInfo nodeId="1560298786499498010" fileName="BoundTablePanel.java" startLine="128" startPosition="58" endLine="129" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499498014" fileName="BoundTablePanel.java" startLine="129" startPosition="21" endLine="130" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499498021" fileName="BoundTablePanel.java" startLine="134" startPosition="42" endLine="135" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499498035" fileName="BoundTablePanel.java" startLine="136" startPosition="27" endLine="137" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499498038" fileName="BoundTablePanel.java" startLine="138" startPosition="7" endLine="139" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499498047" fileName="BoundTablePanel.java" startLine="139" startPosition="56" endLine="140" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499498050" fileName="BoundTablePanel.java" startLine="140" startPosition="21" endLine="141" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499498063" fileName="BoundTablePanel.java" startLine="141" startPosition="60" endLine="142" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499497652" fileName="BoundTablePanel.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BoundTablePanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1560298786499497667" fileName="BoundTablePanel.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addColumn#(Ljetbrains/mps/ide/ui/dialogs/properties/descriptors/ColumnDescriptor;)V" />
-    <nodeInfo nodeId="1560298786499497680" fileName="BoundTablePanel.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setDiffRow#(Z)V" />
-    <nodeInfo nodeId="3416087927885099050" fileName="BoundTablePanel.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTable#()Ljavax/swing/JTable;" />
-    <nodeInfo nodeId="1560298786499497798" fileName="BoundTablePanel.java" startLine="72" startPosition="143" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1560298786499497889" fileName="BoundTablePanel.java" startLine="87" startPosition="54" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499497606" fileName="BoundTablePanel.java" startLine="112" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTableRemoveAction#(Ljavax/swing/JTable;)V" />
-    <nodeInfo nodeId="7648136371139264572" fileName="BoundTablePanel.java" startLine="118" startPosition="75" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499498030" fileName="BoundTablePanel.java" startLine="135" startPosition="43" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499497725" fileName="BoundTablePanel.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAddAction#(Ljetbrains/mps/util/Computable;)Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
-    <nodeInfo nodeId="1560298786499497747" fileName="BoundTablePanel.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRemoveAction#()Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
-    <nodeInfo nodeId="7648136371139264396" fileName="BoundTablePanel.java" startLine="64" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSelectedIndices#()[I" />
-    <nodeInfo nodeId="1560298786499497857" fileName="BoundTablePanel.java" startLine="81" startPosition="43" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499497933" fileName="BoundTablePanel.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCellEditable#(Ljava/util/EventObject;)Z" />
-    <nodeInfo nodeId="1560298786499497624" fileName="BoundTablePanel.java" startLine="128" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTableAddAction#(Ljetbrains/mps/util/Computable;)V" />
-    <nodeInfo nodeId="1560298786499497926" fileName="BoundTablePanel.java" startLine="97" startPosition="32" endLine="103" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497610" fileName="BoundTablePanel.java" startLine="116" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="1560298786499497909" fileName="BoundTablePanel.java" startLine="94" startPosition="12" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1560298786499497630" fileName="BoundTablePanel.java" startLine="133" startPosition="0" endLine="144" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAdd#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)I" />
-    <nodeInfo nodeId="1560298786499497905" fileName="BoundTablePanel.java" startLine="91" startPosition="48" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499497832" fileName="BoundTablePanel.java" startLine="78" startPosition="14" endLine="106" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1560298786499497766" fileName="BoundTablePanel.java" startLine="69" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initUIComponentAndBinding#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="1560298786499497662" fileName="BoundTablePanel.java" startLine="38" startPosition="84" endLine="39" endPosition="30" />
-    <scopeInfo nodeId="1560298786499497672" fileName="BoundTablePanel.java" startLine="42" startPosition="45" endLine="43" endPosition="21" />
-    <scopeInfo nodeId="1560298786499497685" fileName="BoundTablePanel.java" startLine="46" startPosition="45" endLine="47" endPosition="26" />
-    <scopeInfo nodeId="3416087927885099053" fileName="BoundTablePanel.java" startLine="50" startPosition="28" endLine="51" endPosition="19" />
-    <scopeInfo nodeId="1560298786499497732" fileName="BoundTablePanel.java" startLine="55" startPosition="84" endLine="56" endPosition="57" />
-    <scopeInfo nodeId="1560298786499497750" fileName="BoundTablePanel.java" startLine="60" startPosition="54" endLine="61" endPosition="60" />
-    <scopeInfo nodeId="7648136371139264400" fileName="BoundTablePanel.java" startLine="65" startPosition="40" endLine="66" endPosition="37" />
-    <scopeInfo nodeId="1560298786499497804" fileName="BoundTablePanel.java" startLine="73" startPosition="48" endLine="74" endPosition="87" />
-    <scopeInfo nodeId="1560298786499497893" fileName="BoundTablePanel.java" startLine="88" startPosition="29" endLine="89" endPosition="41" />
-    <scopeInfo nodeId="1560298786499497939" fileName="BoundTablePanel.java" startLine="92" startPosition="27" endLine="93" endPosition="37" />
-    <scopeInfo nodeId="1560298786499498077" fileName="BoundTablePanel.java" startLine="100" startPosition="62" endLine="101" endPosition="25" />
-    <scopeInfo nodeId="1560298786499497964" fileName="BoundTablePanel.java" startLine="112" startPosition="46" endLine="113" endPosition="19" />
-    <scopeInfo nodeId="7648136371139264578" fileName="BoundTablePanel.java" startLine="119" startPosition="39" endLine="120" endPosition="112" />
-    <scopeInfo nodeId="1560298786499498034" fileName="BoundTablePanel.java" startLine="136" startPosition="27" endLine="137" endPosition="18" />
-    <scopeInfo nodeId="1560298786499497863" fileName="BoundTablePanel.java" startLine="82" startPosition="29" endLine="84" endPosition="41" />
-    <scopeInfo nodeId="1560298786499498009" fileName="BoundTablePanel.java" startLine="128" startPosition="58" endLine="130" endPosition="26" />
-    <scopeInfo nodeId="1560298786499497652" fileName="BoundTablePanel.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="1560298786499497656" varName="caption" />
-      <varInfo nodeId="1560298786499497654" varName="owner" />
-      <varInfo nodeId="1560298786499497658" varName="ts" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497667" fileName="BoundTablePanel.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="1560298786499497670" varName="d" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497680" fileName="BoundTablePanel.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="1560298786499497683" varName="isDiffRow" />
-    </scopeInfo>
-    <scopeInfo nodeId="3416087927885099050" fileName="BoundTablePanel.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1560298786499497798" fileName="BoundTablePanel.java" startLine="72" startPosition="143" endLine="75" endPosition="5">
-      <varInfo nodeId="1560298786499497802" varName="d" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497606" fileName="BoundTablePanel.java" startLine="112" startPosition="0" endLine="115" endPosition="0">
-      <varInfo nodeId="1560298786499497608" varName="table" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497725" fileName="BoundTablePanel.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="1560298786499497728" varName="chooser" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497747" fileName="BoundTablePanel.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="7648136371139264396" fileName="BoundTablePanel.java" startLine="64" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1560298786499497933" fileName="BoundTablePanel.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="1560298786499497936" varName="anEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497973" fileName="BoundTablePanel.java" startLine="117" startPosition="46" endLine="121" endPosition="7">
-      <varInfo nodeId="7648136371139264567" varName="errorMessage" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497624" fileName="BoundTablePanel.java" startLine="128" startPosition="0" endLine="132" endPosition="0">
-      <varInfo nodeId="1560298786499497626" varName="chooser" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497610" fileName="BoundTablePanel.java" startLine="116" startPosition="0" endLine="123" endPosition="0">
-      <varInfo nodeId="1560298786499497613" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499498020" fileName="BoundTablePanel.java" startLine="134" startPosition="42" endLine="142" endPosition="81">
-      <varInfo nodeId="1560298786499498022" varName="chosen" />
-      <varInfo nodeId="1560298786499498051" varName="first" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497910" fileName="BoundTablePanel.java" startLine="94" startPosition="14" endLine="103" endPosition="11">
-      <varInfo nodeId="1560298786499497912" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497630" fileName="BoundTablePanel.java" startLine="133" startPosition="0" endLine="144" endPosition="0">
-      <varInfo nodeId="1560298786499497633" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497838" fileName="BoundTablePanel.java" startLine="79" startPosition="48" endLine="105" endPosition="10">
-      <varInfo nodeId="1560298786499497840" varName="column" />
-      <varInfo nodeId="1560298786499497900" varName="editor" />
-      <varInfo nodeId="1560298786499497884" varName="renderer" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497832" fileName="BoundTablePanel.java" startLine="78" startPosition="14" endLine="106" endPosition="5">
-      <varInfo nodeId="1560298786499497836" varName="d" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497769" fileName="BoundTablePanel.java" startLine="70" startPosition="52" endLine="108" endPosition="19">
-      <varInfo nodeId="1560298786499497829" varName="i" />
-      <varInfo nodeId="1560298786499497784" varName="tableBinding" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497766" fileName="BoundTablePanel.java" startLine="69" startPosition="0" endLine="110" endPosition="0" />
-    <unitInfo nodeId="1560298786499497932" fileName="BoundTablePanel.java" startLine="98" startPosition="33" endLine="103" endPosition="9" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel$1" />
-    <unitInfo nodeId="1560298786499497600" fileName="BoundTablePanel.java" startLine="111" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel$MyTableRemoveAction" />
-    <unitInfo nodeId="1560298786499497615" fileName="BoundTablePanel.java" startLine="125" startPosition="0" endLine="145" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel$MyTableAddAction" />
-    <unitInfo nodeId="1560298786499497595" fileName="BoundTablePanel.java" startLine="33" startPosition="0" endLine="146" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel" />
+    <file name="BoundTablePanel.java">
+      <node id="1560298786499497635" at="34,0,35,0" concept="6" trace="myTable" />
+      <node id="1560298786499497638" at="35,0,36,0" concept="6" trace="myDiffRow" />
+      <node id="1560298786499497641" at="36,0,37,0" concept="6" trace="myColumns" />
+      <node id="1560298786499497663" at="38,84,39,30" concept="14" />
+      <node id="1560298786499497673" at="42,45,43,21" concept="5" />
+      <node id="1560298786499497686" at="46,45,47,26" concept="5" />
+      <node id="3416087927885099054" at="50,28,51,19" concept="12" />
+      <node id="1560298786499497742" at="55,84,56,57" concept="12" />
+      <node id="1560298786499497760" at="60,54,61,60" concept="12" />
+      <node id="7648136371139264525" at="65,40,66,37" concept="12" />
+      <node id="1560298786499497770" at="70,52,71,63" concept="5" />
+      <node id="1560298786499497783" at="71,63,72,143" concept="11" />
+      <node id="1560298786499497805" at="73,48,74,87" concept="5" />
+      <node id="1560298786499497817" at="75,5,76,24" concept="5" />
+      <node id="1560298786499497821" at="76,24,77,37" concept="5" />
+      <node id="1560298786499497828" at="77,37,78,14" concept="11" />
+      <node id="1560298786499497839" at="79,48,80,65" concept="11" />
+      <node id="1560298786499497850" at="80,65,81,43" concept="5" />
+      <node id="1560298786499497864" at="82,29,83,38" concept="5" />
+      <node id="1560298786499497871" at="83,38,84,41" concept="5" />
+      <node id="1560298786499497878" at="85,7,86,32" concept="5" />
+      <node id="1560298786499497883" at="86,32,87,54" concept="11" />
+      <node id="1560298786499497894" at="88,29,89,41" concept="5" />
+      <node id="1560298786499497899" at="90,7,91,48" concept="11" />
+      <node id="1560298786499497940" at="92,27,93,37" concept="5" />
+      <node id="1560298786499497911" at="94,14,95,43" concept="11" />
+      <node id="1560298786499497916" at="95,43,96,29" concept="5" />
+      <node id="1560298786499497921" at="96,29,97,32" concept="5" />
+      <node id="1560298786499498078" at="100,62,101,25" concept="12" />
+      <node id="1560298786499497945" at="104,7,105,10" concept="5" />
+      <node id="1560298786499497948" at="106,5,107,149" concept="5" />
+      <node id="1560298786499497960" at="107,149,108,19" concept="12" />
+      <node id="1560298786499497965" at="112,46,113,19" concept="14" />
+      <node id="7648136371139264566" at="117,46,118,75" concept="11" />
+      <node id="7648136371139264579" at="119,39,120,112" concept="5" />
+      <node id="1560298786499497619" at="126,0,127,0" concept="6" trace="myChooser" />
+      <node id="1560298786499498010" at="128,58,129,21" concept="14" />
+      <node id="1560298786499498014" at="129,21,130,26" concept="5" />
+      <node id="1560298786499498021" at="134,42,135,43" concept="11" />
+      <node id="1560298786499498035" at="136,27,137,18" concept="12" />
+      <node id="1560298786499498038" at="138,7,139,56" concept="5" />
+      <node id="1560298786499498047" at="139,56,140,21" concept="5" />
+      <node id="1560298786499498050" at="140,21,141,60" concept="11" />
+      <node id="1560298786499498063" at="141,60,142,81" concept="12" />
+      <node id="1560298786499497652" at="38,0,41,0" concept="3" trace="BoundTablePanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)V" />
+      <node id="1560298786499497667" at="42,0,45,0" concept="10" trace="addColumn#(Ljetbrains/mps/ide/ui/dialogs/properties/descriptors/ColumnDescriptor;)V" />
+      <node id="1560298786499497680" at="46,0,49,0" concept="10" trace="setDiffRow#(Z)V" />
+      <node id="3416087927885099050" at="50,0,53,0" concept="10" trace="getTable#()Ljavax/swing/JTable;" />
+      <node id="1560298786499497798" at="72,143,75,5" concept="8" />
+      <node id="1560298786499497889" at="87,54,90,7" concept="9" />
+      <node id="1560298786499497606" at="112,0,115,0" concept="3" trace="MyTableRemoveAction#(Ljavax/swing/JTable;)V" />
+      <node id="7648136371139264572" at="118,75,121,7" concept="9" />
+      <node id="1560298786499498030" at="135,43,138,7" concept="9" />
+      <node id="1560298786499497725" at="54,0,58,0" concept="10" trace="createAddAction#(Ljetbrains/mps/util/Computable;)Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
+      <node id="1560298786499497747" at="59,0,63,0" concept="10" trace="createRemoveAction#()Ljetbrains/mps/workbench/dialogs/project/components/parts/actions/BaseValidatedAction;" />
+      <node id="7648136371139264396" at="64,0,68,0" concept="10" trace="getSelectedIndices#()[I" />
+      <node id="1560298786499497857" at="81,43,85,7" concept="9" />
+      <node id="1560298786499497933" at="99,0,103,0" concept="10" trace="isCellEditable#(Ljava/util/EventObject;)Z" />
+      <node id="1560298786499497624" at="128,0,132,0" concept="3" trace="MyTableAddAction#(Ljetbrains/mps/util/Computable;)V" />
+      <node id="1560298786499497926" at="97,32,103,11" concept="5" />
+      <node id="1560298786499497610" at="116,0,123,0" concept="10" trace="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
+      <node id="1560298786499497909" at="94,12,104,7" concept="1" />
+      <node id="1560298786499497630" at="133,0,144,0" concept="10" trace="doAdd#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)I" />
+      <node id="1560298786499497905" at="91,48,104,7" concept="9" />
+      <node id="1560298786499497832" at="78,14,106,5" concept="8" />
+      <node id="1560298786499497766" at="69,0,110,0" concept="10" trace="initUIComponentAndBinding#()Ljavax/swing/JComponent;" />
+      <scope id="1560298786499497662" at="38,84,39,30" />
+      <scope id="1560298786499497672" at="42,45,43,21" />
+      <scope id="1560298786499497685" at="46,45,47,26" />
+      <scope id="3416087927885099053" at="50,28,51,19" />
+      <scope id="1560298786499497732" at="55,84,56,57" />
+      <scope id="1560298786499497750" at="60,54,61,60" />
+      <scope id="7648136371139264400" at="65,40,66,37" />
+      <scope id="1560298786499497804" at="73,48,74,87" />
+      <scope id="1560298786499497893" at="88,29,89,41" />
+      <scope id="1560298786499497939" at="92,27,93,37" />
+      <scope id="1560298786499498077" at="100,62,101,25" />
+      <scope id="1560298786499497964" at="112,46,113,19" />
+      <scope id="7648136371139264578" at="119,39,120,112" />
+      <scope id="1560298786499498034" at="136,27,137,18" />
+      <scope id="1560298786499497863" at="82,29,84,41" />
+      <scope id="1560298786499498009" at="128,58,130,26" />
+      <scope id="1560298786499497652" at="38,0,41,0">
+        <var name="caption" id="1560298786499497656" />
+        <var name="owner" id="1560298786499497654" />
+        <var name="ts" id="1560298786499497658" />
+      </scope>
+      <scope id="1560298786499497667" at="42,0,45,0">
+        <var name="d" id="1560298786499497670" />
+      </scope>
+      <scope id="1560298786499497680" at="46,0,49,0">
+        <var name="isDiffRow" id="1560298786499497683" />
+      </scope>
+      <scope id="3416087927885099050" at="50,0,53,0" />
+      <scope id="1560298786499497798" at="72,143,75,5">
+        <var name="d" id="1560298786499497802" />
+      </scope>
+      <scope id="1560298786499497606" at="112,0,115,0">
+        <var name="table" id="1560298786499497608" />
+      </scope>
+      <scope id="1560298786499497725" at="54,0,58,0">
+        <var name="chooser" id="1560298786499497728" />
+      </scope>
+      <scope id="1560298786499497747" at="59,0,63,0" />
+      <scope id="7648136371139264396" at="64,0,68,0" />
+      <scope id="1560298786499497933" at="99,0,103,0">
+        <var name="anEvent" id="1560298786499497936" />
+      </scope>
+      <scope id="1560298786499497973" at="117,46,121,7">
+        <var name="errorMessage" id="7648136371139264567" />
+      </scope>
+      <scope id="1560298786499497624" at="128,0,132,0">
+        <var name="chooser" id="1560298786499497626" />
+      </scope>
+      <scope id="1560298786499497610" at="116,0,123,0">
+        <var name="e" id="1560298786499497613" />
+      </scope>
+      <scope id="1560298786499498020" at="134,42,142,81">
+        <var name="chosen" id="1560298786499498022" />
+        <var name="first" id="1560298786499498051" />
+      </scope>
+      <scope id="1560298786499497910" at="94,14,103,11">
+        <var name="text" id="1560298786499497912" />
+      </scope>
+      <scope id="1560298786499497630" at="133,0,144,0">
+        <var name="e" id="1560298786499497633" />
+      </scope>
+      <scope id="1560298786499497838" at="79,48,105,10">
+        <var name="column" id="1560298786499497840" />
+        <var name="editor" id="1560298786499497900" />
+        <var name="renderer" id="1560298786499497884" />
+      </scope>
+      <scope id="1560298786499497832" at="78,14,106,5">
+        <var name="d" id="1560298786499497836" />
+      </scope>
+      <scope id="1560298786499497769" at="70,52,108,19">
+        <var name="i" id="1560298786499497829" />
+        <var name="tableBinding" id="1560298786499497784" />
+      </scope>
+      <scope id="1560298786499497766" at="69,0,110,0" />
+      <unit id="1560298786499497932" at="98,33,103,9" name="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel$1" />
+      <unit id="1560298786499497600" at="111,0,124,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel$MyTableRemoveAction" />
+      <unit id="1560298786499497615" at="125,0,145,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel$MyTableAddAction" />
+      <unit id="1560298786499497595" at="33,0,146,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.boundpanels.BoundTablePanel" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

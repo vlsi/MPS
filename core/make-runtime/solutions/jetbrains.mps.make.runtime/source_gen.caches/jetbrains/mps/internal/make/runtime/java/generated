@@ -8,7 +8,6 @@
   </common>
   <source id="4328738523548225887" name="FileProcessor" hash="2nm0d6ggqvxfcnixbh3ec9mi1j5xwbh">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="FileProcessor.java" />
   </source>
@@ -17,6 +16,7 @@
   </source>
   <source id="4101850974336562102" name="FileDeltaCollector" hash="4nubicrpsdlt7qygfvc1zohec8yubd7">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="FileDeltaCollector.java" />
   </source>
 </dependencies>

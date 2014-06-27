@@ -1,103 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
   <root nodeRef="r:e6b5e0d3-0fc0-44a0-85d6-aa6dea2287c3(jetbrains.mps.lang.editor.diagram.runtime.jetpad.property)/1585775323800152131">
-    <nodeInfo nodeId="1585775323800152132" fileName="DependentProperty.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myHandlers" />
-    <nodeInfo nodeId="1585775323800152139" fileName="DependentProperty.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMainProperty" />
-    <nodeInfo nodeId="1585775323800152143" fileName="DependentProperty.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDependecies" />
-    <nodeInfo nodeId="1585775323800152148" fileName="DependentProperty.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRegistrations" />
-    <nodeInfo nodeId="1585775323800152152" fileName="DependentProperty.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOldValue" />
-    <nodeInfo nodeId="1585775323800152160" fileName="DependentProperty.java" startLine="21" startPosition="104" endLine="22" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152164" fileName="DependentProperty.java" startLine="22" startPosition="34" endLine="23" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152177" fileName="DependentProperty.java" startLine="23" startPosition="69" endLine="24" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152183" fileName="DependentProperty.java" startLine="24" startPosition="36" endLine="25" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152192" fileName="DependentProperty.java" startLine="25" startPosition="77" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1585775323800152204" fileName="DependentProperty.java" startLine="29" startPosition="23" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1585775323800152219" fileName="DependentProperty.java" startLine="34" startPosition="29" endLine="35" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152233" fileName="DependentProperty.java" startLine="37" startPosition="31" endLine="38" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152238" fileName="DependentProperty.java" startLine="39" startPosition="5" endLine="40" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1585775323800152254" fileName="DependentProperty.java" startLine="42" startPosition="28" endLine="43" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152260" fileName="DependentProperty.java" startLine="44" startPosition="35" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152283" fileName="DependentProperty.java" startLine="53" startPosition="57" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152287" fileName="DependentProperty.java" startLine="56" startPosition="6" endLine="57" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152297" fileName="DependentProperty.java" startLine="57" startPosition="61" endLine="58" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152303" fileName="DependentProperty.java" startLine="59" startPosition="52" endLine="60" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152330" fileName="DependentProperty.java" startLine="65" startPosition="46" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152337" fileName="DependentProperty.java" startLine="67" startPosition="5" endLine="68" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152345" fileName="DependentProperty.java" startLine="71" startPosition="34" endLine="72" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1585775323800152349" fileName="DependentProperty.java" startLine="72" startPosition="28" endLine="73" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1585775323800152353" fileName="DependentProperty.java" startLine="73" startPosition="33" endLine="74" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152359" fileName="DependentProperty.java" startLine="75" startPosition="29" endLine="76" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1585775323800152385" fileName="DependentProperty.java" startLine="78" startPosition="85" endLine="79" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152200" fileName="DependentProperty.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()null" />
-    <nodeInfo nodeId="1585775323800152217" fileName="DependentProperty.java" startLine="33" startPosition="93" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1585775323800152231" fileName="DependentProperty.java" startLine="36" startPosition="5" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1585775323800152258" fileName="DependentProperty.java" startLine="43" startPosition="21" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1585775323800152276" fileName="DependentProperty.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
-    <nodeInfo nodeId="1585775323800152301" fileName="DependentProperty.java" startLine="58" startPosition="23" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1585775323800152328" fileName="DependentProperty.java" startLine="64" startPosition="36" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1585775323800152376" fileName="DependentProperty.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="call#(Ljetbrains/jetpad/model/event/EventHandler;)V" />
-    <nodeInfo nodeId="1585775323800152267" fileName="DependentProperty.java" startLine="51" startPosition="33" endLine="56" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1585775323800152368" fileName="DependentProperty.java" startLine="76" startPosition="100" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1585775323800152250" fileName="DependentProperty.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="remove#()V" />
-    <nodeInfo nodeId="1585775323800152326" fileName="DependentProperty.java" startLine="64" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRemoveListeners#()V" />
-    <nodeInfo nodeId="1585775323800152156" fileName="DependentProperty.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependentProperty#(Ljetbrains/jetpad/model/property/ReadableProperty;null)V" />
-    <nodeInfo nodeId="1585775323800152245" fileName="DependentProperty.java" startLine="40" startPosition="53" endLine="48" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1585775323800152357" fileName="DependentProperty.java" startLine="74" startPosition="26" endLine="82" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1585775323800152265" fileName="DependentProperty.java" startLine="51" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAddListeners#()V" />
-    <nodeInfo nodeId="1585775323800152343" fileName="DependentProperty.java" startLine="71" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="somethingChange#()V" />
-    <nodeInfo nodeId="1585775323800152208" fileName="DependentProperty.java" startLine="33" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addHandler#(Ljetbrains/jetpad/model/event/EventHandler;)Ljetbrains/jetpad/base/Registration;" />
-    <scopeInfo nodeId="1585775323800152203" fileName="DependentProperty.java" startLine="29" startPosition="23" endLine="30" endPosition="32" />
-    <scopeInfo nodeId="1585775323800152218" fileName="DependentProperty.java" startLine="34" startPosition="29" endLine="35" endPosition="86" />
-    <scopeInfo nodeId="1585775323800152232" fileName="DependentProperty.java" startLine="37" startPosition="31" endLine="38" endPosition="23" />
-    <scopeInfo nodeId="1585775323800152259" fileName="DependentProperty.java" startLine="44" startPosition="35" endLine="45" endPosition="30" />
-    <scopeInfo nodeId="1585775323800152282" fileName="DependentProperty.java" startLine="53" startPosition="57" endLine="54" endPosition="26" />
-    <scopeInfo nodeId="1585775323800152302" fileName="DependentProperty.java" startLine="59" startPosition="52" endLine="60" endPosition="64" />
-    <scopeInfo nodeId="1585775323800152329" fileName="DependentProperty.java" startLine="65" startPosition="46" endLine="66" endPosition="19" />
-    <scopeInfo nodeId="1585775323800152384" fileName="DependentProperty.java" startLine="78" startPosition="85" endLine="79" endPosition="33" />
-    <scopeInfo nodeId="1585775323800152200" fileName="DependentProperty.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1585775323800152276" fileName="DependentProperty.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="1585775323800152279" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="1585775323800152301" fileName="DependentProperty.java" startLine="58" startPosition="23" endLine="61" endPosition="5">
-      <varInfo nodeId="1585775323800152314" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="1585775323800152328" fileName="DependentProperty.java" startLine="64" startPosition="36" endLine="67" endPosition="5">
-      <varInfo nodeId="1585775323800152334" varName="reg" />
-    </scopeInfo>
-    <scopeInfo nodeId="1585775323800152376" fileName="DependentProperty.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
-      <varInfo nodeId="1585775323800152379" varName="handler" />
-    </scopeInfo>
-    <scopeInfo nodeId="1585775323800152253" fileName="DependentProperty.java" startLine="42" startPosition="28" endLine="46" endPosition="9" />
-    <scopeInfo nodeId="1585775323800152327" fileName="DependentProperty.java" startLine="64" startPosition="36" endLine="68" endPosition="27" />
-    <scopeInfo nodeId="1585775323800152159" fileName="DependentProperty.java" startLine="21" startPosition="104" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1585775323800152250" fileName="DependentProperty.java" startLine="42" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="1585775323800152326" fileName="DependentProperty.java" startLine="64" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="1585775323800152358" fileName="DependentProperty.java" startLine="75" startPosition="29" endLine="81" endPosition="9">
-      <varInfo nodeId="1585775323800152360" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="1585775323800152156" fileName="DependentProperty.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="1585775323800152196" varName="dependencies" />
-      <varInfo nodeId="1585775323800152193" varName="mainProperty" />
-    </scopeInfo>
-    <scopeInfo nodeId="1585775323800152266" fileName="DependentProperty.java" startLine="51" startPosition="33" endLine="61" endPosition="5">
-      <varInfo nodeId="1585775323800152268" varName="handler" />
-    </scopeInfo>
-    <scopeInfo nodeId="1585775323800152344" fileName="DependentProperty.java" startLine="71" startPosition="34" endLine="82" endPosition="5">
-      <varInfo nodeId="1585775323800152346" varName="newValue" />
-      <varInfo nodeId="1585775323800152350" varName="oldValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="1585775323800152265" fileName="DependentProperty.java" startLine="51" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="1585775323800152343" fileName="DependentProperty.java" startLine="71" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="1585775323800152216" fileName="DependentProperty.java" startLine="33" startPosition="93" endLine="48" endPosition="6">
-      <varInfo nodeId="1585775323800152239" varName="reg" />
-    </scopeInfo>
-    <scopeInfo nodeId="1585775323800152208" fileName="DependentProperty.java" startLine="33" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="1585775323800152211" varName="handler" />
-    </scopeInfo>
-    <unitInfo nodeId="1585775323800152274" fileName="DependentProperty.java" startLine="52" startPosition="55" endLine="56" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty$2" />
-    <unitInfo nodeId="1585775323800152374" fileName="DependentProperty.java" startLine="77" startPosition="26" endLine="81" endPosition="7" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty$3" />
-    <unitInfo nodeId="1585775323800152248" fileName="DependentProperty.java" startLine="41" startPosition="15" endLine="48" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty$1" />
-    <unitInfo nodeId="1585775323800152131" fileName="DependentProperty.java" startLine="13" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty" />
+    <file name="DependentProperty.java">
+      <node id="1585775323800152132" at="14,0,15,0" concept="2" trace="myHandlers" />
+      <node id="1585775323800152139" at="15,0,16,0" concept="2" trace="myMainProperty" />
+      <node id="1585775323800152143" at="16,0,17,0" concept="2" trace="myDependecies" />
+      <node id="1585775323800152148" at="17,0,18,0" concept="2" trace="myRegistrations" />
+      <node id="1585775323800152152" at="18,0,19,0" concept="2" trace="myOldValue" />
+      <node id="1585775323800152160" at="21,104,22,34" concept="1" />
+      <node id="1585775323800152164" at="22,34,23,69" concept="1" />
+      <node id="1585775323800152177" at="23,69,24,36" concept="1" />
+      <node id="1585775323800152183" at="24,36,25,77" concept="1" />
+      <node id="1585775323800152192" at="25,77,26,0" concept="9" />
+      <node id="1585775323800152204" at="29,23,30,32" concept="8" />
+      <node id="1585775323800152219" at="34,29,35,86" concept="1" />
+      <node id="1585775323800152233" at="37,31,38,23" concept="1" />
+      <node id="1585775323800152238" at="39,5,40,53" concept="7" />
+      <node id="1585775323800152254" at="42,28,43,21" concept="1" />
+      <node id="1585775323800152260" at="44,35,45,30" concept="1" />
+      <node id="1585775323800152283" at="53,57,54,26" concept="1" />
+      <node id="1585775323800152287" at="56,6,57,61" concept="1" />
+      <node id="1585775323800152297" at="57,61,58,23" concept="1" />
+      <node id="1585775323800152303" at="59,52,60,64" concept="1" />
+      <node id="1585775323800152330" at="65,46,66,19" concept="1" />
+      <node id="1585775323800152337" at="67,5,68,27" concept="1" />
+      <node id="1585775323800152345" at="71,34,72,28" concept="7" />
+      <node id="1585775323800152349" at="72,28,73,33" concept="7" />
+      <node id="1585775323800152353" at="73,33,74,26" concept="1" />
+      <node id="1585775323800152359" at="75,29,76,100" concept="7" />
+      <node id="1585775323800152385" at="78,85,79,33" concept="1" />
+      <node id="1585775323800152200" at="29,0,32,0" concept="6" trace="get#()null" />
+      <node id="1585775323800152217" at="33,93,36,5" concept="5" />
+      <node id="1585775323800152231" at="36,5,39,5" concept="5" />
+      <node id="1585775323800152258" at="43,21,46,9" concept="5" />
+      <node id="1585775323800152276" at="53,0,56,0" concept="6" trace="onEvent#(Ljetbrains/jetpad/model/property/PropertyChangeEvent;)V" />
+      <node id="1585775323800152301" at="58,23,61,5" concept="3" />
+      <node id="1585775323800152328" at="64,36,67,5" concept="4" />
+      <node id="1585775323800152376" at="78,0,81,0" concept="6" trace="call#(Ljetbrains/jetpad/model/event/EventHandler;)V" />
+      <node id="1585775323800152267" at="51,33,56,6" concept="7" />
+      <node id="1585775323800152368" at="76,100,81,9" concept="1" />
+      <node id="1585775323800152250" at="42,0,48,0" concept="6" trace="remove#()V" />
+      <node id="1585775323800152326" at="64,0,70,0" concept="6" trace="doRemoveListeners#()V" />
+      <node id="1585775323800152156" at="21,0,28,0" concept="0" trace="DependentProperty#(Ljetbrains/jetpad/model/property/ReadableProperty;null)V" />
+      <node id="1585775323800152245" at="40,53,48,6" concept="8" />
+      <node id="1585775323800152357" at="74,26,82,5" concept="5" />
+      <node id="1585775323800152265" at="51,0,63,0" concept="6" trace="doAddListeners#()V" />
+      <node id="1585775323800152343" at="71,0,84,0" concept="6" trace="somethingChange#()V" />
+      <node id="1585775323800152208" at="33,0,50,0" concept="6" trace="addHandler#(Ljetbrains/jetpad/model/event/EventHandler;)Ljetbrains/jetpad/base/Registration;" />
+      <scope id="1585775323800152203" at="29,23,30,32" />
+      <scope id="1585775323800152218" at="34,29,35,86" />
+      <scope id="1585775323800152232" at="37,31,38,23" />
+      <scope id="1585775323800152259" at="44,35,45,30" />
+      <scope id="1585775323800152282" at="53,57,54,26" />
+      <scope id="1585775323800152302" at="59,52,60,64" />
+      <scope id="1585775323800152329" at="65,46,66,19" />
+      <scope id="1585775323800152384" at="78,85,79,33" />
+      <scope id="1585775323800152200" at="29,0,32,0" />
+      <scope id="1585775323800152276" at="53,0,56,0">
+        <var name="event" id="1585775323800152279" />
+      </scope>
+      <scope id="1585775323800152301" at="58,23,61,5">
+        <var name="i" id="1585775323800152314" />
+      </scope>
+      <scope id="1585775323800152328" at="64,36,67,5">
+        <var name="reg" id="1585775323800152334" />
+      </scope>
+      <scope id="1585775323800152376" at="78,0,81,0">
+        <var name="handler" id="1585775323800152379" />
+      </scope>
+      <scope id="1585775323800152253" at="42,28,46,9" />
+      <scope id="1585775323800152327" at="64,36,68,27" />
+      <scope id="1585775323800152159" at="21,104,26,0" />
+      <scope id="1585775323800152250" at="42,0,48,0" />
+      <scope id="1585775323800152326" at="64,0,70,0" />
+      <scope id="1585775323800152358" at="75,29,81,9">
+        <var name="event" id="1585775323800152360" />
+      </scope>
+      <scope id="1585775323800152156" at="21,0,28,0">
+        <var name="dependencies" id="1585775323800152196" />
+        <var name="mainProperty" id="1585775323800152193" />
+      </scope>
+      <scope id="1585775323800152266" at="51,33,61,5">
+        <var name="handler" id="1585775323800152268" />
+      </scope>
+      <scope id="1585775323800152344" at="71,34,82,5">
+        <var name="newValue" id="1585775323800152346" />
+        <var name="oldValue" id="1585775323800152350" />
+      </scope>
+      <scope id="1585775323800152265" at="51,0,63,0" />
+      <scope id="1585775323800152343" at="71,0,84,0" />
+      <scope id="1585775323800152216" at="33,93,48,6">
+        <var name="reg" id="1585775323800152239" />
+      </scope>
+      <scope id="1585775323800152208" at="33,0,50,0">
+        <var name="handler" id="1585775323800152211" />
+      </scope>
+      <unit id="1585775323800152274" at="52,55,56,5" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty$2" />
+      <unit id="1585775323800152374" at="77,26,81,7" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty$3" />
+      <unit id="1585775323800152248" at="41,15,48,5" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty$1" />
+      <unit id="1585775323800152131" at="13,0,85,0" name="jetbrains.mps.lang.editor.diagram.runtime.jetpad.property.DependentProperty" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

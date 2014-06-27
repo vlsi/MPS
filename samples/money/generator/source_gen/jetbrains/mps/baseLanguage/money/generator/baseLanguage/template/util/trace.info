@@ -1,90 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f9(jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util)/1187345071733">
-    <nodeInfo nodeId="1187347794779" fileName="Util.java" startLine="15" startPosition="74" endLine="16" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187347814744" fileName="Util.java" startLine="16" startPosition="112" endLine="17" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187348073013" fileName="Util.java" startLine="18" startPosition="221" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187348099643" fileName="Util.java" startLine="20" startPosition="5" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187352032269" fileName="Util.java" startLine="24" startPosition="71" endLine="25" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187352032277" fileName="Util.java" startLine="25" startPosition="112" endLine="26" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187348834663" fileName="Util.java" startLine="27" startPosition="221" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187348834674" fileName="Util.java" startLine="29" startPosition="5" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197379725523" fileName="Util.java" startLine="33" startPosition="61" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379725523" fileName="Util.java" startLine="34" startPosition="63" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379725523" fileName="Util.java" startLine="35" startPosition="30" endLine="36" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379725523" fileName="Util.java" startLine="35" startPosition="30" endLine="36" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379725523" fileName="Util.java" startLine="35" startPosition="30" endLine="36" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197379725523" fileName="Util.java" startLine="36" startPosition="139" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197379725540" fileName="Util.java" startLine="40" startPosition="63" endLine="41" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379725540" fileName="Util.java" startLine="41" startPosition="63" endLine="42" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379725540" fileName="Util.java" startLine="42" startPosition="30" endLine="43" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379725540" fileName="Util.java" startLine="42" startPosition="30" endLine="43" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379725540" fileName="Util.java" startLine="42" startPosition="30" endLine="43" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197379725540" fileName="Util.java" startLine="43" startPosition="139" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197379725542" fileName="Util.java" startLine="47" startPosition="61" endLine="48" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379725542" fileName="Util.java" startLine="48" startPosition="63" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379725542" fileName="Util.java" startLine="49" startPosition="30" endLine="50" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379725542" fileName="Util.java" startLine="49" startPosition="30" endLine="50" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379725542" fileName="Util.java" startLine="49" startPosition="30" endLine="50" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197379725542" fileName="Util.java" startLine="50" startPosition="135" endLine="51" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="54" startPosition="63" endLine="55" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="55" startPosition="63" endLine="56" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="56" startPosition="30" endLine="57" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="56" startPosition="30" endLine="57" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="56" startPosition="30" endLine="57" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="57" startPosition="139" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7383406024685217858" fileName="Util.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Util#()V" />
-    <nodeInfo nodeId="1187347960654" fileName="Util.java" startLine="17" startPosition="111" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1187348834661" fileName="Util.java" startLine="26" startPosition="111" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1197379725523" fileName="Util.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_sd8x_b0a0c0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1197379725540" fileName="Util.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_sd8x_b0a0c0b_0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1197379725542" fileName="Util.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_sd8x_b0a0c0c#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1197379725544" fileName="Util.java" startLine="54" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_sd8x_b0a0c0c_0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1187345082782" fileName="Util.java" startLine="15" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isPlusMinusExpressionMoneyExpression#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1187348734513" fileName="Util.java" startLine="24" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMulDivExpressionMoneyExpression#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="7383406024685217860" fileName="Util.java" startLine="12" startPosition="17" endLine="12" endPosition="17" />
-    <scopeInfo nodeId="1187347960655" fileName="Util.java" startLine="18" startPosition="221" endLine="19" endPosition="18" />
-    <scopeInfo nodeId="1187348834662" fileName="Util.java" startLine="27" startPosition="221" endLine="28" endPosition="18" />
-    <scopeInfo nodeId="1197379725523" fileName="Util.java" startLine="35" startPosition="30" endLine="36" endPosition="139" />
-    <scopeInfo nodeId="1197379725540" fileName="Util.java" startLine="42" startPosition="30" endLine="43" endPosition="139" />
-    <scopeInfo nodeId="1197379725542" fileName="Util.java" startLine="49" startPosition="30" endLine="50" endPosition="135" />
-    <scopeInfo nodeId="1197379725544" fileName="Util.java" startLine="56" startPosition="30" endLine="57" endPosition="139" />
-    <scopeInfo nodeId="7383406024685217858" fileName="Util.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="1197379725523" fileName="Util.java" startLine="33" startPosition="61" endLine="37" endPosition="24">
-      <varInfo nodeId="1197379725523" varName="facade" />
-      <varInfo nodeId="1197379725523" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197379725540" fileName="Util.java" startLine="40" startPosition="63" endLine="44" endPosition="24">
-      <varInfo nodeId="1197379725540" varName="facade" />
-      <varInfo nodeId="1197379725540" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197379725542" fileName="Util.java" startLine="47" startPosition="61" endLine="51" endPosition="24">
-      <varInfo nodeId="1197379725542" varName="facade" />
-      <varInfo nodeId="1197379725542" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197379725544" fileName="Util.java" startLine="54" startPosition="63" endLine="58" endPosition="24">
-      <varInfo nodeId="1197379725544" varName="facade" />
-      <varInfo nodeId="1197379725544" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187345082785" fileName="Util.java" startLine="15" startPosition="74" endLine="21" endPosition="17">
-      <varInfo nodeId="1187347814745" varName="ltype" />
-      <varInfo nodeId="1187347794780" varName="rtype" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187348734516" fileName="Util.java" startLine="24" startPosition="71" endLine="30" endPosition="17">
-      <varInfo nodeId="1187352032278" varName="ltype" />
-      <varInfo nodeId="1187352032270" varName="rtype" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197379725523" fileName="Util.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1197379725540" fileName="Util.java" startLine="40" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="1197379725542" fileName="Util.java" startLine="47" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1197379725544" fileName="Util.java" startLine="54" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="1187345082782" fileName="Util.java" startLine="15" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="1187345199673" varName="expr" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187348734513" fileName="Util.java" startLine="24" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1187348820111" varName="expr" />
-    </scopeInfo>
-    <unitInfo nodeId="1187345071733" fileName="Util.java" startLine="11" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util.Util" />
+    <file name="Util.java">
+      <node id="1187347794779" at="15,74,16,112" concept="4" />
+      <node id="1187347814744" at="16,112,17,111" concept="4" />
+      <node id="1187348073013" at="18,221,19,18" concept="5" />
+      <node id="1187348099643" at="20,5,21,17" concept="5" />
+      <node id="1187352032269" at="24,71,25,112" concept="4" />
+      <node id="1187352032277" at="25,112,26,111" concept="4" />
+      <node id="1187348834663" at="27,221,28,18" concept="5" />
+      <node id="1187348834674" at="29,5,30,17" concept="5" />
+      <node id="1197379725523" at="33,61,34,63" concept="4" />
+      <node id="1197379725523" at="34,63,35,30" concept="4" />
+      <node id="1197379725523" at="35,30,36,139" concept="0" />
+      <node id="1197379725523" at="35,30,36,139" concept="0" />
+      <node id="1197379725523" at="35,30,36,139" concept="2" />
+      <node id="1197379725523" at="36,139,37,24" concept="5" />
+      <node id="1197379725540" at="40,63,41,63" concept="4" />
+      <node id="1197379725540" at="41,63,42,30" concept="4" />
+      <node id="1197379725540" at="42,30,43,139" concept="0" />
+      <node id="1197379725540" at="42,30,43,139" concept="0" />
+      <node id="1197379725540" at="42,30,43,139" concept="2" />
+      <node id="1197379725540" at="43,139,44,24" concept="5" />
+      <node id="1197379725542" at="47,61,48,63" concept="4" />
+      <node id="1197379725542" at="48,63,49,30" concept="4" />
+      <node id="1197379725542" at="49,30,50,135" concept="0" />
+      <node id="1197379725542" at="49,30,50,135" concept="0" />
+      <node id="1197379725542" at="49,30,50,135" concept="2" />
+      <node id="1197379725542" at="50,135,51,24" concept="5" />
+      <node id="1197379725544" at="54,63,55,63" concept="4" />
+      <node id="1197379725544" at="55,63,56,30" concept="4" />
+      <node id="1197379725544" at="56,30,57,139" concept="0" />
+      <node id="1197379725544" at="56,30,57,139" concept="0" />
+      <node id="1197379725544" at="56,30,57,139" concept="2" />
+      <node id="1197379725544" at="57,139,58,24" concept="5" />
+      <node id="7383406024685217858" at="12,0,14,0" concept="1" trace="Util#()V" />
+      <node id="1187347960654" at="17,111,20,5" concept="3" />
+      <node id="1187348834661" at="26,111,29,5" concept="3" />
+      <node id="1197379725523" at="33,0,39,0" concept="6" trace="_quotation_createNode_sd8x_b0a0c0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1197379725540" at="40,0,46,0" concept="6" trace="_quotation_createNode_sd8x_b0a0c0b_0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1197379725542" at="47,0,53,0" concept="6" trace="_quotation_createNode_sd8x_b0a0c0c#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1197379725544" at="54,0,60,0" concept="6" trace="_quotation_createNode_sd8x_b0a0c0c_0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1187345082782" at="15,0,23,0" concept="6" trace="isPlusMinusExpressionMoneyExpression#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1187348734513" at="24,0,32,0" concept="6" trace="isMulDivExpressionMoneyExpression#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="7383406024685217860" at="12,17,12,17" />
+      <scope id="1187347960655" at="18,221,19,18" />
+      <scope id="1187348834662" at="27,221,28,18" />
+      <scope id="1197379725523" at="35,30,36,139" />
+      <scope id="1197379725540" at="42,30,43,139" />
+      <scope id="1197379725542" at="49,30,50,135" />
+      <scope id="1197379725544" at="56,30,57,139" />
+      <scope id="7383406024685217858" at="12,0,14,0" />
+      <scope id="1197379725523" at="33,61,37,24">
+        <var name="facade" id="1197379725523" />
+        <var name="quotedNode_1" id="1197379725523" />
+      </scope>
+      <scope id="1197379725540" at="40,63,44,24">
+        <var name="facade" id="1197379725540" />
+        <var name="quotedNode_1" id="1197379725540" />
+      </scope>
+      <scope id="1197379725542" at="47,61,51,24">
+        <var name="facade" id="1197379725542" />
+        <var name="quotedNode_1" id="1197379725542" />
+      </scope>
+      <scope id="1197379725544" at="54,63,58,24">
+        <var name="facade" id="1197379725544" />
+        <var name="quotedNode_1" id="1197379725544" />
+      </scope>
+      <scope id="1187345082785" at="15,74,21,17">
+        <var name="ltype" id="1187347814745" />
+        <var name="rtype" id="1187347794780" />
+      </scope>
+      <scope id="1187348734516" at="24,71,30,17">
+        <var name="ltype" id="1187352032278" />
+        <var name="rtype" id="1187352032270" />
+      </scope>
+      <scope id="1197379725523" at="33,0,39,0" />
+      <scope id="1197379725540" at="40,0,46,0" />
+      <scope id="1197379725542" at="47,0,53,0" />
+      <scope id="1197379725544" at="54,0,60,0" />
+      <scope id="1187345082782" at="15,0,23,0">
+        <var name="expr" id="1187345199673" />
+      </scope>
+      <scope id="1187348734513" at="24,0,32,0">
+        <var name="expr" id="1187348820111" />
+      </scope>
+      <unit id="1187345071733" at="11,0,61,0" name="jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util.Util" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

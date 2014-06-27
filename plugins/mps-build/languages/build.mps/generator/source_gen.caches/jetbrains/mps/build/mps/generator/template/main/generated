@@ -26,7 +26,7 @@
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="eao7ue458y7tcq2dzwkfpbwu1m1iuda" />
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="-bsuxol9shsh50z2516cbysnc6g9h4kx" />
   <dep model="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)" hash="-bp8j48bgbgpgvmi0lqj7tywy3avotr8" />
-  <dep model="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" hash="-8sfpqv7cd2qk5xaa0itjd780h5iskfh" />
+  <dep model="r:26eadcf0-f275-4e90-be37-e4432772a74d(jetbrains.mps.build.util)" hash="-9ys89x7jt8x2fwjmbutx5d82vpe4hkk" />
   <dep model="r:2c8fa2a8-11a0-4729-bd56-47f702d30278(jetbrains.mps.build.mps.behavior)" hash="-cxb1u3236o06i5zsfxt0lc7qe5qe8mw" />
   <dep model="r:33366a6f-09e8-45e7-ae7f-cb8cf0c7ed05(jetbrains.mps.baseLanguage.tuples.runtime)" hash="-eny3si76dlgw8x1a60tjys88hy65vqw" />
   <dep model="r:38bad86e-d92c-4ea7-ad52-a111dc6c2457(jetbrains.mps.build.mps.util)" hash="-ehew1df5jv8nsw8d497cegv5f46qcpf" />
@@ -92,11 +92,13 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="3189788309732033980" name="main" hash="-af1kakum3db7g224es2grx6z7m2x3ms">
+  <source id="3189788309732033980" name="main" hash="-af1kakum3db7g224es2grx6z7m2x3ms" />
+  <source id="3189788309732145594" name="loadModules" hash="1xzhibg4jk2pef28ia58lk2wh0lba95">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="3189788309732145594" name="loadModules" hash="1xzhibg4jk2pef28ia58lk2wh0lba95" />
-  <source id="2105528055260559263" name="contentOf_BuildMpsLayout_ModuleSources" hash="-7vnrmlx3bsykqgkebhhwum4mnmc3ier" />
+  <source id="2105528055260559263" name="contentOf_BuildMpsLayout_ModuleSources" hash="-7vnrmlx3bsykqgkebhhwum4mnmc3ier">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1265949165890610447" name="reduce_BuildMpsLayout_ModuleJars" hash="7fpxd6k36rgsfdm7rqca67h9hbbomje" />
   <source id="8252715012761547072" name="reduceMPSModule" hash="c87k68utf3ewzt6db91vw7ngjdq6r24" />
   <source id="8252715012761682620" name="loadMods" hash="-e0xty9d09dvldsu5p59a0eod0br3ou0" />

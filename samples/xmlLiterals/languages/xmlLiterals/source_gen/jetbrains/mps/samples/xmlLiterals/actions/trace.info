@@ -1,18 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="14" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.actions.QueriesGenerated" />
-  <root nodeRef="r:5faf59d4-3434-4aef-b295-eb4e8aaf9953(jetbrains.mps.samples.xmlLiterals.actions)/5081393330032046427">
-    <nodeInfo nodeId="5081393330032046640" fileName="QueriesGenerated.java" startLine="15" startPosition="206" endLine="16" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5081393330032046640" fileName="QueriesGenerated.java" startLine="16" startPosition="93" endLine="17" endPosition="334" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5081393330032046640" fileName="QueriesGenerated.java" startLine="17" startPosition="334" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5081393330032046640" fileName="QueriesGenerated.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="nodeSubstituteActionsBuilder_ActionsFactory_XmlText_5081393330032046640#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
-    <scopeInfo nodeId="5081393330032046640" fileName="QueriesGenerated.java" startLine="15" startPosition="206" endLine="18" endPosition="18">
-      <varInfo nodeId="5081393330032046640" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="5081393330032046640" fileName="QueriesGenerated.java" startLine="15" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="5081393330032046640" varName="_context" />
-      <varInfo nodeId="5081393330032046640" varName="operationContext" />
-    </scopeInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="QueriesGenerated.java">
+      <unit at="14,0,21,0" name="jetbrains.mps.samples.xmlLiterals.actions.QueriesGenerated" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:5faf59d4-3434-4aef-b295-eb4e8aaf9953(jetbrains.mps.samples.xmlLiterals.actions)/5081393330032046427">
+    <file name="QueriesGenerated.java">
+      <node id="5081393330032046640" at="15,206,16,93" concept="1" />
+      <node id="5081393330032046640" at="16,93,17,334" concept="0" />
+      <node id="5081393330032046640" at="17,334,18,18" concept="2" />
+      <node id="5081393330032046640" at="15,0,20,0" concept="3" trace="nodeSubstituteActionsBuilder_ActionsFactory_XmlText_5081393330032046640#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/action/NodeSubstituteActionsFactoryContext;)Ljava/util/List;" />
+      <scope id="5081393330032046640" at="15,206,18,18">
+        <var name="result" id="5081393330032046640" />
+      </scope>
+      <scope id="5081393330032046640" at="15,0,20,0">
+        <var name="_context" id="5081393330032046640" />
+        <var name="operationContext" id="5081393330032046640" />
+      </scope>
+    </file>
+  </root>
+</debug-info>
 

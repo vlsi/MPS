@@ -1,51 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895902e7(jetbrains.mps.lang.generator.scripts)/982871510076818109">
-    <nodeInfo nodeId="982871510076818109" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="14" startPosition="80" endLine="15" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="17" startPosition="31" endLine="18" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="21" startPosition="41" endLine="22" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="25" startPosition="59" endLine="26" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="982871510076879349" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="33" startPosition="52" endLine="34" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="982871510076930574" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="34" startPosition="122" endLine="35" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="982871510076982429" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="35" startPosition="114" endLine="36" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="982871510077010307" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="36" startPosition="94" endLine="37" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="982871510077038385" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="37" startPosition="120" endLine="38" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="41" startPosition="42" endLine="42" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="33" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="982871510076818109" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="15" startPosition="56" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="15" startPosition="56" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="982871510076818109" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="14" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UpdateSwitchMacro_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <scopeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="17" startPosition="31" endLine="18" endPosition="62" />
-    <scopeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="21" startPosition="41" endLine="22" endPosition="62" />
-    <scopeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="25" startPosition="59" endLine="26" endPosition="68" />
-    <scopeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="29" startPosition="59" endLine="30" endPosition="20" />
-    <scopeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="41" startPosition="42" endLine="42" endPosition="21" />
-    <scopeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="982871510076825112" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="982871510076825114" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="33" startPosition="52" endLine="38" endPosition="116">
-      <varInfo nodeId="982871510076879352" varName="n" />
-    </scopeInfo>
-    <scopeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="33" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="982871510076825112" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="15" startPosition="56" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="982871510076818109" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="14" startPosition="80" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="982871510076818109" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="14" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="982871510076818109" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="982871510076825112" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="16" startPosition="28" endLine="44" endPosition="5" unitName="jetbrains.mps.lang.generator.scripts.UpdateSwitchMacro_MigrationScript$1" />
-    <unitInfo nodeId="982871510076818109" fileName="UpdateSwitchMacro_MigrationScript.java" startLine="13" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.lang.generator.scripts.UpdateSwitchMacro_MigrationScript" />
+    <file name="UpdateSwitchMacro_MigrationScript.java">
+      <node id="982871510076818109" at="14,80,15,56" concept="6" />
+      <node id="982871510076825112" at="17,31,18,62" concept="5" />
+      <node id="982871510076825112" at="21,41,22,62" concept="5" />
+      <node id="982871510076825112" at="25,59,26,68" concept="5" />
+      <node id="982871510076825112" at="29,59,30,20" concept="5" />
+      <node id="982871510076879349" at="33,52,34,122" concept="4" />
+      <node id="982871510076930574" at="34,122,35,114" concept="2" />
+      <node id="982871510076982429" at="35,114,36,94" concept="2" />
+      <node id="982871510077010307" at="36,94,37,120" concept="2" />
+      <node id="982871510077038385" at="37,120,38,116" concept="2" />
+      <node id="982871510076825112" at="41,42,42,21" concept="5" />
+      <node id="982871510076825112" at="17,0,20,0" concept="3" trace="getName#()Ljava/lang/String;" />
+      <node id="982871510076825112" at="21,0,24,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="982871510076825112" at="25,0,28,0" concept="3" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="982871510076825112" at="29,0,32,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="982871510076825112" at="41,0,44,0" concept="3" trace="isShowAsIntention#()Z" />
+      <node id="982871510076825112" at="33,0,40,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="982871510076818109" at="15,56,44,7" concept="0" />
+      <node id="982871510076825112" at="15,56,44,7" concept="2" />
+      <node id="982871510076818109" at="14,0,46,0" concept="1" trace="UpdateSwitchMacro_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <scope id="982871510076825112" at="17,31,18,62" />
+      <scope id="982871510076825112" at="21,41,22,62" />
+      <scope id="982871510076825112" at="25,59,26,68" />
+      <scope id="982871510076825112" at="29,59,30,20" />
+      <scope id="982871510076825112" at="41,42,42,21" />
+      <scope id="982871510076825112" at="17,0,20,0" />
+      <scope id="982871510076825112" at="21,0,24,0" />
+      <scope id="982871510076825112" at="25,0,28,0" />
+      <scope id="982871510076825112" at="29,0,32,0">
+        <var name="node" id="982871510076825112" />
+      </scope>
+      <scope id="982871510076825112" at="41,0,44,0" />
+      <scope id="982871510076825114" at="33,52,38,116">
+        <var name="n" id="982871510076879352" />
+      </scope>
+      <scope id="982871510076825112" at="33,0,40,0">
+        <var name="node" id="982871510076825112" />
+      </scope>
+      <scope id="982871510076825112" at="15,56,44,7" />
+      <scope id="982871510076818109" at="14,80,44,7" />
+      <scope id="982871510076818109" at="14,0,46,0">
+        <var name="operationContext" id="982871510076818109" />
+      </scope>
+      <unit id="982871510076825112" at="16,28,44,5" name="jetbrains.mps.lang.generator.scripts.UpdateSwitchMacro_MigrationScript$1" />
+      <unit id="982871510076818109" at="13,0,47,0" name="jetbrains.mps.lang.generator.scripts.UpdateSwitchMacro_MigrationScript" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

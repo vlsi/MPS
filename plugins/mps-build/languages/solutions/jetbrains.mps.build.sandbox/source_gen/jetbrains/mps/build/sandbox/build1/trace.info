@@ -1,35 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
   <root nodeRef="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.build.sandbox.build1)/2569834391840042514">
-    <unitInfo nodeId="2569834391840042514" fileName="buildD.xml" startLine="1" startPosition="0" endLine="62" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildD" />
+    <file name="buildD.xml">
+      <unit id="2569834391840042514" at="1,0,62,10" name="jetbrains.mps.build.sandbox.build1.buildD" />
+    </file>
   </root>
   <root nodeRef="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.build.sandbox.build1)/3364920969597702860">
-    <unitInfo nodeId="3364920969597702860" fileName="buildC.xml" startLine="1" startPosition="0" endLine="39" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildC" />
+    <file name="buildC.xml">
+      <unit id="3364920969597702860" at="1,0,39,10" name="jetbrains.mps.build.sandbox.build1.buildC" />
+    </file>
   </root>
   <root nodeRef="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.build.sandbox.build1)/342830306171343431">
-    <unitInfo nodeId="342830306171343431" fileName="buildY.xml" startLine="1" startPosition="0" endLine="51" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildY" />
+    <file name="buildY.xml">
+      <unit id="342830306171343431" at="1,0,51,10" name="jetbrains.mps.build.sandbox.build1.buildY" />
+    </file>
   </root>
   <root nodeRef="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.build.sandbox.build1)/342830306171343454">
-    <unitInfo nodeId="342830306171343454" fileName="buildZ.xml" startLine="1" startPosition="0" endLine="58" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildZ" />
+    <file name="buildZ.xml">
+      <unit id="342830306171343454" at="1,0,58,10" name="jetbrains.mps.build.sandbox.build1.buildZ" />
+    </file>
   </root>
   <root nodeRef="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.build.sandbox.build1)/342830306171382310">
-    <unitInfo nodeId="342830306171382310" fileName="buildZZ.xml" startLine="1" startPosition="0" endLine="54" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildZZ" />
+    <file name="buildZZ.xml">
+      <unit id="342830306171382310" at="1,0,54,10" name="jetbrains.mps.build.sandbox.build1.buildZZ" />
+    </file>
   </root>
   <root nodeRef="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.build.sandbox.build1)/4129895186893541504">
-    <unitInfo nodeId="4129895186893541504" fileName="buildA.xml" startLine="1" startPosition="0" endLine="88" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildA" />
+    <file name="buildA.xml">
+      <unit id="4129895186893541504" at="1,0,88,10" name="jetbrains.mps.build.sandbox.build1.buildA" />
+    </file>
   </root>
   <root nodeRef="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.build.sandbox.build1)/4129895186893541508">
-    <unitInfo nodeId="4129895186893541508" fileName="buildB.xml" startLine="1" startPosition="0" endLine="95" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildB" />
+    <file name="buildB.xml">
+      <unit id="4129895186893541508" at="1,0,95,10" name="jetbrains.mps.build.sandbox.build1.buildB" />
+    </file>
   </root>
   <root nodeRef="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.build.sandbox.build1)/4993211115183387839">
-    <unitInfo nodeId="4993211115183387839" fileName="buildCore.properties" startLine="1" startPosition="0" endLine="3" endPosition="0" unitName="jetbrains.mps.build.sandbox.build1.buildCore" />
-    <unitInfo nodeId="4993211115183387839" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="77" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildCore" />
+    <file name="buildCore.properties">
+      <unit id="4993211115183387839" at="1,0,3,0" name="jetbrains.mps.build.sandbox.build1.buildCore" />
+    </file>
+    <file name="buildCore.xml">
+      <unit id="4993211115183387839" at="1,0,77,10" name="jetbrains.mps.build.sandbox.build1.buildCore" />
+    </file>
   </root>
   <root nodeRef="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.build.sandbox.build1)/4993211115183416028">
-    <unitInfo nodeId="4993211115183416028" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="80" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildPlugin" />
+    <file name="buildPlugin.xml">
+      <unit id="4993211115183416028" at="1,0,80,10" name="jetbrains.mps.build.sandbox.build1.buildPlugin" />
+    </file>
   </root>
   <root nodeRef="r:bcfe2964-5744-4773-9086-0090dbda0712(jetbrains.mps.build.sandbox.build1)/5610619299013213201">
-    <unitInfo nodeId="5610619299013213201" fileName="buildE.xml" startLine="1" startPosition="0" endLine="53" endPosition="10" unitName="jetbrains.mps.build.sandbox.build1.buildE" />
+    <file name="buildE.xml">
+      <unit id="5610619299013213201" at="1,0,53,10" name="jetbrains.mps.build.sandbox.build1.buildE" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

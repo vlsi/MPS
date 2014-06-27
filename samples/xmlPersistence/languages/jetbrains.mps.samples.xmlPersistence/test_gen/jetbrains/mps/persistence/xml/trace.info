@@ -1,143 +1,153 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:8aafd777-0043-4d2b-b2da-119dbfcb6271(jetbrains.mps.persistence.xml@tests)/7358309956615888947">
-    <nodeInfo nodeId="7358309956615889120" fileName="XmlConverterTest.java" startLine="33" startPosition="43" endLine="34" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7358309956615889129" fileName="XmlConverterTest.java" startLine="38" startPosition="43" endLine="39" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7358309956615889138" fileName="XmlConverterTest.java" startLine="43" startPosition="43" endLine="44" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7358309956615889150" fileName="XmlConverterTest.java" startLine="47" startPosition="80" endLine="48" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7358309956615889154" fileName="XmlConverterTest.java" startLine="48" startPosition="61" endLine="49" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7358309956615889159" fileName="XmlConverterTest.java" startLine="49" startPosition="80" endLine="50" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7358309956615889176" fileName="XmlConverterTest.java" startLine="54" startPosition="13" endLine="55" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7358309956615889184" fileName="XmlConverterTest.java" startLine="55" startPosition="111" endLine="56" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7358309956615889198" fileName="XmlConverterTest.java" startLine="57" startPosition="33" endLine="58" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7358309956615889203" fileName="XmlConverterTest.java" startLine="59" startPosition="40" endLine="60" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7358309956615889210" fileName="XmlConverterTest.java" startLine="63" startPosition="7" endLine="64" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7358309956615889214" fileName="XmlConverterTest.java" startLine="64" startPosition="36" endLine="65" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7358309956615889222" fileName="XmlConverterTest.java" startLine="65" startPosition="116" endLine="66" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7358309956615888954" fileName="XmlConverterTest.java" startLine="70" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="resourceName" />
-    <nodeInfo nodeId="7358309956615888963" fileName="XmlConverterTest.java" startLine="72" startPosition="47" endLine="73" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7358309956615888974" fileName="XmlConverterTest.java" startLine="78" startPosition="33" endLine="79" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7358309956615888983" fileName="XmlConverterTest.java" startLine="83" startPosition="61" endLine="84" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7358309956615888992" fileName="XmlConverterTest.java" startLine="84" startPosition="94" endLine="85" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7358309956615888995" fileName="XmlConverterTest.java" startLine="85" startPosition="35" endLine="86" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7358309956615889002" fileName="XmlConverterTest.java" startLine="90" startPosition="33" endLine="91" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7358309956615889011" fileName="XmlConverterTest.java" startLine="95" startPosition="63" endLine="96" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7358309956615889020" fileName="XmlConverterTest.java" startLine="100" startPosition="58" endLine="101" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7358309956615889029" fileName="XmlConverterTest.java" startLine="105" startPosition="61" endLine="106" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7358309956615889035" fileName="XmlConverterTest.java" startLine="110" startPosition="32" endLine="111" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7358309956615889043" fileName="XmlConverterTest.java" startLine="116" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="bos" />
-    <nodeInfo nodeId="7358309956615889053" fileName="XmlConverterTest.java" startLine="121" startPosition="31" endLine="122" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7358309956615889063" fileName="XmlConverterTest.java" startLine="127" startPosition="33" endLine="128" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7358309956615889072" fileName="XmlConverterTest.java" startLine="132" startPosition="61" endLine="133" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7358309956615889078" fileName="XmlConverterTest.java" startLine="137" startPosition="33" endLine="138" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7358309956615889086" fileName="XmlConverterTest.java" startLine="142" startPosition="63" endLine="143" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7358309956615889107" fileName="XmlConverterTest.java" startLine="155" startPosition="32" endLine="156" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7358309956615889112" fileName="XmlConverterTest.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="XmlConverterTest#()V" />
-    <nodeInfo nodeId="7358309956615889047" fileName="XmlConverterTest.java" startLine="118" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringBuilderDataSource#()V" />
-    <nodeInfo nodeId="7358309956615888958" fileName="XmlConverterTest.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyDataSource#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7358309956615889051" fileName="XmlConverterTest.java" startLine="121" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getResult#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7358309956615889090" fileName="XmlConverterTest.java" startLine="146" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Lorg/jetbrains/mps/openapi/persistence/DataSourceListener;)V" />
-    <nodeInfo nodeId="7358309956615889097" fileName="XmlConverterTest.java" startLine="150" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Lorg/jetbrains/mps/openapi/persistence/DataSourceListener;)V" />
-    <nodeInfo nodeId="7358309956615889116" fileName="XmlConverterTest.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testXml1#()V" />
-    <nodeInfo nodeId="7358309956615889125" fileName="XmlConverterTest.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testXml2#()V" />
-    <nodeInfo nodeId="7358309956615889134" fileName="XmlConverterTest.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testXml3#()V" />
-    <nodeInfo nodeId="7358309956615888999" fileName="XmlConverterTest.java" startLine="89" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReadOnly#()Z" />
-    <nodeInfo nodeId="7358309956615889006" fileName="XmlConverterTest.java" startLine="94" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openOutputStream#()Ljava/io/OutputStream;" />
-    <nodeInfo nodeId="7358309956615889014" fileName="XmlConverterTest.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Lorg/jetbrains/mps/openapi/persistence/DataSourceListener;)V" />
-    <nodeInfo nodeId="7358309956615889023" fileName="XmlConverterTest.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Lorg/jetbrains/mps/openapi/persistence/DataSourceListener;)V" />
-    <nodeInfo nodeId="7358309956615889032" fileName="XmlConverterTest.java" startLine="109" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTimestamp#()J" />
-    <nodeInfo nodeId="7358309956615889067" fileName="XmlConverterTest.java" startLine="131" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openInputStream#()Ljava/io/InputStream;" />
-    <nodeInfo nodeId="7358309956615889075" fileName="XmlConverterTest.java" startLine="136" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isReadOnly#()Z" />
-    <nodeInfo nodeId="7358309956615889082" fileName="XmlConverterTest.java" startLine="141" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openOutputStream#()Ljava/io/OutputStream;" />
-    <nodeInfo nodeId="7358309956615889104" fileName="XmlConverterTest.java" startLine="154" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTimestamp#()J" />
-    <nodeInfo nodeId="7358309956615888970" fileName="XmlConverterTest.java" startLine="76" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7358309956615889059" fileName="XmlConverterTest.java" startLine="125" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7358309956615888978" fileName="XmlConverterTest.java" startLine="82" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openInputStream#()Ljava/io/InputStream;" />
-    <nodeInfo nodeId="7358309956615889204" fileName="XmlConverterTest.java" startLine="53" startPosition="25" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7358309956615889170" fileName="XmlConverterTest.java" startLine="52" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7358309956615889162" fileName="XmlConverterTest.java" startLine="50" startPosition="105" endLine="63" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7358309956615889143" fileName="XmlConverterTest.java" startLine="47" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testXml#(Ljava/lang/String;)V" />
-    <scopeInfo nodeId="7358309956615889114" fileName="XmlConverterTest.java" startLine="29" startPosition="29" endLine="29" endPosition="29" />
-    <scopeInfo nodeId="7358309956615889049" fileName="XmlConverterTest.java" startLine="118" startPosition="39" endLine="118" endPosition="39" />
-    <scopeInfo nodeId="7358309956615889094" fileName="XmlConverterTest.java" startLine="147" startPosition="58" endLine="147" endPosition="58" />
-    <scopeInfo nodeId="7358309956615889101" fileName="XmlConverterTest.java" startLine="151" startPosition="61" endLine="151" endPosition="61" />
-    <scopeInfo nodeId="7358309956615889119" fileName="XmlConverterTest.java" startLine="33" startPosition="43" endLine="34" endPosition="65" />
-    <scopeInfo nodeId="7358309956615889128" fileName="XmlConverterTest.java" startLine="38" startPosition="43" endLine="39" endPosition="65" />
-    <scopeInfo nodeId="7358309956615889137" fileName="XmlConverterTest.java" startLine="43" startPosition="43" endLine="44" endPosition="65" />
-    <scopeInfo nodeId="7358309956615889205" fileName="XmlConverterTest.java" startLine="57" startPosition="0" endLine="58" endPosition="40">
-      <varInfo nodeId="7358309956615889188" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="7358309956615889195" fileName="XmlConverterTest.java" startLine="57" startPosition="33" endLine="58" endPosition="40" />
-    <scopeInfo nodeId="7358309956615889206" fileName="XmlConverterTest.java" startLine="59" startPosition="0" endLine="60" endPosition="40">
-      <varInfo nodeId="7358309956615889191" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="7358309956615889200" fileName="XmlConverterTest.java" startLine="59" startPosition="40" endLine="60" endPosition="40" />
-    <scopeInfo nodeId="7358309956615888962" fileName="XmlConverterTest.java" startLine="72" startPosition="47" endLine="73" endPosition="39" />
-    <scopeInfo nodeId="7358309956615888973" fileName="XmlConverterTest.java" startLine="78" startPosition="33" endLine="79" endPosition="20" />
-    <scopeInfo nodeId="7358309956615889001" fileName="XmlConverterTest.java" startLine="90" startPosition="33" endLine="91" endPosition="18" />
-    <scopeInfo nodeId="7358309956615889009" fileName="XmlConverterTest.java" startLine="95" startPosition="63" endLine="96" endPosition="48" />
-    <scopeInfo nodeId="7358309956615889018" fileName="XmlConverterTest.java" startLine="100" startPosition="58" endLine="101" endPosition="48" />
-    <scopeInfo nodeId="7358309956615889027" fileName="XmlConverterTest.java" startLine="105" startPosition="61" endLine="106" endPosition="48" />
-    <scopeInfo nodeId="7358309956615889034" fileName="XmlConverterTest.java" startLine="110" startPosition="32" endLine="111" endPosition="15" />
-    <scopeInfo nodeId="7358309956615889052" fileName="XmlConverterTest.java" startLine="121" startPosition="31" endLine="122" endPosition="69" />
-    <scopeInfo nodeId="7358309956615889062" fileName="XmlConverterTest.java" startLine="127" startPosition="33" endLine="128" endPosition="20" />
-    <scopeInfo nodeId="7358309956615889070" fileName="XmlConverterTest.java" startLine="132" startPosition="61" endLine="133" endPosition="48" />
-    <scopeInfo nodeId="7358309956615889077" fileName="XmlConverterTest.java" startLine="137" startPosition="33" endLine="138" endPosition="19" />
-    <scopeInfo nodeId="7358309956615889085" fileName="XmlConverterTest.java" startLine="142" startPosition="63" endLine="143" endPosition="17" />
-    <scopeInfo nodeId="7358309956615889106" fileName="XmlConverterTest.java" startLine="155" startPosition="32" endLine="156" endPosition="15" />
-    <scopeInfo nodeId="7358309956615889112" fileName="XmlConverterTest.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889174" fileName="XmlConverterTest.java" startLine="54" startPosition="13" endLine="56" endPosition="39">
-      <varInfo nodeId="7358309956615889175" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="7358309956615889047" fileName="XmlConverterTest.java" startLine="118" startPosition="0" endLine="120" endPosition="0" />
-    <scopeInfo nodeId="7358309956615888958" fileName="XmlConverterTest.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="7358309956615888960" varName="resourceName" />
-    </scopeInfo>
-    <scopeInfo nodeId="7358309956615888981" fileName="XmlConverterTest.java" startLine="83" startPosition="61" endLine="86" endPosition="20">
-      <varInfo nodeId="7358309956615888982" varName="stream" />
-    </scopeInfo>
-    <scopeInfo nodeId="7358309956615889051" fileName="XmlConverterTest.java" startLine="121" startPosition="0" endLine="124" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889090" fileName="XmlConverterTest.java" startLine="146" startPosition="0" endLine="149" endPosition="0">
-      <varInfo nodeId="7358309956615889092" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="7358309956615889097" fileName="XmlConverterTest.java" startLine="150" startPosition="0" endLine="153" endPosition="0">
-      <varInfo nodeId="7358309956615889099" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="7358309956615889116" fileName="XmlConverterTest.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889125" fileName="XmlConverterTest.java" startLine="37" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889134" fileName="XmlConverterTest.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="7358309956615888999" fileName="XmlConverterTest.java" startLine="89" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889006" fileName="XmlConverterTest.java" startLine="94" startPosition="0" endLine="98" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889014" fileName="XmlConverterTest.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="7358309956615889016" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="7358309956615889023" fileName="XmlConverterTest.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
-      <varInfo nodeId="7358309956615889025" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="7358309956615889032" fileName="XmlConverterTest.java" startLine="109" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889067" fileName="XmlConverterTest.java" startLine="131" startPosition="0" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889075" fileName="XmlConverterTest.java" startLine="136" startPosition="0" endLine="140" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889082" fileName="XmlConverterTest.java" startLine="141" startPosition="0" endLine="145" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889104" fileName="XmlConverterTest.java" startLine="154" startPosition="0" endLine="158" endPosition="0" />
-    <scopeInfo nodeId="7358309956615888970" fileName="XmlConverterTest.java" startLine="76" startPosition="0" endLine="81" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889059" fileName="XmlConverterTest.java" startLine="125" startPosition="0" endLine="130" endPosition="0" />
-    <scopeInfo nodeId="7358309956615888978" fileName="XmlConverterTest.java" startLine="82" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889172" fileName="XmlConverterTest.java" startLine="53" startPosition="25" endLine="61" endPosition="9" />
-    <scopeInfo nodeId="7358309956615889170" fileName="XmlConverterTest.java" startLine="52" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="7358309956615889148" fileName="XmlConverterTest.java" startLine="47" startPosition="80" endLine="66" endPosition="39">
-      <varInfo nodeId="7358309956615889209" varName="after" />
-      <varInfo nodeId="7358309956615889213" varName="before" />
-      <varInfo nodeId="7358309956615889149" varName="pers" />
-      <varInfo nodeId="7358309956615889158" varName="sbds" />
-      <varInfo nodeId="7358309956615889153" varName="source" />
-    </scopeInfo>
-    <scopeInfo nodeId="7358309956615889143" fileName="XmlConverterTest.java" startLine="47" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="7358309956615889144" varName="resource" />
-    </scopeInfo>
-    <unitInfo nodeId="7358309956615889168" fileName="XmlConverterTest.java" startLine="51" startPosition="45" endLine="63" endPosition="5" unitName="jetbrains.mps.persistence.xml.XmlConverterTest$1" />
-    <unitInfo nodeId="7358309956615889039" fileName="XmlConverterTest.java" startLine="115" startPosition="0" endLine="159" endPosition="0" unitName="jetbrains.mps.persistence.xml.XmlConverterTest$StringBuilderDataSource" />
-    <unitInfo nodeId="7358309956615888950" fileName="XmlConverterTest.java" startLine="69" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.persistence.xml.XmlConverterTest$MyDataSource" />
-    <unitInfo nodeId="7358309956615888947" fileName="XmlConverterTest.java" startLine="25" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.persistence.xml.XmlConverterTest" />
+    <file name="XmlConverterTest.java">
+      <node id="7358309956615889120" at="33,43,34,65" concept="1" />
+      <node id="7358309956615889129" at="38,43,39,65" concept="1" />
+      <node id="7358309956615889138" at="43,43,44,65" concept="1" />
+      <node id="7358309956615889150" at="47,80,48,61" concept="4" />
+      <node id="7358309956615889154" at="48,61,49,80" concept="4" />
+      <node id="7358309956615889159" at="49,80,50,105" concept="4" />
+      <node id="7358309956615889176" at="54,13,55,111" concept="4" />
+      <node id="7358309956615889184" at="55,111,56,39" concept="1" />
+      <node id="7358309956615889198" at="57,33,58,40" concept="6" />
+      <node id="7358309956615889203" at="59,40,60,40" concept="6" />
+      <node id="7358309956615889210" at="63,7,64,36" concept="4" />
+      <node id="7358309956615889214" at="64,36,65,116" concept="4" />
+      <node id="7358309956615889222" at="65,116,66,39" concept="1" />
+      <node id="7358309956615888954" at="70,0,71,0" concept="2" trace="resourceName" />
+      <node id="7358309956615888963" at="72,47,73,39" concept="1" />
+      <node id="7358309956615888974" at="78,33,79,20" concept="5" />
+      <node id="7358309956615888983" at="83,61,84,94" concept="4" />
+      <node id="7358309956615888992" at="84,94,85,35" concept="1" />
+      <node id="7358309956615888995" at="85,35,86,20" concept="5" />
+      <node id="7358309956615889002" at="90,33,91,18" concept="5" />
+      <node id="7358309956615889011" at="95,63,96,48" concept="6" />
+      <node id="7358309956615889020" at="100,58,101,48" concept="6" />
+      <node id="7358309956615889029" at="105,61,106,48" concept="6" />
+      <node id="7358309956615889035" at="110,32,111,15" concept="5" />
+      <node id="7358309956615889043" at="116,0,117,0" concept="2" trace="bos" />
+      <node id="7358309956615889053" at="121,31,122,69" concept="5" />
+      <node id="7358309956615889063" at="127,33,128,20" concept="5" />
+      <node id="7358309956615889072" at="132,61,133,48" concept="6" />
+      <node id="7358309956615889078" at="137,33,138,19" concept="5" />
+      <node id="7358309956615889086" at="142,63,143,17" concept="5" />
+      <node id="7358309956615889107" at="155,32,156,15" concept="5" />
+      <node id="7358309956615889112" at="29,0,31,0" concept="0" trace="XmlConverterTest#()V" />
+      <node id="7358309956615889047" at="118,0,120,0" concept="0" trace="StringBuilderDataSource#()V" />
+      <node id="7358309956615888958" at="72,0,75,0" concept="0" trace="MyDataSource#(Ljava/lang/String;)V" />
+      <node id="7358309956615889051" at="121,0,124,0" concept="3" trace="getResult#()Ljava/lang/String;" />
+      <node id="7358309956615889090" at="146,0,149,0" concept="3" trace="addListener#(Lorg/jetbrains/mps/openapi/persistence/DataSourceListener;)V" />
+      <node id="7358309956615889097" at="150,0,153,0" concept="3" trace="removeListener#(Lorg/jetbrains/mps/openapi/persistence/DataSourceListener;)V" />
+      <node id="7358309956615889116" at="32,0,36,0" concept="3" trace="testXml1#()V" />
+      <node id="7358309956615889125" at="37,0,41,0" concept="3" trace="testXml2#()V" />
+      <node id="7358309956615889134" at="42,0,46,0" concept="3" trace="testXml3#()V" />
+      <node id="7358309956615888999" at="89,0,93,0" concept="3" trace="isReadOnly#()Z" />
+      <node id="7358309956615889006" at="94,0,98,0" concept="3" trace="openOutputStream#()Ljava/io/OutputStream;" />
+      <node id="7358309956615889014" at="99,0,103,0" concept="3" trace="addListener#(Lorg/jetbrains/mps/openapi/persistence/DataSourceListener;)V" />
+      <node id="7358309956615889023" at="104,0,108,0" concept="3" trace="removeListener#(Lorg/jetbrains/mps/openapi/persistence/DataSourceListener;)V" />
+      <node id="7358309956615889032" at="109,0,113,0" concept="3" trace="getTimestamp#()J" />
+      <node id="7358309956615889067" at="131,0,135,0" concept="3" trace="openInputStream#()Ljava/io/InputStream;" />
+      <node id="7358309956615889075" at="136,0,140,0" concept="3" trace="isReadOnly#()Z" />
+      <node id="7358309956615889082" at="141,0,145,0" concept="3" trace="openOutputStream#()Ljava/io/OutputStream;" />
+      <node id="7358309956615889104" at="154,0,158,0" concept="3" trace="getTimestamp#()J" />
+      <node id="7358309956615888970" at="76,0,81,0" concept="3" trace="getLocation#()Ljava/lang/String;" />
+      <node id="7358309956615889059" at="125,0,130,0" concept="3" trace="getLocation#()Ljava/lang/String;" />
+      <node id="7358309956615888978" at="82,0,88,0" concept="3" trace="openInputStream#()Ljava/io/InputStream;" />
+      <node id="7358309956615889204" at="53,25,61,9" concept="7" />
+      <node id="7358309956615889170" at="52,0,63,0" concept="3" trace="run#()V" />
+      <node id="7358309956615889162" at="50,105,63,7" concept="1" />
+      <node id="7358309956615889143" at="47,0,68,0" concept="3" trace="testXml#(Ljava/lang/String;)V" />
+      <scope id="7358309956615889114" at="29,29,29,29" />
+      <scope id="7358309956615889049" at="118,39,118,39" />
+      <scope id="7358309956615889094" at="147,58,147,58" />
+      <scope id="7358309956615889101" at="151,61,151,61" />
+      <scope id="7358309956615889119" at="33,43,34,65" />
+      <scope id="7358309956615889128" at="38,43,39,65" />
+      <scope id="7358309956615889137" at="43,43,44,65" />
+      <scope id="7358309956615889205" at="57,0,58,40">
+        <var name="e" id="7358309956615889188" />
+      </scope>
+      <scope id="7358309956615889195" at="57,33,58,40" />
+      <scope id="7358309956615889206" at="59,0,60,40">
+        <var name="e" id="7358309956615889191" />
+      </scope>
+      <scope id="7358309956615889200" at="59,40,60,40" />
+      <scope id="7358309956615888962" at="72,47,73,39" />
+      <scope id="7358309956615888973" at="78,33,79,20" />
+      <scope id="7358309956615889001" at="90,33,91,18" />
+      <scope id="7358309956615889009" at="95,63,96,48" />
+      <scope id="7358309956615889018" at="100,58,101,48" />
+      <scope id="7358309956615889027" at="105,61,106,48" />
+      <scope id="7358309956615889034" at="110,32,111,15" />
+      <scope id="7358309956615889052" at="121,31,122,69" />
+      <scope id="7358309956615889062" at="127,33,128,20" />
+      <scope id="7358309956615889070" at="132,61,133,48" />
+      <scope id="7358309956615889077" at="137,33,138,19" />
+      <scope id="7358309956615889085" at="142,63,143,17" />
+      <scope id="7358309956615889106" at="155,32,156,15" />
+      <scope id="7358309956615889112" at="29,0,31,0" />
+      <scope id="7358309956615889174" at="54,13,56,39">
+        <var name="model" id="7358309956615889175" />
+      </scope>
+      <scope id="7358309956615889047" at="118,0,120,0" />
+      <scope id="7358309956615888958" at="72,0,75,0">
+        <var name="resourceName" id="7358309956615888960" />
+      </scope>
+      <scope id="7358309956615888981" at="83,61,86,20">
+        <var name="stream" id="7358309956615888982" />
+      </scope>
+      <scope id="7358309956615889051" at="121,0,124,0" />
+      <scope id="7358309956615889090" at="146,0,149,0">
+        <var name="listener" id="7358309956615889092" />
+      </scope>
+      <scope id="7358309956615889097" at="150,0,153,0">
+        <var name="listener" id="7358309956615889099" />
+      </scope>
+      <scope id="7358309956615889116" at="32,0,36,0" />
+      <scope id="7358309956615889125" at="37,0,41,0" />
+      <scope id="7358309956615889134" at="42,0,46,0" />
+      <scope id="7358309956615888999" at="89,0,93,0" />
+      <scope id="7358309956615889006" at="94,0,98,0" />
+      <scope id="7358309956615889014" at="99,0,103,0">
+        <var name="listener" id="7358309956615889016" />
+      </scope>
+      <scope id="7358309956615889023" at="104,0,108,0">
+        <var name="listener" id="7358309956615889025" />
+      </scope>
+      <scope id="7358309956615889032" at="109,0,113,0" />
+      <scope id="7358309956615889067" at="131,0,135,0" />
+      <scope id="7358309956615889075" at="136,0,140,0" />
+      <scope id="7358309956615889082" at="141,0,145,0" />
+      <scope id="7358309956615889104" at="154,0,158,0" />
+      <scope id="7358309956615888970" at="76,0,81,0" />
+      <scope id="7358309956615889059" at="125,0,130,0" />
+      <scope id="7358309956615888978" at="82,0,88,0" />
+      <scope id="7358309956615889172" at="53,25,61,9" />
+      <scope id="7358309956615889170" at="52,0,63,0" />
+      <scope id="7358309956615889148" at="47,80,66,39">
+        <var name="after" id="7358309956615889209" />
+        <var name="before" id="7358309956615889213" />
+        <var name="pers" id="7358309956615889149" />
+        <var name="sbds" id="7358309956615889158" />
+        <var name="source" id="7358309956615889153" />
+      </scope>
+      <scope id="7358309956615889143" at="47,0,68,0">
+        <var name="resource" id="7358309956615889144" />
+      </scope>
+      <unit id="7358309956615889168" at="51,45,63,5" name="jetbrains.mps.persistence.xml.XmlConverterTest$1" />
+      <unit id="7358309956615889039" at="115,0,159,0" name="jetbrains.mps.persistence.xml.XmlConverterTest$StringBuilderDataSource" />
+      <unit id="7358309956615888950" at="69,0,114,0" name="jetbrains.mps.persistence.xml.XmlConverterTest$MyDataSource" />
+      <unit id="7358309956615888947" at="25,0,160,0" name="jetbrains.mps.persistence.xml.XmlConverterTest" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

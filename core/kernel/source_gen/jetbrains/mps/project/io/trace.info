@@ -1,266 +1,289 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)/3323419009397486857">
-    <nodeInfo nodeId="9081946191808729956" fileName="IdeaDescriptorIOProvider.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOLUTION" />
-    <nodeInfo nodeId="9081946191808729946" fileName="IdeaDescriptorIOProvider.java" startLine="18" startPosition="66" endLine="19" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3323419009397486877" fileName="IdeaDescriptorIOProvider.java" startLine="23" startPosition="66" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3323419009397486884" fileName="IdeaDescriptorIOProvider.java" startLine="28" startPosition="62" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3323419009397486891" fileName="IdeaDescriptorIOProvider.java" startLine="32" startPosition="68" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3323419009397486859" fileName="IdeaDescriptorIOProvider.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IdeaDescriptorIOProvider#()V" />
-    <nodeInfo nodeId="3323419009397486886" fileName="IdeaDescriptorIOProvider.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generatorDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-    <nodeInfo nodeId="3323419009397486865" fileName="IdeaDescriptorIOProvider.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="solutionDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-    <nodeInfo nodeId="3323419009397486872" fileName="IdeaDescriptorIOProvider.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="languageDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-    <nodeInfo nodeId="3323419009397486879" fileName="IdeaDescriptorIOProvider.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="devkitDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-    <scopeInfo nodeId="3323419009397486862" fileName="IdeaDescriptorIOProvider.java" startLine="14" startPosition="42" endLine="14" endPosition="42" />
-    <scopeInfo nodeId="3323419009397486869" fileName="IdeaDescriptorIOProvider.java" startLine="18" startPosition="66" endLine="19" endPosition="20" />
-    <scopeInfo nodeId="3323419009397486876" fileName="IdeaDescriptorIOProvider.java" startLine="23" startPosition="66" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="3323419009397486883" fileName="IdeaDescriptorIOProvider.java" startLine="28" startPosition="62" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="3323419009397486890" fileName="IdeaDescriptorIOProvider.java" startLine="32" startPosition="68" endLine="33" endPosition="16" />
-    <scopeInfo nodeId="3323419009397486859" fileName="IdeaDescriptorIOProvider.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="3323419009397486886" fileName="IdeaDescriptorIOProvider.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="3323419009397486865" fileName="IdeaDescriptorIOProvider.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="3323419009397486872" fileName="IdeaDescriptorIOProvider.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="3323419009397486879" fileName="IdeaDescriptorIOProvider.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
-    <unitInfo nodeId="3323419009397486857" fileName="IdeaDescriptorIOProvider.java" startLine="11" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.project.io.IdeaDescriptorIOProvider" />
+    <file name="IdeaDescriptorIOProvider.java">
+      <node id="9081946191808729956" at="12,0,13,0" concept="6" trace="SOLUTION" />
+      <node id="9081946191808729946" at="18,66,19,20" concept="5" />
+      <node id="3323419009397486877" at="23,66,24,16" concept="5" />
+      <node id="3323419009397486884" at="28,62,29,16" concept="5" />
+      <node id="3323419009397486891" at="32,68,33,16" concept="5" />
+      <node id="3323419009397486859" at="14,0,16,0" concept="0" trace="IdeaDescriptorIOProvider#()V" />
+      <node id="3323419009397486886" at="32,0,35,0" concept="3" trace="generatorDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="3323419009397486865" at="17,0,21,0" concept="3" trace="solutionDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="3323419009397486872" at="22,0,26,0" concept="3" trace="languageDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="3323419009397486879" at="27,0,31,0" concept="3" trace="devkitDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <scope id="3323419009397486862" at="14,42,14,42" />
+      <scope id="3323419009397486869" at="18,66,19,20" />
+      <scope id="3323419009397486876" at="23,66,24,16" />
+      <scope id="3323419009397486883" at="28,62,29,16" />
+      <scope id="3323419009397486890" at="32,68,33,16" />
+      <scope id="3323419009397486859" at="14,0,16,0" />
+      <scope id="3323419009397486886" at="32,0,35,0" />
+      <scope id="3323419009397486865" at="17,0,21,0" />
+      <scope id="3323419009397486872" at="22,0,26,0" />
+      <scope id="3323419009397486879" at="27,0,31,0" />
+      <unit id="3323419009397486857" at="11,0,36,0" name="jetbrains.mps.project.io.IdeaDescriptorIOProvider" />
+    </file>
   </root>
   <root nodeRef="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)/557142600900286111">
-    <nodeInfo nodeId="557142600900532770" fileName="DescriptorIOFacade.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="557142600900541528" fileName="DescriptorIOFacade.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STANDARD_FACTORY" />
-    <nodeInfo nodeId="9081946191808734224" fileName="DescriptorIOFacade.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IDEA" />
-    <nodeInfo nodeId="5177508097213614246" fileName="DescriptorIOFacade.java" startLine="17" startPosition="76" endLine="18" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9081946191808734200" fileName="DescriptorIOFacade.java" startLine="21" startPosition="50" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9081946191808734214" fileName="DescriptorIOFacade.java" startLine="25" startPosition="46" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5177508097213614199" fileName="DescriptorIOFacade.java" startLine="30" startPosition="52" endLine="31" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5177508097213614205" fileName="DescriptorIOFacade.java" startLine="32" startPosition="59" endLine="33" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5177508097213614211" fileName="DescriptorIOFacade.java" startLine="34" startPosition="57" endLine="35" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5177508097213614235" fileName="DescriptorIOFacade.java" startLine="36" startPosition="39" endLine="37" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5177508097213614218" fileName="DescriptorIOFacade.java" startLine="38" startPosition="5" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="557142600900560817" fileName="DescriptorIOFacade.java" startLine="42" startPosition="50" endLine="43" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="557142600900286113" fileName="DescriptorIOFacade.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DescriptorIOFacade#()V" />
-    <nodeInfo nodeId="5177508097213611918" fileName="DescriptorIOFacade.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromFileType#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/io/DescriptorIO;" />
-    <nodeInfo nodeId="9081946191808734194" fileName="DescriptorIOFacade.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="standardProvider#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
-    <nodeInfo nodeId="9081946191808734202" fileName="DescriptorIOFacade.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ideaProvider#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
-    <nodeInfo nodeId="557142600900560812" fileName="DescriptorIOFacade.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/project/io/DescriptorIOFacade;" />
-    <nodeInfo nodeId="5177508097213611961" fileName="DescriptorIOFacade.java" startLine="29" startPosition="79" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5177508097213611953" fileName="DescriptorIOFacade.java" startLine="29" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromExtension#(Ljava/lang/String;)Ljetbrains/mps/project/io/DescriptorIO;" />
-    <scopeInfo nodeId="557142600900286116" fileName="DescriptorIOFacade.java" startLine="14" startPosition="32" endLine="14" endPosition="32" />
-    <scopeInfo nodeId="5177508097213611921" fileName="DescriptorIOFacade.java" startLine="17" startPosition="76" endLine="18" endPosition="41" />
-    <scopeInfo nodeId="9081946191808734199" fileName="DescriptorIOFacade.java" startLine="21" startPosition="50" endLine="22" endPosition="28" />
-    <scopeInfo nodeId="9081946191808734207" fileName="DescriptorIOFacade.java" startLine="25" startPosition="46" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="5177508097213611963" fileName="DescriptorIOFacade.java" startLine="30" startPosition="52" endLine="31" endPosition="55" />
-    <scopeInfo nodeId="5177508097213611986" fileName="DescriptorIOFacade.java" startLine="32" startPosition="59" endLine="33" endPosition="55" />
-    <scopeInfo nodeId="5177508097213611993" fileName="DescriptorIOFacade.java" startLine="34" startPosition="57" endLine="35" endPosition="53" />
-    <scopeInfo nodeId="5177508097213614222" fileName="DescriptorIOFacade.java" startLine="36" startPosition="39" endLine="37" endPosition="51" />
-    <scopeInfo nodeId="557142600900560815" fileName="DescriptorIOFacade.java" startLine="42" startPosition="50" endLine="43" endPosition="20" />
-    <scopeInfo nodeId="557142600900286113" fileName="DescriptorIOFacade.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5177508097213611918" fileName="DescriptorIOFacade.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="5177508097213611928" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="9081946191808734194" fileName="DescriptorIOFacade.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="9081946191808734202" fileName="DescriptorIOFacade.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="557142600900560812" fileName="DescriptorIOFacade.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="5177508097213611956" fileName="DescriptorIOFacade.java" startLine="29" startPosition="79" endLine="39" endPosition="16" />
-    <scopeInfo nodeId="5177508097213611953" fileName="DescriptorIOFacade.java" startLine="29" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="5177508097213611958" varName="path" />
-    </scopeInfo>
-    <unitInfo nodeId="557142600900286111" fileName="DescriptorIOFacade.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.project.io.DescriptorIOFacade" />
+    <file name="DescriptorIOFacade.java">
+      <node id="557142600900532770" at="10,0,11,0" concept="6" trace="INSTANCE" />
+      <node id="557142600900541528" at="11,0,12,0" concept="6" trace="STANDARD_FACTORY" />
+      <node id="9081946191808734224" at="12,0,13,0" concept="6" trace="IDEA" />
+      <node id="5177508097213614246" at="17,76,18,41" concept="5" />
+      <node id="9081946191808734200" at="21,50,22,28" concept="5" />
+      <node id="9081946191808734214" at="25,46,26,16" concept="5" />
+      <node id="5177508097213614199" at="30,52,31,55" concept="5" />
+      <node id="5177508097213614205" at="32,59,33,55" concept="5" />
+      <node id="5177508097213614211" at="34,57,35,53" concept="5" />
+      <node id="5177508097213614235" at="36,39,37,51" concept="5" />
+      <node id="5177508097213614218" at="38,5,39,16" concept="5" />
+      <node id="557142600900560817" at="42,50,43,20" concept="5" />
+      <node id="557142600900286113" at="14,0,16,0" concept="0" trace="DescriptorIOFacade#()V" />
+      <node id="5177508097213611918" at="17,0,20,0" concept="3" trace="fromFileType#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="9081946191808734194" at="21,0,24,0" concept="3" trace="standardProvider#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
+      <node id="9081946191808734202" at="25,0,28,0" concept="3" trace="ideaProvider#()Ljetbrains/mps/project/io/DescriptorIOProvider;" />
+      <node id="557142600900560812" at="42,0,45,0" concept="7" trace="getInstance#()Ljetbrains/mps/project/io/DescriptorIOFacade;" />
+      <node id="5177508097213611961" at="29,79,38,5" concept="2" />
+      <node id="5177508097213611953" at="29,0,41,0" concept="3" trace="fromExtension#(Ljava/lang/String;)Ljetbrains/mps/project/io/DescriptorIO;" />
+      <scope id="557142600900286116" at="14,32,14,32" />
+      <scope id="5177508097213611921" at="17,76,18,41" />
+      <scope id="9081946191808734199" at="21,50,22,28" />
+      <scope id="9081946191808734207" at="25,46,26,16" />
+      <scope id="5177508097213611963" at="30,52,31,55" />
+      <scope id="5177508097213611986" at="32,59,33,55" />
+      <scope id="5177508097213611993" at="34,57,35,53" />
+      <scope id="5177508097213614222" at="36,39,37,51" />
+      <scope id="557142600900560815" at="42,50,43,20" />
+      <scope id="557142600900286113" at="14,0,16,0" />
+      <scope id="5177508097213611918" at="17,0,20,0">
+        <var name="file" id="5177508097213611928" />
+      </scope>
+      <scope id="9081946191808734194" at="21,0,24,0" />
+      <scope id="9081946191808734202" at="25,0,28,0" />
+      <scope id="557142600900560812" at="42,0,45,0" />
+      <scope id="5177508097213611956" at="29,79,39,16" />
+      <scope id="5177508097213611953" at="29,0,41,0">
+        <var name="path" id="5177508097213611958" />
+      </scope>
+      <unit id="557142600900286111" at="9,0,46,0" name="jetbrains.mps.project.io.DescriptorIOFacade" />
+    </file>
   </root>
   <root nodeRef="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)/557142600900286148">
-    <nodeInfo nodeId="557142600900560301" fileName="DescriptorIO.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readFromFile#(Ljetbrains/mps/vfs/IFile;)null" />
-    <nodeInfo nodeId="557142600900560307" fileName="DescriptorIO.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeToFile#(nullLjetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="557142600900286151" fileName="DescriptorIO.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)null" />
-    <nodeInfo nodeId="557142600900286159" fileName="DescriptorIO.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeToXml#(nullLorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
-    <scopeInfo nodeId="557142600900560301" fileName="DescriptorIO.java" startLine="9" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="557142600900560302" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900560307" fileName="DescriptorIO.java" startLine="10" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="557142600900560313" varName="file" />
-      <varInfo nodeId="557142600900560311" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900286151" fileName="DescriptorIO.java" startLine="11" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="557142600900286156" varName="anchorFile" />
-      <varInfo nodeId="557142600900560317" varName="element" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900286159" fileName="DescriptorIO.java" startLine="12" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="557142600900286163" varName="anchorFile" />
-      <varInfo nodeId="557142600900560320" varName="element" />
-      <varInfo nodeId="557142600900286167" varName="t" />
-    </scopeInfo>
-    <unitInfo nodeId="557142600900286148" fileName="DescriptorIO.java" startLine="8" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.project.io.DescriptorIO" />
+    <file name="DescriptorIO.java">
+      <node id="557142600900560301" at="9,0,10,0" concept="3" trace="readFromFile#(Ljetbrains/mps/vfs/IFile;)null" />
+      <node id="557142600900560307" at="10,0,11,0" concept="3" trace="writeToFile#(nullLjetbrains/mps/vfs/IFile;)V" />
+      <node id="557142600900286151" at="11,0,12,0" concept="3" trace="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)null" />
+      <node id="557142600900286159" at="12,0,13,0" concept="3" trace="writeToXml#(nullLorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
+      <scope id="557142600900560301" at="9,0,10,0">
+        <var name="file" id="557142600900560302" />
+      </scope>
+      <scope id="557142600900560307" at="10,0,11,0">
+        <var name="file" id="557142600900560313" />
+        <var name="t" id="557142600900560311" />
+      </scope>
+      <scope id="557142600900286151" at="11,0,12,0">
+        <var name="anchorFile" id="557142600900286156" />
+        <var name="element" id="557142600900560317" />
+      </scope>
+      <scope id="557142600900286159" at="12,0,13,0">
+        <var name="anchorFile" id="557142600900286163" />
+        <var name="element" id="557142600900560320" />
+        <var name="t" id="557142600900286167" />
+      </scope>
+      <unit id="557142600900286148" at="8,0,14,0" name="jetbrains.mps.project.io.DescriptorIO" />
+    </file>
   </root>
   <root nodeRef="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)/557142600900532740">
-    <nodeInfo nodeId="557142600900532754" fileName="DescriptorIOProvider.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="solutionDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-    <nodeInfo nodeId="557142600900559972" fileName="DescriptorIOProvider.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="languageDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-    <nodeInfo nodeId="557142600900559978" fileName="DescriptorIOProvider.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="devkitDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-    <scopeInfo nodeId="557142600900532754" fileName="DescriptorIOProvider.java" startLine="10" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="557142600900559972" fileName="DescriptorIOProvider.java" startLine="11" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="557142600900559978" fileName="DescriptorIOProvider.java" startLine="12" startPosition="0" endLine="13" endPosition="0" />
-    <unitInfo nodeId="557142600900532740" fileName="DescriptorIOProvider.java" startLine="9" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.project.io.DescriptorIOProvider" />
+    <file name="DescriptorIOProvider.java">
+      <node id="557142600900532754" at="10,0,11,0" concept="3" trace="solutionDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="557142600900559972" at="11,0,12,0" concept="3" trace="languageDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="557142600900559978" at="12,0,13,0" concept="3" trace="devkitDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <scope id="557142600900532754" at="10,0,11,0" />
+      <scope id="557142600900559972" at="11,0,12,0" />
+      <scope id="557142600900559978" at="12,0,13,0" />
+      <unit id="557142600900532740" at="9,0,14,0" name="jetbrains.mps.project.io.DescriptorIOProvider" />
+    </file>
   </root>
   <root nodeRef="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)/557142600900539533">
-    <nodeInfo nodeId="557142600900559966" fileName="StandardDescriptorIOProvider.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SOLUTION" />
-    <nodeInfo nodeId="557142600900560061" fileName="StandardDescriptorIOProvider.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LANGUAGE" />
-    <nodeInfo nodeId="557142600900560763" fileName="StandardDescriptorIOProvider.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEVKIT" />
-    <nodeInfo nodeId="557142600900559962" fileName="StandardDescriptorIOProvider.java" startLine="26" startPosition="66" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="557142600900560057" fileName="StandardDescriptorIOProvider.java" startLine="31" startPosition="66" endLine="32" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="557142600900560759" fileName="StandardDescriptorIOProvider.java" startLine="36" startPosition="62" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9081946191808723836" fileName="StandardDescriptorIOProvider.java" startLine="46" startPosition="11" endLine="47" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4144315967010534361" fileName="StandardDescriptorIOProvider.java" startLine="48" startPosition="40" endLine="49" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4144315967010534359" fileName="StandardDescriptorIOProvider.java" startLine="49" startPosition="57" endLine="50" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4144315967010534368" fileName="StandardDescriptorIOProvider.java" startLine="50" startPosition="67" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="557142600900539602" fileName="StandardDescriptorIOProvider.java" startLine="56" startPosition="64" endLine="57" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900560342" fileName="StandardDescriptorIOProvider.java" startLine="61" startPosition="86" endLine="62" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="557142600900560347" fileName="StandardDescriptorIOProvider.java" startLine="66" startPosition="78" endLine="67" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="9081946191808723851" fileName="StandardDescriptorIOProvider.java" startLine="77" startPosition="11" endLine="78" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4144315967010534371" fileName="StandardDescriptorIOProvider.java" startLine="79" startPosition="40" endLine="80" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4144315967010534376" fileName="StandardDescriptorIOProvider.java" startLine="80" startPosition="57" endLine="81" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4144315967010534381" fileName="StandardDescriptorIOProvider.java" startLine="81" startPosition="67" endLine="82" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="557142600900560044" fileName="StandardDescriptorIOProvider.java" startLine="87" startPosition="64" endLine="88" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900560368" fileName="StandardDescriptorIOProvider.java" startLine="92" startPosition="86" endLine="93" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="557142600900560371" fileName="StandardDescriptorIOProvider.java" startLine="97" startPosition="78" endLine="98" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="9081946191808723869" fileName="StandardDescriptorIOProvider.java" startLine="108" startPosition="11" endLine="109" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4144315967010535620" fileName="StandardDescriptorIOProvider.java" startLine="110" startPosition="40" endLine="111" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4144315967010535625" fileName="StandardDescriptorIOProvider.java" startLine="111" startPosition="53" endLine="112" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4144315967010535630" fileName="StandardDescriptorIOProvider.java" startLine="112" startPosition="67" endLine="113" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="557142600900560621" fileName="StandardDescriptorIOProvider.java" startLine="118" startPosition="62" endLine="119" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="557142600900560630" fileName="StandardDescriptorIOProvider.java" startLine="123" startPosition="76" endLine="124" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="557142600900560635" fileName="StandardDescriptorIOProvider.java" startLine="128" startPosition="83" endLine="129" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="557142600900560790" fileName="StandardDescriptorIOProvider.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StandardDescriptorIOProvider#()V" />
-    <nodeInfo nodeId="557142600900539551" fileName="StandardDescriptorIOProvider.java" startLine="41" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SolutionDescriptorIO#()V" />
-    <nodeInfo nodeId="557142600900560019" fileName="StandardDescriptorIOProvider.java" startLine="72" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LanguageDescriptorIO#()V" />
-    <nodeInfo nodeId="557142600900560578" fileName="StandardDescriptorIOProvider.java" startLine="103" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DevkitDescriptorIO#()V" />
-    <nodeInfo nodeId="557142600900539576" fileName="StandardDescriptorIOProvider.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="solutionDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-    <nodeInfo nodeId="557142600900559994" fileName="StandardDescriptorIOProvider.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="languageDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-    <nodeInfo nodeId="557142600900560001" fileName="StandardDescriptorIOProvider.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="devkitDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
-    <nodeInfo nodeId="557142600900539590" fileName="StandardDescriptorIOProvider.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeToFile#(Ljetbrains/mps/project/structure/modules/SolutionDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="557142600900560332" fileName="StandardDescriptorIOProvider.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeToXml#(Ljetbrains/mps/project/structure/modules/SolutionDescriptor;Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="557142600900560324" fileName="StandardDescriptorIOProvider.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
-    <nodeInfo nodeId="557142600900560032" fileName="StandardDescriptorIOProvider.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeToFile#(Ljetbrains/mps/project/structure/modules/LanguageDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="557142600900560358" fileName="StandardDescriptorIOProvider.java" startLine="91" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeToXml#(Ljetbrains/mps/project/structure/modules/LanguageDescriptor;Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="557142600900560350" fileName="StandardDescriptorIOProvider.java" startLine="96" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/LanguageDescriptor;" />
-    <nodeInfo nodeId="557142600900560591" fileName="StandardDescriptorIOProvider.java" startLine="117" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeToFile#(Ljetbrains/mps/project/structure/modules/DevkitDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="557142600900560599" fileName="StandardDescriptorIOProvider.java" startLine="122" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/DevkitDescriptor;" />
-    <nodeInfo nodeId="557142600900560607" fileName="StandardDescriptorIOProvider.java" startLine="127" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="writeToXml#(Ljetbrains/mps/project/structure/modules/DevkitDescriptor;Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
-    <nodeInfo nodeId="9081946191808723813" fileName="StandardDescriptorIOProvider.java" startLine="45" startPosition="85" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="9081946191808723837" fileName="StandardDescriptorIOProvider.java" startLine="76" startPosition="85" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="9081946191808723855" fileName="StandardDescriptorIOProvider.java" startLine="107" startPosition="83" endLine="114" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="557142600900539584" fileName="StandardDescriptorIOProvider.java" startLine="44" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
-    <nodeInfo nodeId="557142600900560026" fileName="StandardDescriptorIOProvider.java" startLine="75" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/LanguageDescriptor;" />
-    <nodeInfo nodeId="557142600900560585" fileName="StandardDescriptorIOProvider.java" startLine="106" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/DevkitDescriptor;" />
-    <scopeInfo nodeId="557142600900560792" fileName="StandardDescriptorIOProvider.java" startLine="22" startPosition="46" endLine="22" endPosition="46" />
-    <scopeInfo nodeId="557142600900539554" fileName="StandardDescriptorIOProvider.java" startLine="41" startPosition="35" endLine="41" endPosition="35" />
-    <scopeInfo nodeId="557142600900560022" fileName="StandardDescriptorIOProvider.java" startLine="72" startPosition="35" endLine="72" endPosition="35" />
-    <scopeInfo nodeId="557142600900560581" fileName="StandardDescriptorIOProvider.java" startLine="103" startPosition="33" endLine="103" endPosition="33" />
-    <scopeInfo nodeId="557142600900539580" fileName="StandardDescriptorIOProvider.java" startLine="26" startPosition="66" endLine="27" endPosition="20" />
-    <scopeInfo nodeId="557142600900559998" fileName="StandardDescriptorIOProvider.java" startLine="31" startPosition="66" endLine="32" endPosition="20" />
-    <scopeInfo nodeId="557142600900560005" fileName="StandardDescriptorIOProvider.java" startLine="36" startPosition="62" endLine="37" endPosition="18" />
-    <scopeInfo nodeId="9081946191808723814" fileName="StandardDescriptorIOProvider.java" startLine="46" startPosition="11" endLine="47" endPosition="109" />
-    <scopeInfo nodeId="557142600900539597" fileName="StandardDescriptorIOProvider.java" startLine="56" startPosition="64" endLine="57" endPosition="104" />
-    <scopeInfo nodeId="557142600900560341" fileName="StandardDescriptorIOProvider.java" startLine="61" startPosition="86" endLine="62" endPosition="48" />
-    <scopeInfo nodeId="557142600900560331" fileName="StandardDescriptorIOProvider.java" startLine="66" startPosition="78" endLine="67" endPosition="48" />
-    <scopeInfo nodeId="9081946191808723838" fileName="StandardDescriptorIOProvider.java" startLine="77" startPosition="11" endLine="78" endPosition="109" />
-    <scopeInfo nodeId="557142600900560039" fileName="StandardDescriptorIOProvider.java" startLine="87" startPosition="64" endLine="88" endPosition="104" />
-    <scopeInfo nodeId="557142600900560367" fileName="StandardDescriptorIOProvider.java" startLine="92" startPosition="86" endLine="93" endPosition="48" />
-    <scopeInfo nodeId="557142600900560357" fileName="StandardDescriptorIOProvider.java" startLine="97" startPosition="78" endLine="98" endPosition="48" />
-    <scopeInfo nodeId="9081946191808723856" fileName="StandardDescriptorIOProvider.java" startLine="108" startPosition="11" endLine="109" endPosition="70" />
-    <scopeInfo nodeId="557142600900560598" fileName="StandardDescriptorIOProvider.java" startLine="118" startPosition="62" endLine="119" endPosition="65" />
-    <scopeInfo nodeId="557142600900560606" fileName="StandardDescriptorIOProvider.java" startLine="123" startPosition="76" endLine="124" endPosition="48" />
-    <scopeInfo nodeId="557142600900560616" fileName="StandardDescriptorIOProvider.java" startLine="128" startPosition="83" endLine="129" endPosition="48" />
-    <scopeInfo nodeId="557142600900560790" fileName="StandardDescriptorIOProvider.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="557142600900539551" fileName="StandardDescriptorIOProvider.java" startLine="41" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="557142600900560019" fileName="StandardDescriptorIOProvider.java" startLine="72" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="557142600900560578" fileName="StandardDescriptorIOProvider.java" startLine="103" startPosition="0" endLine="105" endPosition="0" />
-    <scopeInfo nodeId="9081946191808723816" fileName="StandardDescriptorIOProvider.java" startLine="48" startPosition="0" endLine="51" endPosition="18">
-      <varInfo nodeId="9081946191808723817" varName="ex" />
-    </scopeInfo>
-    <scopeInfo nodeId="9081946191808723819" fileName="StandardDescriptorIOProvider.java" startLine="48" startPosition="40" endLine="51" endPosition="18">
-      <varInfo nodeId="4144315967010534362" varName="sd" />
-    </scopeInfo>
-    <scopeInfo nodeId="9081946191808723842" fileName="StandardDescriptorIOProvider.java" startLine="79" startPosition="0" endLine="82" endPosition="18">
-      <varInfo nodeId="9081946191808723843" varName="ex" />
-    </scopeInfo>
-    <scopeInfo nodeId="9081946191808723845" fileName="StandardDescriptorIOProvider.java" startLine="79" startPosition="40" endLine="82" endPosition="18">
-      <varInfo nodeId="4144315967010534372" varName="ld" />
-    </scopeInfo>
-    <scopeInfo nodeId="9081946191808723860" fileName="StandardDescriptorIOProvider.java" startLine="110" startPosition="0" endLine="113" endPosition="18">
-      <varInfo nodeId="9081946191808723861" varName="ex" />
-    </scopeInfo>
-    <scopeInfo nodeId="9081946191808723863" fileName="StandardDescriptorIOProvider.java" startLine="110" startPosition="40" endLine="113" endPosition="18">
-      <varInfo nodeId="4144315967010535621" varName="dd" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900539576" fileName="StandardDescriptorIOProvider.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="557142600900559994" fileName="StandardDescriptorIOProvider.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="557142600900560001" fileName="StandardDescriptorIOProvider.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="557142600900539590" fileName="StandardDescriptorIOProvider.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="557142600900539595" varName="file" />
-      <varInfo nodeId="557142600900539593" varName="sd" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900560332" fileName="StandardDescriptorIOProvider.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="557142600900560339" varName="anchorFile" />
-      <varInfo nodeId="557142600900560337" varName="element" />
-      <varInfo nodeId="557142600900560335" varName="sd" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900560324" fileName="StandardDescriptorIOProvider.java" startLine="65" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="557142600900560327" varName="anchorFile" />
-      <varInfo nodeId="557142600900560325" varName="element" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900560032" fileName="StandardDescriptorIOProvider.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
-      <varInfo nodeId="557142600900560037" varName="file" />
-      <varInfo nodeId="557142600900560035" varName="ld" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900560358" fileName="StandardDescriptorIOProvider.java" startLine="91" startPosition="0" endLine="95" endPosition="0">
-      <varInfo nodeId="557142600900560365" varName="anchorFile" />
-      <varInfo nodeId="557142600900560363" varName="element" />
-      <varInfo nodeId="557142600900560361" varName="ld" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900560350" fileName="StandardDescriptorIOProvider.java" startLine="96" startPosition="0" endLine="100" endPosition="0">
-      <varInfo nodeId="557142600900560353" varName="anchorFile" />
-      <varInfo nodeId="557142600900560351" varName="element" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900560591" fileName="StandardDescriptorIOProvider.java" startLine="117" startPosition="0" endLine="121" endPosition="0">
-      <varInfo nodeId="557142600900560594" varName="dd" />
-      <varInfo nodeId="557142600900560596" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900560599" fileName="StandardDescriptorIOProvider.java" startLine="122" startPosition="0" endLine="126" endPosition="0">
-      <varInfo nodeId="557142600900560602" varName="anchorFile" />
-      <varInfo nodeId="557142600900560600" varName="element" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900560607" fileName="StandardDescriptorIOProvider.java" startLine="127" startPosition="0" endLine="131" endPosition="0">
-      <varInfo nodeId="557142600900560614" varName="anchorFile" />
-      <varInfo nodeId="557142600900560612" varName="element" />
-      <varInfo nodeId="557142600900560610" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900539589" fileName="StandardDescriptorIOProvider.java" startLine="45" startPosition="85" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="557142600900560031" fileName="StandardDescriptorIOProvider.java" startLine="76" startPosition="85" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="557142600900560590" fileName="StandardDescriptorIOProvider.java" startLine="107" startPosition="83" endLine="114" endPosition="7" />
-    <scopeInfo nodeId="557142600900539584" fileName="StandardDescriptorIOProvider.java" startLine="44" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="557142600900539585" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900560026" fileName="StandardDescriptorIOProvider.java" startLine="75" startPosition="0" endLine="85" endPosition="0">
-      <varInfo nodeId="557142600900560027" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="557142600900560585" fileName="StandardDescriptorIOProvider.java" startLine="106" startPosition="0" endLine="116" endPosition="0">
-      <varInfo nodeId="557142600900560586" varName="file" />
-    </scopeInfo>
-    <unitInfo nodeId="557142600900539549" fileName="StandardDescriptorIOProvider.java" startLine="40" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.project.io.StandardDescriptorIOProvider$SolutionDescriptorIO" />
-    <unitInfo nodeId="557142600900560017" fileName="StandardDescriptorIOProvider.java" startLine="71" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.project.io.StandardDescriptorIOProvider$LanguageDescriptorIO" />
-    <unitInfo nodeId="557142600900560576" fileName="StandardDescriptorIOProvider.java" startLine="102" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.project.io.StandardDescriptorIOProvider$DevkitDescriptorIO" />
-    <unitInfo nodeId="557142600900539533" fileName="StandardDescriptorIOProvider.java" startLine="17" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.project.io.StandardDescriptorIOProvider" />
+    <file name="StandardDescriptorIOProvider.java">
+      <node id="557142600900559966" at="18,0,19,0" concept="6" trace="SOLUTION" />
+      <node id="557142600900560061" at="19,0,20,0" concept="6" trace="LANGUAGE" />
+      <node id="557142600900560763" at="20,0,21,0" concept="6" trace="DEVKIT" />
+      <node id="557142600900559962" at="26,66,27,20" concept="5" />
+      <node id="557142600900560057" at="31,66,32,20" concept="5" />
+      <node id="557142600900560759" at="36,62,37,18" concept="5" />
+      <node id="9081946191808723836" at="46,11,47,109" concept="5" />
+      <node id="4144315967010534361" at="48,40,49,57" concept="4" />
+      <node id="4144315967010534359" at="49,57,50,67" concept="1" />
+      <node id="4144315967010534368" at="50,67,51,18" concept="5" />
+      <node id="557142600900539602" at="56,64,57,104" concept="1" />
+      <node id="557142600900560342" at="61,86,62,48" concept="9" />
+      <node id="557142600900560347" at="66,78,67,48" concept="9" />
+      <node id="9081946191808723851" at="77,11,78,109" concept="5" />
+      <node id="4144315967010534371" at="79,40,80,57" concept="4" />
+      <node id="4144315967010534376" at="80,57,81,67" concept="1" />
+      <node id="4144315967010534381" at="81,67,82,18" concept="5" />
+      <node id="557142600900560044" at="87,64,88,104" concept="1" />
+      <node id="557142600900560368" at="92,86,93,48" concept="9" />
+      <node id="557142600900560371" at="97,78,98,48" concept="9" />
+      <node id="9081946191808723869" at="108,11,109,70" concept="5" />
+      <node id="4144315967010535620" at="110,40,111,53" concept="4" />
+      <node id="4144315967010535625" at="111,53,112,67" concept="1" />
+      <node id="4144315967010535630" at="112,67,113,18" concept="5" />
+      <node id="557142600900560621" at="118,62,119,65" concept="1" />
+      <node id="557142600900560630" at="123,76,124,48" concept="9" />
+      <node id="557142600900560635" at="128,83,129,48" concept="9" />
+      <node id="557142600900560790" at="22,0,24,0" concept="0" trace="StandardDescriptorIOProvider#()V" />
+      <node id="557142600900539551" at="41,0,43,0" concept="0" trace="SolutionDescriptorIO#()V" />
+      <node id="557142600900560019" at="72,0,74,0" concept="0" trace="LanguageDescriptorIO#()V" />
+      <node id="557142600900560578" at="103,0,105,0" concept="0" trace="DevkitDescriptorIO#()V" />
+      <node id="557142600900539576" at="25,0,29,0" concept="3" trace="solutionDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="557142600900559994" at="30,0,34,0" concept="3" trace="languageDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="557142600900560001" at="35,0,39,0" concept="3" trace="devkitDescriptorIO#()Ljetbrains/mps/project/io/DescriptorIO;" />
+      <node id="557142600900539590" at="55,0,59,0" concept="3" trace="writeToFile#(Ljetbrains/mps/project/structure/modules/SolutionDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="557142600900560332" at="60,0,64,0" concept="3" trace="writeToXml#(Ljetbrains/mps/project/structure/modules/SolutionDescriptor;Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="557142600900560324" at="65,0,69,0" concept="3" trace="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
+      <node id="557142600900560032" at="86,0,90,0" concept="3" trace="writeToFile#(Ljetbrains/mps/project/structure/modules/LanguageDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="557142600900560358" at="91,0,95,0" concept="3" trace="writeToXml#(Ljetbrains/mps/project/structure/modules/LanguageDescriptor;Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="557142600900560350" at="96,0,100,0" concept="3" trace="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/LanguageDescriptor;" />
+      <node id="557142600900560591" at="117,0,121,0" concept="3" trace="writeToFile#(Ljetbrains/mps/project/structure/modules/DevkitDescriptor;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="557142600900560599" at="122,0,126,0" concept="3" trace="readFromXml#(Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/DevkitDescriptor;" />
+      <node id="557142600900560607" at="127,0,131,0" concept="3" trace="writeToXml#(Ljetbrains/mps/project/structure/modules/DevkitDescriptor;Lorg/jdom/Element;Ljetbrains/mps/vfs/IFile;)V" />
+      <node id="9081946191808723813" at="45,85,52,7" concept="10" />
+      <node id="9081946191808723837" at="76,85,83,7" concept="10" />
+      <node id="9081946191808723855" at="107,83,114,7" concept="10" />
+      <node id="557142600900539584" at="44,0,54,0" concept="3" trace="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/SolutionDescriptor;" />
+      <node id="557142600900560026" at="75,0,85,0" concept="3" trace="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/LanguageDescriptor;" />
+      <node id="557142600900560585" at="106,0,116,0" concept="3" trace="readFromFile#(Ljetbrains/mps/vfs/IFile;)Ljetbrains/mps/project/structure/modules/DevkitDescriptor;" />
+      <scope id="557142600900560792" at="22,46,22,46" />
+      <scope id="557142600900539554" at="41,35,41,35" />
+      <scope id="557142600900560022" at="72,35,72,35" />
+      <scope id="557142600900560581" at="103,33,103,33" />
+      <scope id="557142600900539580" at="26,66,27,20" />
+      <scope id="557142600900559998" at="31,66,32,20" />
+      <scope id="557142600900560005" at="36,62,37,18" />
+      <scope id="9081946191808723814" at="46,11,47,109" />
+      <scope id="557142600900539597" at="56,64,57,104" />
+      <scope id="557142600900560341" at="61,86,62,48" />
+      <scope id="557142600900560331" at="66,78,67,48" />
+      <scope id="9081946191808723838" at="77,11,78,109" />
+      <scope id="557142600900560039" at="87,64,88,104" />
+      <scope id="557142600900560367" at="92,86,93,48" />
+      <scope id="557142600900560357" at="97,78,98,48" />
+      <scope id="9081946191808723856" at="108,11,109,70" />
+      <scope id="557142600900560598" at="118,62,119,65" />
+      <scope id="557142600900560606" at="123,76,124,48" />
+      <scope id="557142600900560616" at="128,83,129,48" />
+      <scope id="557142600900560790" at="22,0,24,0" />
+      <scope id="557142600900539551" at="41,0,43,0" />
+      <scope id="557142600900560019" at="72,0,74,0" />
+      <scope id="557142600900560578" at="103,0,105,0" />
+      <scope id="9081946191808723816" at="48,0,51,18">
+        <var name="ex" id="9081946191808723817" />
+      </scope>
+      <scope id="9081946191808723819" at="48,40,51,18">
+        <var name="sd" id="4144315967010534362" />
+      </scope>
+      <scope id="9081946191808723842" at="79,0,82,18">
+        <var name="ex" id="9081946191808723843" />
+      </scope>
+      <scope id="9081946191808723845" at="79,40,82,18">
+        <var name="ld" id="4144315967010534372" />
+      </scope>
+      <scope id="9081946191808723860" at="110,0,113,18">
+        <var name="ex" id="9081946191808723861" />
+      </scope>
+      <scope id="9081946191808723863" at="110,40,113,18">
+        <var name="dd" id="4144315967010535621" />
+      </scope>
+      <scope id="557142600900539576" at="25,0,29,0" />
+      <scope id="557142600900559994" at="30,0,34,0" />
+      <scope id="557142600900560001" at="35,0,39,0" />
+      <scope id="557142600900539590" at="55,0,59,0">
+        <var name="file" id="557142600900539595" />
+        <var name="sd" id="557142600900539593" />
+      </scope>
+      <scope id="557142600900560332" at="60,0,64,0">
+        <var name="anchorFile" id="557142600900560339" />
+        <var name="element" id="557142600900560337" />
+        <var name="sd" id="557142600900560335" />
+      </scope>
+      <scope id="557142600900560324" at="65,0,69,0">
+        <var name="anchorFile" id="557142600900560327" />
+        <var name="element" id="557142600900560325" />
+      </scope>
+      <scope id="557142600900560032" at="86,0,90,0">
+        <var name="file" id="557142600900560037" />
+        <var name="ld" id="557142600900560035" />
+      </scope>
+      <scope id="557142600900560358" at="91,0,95,0">
+        <var name="anchorFile" id="557142600900560365" />
+        <var name="element" id="557142600900560363" />
+        <var name="ld" id="557142600900560361" />
+      </scope>
+      <scope id="557142600900560350" at="96,0,100,0">
+        <var name="anchorFile" id="557142600900560353" />
+        <var name="element" id="557142600900560351" />
+      </scope>
+      <scope id="557142600900560591" at="117,0,121,0">
+        <var name="dd" id="557142600900560594" />
+        <var name="file" id="557142600900560596" />
+      </scope>
+      <scope id="557142600900560599" at="122,0,126,0">
+        <var name="anchorFile" id="557142600900560602" />
+        <var name="element" id="557142600900560600" />
+      </scope>
+      <scope id="557142600900560607" at="127,0,131,0">
+        <var name="anchorFile" id="557142600900560614" />
+        <var name="element" id="557142600900560612" />
+        <var name="t" id="557142600900560610" />
+      </scope>
+      <scope id="557142600900539589" at="45,85,52,7" />
+      <scope id="557142600900560031" at="76,85,83,7" />
+      <scope id="557142600900560590" at="107,83,114,7" />
+      <scope id="557142600900539584" at="44,0,54,0">
+        <var name="file" id="557142600900539585" />
+      </scope>
+      <scope id="557142600900560026" at="75,0,85,0">
+        <var name="file" id="557142600900560027" />
+      </scope>
+      <scope id="557142600900560585" at="106,0,116,0">
+        <var name="file" id="557142600900560586" />
+      </scope>
+      <unit id="557142600900539549" at="40,0,70,0" name="jetbrains.mps.project.io.StandardDescriptorIOProvider$SolutionDescriptorIO" />
+      <unit id="557142600900560017" at="71,0,101,0" name="jetbrains.mps.project.io.StandardDescriptorIOProvider$LanguageDescriptorIO" />
+      <unit id="557142600900560576" at="102,0,132,0" name="jetbrains.mps.project.io.StandardDescriptorIOProvider$DevkitDescriptorIO" />
+      <unit id="557142600900539533" at="17,0,133,0" name="jetbrains.mps.project.io.StandardDescriptorIOProvider" />
+    </file>
   </root>
   <root nodeRef="r:c7bbaee3-030a-4940-995f-2174babaf670(jetbrains.mps.project.io)/9081946191808704816">
-    <nodeInfo nodeId="9081946191808704825" fileName="DescriptorIOException.java" startLine="7" startPosition="49" endLine="8" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="9081946191808704836" fileName="DescriptorIOException.java" startLine="11" startPosition="44" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="9081946191808704818" fileName="DescriptorIOException.java" startLine="7" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DescriptorIOException#(Ljava/lang/Throwable;)V" />
-    <nodeInfo nodeId="9081946191808704830" fileName="DescriptorIOException.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DescriptorIOException#(Ljava/lang/String;)V" />
-    <scopeInfo nodeId="9081946191808704821" fileName="DescriptorIOException.java" startLine="7" startPosition="49" endLine="8" endPosition="17" />
-    <scopeInfo nodeId="9081946191808704833" fileName="DescriptorIOException.java" startLine="11" startPosition="44" endLine="12" endPosition="15" />
-    <scopeInfo nodeId="9081946191808704818" fileName="DescriptorIOException.java" startLine="7" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="9081946191808704823" varName="cause" />
-    </scopeInfo>
-    <scopeInfo nodeId="9081946191808704830" fileName="DescriptorIOException.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="9081946191808704834" varName="msg" />
-    </scopeInfo>
-    <unitInfo nodeId="9081946191808704816" fileName="DescriptorIOException.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.project.io.DescriptorIOException" />
+    <file name="DescriptorIOException.java">
+      <node id="9081946191808704825" at="7,49,8,17" concept="8" />
+      <node id="9081946191808704836" at="11,44,12,15" concept="8" />
+      <node id="9081946191808704818" at="7,0,10,0" concept="0" trace="DescriptorIOException#(Ljava/lang/Throwable;)V" />
+      <node id="9081946191808704830" at="11,0,14,0" concept="0" trace="DescriptorIOException#(Ljava/lang/String;)V" />
+      <scope id="9081946191808704821" at="7,49,8,17" />
+      <scope id="9081946191808704833" at="11,44,12,15" />
+      <scope id="9081946191808704818" at="7,0,10,0">
+        <var name="cause" id="9081946191808704823" />
+      </scope>
+      <scope id="9081946191808704830" at="11,0,14,0">
+        <var name="msg" id="9081946191808704834" />
+      </scope>
+      <unit id="9081946191808704816" at="6,0,15,0" name="jetbrains.mps.project.io.DescriptorIOException" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

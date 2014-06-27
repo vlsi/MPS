@@ -1,31 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:5ceb4cd2-85c0-4fdb-aeb0-9917270f3853(jetbrains.mps.samples.readerConfigLanguage.reader)/3515521059660696290">
-    <nodeInfo nodeId="3515521059660696292" fileName="ReaderStrategy.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReaderStrategy#(Ljava/lang/String;Ljava/lang/Class;)V" />
-    <nodeInfo nodeId="3515521059660696300" fileName="ReaderStrategy.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="AddFieldExtractor#(IILjava/lang/String;)V" />
-    <scopeInfo nodeId="3515521059660696299" fileName="ReaderStrategy.java" startLine="7" startPosition="64" endLine="7" endPosition="64" />
-    <scopeInfo nodeId="3515521059660696309" fileName="ReaderStrategy.java" startLine="10" startPosition="66" endLine="10" endPosition="66" />
-    <scopeInfo nodeId="3515521059660696292" fileName="ReaderStrategy.java" startLine="7" startPosition="0" endLine="9" endPosition="0">
-      <varInfo nodeId="3515521059660696295" varName="mappingCode" />
-      <varInfo nodeId="3515521059660696297" varName="targetClass" />
-    </scopeInfo>
-    <scopeInfo nodeId="3515521059660696300" fileName="ReaderStrategy.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="3515521059660696305" varName="end" />
-      <varInfo nodeId="3515521059660696307" varName="name" />
-      <varInfo nodeId="3515521059660696303" varName="start" />
-    </scopeInfo>
-    <unitInfo nodeId="3515521059660696290" fileName="ReaderStrategy.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.reader.ReaderStrategy" />
+    <file name="ReaderStrategy.java">
+      <node id="3515521059660696292" at="7,0,9,0" concept="0" trace="ReaderStrategy#(Ljava/lang/String;Ljava/lang/Class;)V" />
+      <node id="3515521059660696300" at="10,0,12,0" concept="1" trace="AddFieldExtractor#(IILjava/lang/String;)V" />
+      <scope id="3515521059660696299" at="7,64,7,64" />
+      <scope id="3515521059660696309" at="10,66,10,66" />
+      <scope id="3515521059660696292" at="7,0,9,0">
+        <var name="mappingCode" id="3515521059660696295" />
+        <var name="targetClass" id="3515521059660696297" />
+      </scope>
+      <scope id="3515521059660696300" at="10,0,12,0">
+        <var name="end" id="3515521059660696305" />
+        <var name="name" id="3515521059660696307" />
+        <var name="start" id="3515521059660696303" />
+      </scope>
+      <unit id="3515521059660696290" at="6,0,13,0" name="jetbrains.mps.samples.readerConfigLanguage.reader.ReaderStrategy" />
+    </file>
   </root>
   <root nodeRef="r:5ceb4cd2-85c0-4fdb-aeb0-9917270f3853(jetbrains.mps.samples.readerConfigLanguage.reader)/3515521059660696316">
-    <nodeInfo nodeId="3515521059660696318" fileName="Reader.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Reader#()V" />
-    <nodeInfo nodeId="3515521059660696322" fileName="Reader.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="AddStrategy#(Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;)V" />
-    <scopeInfo nodeId="3515521059660696321" fileName="Reader.java" startLine="7" startPosition="19" endLine="7" endPosition="19" />
-    <scopeInfo nodeId="3515521059660696327" fileName="Reader.java" startLine="10" startPosition="52" endLine="10" endPosition="52" />
-    <scopeInfo nodeId="3515521059660696318" fileName="Reader.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
-    <scopeInfo nodeId="3515521059660696322" fileName="Reader.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="3515521059660696325" varName="strategy" />
-    </scopeInfo>
-    <unitInfo nodeId="3515521059660696316" fileName="Reader.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.reader.Reader" />
+    <file name="Reader.java">
+      <node id="3515521059660696318" at="7,0,9,0" concept="0" trace="Reader#()V" />
+      <node id="3515521059660696322" at="10,0,12,0" concept="1" trace="AddStrategy#(Ljetbrains/mps/samples/readerConfigLanguage/reader/ReaderStrategy;)V" />
+      <scope id="3515521059660696321" at="7,19,7,19" />
+      <scope id="3515521059660696327" at="10,52,10,52" />
+      <scope id="3515521059660696318" at="7,0,9,0" />
+      <scope id="3515521059660696322" at="10,0,12,0">
+        <var name="strategy" id="3515521059660696325" />
+      </scope>
+      <unit id="3515521059660696316" at="6,0,13,0" name="jetbrains.mps.samples.readerConfigLanguage.reader.Reader" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

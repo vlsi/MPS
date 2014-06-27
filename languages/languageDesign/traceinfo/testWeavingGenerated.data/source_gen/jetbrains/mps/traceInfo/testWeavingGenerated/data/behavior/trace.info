@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="ChildConceptWeaveEachMany_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveEachMany_BehaviorDescriptor" />
-  <unitInfo fileName="ChildConceptWeaveEach_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveEach_BehaviorDescriptor" />
-  <unitInfo fileName="ChildConceptWeaveMany_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveMany_BehaviorDescriptor" />
-  <unitInfo fileName="ChildConceptWeave_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeave_BehaviorDescriptor" />
-  <unitInfo fileName="RootConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.RootConcept_BehaviorDescriptor" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="ChildConceptWeaveMany_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveMany_BehaviorDescriptor" />
+    </file>
+    <file name="ChildConceptWeaveEachMany_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveEachMany_BehaviorDescriptor" />
+    </file>
+    <file name="ChildConceptWeave_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeave_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,32,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ChildConceptWeaveEach_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.ChildConceptWeaveEach_BehaviorDescriptor" />
+    </file>
+    <file name="RootConcept_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.traceInfo.testWeavingGenerated.data.behavior.RootConcept_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

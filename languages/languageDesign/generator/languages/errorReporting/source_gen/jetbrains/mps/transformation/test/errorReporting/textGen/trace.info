@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:e99b0478-397a-402b-a078-57c984a0eca3(jetbrains.mps.transformation.test.errorReporting.textGen)/7287346816896128678">
-    <nodeInfo nodeId="7287346816896135357" fileName="ErrorReportingRoot_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7287346816896135357" fileName="ErrorReportingRoot_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7287346816896135365" fileName="ErrorReportingRoot_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7287346816896135365" fileName="ErrorReportingRoot_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7287346816896135370" fileName="ErrorReportingRoot_TextGen.java" startLine="11" startPosition="25" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7287346816896135370" fileName="ErrorReportingRoot_TextGen.java" startLine="11" startPosition="25" endLine="12" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7287346816896128678" fileName="ErrorReportingRoot_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="7287346816896135357" fileName="ErrorReportingRoot_TextGen.java" startLine="9" startPosition="42" endLine="10" endPosition="42" />
-    <scopeInfo nodeId="7287346816896135365" fileName="ErrorReportingRoot_TextGen.java" startLine="10" startPosition="42" endLine="11" endPosition="25" />
-    <scopeInfo nodeId="7287346816896135370" fileName="ErrorReportingRoot_TextGen.java" startLine="11" startPosition="25" endLine="12" endPosition="21" />
-    <scopeInfo nodeId="7287346816896128678" fileName="ErrorReportingRoot_TextGen.java" startLine="9" startPosition="42" endLine="12" endPosition="21" />
-    <scopeInfo nodeId="7287346816896128678" fileName="ErrorReportingRoot_TextGen.java" startLine="9" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="7287346816896128678" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="7287346816896128678" fileName="ErrorReportingRoot_TextGen.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.transformation.test.errorReporting.textGen.ErrorReportingRoot_TextGen" />
+    <file name="ErrorReportingRoot_TextGen.java">
+      <node id="7287346816896135357" at="9,42,10,42" concept="0" />
+      <node id="7287346816896135357" at="9,42,10,42" concept="1" />
+      <node id="7287346816896135365" at="10,42,11,25" concept="0" />
+      <node id="7287346816896135365" at="10,42,11,25" concept="1" />
+      <node id="7287346816896135370" at="11,25,12,21" concept="0" />
+      <node id="7287346816896135370" at="11,25,12,21" concept="1" />
+      <node id="7287346816896128678" at="9,0,14,0" concept="2" trace="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="7287346816896135357" at="9,42,10,42" />
+      <scope id="7287346816896135365" at="10,42,11,25" />
+      <scope id="7287346816896135370" at="11,25,12,21" />
+      <scope id="7287346816896128678" at="9,42,12,21" />
+      <scope id="7287346816896128678" at="9,0,14,0">
+        <var name="node" id="7287346816896128678" />
+      </scope>
+      <unit id="7287346816896128678" at="8,0,15,0" name="jetbrains.mps.transformation.test.errorReporting.textGen.ErrorReportingRoot_TextGen" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

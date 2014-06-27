@@ -1,59 +1,75 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="11" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.core.xml.structure.StructureAspectDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root>
+    <file name="StructureAspectDescriptor.java">
+      <unit at="11,0,78,0" name="jetbrains.mps.core.xml.structure.StructureAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)/3374336260035925079">
-    <nodeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
-    <scopeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="59">
-      <varInfo nodeId="3374336260035925079" varName="testValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="3374336260035925079" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="3374336260035925079" fileName="xmlEncoding_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.core.xml.structure.xmlEncoding_PropertySupport" />
+    <file name="xmlEncoding_PropertySupport.java">
+      <node id="3374336260035925079" at="8,44,9,28" concept="4" />
+      <node id="3374336260035925079" at="10,24,11,21" concept="1" />
+      <node id="3374336260035925079" at="12,12,13,24" concept="1" />
+      <node id="3374336260035925079" at="14,5,15,59" concept="5" />
+      <node id="3374336260035925079" at="12,10,14,5" concept="0" />
+      <node id="3374336260035925079" at="9,28,14,5" concept="2" />
+      <node id="3374336260035925079" at="8,0,17,0" concept="3" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <scope id="3374336260035925079" at="10,24,11,21" />
+      <scope id="3374336260035925079" at="12,12,13,24" />
+      <scope id="3374336260035925079" at="8,44,15,59">
+        <var name="testValue" id="3374336260035925079" />
+      </scope>
+      <scope id="3374336260035925079" at="8,0,17,0">
+        <var name="value" id="3374336260035925079" />
+      </scope>
+      <unit id="3374336260035925079" at="7,0,18,0" name="jetbrains.mps.core.xml.structure.xmlEncoding_PropertySupport" />
+    </file>
   </root>
   <root nodeRef="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)/3374336260035925081">
-    <nodeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
-    <scopeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="39">
-      <varInfo nodeId="3374336260035925081" varName="testValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="3374336260035925081" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="3374336260035925081" fileName="yesNoString_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.core.xml.structure.yesNoString_PropertySupport" />
+    <file name="yesNoString_PropertySupport.java">
+      <node id="3374336260035925081" at="8,44,9,28" concept="4" />
+      <node id="3374336260035925081" at="10,24,11,21" concept="1" />
+      <node id="3374336260035925081" at="12,12,13,24" concept="1" />
+      <node id="3374336260035925081" at="14,5,15,39" concept="5" />
+      <node id="3374336260035925081" at="12,10,14,5" concept="0" />
+      <node id="3374336260035925081" at="9,28,14,5" concept="2" />
+      <node id="3374336260035925081" at="8,0,17,0" concept="3" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <scope id="3374336260035925081" at="10,24,11,21" />
+      <scope id="3374336260035925081" at="12,12,13,24" />
+      <scope id="3374336260035925081" at="8,44,15,39">
+        <var name="testValue" id="3374336260035925081" />
+      </scope>
+      <scope id="3374336260035925081" at="8,0,17,0">
+        <var name="value" id="3374336260035925081" />
+      </scope>
+      <unit id="3374336260035925081" at="7,0,18,0" name="jetbrains.mps.core.xml.structure.yesNoString_PropertySupport" />
+    </file>
   </root>
   <root nodeRef="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)/5491461270226117666">
-    <nodeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="8" startPosition="44" endLine="9" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="14" startPosition="5" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="12" startPosition="10" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="9" startPosition="28" endLine="14" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <scopeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="10" startPosition="24" endLine="11" endPosition="21" />
-    <scopeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="12" startPosition="12" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="8" startPosition="44" endLine="15" endPosition="41">
-      <varInfo nodeId="5491461270226117666" varName="testValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="8" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="5491461270226117666" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="5491461270226117666" fileName="xmlVersionString_PropertySupport.java" startLine="7" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.core.xml.structure.xmlVersionString_PropertySupport" />
+    <file name="xmlVersionString_PropertySupport.java">
+      <node id="5491461270226117666" at="8,44,9,28" concept="4" />
+      <node id="5491461270226117666" at="10,24,11,21" concept="1" />
+      <node id="5491461270226117666" at="12,12,13,24" concept="1" />
+      <node id="5491461270226117666" at="14,5,15,41" concept="5" />
+      <node id="5491461270226117666" at="12,10,14,5" concept="0" />
+      <node id="5491461270226117666" at="9,28,14,5" concept="2" />
+      <node id="5491461270226117666" at="8,0,17,0" concept="3" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <scope id="5491461270226117666" at="10,24,11,21" />
+      <scope id="5491461270226117666" at="12,12,13,24" />
+      <scope id="5491461270226117666" at="8,44,15,41">
+        <var name="testValue" id="5491461270226117666" />
+      </scope>
+      <scope id="5491461270226117666" at="8,0,17,0">
+        <var name="value" id="5491461270226117666" />
+      </scope>
+      <unit id="5491461270226117666" at="7,0,18,0" name="jetbrains.mps.core.xml.structure.xmlVersionString_PropertySupport" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -1,88 +1,104 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="testDefaultEditor.constraints.ConstraintsAspectDescriptor" />
-  <root nodeRef="r:4903a1be-5d28-4ffe-9f02-a773c7ca3a1a(testDefaultEditor.constraints)/6007318803035047592">
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="27" startPosition="34" endLine="28" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="32" startPosition="83" endLine="33" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="36" startPosition="44" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="45" startPosition="63" endLine="46" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6007318803035147862" fileName="Developer_Constraints.java" startLine="58" startPosition="84" endLine="59" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6007318803035538442" fileName="Developer_Constraints.java" startLine="59" startPosition="83" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6007318803035537046" fileName="Developer_Constraints.java" startLine="60" startPosition="0" endLine="61" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6007318803035679223" fileName="Developer_Constraints.java" startLine="62" startPosition="103" endLine="63" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6007318803035673695" fileName="Developer_Constraints.java" startLine="63" startPosition="107" endLine="64" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6007318803035684907" fileName="Developer_Constraints.java" startLine="65" startPosition="95" endLine="66" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6007318803035707229" fileName="Developer_Constraints.java" startLine="66" startPosition="100" endLine="67" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6007318803035541044" fileName="Developer_Constraints.java" startLine="68" startPosition="26" endLine="69" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6007318803035672331" fileName="Developer_Constraints.java" startLine="71" startPosition="17" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6007318803035157678" fileName="Developer_Constraints.java" startLine="72" startPosition="0" endLine="73" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6007318803035536165" fileName="Developer_Constraints.java" startLine="86" startPosition="80" endLine="87" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6007318803035536579" fileName="Developer_Constraints.java" startLine="101" startPosition="86" endLine="102" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="108" startPosition="7" endLine="109" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="112" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_f3ukjk_a0a0a0a0a1a0b0a1a1" />
-    <nodeInfo nodeId="6007318803035910410" fileName="Developer_Constraints.java" startLine="68" startPosition="24" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Developer_Constraints#()V" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="6007318803035686927" fileName="Developer_Constraints.java" startLine="64" startPosition="66" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6007318803035661284" fileName="Developer_Constraints.java" startLine="61" startPosition="62" endLine="71" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6007318803035485249" fileName="Developer_Constraints.java" startLine="76" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="6007318803035485273" fileName="Developer_Constraints.java" startLine="90" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6007318803035485233" fileName="Developer_Constraints.java" startLine="52" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="50" startPosition="122" endLine="104" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6007318803035473154" fileName="Developer_Constraints.java" startLine="50" startPosition="122" endLine="104" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="49" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="42" startPosition="56" endLine="106" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="40" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="33" startPosition="75" endLine="108" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="31" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="27" startPosition="34" endLine="28" endPosition="51" />
-    <scopeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="36" startPosition="44" endLine="37" endPosition="20" />
-    <scopeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="45" startPosition="63" endLine="46" endPosition="58" />
-    <scopeInfo nodeId="6007318803035910411" fileName="Developer_Constraints.java" startLine="68" startPosition="26" endLine="69" endPosition="70" />
-    <scopeInfo nodeId="6007318803035485271" fileName="Developer_Constraints.java" startLine="86" startPosition="80" endLine="87" endPosition="28" />
-    <scopeInfo nodeId="6007318803035485297" fileName="Developer_Constraints.java" startLine="101" startPosition="86" endLine="102" endPosition="28" />
-    <scopeInfo nodeId="6007318803035686929" fileName="Developer_Constraints.java" startLine="65" startPosition="95" endLine="67" endPosition="142">
-      <varInfo nodeId="6007318803035684910" varName="teamNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="44" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="6007318803035661286" fileName="Developer_Constraints.java" startLine="62" startPosition="103" endLine="70" endPosition="19">
-      <varInfo nodeId="6007318803035679224" varName="devnode" />
-      <varInfo nodeId="6007318803035673698" varName="team" />
-    </scopeInfo>
-    <scopeInfo nodeId="6007318803035485249" fileName="Developer_Constraints.java" startLine="76" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="6007318803035485253" varName="contextNode" />
-      <varInfo nodeId="6007318803035485255" varName="refText" />
-    </scopeInfo>
-    <scopeInfo nodeId="6007318803035485273" fileName="Developer_Constraints.java" startLine="90" startPosition="0" endLine="104" endPosition="0">
-      <varInfo nodeId="6007318803035485277" varName="contextNode" />
-      <varInfo nodeId="6007318803035485279" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="6007318803035485247" fileName="Developer_Constraints.java" startLine="58" startPosition="84" endLine="73" endPosition="30">
-      <varInfo nodeId="6007318803035537049" varName="developer" />
-      <varInfo nodeId="6007318803035147865" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="6007318803035485233" fileName="Developer_Constraints.java" startLine="52" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="6007318803035485238" varName="prefix" />
-    </scopeInfo>
-    <scopeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="50" startPosition="122" endLine="104" endPosition="14" />
-    <scopeInfo nodeId="6007318803035473132" fileName="Developer_Constraints.java" startLine="50" startPosition="122" endLine="104" endPosition="14" />
-    <scopeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="49" startPosition="0" endLine="106" endPosition="0">
-      <varInfo nodeId="6007318803035047592" varName="_context" />
-      <varInfo nodeId="6007318803035047592" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="42" startPosition="56" endLine="106" endPosition="10" />
-    <scopeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="40" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="32" startPosition="83" endLine="109" endPosition="22">
-      <varInfo nodeId="6007318803035047592" varName="references" />
-    </scopeInfo>
-    <scopeInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="31" startPosition="0" endLine="111" endPosition="0" />
-    <unitInfo nodeId="6007318803035485231" fileName="Developer_Constraints.java" startLine="51" startPosition="23" endLine="104" endPosition="13" unitName="testDefaultEditor.constraints.Developer_Constraints$3" />
-    <unitInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="43" startPosition="19" endLine="106" endPosition="9" unitName="testDefaultEditor.constraints.Developer_Constraints$2" />
-    <unitInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="34" startPosition="37" endLine="108" endPosition="5" unitName="testDefaultEditor.constraints.Developer_Constraints$1" />
-    <unitInfo nodeId="6007318803035047592" fileName="Developer_Constraints.java" startLine="26" startPosition="0" endLine="114" endPosition="0" unitName="testDefaultEditor.constraints.Developer_Constraints" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,25,0" name="testDefaultEditor.constraints.ConstraintsAspectDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:4903a1be-5d28-4ffe-9f02-a773c7ca3a1a(testDefaultEditor.constraints)/6007318803035047592">
+    <file name="Developer_Constraints.java">
+      <node id="6007318803035047592" at="27,34,28,51" concept="9" />
+      <node id="6007318803035047592" at="32,83,33,75" concept="5" />
+      <node id="6007318803035047592" at="36,44,37,20" concept="6" />
+      <node id="6007318803035047592" at="45,63,46,58" concept="6" />
+      <node id="6007318803035147862" at="58,84,59,83" concept="5" />
+      <node id="6007318803035538442" at="59,83,60,0" concept="7" />
+      <node id="6007318803035537046" at="60,0,61,62" concept="5" />
+      <node id="6007318803035679223" at="62,103,63,107" concept="5" />
+      <node id="6007318803035673695" at="63,107,64,66" concept="5" />
+      <node id="6007318803035684907" at="65,95,66,100" concept="5" />
+      <node id="6007318803035707229" at="66,100,67,142" concept="2" />
+      <node id="6007318803035541044" at="68,26,69,70" concept="2" />
+      <node id="6007318803035672331" at="71,17,72,0" concept="7" />
+      <node id="6007318803035157678" at="72,0,73,30" concept="6" />
+      <node id="6007318803035536165" at="86,80,87,28" concept="6" />
+      <node id="6007318803035536579" at="101,86,102,28" concept="6" />
+      <node id="6007318803035047592" at="108,7,109,22" concept="6" />
+      <node id="6007318803035047592" at="112,0,113,0" concept="8" trace="breakingNode_f3ukjk_a0a0a0a0a1a0b0a1a1" />
+      <node id="6007318803035910410" at="68,24,70,19" concept="0" />
+      <node id="6007318803035047592" at="27,0,30,0" concept="1" trace="Developer_Constraints#()V" />
+      <node id="6007318803035047592" at="35,0,39,0" concept="4" trace="hasOwnScopeProvider#()Z" />
+      <node id="6007318803035047592" at="44,0,48,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="6007318803035686927" at="64,66,70,19" concept="3" />
+      <node id="6007318803035661284" at="61,62,71,17" concept="3" />
+      <node id="6007318803035485249" at="76,0,89,0" concept="4" trace="resolve#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="6007318803035485273" at="90,0,104,0" concept="4" trace="getReferenceText#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="6007318803035485233" at="52,0,75,0" concept="4" trace="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
+      <node id="6007318803035047592" at="50,122,104,14" concept="0" />
+      <node id="6007318803035473154" at="50,122,104,14" concept="6" />
+      <node id="6007318803035047592" at="49,0,106,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="6007318803035047592" at="42,56,106,10" concept="6" />
+      <node id="6007318803035047592" at="40,0,108,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="6007318803035047592" at="33,75,108,7" concept="2" />
+      <node id="6007318803035047592" at="31,0,111,0" concept="4" trace="getNotDefaultReferences#()Ljava/util/Map;" />
+      <scope id="6007318803035047592" at="27,34,28,51" />
+      <scope id="6007318803035047592" at="36,44,37,20" />
+      <scope id="6007318803035047592" at="45,63,46,58" />
+      <scope id="6007318803035910411" at="68,26,69,70" />
+      <scope id="6007318803035485271" at="86,80,87,28" />
+      <scope id="6007318803035485297" at="101,86,102,28" />
+      <scope id="6007318803035686929" at="65,95,67,142">
+        <var name="teamNode" id="6007318803035684910" />
+      </scope>
+      <scope id="6007318803035047592" at="27,0,30,0" />
+      <scope id="6007318803035047592" at="35,0,39,0" />
+      <scope id="6007318803035047592" at="44,0,48,0" />
+      <scope id="6007318803035661286" at="62,103,70,19">
+        <var name="devnode" id="6007318803035679224" />
+        <var name="team" id="6007318803035673698" />
+      </scope>
+      <scope id="6007318803035485249" at="76,0,89,0">
+        <var name="contextNode" id="6007318803035485253" />
+        <var name="refText" id="6007318803035485255" />
+      </scope>
+      <scope id="6007318803035485273" at="90,0,104,0">
+        <var name="contextNode" id="6007318803035485277" />
+        <var name="node" id="6007318803035485279" />
+      </scope>
+      <scope id="6007318803035485247" at="58,84,73,30">
+        <var name="developer" id="6007318803035537049" />
+        <var name="result" id="6007318803035147865" />
+      </scope>
+      <scope id="6007318803035485233" at="52,0,75,0">
+        <var name="prefix" id="6007318803035485238" />
+      </scope>
+      <scope id="6007318803035047592" at="50,122,104,14" />
+      <scope id="6007318803035473132" at="50,122,104,14" />
+      <scope id="6007318803035047592" at="49,0,106,0">
+        <var name="_context" id="6007318803035047592" />
+        <var name="operationContext" id="6007318803035047592" />
+      </scope>
+      <scope id="6007318803035047592" at="42,56,106,10" />
+      <scope id="6007318803035047592" at="40,0,108,0" />
+      <scope id="6007318803035047592" at="32,83,109,22">
+        <var name="references" id="6007318803035047592" />
+      </scope>
+      <scope id="6007318803035047592" at="31,0,111,0" />
+      <unit id="6007318803035485231" at="51,23,104,13" name="testDefaultEditor.constraints.Developer_Constraints$3" />
+      <unit id="6007318803035047592" at="43,19,106,9" name="testDefaultEditor.constraints.Developer_Constraints$2" />
+      <unit id="6007318803035047592" at="34,37,108,5" name="testDefaultEditor.constraints.Developer_Constraints$1" />
+      <unit id="6007318803035047592" at="26,0,114,0" name="testDefaultEditor.constraints.Developer_Constraints" />
+    </file>
+  </root>
+</debug-info>
 

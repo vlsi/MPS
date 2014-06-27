@@ -1,294 +1,320 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)/4001135958234331732">
-    <nodeInfo nodeId="4001135958234332684" fileName="DailyStockPrice.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="date" />
-    <nodeInfo nodeId="4001135958234332696" fileName="DailyStockPrice.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="open" />
-    <nodeInfo nodeId="4001135958234332773" fileName="DailyStockPrice.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="high" />
-    <nodeInfo nodeId="4001135958234332803" fileName="DailyStockPrice.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="low" />
-    <nodeInfo nodeId="4001135958234332736" fileName="DailyStockPrice.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="close" />
-    <nodeInfo nodeId="4001135958234333066" fileName="DailyStockPrice.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="volume" />
-    <nodeInfo nodeId="4001135958234333337" fileName="DailyStockPrice.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="adjustedClose" />
-    <nodeInfo nodeId="4001135958234333762" fileName="DailyStockPrice.java" startLine="19" startPosition="133" endLine="20" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234333772" fileName="DailyStockPrice.java" startLine="20" startPosition="17" endLine="21" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234333782" fileName="DailyStockPrice.java" startLine="21" startPosition="57" endLine="22" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234333792" fileName="DailyStockPrice.java" startLine="22" startPosition="57" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234333802" fileName="DailyStockPrice.java" startLine="23" startPosition="55" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234333812" fileName="DailyStockPrice.java" startLine="24" startPosition="59" endLine="25" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234333822" fileName="DailyStockPrice.java" startLine="25" startPosition="61" endLine="26" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234336131" fileName="DailyStockPrice.java" startLine="31" startPosition="25" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958234336137" fileName="DailyStockPrice.java" startLine="35" startPosition="31" endLine="36" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958234336143" fileName="DailyStockPrice.java" startLine="39" startPosition="31" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958234336149" fileName="DailyStockPrice.java" startLine="43" startPosition="30" endLine="44" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958234336155" fileName="DailyStockPrice.java" startLine="47" startPosition="32" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958234336161" fileName="DailyStockPrice.java" startLine="51" startPosition="33" endLine="52" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958234336167" fileName="DailyStockPrice.java" startLine="55" startPosition="40" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958234336127" fileName="DailyStockPrice.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDate#()Ljava/util/Date;" />
-    <nodeInfo nodeId="4001135958234336133" fileName="DailyStockPrice.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getOpen#()Ljava/math/BigDecimal;" />
-    <nodeInfo nodeId="4001135958234336139" fileName="DailyStockPrice.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getHigh#()Ljava/math/BigDecimal;" />
-    <nodeInfo nodeId="4001135958234336145" fileName="DailyStockPrice.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLow#()Ljava/math/BigDecimal;" />
-    <nodeInfo nodeId="4001135958234336151" fileName="DailyStockPrice.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClose#()Ljava/math/BigDecimal;" />
-    <nodeInfo nodeId="4001135958234336157" fileName="DailyStockPrice.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getVolume#()Ljava/math/BigDecimal;" />
-    <nodeInfo nodeId="4001135958234336163" fileName="DailyStockPrice.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdjustedClose#()Ljava/math/BigDecimal;" />
-    <nodeInfo nodeId="4001135958234333754" fileName="DailyStockPrice.java" startLine="19" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DailyStockPrice#(Ljava/util/Date;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
-    <scopeInfo nodeId="4001135958234336130" fileName="DailyStockPrice.java" startLine="31" startPosition="25" endLine="32" endPosition="16" />
-    <scopeInfo nodeId="4001135958234336136" fileName="DailyStockPrice.java" startLine="35" startPosition="31" endLine="36" endPosition="16" />
-    <scopeInfo nodeId="4001135958234336142" fileName="DailyStockPrice.java" startLine="39" startPosition="31" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="4001135958234336148" fileName="DailyStockPrice.java" startLine="43" startPosition="30" endLine="44" endPosition="15" />
-    <scopeInfo nodeId="4001135958234336154" fileName="DailyStockPrice.java" startLine="47" startPosition="32" endLine="48" endPosition="17" />
-    <scopeInfo nodeId="4001135958234336160" fileName="DailyStockPrice.java" startLine="51" startPosition="33" endLine="52" endPosition="18" />
-    <scopeInfo nodeId="4001135958234336166" fileName="DailyStockPrice.java" startLine="55" startPosition="40" endLine="56" endPosition="25" />
-    <scopeInfo nodeId="4001135958234336127" fileName="DailyStockPrice.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="4001135958234336133" fileName="DailyStockPrice.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="4001135958234336139" fileName="DailyStockPrice.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="4001135958234336145" fileName="DailyStockPrice.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="4001135958234336151" fileName="DailyStockPrice.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="4001135958234336157" fileName="DailyStockPrice.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="4001135958234336163" fileName="DailyStockPrice.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="4001135958234333758" fileName="DailyStockPrice.java" startLine="19" startPosition="133" endLine="26" endPosition="75" />
-    <scopeInfo nodeId="4001135958234333754" fileName="DailyStockPrice.java" startLine="19" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="4001135958234333821" varName="adjustedClose1" />
-      <varInfo nodeId="4001135958234333801" varName="close1" />
-      <varInfo nodeId="4001135958234333761" varName="date1" />
-      <varInfo nodeId="4001135958234333781" varName="high1" />
-      <varInfo nodeId="4001135958234333791" varName="low1" />
-      <varInfo nodeId="4001135958234333771" varName="open1" />
-      <varInfo nodeId="4001135958234333811" varName="volume1" />
-    </scopeInfo>
-    <unitInfo nodeId="4001135958234331732" fileName="DailyStockPrice.java" startLine="8" startPosition="0" endLine="59" endPosition="0" unitName="org.jetbrains.mps.samples.money.runtime.DailyStockPrice" />
+    <file name="DailyStockPrice.java">
+      <node id="4001135958234332684" at="9,0,10,0" concept="3" trace="date" />
+      <node id="4001135958234332696" at="10,0,11,0" concept="3" trace="open" />
+      <node id="4001135958234332773" at="11,0,12,0" concept="3" trace="high" />
+      <node id="4001135958234332803" at="12,0,13,0" concept="3" trace="low" />
+      <node id="4001135958234332736" at="13,0,14,0" concept="3" trace="close" />
+      <node id="4001135958234333066" at="14,0,15,0" concept="3" trace="volume" />
+      <node id="4001135958234333337" at="15,0,16,0" concept="3" trace="adjustedClose" />
+      <node id="4001135958234333762" at="19,133,20,17" concept="2" />
+      <node id="4001135958234333772" at="20,17,21,57" concept="2" />
+      <node id="4001135958234333782" at="21,57,22,57" concept="2" />
+      <node id="4001135958234333792" at="22,57,23,55" concept="2" />
+      <node id="4001135958234333802" at="23,55,24,59" concept="2" />
+      <node id="4001135958234333812" at="24,59,25,61" concept="2" />
+      <node id="4001135958234333822" at="25,61,26,75" concept="2" />
+      <node id="4001135958234336131" at="31,25,32,16" concept="8" />
+      <node id="4001135958234336137" at="35,31,36,16" concept="8" />
+      <node id="4001135958234336143" at="39,31,40,16" concept="8" />
+      <node id="4001135958234336149" at="43,30,44,15" concept="8" />
+      <node id="4001135958234336155" at="47,32,48,17" concept="8" />
+      <node id="4001135958234336161" at="51,33,52,18" concept="8" />
+      <node id="4001135958234336167" at="55,40,56,25" concept="8" />
+      <node id="4001135958234336127" at="31,0,34,0" concept="6" trace="getDate#()Ljava/util/Date;" />
+      <node id="4001135958234336133" at="35,0,38,0" concept="6" trace="getOpen#()Ljava/math/BigDecimal;" />
+      <node id="4001135958234336139" at="39,0,42,0" concept="6" trace="getHigh#()Ljava/math/BigDecimal;" />
+      <node id="4001135958234336145" at="43,0,46,0" concept="6" trace="getLow#()Ljava/math/BigDecimal;" />
+      <node id="4001135958234336151" at="47,0,50,0" concept="6" trace="getClose#()Ljava/math/BigDecimal;" />
+      <node id="4001135958234336157" at="51,0,54,0" concept="6" trace="getVolume#()Ljava/math/BigDecimal;" />
+      <node id="4001135958234336163" at="55,0,58,0" concept="6" trace="getAdjustedClose#()Ljava/math/BigDecimal;" />
+      <node id="4001135958234333754" at="19,0,28,0" concept="1" trace="DailyStockPrice#(Ljava/util/Date;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
+      <scope id="4001135958234336130" at="31,25,32,16" />
+      <scope id="4001135958234336136" at="35,31,36,16" />
+      <scope id="4001135958234336142" at="39,31,40,16" />
+      <scope id="4001135958234336148" at="43,30,44,15" />
+      <scope id="4001135958234336154" at="47,32,48,17" />
+      <scope id="4001135958234336160" at="51,33,52,18" />
+      <scope id="4001135958234336166" at="55,40,56,25" />
+      <scope id="4001135958234336127" at="31,0,34,0" />
+      <scope id="4001135958234336133" at="35,0,38,0" />
+      <scope id="4001135958234336139" at="39,0,42,0" />
+      <scope id="4001135958234336145" at="43,0,46,0" />
+      <scope id="4001135958234336151" at="47,0,50,0" />
+      <scope id="4001135958234336157" at="51,0,54,0" />
+      <scope id="4001135958234336163" at="55,0,58,0" />
+      <scope id="4001135958234333758" at="19,133,26,75" />
+      <scope id="4001135958234333754" at="19,0,28,0">
+        <var name="adjustedClose1" id="4001135958234333821" />
+        <var name="close1" id="4001135958234333801" />
+        <var name="date1" id="4001135958234333761" />
+        <var name="high1" id="4001135958234333781" />
+        <var name="low1" id="4001135958234333791" />
+        <var name="open1" id="4001135958234333771" />
+        <var name="volume1" id="4001135958234333811" />
+      </scope>
+      <unit id="4001135958234331732" at="8,0,59,0" name="org.jetbrains.mps.samples.money.runtime.DailyStockPrice" />
+    </file>
   </root>
   <root nodeRef="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)/4001135958234855014">
-    <nodeInfo nodeId="4001135958234855082" fileName="StockPriceDownloader.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="instance" />
-    <nodeInfo nodeId="4001135958234855778" fileName="StockPriceDownloader.java" startLine="26" startPosition="52" endLine="27" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958234970127" fileName="StockPriceDownloader.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="priceCache" />
-    <nodeInfo nodeId="4001135958234994538" fileName="StockPriceDownloader.java" startLine="39" startPosition="28" endLine="40" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958235448370" fileName="StockPriceDownloader.java" startLine="45" startPosition="52" endLine="46" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958235026353" fileName="StockPriceDownloader.java" startLine="53" startPosition="11" endLine="54" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958235312362" fileName="StockPriceDownloader.java" startLine="55" startPosition="29" endLine="56" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958233347544" fileName="StockPriceDownloader.java" startLine="56" startPosition="75" endLine="57" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958233349324" fileName="StockPriceDownloader.java" startLine="57" startPosition="85" endLine="58" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958233419547" fileName="StockPriceDownloader.java" startLine="58" startPosition="55" endLine="59" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958233424530" fileName="StockPriceDownloader.java" startLine="59" startPosition="84" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958233523151" fileName="StockPriceDownloader.java" startLine="60" startPosition="22" endLine="61" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958234461229" fileName="StockPriceDownloader.java" startLine="61" startPosition="32" endLine="62" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958233557228" fileName="StockPriceDownloader.java" startLine="64" startPosition="28" endLine="65" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958233577786" fileName="StockPriceDownloader.java" startLine="65" startPosition="44" endLine="66" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958233603691" fileName="StockPriceDownloader.java" startLine="68" startPosition="45" endLine="69" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234413420" fileName="StockPriceDownloader.java" startLine="70" startPosition="17" endLine="71" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958233562533" fileName="StockPriceDownloader.java" startLine="71" startPosition="141" endLine="72" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234410687" fileName="StockPriceDownloader.java" startLine="72" startPosition="64" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4001135958234652131" fileName="StockPriceDownloader.java" startLine="74" startPosition="42" endLine="75" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4001135958234666987" fileName="StockPriceDownloader.java" startLine="75" startPosition="38" endLine="76" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958233635293" fileName="StockPriceDownloader.java" startLine="77" startPosition="53" endLine="78" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4001135958233621269" fileName="StockPriceDownloader.java" startLine="78" startPosition="38" endLine="79" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958233546085" fileName="StockPriceDownloader.java" startLine="81" startPosition="20" endLine="82" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958235113327" fileName="StockPriceDownloader.java" startLine="84" startPosition="11" endLine="85" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958233645900" fileName="StockPriceDownloader.java" startLine="86" startPosition="9" endLine="87" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958233352220" fileName="StockPriceDownloader.java" startLine="88" startPosition="41" endLine="89" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958233362569" fileName="StockPriceDownloader.java" startLine="90" startPosition="31" endLine="91" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958233830184" fileName="StockPriceDownloader.java" startLine="93" startPosition="12" endLine="94" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958234114568" fileName="StockPriceDownloader.java" startLine="100" startPosition="70" endLine="101" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958234855897" fileName="StockPriceDownloader.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StockPriceDownloader#()V" />
-    <nodeInfo nodeId="4001135958233544918" fileName="StockPriceDownloader.java" startLine="81" startPosition="18" endLine="83" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958233824459" fileName="StockPriceDownloader.java" startLine="93" startPosition="10" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4001135958234855043" fileName="StockPriceDownloader.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Lorg/jetbrains/mps/samples/money/runtime/StockPriceDownloader;" />
-    <nodeInfo nodeId="4001135958234990791" fileName="StockPriceDownloader.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearCache#()V" />
-    <nodeInfo nodeId="4001135958235427774" fileName="StockPriceDownloader.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isValidStockSymbol#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="4001135958233588641" fileName="StockPriceDownloader.java" startLine="67" startPosition="19" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4001135958234114568" fileName="StockPriceDownloader.java" startLine="100" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="trim_54jj5w_a0a0a0a2a0a7a1a0a0a21#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4001135958233615363" fileName="StockPriceDownloader.java" startLine="66" startPosition="73" endLine="80" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4001135958233535996" fileName="StockPriceDownloader.java" startLine="63" startPosition="54" endLine="83" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001135958233422324" fileName="StockPriceDownloader.java" startLine="62" startPosition="75" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4001135958235056085" fileName="StockPriceDownloader.java" startLine="54" startPosition="83" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001135958233350117" fileName="StockPriceDownloader.java" startLine="52" startPosition="50" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4001135958233295814" fileName="StockPriceDownloader.java" startLine="51" startPosition="47" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4001135958234862735" fileName="StockPriceDownloader.java" startLine="51" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentPrice#(Ljava/lang/String;)Lorg/jetbrains/mps/samples/money/runtime/Money;" />
-    <scopeInfo nodeId="4001135958234855901" fileName="StockPriceDownloader.java" startLine="32" startPosition="34" endLine="32" endPosition="34" />
-    <scopeInfo nodeId="4001135958234855046" fileName="StockPriceDownloader.java" startLine="26" startPosition="52" endLine="27" endPosition="20" />
-    <scopeInfo nodeId="4001135958234990794" fileName="StockPriceDownloader.java" startLine="39" startPosition="28" endLine="40" endPosition="44" />
-    <scopeInfo nodeId="4001135958235427777" fileName="StockPriceDownloader.java" startLine="45" startPosition="52" endLine="46" endPosition="43" />
-    <scopeInfo nodeId="4001135958233588644" fileName="StockPriceDownloader.java" startLine="68" startPosition="45" endLine="69" endPosition="85" />
-    <scopeInfo nodeId="4001135958233544919" fileName="StockPriceDownloader.java" startLine="81" startPosition="20" endLine="82" endPosition="29" />
-    <scopeInfo nodeId="4001135958233350131" fileName="StockPriceDownloader.java" startLine="88" startPosition="0" endLine="89" endPosition="20">
-      <varInfo nodeId="4001135958233350135" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958233350134" fileName="StockPriceDownloader.java" startLine="88" startPosition="41" endLine="89" endPosition="20" />
-    <scopeInfo nodeId="4001135958233350124" fileName="StockPriceDownloader.java" startLine="90" startPosition="0" endLine="91" endPosition="20">
-      <varInfo nodeId="4001135958233350128" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958233350127" fileName="StockPriceDownloader.java" startLine="90" startPosition="31" endLine="91" endPosition="20" />
-    <scopeInfo nodeId="4001135958233824460" fileName="StockPriceDownloader.java" startLine="93" startPosition="12" endLine="94" endPosition="18" />
-    <scopeInfo nodeId="4001135958234114568" fileName="StockPriceDownloader.java" startLine="100" startPosition="70" endLine="101" endPosition="45" />
-    <scopeInfo nodeId="4001135958234855897" fileName="StockPriceDownloader.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="4001135958234638627" fileName="StockPriceDownloader.java" startLine="74" startPosition="0" endLine="76" endPosition="28">
-      <varInfo nodeId="4001135958234638628" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958234638630" fileName="StockPriceDownloader.java" startLine="74" startPosition="42" endLine="76" endPosition="28" />
-    <scopeInfo nodeId="4001135958233615365" fileName="StockPriceDownloader.java" startLine="77" startPosition="0" endLine="79" endPosition="28">
-      <varInfo nodeId="4001135958233615366" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958233615368" fileName="StockPriceDownloader.java" startLine="77" startPosition="53" endLine="79" endPosition="28" />
-    <scopeInfo nodeId="4001135958234855043" fileName="StockPriceDownloader.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4001135958234990791" fileName="StockPriceDownloader.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="4001135958235427774" fileName="StockPriceDownloader.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="4001135958235434514" varName="symbol" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958233588641" fileName="StockPriceDownloader.java" startLine="67" startPosition="19" endLine="70" endPosition="17">
-      <varInfo nodeId="4001135958233588647" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958234114568" fileName="StockPriceDownloader.java" startLine="100" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="4001135958234114568" varName="str" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958233615364" fileName="StockPriceDownloader.java" startLine="67" startPosition="19" endLine="73" endPosition="0">
-      <varInfo nodeId="4001135958234413421" varName="price" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958233535999" fileName="StockPriceDownloader.java" startLine="64" startPosition="28" endLine="80" endPosition="15">
-      <varInfo nodeId="4001135958233557229" varName="item" />
-      <varInfo nodeId="4001135958233577787" varName="tokenizer" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958233422326" fileName="StockPriceDownloader.java" startLine="63" startPosition="54" endLine="83" endPosition="13" />
-    <scopeInfo nodeId="4001135958235056088" fileName="StockPriceDownloader.java" startLine="55" startPosition="29" endLine="85" endPosition="62">
-      <varInfo nodeId="4001135958234461230" varName="dateFormat" />
-      <varInfo nodeId="4001135958233523154" varName="header" />
-      <varInfo nodeId="4001135958233424533" varName="line" />
-      <varInfo nodeId="4001135958233419548" varName="reader" />
-      <varInfo nodeId="4001135958233349325" varName="stream" />
-      <varInfo nodeId="4001135958233347545" varName="url" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958233350118" fileName="StockPriceDownloader.java" startLine="53" startPosition="11" endLine="87" endPosition="96">
-      <varInfo nodeId="4001135958235026354" varName="prices" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958233295815" fileName="StockPriceDownloader.java" startLine="52" startPosition="50" endLine="92" endPosition="7" />
-    <scopeInfo nodeId="4001135958233293108" fileName="StockPriceDownloader.java" startLine="51" startPosition="47" endLine="95" endPosition="5" />
-    <scopeInfo nodeId="4001135958234862735" fileName="StockPriceDownloader.java" startLine="51" startPosition="0" endLine="97" endPosition="0">
-      <varInfo nodeId="4001135958234868875" varName="symbol" />
-    </scopeInfo>
-    <unitInfo nodeId="4001135958234855014" fileName="StockPriceDownloader.java" startLine="22" startPosition="0" endLine="104" endPosition="0" unitName="org.jetbrains.mps.samples.money.runtime.StockPriceDownloader" />
+    <file name="StockPriceDownloader.java">
+      <node id="4001135958234855082" at="23,0,24,0" concept="11" trace="instance" />
+      <node id="4001135958234855778" at="26,52,27,20" concept="8" />
+      <node id="4001135958234970127" at="36,0,37,0" concept="3" trace="priceCache" />
+      <node id="4001135958234994538" at="39,28,40,44" concept="2" />
+      <node id="4001135958235448370" at="45,52,46,43" concept="8" />
+      <node id="4001135958235026353" at="53,11,54,83" concept="7" />
+      <node id="4001135958235312362" at="55,29,56,75" concept="2" />
+      <node id="4001135958233347544" at="56,75,57,85" concept="7" />
+      <node id="4001135958233349324" at="57,85,58,55" concept="7" />
+      <node id="4001135958233419547" at="58,55,59,84" concept="7" />
+      <node id="4001135958233424530" at="59,84,60,22" concept="7" />
+      <node id="4001135958233523151" at="60,22,61,32" concept="7" />
+      <node id="4001135958234461229" at="61,32,62,75" concept="7" />
+      <node id="4001135958233557228" at="64,28,65,44" concept="7" />
+      <node id="4001135958233577786" at="65,44,66,73" concept="7" />
+      <node id="4001135958233603691" at="68,45,69,85" concept="2" />
+      <node id="4001135958234413420" at="70,17,71,141" concept="7" />
+      <node id="4001135958233562533" at="71,141,72,64" concept="2" />
+      <node id="4001135958234410687" at="72,64,73,0" concept="10" />
+      <node id="4001135958234652131" at="74,42,75,38" concept="9" />
+      <node id="4001135958234666987" at="75,38,76,28" concept="8" />
+      <node id="4001135958233635293" at="77,53,78,38" concept="9" />
+      <node id="4001135958233621269" at="78,38,79,28" concept="8" />
+      <node id="4001135958233546085" at="81,20,82,29" concept="2" />
+      <node id="4001135958235113327" at="84,11,85,62" concept="2" />
+      <node id="4001135958233645900" at="86,9,87,96" concept="8" />
+      <node id="4001135958233352220" at="88,41,89,20" concept="8" />
+      <node id="4001135958233362569" at="90,31,91,20" concept="8" />
+      <node id="4001135958233830184" at="93,12,94,18" concept="8" />
+      <node id="4001135958234114568" at="100,70,101,45" concept="8" />
+      <node id="4001135958234855897" at="32,0,34,0" concept="1" trace="StockPriceDownloader#()V" />
+      <node id="4001135958233544918" at="81,18,83,13" concept="0" />
+      <node id="4001135958233824459" at="93,10,95,5" concept="0" />
+      <node id="4001135958234855043" at="26,0,29,0" concept="12" trace="getInstance#()Lorg/jetbrains/mps/samples/money/runtime/StockPriceDownloader;" />
+      <node id="4001135958234990791" at="39,0,42,0" concept="6" trace="clearCache#()V" />
+      <node id="4001135958235427774" at="45,0,48,0" concept="6" trace="isValidStockSymbol#(Ljava/lang/String;)Z" />
+      <node id="4001135958233588641" at="67,19,70,17" concept="4" />
+      <node id="4001135958234114568" at="100,0,103,0" concept="12" trace="trim_54jj5w_a0a0a0a2a0a7a1a0a0a21#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="4001135958233615363" at="66,73,80,15" concept="14" />
+      <node id="4001135958233535996" at="63,54,83,13" concept="5" />
+      <node id="4001135958233422324" at="62,75,84,11" concept="15" />
+      <node id="4001135958235056085" at="54,83,86,9" concept="5" />
+      <node id="4001135958233350117" at="52,50,92,7" concept="14" />
+      <node id="4001135958233295814" at="51,47,95,5" concept="5" />
+      <node id="4001135958234862735" at="51,0,97,0" concept="6" trace="getCurrentPrice#(Ljava/lang/String;)Lorg/jetbrains/mps/samples/money/runtime/Money;" />
+      <scope id="4001135958234855901" at="32,34,32,34" />
+      <scope id="4001135958234855046" at="26,52,27,20" />
+      <scope id="4001135958234990794" at="39,28,40,44" />
+      <scope id="4001135958235427777" at="45,52,46,43" />
+      <scope id="4001135958233588644" at="68,45,69,85" />
+      <scope id="4001135958233544919" at="81,20,82,29" />
+      <scope id="4001135958233350131" at="88,0,89,20">
+        <var name="e" id="4001135958233350135" />
+      </scope>
+      <scope id="4001135958233350134" at="88,41,89,20" />
+      <scope id="4001135958233350124" at="90,0,91,20">
+        <var name="e" id="4001135958233350128" />
+      </scope>
+      <scope id="4001135958233350127" at="90,31,91,20" />
+      <scope id="4001135958233824460" at="93,12,94,18" />
+      <scope id="4001135958234114568" at="100,70,101,45" />
+      <scope id="4001135958234855897" at="32,0,34,0" />
+      <scope id="4001135958234638627" at="74,0,76,28">
+        <var name="e" id="4001135958234638628" />
+      </scope>
+      <scope id="4001135958234638630" at="74,42,76,28" />
+      <scope id="4001135958233615365" at="77,0,79,28">
+        <var name="e" id="4001135958233615366" />
+      </scope>
+      <scope id="4001135958233615368" at="77,53,79,28" />
+      <scope id="4001135958234855043" at="26,0,29,0" />
+      <scope id="4001135958234990791" at="39,0,42,0" />
+      <scope id="4001135958235427774" at="45,0,48,0">
+        <var name="symbol" id="4001135958235434514" />
+      </scope>
+      <scope id="4001135958233588641" at="67,19,70,17">
+        <var name="i" id="4001135958233588647" />
+      </scope>
+      <scope id="4001135958234114568" at="100,0,103,0">
+        <var name="str" id="4001135958234114568" />
+      </scope>
+      <scope id="4001135958233615364" at="67,19,73,0">
+        <var name="price" id="4001135958234413421" />
+      </scope>
+      <scope id="4001135958233535999" at="64,28,80,15">
+        <var name="item" id="4001135958233557229" />
+        <var name="tokenizer" id="4001135958233577787" />
+      </scope>
+      <scope id="4001135958233422326" at="63,54,83,13" />
+      <scope id="4001135958235056088" at="55,29,85,62">
+        <var name="dateFormat" id="4001135958234461230" />
+        <var name="header" id="4001135958233523154" />
+        <var name="line" id="4001135958233424533" />
+        <var name="reader" id="4001135958233419548" />
+        <var name="stream" id="4001135958233349325" />
+        <var name="url" id="4001135958233347545" />
+      </scope>
+      <scope id="4001135958233350118" at="53,11,87,96">
+        <var name="prices" id="4001135958235026354" />
+      </scope>
+      <scope id="4001135958233295815" at="52,50,92,7" />
+      <scope id="4001135958233293108" at="51,47,95,5" />
+      <scope id="4001135958234862735" at="51,0,97,0">
+        <var name="symbol" id="4001135958234868875" />
+      </scope>
+      <unit id="4001135958234855014" at="22,0,104,0" name="org.jetbrains.mps.samples.money.runtime.StockPriceDownloader" />
+    </file>
   </root>
   <root nodeRef="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)/4001135958235925037">
-    <nodeInfo nodeId="4001135958235930004" fileName="StockPriceCalculator.java" startLine="12" startPosition="91" endLine="13" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958235981132" fileName="StockPriceCalculator.java" startLine="15" startPosition="52" endLine="16" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958235981141" fileName="StockPriceCalculator.java" startLine="19" startPosition="61" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958236004160" fileName="StockPriceCalculator.java" startLine="22" startPosition="7" endLine="23" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958235984470" fileName="StockPriceCalculator.java" startLine="23" startPosition="100" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958235983660" fileName="StockPriceCalculator.java" startLine="24" startPosition="16" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4001135958235928198" fileName="StockPriceCalculator.java" startLine="30" startPosition="91" endLine="31" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958235981130" fileName="StockPriceCalculator.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/samples/money/runtime/DailyStockPrice;)Ljava/math/BigDecimal;" />
-    <nodeInfo nodeId="4001135958235981139" fileName="StockPriceCalculator.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="combine#(Ljava/math/BigDecimal;Ljava/math/BigDecimal;)Ljava/math/BigDecimal;" />
-    <nodeInfo nodeId="4001135958235928366" fileName="StockPriceCalculator.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="retrievePricesWithin#(Ljava/util/List;)Ljava/util/List;" />
-    <nodeInfo nodeId="4001135958235981124" fileName="StockPriceCalculator.java" startLine="13" startPosition="69" endLine="22" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958235925119" fileName="StockPriceCalculator.java" startLine="12" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="calculateMovingAverage#(Ljava/util/List;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="4001135958235981131" fileName="StockPriceCalculator.java" startLine="15" startPosition="52" endLine="16" endPosition="37" />
-    <scopeInfo nodeId="4001135958235981140" fileName="StockPriceCalculator.java" startLine="19" startPosition="61" endLine="20" endPosition="24" />
-    <scopeInfo nodeId="4001135958235926134" fileName="StockPriceCalculator.java" startLine="30" startPosition="91" endLine="31" endPosition="64" />
-    <scopeInfo nodeId="4001135958235981130" fileName="StockPriceCalculator.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="4001135958235981130" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958235981139" fileName="StockPriceCalculator.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="4001135958235981139" varName="a" />
-      <varInfo nodeId="4001135958235981139" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958235928366" fileName="StockPriceCalculator.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="4001135958235926164" varName="prices" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958235925122" fileName="StockPriceCalculator.java" startLine="12" startPosition="91" endLine="25" endPosition="0">
-      <varInfo nodeId="4001135958236004161" varName="divided" />
-      <varInfo nodeId="4001135958235930005" varName="pricesToUse" />
-      <varInfo nodeId="4001135958235981125" varName="sum" />
-    </scopeInfo>
-    <scopeInfo nodeId="4001135958235925119" fileName="StockPriceCalculator.java" startLine="12" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="4001135958235925133" varName="prices" />
-    </scopeInfo>
-    <unitInfo nodeId="4001135958235981130" fileName="StockPriceCalculator.java" startLine="14" startPosition="67" endLine="18" endPosition="5" unitName="org.jetbrains.mps.samples.money.runtime.StockPriceCalculator$1" />
-    <unitInfo nodeId="4001135958235981139" fileName="StockPriceCalculator.java" startLine="18" startPosition="22" endLine="22" endPosition="5" unitName="org.jetbrains.mps.samples.money.runtime.StockPriceCalculator$2" />
-    <unitInfo nodeId="4001135958235925037" fileName="StockPriceCalculator.java" startLine="11" startPosition="0" endLine="34" endPosition="0" unitName="org.jetbrains.mps.samples.money.runtime.StockPriceCalculator" />
+    <file name="StockPriceCalculator.java">
+      <node id="4001135958235930004" at="12,91,13,69" concept="7" />
+      <node id="4001135958235981132" at="15,52,16,37" concept="8" />
+      <node id="4001135958235981141" at="19,61,20,24" concept="8" />
+      <node id="4001135958236004160" at="22,7,23,100" concept="7" />
+      <node id="4001135958235984470" at="23,100,24,16" concept="8" />
+      <node id="4001135958235983660" at="24,16,25,0" concept="10" />
+      <node id="4001135958235928198" at="30,91,31,64" concept="8" />
+      <node id="4001135958235981130" at="15,0,18,0" concept="6" trace="select#(Lorg/jetbrains/mps/samples/money/runtime/DailyStockPrice;)Ljava/math/BigDecimal;" />
+      <node id="4001135958235981139" at="19,0,22,0" concept="6" trace="combine#(Ljava/math/BigDecimal;Ljava/math/BigDecimal;)Ljava/math/BigDecimal;" />
+      <node id="4001135958235928366" at="30,0,33,0" concept="12" trace="retrievePricesWithin#(Ljava/util/List;)Ljava/util/List;" />
+      <node id="4001135958235981124" at="13,69,22,7" concept="7" />
+      <node id="4001135958235925119" at="12,0,27,0" concept="12" trace="calculateMovingAverage#(Ljava/util/List;)Ljava/lang/Iterable;" />
+      <scope id="4001135958235981131" at="15,52,16,37" />
+      <scope id="4001135958235981140" at="19,61,20,24" />
+      <scope id="4001135958235926134" at="30,91,31,64" />
+      <scope id="4001135958235981130" at="15,0,18,0">
+        <var name="it" id="4001135958235981130" />
+      </scope>
+      <scope id="4001135958235981139" at="19,0,22,0">
+        <var name="a" id="4001135958235981139" />
+        <var name="b" id="4001135958235981139" />
+      </scope>
+      <scope id="4001135958235928366" at="30,0,33,0">
+        <var name="prices" id="4001135958235926164" />
+      </scope>
+      <scope id="4001135958235925122" at="12,91,25,0">
+        <var name="divided" id="4001135958236004161" />
+        <var name="pricesToUse" id="4001135958235930005" />
+        <var name="sum" id="4001135958235981125" />
+      </scope>
+      <scope id="4001135958235925119" at="12,0,27,0">
+        <var name="prices" id="4001135958235925133" />
+      </scope>
+      <unit id="4001135958235981130" at="14,67,18,5" name="org.jetbrains.mps.samples.money.runtime.StockPriceCalculator$1" />
+      <unit id="4001135958235981139" at="18,22,22,5" name="org.jetbrains.mps.samples.money.runtime.StockPriceCalculator$2" />
+      <unit id="4001135958235925037" at="11,0,34,0" name="org.jetbrains.mps.samples.money.runtime.StockPriceCalculator" />
+    </file>
   </root>
   <root nodeRef="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)/5447719361346501252">
-    <nodeInfo nodeId="5447719361346501289" fileName="Money.java" startLine="8" startPosition="52" endLine="9" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5447719361346501295" fileName="Money.java" startLine="9" startPosition="27" endLine="10" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5447719361346519358" fileName="Money.java" startLine="13" startPosition="45" endLine="14" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5447719361346519372" fileName="Money.java" startLine="14" startPosition="43" endLine="15" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5447719361346501259" fileName="Money.java" startLine="18" startPosition="42" endLine="19" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5447719361346519508" fileName="Money.java" startLine="23" startPosition="28" endLine="24" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5447719361346555903" fileName="Money.java" startLine="28" startPosition="60" endLine="29" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5447719361346555931" fileName="Money.java" startLine="30" startPosition="12" endLine="31" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5447719361346555948" fileName="Money.java" startLine="36" startPosition="60" endLine="37" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5447719361346555964" fileName="Money.java" startLine="38" startPosition="12" endLine="39" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5447719361346501266" fileName="Money.java" startLine="43" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAmount" />
-    <nodeInfo nodeId="5447719361346501266" fileName="Money.java" startLine="45" startPosition="33" endLine="46" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5447719361346501266" fileName="Money.java" startLine="49" startPosition="44" endLine="50" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5447719361346501273" fileName="Money.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrency" />
-    <nodeInfo nodeId="5447719361346501273" fileName="Money.java" startLine="55" startPosition="31" endLine="56" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5447719361346501273" fileName="Money.java" startLine="59" startPosition="42" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5447719361346555902" fileName="Money.java" startLine="30" startPosition="10" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5447719361346555962" fileName="Money.java" startLine="38" startPosition="10" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5447719361346501253" fileName="Money.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="to#(Ljava/lang/String;)Lorg/jetbrains/mps/samples/money/runtime/Money;" />
-    <nodeInfo nodeId="5447719361346501266" fileName="Money.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAmount#()Ljava/math/BigDecimal;" />
-    <nodeInfo nodeId="5447719361346501266" fileName="Money.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAmount#(Ljava/math/BigDecimal;)V" />
-    <nodeInfo nodeId="5447719361346501273" fileName="Money.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrency#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5447719361346501273" fileName="Money.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCurrency#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5447719361346501281" fileName="Money.java" startLine="8" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Money#(Ljava/math/BigDecimal;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5447719361346519348" fileName="Money.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Money#(ILjava/lang/String;)V" />
-    <nodeInfo nodeId="5447719361346519498" fileName="Money.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5447719361346555870" fileName="Money.java" startLine="27" startPosition="40" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5447719361346555937" fileName="Money.java" startLine="35" startPosition="41" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5447719361346555824" fileName="Money.java" startLine="27" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="plus#(Lorg/jetbrains/mps/samples/money/runtime/Money;)Lorg/jetbrains/mps/samples/money/runtime/Money;" />
-    <nodeInfo nodeId="5447719361346555932" fileName="Money.java" startLine="35" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="minus#(Lorg/jetbrains/mps/samples/money/runtime/Money;)Lorg/jetbrains/mps/samples/money/runtime/Money;" />
-    <scopeInfo nodeId="5447719361346501258" fileName="Money.java" startLine="18" startPosition="42" endLine="19" endPosition="55" />
-    <scopeInfo nodeId="5447719361346519501" fileName="Money.java" startLine="23" startPosition="28" endLine="24" endPosition="55" />
-    <scopeInfo nodeId="5447719361346555901" fileName="Money.java" startLine="28" startPosition="60" endLine="29" endPosition="123" />
-    <scopeInfo nodeId="5447719361346555871" fileName="Money.java" startLine="30" startPosition="12" endLine="31" endPosition="84" />
-    <scopeInfo nodeId="5447719361346555947" fileName="Money.java" startLine="36" startPosition="60" endLine="37" endPosition="123" />
-    <scopeInfo nodeId="5447719361346555963" fileName="Money.java" startLine="38" startPosition="12" endLine="39" endPosition="89" />
-    <scopeInfo nodeId="5447719361346501266" fileName="Money.java" startLine="45" startPosition="33" endLine="46" endPosition="25" />
-    <scopeInfo nodeId="5447719361346501266" fileName="Money.java" startLine="49" startPosition="44" endLine="50" endPosition="26" />
-    <scopeInfo nodeId="5447719361346501273" fileName="Money.java" startLine="55" startPosition="31" endLine="56" endPosition="27" />
-    <scopeInfo nodeId="5447719361346501273" fileName="Money.java" startLine="59" startPosition="42" endLine="60" endPosition="28" />
-    <scopeInfo nodeId="5447719361346501288" fileName="Money.java" startLine="8" startPosition="52" endLine="10" endPosition="31" />
-    <scopeInfo nodeId="5447719361346519351" fileName="Money.java" startLine="13" startPosition="45" endLine="15" endPosition="31" />
-    <scopeInfo nodeId="5447719361346501253" fileName="Money.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="5447719361346501254" varName="targetCurrency" />
-    </scopeInfo>
-    <scopeInfo nodeId="5447719361346501266" fileName="Money.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="5447719361346501266" fileName="Money.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="5447719361346501266" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="5447719361346501273" fileName="Money.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="5447719361346501273" fileName="Money.java" startLine="59" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="5447719361346501273" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="5447719361346501281" fileName="Money.java" startLine="8" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="5447719361346501282" varName="amount" />
-      <varInfo nodeId="5447719361346501284" varName="currency" />
-    </scopeInfo>
-    <scopeInfo nodeId="5447719361346519348" fileName="Money.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="5447719361346519352" varName="amount" />
-      <varInfo nodeId="5447719361346519354" varName="currency" />
-    </scopeInfo>
-    <scopeInfo nodeId="5447719361346519498" fileName="Money.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="5447719361346555827" fileName="Money.java" startLine="27" startPosition="40" endLine="32" endPosition="5" />
-    <scopeInfo nodeId="5447719361346555935" fileName="Money.java" startLine="35" startPosition="41" endLine="40" endPosition="5" />
-    <scopeInfo nodeId="5447719361346555824" fileName="Money.java" startLine="27" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="5447719361346555842" varName="other" />
-    </scopeInfo>
-    <scopeInfo nodeId="5447719361346555932" fileName="Money.java" startLine="35" startPosition="0" endLine="42" endPosition="0">
-      <varInfo nodeId="5447719361346555978" varName="other" />
-    </scopeInfo>
-    <unitInfo nodeId="5447719361346501252" fileName="Money.java" startLine="7" startPosition="0" endLine="63" endPosition="0" unitName="org.jetbrains.mps.samples.money.runtime.Money" />
+    <file name="Money.java">
+      <node id="5447719361346501289" at="8,52,9,27" concept="2" />
+      <node id="5447719361346501295" at="9,27,10,31" concept="2" />
+      <node id="5447719361346519358" at="13,45,14,43" concept="2" />
+      <node id="5447719361346519372" at="14,43,15,31" concept="2" />
+      <node id="5447719361346501259" at="18,42,19,55" concept="8" />
+      <node id="5447719361346519508" at="23,28,24,55" concept="8" />
+      <node id="5447719361346555903" at="28,60,29,123" concept="13" />
+      <node id="5447719361346555931" at="30,12,31,84" concept="8" />
+      <node id="5447719361346555948" at="36,60,37,123" concept="13" />
+      <node id="5447719361346555964" at="38,12,39,89" concept="8" />
+      <node id="5447719361346501266" at="43,0,44,0" concept="3" trace="myAmount" />
+      <node id="5447719361346501266" at="45,33,46,25" concept="8" />
+      <node id="5447719361346501266" at="49,44,50,26" concept="2" />
+      <node id="5447719361346501273" at="53,0,54,0" concept="3" trace="myCurrency" />
+      <node id="5447719361346501273" at="55,31,56,27" concept="8" />
+      <node id="5447719361346501273" at="59,42,60,28" concept="2" />
+      <node id="5447719361346555902" at="30,10,32,5" concept="0" />
+      <node id="5447719361346555962" at="38,10,40,5" concept="0" />
+      <node id="5447719361346501253" at="18,0,21,0" concept="6" trace="to#(Ljava/lang/String;)Lorg/jetbrains/mps/samples/money/runtime/Money;" />
+      <node id="5447719361346501266" at="45,0,48,0" concept="6" trace="getAmount#()Ljava/math/BigDecimal;" />
+      <node id="5447719361346501266" at="49,0,52,0" concept="6" trace="setAmount#(Ljava/math/BigDecimal;)V" />
+      <node id="5447719361346501273" at="55,0,58,0" concept="6" trace="getCurrency#()Ljava/lang/String;" />
+      <node id="5447719361346501273" at="59,0,62,0" concept="6" trace="setCurrency#(Ljava/lang/String;)V" />
+      <node id="5447719361346501281" at="8,0,12,0" concept="1" trace="Money#(Ljava/math/BigDecimal;Ljava/lang/String;)V" />
+      <node id="5447719361346519348" at="13,0,17,0" concept="1" trace="Money#(ILjava/lang/String;)V" />
+      <node id="5447719361346519498" at="22,0,26,0" concept="6" trace="toString#()Ljava/lang/String;" />
+      <node id="5447719361346555870" at="27,40,32,5" concept="5" />
+      <node id="5447719361346555937" at="35,41,40,5" concept="5" />
+      <node id="5447719361346555824" at="27,0,34,0" concept="6" trace="plus#(Lorg/jetbrains/mps/samples/money/runtime/Money;)Lorg/jetbrains/mps/samples/money/runtime/Money;" />
+      <node id="5447719361346555932" at="35,0,42,0" concept="6" trace="minus#(Lorg/jetbrains/mps/samples/money/runtime/Money;)Lorg/jetbrains/mps/samples/money/runtime/Money;" />
+      <scope id="5447719361346501258" at="18,42,19,55" />
+      <scope id="5447719361346519501" at="23,28,24,55" />
+      <scope id="5447719361346555901" at="28,60,29,123" />
+      <scope id="5447719361346555871" at="30,12,31,84" />
+      <scope id="5447719361346555947" at="36,60,37,123" />
+      <scope id="5447719361346555963" at="38,12,39,89" />
+      <scope id="5447719361346501266" at="45,33,46,25" />
+      <scope id="5447719361346501266" at="49,44,50,26" />
+      <scope id="5447719361346501273" at="55,31,56,27" />
+      <scope id="5447719361346501273" at="59,42,60,28" />
+      <scope id="5447719361346501288" at="8,52,10,31" />
+      <scope id="5447719361346519351" at="13,45,15,31" />
+      <scope id="5447719361346501253" at="18,0,21,0">
+        <var name="targetCurrency" id="5447719361346501254" />
+      </scope>
+      <scope id="5447719361346501266" at="45,0,48,0" />
+      <scope id="5447719361346501266" at="49,0,52,0">
+        <var name="value" id="5447719361346501266" />
+      </scope>
+      <scope id="5447719361346501273" at="55,0,58,0" />
+      <scope id="5447719361346501273" at="59,0,62,0">
+        <var name="value" id="5447719361346501273" />
+      </scope>
+      <scope id="5447719361346501281" at="8,0,12,0">
+        <var name="amount" id="5447719361346501282" />
+        <var name="currency" id="5447719361346501284" />
+      </scope>
+      <scope id="5447719361346519348" at="13,0,17,0">
+        <var name="amount" id="5447719361346519352" />
+        <var name="currency" id="5447719361346519354" />
+      </scope>
+      <scope id="5447719361346519498" at="22,0,26,0" />
+      <scope id="5447719361346555827" at="27,40,32,5" />
+      <scope id="5447719361346555935" at="35,41,40,5" />
+      <scope id="5447719361346555824" at="27,0,34,0">
+        <var name="other" id="5447719361346555842" />
+      </scope>
+      <scope id="5447719361346555932" at="35,0,42,0">
+        <var name="other" id="5447719361346555978" />
+      </scope>
+      <unit id="5447719361346501252" at="7,0,63,0" name="org.jetbrains.mps.samples.money.runtime.Money" />
+    </file>
   </root>
   <root nodeRef="r:540d5e3a-9424-4c25-a6ed-9d51ec46dfad(org.jetbrains.mps.samples.money.runtime)/5447719361346501301">
-    <nodeInfo nodeId="5447719361346501314" fileName="MoneyConversion.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="exchangeRates" />
-    <nodeInfo nodeId="5447719361346501312" fileName="MoneyConversion.java" startLine="16" startPosition="72" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5447719361346501324" fileName="MoneyConversion.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyConversion#()V" />
-    <nodeInfo nodeId="5447719361346501302" fileName="MoneyConversion.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="convert#(Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;)Ljava/math/BigDecimal;" />
-    <scopeInfo nodeId="5447719361346501327" fileName="MoneyConversion.java" startLine="13" startPosition="28" endLine="13" endPosition="28" />
-    <scopeInfo nodeId="5447719361346501311" fileName="MoneyConversion.java" startLine="16" startPosition="72" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="5447719361346501324" fileName="MoneyConversion.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="5447719361346501302" fileName="MoneyConversion.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="5447719361346501303" varName="amount" />
-      <varInfo nodeId="5447719361346501305" varName="from" />
-      <varInfo nodeId="5447719361346501307" varName="to" />
-    </scopeInfo>
-    <unitInfo nodeId="5447719361346501301" fileName="MoneyConversion.java" startLine="10" startPosition="0" endLine="20" endPosition="0" unitName="org.jetbrains.mps.samples.money.runtime.MoneyConversion" />
+    <file name="MoneyConversion.java">
+      <node id="5447719361346501314" at="11,0,12,0" concept="3" trace="exchangeRates" />
+      <node id="5447719361346501312" at="16,72,17,16" concept="8" />
+      <node id="5447719361346501324" at="13,0,15,0" concept="1" trace="MoneyConversion#()V" />
+      <node id="5447719361346501302" at="16,0,19,0" concept="6" trace="convert#(Ljava/math/BigDecimal;Ljava/lang/String;Ljava/lang/String;)Ljava/math/BigDecimal;" />
+      <scope id="5447719361346501327" at="13,28,13,28" />
+      <scope id="5447719361346501311" at="16,72,17,16" />
+      <scope id="5447719361346501324" at="13,0,15,0" />
+      <scope id="5447719361346501302" at="16,0,19,0">
+        <var name="amount" id="5447719361346501303" />
+        <var name="from" id="5447719361346501305" />
+        <var name="to" id="5447719361346501307" />
+      </scope>
+      <unit id="5447719361346501301" at="10,0,20,0" name="org.jetbrains.mps.samples.money.runtime.MoneyConversion" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -1,43 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)/6822392181927252916">
-    <nodeInfo nodeId="6822392181927253279" fileName="StyledTextPrinter.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBold#(Z)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
-    <nodeInfo nodeId="6822392181927254012" fileName="StyledTextPrinter.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="append#(Ljava/lang/String;)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
-    <scopeInfo nodeId="6822392181927253279" fileName="StyledTextPrinter.java" startLine="7" startPosition="0" endLine="8" endPosition="0">
-      <varInfo nodeId="6822392181927253375" varName="bold" />
-    </scopeInfo>
-    <scopeInfo nodeId="6822392181927254012" fileName="StyledTextPrinter.java" startLine="8" startPosition="0" endLine="9" endPosition="0">
-      <varInfo nodeId="6822392181927254482" varName="text" />
-    </scopeInfo>
-    <unitInfo nodeId="6822392181927252916" fileName="StyledTextPrinter.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.editor.runtime.style.StyledTextPrinter" />
+    <file name="StyledTextPrinter.java">
+      <node id="6822392181927253279" at="7,0,8,0" concept="0" trace="setBold#(Z)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
+      <node id="6822392181927254012" at="8,0,9,0" concept="0" trace="append#(Ljava/lang/String;)Ljetbrains/mps/editor/runtime/style/StyledTextPrinter;" />
+      <scope id="6822392181927253279" at="7,0,8,0">
+        <var name="bold" id="6822392181927253375" />
+      </scope>
+      <scope id="6822392181927254012" at="8,0,9,0">
+        <var name="text" id="6822392181927254482" />
+      </scope>
+      <unit id="6822392181927252916" at="6,0,10,0" name="jetbrains.mps.editor.runtime.style.StyledTextPrinter" />
+    </file>
   </root>
   <root nodeRef="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)/6822392181928383378">
-    <nodeInfo nodeId="6973815483245703196" fileName="SideTransformTagUtils.java" startLine="7" startPosition="53" endLine="8" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6822392181928397368" fileName="SideTransformTagUtils.java" startLine="7" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefaultSideTransformTag#()Ljava/lang/String;" />
-    <scopeInfo nodeId="6822392181928397371" fileName="SideTransformTagUtils.java" startLine="7" startPosition="53" endLine="8" endPosition="32" />
-    <scopeInfo nodeId="6822392181928397368" fileName="SideTransformTagUtils.java" startLine="7" startPosition="0" endLine="10" endPosition="0" />
-    <unitInfo nodeId="6822392181928383378" fileName="SideTransformTagUtils.java" startLine="6" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.editor.runtime.style.SideTransformTagUtils" />
+    <file name="SideTransformTagUtils.java">
+      <node id="6973815483245703196" at="7,53,8,32" concept="1" />
+      <node id="6822392181928397368" at="7,0,10,0" concept="2" trace="getDefaultSideTransformTag#()Ljava/lang/String;" />
+      <scope id="6822392181928397371" at="7,53,8,32" />
+      <scope id="6822392181928397368" at="7,0,10,0" />
+      <unit id="6822392181928383378" at="6,0,11,0" name="jetbrains.mps.editor.runtime.style.SideTransformTagUtils" />
+    </file>
   </root>
   <root nodeRef="r:1e25de74-7cc0-4f15-8cec-3735c776efd2(jetbrains.mps.editor.runtime.style)/6822392181928409958">
-    <nodeInfo nodeId="2092998546831358572" fileName="ParametersInformation.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="2092998546831390297" fileName="ParametersInformation.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;nullLjetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
-    <nodeInfo nodeId="2092998546831390809" fileName="ParametersInformation.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;null)Z" />
-    <scopeInfo nodeId="2092998546831358572" fileName="ParametersInformation.java" startLine="9" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="2092998546831361737" varName="editorContext" />
-      <varInfo nodeId="2092998546831361735" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2092998546831390297" fileName="ParametersInformation.java" startLine="10" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="2092998546831390653" varName="editorContext" />
-      <varInfo nodeId="2092998546831390655" varName="method" />
-      <varInfo nodeId="2092998546831390651" varName="node" />
-      <varInfo nodeId="2092998546831390657" varName="printer" />
-    </scopeInfo>
-    <scopeInfo nodeId="2092998546831390809" fileName="ParametersInformation.java" startLine="11" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="2092998546831391126" varName="editorContext" />
-      <varInfo nodeId="2092998546831391128" varName="method" />
-      <varInfo nodeId="2092998546831391124" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="6822392181928409958" fileName="ParametersInformation.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.editor.runtime.style.ParametersInformation" />
+    <file name="ParametersInformation.java">
+      <node id="2092998546831358572" at="9,0,10,0" concept="0" trace="getMethods#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/Iterable;" />
+      <node id="2092998546831390297" at="10,0,11,0" concept="0" trace="getStyledMethodPresentation#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;nullLjetbrains/mps/editor/runtime/style/StyledTextPrinter;)V" />
+      <node id="2092998546831390809" at="11,0,12,0" concept="0" trace="isMethodCurrent#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;null)Z" />
+      <scope id="2092998546831358572" at="9,0,10,0">
+        <var name="editorContext" id="2092998546831361737" />
+        <var name="node" id="2092998546831361735" />
+      </scope>
+      <scope id="2092998546831390297" at="10,0,11,0">
+        <var name="editorContext" id="2092998546831390653" />
+        <var name="method" id="2092998546831390655" />
+        <var name="node" id="2092998546831390651" />
+        <var name="printer" id="2092998546831390657" />
+      </scope>
+      <scope id="2092998546831390809" at="11,0,12,0">
+        <var name="editorContext" id="2092998546831391126" />
+        <var name="method" id="2092998546831391128" />
+        <var name="node" id="2092998546831391124" />
+      </scope>
+      <unit id="6822392181928409958" at="8,0,13,0" name="jetbrains.mps.editor.runtime.style.ParametersInformation" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

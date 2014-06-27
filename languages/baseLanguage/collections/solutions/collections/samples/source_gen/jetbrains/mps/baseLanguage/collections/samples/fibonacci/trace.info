@@ -1,125 +1,143 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <root nodeRef="r:00000000-0000-4000-0000-011c895903b5(jetbrains.mps.baseLanguage.collections.samples.fibonacci)/1152305201679">
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="59" startPosition="27" endLine="59" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224754223519" fileName="FibonacciSequence.java" startLine="62" startPosition="27" endLine="62" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="27" startPosition="28" endLine="28" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="28" startPosition="54" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224754223539" fileName="FibonacciSequence.java" startLine="31" startPosition="40" endLine="32" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223539" fileName="FibonacciSequence.java" startLine="32" startPosition="41" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754223539" fileName="FibonacciSequence.java" startLine="34" startPosition="23" endLine="35" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223539" fileName="FibonacciSequence.java" startLine="35" startPosition="39" endLine="36" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754223530" fileName="FibonacciSequence.java" startLine="38" startPosition="33" endLine="39" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223530" fileName="FibonacciSequence.java" startLine="39" startPosition="40" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754223530" fileName="FibonacciSequence.java" startLine="41" startPosition="23" endLine="42" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223530" fileName="FibonacciSequence.java" startLine="42" startPosition="38" endLine="43" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="45" startPosition="34" endLine="46" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="46" startPosition="40" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="48" startPosition="23" endLine="49" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="49" startPosition="38" endLine="50" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754226462" fileName="FibonacciSequence.java" startLine="51" startPosition="27" endLine="52" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754226462" fileName="FibonacciSequence.java" startLine="52" startPosition="38" endLine="53" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754226462" fileName="FibonacciSequence.java" startLine="53" startPosition="36" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224754226454" fileName="FibonacciSequence.java" startLine="55" startPosition="28" endLine="56" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754226454" fileName="FibonacciSequence.java" startLine="56" startPosition="39" endLine="57" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754226454" fileName="FibonacciSequence.java" startLine="57" startPosition="40" endLine="58" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="59" startPosition="27" endLine="60" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="60" startPosition="38" endLine="61" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754223519" fileName="FibonacciSequence.java" startLine="62" startPosition="27" endLine="63" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223519" fileName="FibonacciSequence.java" startLine="63" startPosition="38" endLine="64" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754223522" fileName="FibonacciSequence.java" startLine="65" startPosition="27" endLine="66" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223526" fileName="FibonacciSequence.java" startLine="66" startPosition="37" endLine="67" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223519" fileName="FibonacciSequence.java" startLine="67" startPosition="38" endLine="68" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223519" fileName="FibonacciSequence.java" startLine="68" startPosition="38" endLine="69" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754223532" fileName="FibonacciSequence.java" startLine="70" startPosition="27" endLine="71" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224754223533" fileName="FibonacciSequence.java" startLine="70" startPosition="27" endLine="71" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223532" fileName="FibonacciSequence.java" startLine="71" startPosition="50" endLine="72" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223532" fileName="FibonacciSequence.java" startLine="72" startPosition="39" endLine="73" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754223547" fileName="FibonacciSequence.java" startLine="74" startPosition="28" endLine="75" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223551" fileName="FibonacciSequence.java" startLine="75" startPosition="37" endLine="76" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223532" fileName="FibonacciSequence.java" startLine="76" startPosition="36" endLine="77" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754223532" fileName="FibonacciSequence.java" startLine="77" startPosition="38" endLine="78" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754226534" fileName="FibonacciSequence.java" startLine="79" startPosition="28" endLine="80" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224754226534" fileName="FibonacciSequence.java" startLine="80" startPosition="38" endLine="81" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="82" startPosition="28" endLine="83" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="85" startPosition="31" endLine="86" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224754223523" fileName="FibonacciSequence.java" startLine="89" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_6_n_" />
-    <nodeInfo nodeId="1224754223527" fileName="FibonacciSequence.java" startLine="90" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_7_n__" />
-    <nodeInfo nodeId="1224754223534" fileName="FibonacciSequence.java" startLine="91" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_11_n" />
-    <nodeInfo nodeId="1052538209549030801" fileName="FibonacciSequence.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FibonacciSequence#()V" />
-    <nodeInfo nodeId="1224754223519" fileName="FibonacciSequence.java" startLine="65" startPosition="27" endLine="67" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224754223532" fileName="FibonacciSequence.java" startLine="74" startPosition="28" endLine="76" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224754223543" fileName="FibonacciSequence.java" startLine="79" startPosition="28" endLine="81" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224754226534" fileName="FibonacciSequence.java" startLine="79" startPosition="28" endLine="81" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1224754223539" fileName="FibonacciSequence.java" startLine="30" startPosition="28" endLine="34" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224754223530" fileName="FibonacciSequence.java" startLine="37" startPosition="27" endLine="41" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="44" startPosition="27" endLine="48" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="24" startPosition="20" endLine="84" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="22" startPosition="46" endLine="85" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="22" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="18" startPosition="47" endLine="92" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="18" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="16" startPosition="43" endLine="94" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="16" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1152305302121" fileName="FibonacciSequence.java" startLine="14" startPosition="51" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1152305253646" fileName="FibonacciSequence.java" startLine="14" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="numbers#(I)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="1052538209549030804" fileName="FibonacciSequence.java" startLine="11" startPosition="30" endLine="11" endPosition="30" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="59" startPosition="27" endLine="59" endPosition="27" />
-    <scopeInfo nodeId="1224754223519" fileName="FibonacciSequence.java" startLine="62" startPosition="27" endLine="62" endPosition="27" />
-    <scopeInfo nodeId="1224754223532" fileName="FibonacciSequence.java" startLine="70" startPosition="27" endLine="71" endPosition="50" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="82" startPosition="28" endLine="83" endPosition="37" />
-    <scopeInfo nodeId="1052538209549030801" fileName="FibonacciSequence.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="27" startPosition="28" endLine="29" endPosition="35" />
-    <scopeInfo nodeId="1224754223539" fileName="FibonacciSequence.java" startLine="31" startPosition="40" endLine="33" endPosition="30" />
-    <scopeInfo nodeId="1224754223530" fileName="FibonacciSequence.java" startLine="38" startPosition="33" endLine="40" endPosition="30" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="45" startPosition="34" endLine="47" endPosition="30" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="59" startPosition="27" endLine="61" endPosition="28" />
-    <scopeInfo nodeId="1224754223519" fileName="FibonacciSequence.java" startLine="62" startPosition="27" endLine="64" endPosition="28" />
-    <scopeInfo nodeId="1224754223519" fileName="FibonacciSequence.java" startLine="65" startPosition="27" endLine="67" endPosition="38" />
-    <scopeInfo nodeId="1224754223532" fileName="FibonacciSequence.java" startLine="74" startPosition="28" endLine="76" endPosition="36" />
-    <scopeInfo nodeId="1224754223543" fileName="FibonacciSequence.java" startLine="79" startPosition="28" endLine="81" endPosition="28" />
-    <scopeInfo nodeId="1224754226534" fileName="FibonacciSequence.java" startLine="79" startPosition="28" endLine="81" endPosition="28" />
-    <scopeInfo nodeId="1224754226462" fileName="FibonacciSequence.java" startLine="51" startPosition="27" endLine="54" endPosition="34" />
-    <scopeInfo nodeId="1224754226454" fileName="FibonacciSequence.java" startLine="55" startPosition="28" endLine="58" endPosition="34" />
-    <scopeInfo nodeId="1224754223532" fileName="FibonacciSequence.java" startLine="70" startPosition="27" endLine="73" endPosition="28" />
-    <scopeInfo nodeId="1224754223519" fileName="FibonacciSequence.java" startLine="65" startPosition="27" endLine="69" endPosition="28" />
-    <scopeInfo nodeId="1224754223532" fileName="FibonacciSequence.java" startLine="74" startPosition="28" endLine="78" endPosition="28" />
-    <scopeInfo nodeId="1224754223539" fileName="FibonacciSequence.java" startLine="30" startPosition="28" endLine="36" endPosition="28" />
-    <scopeInfo nodeId="1224754223530" fileName="FibonacciSequence.java" startLine="37" startPosition="27" endLine="43" endPosition="28" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="44" startPosition="27" endLine="50" endPosition="28" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="24" startPosition="20" endLine="84" endPosition="19" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="22" startPosition="46" endLine="86" endPosition="29" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="22" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="18" startPosition="47" endLine="92" endPosition="14" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="18" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="16" startPosition="43" endLine="94" endPosition="10" />
-    <scopeInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="16" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="1152305253648" fileName="FibonacciSequence.java" startLine="14" startPosition="51" endLine="96" endPosition="7" />
-    <scopeInfo nodeId="1152305253646" fileName="FibonacciSequence.java" startLine="14" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="1152828713003" varName="max" />
-    </scopeInfo>
-    <unitInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="19" startPosition="23" endLine="92" endPosition="13" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$3" />
-    <unitInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="17" startPosition="19" endLine="94" endPosition="9" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$2" />
-    <unitInfo nodeId="1224754223518" fileName="FibonacciSequence.java" startLine="15" startPosition="36" endLine="96" endPosition="5" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$1" />
-    <unitInfo nodeId="1152305201679" fileName="FibonacciSequence.java" startLine="10" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence" />
+    <file name="FibonacciSequence.java">
+      <node id="1224754223518" at="59,27,59,27" concept="1" />
+      <node id="1224754223519" at="62,27,62,27" concept="1" />
+      <node id="1224754223518" at="20,0,21,0" concept="6" trace="__CP__" />
+      <node id="1224754223518" at="27,28,28,54" concept="0" />
+      <node id="1224754223518" at="28,54,29,35" concept="11" />
+      <node id="1224754223539" at="31,40,32,41" concept="5" />
+      <node id="1224754223539" at="32,41,33,30" concept="2" />
+      <node id="1224754223539" at="34,23,35,39" concept="5" />
+      <node id="1224754223539" at="35,39,36,28" concept="2" />
+      <node id="1224754223530" at="38,33,39,40" concept="5" />
+      <node id="1224754223530" at="39,40,40,30" concept="2" />
+      <node id="1224754223530" at="41,23,42,38" concept="5" />
+      <node id="1224754223530" at="42,38,43,28" concept="2" />
+      <node id="1224754223518" at="45,34,46,40" concept="5" />
+      <node id="1224754223518" at="46,40,47,30" concept="2" />
+      <node id="1224754223518" at="48,23,49,38" concept="5" />
+      <node id="1224754223518" at="49,38,50,28" concept="2" />
+      <node id="1224754226462" at="51,27,52,38" concept="5" />
+      <node id="1224754226462" at="52,38,53,36" concept="5" />
+      <node id="1224754226462" at="53,36,54,34" concept="11" />
+      <node id="1224754226454" at="55,28,56,39" concept="5" />
+      <node id="1224754226454" at="56,39,57,40" concept="5" />
+      <node id="1224754226454" at="57,40,58,34" concept="11" />
+      <node id="1224754223518" at="59,27,60,38" concept="5" />
+      <node id="1224754223518" at="60,38,61,28" concept="2" />
+      <node id="1224754223519" at="62,27,63,38" concept="5" />
+      <node id="1224754223519" at="63,38,64,28" concept="2" />
+      <node id="1224754223522" at="65,27,66,37" concept="5" />
+      <node id="1224754223526" at="66,37,67,38" concept="5" />
+      <node id="1224754223519" at="67,38,68,38" concept="5" />
+      <node id="1224754223519" at="68,38,69,28" concept="2" />
+      <node id="1224754223532" at="70,27,71,50" concept="1" />
+      <node id="1224754223533" at="70,27,71,50" concept="5" />
+      <node id="1224754223532" at="71,50,72,39" concept="5" />
+      <node id="1224754223532" at="72,39,73,28" concept="2" />
+      <node id="1224754223547" at="74,28,75,37" concept="5" />
+      <node id="1224754223551" at="75,37,76,36" concept="5" />
+      <node id="1224754223532" at="76,36,77,38" concept="5" />
+      <node id="1224754223532" at="77,38,78,28" concept="2" />
+      <node id="1224754226534" at="79,28,80,38" concept="5" />
+      <node id="1224754226534" at="80,38,81,28" concept="2" />
+      <node id="1224754223518" at="82,28,83,37" concept="2" />
+      <node id="1224754223518" at="85,31,86,29" concept="11" />
+      <node id="1224754223523" at="89,0,90,0" concept="6" trace="_6_n_" />
+      <node id="1224754223527" at="90,0,91,0" concept="6" trace="_7_n__" />
+      <node id="1224754223534" at="91,0,92,0" concept="6" trace="_11_n" />
+      <node id="1052538209549030801" at="11,0,13,0" concept="3" trace="FibonacciSequence#()V" />
+      <node id="1224754223519" at="65,27,67,38" concept="1" />
+      <node id="1224754223532" at="74,28,76,36" concept="1" />
+      <node id="1224754223543" at="79,28,81,28" concept="1" />
+      <node id="1224754226534" at="79,28,81,28" concept="1" />
+      <node id="1224754223539" at="30,28,34,23" concept="8" />
+      <node id="1224754223530" at="37,27,41,23" concept="8" />
+      <node id="1224754223518" at="44,27,48,23" concept="8" />
+      <node id="1224754223518" at="24,20,84,19" concept="13" />
+      <node id="1224754223518" at="22,46,85,31" concept="4" />
+      <node id="1224754223518" at="22,0,88,0" concept="9" trace="moveToNext#()Z" />
+      <node id="1224754223518" at="18,47,92,14" concept="11" />
+      <node id="1224754223518" at="18,0,94,0" concept="9" trace="iterator#()Ljava/util/Iterator;" />
+      <node id="1224754223518" at="16,43,94,10" concept="11" />
+      <node id="1224754223518" at="16,0,96,0" concept="9" trace="iterable#()Ljava/lang/Iterable;" />
+      <node id="1152305302121" at="14,51,96,7" concept="11" />
+      <node id="1152305253646" at="14,0,98,0" concept="9" trace="numbers#(I)Ljava/lang/Iterable;" />
+      <scope id="1052538209549030804" at="11,30,11,30" />
+      <scope id="1224754223518" at="59,27,59,27" />
+      <scope id="1224754223519" at="62,27,62,27" />
+      <scope id="1224754223532" at="70,27,71,50" />
+      <scope id="1224754223518" at="82,28,83,37" />
+      <scope id="1052538209549030801" at="11,0,13,0" />
+      <scope id="1224754223518" at="27,28,29,35" />
+      <scope id="1224754223539" at="31,40,33,30" />
+      <scope id="1224754223530" at="38,33,40,30" />
+      <scope id="1224754223518" at="45,34,47,30" />
+      <scope id="1224754223518" at="59,27,61,28" />
+      <scope id="1224754223519" at="62,27,64,28" />
+      <scope id="1224754223519" at="65,27,67,38" />
+      <scope id="1224754223532" at="74,28,76,36" />
+      <scope id="1224754223543" at="79,28,81,28" />
+      <scope id="1224754226534" at="79,28,81,28" />
+      <scope id="1224754226462" at="51,27,54,34" />
+      <scope id="1224754226454" at="55,28,58,34" />
+      <scope id="1224754223532" at="70,27,73,28" />
+      <scope id="1224754223519" at="65,27,69,28" />
+      <scope id="1224754223532" at="74,28,78,28" />
+      <scope id="1224754223539" at="30,28,36,28" />
+      <scope id="1224754223530" at="37,27,43,28" />
+      <scope id="1224754223518" at="44,27,50,28" />
+      <scope id="1224754223518" at="24,20,84,19" />
+      <scope id="1224754223518" at="22,46,86,29" />
+      <scope id="1224754223518" at="22,0,88,0" />
+      <scope id="1224754223518" at="18,47,92,14" />
+      <scope id="1224754223518" at="18,0,94,0" />
+      <scope id="1224754223518" at="16,43,94,10" />
+      <scope id="1224754223518" at="16,0,96,0" />
+      <scope id="1152305253648" at="14,51,96,7" />
+      <scope id="1152305253646" at="14,0,98,0">
+        <var name="max" id="1152828713003" />
+      </scope>
+      <unit id="1224754223518" at="19,23,92,13" name="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$3" />
+      <unit id="1224754223518" at="17,19,94,9" name="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$2" />
+      <unit id="1224754223518" at="15,36,96,5" name="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence$1" />
+      <unit id="1152305201679" at="10,0,99,0" name="jetbrains.mps.baseLanguage.collections.samples.fibonacci.FibonacciSequence" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903b5(jetbrains.mps.baseLanguage.collections.samples.fibonacci)/1152305715106">
-    <nodeInfo nodeId="1152305767927" fileName="Main.java" startLine="8" startPosition="42" endLine="9" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1154035900116" fileName="Main.java" startLine="10" startPosition="65" endLine="11" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1154035872811" fileName="Main.java" startLine="9" startPosition="52" endLine="12" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1152305732654" fileName="Main.java" startLine="8" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <scopeInfo nodeId="1154035872814" fileName="Main.java" startLine="10" startPosition="65" endLine="11" endPosition="30" />
-    <scopeInfo nodeId="1154035872811" fileName="Main.java" startLine="9" startPosition="52" endLine="12" endPosition="5">
-      <varInfo nodeId="1154035872812" varName="num" />
-    </scopeInfo>
-    <scopeInfo nodeId="1152305732656" fileName="Main.java" startLine="8" startPosition="42" endLine="12" endPosition="5">
-      <varInfo nodeId="1152305767928" varName="fib" />
-    </scopeInfo>
-    <scopeInfo nodeId="1152305732654" fileName="Main.java" startLine="8" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="1152305747096" varName="args" />
-    </scopeInfo>
-    <unitInfo nodeId="1152305715106" fileName="Main.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.samples.fibonacci.Main" />
+    <file name="Main.java">
+      <node id="1152305767927" at="8,42,9,52" concept="10" />
+      <node id="1154035900116" at="10,65,11,30" concept="5" />
+      <node id="1154035872811" at="9,52,12,5" concept="7" />
+      <node id="1152305732654" at="8,0,14,0" concept="12" trace="main#([Ljava/lang/String;)V" />
+      <scope id="1154035872814" at="10,65,11,30" />
+      <scope id="1154035872811" at="9,52,12,5">
+        <var name="num" id="1154035872812" />
+      </scope>
+      <scope id="1152305732656" at="8,42,12,5">
+        <var name="fib" id="1152305767928" />
+      </scope>
+      <scope id="1152305732654" at="8,0,14,0">
+        <var name="args" id="1152305747096" />
+      </scope>
+      <unit id="1152305715106" at="7,0,15,0" name="jetbrains.mps.baseLanguage.collections.samples.fibonacci.Main" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 
