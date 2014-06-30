@@ -120,10 +120,10 @@ public class FilesDelta implements IDelta {
     // in case we've got stale directory, check if any updates from that didn't touch it 
     for (IFile file : MapSequence.fromMap(files).keySet()) {
       if (MapSequence.fromMap(files).get(file) == FilesDelta.Status.STALE && file.isDirectory()) {
-        String staleDir = file.getPath();
+        String staleDir = DirUtil.normalizeAsDir(file.getPath());
         for (IFile touchDir : newlyTouchedDirs) {
           // if staleDir is parent of any newly touched directories, it's not stale any more 
-          if (DirUtil.startsWith(touchDir.getPath(), staleDir)) {
+          if (DirUtil.startsWith(DirUtil.normalizeAsDir(touchDir.getPath()), staleDir)) {
             MapSequence.fromMap(files).put(file, FilesDelta.Status.KEPT);
             break;
           }
