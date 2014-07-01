@@ -531,7 +531,6 @@ public class ModuleChecker {
     // resolve all dependencies 
     Map<SNode, Boolean> depsToReexport = new LinkedHashMap<SNode, Boolean>();
     for (Dependency dep : dependencies) {
-      boolean reexport = dep.isReexport();
       SModuleReference moduleRef = dep.getModuleRef();
       final SNode resolved = SNodeOperations.as(myVisibleModules.resolve(moduleRef), "jetbrains.mps.build.mps.structure.BuildMps_Module");
       if (resolved == null) {
@@ -543,6 +542,7 @@ public class ModuleChecker {
       if (alreadyReexport != null && alreadyReexport.booleanValue()) {
         continue;
       }
+      boolean reexport = dep.isReexport();
       depsToReexport.put(resolved, reexport);
 
       // import required 

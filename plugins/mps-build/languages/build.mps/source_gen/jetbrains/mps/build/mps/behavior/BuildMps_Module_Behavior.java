@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_Behavior;
 import jetbrains.mps.build.util.JavaExportUtil;
@@ -29,7 +28,7 @@ public class BuildMps_Module_Behavior {
   }
 
   public static void virtual_fetchDependencies_5908258303322131137(SNode thisNode, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
-    MPSModulesClosure closure = new MPSModulesClosure(artifacts.getGenContext(), thisNode).closure();
+    MPSModulesClosure closure = new MPSModulesClosure(thisNode).closure();
 
     boolean needsFetch = false;
     List<SNode> requiredJars = new ArrayList<SNode>();
@@ -43,19 +42,11 @@ public class BuildMps_Module_Behavior {
         }
       }
 
-      for (SNode dep : ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).select(new ISelector<SNode, SNode>() {
+      for (SNode dep : Sequence.fromIterable(SNodeOperations.ofConcept(ListSequence.fromList(SLinkOperations.getTargets(m, "dependencies", true)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return (SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency") ? SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) : it);
         }
-      }).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar");
-        }
-      }).select(new ISelector<SNode, SNode>() {
-        public SNode select(SNode it) {
-          return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar");
-        }
-      })) {
+      }), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"))) {
         if ((SLinkOperations.getTarget(dep, "customLocation", true) != null)) {
           Tuples._2<SNode, Boolean> dependencyTarget = BuildSource_JavaExternalJarRef_Behavior.call_getDependencyTarget_5610619299014309566(SLinkOperations.getTarget(dep, "customLocation", true), artifacts);
           if (dependencyTarget != null) {
@@ -141,7 +132,7 @@ public class BuildMps_Module_Behavior {
     }
 
     // fetch generation time dependencies 
-    MPSModulesClosure genClosure = new MPSModulesClosure(artifacts.getGenContext(), thisNode).trackDevkits().runtimeClosure().generationDependenciesClosure();
+    MPSModulesClosure genClosure = new MPSModulesClosure(thisNode).trackDevkits().runtimeClosure().generationDependenciesClosure();
     for (SNode m : Sequence.fromIterable(genClosure.getAllModules())) {
       SNode artifact;
       if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(thisNode)) {
