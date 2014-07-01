@@ -22,6 +22,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class VisibleModules {
@@ -82,6 +83,11 @@ public class VisibleModules {
     if (genContext != null) {
       genContext.showErrorMessage(anchor, message);
     }
+  }
+
+  public SNode resolve(SModuleReference moduleRef) {
+    String targetName = moduleRef.getModuleName();
+    return this.resolve(targetName, moduleRef.getModuleId().toString());
   }
 
   public SNode resolve(String moduleName, String moduleId) {

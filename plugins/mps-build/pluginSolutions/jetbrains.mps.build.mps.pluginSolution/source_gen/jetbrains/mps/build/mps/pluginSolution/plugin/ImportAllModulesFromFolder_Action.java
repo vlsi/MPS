@@ -135,7 +135,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
           List<ImportModuleHelper> helpers = new ArrayList<ImportModuleHelper>();
           for (ModulesMiner.ModuleHandle handle : modules) {
             SModuleReference modRef = handle.getDescriptor().getModuleReference();
-            if (visible.resolve(modRef.getModuleName(), modRef.getModuleId().toString()) != null) {
+            if (visible.resolve(modRef) != null) {
               continue;
             }
 
