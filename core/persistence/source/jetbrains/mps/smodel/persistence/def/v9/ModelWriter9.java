@@ -148,11 +148,13 @@ public class ModelWriter9 implements IModelWriter {
         String conceptName = conceptNode != null ? conceptNode.getName() : debugRegistry.getConceptName(conceptId);
         conceptIds.put(conceptId, conceptName);
 
-        SContainmentLinkId roleId = n.getRoleInParentId();
-        SContainmentLinkAdapter role = new SContainmentLinkAdapter(roleId);
-        SNode roleNode = role.getLinkNode();
-        String roleName = roleNode != null ? roleNode.getName() : debugRegistry.getLinkName(roleId);
-        roleIds.put(roleId, roleName);
+        if (n.getParent()!=null) {
+          SContainmentLinkId roleId = n.getRoleInParentId();
+          SContainmentLinkAdapter role = new SContainmentLinkAdapter(roleId);
+          SNode roleNode = role.getLinkNode();
+          String roleName = roleNode != null ? roleNode.getName() : debugRegistry.getLinkName(roleId);
+          roleIds.put(roleId, roleName);
+        }
 
         for (SPropertyId pid : root.getPropertyIds()) {
           SPropertyAdapter propId = new SPropertyAdapter(pid);
@@ -165,7 +167,7 @@ public class ModelWriter9 implements IModelWriter {
           SReferenceLinkId refId = ref.getRoleId();
           SReferenceLinkAdapter refRole = new SReferenceLinkAdapter(refId);
           SNode refNode = refRole.getLinkNode();
-          String refName = refNode != null ? refNode.getName() : debugRegistry.getLinkName(roleId);
+          String refName = refNode != null ? refNode.getName() : debugRegistry.getLinkName(refId);
           refIds.put(refId, refName);
         }
       }
