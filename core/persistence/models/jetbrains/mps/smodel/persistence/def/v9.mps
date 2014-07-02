@@ -1504,6 +1504,11 @@
               </node>
             </node>
           </node>
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.SingleLineComment" typeId="tpee.6329021646629104954" id="7002646598194596450" nodeInfo="nn">
+            <node role="commentPart" roleId="tpee.6329021646629175155" type="tpee.TextCommentPart" typeId="tpee.6329021646629104957" id="7002646598194598415" nodeInfo="nn">
+              <property name="text" nameId="tpee.6329021646629104958" value="can be root" />
+            </node>
+          </node>
           <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="7167172773708890910" nodeInfo="nn">
             <node role="expression" roleId="tpee.1068581517676" type="cx9y.IndexedTupleLiteral" typeId="cx9y.1238853782547" id="4072482659873528344" nodeInfo="nn">
               <node role="component" roleId="cx9y.1238853845806" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="6947980414677299033" nodeInfo="nn">
@@ -1516,14 +1521,23 @@
                   </node>
                 </node>
               </node>
-              <node role="component" roleId="cx9y.1238853845806" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7167172773708890777" nodeInfo="nn">
-                <node role="operand" roleId="tpee.1197027771414" type="nv7r.XMLSAXFieldReference" typeId="nv7r.2264311582634140384" id="7167172773708890778" nodeInfo="nn">
-                  <link role="declaration" roleId="nv7r.2264311582634140385" targetNodeId="7167172773708890195" resolveInfo="helper" />
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7167172773708890779" nodeInfo="nn">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4362914091961476129" resolveInfo="readNodeRole" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="nv7r.XMLSAXAttributeReference" typeId="nv7r.2264311582634140361" id="4072482659873521655" nodeInfo="nn">
+              <node role="component" roleId="cx9y.1238853845806" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="7002646598194582281" nodeInfo="nn">
+                <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7002646598194584188" nodeInfo="nn" />
+                <node role="condition" roleId="tpee.1163668914799" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="7002646598194575891" nodeInfo="nn">
+                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="7002646598194579084" nodeInfo="nn" />
+                  <node role="leftExpression" roleId="tpee.1081773367580" type="nv7r.XMLSAXAttributeReference" typeId="nv7r.2264311582634140361" id="7002646598194573206" nodeInfo="nn">
                     <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890769" resolveInfo="role" />
+                  </node>
+                </node>
+                <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7002646598194588137" nodeInfo="nn">
+                  <node role="operand" roleId="tpee.1197027771414" type="nv7r.XMLSAXFieldReference" typeId="nv7r.2264311582634140384" id="7002646598194588138" nodeInfo="nn">
+                    <link role="declaration" roleId="nv7r.2264311582634140385" targetNodeId="7167172773708890195" resolveInfo="helper" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7002646598194588139" nodeInfo="nn">
+                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4362914091961476129" resolveInfo="readNodeRole" />
+                    <node role="actualArgument" roleId="tpee.1068499141038" type="nv7r.XMLSAXAttributeReference" typeId="nv7r.2264311582634140361" id="7002646598194588140" nodeInfo="nn">
+                      <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890769" resolveInfo="role" />
+                    </node>
                   </node>
                 </node>
               </node>

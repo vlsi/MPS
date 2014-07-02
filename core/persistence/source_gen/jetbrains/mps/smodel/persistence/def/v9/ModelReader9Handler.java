@@ -665,7 +665,8 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       SConceptId conceptId = fieldhelper.readConceptId(attrs.getValue("concept"));
       jetbrains.mps.smodel.SNode result = (interfaceNode ? new InterfaceSNode(conceptId) : new jetbrains.mps.smodel.SNode(conceptId));
       result.setId(SNodeId.fromString(attrs.getValue("id")));
-      return MultiTuple.<SNode,SContainmentLinkId>from(((SNode) result), fieldhelper.readNodeRole(attrs.getValue("role")));
+      // can be root 
+      return MultiTuple.<SNode,SContainmentLinkId>from(((SNode) result), (attrs.getValue("role") == null ? null : fieldhelper.readNodeRole(attrs.getValue("role"))));
     }
 
     @Override
