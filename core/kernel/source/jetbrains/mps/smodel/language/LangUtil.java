@@ -20,7 +20,11 @@ import jetbrains.mps.project.ModuleId.Regular;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -37,7 +41,7 @@ public abstract class LangUtil {
     return new SLanguageId(((Regular) moduleId).getUUID());
   }
 
-  public static SModuleReference getModuleReference(SLanguageId id){
+  public static SModuleReference getModuleReference(SLanguageId id) {
     return new ModuleReference(null, ModuleId.regular(id.getId()));
   }
 
@@ -45,7 +49,31 @@ public abstract class LangUtil {
   public static SConceptId getConceptId(SNode c) {
     SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof jetbrains.mps.smodel.SNodeId.Regular;
-    return new SConceptId(LangUtil.getLanguageId(((Language) c.getModel().getModule())),
-        ((int) ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId()));
+    int id = (int) ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId();
+    return new SConceptId(LangUtil.getLanguageId(((Language) c.getModel().getModule())), id);
+  }
+
+  //node must be a containment link declaration
+  public static SContainmentLinkId getNodeRoleId(SNode c) {
+    SNodeId nodeId = c.getNodeId();
+    assert nodeId instanceof jetbrains.mps.smodel.SNodeId.Regular;
+    int id = (int) ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId();
+    return new SContainmentLinkId(getConceptId(c.getContainingRoot()), id);
+  }
+
+  //node must be a ref link declaration
+  public static SReferenceLinkId getRefRoleId(SNode c) {
+    SNodeId nodeId = c.getNodeId();
+    assert nodeId instanceof jetbrains.mps.smodel.SNodeId.Regular;
+    int id = (int) ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId();
+    return new SReferenceLinkId(getConceptId(c.getContainingRoot()), id);
+  }
+
+  //node must be a property declaration
+  public static SPropertyId getPropId(SNode c) {
+    SNodeId nodeId = c.getNodeId();
+    assert nodeId instanceof jetbrains.mps.smodel.SNodeId.Regular;
+    int id = (int) ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId();
+    return new SPropertyId(getConceptId(c.getContainingRoot()), id);
   }
 }
