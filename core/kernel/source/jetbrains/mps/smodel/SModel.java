@@ -685,7 +685,7 @@ public class SModel implements SModelData {
       ModelChange.assertLegalChange(myModelDescriptor);
     }
 
-    if (importedLanguages().contains(id)) return;
+    if (myLanguagesIds.contains(id)) return;
 
     if (id.getId() == null) {
       LOG.warn("Attempt to add language reference to a language without id in model " + getReference().getModelName() + ". Language = " + id);
