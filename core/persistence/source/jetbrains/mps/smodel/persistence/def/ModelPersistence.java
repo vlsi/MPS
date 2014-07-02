@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.persistence.def.v7.ModelPersistence7;
 import jetbrains.mps.smodel.persistence.def.v8.ModelPersistence8;
 import jetbrains.mps.smodel.persistence.def.v9.ModelPersistence9;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
+import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.JDOMUtil;
@@ -104,7 +105,7 @@ public class ModelPersistence {
   public static final String PERSISTENCE = "persistence";
   public static final String PERSISTENCE_VERSION = "version";
 
-  public static final int LAST_VERSION = 8;
+  public static final int LAST_VERSION = 9;
 
   private static final IModelPersistence[] myModelPersistenceFactory = {
       null,
@@ -301,7 +302,11 @@ public class ModelPersistence {
     }
 
     if (modelPersistence == null) {
-      modelPersistence = getCurrentModelPersistence();
+      if (sourceModel.getModelDescriptor()!=null && TemporaryModels.isTemporary(sourceModel.getModelDescriptor())){
+        modelPersistence = getModelPersistence(8);
+      }else {
+        modelPersistence = getCurrentModelPersistence();
+      }
     }
 
     sourceModel.calculateImplicitImports();
