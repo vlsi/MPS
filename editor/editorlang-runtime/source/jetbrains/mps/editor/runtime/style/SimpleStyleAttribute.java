@@ -31,7 +31,7 @@ public final class SimpleStyleAttribute<T> extends AbstractStyleAttribute<T> {
     this(name, defaultValue, false);
   }
 
-  SimpleStyleAttribute(String name) {
+  public SimpleStyleAttribute(String name) {
     this(name, null, false);
   }
 

@@ -1,7 +1,0 @@
-<components>
-  <actions>
-    <group id="jetbrains.mps.ide.mpsmigration.migration30.Migrations30_ActionGroup" text="Migrations 3.0" popup="true">
-      <add-to-group group-id="ToolsMenu" anchor="last" />
-    </group>
-  </actions>
-</components>

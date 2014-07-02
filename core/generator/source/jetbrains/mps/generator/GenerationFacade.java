@@ -24,6 +24,7 @@ import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.LanguageAspect;
@@ -52,27 +53,12 @@ import java.util.Set;
  * Evgeny Gryaznov, 1/25/11
  */
 public class GenerationFacade {
-  private static Boolean ourLegacyGenTraceEnabled;
-
-  /**
-   * This is a temporary support for both legacy and new generation trace facilities. Once the old one gone, there'd be no need for this property.
-   * @return <code>true</code> if system property <code>"mps.internal.gentrace.old"</code> is set to true. Default value: <code>false</code>
-   */
-  @ToRemove(version = 3.1)
-  public static boolean isLegacyGenTraceEnabled() {
-    if (ourLegacyGenTraceEnabled == null) {
-      ourLegacyGenTraceEnabled = Boolean.getBoolean("mps.internal.gentrace.old");
-    }
-    return ourLegacyGenTraceEnabled;
-  }
 
   public static List<SNode/*MappingConfiguration*/> getOwnMappings(Generator generator) {
     List<SModel> list = generator.getOwnTemplateModels();
     List<SNode> mappings = new ArrayList<SNode>();
     for (SModel templateModel : list) {
-      List<SNode> nodes = ((jetbrains.mps.smodel.SModelInternal) templateModel).getFastNodeFinder().getNodes(
-          BootstrapLanguages.concept_generator_MappingConfiguration, true);
-      mappings.addAll(nodes);
+      mappings.addAll(FastNodeFinderManager.get(templateModel).getNodes(BootstrapLanguages.concept_generator_MappingConfiguration, true));
     }
     return mappings;
   }
@@ -140,8 +126,6 @@ public class GenerationFacade {
     // Calls requireWrite at some point
     transientModelsComponent.startGeneration(options.getNumberOfModelsToKeep());
 
-    options.getGenerationTracer().startTracing();
-
     final GeneratorLoggerAdapter logger = new GeneratorLoggerAdapter(messages, options.isShowInfo(), options.isShowWarnings());
 
     ModelAccess.instance().requireWrite(new Runnable() {
@@ -176,9 +160,6 @@ public class GenerationFacade {
         CleanupManager.getInstance().cleanup();
       }
     });
-
-
-    options.getGenerationTracer().finishTracing();
 
     ModelAccess.instance().requireWrite(new Runnable() {
       @Override

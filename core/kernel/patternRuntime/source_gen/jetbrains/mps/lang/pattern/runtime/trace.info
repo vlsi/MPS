@@ -1,43 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:3b890b7c-4f4e-439e-b3b4-4af658ba5455(jetbrains.mps.lang.pattern.runtime)/7783830406851712418">
-    <nodeInfo nodeId="7783830406851712425" fileName="PatternUtil.java" startLine="15" startPosition="69" endLine="16" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7783830406851712485" fileName="PatternUtil.java" startLine="18" startPosition="66" endLine="19" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7783830406851712500" fileName="PatternUtil.java" startLine="20" startPosition="5" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6803895172776101014" fileName="PatternUtil.java" startLine="24" startPosition="74" endLine="25" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6803895172776101049" fileName="PatternUtil.java" startLine="27" startPosition="28" endLine="28" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6803895172776101053" fileName="PatternUtil.java" startLine="29" startPosition="7" endLine="30" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6803895172776101068" fileName="PatternUtil.java" startLine="31" startPosition="5" endLine="32" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7783830406851712507" fileName="PatternUtil.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PatternUtil#()V" />
-    <nodeInfo nodeId="7783830406851712423" fileName="PatternUtil.java" startLine="14" startPosition="83" endLine="17" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7783830406851712483" fileName="PatternUtil.java" startLine="17" startPosition="5" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6803895172776101026" fileName="PatternUtil.java" startLine="26" startPosition="35" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6803895172776100975" fileName="PatternUtil.java" startLine="25" startPosition="71" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="7783830406851712419" fileName="PatternUtil.java" startLine="14" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchReferentWithNode#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6599163591527286778" fileName="PatternUtil.java" startLine="24" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasNChildren#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;I)Z" />
-    <scopeInfo nodeId="7783830406851712510" fileName="PatternUtil.java" startLine="11" startPosition="24" endLine="11" endPosition="24" />
-    <scopeInfo nodeId="7783830406851712424" fileName="PatternUtil.java" startLine="15" startPosition="69" endLine="16" endPosition="19" />
-    <scopeInfo nodeId="7783830406851712484" fileName="PatternUtil.java" startLine="18" startPosition="66" endLine="19" endPosition="19" />
-    <scopeInfo nodeId="6803895172776101027" fileName="PatternUtil.java" startLine="27" startPosition="28" endLine="28" endPosition="21" />
-    <scopeInfo nodeId="7783830406851712507" fileName="PatternUtil.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="6803895172776100976" fileName="PatternUtil.java" startLine="26" startPosition="35" endLine="30" endPosition="16" />
-    <scopeInfo nodeId="6803895172776100975" fileName="PatternUtil.java" startLine="25" startPosition="71" endLine="31" endPosition="5">
-      <varInfo nodeId="6803895172776100978" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="7783830406851712422" fileName="PatternUtil.java" startLine="14" startPosition="83" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="6599163591527286785" fileName="PatternUtil.java" startLine="24" startPosition="74" endLine="32" endPosition="27">
-      <varInfo nodeId="6803895172776101015" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="7783830406851712419" fileName="PatternUtil.java" startLine="14" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="7783830406851712504" varName="node" />
-      <varInfo nodeId="7783830406851712502" varName="pointer" />
-    </scopeInfo>
-    <scopeInfo nodeId="6599163591527286778" fileName="PatternUtil.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="6803895172776100928" varName="num" />
-      <varInfo nodeId="6599163591527286781" varName="parent" />
-      <varInfo nodeId="6599163591527286783" varName="role" />
-    </scopeInfo>
-    <unitInfo nodeId="7783830406851712418" fileName="PatternUtil.java" startLine="10" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
+    <file name="PatternUtil.java">
+      <node id="7783830406851712425" at="15,69,16,19" concept="5" />
+      <node id="7783830406851712485" at="18,66,19,19" concept="5" />
+      <node id="7783830406851712500" at="20,5,21,16" concept="5" />
+      <node id="6803895172776101014" at="24,74,25,71" concept="4" />
+      <node id="6803895172776101049" at="27,28,28,21" concept="5" />
+      <node id="6803895172776101053" at="29,7,30,16" concept="1" />
+      <node id="6803895172776101068" at="31,5,32,27" concept="5" />
+      <node id="7783830406851712507" at="11,0,13,0" concept="0" trace="PatternUtil#()V" />
+      <node id="7783830406851712423" at="14,83,17,5" concept="3" />
+      <node id="7783830406851712483" at="17,5,20,5" concept="3" />
+      <node id="6803895172776101026" at="26,35,29,7" concept="3" />
+      <node id="6803895172776100975" at="25,71,31,5" concept="2" />
+      <node id="7783830406851712419" at="14,0,23,0" concept="6" trace="matchReferentWithNode#(Lorg/jetbrains/mps/openapi/model/SNodeReference;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6599163591527286778" at="24,0,34,0" concept="6" trace="hasNChildren#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;I)Z" />
+      <scope id="7783830406851712510" at="11,24,11,24" />
+      <scope id="7783830406851712424" at="15,69,16,19" />
+      <scope id="7783830406851712484" at="18,66,19,19" />
+      <scope id="6803895172776101027" at="27,28,28,21" />
+      <scope id="7783830406851712507" at="11,0,13,0" />
+      <scope id="6803895172776100976" at="26,35,30,16" />
+      <scope id="6803895172776100975" at="25,71,31,5">
+        <var name="i" id="6803895172776100978" />
+      </scope>
+      <scope id="7783830406851712422" at="14,83,21,16" />
+      <scope id="6599163591527286785" at="24,74,32,27">
+        <var name="it" id="6803895172776101015" />
+      </scope>
+      <scope id="7783830406851712419" at="14,0,23,0">
+        <var name="node" id="7783830406851712504" />
+        <var name="pointer" id="7783830406851712502" />
+      </scope>
+      <scope id="6599163591527286778" at="24,0,34,0">
+        <var name="num" id="6803895172776100928" />
+        <var name="parent" id="6599163591527286781" />
+        <var name="role" id="6599163591527286783" />
+      </scope>
+      <unit id="7783830406851712418" at="10,0,35,0" name="jetbrains.mps.lang.pattern.runtime.PatternUtil" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

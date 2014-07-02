@@ -115,8 +115,6 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       environment.getLogger().error(getRuleNode(), "weaving rule: no rule myConsequence", GeneratorUtil.describeInput(context));
       return false;
     }
-
-    environment.getTracer().pushRuleConsequence(new jetbrains.mps.smodel.SNodePointer(myConsequenceNode));
     return myConsequence.apply(environment, context, outputContextNode);
   }
 
@@ -128,13 +126,8 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
       environment.getLogger().error(getRuleNode(), "couldn't evaluate weaving rule: no myTemplate");
       return;
     }
-    environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(context.getInput()));
-    try {
-      WeaveTemplateContainer wtc = getWeavingTemplateContainer(environment.getLogger());
-      wtc.apply(outputContextNode, context.subContext(myMappingName));
-    } finally {
-      environment.getTracer().closeInputNode(GenerationTracerUtil.getSNodePointer(context.getInput()));
-    }
+    WeaveTemplateContainer wtc = getWeavingTemplateContainer(environment.getLogger());
+    wtc.apply(outputContextNode, context.subContext(myMappingName));
   }
 
   @NotNull

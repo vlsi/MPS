@@ -8,9 +8,6 @@
       <modulePath path="$PROJECT_DIR$/framework/jetbrains.mps.samples.agreement.framework.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/sandbox/jetbrains.mps.samples.agreementLanguage.sandbox.msd" folder="" />
     </projectModules>
-    <genConfs>
-      <genConfModule name="agreementLanguage" moduleRef="jetbrains.mps.samples.agreementLanguage" />
-    </genConfs>
   </component>
 </project>
 

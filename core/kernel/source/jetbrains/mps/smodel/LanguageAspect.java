@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,11 +16,11 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.SModuleOperations;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.misc.StringBuilderSpinAllocator;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -220,42 +220,48 @@ public enum LanguageAspect {
     myName = name;
   }
 
+  /**
+   * @deprecated use {@link #getAspectQualifiedClassName(org.jetbrains.mps.openapi.language.SAbstractConcept)} instead
+   * NOTE, as it's not an API, might be dropped sooner than end of 3.2 dev cycle
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static String getAspectNodeFqName(@NotNull String conceptFqName, LanguageAspect languageAspect) {
-    String namespace = NameUtil.namespaceFromLongName(conceptFqName);
-    String shortName = NameUtil.shortNameFromLongName(conceptFqName);
-    if (namespace.endsWith("." + STRUCTURE.getName())) {
-      namespace = namespace.substring(0, namespace.length() - ("." + STRUCTURE.getName()).length());
-    } else {
+    SAbstractConcept c = SConceptRepository.getInstance().getConcept(conceptFqName);
+    if (c == null) {
       throw new IllegalArgumentException("Not a concept fq name");
     }
-
-    StringBuilder builder = StringBuilderSpinAllocator.alloc();
-    try {
-      builder.append(namespace);
-      builder.append('.');
-      builder.append(languageAspect.getName());
-      builder.append('.');
-      builder.append(shortName);
-      return builder.toString();
-    } finally {
-      StringBuilderSpinAllocator.dispose(builder);
-    }
+    return languageAspect.getAspectQualifiedClassName(c);
   }
 
-  public boolean is(org.jetbrains.mps.openapi.model.SModel sm) {
+  /**
+   * INTERNAL USE ONLY.
+   * Builds a class name of an aspect class according to hardcoded MPS convention.
+   */
+  public String getAspectQualifiedClassName(@NotNull SAbstractConcept concept) {
+    StringBuilder builder = new StringBuilder();
+    builder.append(concept.getLanguage().getQualifiedName());
+    builder.append('.');
+    builder.append(getName());
+    builder.append('.');
+    builder.append(concept.getName());
+    return builder.toString();
+  }
+
+  public boolean is(SModel sm) {
     return Language.getModelAspect(sm) == this;
   }
 
-  public EditableSModelDescriptor get(Language l) {
+  public SModel get(Language l) {
     return get_internal(l, false);
   }
 
-  public EditableSModelDescriptor getOrCreate(Language l) {
+  public SModel getOrCreate(Language l) {
     return get_internal(l, true);
   }
 
-  private EditableSModelDescriptor get_internal(Language l, boolean doCreate) {
-    EditableSModelDescriptor md = (EditableSModelDescriptor) SModelRepository.getInstance().getModelDescriptor(l.getModuleName() + "." + myName);
+  private SModel get_internal(Language l, boolean doCreate) {
+    SModel md = SModelRepository.getInstance().getModelDescriptor(l.getModuleName() + "." + myName);
     if (md != null && SModelRepository.getInstance().getOwner(md) == l) return md;
     return doCreate ? createNew(l) : null;
   }
@@ -268,11 +274,11 @@ public enum LanguageAspect {
     return myName;
   }
 
-  public EditableSModelDescriptor createNew(Language l) {
+  public SModel createNew(Language l) {
     return createNew(l, true);
   }
 
-  public EditableSModelDescriptor createNew(final Language l, final boolean saveModel) {
+  public SModel createNew(final Language l, final boolean saveModel) {
     assert get(l) == null;
 
     SModel structureModel = l.getStructureModelDescriptor();
@@ -282,7 +288,7 @@ public enum LanguageAspect {
     } else {
       modelRoot = ModelRootUtil.getModelRoot(structureModel);
     }
-    return (EditableSModelDescriptor) SModuleOperations.createModelWithAdjustments(l.getModuleName() + "." + getName(), modelRoot);
+    return SModuleOperations.createModelWithAdjustments(l.getModuleName() + "." + getName(), modelRoot);
   }
 
   @Nullable
@@ -290,10 +296,10 @@ public enum LanguageAspect {
 
   public abstract SModuleReference getMainLanguage();
 
-  public static Collection<EditableSModelDescriptor> getAspectModels(Language l) {
-    Set<EditableSModelDescriptor> result = new HashSet<EditableSModelDescriptor>();
+  public static Collection<SModel> getAspectModels(Language l) {
+    Set<SModel> result = new HashSet<SModel>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
-      EditableSModelDescriptor asp = aspect.get(l);
+      SModel asp = aspect.get(l);
       if (asp != null) {
         result.add(asp);
       }

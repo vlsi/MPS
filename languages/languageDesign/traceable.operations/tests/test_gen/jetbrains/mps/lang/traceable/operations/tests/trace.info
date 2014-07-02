@@ -1,44 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:040810da-2115-47c4-899f-bb0a7342e4e5(jetbrains.mps.lang.traceable.operations.tests@tests)/7327404875649026840">
-    <nodeInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="22" startPosition="57" endLine="23" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="23" startPosition="128" endLine="24" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="28" startPosition="58" endLine="29" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="29" startPosition="128" endLine="30" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7327404875649026893" fileName="CopyWithTrace_Test.java" startLine="35" startPosition="59" endLine="36" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7327404875649059184" fileName="CopyWithTrace_Test.java" startLine="36" startPosition="46" endLine="37" endPosition="333" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7327404875649026944" fileName="CopyWithTrace_Test.java" startLine="40" startPosition="60" endLine="41" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7327404875649026978" fileName="CopyWithTrace_Test.java" startLine="41" startPosition="46" endLine="42" endPosition="360" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7327404875649027019" fileName="CopyWithTrace_Test.java" startLine="42" startPosition="360" endLine="43" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7327404875649027081" fileName="CopyWithTrace_Test.java" startLine="43" startPosition="68" endLine="44" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7327404875649059167" fileName="CopyWithTrace_Test.java" startLine="44" startPosition="68" endLine="45" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7327404875649059174" fileName="CopyWithTrace_Test.java" startLine="45" startPosition="192" endLine="46" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="901167123042832900" fileName="CopyWithTrace_Test.java" startLine="48" startPosition="41" endLine="49" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="901167123042832897" fileName="CopyWithTrace_Test.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7327404875649026893" fileName="CopyWithTrace_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_copyNodeWithTrace#()V" />
-    <nodeInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_copyNodeWithTrace#()V" />
-    <nodeInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_copyNListWithTrace#()V" />
-    <nodeInfo nodeId="7327404875649059159" fileName="CopyWithTrace_Test.java" startLine="46" startPosition="192" endLine="51" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7327404875649026944" fileName="CopyWithTrace_Test.java" startLine="40" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_copyNListWithTrace#()V" />
-    <scopeInfo nodeId="901167123042832899" fileName="CopyWithTrace_Test.java" startLine="48" startPosition="41" endLine="49" endPosition="173" />
-    <scopeInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="22" startPosition="57" endLine="24" endPosition="126" />
-    <scopeInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="28" startPosition="58" endLine="30" endPosition="127" />
-    <scopeInfo nodeId="7327404875649026893" fileName="CopyWithTrace_Test.java" startLine="35" startPosition="59" endLine="37" endPosition="333" />
-    <scopeInfo nodeId="901167123042832897" fileName="CopyWithTrace_Test.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="901167123042832897" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="7327404875649026893" fileName="CopyWithTrace_Test.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="7327404875649026944" fileName="CopyWithTrace_Test.java" startLine="40" startPosition="60" endLine="51" endPosition="81">
-      <varInfo nodeId="7327404875649027082" varName="callingCopy" />
-      <varInfo nodeId="7327404875649026979" varName="copy" />
-      <varInfo nodeId="7327404875649027020" varName="utilityCopy" />
-    </scopeInfo>
-    <scopeInfo nodeId="7327404875649026944" fileName="CopyWithTrace_Test.java" startLine="40" startPosition="0" endLine="53" endPosition="0" />
-    <unitInfo nodeId="901167123042832897" fileName="CopyWithTrace_Test.java" startLine="47" startPosition="208" endLine="51" endPosition="7" unitName="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$1" />
-    <unitInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="33" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$TestBody" />
-    <unitInfo nodeId="7327404875649026840" fileName="CopyWithTrace_Test.java" startLine="19" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test" />
+    <file name="CopyWithTrace_Test.java">
+      <node id="7327404875649026840" at="23,57,24,128" concept="0" />
+      <node id="7327404875649026840" at="24,128,25,126" concept="0" />
+      <node id="7327404875649026840" at="29,58,30,128" concept="0" />
+      <node id="7327404875649026840" at="30,128,31,127" concept="0" />
+      <node id="7327404875649026893" at="36,59,37,46" concept="0" />
+      <node id="7327404875649059184" at="37,46,38,372" concept="0" />
+      <node id="7327404875649026944" at="41,60,42,46" concept="0" />
+      <node id="7327404875649026978" at="42,46,43,360" concept="2" />
+      <node id="7327404875649027019" at="43,360,44,68" concept="2" />
+      <node id="7327404875649027081" at="44,68,45,68" concept="2" />
+      <node id="7327404875649059167" at="45,68,46,231" concept="0" />
+      <node id="7327404875649059174" at="46,231,47,231" concept="0" />
+      <node id="901167123042832900" at="49,41,50,173" concept="3" />
+      <node id="901167123042832897" at="49,0,52,0" concept="1" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7327404875649026893" at="36,0,40,0" concept="1" trace="test_copyNodeWithTrace#()V" />
+      <node id="7327404875649026840" at="22,0,27,0" concept="1" trace="test_copyNodeWithTrace#()V" />
+      <node id="7327404875649026840" at="28,0,33,0" concept="1" trace="test_copyNListWithTrace#()V" />
+      <node id="7327404875649059159" at="47,231,52,81" concept="0" />
+      <node id="7327404875649026944" at="41,0,54,0" concept="1" trace="test_copyNListWithTrace#()V" />
+      <scope id="901167123042832899" at="49,41,50,173" />
+      <scope id="7327404875649026840" at="23,57,25,126" />
+      <scope id="7327404875649026840" at="29,58,31,127" />
+      <scope id="7327404875649026893" at="36,59,38,372" />
+      <scope id="901167123042832897" at="49,0,52,0">
+        <var name="it" id="901167123042832897" />
+      </scope>
+      <scope id="7327404875649026893" at="36,0,40,0" />
+      <scope id="7327404875649026840" at="22,0,27,0" />
+      <scope id="7327404875649026840" at="28,0,33,0" />
+      <scope id="7327404875649026944" at="41,60,52,81">
+        <var name="callingCopy" id="7327404875649027082" />
+        <var name="copy" id="7327404875649026979" />
+        <var name="utilityCopy" id="7327404875649027020" />
+      </scope>
+      <scope id="7327404875649026944" at="41,0,54,0" />
+      <unit id="901167123042832897" at="48,208,52,7" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$1" />
+      <unit id="7327404875649026840" at="34,0,55,0" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test$TestBody" />
+      <unit id="7327404875649026840" at="20,0,56,0" name="jetbrains.mps.lang.traceable.operations.tests.CopyWithTrace_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

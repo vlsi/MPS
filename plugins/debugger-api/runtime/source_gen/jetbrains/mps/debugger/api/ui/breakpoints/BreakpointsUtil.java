@@ -7,7 +7,6 @@ import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 
@@ -20,7 +19,7 @@ public class BreakpointsUtil {
 
   public static void openNode(final IOperationContext context, final ILocationBreakpoint breakpoint, final boolean focus, final boolean select) {
     final Project project = context.getProject();
-    ModelAccess.instance().executeCommand(new Runnable() {
+    project.getModelAccess().executeCommand(new Runnable() {
       @Override
       public void run() {
         SNode node = breakpoint.getLocation().getSNode();
@@ -29,6 +28,6 @@ public class BreakpointsUtil {
         }
         NavigationSupport.getInstance().openNode(context, node, focus, select);
       }
-    }, project);
+    });
   }
 }

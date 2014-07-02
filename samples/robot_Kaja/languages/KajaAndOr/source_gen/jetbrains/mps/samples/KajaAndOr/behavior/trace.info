@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="And_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.behavior.And_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="LogicalOperator_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.behavior.LogicalOperator_BehaviorDescriptor" />
-  <unitInfo fileName="Or_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.behavior.Or_BehaviorDescriptor" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="Or_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.samples.KajaAndOr.behavior.Or_BehaviorDescriptor" />
+    </file>
+    <file name="And_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.samples.KajaAndOr.behavior.And_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.samples.KajaAndOr.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="LogicalOperator_BehaviorDescriptor.java">
+      <unit at="8,0,17,0" name="jetbrains.mps.samples.KajaAndOr.behavior.LogicalOperator_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

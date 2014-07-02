@@ -47,9 +47,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Evgeny Gryaznov, May 12, 2010
@@ -65,40 +63,10 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.checkCondition(condition, required, inputNode, ruleNode);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
-  public boolean checkCondition(SNode condition, boolean required, TemplateContext templateContext, SNode ruleNode) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.checkCondition(condition, required, templateContext, ruleNode);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
   public boolean evaluate(@NotNull InlineSwitchCaseCondition condition, @NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.evaluate(condition, context);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
-  public boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.checkConditionForIfMacro(inputNode, ifMacro, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
@@ -134,32 +102,12 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     }
   }
 
-  @Override
-  public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
   @Nullable
   @Override
   public Object evaluate(@NotNull PropertyValueQuery query, @NotNull PropertyMacroContext context) throws GenerationFailureException {
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.evaluate(query, context);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
-  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
@@ -191,17 +139,6 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     try {
       NodeReadEventsCaster.setNodesReadListener(listener);
       return wrapped.evaluateVariableQuery(inputNode, query, context);
-    } finally {
-      NodeReadEventsCaster.removeNodesReadListener();
-    }
-  }
-
-  @Override
-  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context)
-      throws GenerationFailureException {
-    try {
-      NodeReadEventsCaster.setNodesReadListener(listener);
-      return wrapped.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
@@ -273,12 +210,6 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
   }
 
   @Override
-  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    assert environment == context.getEnvironment();
-    return tryToApply(rule, context);
-  }
-
-  @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
     try {
       final DependenciesReadListener l;
@@ -298,11 +229,6 @@ public class QueryExecutionContextWithDependencyRecording implements QueryExecut
     } finally {
       NodeReadEventsCaster.removeNodesReadListener();
     }
-  }
-
-  @Override
-  public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return isApplicable(rule, context);
   }
 
   @Override

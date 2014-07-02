@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -25,25 +24,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
  * Evgeny Gryaznov, 11/15/10
  */
 public class TemplateQueryContextWithMacro extends TemplateQueryContext {
-
-  /**
-   * @deprecated use alternatives with SNodeReference, without explicit input node and ITemplateGenerator
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public TemplateQueryContextWithMacro(SNode inputNode, SNode macroNode, TemplateContext context, ITemplateGenerator generator) {
-    super(inputNode, macroNode, context, generator);
-  }
-
-  /**
-   * @deprecated use alternatives with SNodeReference, without explicit input node and ITemplateGenerator
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public TemplateQueryContextWithMacro(SNode inputNode, SNodeReference macroNode, TemplateContext context, ITemplateGenerator generator) {
-    super(macroNode, context.subContext(inputNode));
-  }
-
 
   /**
    * @since 3.1

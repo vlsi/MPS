@@ -12,6 +12,7 @@
     <file name="RemoteConnectionSettings.java" />
   </source>
   <source id="3432969378036013783" name="DebugConnectionSettings" hash="7tazmvp3wh5y718ac2s1u80h8wiq2yi">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="DebugConnectionSettings.java" />
   </source>
   <source id="3432969378036017435" name="LocalConnectionSettings" hash="-7nthjbef5dd6a9sy1cuun3rwio771yt">

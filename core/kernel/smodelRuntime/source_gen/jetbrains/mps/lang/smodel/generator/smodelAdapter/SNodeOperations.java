@@ -4,6 +4,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.logging.Logger;
 import org.apache.log4j.LogManager;
+import jetbrains.mps.RuntimeFlags;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
@@ -19,6 +20,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.scope.Scope;
@@ -29,11 +31,12 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Collections;
+import jetbrains.mps.util.ConditionalIterable;
 
 public class SNodeOperations {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNodeOperations.class));
-  private static boolean ourCastsEnabled = !(("true".equals(System.getProperty("mps.disableNodeCastExceptions"))));
+  private static boolean ourCastExceptionsEnabled = RuntimeFlags.isExceptionOnBadCast();
   /**
    * Empty list of nodes that can't be modified helps to detect otherwise hard to catch
    * errors when role of non-existent parent is modified.
@@ -594,7 +597,7 @@ public class SNodeOperations {
   }
 
   public static SNode getNode(String modelUID, String nodeID) {
-    return new SNodePointer(modelUID, nodeID).getNode();
+    return new SNodePointer(modelUID, nodeID).resolve(MPSModuleRepository.getInstance());
   }
 
   /**
@@ -621,7 +624,7 @@ public class SNodeOperations {
     }
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
       String message = "Can't cast node: " + node.getNodeId().toString() + ", concept: " + node.getConcept().getQualifiedName() + " to concept: " + castTo;
-      if (ourCastsEnabled) {
+      if (ourCastExceptionsEnabled) {
         throw new NodeCastException(message);
       } else {
         LOG.warning(message);
@@ -631,9 +634,6 @@ public class SNodeOperations {
   }
 
   public static SNode as(SNode node, String castTo) {
-    if (node == null) {
-      return null;
-    }
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
       return null;
     }
@@ -646,7 +646,7 @@ public class SNodeOperations {
     }
     if (!(SModelUtil.isAssignableConcept(NameUtil.nodeFQName(node), castTo))) {
       String message = "Can't cast concept: " + node.getNodeId().toString() + ", FQName: " + NameUtil.nodeFQName(node) + " to concept: " + castTo;
-      if (ourCastsEnabled) {
+      if (ourCastExceptionsEnabled) {
         throw new NodeCastException(message);
       } else {
         LOG.warning(message);
@@ -681,14 +681,14 @@ public class SNodeOperations {
     if (childNode == null) {
       return null;
     }
-    return ((SNode) childNode).getRoleInParent();
+    return childNode.getRoleInParent();
   }
 
   public static List<SReference> getReferences(SNode node) {
     if (node == null) {
       return new EmptyList<SReference>("Attempt to add reference to unexistent parent. Reference: %s");
     }
-    return ((List) IterableUtil.asList(node.getReferences()));
+    return IterableUtil.asList(node.getReferences());
   }
 
   public static SReference getReference(SNode node, SNode linkDeclaration) {
@@ -699,11 +699,12 @@ public class SNodeOperations {
     return node.getReference(SPropertyOperations.getString(linkDeclaration, "role"));
   }
 
-  public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, final String conceptName) {
-    return Sequence.fromIterable(nodes).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, conceptName);
-      }
-    });
+  public static Iterable<SNode> ofConcept(Iterable<SNode> nodes, String conceptName) {
+    if (conceptName == null) {
+      return Sequence.fromIterable(Collections.<SNode>emptyList());
+    }
+    InstanceOfCondition condition = new InstanceOfCondition(conceptName).tolerateNulls();
+    Iterable<SNode> rv = new ConditionalIterable<SNode>(nodes, condition);
+    return rv;
   }
 }

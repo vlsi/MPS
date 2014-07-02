@@ -27,7 +27,7 @@
     <orderEntry type="module-library" scope="TEST">
       <library>
         <CLASSES>
-          <root url="jar://$APPLICATION_HOME_DIR$/plugins/devkit/lib/jps/devkit-jps-plugin.jar!/" />
+          <root url="jar://$PLUGINS_PATH$/devkit/lib/jps/devkit-jps-plugin.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

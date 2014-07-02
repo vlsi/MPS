@@ -15,114 +15,56 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import jetbrains.mps.smodel.event.SModelChildEvent;
-import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.smodel.impl.StructureAspectChangeTracker;
 import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelChangeListener;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepository;
+import org.jetbrains.mps.openapi.model.SReference;
 
-import java.util.Arrays;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Set;
+// XXX almost identical to TransientModelNodeFinder, once
+// NodeReadAccessCasterInEditor#runReadTransparentAction has better alternative, merge.
+public class DefaultFastNodeFinder extends BaseFastNodeFinder {
+  // XXX identical to listener in TransientModelNodeFinder
+  private final SModelChangeListener myListener = new SModelChangeListener() {
+    @Override
+    public void nodeAdded(org.jetbrains.mps.openapi.model.SModel model, SNode node, String role, SNode child) {
+      added(child);
+    }
 
+    @Override
+    public void nodeRemoved(org.jetbrains.mps.openapi.model.SModel model, SNode node, String role, SNode child) {
+      removed(child);
+    }
 
-public class DefaultFastNodeFinder extends AbstractFastNodeFinder implements StructureAspectChangeTracker.ModuleListener {
-  private final SModelAdapter myListener = new MySModelAdapter();
-  private final StructureAspectChangeTracker myDependencyListener;
-  private final NodeByIdComparator myComparator = new NodeByIdComparator();
-  private final ModelDependenciesManager myDepTracker;
-  private final SRepository myRepository;
+    @Override
+    public void propertyChanged(SNode node, String propertyName, String oldValue, String newValue) {
+      // no-op
+    }
+
+    @Override
+    public void referenceChanged(SNode node, String role, SReference oldRef, SReference newRef) {
+      // no-op, FNF doesn't depend on references, structure only
+    }
+  };
 
   public DefaultFastNodeFinder(SModel model) {
     super(model);
-    ((SModelInternal) model).addModelListener(myListener);
-    myRepository = model.getRepository();
-    myDepTracker = new ModelDependenciesManager(model).trackModelChanges().trackRepositoryChanges(myRepository);
-    // Next code is superfluous in end-user environment with fixed languages (they don't change), but there's no way to tell
-    // this kind of environment.
-    myDependencyListener = new StructureAspectChangeTracker(null, this);
-    myDependencyListener.attachTo(myRepository);
+    if (!model.isReadOnly() && model instanceof EditableSModel) {
+      ((EditableSModel) model).addChangeListener(myListener);
+    }
   }
 
   @Override
   public void dispose() {
-    myDependencyListener.detachFrom(myRepository);
-    myDepTracker.dispose();
-    ((SModelInternal) myModel).removeModelListener(myListener);
-    super.dispose();
-  }
-
-  @Override
-  public List<SNode> getNodes(String conceptFqName, boolean includeInherited) {
-    // pre-loading model to avoid deadlock (model loading process requires a lock)
-    // model cannot be unloaded afterwards, because we have model read access
-    myModel.load();
-    List<SNode> rv = super.getNodes(conceptFqName, includeInherited);
-    // sorting is switched off as it gives different ordering of generated methods
-    // when either regular SModel or transient SModel comes as an input to a generator.
-    // Once generator steps start with transient model (complete copy of input model)
-    // - pending work (FNF consistency is just a nice side-effect), the sorting can be turned on again
-    // (however not sure it is really needed?)
-    if (Boolean.FALSE.booleanValue()) {
-      // not Collections.sort as the list returned is not necessarily modifiable
-      SNode[] arr = rv.toArray(new SNode[rv.size()]);
-      Arrays.sort(arr, myComparator);
-      return Arrays.asList(arr);
+    if (myModel instanceof EditableSModel) {
+      ((EditableSModel) myModel).removeChangeListener(myListener);
     }
-    return rv;
+    super.dispose();
   }
 
   @Override
   protected ConceptInstanceMap build(Computable<ConceptInstanceMap> b) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(b);
-  }
-
-  @Override
-  public void structureAspectChanged(Set<SModuleReference> changedLanguages) {
-    for (SModuleReference importedLang : myDepTracker.getAllImportedLanguages()) {
-      if (changedLanguages.contains(importedLang)) {
-        reset();
-        return;
-      }
-    }
-  }
-
-  private class MySModelAdapter extends SModelAdapter {
-    public MySModelAdapter() {
-      super(SModelListenerPriority.PLATFORM);
-    }
-
-    @Override
-    public void childAdded(SModelChildEvent event) {
-      added(event.getChild());
-    }
-
-    @Override
-    public void childRemoved(SModelChildEvent event) {
-      removed(event.getChild());
-    }
-
-    @Override
-    public void rootAdded(SModelRootEvent event) {
-      added(event.getRoot());
-    }
-
-    @Override
-    public void rootRemoved(SModelRootEvent event) {
-      removed(event.getRoot());
-    }
-  }
-
-
-  public static class NodeByIdComparator implements Comparator<SNode> {
-    @Override
-    public int compare(SNode o1, SNode o2) {
-      return ((jetbrains.mps.smodel.SNodeId) o1.getNodeId()).compareTo(((jetbrains.mps.smodel.SNodeId) o2.getNodeId()));
-    }
   }
 }

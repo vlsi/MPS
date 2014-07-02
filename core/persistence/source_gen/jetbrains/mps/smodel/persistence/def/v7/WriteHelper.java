@@ -23,7 +23,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.StaticReference;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -156,7 +156,7 @@ public class WriteHelper {
   }
 
   public String genResolveInfo(@NotNull SReference ref) {
-    if (!(MPSCore.getInstance().isMergeDriverMode())) {
+    if (!(RuntimeFlags.isMergeDriverMode())) {
       SNode target = (ref instanceof StaticReference ? ref.getTargetNode() : null);
       if ((target != null)) {
         String resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(target);

@@ -1,26 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="AbstractStateMachineElement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.AbstractStateMachineElement_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="EventReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.EventReference_BehaviorDescriptor" />
-  <unitInfo fileName="Event_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.Event_BehaviorDescriptor" />
-  <unitInfo fileName="StateMachine_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.StateMachine_BehaviorDescriptor" />
-  <unitInfo fileName="StateReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.StateReference_BehaviorDescriptor" />
-  <unitInfo fileName="State_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.State_BehaviorDescriptor" />
-  <unitInfo fileName="Transition_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.Transition_BehaviorDescriptor" />
-  <root nodeRef="r:69c80171-1c29-4a65-a4dd-6ac282fe55ff(jetbrains.mps.samples.multipleProjections.stateMachine.behavior)/7943979732673457913">
-    <nodeInfo nodeId="7943979732673457921" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStateMachine_7943979732673457916#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="7943979732673457915" fileName="AbstractStateMachineElement_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="7943979732673457919" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="150" />
-    <scopeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="7943979732673457913" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="7943979732673457913" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.AbstractStateMachineElement_Behavior" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="EventReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.EventReference_BehaviorDescriptor" />
+    </file>
+    <file name="StateMachine_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.StateMachine_BehaviorDescriptor" />
+    </file>
+    <file name="Event_BehaviorDescriptor.java">
+      <unit at="9,0,22,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.Event_BehaviorDescriptor" />
+    </file>
+    <file name="AbstractStateMachineElement_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.AbstractStateMachineElement_BehaviorDescriptor" />
+    </file>
+    <file name="State_BehaviorDescriptor.java">
+      <unit at="9,0,22,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.State_BehaviorDescriptor" />
+    </file>
+    <file name="StateReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.StateReference_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,34,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="Transition_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.Transition_BehaviorDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:69c80171-1c29-4a65-a4dd-6ac282fe55ff(jetbrains.mps.samples.multipleProjections.stateMachine.behavior)/7943979732673457913">
+    <file name="AbstractStateMachineElement_Behavior.java">
+      <node id="7943979732673457921" at="12,80,13,150" concept="0" />
+      <node id="7943979732673457913" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7943979732673457913" at="12,0,15,0" concept="1" trace="call_getStateMachine_7943979732673457916#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="7943979732673457915" at="9,43,9,43" />
+      <scope id="7943979732673457919" at="12,80,13,150" />
+      <scope id="7943979732673457913" at="9,0,11,0">
+        <var name="thisNode" id="7943979732673457913" />
+      </scope>
+      <scope id="7943979732673457913" at="12,0,15,0">
+        <var name="thisNode" id="7943979732673457913" />
+      </scope>
+      <unit id="7943979732673457913" at="8,0,16,0" name="jetbrains.mps.samples.multipleProjections.stateMachine.behavior.AbstractStateMachineElement_Behavior" />
+    </file>
+  </root>
+</debug-info>
 

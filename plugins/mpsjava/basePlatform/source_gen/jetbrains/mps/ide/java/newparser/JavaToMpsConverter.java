@@ -24,6 +24,7 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -47,18 +48,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.scope.Scope;
 import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.persistence.FilePerRootDataSource;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.FilePerRootModelPersistence;
-import jetbrains.mps.project.MPSExtentions;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
@@ -173,6 +176,7 @@ public class JavaToMpsConverter {
             ListSequence.fromList(mySuccessfulFiles).addSequence(ListSequence.fromList(MapSequence.fromMap(filesPerPackage).get(pakage)));
             ListSequence.fromList(myAttachedRoots).addSequence(SetSequence.fromSet(roots));
 
+            ((EditableSModelBase) model).save();
             ListSequence.fromList(myModels).addElement(model);
           }
           module = myModule;
@@ -783,21 +787,20 @@ public class JavaToMpsConverter {
       return null;
     }
 
-    // now check whether it's in another class 
-    SNode thisClass = SNodeOperations.getAncestor(localCall, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    SNode thatClass = SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    // it should be ok to use ==, I think 
-    if (thisClass == thatClass) {
-      // same class, such local method call is ok in baseLanguage 
+    Scope staticMethodScope = Scope.getScope(SNodeOperations.getParent(localCall), localCall, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"));
+    if (staticMethodScope.contains(target)) {
       return null;
     }
 
-    // different class, let's make this call non-local, but qualified 
+    // it's out of scope, let's make it StaticMethodCall 
     SNode smc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
-    SLinkOperations.setTarget(smc, "classConcept", thatClass, false);
+    SLinkOperations.setTarget(smc, "classConcept", SNodeOperations.getAncestor(target, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), false);
     SLinkOperations.setTarget(smc, "baseMethodDeclaration", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(localCall, "actualArgument", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(smc, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
+    }
+    for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(localCall, "typeArgument", true))) {
+      ListSequence.fromList(SLinkOperations.getTargets(smc, "typeArgument", true)).addElement(SNodeOperations.copyNode(arg));
     }
 
     return smc;
@@ -1074,28 +1077,31 @@ public class JavaToMpsConverter {
   }
 
   private SModel createModel(String pkgFqName, IFile pkgDir) {
-    ModelFactory factory = (myCreatePerRoot ? PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID) : PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL));
-
-    ModelRoot modelRoot;
-    String sourceRoot;
-
-    if (myCreateInplace) {
-      Tuples._2<ModelRoot, String> where = getRootContainingDir(pkgDir);
-      modelRoot = where._0();
-      sourceRoot = where._1();
-    } else {
-      modelRoot = getFirstRootToCreateModel(pkgFqName);
-      sourceRoot = null;
-    }
-
-    if (modelRoot == null) {
-      LOG.error("Failed to get model root to create the model in");
-      return null;
-    }
-
     SModel modelDescr;
     try {
-      modelDescr = ((DefaultModelRoot) modelRoot).createModel(pkgFqName, sourceRoot, factory);
+
+      if (myCreateInplace) {
+        Tuples._2<ModelRoot, String> where = getRootContainingDir(pkgDir);
+        ModelRoot modelRoot = where._0();
+        if (modelRoot == null) {
+          LOG.error("Cannot convert to MPS in-place: java sources not under proper model root");
+          return null;
+        }
+        FilePerRootDataSource ds = new FilePerRootDataSource(pkgDir, modelRoot);
+        Map<String, String> options = MapSequence.fromMap(new HashMap<String, String>());
+        MapSequence.fromMap(options).put(ModelFactory.OPTION_MODELNAME, pkgFqName);
+        modelDescr = PersistenceRegistry.getInstance().getFolderModelFactory(FilePerRootModelPersistence.FACTORY_ID).create(ds, options);
+        ((SModelBase) modelDescr).setModelRoot(modelRoot);
+
+      } else {
+        ModelRoot modelRoot = getFirstRootToCreateModel(pkgFqName);
+        if (modelRoot == null) {
+          LOG.error("Failed to find model root to create model in");
+          return null;
+        }
+        modelDescr = ((DefaultModelRoot) modelRoot).createModel(pkgFqName, null, PersistenceRegistry.getInstance().getModelFactory(MPSExtentions.MODEL));
+      }
+
       if (modelDescr == null) {
         LOG.error("Failed to create model: createModel returned null");
         return null;

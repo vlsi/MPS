@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:5e5a9d2b-8a9f-492c-a8d5-9d6251007110(jetbrains.mps.workbench.dialogs.project.components.parts.creators)/1560298786499497434">
-    <nodeInfo nodeId="1560298786499497467" fileName="ModulePathChooser.java" startLine="13" startPosition="25" endLine="14" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499497472" fileName="ModulePathChooser.java" startLine="14" startPosition="52" endLine="15" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499497479" fileName="ModulePathChooser.java" startLine="15" startPosition="144" endLine="16" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499497495" fileName="ModulePathChooser.java" startLine="17" startPosition="23" endLine="18" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499497497" fileName="ModulePathChooser.java" startLine="19" startPosition="5" endLine="20" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499497490" fileName="ModulePathChooser.java" startLine="16" startPosition="38" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1560298786499497463" fileName="ModulePathChooser.java" startLine="12" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/project/structure/project/Path;" />
-    <scopeInfo nodeId="1560298786499497494" fileName="ModulePathChooser.java" startLine="17" startPosition="23" endLine="18" endPosition="18" />
-    <scopeInfo nodeId="1560298786499497466" fileName="ModulePathChooser.java" startLine="13" startPosition="25" endLine="20" endPosition="36">
-      <varInfo nodeId="1560298786499497468" varName="chooser" />
-      <varInfo nodeId="1560298786499497480" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499497463" fileName="ModulePathChooser.java" startLine="12" startPosition="0" endLine="22" endPosition="0" />
-    <unitInfo nodeId="1560298786499497434" fileName="ModulePathChooser.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser" />
+    <file name="ModulePathChooser.java">
+      <node id="1560298786499497467" at="13,25,14,52" concept="3" />
+      <node id="1560298786499497472" at="14,52,15,144" concept="0" />
+      <node id="1560298786499497479" at="15,144,16,38" concept="3" />
+      <node id="1560298786499497495" at="17,23,18,18" concept="4" />
+      <node id="1560298786499497497" at="19,5,20,36" concept="4" />
+      <node id="1560298786499497490" at="16,38,19,5" concept="1" />
+      <node id="1560298786499497463" at="12,0,22,0" concept="2" trace="compute#()Ljetbrains/mps/project/structure/project/Path;" />
+      <scope id="1560298786499497494" at="17,23,18,18" />
+      <scope id="1560298786499497466" at="13,25,20,36">
+        <var name="chooser" id="1560298786499497468" />
+        <var name="file" id="1560298786499497480" />
+      </scope>
+      <scope id="1560298786499497463" at="12,0,22,0" />
+      <unit id="1560298786499497434" at="11,0,23,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.creators.ModulePathChooser" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

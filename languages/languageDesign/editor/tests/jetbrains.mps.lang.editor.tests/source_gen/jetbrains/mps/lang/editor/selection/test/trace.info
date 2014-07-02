@@ -1,386 +1,420 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/1550462124899260772">
-    <nodeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="18" startPosition="51" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1550462124899316438" fileName="UpDownDummy_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899316442" fileName="UpDownDummy_Test.java" startLine="32" startPosition="107" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899316445" fileName="UpDownDummy_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899316447" fileName="UpDownDummy_Test.java" startLine="34" startPosition="107" endLine="35" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899316449" fileName="UpDownDummy_Test.java" startLine="35" startPosition="109" endLine="36" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899316452" fileName="UpDownDummy_Test.java" startLine="36" startPosition="109" endLine="37" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UpDownDummy_Test#()V" />
-    <nodeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_UpDownDummy#()V" />
-    <nodeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="14" startPosition="29" endLine="14" endPosition="29" />
-    <scopeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="18" startPosition="51" endLine="20" endPosition="108" />
-    <scopeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="29" startPosition="51" endLine="37" endPosition="109">
-      <varInfo nodeId="1550462124899260772" varName="editor" />
-      <varInfo nodeId="1550462124899260772" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="28" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="23" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.UpDownDummy_Test$TestBody" />
-    <unitInfo nodeId="1550462124899260772" fileName="UpDownDummy_Test.java" startLine="12" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.UpDownDummy_Test" />
+    <file name="UpDownDummy_Test.java">
+      <node id="1550462124899260772" at="18,51,19,117" concept="1" />
+      <node id="1550462124899260772" at="19,117,20,108" concept="1" />
+      <node id="1550462124899260772" at="29,51,30,99" concept="3" />
+      <node id="1550462124899260772" at="30,99,31,93" concept="3" />
+      <node id="1550462124899316438" at="31,93,32,107" concept="1" />
+      <node id="1550462124899316442" at="32,107,33,107" concept="1" />
+      <node id="1550462124899316445" at="33,107,34,107" concept="1" />
+      <node id="1550462124899316447" at="34,107,35,109" concept="1" />
+      <node id="1550462124899316449" at="35,109,36,109" concept="1" />
+      <node id="1550462124899316452" at="36,109,37,109" concept="1" />
+      <node id="1550462124899260772" at="14,0,16,0" concept="0" trace="UpDownDummy_Test#()V" />
+      <node id="1550462124899260772" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="1550462124899260772" at="17,0,22,0" concept="2" trace="test_UpDownDummy#()V" />
+      <node id="1550462124899260772" at="28,0,39,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="1550462124899260772" at="14,29,14,29" />
+      <scope id="1550462124899260772" at="25,23,25,23" />
+      <scope id="1550462124899260772" at="14,0,16,0" />
+      <scope id="1550462124899260772" at="18,51,20,108" />
+      <scope id="1550462124899260772" at="25,0,27,0" />
+      <scope id="1550462124899260772" at="17,0,22,0" />
+      <scope id="1550462124899260772" at="29,51,37,109">
+        <var name="editor" id="1550462124899260772" />
+        <var name="editorComponent" id="1550462124899260772" />
+      </scope>
+      <scope id="1550462124899260772" at="28,0,39,0" />
+      <unit id="1550462124899260772" at="23,0,40,0" name="jetbrains.mps.lang.editor.selection.test.UpDownDummy_Test$TestBody" />
+      <unit id="1550462124899260772" at="12,0,41,0" name="jetbrains.mps.lang.editor.selection.test.UpDownDummy_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/1550462124899316455">
-    <nodeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="18" startPosition="51" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1550462124899316475" fileName="UpDownStack_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899316479" fileName="UpDownStack_Test.java" startLine="32" startPosition="107" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899316483" fileName="UpDownStack_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UpDownStack_Test#()V" />
-    <nodeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_UpDownStack#()V" />
-    <nodeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="14" startPosition="29" endLine="14" endPosition="29" />
-    <scopeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="18" startPosition="51" endLine="20" endPosition="108" />
-    <scopeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="29" startPosition="51" endLine="34" endPosition="109">
-      <varInfo nodeId="1550462124899316455" varName="editor" />
-      <varInfo nodeId="1550462124899316455" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.UpDownStack_Test$TestBody" />
-    <unitInfo nodeId="1550462124899316455" fileName="UpDownStack_Test.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.UpDownStack_Test" />
+    <file name="UpDownStack_Test.java">
+      <node id="1550462124899316455" at="18,51,19,117" concept="1" />
+      <node id="1550462124899316455" at="19,117,20,108" concept="1" />
+      <node id="1550462124899316455" at="29,51,30,99" concept="3" />
+      <node id="1550462124899316455" at="30,99,31,93" concept="3" />
+      <node id="1550462124899316475" at="31,93,32,107" concept="1" />
+      <node id="1550462124899316479" at="32,107,33,107" concept="1" />
+      <node id="1550462124899316483" at="33,107,34,109" concept="1" />
+      <node id="1550462124899316455" at="14,0,16,0" concept="0" trace="UpDownStack_Test#()V" />
+      <node id="1550462124899316455" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="1550462124899316455" at="17,0,22,0" concept="2" trace="test_UpDownStack#()V" />
+      <node id="1550462124899316455" at="28,0,36,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="1550462124899316455" at="14,29,14,29" />
+      <scope id="1550462124899316455" at="25,23,25,23" />
+      <scope id="1550462124899316455" at="14,0,16,0" />
+      <scope id="1550462124899316455" at="18,51,20,108" />
+      <scope id="1550462124899316455" at="25,0,27,0" />
+      <scope id="1550462124899316455" at="17,0,22,0" />
+      <scope id="1550462124899316455" at="29,51,34,109">
+        <var name="editor" id="1550462124899316455" />
+        <var name="editorComponent" id="1550462124899316455" />
+      </scope>
+      <scope id="1550462124899316455" at="28,0,36,0" />
+      <unit id="1550462124899316455" at="23,0,37,0" name="jetbrains.mps.lang.editor.selection.test.UpDownStack_Test$TestBody" />
+      <unit id="1550462124899316455" at="12,0,38,0" name="jetbrains.mps.lang.editor.selection.test.UpDownStack_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/2025581204008535354">
-    <nodeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="18" startPosition="78" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2025581204008535374" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2025581204008535378" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="32" startPosition="109" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootHomeWithLineSelectionFromFirstCell_Test#()V" />
-    <nodeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RootHomeWithLineSelectionFromFirstCell#()V" />
-    <nodeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="14" startPosition="56" endLine="14" endPosition="56" />
-    <scopeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="18" startPosition="78" endLine="20" endPosition="135" />
-    <scopeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
-      <varInfo nodeId="2025581204008535354" varName="editor" />
-      <varInfo nodeId="2025581204008535354" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromFirstCell_Test$TestBody" />
-    <unitInfo nodeId="2025581204008535354" fileName="RootHomeWithLineSelectionFromFirstCell_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromFirstCell_Test" />
+    <file name="RootHomeWithLineSelectionFromFirstCell_Test.java">
+      <node id="2025581204008535354" at="18,78,19,117" concept="1" />
+      <node id="2025581204008535354" at="19,117,20,135" concept="1" />
+      <node id="2025581204008535354" at="29,51,30,99" concept="3" />
+      <node id="2025581204008535354" at="30,99,31,93" concept="3" />
+      <node id="2025581204008535374" at="31,93,32,109" concept="1" />
+      <node id="2025581204008535378" at="32,109,33,107" concept="1" />
+      <node id="2025581204008535354" at="14,0,16,0" concept="0" trace="RootHomeWithLineSelectionFromFirstCell_Test#()V" />
+      <node id="2025581204008535354" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="2025581204008535354" at="17,0,22,0" concept="2" trace="test_RootHomeWithLineSelectionFromFirstCell#()V" />
+      <node id="2025581204008535354" at="28,0,35,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2025581204008535354" at="14,56,14,56" />
+      <scope id="2025581204008535354" at="25,23,25,23" />
+      <scope id="2025581204008535354" at="14,0,16,0" />
+      <scope id="2025581204008535354" at="18,78,20,135" />
+      <scope id="2025581204008535354" at="25,0,27,0" />
+      <scope id="2025581204008535354" at="29,51,33,107">
+        <var name="editor" id="2025581204008535354" />
+        <var name="editorComponent" id="2025581204008535354" />
+      </scope>
+      <scope id="2025581204008535354" at="17,0,22,0" />
+      <scope id="2025581204008535354" at="28,0,35,0" />
+      <unit id="2025581204008535354" at="23,0,36,0" name="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromFirstCell_Test$TestBody" />
+      <unit id="2025581204008535354" at="12,0,37,0" name="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromFirstCell_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/5097407566121753122">
-    <nodeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="18" startPosition="77" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5097407566121753138" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5097407566121753140" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="32" startPosition="109" endLine="33" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootEndWithLineSelectionFromFirstCell_Test#()V" />
-    <nodeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RootEndWithLineSelectionFromFirstCell#()V" />
-    <nodeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="14" startPosition="55" endLine="14" endPosition="55" />
-    <scopeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="18" startPosition="77" endLine="20" endPosition="134" />
-    <scopeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="106">
-      <varInfo nodeId="5097407566121753122" varName="editor" />
-      <varInfo nodeId="5097407566121753122" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromFirstCell_Test$TestBody" />
-    <unitInfo nodeId="5097407566121753122" fileName="RootEndWithLineSelectionFromFirstCell_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromFirstCell_Test" />
+    <file name="RootEndWithLineSelectionFromFirstCell_Test.java">
+      <node id="5097407566121753122" at="18,77,19,117" concept="1" />
+      <node id="5097407566121753122" at="19,117,20,134" concept="1" />
+      <node id="5097407566121753122" at="29,51,30,99" concept="3" />
+      <node id="5097407566121753122" at="30,99,31,93" concept="3" />
+      <node id="5097407566121753138" at="31,93,32,109" concept="1" />
+      <node id="5097407566121753140" at="32,109,33,106" concept="1" />
+      <node id="5097407566121753122" at="14,0,16,0" concept="0" trace="RootEndWithLineSelectionFromFirstCell_Test#()V" />
+      <node id="5097407566121753122" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="5097407566121753122" at="17,0,22,0" concept="2" trace="test_RootEndWithLineSelectionFromFirstCell#()V" />
+      <node id="5097407566121753122" at="28,0,35,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5097407566121753122" at="14,55,14,55" />
+      <scope id="5097407566121753122" at="25,23,25,23" />
+      <scope id="5097407566121753122" at="14,0,16,0" />
+      <scope id="5097407566121753122" at="18,77,20,134" />
+      <scope id="5097407566121753122" at="25,0,27,0" />
+      <scope id="5097407566121753122" at="29,51,33,106">
+        <var name="editor" id="5097407566121753122" />
+        <var name="editorComponent" id="5097407566121753122" />
+      </scope>
+      <scope id="5097407566121753122" at="17,0,22,0" />
+      <scope id="5097407566121753122" at="28,0,35,0" />
+      <unit id="5097407566121753122" at="23,0,36,0" name="jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromFirstCell_Test$TestBody" />
+      <unit id="5097407566121753122" at="12,0,37,0" name="jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromFirstCell_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/5097407566121771937">
-    <nodeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="18" startPosition="77" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5097407566121771953" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5097407566121771955" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="32" startPosition="113" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootHomeWithLineSelectionFromLastCell_Test#()V" />
-    <nodeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RootHomeWithLineSelectionFromLastCell#()V" />
-    <nodeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="14" startPosition="55" endLine="14" endPosition="55" />
-    <scopeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="18" startPosition="77" endLine="20" endPosition="134" />
-    <scopeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="107">
-      <varInfo nodeId="5097407566121771937" varName="editor" />
-      <varInfo nodeId="5097407566121771937" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromLastCell_Test$TestBody" />
-    <unitInfo nodeId="5097407566121771937" fileName="RootHomeWithLineSelectionFromLastCell_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromLastCell_Test" />
+    <file name="RootHomeWithLineSelectionFromLastCell_Test.java">
+      <node id="5097407566121771937" at="18,77,19,117" concept="1" />
+      <node id="5097407566121771937" at="19,117,20,134" concept="1" />
+      <node id="5097407566121771937" at="29,51,30,99" concept="3" />
+      <node id="5097407566121771937" at="30,99,31,93" concept="3" />
+      <node id="5097407566121771953" at="31,93,32,113" concept="1" />
+      <node id="5097407566121771955" at="32,113,33,107" concept="1" />
+      <node id="5097407566121771937" at="14,0,16,0" concept="0" trace="RootHomeWithLineSelectionFromLastCell_Test#()V" />
+      <node id="5097407566121771937" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="5097407566121771937" at="17,0,22,0" concept="2" trace="test_RootHomeWithLineSelectionFromLastCell#()V" />
+      <node id="5097407566121771937" at="28,0,35,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5097407566121771937" at="14,55,14,55" />
+      <scope id="5097407566121771937" at="25,23,25,23" />
+      <scope id="5097407566121771937" at="14,0,16,0" />
+      <scope id="5097407566121771937" at="18,77,20,134" />
+      <scope id="5097407566121771937" at="25,0,27,0" />
+      <scope id="5097407566121771937" at="29,51,33,107">
+        <var name="editor" id="5097407566121771937" />
+        <var name="editorComponent" id="5097407566121771937" />
+      </scope>
+      <scope id="5097407566121771937" at="17,0,22,0" />
+      <scope id="5097407566121771937" at="28,0,35,0" />
+      <unit id="5097407566121771937" at="23,0,36,0" name="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromLastCell_Test$TestBody" />
+      <unit id="5097407566121771937" at="12,0,37,0" name="jetbrains.mps.lang.editor.selection.test.RootHomeWithLineSelectionFromLastCell_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/5097407566121847268">
-    <nodeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="18" startPosition="76" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5097407566121847284" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5097407566121847286" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="32" startPosition="113" endLine="33" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootEndWithLineSelectionFromLastCell_Test#()V" />
-    <nodeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_RootEndWithLineSelectionFromLastCell#()V" />
-    <nodeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="14" startPosition="54" endLine="14" endPosition="54" />
-    <scopeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="18" startPosition="76" endLine="20" endPosition="133" />
-    <scopeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="106">
-      <varInfo nodeId="5097407566121847268" varName="editor" />
-      <varInfo nodeId="5097407566121847268" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromLastCell_Test$TestBody" />
-    <unitInfo nodeId="5097407566121847268" fileName="RootEndWithLineSelectionFromLastCell_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromLastCell_Test" />
+    <file name="RootEndWithLineSelectionFromLastCell_Test.java">
+      <node id="5097407566121847268" at="18,76,19,117" concept="1" />
+      <node id="5097407566121847268" at="19,117,20,133" concept="1" />
+      <node id="5097407566121847268" at="29,51,30,99" concept="3" />
+      <node id="5097407566121847268" at="30,99,31,93" concept="3" />
+      <node id="5097407566121847284" at="31,93,32,113" concept="1" />
+      <node id="5097407566121847286" at="32,113,33,106" concept="1" />
+      <node id="5097407566121847268" at="14,0,16,0" concept="0" trace="RootEndWithLineSelectionFromLastCell_Test#()V" />
+      <node id="5097407566121847268" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="5097407566121847268" at="17,0,22,0" concept="2" trace="test_RootEndWithLineSelectionFromLastCell#()V" />
+      <node id="5097407566121847268" at="28,0,35,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5097407566121847268" at="14,54,14,54" />
+      <scope id="5097407566121847268" at="25,23,25,23" />
+      <scope id="5097407566121847268" at="14,0,16,0" />
+      <scope id="5097407566121847268" at="18,76,20,133" />
+      <scope id="5097407566121847268" at="25,0,27,0" />
+      <scope id="5097407566121847268" at="29,51,33,106">
+        <var name="editor" id="5097407566121847268" />
+        <var name="editorComponent" id="5097407566121847268" />
+      </scope>
+      <scope id="5097407566121847268" at="17,0,22,0" />
+      <scope id="5097407566121847268" at="28,0,35,0" />
+      <unit id="5097407566121847268" at="23,0,36,0" name="jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromLastCell_Test$TestBody" />
+      <unit id="5097407566121847268" at="12,0,37,0" name="jetbrains.mps.lang.editor.selection.test.RootEndWithLineSelectionFromLastCell_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/5476958923832861246">
-    <nodeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="18" startPosition="70" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5476958923832863127" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5476958923832863131" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="32" startPosition="109" endLine="33" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5476958923832863133" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="33" startPosition="109" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectUpWithNodeRangeSelection_Test#()V" />
-    <nodeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_SelectUpWithNodeRangeSelection#()V" />
-    <nodeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="14" startPosition="48" endLine="14" endPosition="48" />
-    <scopeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="18" startPosition="70" endLine="20" endPosition="127" />
-    <scopeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="29" startPosition="51" endLine="34" endPosition="107">
-      <varInfo nodeId="5476958923832861246" varName="editor" />
-      <varInfo nodeId="5476958923832861246" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.SelectUpWithNodeRangeSelection_Test$TestBody" />
-    <unitInfo nodeId="5476958923832861246" fileName="SelectUpWithNodeRangeSelection_Test.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.SelectUpWithNodeRangeSelection_Test" />
+    <file name="SelectUpWithNodeRangeSelection_Test.java">
+      <node id="5476958923832861246" at="18,70,19,117" concept="1" />
+      <node id="5476958923832861246" at="19,117,20,127" concept="1" />
+      <node id="5476958923832861246" at="29,51,30,99" concept="3" />
+      <node id="5476958923832861246" at="30,99,31,93" concept="3" />
+      <node id="5476958923832863127" at="31,93,32,109" concept="1" />
+      <node id="5476958923832863131" at="32,109,33,109" concept="1" />
+      <node id="5476958923832863133" at="33,109,34,107" concept="1" />
+      <node id="5476958923832861246" at="14,0,16,0" concept="0" trace="SelectUpWithNodeRangeSelection_Test#()V" />
+      <node id="5476958923832861246" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="5476958923832861246" at="17,0,22,0" concept="2" trace="test_SelectUpWithNodeRangeSelection#()V" />
+      <node id="5476958923832861246" at="28,0,36,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5476958923832861246" at="14,48,14,48" />
+      <scope id="5476958923832861246" at="25,23,25,23" />
+      <scope id="5476958923832861246" at="14,0,16,0" />
+      <scope id="5476958923832861246" at="18,70,20,127" />
+      <scope id="5476958923832861246" at="25,0,27,0" />
+      <scope id="5476958923832861246" at="17,0,22,0" />
+      <scope id="5476958923832861246" at="29,51,34,107">
+        <var name="editor" id="5476958923832861246" />
+        <var name="editorComponent" id="5476958923832861246" />
+      </scope>
+      <scope id="5476958923832861246" at="28,0,36,0" />
+      <unit id="5476958923832861246" at="23,0,37,0" name="jetbrains.mps.lang.editor.selection.test.SelectUpWithNodeRangeSelection_Test$TestBody" />
+      <unit id="5476958923832861246" at="12,0,38,0" name="jetbrains.mps.lang.editor.selection.test.SelectUpWithNodeRangeSelection_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/5476958923832863137">
-    <nodeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="18" startPosition="72" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5476958923832863165" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5476958923832863169" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="32" startPosition="113" endLine="33" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5476958923832863173" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="33" startPosition="113" endLine="34" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SelectDownWithNodeRangeSelection_Test#()V" />
-    <nodeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_SelectDownWithNodeRangeSelection#()V" />
-    <nodeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="14" startPosition="50" endLine="14" endPosition="50" />
-    <scopeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="18" startPosition="72" endLine="20" endPosition="129" />
-    <scopeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="29" startPosition="51" endLine="34" endPosition="109">
-      <varInfo nodeId="5476958923832863137" varName="editor" />
-      <varInfo nodeId="5476958923832863137" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.SelectDownWithNodeRangeSelection_Test$TestBody" />
-    <unitInfo nodeId="5476958923832863137" fileName="SelectDownWithNodeRangeSelection_Test.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.SelectDownWithNodeRangeSelection_Test" />
+    <file name="SelectDownWithNodeRangeSelection_Test.java">
+      <node id="5476958923832863137" at="18,72,19,117" concept="1" />
+      <node id="5476958923832863137" at="19,117,20,129" concept="1" />
+      <node id="5476958923832863137" at="29,51,30,99" concept="3" />
+      <node id="5476958923832863137" at="30,99,31,93" concept="3" />
+      <node id="5476958923832863165" at="31,93,32,113" concept="1" />
+      <node id="5476958923832863169" at="32,113,33,113" concept="1" />
+      <node id="5476958923832863173" at="33,113,34,109" concept="1" />
+      <node id="5476958923832863137" at="14,0,16,0" concept="0" trace="SelectDownWithNodeRangeSelection_Test#()V" />
+      <node id="5476958923832863137" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="5476958923832863137" at="17,0,22,0" concept="2" trace="test_SelectDownWithNodeRangeSelection#()V" />
+      <node id="5476958923832863137" at="28,0,36,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5476958923832863137" at="14,50,14,50" />
+      <scope id="5476958923832863137" at="25,23,25,23" />
+      <scope id="5476958923832863137" at="14,0,16,0" />
+      <scope id="5476958923832863137" at="18,72,20,129" />
+      <scope id="5476958923832863137" at="25,0,27,0" />
+      <scope id="5476958923832863137" at="17,0,22,0" />
+      <scope id="5476958923832863137" at="29,51,34,109">
+        <var name="editor" id="5476958923832863137" />
+        <var name="editorComponent" id="5476958923832863137" />
+      </scope>
+      <scope id="5476958923832863137" at="28,0,36,0" />
+      <unit id="5476958923832863137" at="23,0,37,0" name="jetbrains.mps.lang.editor.selection.test.SelectDownWithNodeRangeSelection_Test$TestBody" />
+      <unit id="5476958923832863137" at="12,0,38,0" name="jetbrains.mps.lang.editor.selection.test.SelectDownWithNodeRangeSelection_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/7023440913657702620">
-    <nodeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="20" startPosition="53" endLine="21" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="21" startPosition="117" endLine="22" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="31" startPosition="51" endLine="32" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="32" startPosition="80" endLine="33" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7023440913657719793" fileName="GoToReference_Test.java" startLine="33" startPosition="93" endLine="34" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7023440913657764558" fileName="GoToReference_Test.java" startLine="34" startPosition="119" endLine="35" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GoToReference_Test#()V" />
-    <nodeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_GoToReference#()V" />
-    <nodeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="30" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="16" startPosition="31" endLine="16" endPosition="31" />
-    <scopeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="27" startPosition="23" endLine="27" endPosition="23" />
-    <scopeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="20" startPosition="53" endLine="22" endPosition="110" />
-    <scopeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="31" startPosition="51" endLine="35" endPosition="119">
-      <varInfo nodeId="7023440913657702620" varName="editor" />
-      <varInfo nodeId="7023440913657702620" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="19" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="30" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="25" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.GoToReference_Test$TestBody" />
-    <unitInfo nodeId="7023440913657702620" fileName="GoToReference_Test.java" startLine="14" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.GoToReference_Test" />
+    <file name="GoToReference_Test.java">
+      <node id="7023440913657702620" at="20,53,21,117" concept="1" />
+      <node id="7023440913657702620" at="21,117,22,110" concept="1" />
+      <node id="7023440913657702620" at="31,51,32,80" concept="3" />
+      <node id="7023440913657702620" at="32,80,33,93" concept="3" />
+      <node id="7023440913657719793" at="33,93,34,119" concept="1" />
+      <node id="7023440913657764558" at="34,119,35,119" concept="1" />
+      <node id="7023440913657702620" at="16,0,18,0" concept="0" trace="GoToReference_Test#()V" />
+      <node id="7023440913657702620" at="27,0,29,0" concept="0" trace="TestBody#()V" />
+      <node id="7023440913657702620" at="19,0,24,0" concept="2" trace="test_GoToReference#()V" />
+      <node id="7023440913657702620" at="30,0,37,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7023440913657702620" at="16,31,16,31" />
+      <scope id="7023440913657702620" at="27,23,27,23" />
+      <scope id="7023440913657702620" at="16,0,18,0" />
+      <scope id="7023440913657702620" at="20,53,22,110" />
+      <scope id="7023440913657702620" at="27,0,29,0" />
+      <scope id="7023440913657702620" at="31,51,35,119">
+        <var name="editor" id="7023440913657702620" />
+        <var name="editorComponent" id="7023440913657702620" />
+      </scope>
+      <scope id="7023440913657702620" at="19,0,24,0" />
+      <scope id="7023440913657702620" at="30,0,37,0" />
+      <unit id="7023440913657702620" at="25,0,38,0" name="jetbrains.mps.lang.editor.selection.test.GoToReference_Test$TestBody" />
+      <unit id="7023440913657702620" at="14,0,39,0" name="jetbrains.mps.lang.editor.selection.test.GoToReference_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/789834969242091856">
-    <nodeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="18" startPosition="42" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="789834969242110816" fileName="Up_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Up_Test#()V" />
-    <nodeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_Up#()V" />
-    <nodeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="14" startPosition="20" endLine="14" endPosition="20" />
-    <scopeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="18" startPosition="42" endLine="20" endPosition="99" />
-    <scopeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="107">
-      <varInfo nodeId="789834969242091856" varName="editor" />
-      <varInfo nodeId="789834969242091856" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.Up_Test$TestBody" />
-    <unitInfo nodeId="789834969242091856" fileName="Up_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.Up_Test" />
+    <file name="Up_Test.java">
+      <node id="789834969242091856" at="18,42,19,117" concept="1" />
+      <node id="789834969242091856" at="19,117,20,99" concept="1" />
+      <node id="789834969242091856" at="29,51,30,97" concept="3" />
+      <node id="789834969242091856" at="30,97,31,93" concept="3" />
+      <node id="789834969242110816" at="31,93,32,107" concept="1" />
+      <node id="789834969242091856" at="14,0,16,0" concept="0" trace="Up_Test#()V" />
+      <node id="789834969242091856" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="789834969242091856" at="17,0,22,0" concept="2" trace="test_Up#()V" />
+      <node id="789834969242091856" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="789834969242091856" at="14,20,14,20" />
+      <scope id="789834969242091856" at="25,23,25,23" />
+      <scope id="789834969242091856" at="14,0,16,0" />
+      <scope id="789834969242091856" at="18,42,20,99" />
+      <scope id="789834969242091856" at="25,0,27,0" />
+      <scope id="789834969242091856" at="29,51,32,107">
+        <var name="editor" id="789834969242091856" />
+        <var name="editorComponent" id="789834969242091856" />
+      </scope>
+      <scope id="789834969242091856" at="17,0,22,0" />
+      <scope id="789834969242091856" at="28,0,34,0" />
+      <unit id="789834969242091856" at="23,0,35,0" name="jetbrains.mps.lang.editor.selection.test.Up_Test$TestBody" />
+      <unit id="789834969242091856" at="12,0,36,0" name="jetbrains.mps.lang.editor.selection.test.Up_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/789834969242110843">
-    <nodeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="18" startPosition="54" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2139113728684621883" fileName="UpDownEntirely_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="789834969242110863" fileName="UpDownEntirely_Test.java" startLine="32" startPosition="107" endLine="33" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="789834969242110867" fileName="UpDownEntirely_Test.java" startLine="33" startPosition="109" endLine="34" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UpDownEntirely_Test#()V" />
-    <nodeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_UpDownEntirely#()V" />
-    <nodeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="14" startPosition="32" endLine="14" endPosition="32" />
-    <scopeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="18" startPosition="54" endLine="20" endPosition="111" />
-    <scopeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="29" startPosition="51" endLine="34" endPosition="109">
-      <varInfo nodeId="789834969242110843" varName="editor" />
-      <varInfo nodeId="789834969242110843" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="28" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="23" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.UpDownEntirely_Test$TestBody" />
-    <unitInfo nodeId="789834969242110843" fileName="UpDownEntirely_Test.java" startLine="12" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.UpDownEntirely_Test" />
+    <file name="UpDownEntirely_Test.java">
+      <node id="789834969242110843" at="18,54,19,117" concept="1" />
+      <node id="789834969242110843" at="19,117,20,111" concept="1" />
+      <node id="789834969242110843" at="29,51,30,97" concept="3" />
+      <node id="789834969242110843" at="30,97,31,93" concept="3" />
+      <node id="2139113728684621883" at="31,93,32,107" concept="1" />
+      <node id="789834969242110863" at="32,107,33,109" concept="1" />
+      <node id="789834969242110867" at="33,109,34,109" concept="1" />
+      <node id="789834969242110843" at="14,0,16,0" concept="0" trace="UpDownEntirely_Test#()V" />
+      <node id="789834969242110843" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="789834969242110843" at="17,0,22,0" concept="2" trace="test_UpDownEntirely#()V" />
+      <node id="789834969242110843" at="28,0,36,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="789834969242110843" at="14,32,14,32" />
+      <scope id="789834969242110843" at="25,23,25,23" />
+      <scope id="789834969242110843" at="14,0,16,0" />
+      <scope id="789834969242110843" at="18,54,20,111" />
+      <scope id="789834969242110843" at="25,0,27,0" />
+      <scope id="789834969242110843" at="17,0,22,0" />
+      <scope id="789834969242110843" at="29,51,34,109">
+        <var name="editor" id="789834969242110843" />
+        <var name="editorComponent" id="789834969242110843" />
+      </scope>
+      <scope id="789834969242110843" at="28,0,36,0" />
+      <unit id="789834969242110843" at="23,0,37,0" name="jetbrains.mps.lang.editor.selection.test.UpDownEntirely_Test$TestBody" />
+      <unit id="789834969242110843" at="12,0,38,0" name="jetbrains.mps.lang.editor.selection.test.UpDownEntirely_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/9080919888312354538">
-    <nodeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="18" startPosition="75" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9080919888312354557" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312408929" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="32" startPosition="113" endLine="33" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HomeWithLineSelection_fromFirstCell_Test#()V" />
-    <nodeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_HomeWithLineSelection_fromFirstCell#()V" />
-    <nodeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="14" startPosition="53" endLine="14" endPosition="53" />
-    <scopeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="18" startPosition="75" endLine="20" endPosition="132" />
-    <scopeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="103">
-      <varInfo nodeId="9080919888312354538" varName="editor" />
-      <varInfo nodeId="9080919888312354538" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromFirstCell_Test$TestBody" />
-    <unitInfo nodeId="9080919888312354538" fileName="HomeWithLineSelection_fromFirstCell_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromFirstCell_Test" />
+    <file name="HomeWithLineSelection_fromFirstCell_Test.java">
+      <node id="9080919888312354538" at="18,75,19,117" concept="1" />
+      <node id="9080919888312354538" at="19,117,20,132" concept="1" />
+      <node id="9080919888312354538" at="29,51,30,99" concept="3" />
+      <node id="9080919888312354538" at="30,99,31,93" concept="3" />
+      <node id="9080919888312354557" at="31,93,32,113" concept="1" />
+      <node id="9080919888312408929" at="32,113,33,103" concept="1" />
+      <node id="9080919888312354538" at="14,0,16,0" concept="0" trace="HomeWithLineSelection_fromFirstCell_Test#()V" />
+      <node id="9080919888312354538" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="9080919888312354538" at="17,0,22,0" concept="2" trace="test_HomeWithLineSelection_fromFirstCell#()V" />
+      <node id="9080919888312354538" at="28,0,35,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="9080919888312354538" at="14,53,14,53" />
+      <scope id="9080919888312354538" at="25,23,25,23" />
+      <scope id="9080919888312354538" at="14,0,16,0" />
+      <scope id="9080919888312354538" at="18,75,20,132" />
+      <scope id="9080919888312354538" at="25,0,27,0" />
+      <scope id="9080919888312354538" at="29,51,33,103">
+        <var name="editor" id="9080919888312354538" />
+        <var name="editorComponent" id="9080919888312354538" />
+      </scope>
+      <scope id="9080919888312354538" at="17,0,22,0" />
+      <scope id="9080919888312354538" at="28,0,35,0" />
+      <unit id="9080919888312354538" at="23,0,36,0" name="jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromFirstCell_Test$TestBody" />
+      <unit id="9080919888312354538" at="12,0,37,0" name="jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromFirstCell_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/9080919888312408932">
-    <nodeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="18" startPosition="74" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9080919888312408948" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312408950" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="32" startPosition="113" endLine="33" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HomeWithLineSelection_fromLastCell_Test#()V" />
-    <nodeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_HomeWithLineSelection_fromLastCell#()V" />
-    <nodeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="14" startPosition="52" endLine="14" endPosition="52" />
-    <scopeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="18" startPosition="74" endLine="20" endPosition="131" />
-    <scopeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="103">
-      <varInfo nodeId="9080919888312408932" varName="editor" />
-      <varInfo nodeId="9080919888312408932" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromLastCell_Test$TestBody" />
-    <unitInfo nodeId="9080919888312408932" fileName="HomeWithLineSelection_fromLastCell_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromLastCell_Test" />
+    <file name="HomeWithLineSelection_fromLastCell_Test.java">
+      <node id="9080919888312408932" at="18,74,19,117" concept="1" />
+      <node id="9080919888312408932" at="19,117,20,131" concept="1" />
+      <node id="9080919888312408932" at="29,51,30,99" concept="3" />
+      <node id="9080919888312408932" at="30,99,31,93" concept="3" />
+      <node id="9080919888312408948" at="31,93,32,113" concept="1" />
+      <node id="9080919888312408950" at="32,113,33,103" concept="1" />
+      <node id="9080919888312408932" at="14,0,16,0" concept="0" trace="HomeWithLineSelection_fromLastCell_Test#()V" />
+      <node id="9080919888312408932" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="9080919888312408932" at="17,0,22,0" concept="2" trace="test_HomeWithLineSelection_fromLastCell#()V" />
+      <node id="9080919888312408932" at="28,0,35,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="9080919888312408932" at="14,52,14,52" />
+      <scope id="9080919888312408932" at="25,23,25,23" />
+      <scope id="9080919888312408932" at="14,0,16,0" />
+      <scope id="9080919888312408932" at="18,74,20,131" />
+      <scope id="9080919888312408932" at="25,0,27,0" />
+      <scope id="9080919888312408932" at="29,51,33,103">
+        <var name="editor" id="9080919888312408932" />
+        <var name="editorComponent" id="9080919888312408932" />
+      </scope>
+      <scope id="9080919888312408932" at="17,0,22,0" />
+      <scope id="9080919888312408932" at="28,0,35,0" />
+      <unit id="9080919888312408932" at="23,0,36,0" name="jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromLastCell_Test$TestBody" />
+      <unit id="9080919888312408932" at="12,0,37,0" name="jetbrains.mps.lang.editor.selection.test.HomeWithLineSelection_fromLastCell_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/9080919888312410798">
-    <nodeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="18" startPosition="74" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9080919888312410814" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312410816" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="32" startPosition="109" endLine="33" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EndWithLineSelection_fromFirstCell_Test#()V" />
-    <nodeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_EndWithLineSelection_fromFirstCell#()V" />
-    <nodeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="14" startPosition="52" endLine="14" endPosition="52" />
-    <scopeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="18" startPosition="74" endLine="20" endPosition="131" />
-    <scopeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="102">
-      <varInfo nodeId="9080919888312410798" varName="editor" />
-      <varInfo nodeId="9080919888312410798" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromFirstCell_Test$TestBody" />
-    <unitInfo nodeId="9080919888312410798" fileName="EndWithLineSelection_fromFirstCell_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromFirstCell_Test" />
+    <file name="EndWithLineSelection_fromFirstCell_Test.java">
+      <node id="9080919888312410798" at="18,74,19,117" concept="1" />
+      <node id="9080919888312410798" at="19,117,20,131" concept="1" />
+      <node id="9080919888312410798" at="29,51,30,99" concept="3" />
+      <node id="9080919888312410798" at="30,99,31,93" concept="3" />
+      <node id="9080919888312410814" at="31,93,32,109" concept="1" />
+      <node id="9080919888312410816" at="32,109,33,102" concept="1" />
+      <node id="9080919888312410798" at="14,0,16,0" concept="0" trace="EndWithLineSelection_fromFirstCell_Test#()V" />
+      <node id="9080919888312410798" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="9080919888312410798" at="17,0,22,0" concept="2" trace="test_EndWithLineSelection_fromFirstCell#()V" />
+      <node id="9080919888312410798" at="28,0,35,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="9080919888312410798" at="14,52,14,52" />
+      <scope id="9080919888312410798" at="25,23,25,23" />
+      <scope id="9080919888312410798" at="14,0,16,0" />
+      <scope id="9080919888312410798" at="18,74,20,131" />
+      <scope id="9080919888312410798" at="25,0,27,0" />
+      <scope id="9080919888312410798" at="29,51,33,102">
+        <var name="editor" id="9080919888312410798" />
+        <var name="editorComponent" id="9080919888312410798" />
+      </scope>
+      <scope id="9080919888312410798" at="17,0,22,0" />
+      <scope id="9080919888312410798" at="28,0,35,0" />
+      <unit id="9080919888312410798" at="23,0,36,0" name="jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromFirstCell_Test$TestBody" />
+      <unit id="9080919888312410798" at="12,0,37,0" name="jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromFirstCell_Test" />
+    </file>
   </root>
   <root nodeRef="r:f429894b-858b-4e34-87ae-2cfe2a061928(jetbrains.mps.lang.editor.selection.test)/9080919888312410820">
-    <nodeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="18" startPosition="73" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9080919888312410836" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312410838" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="32" startPosition="109" endLine="33" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EndWithLineSelection_fromLastCell_Test#()V" />
-    <nodeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_EndWithLineSelection_fromLastCell#()V" />
-    <nodeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="14" startPosition="51" endLine="14" endPosition="51" />
-    <scopeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="18" startPosition="73" endLine="20" endPosition="130" />
-    <scopeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="29" startPosition="51" endLine="33" endPosition="102">
-      <varInfo nodeId="9080919888312410820" varName="editor" />
-      <varInfo nodeId="9080919888312410820" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="28" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="23" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromLastCell_Test$TestBody" />
-    <unitInfo nodeId="9080919888312410820" fileName="EndWithLineSelection_fromLastCell_Test.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromLastCell_Test" />
+    <file name="EndWithLineSelection_fromLastCell_Test.java">
+      <node id="9080919888312410820" at="18,73,19,117" concept="1" />
+      <node id="9080919888312410820" at="19,117,20,130" concept="1" />
+      <node id="9080919888312410820" at="29,51,30,99" concept="3" />
+      <node id="9080919888312410820" at="30,99,31,93" concept="3" />
+      <node id="9080919888312410836" at="31,93,32,109" concept="1" />
+      <node id="9080919888312410838" at="32,109,33,102" concept="1" />
+      <node id="9080919888312410820" at="14,0,16,0" concept="0" trace="EndWithLineSelection_fromLastCell_Test#()V" />
+      <node id="9080919888312410820" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="9080919888312410820" at="17,0,22,0" concept="2" trace="test_EndWithLineSelection_fromLastCell#()V" />
+      <node id="9080919888312410820" at="28,0,35,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="9080919888312410820" at="14,51,14,51" />
+      <scope id="9080919888312410820" at="25,23,25,23" />
+      <scope id="9080919888312410820" at="14,0,16,0" />
+      <scope id="9080919888312410820" at="18,73,20,130" />
+      <scope id="9080919888312410820" at="25,0,27,0" />
+      <scope id="9080919888312410820" at="29,51,33,102">
+        <var name="editor" id="9080919888312410820" />
+        <var name="editorComponent" id="9080919888312410820" />
+      </scope>
+      <scope id="9080919888312410820" at="17,0,22,0" />
+      <scope id="9080919888312410820" at="28,0,35,0" />
+      <unit id="9080919888312410820" at="23,0,36,0" name="jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromLastCell_Test$TestBody" />
+      <unit id="9080919888312410820" at="12,0,37,0" name="jetbrains.mps.lang.editor.selection.test.EndWithLineSelection_fromLastCell_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

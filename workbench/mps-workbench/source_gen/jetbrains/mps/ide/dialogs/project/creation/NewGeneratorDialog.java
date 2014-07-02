@@ -179,7 +179,7 @@ public class NewGeneratorDialog extends DialogWrapper {
     language.setLanguageDescriptor(languageDescriptor, false);
     language.save();
 
-    return (Generator) MPSModuleRepository.getInstance().getModuleById(generatorDescriptor.getId());
+    return (Generator) MPSModuleRepository.getInstance().getModule(generatorDescriptor.getId());
   }
 
   private String getTemplateModelPrefix(Language sourceLanguage) {

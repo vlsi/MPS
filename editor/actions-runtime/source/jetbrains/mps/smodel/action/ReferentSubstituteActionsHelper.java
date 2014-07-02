@@ -21,9 +21,8 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.constraints.IReferencePresentation;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil.ReferenceDescriptor;
+import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.smodel.constraints.ReferenceDescriptor;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -48,32 +47,30 @@ import java.util.List;
     }
 
     // search scope
-    ReferenceDescriptor refDescriptor = ModelConstraintsUtil.getReferenceDescriptor(referenceNode, SModelUtil.getLinkDeclarationRole(linkDeclaration), 0);
+    ReferenceDescriptor refDescriptor = ModelConstraints.getReferenceDescriptor(referenceNode, SModelUtil.getLinkDeclarationRole(linkDeclaration));
     Scope searchScope = refDescriptor.getScope();
     if (searchScope instanceof ErrorScope) {
       LOG.error("Couldn't create referent search scope : " + ((ErrorScope) searchScope).getMessage());
       return Collections.emptyList();
     }
 
-    IReferencePresentation presentation = refDescriptor.getReferencePresentation();
-    return createActions(referenceNode, currentReferent, linkDeclaration, searchScope, presentation);
+    return createActions(referenceNode, currentReferent, linkDeclaration, refDescriptor);
   }
 
   private static List<SubstituteAction> createActions(
-      SNode referenceNode, SNode currentReferent, SNode linkDeclaration,
-      Scope searchScope, IReferencePresentation presentation) {
+      SNode referenceNode, SNode currentReferent, SNode linkDeclaration, ReferenceDescriptor descriptor) {
 
     final SNode referentConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
     if (referentConcept == null) {
       return Collections.emptyList();
     }
     String referentConceptFqName = NameUtil.nodeFQName(referentConcept);
-    Iterable<SNode> nodes = searchScope.getAvailableElements(null);
+    Iterable<SNode> nodes = descriptor.getScope().getAvailableElements(null);
     List<SubstituteAction> actions = new ArrayList<SubstituteAction>();
     for (SNode node : nodes) {
       if (node == null || !node.getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(referentConceptFqName)))
         continue;
-      actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration, presentation));
+      actions.add(new DefaultReferentNodeSubstituteAction(node, referenceNode, currentReferent, linkDeclaration, descriptor));
     }
     return actions;
   }

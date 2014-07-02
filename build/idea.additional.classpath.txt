@@ -3,6 +3,7 @@ core/openapi/classes
 :core
 core/analyzers/classes
 core/kernel/classes
+core/kernel/resources/classes
 core/persistence/classes
 core/smodel/classes
 core/findUsages-runtime/classes
@@ -11,6 +12,11 @@ core/typesystemEngine/classes
 core/generator/classes
 core/make-runtime/classes
 core/make-runtime/solutions/jetbrains.mps.make.facets/classes
+core/textgen/classes
+core/kernel/jetbrains.mps.debug.api.info/classes
+core/kernel/dataFlowRuntime/classes
+core/mps-core/classes
+core/project/classes
 core/tool/builder/classes
 languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/classes
 languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/classes

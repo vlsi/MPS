@@ -1,80 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:9a3aa4da-d1a8-44bf-80e0-56cbddbc7ec9(jetbrains.mps.baseLanguage.methodDispatch.test.tests@tests)/3813896760029572858">
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="16" startPosition="77" endLine="17" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="17" startPosition="135" endLine="18" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="22" startPosition="73" endLine="23" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="23" startPosition="135" endLine="24" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="28" startPosition="73" endLine="29" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="29" startPosition="135" endLine="30" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="34" startPosition="77" endLine="35" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="35" startPosition="135" endLine="36" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="40" startPosition="73" endLine="41" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="41" startPosition="135" endLine="42" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="46" startPosition="77" endLine="47" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="47" startPosition="135" endLine="48" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="53" startPosition="79" endLine="54" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="54" startPosition="146" endLine="55" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="58" startPosition="75" endLine="59" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="59" startPosition="146" endLine="60" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="63" startPosition="75" endLine="64" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="64" startPosition="146" endLine="65" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="68" startPosition="79" endLine="69" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="69" startPosition="146" endLine="70" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="73" startPosition="75" endLine="74" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="74" startPosition="146" endLine="75" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="78" startPosition="79" endLine="79" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="79" startPosition="146" endLine="80" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck3813896760029621933#()V" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck3813896760029624351#()V" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck3813896760029586546#()V" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck3813896760029627239#()V" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="73" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck3813896760029637821#()V" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck3813896760029629781#()V" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck3813896760029621933#()V" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck3813896760029624351#()V" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck3813896760029586546#()V" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck3813896760029627239#()V" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_NodeErrorCheck3813896760029637821#()V" />
-    <nodeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="45" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ErrorMessagesCheck3813896760029629781#()V" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="16" startPosition="77" endLine="18" endPosition="166" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="22" startPosition="73" endLine="24" endPosition="162" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="28" startPosition="73" endLine="30" endPosition="162" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="34" startPosition="77" endLine="36" endPosition="166" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="40" startPosition="73" endLine="42" endPosition="162" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="46" startPosition="77" endLine="48" endPosition="166" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="53" startPosition="79" endLine="55" endPosition="159">
-      <varInfo nodeId="3813896760029572858" varName="operation" />
-    </scopeInfo>
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="58" startPosition="75" endLine="60" endPosition="159">
-      <varInfo nodeId="3813896760029572858" varName="operation" />
-    </scopeInfo>
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="63" startPosition="75" endLine="65" endPosition="159">
-      <varInfo nodeId="3813896760029572858" varName="operation" />
-    </scopeInfo>
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="68" startPosition="79" endLine="70" endPosition="159">
-      <varInfo nodeId="3813896760029572858" varName="operation" />
-    </scopeInfo>
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="73" startPosition="75" endLine="75" endPosition="159">
-      <varInfo nodeId="3813896760029572858" varName="operation" />
-    </scopeInfo>
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="78" startPosition="79" endLine="80" endPosition="159">
-      <varInfo nodeId="3813896760029572858" varName="operation" />
-    </scopeInfo>
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="68" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="73" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="45" startPosition="0" endLine="50" endPosition="0" />
-    <unitInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="51" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.baseLanguage.methodDispatch.test.tests.DispatchTypeCheckingErrors_Test$TestBody" />
-    <unitInfo nodeId="3813896760029572858" fileName="DispatchTypeCheckingErrors_Test.java" startLine="13" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.baseLanguage.methodDispatch.test.tests.DispatchTypeCheckingErrors_Test" />
+    <file name="DispatchTypeCheckingErrors_Test.java">
+      <node id="3813896760029572858" at="16,77,17,135" concept="0" />
+      <node id="3813896760029572858" at="17,135,18,166" concept="0" />
+      <node id="3813896760029572858" at="22,73,23,135" concept="0" />
+      <node id="3813896760029572858" at="23,135,24,162" concept="0" />
+      <node id="3813896760029572858" at="28,73,29,135" concept="0" />
+      <node id="3813896760029572858" at="29,135,30,162" concept="0" />
+      <node id="3813896760029572858" at="34,77,35,135" concept="0" />
+      <node id="3813896760029572858" at="35,135,36,166" concept="0" />
+      <node id="3813896760029572858" at="40,73,41,135" concept="0" />
+      <node id="3813896760029572858" at="41,135,42,162" concept="0" />
+      <node id="3813896760029572858" at="46,77,47,135" concept="0" />
+      <node id="3813896760029572858" at="47,135,48,166" concept="0" />
+      <node id="3813896760029572858" at="53,79,54,146" concept="2" />
+      <node id="3813896760029572858" at="54,146,55,159" concept="0" />
+      <node id="3813896760029572858" at="58,75,59,146" concept="2" />
+      <node id="3813896760029572858" at="59,146,60,159" concept="0" />
+      <node id="3813896760029572858" at="63,75,64,146" concept="2" />
+      <node id="3813896760029572858" at="64,146,65,159" concept="0" />
+      <node id="3813896760029572858" at="68,79,69,146" concept="2" />
+      <node id="3813896760029572858" at="69,146,70,159" concept="0" />
+      <node id="3813896760029572858" at="73,75,74,146" concept="2" />
+      <node id="3813896760029572858" at="74,146,75,159" concept="0" />
+      <node id="3813896760029572858" at="78,79,79,146" concept="2" />
+      <node id="3813896760029572858" at="79,146,80,159" concept="0" />
+      <node id="3813896760029572858" at="53,0,57,0" concept="1" trace="test_ErrorMessagesCheck3813896760029621933#()V" />
+      <node id="3813896760029572858" at="58,0,62,0" concept="1" trace="test_NodeErrorCheck3813896760029624351#()V" />
+      <node id="3813896760029572858" at="63,0,67,0" concept="1" trace="test_NodeErrorCheck3813896760029586546#()V" />
+      <node id="3813896760029572858" at="68,0,72,0" concept="1" trace="test_ErrorMessagesCheck3813896760029627239#()V" />
+      <node id="3813896760029572858" at="73,0,77,0" concept="1" trace="test_NodeErrorCheck3813896760029637821#()V" />
+      <node id="3813896760029572858" at="78,0,82,0" concept="1" trace="test_ErrorMessagesCheck3813896760029629781#()V" />
+      <node id="3813896760029572858" at="15,0,20,0" concept="1" trace="test_ErrorMessagesCheck3813896760029621933#()V" />
+      <node id="3813896760029572858" at="21,0,26,0" concept="1" trace="test_NodeErrorCheck3813896760029624351#()V" />
+      <node id="3813896760029572858" at="27,0,32,0" concept="1" trace="test_NodeErrorCheck3813896760029586546#()V" />
+      <node id="3813896760029572858" at="33,0,38,0" concept="1" trace="test_ErrorMessagesCheck3813896760029627239#()V" />
+      <node id="3813896760029572858" at="39,0,44,0" concept="1" trace="test_NodeErrorCheck3813896760029637821#()V" />
+      <node id="3813896760029572858" at="45,0,50,0" concept="1" trace="test_ErrorMessagesCheck3813896760029629781#()V" />
+      <scope id="3813896760029572858" at="16,77,18,166" />
+      <scope id="3813896760029572858" at="22,73,24,162" />
+      <scope id="3813896760029572858" at="28,73,30,162" />
+      <scope id="3813896760029572858" at="34,77,36,166" />
+      <scope id="3813896760029572858" at="40,73,42,162" />
+      <scope id="3813896760029572858" at="46,77,48,166" />
+      <scope id="3813896760029572858" at="53,79,55,159">
+        <var name="operation" id="3813896760029572858" />
+      </scope>
+      <scope id="3813896760029572858" at="58,75,60,159">
+        <var name="operation" id="3813896760029572858" />
+      </scope>
+      <scope id="3813896760029572858" at="63,75,65,159">
+        <var name="operation" id="3813896760029572858" />
+      </scope>
+      <scope id="3813896760029572858" at="68,79,70,159">
+        <var name="operation" id="3813896760029572858" />
+      </scope>
+      <scope id="3813896760029572858" at="73,75,75,159">
+        <var name="operation" id="3813896760029572858" />
+      </scope>
+      <scope id="3813896760029572858" at="78,79,80,159">
+        <var name="operation" id="3813896760029572858" />
+      </scope>
+      <scope id="3813896760029572858" at="53,0,57,0" />
+      <scope id="3813896760029572858" at="58,0,62,0" />
+      <scope id="3813896760029572858" at="63,0,67,0" />
+      <scope id="3813896760029572858" at="68,0,72,0" />
+      <scope id="3813896760029572858" at="73,0,77,0" />
+      <scope id="3813896760029572858" at="78,0,82,0" />
+      <scope id="3813896760029572858" at="15,0,20,0" />
+      <scope id="3813896760029572858" at="21,0,26,0" />
+      <scope id="3813896760029572858" at="27,0,32,0" />
+      <scope id="3813896760029572858" at="33,0,38,0" />
+      <scope id="3813896760029572858" at="39,0,44,0" />
+      <scope id="3813896760029572858" at="45,0,50,0" />
+      <unit id="3813896760029572858" at="51,0,83,0" name="jetbrains.mps.baseLanguage.methodDispatch.test.tests.DispatchTypeCheckingErrors_Test$TestBody" />
+      <unit id="3813896760029572858" at="13,0,84,0" name="jetbrains.mps.baseLanguage.methodDispatch.test.tests.DispatchTypeCheckingErrors_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

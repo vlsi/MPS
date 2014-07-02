@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,7 +19,7 @@ import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
@@ -338,10 +338,7 @@ public abstract class DeltaBuilder {
     // FastNodeFinder update mechanism performs poorly (badly, in fact) with massive in-place updates.
     // It's faster to rebuild FNF completely than to update it. E.g step 4 for lang.editor/editor
     // spent 90 seconds out of 105 in replace of 9k children
-    // TODO make use of standalone FNF
-    if (inputModel instanceof SModelInternal) {
-      ((SModelInternal) inputModel).disposeFastNodeFinder();
-    }
+    FastNodeFinderManager.dispose(inputModel);
     final SModelReference inputModelRef = inputModel.getReference();
     // update references between changed model elements
     for (CopyRoot root : myCopyRoots) {

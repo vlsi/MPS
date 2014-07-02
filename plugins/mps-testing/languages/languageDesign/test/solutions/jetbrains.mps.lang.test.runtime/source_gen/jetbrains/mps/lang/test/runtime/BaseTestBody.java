@@ -27,7 +27,7 @@ public class BaseTestBody {
   }
 
   public void addNodeById(final String id) throws Exception {
-    myProject.getRepository().getModelAccess().executeCommand(new Runnable() {
+    myProject.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         SNode node = BaseTestBody.this.myModel.getNode(SNodeId.fromString(id));
         SNode copy = CopyUtil.copy(node, BaseTestBody.this.myMap, true);

@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:30bd8041-707c-446d-ba2e-b22e9065e9a2(jetbrains.mps.refactoring.tests)/5294483648489409055">
-    <nodeInfo nodeId="5294483648489409058" fileName="IRefactoringTester.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testRefactoring#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/Language;Ljetbrains/mps/smodel/Language;)Z" />
-    <scopeInfo nodeId="5294483648489409058" fileName="IRefactoringTester.java" startLine="10" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="5294483648489409060" varName="project" />
-      <varInfo nodeId="5294483648489409062" varName="sandbox1" />
-      <varInfo nodeId="5294483648489409064" varName="sandbox2" />
-      <varInfo nodeId="5294483648489409068" varName="testRefactoringTargetLanguage" />
-      <varInfo nodeId="5294483648489409066" varName="testRefactoringlanguage" />
-    </scopeInfo>
-    <unitInfo nodeId="5294483648489409055" fileName="IRefactoringTester.java" startLine="9" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.refactoring.tests.IRefactoringTester" />
+    <file name="IRefactoringTester.java">
+      <node id="5294483648489409058" at="10,0,11,0" concept="0" trace="testRefactoring#(Ljetbrains/mps/project/Project;Lorg/jetbrains/mps/openapi/model/SModel;Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/Language;Ljetbrains/mps/smodel/Language;)Z" />
+      <scope id="5294483648489409058" at="10,0,11,0">
+        <var name="project" id="5294483648489409060" />
+        <var name="sandbox1" id="5294483648489409062" />
+        <var name="sandbox2" id="5294483648489409064" />
+        <var name="testRefactoringTargetLanguage" id="5294483648489409068" />
+        <var name="testRefactoringlanguage" id="5294483648489409066" />
+      </scope>
+      <unit id="5294483648489409055" at="9,0,12,0" name="jetbrains.mps.refactoring.tests.IRefactoringTester" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="12" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.generator.template.main.QueriesGenerated" />
-  <root nodeRef="r:5910b194-61bf-46e8-b0dc-e6e7783c2363(jetbrains.mps.lang.traceable.operations.generator.template.main@generator)/6942529559415687114">
-    <nodeInfo nodeId="7529650772944783752" fileName="QueriesGenerated.java" startLine="16" startPosition="110" endLine="17" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1381762044504211663" fileName="QueriesGenerated.java" startLine="20" startPosition="108" endLine="21" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2603522263179413975" fileName="QueriesGenerated.java" startLine="24" startPosition="108" endLine="25" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="7529650772944783751" fileName="QueriesGenerated.java" startLine="16" startPosition="110" endLine="17" endPosition="187" />
-    <scopeInfo nodeId="1381762044504211662" fileName="QueriesGenerated.java" startLine="20" startPosition="108" endLine="21" endPosition="74" />
-    <scopeInfo nodeId="2603522263179413974" fileName="QueriesGenerated.java" startLine="24" startPosition="108" endLine="25" endPosition="75" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <root>
+    <file name="QueriesGenerated.java">
+      <unit at="12,0,28,0" name="jetbrains.mps.lang.traceable.operations.generator.template.main.QueriesGenerated" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:5910b194-61bf-46e8-b0dc-e6e7783c2363(jetbrains.mps.lang.traceable.operations.generator.template.main@generator)/6942529559415687114">
+    <file name="QueriesGenerated.java">
+      <node id="7529650772944783752" at="16,110,17,187" concept="0" />
+      <node id="1381762044504211663" at="20,108,21,74" concept="0" />
+      <node id="2603522263179413975" at="24,108,25,75" concept="0" />
+      <scope id="7529650772944783751" at="16,110,17,187" />
+      <scope id="1381762044504211662" at="20,108,21,74" />
+      <scope id="2603522263179413974" at="24,108,25,75" />
+    </file>
+  </root>
+</debug-info>
 

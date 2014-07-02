@@ -71,7 +71,7 @@ public class WorkbenchUndoHandler implements UndoHandler {
     }
     UndoManager undoManager = UndoManager.getInstance(ProjectHelper.toIdeaProject(project));
 
-    undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(myActions));
+    undoManager.undoableActionPerformed(new SNodeIdeaUndoableAction(project, myActions));
     myActions = new LinkedList<SNodeUndoableAction>();
   }
 }

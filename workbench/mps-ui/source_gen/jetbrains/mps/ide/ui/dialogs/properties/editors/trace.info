@@ -1,221 +1,241 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:e46d921f-36a3-4bc0-aa46-fc10c6f85948(jetbrains.mps.ide.ui.dialogs.properties.editors)/3995997045458442618">
-    <nodeInfo nodeId="3995997045458442619" fileName="ManagerTableCellEditor.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCombo" />
-    <nodeInfo nodeId="3995997045458442629" fileName="ManagerTableCellEditor.java" startLine="32" startPosition="35" endLine="33" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3995997045458442638" fileName="ManagerTableCellEditor.java" startLine="33" startPosition="102" endLine="34" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458442645" fileName="ManagerTableCellEditor.java" startLine="34" startPosition="49" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3995997045458442668" fileName="ManagerTableCellEditor.java" startLine="38" startPosition="123" endLine="39" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3995997045458442675" fileName="ManagerTableCellEditor.java" startLine="39" startPosition="62" endLine="40" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3995997045458442687" fileName="ManagerTableCellEditor.java" startLine="40" startPosition="116" endLine="41" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458442700" fileName="ManagerTableCellEditor.java" startLine="46" startPosition="54" endLine="47" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361597454" fileName="ManagerTableCellEditor.java" startLine="50" startPosition="69" endLine="51" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361597462" fileName="ManagerTableCellEditor.java" startLine="51" startPosition="86" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2034046503361597463" fileName="ManagerTableCellEditor.java" startLine="52" startPosition="0" endLine="53" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361597495" fileName="ManagerTableCellEditor.java" startLine="53" startPosition="327" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2034046503361597496" fileName="ManagerTableCellEditor.java" startLine="54" startPosition="0" endLine="55" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458442764" fileName="ManagerTableCellEditor.java" startLine="58" startPosition="7" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3995997045458442765" fileName="ManagerTableCellEditor.java" startLine="59" startPosition="0" endLine="60" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3995997045458442767" fileName="ManagerTableCellEditor.java" startLine="60" startPosition="15" endLine="61" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458442772" fileName="ManagerTableCellEditor.java" startLine="61" startPosition="51" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3995997045458442773" fileName="ManagerTableCellEditor.java" startLine="62" startPosition="0" endLine="63" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458442781" fileName="ManagerTableCellEditor.java" startLine="66" startPosition="47" endLine="67" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361579225" fileName="ManagerTableCellEditor.java" startLine="70" startPosition="95" endLine="71" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361579237" fileName="ManagerTableCellEditor.java" startLine="72" startPosition="36" endLine="73" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="2034046503361579238" fileName="ManagerTableCellEditor.java" startLine="74" startPosition="11" endLine="75" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361579242" fileName="ManagerTableCellEditor.java" startLine="75" startPosition="37" endLine="76" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503361579249" fileName="ManagerTableCellEditor.java" startLine="77" startPosition="9" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2034046503361579250" fileName="ManagerTableCellEditor.java" startLine="78" startPosition="0" endLine="79" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2034046503361579256" fileName="ManagerTableCellEditor.java" startLine="81" startPosition="79" endLine="82" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2034046503361579258" fileName="ManagerTableCellEditor.java" startLine="82" startPosition="33" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2034046503361579263" fileName="ManagerTableCellEditor.java" startLine="85" startPosition="103" endLine="86" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361579267" fileName="ManagerTableCellEditor.java" startLine="86" startPosition="31" endLine="87" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458442878" fileName="ManagerTableCellEditor.java" startLine="93" startPosition="7" endLine="94" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503361579232" fileName="ManagerTableCellEditor.java" startLine="71" startPosition="59" endLine="74" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503361579261" fileName="ManagerTableCellEditor.java" startLine="84" startPosition="86" endLine="88" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3995997045458442654" fileName="ManagerTableCellEditor.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
-    <nodeInfo nodeId="2034046503361579259" fileName="ManagerTableCellEditor.java" startLine="83" startPosition="0" endLine="89" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2034046503361597451" fileName="ManagerTableCellEditor.java" startLine="49" startPosition="25" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3995997045458442646" fileName="ManagerTableCellEditor.java" startLine="35" startPosition="0" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503361579217" fileName="ManagerTableCellEditor.java" startLine="69" startPosition="25" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2034046503361597449" fileName="ManagerTableCellEditor.java" startLine="49" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2034046503361579254" fileName="ManagerTableCellEditor.java" startLine="80" startPosition="95" endLine="90" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503361597445" fileName="ManagerTableCellEditor.java" startLine="47" startPosition="99" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503361579252" fileName="ManagerTableCellEditor.java" startLine="79" startPosition="26" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3995997045458442624" fileName="ManagerTableCellEditor.java" startLine="32" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ManagerTableCellEditor#()V" />
-    <nodeInfo nodeId="3995997045458442694" fileName="ManagerTableCellEditor.java" startLine="46" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getManagers#()Ljava/util/List;" />
-    <nodeInfo nodeId="2034046503361579215" fileName="ManagerTableCellEditor.java" startLine="69" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2034046503361579211" fileName="ManagerTableCellEditor.java" startLine="67" startPosition="54" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458442776" fileName="ManagerTableCellEditor.java" startLine="66" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getManagerNodes#()Ljava/util/List;" />
-    <scopeInfo nodeId="2034046503361579236" fileName="ManagerTableCellEditor.java" startLine="72" startPosition="36" endLine="73" endPosition="21" />
-    <scopeInfo nodeId="2034046503361579262" fileName="ManagerTableCellEditor.java" startLine="85" startPosition="103" endLine="87" endPosition="173">
-      <varInfo nodeId="2034046503361579264" varName="m" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458442667" fileName="ManagerTableCellEditor.java" startLine="38" startPosition="123" endLine="41" endPosition="93">
-      <varInfo nodeId="3995997045458442669" varName="manager" />
-      <varInfo nodeId="3995997045458442676" varName="managerName" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503361579260" fileName="ManagerTableCellEditor.java" startLine="84" startPosition="86" endLine="88" endPosition="15" />
-    <scopeInfo nodeId="2034046503361597453" fileName="ManagerTableCellEditor.java" startLine="50" startPosition="69" endLine="55" endPosition="60">
-      <varInfo nodeId="2034046503361597455" varName="language" />
-      <varInfo nodeId="2034046503361597464" varName="manager" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458442654" fileName="ManagerTableCellEditor.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="3995997045458442665" varName="focus" />
-      <varInfo nodeId="3995997045458442661" varName="index" />
-      <varInfo nodeId="3995997045458442657" varName="list" />
-      <varInfo nodeId="3995997045458442663" varName="selected" />
-      <varInfo nodeId="3995997045458442659" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503361579224" fileName="ManagerTableCellEditor.java" startLine="70" startPosition="95" endLine="76" endPosition="120">
-      <varInfo nodeId="2034046503361579239" varName="model" />
-      <varInfo nodeId="2034046503361579226" varName="stubsAspect" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503361579259" fileName="ManagerTableCellEditor.java" startLine="83" startPosition="0" endLine="89" endPosition="13">
-      <varInfo nodeId="2034046503361579279" varName="smd" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503361597450" fileName="ManagerTableCellEditor.java" startLine="49" startPosition="25" endLine="56" endPosition="9" />
-    <scopeInfo nodeId="2034046503361597451" fileName="ManagerTableCellEditor.java" startLine="49" startPosition="25" endLine="56" endPosition="9">
-      <varInfo nodeId="2034046503361597452" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503361579217" fileName="ManagerTableCellEditor.java" startLine="69" startPosition="25" endLine="77" endPosition="9">
-      <varInfo nodeId="2034046503361579222" varName="l" />
-    </scopeInfo>
-    <scopeInfo nodeId="2034046503361579255" fileName="ManagerTableCellEditor.java" startLine="81" startPosition="79" endLine="89" endPosition="13" />
-    <scopeInfo nodeId="2034046503361597449" fileName="ManagerTableCellEditor.java" startLine="49" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="2034046503361579253" fileName="ManagerTableCellEditor.java" startLine="80" startPosition="95" endLine="90" endPosition="11" />
-    <scopeInfo nodeId="3995997045458442628" fileName="ManagerTableCellEditor.java" startLine="32" startPosition="35" endLine="43" endPosition="7" />
-    <scopeInfo nodeId="2034046503361579252" fileName="ManagerTableCellEditor.java" startLine="79" startPosition="26" endLine="91" endPosition="9">
-      <varInfo nodeId="2034046503361579294" varName="s" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458442624" fileName="ManagerTableCellEditor.java" startLine="32" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="3995997045458442699" fileName="ManagerTableCellEditor.java" startLine="46" startPosition="54" endLine="63" endPosition="18">
-      <varInfo nodeId="3995997045458442701" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458442694" fileName="ManagerTableCellEditor.java" startLine="46" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="2034046503361579216" fileName="ManagerTableCellEditor.java" startLine="69" startPosition="25" endLine="91" endPosition="9" />
-    <scopeInfo nodeId="2034046503361579215" fileName="ManagerTableCellEditor.java" startLine="69" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="3995997045458442780" fileName="ManagerTableCellEditor.java" startLine="66" startPosition="47" endLine="94" endPosition="18">
-      <varInfo nodeId="3995997045458442782" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458442776" fileName="ManagerTableCellEditor.java" startLine="66" startPosition="0" endLine="96" endPosition="0" />
-    <unitInfo nodeId="3995997045458442652" fileName="ManagerTableCellEditor.java" startLine="36" startPosition="28" endLine="43" endPosition="5" unitName="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor$1" />
-    <unitInfo nodeId="2034046503361597449" fileName="ManagerTableCellEditor.java" startLine="48" startPosition="45" endLine="58" endPosition="5" unitName="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor$2" />
-    <unitInfo nodeId="2034046503361579215" fileName="ManagerTableCellEditor.java" startLine="68" startPosition="45" endLine="93" endPosition="5" unitName="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor$3" />
-    <unitInfo nodeId="3995997045458442618" fileName="ManagerTableCellEditor.java" startLine="29" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor" />
+    <file name="ManagerTableCellEditor.java">
+      <node id="3995997045458442619" at="30,0,31,0" concept="4" trace="myCombo" />
+      <node id="3995997045458442629" at="32,35,33,102" concept="13" />
+      <node id="3995997045458442638" at="33,102,34,49" concept="3" />
+      <node id="3995997045458442645" at="34,49,35,0" concept="11" />
+      <node id="3995997045458442668" at="38,123,39,62" concept="8" />
+      <node id="3995997045458442675" at="39,62,40,116" concept="8" />
+      <node id="3995997045458442687" at="40,116,41,93" concept="9" />
+      <node id="3995997045458442700" at="46,54,47,99" concept="8" />
+      <node id="2034046503361597454" at="50,69,51,86" concept="8" />
+      <node id="2034046503361597462" at="51,86,52,0" concept="11" />
+      <node id="2034046503361597463" at="52,0,53,327" concept="8" />
+      <node id="2034046503361597495" at="53,327,54,0" concept="11" />
+      <node id="2034046503361597496" at="54,0,55,60" concept="3" />
+      <node id="3995997045458442764" at="58,7,59,0" concept="11" />
+      <node id="3995997045458442765" at="59,0,60,15" concept="10" />
+      <node id="3995997045458442767" at="60,15,61,51" concept="3" />
+      <node id="3995997045458442772" at="61,51,62,0" concept="11" />
+      <node id="3995997045458442773" at="62,0,63,18" concept="9" />
+      <node id="3995997045458442781" at="66,47,67,54" concept="8" />
+      <node id="2034046503361579225" at="70,95,71,59" concept="8" />
+      <node id="2034046503361579237" at="72,36,73,21" concept="2" />
+      <node id="2034046503361579238" at="74,11,75,37" concept="8" />
+      <node id="2034046503361579242" at="75,37,76,120" concept="3" />
+      <node id="2034046503361579249" at="77,9,78,0" concept="11" />
+      <node id="2034046503361579250" at="78,0,79,26" concept="10" />
+      <node id="2034046503361579256" at="81,79,82,33" concept="10" />
+      <node id="2034046503361579258" at="82,33,83,0" concept="11" />
+      <node id="2034046503361579263" at="85,103,86,31" concept="8" />
+      <node id="2034046503361579267" at="86,31,87,173" concept="3" />
+      <node id="3995997045458442878" at="93,7,94,18" concept="9" />
+      <node id="2034046503361579232" at="71,59,74,11" concept="6" />
+      <node id="2034046503361579261" at="84,86,88,15" concept="6" />
+      <node id="3995997045458442654" at="37,0,43,0" concept="7" trace="getListCellRendererComponent#(Ljavax/swing/JList;Ljava/lang/Object;IZZ)Ljava/awt/Component;" />
+      <node id="2034046503361579259" at="83,0,89,13" concept="5" />
+      <node id="2034046503361597451" at="49,25,56,9" concept="5" />
+      <node id="3995997045458442646" at="35,0,43,7" concept="3" />
+      <node id="2034046503361579217" at="69,25,77,9" concept="5" />
+      <node id="2034046503361597449" at="49,0,58,0" concept="7" trace="run#()V" />
+      <node id="2034046503361579254" at="80,95,90,11" concept="6" />
+      <node id="2034046503361597445" at="47,99,58,7" concept="3" />
+      <node id="2034046503361579252" at="79,26,91,9" concept="5" />
+      <node id="3995997045458442624" at="32,0,45,0" concept="1" trace="ManagerTableCellEditor#()V" />
+      <node id="3995997045458442694" at="46,0,65,0" concept="12" trace="getManagers#()Ljava/util/List;" />
+      <node id="2034046503361579215" at="69,0,93,0" concept="7" trace="run#()V" />
+      <node id="2034046503361579211" at="67,54,93,7" concept="3" />
+      <node id="3995997045458442776" at="66,0,96,0" concept="12" trace="getManagerNodes#()Ljava/util/List;" />
+      <scope id="2034046503361579236" at="72,36,73,21" />
+      <scope id="2034046503361579262" at="85,103,87,173">
+        <var name="m" id="2034046503361579264" />
+      </scope>
+      <scope id="3995997045458442667" at="38,123,41,93">
+        <var name="manager" id="3995997045458442669" />
+        <var name="managerName" id="3995997045458442676" />
+      </scope>
+      <scope id="2034046503361579260" at="84,86,88,15" />
+      <scope id="2034046503361597453" at="50,69,55,60">
+        <var name="language" id="2034046503361597455" />
+        <var name="manager" id="2034046503361597464" />
+      </scope>
+      <scope id="3995997045458442654" at="37,0,43,0">
+        <var name="focus" id="3995997045458442665" />
+        <var name="index" id="3995997045458442661" />
+        <var name="list" id="3995997045458442657" />
+        <var name="selected" id="3995997045458442663" />
+        <var name="value" id="3995997045458442659" />
+      </scope>
+      <scope id="2034046503361579224" at="70,95,76,120">
+        <var name="model" id="2034046503361579239" />
+        <var name="stubsAspect" id="2034046503361579226" />
+      </scope>
+      <scope id="2034046503361579259" at="83,0,89,13">
+        <var name="smd" id="2034046503361579279" />
+      </scope>
+      <scope id="2034046503361597450" at="49,25,56,9" />
+      <scope id="2034046503361597451" at="49,25,56,9">
+        <var name="node" id="2034046503361597452" />
+      </scope>
+      <scope id="2034046503361579217" at="69,25,77,9">
+        <var name="l" id="2034046503361579222" />
+      </scope>
+      <scope id="2034046503361579255" at="81,79,89,13" />
+      <scope id="2034046503361597449" at="49,0,58,0" />
+      <scope id="2034046503361579253" at="80,95,90,11" />
+      <scope id="3995997045458442628" at="32,35,43,7" />
+      <scope id="2034046503361579252" at="79,26,91,9">
+        <var name="s" id="2034046503361579294" />
+      </scope>
+      <scope id="3995997045458442624" at="32,0,45,0" />
+      <scope id="3995997045458442699" at="46,54,63,18">
+        <var name="result" id="3995997045458442701" />
+      </scope>
+      <scope id="3995997045458442694" at="46,0,65,0" />
+      <scope id="2034046503361579216" at="69,25,91,9" />
+      <scope id="2034046503361579215" at="69,0,93,0" />
+      <scope id="3995997045458442780" at="66,47,94,18">
+        <var name="result" id="3995997045458442782" />
+      </scope>
+      <scope id="3995997045458442776" at="66,0,96,0" />
+      <unit id="3995997045458442652" at="36,28,43,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor$1" />
+      <unit id="2034046503361597449" at="48,45,58,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor$2" />
+      <unit id="2034046503361579215" at="68,45,93,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor$3" />
+      <unit id="3995997045458442618" at="29,0,97,0" name="jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor" />
+    </file>
   </root>
   <root nodeRef="r:e46d921f-36a3-4bc0-aa46-fc10c6f85948(jetbrains.mps.ide.ui.dialogs.properties.editors)/3995997045458442881">
-    <nodeInfo nodeId="3995997045458442884" fileName="RuleOperandEditor.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOperand" />
-    <nodeInfo nodeId="3995997045458442887" fileName="RuleOperandEditor.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myGenerator" />
-    <nodeInfo nodeId="3995997045458442890" fileName="RuleOperandEditor.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDepGens" />
-    <nodeInfo nodeId="3995997045458442894" fileName="RuleOperandEditor.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeft" />
-    <nodeInfo nodeId="3995997045458442907" fileName="RuleOperandEditor.java" startLine="26" startPosition="97" endLine="27" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458442911" fileName="RuleOperandEditor.java" startLine="27" startPosition="28" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458442915" fileName="RuleOperandEditor.java" startLine="28" startPosition="24" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458442923" fileName="RuleOperandEditor.java" startLine="33" startPosition="38" endLine="34" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458442936" fileName="RuleOperandEditor.java" startLine="39" startPosition="20" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458442943" fileName="RuleOperandEditor.java" startLine="42" startPosition="34" endLine="43" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458442952" fileName="RuleOperandEditor.java" startLine="44" startPosition="5" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458442961" fileName="RuleOperandEditor.java" startLine="49" startPosition="50" endLine="50" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458442978" fileName="RuleOperandEditor.java" startLine="54" startPosition="135" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458442993" fileName="RuleOperandEditor.java" startLine="58" startPosition="25" endLine="59" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3995997045458443002" fileName="RuleOperandEditor.java" startLine="59" startPosition="100" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443013" fileName="RuleOperandEditor.java" startLine="61" startPosition="41" endLine="62" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443019" fileName="RuleOperandEditor.java" startLine="62" startPosition="41" endLine="63" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443026" fileName="RuleOperandEditor.java" startLine="63" startPosition="54" endLine="64" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443030" fileName="RuleOperandEditor.java" startLine="64" startPosition="29" endLine="65" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443036" fileName="RuleOperandEditor.java" startLine="66" startPosition="16" endLine="67" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443043" fileName="RuleOperandEditor.java" startLine="70" startPosition="7" endLine="71" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458443061" fileName="RuleOperandEditor.java" startLine="74" startPosition="86" endLine="75" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3995997045458443034" fileName="RuleOperandEditor.java" startLine="66" startPosition="14" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3995997045458442931" fileName="RuleOperandEditor.java" startLine="38" startPosition="48" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3995997045458442938" fileName="RuleOperandEditor.java" startLine="41" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3995997045458443049" fileName="RuleOperandEditor.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRenderer#(Ljavax/swing/JTable;Ljava/lang/Object;II)Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="3995997045458442919" fileName="RuleOperandEditor.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellEditorValue#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="3995997045458442955" fileName="RuleOperandEditor.java" startLine="48" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="shouldSelectCell#(Ljava/util/EventObject;)Z" />
-    <nodeInfo nodeId="3995997045458442897" fileName="RuleOperandEditor.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuleOperandEditor#(Ljetbrains/mps/smodel/Generator;Ljava/util/List;Z)V" />
-    <nodeInfo nodeId="3995997045458443006" fileName="RuleOperandEditor.java" startLine="60" startPosition="22" endLine="68" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3995997045458442925" fileName="RuleOperandEditor.java" startLine="37" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isCellEditable#(Ljava/util/EventObject;)Z" />
-    <nodeInfo nodeId="3995997045458442989" fileName="RuleOperandEditor.java" startLine="57" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="3995997045458442984" fileName="RuleOperandEditor.java" startLine="55" startPosition="50" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458442964" fileName="RuleOperandEditor.java" startLine="53" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTableCellEditorComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;" />
-    <scopeInfo nodeId="3995997045458442922" fileName="RuleOperandEditor.java" startLine="33" startPosition="38" endLine="34" endPosition="21" />
-    <scopeInfo nodeId="3995997045458442935" fileName="RuleOperandEditor.java" startLine="39" startPosition="20" endLine="40" endPosition="19" />
-    <scopeInfo nodeId="3995997045458442942" fileName="RuleOperandEditor.java" startLine="42" startPosition="34" endLine="43" endPosition="51" />
-    <scopeInfo nodeId="3995997045458442960" fileName="RuleOperandEditor.java" startLine="49" startPosition="50" endLine="50" endPosition="17" />
-    <scopeInfo nodeId="3995997045458443035" fileName="RuleOperandEditor.java" startLine="66" startPosition="16" endLine="67" endPosition="54" />
-    <scopeInfo nodeId="3995997045458443060" fileName="RuleOperandEditor.java" startLine="74" startPosition="86" endLine="75" endPosition="119" />
-    <scopeInfo nodeId="3995997045458442906" fileName="RuleOperandEditor.java" startLine="26" startPosition="97" endLine="29" endPosition="20" />
-    <scopeInfo nodeId="3995997045458443049" fileName="RuleOperandEditor.java" startLine="74" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="3995997045458443058" varName="column" />
-      <varInfo nodeId="3995997045458443056" varName="row" />
-      <varInfo nodeId="3995997045458443052" varName="table" />
-      <varInfo nodeId="3995997045458443054" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458442919" fileName="RuleOperandEditor.java" startLine="32" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="3995997045458442955" fileName="RuleOperandEditor.java" startLine="48" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="3995997045458442958" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458443012" fileName="RuleOperandEditor.java" startLine="61" startPosition="41" endLine="65" endPosition="26" />
-    <scopeInfo nodeId="3995997045458442897" fileName="RuleOperandEditor.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="3995997045458442901" varName="depGens" />
-      <varInfo nodeId="3995997045458442899" varName="generator" />
-      <varInfo nodeId="3995997045458442904" varName="isLeft" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458442930" fileName="RuleOperandEditor.java" startLine="38" startPosition="48" endLine="45" endPosition="16" />
-    <scopeInfo nodeId="3995997045458442925" fileName="RuleOperandEditor.java" startLine="37" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="3995997045458442928" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458442992" fileName="RuleOperandEditor.java" startLine="58" startPosition="25" endLine="68" endPosition="9">
-      <varInfo nodeId="3995997045458442994" varName="dialog" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458442989" fileName="RuleOperandEditor.java" startLine="57" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="3995997045458442977" fileName="RuleOperandEditor.java" startLine="54" startPosition="135" endLine="71" endPosition="57" />
-    <scopeInfo nodeId="3995997045458442964" fileName="RuleOperandEditor.java" startLine="53" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="3995997045458442975" varName="column" />
-      <varInfo nodeId="3995997045458442971" varName="isSelected" />
-      <varInfo nodeId="3995997045458442973" varName="row" />
-      <varInfo nodeId="3995997045458442967" varName="table" />
-      <varInfo nodeId="3995997045458442969" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="3995997045458442988" fileName="RuleOperandEditor.java" startLine="56" startPosition="35" endLine="70" endPosition="5" unitName="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleOperandEditor$1" />
-    <unitInfo nodeId="3995997045458442881" fileName="RuleOperandEditor.java" startLine="20" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleOperandEditor" />
+    <file name="RuleOperandEditor.java">
+      <node id="3995997045458442884" at="21,0,22,0" concept="4" trace="myOperand" />
+      <node id="3995997045458442887" at="22,0,23,0" concept="4" trace="myGenerator" />
+      <node id="3995997045458442890" at="23,0,24,0" concept="4" trace="myDepGens" />
+      <node id="3995997045458442894" at="24,0,25,0" concept="4" trace="myLeft" />
+      <node id="3995997045458442907" at="26,97,27,28" concept="3" />
+      <node id="3995997045458442911" at="27,28,28,24" concept="3" />
+      <node id="3995997045458442915" at="28,24,29,20" concept="3" />
+      <node id="3995997045458442923" at="33,38,34,21" concept="9" />
+      <node id="3995997045458442936" at="39,20,40,19" concept="9" />
+      <node id="3995997045458442943" at="42,34,43,51" concept="9" />
+      <node id="3995997045458442952" at="44,5,45,16" concept="9" />
+      <node id="3995997045458442961" at="49,50,50,17" concept="9" />
+      <node id="3995997045458442978" at="54,135,55,50" concept="3" />
+      <node id="3995997045458442993" at="58,25,59,100" concept="8" />
+      <node id="3995997045458443002" at="59,100,60,22" concept="3" />
+      <node id="3995997045458443013" at="61,41,62,41" concept="3" />
+      <node id="3995997045458443019" at="62,41,63,54" concept="3" />
+      <node id="3995997045458443026" at="63,54,64,29" concept="3" />
+      <node id="3995997045458443030" at="64,29,65,26" concept="3" />
+      <node id="3995997045458443036" at="66,16,67,54" concept="3" />
+      <node id="3995997045458443043" at="70,7,71,57" concept="9" />
+      <node id="3995997045458443061" at="74,86,75,119" concept="9" />
+      <node id="3995997045458443034" at="66,14,68,9" concept="0" />
+      <node id="3995997045458442931" at="38,48,41,5" concept="6" />
+      <node id="3995997045458442938" at="41,5,44,5" concept="6" />
+      <node id="3995997045458443049" at="74,0,77,0" concept="7" trace="createRenderer#(Ljavax/swing/JTable;Ljava/lang/Object;II)Ljavax/swing/JComponent;" />
+      <node id="3995997045458442919" at="32,0,36,0" concept="7" trace="getCellEditorValue#()Ljava/lang/Object;" />
+      <node id="3995997045458442955" at="48,0,52,0" concept="7" trace="shouldSelectCell#(Ljava/util/EventObject;)Z" />
+      <node id="3995997045458442897" at="26,0,31,0" concept="1" trace="RuleOperandEditor#(Ljetbrains/mps/smodel/Generator;Ljava/util/List;Z)V" />
+      <node id="3995997045458443006" at="60,22,68,9" concept="6" />
+      <node id="3995997045458442925" at="37,0,47,0" concept="7" trace="isCellEditable#(Ljava/util/EventObject;)Z" />
+      <node id="3995997045458442989" at="57,0,70,0" concept="7" trace="run#()V" />
+      <node id="3995997045458442984" at="55,50,70,7" concept="3" />
+      <node id="3995997045458442964" at="53,0,73,0" concept="7" trace="getTableCellEditorComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;" />
+      <scope id="3995997045458442922" at="33,38,34,21" />
+      <scope id="3995997045458442935" at="39,20,40,19" />
+      <scope id="3995997045458442942" at="42,34,43,51" />
+      <scope id="3995997045458442960" at="49,50,50,17" />
+      <scope id="3995997045458443035" at="66,16,67,54" />
+      <scope id="3995997045458443060" at="74,86,75,119" />
+      <scope id="3995997045458442906" at="26,97,29,20" />
+      <scope id="3995997045458443049" at="74,0,77,0">
+        <var name="column" id="3995997045458443058" />
+        <var name="row" id="3995997045458443056" />
+        <var name="table" id="3995997045458443052" />
+        <var name="value" id="3995997045458443054" />
+      </scope>
+      <scope id="3995997045458442919" at="32,0,36,0" />
+      <scope id="3995997045458442955" at="48,0,52,0">
+        <var name="e" id="3995997045458442958" />
+      </scope>
+      <scope id="3995997045458443012" at="61,41,65,26" />
+      <scope id="3995997045458442897" at="26,0,31,0">
+        <var name="depGens" id="3995997045458442901" />
+        <var name="generator" id="3995997045458442899" />
+        <var name="isLeft" id="3995997045458442904" />
+      </scope>
+      <scope id="3995997045458442930" at="38,48,45,16" />
+      <scope id="3995997045458442925" at="37,0,47,0">
+        <var name="e" id="3995997045458442928" />
+      </scope>
+      <scope id="3995997045458442992" at="58,25,68,9">
+        <var name="dialog" id="3995997045458442994" />
+      </scope>
+      <scope id="3995997045458442989" at="57,0,70,0" />
+      <scope id="3995997045458442977" at="54,135,71,57" />
+      <scope id="3995997045458442964" at="53,0,73,0">
+        <var name="column" id="3995997045458442975" />
+        <var name="isSelected" id="3995997045458442971" />
+        <var name="row" id="3995997045458442973" />
+        <var name="table" id="3995997045458442967" />
+        <var name="value" id="3995997045458442969" />
+      </scope>
+      <unit id="3995997045458442988" at="56,35,70,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleOperandEditor$1" />
+      <unit id="3995997045458442881" at="20,0,78,0" name="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleOperandEditor" />
+    </file>
   </root>
   <root nodeRef="r:e46d921f-36a3-4bc0-aa46-fc10c6f85948(jetbrains.mps.ide.ui.dialogs.properties.editors)/3995997045458443074">
-    <nodeInfo nodeId="6464687090063975627" fileName="RuleTypeEditor.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myComboBox" />
-    <nodeInfo nodeId="3995997045458443080" fileName="RuleTypeEditor.java" startLine="15" startPosition="27" endLine="16" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6464687090063975762" fileName="RuleTypeEditor.java" startLine="16" startPosition="27" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443089" fileName="RuleTypeEditor.java" startLine="17" startPosition="45" endLine="18" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443094" fileName="RuleTypeEditor.java" startLine="18" startPosition="49" endLine="19" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443099" fileName="RuleTypeEditor.java" startLine="19" startPosition="52" endLine="20" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443104" fileName="RuleTypeEditor.java" startLine="20" startPosition="48" endLine="21" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443109" fileName="RuleTypeEditor.java" startLine="21" startPosition="51" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443114" fileName="RuleTypeEditor.java" startLine="22" startPosition="51" endLine="23" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8881345873770272859" fileName="RuleTypeEditor.java" startLine="29" startPosition="71" endLine="30" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8881345873770236606" fileName="RuleTypeEditor.java" startLine="30" startPosition="41" endLine="31" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8719553478678306782" fileName="RuleTypeEditor.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyTyped#(Ljava/awt/event/KeyEvent;)V" />
-    <nodeInfo nodeId="8719553478678306798" fileName="RuleTypeEditor.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyReleased#(Ljava/awt/event/KeyEvent;)V" />
-    <nodeInfo nodeId="8719553478678306850" fileName="RuleTypeEditor.java" startLine="28" startPosition="43" endLine="32" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8719553478678306790" fileName="RuleTypeEditor.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="keyPressed#(Ljava/awt/event/KeyEvent;)V" />
-    <nodeInfo nodeId="8719553478678184317" fileName="RuleTypeEditor.java" startLine="23" startPosition="84" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3995997045458443077" fileName="RuleTypeEditor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RuleTypeEditor#()V" />
-    <scopeInfo nodeId="8719553478678306788" fileName="RuleTypeEditor.java" startLine="25" startPosition="41" endLine="25" endPosition="41" />
-    <scopeInfo nodeId="8719553478678306804" fileName="RuleTypeEditor.java" startLine="35" startPosition="44" endLine="35" endPosition="44" />
-    <scopeInfo nodeId="8719553478678306782" fileName="RuleTypeEditor.java" startLine="25" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="8719553478678306786" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="8719553478678306851" fileName="RuleTypeEditor.java" startLine="29" startPosition="71" endLine="31" endPosition="23" />
-    <scopeInfo nodeId="8719553478678306798" fileName="RuleTypeEditor.java" startLine="35" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="8719553478678306802" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="8719553478678306796" fileName="RuleTypeEditor.java" startLine="28" startPosition="43" endLine="32" endPosition="9" />
-    <scopeInfo nodeId="8719553478678306790" fileName="RuleTypeEditor.java" startLine="28" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="8719553478678306794" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="3995997045458443079" fileName="RuleTypeEditor.java" startLine="15" startPosition="27" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="3995997045458443077" fileName="RuleTypeEditor.java" startLine="15" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="8719553478678306780" fileName="RuleTypeEditor.java" startLine="24" startPosition="39" endLine="37" endPosition="5" unitName="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor$1" />
-    <unitInfo nodeId="3995997045458443074" fileName="RuleTypeEditor.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor" />
+    <file name="RuleTypeEditor.java">
+      <node id="6464687090063975627" at="13,0,14,0" concept="4" trace="myComboBox" />
+      <node id="3995997045458443080" at="15,27,16,27" concept="13" />
+      <node id="6464687090063975762" at="16,27,17,45" concept="3" />
+      <node id="3995997045458443089" at="17,45,18,49" concept="3" />
+      <node id="3995997045458443094" at="18,49,19,52" concept="3" />
+      <node id="3995997045458443099" at="19,52,20,48" concept="3" />
+      <node id="3995997045458443104" at="20,48,21,51" concept="3" />
+      <node id="3995997045458443109" at="21,51,22,51" concept="3" />
+      <node id="3995997045458443114" at="22,51,23,84" concept="3" />
+      <node id="8881345873770272859" at="29,71,30,41" concept="3" />
+      <node id="8881345873770236606" at="30,41,31,23" concept="3" />
+      <node id="8719553478678306782" at="25,0,27,0" concept="7" trace="keyTyped#(Ljava/awt/event/KeyEvent;)V" />
+      <node id="8719553478678306798" at="35,0,37,0" concept="7" trace="keyReleased#(Ljava/awt/event/KeyEvent;)V" />
+      <node id="8719553478678306850" at="28,43,32,9" concept="6" />
+      <node id="8719553478678306790" at="28,0,34,0" concept="7" trace="keyPressed#(Ljava/awt/event/KeyEvent;)V" />
+      <node id="8719553478678184317" at="23,84,37,7" concept="3" />
+      <node id="3995997045458443077" at="15,0,39,0" concept="1" trace="RuleTypeEditor#()V" />
+      <scope id="8719553478678306788" at="25,41,25,41" />
+      <scope id="8719553478678306804" at="35,44,35,44" />
+      <scope id="8719553478678306782" at="25,0,27,0">
+        <var name="p0" id="8719553478678306786" />
+      </scope>
+      <scope id="8719553478678306851" at="29,71,31,23" />
+      <scope id="8719553478678306798" at="35,0,37,0">
+        <var name="p0" id="8719553478678306802" />
+      </scope>
+      <scope id="8719553478678306796" at="28,43,32,9" />
+      <scope id="8719553478678306790" at="28,0,34,0">
+        <var name="p0" id="8719553478678306794" />
+      </scope>
+      <scope id="3995997045458443079" at="15,27,37,7" />
+      <scope id="3995997045458443077" at="15,0,39,0" />
+      <unit id="8719553478678306780" at="24,39,37,5" name="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor$1" />
+      <unit id="3995997045458443074" at="12,0,40,0" name="jetbrains.mps.ide.ui.dialogs.properties.editors.RuleTypeEditor" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

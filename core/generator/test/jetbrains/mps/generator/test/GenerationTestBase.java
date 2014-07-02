@@ -17,6 +17,7 @@ package jetbrains.mps.generator.test;
 
 import com.intellij.openapi.application.PathManager;
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.tool.environment.ActiveEnvironment;
 import jetbrains.mps.tool.environment.Environment;
@@ -85,7 +86,7 @@ public class GenerationTestBase {
     MpsTestsSupport.makeAllInCreatedEnvironment();
 
     Logger.getRootLogger().setLevel(Level.INFO);
-    MPSCore.getInstance().setTestMode(true);
+    RuntimeFlags.setTestMode(true);
   }
 
   protected void doMeasureParallelGeneration(final Project p, final SModel descr, int threads) throws IOException {
@@ -206,12 +207,12 @@ public class GenerationTestBase {
         ThreadUtils.runInUIThreadAndWait(new Runnable() {
           @Override
           public void run() {
-            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            p.getModelAccess().executeCommand(new Runnable() {
               @Override
               public void run() {
                 r.run(descr);
               }
-            }, p);
+            });
           }
         });
 

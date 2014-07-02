@@ -1,561 +1,624 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="16" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.testHybridEditor.editor.EditorAspectDescriptorImpl" />
-  <root nodeRef="r:814b5a42-e9ec-45d8-81f9-8c398455e907(jetbrains.mps.testHybridEditor.editor)/4394877045817292529">
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="40" startPosition="79" endLine="41" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="44" startPosition="82" endLine="45" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="48" startPosition="89" endLine="49" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="49" startPosition="96" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="50" startPosition="48" endLine="51" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="51" startPosition="28" endLine="52" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="51" startPosition="28" endLine="52" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="52" startPosition="81" endLine="53" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="52" startPosition="81" endLine="53" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="53" startPosition="81" endLine="54" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="53" startPosition="81" endLine="54" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="54" startPosition="81" endLine="55" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="54" startPosition="81" endLine="55" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="55" startPosition="83" endLine="56" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="55" startPosition="83" endLine="56" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="56" startPosition="81" endLine="57" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292684" fileName="MetaBlock_Editor.java" startLine="60" startPosition="88" endLine="61" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292684" fileName="MetaBlock_Editor.java" startLine="61" startPosition="96" endLine="62" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292684" fileName="MetaBlock_Editor.java" startLine="62" startPosition="47" endLine="63" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292684" fileName="MetaBlock_Editor.java" startLine="63" startPosition="34" endLine="64" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="67" startPosition="88" endLine="68" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="68" startPosition="82" endLine="69" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="69" startPosition="29" endLine="70" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="70" startPosition="42" endLine="71" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="71" startPosition="26" endLine="72" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="72" startPosition="58" endLine="73" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="73" startPosition="42" endLine="74" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="74" startPosition="73" endLine="75" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="75" startPosition="57" endLine="76" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="77" startPosition="35" endLine="78" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="78" startPosition="72" endLine="79" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="79" startPosition="78" endLine="80" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="81" startPosition="10" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292686" fileName="MetaBlock_Editor.java" startLine="85" startPosition="88" endLine="86" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292686" fileName="MetaBlock_Editor.java" startLine="86" startPosition="87" endLine="87" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292686" fileName="MetaBlock_Editor.java" startLine="87" startPosition="47" endLine="88" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292686" fileName="MetaBlock_Editor.java" startLine="88" startPosition="34" endLine="89" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292686" fileName="MetaBlock_Editor.java" startLine="89" startPosition="60" endLine="90" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292686" fileName="MetaBlock_Editor.java" startLine="90" startPosition="60" endLine="91" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292686" fileName="MetaBlock_Editor.java" startLine="91" startPosition="40" endLine="92" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292686" fileName="MetaBlock_Editor.java" startLine="92" startPosition="34" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="96" startPosition="90" endLine="97" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="97" startPosition="96" endLine="98" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="98" startPosition="49" endLine="99" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="99" startPosition="34" endLine="100" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="100" startPosition="58" endLine="101" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="101" startPosition="40" endLine="102" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="101" startPosition="40" endLine="102" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="102" startPosition="82" endLine="103" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="102" startPosition="82" endLine="103" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="103" startPosition="82" endLine="104" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="103" startPosition="82" endLine="104" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="104" startPosition="85" endLine="105" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="104" startPosition="85" endLine="105" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="105" startPosition="82" endLine="106" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="105" startPosition="82" endLine="106" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="106" startPosition="82" endLine="107" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="106" startPosition="82" endLine="107" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="107" startPosition="82" endLine="108" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="107" startPosition="82" endLine="108" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="108" startPosition="85" endLine="109" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292699" fileName="MetaBlock_Editor.java" startLine="112" startPosition="89" endLine="113" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292699" fileName="MetaBlock_Editor.java" startLine="113" startPosition="99" endLine="114" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292699" fileName="MetaBlock_Editor.java" startLine="114" startPosition="48" endLine="115" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292699" fileName="MetaBlock_Editor.java" startLine="115" startPosition="34" endLine="116" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292700" fileName="MetaBlock_Editor.java" startLine="119" startPosition="89" endLine="120" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292700" fileName="MetaBlock_Editor.java" startLine="120" startPosition="87" endLine="121" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292700" fileName="MetaBlock_Editor.java" startLine="121" startPosition="48" endLine="122" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292700" fileName="MetaBlock_Editor.java" startLine="122" startPosition="34" endLine="123" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292700" fileName="MetaBlock_Editor.java" startLine="123" startPosition="54" endLine="124" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292700" fileName="MetaBlock_Editor.java" startLine="124" startPosition="60" endLine="125" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292700" fileName="MetaBlock_Editor.java" startLine="125" startPosition="40" endLine="126" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292700" fileName="MetaBlock_Editor.java" startLine="126" startPosition="34" endLine="127" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="130" startPosition="92" endLine="131" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="131" startPosition="129" endLine="132" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="132" startPosition="106" endLine="133" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="133" startPosition="52" endLine="134" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="134" startPosition="34" endLine="135" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="135" startPosition="68" endLine="136" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="136" startPosition="58" endLine="137" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="137" startPosition="60" endLine="138" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="138" startPosition="40" endLine="139" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="139" startPosition="49" endLine="140" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="144" startPosition="104" endLine="145" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="148" startPosition="66" endLine="149" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="149" startPosition="41" endLine="150" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="153" startPosition="86" endLine="154" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="154" startPosition="80" endLine="155" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="155" startPosition="95" endLine="156" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="159" startPosition="68" endLine="160" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="160" startPosition="34" endLine="161" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="161" startPosition="55" endLine="162" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="162" startPosition="87" endLine="163" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="167" startPosition="96" endLine="168" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="169" startPosition="34" endLine="170" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="172" startPosition="131" endLine="173" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292708" fileName="MetaBlock_Editor.java" startLine="179" startPosition="89" endLine="180" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292708" fileName="MetaBlock_Editor.java" startLine="180" startPosition="86" endLine="181" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292708" fileName="MetaBlock_Editor.java" startLine="181" startPosition="48" endLine="182" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292708" fileName="MetaBlock_Editor.java" startLine="182" startPosition="34" endLine="183" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292708" fileName="MetaBlock_Editor.java" startLine="183" startPosition="60" endLine="184" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292708" fileName="MetaBlock_Editor.java" startLine="184" startPosition="40" endLine="185" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292708" fileName="MetaBlock_Editor.java" startLine="185" startPosition="34" endLine="186" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292710" fileName="MetaBlock_Editor.java" startLine="189" startPosition="89" endLine="190" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292710" fileName="MetaBlock_Editor.java" startLine="190" startPosition="100" endLine="191" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292710" fileName="MetaBlock_Editor.java" startLine="191" startPosition="48" endLine="192" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292710" fileName="MetaBlock_Editor.java" startLine="192" startPosition="34" endLine="193" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292711" fileName="MetaBlock_Editor.java" startLine="196" startPosition="89" endLine="197" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292711" fileName="MetaBlock_Editor.java" startLine="197" startPosition="87" endLine="198" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292711" fileName="MetaBlock_Editor.java" startLine="198" startPosition="48" endLine="199" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292711" fileName="MetaBlock_Editor.java" startLine="199" startPosition="34" endLine="200" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292711" fileName="MetaBlock_Editor.java" startLine="200" startPosition="54" endLine="201" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292711" fileName="MetaBlock_Editor.java" startLine="201" startPosition="60" endLine="202" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292711" fileName="MetaBlock_Editor.java" startLine="202" startPosition="40" endLine="203" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292711" fileName="MetaBlock_Editor.java" startLine="203" startPosition="34" endLine="204" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="207" startPosition="92" endLine="208" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="208" startPosition="131" endLine="209" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="209" startPosition="106" endLine="210" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="210" startPosition="53" endLine="211" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="211" startPosition="34" endLine="212" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="212" startPosition="68" endLine="213" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="213" startPosition="58" endLine="214" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="214" startPosition="60" endLine="215" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="215" startPosition="40" endLine="216" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="216" startPosition="49" endLine="217" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="221" startPosition="105" endLine="222" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="225" startPosition="66" endLine="226" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="226" startPosition="41" endLine="227" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="230" startPosition="86" endLine="231" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="231" startPosition="80" endLine="232" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="232" startPosition="95" endLine="233" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="236" startPosition="68" endLine="237" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="237" startPosition="34" endLine="238" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="238" startPosition="55" endLine="239" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="239" startPosition="87" endLine="240" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="244" startPosition="96" endLine="245" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="246" startPosition="34" endLine="247" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="249" startPosition="131" endLine="250" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292719" fileName="MetaBlock_Editor.java" startLine="256" startPosition="88" endLine="257" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292719" fileName="MetaBlock_Editor.java" startLine="257" startPosition="87" endLine="258" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292719" fileName="MetaBlock_Editor.java" startLine="258" startPosition="47" endLine="259" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292719" fileName="MetaBlock_Editor.java" startLine="259" startPosition="34" endLine="260" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292719" fileName="MetaBlock_Editor.java" startLine="260" startPosition="60" endLine="261" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292719" fileName="MetaBlock_Editor.java" startLine="261" startPosition="40" endLine="262" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292719" fileName="MetaBlock_Editor.java" startLine="262" startPosition="34" endLine="263" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="266" startPosition="91" endLine="267" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="267" startPosition="97" endLine="268" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="268" startPosition="50" endLine="269" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="269" startPosition="28" endLine="270" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="269" startPosition="28" endLine="270" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="270" startPosition="84" endLine="271" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="270" startPosition="84" endLine="271" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="271" startPosition="83" endLine="272" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="275" startPosition="91" endLine="276" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="276" startPosition="40" endLine="277" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="277" startPosition="95" endLine="278" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="279" startPosition="31" endLine="280" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="281" startPosition="12" endLine="282" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="283" startPosition="5" endLine="284" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045816805258" fileName="MetaBlock_Editor.java" startLine="287" startPosition="97" endLine="288" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045816813284" fileName="MetaBlock_Editor.java" startLine="289" startPosition="46" endLine="290" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1161166135928" fileName="MetaBlock_Editor.java" startLine="291" startPosition="5" endLine="292" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1161722913887" fileName="MetaBlock_Editor.java" startLine="293" startPosition="20" endLine="294" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1161166287878" fileName="MetaBlock_Editor.java" startLine="295" startPosition="5" endLine="296" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817337544" fileName="MetaBlock_Editor.java" startLine="296" startPosition="62" endLine="297" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1161165534970" fileName="MetaBlock_Editor.java" startLine="300" startPosition="98" endLine="301" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1214580244841" fileName="MetaBlock_Editor.java" startLine="303" startPosition="30" endLine="304" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1161165534970" fileName="MetaBlock_Editor.java" startLine="306" startPosition="16" endLine="307" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1161165534970" fileName="MetaBlock_Editor.java" startLine="307" startPosition="45" endLine="308" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1161165534970" fileName="MetaBlock_Editor.java" startLine="308" startPosition="29" endLine="309" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1161165544408" fileName="MetaBlock_Editor.java" startLine="312" startPosition="89" endLine="313" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1161165544408" fileName="MetaBlock_Editor.java" startLine="313" startPosition="95" endLine="314" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1161165544408" fileName="MetaBlock_Editor.java" startLine="314" startPosition="48" endLine="315" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1161165544408" fileName="MetaBlock_Editor.java" startLine="315" startPosition="34" endLine="316" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="319" startPosition="90" endLine="320" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="320" startPosition="99" endLine="321" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="321" startPosition="49" endLine="322" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="322" startPosition="34" endLine="323" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="323" startPosition="49" endLine="324" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="324" startPosition="40" endLine="325" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="324" startPosition="40" endLine="325" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="325" startPosition="82" endLine="326" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="325" startPosition="82" endLine="326" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="326" startPosition="82" endLine="327" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="326" startPosition="82" endLine="327" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="327" startPosition="84" endLine="328" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1160492829176" fileName="MetaBlock_Editor.java" startLine="331" startPosition="89" endLine="332" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1160492829176" fileName="MetaBlock_Editor.java" startLine="332" startPosition="90" endLine="333" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1160492829176" fileName="MetaBlock_Editor.java" startLine="333" startPosition="48" endLine="334" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1160492829176" fileName="MetaBlock_Editor.java" startLine="334" startPosition="34" endLine="335" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="338" startPosition="89" endLine="339" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="339" startPosition="82" endLine="340" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="340" startPosition="33" endLine="341" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="341" startPosition="42" endLine="342" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="342" startPosition="40" endLine="343" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="343" startPosition="26" endLine="344" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="344" startPosition="58" endLine="345" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="345" startPosition="46" endLine="346" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="346" startPosition="34" endLine="347" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="347" startPosition="72" endLine="348" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="348" startPosition="40" endLine="349" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="349" startPosition="73" endLine="350" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="350" startPosition="57" endLine="351" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="352" startPosition="35" endLine="353" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="353" startPosition="72" endLine="354" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="354" startPosition="78" endLine="355" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="356" startPosition="10" endLine="357" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="360" startPosition="91" endLine="361" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="361" startPosition="182" endLine="362" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="362" startPosition="50" endLine="363" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1176492672998" fileName="MetaBlock_Editor.java" startLine="366" startPosition="120" endLine="367" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="281" startPosition="10" endLine="283" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="144" startPosition="0" endLine="147" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="inMetaPortsListHandler_liyxwi_c3a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="168" startPosition="134" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="171" startPosition="9" endLine="174" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="221" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="outMetaPortsListHandler_liyxwi_g3a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="245" startPosition="134" endLine="248" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="248" startPosition="9" endLine="251" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4394877045816807010" fileName="MetaBlock_Editor.java" startLine="288" startPosition="64" endLine="291" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1161722900535" fileName="MetaBlock_Editor.java" startLine="292" startPosition="126" endLine="295" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1161165534970" fileName="MetaBlock_Editor.java" startLine="303" startPosition="0" endLine="306" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1176492331666" fileName="MetaBlock_Editor.java" startLine="366" startPosition="0" endLine="369" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_QueryFunction_JComponent_liyxwi_a2b0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljavax/swing/JComponent;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="148" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="225" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="153" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="230" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="278" startPosition="33" endLine="283" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1161165534970" fileName="MetaBlock_Editor.java" startLine="301" startPosition="32" endLine="306" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="360" startPosition="0" endLine="365" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJComponent_liyxwi_c1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292684" fileName="MetaBlock_Editor.java" startLine="60" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_liyxwi_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="76" startPosition="59" endLine="82" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4394877045817292699" fileName="MetaBlock_Editor.java" startLine="112" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_liyxwi_a3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="159" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292710" fileName="MetaBlock_Editor.java" startLine="189" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_liyxwi_e3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="236" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1161165544408" fileName="MetaBlock_Editor.java" startLine="312" startPosition="0" endLine="318" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_liyxwi_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1160492829176" fileName="MetaBlock_Editor.java" startLine="331" startPosition="0" endLine="337" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_liyxwi_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="351" startPosition="59" endLine="357" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="266" startPosition="0" endLine="274" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_liyxwi_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="166" startPosition="132" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4394877045817292708" fileName="MetaBlock_Editor.java" startLine="179" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_liyxwi_d3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="243" startPosition="132" endLine="252" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4394877045817292719" fileName="MetaBlock_Editor.java" startLine="256" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_liyxwi_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292686" fileName="MetaBlock_Editor.java" startLine="85" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_liyxwi_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292700" fileName="MetaBlock_Editor.java" startLine="119" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_liyxwi_b3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292711" fileName="MetaBlock_Editor.java" startLine="196" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_liyxwi_f3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="48" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_liyxwi_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="166" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="243" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="275" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createAlternation_liyxwi_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1161165534970" fileName="MetaBlock_Editor.java" startLine="300" startPosition="0" endLine="311" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createImage_liyxwi_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="319" startPosition="0" endLine="330" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_liyxwi_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="130" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_liyxwi_c3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="207" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_liyxwi_g3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1161165530948" fileName="MetaBlock_Editor.java" startLine="287" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_liyxwi_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="96" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_liyxwi_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="67" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_liyxwi_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="338" startPosition="0" endLine="359" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_liyxwi_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="40" startPosition="79" endLine="41" endPosition="63" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="44" startPosition="82" endLine="45" endPosition="65" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="51" startPosition="28" endLine="52" endPosition="81" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="52" startPosition="81" endLine="53" endPosition="81" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="53" startPosition="81" endLine="54" endPosition="81" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="54" startPosition="81" endLine="55" endPosition="83" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="55" startPosition="83" endLine="56" endPosition="81" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="101" startPosition="40" endLine="102" endPosition="82" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="102" startPosition="82" endLine="103" endPosition="82" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="103" startPosition="82" endLine="104" endPosition="85" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="104" startPosition="85" endLine="105" endPosition="82" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="105" startPosition="82" endLine="106" endPosition="82" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="106" startPosition="82" endLine="107" endPosition="82" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="107" startPosition="82" endLine="108" endPosition="85" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="144" startPosition="104" endLine="145" endPosition="50" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="169" startPosition="34" endLine="170" endPosition="95" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="172" startPosition="131" endLine="173" endPosition="139" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="221" startPosition="105" endLine="222" endPosition="50" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="246" startPosition="34" endLine="247" endPosition="95" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="249" startPosition="131" endLine="250" endPosition="139" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="269" startPosition="28" endLine="270" endPosition="84" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="270" startPosition="84" endLine="271" endPosition="83" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="279" startPosition="31" endLine="280" endPosition="68" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="281" startPosition="12" endLine="282" endPosition="71" />
-    <scopeInfo nodeId="4394877045816807013" fileName="MetaBlock_Editor.java" startLine="289" startPosition="46" endLine="290" endPosition="19" />
-    <scopeInfo nodeId="1161722900537" fileName="MetaBlock_Editor.java" startLine="293" startPosition="20" endLine="294" endPosition="19" />
-    <scopeInfo nodeId="1210083703315" fileName="MetaBlock_Editor.java" startLine="303" startPosition="30" endLine="304" endPosition="63" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="324" startPosition="40" endLine="325" endPosition="82" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="325" startPosition="82" endLine="326" endPosition="82" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="326" startPosition="82" endLine="327" endPosition="84" />
-    <scopeInfo nodeId="1176492331667" fileName="MetaBlock_Editor.java" startLine="366" startPosition="120" endLine="367" endPosition="66" />
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="148" startPosition="66" endLine="150" endPosition="93">
-      <varInfo nodeId="4394877045817292529" varName="listOwner" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="225" startPosition="66" endLine="227" endPosition="93">
-      <varInfo nodeId="4394877045817292529" varName="listOwner" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="77" startPosition="35" endLine="80" endPosition="109">
-      <varInfo nodeId="4394877045817292685" varName="manager" />
-      <varInfo nodeId="4394877045817292685" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="144" startPosition="0" endLine="147" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="childRole" />
-      <varInfo nodeId="4394877045817292529" varName="context" />
-      <varInfo nodeId="4394877045817292529" varName="ownerNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="153" startPosition="86" endLine="156" endPosition="25">
-      <varInfo nodeId="4394877045817292529" varName="elementCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="221" startPosition="0" endLine="224" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="childRole" />
-      <varInfo nodeId="4394877045817292529" varName="context" />
-      <varInfo nodeId="4394877045817292529" varName="ownerNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="230" startPosition="86" endLine="233" endPosition="25">
-      <varInfo nodeId="4394877045817292529" varName="elementCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1161165534970" fileName="MetaBlock_Editor.java" startLine="303" startPosition="0" endLine="306" endPosition="0" />
-    <scopeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="352" startPosition="35" endLine="355" endPosition="109">
-      <varInfo nodeId="1160492829177" varName="manager" />
-      <varInfo nodeId="1160492829177" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="360" startPosition="91" endLine="363" endPosition="22">
-      <varInfo nodeId="4394877045817292529" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1176492331666" fileName="MetaBlock_Editor.java" startLine="366" startPosition="0" endLine="369" endPosition="0">
-      <varInfo nodeId="1176492331666" varName="editorContext" />
-      <varInfo nodeId="1176492331666" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292684" fileName="MetaBlock_Editor.java" startLine="60" startPosition="88" endLine="64" endPosition="22">
-      <varInfo nodeId="4394877045817292684" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292699" fileName="MetaBlock_Editor.java" startLine="112" startPosition="89" endLine="116" endPosition="22">
-      <varInfo nodeId="4394877045817292699" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="148" startPosition="0" endLine="152" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="159" startPosition="68" endLine="163" endPosition="23">
-      <varInfo nodeId="4394877045817292529" varName="emptyCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292710" fileName="MetaBlock_Editor.java" startLine="189" startPosition="89" endLine="193" endPosition="22">
-      <varInfo nodeId="4394877045817292710" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="225" startPosition="0" endLine="229" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="236" startPosition="68" endLine="240" endPosition="23">
-      <varInfo nodeId="4394877045817292529" varName="emptyCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1161165544408" fileName="MetaBlock_Editor.java" startLine="312" startPosition="89" endLine="316" endPosition="22">
-      <varInfo nodeId="1161165544408" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1160492829176" fileName="MetaBlock_Editor.java" startLine="331" startPosition="89" endLine="335" endPosition="22">
-      <varInfo nodeId="1160492829176" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="153" startPosition="0" endLine="158" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="elementNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="230" startPosition="0" endLine="235" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="elementNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="360" startPosition="0" endLine="365" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292684" fileName="MetaBlock_Editor.java" startLine="60" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="4394877045817292684" varName="editorContext" />
-      <varInfo nodeId="4394877045817292684" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292699" fileName="MetaBlock_Editor.java" startLine="112" startPosition="0" endLine="118" endPosition="0">
-      <varInfo nodeId="4394877045817292699" varName="editorContext" />
-      <varInfo nodeId="4394877045817292699" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="159" startPosition="0" endLine="165" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292710" fileName="MetaBlock_Editor.java" startLine="189" startPosition="0" endLine="195" endPosition="0">
-      <varInfo nodeId="4394877045817292710" varName="editorContext" />
-      <varInfo nodeId="4394877045817292710" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="236" startPosition="0" endLine="242" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="266" startPosition="91" endLine="272" endPosition="22">
-      <varInfo nodeId="4394877045817292529" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1161165544408" fileName="MetaBlock_Editor.java" startLine="312" startPosition="0" endLine="318" endPosition="0">
-      <varInfo nodeId="1161165544408" varName="editorContext" />
-      <varInfo nodeId="1161165544408" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1160492829176" fileName="MetaBlock_Editor.java" startLine="331" startPosition="0" endLine="337" endPosition="0">
-      <varInfo nodeId="1160492829176" varName="editorContext" />
-      <varInfo nodeId="1160492829176" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="167" startPosition="96" endLine="174" endPosition="9" />
-    <scopeInfo nodeId="4394877045817292708" fileName="MetaBlock_Editor.java" startLine="179" startPosition="89" endLine="186" endPosition="22">
-      <varInfo nodeId="4394877045817292708" varName="editorCell" />
-      <varInfo nodeId="4394877045817292708" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="244" startPosition="96" endLine="251" endPosition="9" />
-    <scopeInfo nodeId="4394877045817292719" fileName="MetaBlock_Editor.java" startLine="256" startPosition="88" endLine="263" endPosition="22">
-      <varInfo nodeId="4394877045817292719" varName="editorCell" />
-      <varInfo nodeId="4394877045817292719" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292686" fileName="MetaBlock_Editor.java" startLine="85" startPosition="88" endLine="93" endPosition="22">
-      <varInfo nodeId="4394877045817292686" varName="editorCell" />
-      <varInfo nodeId="4394877045817292686" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292700" fileName="MetaBlock_Editor.java" startLine="119" startPosition="89" endLine="127" endPosition="22">
-      <varInfo nodeId="4394877045817292700" varName="editorCell" />
-      <varInfo nodeId="4394877045817292700" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292711" fileName="MetaBlock_Editor.java" startLine="196" startPosition="89" endLine="204" endPosition="22">
-      <varInfo nodeId="4394877045817292711" varName="editorCell" />
-      <varInfo nodeId="4394877045817292711" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="266" startPosition="0" endLine="274" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="48" startPosition="89" endLine="57" endPosition="22">
-      <varInfo nodeId="4394877045817292529" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="166" startPosition="132" endLine="175" endPosition="7" />
-    <scopeInfo nodeId="4394877045817292708" fileName="MetaBlock_Editor.java" startLine="179" startPosition="0" endLine="188" endPosition="0">
-      <varInfo nodeId="4394877045817292708" varName="editorContext" />
-      <varInfo nodeId="4394877045817292708" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="243" startPosition="132" endLine="252" endPosition="7" />
-    <scopeInfo nodeId="4394877045817292719" fileName="MetaBlock_Editor.java" startLine="256" startPosition="0" endLine="265" endPosition="0">
-      <varInfo nodeId="4394877045817292719" varName="editorContext" />
-      <varInfo nodeId="4394877045817292719" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="275" startPosition="91" endLine="284" endPosition="22">
-      <varInfo nodeId="4394877045817292529" varName="alternationCondition" />
-      <varInfo nodeId="4394877045817292529" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="1161165534970" fileName="MetaBlock_Editor.java" startLine="300" startPosition="98" endLine="309" endPosition="22">
-      <varInfo nodeId="1161165534970" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="319" startPosition="90" endLine="328" endPosition="22">
-      <varInfo nodeId="4394877045817292529" varName="editorCell" />
-      <varInfo nodeId="4394877045817292529" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292686" fileName="MetaBlock_Editor.java" startLine="85" startPosition="0" endLine="95" endPosition="0">
-      <varInfo nodeId="4394877045817292686" varName="editorContext" />
-      <varInfo nodeId="4394877045817292686" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292700" fileName="MetaBlock_Editor.java" startLine="119" startPosition="0" endLine="129" endPosition="0">
-      <varInfo nodeId="4394877045817292700" varName="editorContext" />
-      <varInfo nodeId="4394877045817292700" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="130" startPosition="92" endLine="140" endPosition="22">
-      <varInfo nodeId="4394877045817292529" varName="editorCell" />
-      <varInfo nodeId="4394877045817292529" varName="handler" />
-      <varInfo nodeId="4394877045817292529" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292711" fileName="MetaBlock_Editor.java" startLine="196" startPosition="0" endLine="206" endPosition="0">
-      <varInfo nodeId="4394877045817292711" varName="editorContext" />
-      <varInfo nodeId="4394877045817292711" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="207" startPosition="92" endLine="217" endPosition="22">
-      <varInfo nodeId="4394877045817292529" varName="editorCell" />
-      <varInfo nodeId="4394877045817292529" varName="handler" />
-      <varInfo nodeId="4394877045817292529" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1161165530949" fileName="MetaBlock_Editor.java" startLine="287" startPosition="97" endLine="297" endPosition="0">
-      <varInfo nodeId="4394877045816805259" varName="module" />
-      <varInfo nodeId="1161166135929" varName="s" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="48" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="166" startPosition="0" endLine="177" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="elementCell" />
-      <varInfo nodeId="4394877045817292529" varName="elementNode" />
-      <varInfo nodeId="4394877045817292529" varName="listOwner" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="243" startPosition="0" endLine="254" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="elementCell" />
-      <varInfo nodeId="4394877045817292529" varName="elementNode" />
-      <varInfo nodeId="4394877045817292529" varName="listOwner" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="275" startPosition="0" endLine="286" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1161165534970" fileName="MetaBlock_Editor.java" startLine="300" startPosition="0" endLine="311" endPosition="0">
-      <varInfo nodeId="1161165534970" varName="editorContext" />
-      <varInfo nodeId="1161165534970" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="319" startPosition="0" endLine="330" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="130" startPosition="0" endLine="142" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="207" startPosition="0" endLine="219" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1161165530948" fileName="MetaBlock_Editor.java" startLine="287" startPosition="0" endLine="299" endPosition="0">
-      <varInfo nodeId="1161165530948" varName="editorContext" />
-      <varInfo nodeId="1161165530948" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="96" startPosition="90" endLine="109" endPosition="22">
-      <varInfo nodeId="4394877045817292529" varName="editorCell" />
-      <varInfo nodeId="4394877045817292529" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="67" startPosition="88" endLine="82" endPosition="22">
-      <varInfo nodeId="4394877045817292685" varName="attributeConcept" />
-      <varInfo nodeId="4394877045817292685" varName="attributeKind" />
-      <varInfo nodeId="4394877045817292685" varName="editorCell" />
-      <varInfo nodeId="4394877045817292685" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="96" startPosition="0" endLine="111" endPosition="0">
-      <varInfo nodeId="4394877045817292529" varName="editorContext" />
-      <varInfo nodeId="4394877045817292529" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4394877045817292685" fileName="MetaBlock_Editor.java" startLine="67" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="4394877045817292685" varName="editorContext" />
-      <varInfo nodeId="4394877045817292685" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="338" startPosition="89" endLine="357" endPosition="22">
-      <varInfo nodeId="1160492829177" varName="attributeConcept" />
-      <varInfo nodeId="1160492829177" varName="attributeKind" />
-      <varInfo nodeId="1160492829177" varName="editorCell" />
-      <varInfo nodeId="1160492829177" varName="provider" />
-      <varInfo nodeId="1160492829177" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="1160492829177" fileName="MetaBlock_Editor.java" startLine="338" startPosition="0" endLine="359" endPosition="0">
-      <varInfo nodeId="1160492829177" varName="editorContext" />
-      <varInfo nodeId="1160492829177" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1161165534970" fileName="MetaBlock_Editor.java" startLine="302" startPosition="75" endLine="306" endPosition="5" unitName="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor$1" />
-    <unitInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="143" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor$inMetaPortsListHandler_liyxwi_c3a" />
-    <unitInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="220" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor$outMetaPortsListHandler_liyxwi_g3a" />
-    <unitInfo nodeId="4394877045817292529" fileName="MetaBlock_Editor.java" startLine="39" startPosition="0" endLine="370" endPosition="0" unitName="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="EditorAspectDescriptorImpl.java">
+      <unit at="16,0,42,0" name="jetbrains.mps.testHybridEditor.editor.EditorAspectDescriptorImpl" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:814b5a42-e9ec-45d8-81f9-8c398455e907(jetbrains.mps.testHybridEditor.editor)/4394877045817292529">
+    <file name="MetaBlock_Editor.java">
+      <node id="4394877045817292529" at="40,79,41,63" concept="6" />
+      <node id="4394877045817292529" at="44,82,45,65" concept="6" />
+      <node id="4394877045817292529" at="48,89,49,96" concept="5" />
+      <node id="4394877045817292529" at="49,96,50,48" concept="2" />
+      <node id="4394877045817292529" at="50,48,51,28" concept="2" />
+      <node id="4394877045817292529" at="51,28,52,81" concept="0" />
+      <node id="4394877045817292529" at="51,28,52,81" concept="2" />
+      <node id="4394877045817292529" at="52,81,53,81" concept="0" />
+      <node id="4394877045817292529" at="52,81,53,81" concept="2" />
+      <node id="4394877045817292529" at="53,81,54,81" concept="0" />
+      <node id="4394877045817292529" at="53,81,54,81" concept="2" />
+      <node id="4394877045817292529" at="54,81,55,83" concept="0" />
+      <node id="4394877045817292529" at="54,81,55,83" concept="2" />
+      <node id="4394877045817292529" at="55,83,56,81" concept="0" />
+      <node id="4394877045817292529" at="55,83,56,81" concept="2" />
+      <node id="4394877045817292529" at="56,81,57,22" concept="6" />
+      <node id="4394877045817292684" at="60,88,61,96" concept="5" />
+      <node id="4394877045817292684" at="61,96,62,47" concept="2" />
+      <node id="4394877045817292684" at="62,47,63,34" concept="2" />
+      <node id="4394877045817292684" at="63,34,64,22" concept="6" />
+      <node id="4394877045817292685" at="67,88,68,82" concept="5" />
+      <node id="4394877045817292685" at="68,82,69,29" concept="2" />
+      <node id="4394877045817292685" at="69,29,70,42" concept="2" />
+      <node id="4394877045817292685" at="70,42,71,26" concept="5" />
+      <node id="4394877045817292685" at="71,26,72,58" concept="2" />
+      <node id="4394877045817292685" at="72,58,73,42" concept="2" />
+      <node id="4394877045817292685" at="73,42,74,73" concept="2" />
+      <node id="4394877045817292685" at="74,73,75,57" concept="5" />
+      <node id="4394877045817292685" at="75,57,76,59" concept="5" />
+      <node id="4394877045817292685" at="77,35,78,72" concept="5" />
+      <node id="4394877045817292685" at="78,72,79,78" concept="5" />
+      <node id="4394877045817292685" at="79,78,80,109" concept="6" />
+      <node id="4394877045817292685" at="81,10,82,22" concept="6" />
+      <node id="4394877045817292686" at="85,88,86,87" concept="5" />
+      <node id="4394877045817292686" at="86,87,87,47" concept="2" />
+      <node id="4394877045817292686" at="87,47,88,34" concept="5" />
+      <node id="4394877045817292686" at="88,34,89,60" concept="2" />
+      <node id="4394877045817292686" at="89,60,90,60" concept="2" />
+      <node id="4394877045817292686" at="90,60,91,40" concept="2" />
+      <node id="4394877045817292686" at="91,40,92,34" concept="2" />
+      <node id="4394877045817292686" at="92,34,93,22" concept="6" />
+      <node id="4394877045817292529" at="96,90,97,96" concept="5" />
+      <node id="4394877045817292529" at="97,96,98,49" concept="2" />
+      <node id="4394877045817292529" at="98,49,99,34" concept="5" />
+      <node id="4394877045817292529" at="99,34,100,58" concept="2" />
+      <node id="4394877045817292529" at="100,58,101,40" concept="2" />
+      <node id="4394877045817292529" at="101,40,102,82" concept="0" />
+      <node id="4394877045817292529" at="101,40,102,82" concept="2" />
+      <node id="4394877045817292529" at="102,82,103,82" concept="0" />
+      <node id="4394877045817292529" at="102,82,103,82" concept="2" />
+      <node id="4394877045817292529" at="103,82,104,85" concept="0" />
+      <node id="4394877045817292529" at="103,82,104,85" concept="2" />
+      <node id="4394877045817292529" at="104,85,105,82" concept="0" />
+      <node id="4394877045817292529" at="104,85,105,82" concept="2" />
+      <node id="4394877045817292529" at="105,82,106,82" concept="0" />
+      <node id="4394877045817292529" at="105,82,106,82" concept="2" />
+      <node id="4394877045817292529" at="106,82,107,82" concept="0" />
+      <node id="4394877045817292529" at="106,82,107,82" concept="2" />
+      <node id="4394877045817292529" at="107,82,108,85" concept="0" />
+      <node id="4394877045817292529" at="107,82,108,85" concept="2" />
+      <node id="4394877045817292529" at="108,85,109,22" concept="6" />
+      <node id="4394877045817292699" at="112,89,113,99" concept="5" />
+      <node id="4394877045817292699" at="113,99,114,48" concept="2" />
+      <node id="4394877045817292699" at="114,48,115,34" concept="2" />
+      <node id="4394877045817292699" at="115,34,116,22" concept="6" />
+      <node id="4394877045817292700" at="119,89,120,87" concept="5" />
+      <node id="4394877045817292700" at="120,87,121,48" concept="2" />
+      <node id="4394877045817292700" at="121,48,122,34" concept="5" />
+      <node id="4394877045817292700" at="122,34,123,54" concept="2" />
+      <node id="4394877045817292700" at="123,54,124,60" concept="2" />
+      <node id="4394877045817292700" at="124,60,125,40" concept="2" />
+      <node id="4394877045817292700" at="125,40,126,34" concept="2" />
+      <node id="4394877045817292700" at="126,34,127,22" concept="6" />
+      <node id="4394877045817292529" at="130,92,131,129" concept="5" />
+      <node id="4394877045817292529" at="131,129,132,106" concept="5" />
+      <node id="4394877045817292529" at="132,106,133,52" concept="2" />
+      <node id="4394877045817292529" at="133,52,134,34" concept="5" />
+      <node id="4394877045817292529" at="134,34,135,68" concept="2" />
+      <node id="4394877045817292529" at="135,68,136,58" concept="2" />
+      <node id="4394877045817292529" at="136,58,137,60" concept="2" />
+      <node id="4394877045817292529" at="137,60,138,40" concept="2" />
+      <node id="4394877045817292529" at="138,40,139,49" concept="2" />
+      <node id="4394877045817292529" at="139,49,140,22" concept="6" />
+      <node id="4394877045817292529" at="144,104,145,50" concept="9" />
+      <node id="4394877045817292529" at="148,66,149,41" concept="5" />
+      <node id="4394877045817292529" at="149,41,150,93" concept="6" />
+      <node id="4394877045817292529" at="153,86,154,80" concept="5" />
+      <node id="4394877045817292529" at="154,80,155,95" concept="2" />
+      <node id="4394877045817292529" at="155,95,156,25" concept="6" />
+      <node id="4394877045817292529" at="159,68,160,34" concept="5" />
+      <node id="4394877045817292529" at="160,34,161,55" concept="2" />
+      <node id="4394877045817292529" at="161,55,162,87" concept="2" />
+      <node id="4394877045817292529" at="162,87,163,23" concept="6" />
+      <node id="4394877045817292529" at="167,96,168,134" concept="2" />
+      <node id="4394877045817292529" at="169,34,170,95" concept="2" />
+      <node id="4394877045817292529" at="172,131,173,139" concept="2" />
+      <node id="4394877045817292708" at="179,89,180,86" concept="5" />
+      <node id="4394877045817292708" at="180,86,181,48" concept="2" />
+      <node id="4394877045817292708" at="181,48,182,34" concept="5" />
+      <node id="4394877045817292708" at="182,34,183,60" concept="2" />
+      <node id="4394877045817292708" at="183,60,184,40" concept="2" />
+      <node id="4394877045817292708" at="184,40,185,34" concept="2" />
+      <node id="4394877045817292708" at="185,34,186,22" concept="6" />
+      <node id="4394877045817292710" at="189,89,190,100" concept="5" />
+      <node id="4394877045817292710" at="190,100,191,48" concept="2" />
+      <node id="4394877045817292710" at="191,48,192,34" concept="2" />
+      <node id="4394877045817292710" at="192,34,193,22" concept="6" />
+      <node id="4394877045817292711" at="196,89,197,87" concept="5" />
+      <node id="4394877045817292711" at="197,87,198,48" concept="2" />
+      <node id="4394877045817292711" at="198,48,199,34" concept="5" />
+      <node id="4394877045817292711" at="199,34,200,54" concept="2" />
+      <node id="4394877045817292711" at="200,54,201,60" concept="2" />
+      <node id="4394877045817292711" at="201,60,202,40" concept="2" />
+      <node id="4394877045817292711" at="202,40,203,34" concept="2" />
+      <node id="4394877045817292711" at="203,34,204,22" concept="6" />
+      <node id="4394877045817292529" at="207,92,208,131" concept="5" />
+      <node id="4394877045817292529" at="208,131,209,106" concept="5" />
+      <node id="4394877045817292529" at="209,106,210,53" concept="2" />
+      <node id="4394877045817292529" at="210,53,211,34" concept="5" />
+      <node id="4394877045817292529" at="211,34,212,68" concept="2" />
+      <node id="4394877045817292529" at="212,68,213,58" concept="2" />
+      <node id="4394877045817292529" at="213,58,214,60" concept="2" />
+      <node id="4394877045817292529" at="214,60,215,40" concept="2" />
+      <node id="4394877045817292529" at="215,40,216,49" concept="2" />
+      <node id="4394877045817292529" at="216,49,217,22" concept="6" />
+      <node id="4394877045817292529" at="221,105,222,50" concept="9" />
+      <node id="4394877045817292529" at="225,66,226,41" concept="5" />
+      <node id="4394877045817292529" at="226,41,227,93" concept="6" />
+      <node id="4394877045817292529" at="230,86,231,80" concept="5" />
+      <node id="4394877045817292529" at="231,80,232,95" concept="2" />
+      <node id="4394877045817292529" at="232,95,233,25" concept="6" />
+      <node id="4394877045817292529" at="236,68,237,34" concept="5" />
+      <node id="4394877045817292529" at="237,34,238,55" concept="2" />
+      <node id="4394877045817292529" at="238,55,239,87" concept="2" />
+      <node id="4394877045817292529" at="239,87,240,23" concept="6" />
+      <node id="4394877045817292529" at="244,96,245,134" concept="2" />
+      <node id="4394877045817292529" at="246,34,247,95" concept="2" />
+      <node id="4394877045817292529" at="249,131,250,139" concept="2" />
+      <node id="4394877045817292719" at="256,88,257,87" concept="5" />
+      <node id="4394877045817292719" at="257,87,258,47" concept="2" />
+      <node id="4394877045817292719" at="258,47,259,34" concept="5" />
+      <node id="4394877045817292719" at="259,34,260,60" concept="2" />
+      <node id="4394877045817292719" at="260,60,261,40" concept="2" />
+      <node id="4394877045817292719" at="261,40,262,34" concept="2" />
+      <node id="4394877045817292719" at="262,34,263,22" concept="6" />
+      <node id="4394877045817292529" at="266,91,267,97" concept="5" />
+      <node id="4394877045817292529" at="267,97,268,50" concept="2" />
+      <node id="4394877045817292529" at="268,50,269,28" concept="2" />
+      <node id="4394877045817292529" at="269,28,270,84" concept="0" />
+      <node id="4394877045817292529" at="269,28,270,84" concept="2" />
+      <node id="4394877045817292529" at="270,84,271,83" concept="0" />
+      <node id="4394877045817292529" at="270,84,271,83" concept="2" />
+      <node id="4394877045817292529" at="271,83,272,83" concept="0" />
+      <node id="4394877045817292529" at="271,83,272,83" concept="2" />
+      <node id="4394877045817292529" at="272,83,273,81" concept="0" />
+      <node id="4394877045817292529" at="272,83,273,81" concept="2" />
+      <node id="4394877045817292529" at="273,81,274,22" concept="6" />
+      <node id="4394877045817292529" at="277,91,278,40" concept="5" />
+      <node id="4394877045817292529" at="278,40,279,95" concept="2" />
+      <node id="4394877045817292529" at="279,95,280,33" concept="5" />
+      <node id="4394877045817292529" at="281,31,282,68" concept="2" />
+      <node id="4394877045817292529" at="283,12,284,71" concept="2" />
+      <node id="4394877045817292529" at="285,5,286,22" concept="6" />
+      <node id="4394877045816805258" at="289,97,290,64" concept="5" />
+      <node id="4394877045816813284" at="291,46,292,19" concept="6" />
+      <node id="1161166135928" at="293,5,294,126" concept="5" />
+      <node id="1161722913887" at="295,20,296,19" concept="6" />
+      <node id="1161166287878" at="297,5,298,62" concept="6" />
+      <node id="4394877045817337544" at="298,62,299,0" concept="7" />
+      <node id="1161165534970" at="302,98,303,32" concept="5" />
+      <node id="1214580244841" at="305,30,306,63" concept="6" />
+      <node id="1161165534970" at="308,16,309,45" concept="2" />
+      <node id="1161165534970" at="309,45,310,29" concept="2" />
+      <node id="1161165534970" at="310,29,311,22" concept="6" />
+      <node id="1161165544408" at="314,89,315,95" concept="5" />
+      <node id="1161165544408" at="315,95,316,48" concept="2" />
+      <node id="1161165544408" at="316,48,317,34" concept="2" />
+      <node id="1161165544408" at="317,34,318,22" concept="6" />
+      <node id="4394877045817292529" at="321,90,322,99" concept="5" />
+      <node id="4394877045817292529" at="322,99,323,49" concept="2" />
+      <node id="4394877045817292529" at="323,49,324,34" concept="5" />
+      <node id="4394877045817292529" at="324,34,325,49" concept="2" />
+      <node id="4394877045817292529" at="325,49,326,40" concept="2" />
+      <node id="4394877045817292529" at="326,40,327,82" concept="0" />
+      <node id="4394877045817292529" at="326,40,327,82" concept="2" />
+      <node id="4394877045817292529" at="327,82,328,82" concept="0" />
+      <node id="4394877045817292529" at="327,82,328,82" concept="2" />
+      <node id="4394877045817292529" at="328,82,329,84" concept="0" />
+      <node id="4394877045817292529" at="328,82,329,84" concept="2" />
+      <node id="4394877045817292529" at="329,84,330,22" concept="6" />
+      <node id="1160492829176" at="333,89,334,90" concept="5" />
+      <node id="1160492829176" at="334,90,335,48" concept="2" />
+      <node id="1160492829176" at="335,48,336,34" concept="2" />
+      <node id="1160492829176" at="336,34,337,22" concept="6" />
+      <node id="1160492829177" at="340,89,341,82" concept="5" />
+      <node id="1160492829177" at="341,82,342,33" concept="2" />
+      <node id="1160492829177" at="342,33,343,42" concept="2" />
+      <node id="1160492829177" at="343,42,344,40" concept="2" />
+      <node id="1160492829177" at="344,40,345,26" concept="5" />
+      <node id="1160492829177" at="345,26,346,58" concept="2" />
+      <node id="1160492829177" at="346,58,347,46" concept="2" />
+      <node id="1160492829177" at="347,46,348,34" concept="5" />
+      <node id="1160492829177" at="348,34,349,72" concept="2" />
+      <node id="1160492829177" at="349,72,350,40" concept="2" />
+      <node id="1160492829177" at="350,40,351,73" concept="2" />
+      <node id="1160492829177" at="351,73,352,57" concept="5" />
+      <node id="1160492829177" at="352,57,353,59" concept="5" />
+      <node id="1160492829177" at="354,35,355,72" concept="5" />
+      <node id="1160492829177" at="355,72,356,78" concept="5" />
+      <node id="1160492829177" at="356,78,357,109" concept="6" />
+      <node id="1160492829177" at="358,10,359,22" concept="6" />
+      <node id="4394877045817292529" at="362,91,363,182" concept="5" />
+      <node id="4394877045817292529" at="363,182,364,50" concept="2" />
+      <node id="4394877045817292529" at="364,50,365,22" concept="6" />
+      <node id="1176492672998" at="368,120,369,66" concept="6" />
+      <node id="2336278055263059570" at="372,90,373,91" concept="5" />
+      <node id="2336278055263059570" at="373,91,374,49" concept="2" />
+      <node id="2336278055263059570" at="374,49,375,34" concept="2" />
+      <node id="2336278055263059570" at="375,34,376,22" concept="6" />
+      <node id="2336278055263065672" at="379,88,380,82" concept="5" />
+      <node id="2336278055263065672" at="380,82,381,29" concept="2" />
+      <node id="2336278055263065672" at="381,29,382,42" concept="2" />
+      <node id="2336278055263065672" at="382,42,383,26" concept="5" />
+      <node id="2336278055263065672" at="383,26,384,58" concept="2" />
+      <node id="2336278055263065672" at="384,58,385,42" concept="2" />
+      <node id="2336278055263065672" at="385,42,386,73" concept="2" />
+      <node id="2336278055263065672" at="386,73,387,57" concept="5" />
+      <node id="2336278055263065672" at="387,57,388,59" concept="5" />
+      <node id="2336278055263065672" at="389,35,390,72" concept="5" />
+      <node id="2336278055263065672" at="390,72,391,78" concept="5" />
+      <node id="2336278055263065672" at="391,78,392,109" concept="6" />
+      <node id="2336278055263065672" at="393,10,394,22" concept="6" />
+      <node id="4394877045817292529" at="283,10,285,5" concept="0" />
+      <node id="4394877045817292529" at="40,0,43,0" concept="4" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="44,0,47,0" concept="4" trace="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="144,0,147,0" concept="1" trace="inMetaPortsListHandler_liyxwi_c3a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4394877045817292529" at="168,134,171,9" concept="3" />
+      <node id="4394877045817292529" at="171,9,174,9" concept="3" />
+      <node id="4394877045817292529" at="221,0,224,0" concept="1" trace="outMetaPortsListHandler_liyxwi_g3a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4394877045817292529" at="245,134,248,9" concept="3" />
+      <node id="4394877045817292529" at="248,9,251,9" concept="3" />
+      <node id="4394877045816807010" at="290,64,293,5" concept="3" />
+      <node id="1161722900535" at="294,126,297,5" concept="3" />
+      <node id="1161165534970" at="305,0,308,0" concept="4" trace="invoke#()Ljava/lang/String;" />
+      <node id="1176492331666" at="368,0,371,0" concept="8" trace="_QueryFunction_JComponent_liyxwi_a2b0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljavax/swing/JComponent;" />
+      <node id="4394877045817292529" at="148,0,152,0" concept="4" trace="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4394877045817292529" at="225,0,229,0" concept="4" trace="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4394877045817292529" at="153,0,158,0" concept="4" trace="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="230,0,235,0" concept="4" trace="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="280,33,285,5" concept="3" />
+      <node id="1161165534970" at="303,32,308,16" concept="2" />
+      <node id="4394877045817292529" at="362,0,367,0" concept="4" trace="createJComponent_liyxwi_c1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292684" at="60,0,66,0" concept="4" trace="createConstant_liyxwi_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292685" at="76,59,82,22" concept="3" />
+      <node id="4394877045817292699" at="112,0,118,0" concept="4" trace="createConstant_liyxwi_a3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="159,0,165,0" concept="4" trace="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292710" at="189,0,195,0" concept="4" trace="createConstant_liyxwi_e3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="236,0,242,0" concept="4" trace="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="1161165544408" at="314,0,320,0" concept="4" trace="createConstant_liyxwi_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="1160492829176" at="333,0,339,0" concept="4" trace="createConstant_liyxwi_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="1160492829177" at="353,59,359,22" concept="3" />
+      <node id="2336278055263059570" at="372,0,378,0" concept="4" trace="createConstant_liyxwi_c0_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2336278055263065672" at="388,59,394,22" concept="3" />
+      <node id="4394877045817292529" at="166,132,175,7" concept="3" />
+      <node id="4394877045817292708" at="179,0,188,0" concept="4" trace="createConstant_liyxwi_d3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="243,132,252,7" concept="3" />
+      <node id="4394877045817292719" at="256,0,265,0" concept="4" trace="createConstant_liyxwi_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292686" at="85,0,95,0" concept="4" trace="createConstant_liyxwi_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292700" at="119,0,129,0" concept="4" trace="createConstant_liyxwi_b3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292711" at="196,0,206,0" concept="4" trace="createConstant_liyxwi_f3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="266,0,276,0" concept="4" trace="createCollection_liyxwi_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="48,0,59,0" concept="4" trace="createCollection_liyxwi_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="166,0,177,0" concept="4" trace="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4394877045817292529" at="243,0,254,0" concept="4" trace="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4394877045817292529" at="277,0,288,0" concept="4" trace="createAlternation_liyxwi_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="1161165534970" at="302,0,313,0" concept="4" trace="createImage_liyxwi_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="321,0,332,0" concept="4" trace="createCollection_liyxwi_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="130,0,142,0" concept="4" trace="createRefNodeList_liyxwi_c3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292529" at="207,0,219,0" concept="4" trace="createRefNodeList_liyxwi_g3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="1161165530948" at="289,0,301,0" concept="8" trace="renderingCondition_liyxwi_a0a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="4394877045817292529" at="96,0,111,0" concept="4" trace="createCollection_liyxwi_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4394877045817292685" at="67,0,84,0" concept="4" trace="createProperty_liyxwi_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="2336278055263065672" at="379,0,396,0" concept="4" trace="createProperty_liyxwi_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="1160492829177" at="340,0,361,0" concept="4" trace="createProperty_liyxwi_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="4394877045817292529" at="40,79,41,63" />
+      <scope id="4394877045817292529" at="44,82,45,65" />
+      <scope id="4394877045817292529" at="51,28,52,81" />
+      <scope id="4394877045817292529" at="52,81,53,81" />
+      <scope id="4394877045817292529" at="53,81,54,81" />
+      <scope id="4394877045817292529" at="54,81,55,83" />
+      <scope id="4394877045817292529" at="55,83,56,81" />
+      <scope id="4394877045817292529" at="101,40,102,82" />
+      <scope id="4394877045817292529" at="102,82,103,82" />
+      <scope id="4394877045817292529" at="103,82,104,85" />
+      <scope id="4394877045817292529" at="104,85,105,82" />
+      <scope id="4394877045817292529" at="105,82,106,82" />
+      <scope id="4394877045817292529" at="106,82,107,82" />
+      <scope id="4394877045817292529" at="107,82,108,85" />
+      <scope id="4394877045817292529" at="144,104,145,50" />
+      <scope id="4394877045817292529" at="169,34,170,95" />
+      <scope id="4394877045817292529" at="172,131,173,139" />
+      <scope id="4394877045817292529" at="221,105,222,50" />
+      <scope id="4394877045817292529" at="246,34,247,95" />
+      <scope id="4394877045817292529" at="249,131,250,139" />
+      <scope id="4394877045817292529" at="269,28,270,84" />
+      <scope id="4394877045817292529" at="270,84,271,83" />
+      <scope id="4394877045817292529" at="271,83,272,83" />
+      <scope id="4394877045817292529" at="272,83,273,81" />
+      <scope id="4394877045817292529" at="281,31,282,68" />
+      <scope id="4394877045817292529" at="283,12,284,71" />
+      <scope id="4394877045816807013" at="291,46,292,19" />
+      <scope id="1161722900537" at="295,20,296,19" />
+      <scope id="1210083703315" at="305,30,306,63" />
+      <scope id="4394877045817292529" at="326,40,327,82" />
+      <scope id="4394877045817292529" at="327,82,328,82" />
+      <scope id="4394877045817292529" at="328,82,329,84" />
+      <scope id="1176492331667" at="368,120,369,66" />
+      <scope id="4394877045817292529" at="148,66,150,93">
+        <var name="listOwner" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="225,66,227,93">
+        <var name="listOwner" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="40,0,43,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="node" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="44,0,47,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="node" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292685" at="77,35,80,109">
+        <var name="manager" id="4394877045817292685" />
+        <var name="opContext" id="4394877045817292685" />
+      </scope>
+      <scope id="4394877045817292529" at="144,0,147,0">
+        <var name="childRole" id="4394877045817292529" />
+        <var name="context" id="4394877045817292529" />
+        <var name="ownerNode" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="153,86,156,25">
+        <var name="elementCell" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="221,0,224,0">
+        <var name="childRole" id="4394877045817292529" />
+        <var name="context" id="4394877045817292529" />
+        <var name="ownerNode" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="230,86,233,25">
+        <var name="elementCell" id="4394877045817292529" />
+      </scope>
+      <scope id="1161165534970" at="305,0,308,0" />
+      <scope id="1160492829177" at="354,35,357,109">
+        <var name="manager" id="1160492829177" />
+        <var name="opContext" id="1160492829177" />
+      </scope>
+      <scope id="4394877045817292529" at="362,91,365,22">
+        <var name="editorCell" id="4394877045817292529" />
+      </scope>
+      <scope id="1176492331666" at="368,0,371,0">
+        <var name="editorContext" id="1176492331666" />
+        <var name="node" id="1176492331666" />
+      </scope>
+      <scope id="2336278055263065672" at="389,35,392,109">
+        <var name="manager" id="2336278055263065672" />
+        <var name="opContext" id="2336278055263065672" />
+      </scope>
+      <scope id="4394877045817292684" at="60,88,64,22">
+        <var name="editorCell" id="4394877045817292684" />
+      </scope>
+      <scope id="4394877045817292699" at="112,89,116,22">
+        <var name="editorCell" id="4394877045817292699" />
+      </scope>
+      <scope id="4394877045817292529" at="148,0,152,0">
+        <var name="editorContext" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="159,68,163,23">
+        <var name="emptyCell" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292710" at="189,89,193,22">
+        <var name="editorCell" id="4394877045817292710" />
+      </scope>
+      <scope id="4394877045817292529" at="225,0,229,0">
+        <var name="editorContext" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="236,68,240,23">
+        <var name="emptyCell" id="4394877045817292529" />
+      </scope>
+      <scope id="1161165544408" at="314,89,318,22">
+        <var name="editorCell" id="1161165544408" />
+      </scope>
+      <scope id="1160492829176" at="333,89,337,22">
+        <var name="editorCell" id="1160492829176" />
+      </scope>
+      <scope id="2336278055263059570" at="372,90,376,22">
+        <var name="editorCell" id="2336278055263059570" />
+      </scope>
+      <scope id="4394877045817292529" at="153,0,158,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="elementNode" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="230,0,235,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="elementNode" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="362,0,367,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="node" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292684" at="60,0,66,0">
+        <var name="editorContext" id="4394877045817292684" />
+        <var name="node" id="4394877045817292684" />
+      </scope>
+      <scope id="4394877045817292699" at="112,0,118,0">
+        <var name="editorContext" id="4394877045817292699" />
+        <var name="node" id="4394877045817292699" />
+      </scope>
+      <scope id="4394877045817292529" at="159,0,165,0">
+        <var name="editorContext" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292710" at="189,0,195,0">
+        <var name="editorContext" id="4394877045817292710" />
+        <var name="node" id="4394877045817292710" />
+      </scope>
+      <scope id="4394877045817292529" at="236,0,242,0">
+        <var name="editorContext" id="4394877045817292529" />
+      </scope>
+      <scope id="1161165544408" at="314,0,320,0">
+        <var name="editorContext" id="1161165544408" />
+        <var name="node" id="1161165544408" />
+      </scope>
+      <scope id="1160492829176" at="333,0,339,0">
+        <var name="editorContext" id="1160492829176" />
+        <var name="node" id="1160492829176" />
+      </scope>
+      <scope id="2336278055263059570" at="372,0,378,0">
+        <var name="editorContext" id="2336278055263059570" />
+        <var name="node" id="2336278055263059570" />
+      </scope>
+      <scope id="4394877045817292529" at="167,96,174,9" />
+      <scope id="4394877045817292708" at="179,89,186,22">
+        <var name="editorCell" id="4394877045817292708" />
+        <var name="style" id="4394877045817292708" />
+      </scope>
+      <scope id="4394877045817292529" at="244,96,251,9" />
+      <scope id="4394877045817292719" at="256,88,263,22">
+        <var name="editorCell" id="4394877045817292719" />
+        <var name="style" id="4394877045817292719" />
+      </scope>
+      <scope id="4394877045817292686" at="85,88,93,22">
+        <var name="editorCell" id="4394877045817292686" />
+        <var name="style" id="4394877045817292686" />
+      </scope>
+      <scope id="4394877045817292700" at="119,89,127,22">
+        <var name="editorCell" id="4394877045817292700" />
+        <var name="style" id="4394877045817292700" />
+      </scope>
+      <scope id="4394877045817292711" at="196,89,204,22">
+        <var name="editorCell" id="4394877045817292711" />
+        <var name="style" id="4394877045817292711" />
+      </scope>
+      <scope id="4394877045817292529" at="266,91,274,22">
+        <var name="editorCell" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="48,89,57,22">
+        <var name="editorCell" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="166,132,175,7" />
+      <scope id="4394877045817292708" at="179,0,188,0">
+        <var name="editorContext" id="4394877045817292708" />
+        <var name="node" id="4394877045817292708" />
+      </scope>
+      <scope id="4394877045817292529" at="243,132,252,7" />
+      <scope id="4394877045817292719" at="256,0,265,0">
+        <var name="editorContext" id="4394877045817292719" />
+        <var name="node" id="4394877045817292719" />
+      </scope>
+      <scope id="4394877045817292529" at="277,91,286,22">
+        <var name="alternationCondition" id="4394877045817292529" />
+        <var name="editorCell" id="4394877045817292529" />
+      </scope>
+      <scope id="1161165534970" at="302,98,311,22">
+        <var name="editorCell" id="1161165534970" />
+      </scope>
+      <scope id="4394877045817292529" at="321,90,330,22">
+        <var name="editorCell" id="4394877045817292529" />
+        <var name="style" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292686" at="85,0,95,0">
+        <var name="editorContext" id="4394877045817292686" />
+        <var name="node" id="4394877045817292686" />
+      </scope>
+      <scope id="4394877045817292700" at="119,0,129,0">
+        <var name="editorContext" id="4394877045817292700" />
+        <var name="node" id="4394877045817292700" />
+      </scope>
+      <scope id="4394877045817292529" at="130,92,140,22">
+        <var name="editorCell" id="4394877045817292529" />
+        <var name="handler" id="4394877045817292529" />
+        <var name="style" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292711" at="196,0,206,0">
+        <var name="editorContext" id="4394877045817292711" />
+        <var name="node" id="4394877045817292711" />
+      </scope>
+      <scope id="4394877045817292529" at="207,92,217,22">
+        <var name="editorCell" id="4394877045817292529" />
+        <var name="handler" id="4394877045817292529" />
+        <var name="style" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="266,0,276,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="node" id="4394877045817292529" />
+      </scope>
+      <scope id="1161165530949" at="289,97,299,0">
+        <var name="module" id="4394877045816805259" />
+        <var name="s" id="1161166135929" />
+      </scope>
+      <scope id="4394877045817292529" at="48,0,59,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="node" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="166,0,177,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="elementCell" id="4394877045817292529" />
+        <var name="elementNode" id="4394877045817292529" />
+        <var name="listOwner" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="243,0,254,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="elementCell" id="4394877045817292529" />
+        <var name="elementNode" id="4394877045817292529" />
+        <var name="listOwner" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="277,0,288,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="node" id="4394877045817292529" />
+      </scope>
+      <scope id="1161165534970" at="302,0,313,0">
+        <var name="editorContext" id="1161165534970" />
+        <var name="node" id="1161165534970" />
+      </scope>
+      <scope id="4394877045817292529" at="321,0,332,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="node" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="130,0,142,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="node" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292529" at="207,0,219,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="node" id="4394877045817292529" />
+      </scope>
+      <scope id="1161165530948" at="289,0,301,0">
+        <var name="editorContext" id="1161165530948" />
+        <var name="node" id="1161165530948" />
+      </scope>
+      <scope id="4394877045817292529" at="96,90,109,22">
+        <var name="editorCell" id="4394877045817292529" />
+        <var name="style" id="4394877045817292529" />
+      </scope>
+      <scope id="4394877045817292685" at="67,88,82,22">
+        <var name="attributeConcept" id="4394877045817292685" />
+        <var name="attributeKind" id="4394877045817292685" />
+        <var name="editorCell" id="4394877045817292685" />
+        <var name="provider" id="4394877045817292685" />
+      </scope>
+      <scope id="4394877045817292529" at="96,0,111,0">
+        <var name="editorContext" id="4394877045817292529" />
+        <var name="node" id="4394877045817292529" />
+      </scope>
+      <scope id="2336278055263065672" at="379,88,394,22">
+        <var name="attributeConcept" id="2336278055263065672" />
+        <var name="attributeKind" id="2336278055263065672" />
+        <var name="editorCell" id="2336278055263065672" />
+        <var name="provider" id="2336278055263065672" />
+      </scope>
+      <scope id="4394877045817292685" at="67,0,84,0">
+        <var name="editorContext" id="4394877045817292685" />
+        <var name="node" id="4394877045817292685" />
+      </scope>
+      <scope id="2336278055263065672" at="379,0,396,0">
+        <var name="editorContext" id="2336278055263065672" />
+        <var name="node" id="2336278055263065672" />
+      </scope>
+      <scope id="1160492829177" at="340,89,359,22">
+        <var name="attributeConcept" id="1160492829177" />
+        <var name="attributeKind" id="1160492829177" />
+        <var name="editorCell" id="1160492829177" />
+        <var name="provider" id="1160492829177" />
+        <var name="style" id="1160492829177" />
+      </scope>
+      <scope id="1160492829177" at="340,0,361,0">
+        <var name="editorContext" id="1160492829177" />
+        <var name="node" id="1160492829177" />
+      </scope>
+      <unit id="1161165534970" at="304,75,308,5" name="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor$1" />
+      <unit id="4394877045817292529" at="143,0,178,0" name="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor$inMetaPortsListHandler_liyxwi_c3a" />
+      <unit id="4394877045817292529" at="220,0,255,0" name="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor$outMetaPortsListHandler_liyxwi_g3a" />
+      <unit id="4394877045817292529" at="39,0,397,0" name="jetbrains.mps.testHybridEditor.editor.MetaBlock_Editor" />
+    </file>
+  </root>
+</debug-info>
 

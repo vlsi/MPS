@@ -13,10 +13,11 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="module" module-name="generator-engine" />
+    <orderEntry type="module" module-name="Tuples-runtime" />
+    <orderEntry type="module" module-name="project" />
+    <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="library" name="ASM" level="project" />
     <orderEntry type="library" name="Beansbinding" level="project" />
-    <orderEntry type="module" module-name="Tuples-runtime" />
-    <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="library" name="Annotations" level="project" />
   </component>
 </module>

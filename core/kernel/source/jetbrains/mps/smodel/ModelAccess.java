@@ -26,10 +26,10 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-public abstract class ModelAccess implements ModelCommandExecutor {
+public abstract class ModelAccess implements ModelCommandProjectExecutor {
   protected static final Logger LOG = LogManager.getLogger(ModelAccess.class);
 
-  private static ModelAccess ourInstance = new DefaultModelAccess();
+  private static ModelAccess ourInstance;
 
   private final ReentrantReadWriteLockEx myReadWriteLock = new ReentrantReadWriteLockEx();
 

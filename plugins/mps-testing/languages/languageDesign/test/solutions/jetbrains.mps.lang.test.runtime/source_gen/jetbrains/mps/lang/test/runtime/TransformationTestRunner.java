@@ -6,7 +6,7 @@ import java.awt.datatransfer.StringSelection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import java.lang.reflect.InvocationTargetException;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -23,7 +23,6 @@ import jetbrains.mps.tool.environment.ActiveEnvironment;
 import org.apache.log4j.Level;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.util.Computable;
 import java.awt.GraphicsEnvironment;
 import java.awt.datatransfer.Clipboard;
 import java.awt.Toolkit;
@@ -67,7 +66,7 @@ public class TransformationTestRunner implements TestRunner {
 
 
   private void startMps() {
-    MPSCore.getInstance().setTestMode(true);
+    RuntimeFlags.setTestMode(true);
     MpsTestsSupport.initEnv(true);
     // <node> 
     clearSystemClipboard();
@@ -173,9 +172,9 @@ public class TransformationTestRunner implements TestRunner {
     if (runInCommand) {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
-          ModelAccess.instance().runWriteActionInCommand(new Computable<Throwable>() {
-            public Throwable compute() {
-              return exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              exception[0] = TransformationTestRunner.this.tryToRunTest(clazz.value, methodName, obj);
             }
           }, projectTest.getProject());
         }

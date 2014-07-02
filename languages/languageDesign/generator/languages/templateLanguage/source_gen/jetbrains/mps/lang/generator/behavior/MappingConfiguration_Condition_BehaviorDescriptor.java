@@ -14,6 +14,10 @@ public class MappingConfiguration_Condition_BehaviorDescriptor extends TemplateQ
     return MappingConfiguration_Condition_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return MappingConfiguration_Condition_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
     return MappingConfiguration_Condition_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
   }

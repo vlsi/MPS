@@ -19,10 +19,10 @@ import com.intellij.openapi.editor.colors.ColorKey;
 import com.intellij.openapi.editor.colors.EditorColorsManager;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.tree.ErrorState;
+import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.util.NodeAttributesUtil;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNodeOperations;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -35,6 +35,9 @@ import java.awt.Color;
 import java.awt.font.TextAttribute;
 
 public class SNodeTreeNode extends MPSTreeNodeEx {
+  //todo this is a hack till we move to Idea's tree in project pane or move SNodeTreeNode to workbench
+  private static Condition<MPSTree> ourShowStructureCondition = null;
+
   private static final Logger LOG = LogManager.getLogger(SNodeTreeNode.class);
 
   protected boolean myInitialized = false;
@@ -63,6 +66,10 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       setNodeIdentifier(myNode.getNodeId().toString());
     }
     setToggleClickCount(-1);
+  }
+
+  public static void setShowStructureCondition(Condition<MPSTree> showStructureCondition) {
+    ourShowStructureCondition = showStructureCondition;
   }
 
   @Override
@@ -100,7 +107,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       setIcon(IconManager.getIconFor(myNode));
     }
 
-    if (SNodeOperations.isUnknown(myNode)) {
+    if (jetbrains.mps.util.SNodeOperations.isUnknown(myNode)) {
       setErrorState(ErrorState.ERROR);
     }
     if (NodeAttributesUtil.isDeprecatedNode(myNode)) {
@@ -158,16 +165,23 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       provider.populate(this);
     }
 
-    for (SNode childNode : n.getChildren()) {
-      if (!myCondition.met(childNode)) continue;
-      SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRoleInParent(), getOperationContext());
-      child.myCondition = myCondition;
-      add(child);
+    if (ourShowStructureCondition == null || ourShowStructureCondition.met(getTree())) {
+      for (SNode childNode : n.getChildren()) {
+        if (!myCondition.met(childNode)) continue;
+        SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRoleInParent(), getOperationContext());
+        child.myCondition = myCondition;
+        add(child);
+      }
     }
 
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
     treeModel.nodeStructureChanged(this);
     myInitialized = true;
+  }
+
+  @Override
+  public boolean isLeaf() {
+    return ourShowStructureCondition != null && !ourShowStructureCondition.met(getTree());
   }
 
   protected SNodeTreeNode createChildTreeNode(SNode childNode, String role, IOperationContext operationContext) {

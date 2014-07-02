@@ -26,9 +26,7 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
-import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationTrace;
-import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.ide.generator.TransientModelsComponent;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.ide.tools.CloseAction;
@@ -57,46 +55,31 @@ public class GenerationTracerViewTool extends BaseProjectTool {
 
   private List<GenerationTracerView> myTracerViews = new ArrayList<GenerationTracerView>();
   private ContentManagerAdapter myContentListener;
-  private final GenerationTracer myTracer;
   private final TransientModelsComponent myTransientModelsOwner;
   private boolean myAutoscroll;
 
 
-  public GenerationTracerViewTool(Project project, GenerationTracer tracer, TransientModelsComponent transientModels) {
+  public GenerationTracerViewTool(Project project, TransientModelsComponent transientModels) {
     super(project, "Generation Tracer", -1, jetbrains.mps.ide.projectPane.Icons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
-    myTracer = tracer;
     myTransientModelsOwner = transientModels;
     myNoTabsComponent = new NoTabsComponent(this);
-    myTracer.setTracerViewTool(this);
   }
 
   //////
   public boolean hasTracingData() {
-    if (GenerationFacade.isLegacyGenTraceEnabled()) {
-      return myTracer.hasTracingData();
-    } else {
-      // FIXME not quite nice code
-      return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        @Override
-        public Boolean compute() {
-          return myTransientModelsOwner.getModules().iterator().hasNext();
-        }
-      });
-    }
+    // FIXME not quite nice code
+    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return myTransientModelsOwner.getModules().iterator().hasNext();
+      }
+    });
   }
   public boolean hasTraceInputData(SModelReference modelReference) {
-    if (GenerationFacade.isLegacyGenTraceEnabled()) {
-      return myTracer.hasTraceInputData(modelReference);
-    } else {
-      return myTransientModelsOwner.getTrace(modelReference) != null;
-    }
+    return myTransientModelsOwner.getTrace(modelReference) != null;
   }
   public boolean hasTracebackData(SModelReference modelReference) {
-    if (GenerationFacade.isLegacyGenTraceEnabled()) {
-      return myTracer.hasTracebackData(modelReference);
-    } else {
-      return myTransientModelsOwner.getTrace(modelReference) != null;
-    }
+    return myTransientModelsOwner.getTrace(modelReference) != null;
   }
   public boolean showTraceInputData(@NotNull SNode node) {
     int index = getTabIndex(GenerationTracerView.Kind.TraceForward, node.getReference());
@@ -222,7 +205,7 @@ public class GenerationTracerViewTool extends BaseProjectTool {
   void showTraceView(GenerationTracerView.Kind viewToken, TraceNodeUI tracerNode, SNode node) {
     GenerationTracerView tracerView = new GenerationTracerView(this, node.getReference(), viewToken, tracerNode);
     myTracerViews.add(tracerView);
-    Icon i = Icons.getIcon(tracerView.isForwardTraceView() ? TracerNode.Kind.INPUT : TracerNode.Kind.OUTPUT, node);
+    Icon i = Icons.getIcon(tracerView.isForwardTraceView() ? TraceNodeUI.Kind.INPUT : TraceNodeUI.Kind.OUTPUT, node);
     Content content = addContent(tracerView.getComponent(), node.getPresentation(), i, true);
     getContentManager().setSelectedContent(content);
 
@@ -247,35 +230,27 @@ public class GenerationTracerViewTool extends BaseProjectTool {
     return super.getProject(); // public for GenerationTracerView
   }
 
-  private TraceNodeUI buildForwardTrace(SNode node) {
-    if (GenerationFacade.isLegacyGenTraceEnabled()) {
-      return myTracer.buildTraceInputTree(node);
-    } else {
-      final GenerationTrace ngt = myTransientModelsOwner.getTrace(node.getModel().getReference());
-      if (ngt == null) {
-        return null;
-      }
-      TraceNodeUI newTrace = new TraceNodeUI("New gen tracer", jetbrains.mps.ide.devkit.generator.icons.Icons.COLLECTION, node.getReference());
-      for (TraceNodeUI n : TraceBuilderUI.buildTrace(ngt, node)) {
-        newTrace.addChild(n);
-      }
-      return newTrace;
+  TraceNodeUI buildForwardTrace(SNode node) {
+    final GenerationTrace ngt = myTransientModelsOwner.getTrace(node.getModel().getReference());
+    if (ngt == null) {
+      return null;
     }
+    TraceNodeUI newTrace = new TraceNodeUI("New gen tracer", Icons.COLLECTION, node.getReference());
+    for (TraceNodeUI n : TraceBuilderUI.buildTrace(ngt, node)) {
+      newTrace.addChild(n);
+    }
+    return newTrace;
   }
-  private TraceNodeUI buildBackwardTrace(SNode node) {
-    if (GenerationFacade.isLegacyGenTraceEnabled()) {
-      return myTracer.buildTracebackTree(node);
-    } else {
-      final GenerationTrace ngt = myTransientModelsOwner.getTrace(node.getModel().getReference());
-      if (ngt == null) {
-        return null;
-      }
-      TraceNodeUI newTrace = new TraceNodeUI("New gen tracer", jetbrains.mps.ide.devkit.generator.icons.Icons.COLLECTION, node.getReference());
-      for (TraceNodeUI n : TraceBuilderUI.buildBackTrace(ngt, node)) {
-        newTrace.addChild(n);
-      }
-      return newTrace;
+  TraceNodeUI buildBackwardTrace(SNode node) {
+    final GenerationTrace ngt = myTransientModelsOwner.getTrace(node.getModel().getReference());
+    if (ngt == null) {
+      return null;
     }
+    TraceNodeUI newTrace = new TraceNodeUI("New gen tracer", Icons.COLLECTION, node.getReference());
+    for (TraceNodeUI n : TraceBuilderUI.buildBackTrace(ngt, node)) {
+      newTrace.addChild(n);
+    }
+    return newTrace;
   }
 
   public static class NoTabsComponent extends JPanel {

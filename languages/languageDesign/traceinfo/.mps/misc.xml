@@ -12,7 +12,6 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="$PROJECT_DIR$/../../../core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.traceInfo.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/../../baseLanguage/baseLanguage/jetbrains.mps.baseLanguage.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/../plugin/jetbrains.mps.lang.plugin.mpl" folder="" />
       <modulePath path="$PROJECT_DIR$/../textGen/jetbrains.mps.lang.textGen.mpl" folder="" />
@@ -22,7 +21,6 @@
       <modulePath path="$PROJECT_DIR$/tests/jetbrains.mps.traceInfo.test.msd" folder="" />
     </projectModules>
     <genConfs>
-      <genConfModule name="info" moduleRef="jetbrains.mps.traceInfo" />
       <genConfModule name="test" moduleRef="jetbrains.mps.traceInfo.test" />
     </genConfs>
   </component>

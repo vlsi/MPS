@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="GeneratedForeach_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.traceInfo.tracemacro.testlang.behavior.GeneratedForeach_BehaviorDescriptor" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="GeneratedForeach_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.behavior.GeneratedForeach_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,24,0" name="jetbrains.mps.traceInfo.tracemacro.testlang.behavior.BehaviorAspectDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

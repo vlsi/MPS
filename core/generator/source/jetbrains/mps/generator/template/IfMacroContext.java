@@ -16,35 +16,13 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 /**
  * Perhaps, shall replace usages right with TemplateQueryContextWithMacro
  */
 public class IfMacroContext extends TemplateQueryContextWithMacro {
-
-  /**
-   * @deprecated use {@link #IfMacroContext(TemplateContext, SNodeReference)} instead.  This constructor
-   * will be removed after 3.1
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public IfMacroContext(SNode node, SNode ifMacro, TemplateContext context, ITemplateGenerator generator) {
-    super(node, ifMacro, context, generator);
-  }
-
-  /**
-   * @deprecated use {@link #IfMacroContext(TemplateContext, SNodeReference)} instead.  This constructor
-   * will be removed after 3.1
-   */
-  @Deprecated
-  @ToRemove(version=3.1)
-  public IfMacroContext(SNode node, @NotNull SNodeReference ifMacro, TemplateContext context, @NotNull ITemplateGenerator generator) {
-    super(node, ifMacro, context, generator);
-  }
 
   /**
    * @since 3.1

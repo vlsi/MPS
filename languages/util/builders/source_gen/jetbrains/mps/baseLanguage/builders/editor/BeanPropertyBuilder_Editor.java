@@ -39,6 +39,10 @@ public class BeanPropertyBuilder_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BeanPropertyBuilder_Editor._Inline_pd8zqj_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("setter");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -66,10 +70,6 @@ public class BeanPropertyBuilder_Editor extends DefaultNodeEditor {
     private EditorCell createReferencePresentation_pd8zqj_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "setter");
       editorCell.setCellId("ReferencePresentation_pd8zqj_a0a0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("setter");
-      }
       return editorCell;
     }
   }

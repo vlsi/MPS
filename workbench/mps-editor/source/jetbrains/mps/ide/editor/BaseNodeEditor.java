@@ -219,7 +219,11 @@ public abstract class BaseNodeEditor implements Editor {
     executeInEDT(new PrioritizedTask(TaskType.EDITOR_MEMENTO, myType2TaskMap) {
       @Override
       public void performTask() {
+        if (myEditorComponent.isDisposed()) {
+          return;
+        }
         editorContext.setMemento(s.myMemento);
+        editorContext.getEditorComponent().rebuildEditorContent();
       }
     });
     if (s.myInspectorMemento == null || !(getCurrentEditorComponent() instanceof NodeEditorComponent)) {
@@ -235,6 +239,7 @@ public abstract class BaseNodeEditor implements Editor {
       @Override
       public void performTask() {
         inspectorEditorContext.setMemento(s.myInspectorMemento);
+        editorContext.getEditorComponent().rebuildEditorContent();
       }
     });
   }

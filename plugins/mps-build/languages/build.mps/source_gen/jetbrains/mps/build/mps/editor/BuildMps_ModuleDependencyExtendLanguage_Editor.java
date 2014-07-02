@@ -49,6 +49,10 @@ public class BuildMps_ModuleDependencyExtendLanguage_Editor extends DefaultNodeE
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new BuildMps_ModuleDependencyExtendLanguage_Editor._Inline_r99sur_a1a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("language");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -81,10 +85,6 @@ public class BuildMps_ModuleDependencyExtendLanguage_Editor extends DefaultNodeE
       EditorCell editorCell;
       editorCell = provider.createEditorCell(editorContext);
       editorCell.setCellId("property_name");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("language");
-      }
       editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
       SNode attributeConcept = provider.getRoleAttribute();
       Class attributeKind = provider.getRoleAttributeClass();

@@ -21,15 +21,9 @@ import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
 /**
  * evgeny, 11/9/12
  */
-public class MPSPersistence extends ComponentPlugin {
+public final class MPSPersistence extends ComponentPlugin {
 
-  private static MPSPersistence ourInstance = new MPSPersistence();
-
-  public static MPSPersistence getInstance() {
-    return ourInstance;
-  }
-
-  private MPSPersistence() {
+  public MPSPersistence() {
   }
 
   @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.extapi.module.EditableSModule;
 import jetbrains.mps.extapi.module.SModuleBase;
@@ -29,11 +28,11 @@ import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SearchScope;
 
 import java.util.ArrayList;
@@ -46,7 +45,10 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class MPSModuleRepository extends SRepositoryBase implements CoreComponent {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(MPSModuleRepository.class));
+  private static MPSModuleRepository ourInstance;
+
   private final MPSModuleRepository.GlobalModelAccess myGlobalModelAccess;
+
   private final ModelAccessListener myCommandListener = new ModelAccessListener() {
     @Override
     public void commandStarted() {
@@ -58,6 +60,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
       fireCommandFinished();
     }
   };
+  private final DebugRegistryImpl myDebugRegistry = new DebugRegistryImpl(this);
 
   private Set<SModule> myModules = new LinkedHashSet<SModule>();
   private Map<String, SModule> myFqNameToModulesMap = new ConcurrentHashMap<String, SModule>();
@@ -65,7 +68,7 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   private ManyToManyMap<SModule, MPSModuleOwner> myModuleToOwners = new ManyToManyMap<SModule, MPSModuleOwner>();
 
   public static MPSModuleRepository getInstance() {
-    return MPSCore.getInstance().getModuleRepository();
+    return ourInstance;
   }
 
   public MPSModuleRepository() {
@@ -75,12 +78,17 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   @Override
   public void init() {
     super.init();
+    if (ourInstance != null) {
+      throw new IllegalStateException("already initialized");
+    }
+    ourInstance = this;
     ModelAccess.instance().addCommandListener(myCommandListener);
   }
 
   @Override
   public void dispose() {
     ModelAccess.instance().removeCommandListener(myCommandListener);
+    ourInstance = null;
     super.dispose();
   }
 
@@ -205,12 +213,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
   }
 
   @Override
-  public SRepository getParent() {
-    // root repository
-    return null;
-  }
-
-  @Override
   public SModule getModule(SModuleId id) {
     ModelAccess.assertLegalRead();
 
@@ -266,13 +268,6 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
           ((AbstractModule.ModuleScope) moduleScope).invalidateCaches();
         }
         SModelUtil.clearCaches();
-
-        // FIXME temporary workaround: modelReplaced event is delivered in EDT, so Language caches are not cleared properly
-        for (SModule m : getModules()) {
-          if (m instanceof Language) {
-            ((Language) m).invalidateConceptDeclarationsCache();
-          }
-        }
       }
     });
   }
@@ -305,7 +300,11 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
     myFqNameToModulesMap.put(module.getModuleName(), module);
   }
 
-  //-------------------DEPRECATED
+  @Override
+  public DebugRegistry getDebugRegistry() {
+    return myDebugRegistry;
+  }
+//-------------------DEPRECATED
 
   @Deprecated //use ModuleRepositoryFacade instead
   public SModule getModule(@NotNull SModuleReference ref) {
@@ -355,6 +354,11 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
 
     @Override
     public void executeCommand(Runnable r) {
+      // FIXME: CommandProcessor tolerates null project, why don't we support commands from this ModelAccessor?
+      // e.g. there are actions that run without a project (like New Project action), and they could benefit from
+      // same command execution approach. OTOH, this might be defect in the actions, as most actions that run without
+      // project have executeOutsideCommand = true. This is not true for some vcs commands, though, the question is whether
+      // it's legitimate to execute commands when there's no project (even though CommandProcessor allows that).
       throw new UnsupportedOperationException();
     }
 

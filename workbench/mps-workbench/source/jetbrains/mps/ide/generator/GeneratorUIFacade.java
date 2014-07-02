@@ -16,6 +16,9 @@
 package jetbrains.mps.ide.generator;
 
 import com.intellij.ide.IdeEventQueue;
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationOptions;
@@ -33,19 +36,19 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.ide.messages.DefaultMessageHandler;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModelCommandExecutor.RunnableWithProgress;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
 
 import javax.swing.JOptionPane;
 import java.util.ArrayList;
@@ -58,14 +61,19 @@ import java.util.Set;
 /**
  * Evgeny Gryaznov, Aug 24, 2010
  */
+@Deprecated
 public class GeneratorUIFacade {
-  private static final GeneratorUIFacade INSTANCE = new GeneratorUIFacade();
 
   private GeneratorUIFacade() {
   }
 
+  /**
+   * @deprecated This class shall not be used, there seems to be no use-cases to justify its existence
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public static GeneratorUIFacade getInstance() {
-    return INSTANCE;
+    return new GeneratorUIFacade();
   }
 
   public IGenerationHandler getDefaultGenerationHandler() {
@@ -167,9 +175,10 @@ public class GeneratorUIFacade {
     final boolean[] result = new boolean[]{false};
     final DefaultMessageHandler messages = new DefaultMessageHandler(ideaProject);
 
-    ModelAccess.instance().runWriteActionWithProgressSynchronously(new RunnableWithProgress() {
+    ProgressManager.getInstance().run(new Task.Modal(ideaProject, "Generation", true) {
+
       @Override
-      public void run(@NotNull ProgressMonitor monitor) {
+      public void run(@NotNull ProgressIndicator indicator) {
         // pretty much the same code as in Generate_Facet
         final OptionsBuilder options = GenerationOptions.fromSettings(settings);
         if (settings.isIncremental()) {
@@ -178,21 +187,17 @@ public class GeneratorUIFacade {
           options.incremental(new DefaultNonIncrementalStrategy());
         }
 
-        if (GenerationFacade.isLegacyGenTraceEnabled()) {
-          IGenerationTracer tracer = ideaProject.getComponent(IGenerationTracer.class);
-          if (!settings.isSaveTransientModels() && tracer != null) {
-            tracer.discardTracing();
-          }
-          if (settings.isSaveTransientModels() && tracer == null) {
-            tracer = new NullGenerationTracer();
-          }
-          options.tracing(settings.getPerformanceTracingLevel(), tracer);
-        }
-
         final TransientModelsComponent tmc = ideaProject.getComponent(TransientModelsComponent.class);
-        result[0] = GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, monitor, messages, options.create(), tmc);
+        // XXX note, this code used to run with both idea and mps write locks. I'm pretty sure idea write lock was an overkill,
+        // as only generationHandler might need a write access; but MPS write access (effectively exclusive read) might come handy here.
+        // However, since this class is deprecated, I see no value in struggling with threading and read/write locks here. Besides,
+        // UI thread is blocked, and user unlikely to change any model anyway.
+        // Note, wrapping with read action might be bad idea, as no write action from within would run then.
+        result[0] =
+            GenerationFacade.generateModels(project, inputModels, invocationContext, generationHandler, new ProgressMonitorAdapter(indicator), messages, options.create(),
+                tmc);
       }
-    }, "Generation", true, invocationContext.getProject());
+    });
 
     return result[0];
   }

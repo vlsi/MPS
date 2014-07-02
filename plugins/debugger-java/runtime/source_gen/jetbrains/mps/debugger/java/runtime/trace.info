@@ -1,85 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:171d7488-7735-44dd-8049-f905d8fca4b0(jetbrains.mps.debugger.java.runtime)/4352118152439837554">
-    <nodeInfo nodeId="4352118152439837558" fileName="JavaDebugger.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myJavaBreakpointsProvider" />
-    <nodeInfo nodeId="4352118152439837571" fileName="JavaDebugger.java" startLine="23" startPosition="99" endLine="24" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4352118152439837582" fileName="JavaDebugger.java" startLine="29" startPosition="90" endLine="30" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439837592" fileName="JavaDebugger.java" startLine="35" startPosition="56" endLine="36" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439837600" fileName="JavaDebugger.java" startLine="41" startPosition="36" endLine="42" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4352118152439837610" fileName="JavaDebugger.java" startLine="46" startPosition="31" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439837612" fileName="JavaDebugger.java" startLine="47" startPosition="17" endLine="48" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439837621" fileName="JavaDebugger.java" startLine="48" startPosition="37" endLine="49" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439837626" fileName="JavaDebugger.java" startLine="49" startPosition="32" endLine="50" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439837636" fileName="JavaDebugger.java" startLine="54" startPosition="34" endLine="55" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439837640" fileName="JavaDebugger.java" startLine="55" startPosition="44" endLine="56" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439837648" fileName="JavaDebugger.java" startLine="56" startPosition="39" endLine="57" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439837652" fileName="JavaDebugger.java" startLine="57" startPosition="40" endLine="58" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4352118152439837563" fileName="JavaDebugger.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaDebugger#(Ljetbrains/mps/debug/api/Debuggers;Ljetbrains/mps/debug/api/breakpoints/BreakpointProvidersManager;)V" />
-    <nodeInfo nodeId="4352118152439837575" fileName="JavaDebugger.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createDebugSessionCreator#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSessionCreator;" />
-    <nodeInfo nodeId="4352118152439837588" fileName="JavaDebugger.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBreakpointsProvider#()Ljetbrains/mps/debug/api/breakpoints/IBreakpointsProvider;" />
-    <nodeInfo nodeId="4352118152439837596" fileName="JavaDebugger.java" startLine="39" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4352118152439837606" fileName="JavaDebugger.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="4352118152439837632" fileName="JavaDebugger.java" startLine="53" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <scopeInfo nodeId="4352118152439837570" fileName="JavaDebugger.java" startLine="23" startPosition="99" endLine="24" endPosition="57" />
-    <scopeInfo nodeId="4352118152439837581" fileName="JavaDebugger.java" startLine="29" startPosition="90" endLine="30" endPosition="34" />
-    <scopeInfo nodeId="4352118152439837591" fileName="JavaDebugger.java" startLine="35" startPosition="56" endLine="36" endPosition="37" />
-    <scopeInfo nodeId="4352118152439837599" fileName="JavaDebugger.java" startLine="41" startPosition="36" endLine="42" endPosition="35" />
-    <scopeInfo nodeId="4352118152439837563" fileName="JavaDebugger.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="4352118152439837568" varName="breakpointsProviderManager" />
-      <varInfo nodeId="4352118152439837566" varName="debuggers" />
-    </scopeInfo>
-    <scopeInfo nodeId="4352118152439837609" fileName="JavaDebugger.java" startLine="46" startPosition="31" endLine="50" endPosition="37" />
-    <scopeInfo nodeId="4352118152439837635" fileName="JavaDebugger.java" startLine="54" startPosition="34" endLine="58" endPosition="20" />
-    <scopeInfo nodeId="4352118152439837575" fileName="JavaDebugger.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="4352118152439837578" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="4352118152439837588" fileName="JavaDebugger.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="4352118152439837596" fileName="JavaDebugger.java" startLine="39" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="4352118152439837606" fileName="JavaDebugger.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="4352118152439837632" fileName="JavaDebugger.java" startLine="53" startPosition="0" endLine="60" endPosition="0" />
-    <unitInfo nodeId="4352118152439837554" fileName="JavaDebugger.java" startLine="20" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.JavaDebugger" />
+    <file name="JavaDebugger.java">
+      <node id="4352118152439837558" at="21,0,22,0" concept="2" trace="myJavaBreakpointsProvider" />
+      <node id="4352118152439837571" at="23,99,24,57" concept="5" />
+      <node id="4352118152439837582" at="29,90,30,34" concept="4" />
+      <node id="4352118152439837592" at="35,56,36,37" concept="4" />
+      <node id="4352118152439837600" at="41,36,42,35" concept="4" />
+      <node id="4352118152439837610" at="46,31,47,17" concept="1" />
+      <node id="4352118152439837612" at="47,17,48,37" concept="1" />
+      <node id="4352118152439837621" at="48,37,49,32" concept="1" />
+      <node id="4352118152439837626" at="49,32,50,37" concept="1" />
+      <node id="4352118152439837636" at="54,34,55,44" concept="1" />
+      <node id="4352118152439837640" at="55,44,56,39" concept="1" />
+      <node id="4352118152439837648" at="56,39,57,40" concept="1" />
+      <node id="4352118152439837652" at="57,40,58,20" concept="1" />
+      <node id="4352118152439837563" at="23,0,26,0" concept="0" trace="JavaDebugger#(Ljetbrains/mps/debug/api/Debuggers;Ljetbrains/mps/debug/api/breakpoints/BreakpointProvidersManager;)V" />
+      <node id="4352118152439837575" at="27,0,32,0" concept="3" trace="createDebugSessionCreator#(Lcom/intellij/openapi/project/Project;)Ljetbrains/mps/debug/api/AbstractDebugSessionCreator;" />
+      <node id="4352118152439837588" at="33,0,38,0" concept="3" trace="getBreakpointsProvider#()Ljetbrains/mps/debug/api/breakpoints/IBreakpointsProvider;" />
+      <node id="4352118152439837596" at="39,0,44,0" concept="3" trace="getComponentName#()Ljava/lang/String;" />
+      <node id="4352118152439837606" at="45,0,52,0" concept="3" trace="initComponent#()V" />
+      <node id="4352118152439837632" at="53,0,60,0" concept="3" trace="disposeComponent#()V" />
+      <scope id="4352118152439837570" at="23,99,24,57" />
+      <scope id="4352118152439837581" at="29,90,30,34" />
+      <scope id="4352118152439837591" at="35,56,36,37" />
+      <scope id="4352118152439837599" at="41,36,42,35" />
+      <scope id="4352118152439837563" at="23,0,26,0">
+        <var name="breakpointsProviderManager" id="4352118152439837568" />
+        <var name="debuggers" id="4352118152439837566" />
+      </scope>
+      <scope id="4352118152439837609" at="46,31,50,37" />
+      <scope id="4352118152439837635" at="54,34,58,20" />
+      <scope id="4352118152439837575" at="27,0,32,0">
+        <var name="project" id="4352118152439837578" />
+      </scope>
+      <scope id="4352118152439837588" at="33,0,38,0" />
+      <scope id="4352118152439837596" at="39,0,44,0" />
+      <scope id="4352118152439837606" at="45,0,52,0" />
+      <scope id="4352118152439837632" at="53,0,60,0" />
+      <unit id="4352118152439837554" at="20,0,61,0" name="jetbrains.mps.debugger.java.runtime.JavaDebugger" />
+    </file>
   </root>
   <root nodeRef="r:171d7488-7735-44dd-8049-f905d8fca4b0(jetbrains.mps.debugger.java.runtime)/7048882195103614171">
-    <nodeInfo nodeId="7576820355142760411" fileName="JavaNodePositionProvider.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProvider" />
-    <nodeInfo nodeId="7576820355142760415" fileName="JavaNodePositionProvider.java" startLine="20" startPosition="62" endLine="21" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7048882195103614187" fileName="JavaNodePositionProvider.java" startLine="26" startPosition="88" endLine="27" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7576820355142760421" fileName="JavaNodePositionProvider.java" startLine="39" startPosition="31" endLine="40" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7576820355142760482" fileName="JavaNodePositionProvider.java" startLine="44" startPosition="34" endLine="45" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7576820355142760399" fileName="JavaNodePositionProvider.java" startLine="51" startPosition="36" endLine="52" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9184765813288372298" fileName="JavaNodePositionProvider.java" startLine="56" startPosition="56" endLine="57" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7048882195103614193" fileName="JavaNodePositionProvider.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaNodePositionProvider#(Ljetbrains/mps/debug/api/source/PositionProvider;)V" />
-    <nodeInfo nodeId="7576820355142760377" fileName="JavaNodePositionProvider.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectOpened#()V" />
-    <nodeInfo nodeId="7576820355142760381" fileName="JavaNodePositionProvider.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="projectClosed#()V" />
-    <nodeInfo nodeId="7576820355142760385" fileName="JavaNodePositionProvider.java" startLine="38" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initComponent#()V" />
-    <nodeInfo nodeId="7576820355142760389" fileName="JavaNodePositionProvider.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#()V" />
-    <nodeInfo nodeId="9184765813288352954" fileName="JavaNodePositionProvider.java" startLine="55" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accepts#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Z" />
-    <nodeInfo nodeId="7048882195103614174" fileName="JavaNodePositionProvider.java" startLine="24" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#(Ljava/lang/String;Ljava/lang/String;I)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7576820355142760393" fileName="JavaNodePositionProvider.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <scopeInfo nodeId="7576820355142760380" fileName="JavaNodePositionProvider.java" startLine="31" startPosition="31" endLine="31" endPosition="31" />
-    <scopeInfo nodeId="7576820355142760384" fileName="JavaNodePositionProvider.java" startLine="35" startPosition="31" endLine="35" endPosition="31" />
-    <scopeInfo nodeId="7048882195103614195" fileName="JavaNodePositionProvider.java" startLine="20" startPosition="62" endLine="21" endPosition="26" />
-    <scopeInfo nodeId="7048882195103614186" fileName="JavaNodePositionProvider.java" startLine="26" startPosition="88" endLine="27" endPosition="67" />
-    <scopeInfo nodeId="7576820355142760388" fileName="JavaNodePositionProvider.java" startLine="39" startPosition="31" endLine="40" endPosition="69" />
-    <scopeInfo nodeId="7576820355142760392" fileName="JavaNodePositionProvider.java" startLine="44" startPosition="34" endLine="45" endPosition="36" />
-    <scopeInfo nodeId="7576820355142760398" fileName="JavaNodePositionProvider.java" startLine="51" startPosition="36" endLine="52" endPosition="41" />
-    <scopeInfo nodeId="9184765813288352959" fileName="JavaNodePositionProvider.java" startLine="56" startPosition="56" endLine="57" endPosition="43" />
-    <scopeInfo nodeId="7048882195103614193" fileName="JavaNodePositionProvider.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="7576820355142760405" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="7576820355142760377" fileName="JavaNodePositionProvider.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="7576820355142760381" fileName="JavaNodePositionProvider.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="7576820355142760385" fileName="JavaNodePositionProvider.java" startLine="38" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="7576820355142760389" fileName="JavaNodePositionProvider.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="9184765813288352954" fileName="JavaNodePositionProvider.java" startLine="55" startPosition="0" endLine="59" endPosition="0">
-      <varInfo nodeId="9184765813288352955" varName="session" />
-    </scopeInfo>
-    <scopeInfo nodeId="7048882195103614174" fileName="JavaNodePositionProvider.java" startLine="24" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="7048882195103614178" varName="fileName" />
-      <varInfo nodeId="7048882195103614181" varName="position" />
-      <varInfo nodeId="7048882195103614175" varName="unitName" />
-    </scopeInfo>
-    <scopeInfo nodeId="7576820355142760393" fileName="JavaNodePositionProvider.java" startLine="48" startPosition="0" endLine="54" endPosition="0" />
-    <unitInfo nodeId="7048882195103614171" fileName="JavaNodePositionProvider.java" startLine="17" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.JavaNodePositionProvider" />
+    <file name="JavaNodePositionProvider.java">
+      <node id="7576820355142760411" at="18,0,19,0" concept="2" trace="myProvider" />
+      <node id="7576820355142760415" at="20,62,21,26" concept="1" />
+      <node id="7048882195103614187" at="26,88,27,67" concept="4" />
+      <node id="7576820355142760421" at="39,31,40,69" concept="1" />
+      <node id="7576820355142760482" at="44,34,45,36" concept="1" />
+      <node id="7576820355142760399" at="51,36,52,41" concept="4" />
+      <node id="9184765813288372298" at="56,56,57,43" concept="4" />
+      <node id="7048882195103614193" at="20,0,23,0" concept="0" trace="JavaNodePositionProvider#(Ljetbrains/mps/debug/api/source/PositionProvider;)V" />
+      <node id="7576820355142760377" at="30,0,33,0" concept="3" trace="projectOpened#()V" />
+      <node id="7576820355142760381" at="34,0,37,0" concept="3" trace="projectClosed#()V" />
+      <node id="7576820355142760385" at="38,0,42,0" concept="3" trace="initComponent#()V" />
+      <node id="7576820355142760389" at="43,0,47,0" concept="3" trace="disposeComponent#()V" />
+      <node id="9184765813288352954" at="55,0,59,0" concept="3" trace="accepts#(Ljetbrains/mps/debug/api/AbstractDebugSession;)Z" />
+      <node id="7048882195103614174" at="24,0,29,0" concept="3" trace="getNode#(Ljava/lang/String;Ljava/lang/String;I)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7576820355142760393" at="48,0,54,0" concept="3" trace="getComponentName#()Ljava/lang/String;" />
+      <scope id="7576820355142760380" at="31,31,31,31" />
+      <scope id="7576820355142760384" at="35,31,35,31" />
+      <scope id="7048882195103614195" at="20,62,21,26" />
+      <scope id="7048882195103614186" at="26,88,27,67" />
+      <scope id="7576820355142760388" at="39,31,40,69" />
+      <scope id="7576820355142760392" at="44,34,45,36" />
+      <scope id="7576820355142760398" at="51,36,52,41" />
+      <scope id="9184765813288352959" at="56,56,57,43" />
+      <scope id="7048882195103614193" at="20,0,23,0">
+        <var name="provider" id="7576820355142760405" />
+      </scope>
+      <scope id="7576820355142760377" at="30,0,33,0" />
+      <scope id="7576820355142760381" at="34,0,37,0" />
+      <scope id="7576820355142760385" at="38,0,42,0" />
+      <scope id="7576820355142760389" at="43,0,47,0" />
+      <scope id="9184765813288352954" at="55,0,59,0">
+        <var name="session" id="9184765813288352955" />
+      </scope>
+      <scope id="7048882195103614174" at="24,0,29,0">
+        <var name="fileName" id="7048882195103614178" />
+        <var name="position" id="7048882195103614181" />
+        <var name="unitName" id="7048882195103614175" />
+      </scope>
+      <scope id="7576820355142760393" at="48,0,54,0" />
+      <unit id="7048882195103614171" at="17,0,60,0" name="jetbrains.mps.debugger.java.runtime.JavaNodePositionProvider" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

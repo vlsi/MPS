@@ -12,16 +12,18 @@
     <file name="IMakeService.java" />
   </source>
   <source id="8695426379435232461" name="MakeSession" hash="-afxyo4qr2t15zzjc16fma7j24708p97">
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="MakeSession.java" />
   </source>
   <source id="8464977774479999203" name="MakeNotification" hash="cvzpuyhe3lid8t68ss2cqgsotyq2ppn">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="MakeNotification.java" />
   </source>
   <source id="8464977774480012290" name="IMakeNotificationListener" hash="-24exiixlj1pr554h0mw31d7968g3mb4">
     <dep root="8464977774479999203" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="IMakeNotificationListener.java" />
   </source>
   <source id="2958721966247272985" name="IHName" hash="b72lyyg0xy7g5sbtyyo78t3cmxafq8k">

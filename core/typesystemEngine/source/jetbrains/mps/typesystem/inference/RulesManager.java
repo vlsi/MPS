@@ -16,21 +16,40 @@
 package jetbrains.mps.typesystem.inference;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.lang.typesystem.runtime.*;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.errors.IRuleConflictWarningProducer;
+import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.CheckingRuleSet;
+import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.DoubleRuleSet;
+import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
+import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
+import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsManager;
+import jetbrains.mps.lang.typesystem.runtime.RuleSet;
+import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.Pair;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import java.util.*;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Set;
 
 public class RulesManager {
 
-  private TypeChecker myTypeChecker;
+  private final TypeChecker myTypeChecker;
   private Set<String> myLoadedLanguages = new THashSet<String>();
   private RuleSet<InferenceRule_Runtime> myInferenceRules = new CheckingRuleSet<InferenceRule_Runtime>();
   private RuleSet<NonTypesystemRule_Runtime> myNonTypesystemRules = new CheckingRuleSet<NonTypesystemRule_Runtime>();
@@ -86,7 +105,7 @@ public class RulesManager {
     if (myLoadedLanguages.contains(languageNamespace)) {
       return true;
     }
-    LanguageRuntime language = LanguageRegistry.getInstance().getLanguage(languageNamespace);
+    LanguageRuntime language = myTypeChecker.getLanguageRegistry().getLanguage(languageNamespace);
     if (language == null) return false;
 
     return loadLanguages(Collections.singleton(language));
@@ -153,7 +172,7 @@ public class RulesManager {
     // load
     Set<LanguageRuntime> toLoadRuntimes = new HashSet<LanguageRuntime>();
     for (String language : toLoad) {
-      toLoadRuntimes.add(LanguageRegistry.getInstance().getLanguage(language));
+      toLoadRuntimes.add(myTypeChecker.getLanguageRegistry().getLanguage(language));
     }
     return loadLanguages(toLoadRuntimes);
   }
@@ -247,7 +266,11 @@ public class RulesManager {
   }
 
   public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-    return myOverloadedOperationsManager.getOperationType(operation, leftOperandType, rightOperandType);
+    return getOperationType(operation, leftOperandType, rightOperandType, IRuleConflictWarningProducer.NULL);
+  }
+
+  public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType, IRuleConflictWarningProducer warningProducer) {
+    return myOverloadedOperationsManager.getOperationType(operation, leftOperandType, rightOperandType, warningProducer);
   }
 
   @Deprecated

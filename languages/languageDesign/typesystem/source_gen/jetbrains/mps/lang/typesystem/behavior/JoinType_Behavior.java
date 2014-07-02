@@ -25,4 +25,14 @@ public class JoinType_Behavior {
     sb.append(")");
     return sb.toString();
   }
+
+  public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
+    SNode copy = SNodeOperations.copyNode(thisNode);
+    for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(copy, "argument", true)).toListSequence()) {
+      if (SNodeOperations.isInstanceOf(arg, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
+        SNodeOperations.replaceWithAnother(arg, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(arg, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_eraseGenerics_5089784887112634594", new Object[]{}));
+      }
+    }
+    return copy;
+  }
 }

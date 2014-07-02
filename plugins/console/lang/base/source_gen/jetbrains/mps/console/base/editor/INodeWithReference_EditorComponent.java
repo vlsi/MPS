@@ -58,6 +58,10 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new INodeWithReference_EditorComponent._Inline_clzyhh_a0a());
     editorCell = provider.createEditorCell(editorContext);
+    if (editorCell.getRole() == null) {
+      editorCell.setReferenceCell(true);
+      editorCell.setRole("target");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -85,10 +89,6 @@ public class INodeWithReference_EditorComponent implements ConceptEditorComponen
     private EditorCell createReferencePresentation_clzyhh_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "target");
       editorCell.setCellId("ReferencePresentation_clzyhh_a0a0");
-      if (editorCell.getRole() == null) {
-        editorCell.setReferenceCell(true);
-        editorCell.setRole("target");
-      }
       Style style = new StyleImpl();
       style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
       style.set(StyleAttributes.UNDERLINED, true);

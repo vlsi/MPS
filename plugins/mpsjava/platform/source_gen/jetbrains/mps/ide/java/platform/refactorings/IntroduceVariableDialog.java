@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.Nullable;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import javax.swing.JLabel;
@@ -23,7 +24,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceVariableRefactoring;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MoveRefactoringUtils;
 import java.awt.Insets;
-import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 
 public abstract class IntroduceVariableDialog extends RefactoringDialog {
@@ -39,6 +39,14 @@ public abstract class IntroduceVariableDialog extends RefactoringDialog {
     super(project, true);
     setTitle(name);
     myEditorContext = editorContext;
+  }
+
+
+
+  @Nullable
+  @Override
+  protected String getHelpId() {
+    return "refactoring.introduceVariable1";
   }
 
   private JPanel createNamePanel() {

@@ -1,27 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="NList_CopyWithTraceOperation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.behavior.NList_CopyWithTraceOperation_BehaviorDescriptor" />
-  <unitInfo fileName="Node_CopyWithTraceOperation_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.behavior.Node_CopyWithTraceOperation_BehaviorDescriptor" />
-  <root nodeRef="r:0305b770-140c-4492-809c-8fad4cbadc02(jetbrains.mps.lang.traceable.operations.behavior)/1262430001741703821">
-    <nodeInfo nodeId="1262430001741703819" fileName="Node_CopyWithTraceOperation_Behavior.java" startLine="12" startPosition="100" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741720080" fileName="Node_CopyWithTraceOperation_Behavior.java" startLine="16" startPosition="100" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741703821" fileName="Node_CopyWithTraceOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741703821" fileName="Node_CopyWithTraceOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_applicableToNode_1262430001741498076#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-    <nodeInfo nodeId="1262430001741703821" fileName="Node_CopyWithTraceOperation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_applicableToLink_1262430001741498352#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-    <scopeInfo nodeId="1262430001741703823" fileName="Node_CopyWithTraceOperation_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741703818" fileName="Node_CopyWithTraceOperation_Behavior.java" startLine="12" startPosition="100" endLine="13" endPosition="16" />
-    <scopeInfo nodeId="1262430001741720079" fileName="Node_CopyWithTraceOperation_Behavior.java" startLine="16" startPosition="100" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="1262430001741703821" fileName="Node_CopyWithTraceOperation_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="1262430001741703821" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741703821" fileName="Node_CopyWithTraceOperation_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="1262430001741703821" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741703821" fileName="Node_CopyWithTraceOperation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1262430001741703821" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741703821" fileName="Node_CopyWithTraceOperation_Behavior.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.traceable.operations.behavior.Node_CopyWithTraceOperation_Behavior" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="Node_CopyWithTraceOperation_BehaviorDescriptor.java">
+      <unit at="8,0,25,0" name="jetbrains.mps.lang.traceable.operations.behavior.Node_CopyWithTraceOperation_BehaviorDescriptor" />
+    </file>
+    <file name="NList_CopyWithTraceOperation_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.traceable.operations.behavior.NList_CopyWithTraceOperation_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.lang.traceable.operations.behavior.BehaviorAspectDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:0305b770-140c-4492-809c-8fad4cbadc02(jetbrains.mps.lang.traceable.operations.behavior)/1262430001741703821">
+    <file name="Node_CopyWithTraceOperation_Behavior.java">
+      <node id="1262430001741703819" at="12,100,13,16" concept="0" />
+      <node id="1262430001741720080" at="16,100,17,16" concept="0" />
+      <node id="1262430001741703821" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741703821" at="12,0,15,0" concept="1" trace="virtual_applicableToNode_1262430001741498076#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="1262430001741703821" at="16,0,19,0" concept="1" trace="virtual_applicableToLink_1262430001741498352#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <scope id="1262430001741703823" at="9,43,9,43" />
+      <scope id="1262430001741703818" at="12,100,13,16" />
+      <scope id="1262430001741720079" at="16,100,17,16" />
+      <scope id="1262430001741703821" at="9,0,11,0">
+        <var name="thisNode" id="1262430001741703821" />
+      </scope>
+      <scope id="1262430001741703821" at="12,0,15,0">
+        <var name="thisConcept" id="1262430001741703821" />
+      </scope>
+      <scope id="1262430001741703821" at="16,0,19,0">
+        <var name="thisConcept" id="1262430001741703821" />
+      </scope>
+      <unit id="1262430001741703821" at="8,0,20,0" name="jetbrains.mps.lang.traceable.operations.behavior.Node_CopyWithTraceOperation_Behavior" />
+    </file>
+  </root>
+</debug-info>
 

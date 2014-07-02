@@ -21,8 +21,24 @@ public class JavaWatchablesCategory extends WatchablesCategory {
   }
 
   @Override
+  public int hashCode() {
+    return myOrder;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) {
+      return true;
+    }
+    if (o == null || getClass() != o.getClass()) {
+      return false;
+    }
+    return myOrder == ((JavaWatchablesCategory) o).myOrder;
+  }
+
+  @Override
   public int compareTo(WatchablesCategory o) {
-    if (!((o instanceof JavaWatchablesCategory))) {
+    if (!(o instanceof JavaWatchablesCategory)) {
       return 1;
     }
     return myOrder - ((JavaWatchablesCategory) o).myOrder;

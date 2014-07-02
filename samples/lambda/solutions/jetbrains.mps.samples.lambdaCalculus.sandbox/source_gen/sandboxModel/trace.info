@@ -1,157 +1,172 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)/2167053794906818090">
-    <nodeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="13" startPosition="42" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="17" startPosition="31" endLine="18" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myOuterVars" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="24" startPosition="43" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="28" startPosition="57" endLine="29" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="29" startPosition="34" endLine="30" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="33" startPosition="26" endLine="34" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="34" startPosition="16" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="35" startPosition="16" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="36" startPosition="44" endLine="37" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="40" startPosition="33" endLine="41" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="44" startPosition="28" endLine="45" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2167053794906818091" fileName="sim.java" startLine="49" startPosition="61" endLine="50" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="sim#()V" />
-    <nodeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <nodeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eval#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Function_2167053794906818092#()V" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParamsCount#()I" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="copy#()Ljetbrains/mps/samples/lambdaCalculus/runtime/Function;" />
-    <nodeInfo nodeId="2167053794906818091" fileName="sim.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="let_2167053794906818091#(Ljetbrains/mps/samples/lambdaCalculus/runtime/Function;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Function_2167053794906818092#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="eval#()Ljava/lang/Object;" />
-    <scopeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="10" startPosition="16" endLine="10" endPosition="16" />
-    <scopeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="13" startPosition="42" endLine="14" endPosition="33" />
-    <scopeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="17" startPosition="31" endLine="18" endPosition="85" />
-    <scopeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="24" startPosition="43" endLine="25" endPosition="34" />
-    <scopeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="40" startPosition="33" endLine="41" endPosition="15" />
-    <scopeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="44" startPosition="28" endLine="45" endPosition="63" />
-    <scopeInfo nodeId="2167053794906818091" fileName="sim.java" startLine="49" startPosition="61" endLine="50" endPosition="95" />
-    <scopeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="28" startPosition="57" endLine="30" endPosition="36" />
-    <scopeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="2167053794906818090" varName="args" />
-    </scopeInfo>
-    <scopeInfo nodeId="2167053794906818090" fileName="sim.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="2167053794906818091" fileName="sim.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="2167053794906818091" varName="sq" />
-    </scopeInfo>
-    <scopeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="28" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="2167053794906818092" varName="outerVars" />
-    </scopeInfo>
-    <scopeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="33" startPosition="26" endLine="37" endPosition="19">
-      <varInfo nodeId="2167053794906818092" varName="i" />
-      <varInfo nodeId="2167053794906818092" varName="j" />
-      <varInfo nodeId="2167053794906818092" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="2167053794906818092" fileName="sim.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
-    <unitInfo nodeId="2167053794906818092" fileName="sim.java" startLine="21" startPosition="0" endLine="48" endPosition="0" unitName="sandboxModel.sim$Function_2167053794906818092" />
-    <unitInfo nodeId="2167053794906818090" fileName="sim.java" startLine="9" startPosition="0" endLine="53" endPosition="0" unitName="sandboxModel.sim" />
+    <file name="sim.java">
+      <node id="2167053794906818090" at="13,42,14,33" concept="1" />
+      <node id="2167053794906818090" at="17,31,18,85" concept="5" />
+      <node id="2167053794906818092" at="22,0,23,0" concept="2" trace="myOuterVars" />
+      <node id="2167053794906818092" at="24,43,25,34" concept="1" />
+      <node id="2167053794906818092" at="28,57,29,34" concept="1" />
+      <node id="2167053794906818092" at="29,34,30,36" concept="1" />
+      <node id="2167053794906818092" at="33,26,34,16" concept="4" />
+      <node id="2167053794906818092" at="34,16,35,16" concept="4" />
+      <node id="2167053794906818092" at="35,16,36,44" concept="4" />
+      <node id="2167053794906818092" at="36,44,37,19" concept="5" />
+      <node id="2167053794906818092" at="40,33,41,15" concept="5" />
+      <node id="2167053794906818092" at="44,28,45,63" concept="5" />
+      <node id="2167053794906818091" at="49,61,50,95" concept="5" />
+      <node id="2167053794906818090" at="10,0,12,0" concept="0" trace="sim#()V" />
+      <node id="2167053794906818090" at="13,0,16,0" concept="6" trace="main#([Ljava/lang/String;)V" />
+      <node id="2167053794906818090" at="17,0,20,0" concept="6" trace="eval#()Ljava/lang/Object;" />
+      <node id="2167053794906818092" at="24,0,27,0" concept="0" trace="Function_2167053794906818092#()V" />
+      <node id="2167053794906818092" at="40,0,43,0" concept="3" trace="getParamsCount#()I" />
+      <node id="2167053794906818092" at="44,0,47,0" concept="3" trace="copy#()Ljetbrains/mps/samples/lambdaCalculus/runtime/Function;" />
+      <node id="2167053794906818091" at="49,0,52,0" concept="6" trace="let_2167053794906818091#(Ljetbrains/mps/samples/lambdaCalculus/runtime/Function;)Ljava/lang/Object;" />
+      <node id="2167053794906818092" at="28,0,32,0" concept="0" trace="Function_2167053794906818092#(Ljava/util/List;)V" />
+      <node id="2167053794906818092" at="33,0,39,0" concept="3" trace="eval#()Ljava/lang/Object;" />
+      <scope id="2167053794906818090" at="10,16,10,16" />
+      <scope id="2167053794906818090" at="13,42,14,33" />
+      <scope id="2167053794906818090" at="17,31,18,85" />
+      <scope id="2167053794906818092" at="24,43,25,34" />
+      <scope id="2167053794906818092" at="40,33,41,15" />
+      <scope id="2167053794906818092" at="44,28,45,63" />
+      <scope id="2167053794906818091" at="49,61,50,95" />
+      <scope id="2167053794906818090" at="10,0,12,0" />
+      <scope id="2167053794906818092" at="28,57,30,36" />
+      <scope id="2167053794906818090" at="13,0,16,0">
+        <var name="args" id="2167053794906818090" />
+      </scope>
+      <scope id="2167053794906818090" at="17,0,20,0" />
+      <scope id="2167053794906818092" at="24,0,27,0" />
+      <scope id="2167053794906818092" at="40,0,43,0" />
+      <scope id="2167053794906818092" at="44,0,47,0" />
+      <scope id="2167053794906818091" at="49,0,52,0">
+        <var name="sq" id="2167053794906818091" />
+      </scope>
+      <scope id="2167053794906818092" at="28,0,32,0">
+        <var name="outerVars" id="2167053794906818092" />
+      </scope>
+      <scope id="2167053794906818092" at="33,26,37,19">
+        <var name="i" id="2167053794906818092" />
+        <var name="j" id="2167053794906818092" />
+        <var name="x" id="2167053794906818092" />
+      </scope>
+      <scope id="2167053794906818092" at="33,0,39,0" />
+      <unit id="2167053794906818092" at="21,0,48,0" name="sandboxModel.sim$Function_2167053794906818092" />
+      <unit id="2167053794906818090" at="9,0,53,0" name="sandboxModel.sim" />
+    </file>
   </root>
   <root nodeRef="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)/5277476162361142416">
-    <nodeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="10" startPosition="42" endLine="11" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="14" startPosition="31" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5277476162361142445" fileName="test2.java" startLine="18" startPosition="68" endLine="19" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="test2#()V" />
-    <nodeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eval#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="5277476162361142445" fileName="test2.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="lambdaAbstr_5277476162361142418#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
-    <scopeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="7" startPosition="18" endLine="7" endPosition="18" />
-    <scopeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="10" startPosition="42" endLine="11" endPosition="33" />
-    <scopeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="14" startPosition="31" endLine="15" endPosition="46" />
-    <scopeInfo nodeId="5277476162361142445" fileName="test2.java" startLine="18" startPosition="68" endLine="19" endPosition="13" />
-    <scopeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
-    <scopeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="10" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="5277476162361142416" varName="args" />
-    </scopeInfo>
-    <scopeInfo nodeId="5277476162361142416" fileName="test2.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="5277476162361142445" fileName="test2.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="5277476162361142445" varName="x" />
-    </scopeInfo>
-    <unitInfo nodeId="5277476162361142416" fileName="test2.java" startLine="6" startPosition="0" endLine="22" endPosition="0" unitName="sandboxModel.test2" />
+    <file name="test2.java">
+      <node id="5277476162361142416" at="10,42,11,33" concept="1" />
+      <node id="5277476162361142416" at="14,31,15,46" concept="5" />
+      <node id="5277476162361142445" at="18,68,19,13" concept="5" />
+      <node id="5277476162361142416" at="7,0,9,0" concept="0" trace="test2#()V" />
+      <node id="5277476162361142416" at="10,0,13,0" concept="6" trace="main#([Ljava/lang/String;)V" />
+      <node id="5277476162361142416" at="14,0,17,0" concept="6" trace="eval#()Ljava/lang/Object;" />
+      <node id="5277476162361142445" at="18,0,21,0" concept="6" trace="lambdaAbstr_5277476162361142418#(Ljava/lang/Integer;)Ljava/lang/Integer;" />
+      <scope id="5277476162361142416" at="7,18,7,18" />
+      <scope id="5277476162361142416" at="10,42,11,33" />
+      <scope id="5277476162361142416" at="14,31,15,46" />
+      <scope id="5277476162361142445" at="18,68,19,13" />
+      <scope id="5277476162361142416" at="7,0,9,0" />
+      <scope id="5277476162361142416" at="10,0,13,0">
+        <var name="args" id="5277476162361142416" />
+      </scope>
+      <scope id="5277476162361142416" at="14,0,17,0" />
+      <scope id="5277476162361142445" at="18,0,21,0">
+        <var name="x" id="5277476162361142445" />
+      </scope>
+      <unit id="5277476162361142416" at="6,0,22,0" name="sandboxModel.test2" />
+    </file>
   </root>
   <root nodeRef="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)/816130369292750457">
-    <nodeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="10" startPosition="42" endLine="11" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="14" startPosition="31" endLine="15" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="816130369292750664" fileName="sumsq.java" startLine="18" startPosition="78" endLine="19" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="816130369292750468" fileName="sumsq.java" startLine="22" startPosition="82" endLine="23" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="816130369292750496" fileName="sumsq.java" startLine="26" startPosition="96" endLine="27" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="816130369292750539" fileName="sumsq.java" startLine="30" startPosition="94" endLine="31" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="sumsq#()V" />
-    <nodeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <nodeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eval#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="816130369292750664" fileName="sumsq.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="lambdaAbstr_816130369292750642#(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="816130369292750468" fileName="sumsq.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="let_816130369292750468#(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="816130369292750496" fileName="sumsq.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="let_816130369292750496#(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="816130369292750539" fileName="sumsq.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="lambdaAbstr_816130369292750515#(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;" />
-    <scopeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="7" startPosition="18" endLine="7" endPosition="18" />
-    <scopeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="10" startPosition="42" endLine="11" endPosition="33" />
-    <scopeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="14" startPosition="31" endLine="15" endPosition="48" />
-    <scopeInfo nodeId="816130369292750664" fileName="sumsq.java" startLine="18" startPosition="78" endLine="19" endPosition="57" />
-    <scopeInfo nodeId="816130369292750468" fileName="sumsq.java" startLine="22" startPosition="82" endLine="23" endPosition="62" />
-    <scopeInfo nodeId="816130369292750496" fileName="sumsq.java" startLine="26" startPosition="96" endLine="27" endPosition="58" />
-    <scopeInfo nodeId="816130369292750539" fileName="sumsq.java" startLine="30" startPosition="94" endLine="31" endPosition="28" />
-    <scopeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
-    <scopeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="10" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="816130369292750457" varName="args" />
-    </scopeInfo>
-    <scopeInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="816130369292750664" fileName="sumsq.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="816130369292750664" varName="x" />
-      <varInfo nodeId="816130369292750664" varName="y" />
-    </scopeInfo>
-    <scopeInfo nodeId="816130369292750468" fileName="sumsq.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="816130369292750468" varName="sum" />
-      <varInfo nodeId="816130369292750468" varName="x" />
-      <varInfo nodeId="816130369292750468" varName="y" />
-    </scopeInfo>
-    <scopeInfo nodeId="816130369292750496" fileName="sumsq.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="816130369292750496" varName="mult" />
-      <varInfo nodeId="816130369292750496" varName="sum" />
-      <varInfo nodeId="816130369292750496" varName="x" />
-      <varInfo nodeId="816130369292750496" varName="y" />
-    </scopeInfo>
-    <scopeInfo nodeId="816130369292750539" fileName="sumsq.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="816130369292750539" varName="mult" />
-      <varInfo nodeId="816130369292750539" varName="sum" />
-      <varInfo nodeId="816130369292750539" varName="z" />
-    </scopeInfo>
-    <unitInfo nodeId="816130369292750457" fileName="sumsq.java" startLine="6" startPosition="0" endLine="34" endPosition="0" unitName="sandboxModel.sumsq" />
+    <file name="sumsq.java">
+      <node id="816130369292750457" at="10,42,11,33" concept="1" />
+      <node id="816130369292750457" at="14,31,15,48" concept="5" />
+      <node id="816130369292750664" at="18,78,19,57" concept="5" />
+      <node id="816130369292750468" at="22,82,23,62" concept="5" />
+      <node id="816130369292750496" at="26,96,27,58" concept="5" />
+      <node id="816130369292750539" at="30,94,31,28" concept="5" />
+      <node id="816130369292750457" at="7,0,9,0" concept="0" trace="sumsq#()V" />
+      <node id="816130369292750457" at="10,0,13,0" concept="6" trace="main#([Ljava/lang/String;)V" />
+      <node id="816130369292750457" at="14,0,17,0" concept="6" trace="eval#()Ljava/lang/Object;" />
+      <node id="816130369292750664" at="18,0,21,0" concept="6" trace="lambdaAbstr_816130369292750642#(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;" />
+      <node id="816130369292750468" at="22,0,25,0" concept="6" trace="let_816130369292750468#(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Object;" />
+      <node id="816130369292750496" at="26,0,29,0" concept="6" trace="let_816130369292750496#(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Object;" />
+      <node id="816130369292750539" at="30,0,33,0" concept="6" trace="lambdaAbstr_816130369292750515#(Ljava/lang/Integer;Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Integer;" />
+      <scope id="816130369292750457" at="7,18,7,18" />
+      <scope id="816130369292750457" at="10,42,11,33" />
+      <scope id="816130369292750457" at="14,31,15,48" />
+      <scope id="816130369292750664" at="18,78,19,57" />
+      <scope id="816130369292750468" at="22,82,23,62" />
+      <scope id="816130369292750496" at="26,96,27,58" />
+      <scope id="816130369292750539" at="30,94,31,28" />
+      <scope id="816130369292750457" at="7,0,9,0" />
+      <scope id="816130369292750457" at="10,0,13,0">
+        <var name="args" id="816130369292750457" />
+      </scope>
+      <scope id="816130369292750457" at="14,0,17,0" />
+      <scope id="816130369292750664" at="18,0,21,0">
+        <var name="x" id="816130369292750664" />
+        <var name="y" id="816130369292750664" />
+      </scope>
+      <scope id="816130369292750468" at="22,0,25,0">
+        <var name="sum" id="816130369292750468" />
+        <var name="x" id="816130369292750468" />
+        <var name="y" id="816130369292750468" />
+      </scope>
+      <scope id="816130369292750496" at="26,0,29,0">
+        <var name="mult" id="816130369292750496" />
+        <var name="sum" id="816130369292750496" />
+        <var name="x" id="816130369292750496" />
+        <var name="y" id="816130369292750496" />
+      </scope>
+      <scope id="816130369292750539" at="30,0,33,0">
+        <var name="mult" id="816130369292750539" />
+        <var name="sum" id="816130369292750539" />
+        <var name="z" id="816130369292750539" />
+      </scope>
+      <unit id="816130369292750457" at="6,0,34,0" name="sandboxModel.sumsq" />
+    </file>
   </root>
   <root nodeRef="r:19bf018c-b5e7-418d-8415-b23921421325(sandboxModel)/816130369292806252">
-    <nodeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="10" startPosition="42" endLine="11" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="14" startPosition="31" endLine="15" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="816130369292806253" fileName="letlet.java" startLine="18" startPosition="59" endLine="19" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="816130369292806255" fileName="letlet.java" startLine="22" startPosition="71" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="letlet#()V" />
-    <nodeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <nodeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eval#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="816130369292806253" fileName="letlet.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="let_816130369292806253#(Ljava/lang/Integer;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="816130369292806255" fileName="letlet.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="let_816130369292806255#(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Object;" />
-    <scopeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="7" startPosition="19" endLine="7" endPosition="19" />
-    <scopeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="10" startPosition="42" endLine="11" endPosition="33" />
-    <scopeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="14" startPosition="31" endLine="15" endPosition="47" />
-    <scopeInfo nodeId="816130369292806253" fileName="letlet.java" startLine="18" startPosition="59" endLine="19" endPosition="51" />
-    <scopeInfo nodeId="816130369292806255" fileName="letlet.java" startLine="22" startPosition="71" endLine="23" endPosition="19" />
-    <scopeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
-    <scopeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="10" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="816130369292806252" varName="args" />
-    </scopeInfo>
-    <scopeInfo nodeId="816130369292806252" fileName="letlet.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="816130369292806253" fileName="letlet.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="816130369292806253" varName="q1" />
-    </scopeInfo>
-    <scopeInfo nodeId="816130369292806255" fileName="letlet.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="816130369292806255" varName="q1" />
-      <varInfo nodeId="816130369292806255" varName="q2" />
-    </scopeInfo>
-    <unitInfo nodeId="816130369292806252" fileName="letlet.java" startLine="6" startPosition="0" endLine="26" endPosition="0" unitName="sandboxModel.letlet" />
+    <file name="letlet.java">
+      <node id="816130369292806252" at="10,42,11,33" concept="1" />
+      <node id="816130369292806252" at="14,31,15,47" concept="5" />
+      <node id="816130369292806253" at="18,59,19,51" concept="5" />
+      <node id="816130369292806255" at="22,71,23,19" concept="5" />
+      <node id="816130369292806252" at="7,0,9,0" concept="0" trace="letlet#()V" />
+      <node id="816130369292806252" at="10,0,13,0" concept="6" trace="main#([Ljava/lang/String;)V" />
+      <node id="816130369292806252" at="14,0,17,0" concept="6" trace="eval#()Ljava/lang/Object;" />
+      <node id="816130369292806253" at="18,0,21,0" concept="6" trace="let_816130369292806253#(Ljava/lang/Integer;)Ljava/lang/Object;" />
+      <node id="816130369292806255" at="22,0,25,0" concept="6" trace="let_816130369292806255#(Ljava/lang/Integer;Ljava/lang/Integer;)Ljava/lang/Object;" />
+      <scope id="816130369292806252" at="7,19,7,19" />
+      <scope id="816130369292806252" at="10,42,11,33" />
+      <scope id="816130369292806252" at="14,31,15,47" />
+      <scope id="816130369292806253" at="18,59,19,51" />
+      <scope id="816130369292806255" at="22,71,23,19" />
+      <scope id="816130369292806252" at="7,0,9,0" />
+      <scope id="816130369292806252" at="10,0,13,0">
+        <var name="args" id="816130369292806252" />
+      </scope>
+      <scope id="816130369292806252" at="14,0,17,0" />
+      <scope id="816130369292806253" at="18,0,21,0">
+        <var name="q1" id="816130369292806253" />
+      </scope>
+      <scope id="816130369292806255" at="22,0,25,0">
+        <var name="q1" id="816130369292806255" />
+        <var name="q2" id="816130369292806255" />
+      </scope>
+      <unit id="816130369292806252" at="6,0,26,0" name="sandboxModel.letlet" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

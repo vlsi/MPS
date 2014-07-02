@@ -5,6 +5,7 @@ package jetbrains.mps.build.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.build.util.Context;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.MacroHelper;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -13,8 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildRelativePath_Behavior {
   public static void init(SNode thisNode) {
@@ -26,7 +25,7 @@ public class BuildRelativePath_Behavior {
   }
 
   public static String virtual_getLocalPath_5481553824944787364(SNode thisNode, Context context) {
-    String basePath = BuildRelativePath_Behavior.call_getBasePath_4959435991187140515(thisNode, context);
+    String basePath = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getBasePath_4959435991187140515", new Object[]{context});
     if (basePath == null) {
       return null;
     }
@@ -84,16 +83,6 @@ public class BuildRelativePath_Behavior {
       return BuildRelativePath_Behavior.call_next_8654221991637156927(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildRelativePath"))), SLinkOperations.getTarget(cp, "tail", true));
     }
     return SLinkOperations.getTarget(cp, "tail", true);
-  }
-
-  @Deprecated
-  public static String call_getBasePath_4959435991187140515(SNode thisNode, Context context) {
-    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getBasePath_4959435991187140515", new Object[]{context});
-  }
-
-  @Deprecated
-  public static String callSuper_getBasePath_4959435991187140515(SNode thisNode, String callerConceptFqName, Context context) {
-    return BehaviorManager.getInstance().invokeSuper(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.structure.BuildRelativePath"), callerConceptFqName, "virtual_getBasePath_4959435991187140515", new Class[]{SNode.class, Context.class}, new Object[]{context});
   }
 
   private static boolean isEmptyString(String str) {

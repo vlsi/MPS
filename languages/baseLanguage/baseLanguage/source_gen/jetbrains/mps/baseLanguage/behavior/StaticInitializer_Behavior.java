@@ -8,8 +8,6 @@ import javax.swing.Icon;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StaticInitializer_Behavior {
   public static void init(SNode thisNode) {
@@ -27,15 +25,5 @@ public class StaticInitializer_Behavior {
 
   public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return true;
-  }
-
-  @Deprecated
-  public static List<Icon> call_getMarkIcons_5039675756633082351(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<List<Icon>>) ((Class) Object.class), thisNode, "virtual_getMarkIcons_3923831204883340393", new Object[]{});
-  }
-
-  @Deprecated
-  public static List<Icon> callSuper_getMarkIcons_5039675756633082351(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<List<Icon>>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticInitializer"), callerConceptFqName, "virtual_getMarkIcons_3923831204883340393", new Class[]{SNode.class}, new Object[]{});
   }
 }

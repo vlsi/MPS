@@ -12,6 +12,8 @@
   <property name="mps.bat" value="mps.bat"/>
   <property name="mps.vmoptions" value="mps.vmoptions"/>
   <property name="mps.exe.vmoptions" value="mps.exe.vmoptions"/>
+  <property name="mps64.vmoptions" value="mps64.vmoptions"/>
+  <property name="mps64.exe.vmoptions" value="mps64.exe.vmoptions"/>
   <property name="MPS" value="MPS"/>
   <property name="mpshelp.jar" value="help/mpshelp.jar"/>
 
@@ -30,10 +32,9 @@
                excludes="**/bin/linux/**, **/bin/mac/**, **/bin/nix/**, **/bin/win/**, "/>
     </copy>
     <copy file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.vmoptions" tofile="${build.tmp}/mps.exe.vmoptions"/>
+    <copy file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps64.vmoptions" tofile="${build.tmp}/mps64.exe.vmoptions"/>
     <copy file="${basedir}/plugins/mps-build/solutions/mpsBuild/source_gen/jetbrains/mps/ide/build/mps.bat" tofile="${build.tmp}/mps.bat"/>
-    <copy todir="${build.tmp}/help">
-      <fileset dir="${basedir}/help"/>
-    </copy>
+    <copy file="${basedir}/help/mpshelp.jar" tofile="${build.tmp}/MPS/${mpshelp.jar}"/>
     <copy file="${basedir}/build/resources/mps.ico" tofile="${build.tmp}/mps.ico"/>
     <copy file="${basedir}/build/resources/mps.inst.ico" tofile="${build.tmp}/installer.ico"/>
     <copy file="${basedir}/build/resources/mps.uninst.ico" tofile="${build.tmp}/uninstaller.ico"/>
@@ -60,7 +61,9 @@
     <fixcrlf file="${input.dir}/${mps.bat}" eol="dos" eof="asis"/>
     <fixcrlf file="${input.dir}/${installer.nsi}" eol="dos" eof="asis"/>
     <fixcrlf file="${input.dir}/${mps.exe.vmoptions}" eof="asis" eol="dos"/>
+    <fixcrlf file="${input.dir}/${mps64.exe.vmoptions}" eof="asis" eol="dos"/>
     <copy file="${input.dir}/${mps.exe.vmoptions}" todir="${input.dir}/${MPS}/bin"/>
+    <copy file="${input.dir}/${mps64.exe.vmoptions}" todir="${input.dir}/${MPS}/bin"/>
     <unzip src="${input.dir}/jre.zip" dest="${input.dir}/jre"/>
     <java classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${input.dir}" failonerror="true">
       <arg file="${input.dir}/install.nsh"/>
@@ -70,7 +73,6 @@
       <arg file="${input.dir}/${mps.ico}"/>
       <arg file="${input.dir}/${homepage.ico}"/>
       <arg file="${input.dir}/jre"/>
-      <arg file="${input.dir}/help"/>
       <classpath>
         <pathelement path="${input.dir}/${MPS}/lib/mps-workbench.jar"/>
         <pathelement path="${input.dir}/${MPS}/lib/mps-core.jar"/>

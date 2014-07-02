@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.actions;
 
 import com.intellij.facet.FacetManager;
+import com.intellij.ide.projectView.ProjectView;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.LangDataKeys;
@@ -45,7 +46,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -55,6 +56,8 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModel.Problem;
+import org.jetbrains.mps.openapi.model.SModelListener;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -152,7 +155,7 @@ public class NewModelAction extends AnAction {
           return;
         }
 
-        SModel newModel = ModelAccess.instance().runWriteActionInCommand(new Computable<SModel>() {
+        final SModel newModel = new ModelAccessHelper(ProjectHelper.getModelAccess(myProject)).executeCommand(new Computable<SModel>() {
           @Override
           public SModel compute() {
             // TODO create model in myModelRoot/mySourceRoot, fix literal
@@ -168,6 +171,26 @@ public class NewModelAction extends AnAction {
             // FIXME something bad: see MPS-18545 SModel api: createModel(), setChanged(), isLoaded(), save()
             // model.getSModel() ?
             template.preConfigure(model, mySolution);
+
+            //Hack for update ProjectView
+            model.addModelListener(new SModelListener() {
+              @Override
+              public void modelLoaded(SModel sModel, boolean b) {}
+              @Override
+              public void modelReplaced(SModel sModel) {}
+              @Override
+              public void modelUnloaded(SModel sModel) {}
+              @Override
+              public void modelSaved(SModel sModel) {
+                ProjectView.getInstance(myProject).refresh();
+                sModel.removeModelListener(this); //need to refresh once
+              }
+              @Override
+              public void conflictDetected(SModel sModel) {}
+              @Override
+              public void problemsDetected(SModel sModel, Iterable<Problem> problems) {}
+            });
+
             model.setChanged(true);
             model.save();
 
@@ -176,7 +199,7 @@ public class NewModelAction extends AnAction {
 
             return model;
           }
-        }, ProjectHelper.toMPSProject(myProject));
+        });
         if (newModel == null) {
           return;
         }
@@ -185,6 +208,14 @@ public class NewModelAction extends AnAction {
         if (getOKAction().isEnabled()) {
           close(OK_EXIT_CODE);
         }
+
+        //Hack for update ProjectView
+        ProjectHelper.getModelAccess(myProject).runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            ((EditableSModel)newModel).save();
+          }
+        });
       }
 
       private boolean isModelNameValid(String modelName) {

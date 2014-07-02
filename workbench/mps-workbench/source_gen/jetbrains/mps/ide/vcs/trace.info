@@ -1,69 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)/5015601397718077769">
-    <nodeInfo nodeId="5015601397718077942" fileName="SourceRevision.java" startLine="16" startPosition="25" endLine="17" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5015601397718077923" fileName="SourceRevision.java" startLine="27" startPosition="59" endLine="28" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5015601397718077931" fileName="SourceRevision.java" startLine="32" startPosition="44" endLine="33" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5015601397718077908" fileName="SourceRevision.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SourceRevision#()V" />
-    <nodeInfo nodeId="5015601397718077912" fileName="SourceRevision.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5015601397718077917" fileName="SourceRevision.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setProvider#(Ljetbrains/mps/ide/vcs/SourceRevision;)V" />
-    <nodeInfo nodeId="5015601397718077905" fileName="SourceRevision.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="get#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5015601397718077927" fileName="SourceRevision.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSourceRevision#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5015601397718077899" fileName="SourceRevision.java" startLine="14" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourProvider" />
-    <scopeInfo nodeId="5015601397718077911" fileName="SourceRevision.java" startLine="21" startPosition="27" endLine="21" endPosition="27" />
-    <scopeInfo nodeId="5015601397718077941" fileName="SourceRevision.java" startLine="16" startPosition="25" endLine="17" endPosition="18" />
-    <scopeInfo nodeId="5015601397718077922" fileName="SourceRevision.java" startLine="27" startPosition="59" endLine="28" endPosition="27" />
-    <scopeInfo nodeId="5015601397718077930" fileName="SourceRevision.java" startLine="32" startPosition="44" endLine="33" endPosition="29" />
-    <scopeInfo nodeId="5015601397718077908" fileName="SourceRevision.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="5015601397718077912" fileName="SourceRevision.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="5015601397718077917" fileName="SourceRevision.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="5015601397718077920" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="5015601397718077905" fileName="SourceRevision.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="5015601397718077927" fileName="SourceRevision.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="5015601397718077904" fileName="SourceRevision.java" startLine="14" startPosition="50" endLine="19" endPosition="3" unitName="jetbrains.mps.ide.vcs.SourceRevision$1" />
-    <unitInfo nodeId="5015601397718077769" fileName="SourceRevision.java" startLine="7" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.ide.vcs.SourceRevision" />
+    <file name="SourceRevision.java">
+      <node id="5015601397718077942" at="16,25,17,18" concept="7" />
+      <node id="5015601397718077923" at="27,59,28,27" concept="1" />
+      <node id="5015601397718077931" at="32,44,33,29" concept="7" />
+      <node id="5015601397718077908" at="21,0,23,0" concept="0" trace="SourceRevision#()V" />
+      <node id="5015601397718077912" at="24,0,26,0" concept="5" trace="get#()Ljava/lang/String;" />
+      <node id="5015601397718077917" at="27,0,30,0" concept="10" trace="setProvider#(Ljetbrains/mps/ide/vcs/SourceRevision;)V" />
+      <node id="5015601397718077905" at="15,0,19,0" concept="5" trace="get#()Ljava/lang/String;" />
+      <node id="5015601397718077927" at="31,0,35,0" concept="10" trace="getSourceRevision#()Ljava/lang/String;" />
+      <node id="5015601397718077899" at="14,0,20,0" concept="9" trace="ourProvider" />
+      <scope id="5015601397718077911" at="21,27,21,27" />
+      <scope id="5015601397718077941" at="16,25,17,18" />
+      <scope id="5015601397718077922" at="27,59,28,27" />
+      <scope id="5015601397718077930" at="32,44,33,29" />
+      <scope id="5015601397718077908" at="21,0,23,0" />
+      <scope id="5015601397718077912" at="24,0,26,0" />
+      <scope id="5015601397718077917" at="27,0,30,0">
+        <var name="provider" id="5015601397718077920" />
+      </scope>
+      <scope id="5015601397718077905" at="15,0,19,0" />
+      <scope id="5015601397718077927" at="31,0,35,0" />
+      <unit id="5015601397718077904" at="14,50,19,3" name="jetbrains.mps.ide.vcs.SourceRevision$1" />
+      <unit id="5015601397718077769" at="7,0,36,0" name="jetbrains.mps.ide.vcs.SourceRevision" />
+    </file>
   </root>
   <root nodeRef="r:f97bb30d-7cf7-420d-ba6b-395564fcaa7f(jetbrains.mps.ide.vcs)/5015601397718560603">
-    <nodeInfo nodeId="5015601397718560606" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="5015601397718560615" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="17" startPosition="56" endLine="18" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5015601397718560617" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="18" startPosition="19" endLine="19" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5015601397718560629" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="23" startPosition="83" endLine="24" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7184641355071739581" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="24" startPosition="51" endLine="25" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5015601397718560633" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="25" startPosition="26" endLine="26" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5015601397718560638" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="26" startPosition="83" endLine="27" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5015601397718560650" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="28" startPosition="32" endLine="29" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7184641355071698783" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="35" startPosition="75" endLine="36" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5015601397718560672" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="36" startPosition="28" endLine="37" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5015601397718560674" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="38" startPosition="5" endLine="39" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5015601397718560645" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="27" startPosition="47" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5015601397718560609" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ExtendedDefaultVcsRootPolicy#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="5015601397718560664" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="34" startPosition="79" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5015601397718560656" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="33" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="matchesDefaultMapping#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5015601397718560621" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="22" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="markDefaultRootsDirty#(Lcom/intellij/openapi/vcs/changes/DirtBuilder;Lcom/intellij/openapi/vcs/changes/VcsGuess;)V" />
-    <scopeInfo nodeId="5015601397718560649" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="28" startPosition="32" endLine="29" endPosition="43" />
-    <scopeInfo nodeId="5015601397718560614" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="17" startPosition="56" endLine="19" endPosition="24" />
-    <scopeInfo nodeId="5015601397718560671" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="35" startPosition="75" endLine="37" endPosition="19" />
-    <scopeInfo nodeId="5015601397718560645" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="27" startPosition="47" endLine="30" endPosition="5">
-      <varInfo nodeId="5015601397718560647" varName="root" />
-    </scopeInfo>
-    <scopeInfo nodeId="5015601397718560609" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="5015601397718560612" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="5015601397718560663" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="34" startPosition="79" endLine="39" endPosition="59" />
-    <scopeInfo nodeId="5015601397718560628" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="23" startPosition="83" endLine="30" endPosition="5">
-      <varInfo nodeId="5015601397718560634" varName="manager" />
-      <varInfo nodeId="5015601397718560639" varName="roots" />
-    </scopeInfo>
-    <scopeInfo nodeId="5015601397718560656" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="33" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="5015601397718560659" varName="file" />
-      <varInfo nodeId="5015601397718560661" varName="matchContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5015601397718560621" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="22" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="5015601397718560624" varName="builder" />
-      <varInfo nodeId="5015601397718560626" varName="vcsGuess" />
-    </scopeInfo>
-    <unitInfo nodeId="5015601397718560603" fileName="ExtendedDefaultVcsRootPolicy.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ide.vcs.ExtendedDefaultVcsRootPolicy" />
+    <file name="ExtendedDefaultVcsRootPolicy.java">
+      <node id="5015601397718560606" at="15,0,16,0" concept="2" trace="myProject" />
+      <node id="5015601397718560615" at="17,56,18,19" concept="11" />
+      <node id="5015601397718560617" at="18,19,19,24" concept="1" />
+      <node id="5015601397718560629" at="23,83,24,51" concept="1" />
+      <node id="7184641355071739581" at="24,51,25,26" concept="8" />
+      <node id="5015601397718560633" at="25,26,26,83" concept="6" />
+      <node id="5015601397718560638" at="26,83,27,47" concept="6" />
+      <node id="5015601397718560650" at="28,32,29,43" concept="1" />
+      <node id="7184641355071698783" at="35,75,36,28" concept="8" />
+      <node id="5015601397718560672" at="36,28,37,19" concept="7" />
+      <node id="5015601397718560674" at="38,5,39,59" concept="7" />
+      <node id="5015601397718560645" at="27,47,30,5" concept="3" />
+      <node id="5015601397718560609" at="17,0,21,0" concept="0" trace="ExtendedDefaultVcsRootPolicy#(Lcom/intellij/openapi/project/Project;)V" />
+      <node id="5015601397718560664" at="34,79,38,5" concept="4" />
+      <node id="5015601397718560656" at="33,0,41,0" concept="5" trace="matchesDefaultMapping#(Lcom/intellij/openapi/vfs/VirtualFile;Ljava/lang/Object;)Z" />
+      <node id="5015601397718560621" at="22,0,32,0" concept="5" trace="markDefaultRootsDirty#(Lcom/intellij/openapi/vcs/changes/DirtBuilder;Lcom/intellij/openapi/vcs/changes/VcsGuess;)V" />
+      <scope id="5015601397718560649" at="28,32,29,43" />
+      <scope id="5015601397718560614" at="17,56,19,24" />
+      <scope id="5015601397718560671" at="35,75,37,19" />
+      <scope id="5015601397718560645" at="27,47,30,5">
+        <var name="root" id="5015601397718560647" />
+      </scope>
+      <scope id="5015601397718560609" at="17,0,21,0">
+        <var name="project" id="5015601397718560612" />
+      </scope>
+      <scope id="5015601397718560663" at="34,79,39,59" />
+      <scope id="5015601397718560628" at="23,83,30,5">
+        <var name="manager" id="5015601397718560634" />
+        <var name="roots" id="5015601397718560639" />
+      </scope>
+      <scope id="5015601397718560656" at="33,0,41,0">
+        <var name="file" id="5015601397718560659" />
+        <var name="matchContext" id="5015601397718560661" />
+      </scope>
+      <scope id="5015601397718560621" at="22,0,32,0">
+        <var name="builder" id="5015601397718560624" />
+        <var name="vcsGuess" id="5015601397718560626" />
+      </scope>
+      <unit id="5015601397718560603" at="14,0,42,0" name="jetbrains.mps.ide.vcs.ExtendedDefaultVcsRootPolicy" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

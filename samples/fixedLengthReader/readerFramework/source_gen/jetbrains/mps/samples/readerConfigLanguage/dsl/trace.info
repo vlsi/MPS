@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <root nodeRef="r:628f4908-1ab8-453a-b89e-0fbcb5a43fdb(jetbrains.mps.samples.readerConfigLanguage.dsl)/3515521059660696284">
-    <nodeInfo nodeId="3515521059660696286" fileName="Usage.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Usage#()V" />
-    <scopeInfo nodeId="3515521059660696289" fileName="Usage.java" startLine="7" startPosition="18" endLine="7" endPosition="18" />
-    <scopeInfo nodeId="3515521059660696286" fileName="Usage.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
-    <unitInfo nodeId="3515521059660696284" fileName="Usage.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.dsl.Usage" />
+    <file name="Usage.java">
+      <node id="3515521059660696286" at="7,0,9,0" concept="0" trace="Usage#()V" />
+      <scope id="3515521059660696289" at="7,18,7,18" />
+      <scope id="3515521059660696286" at="7,0,9,0" />
+      <unit id="3515521059660696284" at="6,0,10,0" name="jetbrains.mps.samples.readerConfigLanguage.dsl.Usage" />
+    </file>
   </root>
   <root nodeRef="r:628f4908-1ab8-453a-b89e-0fbcb5a43fdb(jetbrains.mps.samples.readerConfigLanguage.dsl)/3515521059660696310">
-    <nodeInfo nodeId="3515521059660696312" fileName="ServiceCall.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ServiceCall#()V" />
-    <scopeInfo nodeId="3515521059660696315" fileName="ServiceCall.java" startLine="7" startPosition="24" endLine="7" endPosition="24" />
-    <scopeInfo nodeId="3515521059660696312" fileName="ServiceCall.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
-    <unitInfo nodeId="3515521059660696310" fileName="ServiceCall.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.samples.readerConfigLanguage.dsl.ServiceCall" />
+    <file name="ServiceCall.java">
+      <node id="3515521059660696312" at="7,0,9,0" concept="0" trace="ServiceCall#()V" />
+      <scope id="3515521059660696315" at="7,24,7,24" />
+      <scope id="3515521059660696312" at="7,0,9,0" />
+      <unit id="3515521059660696310" at="6,0,10,0" name="jetbrains.mps.samples.readerConfigLanguage.dsl.ServiceCall" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

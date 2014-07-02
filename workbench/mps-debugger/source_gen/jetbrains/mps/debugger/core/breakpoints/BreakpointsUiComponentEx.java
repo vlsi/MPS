@@ -7,16 +7,14 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.nodeEditor.LeftMarginMouseListener;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.nodeEditor.highlighter.EditorComponentCreateListener;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import java.util.Set;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.generator.traceInfo.TraceDown;
+import jetbrains.mps.textgen.trace.TraceInfo;
 import org.jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -47,7 +45,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   public void init() {
     myMessageBusConnection = myProject.getMessageBus().connect();
     myMessageBusConnection.subscribe(EditorComponentCreateListener.EDITOR_COMPONENT_CREATION, myEditorComponentCreationHandler);
-    if (MPSCore.getInstance().isTestMode()) {
+    if (RuntimeFlags.isTestMode()) {
       return;
     }
     for (EditorComponent editor : EditorComponentUtil.getAllEditorComponents(myFileEditorManager, true)) {
@@ -81,16 +79,11 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
   }
 
   protected EditorCell findTraceableCell(EditorCell foundCell) {
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(foundCell.getEditorComponent().getEditedNode().getModel());
-    if (debugInfo == null) {
-      return null;
-    }
-
     EditorCell cell = foundCell;
     while (cell != null) {
       SNode node = cell.getSNode();
       if (node != null) {
-        if (TraceDown.isTraceable(node, debugInfo)) {
+        if (TraceInfo.hasTrace(node)) {
           break;
         }
       }

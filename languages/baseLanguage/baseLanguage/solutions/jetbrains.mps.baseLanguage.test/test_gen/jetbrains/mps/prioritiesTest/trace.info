@@ -1,256 +1,268 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
   <root nodeRef="r:3c49ab36-1271-439f-ac5d-2df7deb7394d(jetbrains.mps.prioritiesTest@tests)/5936308221645772775">
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="22" startPosition="61" endLine="23" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="23" startPosition="111" endLine="24" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="28" startPosition="73" endLine="29" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="29" startPosition="111" endLine="30" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091156" fileName="TestBlPriorities_Test.java" startLine="35" startPosition="63" endLine="36" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255008" fileName="TestBlPriorities_Test.java" startLine="39" startPosition="75" endLine="40" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8266208698961529534" fileName="TestBlPriorities_Test.java" startLine="43" startPosition="57" endLine="44" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091145" fileName="TestBlPriorities_Test.java" startLine="44" startPosition="45" endLine="45" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8266208698961528766" fileName="TestBlPriorities_Test.java" startLine="50" startPosition="101" endLine="51" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091136" fileName="TestBlPriorities_Test.java" startLine="54" startPosition="100" endLine="55" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929098080" fileName="TestBlPriorities_Test.java" startLine="60" startPosition="100" endLine="61" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1488872796929098143" fileName="TestBlPriorities_Test.java" startLine="63" startPosition="100" endLine="64" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5907049006927254695" fileName="TestBlPriorities_Test.java" startLine="66" startPosition="100" endLine="67" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1488872796929098197" fileName="TestBlPriorities_Test.java" startLine="68" startPosition="7" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1488872796929091437" fileName="TestBlPriorities_Test.java" startLine="69" startPosition="0" endLine="70" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1488872796929096505" fileName="TestBlPriorities_Test.java" startLine="73" startPosition="48" endLine="74" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929096617" fileName="TestBlPriorities_Test.java" startLine="74" startPosition="162" endLine="75" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5907049006927254753" fileName="TestBlPriorities_Test.java" startLine="75" startPosition="164" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1488872796929096697" fileName="TestBlPriorities_Test.java" startLine="77" startPosition="104" endLine="78" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1488872796929096749" fileName="TestBlPriorities_Test.java" startLine="80" startPosition="105" endLine="81" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1488872796929096791" fileName="TestBlPriorities_Test.java" startLine="83" startPosition="104" endLine="84" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1488872796929096833" fileName="TestBlPriorities_Test.java" startLine="86" startPosition="105" endLine="87" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1488872796929098040" fileName="TestBlPriorities_Test.java" startLine="88" startPosition="7" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5907049006927254867" fileName="TestBlPriorities_Test.java" startLine="90" startPosition="98" endLine="91" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5907049006927254908" fileName="TestBlPriorities_Test.java" startLine="93" startPosition="97" endLine="94" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5907049006927254965" fileName="TestBlPriorities_Test.java" startLine="95" startPosition="7" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5907049006927254969" fileName="TestBlPriorities_Test.java" startLine="97" startPosition="101" endLine="98" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5907049006927254905" fileName="TestBlPriorities_Test.java" startLine="99" startPosition="7" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1488872796929096706" fileName="TestBlPriorities_Test.java" startLine="100" startPosition="0" endLine="101" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="104" startPosition="64" endLine="105" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="105" startPosition="65" endLine="106" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="106" startPosition="32" endLine="107" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="107" startPosition="32" endLine="108" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="108" startPosition="32" endLine="109" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="109" startPosition="32" endLine="110" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="110" startPosition="32" endLine="111" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="111" startPosition="32" endLine="112" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="112" startPosition="32" endLine="113" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="113" startPosition="32" endLine="114" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="114" startPosition="32" endLine="115" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="115" startPosition="33" endLine="116" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="116" startPosition="33" endLine="117" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="117" startPosition="33" endLine="118" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="118" startPosition="149" endLine="119" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="119" startPosition="145" endLine="120" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="120" startPosition="141" endLine="121" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="121" startPosition="62" endLine="122" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="122" startPosition="61" endLine="123" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="123" startPosition="145" endLine="124" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="124" startPosition="146" endLine="125" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="125" startPosition="141" endLine="126" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="126" startPosition="62" endLine="127" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="127" startPosition="60" endLine="128" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="128" startPosition="141" endLine="129" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="129" startPosition="62" endLine="130" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="130" startPosition="61" endLine="131" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="131" startPosition="60" endLine="132" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="132" startPosition="146" endLine="133" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="133" startPosition="145" endLine="134" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="134" startPosition="142" endLine="135" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="135" startPosition="63" endLine="136" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="136" startPosition="61" endLine="137" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="137" startPosition="142" endLine="138" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="138" startPosition="63" endLine="139" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="139" startPosition="62" endLine="140" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="140" startPosition="60" endLine="141" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="141" startPosition="142" endLine="142" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="142" startPosition="63" endLine="143" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="143" startPosition="62" endLine="144" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="144" startPosition="61" endLine="145" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="145" startPosition="60" endLine="146" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="146" startPosition="56" endLine="147" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="150" startPosition="64" endLine="151" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="151" startPosition="65" endLine="152" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="152" startPosition="32" endLine="153" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="153" startPosition="32" endLine="154" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="154" startPosition="32" endLine="155" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="155" startPosition="32" endLine="156" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="156" startPosition="32" endLine="157" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="157" startPosition="32" endLine="158" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="158" startPosition="149" endLine="159" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="159" startPosition="142" endLine="160" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="160" startPosition="141" endLine="161" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="161" startPosition="66" endLine="162" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="162" startPosition="61" endLine="163" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="163" startPosition="138" endLine="164" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="164" startPosition="141" endLine="165" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="165" startPosition="66" endLine="166" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="166" startPosition="61" endLine="167" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="167" startPosition="141" endLine="168" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="168" startPosition="65" endLine="169" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="169" startPosition="60" endLine="170" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="170" startPosition="60" endLine="171" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="171" startPosition="56" endLine="172" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5907049006927254992" fileName="TestBlPriorities_Test.java" startLine="175" startPosition="67" endLine="176" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5936308221645772905" fileName="TestBlPriorities_Test.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testBitwisePriorities#()V" />
-    <nodeInfo nodeId="5907049006927254999" fileName="TestBlPriorities_Test.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testBooleanAndWithEqualsOperation#()V" />
-    <nodeInfo nodeId="8266208698961528774" fileName="TestBlPriorities_Test.java" startLine="49" startPosition="58" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8266208698961528873" fileName="TestBlPriorities_Test.java" startLine="53" startPosition="7" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1488872796929098046" fileName="TestBlPriorities_Test.java" startLine="59" startPosition="33" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1488872796929098109" fileName="TestBlPriorities_Test.java" startLine="62" startPosition="7" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5907049006927223133" fileName="TestBlPriorities_Test.java" startLine="65" startPosition="7" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1488872796929091198" fileName="TestBlPriorities_Test.java" startLine="76" startPosition="0" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1488872796929096715" fileName="TestBlPriorities_Test.java" startLine="79" startPosition="7" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1488872796929096757" fileName="TestBlPriorities_Test.java" startLine="82" startPosition="7" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1488872796929096799" fileName="TestBlPriorities_Test.java" startLine="85" startPosition="7" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5907049006927254833" fileName="TestBlPriorities_Test.java" startLine="89" startPosition="0" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5907049006927254906" fileName="TestBlPriorities_Test.java" startLine="92" startPosition="7" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5907049006927254967" fileName="TestBlPriorities_Test.java" startLine="96" startPosition="0" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="119" startPosition="145" endLine="122" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="119" startPosition="145" endLine="122" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="124" startPosition="146" endLine="127" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="124" startPosition="146" endLine="127" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="127" startPosition="60" endLine="130" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="127" startPosition="60" endLine="130" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="133" startPosition="145" endLine="136" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="133" startPosition="145" endLine="136" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="136" startPosition="61" endLine="139" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="136" startPosition="61" endLine="139" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="140" startPosition="60" endLine="143" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="140" startPosition="60" endLine="143" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="159" startPosition="142" endLine="162" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="159" startPosition="142" endLine="162" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="163" startPosition="138" endLine="166" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="163" startPosition="138" endLine="166" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="166" startPosition="61" endLine="169" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="166" startPosition="61" endLine="169" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927254992" fileName="TestBlPriorities_Test.java" startLine="175" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_p8h609_a0a0l0f2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="check#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testBitwisePriorities#()V" />
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_testBooleanAndWithEqualsOperation#()V" />
-    <nodeInfo nodeId="8266208698961528730" fileName="TestBlPriorities_Test.java" startLine="48" startPosition="54" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="123" startPosition="145" endLine="131" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="123" startPosition="145" endLine="131" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="132" startPosition="146" endLine="140" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="132" startPosition="146" endLine="140" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="162" startPosition="61" endLine="170" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="162" startPosition="61" endLine="170" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="48" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expressionPriorityRebalance#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="59" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="eval#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="131" startPosition="60" endLine="144" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="131" startPosition="60" endLine="144" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="158" startPosition="149" endLine="171" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="158" startPosition="149" endLine="171" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="157" startPosition="32" endLine="171" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="157" startPosition="32" endLine="171" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="122" startPosition="61" endLine="145" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="122" startPosition="61" endLine="145" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="150" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_hlijcv_a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="118" startPosition="149" endLine="146" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="118" startPosition="149" endLine="146" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="117" startPosition="33" endLine="146" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="117" startPosition="33" endLine="146" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="73" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="evalBinaryOperation#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="104" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_hlijcv_a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="5936308221645772905" fileName="TestBlPriorities_Test.java" startLine="35" startPosition="63" endLine="36" endPosition="80" />
-    <scopeInfo nodeId="5907049006927254999" fileName="TestBlPriorities_Test.java" startLine="39" startPosition="75" endLine="40" endPosition="80" />
-    <scopeInfo nodeId="8266208698961528775" fileName="TestBlPriorities_Test.java" startLine="50" startPosition="101" endLine="51" endPosition="123" />
-    <scopeInfo nodeId="8266208698961528874" fileName="TestBlPriorities_Test.java" startLine="54" startPosition="100" endLine="55" endPosition="131" />
-    <scopeInfo nodeId="1488872796929098047" fileName="TestBlPriorities_Test.java" startLine="60" startPosition="100" endLine="61" endPosition="121" />
-    <scopeInfo nodeId="1488872796929098110" fileName="TestBlPriorities_Test.java" startLine="63" startPosition="100" endLine="64" endPosition="136" />
-    <scopeInfo nodeId="5907049006927223134" fileName="TestBlPriorities_Test.java" startLine="66" startPosition="100" endLine="67" endPosition="136" />
-    <scopeInfo nodeId="1488872796929091199" fileName="TestBlPriorities_Test.java" startLine="77" startPosition="104" endLine="78" endPosition="53" />
-    <scopeInfo nodeId="1488872796929096716" fileName="TestBlPriorities_Test.java" startLine="80" startPosition="105" endLine="81" endPosition="52" />
-    <scopeInfo nodeId="1488872796929096758" fileName="TestBlPriorities_Test.java" startLine="83" startPosition="104" endLine="84" endPosition="52" />
-    <scopeInfo nodeId="1488872796929096800" fileName="TestBlPriorities_Test.java" startLine="86" startPosition="105" endLine="87" endPosition="52" />
-    <scopeInfo nodeId="5907049006927254834" fileName="TestBlPriorities_Test.java" startLine="90" startPosition="98" endLine="91" endPosition="53" />
-    <scopeInfo nodeId="5907049006927254907" fileName="TestBlPriorities_Test.java" startLine="93" startPosition="97" endLine="94" endPosition="53" />
-    <scopeInfo nodeId="5907049006927254968" fileName="TestBlPriorities_Test.java" startLine="97" startPosition="101" endLine="98" endPosition="47" />
-    <scopeInfo nodeId="5907049006927254992" fileName="TestBlPriorities_Test.java" startLine="175" startPosition="67" endLine="176" endPosition="48" />
-    <scopeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="22" startPosition="61" endLine="24" endPosition="116" />
-    <scopeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="28" startPosition="73" endLine="30" endPosition="128" />
-    <scopeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="43" startPosition="57" endLine="45" endPosition="105" />
-    <scopeInfo nodeId="5936308221645772905" fileName="TestBlPriorities_Test.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="5907049006927254999" fileName="TestBlPriorities_Test.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="8266208698961528731" fileName="TestBlPriorities_Test.java" startLine="49" startPosition="58" endLine="52" endPosition="9" />
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="119" startPosition="145" endLine="122" endPosition="61" />
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="124" startPosition="146" endLine="127" endPosition="60" />
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="127" startPosition="60" endLine="130" endPosition="61" />
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="133" startPosition="145" endLine="136" endPosition="61" />
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="136" startPosition="61" endLine="139" endPosition="62" />
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="140" startPosition="60" endLine="143" endPosition="62" />
-    <scopeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="159" startPosition="142" endLine="162" endPosition="61" />
-    <scopeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="163" startPosition="138" endLine="166" endPosition="61" />
-    <scopeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="166" startPosition="61" endLine="169" endPosition="60" />
-    <scopeInfo nodeId="5907049006927254992" fileName="TestBlPriorities_Test.java" startLine="175" startPosition="0" endLine="178" endPosition="0">
-      <varInfo nodeId="5907049006927254992" varName="a" />
-      <varInfo nodeId="5907049006927254992" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="43" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="1488872796929091133" varName="expectedValue" />
-      <varInfo nodeId="1488872796929091131" varName="expr" />
-    </scopeInfo>
-    <scopeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="27" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="8266208698961528730" fileName="TestBlPriorities_Test.java" startLine="48" startPosition="54" endLine="53" endPosition="7">
-      <varInfo nodeId="8266208698961528733" varName="child" />
-    </scopeInfo>
-    <scopeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="48" startPosition="54" endLine="56" endPosition="7" />
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="123" startPosition="145" endLine="131" endPosition="60" />
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="132" startPosition="146" endLine="140" endPosition="60" />
-    <scopeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="162" startPosition="61" endLine="170" endPosition="60" />
-    <scopeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="48" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="8266208698961528725" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="59" startPosition="33" endLine="70" endPosition="67" />
-    <scopeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="59" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="1488872796929091121" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="131" startPosition="60" endLine="144" endPosition="61" />
-    <scopeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="158" startPosition="149" endLine="171" endPosition="56" />
-    <scopeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="157" startPosition="32" endLine="171" endPosition="56" />
-    <scopeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="150" startPosition="64" endLine="172" endPosition="26">
-      <varInfo nodeId="5907049006927255012" varName="facade" />
-      <varInfo nodeId="5907049006927255012" varName="quotedNode_1" />
-      <varInfo nodeId="5907049006927255012" varName="quotedNode_2" />
-      <varInfo nodeId="5907049006927255012" varName="quotedNode_3" />
-      <varInfo nodeId="5907049006927255012" varName="quotedNode_4" />
-      <varInfo nodeId="5907049006927255012" varName="quotedNode_5" />
-      <varInfo nodeId="5907049006927255012" varName="quotedNode_6" />
-    </scopeInfo>
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="122" startPosition="61" endLine="145" endPosition="60" />
-    <scopeInfo nodeId="5907049006927255012" fileName="TestBlPriorities_Test.java" startLine="150" startPosition="0" endLine="174" endPosition="0" />
-    <scopeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="73" startPosition="48" endLine="101" endPosition="67">
-      <varInfo nodeId="1488872796929096506" varName="left" />
-      <varInfo nodeId="1488872796929096618" varName="right" />
-    </scopeInfo>
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="118" startPosition="149" endLine="146" endPosition="56" />
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="117" startPosition="33" endLine="146" endPosition="56" />
-    <scopeInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="73" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="1488872796929098036" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="104" startPosition="64" endLine="147" endPosition="26">
-      <varInfo nodeId="1488872796929091160" varName="facade" />
-      <varInfo nodeId="1488872796929091160" varName="quotedNode_1" />
-      <varInfo nodeId="1488872796929091160" varName="quotedNode_10" />
-      <varInfo nodeId="1488872796929091160" varName="quotedNode_11" />
-      <varInfo nodeId="1488872796929091160" varName="quotedNode_12" />
-      <varInfo nodeId="1488872796929091160" varName="quotedNode_2" />
-      <varInfo nodeId="1488872796929091160" varName="quotedNode_3" />
-      <varInfo nodeId="1488872796929091160" varName="quotedNode_4" />
-      <varInfo nodeId="1488872796929091160" varName="quotedNode_5" />
-      <varInfo nodeId="1488872796929091160" varName="quotedNode_6" />
-      <varInfo nodeId="1488872796929091160" varName="quotedNode_7" />
-      <varInfo nodeId="1488872796929091160" varName="quotedNode_8" />
-      <varInfo nodeId="1488872796929091160" varName="quotedNode_9" />
-    </scopeInfo>
-    <scopeInfo nodeId="1488872796929091160" fileName="TestBlPriorities_Test.java" startLine="104" startPosition="0" endLine="149" endPosition="0" />
-    <unitInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="33" startPosition="0" endLine="179" endPosition="0" unitName="jetbrains.mps.prioritiesTest.TestBlPriorities_Test$TestBody" />
-    <unitInfo nodeId="5936308221645772775" fileName="TestBlPriorities_Test.java" startLine="19" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.prioritiesTest.TestBlPriorities_Test" />
+    <file name="TestBlPriorities_Test.java">
+      <node id="5936308221645772775" at="22,61,23,111" concept="1" />
+      <node id="5936308221645772775" at="23,111,24,116" concept="1" />
+      <node id="5936308221645772775" at="28,73,29,111" concept="1" />
+      <node id="5936308221645772775" at="29,111,30,128" concept="1" />
+      <node id="1488872796929091156" at="35,63,36,80" concept="1" />
+      <node id="5907049006927255008" at="39,75,40,80" concept="1" />
+      <node id="8266208698961529534" at="43,57,44,45" concept="1" />
+      <node id="1488872796929091145" at="44,45,45,105" concept="1" />
+      <node id="8266208698961528766" at="50,101,51,123" concept="1" />
+      <node id="1488872796929091136" at="54,100,55,131" concept="1" />
+      <node id="1488872796929098080" at="60,100,61,121" concept="6" />
+      <node id="1488872796929098143" at="63,100,64,136" concept="6" />
+      <node id="5907049006927254695" at="66,100,67,136" concept="6" />
+      <node id="1488872796929098197" at="68,7,69,0" concept="7" />
+      <node id="1488872796929091437" at="69,0,70,67" concept="9" />
+      <node id="1488872796929096505" at="73,48,74,162" concept="5" />
+      <node id="1488872796929096617" at="74,162,75,164" concept="5" />
+      <node id="5907049006927254753" at="75,164,76,0" concept="7" />
+      <node id="1488872796929096697" at="77,104,78,53" concept="6" />
+      <node id="1488872796929096749" at="80,105,81,52" concept="6" />
+      <node id="1488872796929096791" at="83,104,84,52" concept="6" />
+      <node id="1488872796929096833" at="86,105,87,52" concept="6" />
+      <node id="1488872796929098040" at="88,7,89,0" concept="7" />
+      <node id="5907049006927254867" at="90,98,91,53" concept="6" />
+      <node id="5907049006927254908" at="93,97,94,53" concept="6" />
+      <node id="5907049006927254965" at="95,7,96,0" concept="7" />
+      <node id="5907049006927254969" at="97,101,98,47" concept="6" />
+      <node id="5907049006927254905" at="99,7,100,0" concept="7" />
+      <node id="1488872796929096706" at="100,0,101,67" concept="9" />
+      <node id="1488872796929091160" at="104,64,105,65" concept="5" />
+      <node id="1488872796929091160" at="105,65,106,32" concept="5" />
+      <node id="1488872796929091160" at="106,32,107,32" concept="5" />
+      <node id="1488872796929091160" at="107,32,108,32" concept="5" />
+      <node id="1488872796929091160" at="108,32,109,32" concept="5" />
+      <node id="1488872796929091160" at="109,32,110,32" concept="5" />
+      <node id="1488872796929091160" at="110,32,111,32" concept="5" />
+      <node id="1488872796929091160" at="111,32,112,32" concept="5" />
+      <node id="1488872796929091160" at="112,32,113,32" concept="5" />
+      <node id="1488872796929091160" at="113,32,114,32" concept="5" />
+      <node id="1488872796929091160" at="114,32,115,33" concept="5" />
+      <node id="1488872796929091160" at="115,33,116,33" concept="5" />
+      <node id="1488872796929091160" at="116,33,117,33" concept="5" />
+      <node id="1488872796929091160" at="117,33,118,149" concept="1" />
+      <node id="1488872796929091160" at="118,149,119,145" concept="1" />
+      <node id="1488872796929091160" at="119,145,120,141" concept="1" />
+      <node id="1488872796929091160" at="120,141,121,62" concept="1" />
+      <node id="1488872796929091160" at="121,62,122,61" concept="1" />
+      <node id="1488872796929091160" at="122,61,123,145" concept="1" />
+      <node id="1488872796929091160" at="123,145,124,146" concept="1" />
+      <node id="1488872796929091160" at="124,146,125,141" concept="1" />
+      <node id="1488872796929091160" at="125,141,126,62" concept="1" />
+      <node id="1488872796929091160" at="126,62,127,60" concept="1" />
+      <node id="1488872796929091160" at="127,60,128,141" concept="1" />
+      <node id="1488872796929091160" at="128,141,129,62" concept="1" />
+      <node id="1488872796929091160" at="129,62,130,61" concept="1" />
+      <node id="1488872796929091160" at="130,61,131,60" concept="1" />
+      <node id="1488872796929091160" at="131,60,132,146" concept="1" />
+      <node id="1488872796929091160" at="132,146,133,145" concept="1" />
+      <node id="1488872796929091160" at="133,145,134,142" concept="1" />
+      <node id="1488872796929091160" at="134,142,135,63" concept="1" />
+      <node id="1488872796929091160" at="135,63,136,61" concept="1" />
+      <node id="1488872796929091160" at="136,61,137,142" concept="1" />
+      <node id="1488872796929091160" at="137,142,138,63" concept="1" />
+      <node id="1488872796929091160" at="138,63,139,62" concept="1" />
+      <node id="1488872796929091160" at="139,62,140,60" concept="1" />
+      <node id="1488872796929091160" at="140,60,141,142" concept="1" />
+      <node id="1488872796929091160" at="141,142,142,63" concept="1" />
+      <node id="1488872796929091160" at="142,63,143,62" concept="1" />
+      <node id="1488872796929091160" at="143,62,144,61" concept="1" />
+      <node id="1488872796929091160" at="144,61,145,60" concept="1" />
+      <node id="1488872796929091160" at="145,60,146,56" concept="1" />
+      <node id="1488872796929091160" at="146,56,147,26" concept="6" />
+      <node id="5907049006927255012" at="150,64,151,65" concept="5" />
+      <node id="5907049006927255012" at="151,65,152,32" concept="5" />
+      <node id="5907049006927255012" at="152,32,153,32" concept="5" />
+      <node id="5907049006927255012" at="153,32,154,32" concept="5" />
+      <node id="5907049006927255012" at="154,32,155,32" concept="5" />
+      <node id="5907049006927255012" at="155,32,156,32" concept="5" />
+      <node id="5907049006927255012" at="156,32,157,32" concept="5" />
+      <node id="5907049006927255012" at="157,32,158,149" concept="1" />
+      <node id="5907049006927255012" at="158,149,159,142" concept="1" />
+      <node id="5907049006927255012" at="159,142,160,141" concept="1" />
+      <node id="5907049006927255012" at="160,141,161,66" concept="1" />
+      <node id="5907049006927255012" at="161,66,162,61" concept="1" />
+      <node id="5907049006927255012" at="162,61,163,138" concept="1" />
+      <node id="5907049006927255012" at="163,138,164,141" concept="1" />
+      <node id="5907049006927255012" at="164,141,165,66" concept="1" />
+      <node id="5907049006927255012" at="165,66,166,61" concept="1" />
+      <node id="5907049006927255012" at="166,61,167,141" concept="1" />
+      <node id="5907049006927255012" at="167,141,168,65" concept="1" />
+      <node id="5907049006927255012" at="168,65,169,60" concept="1" />
+      <node id="5907049006927255012" at="169,60,170,60" concept="1" />
+      <node id="5907049006927255012" at="170,60,171,56" concept="1" />
+      <node id="5907049006927255012" at="171,56,172,26" concept="6" />
+      <node id="5907049006927254992" at="175,67,176,48" concept="6" />
+      <node id="5936308221645772905" at="35,0,38,0" concept="4" trace="test_testBitwisePriorities#()V" />
+      <node id="5907049006927254999" at="39,0,42,0" concept="4" trace="test_testBooleanAndWithEqualsOperation#()V" />
+      <node id="8266208698961528774" at="49,58,52,9" concept="3" />
+      <node id="8266208698961528873" at="53,7,56,7" concept="3" />
+      <node id="1488872796929098046" at="59,33,62,7" concept="3" />
+      <node id="1488872796929098109" at="62,7,65,7" concept="3" />
+      <node id="5907049006927223133" at="65,7,68,7" concept="3" />
+      <node id="1488872796929091198" at="76,0,79,7" concept="3" />
+      <node id="1488872796929096715" at="79,7,82,7" concept="3" />
+      <node id="1488872796929096757" at="82,7,85,7" concept="3" />
+      <node id="1488872796929096799" at="85,7,88,7" concept="3" />
+      <node id="5907049006927254833" at="89,0,92,7" concept="3" />
+      <node id="5907049006927254906" at="92,7,95,7" concept="3" />
+      <node id="5907049006927254967" at="96,0,99,7" concept="3" />
+      <node id="1488872796929091160" at="119,145,122,61" concept="0" />
+      <node id="1488872796929091160" at="119,145,122,61" concept="0" />
+      <node id="1488872796929091160" at="124,146,127,60" concept="0" />
+      <node id="1488872796929091160" at="124,146,127,60" concept="0" />
+      <node id="1488872796929091160" at="127,60,130,61" concept="0" />
+      <node id="1488872796929091160" at="127,60,130,61" concept="0" />
+      <node id="1488872796929091160" at="133,145,136,61" concept="0" />
+      <node id="1488872796929091160" at="133,145,136,61" concept="0" />
+      <node id="1488872796929091160" at="136,61,139,62" concept="0" />
+      <node id="1488872796929091160" at="136,61,139,62" concept="0" />
+      <node id="1488872796929091160" at="140,60,143,62" concept="0" />
+      <node id="1488872796929091160" at="140,60,143,62" concept="0" />
+      <node id="5907049006927255012" at="159,142,162,61" concept="0" />
+      <node id="5907049006927255012" at="159,142,162,61" concept="0" />
+      <node id="5907049006927255012" at="163,138,166,61" concept="0" />
+      <node id="5907049006927255012" at="163,138,166,61" concept="0" />
+      <node id="5907049006927255012" at="166,61,169,60" concept="0" />
+      <node id="5907049006927255012" at="166,61,169,60" concept="0" />
+      <node id="5907049006927254992" at="175,0,178,0" concept="8" trace="eq_p8h609_a0a0l0f2#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="5936308221645772775" at="43,0,47,0" concept="4" trace="check#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/Object;)V" />
+      <node id="5936308221645772775" at="21,0,26,0" concept="4" trace="test_testBitwisePriorities#()V" />
+      <node id="5936308221645772775" at="27,0,32,0" concept="4" trace="test_testBooleanAndWithEqualsOperation#()V" />
+      <node id="8266208698961528730" at="48,54,53,7" concept="2" />
+      <node id="1488872796929091160" at="123,145,131,60" concept="0" />
+      <node id="1488872796929091160" at="123,145,131,60" concept="0" />
+      <node id="1488872796929091160" at="132,146,140,60" concept="0" />
+      <node id="1488872796929091160" at="132,146,140,60" concept="0" />
+      <node id="5907049006927255012" at="162,61,170,60" concept="0" />
+      <node id="5907049006927255012" at="162,61,170,60" concept="0" />
+      <node id="5936308221645772775" at="48,0,58,0" concept="4" trace="expressionPriorityRebalance#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5936308221645772775" at="59,0,72,0" concept="4" trace="eval#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="1488872796929091160" at="131,60,144,61" concept="0" />
+      <node id="1488872796929091160" at="131,60,144,61" concept="0" />
+      <node id="5907049006927255012" at="158,149,171,56" concept="0" />
+      <node id="5907049006927255012" at="158,149,171,56" concept="0" />
+      <node id="5907049006927255012" at="157,32,171,56" concept="0" />
+      <node id="5907049006927255012" at="157,32,171,56" concept="0" />
+      <node id="1488872796929091160" at="122,61,145,60" concept="0" />
+      <node id="1488872796929091160" at="122,61,145,60" concept="0" />
+      <node id="5907049006927255012" at="150,0,174,0" concept="8" trace="_quotation_createNode_hlijcv_a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1488872796929091160" at="118,149,146,56" concept="0" />
+      <node id="1488872796929091160" at="118,149,146,56" concept="0" />
+      <node id="1488872796929091160" at="117,33,146,56" concept="0" />
+      <node id="1488872796929091160" at="117,33,146,56" concept="0" />
+      <node id="5936308221645772775" at="73,0,103,0" concept="4" trace="evalBinaryOperation#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Object;" />
+      <node id="1488872796929091160" at="104,0,149,0" concept="8" trace="_quotation_createNode_hlijcv_a0a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="5936308221645772905" at="35,63,36,80" />
+      <scope id="5907049006927254999" at="39,75,40,80" />
+      <scope id="8266208698961528775" at="50,101,51,123" />
+      <scope id="8266208698961528874" at="54,100,55,131" />
+      <scope id="1488872796929098047" at="60,100,61,121" />
+      <scope id="1488872796929098110" at="63,100,64,136" />
+      <scope id="5907049006927223134" at="66,100,67,136" />
+      <scope id="1488872796929091199" at="77,104,78,53" />
+      <scope id="1488872796929096716" at="80,105,81,52" />
+      <scope id="1488872796929096758" at="83,104,84,52" />
+      <scope id="1488872796929096800" at="86,105,87,52" />
+      <scope id="5907049006927254834" at="90,98,91,53" />
+      <scope id="5907049006927254907" at="93,97,94,53" />
+      <scope id="5907049006927254968" at="97,101,98,47" />
+      <scope id="5907049006927254992" at="175,67,176,48" />
+      <scope id="5936308221645772775" at="22,61,24,116" />
+      <scope id="5936308221645772775" at="28,73,30,128" />
+      <scope id="5936308221645772775" at="43,57,45,105" />
+      <scope id="5936308221645772905" at="35,0,38,0" />
+      <scope id="5907049006927254999" at="39,0,42,0" />
+      <scope id="8266208698961528731" at="49,58,52,9" />
+      <scope id="1488872796929091160" at="119,145,122,61" />
+      <scope id="1488872796929091160" at="124,146,127,60" />
+      <scope id="1488872796929091160" at="127,60,130,61" />
+      <scope id="1488872796929091160" at="133,145,136,61" />
+      <scope id="1488872796929091160" at="136,61,139,62" />
+      <scope id="1488872796929091160" at="140,60,143,62" />
+      <scope id="5907049006927255012" at="159,142,162,61" />
+      <scope id="5907049006927255012" at="163,138,166,61" />
+      <scope id="5907049006927255012" at="166,61,169,60" />
+      <scope id="5907049006927254992" at="175,0,178,0">
+        <var name="a" id="5907049006927254992" />
+        <var name="b" id="5907049006927254992" />
+      </scope>
+      <scope id="5936308221645772775" at="43,0,47,0">
+        <var name="expectedValue" id="1488872796929091133" />
+        <var name="expr" id="1488872796929091131" />
+      </scope>
+      <scope id="5936308221645772775" at="21,0,26,0" />
+      <scope id="5936308221645772775" at="27,0,32,0" />
+      <scope id="8266208698961528730" at="48,54,53,7">
+        <var name="child" id="8266208698961528733" />
+      </scope>
+      <scope id="5936308221645772775" at="48,54,56,7" />
+      <scope id="1488872796929091160" at="123,145,131,60" />
+      <scope id="1488872796929091160" at="132,146,140,60" />
+      <scope id="5907049006927255012" at="162,61,170,60" />
+      <scope id="5936308221645772775" at="48,0,58,0">
+        <var name="e" id="8266208698961528725" />
+      </scope>
+      <scope id="5936308221645772775" at="59,33,70,67" />
+      <scope id="5936308221645772775" at="59,0,72,0">
+        <var name="e" id="1488872796929091121" />
+      </scope>
+      <scope id="1488872796929091160" at="131,60,144,61" />
+      <scope id="5907049006927255012" at="158,149,171,56" />
+      <scope id="5907049006927255012" at="157,32,171,56" />
+      <scope id="5907049006927255012" at="150,64,172,26">
+        <var name="facade" id="5907049006927255012" />
+        <var name="quotedNode_1" id="5907049006927255012" />
+        <var name="quotedNode_2" id="5907049006927255012" />
+        <var name="quotedNode_3" id="5907049006927255012" />
+        <var name="quotedNode_4" id="5907049006927255012" />
+        <var name="quotedNode_5" id="5907049006927255012" />
+        <var name="quotedNode_6" id="5907049006927255012" />
+      </scope>
+      <scope id="1488872796929091160" at="122,61,145,60" />
+      <scope id="5907049006927255012" at="150,0,174,0" />
+      <scope id="5936308221645772775" at="73,48,101,67">
+        <var name="left" id="1488872796929096506" />
+        <var name="right" id="1488872796929096618" />
+      </scope>
+      <scope id="1488872796929091160" at="118,149,146,56" />
+      <scope id="1488872796929091160" at="117,33,146,56" />
+      <scope id="5936308221645772775" at="73,0,103,0">
+        <var name="e" id="1488872796929098036" />
+      </scope>
+      <scope id="1488872796929091160" at="104,64,147,26">
+        <var name="facade" id="1488872796929091160" />
+        <var name="quotedNode_1" id="1488872796929091160" />
+        <var name="quotedNode_10" id="1488872796929091160" />
+        <var name="quotedNode_11" id="1488872796929091160" />
+        <var name="quotedNode_12" id="1488872796929091160" />
+        <var name="quotedNode_2" id="1488872796929091160" />
+        <var name="quotedNode_3" id="1488872796929091160" />
+        <var name="quotedNode_4" id="1488872796929091160" />
+        <var name="quotedNode_5" id="1488872796929091160" />
+        <var name="quotedNode_6" id="1488872796929091160" />
+        <var name="quotedNode_7" id="1488872796929091160" />
+        <var name="quotedNode_8" id="1488872796929091160" />
+        <var name="quotedNode_9" id="1488872796929091160" />
+      </scope>
+      <scope id="1488872796929091160" at="104,0,149,0" />
+      <unit id="5936308221645772775" at="33,0,179,0" name="jetbrains.mps.prioritiesTest.TestBlPriorities_Test$TestBody" />
+      <unit id="5936308221645772775" at="19,0,180,0" name="jetbrains.mps.prioritiesTest.TestBlPriorities_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

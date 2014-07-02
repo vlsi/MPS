@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:6c15a5c9-1bba-4ade-a066-13f2741b04fc(jetbrains.mps.debugger.java.api.state)/3432969378036015499">
-    <nodeInfo nodeId="3432969378036015508" fileName="JavaUiState.java" startLine="14" startPosition="60" endLine="15" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3432969378036015510" fileName="JavaUiState.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThisObject#()Lcom/sun/jdi/ObjectReference;" />
-    <nodeInfo nodeId="3432969378036015514" fileName="JavaUiState.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStackFrame#()Ljetbrains/mps/debugger/java/api/state/proxy/JavaStackFrame;" />
-    <nodeInfo nodeId="3432969378036015518" fileName="JavaUiState.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getThread#()Ljetbrains/mps/debugger/java/api/state/proxy/JavaThread;" />
-    <nodeInfo nodeId="3432969378036015502" fileName="JavaUiState.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaUiState#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
-    <nodeInfo nodeId="4750532960509859178" fileName="JavaUiState.java" startLine="26" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeEvaluationSynchronously#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
-    <scopeInfo nodeId="3432969378036015507" fileName="JavaUiState.java" startLine="14" startPosition="60" endLine="15" endPosition="24" />
-    <scopeInfo nodeId="3432969378036015510" fileName="JavaUiState.java" startLine="18" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="3432969378036015514" fileName="JavaUiState.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="3432969378036015518" fileName="JavaUiState.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="3432969378036015502" fileName="JavaUiState.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="3432969378036015505" varName="debugSession" />
-    </scopeInfo>
-    <scopeInfo nodeId="4750532960509859178" fileName="JavaUiState.java" startLine="26" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="4750532960509859181" varName="command" />
-    </scopeInfo>
-    <unitInfo nodeId="3432969378036015499" fileName="JavaUiState.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.JavaUiState" />
+    <file name="JavaUiState.java">
+      <node id="3432969378036015508" at="14,60,15,24" concept="2" />
+      <node id="3432969378036015510" at="18,0,19,0" concept="1" trace="getThisObject#()Lcom/sun/jdi/ObjectReference;" />
+      <node id="3432969378036015514" at="20,0,22,0" concept="1" trace="getStackFrame#()Ljetbrains/mps/debugger/java/api/state/proxy/JavaStackFrame;" />
+      <node id="3432969378036015518" at="23,0,25,0" concept="1" trace="getThread#()Ljetbrains/mps/debugger/java/api/state/proxy/JavaThread;" />
+      <node id="3432969378036015502" at="14,0,17,0" concept="0" trace="JavaUiState#(Ljetbrains/mps/debug/api/AbstractDebugSession;)V" />
+      <node id="4750532960509859178" at="26,0,31,0" concept="1" trace="invokeEvaluationSynchronously#(Ljetbrains/mps/baseLanguage/closures/runtime/_FunctionTypes/_return_P0_E0;)null" />
+      <scope id="3432969378036015507" at="14,60,15,24" />
+      <scope id="3432969378036015510" at="18,0,19,0" />
+      <scope id="3432969378036015514" at="20,0,22,0" />
+      <scope id="3432969378036015518" at="23,0,25,0" />
+      <scope id="3432969378036015502" at="14,0,17,0">
+        <var name="debugSession" id="3432969378036015505" />
+      </scope>
+      <scope id="4750532960509859178" at="26,0,31,0">
+        <var name="command" id="4750532960509859181" />
+      </scope>
+      <unit id="3432969378036015499" at="13,0,32,0" name="jetbrains.mps.debugger.java.api.state.JavaUiState" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

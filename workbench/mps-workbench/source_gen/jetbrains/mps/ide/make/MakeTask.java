@@ -11,16 +11,16 @@ import jetbrains.mps.make.service.CoreMakeTask;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.make.script.IScript;
-import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.make.dependencies.MakeSequence;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.messages.IMessageHandler;
 import com.intellij.openapi.progress.PerformInBackgroundOption;
-import jetbrains.mps.make.dependencies.MakeSequence;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.CancellationException;
 import java.util.concurrent.TimeUnit;
@@ -31,12 +31,6 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   private final AtomicReference<MakeTask.TaskState> myState = new AtomicReference<MakeTask.TaskState>(MakeTask.TaskState.NOT_STARTED);
   private final CoreMakeTask coreTask;
   private boolean isCanceled = false;
-
-  @Deprecated
-  public MakeTask(@Nullable Project project, @NotNull String title, Iterable<IScript> scripts, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh, PerformInBackgroundOption bgoption) {
-    super(project, title, true, bgoption);
-    coreTask = new MakeTask.WorkbenchMakeTask(title, scripts, scrName, clInput, ctl, mh);
-  }
 
   public MakeTask(@Nullable Project project, @NotNull String title, MakeSequence makeSeq, IScriptController ctl, IMessageHandler mh, PerformInBackgroundOption bgoption) {
     super(project, title, true, bgoption);
@@ -57,7 +51,14 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   }
 
   private void spawnMakeThreadThenDoRunRelayingLog(final ProgressMonitor monitor) {
-    ThreadGroup tg = new ThreadGroup("MPS Make Thread Group");
+    ThreadGroup tg = new ThreadGroup("MPS Make Thread Group") {
+      @Override
+      public void uncaughtException(Thread thread, Throwable th) {
+        Message msg = new Message(MessageKind.ERROR, String.format("Uncaught %s during make in thread %s", th.getClass().getSimpleName(), thread.getName()));
+        msg.setException(th);
+        coreTask.getMessageHandler().handle(msg);
+      }
+    };
     Thread makeThread = new Thread(tg, new Runnable() {
       @Override
       public void run() {
@@ -126,11 +127,6 @@ public class MakeTask extends Task.Backgroundable implements Future<IResult> {
   }
 
   public class WorkbenchMakeTask extends CoreMakeTask {
-    @Deprecated
-    public WorkbenchMakeTask(@NotNull String title, Iterable<IScript> scripts, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh) {
-      super(title, scripts, scrName, clInput, ctl, mh);
-    }
-
     public WorkbenchMakeTask(@NotNull String title, MakeSequence makeSeq, IScriptController ctl, IMessageHandler mh) {
       super(title, makeSeq, ctl, mh);
     }

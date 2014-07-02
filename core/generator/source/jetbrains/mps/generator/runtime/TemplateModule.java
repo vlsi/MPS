@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.runtime;
 
+import jetbrains.mps.smodel.language.GeneratorRuntime;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 
@@ -23,7 +24,7 @@ import java.util.Collection;
 /**
  * evgeny, 3/10/11
  */
-public interface TemplateModule {
+public interface TemplateModule extends GeneratorRuntime {
 
   LanguageRuntime getSourceLanguage();
 

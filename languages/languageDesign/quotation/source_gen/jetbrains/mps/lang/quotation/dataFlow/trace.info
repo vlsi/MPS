@@ -1,56 +1,70 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.quotation.dataFlow.DFABuilders" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root>
+    <file name="DFABuilders.java">
+      <unit at="8,0,15,0" name="jetbrains.mps.lang.quotation.dataFlow.DFABuilders" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590348(jetbrains.mps.lang.quotation.dataFlow)/1006429225401308444">
-    <nodeInfo nodeId="1006429225401308456" fileName="NodeBuilder_DataFlow.java" startLine="17" startPosition="164" endLine="18" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1006429225401308444" fileName="NodeBuilder_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeBuilder_DataFlow#()V" />
-    <nodeInfo nodeId="1006429225401308447" fileName="NodeBuilder_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1006429225401308444" fileName="NodeBuilder_DataFlow.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-    <scopeInfo nodeId="1006429225401308444" fileName="NodeBuilder_DataFlow.java" startLine="13" startPosition="33" endLine="13" endPosition="33" />
-    <scopeInfo nodeId="1006429225401308455" fileName="NodeBuilder_DataFlow.java" startLine="17" startPosition="164" endLine="18" endPosition="48" />
-    <scopeInfo nodeId="1006429225401308444" fileName="NodeBuilder_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="1006429225401308446" fileName="NodeBuilder_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" />
-    <scopeInfo nodeId="1006429225401308447" fileName="NodeBuilder_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5">
-      <varInfo nodeId="1006429225401308453" varName="expr" />
-    </scopeInfo>
-    <scopeInfo nodeId="1006429225401308444" fileName="NodeBuilder_DataFlow.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="1006429225401308444" varName="_context" />
-      <varInfo nodeId="1006429225401308444" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1006429225401308444" fileName="NodeBuilder_DataFlow.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.quotation.dataFlow.NodeBuilder_DataFlow" />
+    <file name="NodeBuilder_DataFlow.java">
+      <node id="1006429225401308456" at="17,164,18,48" concept="1" />
+      <node id="1006429225401308444" at="13,0,15,0" concept="0" trace="NodeBuilder_DataFlow#()V" />
+      <node id="1006429225401308447" at="16,102,19,5" concept="2" />
+      <node id="1006429225401308444" at="16,0,21,0" concept="3" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="1006429225401308444" at="13,33,13,33" />
+      <scope id="1006429225401308455" at="17,164,18,48" />
+      <scope id="1006429225401308444" at="13,0,15,0" />
+      <scope id="1006429225401308446" at="16,102,19,5" />
+      <scope id="1006429225401308447" at="16,102,19,5">
+        <var name="expr" id="1006429225401308453" />
+      </scope>
+      <scope id="1006429225401308444" at="16,0,21,0">
+        <var name="_context" id="1006429225401308444" />
+        <var name="operationContext" id="1006429225401308444" />
+      </scope>
+      <unit id="1006429225401308444" at="12,0,22,0" name="jetbrains.mps.lang.quotation.dataFlow.NodeBuilder_DataFlow" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590348(jetbrains.mps.lang.quotation.dataFlow)/1207243664442">
-    <nodeInfo nodeId="1207243732321" fileName="AbstractAntiquotation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207243664442" fileName="AbstractAntiquotation_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractAntiquotation_DataFlow#()V" />
-    <nodeInfo nodeId="1207243664442" fileName="AbstractAntiquotation_DataFlow.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-    <scopeInfo nodeId="1207243664442" fileName="AbstractAntiquotation_DataFlow.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="1207243664444" fileName="AbstractAntiquotation_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" />
-    <scopeInfo nodeId="1207243664442" fileName="AbstractAntiquotation_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="1207243664442" fileName="AbstractAntiquotation_DataFlow.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="1207243664442" varName="_context" />
-      <varInfo nodeId="1207243664442" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1207243664442" fileName="AbstractAntiquotation_DataFlow.java" startLine="11" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.quotation.dataFlow.AbstractAntiquotation_DataFlow" />
+    <file name="AbstractAntiquotation_DataFlow.java">
+      <node id="1207243732321" at="15,102,16,107" concept="1" />
+      <node id="1207243664442" at="12,0,14,0" concept="0" trace="AbstractAntiquotation_DataFlow#()V" />
+      <node id="1207243664442" at="15,0,18,0" concept="3" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="1207243664442" at="12,43,12,43" />
+      <scope id="1207243664444" at="15,102,16,107" />
+      <scope id="1207243664442" at="12,0,14,0" />
+      <scope id="1207243664442" at="15,0,18,0">
+        <var name="_context" id="1207243664442" />
+        <var name="operationContext" id="1207243664442" />
+      </scope>
+      <unit id="1207243664442" at="11,0,19,0" name="jetbrains.mps.lang.quotation.dataFlow.AbstractAntiquotation_DataFlow" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590348(jetbrains.mps.lang.quotation.dataFlow)/1207243772639">
-    <nodeInfo nodeId="1207243820006" fileName="Quotation_DataFlow.java" startLine="17" startPosition="171" endLine="18" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3180306201267192200" fileName="Quotation_DataFlow.java" startLine="19" startPosition="5" endLine="20" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3180306201267192259" fileName="Quotation_DataFlow.java" startLine="20" startPosition="110" endLine="21" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207243772639" fileName="Quotation_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Quotation_DataFlow#()V" />
-    <nodeInfo nodeId="1207243785969" fileName="Quotation_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1207243772639" fileName="Quotation_DataFlow.java" startLine="16" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-    <scopeInfo nodeId="1207243772639" fileName="Quotation_DataFlow.java" startLine="13" startPosition="31" endLine="13" endPosition="31" />
-    <scopeInfo nodeId="1207243785973" fileName="Quotation_DataFlow.java" startLine="17" startPosition="171" endLine="18" endPosition="57" />
-    <scopeInfo nodeId="1207243772639" fileName="Quotation_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="1207243785969" fileName="Quotation_DataFlow.java" startLine="16" startPosition="102" endLine="19" endPosition="5">
-      <varInfo nodeId="1207243785971" varName="antiquotation" />
-    </scopeInfo>
-    <scopeInfo nodeId="1207243772641" fileName="Quotation_DataFlow.java" startLine="16" startPosition="102" endLine="21" endPosition="103" />
-    <scopeInfo nodeId="1207243772639" fileName="Quotation_DataFlow.java" startLine="16" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="1207243772639" varName="_context" />
-      <varInfo nodeId="1207243772639" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1207243772639" fileName="Quotation_DataFlow.java" startLine="12" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.quotation.dataFlow.Quotation_DataFlow" />
+    <file name="Quotation_DataFlow.java">
+      <node id="1207243820006" at="17,171,18,57" concept="1" />
+      <node id="3180306201267192200" at="19,5,20,110" concept="1" />
+      <node id="3180306201267192259" at="20,110,21,103" concept="1" />
+      <node id="1207243772639" at="13,0,15,0" concept="0" trace="Quotation_DataFlow#()V" />
+      <node id="1207243785969" at="16,102,19,5" concept="2" />
+      <node id="1207243772639" at="16,0,23,0" concept="3" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="1207243772639" at="13,31,13,31" />
+      <scope id="1207243785973" at="17,171,18,57" />
+      <scope id="1207243772639" at="13,0,15,0" />
+      <scope id="1207243785969" at="16,102,19,5">
+        <var name="antiquotation" id="1207243785971" />
+      </scope>
+      <scope id="1207243772641" at="16,102,21,103" />
+      <scope id="1207243772639" at="16,0,23,0">
+        <var name="_context" id="1207243772639" />
+        <var name="operationContext" id="1207243772639" />
+      </scope>
+      <unit id="1207243772639" at="12,0,24,0" name="jetbrains.mps.lang.quotation.dataFlow.Quotation_DataFlow" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

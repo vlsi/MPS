@@ -4,9 +4,9 @@ package jetbrains.mps.execution.settings.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.smodel.SReference;
 
 public class CreateEditor_Function_Behavior {
   public static void init(SNode thisNode) {
@@ -24,23 +24,15 @@ public class CreateEditor_Function_Behavior {
     return true;
   }
 
-  @Deprecated
-  public static SNode call_getJavaMethod_946964771156066804(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getJavaMethod_946964771156066991", new Object[]{});
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return _quotation_createNode_ajrw81_a0a3();
   }
 
-  @Deprecated
-  public static SNode callSuper_getJavaMethod_946964771156066804(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), callerConceptFqName, "virtual_getJavaMethod_946964771156066991", new Class[]{SNode.class}, new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode call_getPublicJavaMethod_203908296139519699(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getPublicJavaMethod_203908296139519011", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getPublicJavaMethod_203908296139519699(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.CreateEditor_Function"), callerConceptFqName, "virtual_getPublicJavaMethod_203908296139519011", new Class[]{SNode.class}, new Object[]{});
+  private static SNode _quotation_createNode_ajrw81_a0a3() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)"), facade.createNodeId("~JComponent")));
+    return quotedNode_1;
   }
 }

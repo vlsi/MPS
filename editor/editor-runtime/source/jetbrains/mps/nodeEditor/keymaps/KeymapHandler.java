@@ -31,11 +31,11 @@ import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -130,7 +130,7 @@ public abstract class KeymapHandler<E> {
       for (SModuleReference ref : importedAndExtendedLanguages) {
         SModule language = ref.resolve(MPSModuleRepository.getInstance());
         if (language == null) continue;
-        if (!VisibilityUtil.isVisibleLanguage(editorContext.getModel().getModule(), new SLanguageAdapter(language.getModuleName()))) continue;
+        if (!VisibilityUtil.isVisibleLanguage(editorContext.getModel().getModule(), SConceptRepository.getInstance().getLanguage(language.getModuleName()))) continue;
 
         List<KeyMap> keyMapsForNamespace = LanguagesKeymapManager.getInstance().getKeyMapsForLanguage(((Language) language));
         if (keyMapsForNamespace != null) {

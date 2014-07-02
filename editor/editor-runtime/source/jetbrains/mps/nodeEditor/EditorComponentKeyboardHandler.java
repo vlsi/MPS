@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.keymaps.KeymapHandler;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.KeyMapAction;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 
@@ -81,7 +80,7 @@ public class EditorComponentKeyboardHandler implements KeyboardHandler {
           jetbrains.mps.openapi.editor.cells.CellActionType.LEFT_TRANSFORM.equals(actionType);
 
       if (selectedCell.isErrorState() && strictMatching) {
-        boolean res = ModelAccess.instance().runWriteActionInCommand(new Computable<Boolean>() {
+        boolean res = editorContext.executeCommand(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
             return APICellAdapter.validate(selectedCell, strictMatching, false);

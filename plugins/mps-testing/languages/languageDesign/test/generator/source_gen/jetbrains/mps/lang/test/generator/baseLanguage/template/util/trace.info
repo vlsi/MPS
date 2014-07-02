@@ -1,52 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:3d2b27a7-4374-41aa-af31-19e1e430d9f5(jetbrains.mps.lang.test.generator.baseLanguage.template.util)/882854394069504727">
-    <nodeInfo nodeId="882854394069504745" fileName="TestsUtil.java" startLine="22" startPosition="89" endLine="23" endPosition="245" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="882854394069504754" fileName="TestsUtil.java" startLine="24" startPosition="30" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="882854394069504765" fileName="TestsUtil.java" startLine="26" startPosition="5" endLine="27" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="882854394069504775" fileName="TestsUtil.java" startLine="28" startPosition="22" endLine="29" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="882854394069504786" fileName="TestsUtil.java" startLine="30" startPosition="5" endLine="31" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="882854394069695316" fileName="TestsUtil.java" startLine="34" startPosition="61" endLine="35" endPosition="348" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1979862460101669798" fileName="TestsUtil.java" startLine="39" startPosition="36" endLine="40" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1979862460101669798" fileName="TestsUtil.java" startLine="41" startPosition="5" endLine="42" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1979862460101669790" fileName="TestsUtil.java" startLine="46" startPosition="36" endLine="47" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1979862460101669790" fileName="TestsUtil.java" startLine="48" startPosition="5" endLine="49" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="882854394069504729" fileName="TestsUtil.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestsUtil#()V" />
-    <nodeInfo nodeId="882854394069504752" fileName="TestsUtil.java" startLine="23" startPosition="245" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="882854394069504773" fileName="TestsUtil.java" startLine="27" startPosition="88" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="882854394069695309" fileName="TestsUtil.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getTestBodyClassName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1979862460101669798" fileName="TestsUtil.java" startLine="38" startPosition="68" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1979862460101669790" fileName="TestsUtil.java" startLine="45" startPosition="70" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1979862460101669798" fileName="TestsUtil.java" startLine="38" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_6yh4up_a0c0b#(Ljava/io/File;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1979862460101669790" fileName="TestsUtil.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_6yh4up_a0a2a1#(Ljetbrains/mps/project/Project;)Ljava/io/File;" />
-    <nodeInfo nodeId="882854394069504737" fileName="TestsUtil.java" startLine="22" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getProjectPath#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Ljava/lang/String;" />
-    <scopeInfo nodeId="882854394069504732" fileName="TestsUtil.java" startLine="19" startPosition="22" endLine="19" endPosition="22" />
-    <scopeInfo nodeId="882854394069504753" fileName="TestsUtil.java" startLine="24" startPosition="30" endLine="25" endPosition="25" />
-    <scopeInfo nodeId="882854394069504774" fileName="TestsUtil.java" startLine="28" startPosition="22" endLine="29" endPosition="55" />
-    <scopeInfo nodeId="882854394069695312" fileName="TestsUtil.java" startLine="34" startPosition="61" endLine="35" endPosition="348" />
-    <scopeInfo nodeId="1979862460101669798" fileName="TestsUtil.java" startLine="39" startPosition="36" endLine="40" endPosition="49" />
-    <scopeInfo nodeId="1979862460101669790" fileName="TestsUtil.java" startLine="46" startPosition="36" endLine="47" endPosition="48" />
-    <scopeInfo nodeId="882854394069504729" fileName="TestsUtil.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="882854394069695309" fileName="TestsUtil.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="882854394069695314" varName="testCase" />
-    </scopeInfo>
-    <scopeInfo nodeId="1979862460101669798" fileName="TestsUtil.java" startLine="38" startPosition="68" endLine="42" endPosition="16" />
-    <scopeInfo nodeId="1979862460101669790" fileName="TestsUtil.java" startLine="45" startPosition="70" endLine="49" endPosition="16" />
-    <scopeInfo nodeId="1979862460101669798" fileName="TestsUtil.java" startLine="38" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="1979862460101669798" varName="checkedDotOperand" />
-    </scopeInfo>
-    <scopeInfo nodeId="1979862460101669790" fileName="TestsUtil.java" startLine="45" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="1979862460101669790" varName="checkedDotOperand" />
-    </scopeInfo>
-    <scopeInfo nodeId="882854394069504740" fileName="TestsUtil.java" startLine="22" startPosition="89" endLine="31" endPosition="14">
-      <varInfo nodeId="882854394069504746" varName="projectPath" />
-      <varInfo nodeId="882854394069504766" varName="url" />
-    </scopeInfo>
-    <scopeInfo nodeId="882854394069504737" fileName="TestsUtil.java" startLine="22" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="882854394069504788" varName="model" />
-      <varInfo nodeId="882854394069504790" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="882854394069504727" fileName="TestsUtil.java" startLine="18" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil" />
+    <file name="TestsUtil.java">
+      <node id="882854394069504745" at="22,89,23,245" concept="2" />
+      <node id="882854394069504754" at="24,30,25,25" concept="3" />
+      <node id="882854394069504765" at="26,5,27,88" concept="2" />
+      <node id="882854394069504775" at="28,22,29,55" concept="3" />
+      <node id="882854394069504786" at="30,5,31,14" concept="3" />
+      <node id="882854394069695316" at="34,61,35,348" concept="3" />
+      <node id="1979862460101669798" at="39,36,40,49" concept="3" />
+      <node id="1979862460101669798" at="41,5,42,16" concept="3" />
+      <node id="1979862460101669790" at="46,36,47,48" concept="3" />
+      <node id="1979862460101669790" at="48,5,49,16" concept="3" />
+      <node id="882854394069504729" at="19,0,21,0" concept="0" trace="TestsUtil#()V" />
+      <node id="882854394069504752" at="23,245,26,5" concept="1" />
+      <node id="882854394069504773" at="27,88,30,5" concept="1" />
+      <node id="882854394069695309" at="34,0,37,0" concept="4" trace="getTestBodyClassName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1979862460101669798" at="38,68,41,5" concept="1" />
+      <node id="1979862460101669790" at="45,70,48,5" concept="1" />
+      <node id="1979862460101669798" at="38,0,44,0" concept="4" trace="check_6yh4up_a0c0b#(Ljava/io/File;)Ljava/lang/String;" />
+      <node id="1979862460101669790" at="45,0,51,0" concept="4" trace="check_6yh4up_a0a2a1#(Ljetbrains/mps/project/Project;)Ljava/io/File;" />
+      <node id="882854394069504737" at="22,0,33,0" concept="4" trace="getProjectPath#(Lorg/jetbrains/mps/openapi/model/SModel;Ljetbrains/mps/smodel/IOperationContext;)Ljava/lang/String;" />
+      <scope id="882854394069504732" at="19,22,19,22" />
+      <scope id="882854394069504753" at="24,30,25,25" />
+      <scope id="882854394069504774" at="28,22,29,55" />
+      <scope id="882854394069695312" at="34,61,35,348" />
+      <scope id="1979862460101669798" at="39,36,40,49" />
+      <scope id="1979862460101669790" at="46,36,47,48" />
+      <scope id="882854394069504729" at="19,0,21,0" />
+      <scope id="882854394069695309" at="34,0,37,0">
+        <var name="testCase" id="882854394069695314" />
+      </scope>
+      <scope id="1979862460101669798" at="38,68,42,16" />
+      <scope id="1979862460101669790" at="45,70,49,16" />
+      <scope id="1979862460101669798" at="38,0,44,0">
+        <var name="checkedDotOperand" id="1979862460101669798" />
+      </scope>
+      <scope id="1979862460101669790" at="45,0,51,0">
+        <var name="checkedDotOperand" id="1979862460101669790" />
+      </scope>
+      <scope id="882854394069504740" at="22,89,31,14">
+        <var name="projectPath" id="882854394069504746" />
+        <var name="url" id="882854394069504766" />
+      </scope>
+      <scope id="882854394069504737" at="22,0,33,0">
+        <var name="model" id="882854394069504788" />
+        <var name="operationContext" id="882854394069504790" />
+      </scope>
+      <unit id="882854394069504727" at="18,0,52,0" name="jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

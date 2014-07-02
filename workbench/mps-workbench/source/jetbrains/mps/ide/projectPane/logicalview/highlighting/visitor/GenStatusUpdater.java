@@ -27,7 +27,6 @@ import jetbrains.mps.ide.ui.tree.module.NamespaceTextNode;
 import jetbrains.mps.ide.ui.tree.module.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
 import jetbrains.mps.make.IMakeService;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
@@ -68,34 +67,33 @@ public class GenStatusUpdater extends TreeUpdateVisitor {
         }
 
         SModel md = modelNode.getModel();
-        if (!(md instanceof EditableSModel)) return;
-        if (!(md instanceof GeneratableSModel) || !(((GeneratableSModel) md).isGeneratable())) return;
+        if (!(md instanceof EditableSModel)) {
+          return;
+        }
+        if (!(md instanceof GeneratableSModel)) {
+          return;
+        }
         if (md.getModule() == null) return;
-
-        final ProjectModuleTreeNode moduleNode = getContainingModuleNode(modelNode);
 
         boolean wasChanged = ((EditableSModel) md).isChanged();
 
+        if (!wasChanged && !((GeneratableSModel) md).isGeneratable()) {
+          // changing doNotGenerate := true immediately renders the model notGeneratable
+          // while GenStatusUpdater needs to update its status
+          return;
+        }
+
+        final ProjectModuleTreeNode moduleNode = getContainingModuleNode(modelNode);
         if (moduleNode.getModule().isReadOnly()) {
           new StatusUpdate(modelNode).update(GenerationStatus.READONLY);
           new StatusUpdate(moduleNode).update(GenerationStatus.READONLY);
           return;
         }
 
-        if (wasChanged) {
-          new StatusUpdate(modelNode).update(GenerationStatus.REQUIRED);
-          new StatusUpdate(moduleNode).update(GenerationStatus.REQUIRED);
-          if (moduleNode.getModule() instanceof Generator) {
-            new StatusUpdate(getContainingModuleNode(moduleNode)).update(GenerationStatus.REQUIRED);
-          }
-          propagateStatusToNamespaceNodes(moduleNode, GenerationStatus.REQUIRED);
-          return;
-        }
-
         new StatusUpdate(modelNode).update();
         GenerationStatus s = new StatusUpdate(moduleNode).update();
         if (moduleNode.getModule() instanceof Generator) {
-          new StatusUpdate(getContainingModuleNode(moduleNode)).update();
+          new StatusUpdate(getContainingModuleNode(moduleNode)).update(s);
         }
         propagateStatusToNamespaceNodes(moduleNode, s);
       }

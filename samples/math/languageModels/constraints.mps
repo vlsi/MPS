@@ -195,7 +195,7 @@
             <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="1237825752847" nodeInfo="nr">
               <property name="name" nameId="tpck.1169194664001" value="msi" />
               <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeListType" typeId="tp25.1145383075378" id="1237825752848" nodeInfo="in">
-                <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="39kg.1236426976680" resolveInfo="MathSymbolIndex" />
+                <link role="elementConcept" roleId="tp25.1145383142433" targetNodeId="39kg.1236589266912" resolveInfo="AbstractIndex" />
               </node>
               <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1237828474467" nodeInfo="nn">
                 <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363085372" nodeInfo="nn">

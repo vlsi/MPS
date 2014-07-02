@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,24 +18,31 @@ package jetbrains.mps.ide;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.ide.findusages.MPSFindUsages;
 import jetbrains.mps.ide.smodel.WorkbenchModelAccess;
 import jetbrains.mps.ide.undo.WorkbenchUndoHandler;
 import jetbrains.mps.ide.vfs.FileSystemProviderComponent;
-import jetbrains.mps.ide.vfs.IdeaFileSystemProvider;
 import jetbrains.mps.persistence.MPSPersistence;
-import jetbrains.mps.classloading.ClassLoaderManager;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.typesystem.MPSTypesystem;
-import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
 public class MPSCoreComponents implements ApplicationComponent {
+  private MPSCore myMPSCore;
+  private MPSPersistence myMPSPersistence;
+  private MPSGenerator myMPSGenerator;
+  private MPSTypesystem myMPSTypesystem;
+  private MPSFindUsages myMPSFindUsages;
+  private MPSBaseLanguage myMPSBaseLanguage;
 
   public MPSCoreComponents(FileSystemProviderComponent fsProvider) {
   }
@@ -57,33 +64,39 @@ public class MPSCoreComponents implements ApplicationComponent {
     ModelAccess.setInstance(new WorkbenchModelAccess());
 
     // setup MPS.Core
-    MPSCore.getInstance().init();
-    MPSPersistence.getInstance().init();
-    MPSTypesystem.getInstance().init();
-    MPSGenerator.getInstance().init();
-    MPSFindUsages.getInstance().init();
+    myMPSCore = new MPSCore();
+    myMPSPersistence = new MPSPersistence();
+    myMPSTypesystem = new MPSTypesystem();
+    myMPSGenerator = new MPSGenerator();
+    myMPSFindUsages = new MPSFindUsages();
+    myMPSCore.init();
+    myMPSPersistence.init();
+    myMPSTypesystem.init();
+    myMPSGenerator.init();
+    myMPSFindUsages.init();
 
     // setup BaseLanguage
-    MPSBaseLanguage.getInstance().init();
+    myMPSBaseLanguage = new MPSBaseLanguage();
+    myMPSBaseLanguage.init();
   }
 
   @Override
   public void disposeComponent() {
-    // set IoFileSystem
-    if (FileSystem.getInstance().getFileSystemProvider() instanceof IdeaFileSystemProvider) {
-      ((IdeaFileSystemProvider) FileSystem.getInstance().getFileSystemProvider()).dispose();
-      FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
-    }
-
     // dispose BaseLanguage
-    MPSBaseLanguage.getInstance().dispose();
+    myMPSBaseLanguage.dispose();
+    myMPSBaseLanguage = null;
 
     // dispose Core
-    MPSFindUsages.getInstance().dispose();
-    MPSGenerator.getInstance().dispose();
-    MPSTypesystem.getInstance().dispose();
-    MPSPersistence.getInstance().dispose();
-    MPSCore.getInstance().dispose();
+    myMPSFindUsages.dispose();
+    myMPSGenerator.dispose();
+    myMPSTypesystem.dispose();
+    myMPSPersistence.dispose();
+    myMPSCore.dispose();
+    myMPSFindUsages = null;
+    myMPSGenerator = null;
+    myMPSTypesystem = null;
+    myMPSPersistence = null;
+    myMPSCore = null;
 
     // cleanup
     ModelAccess.instance().dispose();

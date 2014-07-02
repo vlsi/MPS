@@ -30,7 +30,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     {
       Style styleToPut;
       styleToPut = new StyleImpl();
-      Console_Styles_StyleSheet.apply_readOnly(styleToPut, editorCell);
+      ConsoleStyle_StyleSheet.apply_ReadOnly(styleToPut, editorCell);
       style.putAll(styleToPut);
     }
     editorCell.getStyle().putAll(style);
@@ -116,7 +116,7 @@ public class ConsoleRoot_Editor extends DefaultNodeEditor {
     {
       Style styleToPut;
       styleToPut = new StyleImpl();
-      Console_Styles_StyleSheet.apply_readOnly(styleToPut, editorCell);
+      ConsoleStyle_StyleSheet.apply_ReadOnly(styleToPut, editorCell);
       style.removeAll(styleToPut);
     }
     editorCell.getStyle().putAll(style);

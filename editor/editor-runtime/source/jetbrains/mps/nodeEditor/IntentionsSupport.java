@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,13 +25,11 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.application.RuntimeInterruptedException;
 import com.intellij.openapi.extensions.Extensions;
-import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.editor.runtime.cells.ReadOnlyUtil;
 import jetbrains.mps.ide.actions.MPSActions;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
@@ -43,10 +41,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.selection.Selection;
 import jetbrains.mps.openapi.editor.selection.SelectionListener;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -57,7 +53,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 import javax.swing.AbstractAction;
 import javax.swing.Icon;
@@ -99,7 +95,7 @@ public class IntentionsSupport {
     myLightBulb = new LightBulbMenu() {
       @Override
       public void activate() {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
             checkAndShowMenu();
@@ -118,7 +114,7 @@ public class IntentionsSupport {
     myShowIntentionsAction = new AbstractAction() {
       @Override
       public void actionPerformed(ActionEvent e) {
-        ModelAccess.instance().runReadAction(new Runnable() {
+        getModelAccess().runReadAction(new Runnable() {
           @Override
           public void run() {
             checkAndShowMenu();
@@ -177,7 +173,7 @@ public class IntentionsSupport {
             return;
           }
 
-          final IntentionType intentionType = ModelAccess.instance().runReadAction(new Computable<IntentionType>() {
+          final IntentionType intentionType = new ModelAccessHelper(getModelAccess()).runReadAction(new Computable<IntentionType>() {
             @Override
             public IntentionType compute() {
               if (isInconsistentEditor() || ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor)) return null;
@@ -196,7 +192,7 @@ public class IntentionsSupport {
             return;
           }
 
-          ModelAccess.instance().runReadInEDT(new Runnable() {
+          getModelAccess().runReadInEDT(new Runnable() {
             @Override
             public void run() {
               if (isInconsistentEditor() || ReadOnlyUtil.isSelectionReadOnlyInEditor(myEditor) || interrupted()) return;
@@ -224,8 +220,7 @@ public class IntentionsSupport {
   }
 
   private boolean isInconsistentEditor() {
-    return myEditor.isDisposed() || myEditor.getEditedNode() == null || jetbrains.mps.util.SNodeOperations.isDisposed(myEditor.getEditedNode()) ||
-        !myEditor.hasValidSelectedNode();
+    return myEditor.isDisposed() || myEditor.getEditedNode() == null || !myEditor.hasValidSelectedNode();
   }
 
   private void adjustLightBulbLocation() {
@@ -276,12 +271,12 @@ public class IntentionsSupport {
     Project project = myEditor.getOperationContext().getProject();
     if (project == null)  return;
 
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    getModelAccess().executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
         intention.execute(node, myEditor.getEditorContext());
       }
-    }, project);
+    });
   }
 
   private AnAction getIntentionGroup(final IntentionExecutable intention, final SNode node) {
@@ -369,7 +364,7 @@ public class IntentionsSupport {
 
   private void showIntentionsMenu() {
     final EditorContext editorContext = myEditor.getEditorContext();
-    ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
+    ListPopup popup = new ModelAccessHelper(getModelAccess()).runReadAction(new Computable<ListPopup>() {
       @Override
       public ListPopup compute() {
         DataContext dataContext = DataManager.getInstance().getDataContext(editorContext.getNodeEditorComponent());
@@ -423,5 +418,9 @@ public class IntentionsSupport {
 
   public boolean isLightBulbVisible() {
     return myLightBulb.isVisible();
+  }
+
+  private ModelAccess getModelAccess() {
+    return myEditor.getRepository().getModelAccess();
   }
 }

@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl.plan;
 import jetbrains.mps.generator.impl.GeneratorUtilEx;
 import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.smodel.FastNodeFinder;
-import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLanguage;
@@ -58,9 +58,8 @@ public final class ModelScanner {
   }
 
   public ModelScanner scan(SModel model) {
-    assert model instanceof SModelInternal;
 //    assert SModelStereotype.isGeneratorModel(model);
-    FastNodeFinder fnf = ((SModelInternal) model).getFastNodeFinder();
+    FastNodeFinder fnf = FastNodeFinderManager.get(model);
     processTemplateNodeAttribute(fnf.getNodes(RuleUtil.concept_TemplateFragment, false));
     processTemplateNodeAttribute(fnf.getNodes(RuleUtil.concept_RootTemplateAnnotation, false));
     final NodeScanner ns = new NodeScanner(new MacroFilter());

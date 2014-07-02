@@ -374,7 +374,7 @@
    <int>4</int>
   </void>
   <void method="put">
-   <string>public java.util.Set&lt;java.lang.String&gt; jetbrains.mps.smodel.SNode.getPropertyNames()</string>
+   <string>public java.lang.Iterable&lt;java.lang.String&gt; jetbrains.mps.smodel.SNode.getPropertyNames()</string>
    <int>2</int>
   </void>
   <void method="put">

@@ -21,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.scope.ModelsScope;
 import jetbrains.mps.smodel.SNodePointer;
@@ -54,9 +53,10 @@ public class AttributeStyleClassItem_Constraints extends BaseConstraintsDescript
             {
               List<Language> languages = SModelOperations.getLanguages(_context.getModel());
               List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
+              ListSequence.fromList(models).addElement(_context.getModel());
               ListSequence.fromList(models).addSequence(ListSequence.fromList(SModelOperations.allImportedModels(_context.getModel())));
-              ListSequence.fromList(models).addSequence(ListSequence.fromList(languages).select(new ISelector<Language, EditableSModelDescriptor>() {
-                public EditableSModelDescriptor select(Language it) {
+              ListSequence.fromList(models).addSequence(ListSequence.fromList(languages).select(new ISelector<Language, SModel>() {
+                public SModel select(Language it) {
                   return LanguageAspect.EDITOR.get(it);
                 }
               }));

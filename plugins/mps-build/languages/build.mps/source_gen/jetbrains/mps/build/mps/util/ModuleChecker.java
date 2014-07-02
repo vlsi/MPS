@@ -39,6 +39,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.build.mps.behavior.BuildMps_Generator_Behavior;
 import java.util.LinkedHashMap;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -694,6 +696,54 @@ public class ModuleChecker {
 
     ModuleChecker moduleCheckerForGenerator = new ModuleChecker(SLinkOperations.getTarget(language, "generator", true), SLinkOperations.getTarget(language, "generator", true), myVisibleModules, myPathConverter, myGenContext, myModuleSourceDir, generatorDescriptor, myReporter);
     moduleCheckerForGenerator.check(type);
+    if (type.doFullImport) {
+      // propagate collected generator dependencies up to generator's source language dependencies. 
+      // do it at runtime only (doFullImport == true) as extracted dependencies are enough to reconstruct  
+      // complete set of dependencies 
+      Set<SNode> alreadyInDeps = unwrapExtractedDeps(language);
+      SetSequence.fromSet(alreadyInDeps).addElement(language);
+      Set<SNode> generatorDeps = unwrapExtractedDeps(SLinkOperations.getTarget(language, "generator", true));
+      for (SNode dep : generatorDeps) {
+        SNode extraDep = dep;
+        if (SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_Generator")) {
+          // generator depends on another generator, use dependant generator's language as our dependency 
+          extraDep = SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_Generator"), "sourceLanguage", false);
+        }
+        if (SetSequence.fromSet(alreadyInDeps).contains(extraDep)) {
+          continue;
+        }
+        SNode newDep = SModelOperations.createNewNode(SNodeOperations.getModel(language), null, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule");
+        SLinkOperations.setTarget(newDep, "module", extraDep, false);
+        ListSequence.fromList(SLinkOperations.getTargets(language, "dependencies", true)).addElement(newDep);
+        SetSequence.fromSet(alreadyInDeps).addElement(extraDep);
+      }
+    }
+  }
+
+  private static Set<SNode> unwrapExtractedDeps(SNode module) {
+    // unwrap extracted dependencies into true dependencies, find dependencies from modules 
+    Iterable<SNode> moduleExtractedDependencies = SNodeOperations.ofConcept(SLinkOperations.getTargets(module, "dependencies", true), "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency");
+    Set<SNode> moduleDependencies = SetSequence.fromSet(new HashSet<SNode>());
+    SetSequence.fromSet(moduleDependencies).addSequence(ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)));
+    SetSequence.fromSet(moduleDependencies).removeSequence(Sequence.fromIterable(moduleExtractedDependencies));
+    SetSequence.fromSet(moduleDependencies).addSequence(Sequence.fromIterable(moduleExtractedDependencies).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "dependency", true) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "dependency", true);
+      }
+    }));
+    return SetSequence.fromSetWithValues(new HashSet<SNode>(), Sequence.fromIterable(SNodeOperations.ofConcept(moduleDependencies, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule")).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return (SLinkOperations.getTarget(it, "module", false) != null);
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SLinkOperations.getTarget(it, "module", false);
+      }
+    }));
   }
 
   private void optimizeDeps() {

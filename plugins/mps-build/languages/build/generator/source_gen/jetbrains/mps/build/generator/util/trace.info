@@ -1,221 +1,237 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:9a95c968-dcbf-4b0d-8fd9-b8db00f89883(jetbrains.mps.build.generator.util)/8775597636506088045">
-    <nodeInfo nodeId="8775597636506088069" fileName="JavaExternalLibraryHelper.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="library" />
-    <nodeInfo nodeId="8775597636506088078" fileName="JavaExternalLibraryHelper.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="helper" />
-    <nodeInfo nodeId="8775597636506120595" fileName="JavaExternalLibraryHelper.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
-    <nodeInfo nodeId="8775597636506088072" fileName="JavaExternalLibraryHelper.java" startLine="27" startPosition="111" endLine="28" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506088081" fileName="JavaExternalLibraryHelper.java" startLine="28" startPosition="27" endLine="29" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506120598" fileName="JavaExternalLibraryHelper.java" startLine="29" startPosition="25" endLine="30" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506120627" fileName="JavaExternalLibraryHelper.java" startLine="33" startPosition="38" endLine="34" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506120650" fileName="JavaExternalLibraryHelper.java" startLine="34" startPosition="51" endLine="35" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506120649" fileName="JavaExternalLibraryHelper.java" startLine="35" startPosition="55" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6853883513540407299" fileName="JavaExternalLibraryHelper.java" startLine="38" startPosition="106" endLine="39" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6853883513540407342" fileName="JavaExternalLibraryHelper.java" startLine="40" startPosition="28" endLine="41" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6853883513540407376" fileName="JavaExternalLibraryHelper.java" startLine="42" startPosition="9" endLine="43" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6853883513540407418" fileName="JavaExternalLibraryHelper.java" startLine="44" startPosition="107" endLine="45" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6853883513540407428" fileName="JavaExternalLibraryHelper.java" startLine="46" startPosition="36" endLine="47" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6853883513540510991" fileName="JavaExternalLibraryHelper.java" startLine="48" startPosition="18" endLine="49" endPosition="334" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506120936" fileName="JavaExternalLibraryHelper.java" startLine="49" startPosition="334" endLine="50" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6853883513540511126" fileName="JavaExternalLibraryHelper.java" startLine="52" startPosition="129" endLine="53" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121019" fileName="JavaExternalLibraryHelper.java" startLine="53" startPosition="207" endLine="54" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121224" fileName="JavaExternalLibraryHelper.java" startLine="55" startPosition="125" endLine="56" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121026" fileName="JavaExternalLibraryHelper.java" startLine="58" startPosition="33" endLine="59" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121036" fileName="JavaExternalLibraryHelper.java" startLine="60" startPosition="18" endLine="61" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121048" fileName="JavaExternalLibraryHelper.java" startLine="61" startPosition="218" endLine="62" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8775597636506120688" fileName="JavaExternalLibraryHelper.java" startLine="63" startPosition="11" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6853883513540511140" fileName="JavaExternalLibraryHelper.java" startLine="65" startPosition="135" endLine="66" endPosition="221" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6853883513540408006" fileName="JavaExternalLibraryHelper.java" startLine="66" startPosition="221" endLine="67" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121115" fileName="JavaExternalLibraryHelper.java" startLine="68" startPosition="129" endLine="69" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506120980" fileName="JavaExternalLibraryHelper.java" startLine="71" startPosition="33" endLine="72" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506120961" fileName="JavaExternalLibraryHelper.java" startLine="73" startPosition="18" endLine="74" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506120977" fileName="JavaExternalLibraryHelper.java" startLine="74" startPosition="222" endLine="75" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8775597636506121016" fileName="JavaExternalLibraryHelper.java" startLine="77" startPosition="16" endLine="78" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8775597636506120725" fileName="JavaExternalLibraryHelper.java" startLine="78" startPosition="54" endLine="79" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506120756" fileName="JavaExternalLibraryHelper.java" startLine="79" startPosition="51" endLine="80" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506120786" fileName="JavaExternalLibraryHelper.java" startLine="80" startPosition="55" endLine="81" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8775597636506120849" fileName="JavaExternalLibraryHelper.java" startLine="84" startPosition="5" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8775597636506121309" fileName="JavaExternalLibraryHelper.java" startLine="85" startPosition="0" endLine="86" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5979287180587467452" fileName="JavaExternalLibraryHelper.java" startLine="87" startPosition="103" endLine="88" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5979287180587467467" fileName="JavaExternalLibraryHelper.java" startLine="89" startPosition="31" endLine="90" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121289" fileName="JavaExternalLibraryHelper.java" startLine="90" startPosition="144" endLine="91" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8775597636506120657" fileName="JavaExternalLibraryHelper.java" startLine="93" startPosition="120" endLine="94" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506120693" fileName="JavaExternalLibraryHelper.java" startLine="95" startPosition="16" endLine="96" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121293" fileName="JavaExternalLibraryHelper.java" startLine="99" startPosition="5" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8775597636506121297" fileName="JavaExternalLibraryHelper.java" startLine="100" startPosition="0" endLine="101" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5979287180587467520" fileName="JavaExternalLibraryHelper.java" startLine="102" startPosition="66" endLine="103" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5979287180587467531" fileName="JavaExternalLibraryHelper.java" startLine="104" startPosition="24" endLine="105" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5979287180587467543" fileName="JavaExternalLibraryHelper.java" startLine="105" startPosition="204" endLine="106" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5979287180587467547" fileName="JavaExternalLibraryHelper.java" startLine="107" startPosition="7" endLine="108" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121314" fileName="JavaExternalLibraryHelper.java" startLine="108" startPosition="142" endLine="109" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5979287180587467562" fileName="JavaExternalLibraryHelper.java" startLine="109" startPosition="81" endLine="110" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121419" fileName="JavaExternalLibraryHelper.java" startLine="112" startPosition="36" endLine="113" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121430" fileName="JavaExternalLibraryHelper.java" startLine="114" startPosition="24" endLine="115" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121442" fileName="JavaExternalLibraryHelper.java" startLine="115" startPosition="212" endLine="116" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="8775597636506121446" fileName="JavaExternalLibraryHelper.java" startLine="117" startPosition="7" endLine="118" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121454" fileName="JavaExternalLibraryHelper.java" startLine="118" startPosition="142" endLine="119" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121475" fileName="JavaExternalLibraryHelper.java" startLine="119" startPosition="82" endLine="120" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121465" fileName="JavaExternalLibraryHelper.java" startLine="120" startPosition="79" endLine="121" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5979287180587467570" fileName="JavaExternalLibraryHelper.java" startLine="122" startPosition="5" endLine="123" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="126" startPosition="82" endLine="127" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="127" startPosition="63" endLine="128" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="128" startPosition="30" endLine="129" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="129" startPosition="30" endLine="130" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="130" startPosition="132" endLine="131" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="131" startPosition="66" endLine="132" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="132" startPosition="132" endLine="133" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="133" startPosition="76" endLine="134" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="134" startPosition="49" endLine="135" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="138" startPosition="83" endLine="139" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="139" startPosition="63" endLine="140" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="140" startPosition="30" endLine="141" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="141" startPosition="30" endLine="142" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="142" startPosition="132" endLine="143" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="143" startPosition="65" endLine="144" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="144" startPosition="132" endLine="145" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="145" startPosition="76" endLine="146" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="146" startPosition="49" endLine="147" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="150" startPosition="65" endLine="151" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="151" startPosition="63" endLine="152" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="152" startPosition="30" endLine="153" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="153" startPosition="30" endLine="154" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="154" startPosition="132" endLine="155" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="155" startPosition="70" endLine="156" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="156" startPosition="132" endLine="157" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="157" startPosition="63" endLine="158" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="158" startPosition="49" endLine="159" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5979287180587467503" fileName="JavaExternalLibraryHelper.java" startLine="95" startPosition="14" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6853883513540407309" fileName="JavaExternalLibraryHelper.java" startLine="39" startPosition="107" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6853883513540510988" fileName="JavaExternalLibraryHelper.java" startLine="48" startPosition="16" endLine="51" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121222" fileName="JavaExternalLibraryHelper.java" startLine="54" startPosition="102" endLine="57" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8775597636506121034" fileName="JavaExternalLibraryHelper.java" startLine="60" startPosition="16" endLine="63" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121053" fileName="JavaExternalLibraryHelper.java" startLine="67" startPosition="117" endLine="70" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8775597636506120959" fileName="JavaExternalLibraryHelper.java" startLine="73" startPosition="16" endLine="76" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="131" startPosition="66" endLine="134" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="131" startPosition="66" endLine="134" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="143" startPosition="65" endLine="146" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="143" startPosition="65" endLine="146" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="155" startPosition="70" endLine="158" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="155" startPosition="70" endLine="158" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5979287180587467529" fileName="JavaExternalLibraryHelper.java" startLine="103" startPosition="46" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8775597636506121428" fileName="JavaExternalLibraryHelper.java" startLine="113" startPosition="53" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8775597636506088047" fileName="JavaExternalLibraryHelper.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="JavaExternalLibraryHelper#(Ljetbrains/mps/build/util/DependenciesHelper;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
-    <nodeInfo nodeId="6853883513540408109" fileName="JavaExternalLibraryHelper.java" startLine="77" startPosition="14" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5979287180587467490" fileName="JavaExternalLibraryHelper.java" startLine="92" startPosition="14" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="129" startPosition="30" endLine="134" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="129" startPosition="30" endLine="134" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="141" startPosition="30" endLine="146" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="141" startPosition="30" endLine="146" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="153" startPosition="30" endLine="158" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="153" startPosition="30" endLine="158" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6853883513540407426" fileName="JavaExternalLibraryHelper.java" startLine="45" startPosition="180" endLine="51" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8775597636506121024" fileName="JavaExternalLibraryHelper.java" startLine="57" startPosition="11" endLine="63" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6853883513540408020" fileName="JavaExternalLibraryHelper.java" startLine="70" startPosition="11" endLine="76" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6853883513540510839" fileName="JavaExternalLibraryHelper.java" startLine="92" startPosition="12" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5979287180587467465" fileName="JavaExternalLibraryHelper.java" startLine="88" startPosition="57" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5979287180587467518" fileName="JavaExternalLibraryHelper.java" startLine="101" startPosition="48" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8775597636506121417" fileName="JavaExternalLibraryHelper.java" startLine="111" startPosition="5" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="126" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_g6ffke_b0a3a9a4#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="138" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_g6ffke_b0a3a01a4#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="150" startPosition="0" endLine="161" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_g6ffke_b0a4a01a4#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8775597636506120851" fileName="JavaExternalLibraryHelper.java" startLine="86" startPosition="30" endLine="99" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6853883513540407384" fileName="JavaExternalLibraryHelper.java" startLine="43" startPosition="76" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6853883513540407202" fileName="JavaExternalLibraryHelper.java" startLine="37" startPosition="94" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6853883513540510779" fileName="JavaExternalLibraryHelper.java" startLine="36" startPosition="0" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8775597636506088064" fileName="JavaExternalLibraryHelper.java" startLine="33" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="artifacts#()Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="6853883513540407310" fileName="JavaExternalLibraryHelper.java" startLine="40" startPosition="28" endLine="41" endPosition="22" />
-    <scopeInfo nodeId="6853883513540407427" fileName="JavaExternalLibraryHelper.java" startLine="46" startPosition="36" endLine="47" endPosition="69" />
-    <scopeInfo nodeId="8775597636506121223" fileName="JavaExternalLibraryHelper.java" startLine="55" startPosition="125" endLine="56" endPosition="239" />
-    <scopeInfo nodeId="8775597636506121025" fileName="JavaExternalLibraryHelper.java" startLine="58" startPosition="33" endLine="59" endPosition="66" />
-    <scopeInfo nodeId="8775597636506121054" fileName="JavaExternalLibraryHelper.java" startLine="68" startPosition="129" endLine="69" endPosition="256" />
-    <scopeInfo nodeId="6853883513540408021" fileName="JavaExternalLibraryHelper.java" startLine="71" startPosition="33" endLine="72" endPosition="70" />
-    <scopeInfo nodeId="5979287180587467491" fileName="JavaExternalLibraryHelper.java" startLine="93" startPosition="120" endLine="94" endPosition="223" />
-    <scopeInfo nodeId="5979287180587467504" fileName="JavaExternalLibraryHelper.java" startLine="95" startPosition="16" endLine="96" endPosition="66" />
-    <scopeInfo nodeId="6853883513540510989" fileName="JavaExternalLibraryHelper.java" startLine="48" startPosition="18" endLine="50" endPosition="43" />
-    <scopeInfo nodeId="8775597636506121035" fileName="JavaExternalLibraryHelper.java" startLine="60" startPosition="18" endLine="62" endPosition="43" />
-    <scopeInfo nodeId="8775597636506120960" fileName="JavaExternalLibraryHelper.java" startLine="73" startPosition="18" endLine="75" endPosition="43" />
-    <scopeInfo nodeId="5979287180587467466" fileName="JavaExternalLibraryHelper.java" startLine="89" startPosition="31" endLine="91" endPosition="39" />
-    <scopeInfo nodeId="5979287180587467530" fileName="JavaExternalLibraryHelper.java" startLine="104" startPosition="24" endLine="106" endPosition="17" />
-    <scopeInfo nodeId="8775597636506121429" fileName="JavaExternalLibraryHelper.java" startLine="114" startPosition="24" endLine="116" endPosition="17" />
-    <scopeInfo nodeId="8775597636506088050" fileName="JavaExternalLibraryHelper.java" startLine="27" startPosition="111" endLine="30" endPosition="33" />
-    <scopeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="131" startPosition="66" endLine="134" endPosition="49" />
-    <scopeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="143" startPosition="65" endLine="146" endPosition="49" />
-    <scopeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="155" startPosition="70" endLine="158" endPosition="49" />
-    <scopeInfo nodeId="6853883513540408110" fileName="JavaExternalLibraryHelper.java" startLine="77" startPosition="16" endLine="81" endPosition="16" />
-    <scopeInfo nodeId="8775597636506088047" fileName="JavaExternalLibraryHelper.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="8775597636506120587" varName="genContext" />
-      <varInfo nodeId="8775597636506088051" varName="helper" />
-      <varInfo nodeId="8775597636506088053" varName="library" />
-    </scopeInfo>
-    <scopeInfo nodeId="6853883513540510840" fileName="JavaExternalLibraryHelper.java" startLine="92" startPosition="14" endLine="97" endPosition="9" />
-    <scopeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="129" startPosition="30" endLine="134" endPosition="49" />
-    <scopeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="141" startPosition="30" endLine="146" endPosition="49" />
-    <scopeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="153" startPosition="30" endLine="158" endPosition="49" />
-    <scopeInfo nodeId="6853883513540407385" fileName="JavaExternalLibraryHelper.java" startLine="44" startPosition="107" endLine="51" endPosition="11">
-      <varInfo nodeId="6853883513540407419" varName="jarArtifact" />
-    </scopeInfo>
-    <scopeInfo nodeId="5979287180587467519" fileName="JavaExternalLibraryHelper.java" startLine="102" startPosition="66" endLine="110" endPosition="61">
-      <varInfo nodeId="5979287180587467548" varName="propertyNode" />
-      <varInfo nodeId="5979287180587467521" varName="val" />
-    </scopeInfo>
-    <scopeInfo nodeId="8775597636506121418" fileName="JavaExternalLibraryHelper.java" startLine="112" startPosition="36" endLine="121" endPosition="61">
-      <varInfo nodeId="8775597636506121447" varName="propertyNode" />
-      <varInfo nodeId="8775597636506121420" varName="val" />
-    </scopeInfo>
-    <scopeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="126" startPosition="82" endLine="135" endPosition="24">
-      <varInfo nodeId="8775597636506121407" varName="facade" />
-      <varInfo nodeId="8775597636506121407" varName="quotedNode_2" />
-      <varInfo nodeId="8775597636506121407" varName="quotedNode_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="138" startPosition="83" endLine="147" endPosition="24">
-      <varInfo nodeId="8775597636506121460" varName="facade" />
-      <varInfo nodeId="8775597636506121460" varName="quotedNode_2" />
-      <varInfo nodeId="8775597636506121460" varName="quotedNode_3" />
-    </scopeInfo>
-    <scopeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="150" startPosition="65" endLine="159" endPosition="24">
-      <varInfo nodeId="8775597636506121481" varName="facade" />
-      <varInfo nodeId="8775597636506121481" varName="quotedNode_1" />
-      <varInfo nodeId="8775597636506121481" varName="quotedNode_2" />
-    </scopeInfo>
-    <scopeInfo nodeId="5979287180587467518" fileName="JavaExternalLibraryHelper.java" startLine="101" startPosition="48" endLine="111" endPosition="5">
-      <varInfo nodeId="5979287180587467567" varName="pe" />
-    </scopeInfo>
-    <scopeInfo nodeId="6853883513540407867" fileName="JavaExternalLibraryHelper.java" startLine="65" startPosition="135" endLine="76" endPosition="11">
-      <varInfo nodeId="6853883513540408007" varName="artifact" />
-      <varInfo nodeId="6853883513540511141" varName="folder" />
-    </scopeInfo>
-    <scopeInfo nodeId="8775597636506120852" fileName="JavaExternalLibraryHelper.java" startLine="87" startPosition="103" endLine="98" endPosition="7">
-      <varInfo nodeId="5979287180587467453" varName="layoutNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8775597636506121417" fileName="JavaExternalLibraryHelper.java" startLine="111" startPosition="5" endLine="122" endPosition="5">
-      <varInfo nodeId="8775597636506121470" varName="pe" />
-    </scopeInfo>
-    <scopeInfo nodeId="8775597636506121407" fileName="JavaExternalLibraryHelper.java" startLine="126" startPosition="0" endLine="137" endPosition="0">
-      <varInfo nodeId="8775597636506121407" varName="parameter_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8775597636506121460" fileName="JavaExternalLibraryHelper.java" startLine="138" startPosition="0" endLine="149" endPosition="0">
-      <varInfo nodeId="8775597636506121460" varName="parameter_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8775597636506121481" fileName="JavaExternalLibraryHelper.java" startLine="150" startPosition="0" endLine="161" endPosition="0" />
-    <scopeInfo nodeId="6853883513540407488" fileName="JavaExternalLibraryHelper.java" startLine="52" startPosition="129" endLine="64" endPosition="0">
-      <varInfo nodeId="8775597636506121020" varName="artifact" />
-      <varInfo nodeId="6853883513540511127" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="6853883513540407205" fileName="JavaExternalLibraryHelper.java" startLine="38" startPosition="106" endLine="82" endPosition="9">
-      <varInfo nodeId="6853883513540407377" varName="classpath" />
-      <varInfo nodeId="6853883513540407300" varName="jcp" />
-    </scopeInfo>
-    <scopeInfo nodeId="6853883513540407202" fileName="JavaExternalLibraryHelper.java" startLine="37" startPosition="94" endLine="83" endPosition="7">
-      <varInfo nodeId="6853883513540407203" varName="element" />
-    </scopeInfo>
-    <scopeInfo nodeId="6853883513540510780" fileName="JavaExternalLibraryHelper.java" startLine="37" startPosition="94" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="8775597636506088067" fileName="JavaExternalLibraryHelper.java" startLine="33" startPosition="38" endLine="123" endPosition="18">
-      <varInfo nodeId="8775597636506120628" varName="artifacts" />
-      <varInfo nodeId="8775597636506120651" varName="jarContainers" />
-      <varInfo nodeId="8775597636506121298" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="8775597636506088064" fileName="JavaExternalLibraryHelper.java" startLine="33" startPosition="0" endLine="125" endPosition="0" />
-    <unitInfo nodeId="8775597636506088045" fileName="JavaExternalLibraryHelper.java" startLine="22" startPosition="0" endLine="162" endPosition="0" unitName="jetbrains.mps.build.generator.util.JavaExternalLibraryHelper" />
+    <file name="JavaExternalLibraryHelper.java">
+      <node id="8775597636506088069" at="23,0,24,0" concept="5" trace="library" />
+      <node id="8775597636506088078" at="24,0,25,0" concept="5" trace="helper" />
+      <node id="8775597636506120595" at="25,0,26,0" concept="5" trace="genContext" />
+      <node id="8775597636506088072" at="27,111,28,27" concept="4" />
+      <node id="8775597636506088081" at="28,27,29,25" concept="4" />
+      <node id="8775597636506120598" at="29,25,30,33" concept="4" />
+      <node id="8775597636506120627" at="33,38,34,51" concept="9" />
+      <node id="8775597636506120650" at="34,51,35,55" concept="9" />
+      <node id="8775597636506120649" at="35,55,36,0" concept="12" />
+      <node id="6853883513540407299" at="38,106,39,107" concept="9" />
+      <node id="6853883513540407342" at="40,28,41,22" concept="10" />
+      <node id="6853883513540407376" at="42,9,43,76" concept="9" />
+      <node id="6853883513540407418" at="44,107,45,180" concept="9" />
+      <node id="6853883513540407428" at="46,36,47,69" concept="4" />
+      <node id="6853883513540510991" at="48,18,49,334" concept="4" />
+      <node id="8775597636506120936" at="49,334,50,43" concept="10" />
+      <node id="6853883513540511126" at="52,129,53,207" concept="9" />
+      <node id="8775597636506121019" at="53,207,54,102" concept="9" />
+      <node id="8775597636506121224" at="55,125,56,239" concept="4" />
+      <node id="8775597636506121026" at="58,33,59,66" concept="4" />
+      <node id="8775597636506121036" at="60,18,61,218" concept="4" />
+      <node id="8775597636506121048" at="61,218,62,43" concept="10" />
+      <node id="8775597636506120688" at="63,11,64,0" concept="12" />
+      <node id="6853883513540511140" at="65,135,66,221" concept="9" />
+      <node id="6853883513540408006" at="66,221,67,117" concept="9" />
+      <node id="8775597636506121115" at="68,129,69,256" concept="4" />
+      <node id="8775597636506120980" at="71,33,72,70" concept="4" />
+      <node id="8775597636506120961" at="73,18,74,222" concept="4" />
+      <node id="8775597636506120977" at="74,222,75,43" concept="10" />
+      <node id="8775597636506121016" at="77,16,78,54" concept="11" />
+      <node id="8775597636506120725" at="78,54,79,51" concept="4" />
+      <node id="8775597636506120756" at="79,51,80,55" concept="4" />
+      <node id="8775597636506120786" at="80,55,81,16" concept="1" />
+      <node id="8775597636506120849" at="84,5,85,0" concept="12" />
+      <node id="8775597636506121309" at="85,0,86,30" concept="11" />
+      <node id="5979287180587467452" at="87,103,88,57" concept="9" />
+      <node id="5979287180587467467" at="89,31,90,144" concept="4" />
+      <node id="8775597636506121289" at="90,144,91,39" concept="10" />
+      <node id="8775597636506120657" at="93,120,94,223" concept="4" />
+      <node id="8775597636506120693" at="95,16,96,66" concept="4" />
+      <node id="8775597636506121293" at="99,5,100,0" concept="12" />
+      <node id="8775597636506121297" at="100,0,101,48" concept="9" />
+      <node id="5979287180587467520" at="102,66,103,46" concept="9" />
+      <node id="5979287180587467531" at="104,24,105,204" concept="4" />
+      <node id="5979287180587467543" at="105,204,106,17" concept="3" />
+      <node id="5979287180587467547" at="107,7,108,142" concept="9" />
+      <node id="8775597636506121314" at="108,142,109,81" concept="4" />
+      <node id="5979287180587467562" at="109,81,110,61" concept="4" />
+      <node id="8775597636506121419" at="112,36,113,53" concept="9" />
+      <node id="8775597636506121430" at="114,24,115,212" concept="4" />
+      <node id="8775597636506121442" at="115,212,116,17" concept="3" />
+      <node id="8775597636506121446" at="117,7,118,142" concept="9" />
+      <node id="8775597636506121454" at="118,142,119,82" concept="4" />
+      <node id="8775597636506121475" at="119,82,120,79" concept="4" />
+      <node id="8775597636506121465" at="120,79,121,61" concept="4" />
+      <node id="5979287180587467570" at="122,5,123,18" concept="10" />
+      <node id="8775597636506121407" at="126,82,127,63" concept="9" />
+      <node id="8775597636506121407" at="127,63,128,30" concept="9" />
+      <node id="8775597636506121407" at="128,30,129,30" concept="9" />
+      <node id="8775597636506121407" at="129,30,130,132" concept="4" />
+      <node id="8775597636506121407" at="130,132,131,66" concept="4" />
+      <node id="8775597636506121407" at="131,66,132,132" concept="4" />
+      <node id="8775597636506121407" at="132,132,133,76" concept="4" />
+      <node id="8775597636506121407" at="133,76,134,49" concept="4" />
+      <node id="8775597636506121407" at="134,49,135,24" concept="10" />
+      <node id="8775597636506121460" at="138,83,139,63" concept="9" />
+      <node id="8775597636506121460" at="139,63,140,30" concept="9" />
+      <node id="8775597636506121460" at="140,30,141,30" concept="9" />
+      <node id="8775597636506121460" at="141,30,142,132" concept="4" />
+      <node id="8775597636506121460" at="142,132,143,65" concept="4" />
+      <node id="8775597636506121460" at="143,65,144,132" concept="4" />
+      <node id="8775597636506121460" at="144,132,145,76" concept="4" />
+      <node id="8775597636506121460" at="145,76,146,49" concept="4" />
+      <node id="8775597636506121460" at="146,49,147,24" concept="10" />
+      <node id="8775597636506121481" at="150,65,151,63" concept="9" />
+      <node id="8775597636506121481" at="151,63,152,30" concept="9" />
+      <node id="8775597636506121481" at="152,30,153,30" concept="9" />
+      <node id="8775597636506121481" at="153,30,154,132" concept="4" />
+      <node id="8775597636506121481" at="154,132,155,70" concept="4" />
+      <node id="8775597636506121481" at="155,70,156,132" concept="4" />
+      <node id="8775597636506121481" at="156,132,157,63" concept="4" />
+      <node id="8775597636506121481" at="157,63,158,49" concept="4" />
+      <node id="8775597636506121481" at="158,49,159,24" concept="10" />
+      <node id="5979287180587467503" at="95,14,97,9" concept="0" />
+      <node id="6853883513540407309" at="39,107,42,9" concept="7" />
+      <node id="6853883513540510988" at="48,16,51,11" concept="0" />
+      <node id="8775597636506121222" at="54,102,57,11" concept="7" />
+      <node id="8775597636506121034" at="60,16,63,11" concept="0" />
+      <node id="8775597636506121053" at="67,117,70,11" concept="7" />
+      <node id="8775597636506120959" at="73,16,76,11" concept="0" />
+      <node id="8775597636506121407" at="131,66,134,49" concept="0" />
+      <node id="8775597636506121407" at="131,66,134,49" concept="0" />
+      <node id="8775597636506121460" at="143,65,146,49" concept="0" />
+      <node id="8775597636506121460" at="143,65,146,49" concept="0" />
+      <node id="8775597636506121481" at="155,70,158,49" concept="0" />
+      <node id="8775597636506121481" at="155,70,158,49" concept="0" />
+      <node id="5979287180587467529" at="103,46,107,7" concept="7" />
+      <node id="8775597636506121428" at="113,53,117,7" concept="7" />
+      <node id="8775597636506088047" at="27,0,32,0" concept="2" trace="JavaExternalLibraryHelper#(Ljetbrains/mps/build/util/DependenciesHelper;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
+      <node id="6853883513540408109" at="77,14,82,9" concept="0" />
+      <node id="5979287180587467490" at="92,14,97,9" concept="7" />
+      <node id="8775597636506121407" at="129,30,134,49" concept="0" />
+      <node id="8775597636506121407" at="129,30,134,49" concept="0" />
+      <node id="8775597636506121460" at="141,30,146,49" concept="0" />
+      <node id="8775597636506121460" at="141,30,146,49" concept="0" />
+      <node id="8775597636506121481" at="153,30,158,49" concept="0" />
+      <node id="8775597636506121481" at="153,30,158,49" concept="0" />
+      <node id="6853883513540407426" at="45,180,51,11" concept="7" />
+      <node id="8775597636506121024" at="57,11,63,11" concept="7" />
+      <node id="6853883513540408020" at="70,11,76,11" concept="7" />
+      <node id="6853883513540510839" at="92,12,98,7" concept="0" />
+      <node id="5979287180587467465" at="88,57,98,7" concept="7" />
+      <node id="5979287180587467518" at="101,48,111,5" concept="6" />
+      <node id="8775597636506121417" at="111,5,122,5" concept="6" />
+      <node id="8775597636506121407" at="126,0,137,0" concept="13" trace="_quotation_createNode_g6ffke_b0a3a9a4#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8775597636506121460" at="138,0,149,0" concept="13" trace="_quotation_createNode_g6ffke_b0a3a01a4#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8775597636506121481" at="150,0,161,0" concept="13" trace="_quotation_createNode_g6ffke_b0a4a01a4#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8775597636506120851" at="86,30,99,5" concept="7" />
+      <node id="6853883513540407384" at="43,76,82,9" concept="7" />
+      <node id="6853883513540407202" at="37,94,83,7" concept="6" />
+      <node id="6853883513540510779" at="36,0,84,5" concept="7" />
+      <node id="8775597636506088064" at="33,0,125,0" concept="8" trace="artifacts#()Ljava/lang/Iterable;" />
+      <scope id="6853883513540407310" at="40,28,41,22" />
+      <scope id="6853883513540407427" at="46,36,47,69" />
+      <scope id="8775597636506121223" at="55,125,56,239" />
+      <scope id="8775597636506121025" at="58,33,59,66" />
+      <scope id="8775597636506121054" at="68,129,69,256" />
+      <scope id="6853883513540408021" at="71,33,72,70" />
+      <scope id="5979287180587467491" at="93,120,94,223" />
+      <scope id="5979287180587467504" at="95,16,96,66" />
+      <scope id="6853883513540510989" at="48,18,50,43" />
+      <scope id="8775597636506121035" at="60,18,62,43" />
+      <scope id="8775597636506120960" at="73,18,75,43" />
+      <scope id="5979287180587467466" at="89,31,91,39" />
+      <scope id="5979287180587467530" at="104,24,106,17" />
+      <scope id="8775597636506121429" at="114,24,116,17" />
+      <scope id="8775597636506088050" at="27,111,30,33" />
+      <scope id="8775597636506121407" at="131,66,134,49" />
+      <scope id="8775597636506121460" at="143,65,146,49" />
+      <scope id="8775597636506121481" at="155,70,158,49" />
+      <scope id="6853883513540408110" at="77,16,81,16" />
+      <scope id="8775597636506088047" at="27,0,32,0">
+        <var name="genContext" id="8775597636506120587" />
+        <var name="helper" id="8775597636506088051" />
+        <var name="library" id="8775597636506088053" />
+      </scope>
+      <scope id="6853883513540510840" at="92,14,97,9" />
+      <scope id="8775597636506121407" at="129,30,134,49" />
+      <scope id="8775597636506121460" at="141,30,146,49" />
+      <scope id="8775597636506121481" at="153,30,158,49" />
+      <scope id="6853883513540407385" at="44,107,51,11">
+        <var name="jarArtifact" id="6853883513540407419" />
+      </scope>
+      <scope id="5979287180587467519" at="102,66,110,61">
+        <var name="propertyNode" id="5979287180587467548" />
+        <var name="val" id="5979287180587467521" />
+      </scope>
+      <scope id="8775597636506121418" at="112,36,121,61">
+        <var name="propertyNode" id="8775597636506121447" />
+        <var name="val" id="8775597636506121420" />
+      </scope>
+      <scope id="8775597636506121407" at="126,82,135,24">
+        <var name="facade" id="8775597636506121407" />
+        <var name="quotedNode_2" id="8775597636506121407" />
+        <var name="quotedNode_3" id="8775597636506121407" />
+      </scope>
+      <scope id="8775597636506121460" at="138,83,147,24">
+        <var name="facade" id="8775597636506121460" />
+        <var name="quotedNode_2" id="8775597636506121460" />
+        <var name="quotedNode_3" id="8775597636506121460" />
+      </scope>
+      <scope id="8775597636506121481" at="150,65,159,24">
+        <var name="facade" id="8775597636506121481" />
+        <var name="quotedNode_1" id="8775597636506121481" />
+        <var name="quotedNode_2" id="8775597636506121481" />
+      </scope>
+      <scope id="5979287180587467518" at="101,48,111,5">
+        <var name="pe" id="5979287180587467567" />
+      </scope>
+      <scope id="6853883513540407867" at="65,135,76,11">
+        <var name="artifact" id="6853883513540408007" />
+        <var name="folder" id="6853883513540511141" />
+      </scope>
+      <scope id="8775597636506120852" at="87,103,98,7">
+        <var name="layoutNode" id="5979287180587467453" />
+      </scope>
+      <scope id="8775597636506121417" at="111,5,122,5">
+        <var name="pe" id="8775597636506121470" />
+      </scope>
+      <scope id="8775597636506121407" at="126,0,137,0">
+        <var name="parameter_1" id="8775597636506121407" />
+      </scope>
+      <scope id="8775597636506121460" at="138,0,149,0">
+        <var name="parameter_1" id="8775597636506121460" />
+      </scope>
+      <scope id="8775597636506121481" at="150,0,161,0" />
+      <scope id="6853883513540407488" at="52,129,64,0">
+        <var name="artifact" id="8775597636506121020" />
+        <var name="file" id="6853883513540511127" />
+      </scope>
+      <scope id="6853883513540407205" at="38,106,82,9">
+        <var name="classpath" id="6853883513540407377" />
+        <var name="jcp" id="6853883513540407300" />
+      </scope>
+      <scope id="6853883513540407202" at="37,94,83,7">
+        <var name="element" id="6853883513540407203" />
+      </scope>
+      <scope id="6853883513540510780" at="37,94,83,7" />
+      <scope id="8775597636506088067" at="33,38,123,18">
+        <var name="artifacts" id="8775597636506120628" />
+        <var name="jarContainers" id="8775597636506120651" />
+        <var name="result" id="8775597636506121298" />
+      </scope>
+      <scope id="8775597636506088064" at="33,0,125,0" />
+      <unit id="8775597636506088045" at="22,0,162,0" name="jetbrains.mps.build.generator.util.JavaExternalLibraryHelper" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

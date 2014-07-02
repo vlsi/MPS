@@ -42,8 +42,9 @@ import java.util.HashSet;
 import java.util.ListIterator;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.ui.DiagramPalette;
 import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationActionGroup;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.DiagramTraitButton;
 
 public class MindMap_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.mindmaps.editor.mindmaps.diagram"});
@@ -243,7 +244,15 @@ public class MindMap_diagram_Editor extends DefaultNodeEditor {
             SNode thought = SNodeOperations.cast(node, "jetbrains.mps.samples.mindmaps.structure.Thought");
             SPropertyOperations.set(thought, "name", "new thought");
           }
-        }) {});
+        }) {
+          @Override
+          public String getText() {
+            return "Thought";
+          }
+
+
+        });
+        addPaletteElement(new DiagramTraitButton(diagramCell));
         createPalette();
       }
     }

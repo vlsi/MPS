@@ -22,7 +22,6 @@ import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.IterableUtil;
@@ -41,7 +40,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.WeakHashMap;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
@@ -55,8 +53,7 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
   private final SModel myOriginalInputModel;
 
-  private final IOperationContext myInvocationContext;
-  private final IGenerationTracer myGenerationTracer;
+  private final Project myProject;
   private final TransientModelsModule myTransientModule;
   private final GenerationPlan myGenerationPlan;
   private final Map<String, Object> myParameters;
@@ -89,18 +86,17 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   private final ConcurrentMap<SNodeReference, Set<String>> myUsedNames;
   private final SAbstractConcept myNamedConcept;
   private final SNodeReference myFakeNameTopContextNode = new SNodePointer((SModelReference) null, null);
-  private final Map<SNode, String> topToSuffix = new WeakHashMap<SNode, String>();
+  private final Map<SNode, String> topToSuffix = new ConcurrentHashMap<SNode, String>();
 
-  public GenerationSessionContext(IOperationContext invocationContext,
+  public GenerationSessionContext(Project project,
                                   GenerationOptions generationOptions,
                                   GenerationSessionLogger logger,
                                   TransientModelsModule transientModule,
                                   SModel inputModel,
                                   IPerformanceTracer performanceTracer) {
 
-    myInvocationContext = invocationContext;
+    myProject = project;
     myGenerationOptions = generationOptions;
-    myGenerationTracer = generationOptions.getGenerationTracer();
     myTransientModule = transientModule;
     myOriginalInputModel = inputModel;
     myPerfTrace = performanceTracer;
@@ -118,9 +114,8 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
   // copy cons
   public GenerationSessionContext(@NotNull GenerationSessionContext prevContext, @NotNull GenerationPlan generationPlan, @Nullable Map<String, Object> parameters) {
-    myInvocationContext = prevContext.myInvocationContext;
+    myProject = prevContext.myProject;
     myGenerationOptions = prevContext.myGenerationOptions;
-    myGenerationTracer = prevContext.myGenerationTracer;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
     myPerfTrace = prevContext.myPerfTrace;
@@ -141,9 +136,8 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
    * copy cons for each major step. Nothing but an odd way to clear step and transient objects
    */
   public GenerationSessionContext(@NotNull GenerationSessionContext prevContext) {
-    myInvocationContext = prevContext.myInvocationContext;
+    myProject = prevContext.myProject;
     myGenerationOptions = prevContext.myGenerationOptions;
-    myGenerationTracer = prevContext.myGenerationTracer;
     myTransientModule = prevContext.myTransientModule;
     myOriginalInputModel = prevContext.myOriginalInputModel;
     myPerfTrace = prevContext.myPerfTrace;
@@ -169,11 +163,6 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
   }
 
   @Override
-  public <T> T getComponent(@NotNull Class<T> clazz) {
-    return myInvocationContext.getComponent(clazz);
-  }
-
-  @Override
   @NotNull
   public TransientModelsModule getModule() {
     return myTransientModule;
@@ -181,16 +170,17 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
 
   @Override
   public Project getProject() {
-    return myInvocationContext.getProject();
+    return myProject;
   }
 
+  @NotNull
   @Override
   public GeneratorQueryProvider getQueryProvider(@NotNull SNodeReference ruleNode) {
     return myQueryProviders.getQueryProvider(ruleNode);
   }
 
   public String toString() {
-    return getClass().getName() + "-> " + "<auto-plan>" + "\ninvoked from: " + myInvocationContext;
+    return String.format("%s: generating %s in project %s", getClass().getSimpleName(), myOriginalInputModel.getModelName(), myProject.getName());
   }
 
   public void putTransientObject(Object key, Object o) {
@@ -242,50 +232,8 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     return sb.toString();
   }
 
-  boolean useOldStyleUniqueName = "true".equals(System.getProperty("mps.olduniquename"));
-
-  public String createUniqueNameOldStyle(String roughName, SNode contextNode) {
-    if (contextNode != null) {
-      // find topmost 'named' ancestor
-      SNode topmostNamed = null;
-      SNode node_ = contextNode;
-      final SAbstractConcept namedConcept = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_INamedConcept);
-      while (node_ != null) {
-        if (node_.getConcept().isSubConceptOf(namedConcept)) {
-          topmostNamed = node_;
-        }
-        node_ = node_.getParent();
-      }
-
-      if (topmostNamed != null) {
-        String name = topmostNamed.getName();
-        if (name != null) {
-          String contextSuffix = String.valueOf(name.hashCode());
-          if (contextSuffix.length() > 4) {
-            contextSuffix = contextSuffix.substring(contextSuffix.length() - 4); // make it a bit shorter
-          }
-          // modify roughName
-          roughName = roughName + contextSuffix + "_";
-        }
-      }
-    } // if(contextNode != null)
-
-    String uniqueName;
-    int count = 0;
-    final Set<String> usedNames = getUsedNames(null);
-    while (true) {
-      uniqueName = roughName + (count++);
-      if (!usedNames.contains(uniqueName)) break;
-    }
-    usedNames.add(uniqueName);
-    return uniqueName;
-  }
 
   public String createUniqueName(String roughName, SNode contextNode, SNode inputNode) {
-    if (useOldStyleUniqueName) {
-      return createUniqueNameOldStyle(roughName, contextNode);
-    }
-
     StringBuilder uniqueNameBuffer = new StringBuilder(50);
     uniqueNameBuffer.append(roughName);
     if (roughName.length() > 0 && roughName.charAt(roughName.length()-1) == '_') {
@@ -390,42 +338,14 @@ public class GenerationSessionContext extends StandaloneMPSContext implements Ge
     return set;
   }
 
+  /**
+   * @deprecated
+   * @return always NullGenerationTracer
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public IGenerationTracer getGenerationTracer() {
-    return myGenerationTracer;
-  }
-
-  /**
-   * @deprecated Although I don't see a reason to use extra property to keep transient models
-   * (to me, IGenerationSettings#isSaveTransientModels is enough), the logic is kept,
-   * moved to similar method in GenerationSession
-   */
-  @Deprecated
-  private boolean keepTransientForMessageNavigation() {
-    return !myInvocationContext.isTestMode();
-  }
-
-  /**
-   * @deprecated there shall be no reason to use this method, transients are generator internals
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public boolean keepTransientModel(@Nullable SModelReference model, boolean force) {
-    if (model == null) {
-      return false;
-    }
-    if (getModule().isMyTransientModel(model) && (force || keepTransientForMessageNavigation())) {
-      return getModule().addModelToKeep(model, force);
-    }
-    return false;
-  }
-
-  /**
-   * @deprecated there shall be no reason to use this method, transients are generator internals
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public void clearTransientModels() {
-    getModule().clearUnused();
+    return new NullGenerationTracer();
   }
 
   public void disposeQueryProvider() {

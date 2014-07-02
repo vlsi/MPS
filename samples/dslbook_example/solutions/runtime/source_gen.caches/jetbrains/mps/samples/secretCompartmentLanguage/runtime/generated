@@ -20,6 +20,7 @@
     <file name="AbstractEvent.java" />
   </source>
   <source id="6877931680625740350" name="Event" hash="e4ndt6jjfre1yl11ake1nz1m27sokmu">
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Event.java" />
   </source>
   <source id="6877931680625740406" name="State" hash="-2x65efj8nckdcrtcuxxwg4yxn6l1qnl">

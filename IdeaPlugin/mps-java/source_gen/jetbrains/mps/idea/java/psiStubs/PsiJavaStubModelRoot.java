@@ -4,7 +4,7 @@ package jetbrains.mps.idea.java.psiStubs;
 
 import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.idea.java.psi.JavaPsiListener;
-import jetbrains.mps.logging.Logger;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.module.Module;
 import org.jetbrains.mps.openapi.model.SModel;

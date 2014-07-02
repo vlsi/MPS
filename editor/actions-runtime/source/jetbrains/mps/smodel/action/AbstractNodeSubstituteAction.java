@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,13 +16,12 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.PatternUtil;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -44,17 +43,6 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
   }
 
   protected SNode doSubstitute(@Nullable final EditorContext editorContext, String pattern) {
-    return doSubstitute(pattern);
-  }
-
-  /**
-   * @deprecated Since MPS 3.0 was replaced by:
-   *             <code>doSubstitute(@Nullable final EditorContext editorContext, String pattern)</code>
-   *             <p/>
-   *             Was left for compatibility with generated code. Later should be removed.
-   */
-  @Deprecated
-  protected SNode doSubstitute(String pattern) {
     throw new UnsupportedOperationException();
   }
 
@@ -196,7 +184,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     if (context != null) {
       context.executeCommand(runnable);
     } else {
-      ModelAccess.instance().executeCommand(runnable, null /* TODO ? */);
+      runnable.run();
     }
 
     return newNode[0];

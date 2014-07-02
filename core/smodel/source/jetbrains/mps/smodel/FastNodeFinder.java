@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
@@ -27,4 +30,14 @@ public interface FastNodeFinder {
   List<SNode> getNodes(String conceptFqName, boolean includeInherited);
 
   void dispose();
+
+  /**
+   * Interface models can implement if they'd like to supply own <code>FastNodeFinder</code> implementation
+   * In general, there should be an alternative mechanism to obtain factories, other than model implementing
+   * the interface (something more extension-friendly, e.g. Adaptable-like), this is the reason for model argument.
+   */
+  interface Factory {
+    @Nullable
+    FastNodeFinder createNodeFinder(@NotNull SModel model);
+  }
 }

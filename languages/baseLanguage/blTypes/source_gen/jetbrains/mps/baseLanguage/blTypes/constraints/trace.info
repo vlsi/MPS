@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.ConstraintsAspectDescriptor" />
-  <root nodeRef="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)/1227084833325">
-    <nodeInfo nodeId="1227084833325" fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="8" startPosition="48" endLine="9" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1227084833325" fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrimitiveTypeDescriptor_Constraints#()V" />
-    <scopeInfo nodeId="1227084833325" fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="8" startPosition="48" endLine="9" endPosition="82" />
-    <scopeInfo nodeId="1227084833325" fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="8" startPosition="0" endLine="11" endPosition="0" />
-    <unitInfo nodeId="1227084833325" fileName="PrimitiveTypeDescriptor_Constraints.java" startLine="7" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.baseLanguage.blTypes.constraints.PrimitiveTypeDescriptor_Constraints" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,25,0" name="jetbrains.mps.baseLanguage.blTypes.constraints.ConstraintsAspectDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:00000000-0000-4000-0000-011c895902db(jetbrains.mps.baseLanguage.blTypes.constraints)/1227084833325">
+    <file name="PrimitiveTypeDescriptor_Constraints.java">
+      <node id="1227084833325" at="8,48,9,82" concept="1" />
+      <node id="1227084833325" at="8,0,11,0" concept="0" trace="PrimitiveTypeDescriptor_Constraints#()V" />
+      <scope id="1227084833325" at="8,48,9,82" />
+      <scope id="1227084833325" at="8,0,11,0" />
+      <unit id="1227084833325" at="7,0,12,0" name="jetbrains.mps.baseLanguage.blTypes.constraints.PrimitiveTypeDescriptor_Constraints" />
+    </file>
+  </root>
+</debug-info>
 

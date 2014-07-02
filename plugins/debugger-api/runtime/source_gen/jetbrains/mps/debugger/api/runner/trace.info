@@ -1,116 +1,130 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:2a614e43-21e7-49b5-9503-c8251b638b89(jetbrains.mps.debugger.api.runner)/4474271214083126640">
-    <nodeInfo nodeId="4474271214083126643" fileName="MPSDebugRunner.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4474271214083126675" fileName="MPSDebugRunner.java" startLine="39" startPosition="9" endLine="40" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126665" fileName="MPSDebugRunner.java" startLine="41" startPosition="35" endLine="42" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126670" fileName="MPSDebugRunner.java" startLine="42" startPosition="40" endLine="43" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321286824330362412" fileName="MPSDebugRunner.java" startLine="48" startPosition="9" endLine="49" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321286824330378007" fileName="MPSDebugRunner.java" startLine="50" startPosition="27" endLine="51" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8321286824330379195" fileName="MPSDebugRunner.java" startLine="51" startPosition="58" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8321286824330391743" fileName="MPSDebugRunner.java" startLine="55" startPosition="43" endLine="56" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8321286824330380283" fileName="MPSDebugRunner.java" startLine="58" startPosition="5" endLine="59" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126712" fileName="MPSDebugRunner.java" startLine="62" startPosition="61" endLine="63" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126730" fileName="MPSDebugRunner.java" startLine="68" startPosition="31" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083127122" fileName="MPSDebugRunner.java" startLine="73" startPosition="197" endLine="74" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4474271214083126747" fileName="MPSDebugRunner.java" startLine="74" startPosition="62" endLine="75" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126769" fileName="MPSDebugRunner.java" startLine="79" startPosition="206" endLine="80" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083127124" fileName="MPSDebugRunner.java" startLine="80" startPosition="23" endLine="81" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4474271214083126783" fileName="MPSDebugRunner.java" startLine="82" startPosition="51" endLine="83" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126778" fileName="MPSDebugRunner.java" startLine="84" startPosition="12" endLine="85" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4474271214083126799" fileName="MPSDebugRunner.java" startLine="87" startPosition="27" endLine="88" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="4474271214083126803" fileName="MPSDebugRunner.java" startLine="89" startPosition="5" endLine="90" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126810" fileName="MPSDebugRunner.java" startLine="90" startPosition="98" endLine="91" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126820" fileName="MPSDebugRunner.java" startLine="91" startPosition="103" endLine="92" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6225536200579648566" fileName="MPSDebugRunner.java" startLine="92" startPosition="78" endLine="93" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4474271214083126826" fileName="MPSDebugRunner.java" startLine="93" startPosition="135" endLine="94" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4474271214083126832" fileName="MPSDebugRunner.java" startLine="94" startPosition="84" endLine="95" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083126842" fileName="MPSDebugRunner.java" startLine="95" startPosition="126" endLine="96" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126857" fileName="MPSDebugRunner.java" startLine="100" startPosition="100" endLine="101" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083126648" fileName="MPSDebugRunner.java" startLine="34" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSDebugRunner#()V" />
-    <nodeInfo nodeId="4474271214083126776" fileName="MPSDebugRunner.java" startLine="84" startPosition="10" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4474271214083126706" fileName="MPSDebugRunner.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isNewRunConfiguration#(Lcom/intellij/execution/configurations/RunProfile;)Z" />
-    <nodeInfo nodeId="4474271214083126794" fileName="MPSDebugRunner.java" startLine="86" startPosition="5" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8321286824330362513" fileName="MPSDebugRunner.java" startLine="49" startPosition="69" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126849" fileName="MPSDebugRunner.java" startLine="99" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSettingsEditor#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/configurations/RunConfiguration;)Lcom/intellij/openapi/options/SettingsEditor;" />
-    <nodeInfo nodeId="4474271214083126726" fileName="MPSDebugRunner.java" startLine="66" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRunnerId#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4474271214083126733" fileName="MPSDebugRunner.java" startLine="72" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/project/Project;Lcom/intellij/execution/configurations/RunProfileState;Lcom/intellij/execution/ui/RunContentDescriptor;Lcom/intellij/execution/runners/ExecutionEnvironment;)Lcom/intellij/execution/ui/RunContentDescriptor;" />
-    <nodeInfo nodeId="4474271214083126772" fileName="MPSDebugRunner.java" startLine="81" startPosition="36" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4474271214083126662" fileName="MPSDebugRunner.java" startLine="38" startPosition="94" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4474271214083126652" fileName="MPSDebugRunner.java" startLine="37" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canRun#(Ljava/lang/String;Lcom/intellij/execution/configurations/RunProfile;)Z" />
-    <nodeInfo nodeId="8321286824330391461" fileName="MPSDebugRunner.java" startLine="47" startPosition="61" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4474271214083126687" fileName="MPSDebugRunner.java" startLine="47" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOldRunConfiguration#(Lcom/intellij/execution/configurations/RunProfile;)Z" />
-    <nodeInfo nodeId="4474271214083126755" fileName="MPSDebugRunner.java" startLine="78" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createContentDescriptor#(Lcom/intellij/openapi/project/Project;Lcom/intellij/execution/Executor;Lcom/intellij/execution/configurations/RunProfileState;Lcom/intellij/execution/ui/RunContentDescriptor;Lcom/intellij/execution/runners/ExecutionEnvironment;)Lcom/intellij/execution/ui/RunContentDescriptor;" />
-    <scopeInfo nodeId="4474271214083126651" fileName="MPSDebugRunner.java" startLine="34" startPosition="27" endLine="34" endPosition="27" />
-    <scopeInfo nodeId="8321286824330391464" fileName="MPSDebugRunner.java" startLine="54" startPosition="0" endLine="54" endPosition="39">
-      <varInfo nodeId="8321286824330391466" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="8321286824330391470" fileName="MPSDebugRunner.java" startLine="54" startPosition="39" endLine="54" endPosition="39" />
-    <scopeInfo nodeId="8321286824330418203" fileName="MPSDebugRunner.java" startLine="57" startPosition="0" endLine="57" endPosition="40">
-      <varInfo nodeId="8321286824330418204" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="8321286824330418206" fileName="MPSDebugRunner.java" startLine="57" startPosition="40" endLine="57" endPosition="40" />
-    <scopeInfo nodeId="4474271214083126674" fileName="MPSDebugRunner.java" startLine="39" startPosition="9" endLine="40" endPosition="135" />
-    <scopeInfo nodeId="8321286824330391686" fileName="MPSDebugRunner.java" startLine="55" startPosition="0" endLine="56" endPosition="19">
-      <varInfo nodeId="8321286824330391687" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="8321286824330391689" fileName="MPSDebugRunner.java" startLine="55" startPosition="43" endLine="56" endPosition="19" />
-    <scopeInfo nodeId="4474271214083126711" fileName="MPSDebugRunner.java" startLine="62" startPosition="61" endLine="63" endPosition="142" />
-    <scopeInfo nodeId="4474271214083126729" fileName="MPSDebugRunner.java" startLine="68" startPosition="31" endLine="69" endPosition="34" />
-    <scopeInfo nodeId="4474271214083126782" fileName="MPSDebugRunner.java" startLine="82" startPosition="51" endLine="83" endPosition="92" />
-    <scopeInfo nodeId="4474271214083126777" fileName="MPSDebugRunner.java" startLine="84" startPosition="12" endLine="85" endPosition="64" />
-    <scopeInfo nodeId="4474271214083126798" fileName="MPSDebugRunner.java" startLine="87" startPosition="27" endLine="88" endPosition="59" />
-    <scopeInfo nodeId="4474271214083126856" fileName="MPSDebugRunner.java" startLine="100" startPosition="100" endLine="101" endPosition="16" />
-    <scopeInfo nodeId="4474271214083126648" fileName="MPSDebugRunner.java" startLine="34" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126663" fileName="MPSDebugRunner.java" startLine="41" startPosition="0" endLine="43" endPosition="19">
-      <varInfo nodeId="4474271214083126672" varName="throwable" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126664" fileName="MPSDebugRunner.java" startLine="41" startPosition="35" endLine="43" endPosition="19" />
-    <scopeInfo nodeId="8321286824330362516" fileName="MPSDebugRunner.java" startLine="50" startPosition="27" endLine="52" endPosition="22">
-      <varInfo nodeId="8321286824330378008" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126746" fileName="MPSDebugRunner.java" startLine="73" startPosition="197" endLine="75" endPosition="91" />
-    <scopeInfo nodeId="4474271214083126706" fileName="MPSDebugRunner.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="4474271214083126709" varName="profile" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126849" fileName="MPSDebugRunner.java" startLine="99" startPosition="0" endLine="103" endPosition="0">
-      <varInfo nodeId="4474271214083126854" varName="configuration" />
-      <varInfo nodeId="4474271214083126852" varName="executor" />
-    </scopeInfo>
-    <scopeInfo nodeId="8321286824330391463" fileName="MPSDebugRunner.java" startLine="48" startPosition="9" endLine="53" endPosition="7">
-      <varInfo nodeId="8321286824330362413" varName="method" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126726" fileName="MPSDebugRunner.java" startLine="66" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="4474271214083126733" fileName="MPSDebugRunner.java" startLine="72" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="4474271214083126742" varName="contentToReuse" />
-      <varInfo nodeId="4474271214083126744" varName="env" />
-      <varInfo nodeId="4474271214083126736" varName="project" />
-      <varInfo nodeId="4474271214083126740" varName="state" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126661" fileName="MPSDebugRunner.java" startLine="38" startPosition="94" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="4474271214083126652" fileName="MPSDebugRunner.java" startLine="37" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="4474271214083126655" varName="executorId" />
-      <varInfo nodeId="4474271214083126658" varName="profile" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126692" fileName="MPSDebugRunner.java" startLine="47" startPosition="61" endLine="59" endPosition="17" />
-    <scopeInfo nodeId="4474271214083126687" fileName="MPSDebugRunner.java" startLine="47" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="4474271214083126690" varName="profile" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126768" fileName="MPSDebugRunner.java" startLine="79" startPosition="206" endLine="96" endPosition="57">
-      <varInfo nodeId="4474271214083126833" varName="contentBuilder" />
-      <varInfo nodeId="4474271214083126821" varName="debugSession" />
-      <varInfo nodeId="4474271214083126804" varName="debugSessionCreator" />
-      <varInfo nodeId="4474271214083126770" varName="debugger" />
-      <varInfo nodeId="4474271214083126811" varName="executionResult" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214083126755" fileName="MPSDebugRunner.java" startLine="78" startPosition="0" endLine="98" endPosition="0">
-      <varInfo nodeId="4474271214083126764" varName="contentToReuse" />
-      <varInfo nodeId="4474271214083126766" varName="env" />
-      <varInfo nodeId="4474271214083126760" varName="executor" />
-      <varInfo nodeId="4474271214083126758" varName="project" />
-      <varInfo nodeId="4474271214083126762" varName="state" />
-    </scopeInfo>
-    <unitInfo nodeId="4474271214083126640" fileName="MPSDebugRunner.java" startLine="31" startPosition="0" endLine="104" endPosition="0" unitName="jetbrains.mps.debugger.api.runner.MPSDebugRunner" />
+    <file name="MPSDebugRunner.java">
+      <node id="4474271214083126643" at="32,0,33,0" concept="9" trace="LOG" />
+      <node id="4474271214083126675" at="39,9,40,135" concept="7" />
+      <node id="4474271214083126665" at="41,35,42,40" concept="3" />
+      <node id="4474271214083126670" at="42,40,43,19" concept="7" />
+      <node id="8321286824330362412" at="48,9,49,69" concept="6" />
+      <node id="8321286824330378007" at="50,27,51,58" concept="6" />
+      <node id="8321286824330379195" at="51,58,52,22" concept="7" />
+      <node id="8321286824330391743" at="55,43,56,19" concept="3" />
+      <node id="8321286824330380283" at="58,5,59,17" concept="7" />
+      <node id="4474271214083126712" at="62,61,63,142" concept="7" />
+      <node id="4474271214083126730" at="68,31,69,34" concept="7" />
+      <node id="4474271214083127122" at="73,197,74,62" concept="8" />
+      <node id="4474271214083126747" at="74,62,75,91" concept="7" />
+      <node id="4474271214083126769" at="79,206,80,23" concept="6" />
+      <node id="4474271214083127124" at="80,23,81,36" concept="8" />
+      <node id="4474271214083126783" at="82,51,83,92" concept="3" />
+      <node id="4474271214083126778" at="84,12,85,64" concept="10" />
+      <node id="4474271214083126799" at="87,27,88,59" concept="10" />
+      <node id="4474271214083126803" at="89,5,90,98" concept="6" />
+      <node id="4474271214083126810" at="90,98,91,103" concept="6" />
+      <node id="4474271214083126820" at="91,103,92,78" concept="6" />
+      <node id="6225536200579648566" at="92,78,93,135" concept="0" />
+      <node id="4474271214083126826" at="93,135,94,84" concept="3" />
+      <node id="4474271214083126832" at="94,84,95,126" concept="6" />
+      <node id="4474271214083126842" at="95,126,96,57" concept="7" />
+      <node id="4474271214083126857" at="100,100,101,16" concept="7" />
+      <node id="4474271214083126648" at="34,0,36,0" concept="2" trace="MPSDebugRunner#()V" />
+      <node id="4474271214083126776" at="84,10,86,5" concept="1" />
+      <node id="4474271214083126706" at="62,0,65,0" concept="5" trace="isNewRunConfiguration#(Lcom/intellij/execution/configurations/RunProfile;)Z" />
+      <node id="4474271214083126794" at="86,5,89,5" concept="4" />
+      <node id="8321286824330362513" at="49,69,53,7" concept="4" />
+      <node id="4474271214083126849" at="99,0,103,0" concept="5" trace="getSettingsEditor#(Lcom/intellij/execution/Executor;Lcom/intellij/execution/configurations/RunConfiguration;)Lcom/intellij/openapi/options/SettingsEditor;" />
+      <node id="4474271214083126726" at="66,0,71,0" concept="5" trace="getRunnerId#()Ljava/lang/String;" />
+      <node id="4474271214083126733" at="72,0,77,0" concept="5" trace="doExecute#(Lcom/intellij/openapi/project/Project;Lcom/intellij/execution/configurations/RunProfileState;Lcom/intellij/execution/ui/RunContentDescriptor;Lcom/intellij/execution/runners/ExecutionEnvironment;)Lcom/intellij/execution/ui/RunContentDescriptor;" />
+      <node id="4474271214083126772" at="81,36,86,5" concept="4" />
+      <node id="4474271214083126662" at="38,94,44,5" concept="11" />
+      <node id="4474271214083126652" at="37,0,46,0" concept="5" trace="canRun#(Ljava/lang/String;Lcom/intellij/execution/configurations/RunProfile;)Z" />
+      <node id="8321286824330391461" at="47,61,58,5" concept="11" />
+      <node id="4474271214083126687" at="47,0,61,0" concept="5" trace="isOldRunConfiguration#(Lcom/intellij/execution/configurations/RunProfile;)Z" />
+      <node id="4474271214083126755" at="78,0,98,0" concept="5" trace="createContentDescriptor#(Lcom/intellij/openapi/project/Project;Lcom/intellij/execution/Executor;Lcom/intellij/execution/configurations/RunProfileState;Lcom/intellij/execution/ui/RunContentDescriptor;Lcom/intellij/execution/runners/ExecutionEnvironment;)Lcom/intellij/execution/ui/RunContentDescriptor;" />
+      <scope id="4474271214083126651" at="34,27,34,27" />
+      <scope id="8321286824330391464" at="54,0,54,39">
+        <var name="e" id="8321286824330391466" />
+      </scope>
+      <scope id="8321286824330391470" at="54,39,54,39" />
+      <scope id="8321286824330418203" at="57,0,57,40">
+        <var name="e" id="8321286824330418204" />
+      </scope>
+      <scope id="8321286824330418206" at="57,40,57,40" />
+      <scope id="4474271214083126674" at="39,9,40,135" />
+      <scope id="8321286824330391686" at="55,0,56,19">
+        <var name="e" id="8321286824330391687" />
+      </scope>
+      <scope id="8321286824330391689" at="55,43,56,19" />
+      <scope id="4474271214083126711" at="62,61,63,142" />
+      <scope id="4474271214083126729" at="68,31,69,34" />
+      <scope id="4474271214083126782" at="82,51,83,92" />
+      <scope id="4474271214083126777" at="84,12,85,64" />
+      <scope id="4474271214083126798" at="87,27,88,59" />
+      <scope id="4474271214083126856" at="100,100,101,16" />
+      <scope id="4474271214083126648" at="34,0,36,0" />
+      <scope id="4474271214083126663" at="41,0,43,19">
+        <var name="throwable" id="4474271214083126672" />
+      </scope>
+      <scope id="4474271214083126664" at="41,35,43,19" />
+      <scope id="8321286824330362516" at="50,27,52,22">
+        <var name="result" id="8321286824330378008" />
+      </scope>
+      <scope id="4474271214083126746" at="73,197,75,91" />
+      <scope id="4474271214083126706" at="62,0,65,0">
+        <var name="profile" id="4474271214083126709" />
+      </scope>
+      <scope id="4474271214083126849" at="99,0,103,0">
+        <var name="configuration" id="4474271214083126854" />
+        <var name="executor" id="4474271214083126852" />
+      </scope>
+      <scope id="8321286824330391463" at="48,9,53,7">
+        <var name="method" id="8321286824330362413" />
+      </scope>
+      <scope id="4474271214083126726" at="66,0,71,0" />
+      <scope id="4474271214083126733" at="72,0,77,0">
+        <var name="contentToReuse" id="4474271214083126742" />
+        <var name="env" id="4474271214083126744" />
+        <var name="project" id="4474271214083126736" />
+        <var name="state" id="4474271214083126740" />
+      </scope>
+      <scope id="4474271214083126661" at="38,94,44,5" />
+      <scope id="4474271214083126652" at="37,0,46,0">
+        <var name="executorId" id="4474271214083126655" />
+        <var name="profile" id="4474271214083126658" />
+      </scope>
+      <scope id="4474271214083126692" at="47,61,59,17" />
+      <scope id="4474271214083126687" at="47,0,61,0">
+        <var name="profile" id="4474271214083126690" />
+      </scope>
+      <scope id="4474271214083126768" at="79,206,96,57">
+        <var name="contentBuilder" id="4474271214083126833" />
+        <var name="debugSession" id="4474271214083126821" />
+        <var name="debugSessionCreator" id="4474271214083126804" />
+        <var name="debugger" id="4474271214083126770" />
+        <var name="executionResult" id="4474271214083126811" />
+      </scope>
+      <scope id="4474271214083126755" at="78,0,98,0">
+        <var name="contentToReuse" id="4474271214083126764" />
+        <var name="env" id="4474271214083126766" />
+        <var name="executor" id="4474271214083126760" />
+        <var name="project" id="4474271214083126758" />
+        <var name="state" id="4474271214083126762" />
+      </scope>
+      <unit id="4474271214083126640" at="31,0,104,0" name="jetbrains.mps.debugger.api.runner.MPSDebugRunner" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

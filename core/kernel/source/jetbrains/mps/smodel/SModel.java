@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
@@ -66,9 +66,6 @@ public class SModel implements SModelData {
   private SModelReference myReference;
 
   private boolean myDisposed;
-
-  private final Object FAST_FINDER_LOCK = new Object();
-  private FastNodeFinder myFastNodeFinder;
 
   private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
   private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
@@ -145,7 +142,7 @@ public class SModel implements SModelData {
   public void addRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
     if (myModelDescriptor != null) {
-      ModelChange.assertLegalNodeRegistration(myModelDescriptor, node);
+      ModelChange.assertLegalNodeRegistration(this, node);
     }
     enforceFullLoad();
     if (myRoots.contains(node)) return;
@@ -175,7 +172,7 @@ public class SModel implements SModelData {
   public void removeRootNode(final org.jetbrains.mps.openapi.model.SNode node) {
     assert node instanceof SNode;
     if (myModelDescriptor != null) {
-      ModelChange.assertLegalNodeUnRegistration(myModelDescriptor, node);
+      ModelChange.assertLegalNodeUnRegistration(this, node);
     }
     enforceFullLoad();
     if (myRoots.contains(node)) {
@@ -276,14 +273,17 @@ public class SModel implements SModelData {
   }
 
   public void dispose() {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
     if (myDisposed) return;
 
     myDisposed = true;
+    SModelBase modelBase = getModelDescriptor();
+    if (modelBase != null) {
+      // Quick hack unless FNFM implements model listener to get notified about models disposed,
+      // or there's better alternative how to keep FNFM up-to-date.
+      FastNodeFinderManager.dispose(modelBase);
+    }
     myDisposedStacktrace = new Throwable().getStackTrace();
-    disposeFastNodeFinder();
     myIdToNodeMap = null;
     myRoots.clear();
     if (myModelDependenciesManager != null) {
@@ -491,29 +491,8 @@ public class SModel implements SModelData {
 
   //---------fast node finder--------
 
-  //todo this is an external functionality. Should be implemented externally
-  public final FastNodeFinder getFastNodeFinder() {
-    synchronized (FAST_FINDER_LOCK) {
-      if (myFastNodeFinder == null) {
-        myFastNodeFinder = createFastNodeFinder();
-      }
-      fireModelNodesReadAccess();
-      return myFastNodeFinder;
-    }
-  }
-
-  protected FastNodeFinder createFastNodeFinder() {
+  public FastNodeFinder createFastNodeFinder() {
     return new DefaultFastNodeFinder(getModelDescriptor());
-  }
-
-  //todo this is an external functionality. Should be implemented externally
-  public void disposeFastNodeFinder() {
-    synchronized (FAST_FINDER_LOCK) {
-      if (myFastNodeFinder != null) {
-        myFastNodeFinder.dispose();
-        myFastNodeFinder = null;
-      }
-    }
   }
 
   //---------node id--------
@@ -606,9 +585,7 @@ public class SModel implements SModelData {
   }
 
   public void deleteLanguage(@NotNull SModuleReference ref) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
 
     if (myLanguages.remove(ref)) {
       //calculateImplicitImports();
@@ -619,9 +596,7 @@ public class SModel implements SModelData {
   }
 
   public void addLanguage(SModuleReference ref) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
 
     if (importedLanguages().contains(ref)) return;
 
@@ -643,9 +618,7 @@ public class SModel implements SModelData {
   }
 
   public void addDevKit(SModuleReference ref) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
 
     if (myDevKits.add(ref)) {
       invalidateModelDepsManager();
@@ -655,9 +628,7 @@ public class SModel implements SModelData {
   }
 
   public void deleteDevKit(@NotNull SModuleReference ref) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
 
     if (myDevKits.remove(ref)) {
       invalidateModelDepsManager();
@@ -673,15 +644,14 @@ public class SModel implements SModelData {
   }
 
   public void addModelImport(SModelReference modelReference, boolean firstVersion) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
+
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
     if (importElement != null) return;
     importElement = SModelOperations.getAdditionalModelElement(this, modelReference);
     if (importElement == null) {
       org.jetbrains.mps.openapi.model.SModel modelDescriptor =
-          MPSCore.getInstance().isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
+          RuntimeFlags.isMergeDriverMode() ? null : SModelRepository.getInstance().getModelDescriptor(modelReference);
       int usedVersion = -1;
       if (modelDescriptor instanceof RefactorableSModelDescriptor) {
         usedVersion = ((RefactorableSModelDescriptor) modelDescriptor).getVersion();
@@ -693,9 +663,7 @@ public class SModel implements SModelData {
   }
 
   public void addModelImport(ImportElement importElement) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
 
     myImports.add(importElement);
     fireImportAddedEvent(importElement.getModelReference());
@@ -703,9 +671,7 @@ public class SModel implements SModelData {
   }
 
   public void deleteModelImport(SModelReference modelReference) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
 
     ImportElement importElement = SModelOperations.getImportElement(this, modelReference);
     if (importElement != null) {
@@ -719,8 +685,7 @@ public class SModel implements SModelData {
   @NotNull
   public static Set<SModelReference> collectUsedModels(@NotNull SModel model, @NotNull Set<SModelReference> result) {
     ModelEnvironmentInfo env = PersistenceRegistry.getInstance().getModelEnvironmentInfo();
-    for (org.jetbrains.mps.openapi.model.SNode n1 : model.myIdToNodeMap.values()) {
-      SNode node = ((SNode) n1);
+    for (org.jetbrains.mps.openapi.model.SNode node : model.myIdToNodeMap.values()) {
       SNodeReference ptrConcept = env.getConceptId(node);
       if (ptrConcept == null) {
         LOG.warn("concept not found for node " + SNodeUtil.getDebugText(node));
@@ -746,7 +711,7 @@ public class SModel implements SModelData {
           result.add(ptrDecl.getModelReference());
         }
       }
-      for (SNode child : node.getChildren()) {
+      for (org.jetbrains.mps.openapi.model.SNode child : node.getChildren()) {
         SNodeReference ptrDecl = env.getNodeRoleId(child);
         if (ptrDecl == null) {
           LOG.warn(
@@ -794,9 +759,7 @@ public class SModel implements SModelData {
   }
 
   public void addEngagedOnGenerationLanguage(SModuleReference ref) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
 
     if (!myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.add(ref);
@@ -808,9 +771,7 @@ public class SModel implements SModelData {
   }
 
   public void removeEngagedOnGenerationLanguage(SModuleReference ref) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
 
     if (myLanguagesEngagedOnGeneration.contains(ref)) {
       myLanguagesEngagedOnGeneration.remove(ref);
@@ -832,9 +793,7 @@ public class SModel implements SModelData {
   }
 
   public void addAdditionalModelVersion(@NotNull ImportElement element) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
     myImplicitImports.add(element);
   }
 
@@ -851,6 +810,17 @@ public class SModel implements SModelData {
     return myModelDescriptor == null ? null : myModelDescriptor.getRepository();
   }
 
+  public void detachRoots() {
+    for (SNode node : myRoots) {
+      node.detach();
+    }
+  }
+
+  private void assertLegalChange() {
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(this);
+    }
+  }
   public static class ImportElement {
     private SModelReference myModelReference;
     private int myReferenceID;  // persistence related index
@@ -933,9 +903,7 @@ public class SModel implements SModelData {
   }
 
   public void updateImportedModelUsedVersion(org.jetbrains.mps.openapi.model.SModelReference sModelReference, int currentVersion) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
 
     ImportElement importElement = SModelOperations.getImportElement(this, sModelReference);
     if (importElement == null) {
@@ -950,9 +918,7 @@ public class SModel implements SModelData {
   }
 
   public boolean updateSModelReferences() {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
     enforceFullLoad();
 
     boolean changed = false;
@@ -994,9 +960,7 @@ public class SModel implements SModelData {
   }
 
   public boolean updateModuleReferences() {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
+    assertLegalChange();
 
 
 

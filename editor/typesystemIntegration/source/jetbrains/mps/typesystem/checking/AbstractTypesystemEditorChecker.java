@@ -28,12 +28,12 @@ import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Cancellable;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
@@ -56,16 +56,21 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
 
   protected abstract void doCreateMessages(TypeCheckingContext context, boolean wasCheckedOnce, EditorContext editorContext, SNode rootNode,
-      Set<EditorMessage> messages);
+      Set<EditorMessage> messages, Cancellable cancellable);
 
   @Override
-  public Set<EditorMessage> createMessages(final SNode rootNode, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
+  protected Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
+    return createMessages(rootNode, events, wasCheckedOnce, editorContext, Cancellable.NEVER);
+  }
+
+  @Override
+  public Set<EditorMessage> createMessages(final SNode rootNode, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext, final Cancellable cancellable) {
     myMessagesChanged = false;
     return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), rootNode, new Computation<Set<EditorMessage>>() {
       @Override
       public Set<EditorMessage> compute(final TypeCheckingContext context) {
         final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-        doCreateMessages(context, wasCheckedOnce, editorContext, rootNode, messages);
+        doCreateMessages(context, wasCheckedOnce, editorContext, rootNode, messages, cancellable);
         return messages;
       }
     });
@@ -148,12 +153,12 @@ public abstract class AbstractTypesystemEditorChecker extends EditorCheckerAdapt
               return;
             }
 
-            ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+            p.getModelAccess().executeUndoTransparentCommand(new Runnable() {
               @Override
               public void run() {
                 intention.execute(quickFixNode);
               }
-            }, p);
+            });
 
             editorContext.flushEvents();
             if (editorContext.getSelectionManager().getSelection() == null) {

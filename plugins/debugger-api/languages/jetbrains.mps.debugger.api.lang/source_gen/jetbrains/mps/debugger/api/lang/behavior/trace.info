@@ -1,83 +1,297 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="BreakpointCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.BreakpointCreator_BehaviorDescriptor" />
-  <unitInfo fileName="BreakpointableNodeItem_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.BreakpointableNodeItem_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptDeclarationReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptDeclarationReference_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunctionParameter_Concept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Concept_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunctionParameter_Debug_Project_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunction_CreateBreakpoint_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_BehaviorDescriptor" />
-  <unitInfo fileName="ConceptFunction_IsApplicableToConcept_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableToConcept_BehaviorDescriptor" />
-  <unitInfo fileName="CreateBreakpointOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.CreateBreakpointOperation_BehaviorDescriptor" />
-  <unitInfo fileName="DebuggerConfiguration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.DebuggerConfiguration_BehaviorDescriptor" />
-  <unitInfo fileName="DebuggerReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference_BehaviorDescriptor" />
-  <unitInfo fileName="DebuggerType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.DebuggerType_BehaviorDescriptor" />
-  <unitInfo fileName="GetDebuggerSettings_Function_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function_BehaviorDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="ConceptDeclarationReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptDeclarationReference_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_Concept_BehaviorDescriptor.java">
+      <unit at="8,0,21,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Concept_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunction_CreateBreakpoint_BehaviorDescriptor.java">
+      <unit at="10,0,31,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_BehaviorDescriptor" />
+    </file>
+    <file name="DebuggerConfiguration_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerConfiguration_BehaviorDescriptor" />
+    </file>
+    <file name="BreakpointCreator_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.debugger.api.lang.behavior.BreakpointCreator_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor.java">
+      <unit at="8,0,21,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_DebuggableNode_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunction_IsApplicableToConcept_BehaviorDescriptor.java">
+      <unit at="10,0,31,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableToConcept_BehaviorDescriptor" />
+    </file>
+    <file name="DebuggerReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference_BehaviorDescriptor" />
+    </file>
+    <file name="CreateBreakpointOperation_BehaviorDescriptor.java">
+      <unit at="11,0,40,0" name="jetbrains.mps.debugger.api.lang.behavior.CreateBreakpointOperation_BehaviorDescriptor" />
+    </file>
+    <file name="BreakpointableNodeItem_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.debugger.api.lang.behavior.BreakpointableNodeItem_BehaviorDescriptor" />
+    </file>
+    <file name="ConceptFunctionParameter_Debug_Project_BehaviorDescriptor.java">
+      <unit at="8,0,21,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project_BehaviorDescriptor" />
+    </file>
+    <file name="DebuggerType_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerType_BehaviorDescriptor" />
+    </file>
+    <file name="GetDebuggerSettings_Function_BehaviorDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,48,0" name="jetbrains.mps.debugger.api.lang.behavior.BehaviorAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/1262430001741703317">
-    <nodeInfo nodeId="1262430001741703315" fileName="GetDebuggerSettings_Function_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741703317" fileName="GetDebuggerSettings_Function_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741703317" fileName="GetDebuggerSettings_Function_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-    <scopeInfo nodeId="1262430001741703319" fileName="GetDebuggerSettings_Function_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741703314" fileName="GetDebuggerSettings_Function_Behavior.java" startLine="12" startPosition="92" endLine="13" endPosition="16" />
-    <scopeInfo nodeId="1262430001741703317" fileName="GetDebuggerSettings_Function_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="1262430001741703317" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741703317" fileName="GetDebuggerSettings_Function_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="1262430001741703317" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741703317" fileName="GetDebuggerSettings_Function_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function_Behavior" />
+    <file name="GetDebuggerSettings_Function_Behavior.java">
+      <node id="1262430001741703315" at="15,92,16,16" concept="3" />
+      <node id="658365993682019574" at="19,83,20,47" concept="3" />
+      <node id="658365993682018707" at="23,60,24,63" concept="2" />
+      <node id="658365993682018707" at="24,63,25,30" concept="2" />
+      <node id="658365993682018707" at="25,30,26,138" concept="1" />
+      <node id="658365993682018707" at="26,138,27,231" concept="1" />
+      <node id="658365993682018707" at="27,231,28,24" concept="3" />
+      <node id="1262430001741703317" at="12,0,14,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="658365993682018707" at="25,30,27,231" concept="0" />
+      <node id="658365993682018707" at="25,30,27,231" concept="0" />
+      <node id="1262430001741703317" at="15,0,18,0" concept="4" trace="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="1262430001741703317" at="19,0,22,0" concept="4" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="658365993682018707" at="23,0,30,0" concept="4" trace="_quotation_createNode_u7oci2_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1262430001741703319" at="12,43,12,43" />
+      <scope id="1262430001741703314" at="15,92,16,16" />
+      <scope id="658365993682019573" at="19,83,20,47" />
+      <scope id="1262430001741703317" at="12,0,14,0">
+        <var name="thisNode" id="1262430001741703317" />
+      </scope>
+      <scope id="658365993682018707" at="25,30,27,231" />
+      <scope id="1262430001741703317" at="15,0,18,0">
+        <var name="thisConcept" id="1262430001741703317" />
+      </scope>
+      <scope id="1262430001741703317" at="19,0,22,0">
+        <var name="thisNode" id="1262430001741703317" />
+      </scope>
+      <scope id="658365993682018707" at="23,60,28,24">
+        <var name="facade" id="658365993682018707" />
+        <var name="quotedNode_1" id="658365993682018707" />
+      </scope>
+      <scope id="658365993682018707" at="23,0,30,0" />
+      <unit id="1262430001741703317" at="11,0,31,0" name="jetbrains.mps.debugger.api.lang.behavior.GetDebuggerSettings_Function_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/1262430001741720248">
-    <nodeInfo nodeId="1262430001741720246" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="16" startPosition="92" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914726367" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="20" startPosition="125" endLine="21" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914726382" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="21" startPosition="261" endLine="22" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914726386" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="22" startPosition="178" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741720248" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1262430001741720248" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
-    <nodeInfo nodeId="1262430001741720248" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741720250" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1262430001741720245" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="16" startPosition="92" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="1262430001741720248" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="1262430001741720248" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741720248" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1262430001741720248" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914726366" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="20" startPosition="125" endLine="23" endPosition="18">
-      <varInfo nodeId="3044950653914726368" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1262430001741720248" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1262430001741720248" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741720248" fileName="ConceptFunction_IsApplicableToConcept_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableToConcept_Behavior" />
+    <file name="ConceptFunction_IsApplicableToConcept_Behavior.java">
+      <node id="1262430001741720246" at="18,92,19,16" concept="3" />
+      <node id="3044950653914726367" at="22,125,23,261" concept="2" />
+      <node id="3044950653914726382" at="23,261,24,178" concept="1" />
+      <node id="3044950653914726386" at="24,178,25,18" concept="3" />
+      <node id="658365993682020132" at="28,83,29,47" concept="3" />
+      <node id="658365993682020128" at="32,60,33,63" concept="2" />
+      <node id="658365993682020128" at="33,63,34,30" concept="2" />
+      <node id="658365993682020128" at="34,30,35,135" concept="0" />
+      <node id="658365993682020128" at="34,30,35,135" concept="0" />
+      <node id="658365993682020128" at="34,30,35,135" concept="1" />
+      <node id="658365993682020128" at="35,135,36,24" concept="3" />
+      <node id="1262430001741720248" at="15,0,17,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741720248" at="18,0,21,0" concept="4" trace="virtual_showName_1262430001741498082#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="1262430001741720248" at="28,0,31,0" concept="4" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1262430001741720248" at="22,0,27,0" concept="4" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <node id="658365993682020128" at="32,0,38,0" concept="4" trace="_quotation_createNode_jfumxy_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1262430001741720250" at="15,43,15,43" />
+      <scope id="1262430001741720245" at="18,92,19,16" />
+      <scope id="658365993682020131" at="28,83,29,47" />
+      <scope id="658365993682020128" at="34,30,35,135" />
+      <scope id="1262430001741720248" at="15,0,17,0">
+        <var name="thisNode" id="1262430001741720248" />
+      </scope>
+      <scope id="1262430001741720248" at="18,0,21,0">
+        <var name="thisConcept" id="1262430001741720248" />
+      </scope>
+      <scope id="3044950653914726366" at="22,125,25,18">
+        <var name="result" id="3044950653914726368" />
+      </scope>
+      <scope id="1262430001741720248" at="28,0,31,0">
+        <var name="thisNode" id="1262430001741720248" />
+      </scope>
+      <scope id="658365993682020128" at="32,60,36,24">
+        <var name="facade" id="658365993682020128" />
+        <var name="quotedNode_1" id="658365993682020128" />
+      </scope>
+      <scope id="1262430001741720248" at="22,0,27,0">
+        <var name="thisConcept" id="1262430001741720248" />
+      </scope>
+      <scope id="658365993682020128" at="32,0,38,0" />
+      <unit id="1262430001741720248" at="14,0,39,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_IsApplicableToConcept_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/2511103526757024634">
-    <nodeInfo nodeId="2511103526757024634" fileName="DebuggerReference_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="2511103526757024636" fileName="DebuggerReference_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="2511103526757024634" fileName="DebuggerReference_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="2511103526757024634" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2511103526757024634" fileName="DebuggerReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference_Behavior" />
+    <file name="DebuggerReference_Behavior.java">
+      <node id="2511103526757024634" at="8,0,10,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="2511103526757024636" at="8,43,8,43" />
+      <scope id="2511103526757024634" at="8,0,10,0">
+        <var name="thisNode" id="2511103526757024634" />
+      </scope>
+      <unit id="2511103526757024634" at="7,0,11,0" name="jetbrains.mps.debugger.api.lang.behavior.DebuggerReference_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/3044950653914719163">
-    <nodeInfo nodeId="3044950653914719137" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="16" startPosition="125" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914719152" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719157" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="18" startPosition="178" endLine="19" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719161" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="19" startPosition="178" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914719163" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3044950653914719163" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="3044950653914719165" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="3044950653914719163" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="3044950653914719163" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914719136" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="16" startPosition="125" endLine="20" endPosition="18">
-      <varInfo nodeId="3044950653914719138" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3044950653914719163" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="3044950653914719163" varName="thisConcept" />
-    </scopeInfo>
-    <unitInfo nodeId="3044950653914719163" fileName="ConceptFunction_CreateBreakpoint_Behavior.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_Behavior" />
+    <file name="ConceptFunction_CreateBreakpoint_Behavior.java">
+      <node id="3044950653914719137" at="20,125,21,261" concept="2" />
+      <node id="3044950653914719152" at="21,261,22,178" concept="1" />
+      <node id="3044950653914719157" at="22,178,23,178" concept="1" />
+      <node id="3044950653914719161" at="23,178,24,18" concept="3" />
+      <node id="658365993682017358" at="27,83,28,47" concept="3" />
+      <node id="658365993682200132" at="31,91,32,232" concept="2" />
+      <node id="658365993682200138" at="32,232,33,165" concept="1" />
+      <node id="658365993682200145" at="33,165,34,18" concept="3" />
+      <node id="658365993682017039" at="37,60,38,63" concept="2" />
+      <node id="658365993682017039" at="38,63,39,30" concept="2" />
+      <node id="658365993682017039" at="39,30,40,138" concept="1" />
+      <node id="658365993682017039" at="40,138,41,243" concept="1" />
+      <node id="658365993682017039" at="41,243,42,24" concept="3" />
+      <node id="658365993682200128" at="45,64,46,63" concept="2" />
+      <node id="658365993682200128" at="46,63,47,30" concept="2" />
+      <node id="658365993682200128" at="47,30,48,138" concept="1" />
+      <node id="658365993682200128" at="48,138,49,231" concept="1" />
+      <node id="658365993682200128" at="49,231,50,24" concept="3" />
+      <node id="3044950653914719163" at="17,0,19,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="658365993682017039" at="39,30,41,243" concept="0" />
+      <node id="658365993682017039" at="39,30,41,243" concept="0" />
+      <node id="658365993682200128" at="47,30,49,231" concept="0" />
+      <node id="658365993682200128" at="47,30,49,231" concept="0" />
+      <node id="3044950653914719163" at="27,0,30,0" concept="4" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3044950653914719163" at="31,0,36,0" concept="4" trace="virtual_getThrowableTypes_6204026822016975623#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="3044950653914719163" at="20,0,26,0" concept="4" trace="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/util/List;" />
+      <node id="658365993682017039" at="37,0,44,0" concept="4" trace="_quotation_createNode_m5jr7m_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="658365993682200128" at="45,0,52,0" concept="4" trace="_quotation_createNode_m5jr7m_a0a0a1a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3044950653914719165" at="17,43,17,43" />
+      <scope id="658365993682017357" at="27,83,28,47" />
+      <scope id="3044950653914719163" at="17,0,19,0">
+        <var name="thisNode" id="3044950653914719163" />
+      </scope>
+      <scope id="658365993682017039" at="39,30,41,243" />
+      <scope id="658365993682200128" at="47,30,49,231" />
+      <scope id="3044950653914719163" at="27,0,30,0">
+        <var name="thisNode" id="3044950653914719163" />
+      </scope>
+      <scope id="658365993682200131" at="31,91,34,18">
+        <var name="result" id="658365993682200133" />
+      </scope>
+      <scope id="3044950653914719136" at="20,125,24,18">
+        <var name="result" id="3044950653914719138" />
+      </scope>
+      <scope id="3044950653914719163" at="31,0,36,0">
+        <var name="thisNode" id="3044950653914719163" />
+      </scope>
+      <scope id="658365993682017039" at="37,60,42,24">
+        <var name="facade" id="658365993682017039" />
+        <var name="quotedNode_1" id="658365993682017039" />
+      </scope>
+      <scope id="658365993682200128" at="45,64,50,24">
+        <var name="facade" id="658365993682200128" />
+        <var name="quotedNode_1" id="658365993682200128" />
+      </scope>
+      <scope id="3044950653914719163" at="20,0,26,0">
+        <var name="thisConcept" id="3044950653914719163" />
+      </scope>
+      <scope id="658365993682017039" at="37,0,44,0" />
+      <scope id="658365993682200128" at="45,0,52,0" />
+      <unit id="3044950653914719163" at="16,0,53,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunction_CreateBreakpoint_Behavior" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/5452844340287051173">
+    <file name="ConceptFunctionParameter_DebuggableNode_Behavior.java">
+      <node id="5452844340287051289" at="13,75,14,47" concept="3" />
+      <node id="5452844340287051285" at="17,60,18,63" concept="2" />
+      <node id="5452844340287051285" at="18,63,19,30" concept="2" />
+      <node id="5452844340287051285" at="19,30,20,132" concept="0" />
+      <node id="5452844340287051285" at="19,30,20,132" concept="0" />
+      <node id="5452844340287051285" at="19,30,20,132" concept="1" />
+      <node id="5452844340287051285" at="20,132,21,24" concept="3" />
+      <node id="5452844340287051173" at="10,0,12,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5452844340287051173" at="13,0,16,0" concept="4" trace="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5452844340287051285" at="17,0,23,0" concept="4" trace="_quotation_createNode_69azfp_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="5452844340287051175" at="10,43,10,43" />
+      <scope id="5452844340287051288" at="13,75,14,47" />
+      <scope id="5452844340287051285" at="19,30,20,132" />
+      <scope id="5452844340287051173" at="10,0,12,0">
+        <var name="thisNode" id="5452844340287051173" />
+      </scope>
+      <scope id="5452844340287051173" at="13,0,16,0">
+        <var name="thisNode" id="5452844340287051173" />
+      </scope>
+      <scope id="5452844340287051285" at="17,60,21,24">
+        <var name="facade" id="5452844340287051285" />
+        <var name="quotedNode_1" id="5452844340287051285" />
+      </scope>
+      <scope id="5452844340287051285" at="17,0,23,0" />
+      <unit id="5452844340287051173" at="9,0,24,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_DebuggableNode_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/5452844340287052544">
+    <file name="ConceptFunctionParameter_Concept_Behavior.java">
+      <node id="5452844340287052551" at="13,75,14,47" concept="3" />
+      <node id="5452844340287052547" at="17,60,18,63" concept="2" />
+      <node id="5452844340287052547" at="18,63,19,30" concept="2" />
+      <node id="5452844340287052547" at="19,30,20,135" concept="0" />
+      <node id="5452844340287052547" at="19,30,20,135" concept="0" />
+      <node id="5452844340287052547" at="19,30,20,135" concept="1" />
+      <node id="5452844340287052547" at="20,135,21,24" concept="3" />
+      <node id="5452844340287052544" at="10,0,12,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5452844340287052544" at="13,0,16,0" concept="4" trace="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5452844340287052547" at="17,0,23,0" concept="4" trace="_quotation_createNode_a1nuxr_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="5452844340287052546" at="10,43,10,43" />
+      <scope id="5452844340287052550" at="13,75,14,47" />
+      <scope id="5452844340287052547" at="19,30,20,135" />
+      <scope id="5452844340287052544" at="10,0,12,0">
+        <var name="thisNode" id="5452844340287052544" />
+      </scope>
+      <scope id="5452844340287052544" at="13,0,16,0">
+        <var name="thisNode" id="5452844340287052544" />
+      </scope>
+      <scope id="5452844340287052547" at="17,60,21,24">
+        <var name="facade" id="5452844340287052547" />
+        <var name="quotedNode_1" id="5452844340287052547" />
+      </scope>
+      <scope id="5452844340287052547" at="17,0,23,0" />
+      <unit id="5452844340287052544" at="9,0,24,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Concept_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:8eb86a12-4c89-435e-ac64-6719350750c1(jetbrains.mps.debugger.api.lang.behavior)/5452844340287052604">
+    <file name="ConceptFunctionParameter_Debug_Project_Behavior.java">
+      <node id="5452844340287052611" at="14,75,15,47" concept="3" />
+      <node id="5452844340287052607" at="18,60,19,63" concept="2" />
+      <node id="5452844340287052607" at="19,63,20,30" concept="2" />
+      <node id="5452844340287052607" at="20,30,21,138" concept="1" />
+      <node id="5452844340287052607" at="21,138,22,283" concept="1" />
+      <node id="5452844340287052607" at="22,283,23,24" concept="3" />
+      <node id="5452844340287052604" at="11,0,13,0" concept="4" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5452844340287052607" at="20,30,22,283" concept="0" />
+      <node id="5452844340287052607" at="20,30,22,283" concept="0" />
+      <node id="5452844340287052604" at="14,0,17,0" concept="4" trace="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5452844340287052607" at="18,0,25,0" concept="4" trace="_quotation_createNode_jbv3x9_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="5452844340287052606" at="11,43,11,43" />
+      <scope id="5452844340287052610" at="14,75,15,47" />
+      <scope id="5452844340287052604" at="11,0,13,0">
+        <var name="thisNode" id="5452844340287052604" />
+      </scope>
+      <scope id="5452844340287052607" at="20,30,22,283" />
+      <scope id="5452844340287052604" at="14,0,17,0">
+        <var name="thisNode" id="5452844340287052604" />
+      </scope>
+      <scope id="5452844340287052607" at="18,60,23,24">
+        <var name="facade" id="5452844340287052607" />
+        <var name="quotedNode_1" id="5452844340287052607" />
+      </scope>
+      <scope id="5452844340287052607" at="18,0,25,0" />
+      <unit id="5452844340287052604" at="10,0,26,0" name="jetbrains.mps.debugger.api.lang.behavior.ConceptFunctionParameter_Debug_Project_Behavior" />
+    </file>
+  </root>
+</debug-info>
 

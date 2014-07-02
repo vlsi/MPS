@@ -6,6 +6,7 @@ import jetbrains.mps.internal.collections.runtime.backports.Deque;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.DequeSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -30,12 +31,15 @@ public class DefaultEditorBuilder {
   private SNode editorNode;
   private SNode conceptDeclaration;
 
-  public DefaultEditorBuilder(SNode node) {
+  public DefaultEditorBuilder(@NotNull SNode node) {
     editorNode = node;
     conceptDeclaration = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), node, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{});
   }
 
   public void buildStatementLike() {
+    if (conceptDeclaration == null) {
+      return;
+    }
     pushCollection();
     addLabel(camelToLabel(SPropertyOperations.getString(conceptDeclaration, "name")));
     final SNode nameProperty = getNameProperty(conceptDeclaration);
@@ -106,6 +110,9 @@ public class DefaultEditorBuilder {
   }
 
   public void buildExpressionLike() {
+    if (conceptDeclaration == null) {
+      return;
+    }
     pushCollection();
     addLabel(camelToLabel(SPropertyOperations.getString(conceptDeclaration, "name")));
     final SNode nameProperty = getNameProperty(conceptDeclaration);
@@ -211,7 +218,7 @@ public class DefaultEditorBuilder {
     ListSequence.fromList(SLinkOperations.getTargets(DequeSequence.fromDeque(collectionsStack).peekElement(), "childCellModel", true)).addElement(nameCell);
   }
 
-  public void setMatchingLabel(String matchingLabel) {
+  private void setMatchingLabel(String matchingLabel) {
     SNode style = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", null);
     SPropertyOperations.set(style, "labelName", matchingLabel);
     setStyle(style);
@@ -247,7 +254,7 @@ public class DefaultEditorBuilder {
     ListSequence.fromList(SLinkOperations.getTargets(cell, "styleItem", true)).addElement(classItem);
   }
 
-  public void setStyle(SNode style) {
+  private void setStyle(SNode style) {
     SNode collection = DequeSequence.fromDeque(collectionsStack).peekElement();
     SNode cell = (ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).isEmpty() ? collection : ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).last());
     ListSequence.fromList(SLinkOperations.getTargets(cell, "styleItem", true)).addElement(style);
@@ -316,7 +323,7 @@ public class DefaultEditorBuilder {
     return sb.toString();
   }
 
-  public boolean isStringProperty(SNode property) {
+  private boolean isStringProperty(SNode property) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
       return false;
     }
@@ -326,7 +333,7 @@ public class DefaultEditorBuilder {
     return true;
   }
 
-  public boolean isBooleanProperty(SNode property) {
+  private boolean isBooleanProperty(SNode property) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(property, "dataType", false), "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration"))) {
       return false;
     }

@@ -15,9 +15,9 @@ import org.jetbrains.mps.openapi.model.SModel;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFactory;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
@@ -84,6 +84,14 @@ public class ExtractMethodDialog extends RefactoringDialog {
       }
     });
     this.update();
+  }
+
+
+
+  @Nullable
+  @Override
+  protected String getHelpId() {
+    return "refactoring.extractMethod1";
   }
 
   private void update() {

@@ -28,13 +28,11 @@ import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.generator.runtime.TemplateRootMappingRule;
 import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateWeavingRule;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * XXX this is not a context, rather QueryExecutionFacility/QueryExecutor, utility to provide extra indirection
@@ -53,57 +51,13 @@ public interface QueryExecutionContext extends QueryExecutor {
    */
   boolean isMultithreaded();
 
-  /**
-   * Not in use, alternative #checkCondition that takes TemplateContext is available
-   */
-  @Deprecated
-  @ToRemove(version=3.1)
-  boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException;
-
-  /**
-   * @deprecated use {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.InlineSwitchCaseCondition, InlineSwitchCaseContext)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  boolean checkCondition(SNode condition, boolean required, TemplateContext templateContext, SNode ruleNode) throws GenerationFailureException;
-
-  /**
-   * @deprecated use {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.IfMacroCondition, IfMacroContext)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException;
-
   SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, @NotNull TemplateContext context) throws GenerationFailureException;
 
   void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException;
 
-  /**
-   * @deprecated use {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.PropertyValueQuery, jetbrains.mps.generator.template.PropertyMacroContext)}
-   * instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException;
-
-  /**
-   * @deprecated replaced with {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.SourceNodeQuery, SourceSubstituteMacroNodeContext)}  method
-   */
-  @Deprecated
-  @ToRemove(version=3.1)
-  SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws GenerationFailureException;
-
   Object evaluateArgumentQuery(SNode inputNode, SNode query, @NotNull TemplateContext context);
 
   Object evaluateVariableQuery(SNode inputNode, SNode query, @NotNull TemplateContext context);
-
-  /**
-   * @deprecated replaced with {@link jetbrains.mps.generator.impl.template.QueryExecutor#evaluate(jetbrains.mps.generator.impl.query.SourceNodesQuery, SourceSubstituteMacroNodesContext)} method
-   */
-  @Deprecated
-  @ToRemove(version=3.1)
-  List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws
-      GenerationFailureException;
 
   SNode evaluateInsertQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context);
 
@@ -115,21 +69,7 @@ public interface QueryExecutionContext extends QueryExecutor {
 
   SNode executeInContext(SNode outputNode, TemplateContext context, NodeMapper mapper);
 
-  /**
-   * @deprecated Use {@link #tryToApply(jetbrains.mps.generator.runtime.TemplateReductionRule, jetbrains.mps.generator.runtime.TemplateContext)} instead
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
-
   Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateContext context) throws GenerationException;
-
-  /**
-   * @deprecated use {@link #isApplicable(jetbrains.mps.generator.runtime.TemplateRuleWithCondition, jetbrains.mps.generator.runtime.TemplateContext)}
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException;
 
   boolean isApplicable(@NotNull TemplateRuleWithCondition rule, @NotNull TemplateContext context) throws GenerationFailureException;
 

@@ -1,482 +1,505 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="41" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_a" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="78" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_b" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="115" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_c" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="152" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_d" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="189" startPosition="0" endLine="225" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_e" />
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="12" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="TypesystemDescriptor.java">
+      <unit at="42,0,85,0" name="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_a" />
+      <unit at="86,0,129,0" name="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_b" />
+      <unit at="130,0,173,0" name="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_c" />
+      <unit at="174,0,217,0" name="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_d" />
+      <unit at="218,0,261,0" name="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor$CustomOverloadedOperationsTypesProvider_e" />
+      <unit at="13,0,262,0" name="jetbrains.mps.baseLanguage.money.typesystem.TypesystemDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)/1187359576319">
-    <nodeInfo nodeId="1187360077368" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187360077368" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="20" startPosition="66" endLine="21" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187360077368" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="21" startPosition="203" endLine="22" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="32" startPosition="130" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197379728947" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="41" startPosition="61" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379728947" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="42" startPosition="63" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379728947" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379728947" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379728947" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197379728947" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="44" startPosition="134" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_MoneyGetAmountMethodCall_InferenceRule#()V" />
-    <nodeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1187360077368" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="18" startPosition="137" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1197379728947" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_buwp7s_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="15" startPosition="58" endLine="15" endPosition="58" />
-    <scopeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="81" />
-    <scopeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="1197379728947" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="134" />
-    <scopeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
-      <varInfo nodeId="1187359576319" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187360077368" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="280">
-      <varInfo nodeId="1187360077368" varName="_info_12389875345" />
-      <varInfo nodeId="1187360077368" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="1197379728947" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="41" startPosition="61" endLine="45" endPosition="24">
-      <varInfo nodeId="1197379728947" varName="facade" />
-      <varInfo nodeId="1197379728947" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187359576320" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="18" startPosition="137" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1187359576319" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197379728947" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1187359576319" varName="moneyGetAmountMethodCall" />
-      <varInfo nodeId="1187359576319" varName="status" />
-      <varInfo nodeId="1187359576319" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1187359576319" fileName="typeof_MoneyGetAmountMethodCall_InferenceRule.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyGetAmountMethodCall_InferenceRule" />
+    <file name="typeof_MoneyGetAmountMethodCall_InferenceRule.java">
+      <node id="1187360077368" at="19,5,20,66" concept="4" />
+      <node id="1187360077368" at="20,66,21,203" concept="4" />
+      <node id="1187360077368" at="21,203,22,280" concept="2" />
+      <node id="1187359576319" at="26,46,27,81" concept="5" />
+      <node id="1187359576319" at="31,5,32,130" concept="4" />
+      <node id="1187359576319" at="32,130,33,45" concept="5" />
+      <node id="1187359576319" at="37,30,38,17" concept="5" />
+      <node id="1197379728947" at="41,61,42,63" concept="4" />
+      <node id="1197379728947" at="42,63,43,30" concept="4" />
+      <node id="1197379728947" at="43,30,44,134" concept="0" />
+      <node id="1197379728947" at="43,30,44,134" concept="0" />
+      <node id="1197379728947" at="43,30,44,134" concept="2" />
+      <node id="1197379728947" at="44,134,45,24" concept="5" />
+      <node id="1187359576319" at="15,0,17,0" concept="1" trace="typeof_MoneyGetAmountMethodCall_InferenceRule#()V" />
+      <node id="1187359576319" at="26,0,29,0" concept="3" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1187359576319" at="37,0,40,0" concept="3" trace="overrides#()Z" />
+      <node id="1187359576319" at="30,68,34,5" concept="0" />
+      <node id="1187360077368" at="18,137,23,5" concept="0" />
+      <node id="1187359576319" at="30,0,36,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1197379728947" at="41,0,47,0" concept="6" trace="_quotation_createNode_buwp7s_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1187359576319" at="18,0,25,0" concept="3" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1187359576319" at="15,58,15,58" />
+      <scope id="1187359576319" at="26,46,27,81" />
+      <scope id="1187359576319" at="37,30,38,17" />
+      <scope id="1197379728947" at="43,30,44,134" />
+      <scope id="1187359576319" at="15,0,17,0" />
+      <scope id="1187359576319" at="31,5,33,45">
+        <var name="b" id="1187359576319" />
+      </scope>
+      <scope id="1187360077368" at="19,5,22,280">
+        <var name="_info_12389875345" id="1187360077368" />
+        <var name="_nodeToCheck_1029348928467" id="1187360077368" />
+      </scope>
+      <scope id="1187359576319" at="26,0,29,0" />
+      <scope id="1187359576319" at="37,0,40,0" />
+      <scope id="1187359576319" at="30,68,34,5" />
+      <scope id="1197379728947" at="41,61,45,24">
+        <var name="facade" id="1197379728947" />
+        <var name="quotedNode_1" id="1197379728947" />
+      </scope>
+      <scope id="1187359576320" at="18,137,23,5" />
+      <scope id="1187359576319" at="30,0,36,0">
+        <var name="argument" id="1187359576319" />
+      </scope>
+      <scope id="1197379728947" at="41,0,47,0" />
+      <scope id="1187359576319" at="18,0,25,0">
+        <var name="moneyGetAmountMethodCall" id="1187359576319" />
+        <var name="status" id="1187359576319" />
+        <var name="typeCheckingContext" id="1187359576319" />
+      </scope>
+      <unit id="1187359576319" at="14,0,48,0" name="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyGetAmountMethodCall_InferenceRule" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)/1187360305150">
-    <nodeInfo nodeId="1187360333778" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187360333778" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="20" startPosition="68" endLine="21" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187360333778" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="21" startPosition="203" endLine="22" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="32" startPosition="130" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197379728949" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="41" startPosition="61" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379728949" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="42" startPosition="63" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379728949" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379728949" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379728949" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197379728949" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="44" startPosition="134" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_MoneyGetCurrencyMethodCall_InferenceRule#()V" />
-    <nodeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1187360333778" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="18" startPosition="139" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1197379728949" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_i0acud_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="15" startPosition="60" endLine="15" endPosition="60" />
-    <scopeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="83" />
-    <scopeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="1197379728949" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="134" />
-    <scopeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
-      <varInfo nodeId="1187360305150" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187360333778" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="280">
-      <varInfo nodeId="1187360333778" varName="_info_12389875345" />
-      <varInfo nodeId="1187360333778" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="1197379728949" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="41" startPosition="61" endLine="45" endPosition="24">
-      <varInfo nodeId="1197379728949" varName="facade" />
-      <varInfo nodeId="1197379728949" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187360305151" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="18" startPosition="139" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1187360305150" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197379728949" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1187360305150" varName="moneyGetCurrencyMethodCall" />
-      <varInfo nodeId="1187360305150" varName="status" />
-      <varInfo nodeId="1187360305150" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1187360305150" fileName="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyGetCurrencyMethodCall_InferenceRule" />
+    <file name="typeof_MoneyGetCurrencyMethodCall_InferenceRule.java">
+      <node id="1187360333778" at="19,5,20,68" concept="4" />
+      <node id="1187360333778" at="20,68,21,203" concept="4" />
+      <node id="1187360333778" at="21,203,22,280" concept="2" />
+      <node id="1187360305150" at="26,46,27,83" concept="5" />
+      <node id="1187360305150" at="31,5,32,130" concept="4" />
+      <node id="1187360305150" at="32,130,33,45" concept="5" />
+      <node id="1187360305150" at="37,30,38,17" concept="5" />
+      <node id="1197379728949" at="41,61,42,63" concept="4" />
+      <node id="1197379728949" at="42,63,43,30" concept="4" />
+      <node id="1197379728949" at="43,30,44,134" concept="0" />
+      <node id="1197379728949" at="43,30,44,134" concept="0" />
+      <node id="1197379728949" at="43,30,44,134" concept="2" />
+      <node id="1197379728949" at="44,134,45,24" concept="5" />
+      <node id="1187360305150" at="15,0,17,0" concept="1" trace="typeof_MoneyGetCurrencyMethodCall_InferenceRule#()V" />
+      <node id="1187360305150" at="26,0,29,0" concept="3" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1187360305150" at="37,0,40,0" concept="3" trace="overrides#()Z" />
+      <node id="1187360305150" at="30,68,34,5" concept="0" />
+      <node id="1187360333778" at="18,139,23,5" concept="0" />
+      <node id="1187360305150" at="30,0,36,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1197379728949" at="41,0,47,0" concept="6" trace="_quotation_createNode_i0acud_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1187360305150" at="18,0,25,0" concept="3" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1187360305150" at="15,60,15,60" />
+      <scope id="1187360305150" at="26,46,27,83" />
+      <scope id="1187360305150" at="37,30,38,17" />
+      <scope id="1197379728949" at="43,30,44,134" />
+      <scope id="1187360305150" at="15,0,17,0" />
+      <scope id="1187360305150" at="31,5,33,45">
+        <var name="b" id="1187360305150" />
+      </scope>
+      <scope id="1187360333778" at="19,5,22,280">
+        <var name="_info_12389875345" id="1187360333778" />
+        <var name="_nodeToCheck_1029348928467" id="1187360333778" />
+      </scope>
+      <scope id="1187360305150" at="26,0,29,0" />
+      <scope id="1187360305150" at="37,0,40,0" />
+      <scope id="1187360305150" at="30,68,34,5" />
+      <scope id="1197379728949" at="41,61,45,24">
+        <var name="facade" id="1197379728949" />
+        <var name="quotedNode_1" id="1197379728949" />
+      </scope>
+      <scope id="1187360305151" at="18,139,23,5" />
+      <scope id="1187360305150" at="30,0,36,0">
+        <var name="argument" id="1187360305150" />
+      </scope>
+      <scope id="1197379728949" at="41,0,47,0" />
+      <scope id="1187360305150" at="18,0,25,0">
+        <var name="moneyGetCurrencyMethodCall" id="1187360305150" />
+        <var name="status" id="1187360305150" />
+        <var name="typeCheckingContext" id="1187360305150" />
+      </scope>
+      <unit id="1187360305150" at="14,0,48,0" name="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyGetCurrencyMethodCall_InferenceRule" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)/1187618173694">
-    <nodeInfo nodeId="1187618239848" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187618239848" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="20" startPosition="63" endLine="21" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187618239848" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="21" startPosition="203" endLine="22" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="32" startPosition="130" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197379728951" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="41" startPosition="61" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379728951" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="42" startPosition="63" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379728951" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379728951" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379728951" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197379728951" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="44" startPosition="135" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_MoneyIsZeroMethodCall_InferenceRule#()V" />
-    <nodeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1187618239848" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="18" startPosition="134" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1197379728951" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_xrh9nw_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="15" startPosition="55" endLine="15" endPosition="55" />
-    <scopeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="78" />
-    <scopeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="1197379728951" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="135" />
-    <scopeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
-      <varInfo nodeId="1187618173694" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187618239848" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="280">
-      <varInfo nodeId="1187618239848" varName="_info_12389875345" />
-      <varInfo nodeId="1187618239848" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="1197379728951" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="41" startPosition="61" endLine="45" endPosition="24">
-      <varInfo nodeId="1197379728951" varName="facade" />
-      <varInfo nodeId="1197379728951" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187618173695" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="18" startPosition="134" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1187618173694" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197379728951" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1187618173694" varName="moneyIsZeroMethodCall" />
-      <varInfo nodeId="1187618173694" varName="status" />
-      <varInfo nodeId="1187618173694" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1187618173694" fileName="typeof_MoneyIsZeroMethodCall_InferenceRule.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyIsZeroMethodCall_InferenceRule" />
+    <file name="typeof_MoneyIsZeroMethodCall_InferenceRule.java">
+      <node id="1187618239848" at="19,5,20,63" concept="4" />
+      <node id="1187618239848" at="20,63,21,203" concept="4" />
+      <node id="1187618239848" at="21,203,22,280" concept="2" />
+      <node id="1187618173694" at="26,46,27,78" concept="5" />
+      <node id="1187618173694" at="31,5,32,130" concept="4" />
+      <node id="1187618173694" at="32,130,33,45" concept="5" />
+      <node id="1187618173694" at="37,30,38,17" concept="5" />
+      <node id="1197379728951" at="41,61,42,63" concept="4" />
+      <node id="1197379728951" at="42,63,43,30" concept="4" />
+      <node id="1197379728951" at="43,30,44,135" concept="0" />
+      <node id="1197379728951" at="43,30,44,135" concept="0" />
+      <node id="1197379728951" at="43,30,44,135" concept="2" />
+      <node id="1197379728951" at="44,135,45,24" concept="5" />
+      <node id="1187618173694" at="15,0,17,0" concept="1" trace="typeof_MoneyIsZeroMethodCall_InferenceRule#()V" />
+      <node id="1187618173694" at="26,0,29,0" concept="3" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1187618173694" at="37,0,40,0" concept="3" trace="overrides#()Z" />
+      <node id="1187618173694" at="30,68,34,5" concept="0" />
+      <node id="1187618239848" at="18,134,23,5" concept="0" />
+      <node id="1187618173694" at="30,0,36,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1197379728951" at="41,0,47,0" concept="6" trace="_quotation_createNode_xrh9nw_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1187618173694" at="18,0,25,0" concept="3" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1187618173694" at="15,55,15,55" />
+      <scope id="1187618173694" at="26,46,27,78" />
+      <scope id="1187618173694" at="37,30,38,17" />
+      <scope id="1197379728951" at="43,30,44,135" />
+      <scope id="1187618173694" at="15,0,17,0" />
+      <scope id="1187618173694" at="31,5,33,45">
+        <var name="b" id="1187618173694" />
+      </scope>
+      <scope id="1187618239848" at="19,5,22,280">
+        <var name="_info_12389875345" id="1187618239848" />
+        <var name="_nodeToCheck_1029348928467" id="1187618239848" />
+      </scope>
+      <scope id="1187618173694" at="26,0,29,0" />
+      <scope id="1187618173694" at="37,0,40,0" />
+      <scope id="1187618173694" at="30,68,34,5" />
+      <scope id="1197379728951" at="41,61,45,24">
+        <var name="facade" id="1197379728951" />
+        <var name="quotedNode_1" id="1197379728951" />
+      </scope>
+      <scope id="1187618173695" at="18,134,23,5" />
+      <scope id="1187618173694" at="30,0,36,0">
+        <var name="argument" id="1187618173694" />
+      </scope>
+      <scope id="1197379728951" at="41,0,47,0" />
+      <scope id="1187618173694" at="18,0,25,0">
+        <var name="moneyIsZeroMethodCall" id="1187618173694" />
+        <var name="status" id="1187618173694" />
+        <var name="typeCheckingContext" id="1187618173694" />
+      </scope>
+      <unit id="1187618173694" at="14,0,48,0" name="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyIsZeroMethodCall_InferenceRule" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)/1187621915208">
-    <nodeInfo nodeId="1187621962983" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187621962983" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="20" startPosition="54" endLine="21" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187621962983" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="21" startPosition="203" endLine="22" endPosition="280" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="32" startPosition="130" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197379728953" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="41" startPosition="61" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379728953" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="42" startPosition="63" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379728953" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379728953" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379728953" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197379728953" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="44" startPosition="139" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_MoneyCreator_InferenceRule#()V" />
-    <nodeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1187621962983" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="18" startPosition="125" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1197379728953" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_n52308_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="15" startPosition="46" endLine="15" endPosition="46" />
-    <scopeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="69" />
-    <scopeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="1197379728953" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="139" />
-    <scopeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
-      <varInfo nodeId="1187621915208" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187621962983" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="280">
-      <varInfo nodeId="1187621962983" varName="_info_12389875345" />
-      <varInfo nodeId="1187621962983" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="1197379728953" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="41" startPosition="61" endLine="45" endPosition="24">
-      <varInfo nodeId="1197379728953" varName="facade" />
-      <varInfo nodeId="1197379728953" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187621915209" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="18" startPosition="125" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1187621915208" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197379728953" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1187621915208" varName="moneyCreator" />
-      <varInfo nodeId="1187621915208" varName="status" />
-      <varInfo nodeId="1187621915208" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1187621915208" fileName="typeof_MoneyCreator_InferenceRule.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyCreator_InferenceRule" />
+    <file name="typeof_MoneyCreator_InferenceRule.java">
+      <node id="1187621962983" at="19,5,20,54" concept="4" />
+      <node id="1187621962983" at="20,54,21,203" concept="4" />
+      <node id="1187621962983" at="21,203,22,280" concept="2" />
+      <node id="1187621915208" at="26,46,27,69" concept="5" />
+      <node id="1187621915208" at="31,5,32,130" concept="4" />
+      <node id="1187621915208" at="32,130,33,45" concept="5" />
+      <node id="1187621915208" at="37,30,38,17" concept="5" />
+      <node id="1197379728953" at="41,61,42,63" concept="4" />
+      <node id="1197379728953" at="42,63,43,30" concept="4" />
+      <node id="1197379728953" at="43,30,44,139" concept="0" />
+      <node id="1197379728953" at="43,30,44,139" concept="0" />
+      <node id="1197379728953" at="43,30,44,139" concept="2" />
+      <node id="1197379728953" at="44,139,45,24" concept="5" />
+      <node id="1187621915208" at="15,0,17,0" concept="1" trace="typeof_MoneyCreator_InferenceRule#()V" />
+      <node id="1187621915208" at="26,0,29,0" concept="3" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1187621915208" at="37,0,40,0" concept="3" trace="overrides#()Z" />
+      <node id="1187621915208" at="30,68,34,5" concept="0" />
+      <node id="1187621962983" at="18,125,23,5" concept="0" />
+      <node id="1187621915208" at="30,0,36,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1197379728953" at="41,0,47,0" concept="6" trace="_quotation_createNode_n52308_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1187621915208" at="18,0,25,0" concept="3" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1187621915208" at="15,46,15,46" />
+      <scope id="1187621915208" at="26,46,27,69" />
+      <scope id="1187621915208" at="37,30,38,17" />
+      <scope id="1197379728953" at="43,30,44,139" />
+      <scope id="1187621915208" at="15,0,17,0" />
+      <scope id="1187621915208" at="31,5,33,45">
+        <var name="b" id="1187621915208" />
+      </scope>
+      <scope id="1187621962983" at="19,5,22,280">
+        <var name="_info_12389875345" id="1187621962983" />
+        <var name="_nodeToCheck_1029348928467" id="1187621962983" />
+      </scope>
+      <scope id="1187621915208" at="26,0,29,0" />
+      <scope id="1187621915208" at="37,0,40,0" />
+      <scope id="1187621915208" at="30,68,34,5" />
+      <scope id="1197379728953" at="41,61,45,24">
+        <var name="facade" id="1197379728953" />
+        <var name="quotedNode_1" id="1197379728953" />
+      </scope>
+      <scope id="1187621915209" at="18,125,23,5" />
+      <scope id="1187621915208" at="30,0,36,0">
+        <var name="argument" id="1187621915208" />
+      </scope>
+      <scope id="1197379728953" at="41,0,47,0" />
+      <scope id="1187621915208" at="18,0,25,0">
+        <var name="moneyCreator" id="1187621915208" />
+        <var name="status" id="1187621915208" />
+        <var name="typeCheckingContext" id="1187621915208" />
+      </scope>
+      <unit id="1187621915208" at="14,0,48,0" name="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyCreator_InferenceRule" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)/1187622269431">
-    <nodeInfo nodeId="1187622287642" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="19" startPosition="5" endLine="20" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187622287642" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="20" startPosition="54" endLine="21" endPosition="203" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187622287642" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="21" startPosition="203" endLine="22" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="31" startPosition="5" endLine="32" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="32" startPosition="130" endLine="33" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1197379728955" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="41" startPosition="60" endLine="42" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379728955" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="42" startPosition="63" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1197379728955" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379728955" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1197379728955" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1197379728955" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="44" startPosition="139" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_MoneyLiteral_InferenceRule#()V" />
-    <nodeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1187622287642" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="18" startPosition="125" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1197379728955" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_1il3t_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="15" startPosition="46" endLine="15" endPosition="46" />
-    <scopeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="26" startPosition="46" endLine="27" endPosition="69" />
-    <scopeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="37" startPosition="30" endLine="38" endPosition="17" />
-    <scopeInfo nodeId="1197379728955" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="43" startPosition="30" endLine="44" endPosition="139" />
-    <scopeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="31" startPosition="5" endLine="33" endPosition="45">
-      <varInfo nodeId="1187622269431" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187622287642" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="19" startPosition="5" endLine="22" endPosition="279">
-      <varInfo nodeId="1187622287642" varName="_info_12389875345" />
-      <varInfo nodeId="1187622287642" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="30" startPosition="68" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="1197379728955" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="41" startPosition="60" endLine="45" endPosition="24">
-      <varInfo nodeId="1197379728955" varName="facade" />
-      <varInfo nodeId="1197379728955" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1187622269432" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="18" startPosition="125" endLine="23" endPosition="5" />
-    <scopeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1187622269431" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="1197379728955" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="41" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="18" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="1187622269431" varName="moneyLiteral" />
-      <varInfo nodeId="1187622269431" varName="status" />
-      <varInfo nodeId="1187622269431" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1187622269431" fileName="typeof_MoneyLiteral_InferenceRule.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyLiteral_InferenceRule" />
+    <file name="typeof_MoneyLiteral_InferenceRule.java">
+      <node id="1187622287642" at="19,5,20,54" concept="4" />
+      <node id="1187622287642" at="20,54,21,203" concept="4" />
+      <node id="1187622287642" at="21,203,22,279" concept="2" />
+      <node id="1187622269431" at="26,46,27,69" concept="5" />
+      <node id="1187622269431" at="31,5,32,130" concept="4" />
+      <node id="1187622269431" at="32,130,33,45" concept="5" />
+      <node id="1187622269431" at="37,30,38,17" concept="5" />
+      <node id="1197379728955" at="41,60,42,63" concept="4" />
+      <node id="1197379728955" at="42,63,43,30" concept="4" />
+      <node id="1197379728955" at="43,30,44,139" concept="0" />
+      <node id="1197379728955" at="43,30,44,139" concept="0" />
+      <node id="1197379728955" at="43,30,44,139" concept="2" />
+      <node id="1197379728955" at="44,139,45,24" concept="5" />
+      <node id="1187622269431" at="15,0,17,0" concept="1" trace="typeof_MoneyLiteral_InferenceRule#()V" />
+      <node id="1187622269431" at="26,0,29,0" concept="3" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1187622269431" at="37,0,40,0" concept="3" trace="overrides#()Z" />
+      <node id="1187622269431" at="30,68,34,5" concept="0" />
+      <node id="1187622287642" at="18,125,23,5" concept="0" />
+      <node id="1187622269431" at="30,0,36,0" concept="3" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1197379728955" at="41,0,47,0" concept="6" trace="_quotation_createNode_1il3t_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1187622269431" at="18,0,25,0" concept="3" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1187622269431" at="15,46,15,46" />
+      <scope id="1187622269431" at="26,46,27,69" />
+      <scope id="1187622269431" at="37,30,38,17" />
+      <scope id="1197379728955" at="43,30,44,139" />
+      <scope id="1187622269431" at="15,0,17,0" />
+      <scope id="1187622269431" at="31,5,33,45">
+        <var name="b" id="1187622269431" />
+      </scope>
+      <scope id="1187622287642" at="19,5,22,279">
+        <var name="_info_12389875345" id="1187622287642" />
+        <var name="_nodeToCheck_1029348928467" id="1187622287642" />
+      </scope>
+      <scope id="1187622269431" at="26,0,29,0" />
+      <scope id="1187622269431" at="37,0,40,0" />
+      <scope id="1187622269431" at="30,68,34,5" />
+      <scope id="1197379728955" at="41,60,45,24">
+        <var name="facade" id="1197379728955" />
+        <var name="quotedNode_1" id="1197379728955" />
+      </scope>
+      <scope id="1187622269432" at="18,125,23,5" />
+      <scope id="1187622269431" at="30,0,36,0">
+        <var name="argument" id="1187622269431" />
+      </scope>
+      <scope id="1197379728955" at="41,0,47,0" />
+      <scope id="1187622269431" at="18,0,25,0">
+        <var name="moneyLiteral" id="1187622269431" />
+        <var name="status" id="1187622269431" />
+        <var name="typeCheckingContext" id="1187622269431" />
+      </scope>
+      <unit id="1187622269431" at="14,0,48,0" name="jetbrains.mps.baseLanguage.money.typesystem.typeof_MoneyLiteral_InferenceRule" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f6(jetbrains.mps.baseLanguage.money.typesystem)/1239364210617">
-    <nodeInfo nodeId="1239364296940" fileName="TypesystemDescriptor.java" startLine="52" startPosition="99" endLine="53" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364229833" fileName="TypesystemDescriptor.java" startLine="56" startPosition="64" endLine="57" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364229833" fileName="TypesystemDescriptor.java" startLine="57" startPosition="65" endLine="58" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364229833" fileName="TypesystemDescriptor.java" startLine="58" startPosition="32" endLine="59" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364229833" fileName="TypesystemDescriptor.java" startLine="58" startPosition="32" endLine="59" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364229833" fileName="TypesystemDescriptor.java" startLine="58" startPosition="32" endLine="59" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364229833" fileName="TypesystemDescriptor.java" startLine="59" startPosition="141" endLine="60" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364289289" fileName="TypesystemDescriptor.java" startLine="63" startPosition="64" endLine="64" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364289289" fileName="TypesystemDescriptor.java" startLine="64" startPosition="65" endLine="65" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364289289" fileName="TypesystemDescriptor.java" startLine="65" startPosition="32" endLine="66" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364289289" fileName="TypesystemDescriptor.java" startLine="65" startPosition="32" endLine="66" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364289289" fileName="TypesystemDescriptor.java" startLine="65" startPosition="32" endLine="66" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364289289" fileName="TypesystemDescriptor.java" startLine="66" startPosition="141" endLine="67" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364299263" fileName="TypesystemDescriptor.java" startLine="70" startPosition="63" endLine="71" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364299263" fileName="TypesystemDescriptor.java" startLine="71" startPosition="65" endLine="72" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364299263" fileName="TypesystemDescriptor.java" startLine="72" startPosition="32" endLine="73" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364299263" fileName="TypesystemDescriptor.java" startLine="72" startPosition="32" endLine="73" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364299263" fileName="TypesystemDescriptor.java" startLine="72" startPosition="32" endLine="73" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364299263" fileName="TypesystemDescriptor.java" startLine="73" startPosition="141" endLine="74" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364305886" fileName="TypesystemDescriptor.java" startLine="89" startPosition="99" endLine="90" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364305880" fileName="TypesystemDescriptor.java" startLine="93" startPosition="64" endLine="94" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364305880" fileName="TypesystemDescriptor.java" startLine="94" startPosition="65" endLine="95" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364305880" fileName="TypesystemDescriptor.java" startLine="95" startPosition="32" endLine="96" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364305880" fileName="TypesystemDescriptor.java" startLine="95" startPosition="32" endLine="96" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364305880" fileName="TypesystemDescriptor.java" startLine="95" startPosition="32" endLine="96" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364305880" fileName="TypesystemDescriptor.java" startLine="96" startPosition="141" endLine="97" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364305882" fileName="TypesystemDescriptor.java" startLine="100" startPosition="64" endLine="101" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364305882" fileName="TypesystemDescriptor.java" startLine="101" startPosition="65" endLine="102" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364305882" fileName="TypesystemDescriptor.java" startLine="102" startPosition="32" endLine="103" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364305882" fileName="TypesystemDescriptor.java" startLine="102" startPosition="32" endLine="103" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364305882" fileName="TypesystemDescriptor.java" startLine="102" startPosition="32" endLine="103" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364305882" fileName="TypesystemDescriptor.java" startLine="103" startPosition="141" endLine="104" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364305887" fileName="TypesystemDescriptor.java" startLine="107" startPosition="63" endLine="108" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364305887" fileName="TypesystemDescriptor.java" startLine="108" startPosition="65" endLine="109" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364305887" fileName="TypesystemDescriptor.java" startLine="109" startPosition="32" endLine="110" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364305887" fileName="TypesystemDescriptor.java" startLine="109" startPosition="32" endLine="110" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364305887" fileName="TypesystemDescriptor.java" startLine="109" startPosition="32" endLine="110" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364305887" fileName="TypesystemDescriptor.java" startLine="110" startPosition="141" endLine="111" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364336257" fileName="TypesystemDescriptor.java" startLine="126" startPosition="99" endLine="127" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364336251" fileName="TypesystemDescriptor.java" startLine="130" startPosition="64" endLine="131" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364336251" fileName="TypesystemDescriptor.java" startLine="131" startPosition="65" endLine="132" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364336251" fileName="TypesystemDescriptor.java" startLine="132" startPosition="32" endLine="133" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364336251" fileName="TypesystemDescriptor.java" startLine="132" startPosition="32" endLine="133" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364336251" fileName="TypesystemDescriptor.java" startLine="132" startPosition="32" endLine="133" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364336251" fileName="TypesystemDescriptor.java" startLine="133" startPosition="141" endLine="134" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364367200" fileName="TypesystemDescriptor.java" startLine="137" startPosition="64" endLine="138" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364367200" fileName="TypesystemDescriptor.java" startLine="138" startPosition="65" endLine="139" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364367200" fileName="TypesystemDescriptor.java" startLine="139" startPosition="32" endLine="140" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364367200" fileName="TypesystemDescriptor.java" startLine="139" startPosition="32" endLine="140" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364367200" fileName="TypesystemDescriptor.java" startLine="139" startPosition="32" endLine="140" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364367200" fileName="TypesystemDescriptor.java" startLine="140" startPosition="137" endLine="141" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364336258" fileName="TypesystemDescriptor.java" startLine="144" startPosition="63" endLine="145" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364336258" fileName="TypesystemDescriptor.java" startLine="145" startPosition="65" endLine="146" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364336258" fileName="TypesystemDescriptor.java" startLine="146" startPosition="32" endLine="147" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364336258" fileName="TypesystemDescriptor.java" startLine="146" startPosition="32" endLine="147" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364336258" fileName="TypesystemDescriptor.java" startLine="146" startPosition="32" endLine="147" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364336258" fileName="TypesystemDescriptor.java" startLine="147" startPosition="141" endLine="148" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364372748" fileName="TypesystemDescriptor.java" startLine="163" startPosition="99" endLine="164" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364372742" fileName="TypesystemDescriptor.java" startLine="167" startPosition="64" endLine="168" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364372742" fileName="TypesystemDescriptor.java" startLine="168" startPosition="65" endLine="169" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364372742" fileName="TypesystemDescriptor.java" startLine="169" startPosition="32" endLine="170" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364372742" fileName="TypesystemDescriptor.java" startLine="169" startPosition="32" endLine="170" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364372742" fileName="TypesystemDescriptor.java" startLine="169" startPosition="32" endLine="170" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364372742" fileName="TypesystemDescriptor.java" startLine="170" startPosition="141" endLine="171" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364372744" fileName="TypesystemDescriptor.java" startLine="174" startPosition="64" endLine="175" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364372744" fileName="TypesystemDescriptor.java" startLine="175" startPosition="65" endLine="176" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364372744" fileName="TypesystemDescriptor.java" startLine="176" startPosition="32" endLine="177" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364372744" fileName="TypesystemDescriptor.java" startLine="176" startPosition="32" endLine="177" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364372744" fileName="TypesystemDescriptor.java" startLine="176" startPosition="32" endLine="177" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364372744" fileName="TypesystemDescriptor.java" startLine="177" startPosition="137" endLine="178" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364372749" fileName="TypesystemDescriptor.java" startLine="181" startPosition="63" endLine="182" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364372749" fileName="TypesystemDescriptor.java" startLine="182" startPosition="65" endLine="183" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364372749" fileName="TypesystemDescriptor.java" startLine="183" startPosition="32" endLine="184" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364372749" fileName="TypesystemDescriptor.java" startLine="183" startPosition="32" endLine="184" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364372749" fileName="TypesystemDescriptor.java" startLine="183" startPosition="32" endLine="184" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364372749" fileName="TypesystemDescriptor.java" startLine="184" startPosition="141" endLine="185" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364383457" fileName="TypesystemDescriptor.java" startLine="200" startPosition="99" endLine="201" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364383451" fileName="TypesystemDescriptor.java" startLine="204" startPosition="64" endLine="205" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364383451" fileName="TypesystemDescriptor.java" startLine="205" startPosition="65" endLine="206" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364383451" fileName="TypesystemDescriptor.java" startLine="206" startPosition="32" endLine="207" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364383451" fileName="TypesystemDescriptor.java" startLine="206" startPosition="32" endLine="207" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364383451" fileName="TypesystemDescriptor.java" startLine="206" startPosition="32" endLine="207" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364383451" fileName="TypesystemDescriptor.java" startLine="207" startPosition="137" endLine="208" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364383453" fileName="TypesystemDescriptor.java" startLine="211" startPosition="64" endLine="212" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364383453" fileName="TypesystemDescriptor.java" startLine="212" startPosition="65" endLine="213" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364383453" fileName="TypesystemDescriptor.java" startLine="213" startPosition="32" endLine="214" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364383453" fileName="TypesystemDescriptor.java" startLine="213" startPosition="32" endLine="214" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364383453" fileName="TypesystemDescriptor.java" startLine="213" startPosition="32" endLine="214" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364383453" fileName="TypesystemDescriptor.java" startLine="214" startPosition="141" endLine="215" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364383458" fileName="TypesystemDescriptor.java" startLine="218" startPosition="63" endLine="219" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364383458" fileName="TypesystemDescriptor.java" startLine="219" startPosition="65" endLine="220" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1239364383458" fileName="TypesystemDescriptor.java" startLine="220" startPosition="32" endLine="221" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364383458" fileName="TypesystemDescriptor.java" startLine="220" startPosition="32" endLine="221" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1239364383458" fileName="TypesystemDescriptor.java" startLine="220" startPosition="32" endLine="221" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1239364383458" fileName="TypesystemDescriptor.java" startLine="221" startPosition="141" endLine="222" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1239364229833" fileName="TypesystemDescriptor.java" startLine="56" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364289289" fileName="TypesystemDescriptor.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0b0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364299263" fileName="TypesystemDescriptor.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0a1b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364305880" fileName="TypesystemDescriptor.java" startLine="93" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364305882" fileName="TypesystemDescriptor.java" startLine="100" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0b0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364305887" fileName="TypesystemDescriptor.java" startLine="107" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0a1c#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364336251" fileName="TypesystemDescriptor.java" startLine="130" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0a0a3#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364367200" fileName="TypesystemDescriptor.java" startLine="137" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0b0a3#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364336258" fileName="TypesystemDescriptor.java" startLine="144" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0a1d#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364372742" fileName="TypesystemDescriptor.java" startLine="167" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0a0a4#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364372744" fileName="TypesystemDescriptor.java" startLine="174" startPosition="0" endLine="180" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0b0a4#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364372749" fileName="TypesystemDescriptor.java" startLine="181" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0a1e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364383451" fileName="TypesystemDescriptor.java" startLine="204" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0a0a5#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364383453" fileName="TypesystemDescriptor.java" startLine="211" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0b0a5#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1239364383458" fileName="TypesystemDescriptor.java" startLine="218" startPosition="0" endLine="224" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_3ist9o_a0a1f#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="1239364220848" fileName="TypesystemDescriptor.java" startLine="52" startPosition="99" endLine="53" endPosition="50" />
-    <scopeInfo nodeId="1239364229833" fileName="TypesystemDescriptor.java" startLine="58" startPosition="32" endLine="59" endPosition="141" />
-    <scopeInfo nodeId="1239364289289" fileName="TypesystemDescriptor.java" startLine="65" startPosition="32" endLine="66" endPosition="141" />
-    <scopeInfo nodeId="1239364299263" fileName="TypesystemDescriptor.java" startLine="72" startPosition="32" endLine="73" endPosition="141" />
-    <scopeInfo nodeId="1239364305885" fileName="TypesystemDescriptor.java" startLine="89" startPosition="99" endLine="90" endPosition="50" />
-    <scopeInfo nodeId="1239364305880" fileName="TypesystemDescriptor.java" startLine="95" startPosition="32" endLine="96" endPosition="141" />
-    <scopeInfo nodeId="1239364305882" fileName="TypesystemDescriptor.java" startLine="102" startPosition="32" endLine="103" endPosition="141" />
-    <scopeInfo nodeId="1239364305887" fileName="TypesystemDescriptor.java" startLine="109" startPosition="32" endLine="110" endPosition="141" />
-    <scopeInfo nodeId="1239364336256" fileName="TypesystemDescriptor.java" startLine="126" startPosition="99" endLine="127" endPosition="50" />
-    <scopeInfo nodeId="1239364336251" fileName="TypesystemDescriptor.java" startLine="132" startPosition="32" endLine="133" endPosition="141" />
-    <scopeInfo nodeId="1239364367200" fileName="TypesystemDescriptor.java" startLine="139" startPosition="32" endLine="140" endPosition="137" />
-    <scopeInfo nodeId="1239364336258" fileName="TypesystemDescriptor.java" startLine="146" startPosition="32" endLine="147" endPosition="141" />
-    <scopeInfo nodeId="1239364372747" fileName="TypesystemDescriptor.java" startLine="163" startPosition="99" endLine="164" endPosition="50" />
-    <scopeInfo nodeId="1239364372742" fileName="TypesystemDescriptor.java" startLine="169" startPosition="32" endLine="170" endPosition="141" />
-    <scopeInfo nodeId="1239364372744" fileName="TypesystemDescriptor.java" startLine="176" startPosition="32" endLine="177" endPosition="137" />
-    <scopeInfo nodeId="1239364372749" fileName="TypesystemDescriptor.java" startLine="183" startPosition="32" endLine="184" endPosition="141" />
-    <scopeInfo nodeId="1239364383456" fileName="TypesystemDescriptor.java" startLine="200" startPosition="99" endLine="201" endPosition="50" />
-    <scopeInfo nodeId="1239364383451" fileName="TypesystemDescriptor.java" startLine="206" startPosition="32" endLine="207" endPosition="137" />
-    <scopeInfo nodeId="1239364383453" fileName="TypesystemDescriptor.java" startLine="213" startPosition="32" endLine="214" endPosition="141" />
-    <scopeInfo nodeId="1239364383458" fileName="TypesystemDescriptor.java" startLine="220" startPosition="32" endLine="221" endPosition="141" />
-    <scopeInfo nodeId="1239364229833" fileName="TypesystemDescriptor.java" startLine="56" startPosition="64" endLine="60" endPosition="26">
-      <varInfo nodeId="1239364229833" varName="facade" />
-      <varInfo nodeId="1239364229833" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364289289" fileName="TypesystemDescriptor.java" startLine="63" startPosition="64" endLine="67" endPosition="26">
-      <varInfo nodeId="1239364289289" varName="facade" />
-      <varInfo nodeId="1239364289289" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364299263" fileName="TypesystemDescriptor.java" startLine="70" startPosition="63" endLine="74" endPosition="26">
-      <varInfo nodeId="1239364299263" varName="facade" />
-      <varInfo nodeId="1239364299263" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364305880" fileName="TypesystemDescriptor.java" startLine="93" startPosition="64" endLine="97" endPosition="26">
-      <varInfo nodeId="1239364305880" varName="facade" />
-      <varInfo nodeId="1239364305880" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364305882" fileName="TypesystemDescriptor.java" startLine="100" startPosition="64" endLine="104" endPosition="26">
-      <varInfo nodeId="1239364305882" varName="facade" />
-      <varInfo nodeId="1239364305882" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364305887" fileName="TypesystemDescriptor.java" startLine="107" startPosition="63" endLine="111" endPosition="26">
-      <varInfo nodeId="1239364305887" varName="facade" />
-      <varInfo nodeId="1239364305887" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364336251" fileName="TypesystemDescriptor.java" startLine="130" startPosition="64" endLine="134" endPosition="26">
-      <varInfo nodeId="1239364336251" varName="facade" />
-      <varInfo nodeId="1239364336251" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364367200" fileName="TypesystemDescriptor.java" startLine="137" startPosition="64" endLine="141" endPosition="26">
-      <varInfo nodeId="1239364367200" varName="facade" />
-      <varInfo nodeId="1239364367200" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364336258" fileName="TypesystemDescriptor.java" startLine="144" startPosition="63" endLine="148" endPosition="26">
-      <varInfo nodeId="1239364336258" varName="facade" />
-      <varInfo nodeId="1239364336258" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364372742" fileName="TypesystemDescriptor.java" startLine="167" startPosition="64" endLine="171" endPosition="26">
-      <varInfo nodeId="1239364372742" varName="facade" />
-      <varInfo nodeId="1239364372742" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364372744" fileName="TypesystemDescriptor.java" startLine="174" startPosition="64" endLine="178" endPosition="26">
-      <varInfo nodeId="1239364372744" varName="facade" />
-      <varInfo nodeId="1239364372744" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364372749" fileName="TypesystemDescriptor.java" startLine="181" startPosition="63" endLine="185" endPosition="26">
-      <varInfo nodeId="1239364372749" varName="facade" />
-      <varInfo nodeId="1239364372749" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364383451" fileName="TypesystemDescriptor.java" startLine="204" startPosition="64" endLine="208" endPosition="26">
-      <varInfo nodeId="1239364383451" varName="facade" />
-      <varInfo nodeId="1239364383451" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364383453" fileName="TypesystemDescriptor.java" startLine="211" startPosition="64" endLine="215" endPosition="26">
-      <varInfo nodeId="1239364383453" varName="facade" />
-      <varInfo nodeId="1239364383453" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364383458" fileName="TypesystemDescriptor.java" startLine="218" startPosition="63" endLine="222" endPosition="26">
-      <varInfo nodeId="1239364383458" varName="facade" />
-      <varInfo nodeId="1239364383458" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1239364229833" fileName="TypesystemDescriptor.java" startLine="56" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1239364289289" fileName="TypesystemDescriptor.java" startLine="63" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1239364299263" fileName="TypesystemDescriptor.java" startLine="70" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="1239364305880" fileName="TypesystemDescriptor.java" startLine="93" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="1239364305882" fileName="TypesystemDescriptor.java" startLine="100" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="1239364305887" fileName="TypesystemDescriptor.java" startLine="107" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="1239364336251" fileName="TypesystemDescriptor.java" startLine="130" startPosition="0" endLine="136" endPosition="0" />
-    <scopeInfo nodeId="1239364367200" fileName="TypesystemDescriptor.java" startLine="137" startPosition="0" endLine="143" endPosition="0" />
-    <scopeInfo nodeId="1239364336258" fileName="TypesystemDescriptor.java" startLine="144" startPosition="0" endLine="150" endPosition="0" />
-    <scopeInfo nodeId="1239364372742" fileName="TypesystemDescriptor.java" startLine="167" startPosition="0" endLine="173" endPosition="0" />
-    <scopeInfo nodeId="1239364372744" fileName="TypesystemDescriptor.java" startLine="174" startPosition="0" endLine="180" endPosition="0" />
-    <scopeInfo nodeId="1239364372749" fileName="TypesystemDescriptor.java" startLine="181" startPosition="0" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="1239364383451" fileName="TypesystemDescriptor.java" startLine="204" startPosition="0" endLine="210" endPosition="0" />
-    <scopeInfo nodeId="1239364383453" fileName="TypesystemDescriptor.java" startLine="211" startPosition="0" endLine="217" endPosition="0" />
-    <scopeInfo nodeId="1239364383458" fileName="TypesystemDescriptor.java" startLine="218" startPosition="0" endLine="224" endPosition="0" />
+    <file name="TypesystemDescriptor.java">
+      <node id="1239364296940" at="55,99,56,50" concept="5" />
+      <node id="1239364229833" at="64,64,65,65" concept="4" />
+      <node id="1239364229833" at="65,65,66,32" concept="4" />
+      <node id="1239364229833" at="66,32,67,141" concept="0" />
+      <node id="1239364229833" at="66,32,67,141" concept="0" />
+      <node id="1239364229833" at="66,32,67,141" concept="2" />
+      <node id="1239364229833" at="67,141,68,26" concept="5" />
+      <node id="1239364289289" at="71,64,72,65" concept="4" />
+      <node id="1239364289289" at="72,65,73,32" concept="4" />
+      <node id="1239364289289" at="73,32,74,141" concept="0" />
+      <node id="1239364289289" at="73,32,74,141" concept="0" />
+      <node id="1239364289289" at="73,32,74,141" concept="2" />
+      <node id="1239364289289" at="74,141,75,26" concept="5" />
+      <node id="1239364299263" at="78,63,79,65" concept="4" />
+      <node id="1239364299263" at="79,65,80,32" concept="4" />
+      <node id="1239364299263" at="80,32,81,141" concept="0" />
+      <node id="1239364299263" at="80,32,81,141" concept="0" />
+      <node id="1239364299263" at="80,32,81,141" concept="2" />
+      <node id="1239364299263" at="81,141,82,26" concept="5" />
+      <node id="1239364305886" at="99,99,100,50" concept="5" />
+      <node id="1239364305880" at="108,64,109,65" concept="4" />
+      <node id="1239364305880" at="109,65,110,32" concept="4" />
+      <node id="1239364305880" at="110,32,111,141" concept="0" />
+      <node id="1239364305880" at="110,32,111,141" concept="0" />
+      <node id="1239364305880" at="110,32,111,141" concept="2" />
+      <node id="1239364305880" at="111,141,112,26" concept="5" />
+      <node id="1239364305882" at="115,64,116,65" concept="4" />
+      <node id="1239364305882" at="116,65,117,32" concept="4" />
+      <node id="1239364305882" at="117,32,118,141" concept="0" />
+      <node id="1239364305882" at="117,32,118,141" concept="0" />
+      <node id="1239364305882" at="117,32,118,141" concept="2" />
+      <node id="1239364305882" at="118,141,119,26" concept="5" />
+      <node id="1239364305887" at="122,63,123,65" concept="4" />
+      <node id="1239364305887" at="123,65,124,32" concept="4" />
+      <node id="1239364305887" at="124,32,125,141" concept="0" />
+      <node id="1239364305887" at="124,32,125,141" concept="0" />
+      <node id="1239364305887" at="124,32,125,141" concept="2" />
+      <node id="1239364305887" at="125,141,126,26" concept="5" />
+      <node id="1239364336257" at="143,99,144,50" concept="5" />
+      <node id="1239364336251" at="152,64,153,65" concept="4" />
+      <node id="1239364336251" at="153,65,154,32" concept="4" />
+      <node id="1239364336251" at="154,32,155,141" concept="0" />
+      <node id="1239364336251" at="154,32,155,141" concept="0" />
+      <node id="1239364336251" at="154,32,155,141" concept="2" />
+      <node id="1239364336251" at="155,141,156,26" concept="5" />
+      <node id="1239364367200" at="159,64,160,65" concept="4" />
+      <node id="1239364367200" at="160,65,161,32" concept="4" />
+      <node id="1239364367200" at="161,32,162,137" concept="0" />
+      <node id="1239364367200" at="161,32,162,137" concept="0" />
+      <node id="1239364367200" at="161,32,162,137" concept="2" />
+      <node id="1239364367200" at="162,137,163,26" concept="5" />
+      <node id="1239364336258" at="166,63,167,65" concept="4" />
+      <node id="1239364336258" at="167,65,168,32" concept="4" />
+      <node id="1239364336258" at="168,32,169,141" concept="0" />
+      <node id="1239364336258" at="168,32,169,141" concept="0" />
+      <node id="1239364336258" at="168,32,169,141" concept="2" />
+      <node id="1239364336258" at="169,141,170,26" concept="5" />
+      <node id="1239364372748" at="187,99,188,50" concept="5" />
+      <node id="1239364372742" at="196,64,197,65" concept="4" />
+      <node id="1239364372742" at="197,65,198,32" concept="4" />
+      <node id="1239364372742" at="198,32,199,141" concept="0" />
+      <node id="1239364372742" at="198,32,199,141" concept="0" />
+      <node id="1239364372742" at="198,32,199,141" concept="2" />
+      <node id="1239364372742" at="199,141,200,26" concept="5" />
+      <node id="1239364372744" at="203,64,204,65" concept="4" />
+      <node id="1239364372744" at="204,65,205,32" concept="4" />
+      <node id="1239364372744" at="205,32,206,137" concept="0" />
+      <node id="1239364372744" at="205,32,206,137" concept="0" />
+      <node id="1239364372744" at="205,32,206,137" concept="2" />
+      <node id="1239364372744" at="206,137,207,26" concept="5" />
+      <node id="1239364372749" at="210,63,211,65" concept="4" />
+      <node id="1239364372749" at="211,65,212,32" concept="4" />
+      <node id="1239364372749" at="212,32,213,141" concept="0" />
+      <node id="1239364372749" at="212,32,213,141" concept="0" />
+      <node id="1239364372749" at="212,32,213,141" concept="2" />
+      <node id="1239364372749" at="213,141,214,26" concept="5" />
+      <node id="1239364383457" at="231,99,232,50" concept="5" />
+      <node id="1239364383451" at="240,64,241,65" concept="4" />
+      <node id="1239364383451" at="241,65,242,32" concept="4" />
+      <node id="1239364383451" at="242,32,243,137" concept="0" />
+      <node id="1239364383451" at="242,32,243,137" concept="0" />
+      <node id="1239364383451" at="242,32,243,137" concept="2" />
+      <node id="1239364383451" at="243,137,244,26" concept="5" />
+      <node id="1239364383453" at="247,64,248,65" concept="4" />
+      <node id="1239364383453" at="248,65,249,32" concept="4" />
+      <node id="1239364383453" at="249,32,250,141" concept="0" />
+      <node id="1239364383453" at="249,32,250,141" concept="0" />
+      <node id="1239364383453" at="249,32,250,141" concept="2" />
+      <node id="1239364383453" at="250,141,251,26" concept="5" />
+      <node id="1239364383458" at="254,63,255,65" concept="4" />
+      <node id="1239364383458" at="255,65,256,32" concept="4" />
+      <node id="1239364383458" at="256,32,257,141" concept="0" />
+      <node id="1239364383458" at="256,32,257,141" concept="0" />
+      <node id="1239364383458" at="256,32,257,141" concept="2" />
+      <node id="1239364383458" at="257,141,258,26" concept="5" />
+      <node id="1239364229833" at="64,0,70,0" concept="6" trace="_quotation_createNode_3ist9o_a0a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364289289" at="71,0,77,0" concept="6" trace="_quotation_createNode_3ist9o_a0b0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364299263" at="78,0,84,0" concept="6" trace="_quotation_createNode_3ist9o_a0a1b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364305880" at="108,0,114,0" concept="6" trace="_quotation_createNode_3ist9o_a0a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364305882" at="115,0,121,0" concept="6" trace="_quotation_createNode_3ist9o_a0b0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364305887" at="122,0,128,0" concept="6" trace="_quotation_createNode_3ist9o_a0a1c#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364336251" at="152,0,158,0" concept="6" trace="_quotation_createNode_3ist9o_a0a0a3#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364367200" at="159,0,165,0" concept="6" trace="_quotation_createNode_3ist9o_a0b0a3#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364336258" at="166,0,172,0" concept="6" trace="_quotation_createNode_3ist9o_a0a1d#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364372742" at="196,0,202,0" concept="6" trace="_quotation_createNode_3ist9o_a0a0a4#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364372744" at="203,0,209,0" concept="6" trace="_quotation_createNode_3ist9o_a0b0a4#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364372749" at="210,0,216,0" concept="6" trace="_quotation_createNode_3ist9o_a0a1e#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364383451" at="240,0,246,0" concept="6" trace="_quotation_createNode_3ist9o_a0a0a5#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364383453" at="247,0,253,0" concept="6" trace="_quotation_createNode_3ist9o_a0b0a5#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1239364383458" at="254,0,260,0" concept="6" trace="_quotation_createNode_3ist9o_a0a1f#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1239364220848" at="55,99,56,50" />
+      <scope id="1239364229833" at="66,32,67,141" />
+      <scope id="1239364289289" at="73,32,74,141" />
+      <scope id="1239364299263" at="80,32,81,141" />
+      <scope id="1239364305885" at="99,99,100,50" />
+      <scope id="1239364305880" at="110,32,111,141" />
+      <scope id="1239364305882" at="117,32,118,141" />
+      <scope id="1239364305887" at="124,32,125,141" />
+      <scope id="1239364336256" at="143,99,144,50" />
+      <scope id="1239364336251" at="154,32,155,141" />
+      <scope id="1239364367200" at="161,32,162,137" />
+      <scope id="1239364336258" at="168,32,169,141" />
+      <scope id="1239364372747" at="187,99,188,50" />
+      <scope id="1239364372742" at="198,32,199,141" />
+      <scope id="1239364372744" at="205,32,206,137" />
+      <scope id="1239364372749" at="212,32,213,141" />
+      <scope id="1239364383456" at="231,99,232,50" />
+      <scope id="1239364383451" at="242,32,243,137" />
+      <scope id="1239364383453" at="249,32,250,141" />
+      <scope id="1239364383458" at="256,32,257,141" />
+      <scope id="1239364229833" at="64,64,68,26">
+        <var name="facade" id="1239364229833" />
+        <var name="quotedNode_1" id="1239364229833" />
+      </scope>
+      <scope id="1239364289289" at="71,64,75,26">
+        <var name="facade" id="1239364289289" />
+        <var name="quotedNode_1" id="1239364289289" />
+      </scope>
+      <scope id="1239364299263" at="78,63,82,26">
+        <var name="facade" id="1239364299263" />
+        <var name="quotedNode_1" id="1239364299263" />
+      </scope>
+      <scope id="1239364305880" at="108,64,112,26">
+        <var name="facade" id="1239364305880" />
+        <var name="quotedNode_1" id="1239364305880" />
+      </scope>
+      <scope id="1239364305882" at="115,64,119,26">
+        <var name="facade" id="1239364305882" />
+        <var name="quotedNode_1" id="1239364305882" />
+      </scope>
+      <scope id="1239364305887" at="122,63,126,26">
+        <var name="facade" id="1239364305887" />
+        <var name="quotedNode_1" id="1239364305887" />
+      </scope>
+      <scope id="1239364336251" at="152,64,156,26">
+        <var name="facade" id="1239364336251" />
+        <var name="quotedNode_1" id="1239364336251" />
+      </scope>
+      <scope id="1239364367200" at="159,64,163,26">
+        <var name="facade" id="1239364367200" />
+        <var name="quotedNode_1" id="1239364367200" />
+      </scope>
+      <scope id="1239364336258" at="166,63,170,26">
+        <var name="facade" id="1239364336258" />
+        <var name="quotedNode_1" id="1239364336258" />
+      </scope>
+      <scope id="1239364372742" at="196,64,200,26">
+        <var name="facade" id="1239364372742" />
+        <var name="quotedNode_1" id="1239364372742" />
+      </scope>
+      <scope id="1239364372744" at="203,64,207,26">
+        <var name="facade" id="1239364372744" />
+        <var name="quotedNode_1" id="1239364372744" />
+      </scope>
+      <scope id="1239364372749" at="210,63,214,26">
+        <var name="facade" id="1239364372749" />
+        <var name="quotedNode_1" id="1239364372749" />
+      </scope>
+      <scope id="1239364383451" at="240,64,244,26">
+        <var name="facade" id="1239364383451" />
+        <var name="quotedNode_1" id="1239364383451" />
+      </scope>
+      <scope id="1239364383453" at="247,64,251,26">
+        <var name="facade" id="1239364383453" />
+        <var name="quotedNode_1" id="1239364383453" />
+      </scope>
+      <scope id="1239364383458" at="254,63,258,26">
+        <var name="facade" id="1239364383458" />
+        <var name="quotedNode_1" id="1239364383458" />
+      </scope>
+      <scope id="1239364229833" at="64,0,70,0" />
+      <scope id="1239364289289" at="71,0,77,0" />
+      <scope id="1239364299263" at="78,0,84,0" />
+      <scope id="1239364305880" at="108,0,114,0" />
+      <scope id="1239364305882" at="115,0,121,0" />
+      <scope id="1239364305887" at="122,0,128,0" />
+      <scope id="1239364336251" at="152,0,158,0" />
+      <scope id="1239364367200" at="159,0,165,0" />
+      <scope id="1239364336258" at="166,0,172,0" />
+      <scope id="1239364372742" at="196,0,202,0" />
+      <scope id="1239364372744" at="203,0,209,0" />
+      <scope id="1239364372749" at="210,0,216,0" />
+      <scope id="1239364383451" at="240,0,246,0" />
+      <scope id="1239364383453" at="247,0,253,0" />
+      <scope id="1239364383458" at="254,0,260,0" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

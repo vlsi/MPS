@@ -20,6 +20,7 @@ import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -167,8 +168,8 @@ public class TemplateQueryContext {
   }
 
   public SNode getOriginalCopiedInputNode(SNode node) {
-    if (node == null || jetbrains.mps.util.SNodeOperations.isDisposed(node)) return null;
-    SNode result = TracingUtil.getInputNode(node);
+    if (node == null) return null;
+    SNode result = TracingUtil.getInputNode(node, MPSModuleRepository.getInstance());
     return result != null ? result : node;
   }
 

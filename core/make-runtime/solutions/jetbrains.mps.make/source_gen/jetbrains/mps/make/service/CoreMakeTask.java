@@ -8,10 +8,7 @@ import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.dependencies.MakeSequence;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.make.script.IScript;
-import jetbrains.mps.make.resources.IResource;
 import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import java.util.Map;
 import jetbrains.mps.make.facet.ITarget;
@@ -19,6 +16,8 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.make.script.IScript;
+import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.IMessage;
@@ -48,12 +47,6 @@ public class CoreMakeTask {
   private final MakeSequence myMakeSequence;
   private final IScriptController myController;
   private final IMessageHandler myMessageHandler;
-
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public CoreMakeTask(@NotNull String title, Iterable<IScript> scripts, String scrName, Iterable<? extends Iterable<IResource>> clInput, IScriptController ctl, IMessageHandler mh) {
-    this(scrName, new MakeSequence(clInput, scripts) {}, ctl, mh);
-  }
 
   public CoreMakeTask(@NotNull String scriptName, MakeSequence makeSeq, IScriptController ctl, IMessageHandler mh) {
     myScrName = scriptName;

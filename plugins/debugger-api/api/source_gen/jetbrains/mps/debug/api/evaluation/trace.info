@@ -1,20 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:4a0301da-c964-420c-8e35-486843de9df5(jetbrains.mps.debug.api.evaluation)/4474271214082914177">
-    <nodeInfo nodeId="4474271214082914179" fileName="IEvaluationProvider.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showEvaluationDialog#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <nodeInfo nodeId="4474271214082914185" fileName="IEvaluationProvider.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="showEvaluationDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljava/util/List;)V" />
-    <nodeInfo nodeId="4474271214082914199" fileName="IEvaluationProvider.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canEvaluate#()Z" />
-    <nodeInfo nodeId="4474271214082914194" fileName="IEvaluationProvider.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createWatchesPanel#()Ljavax/swing/JComponent;" />
-    <scopeInfo nodeId="4474271214082914179" fileName="IEvaluationProvider.java" startLine="12" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="4474271214082914182" varName="context" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214082914185" fileName="IEvaluationProvider.java" startLine="13" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="4474271214082914188" varName="context" />
-      <varInfo nodeId="4474271214082914190" varName="selectedNodes" />
-    </scopeInfo>
-    <scopeInfo nodeId="4474271214082914199" fileName="IEvaluationProvider.java" startLine="16" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="4474271214082914194" fileName="IEvaluationProvider.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <unitInfo nodeId="4474271214082914177" fileName="IEvaluationProvider.java" startLine="11" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.debug.api.evaluation.IEvaluationProvider" />
+    <file name="IEvaluationProvider.java">
+      <node id="4474271214082914179" at="12,0,13,0" concept="0" trace="showEvaluationDialog#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <node id="4474271214082914185" at="13,0,14,0" concept="0" trace="showEvaluationDialog#(Ljetbrains/mps/smodel/IOperationContext;Ljava/util/List;)V" />
+      <node id="4474271214082914199" at="16,0,17,0" concept="0" trace="canEvaluate#()Z" />
+      <node id="4474271214082914194" at="14,0,16,0" concept="0" trace="createWatchesPanel#()Ljavax/swing/JComponent;" />
+      <scope id="4474271214082914179" at="12,0,13,0">
+        <var name="context" id="4474271214082914182" />
+      </scope>
+      <scope id="4474271214082914185" at="13,0,14,0">
+        <var name="context" id="4474271214082914188" />
+        <var name="selectedNodes" id="4474271214082914190" />
+      </scope>
+      <scope id="4474271214082914199" at="16,0,17,0" />
+      <scope id="4474271214082914194" at="14,0,16,0" />
+      <unit id="4474271214082914177" at="11,0,18,0" name="jetbrains.mps.debug.api.evaluation.IEvaluationProvider" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="duf9ewiw306a08wipckmnunokfolb3r">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+<dependencies version="2" modelHash="3khck4sn9qip0n83udoumea3awmhpzk">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="71mhb0v5f0gb4vfw478iy5a4irvpfac" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-cidc8d2b9p0mez2nr6amfdnaun2z4vr" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="8i4kafnhzm6u2y3283i1oew7gy4ynjm" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="eggblwsr0208cbp174vd3je0pubxy4w" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" hash="-7zfaw081azxsymmxu2b38xxv0iqlcus" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
@@ -26,7 +25,6 @@
     <dep root="2005690715325995353" />
     <dep root="2005690715325995359" />
     <dep root="6366407517031508177" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
@@ -37,21 +35,21 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1197044488840" name="FindBlock" hash="-t5eohxbrt8dg804fbhv66l05ay3g7i" />
+  <source id="1197044488840" name="FindBlock" hash="ds6x330ejwlo7nrchq8op64cx84t21e" />
   <source id="1197044488845" name="FinderDeclaration" hash="-arb2trok955qmm69yrhrqjjm8j0cnq7" />
-  <source id="1197044488852" name="IsApplicableBlock" hash="-1rqtrbsq71try2dqmni3f4kt9n326j4" />
+  <source id="1197044488852" name="IsApplicableBlock" hash="68vcoml93z7y3ssvnic28wxfcpkyqvg" />
   <source id="1197386047362" name="ConceptFunctionParameter_node" hash="-7hxx4i4tbr4zn0k0d1ma8q1u0rh3jje" />
   <source id="1200242336756" name="ResultStatement" hash="-c4yqdkjadn3myzrx7l3m5ylfzzcouom" />
   <source id="1200242562138" name="NodeStatement" hash="-1935tus87jfdtfslsbu5e46kol31ib1" />
   <source id="1206197741569" name="ExecuteFinderExpression" hash="70y0vei6ybm63qapv2g6jeikzgmgild" />
-  <source id="1206461221942" name="CategorizeBlock" hash="wwlxna6lby29xpzjz9g0zmryl7u7ps" />
-  <source id="1206461516825" name="SearchedNodesBlock" hash="-3pzptfalcs10j1dshc3idj2dmtjlanm" />
+  <source id="1206461221942" name="CategorizeBlock" hash="4uuztuxj62h1df9qa5j5xqw8donlcxy" />
+  <source id="1206461516825" name="SearchedNodesBlock" hash="90604j31jo44jt08p4n4xw9ol76m411" />
   <source id="1207141825411" name="CheckCancelledStatusStatement" hash="-8dk7flyrazd35gai9o0u1d4e0doqqy4" />
-  <source id="1216396788049" name="IsVisibleBlock" hash="-eu73xecwhkd2k6hu7kfq1nq5gpfhe5k" />
+  <source id="1216396788049" name="IsVisibleBlock" hash="8pi48r1kb04swjwh9qqhy54bz6q8352" />
   <source id="1218978086674" name="AbstractFinderDeclaration" hash="-17rexixt71v8yyvlv7w6dsgg9z7csih" />
   <source id="2005690715325995353" name="ExecuteFindersGetSearchResults" hash="-xiuxs265j663a34311s7i76hoycf9i" />
   <source id="2005690715325995359" name="FinderReference" hash="-6npz5s8gz09b005onyf5pf8nuhbng79" />
   <source id="6366407517031508177" name="MakeResultProvider" hash="-90m3g2mgtsthtt9rqda7fb1qx9vhjh7" />
-  <source id="100784871586155151" name="IsUsedByDefault" hash="-4aqhk035bb1gjd8rq74q38aq96s92z" />
+  <source id="100784871586155151" name="IsUsedByDefault" hash="-6gw6nnrz9ex2slcj4aa6l8obrhvg4km" />
 </dependencies>
 

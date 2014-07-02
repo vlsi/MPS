@@ -12,8 +12,6 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.baseLanguage.scopes.Scopes;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -74,26 +72,6 @@ public class ClosureLiteral_Behavior {
       }
     }
     return null;
-  }
-
-  @Deprecated
-  public static SNode call_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getType_1229718192182", new Object[]{paramTypes, resultType, returnType, termType, throwsTypes});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getType_1229718192182(SNode thisNode, String callerConceptFqName, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), callerConceptFqName, "virtual_getType_1229718192182", new Class[]{SNode.class, List.class, SNode.class, SNode.class, SNode.class, List.class}, new Object[]{paramTypes, resultType, returnType, termType, throwsTypes});
-  }
-
-  @Deprecated
-  public static boolean call_isClosure_3262277503800835449(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isClosure_3262277503800835439", new Object[]{});
-  }
-
-  @Deprecated
-  public static boolean callSuper_isClosure_3262277503800835449(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), callerConceptFqName, "virtual_isClosure_3262277503800835439", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_l77foe_a0a2(Object parameter_1, Object parameter_2, Object parameter_3) {

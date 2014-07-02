@@ -29,7 +29,10 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.CollectConsumer;
 import com.intellij.util.Consumer;
 import com.intellij.util.indexing.FileBasedIndex;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
+import jetbrains.mps.extapi.persistence.FolderDataSource;
+import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.idea.core.psi.impl.MPSPsiProvider;
 import jetbrains.mps.idea.core.usages.IdeaSearchScope;
 import jetbrains.mps.idea.java.Constants.ConceptNames;
@@ -38,9 +41,9 @@ import jetbrains.mps.idea.java.index.MPSJavaPackageIndex;
 import jetbrains.mps.idea.java.util.ClassUtil;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.goTo.index.SNodeDescriptor;
@@ -154,18 +157,36 @@ public class MPSJavaClassFinder extends PsiElementFinder {
     String packageName = model.getModelName();
     if (!qname.startsWith(packageName + ".")) return;
 
+    // Fix for MPS-19687 Import of Mps class in Java class breaks after any editing of Mps class.
+    // It would be better to use some single interface like FileSystemBasedDataSource, but its method
+    // getAffectedFiles() gives us only the folder in case of FolderDataSource, not the actual files
+    // Should consider changing it to return all _files_ not folders.
     DataSource dataSource = model.getSource();
-    if (dataSource instanceof FileSystemBasedDataSource)  {
-      // todo make util method and try to find similar code in other places
-      for (IFile iFile : ((FileSystemBasedDataSource) dataSource).getAffectedFiles()) {
-        VirtualFile vFile = LocalFileSystem.getInstance().findFileByPath(iFile.getPath());
-        if (vFile != null) {
-          processedConsumer.consume(vFile);
+    List<IFile> dataSourceFiles = new ArrayList<IFile>();
+    if (dataSource instanceof FileDataSource) {
+      dataSourceFiles.add(((FileDataSource) dataSource).getFile());
+    } else if (dataSource instanceof FolderDataSource) {
+      FolderDataSource fds = (FolderDataSource) dataSource;
+      for (String stream : fds.getAvailableStreams()) {
+        dataSourceFiles.add(fds.getFile(stream));
+      }
+    } else if (dataSource instanceof FolderSetDataSource) {
+      for (IFile file : ((FolderSetDataSource) dataSource).getAffectedFiles()) {
+        for (IFile child : file.getChildren()) {
+          if (child.isDirectory()) continue;
+          dataSourceFiles.add(child);
         }
       }
     }
 
-    FastNodeFinder fastFinder = ((SModelInternal) model).getFastNodeFinder();
+    for (IFile iFile : dataSourceFiles) {
+      VirtualFile vFile = LocalFileSystem.getInstance().findFileByPath(iFile.getPath());
+      if (vFile != null) {
+        processedConsumer.consume(vFile);
+      }
+    }
+
+    FastNodeFinder fastFinder = FastNodeFinderManager.get(model);
     List<SNode> classes = fastFinder.getNodes(ConceptNames.Classifier, true);
     if (classes.isEmpty()) return;
 

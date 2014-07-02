@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,16 +35,18 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModelAccessListener;
 import jetbrains.mps.smodel.TimeOutRuntimeException;
 import jetbrains.mps.smodel.UndoHelper;
+import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.ComputeRunnable;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.concurrent.DelayQueue;
 import java.util.concurrent.Delayed;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import static java.util.concurrent.TimeUnit.MILLISECONDS;
 
@@ -55,6 +57,7 @@ import static java.util.concurrent.TimeUnit.MILLISECONDS;
 public class WorkbenchModelAccess extends ModelAccess {
 
   public static final int WAIT_FOR_WRITE_LOCK_MILLIS = 200;
+  private final AtomicInteger myWritesScheduled = new AtomicInteger();
   private EDTExecutor myEDTExecutor = new EDTExecutor(this);
   private Set<Thread> myIndexingThreads = new ConcurrentHashSet<Thread>();
 
@@ -129,17 +132,9 @@ public class WorkbenchModelAccess extends ModelAccess {
     if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
       throw new IllegalStateException("deadlock prevention: do not start read action in EDT, use tryRead");
     }
-    return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<T>() {
-      @Override
-      public T compute() {
-        getReadLock().lock();
-        try {
-          return c.compute();
-        } finally {
-          getReadLock().unlock();
-        }
-      }
-    });
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    runReadAction(r);
+    return r.getResult();
   }
 
   @Override
@@ -164,8 +159,13 @@ public class WorkbenchModelAccess extends ModelAccess {
         }
       }
     };
-    if (ThreadUtils.isEventDispatchThread()) {
-      ApplicationManager.getApplication().runWriteAction(runnable);
+    if (isInEDT()) {
+      try {
+        myWritesScheduled.incrementAndGet();
+        ApplicationManager.getApplication().runWriteAction(runnable);
+      } finally {
+        myWritesScheduled.decrementAndGet();
+      }
     } else {
       ApplicationManager.getApplication().runReadAction(runnable);
     }
@@ -180,23 +180,9 @@ public class WorkbenchModelAccess extends ModelAccess {
     if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
       throw new IllegalStateException("deadlock prevention: do not start write action in EDT, use tryWrite");
     }
-    com.intellij.openapi.util.Computable<T> computable = new com.intellij.openapi.util.Computable<T>() {
-      @Override
-      public T compute() {
-        getWriteLock().lock();
-        try {
-          clearRepositoryStateCaches();
-          return c.compute();
-        } finally {
-          getWriteLock().unlock();
-        }
-      }
-    };
-    if (ThreadUtils.isEventDispatchThread()) {
-      return ApplicationManager.getApplication().runWriteAction(computable);
-    } else {
-      return ApplicationManager.getApplication().runReadAction(computable);
-    }
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    runWriteAction(r);
+    return r.getResult();
   }
 
   @Override
@@ -235,31 +221,37 @@ public class WorkbenchModelAccess extends ModelAccess {
     assert !canRead() : "should be outside of read actions";
     assert !myDistributedLocksMode : "cannot re-enter distributed locks mode";
 
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        try {
-          myDistributedLocksMode = true;
-          ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
-            @Override
-            public void run() {
-              ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
-              progressIndicator.pushState();
-              getWriteLock().lock();
-              try {
-                clearRepositoryStateCaches();
-                process.run(new ProgressMonitorAdapter(progressIndicator));
-              } finally {
-                getWriteLock().unlock();
-                progressIndicator.popState();
+    try {
+      myWritesScheduled.incrementAndGet();
+      ApplicationManager.getApplication().runWriteAction(new Runnable() {
+        @Override
+        public void run() {
+          try {
+            myDistributedLocksMode = true;
+            ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+              @Override
+              public void run() {
+                ProgressIndicator progressIndicator = ProgressManager.getInstance().getProgressIndicator();
+                progressIndicator.pushState();
+                getWriteLock().lock();
+                try {
+                  clearRepositoryStateCaches();
+                  process.run(new ProgressMonitorAdapter(progressIndicator));
+                } finally {
+                  getWriteLock().unlock();
+                  progressIndicator.popState();
+                }
               }
-            }
-          }, progressTitle, canBeCanceled, ProjectHelper.toIdeaProject(project));
-        } finally {
-          myDistributedLocksMode = false;
+            }, progressTitle, canBeCanceled, ProjectHelper.toIdeaProject(project));
+          } finally {
+            myDistributedLocksMode = false;
+          }
         }
-      }
-    });
+      });
+    }
+    finally {
+      myWritesScheduled.decrementAndGet();
+    }
   }
 
   private void assertNotWriteFromRead() {
@@ -327,24 +319,11 @@ public class WorkbenchModelAccess extends ModelAccess {
       return c.compute();
     }
 
-    if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
-      return null;
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    if (tryRead(r)) {
+      return r.getResult();
     }
-
-    return ApplicationManager.getApplication().runReadAction(new com.intellij.openapi.util.Computable<T>() {
-      @Override
-      public T compute() {
-        if (getReadLock().tryLock()) {
-          try {
-            return c.compute();
-          } finally {
-            getReadLock().unlock();
-          }
-        } else {
-          return null;
-        }
-      }
-    });
+    return null;
   }
 
   @Override
@@ -370,25 +349,9 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public <T> T requireRead(Computable<T> c) {
-    T result = null;
-    int i;
-    long start;
-    long waited;
-    do {
-      start = System.currentTimeMillis();
-      for (i = 0; i < REQUIRE_MAX_TRIES && (result = tryRead(c)) == null; ++i) {
-        try {
-          Thread.sleep((1 << i) * 100);
-        } catch (InterruptedException ignore) {
-        }
-      }
-      waited = System.currentTimeMillis() - start;
-    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
-
-    if (i >= REQUIRE_MAX_TRIES) {
-      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for " + waited + "ms");
-    }
-    return result;
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    requireRead(r);
+    return r.getResult();
   }
 
   @Override
@@ -397,38 +360,15 @@ public class WorkbenchModelAccess extends ModelAccess {
       r.run();
       return true;
     }
-
-    if (myDistributedLocksMode && ApplicationManager.getApplication().isDispatchThread()) {
-      return false;
-    }
-
-    com.intellij.openapi.util.Computable<Boolean> computable = new com.intellij.openapi.util.Computable<Boolean>() {
+    Computable<Boolean> c = new Computable<Boolean>() {
       @Override
       public Boolean compute() {
-        try {
-          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-            try {
-              clearRepositoryStateCaches();
-              r.run();
-            } finally {
-              getWriteLock().unlock();
-            }
-            return true;
-          } else {
-            return false;
-          }
-        } catch (InterruptedException e) {
-          return false;
-        }
+        r.run();
+        return true;
       }
     };
-
-    if (ThreadUtils.isEventDispatchThread()) {
-      Boolean res = new TryWriteActionComputable<Boolean>(computable).compute();
-      return res != null ? res : false;
-    } else {
-      return ApplicationManager.getApplication().runReadAction(computable);
-    }
+    Boolean res = tryWrite(c);
+    return res != null ? res : false;
   }
 
 
@@ -442,6 +382,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       return null;
     }
 
+    // idea.Computable, not mps.Computable to facilitate direct Application.runReadAction call below
     com.intellij.openapi.util.Computable<T> computable = new com.intellij.openapi.util.Computable<T>() {
       @Override
       public T compute() {
@@ -462,9 +403,10 @@ public class WorkbenchModelAccess extends ModelAccess {
       }
     };
 
-    if (ThreadUtils.isEventDispatchThread()) {
+    if (isInEDT()) {
       return new TryWriteActionComputable<T>(computable).compute();
     } else {
+      // [artem] Why on earth do we run read action without acquiring a read lock???
       return ApplicationManager.getApplication().runReadAction(computable);
     }
   }
@@ -492,25 +434,9 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public <T> T requireWrite(Computable<T> c) {
-    T result = null;
-    int i;
-    long start;
-    long waited;
-    do {
-      start = System.currentTimeMillis();
-      for (i = 0; i < REQUIRE_MAX_TRIES && (result = tryWrite(c)) == null; ++i) {
-        try {
-          Thread.sleep((1 << i) * 100);
-        } catch (InterruptedException ignore) {
-        }
-      }
-      waited = System.currentTimeMillis() - start;
-    } while (i >= REQUIRE_MAX_TRIES && !confirmActionCancellation());
-
-    if (i >= REQUIRE_MAX_TRIES) {
-      throw new TimeOutRuntimeException("Failed to acquire write lock after having waited for " + waited + "ms");
-    }
-    return result;
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    requireWrite(r);
+    return r.getResult();
   }
 
   @Override
@@ -552,38 +478,10 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  public <T> T tryWriteInCommand(final Computable<T> r, Project p) {
-    if (myDistributedLocksMode) {
-      return null;
-    }
-    ApplicationManager.getApplication().assertIsDispatchThread();
-
-    final T[] res = (T[]) new Object[]{null};
-
-    final Project project = p != null ? p : CurrentProjectAccessUtil.getMPSProjectFromUI();
-    Runnable commandRunnable = new Runnable() {
-      @Override
-      public void run() {
-        try {
-          if (getWriteLock().tryLock(WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS)) {
-            try {
-              clearRepositoryStateCaches();
-              res[0] = new CommandComputable<T>(r, project).compute();
-            } finally {
-              getWriteLock().unlock();
-            }
-          }
-        } catch (InterruptedException ignore) {
-        }
-      }
-    };
-
-    CommandProcessor.getInstance().executeCommand(
-        ProjectHelper.toIdeaProject(project),
-        new TryWriteActionRunnable(commandRunnable),
-        "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
-
-    return res[0];
+  public <T> T tryWriteInCommand(final Computable<T> c, Project p) {
+    ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    boolean success = tryWriteInCommand(r, p);
+    return success ? r.getResult() : null;
   }
 
   @Override
@@ -591,8 +489,13 @@ public class WorkbenchModelAccess extends ModelAccess {
     if (project == null) {
       project = CurrentProjectAccessUtil.getMPSProjectFromUI();
     }
-    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new CommandRunnable(r, project), "", null,
-        UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    String name = "", groupId = null;
+    if (r instanceof UndoRunnable) {
+      UndoRunnable ur = (UndoRunnable) r;
+      name = ur.getName();
+      groupId = ur.getGroupId();
+    }
+    runWriteActionInCommand(r, name, groupId, false, project);
   }
 
   @Override
@@ -610,15 +513,10 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  public <T> T runWriteActionInCommand(final Computable<T> c, String name, Object groupId, final boolean requestUndoConfirmation, final Project project) {
-    final Object[] result = new Object[1];
-    CommandProcessor.getInstance().executeCommand(ProjectHelper.toIdeaProject(project), new Runnable() {
-      @Override
-      public void run() {
-        result[0] = new CommandComputable(c, project).compute();
-      }
-    }, name, null, requestUndoConfirmation ? UndoConfirmationPolicy.REQUEST_CONFIRMATION : UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
-    return (T) result[0];
+  public <T> T runWriteActionInCommand(Computable<T> c, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
+    final ComputeRunnable<T> r = new ComputeRunnable<T>(c);
+    runWriteActionInCommand(r, name, groupId, requestUndoConfirmation, project);
+    return r.getResult();
   }
 
   @Override
@@ -629,7 +527,7 @@ public class WorkbenchModelAccess extends ModelAccess {
 
   @Override
   public void runWriteActionInCommand(Runnable r, Project project) {
-    runWriteActionInCommand(r, null, null, false, project);
+    executeCommand(r, project);
   }
 
   @Override
@@ -639,29 +537,8 @@ public class WorkbenchModelAccess extends ModelAccess {
   }
 
   @Override
-  public void runWriteActionInCommandAsync(final Runnable r, final Project project) {
-    // FIXME
-    SwingUtilities.invokeLater(new Runnable() {
-      @Override
-      public void run() {
-        runWriteActionInCommand(r, project);
-      }
-    });
-  }
-
-  @Override
   public void runUndoTransparentCommand(Runnable r) {
-    if (myCommandLevel > 0) {
-      throw new IllegalStateException("undo transparent action cannot be invoked in a command");
-    }
-
-    int cmd = myCommandLevel;
-    try {
-      myCommandLevel = 0;
-      CommandProcessor.getInstance().runUndoTransparentAction(new CommandRunnable(r, CurrentProjectAccessUtil.getMPSProjectFromUI()));
-    } finally {
-      myCommandLevel = cmd;
-    }
+    runUndoTransparentCommand(r, CurrentProjectAccessUtil.getMPSProjectFromUI());
   }
 
   @Override
@@ -702,6 +579,11 @@ public class WorkbenchModelAccess extends ModelAccess {
         myIndexingThreads.remove(Thread.currentThread());
       }
     }
+  }
+
+  @Override
+  public boolean hasScheduledWrites() {
+    return myWritesScheduled.get() > 0 || super.hasScheduledWrites();
   }
 
   private boolean confirmActionCancellation() {
@@ -837,33 +719,6 @@ public class WorkbenchModelAccess extends ModelAccess {
     }
   }
 
-  private class CommandComputable<T> implements Computable<T> {
-    private final Computable<T> myComputable;
-    private final Project myProject;
-
-    public CommandComputable(Computable<T> c, Project project) {
-      myComputable = c;
-      myProject = project;
-    }
-
-    @Override
-    public T compute() {
-      return runWriteAction(new Computable<T>() {
-        @Override
-        public T compute() {
-          incCommandLevel();
-          T result = null;
-          try {
-            result = myComputable.compute();
-          } finally {
-            decCommandLevel(myProject);
-          }
-          return result;
-        }
-      });
-    }
-  }
-
   private class TryWriteActionRunnable implements Runnable {
 
     private final Runnable myRunnable;
@@ -878,6 +733,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       Thread.interrupted();
       final DelayedInterrupt delayedInterrupt = interruptLater(Thread.currentThread(), WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS);
       try {
+        myWritesScheduled.incrementAndGet();
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           @Override
           public void run() {
@@ -893,6 +749,9 @@ public class WorkbenchModelAccess extends ModelAccess {
           throw re;
         }
         cancelInterrupt(delayedInterrupt);
+      }
+      finally {
+        myWritesScheduled.decrementAndGet();
       }
     }
   }
@@ -911,6 +770,7 @@ public class WorkbenchModelAccess extends ModelAccess {
       Thread.interrupted();
       final DelayedInterrupt delayedInterrupt = interruptLater(Thread.currentThread(), WAIT_FOR_WRITE_LOCK_MILLIS, MILLISECONDS);
       try {
+        myWritesScheduled.incrementAndGet();
         return ApplicationManager.getApplication().runWriteAction(new com.intellij.openapi.util.Computable<T>() {
           @Override
           public T compute() {
@@ -927,6 +787,9 @@ public class WorkbenchModelAccess extends ModelAccess {
         }
         cancelInterrupt(delayedInterrupt);
         return null;
+      }
+      finally {
+        myWritesScheduled.decrementAndGet();
       }
     }
   }

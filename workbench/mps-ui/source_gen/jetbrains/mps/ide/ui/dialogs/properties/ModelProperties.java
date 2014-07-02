@@ -16,6 +16,8 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.smodel.DefaultSModel;
 import org.jetbrains.mps.openapi.persistence.NullDataSource;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
+import jetbrains.mps.generator.ModelGenerationStatusManager;
+import java.util.Collections;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.DevKit;
@@ -28,7 +30,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import java.util.Collections;
 
 public class ModelProperties {
   private static String USE_MODEL_FOLDER_FOR_GENERATION = "useModelFolderForGeneration";
@@ -133,6 +134,10 @@ public class ModelProperties {
       ((EditableSModel) myModelDescriptor).save();
     }
     MissingDependenciesFixer.fixDependencies(myModelDescriptor);
+    // change of model properties might affect generation status. This explicit call is needed  
+    // unless model dispatch proper change events (which it does not at the moment), and project pane  
+    // got no other means to find out it needs to update generation status 
+    ModelGenerationStatusManager.getInstance().invalidateData(Collections.singleton(myModelDescriptor));
   }
 
   private void addNewDevKits() {

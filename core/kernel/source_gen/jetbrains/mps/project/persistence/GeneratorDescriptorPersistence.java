@@ -40,7 +40,7 @@ public class GeneratorDescriptorPersistence {
         result_wk2vdq_a0a0a0b.setGenerateTemplates(result_wk2vdq_a2a0a0a0b);
         final boolean result_wk2vdq_a3a0a0a0b = XmlUtil.booleanWithDefault(generatorElement, "reflective-queries", true);
         result_wk2vdq_a0a0a0b.setReflectiveQueries(result_wk2vdq_a3a0a0a0b);
-        final boolean result_wk2vdq_a4a0a0a0b = XmlUtil.booleanWithDefault(generatorElement, "needs-opctx", true);
+        final boolean result_wk2vdq_a4a0a0a0b = XmlUtil.booleanWithDefault(generatorElement, "needs-opctx", false);
         result_wk2vdq_a0a0a0b.setNeedOperationContext(result_wk2vdq_a4a0a0a0b);
 
         String uuid = generatorElement.getAttributeValue("uuid");
@@ -125,8 +125,8 @@ public class GeneratorDescriptorPersistence {
     if (!(descriptor.isReflectiveQueries())) {
       generator.setAttribute("reflective-queries", Boolean.toString(false));
     }
-    if (!(descriptor.needsOperationContext())) {
-      generator.setAttribute("needs-opctx", Boolean.toString(false));
+    if (descriptor.needsOperationContext()) {
+      generator.setAttribute("needs-opctx", Boolean.toString(true));
     }
 
     Element models = new Element("models");

@@ -69,12 +69,14 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
           if (!(SNodeOperations.isInstanceOf(ctype, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
             ctype = TypeChecker.getInstance().getRuntimeSupport().coerce_(ctype, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
           }
+          final boolean rawInstanceType = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(ctype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(ctype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "typeVariableDeclaration", true)).isNotEmpty();
+
           final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
           // check the inference context 
           if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, mcallop, "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{}))) {
             for (SNode tvd : ListSequence.fromList(BaseMethodDeclaration_Behavior.call_getInferrableTypeVars_6848250892784543828(mdecl))) {
               // assume all unbound type vars outside an inference context are Object or its bound 
-              MapSequence.fromMap(subs).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ? _quotation_createNode_ecn83h_a0a1a0a5a31a1() : SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))));
+              MapSequence.fromMap(subs).put(tvd, ((SLinkOperations.getTarget(tvd, "bound", true) == null) ? _quotation_createNode_ecn83h_a0a1a0a7a31a1() : SNodeOperations.copyNode(SLinkOperations.getTarget(tvd, "bound", true))));
             }
           }
           if (ListSequence.fromList(SLinkOperations.getTargets(mcallop, "typeArgument", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(mdecl, "typeVariableDeclaration", true)).isNotEmpty()) {
@@ -152,6 +154,10 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
                   final SNode A = argt_var;
                   typeCheckingContext.whenConcrete(A, new Runnable() {
                     public void run() {
+                      SNode gtype = _type;
+                      if (rawInstanceType) {
+                        gtype = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(gtype, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_eraseGenerics_5089784887112634594", new Object[]{});
+                      }
                       {
                         SNode _nodeToCheck_1029348928467 = mcallop;
                         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4660288602099522921", 0, null);
@@ -162,7 +168,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
                           intentionProvider.putArgument("expression", actualArgument);
                           _info_12389875345.addIntentionProvider(intentionProvider);
                         }
-                        typeCheckingContext.createGreaterThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(_type, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), (SNode) typeCheckingContext.getExpandedNode(A), false, true, _info_12389875345);
+                        typeCheckingContext.createGreaterThanInequality((SNode) BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(gtype, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs}), (SNode) typeCheckingContext.getExpandedNode(A), false, true, _info_12389875345);
                       }
                     }
                   }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3058438378413428023", false, false);
@@ -170,7 +176,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
               } else {
                 if (!(typeCheckingContext.isSingleTypeComputation())) {
                   {
-                    SNode _nodeToCheck_1029348928467 = argt_var;
+                    SNode _nodeToCheck_1029348928467 = mcallop;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4660288602099522937", 0, null);
                     {
                       BaseQuickFixProvider intentionProvider = null;
@@ -179,7 +185,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
                       intentionProvider.putArgument("expression", actualArgument);
                       _info_12389875345.addIntentionProvider(intentionProvider);
                     }
-                    typeCheckingContext.createGreaterThanInequality((SNode) _type, (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4660288602099522939", true), true, true, _info_12389875345);
+                    typeCheckingContext.createGreaterThanInequality((SNode) _type, (SNode) argt_var, true, true, _info_12389875345);
                   }
                 }
               }
@@ -215,7 +221,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_ecn83h_a0a1a0a5a31a1() {
+  private static SNode _quotation_createNode_ecn83h_a0a1a0a7a31a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);

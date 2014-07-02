@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="ExtensionDescriptor.java" startLine="10" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.structure.plugin.ExtensionDescriptor" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="ExtensionDescriptor.java">
+      <unit at="10,0,21,0" name="jetbrains.mps.lang.structure.plugin.ExtensionDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

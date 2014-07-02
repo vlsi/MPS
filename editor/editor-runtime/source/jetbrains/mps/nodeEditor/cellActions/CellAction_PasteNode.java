@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -45,6 +45,7 @@ import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
 import javax.swing.SwingUtilities;
@@ -74,21 +75,22 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
     boolean disposed = false;
     for (SNode node : selection.getSelectedNodes()) {
-      if (jetbrains.mps.util.SNodeOperations.isDisposed(node)) {
+      if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) {
         disposed = true;
         break;
       }
     }
 
     boolean canPasteWithRemove = !disposed && canPasteViaNodePasterWithRemove(selection.getSelectedNodes(), pasteNodes);
-    if (selection instanceof SingularSelection && (selection instanceof EditorCellLabelSelection ||
-        (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
+    if (selection instanceof SingularSelection &&
+        (selection instanceof EditorCellLabelSelection && !isCompletelySelected((EditorCellLabelSelection) selection) ||
+            (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
       EditorCell selectedCell = getCellToPasteTo(context.getSelectedCell());
       if (selectedCell == null) {
         return false;
       }
       SNode selectedNode = selectedCell.getSNode();
-      if (selectedNode == null || jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
+      if (selectedNode == null || !(SNodeUtil.isAccessible(selectedNode, MPSModuleRepository.getInstance()))) {
         return false;
       }
 
@@ -98,6 +100,11 @@ public class CellAction_PasteNode extends AbstractCellAction {
       return true;
     }
     return false;
+  }
+
+  private boolean isCompletelySelected(EditorCellLabelSelection labelSelection) {
+    int textLength = labelSelection.getEditorCellLabel().getText().length();
+    return labelSelection.getSelectionStart() == 0 && labelSelection.getSelectionEnd() == textLength && textLength > 0;
   }
 
   private boolean canPasteViaNodePaster(EditorCell selectedCell, List<SNode> pasteNodes) {
@@ -118,7 +125,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
 
   @Override
   public void execute(final EditorContext context) {
-    LOG.assertInCommand();
+    LOG.assertLog(context.getRepository().getModelAccess().isCommandAction(), "This action must be performed in command");
     final EditorComponent editorComponent = (EditorComponent) context.getEditorComponent();
     final Selection selection = editorComponent.getSelectionManager().getSelection();
     final List<SNode> selectedNodes = selection.getSelectedNodes();
@@ -158,7 +165,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
       @Override
       public void run() {
         final Runnable addImportsRunnable = CopyPasteUtil.addImportsWithDialog(pasteNodeData, modelToPaste, context.getOperationContext());
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
+        context.getRepository().getModelAccess().executeCommandInEDT(new Runnable() {
           @Override
           public void run() {
             if (addImportsRunnable != null) {
@@ -180,8 +187,9 @@ public class CellAction_PasteNode extends AbstractCellAction {
             NodePaster nodePaster = new NodePaster(pasteNodes);
             boolean disposed = checkDisposedSelectedNodes(currentSelectedNodes, selectedReferences);
             boolean canPasteWithRemove = !disposed && nodePaster.canPasteWithRemove(currentSelectedNodes);
-            if (selection instanceof SingularSelection && (selection instanceof EditorCellLabelSelection ||
-                (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
+            if (selection instanceof SingularSelection &&
+                (selection instanceof EditorCellLabelSelection && !isCompletelySelected((EditorCellLabelSelection) selection) ||
+                    (selection instanceof EditorCellSelection && !canPasteWithRemove))) {
               EditorCell selectedCell = pasteTargetCellInfo.findCell(editorComponent);
               assert selectedCell != null;
 
@@ -215,7 +223,7 @@ public class CellAction_PasteNode extends AbstractCellAction {
             SNode lastNode = pasteNodes.get(pasteNodes.size() - 1);
             editorComponent.getSelectionManager().setSelection(lastNode, SelectionManager.LAST_CELL, -1);
           }
-        }, context.getOperationContext().getProject());
+        });
 
       }
     });
@@ -230,10 +238,10 @@ public class CellAction_PasteNode extends AbstractCellAction {
     return false;
   }
 
-  private boolean checkDisposed(SNodeReference currentSelectedReference, SNode currentSelectedNode) {
-    if (jetbrains.mps.util.SNodeOperations.isDisposed(currentSelectedNode)) {
+  private boolean checkDisposed(SNodeReference currentSelectedReference, SNode selectedNode) {
+    if (!SNodeUtil.isAccessible(selectedNode, MPSModuleRepository.getInstance())) {
       LOG.error(
-          "Selected node is disposed: node = " + currentSelectedNode.toString() + " ; node pointer = (" + currentSelectedReference.toString() +
+          "Selected node is disposed: node = " + selectedNode.toString() + " ; node pointer = (" + currentSelectedReference.toString() +
               ")");
       return true;
     }

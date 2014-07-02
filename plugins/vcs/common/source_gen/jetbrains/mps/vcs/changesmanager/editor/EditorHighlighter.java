@@ -16,7 +16,8 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.EditableSModel;
 import jetbrains.mps.vcs.diff.ChangeSet;
@@ -56,7 +57,7 @@ public class EditorHighlighter implements EditorMessageOwner {
                 return;
               }
               final SNode editedNode = editorComponent.getEditedNode();
-              if (editedNode == null || SNodeOperations.isDisposed(editedNode) || !(editedNode.getModel() != null)) {
+              if (editedNode == null || !(SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance()))) {
                 return;
               }
               final SModel model = editedNode.getModel();
@@ -112,16 +113,11 @@ public class EditorHighlighter implements EditorMessageOwner {
     if (!(change instanceof AddRootChange)) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          SModel model;
           SNode editedNode = myEditorComponent.getEditedNode();
-          if (editedNode == null || SNodeOperations.isDisposed(editedNode)) {
+          if (editedNode == null || !(SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance()))) {
             return;
           }
-          model = editedNode.getModel();
-          if (model == null || SNodeOperations.isModelDisposed(model)) {
-            return;
-          }
-          messages.value = ChangeEditorMessageFactory.createMessages(model, change, EditorHighlighter.this, null, false);
+          messages.value = ChangeEditorMessageFactory.createMessages(editedNode.getModel(), change, EditorHighlighter.this, null, false);
         }
       });
     }

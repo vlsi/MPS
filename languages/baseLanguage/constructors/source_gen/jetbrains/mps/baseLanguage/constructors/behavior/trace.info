@@ -1,29 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="ArgumentClause_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.ArgumentClause_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="CustomArgumentClause_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomArgumentClause_BehaviorDescriptor" />
-  <unitInfo fileName="CustomConstructorContainer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorContainer_BehaviorDescriptor" />
-  <unitInfo fileName="CustomConstructorParameterReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorParameterReference_BehaviorDescriptor" />
-  <unitInfo fileName="CustomConstructorParameter_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorParameter_BehaviorDescriptor" />
-  <unitInfo fileName="CustomConstructorUsage_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorUsage_BehaviorDescriptor" />
-  <unitInfo fileName="CustomConstructor_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructor_BehaviorDescriptor" />
-  <unitInfo fileName="ListArgumentsClause_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.ListArgumentsClause_BehaviorDescriptor" />
-  <unitInfo fileName="ListCustomParameter_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.ListCustomParameter_BehaviorDescriptor" />
-  <unitInfo fileName="ListParameterReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.ListParameterReference_BehaviorDescriptor" />
-  <root nodeRef="r:cf54bb52-3dc2-4193-8c77-3acf5e21bf95(jetbrains.mps.baseLanguage.constructors.behavior)/3041831561922029481">
-    <nodeInfo nodeId="3041831561922044926" fileName="CustomConstructor_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3041831561922029481" fileName="CustomConstructor_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3041831561922029481" fileName="CustomConstructor_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="3041831561922029483" fileName="CustomConstructor_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="3041831561922044925" fileName="CustomConstructor_Behavior.java" startLine="12" startPosition="83" endLine="13" endPosition="67" />
-    <scopeInfo nodeId="3041831561922029481" fileName="CustomConstructor_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="3041831561922029481" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3041831561922029481" fileName="CustomConstructor_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="3041831561922029481" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="3041831561922029481" fileName="CustomConstructor_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructor_Behavior" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="CustomConstructorUsage_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorUsage_BehaviorDescriptor" />
+    </file>
+    <file name="CustomConstructorParameterReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorParameterReference_BehaviorDescriptor" />
+    </file>
+    <file name="CustomConstructorContainer_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorContainer_BehaviorDescriptor" />
+    </file>
+    <file name="ListCustomParameter_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.constructors.behavior.ListCustomParameter_BehaviorDescriptor" />
+    </file>
+    <file name="CustomConstructor_BehaviorDescriptor.java">
+      <unit at="10,0,27,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructor_BehaviorDescriptor" />
+    </file>
+    <file name="CustomArgumentClause_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomArgumentClause_BehaviorDescriptor" />
+    </file>
+    <file name="ListParameterReference_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.constructors.behavior.ListParameterReference_BehaviorDescriptor" />
+    </file>
+    <file name="ListArgumentsClause_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.constructors.behavior.ListArgumentsClause_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,40,0" name="jetbrains.mps.baseLanguage.constructors.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="CustomConstructorParameter_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructorParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ArgumentClause_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.constructors.behavior.ArgumentClause_BehaviorDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:cf54bb52-3dc2-4193-8c77-3acf5e21bf95(jetbrains.mps.baseLanguage.constructors.behavior)/3041831561922029481">
+    <file name="CustomConstructor_Behavior.java">
+      <node id="3041831561922044926" at="12,83,13,67" concept="0" />
+      <node id="3041831561922029481" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3041831561922029481" at="12,0,15,0" concept="1" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3041831561922029483" at="9,43,9,43" />
+      <scope id="3041831561922044925" at="12,83,13,67" />
+      <scope id="3041831561922029481" at="9,0,11,0">
+        <var name="thisNode" id="3041831561922029481" />
+      </scope>
+      <scope id="3041831561922029481" at="12,0,15,0">
+        <var name="thisNode" id="3041831561922029481" />
+      </scope>
+      <unit id="3041831561922029481" at="8,0,16,0" name="jetbrains.mps.baseLanguage.constructors.behavior.CustomConstructor_Behavior" />
+    </file>
+  </root>
+</debug-info>
 

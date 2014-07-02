@@ -38,10 +38,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.jetpad.projectional.diagram.view.ConnectionRoutingView;
 import jetbrains.jetpad.projectional.diagram.layout.OrthogonalRouter;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.impl.PaletteElementsCreationActionGroup;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi.PaletteSeparator;
-import javax.swing.Icon;
 
 public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
   private Collection<String> myContextHints = Arrays.asList(new String[]{"jetbrains.mps.samples.componentDependencies.editor.views.diagram"});
@@ -93,7 +89,6 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
           SPropertyOperations.set(node, "y", "" + (y));
         }
       })}));
-      setPalette(new ComponentSet_diagram_Editor.DiagramCellImpl_amytw9_a0a.DiagramPaletteImpl_amytw9_a0a0(this));
       synchronize();
     }
 
@@ -191,29 +186,6 @@ public class ComponentSet_diagram_Editor extends DefaultNodeEditor {
     private DiagramView createDiagramView() {
       ConnectionRoutingView diagramView = new ConnectionRoutingView(new OrthogonalRouter());
       return diagramView;
-    }
-
-    private class DiagramPaletteImpl_amytw9_a0a0 extends DiagramPalette {
-      private DiagramPaletteImpl_amytw9_a0a0(DiagramCell diagramCell) {
-        super(diagramCell);
-        addPaletteElement(new PaletteElementsCreationActionGroup(diagramCell, getSNode(), SConceptOperations.findConceptDeclaration("jetbrains.mps.samples.componentDependencies.structure.Component"), SLinkOperations.findLinkDeclaration("jetbrains.mps.samples.componentDependencies.structure.ComponentSet", "component"), new _FunctionTypes._void_P3_E0<SNode, Integer, Integer>() {
-          public void invoke(SNode node, Integer x, Integer y) {
-            SPropertyOperations.set(node, "name", "New component");
-            SPropertyOperations.set(node, "x", "" + (x));
-            SPropertyOperations.set(node, "y", "" + (y));
-          }
-        }) {});
-        addPaletteElement(new PaletteSeparator() {
-          public Icon getIcon() {
-            return null;
-          }
-
-          public String getText() {
-            return "";
-          }
-        });
-        createPalette();
-      }
     }
   }
 }

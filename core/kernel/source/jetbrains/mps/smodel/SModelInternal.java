@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.model.ModelWithDisposeInfo;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.event.SModelListener;
@@ -24,27 +25,11 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
 
-public interface SModelInternal {
+public interface SModelInternal extends ModelWithDisposeInfo  {
 
   void addModelListener(@NotNull SModelListener listener);
 
   void removeModelListener(@NotNull SModelListener listener);
-
-  //todo get rid of, try to cast, show an error if not casted
-  boolean isDisposed();
-
-  //todo cast if can be
-  StackTraceElement[] getDisposedStacktrace();
-
-  boolean canFireEvent();
-
-  void dispose();
-
-  //todo this is an external functionality. Should be implemented externally
-  FastNodeFinder getFastNodeFinder();
-
-  //todo this is an external functionality. Should be implemented externally
-  void disposeFastNodeFinder();
 
   ModelDependenciesManager getModelDepsManager();
 
@@ -84,8 +69,6 @@ public interface SModelInternal {
   void setVersion(int version);
 
   void updateImportedModelUsedVersion(SModelReference sModelReference, int currentVersion);
-
-  boolean canFireReadEvent();
 
   boolean updateSModelReferences();
 

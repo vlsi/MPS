@@ -5,11 +5,12 @@ package jetbrains.mps.ide.make.actions;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.make.MakeSession;
-import jetbrains.mps.ide.generator.GenerationCheckHelper;
+import java.util.List;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.make.MakeSession;
+import jetbrains.mps.ide.generator.GenerationCheckHelper;
 import jetbrains.mps.make.IMakeService;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -31,16 +32,17 @@ public class MakeActionImpl {
 
     // save all before launching make 
     final Project project = context.getProject();
-    project.getRepository().getModelAccess().executeCommand(new Runnable() {
+    project.getModelAccess().executeCommand(new Runnable() {
       public void run() {
         project.getRepository().saveAll();
       }
     });
 
+    final List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), MakeActionImpl.this.selectModels(inputRes));
     MakeSession session = new MakeSession(context, null, cleanMake) {
       @Override
       public void doExecute(Runnable scriptRunnable) {
-        if (GenerationCheckHelper.getInstance().checkModelsBeforeGenerationIfNeeded(project, MakeActionImpl.this.context, ListSequence.fromListWithValues(new ArrayList<SModel>(), MakeActionImpl.this.selectModels(inputRes)))) {
+        if (GenerationCheckHelper.getInstance().checkModelsBeforeGenerationIfNeeded(project, MakeActionImpl.this.context, models)) {
           // ok to go 
           scriptRunnable.run();
         } else {

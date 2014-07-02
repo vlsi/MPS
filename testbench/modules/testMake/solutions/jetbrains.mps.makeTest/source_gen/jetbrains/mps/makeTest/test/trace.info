@@ -1,374 +1,396 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903967681">
-    <nodeInfo nodeId="1957199320903967682" fileName="ChangeModel.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
-    <nodeInfo nodeId="1957199320903967690" fileName="ChangeModel.java" startLine="16" startPosition="36" endLine="17" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8788437410276520176" fileName="ChangeModel.java" startLine="17" startPosition="59" endLine="18" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8788437410276521488" fileName="ChangeModel.java" startLine="18" startPosition="87" endLine="19" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1578360511943351820" fileName="ChangeModel.java" startLine="22" startPosition="38" endLine="23" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1578360511943376462" fileName="ChangeModel.java" startLine="23" startPosition="39" endLine="24" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7137969394171673935" fileName="ChangeModel.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeModel#()V" />
-    <nodeInfo nodeId="1957199320903967699" fileName="ChangeModel.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="rollback#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="1957199320903967686" fileName="ChangeModel.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <scopeInfo nodeId="7137969394171673938" fileName="ChangeModel.java" startLine="13" startPosition="24" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="7137969394171673935" fileName="ChangeModel.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="1957199320903967701" fileName="ChangeModel.java" startLine="22" startPosition="38" endLine="24" endPosition="29">
-      <varInfo nodeId="1578360511943351821" varName="md" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903967689" fileName="ChangeModel.java" startLine="16" startPosition="36" endLine="19" endPosition="76" />
-    <scopeInfo nodeId="1957199320903967699" fileName="ChangeModel.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="1957199320903967712" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903967686" fileName="ChangeModel.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="1957199320903967697" varName="model" />
-    </scopeInfo>
-    <unitInfo nodeId="1957199320903967681" fileName="ChangeModel.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.makeTest.test.ChangeModel" />
+    <file name="ChangeModel.java">
+      <node id="1957199320903967682" at="11,0,12,0" concept="3" trace="myModel" />
+      <node id="1957199320903967690" at="16,36,17,59" concept="2" />
+      <node id="8788437410276520176" at="17,59,18,87" concept="2" />
+      <node id="8788437410276521488" at="18,87,19,76" concept="2" />
+      <node id="1578360511943351820" at="22,38,23,39" concept="7" />
+      <node id="1578360511943376462" at="23,39,24,29" concept="2" />
+      <node id="7137969394171673935" at="13,0,15,0" concept="1" trace="ChangeModel#()V" />
+      <node id="1957199320903967699" at="22,0,26,0" concept="6" trace="rollback#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="1957199320903967686" at="16,0,21,0" concept="6" trace="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <scope id="7137969394171673938" at="13,24,13,24" />
+      <scope id="7137969394171673935" at="13,0,15,0" />
+      <scope id="1957199320903967701" at="22,38,24,29">
+        <var name="md" id="1578360511943351821" />
+      </scope>
+      <scope id="1957199320903967689" at="16,36,19,76" />
+      <scope id="1957199320903967699" at="22,0,26,0">
+        <var name="model" id="1957199320903967712" />
+      </scope>
+      <scope id="1957199320903967686" at="16,0,21,0">
+        <var name="model" id="1957199320903967697" />
+      </scope>
+      <unit id="1957199320903967681" at="10,0,27,0" name="jetbrains.mps.makeTest.test.ChangeModel" />
+    </file>
   </root>
   <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903967715">
-    <nodeInfo nodeId="1957199320903967738" fileName="CheckDependencies_Test.java" startLine="22" startPosition="40" endLine="23" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903967741" fileName="CheckDependencies_Test.java" startLine="23" startPosition="28" endLine="24" endPosition="385" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903967717" fileName="CheckDependencies_Test.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckDependencies_Test#()V" />
-    <nodeInfo nodeId="1957199320903967732" fileName="CheckDependencies_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="1957199320903967725" fileName="CheckDependencies_Test.java" startLine="19" startPosition="51" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903967722" fileName="CheckDependencies_Test.java" startLine="18" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_staticConst#()V" />
-    <scopeInfo nodeId="1957199320903967720" fileName="CheckDependencies_Test.java" startLine="29" startPosition="35" endLine="29" endPosition="35" />
-    <scopeInfo nodeId="1957199320903967737" fileName="CheckDependencies_Test.java" startLine="22" startPosition="40" endLine="24" endPosition="385" />
-    <scopeInfo nodeId="1957199320903967717" fileName="CheckDependencies_Test.java" startLine="29" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1957199320903967732" fileName="CheckDependencies_Test.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="1957199320903967735" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903967724" fileName="CheckDependencies_Test.java" startLine="19" startPosition="51" endLine="26" endPosition="7" />
-    <scopeInfo nodeId="1957199320903967722" fileName="CheckDependencies_Test.java" startLine="18" startPosition="0" endLine="28" endPosition="0" />
-    <unitInfo nodeId="1957199320903967730" fileName="CheckDependencies_Test.java" startLine="20" startPosition="60" endLine="26" endPosition="5" unitName="jetbrains.mps.makeTest.test.CheckDependencies_Test$1" />
-    <unitInfo nodeId="1957199320903967715" fileName="CheckDependencies_Test.java" startLine="16" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.makeTest.test.CheckDependencies_Test" />
+    <file name="CheckDependencies_Test.java">
+      <node id="1957199320903967738" at="22,40,23,28" concept="2" />
+      <node id="1957199320903967741" at="23,28,24,385" concept="2" />
+      <node id="1957199320903967717" at="29,0,31,0" concept="1" trace="CheckDependencies_Test#()V" />
+      <node id="1957199320903967732" at="21,0,26,0" concept="6" trace="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="1957199320903967725" at="19,51,26,7" concept="2" />
+      <node id="1957199320903967722" at="18,0,28,0" concept="6" trace="test_staticConst#()V" />
+      <scope id="1957199320903967720" at="29,35,29,35" />
+      <scope id="1957199320903967737" at="22,40,24,385" />
+      <scope id="1957199320903967717" at="29,0,31,0" />
+      <scope id="1957199320903967732" at="21,0,26,0">
+        <var name="model" id="1957199320903967735" />
+      </scope>
+      <scope id="1957199320903967724" at="19,51,26,7" />
+      <scope id="1957199320903967722" at="18,0,28,0" />
+      <unit id="1957199320903967730" at="20,60,26,5" name="jetbrains.mps.makeTest.test.CheckDependencies_Test$1" />
+      <unit id="1957199320903967715" at="16,0,32,0" name="jetbrains.mps.makeTest.test.CheckDependencies_Test" />
+    </file>
   </root>
   <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903967759">
-    <nodeInfo nodeId="1957199320903968387" fileName="MakeAssert.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MESSAGE_COMPILATION_FAILED" />
-    <nodeInfo nodeId="1957199320903968391" fileName="MakeAssert.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MESSAGE_DEPENDENCY_NOT_CHECKED" />
-    <nodeInfo nodeId="1957199320903968395" fileName="MakeAssert.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROJECT_FILE" />
-    <nodeInfo nodeId="1957199320903967764" fileName="MakeAssert.java" startLine="31" startPosition="87" endLine="32" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4338657704633418355" fileName="MakeAssert.java" startLine="32" startPosition="38" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116386535" fileName="MakeAssert.java" startLine="33" startPosition="59" endLine="34" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7196776143116393597" fileName="MakeAssert.java" startLine="34" startPosition="102" endLine="35" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7196776143116393307" fileName="MakeAssert.java" startLine="35" startPosition="54" endLine="36" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7196776143116393322" fileName="MakeAssert.java" startLine="36" startPosition="64" endLine="37" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7196776143116393334" fileName="MakeAssert.java" startLine="37" startPosition="63" endLine="38" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903967863" fileName="MakeAssert.java" startLine="38" startPosition="56" endLine="39" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903967866" fileName="MakeAssert.java" startLine="39" startPosition="76" endLine="40" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903967869" fileName="MakeAssert.java" startLine="40" startPosition="31" endLine="41" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903967880" fileName="MakeAssert.java" startLine="44" startPosition="99" endLine="45" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4338657704633610067" fileName="MakeAssert.java" startLine="45" startPosition="44" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116393386" fileName="MakeAssert.java" startLine="46" startPosition="59" endLine="47" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7196776143116393606" fileName="MakeAssert.java" startLine="47" startPosition="108" endLine="48" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7196776143116393399" fileName="MakeAssert.java" startLine="48" startPosition="68" endLine="49" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6016914837743474509" fileName="MakeAssert.java" startLine="49" startPosition="53" endLine="50" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7196776143116393416" fileName="MakeAssert.java" startLine="50" startPosition="77" endLine="51" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116393425" fileName="MakeAssert.java" startLine="51" startPosition="55" endLine="52" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903967957" fileName="MakeAssert.java" startLine="52" startPosition="59" endLine="53" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1957199320903967970" fileName="MakeAssert.java" startLine="53" startPosition="54" endLine="54" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1957199320903967979" fileName="MakeAssert.java" startLine="57" startPosition="13" endLine="58" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1957199320903967987" fileName="MakeAssert.java" startLine="58" startPosition="97" endLine="59" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2381103581468453845" fileName="MakeAssert.java" startLine="59" startPosition="55" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903967997" fileName="MakeAssert.java" startLine="60" startPosition="57" endLine="61" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1957199320903968008" fileName="MakeAssert.java" startLine="61" startPosition="111" endLine="62" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1957199320903968015" fileName="MakeAssert.java" startLine="62" startPosition="61" endLine="63" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1957199320903968023" fileName="MakeAssert.java" startLine="63" startPosition="52" endLine="64" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968034" fileName="MakeAssert.java" startLine="64" startPosition="57" endLine="65" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116393564" fileName="MakeAssert.java" startLine="65" startPosition="105" endLine="66" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116393575" fileName="MakeAssert.java" startLine="66" startPosition="59" endLine="67" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968085" fileName="MakeAssert.java" startLine="68" startPosition="31" endLine="69" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968088" fileName="MakeAssert.java" startLine="69" startPosition="82" endLine="70" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968092" fileName="MakeAssert.java" startLine="70" startPosition="30" endLine="71" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968098" fileName="MakeAssert.java" startLine="74" startPosition="7" endLine="75" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968101" fileName="MakeAssert.java" startLine="75" startPosition="76" endLine="76" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968115" fileName="MakeAssert.java" startLine="79" startPosition="62" endLine="80" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968128" fileName="MakeAssert.java" startLine="83" startPosition="53" endLine="84" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2770012171661542160" fileName="MakeAssert.java" startLine="87" startPosition="42" endLine="88" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2770012171661543220" fileName="MakeAssert.java" startLine="88" startPosition="115" endLine="89" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1957199320903968383" fileName="MakeAssert.java" startLine="92" startPosition="58" endLine="93" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1421568629578017573" fileName="MakeAssert.java" startLine="28" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeAssert#()V" />
-    <nodeInfo nodeId="1957199320903968111" fileName="MakeAssert.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="assertDependenciesChecked#(Z)V" />
-    <nodeInfo nodeId="1957199320903968124" fileName="MakeAssert.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="assertNoProblems#(Z)V" />
-    <nodeInfo nodeId="1957199320903968379" fileName="MakeAssert.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFilesGenHandler#()Ljetbrains/mps/generator/generationTypes/IGenerationHandler;" />
-    <nodeInfo nodeId="1957199320903968137" fileName="MakeAssert.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="launchProject#()Lcom/intellij/openapi/project/Project;" />
-    <nodeInfo nodeId="1957199320903967760" fileName="MakeAssert.java" startLine="31" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="assertNotMake#(Ljava/lang/String;Ljetbrains/mps/makeTest/test/ChangeModel;)V" />
-    <nodeInfo nodeId="1957199320903967968" fileName="MakeAssert.java" startLine="56" startPosition="25" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1957199320903967966" fileName="MakeAssert.java" startLine="56" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="1957199320903967965" fileName="MakeAssert.java" startLine="54" startPosition="65" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903967876" fileName="MakeAssert.java" startLine="44" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="assertDependenciesChecked#(Ljava/lang/String;Ljetbrains/mps/makeTest/test/ChangeModel;)V" />
-    <scopeInfo nodeId="1421568629578017576" fileName="MakeAssert.java" startLine="28" startPosition="24" endLine="28" endPosition="24" />
-    <scopeInfo nodeId="1957199320903968114" fileName="MakeAssert.java" startLine="79" startPosition="62" endLine="80" endPosition="61" />
-    <scopeInfo nodeId="1957199320903968127" fileName="MakeAssert.java" startLine="83" startPosition="53" endLine="84" endPosition="56" />
-    <scopeInfo nodeId="1957199320903968382" fileName="MakeAssert.java" startLine="92" startPosition="58" endLine="93" endPosition="39" />
-    <scopeInfo nodeId="1421568629578017573" fileName="MakeAssert.java" startLine="28" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1957199320903968140" fileName="MakeAssert.java" startLine="87" startPosition="42" endLine="89" endPosition="50">
-      <varInfo nodeId="2770012171661542161" varName="mpsProject" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903968081" fileName="MakeAssert.java" startLine="68" startPosition="0" endLine="71" endPosition="41">
-      <varInfo nodeId="1957199320903968082" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903968084" fileName="MakeAssert.java" startLine="68" startPosition="31" endLine="71" endPosition="41" />
-    <scopeInfo nodeId="1957199320903968111" fileName="MakeAssert.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="2373221169643219029" varName="isOk" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903968124" fileName="MakeAssert.java" startLine="83" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="2373221169643219006" varName="isOk" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903968379" fileName="MakeAssert.java" startLine="92" startPosition="0" endLine="95" endPosition="0" />
-    <scopeInfo nodeId="1957199320903968137" fileName="MakeAssert.java" startLine="87" startPosition="0" endLine="91" endPosition="0" />
-    <scopeInfo nodeId="1957199320903967763" fileName="MakeAssert.java" startLine="31" startPosition="87" endLine="41" endPosition="39">
-      <varInfo nodeId="7196776143116393308" varName="baseIsOk" />
-      <varInfo nodeId="7196776143116386536" varName="changeModelProcessor" />
-      <varInfo nodeId="7196776143116393598" varName="genType" />
-      <varInfo nodeId="7196776143116393323" varName="newIsOk" />
-      <varInfo nodeId="1957199320903967765" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903967969" fileName="MakeAssert.java" startLine="57" startPosition="13" endLine="67" endPosition="70">
-      <varInfo nodeId="1957199320903967998" varName="classLoader" />
-      <varInfo nodeId="1957199320903967988" varName="className" />
-      <varInfo nodeId="1957199320903968016" varName="method" />
-      <varInfo nodeId="1957199320903967980" varName="test" />
-      <varInfo nodeId="1957199320903968009" varName="testClass" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903967760" fileName="MakeAssert.java" startLine="31" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="1957199320903967874" varName="changer" />
-      <varInfo nodeId="1957199320903967872" varName="modelName" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903967967" fileName="MakeAssert.java" startLine="56" startPosition="25" endLine="72" endPosition="9" />
-    <scopeInfo nodeId="1957199320903967966" fileName="MakeAssert.java" startLine="56" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1957199320903967879" fileName="MakeAssert.java" startLine="44" startPosition="99" endLine="76" endPosition="71">
-      <varInfo nodeId="7196776143116393387" varName="changeModelProcessor" />
-      <varInfo nodeId="7196776143116393607" varName="filesGenHandler" />
-      <varInfo nodeId="6016914837743474510" varName="genHandler" />
-      <varInfo nodeId="1957199320903967881" varName="project" />
-      <varInfo nodeId="1957199320903967958" varName="returnValue" />
-      <varInfo nodeId="1957199320903967971" varName="testModel" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903967876" fileName="MakeAssert.java" startLine="44" startPosition="0" endLine="78" endPosition="0">
-      <varInfo nodeId="1957199320903968109" varName="changer" />
-      <varInfo nodeId="1957199320903968107" varName="modelName" />
-    </scopeInfo>
-    <unitInfo nodeId="1957199320903967966" fileName="MakeAssert.java" startLine="55" startPosition="45" endLine="74" endPosition="5" unitName="jetbrains.mps.makeTest.test.MakeAssert$1" />
-    <unitInfo nodeId="1957199320903967759" fileName="MakeAssert.java" startLine="23" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.makeTest.test.MakeAssert" />
+    <file name="MakeAssert.java">
+      <node id="1957199320903968387" at="24,0,25,0" concept="9" trace="MESSAGE_COMPILATION_FAILED" />
+      <node id="1957199320903968391" at="25,0,26,0" concept="9" trace="MESSAGE_DEPENDENCY_NOT_CHECKED" />
+      <node id="1957199320903968395" at="26,0,27,0" concept="9" trace="PROJECT_FILE" />
+      <node id="1957199320903967764" at="31,87,32,38" concept="7" />
+      <node id="4338657704633418355" at="32,38,33,59" concept="2" />
+      <node id="7196776143116386535" at="33,59,34,102" concept="7" />
+      <node id="7196776143116393597" at="34,102,35,54" concept="7" />
+      <node id="7196776143116393307" at="35,54,36,64" concept="7" />
+      <node id="7196776143116393322" at="36,64,37,63" concept="7" />
+      <node id="7196776143116393334" at="37,63,38,56" concept="2" />
+      <node id="1957199320903967863" at="38,56,39,76" concept="2" />
+      <node id="1957199320903967866" at="39,76,40,31" concept="2" />
+      <node id="1957199320903967869" at="40,31,41,39" concept="2" />
+      <node id="1957199320903967880" at="44,99,45,44" concept="7" />
+      <node id="4338657704633610067" at="45,44,46,59" concept="2" />
+      <node id="7196776143116393386" at="46,59,47,108" concept="7" />
+      <node id="7196776143116393606" at="47,108,48,68" concept="7" />
+      <node id="7196776143116393399" at="48,68,49,53" concept="2" />
+      <node id="6016914837743474509" at="49,53,50,77" concept="7" />
+      <node id="7196776143116393416" at="50,77,51,55" concept="2" />
+      <node id="7196776143116393425" at="51,55,52,59" concept="2" />
+      <node id="1957199320903967957" at="52,59,53,54" concept="7" />
+      <node id="1957199320903967970" at="53,54,54,65" concept="7" />
+      <node id="1957199320903967979" at="57,13,58,97" concept="7" />
+      <node id="1957199320903967987" at="58,97,59,55" concept="7" />
+      <node id="2381103581468453845" at="59,55,60,57" concept="2" />
+      <node id="1957199320903967997" at="60,57,61,111" concept="7" />
+      <node id="1957199320903968008" at="61,111,62,61" concept="7" />
+      <node id="1957199320903968015" at="62,61,63,52" concept="7" />
+      <node id="1957199320903968023" at="63,52,64,57" concept="2" />
+      <node id="1957199320903968034" at="64,57,65,105" concept="2" />
+      <node id="7196776143116393564" at="65,105,66,59" concept="2" />
+      <node id="7196776143116393575" at="66,59,67,70" concept="2" />
+      <node id="1957199320903968085" at="68,31,69,82" concept="2" />
+      <node id="1957199320903968088" at="69,82,70,30" concept="2" />
+      <node id="1957199320903968092" at="70,30,71,41" concept="2" />
+      <node id="1957199320903968098" at="74,7,75,76" concept="2" />
+      <node id="1957199320903968101" at="75,76,76,71" concept="2" />
+      <node id="1957199320903968115" at="79,62,80,61" concept="2" />
+      <node id="1957199320903968128" at="83,53,84,56" concept="2" />
+      <node id="2770012171661542160" at="87,42,88,115" concept="7" />
+      <node id="2770012171661543220" at="88,115,89,50" concept="8" />
+      <node id="1957199320903968383" at="92,58,93,39" concept="8" />
+      <node id="1421568629578017573" at="28,0,30,0" concept="1" trace="MakeAssert#()V" />
+      <node id="1957199320903968111" at="79,0,82,0" concept="10" trace="assertDependenciesChecked#(Z)V" />
+      <node id="1957199320903968124" at="83,0,86,0" concept="10" trace="assertNoProblems#(Z)V" />
+      <node id="1957199320903968379" at="92,0,95,0" concept="10" trace="getFilesGenHandler#()Ljetbrains/mps/generator/generationTypes/IGenerationHandler;" />
+      <node id="1957199320903968137" at="87,0,91,0" concept="10" trace="launchProject#()Lcom/intellij/openapi/project/Project;" />
+      <node id="1957199320903967760" at="31,0,43,0" concept="10" trace="assertNotMake#(Ljava/lang/String;Ljetbrains/mps/makeTest/test/ChangeModel;)V" />
+      <node id="1957199320903967968" at="56,25,72,9" concept="11" />
+      <node id="1957199320903967966" at="56,0,74,0" concept="6" trace="run#()V" />
+      <node id="1957199320903967965" at="54,65,74,7" concept="2" />
+      <node id="1957199320903967876" at="44,0,78,0" concept="10" trace="assertDependenciesChecked#(Ljava/lang/String;Ljetbrains/mps/makeTest/test/ChangeModel;)V" />
+      <scope id="1421568629578017576" at="28,24,28,24" />
+      <scope id="1957199320903968114" at="79,62,80,61" />
+      <scope id="1957199320903968127" at="83,53,84,56" />
+      <scope id="1957199320903968382" at="92,58,93,39" />
+      <scope id="1421568629578017573" at="28,0,30,0" />
+      <scope id="1957199320903968140" at="87,42,89,50">
+        <var name="mpsProject" id="2770012171661542161" />
+      </scope>
+      <scope id="1957199320903968081" at="68,0,71,41">
+        <var name="t" id="1957199320903968082" />
+      </scope>
+      <scope id="1957199320903968084" at="68,31,71,41" />
+      <scope id="1957199320903968111" at="79,0,82,0">
+        <var name="isOk" id="2373221169643219029" />
+      </scope>
+      <scope id="1957199320903968124" at="83,0,86,0">
+        <var name="isOk" id="2373221169643219006" />
+      </scope>
+      <scope id="1957199320903968379" at="92,0,95,0" />
+      <scope id="1957199320903968137" at="87,0,91,0" />
+      <scope id="1957199320903967763" at="31,87,41,39">
+        <var name="baseIsOk" id="7196776143116393308" />
+        <var name="changeModelProcessor" id="7196776143116386536" />
+        <var name="genType" id="7196776143116393598" />
+        <var name="newIsOk" id="7196776143116393323" />
+        <var name="project" id="1957199320903967765" />
+      </scope>
+      <scope id="1957199320903967969" at="57,13,67,70">
+        <var name="classLoader" id="1957199320903967998" />
+        <var name="className" id="1957199320903967988" />
+        <var name="method" id="1957199320903968016" />
+        <var name="test" id="1957199320903967980" />
+        <var name="testClass" id="1957199320903968009" />
+      </scope>
+      <scope id="1957199320903967760" at="31,0,43,0">
+        <var name="changer" id="1957199320903967874" />
+        <var name="modelName" id="1957199320903967872" />
+      </scope>
+      <scope id="1957199320903967967" at="56,25,72,9" />
+      <scope id="1957199320903967966" at="56,0,74,0" />
+      <scope id="1957199320903967879" at="44,99,76,71">
+        <var name="changeModelProcessor" id="7196776143116393387" />
+        <var name="filesGenHandler" id="7196776143116393607" />
+        <var name="genHandler" id="6016914837743474510" />
+        <var name="project" id="1957199320903967881" />
+        <var name="returnValue" id="1957199320903967958" />
+        <var name="testModel" id="1957199320903967971" />
+      </scope>
+      <scope id="1957199320903967876" at="44,0,78,0">
+        <var name="changer" id="1957199320903968109" />
+        <var name="modelName" id="1957199320903968107" />
+      </scope>
+      <unit id="1957199320903967966" at="55,45,74,5" name="jetbrains.mps.makeTest.test.MakeAssert$1" />
+      <unit id="1957199320903967759" at="23,0,96,0" name="jetbrains.mps.makeTest.test.MakeAssert" />
+    </file>
   </root>
   <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/1957199320903968411">
-    <nodeInfo nodeId="1957199320903968434" fileName="NotMake_Test.java" startLine="23" startPosition="40" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968437" fileName="NotMake_Test.java" startLine="24" startPosition="28" endLine="25" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968468" fileName="NotMake_Test.java" startLine="34" startPosition="40" endLine="35" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968471" fileName="NotMake_Test.java" startLine="35" startPosition="28" endLine="36" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968498" fileName="NotMake_Test.java" startLine="45" startPosition="40" endLine="46" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968508" fileName="NotMake_Test.java" startLine="47" startPosition="111" endLine="48" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1957199320903968514" fileName="NotMake_Test.java" startLine="48" startPosition="130" endLine="49" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1957199320903968520" fileName="NotMake_Test.java" startLine="49" startPosition="115" endLine="50" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968526" fileName="NotMake_Test.java" startLine="50" startPosition="57" endLine="51" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968532" fileName="NotMake_Test.java" startLine="51" startPosition="74" endLine="52" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968556" fileName="NotMake_Test.java" startLine="62" startPosition="40" endLine="63" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968559" fileName="NotMake_Test.java" startLine="63" startPosition="28" endLine="64" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968413" fileName="NotMake_Test.java" startLine="69" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NotMake_Test#()V" />
-    <nodeInfo nodeId="1957199320903968428" fileName="NotMake_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="1957199320903968462" fileName="NotMake_Test.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="1957199320903968550" fileName="NotMake_Test.java" startLine="61" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="1957199320903968421" fileName="NotMake_Test.java" startLine="20" startPosition="66" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968455" fileName="NotMake_Test.java" startLine="31" startPosition="50" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968501" fileName="NotMake_Test.java" startLine="46" startPosition="28" endLine="53" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1957199320903968543" fileName="NotMake_Test.java" startLine="59" startPosition="54" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968418" fileName="NotMake_Test.java" startLine="19" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_abstractMethodNotImplement#()V" />
-    <nodeInfo nodeId="1957199320903968452" fileName="NotMake_Test.java" startLine="30" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_finalClass#()V" />
-    <nodeInfo nodeId="1957199320903968540" fileName="NotMake_Test.java" startLine="58" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_anonymousClass#()V" />
-    <nodeInfo nodeId="1957199320903968492" fileName="NotMake_Test.java" startLine="44" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <nodeInfo nodeId="1957199320903968485" fileName="NotMake_Test.java" startLine="42" startPosition="60" endLine="55" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968482" fileName="NotMake_Test.java" startLine="41" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_recursiveInHierarchy#()V" />
-    <scopeInfo nodeId="1957199320903968416" fileName="NotMake_Test.java" startLine="69" startPosition="25" endLine="69" endPosition="25" />
-    <scopeInfo nodeId="1957199320903968433" fileName="NotMake_Test.java" startLine="23" startPosition="40" endLine="25" endPosition="260" />
-    <scopeInfo nodeId="1957199320903968467" fileName="NotMake_Test.java" startLine="34" startPosition="40" endLine="36" endPosition="174" />
-    <scopeInfo nodeId="1957199320903968555" fileName="NotMake_Test.java" startLine="62" startPosition="40" endLine="64" endPosition="260" />
-    <scopeInfo nodeId="1957199320903968413" fileName="NotMake_Test.java" startLine="69" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="1957199320903968428" fileName="NotMake_Test.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="1957199320903968431" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903968462" fileName="NotMake_Test.java" startLine="33" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="1957199320903968465" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903968507" fileName="NotMake_Test.java" startLine="47" startPosition="111" endLine="52" endPosition="101">
-      <varInfo nodeId="1957199320903968509" varName="method" />
-      <varInfo nodeId="1957199320903968515" varName="voidType" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903968550" fileName="NotMake_Test.java" startLine="61" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="1957199320903968553" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903968420" fileName="NotMake_Test.java" startLine="20" startPosition="66" endLine="27" endPosition="7" />
-    <scopeInfo nodeId="1957199320903968454" fileName="NotMake_Test.java" startLine="31" startPosition="50" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="1957199320903968501" fileName="NotMake_Test.java" startLine="46" startPosition="28" endLine="53" endPosition="9">
-      <varInfo nodeId="1957199320903968505" varName="root" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903968542" fileName="NotMake_Test.java" startLine="59" startPosition="54" endLine="66" endPosition="7" />
-    <scopeInfo nodeId="1957199320903968497" fileName="NotMake_Test.java" startLine="45" startPosition="40" endLine="53" endPosition="9" />
-    <scopeInfo nodeId="1957199320903968418" fileName="NotMake_Test.java" startLine="19" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1957199320903968452" fileName="NotMake_Test.java" startLine="30" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="1957199320903968540" fileName="NotMake_Test.java" startLine="58" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1957199320903968492" fileName="NotMake_Test.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="1957199320903968495" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="1957199320903968484" fileName="NotMake_Test.java" startLine="42" startPosition="60" endLine="55" endPosition="7" />
-    <scopeInfo nodeId="1957199320903968482" fileName="NotMake_Test.java" startLine="41" startPosition="0" endLine="57" endPosition="0" />
-    <unitInfo nodeId="1957199320903968426" fileName="NotMake_Test.java" startLine="21" startPosition="63" endLine="27" endPosition="5" unitName="jetbrains.mps.makeTest.test.NotMake_Test$1" />
-    <unitInfo nodeId="1957199320903968460" fileName="NotMake_Test.java" startLine="32" startPosition="47" endLine="38" endPosition="5" unitName="jetbrains.mps.makeTest.test.NotMake_Test$2" />
-    <unitInfo nodeId="1957199320903968548" fileName="NotMake_Test.java" startLine="60" startPosition="51" endLine="66" endPosition="5" unitName="jetbrains.mps.makeTest.test.NotMake_Test$4" />
-    <unitInfo nodeId="1957199320903968490" fileName="NotMake_Test.java" startLine="43" startPosition="57" endLine="55" endPosition="5" unitName="jetbrains.mps.makeTest.test.NotMake_Test$3" />
-    <unitInfo nodeId="1957199320903968411" fileName="NotMake_Test.java" startLine="17" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.makeTest.test.NotMake_Test" />
+    <file name="NotMake_Test.java">
+      <node id="1957199320903968434" at="23,40,24,28" concept="2" />
+      <node id="1957199320903968437" at="24,28,25,260" concept="2" />
+      <node id="1957199320903968468" at="34,40,35,28" concept="2" />
+      <node id="1957199320903968471" at="35,28,36,174" concept="2" />
+      <node id="1957199320903968498" at="45,40,46,28" concept="2" />
+      <node id="1957199320903968508" at="47,111,48,130" concept="7" />
+      <node id="1957199320903968514" at="48,130,49,115" concept="7" />
+      <node id="1957199320903968520" at="49,115,50,57" concept="2" />
+      <node id="1957199320903968526" at="50,57,51,74" concept="2" />
+      <node id="1957199320903968532" at="51,74,52,101" concept="2" />
+      <node id="1957199320903968556" at="62,40,63,28" concept="2" />
+      <node id="1957199320903968559" at="63,28,64,260" concept="2" />
+      <node id="1957199320903968413" at="69,0,71,0" concept="1" trace="NotMake_Test#()V" />
+      <node id="1957199320903968428" at="22,0,27,0" concept="6" trace="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="1957199320903968462" at="33,0,38,0" concept="6" trace="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="1957199320903968550" at="61,0,66,0" concept="6" trace="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="1957199320903968421" at="20,66,27,7" concept="2" />
+      <node id="1957199320903968455" at="31,50,38,7" concept="2" />
+      <node id="1957199320903968501" at="46,28,53,9" concept="4" />
+      <node id="1957199320903968543" at="59,54,66,7" concept="2" />
+      <node id="1957199320903968418" at="19,0,29,0" concept="6" trace="test_abstractMethodNotImplement#()V" />
+      <node id="1957199320903968452" at="30,0,40,0" concept="6" trace="test_finalClass#()V" />
+      <node id="1957199320903968540" at="58,0,68,0" concept="6" trace="test_anonymousClass#()V" />
+      <node id="1957199320903968492" at="44,0,55,0" concept="6" trace="change#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <node id="1957199320903968485" at="42,60,55,7" concept="2" />
+      <node id="1957199320903968482" at="41,0,57,0" concept="6" trace="test_recursiveInHierarchy#()V" />
+      <scope id="1957199320903968416" at="69,25,69,25" />
+      <scope id="1957199320903968433" at="23,40,25,260" />
+      <scope id="1957199320903968467" at="34,40,36,174" />
+      <scope id="1957199320903968555" at="62,40,64,260" />
+      <scope id="1957199320903968413" at="69,0,71,0" />
+      <scope id="1957199320903968428" at="22,0,27,0">
+        <var name="model" id="1957199320903968431" />
+      </scope>
+      <scope id="1957199320903968462" at="33,0,38,0">
+        <var name="model" id="1957199320903968465" />
+      </scope>
+      <scope id="1957199320903968507" at="47,111,52,101">
+        <var name="method" id="1957199320903968509" />
+        <var name="voidType" id="1957199320903968515" />
+      </scope>
+      <scope id="1957199320903968550" at="61,0,66,0">
+        <var name="model" id="1957199320903968553" />
+      </scope>
+      <scope id="1957199320903968420" at="20,66,27,7" />
+      <scope id="1957199320903968454" at="31,50,38,7" />
+      <scope id="1957199320903968501" at="46,28,53,9">
+        <var name="root" id="1957199320903968505" />
+      </scope>
+      <scope id="1957199320903968542" at="59,54,66,7" />
+      <scope id="1957199320903968497" at="45,40,53,9" />
+      <scope id="1957199320903968418" at="19,0,29,0" />
+      <scope id="1957199320903968452" at="30,0,40,0" />
+      <scope id="1957199320903968540" at="58,0,68,0" />
+      <scope id="1957199320903968492" at="44,0,55,0">
+        <var name="model" id="1957199320903968495" />
+      </scope>
+      <scope id="1957199320903968484" at="42,60,55,7" />
+      <scope id="1957199320903968482" at="41,0,57,0" />
+      <unit id="1957199320903968426" at="21,63,27,5" name="jetbrains.mps.makeTest.test.NotMake_Test$1" />
+      <unit id="1957199320903968460" at="32,47,38,5" name="jetbrains.mps.makeTest.test.NotMake_Test$2" />
+      <unit id="1957199320903968548" at="60,51,66,5" name="jetbrains.mps.makeTest.test.NotMake_Test$4" />
+      <unit id="1957199320903968490" at="43,57,55,5" name="jetbrains.mps.makeTest.test.NotMake_Test$3" />
+      <unit id="1957199320903968411" at="17,0,72,0" name="jetbrains.mps.makeTest.test.NotMake_Test" />
+    </file>
   </root>
   <root nodeRef="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)/7196776143116381095">
-    <nodeInfo nodeId="7196776143116382452" fileName="ChangeModelProcessor.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="TEST_RESOURCES_PATH" />
-    <nodeInfo nodeId="7196776143116384959" fileName="ChangeModelProcessor.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STEP_TYPE_CHANGE" />
-    <nodeInfo nodeId="7196776143116384963" fileName="ChangeModelProcessor.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="STEP_TYPE_REVERT" />
-    <nodeInfo nodeId="7196776143116382460" fileName="ChangeModelProcessor.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="7196776143116382899" fileName="ChangeModelProcessor.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTestModel" />
-    <nodeInfo nodeId="7196776143116382921" fileName="ChangeModelProcessor.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelToChange" />
-    <nodeInfo nodeId="7196776143116385030" fileName="ChangeModelProcessor.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myChangeModel" />
-    <nodeInfo nodeId="7196776143116382655" fileName="ChangeModelProcessor.java" startLine="40" startPosition="95" endLine="41" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116382936" fileName="ChangeModelProcessor.java" startLine="41" startPosition="29" endLine="42" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116382949" fileName="ChangeModelProcessor.java" startLine="42" startPosition="93" endLine="43" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116385048" fileName="ChangeModelProcessor.java" startLine="43" startPosition="97" endLine="44" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116386463" fileName="ChangeModelProcessor.java" startLine="47" startPosition="67" endLine="48" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2753411633254448177" fileName="ChangeModelProcessor.java" startLine="50" startPosition="25" endLine="51" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116386506" fileName="ChangeModelProcessor.java" startLine="56" startPosition="67" endLine="57" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2753411633254448170" fileName="ChangeModelProcessor.java" startLine="59" startPosition="25" endLine="60" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116382775" fileName="ChangeModelProcessor.java" startLine="65" startPosition="100" endLine="66" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116382575" fileName="ChangeModelProcessor.java" startLine="66" startPosition="50" endLine="67" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361589678" fileName="ChangeModelProcessor.java" startLine="69" startPosition="25" endLine="70" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116382606" fileName="ChangeModelProcessor.java" startLine="73" startPosition="23" endLine="74" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116382613" fileName="ChangeModelProcessor.java" startLine="75" startPosition="12" endLine="76" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2034046503361615733" fileName="ChangeModelProcessor.java" startLine="79" startPosition="25" endLine="80" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116382630" fileName="ChangeModelProcessor.java" startLine="82" startPosition="7" endLine="83" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116382641" fileName="ChangeModelProcessor.java" startLine="83" startPosition="84" endLine="84" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7196776143116384915" fileName="ChangeModelProcessor.java" startLine="87" startPosition="79" endLine="88" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7196776143116384944" fileName="ChangeModelProcessor.java" startLine="91" startPosition="83" endLine="92" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7196776143116382687" fileName="ChangeModelProcessor.java" startLine="95" startPosition="93" endLine="96" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7196776143116382694" fileName="ChangeModelProcessor.java" startLine="96" startPosition="80" endLine="97" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7196776143116382727" fileName="ChangeModelProcessor.java" startLine="101" startPosition="49" endLine="102" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6166056446716858278" fileName="ChangeModelProcessor.java" startLine="109" startPosition="6" endLine="110" endPosition="332" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116382767" fileName="ChangeModelProcessor.java" startLine="110" startPosition="332" endLine="111" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7196776143116382795" fileName="ChangeModelProcessor.java" startLine="114" startPosition="55" endLine="115" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7196776143116382803" fileName="ChangeModelProcessor.java" startLine="115" startPosition="54" endLine="116" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2834132315319621226" fileName="ChangeModelProcessor.java" startLine="116" startPosition="62" endLine="117" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7196776143116393545" fileName="ChangeModelProcessor.java" startLine="120" startPosition="32" endLine="121" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7196776143116393530" fileName="ChangeModelProcessor.java" startLine="124" startPosition="36" endLine="125" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7196776143116393474" fileName="ChangeModelProcessor.java" startLine="128" startPosition="57" endLine="129" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2034046503361584853" fileName="ChangeModelProcessor.java" startLine="131" startPosition="25" endLine="132" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116393495" fileName="ChangeModelProcessor.java" startLine="134" startPosition="7" endLine="135" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7196776143116382611" fileName="ChangeModelProcessor.java" startLine="75" startPosition="10" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7196776143116385103" fileName="ChangeModelProcessor.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7196776143116386514" fileName="ChangeModelProcessor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2034046503361589676" fileName="ChangeModelProcessor.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2034046503361615731" fileName="ChangeModelProcessor.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7196776143116384896" fileName="ChangeModelProcessor.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generateTestModel#(Ljetbrains/mps/generator/generationTypes/IGenerationHandler;)Ljava/util/List;" />
-    <nodeInfo nodeId="7196776143116384924" fileName="ChangeModelProcessor.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generateModelToChange#(Ljetbrains/mps/generator/generationTypes/IGenerationHandler;)Ljava/util/List;" />
-    <nodeInfo nodeId="7196776143116382720" fileName="ChangeModelProcessor.java" startLine="100" startPosition="40" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4526112498887464191" fileName="ChangeModelProcessor.java" startLine="106" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clear#()V" />
-    <nodeInfo nodeId="7196776143116393433" fileName="ChangeModelProcessor.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTestModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="7196776143116393200" fileName="ChangeModelProcessor.java" startLine="124" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelToChange#()Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="2034046503361584851" fileName="ChangeModelProcessor.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7196776143116385061" fileName="ChangeModelProcessor.java" startLine="48" startPosition="57" endLine="53" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7196776143116385094" fileName="ChangeModelProcessor.java" startLine="57" startPosition="57" endLine="62" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2034046503361589672" fileName="ChangeModelProcessor.java" startLine="67" startPosition="71" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116382604" fileName="ChangeModelProcessor.java" startLine="72" startPosition="7" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2034046503361615727" fileName="ChangeModelProcessor.java" startLine="77" startPosition="5" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116382786" fileName="ChangeModelProcessor.java" startLine="114" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModelDescriptorByName#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="2034046503361584847" fileName="ChangeModelProcessor.java" startLine="129" startPosition="64" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7196776143116381097" fileName="ChangeModelProcessor.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChangeModelProcessor#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljetbrains/mps/makeTest/test/ChangeModel;)V" />
-    <nodeInfo nodeId="340028429655532660" fileName="ChangeModelProcessor.java" startLine="99" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handle#(Ljetbrains/mps/messages/IMessage;)V" />
-    <nodeInfo nodeId="7196776143116385016" fileName="ChangeModelProcessor.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="changeStep#(Ljetbrains/mps/generator/generationTypes/IGenerationHandler;)Z" />
-    <nodeInfo nodeId="7196776143116385072" fileName="ChangeModelProcessor.java" startLine="56" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="revertStep#(Ljetbrains/mps/generator/generationTypes/IGenerationHandler;)Z" />
-    <nodeInfo nodeId="7196776143116393454" fileName="ChangeModelProcessor.java" startLine="128" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModel#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
-    <nodeInfo nodeId="7196776143116382707" fileName="ChangeModelProcessor.java" startLine="97" startPosition="67" endLine="109" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7196776143116382663" fileName="ChangeModelProcessor.java" startLine="95" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="generate#(Lorg/jetbrains/mps/openapi/model/EditableSModel;Ljetbrains/mps/generator/generationTypes/IGenerationHandler;)Ljava/util/List;" />
-    <nodeInfo nodeId="7196776143116382552" fileName="ChangeModelProcessor.java" startLine="65" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="step#(Ljava/lang/Runnable;Ljava/lang/String;Ljetbrains/mps/generator/generationTypes/IGenerationHandler;)Z" />
-    <scopeInfo nodeId="4526112498887464194" fileName="ChangeModelProcessor.java" startLine="107" startPosition="27" endLine="107" endPosition="27" />
-    <scopeInfo nodeId="7196776143116385104" fileName="ChangeModelProcessor.java" startLine="50" startPosition="25" endLine="51" endPosition="70" />
-    <scopeInfo nodeId="7196776143116386515" fileName="ChangeModelProcessor.java" startLine="59" startPosition="25" endLine="60" endPosition="70" />
-    <scopeInfo nodeId="2034046503361589677" fileName="ChangeModelProcessor.java" startLine="69" startPosition="25" endLine="70" endPosition="141" />
-    <scopeInfo nodeId="7196776143116382605" fileName="ChangeModelProcessor.java" startLine="73" startPosition="23" endLine="74" endPosition="51" />
-    <scopeInfo nodeId="7196776143116382612" fileName="ChangeModelProcessor.java" startLine="75" startPosition="12" endLine="76" endPosition="47" />
-    <scopeInfo nodeId="2034046503361615732" fileName="ChangeModelProcessor.java" startLine="79" startPosition="25" endLine="80" endPosition="23" />
-    <scopeInfo nodeId="7196776143116384899" fileName="ChangeModelProcessor.java" startLine="87" startPosition="79" endLine="88" endPosition="62" />
-    <scopeInfo nodeId="7196776143116384927" fileName="ChangeModelProcessor.java" startLine="91" startPosition="83" endLine="92" endPosition="66" />
-    <scopeInfo nodeId="7196776143116382726" fileName="ChangeModelProcessor.java" startLine="101" startPosition="49" endLine="102" endPosition="67" />
-    <scopeInfo nodeId="7196776143116393436" fileName="ChangeModelProcessor.java" startLine="120" startPosition="32" endLine="121" endPosition="43" />
-    <scopeInfo nodeId="7196776143116393203" fileName="ChangeModelProcessor.java" startLine="124" startPosition="36" endLine="125" endPosition="47" />
-    <scopeInfo nodeId="2034046503361584852" fileName="ChangeModelProcessor.java" startLine="131" startPosition="25" endLine="132" endPosition="38" />
-    <scopeInfo nodeId="7196776143116385103" fileName="ChangeModelProcessor.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="7196776143116386514" fileName="ChangeModelProcessor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="2034046503361589676" fileName="ChangeModelProcessor.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="2034046503361615731" fileName="ChangeModelProcessor.java" startLine="79" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="7196776143116384896" fileName="ChangeModelProcessor.java" startLine="87" startPosition="0" endLine="90" endPosition="0">
-      <varInfo nodeId="7196776143116384913" varName="generationHandler" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116384924" fileName="ChangeModelProcessor.java" startLine="91" startPosition="0" endLine="94" endPosition="0">
-      <varInfo nodeId="7196776143116384942" varName="generationHandler" />
-    </scopeInfo>
-    <scopeInfo nodeId="340028429655532665" fileName="ChangeModelProcessor.java" startLine="100" startPosition="40" endLine="103" endPosition="9" />
-    <scopeInfo nodeId="4526112498887464191" fileName="ChangeModelProcessor.java" startLine="106" startPosition="0" endLine="109" endPosition="0" />
-    <scopeInfo nodeId="7196776143116382789" fileName="ChangeModelProcessor.java" startLine="114" startPosition="55" endLine="117" endPosition="59">
-      <varInfo nodeId="7196776143116382804" varName="file" />
-      <varInfo nodeId="7196776143116382796" varName="path" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116393433" fileName="ChangeModelProcessor.java" startLine="120" startPosition="0" endLine="123" endPosition="0" />
-    <scopeInfo nodeId="7196776143116393200" fileName="ChangeModelProcessor.java" startLine="124" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="2034046503361584851" fileName="ChangeModelProcessor.java" startLine="131" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="7196776143116381100" fileName="ChangeModelProcessor.java" startLine="40" startPosition="95" endLine="44" endPosition="37" />
-    <scopeInfo nodeId="7196776143116382786" fileName="ChangeModelProcessor.java" startLine="114" startPosition="0" endLine="119" endPosition="0">
-      <varInfo nodeId="7196776143116382790" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116381097" fileName="ChangeModelProcessor.java" startLine="40" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="7196776143116382918" varName="baseModelName" />
-      <varInfo nodeId="7196776143116385044" varName="changeModel" />
-      <varInfo nodeId="7196776143116382653" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116385019" fileName="ChangeModelProcessor.java" startLine="47" startPosition="67" endLine="53" endPosition="44">
-      <varInfo nodeId="7196776143116386464" varName="modelToChange" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116385075" fileName="ChangeModelProcessor.java" startLine="56" startPosition="67" endLine="62" endPosition="44">
-      <varInfo nodeId="7196776143116386507" varName="modelToChange" />
-    </scopeInfo>
-    <scopeInfo nodeId="340028429655532660" fileName="ChangeModelProcessor.java" startLine="99" startPosition="0" endLine="105" endPosition="0">
-      <varInfo nodeId="340028429655532663" varName="msg" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116393457" fileName="ChangeModelProcessor.java" startLine="128" startPosition="57" endLine="135" endPosition="23">
-      <varInfo nodeId="7196776143116393475" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116385016" fileName="ChangeModelProcessor.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="7196776143116385068" varName="generationHandler" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116385072" fileName="ChangeModelProcessor.java" startLine="56" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="7196776143116385092" varName="generationHandler" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116393454" fileName="ChangeModelProcessor.java" startLine="128" startPosition="0" endLine="137" endPosition="0">
-      <varInfo nodeId="7196776143116393471" varName="modelDescriptor" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116382666" fileName="ChangeModelProcessor.java" startLine="95" startPosition="93" endLine="111" endPosition="19">
-      <varInfo nodeId="7196776143116382708" varName="handler" />
-      <varInfo nodeId="7196776143116382695" varName="models" />
-      <varInfo nodeId="7196776143116382688" varName="results" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116382663" fileName="ChangeModelProcessor.java" startLine="95" startPosition="0" endLine="113" endPosition="0">
-      <varInfo nodeId="7196776143116382674" varName="generationHandler" />
-      <varInfo nodeId="7196776143116382670" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116382555" fileName="ChangeModelProcessor.java" startLine="65" startPosition="100" endLine="84" endPosition="24">
-      <varInfo nodeId="7196776143116382576" varName="cr" />
-    </scopeInfo>
-    <scopeInfo nodeId="7196776143116382552" fileName="ChangeModelProcessor.java" startLine="65" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="7196776143116382562" varName="generationHandler" />
-      <varInfo nodeId="7196776143116382558" varName="runnable" />
-      <varInfo nodeId="7196776143116382560" varName="type" />
-    </scopeInfo>
-    <unitInfo nodeId="7196776143116385103" fileName="ChangeModelProcessor.java" startLine="49" startPosition="25" endLine="53" endPosition="5" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor$1" />
-    <unitInfo nodeId="7196776143116386514" fileName="ChangeModelProcessor.java" startLine="58" startPosition="25" endLine="62" endPosition="5" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor$2" />
-    <unitInfo nodeId="2034046503361589676" fileName="ChangeModelProcessor.java" startLine="68" startPosition="45" endLine="72" endPosition="5" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor$3" />
-    <unitInfo nodeId="2034046503361615731" fileName="ChangeModelProcessor.java" startLine="78" startPosition="45" endLine="82" endPosition="5" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor$4" />
-    <unitInfo nodeId="2034046503361584851" fileName="ChangeModelProcessor.java" startLine="130" startPosition="45" endLine="134" endPosition="5" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor$6" />
-    <unitInfo nodeId="7196776143116382712" fileName="ChangeModelProcessor.java" startLine="98" startPosition="34" endLine="109" endPosition="5" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor$5" />
-    <unitInfo nodeId="7196776143116381095" fileName="ChangeModelProcessor.java" startLine="31" startPosition="0" endLine="138" endPosition="0" unitName="jetbrains.mps.makeTest.test.ChangeModelProcessor" />
+    <file name="ChangeModelProcessor.java">
+      <node id="7196776143116382452" at="32,0,33,0" concept="9" trace="TEST_RESOURCES_PATH" />
+      <node id="7196776143116384959" at="33,0,34,0" concept="9" trace="STEP_TYPE_CHANGE" />
+      <node id="7196776143116384963" at="34,0,35,0" concept="9" trace="STEP_TYPE_REVERT" />
+      <node id="7196776143116382460" at="35,0,36,0" concept="3" trace="myProject" />
+      <node id="7196776143116382899" at="36,0,37,0" concept="3" trace="myTestModel" />
+      <node id="7196776143116382921" at="37,0,38,0" concept="3" trace="myModelToChange" />
+      <node id="7196776143116385030" at="38,0,39,0" concept="3" trace="myChangeModel" />
+      <node id="7196776143116382655" at="40,95,41,29" concept="2" />
+      <node id="7196776143116382936" at="41,29,42,93" concept="2" />
+      <node id="7196776143116382949" at="42,93,43,97" concept="2" />
+      <node id="7196776143116385048" at="43,97,44,37" concept="2" />
+      <node id="7196776143116386463" at="47,67,48,57" concept="7" />
+      <node id="2753411633254448177" at="50,25,51,70" concept="2" />
+      <node id="7196776143116386506" at="56,67,57,57" concept="7" />
+      <node id="2753411633254448170" at="59,25,60,70" concept="2" />
+      <node id="7196776143116382775" at="65,100,66,50" concept="2" />
+      <node id="7196776143116382575" at="66,50,67,71" concept="7" />
+      <node id="2034046503361589678" at="69,25,70,141" concept="2" />
+      <node id="7196776143116382606" at="73,23,74,51" concept="2" />
+      <node id="7196776143116382613" at="75,12,76,47" concept="2" />
+      <node id="2034046503361615733" at="79,25,80,23" concept="2" />
+      <node id="7196776143116382630" at="82,7,83,84" concept="2" />
+      <node id="7196776143116382641" at="83,84,84,24" concept="8" />
+      <node id="7196776143116384915" at="87,79,88,62" concept="8" />
+      <node id="7196776143116384944" at="91,83,92,66" concept="8" />
+      <node id="7196776143116382687" at="95,93,96,80" concept="7" />
+      <node id="7196776143116382694" at="96,80,97,67" concept="7" />
+      <node id="7196776143116382727" at="101,49,102,67" concept="2" />
+      <node id="6166056446716858278" at="109,6,110,332" concept="2" />
+      <node id="7196776143116382767" at="110,332,111,19" concept="8" />
+      <node id="7196776143116382795" at="114,55,115,54" concept="7" />
+      <node id="7196776143116382803" at="115,54,116,62" concept="7" />
+      <node id="2834132315319621226" at="116,62,117,59" concept="8" />
+      <node id="7196776143116393545" at="120,32,121,43" concept="8" />
+      <node id="7196776143116393530" at="124,36,125,47" concept="8" />
+      <node id="7196776143116393474" at="128,57,129,64" concept="7" />
+      <node id="2034046503361584853" at="131,25,132,38" concept="2" />
+      <node id="7196776143116393495" at="134,7,135,23" concept="8" />
+      <node id="7196776143116382611" at="75,10,77,5" concept="0" />
+      <node id="7196776143116385103" at="50,0,53,0" concept="6" trace="run#()V" />
+      <node id="7196776143116386514" at="59,0,62,0" concept="6" trace="run#()V" />
+      <node id="2034046503361589676" at="69,0,72,0" concept="6" trace="run#()V" />
+      <node id="2034046503361615731" at="79,0,82,0" concept="6" trace="run#()V" />
+      <node id="7196776143116384896" at="87,0,90,0" concept="6" trace="generateTestModel#(Ljetbrains/mps/generator/generationTypes/IGenerationHandler;)Ljava/util/List;" />
+      <node id="7196776143116384924" at="91,0,94,0" concept="6" trace="generateModelToChange#(Ljetbrains/mps/generator/generationTypes/IGenerationHandler;)Ljava/util/List;" />
+      <node id="7196776143116382720" at="100,40,103,9" concept="5" />
+      <node id="4526112498887464191" at="106,0,109,0" concept="6" trace="clear#()V" />
+      <node id="7196776143116393433" at="120,0,123,0" concept="6" trace="getTestModel#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="7196776143116393200" at="124,0,127,0" concept="6" trace="getModelToChange#()Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="2034046503361584851" at="131,0,134,0" concept="6" trace="run#()V" />
+      <node id="7196776143116385061" at="48,57,53,44" concept="8" />
+      <node id="7196776143116385094" at="57,57,62,44" concept="8" />
+      <node id="2034046503361589672" at="67,71,72,7" concept="2" />
+      <node id="7196776143116382604" at="72,7,77,5" concept="5" />
+      <node id="2034046503361615727" at="77,5,82,7" concept="2" />
+      <node id="7196776143116382786" at="114,0,119,0" concept="6" trace="getModelDescriptorByName#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="2034046503361584847" at="129,64,134,7" concept="2" />
+      <node id="7196776143116381097" at="40,0,46,0" concept="1" trace="ChangeModelProcessor#(Lcom/intellij/openapi/project/Project;Ljava/lang/String;Ljetbrains/mps/makeTest/test/ChangeModel;)V" />
+      <node id="340028429655532660" at="99,0,105,0" concept="6" trace="handle#(Ljetbrains/mps/messages/IMessage;)V" />
+      <node id="7196776143116385016" at="47,0,55,0" concept="6" trace="changeStep#(Ljetbrains/mps/generator/generationTypes/IGenerationHandler;)Z" />
+      <node id="7196776143116385072" at="56,0,64,0" concept="6" trace="revertStep#(Ljetbrains/mps/generator/generationTypes/IGenerationHandler;)Z" />
+      <node id="7196776143116393454" at="128,0,137,0" concept="6" trace="getModel#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/model/SModel;" />
+      <node id="7196776143116382707" at="97,67,109,6" concept="7" />
+      <node id="7196776143116382663" at="95,0,113,0" concept="6" trace="generate#(Lorg/jetbrains/mps/openapi/model/EditableSModel;Ljetbrains/mps/generator/generationTypes/IGenerationHandler;)Ljava/util/List;" />
+      <node id="7196776143116382552" at="65,0,86,0" concept="6" trace="step#(Ljava/lang/Runnable;Ljava/lang/String;Ljetbrains/mps/generator/generationTypes/IGenerationHandler;)Z" />
+      <scope id="4526112498887464194" at="107,27,107,27" />
+      <scope id="7196776143116385104" at="50,25,51,70" />
+      <scope id="7196776143116386515" at="59,25,60,70" />
+      <scope id="2034046503361589677" at="69,25,70,141" />
+      <scope id="7196776143116382605" at="73,23,74,51" />
+      <scope id="7196776143116382612" at="75,12,76,47" />
+      <scope id="2034046503361615732" at="79,25,80,23" />
+      <scope id="7196776143116384899" at="87,79,88,62" />
+      <scope id="7196776143116384927" at="91,83,92,66" />
+      <scope id="7196776143116382726" at="101,49,102,67" />
+      <scope id="7196776143116393436" at="120,32,121,43" />
+      <scope id="7196776143116393203" at="124,36,125,47" />
+      <scope id="2034046503361584852" at="131,25,132,38" />
+      <scope id="7196776143116385103" at="50,0,53,0" />
+      <scope id="7196776143116386514" at="59,0,62,0" />
+      <scope id="2034046503361589676" at="69,0,72,0" />
+      <scope id="2034046503361615731" at="79,0,82,0" />
+      <scope id="7196776143116384896" at="87,0,90,0">
+        <var name="generationHandler" id="7196776143116384913" />
+      </scope>
+      <scope id="7196776143116384924" at="91,0,94,0">
+        <var name="generationHandler" id="7196776143116384942" />
+      </scope>
+      <scope id="340028429655532665" at="100,40,103,9" />
+      <scope id="4526112498887464191" at="106,0,109,0" />
+      <scope id="7196776143116382789" at="114,55,117,59">
+        <var name="file" id="7196776143116382804" />
+        <var name="path" id="7196776143116382796" />
+      </scope>
+      <scope id="7196776143116393433" at="120,0,123,0" />
+      <scope id="7196776143116393200" at="124,0,127,0" />
+      <scope id="2034046503361584851" at="131,0,134,0" />
+      <scope id="7196776143116381100" at="40,95,44,37" />
+      <scope id="7196776143116382786" at="114,0,119,0">
+        <var name="name" id="7196776143116382790" />
+      </scope>
+      <scope id="7196776143116381097" at="40,0,46,0">
+        <var name="baseModelName" id="7196776143116382918" />
+        <var name="changeModel" id="7196776143116385044" />
+        <var name="project" id="7196776143116382653" />
+      </scope>
+      <scope id="7196776143116385019" at="47,67,53,44">
+        <var name="modelToChange" id="7196776143116386464" />
+      </scope>
+      <scope id="7196776143116385075" at="56,67,62,44">
+        <var name="modelToChange" id="7196776143116386507" />
+      </scope>
+      <scope id="340028429655532660" at="99,0,105,0">
+        <var name="msg" id="340028429655532663" />
+      </scope>
+      <scope id="7196776143116393457" at="128,57,135,23">
+        <var name="model" id="7196776143116393475" />
+      </scope>
+      <scope id="7196776143116385016" at="47,0,55,0">
+        <var name="generationHandler" id="7196776143116385068" />
+      </scope>
+      <scope id="7196776143116385072" at="56,0,64,0">
+        <var name="generationHandler" id="7196776143116385092" />
+      </scope>
+      <scope id="7196776143116393454" at="128,0,137,0">
+        <var name="modelDescriptor" id="7196776143116393471" />
+      </scope>
+      <scope id="7196776143116382666" at="95,93,111,19">
+        <var name="handler" id="7196776143116382708" />
+        <var name="models" id="7196776143116382695" />
+        <var name="results" id="7196776143116382688" />
+      </scope>
+      <scope id="7196776143116382663" at="95,0,113,0">
+        <var name="generationHandler" id="7196776143116382674" />
+        <var name="model" id="7196776143116382670" />
+      </scope>
+      <scope id="7196776143116382555" at="65,100,84,24">
+        <var name="cr" id="7196776143116382576" />
+      </scope>
+      <scope id="7196776143116382552" at="65,0,86,0">
+        <var name="generationHandler" id="7196776143116382562" />
+        <var name="runnable" id="7196776143116382558" />
+        <var name="type" id="7196776143116382560" />
+      </scope>
+      <unit id="7196776143116385103" at="49,25,53,5" name="jetbrains.mps.makeTest.test.ChangeModelProcessor$1" />
+      <unit id="7196776143116386514" at="58,25,62,5" name="jetbrains.mps.makeTest.test.ChangeModelProcessor$2" />
+      <unit id="2034046503361589676" at="68,45,72,5" name="jetbrains.mps.makeTest.test.ChangeModelProcessor$3" />
+      <unit id="2034046503361615731" at="78,45,82,5" name="jetbrains.mps.makeTest.test.ChangeModelProcessor$4" />
+      <unit id="2034046503361584851" at="130,45,134,5" name="jetbrains.mps.makeTest.test.ChangeModelProcessor$6" />
+      <unit id="7196776143116382712" at="98,34,109,5" name="jetbrains.mps.makeTest.test.ChangeModelProcessor$5" />
+      <unit id="7196776143116381095" at="31,0,138,0" name="jetbrains.mps.makeTest.test.ChangeModelProcessor" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

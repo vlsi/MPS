@@ -20,13 +20,13 @@ import jetbrains.mps.generator.GenerationTrace;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.IGeneratorLogger;
+import jetbrains.mps.generator.NullGenerationTracer;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.query.GeneratorQueryProvider;
 import jetbrains.mps.generator.impl.reference.PostponedReference;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Macro;
 import jetbrains.mps.generator.impl.reference.ReferenceInfo_Template;
-import jetbrains.mps.generator.impl.reference.ReferenceInfo_TemplateParent;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
@@ -41,8 +41,8 @@ import jetbrains.mps.generator.runtime.TemplateRuleWithCondition;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.ITemplateProcessor;
 import jetbrains.mps.generator.template.QueryExecutionContext;
-import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -110,19 +110,12 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
 
   @Override
   public IGenerationTracer getTracer() {
-    return generator.getGenerationTracer();
+    return new NullGenerationTracer();
   }
 
   @Override
   public IGeneratorLogger getLogger() {
     return generator.getLogger();
-  }
-
-  @NotNull
-  @Override
-  public ReductionContext getReductionContext() {
-    // this method is not used
-    return new ReductionContext();
   }
 
   @NotNull
@@ -143,19 +136,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     return myTemplateProcessor;
   }
 
-  @Override
-  public TemplateExecutionEnvironment getEnvironment(SNode inputNode, TemplateReductionRule rule) {
-    return this;
-  }
-
-  @Override
-  public Collection<SNode> copyNodes(@NotNull Iterable<SNode> inputNodes, @NotNull SNodeReference templateNode, @NotNull String templateId, String mappingName, TemplateContext templateContext)
-      throws GenerationCanceledException, GenerationFailureException {
-    // earlier approach to mappingName here used to hide mappingName from the context (null down to generator.copySrc => no mapping label
-    // however, interpreted templates keep context mappingName (common approach for all node macros - ctx.subContext(newNameOrNullIfNone))
-    // hence here's the same code to ensure mappingName propagation is the same either for interpreted or generated.
-    return copyNodes(inputNodes, templateNode, templateId, templateContext.subContext(mappingName));
-  }
 
   @Override
   @NotNull
@@ -173,11 +153,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     ChildAdopter a = new ChildAdopter(generator);
     a.checkIsExpectedLanguage(Collections.singletonList(child), templateNode, templateContext);
     return a.adopt(child, templateContext);
-  }
-
-  @Override
-  public Collection<SNode> trySwitch(SNodeReference switch_, String mappingName, TemplateContext context) throws GenerationException {
-    return trySwitch(switch_, context.subContext(mappingName));
   }
 
   @Nullable
@@ -252,18 +227,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   }
 
   @Override
-  public void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference sourceNode, int parentIndex, String resolveInfo, TemplateContext context) {
-    ReferenceInfo_TemplateParent refInfo = new ReferenceInfo_TemplateParent(
-      outputNode,
-      role,
-      sourceNode,
-      parentIndex,
-      resolveInfo,
-      context);
-    generator.register(new PostponedReference(refInfo)).setReferenceInOutputSourceNode();
-  }
-
-  @Override
   public void resolveInTemplateLater(@NotNull SNode outputNode, @NotNull String role, SNodeReference sourceNode, String templateNodeId, String resolveInfo, TemplateContext context) {
     ReferenceInfo_Template refInfo = new ReferenceInfo_Template(
       outputNode,
@@ -288,7 +251,6 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
   @Override
   public SNode insertLater(@NotNull NodeMapper mapper, PostProcessor postProcessor, TemplateContext context) {
     SNode childToReplaceLater = createOutputNode(mapper.getConceptFqName());
-    getTracer().pushOutputNodeToReplaceLater(childToReplaceLater);
     generator.getDelayedChanges().addExecuteNodeMapper(mapper, postProcessor, childToReplaceLater, context, getQueryExecutor());
     return childToReplaceLater;
   }
@@ -389,27 +351,26 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
               getTrace().trace(in, GenerationTracerUtil.translateOutput(outputNodes), rule.getRuleNode());
               return outputNodes;
             }
+          } catch (DismissTopMappingRuleException ex) {
+            // it's ok, just continue with a next applicable rule, if any
+            if (ex.isLoggingNeeded() && reductionRule != null) {
+              SNodeReference ruleNode = reductionRule.getRuleNode();
+              String messageText = String.format("-- dismissed reduction rule: %s", ruleNode);
+              if (ex.isInfo()) {
+                getLogger().info(ruleNode, messageText);
+              } else if (ex.isWarning()) {
+                getLogger().warning(ruleNode, messageText);
+              } else {
+                getLogger().error(ruleNode, messageText);
+              }
+            }
           } finally {
             myReductionTrack.leave();
           }
         }
       }
-
     } catch (AbandonRuleInputException ex) {
       return Collections.emptyList();
-    } catch (DismissTopMappingRuleException ex) {
-      // it's ok, just continue
-      if (ex.isLoggingNeeded() && reductionRule != null) {
-        SNodeReference ruleNode = reductionRule.getRuleNode();
-        String messageText = String.format("-- dismissed reduction rule: %s", ruleNode);
-        if (ex.isInfo()) {
-          getLogger().info(ruleNode, messageText);
-        } else if (ex.isWarning()) {
-          getLogger().warning(ruleNode, messageText);
-        } else {
-          getLogger().error(ruleNode, messageText);
-        }
-      }
     } catch (TemplateProcessingFailureException ex) {
       SNodeReference ruleNode = reductionRule.getRuleNode();
       if (myFailedRules.add(ruleNode)) {

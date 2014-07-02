@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 import jetbrains.mps.testbench.junit.runners.DynamicSuite;
 import org.junit.runners.model.InitializationError;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.Map;
@@ -46,7 +46,7 @@ public class DefaultTestSuite {
   public static Class<?>[] suiteClasses(org.junit.runners.model.TestClass testClass) throws InitializationError {
     String projectPath = getProjectPath(testClass.getJavaClass());
     MpsTestsSupport.initEnv(true);
-    MPSCore.getInstance().setTestMode(true);
+    RuntimeFlags.setTestMode(true);
     initPathMacros();
     Project project = null;
     assert false;
@@ -55,7 +55,7 @@ public class DefaultTestSuite {
     // 
     // 2. Libraries? 
     // 3. Cache location ? 
-    // 4. creste separate suite generating (making) all modules in this project by using ProjectTestHelper? 
+    // 4. create separate suite generating (making) all modules in this project by using ProjectTestHelper? 
     ModelAccess.instance().flushEventQueue();
 
     return getUnitTestClasses(testClass, project);

@@ -18,7 +18,6 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.extensionMethods.behavior.ExtensionMethodDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -73,7 +72,6 @@ public class LocalExtendedMethodCall_Constraints extends BaseConstraintsDescript
             if (classifier == null) {
               return result;
             }
-            SNode constraint = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
 
             Set<String> names = SetSequence.fromSet(new HashSet<String>());
             while (classifier != null) {

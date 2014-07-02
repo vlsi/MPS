@@ -26,7 +26,7 @@ import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 * Time: 4:13 PM
 * To change this template use File | Settings | File Templates.
 */
-class NonReusableTypecheckingContextOwner implements ITypeContextOwner {
+public class NonReusableTypecheckingContextOwner implements ITypeContextOwner {
   @Override
   public TypeCheckingContext createTypecheckingContext(SNode sNode, TypeContextManager typeContextManager) {
     return typeContextManager.createTypeCheckingContextForResolve(sNode);

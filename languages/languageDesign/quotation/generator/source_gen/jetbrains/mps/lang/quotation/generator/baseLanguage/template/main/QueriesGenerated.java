@@ -32,7 +32,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.generator.template.TracingUtil;
+import jetbrains.mps.textgen.trace.TracingUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
@@ -47,7 +49,6 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
@@ -508,10 +509,11 @@ public class QueriesGenerated {
       SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
       referenceNode.setProperty("role", ref.getRole());
       if (targetNode != null && TracingUtil.getInput(targetNode) != null) {
-        referenceNode.setProperty("targetModel", TracingUtil.getInput(targetNode).getModelReference().toString());
-        targetNode = TracingUtil.getInputNode(targetNode);
+        SNodeReference originalInput = TracingUtil.getInput(targetNode);
+        referenceNode.setProperty("targetModel", originalInput.getModelReference().toString());
+        targetNode = originalInput.resolve(MPSModuleRepository.getInstance());
       } else {
-        referenceNode.setProperty("targetModel", ((SModelReference) ((jetbrains.mps.smodel.SReference) ref).getTargetSModelReference()).update().toString());
+        referenceNode.setProperty("targetModel", ((SModelReference) ref.getTargetSModelReference()).update().toString());
       }
       if (targetNode != null) {
         referenceNode.setProperty("targetNodeId", targetNode.getNodeId().toString());

@@ -1,24 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.lang.editor.dataFlow.DFABuilders" />
-  <root nodeRef="r:ee466c3b-c879-435f-9e8d-bb261ada44ed(jetbrains.mps.lang.editor.dataFlow)/4531786690998643506">
-    <nodeInfo nodeId="4531786690998643509" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="16" startPosition="102" endLine="17" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4531786690998643525" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="18" startPosition="122" endLine="19" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4531786690998643506" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AbstractStyledTextOperation_DataFlow#()V" />
-    <nodeInfo nodeId="4531786690998643511" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="17" startPosition="132" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4531786690998643506" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-    <scopeInfo nodeId="4531786690998643506" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="13" startPosition="49" endLine="13" endPosition="49" />
-    <scopeInfo nodeId="4531786690998643514" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="18" startPosition="122" endLine="19" endPosition="52" />
-    <scopeInfo nodeId="4531786690998643506" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="4531786690998643511" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="17" startPosition="132" endLine="20" endPosition="5">
-      <varInfo nodeId="4531786690998643512" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="4531786690998643508" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="16" startPosition="102" endLine="20" endPosition="5" />
-    <scopeInfo nodeId="4531786690998643506" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="16" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="4531786690998643506" varName="_context" />
-      <varInfo nodeId="4531786690998643506" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="4531786690998643506" fileName="AbstractStyledTextOperation_DataFlow.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.dataFlow.AbstractStyledTextOperation_DataFlow" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root>
+    <file name="DFABuilders.java">
+      <unit at="8,0,13,0" name="jetbrains.mps.lang.editor.dataFlow.DFABuilders" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:ee466c3b-c879-435f-9e8d-bb261ada44ed(jetbrains.mps.lang.editor.dataFlow)/4531786690998643506">
+    <file name="AbstractStyledTextOperation_DataFlow.java">
+      <node id="4531786690998643509" at="16,102,17,132" concept="1" />
+      <node id="4531786690998643525" at="18,122,19,52" concept="1" />
+      <node id="4531786690998643506" at="13,0,15,0" concept="0" trace="AbstractStyledTextOperation_DataFlow#()V" />
+      <node id="4531786690998643511" at="17,132,20,5" concept="2" />
+      <node id="4531786690998643506" at="16,0,22,0" concept="3" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="4531786690998643506" at="13,49,13,49" />
+      <scope id="4531786690998643514" at="18,122,19,52" />
+      <scope id="4531786690998643506" at="13,0,15,0" />
+      <scope id="4531786690998643511" at="17,132,20,5">
+        <var name="argument" id="4531786690998643512" />
+      </scope>
+      <scope id="4531786690998643508" at="16,102,20,5" />
+      <scope id="4531786690998643506" at="16,0,22,0">
+        <var name="_context" id="4531786690998643506" />
+        <var name="operationContext" id="4531786690998643506" />
+      </scope>
+      <unit id="4531786690998643506" at="12,0,23,0" name="jetbrains.mps.lang.editor.dataFlow.AbstractStyledTextOperation_DataFlow" />
+    </file>
+  </root>
+</debug-info>
 

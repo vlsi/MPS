@@ -15,6 +15,8 @@
     </myPluginsSettings>
     <RunnerSettings RunnerId="Default Runner" />
     <ConfigurationWrapper RunnerId="Default Runner" />
-    <method />
+    <method>
+      <option name="jetbrains.mps.execution.configurations.implementation.plugin.plugin.MakeDeployScripts_BeforeTask" enabled="false" />
+    </method>
   </configuration>
 </component>

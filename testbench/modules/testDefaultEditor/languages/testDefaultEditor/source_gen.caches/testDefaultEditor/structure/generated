@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bmr2na59xghg9z1rjfvnphhkjr92vqd">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+<dependencies version="2" modelHash="lebrf37sy33wznurlt6kb6n54x9zar">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="-1ikzmqik3x75183t3smdtqaj9hjlro9" dependsOnNodes="true">
+    <dep root="2870455723671203428" />
+    <dep root="2870455723671203511" />
+    <dep root="2870455723671203553" />
     <dep root="6007318803034320743" />
     <dep root="938834323431421731" />
     <dep root="938834323431421842" />
     <dep root="938834323431434553" />
     <dep root="938834323431472762" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -25,5 +26,8 @@
   <source id="938834323431434553" name="Developer" hash="-6kbbymxom7sdh2c3oicjixa2opli94m" />
   <source id="938834323431472762" name="Friend" hash="4zhe3saae08p4lkhz0yx5o7cfk4slyv" />
   <source id="6007318803034320743" name="DummyMethod" hash="9q5ta54rlujvkib8l8kbgmz0dn69s7k" />
+  <source id="2870455723671203428" name="DefaultPropertyAttribute" hash="-e0whk4ynenexghlr9o1keu8odpmsv9a" />
+  <source id="2870455723671203511" name="DefaultReferenceAttribute" hash="66w6yknacewzxtck37fw10ywvdqogyc" />
+  <source id="2870455723671203553" name="DefaultNodeAttribute" hash="-6j5vv0arn4zuiodj3zu1fakxmcdsbw" />
 </dependencies>
 

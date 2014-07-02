@@ -1,152 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:c3da7c0f-455f-4f59-9aeb-87893ec83594(jetbrains.mps.idea.java.psi.impl.blTypes)/8308904528689640525">
-    <nodeInfo nodeId="8308904528689640997" fileName="MPSPsiMapType.java" startLine="12" startPosition="75" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8308904528689640546" fileName="MPSPsiMapType.java" startLine="17" startPosition="35" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8308904528689640554" fileName="MPSPsiMapType.java" startLine="22" startPosition="46" endLine="23" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8308904528689640562" fileName="MPSPsiMapType.java" startLine="23" startPosition="43" endLine="24" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8308904528689640571" fileName="MPSPsiMapType.java" startLine="24" startPosition="59" endLine="25" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8308904528689640580" fileName="MPSPsiMapType.java" startLine="25" startPosition="61" endLine="26" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8308904528689640529" fileName="MPSPsiMapType.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSPsiMapType#(Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8308904528689640543" fileName="MPSPsiMapType.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8308904528689640550" fileName="MPSPsiMapType.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildTypeNodes#()[Ljetbrains/mps/idea/core/psi/impl/MPSPsiNode;" />
-    <scopeInfo nodeId="8308904528689640537" fileName="MPSPsiMapType.java" startLine="12" startPosition="75" endLine="13" endPosition="39" />
-    <scopeInfo nodeId="8308904528689640545" fileName="MPSPsiMapType.java" startLine="17" startPosition="35" endLine="18" endPosition="27" />
-    <scopeInfo nodeId="8308904528689640529" fileName="MPSPsiMapType.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="8308904528689640533" varName="concept" />
-      <varInfo nodeId="8308904528689640535" varName="containingRole" />
-      <varInfo nodeId="8308904528689640531" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="8308904528689640543" fileName="MPSPsiMapType.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="8308904528689640552" fileName="MPSPsiMapType.java" startLine="22" startPosition="46" endLine="26" endPosition="17">
-      <varInfo nodeId="8308904528689640553" varName="types" />
-    </scopeInfo>
-    <scopeInfo nodeId="8308904528689640550" fileName="MPSPsiMapType.java" startLine="21" startPosition="0" endLine="28" endPosition="0" />
-    <unitInfo nodeId="8308904528689640525" fileName="MPSPsiMapType.java" startLine="8" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiMapType" />
+    <file name="MPSPsiMapType.java">
+      <node id="8308904528689640997" at="12,75,13,39" concept="9" />
+      <node id="8308904528689640546" at="17,35,18,27" concept="7" />
+      <node id="8308904528689640554" at="22,46,23,43" concept="6" />
+      <node id="8308904528689640562" at="23,43,24,59" concept="2" />
+      <node id="8308904528689640571" at="24,59,25,61" concept="2" />
+      <node id="8308904528689640580" at="25,61,26,17" concept="7" />
+      <node id="8308904528689640529" at="12,0,15,0" concept="1" trace="MPSPsiMapType#(Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="8308904528689640543" at="16,0,20,0" concept="5" trace="getClassName#()Ljava/lang/String;" />
+      <node id="8308904528689640550" at="21,0,28,0" concept="5" trace="getChildTypeNodes#()[Ljetbrains/mps/idea/core/psi/impl/MPSPsiNode;" />
+      <scope id="8308904528689640537" at="12,75,13,39" />
+      <scope id="8308904528689640545" at="17,35,18,27" />
+      <scope id="8308904528689640529" at="12,0,15,0">
+        <var name="concept" id="8308904528689640533" />
+        <var name="containingRole" id="8308904528689640535" />
+        <var name="id" id="8308904528689640531" />
+      </scope>
+      <scope id="8308904528689640543" at="16,0,20,0" />
+      <scope id="8308904528689640552" at="22,46,26,17">
+        <var name="types" id="8308904528689640553" />
+      </scope>
+      <scope id="8308904528689640550" at="21,0,28,0" />
+      <unit id="8308904528689640525" at="8,0,29,0" name="jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiMapType" />
+    </file>
   </root>
   <root nodeRef="r:c3da7c0f-455f-4f59-9aeb-87893ec83594(jetbrains.mps.idea.java.psi.impl.blTypes)/8308904528689640671">
-    <nodeInfo nodeId="8308904528689737878" fileName="MPSPsiSetType.java" startLine="12" startPosition="75" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8308904528689640692" fileName="MPSPsiSetType.java" startLine="17" startPosition="35" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8308904528689640699" fileName="MPSPsiSetType.java" startLine="22" startPosition="46" endLine="23" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8308904528689640675" fileName="MPSPsiSetType.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSPsiSetType#(Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8308904528689640689" fileName="MPSPsiSetType.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8308904528689640696" fileName="MPSPsiSetType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildTypeNodes#()[Ljetbrains/mps/idea/core/psi/impl/MPSPsiNode;" />
-    <scopeInfo nodeId="8308904528689640683" fileName="MPSPsiSetType.java" startLine="12" startPosition="75" endLine="13" endPosition="39" />
-    <scopeInfo nodeId="8308904528689640691" fileName="MPSPsiSetType.java" startLine="17" startPosition="35" endLine="18" endPosition="27" />
-    <scopeInfo nodeId="8308904528689640698" fileName="MPSPsiSetType.java" startLine="22" startPosition="46" endLine="23" endPosition="62" />
-    <scopeInfo nodeId="8308904528689640675" fileName="MPSPsiSetType.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="8308904528689640679" varName="concept" />
-      <varInfo nodeId="8308904528689640681" varName="containingRole" />
-      <varInfo nodeId="8308904528689640677" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="8308904528689640689" fileName="MPSPsiSetType.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="8308904528689640696" fileName="MPSPsiSetType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <unitInfo nodeId="8308904528689640671" fileName="MPSPsiSetType.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiSetType" />
+    <file name="MPSPsiSetType.java">
+      <node id="8308904528689737878" at="12,75,13,39" concept="9" />
+      <node id="8308904528689640692" at="17,35,18,27" concept="7" />
+      <node id="8308904528689640699" at="22,46,23,62" concept="7" />
+      <node id="8308904528689640675" at="12,0,15,0" concept="1" trace="MPSPsiSetType#(Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="8308904528689640689" at="16,0,20,0" concept="5" trace="getClassName#()Ljava/lang/String;" />
+      <node id="8308904528689640696" at="21,0,25,0" concept="5" trace="getChildTypeNodes#()[Ljetbrains/mps/idea/core/psi/impl/MPSPsiNode;" />
+      <scope id="8308904528689640683" at="12,75,13,39" />
+      <scope id="8308904528689640691" at="17,35,18,27" />
+      <scope id="8308904528689640698" at="22,46,23,62" />
+      <scope id="8308904528689640675" at="12,0,15,0">
+        <var name="concept" id="8308904528689640679" />
+        <var name="containingRole" id="8308904528689640681" />
+        <var name="id" id="8308904528689640677" />
+      </scope>
+      <scope id="8308904528689640689" at="16,0,20,0" />
+      <scope id="8308904528689640696" at="21,0,25,0" />
+      <unit id="8308904528689640671" at="8,0,26,0" name="jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiSetType" />
+    </file>
   </root>
   <root nodeRef="r:c3da7c0f-455f-4f59-9aeb-87893ec83594(jetbrains.mps.idea.java.psi.impl.blTypes)/8308904528689640714">
-    <nodeInfo nodeId="8308904528689737879" fileName="MPSPsiListType.java" startLine="12" startPosition="76" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8308904528689640735" fileName="MPSPsiListType.java" startLine="17" startPosition="35" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8308904528689640742" fileName="MPSPsiListType.java" startLine="22" startPosition="46" endLine="23" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8308904528689640718" fileName="MPSPsiListType.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSPsiListType#(Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8308904528689640732" fileName="MPSPsiListType.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8308904528689640739" fileName="MPSPsiListType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildTypeNodes#()[Ljetbrains/mps/idea/core/psi/impl/MPSPsiNode;" />
-    <scopeInfo nodeId="8308904528689640726" fileName="MPSPsiListType.java" startLine="12" startPosition="76" endLine="13" endPosition="39" />
-    <scopeInfo nodeId="8308904528689640734" fileName="MPSPsiListType.java" startLine="17" startPosition="35" endLine="18" endPosition="28" />
-    <scopeInfo nodeId="8308904528689640741" fileName="MPSPsiListType.java" startLine="22" startPosition="46" endLine="23" endPosition="62" />
-    <scopeInfo nodeId="8308904528689640718" fileName="MPSPsiListType.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="8308904528689640722" varName="concept" />
-      <varInfo nodeId="8308904528689640724" varName="containingRole" />
-      <varInfo nodeId="8308904528689640720" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="8308904528689640732" fileName="MPSPsiListType.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="8308904528689640739" fileName="MPSPsiListType.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <unitInfo nodeId="8308904528689640714" fileName="MPSPsiListType.java" startLine="8" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiListType" />
+    <file name="MPSPsiListType.java">
+      <node id="8308904528689737879" at="12,76,13,39" concept="9" />
+      <node id="8308904528689640735" at="17,35,18,28" concept="7" />
+      <node id="8308904528689640742" at="22,46,23,62" concept="7" />
+      <node id="8308904528689640718" at="12,0,15,0" concept="1" trace="MPSPsiListType#(Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="8308904528689640732" at="16,0,20,0" concept="5" trace="getClassName#()Ljava/lang/String;" />
+      <node id="8308904528689640739" at="21,0,25,0" concept="5" trace="getChildTypeNodes#()[Ljetbrains/mps/idea/core/psi/impl/MPSPsiNode;" />
+      <scope id="8308904528689640726" at="12,76,13,39" />
+      <scope id="8308904528689640734" at="17,35,18,28" />
+      <scope id="8308904528689640741" at="22,46,23,62" />
+      <scope id="8308904528689640718" at="12,0,15,0">
+        <var name="concept" id="8308904528689640722" />
+        <var name="containingRole" id="8308904528689640724" />
+        <var name="id" id="8308904528689640720" />
+      </scope>
+      <scope id="8308904528689640732" at="16,0,20,0" />
+      <scope id="8308904528689640739" at="21,0,25,0" />
+      <unit id="8308904528689640714" at="8,0,26,0" name="jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiListType" />
+    </file>
   </root>
   <root nodeRef="r:c3da7c0f-455f-4f59-9aeb-87893ec83594(jetbrains.mps.idea.java.psi.impl.blTypes)/8308904528689640757">
-    <nodeInfo nodeId="8308904528689640998" fileName="MPSPsiStringType.java" startLine="18" startPosition="78" endLine="19" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8308904528689640810" fileName="MPSPsiStringType.java" startLine="23" startPosition="36" endLine="24" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8308904528689640781" fileName="MPSPsiStringType.java" startLine="24" startPosition="89" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8308904528689640784" fileName="MPSPsiStringType.java" startLine="25" startPosition="35" endLine="26" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8308904528689640763" fileName="MPSPsiStringType.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSPsiStringType#(Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8308904528689640777" fileName="MPSPsiStringType.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPsiType#()Lcom/intellij/psi/PsiClassType;" />
-    <scopeInfo nodeId="8308904528689640771" fileName="MPSPsiStringType.java" startLine="18" startPosition="78" endLine="19" endPosition="39" />
-    <scopeInfo nodeId="8308904528689640763" fileName="MPSPsiStringType.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="8308904528689640767" varName="concept" />
-      <varInfo nodeId="8308904528689640769" varName="containingRole" />
-      <varInfo nodeId="8308904528689640765" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="8308904528689640779" fileName="MPSPsiStringType.java" startLine="23" startPosition="36" endLine="26" endPosition="107">
-      <varInfo nodeId="8308904528689640780" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="8308904528689640777" fileName="MPSPsiStringType.java" startLine="22" startPosition="0" endLine="28" endPosition="0" />
-    <unitInfo nodeId="8308904528689640757" fileName="MPSPsiStringType.java" startLine="14" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiStringType" />
+    <file name="MPSPsiStringType.java">
+      <node id="8308904528689640998" at="18,78,19,39" concept="9" />
+      <node id="8308904528689640810" at="23,36,24,89" concept="8" />
+      <node id="8308904528689640781" at="24,89,25,35" concept="6" />
+      <node id="8308904528689640784" at="25,35,26,107" concept="7" />
+      <node id="8308904528689640763" at="18,0,21,0" concept="1" trace="MPSPsiStringType#(Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="8308904528689640777" at="22,0,28,0" concept="5" trace="getPsiType#()Lcom/intellij/psi/PsiClassType;" />
+      <scope id="8308904528689640771" at="18,78,19,39" />
+      <scope id="8308904528689640763" at="18,0,21,0">
+        <var name="concept" id="8308904528689640767" />
+        <var name="containingRole" id="8308904528689640769" />
+        <var name="id" id="8308904528689640765" />
+      </scope>
+      <scope id="8308904528689640779" at="23,36,26,107">
+        <var name="project" id="8308904528689640780" />
+      </scope>
+      <scope id="8308904528689640777" at="22,0,28,0" />
+      <unit id="8308904528689640757" at="14,0,29,0" name="jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiStringType" />
+    </file>
   </root>
   <root nodeRef="r:c3da7c0f-455f-4f59-9aeb-87893ec83594(jetbrains.mps.idea.java.psi.impl.blTypes)/8308904528689640811">
-    <nodeInfo nodeId="8308904528689737880" fileName="MPSPsiSequenceType.java" startLine="12" startPosition="80" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8308904528689640832" fileName="MPSPsiSequenceType.java" startLine="17" startPosition="35" endLine="18" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8308904528689640855" fileName="MPSPsiSequenceType.java" startLine="22" startPosition="46" endLine="23" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="8308904528689640839" fileName="MPSPsiSequenceType.java" startLine="23" startPosition="119" endLine="24" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8308904528689640815" fileName="MPSPsiSequenceType.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSPsiSequenceType#(Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8308904528689640829" fileName="MPSPsiSequenceType.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8308904528689640836" fileName="MPSPsiSequenceType.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildTypeNodes#()[Ljetbrains/mps/idea/core/psi/impl/MPSPsiNode;" />
-    <scopeInfo nodeId="8308904528689640823" fileName="MPSPsiSequenceType.java" startLine="12" startPosition="80" endLine="13" endPosition="39" />
-    <scopeInfo nodeId="8308904528689640831" fileName="MPSPsiSequenceType.java" startLine="17" startPosition="35" endLine="18" endPosition="32" />
-    <scopeInfo nodeId="8308904528689640838" fileName="MPSPsiSequenceType.java" startLine="22" startPosition="46" endLine="24" endPosition="62" />
-    <scopeInfo nodeId="8308904528689640815" fileName="MPSPsiSequenceType.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="8308904528689640819" varName="concept" />
-      <varInfo nodeId="8308904528689640821" varName="containingRole" />
-      <varInfo nodeId="8308904528689640817" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="8308904528689640829" fileName="MPSPsiSequenceType.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="8308904528689640836" fileName="MPSPsiSequenceType.java" startLine="21" startPosition="0" endLine="26" endPosition="0" />
-    <unitInfo nodeId="8308904528689640811" fileName="MPSPsiSequenceType.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiSequenceType" />
+    <file name="MPSPsiSequenceType.java">
+      <node id="8308904528689737880" at="12,80,13,39" concept="9" />
+      <node id="8308904528689640832" at="17,35,18,32" concept="7" />
+      <node id="8308904528689640855" at="22,46,23,119" concept="8" />
+      <node id="8308904528689640839" at="23,119,24,62" concept="7" />
+      <node id="8308904528689640815" at="12,0,15,0" concept="1" trace="MPSPsiSequenceType#(Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="8308904528689640829" at="16,0,20,0" concept="5" trace="getClassName#()Ljava/lang/String;" />
+      <node id="8308904528689640836" at="21,0,26,0" concept="5" trace="getChildTypeNodes#()[Ljetbrains/mps/idea/core/psi/impl/MPSPsiNode;" />
+      <scope id="8308904528689640823" at="12,80,13,39" />
+      <scope id="8308904528689640831" at="17,35,18,32" />
+      <scope id="8308904528689640838" at="22,46,24,62" />
+      <scope id="8308904528689640815" at="12,0,15,0">
+        <var name="concept" id="8308904528689640819" />
+        <var name="containingRole" id="8308904528689640821" />
+        <var name="id" id="8308904528689640817" />
+      </scope>
+      <scope id="8308904528689640829" at="16,0,20,0" />
+      <scope id="8308904528689640836" at="21,0,26,0" />
+      <unit id="8308904528689640811" at="8,0,27,0" name="jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiSequenceType" />
+    </file>
   </root>
   <root nodeRef="r:c3da7c0f-455f-4f59-9aeb-87893ec83594(jetbrains.mps.idea.java.psi.impl.blTypes)/8308904528689640856">
-    <nodeInfo nodeId="8308904528689737881" fileName="MPSPsiCollectionType.java" startLine="23" startPosition="82" endLine="24" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8308904528689640880" fileName="MPSPsiCollectionType.java" startLine="28" startPosition="36" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8308904528689640884" fileName="MPSPsiCollectionType.java" startLine="29" startPosition="35" endLine="30" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8308904528689640894" fileName="MPSPsiCollectionType.java" startLine="30" startPosition="118" endLine="31" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8308904528689640899" fileName="MPSPsiCollectionType.java" startLine="31" startPosition="54" endLine="32" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8308904528689640921" fileName="MPSPsiCollectionType.java" startLine="33" startPosition="53" endLine="34" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8308904528689640927" fileName="MPSPsiCollectionType.java" startLine="34" startPosition="46" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8308904528689640935" fileName="MPSPsiCollectionType.java" startLine="36" startPosition="48" endLine="37" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8308904528689640946" fileName="MPSPsiCollectionType.java" startLine="38" startPosition="14" endLine="39" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8308904528689640951" fileName="MPSPsiCollectionType.java" startLine="40" startPosition="7" endLine="41" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8308904528689640958" fileName="MPSPsiCollectionType.java" startLine="42" startPosition="5" endLine="43" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8308904528689640963" fileName="MPSPsiCollectionType.java" startLine="43" startPosition="76" endLine="44" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8308904528689640969" fileName="MPSPsiCollectionType.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getClassName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8308904528689640973" fileName="MPSPsiCollectionType.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getChildTypeNodes#()[Ljetbrains/mps/idea/core/psi/impl/MPSPsiNode;" />
-    <nodeInfo nodeId="8308904528689640944" fileName="MPSPsiCollectionType.java" startLine="38" startPosition="12" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8308904528689640862" fileName="MPSPsiCollectionType.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSPsiCollectionType#(Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8308904528689640929" fileName="MPSPsiCollectionType.java" startLine="35" startPosition="22" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8308904528689640907" fileName="MPSPsiCollectionType.java" startLine="32" startPosition="65" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8308904528689640876" fileName="MPSPsiCollectionType.java" startLine="27" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPsiType#()Lcom/intellij/psi/PsiClassType;" />
-    <scopeInfo nodeId="8308904528689640870" fileName="MPSPsiCollectionType.java" startLine="23" startPosition="82" endLine="24" endPosition="39" />
-    <scopeInfo nodeId="8308904528689640934" fileName="MPSPsiCollectionType.java" startLine="36" startPosition="48" endLine="37" endPosition="60" />
-    <scopeInfo nodeId="8308904528689640945" fileName="MPSPsiCollectionType.java" startLine="38" startPosition="14" endLine="39" endPosition="64" />
-    <scopeInfo nodeId="8308904528689640969" fileName="MPSPsiCollectionType.java" startLine="47" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="8308904528689640973" fileName="MPSPsiCollectionType.java" startLine="49" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="8308904528689640862" fileName="MPSPsiCollectionType.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="8308904528689640866" varName="concept" />
-      <varInfo nodeId="8308904528689640868" varName="containingRole" />
-      <varInfo nodeId="8308904528689640864" varName="id" />
-    </scopeInfo>
-    <scopeInfo nodeId="8308904528689640919" fileName="MPSPsiCollectionType.java" startLine="33" startPosition="53" endLine="41" endPosition="33">
-      <varInfo nodeId="8308904528689640926" varName="psiType" />
-      <varInfo nodeId="8308904528689640920" varName="typeNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8308904528689640907" fileName="MPSPsiCollectionType.java" startLine="32" startPosition="65" endLine="42" endPosition="5">
-      <varInfo nodeId="8308904528689640908" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="8308904528689640878" fileName="MPSPsiCollectionType.java" startLine="28" startPosition="36" endLine="44" endPosition="50">
-      <varInfo nodeId="8308904528689640893" varName="childTypeNodes" />
-      <varInfo nodeId="8308904528689640883" varName="claz" />
-      <varInfo nodeId="8308904528689640879" varName="project" />
-      <varInfo nodeId="8308904528689640898" varName="psiChildTypes" />
-      <varInfo nodeId="8308904528689640957" varName="subst" />
-    </scopeInfo>
-    <scopeInfo nodeId="8308904528689640876" fileName="MPSPsiCollectionType.java" startLine="27" startPosition="0" endLine="46" endPosition="0" />
-    <unitInfo nodeId="8308904528689640856" fileName="MPSPsiCollectionType.java" startLine="19" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiCollectionType" />
+    <file name="MPSPsiCollectionType.java">
+      <node id="8308904528689737881" at="23,82,24,39" concept="9" />
+      <node id="8308904528689640880" at="28,36,29,35" concept="6" />
+      <node id="8308904528689640884" at="29,35,30,118" concept="6" />
+      <node id="8308904528689640894" at="30,118,31,54" concept="6" />
+      <node id="8308904528689640899" at="31,54,32,65" concept="6" />
+      <node id="8308904528689640921" at="33,53,34,46" concept="6" />
+      <node id="8308904528689640927" at="34,46,35,22" concept="6" />
+      <node id="8308904528689640935" at="36,48,37,60" concept="2" />
+      <node id="8308904528689640946" at="38,14,39,64" concept="2" />
+      <node id="8308904528689640951" at="40,7,41,33" concept="2" />
+      <node id="8308904528689640958" at="42,5,43,76" concept="6" />
+      <node id="8308904528689640963" at="43,76,44,50" concept="7" />
+      <node id="8308904528689640969" at="47,0,48,0" concept="5" trace="getClassName#()Ljava/lang/String;" />
+      <node id="8308904528689640973" at="49,0,50,0" concept="5" trace="getChildTypeNodes#()[Ljetbrains/mps/idea/core/psi/impl/MPSPsiNode;" />
+      <node id="8308904528689640944" at="38,12,40,7" concept="0" />
+      <node id="8308904528689640862" at="23,0,26,0" concept="1" trace="MPSPsiCollectionType#(Lorg/jetbrains/mps/openapi/model/SNodeId;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="8308904528689640929" at="35,22,40,7" concept="4" />
+      <node id="8308904528689640907" at="32,65,42,5" concept="3" />
+      <node id="8308904528689640876" at="27,0,46,0" concept="5" trace="getPsiType#()Lcom/intellij/psi/PsiClassType;" />
+      <scope id="8308904528689640870" at="23,82,24,39" />
+      <scope id="8308904528689640934" at="36,48,37,60" />
+      <scope id="8308904528689640945" at="38,14,39,64" />
+      <scope id="8308904528689640969" at="47,0,48,0" />
+      <scope id="8308904528689640973" at="49,0,50,0" />
+      <scope id="8308904528689640862" at="23,0,26,0">
+        <var name="concept" id="8308904528689640866" />
+        <var name="containingRole" id="8308904528689640868" />
+        <var name="id" id="8308904528689640864" />
+      </scope>
+      <scope id="8308904528689640919" at="33,53,41,33">
+        <var name="psiType" id="8308904528689640926" />
+        <var name="typeNode" id="8308904528689640920" />
+      </scope>
+      <scope id="8308904528689640907" at="32,65,42,5">
+        <var name="i" id="8308904528689640908" />
+      </scope>
+      <scope id="8308904528689640878" at="28,36,44,50">
+        <var name="childTypeNodes" id="8308904528689640893" />
+        <var name="claz" id="8308904528689640883" />
+        <var name="project" id="8308904528689640879" />
+        <var name="psiChildTypes" id="8308904528689640898" />
+        <var name="subst" id="8308904528689640957" />
+      </scope>
+      <scope id="8308904528689640876" at="27,0,46,0" />
+      <unit id="8308904528689640856" at="19,0,51,0" name="jetbrains.mps.idea.java.psi.impl.blTypes.MPSPsiCollectionType" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

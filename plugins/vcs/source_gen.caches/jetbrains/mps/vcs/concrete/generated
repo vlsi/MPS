@@ -41,7 +41,6 @@
     <file name="MPSSourceRevision.java" />
   </source>
   <source id="4346819404427339851" name="GitUtils" hash="a7fdc1w6kcgfbwppyjwrra7e1kuk351">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="GitUtils.java" />
   </source>
 </dependencies>

@@ -9,10 +9,11 @@ import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
-import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.openapi.editor.Document;
 import com.intellij.util.ThreeState;
 
@@ -35,22 +36,26 @@ public class NodeFileStatusProvider implements FileStatusProvider {
     }
 
     final MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
-    SNode root = MPSEditorUtil.getCurrentEditedNode(myProject, nodeFile);
-    if (root == null) {
-      root = ModelAccess.instance().runReadAction(new Computable<SNode>() {
-        @Override
-        public SNode compute() {
-          return nodeFile.getNode().getContainingRoot();
+
+    final Wrappers._T<FileStatus> status = new Wrappers._T<FileStatus>(null);
+
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        SNode root = MPSEditorUtil.getCurrentEditedNode(myProject, nodeFile);
+        if (root == null) {
+          root = nodeFile.getNode().getContainingRoot();
         }
-      });
-    }
-    if (root == null) {
-      return null;
-    }
-    if (SNodeOperations.isDisposed(root)) {
-      return null;
-    }
-    return myMapping.getStatus(root);
+        if (root == null) {
+          return;
+        }
+        if (SNodeUtil.isAccessible(root, MPSModuleRepository.getInstance())) {
+          return;
+        }
+        status.value = myMapping.getStatus(root);
+      }
+    });
+
+    return status.value;
   }
 
   @Override

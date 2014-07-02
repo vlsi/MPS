@@ -9,6 +9,7 @@
     <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="jetbrains.mps.RuntimeFlags" />
     <classNode dependClassName="jetbrains.mps.tool.builder.util.ClassloaderUtil" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
     <classNode dependClassName="org.apache.log4j.LogManager" />

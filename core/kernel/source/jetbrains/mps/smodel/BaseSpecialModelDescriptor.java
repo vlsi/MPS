@@ -56,8 +56,8 @@ public abstract class BaseSpecialModelDescriptor extends SModelBase {
   protected abstract jetbrains.mps.smodel.SModel createModel();
 
   @Override
-  public void dispose() {
-    super.dispose();
+  public void detach() {
+    super.detach();
     fireBeforeModelDisposed(this);
     jetbrains.mps.smodel.SModel model = mySModel;
     if (model != null) {

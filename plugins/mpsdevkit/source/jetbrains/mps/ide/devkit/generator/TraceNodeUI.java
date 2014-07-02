@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.ide.devkit.generator;
 
-import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
-import jetbrains.mps.ide.devkit.generator.icons.Icons;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -52,13 +50,6 @@ final class TraceNodeUI {
     myKind = kind;
     myTargetNode = targetNode;
     myIcon = Icons.getIcon(kind, targetNode);
-    myText = null;
-  }
-
-  /*package*/ TraceNodeUI(@NotNull TracerNode tracerNode) {
-    myKind = tracerNode.getKind();
-    myTargetNode = tracerNode.getNodePointer();
-    myIcon = Icons.getIcon(tracerNode);
     myText = null;
   }
 
@@ -126,5 +117,29 @@ final class TraceNodeUI {
   @Nullable
   public SNodeReference getNavigateTarget() {
     return myTargetNode;
+  }
+
+  public enum Kind {
+    INPUT("input"),
+    OUTPUT("output"),
+    TEMPLATE("template"),
+    MACRO("macro"),
+    RULE("rule"),
+    RULE_CONSEQUENCE("rule consequence"),
+    SWITCH("switch"),
+    COPY_OPERATION("copy"),
+    MAPPING_SCRIPT("mapping script"),
+    APPROXIMATE_OUTPUT("approximate output"),
+    APPROXIMATE_INPUT("approximate input");
+
+    private String myText;
+
+    Kind(String text) {
+      myText = text;
+    }
+
+    public String toString() {
+      return myText;
+    }
   }
 }

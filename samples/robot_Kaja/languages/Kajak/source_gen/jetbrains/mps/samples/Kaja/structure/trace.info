@@ -1,119 +1,136 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.samples.Kaja.structure.StructureAspectDescriptor" />
-  <root nodeRef="r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)/7060824959893064709">
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="17" startPosition="27" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="21" startPosition="36" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="25" startPosition="55" endLine="26" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="26" startPosition="92" endLine="27" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="27" startPosition="67" endLine="28" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="28" startPosition="66" endLine="29" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="29" startPosition="67" endLine="30" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="30" startPosition="66" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="34" startPosition="47" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="39" startPosition="24" endLine="40" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="42" startPosition="66" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="45" startPosition="65" endLine="46" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="48" startPosition="66" endLine="49" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="51" startPosition="65" endLine="52" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="53" startPosition="5" endLine="54" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="57" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="59" startPosition="47" endLine="60" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="60" startPosition="23" endLine="61" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="64" startPosition="28" endLine="65" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/samples/Kaja/structure/LookingDirection;" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="38" startPosition="59" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="41" startPosition="5" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="44" startPosition="5" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="47" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="50" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="LookingDirection#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="25" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="38" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/Kaja/structure/LookingDirection;" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="20" startPosition="5" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="27" startPosition="5" endLine="28" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="29" startPosition="33" endLine="30" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="34" startPosition="5" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="38" startPosition="49" endLine="39" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="42" startPosition="5" endLine="43" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="10" startPosition="44" endLine="13" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="16" startPosition="51" endLine="19" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="24" startPosition="47" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="30" startPosition="51" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="39" startPosition="67" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="14" startPosition="109" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="28" startPosition="109" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="17" startPosition="27" endLine="18" endPosition="23" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="21" startPosition="36" endLine="22" endPosition="24" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="34" startPosition="47" endLine="35" endPosition="16" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="39" startPosition="24" endLine="40" endPosition="43" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="42" startPosition="66" endLine="43" endPosition="36" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="45" startPosition="65" endLine="46" endPosition="35" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="48" startPosition="66" endLine="49" endPosition="36" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="51" startPosition="65" endLine="52" endPosition="35" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="64" startPosition="28" endLine="65" endPosition="24" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="59" startPosition="47" endLine="61" endPosition="25" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="59" startPosition="0" endLine="63" endPosition="0">
-      <varInfo nodeId="7060824959893064709" varName="name" />
-      <varInfo nodeId="7060824959893064709" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="25" startPosition="55" endLine="31" endPosition="16">
-      <varInfo nodeId="7060824959893064709" varName="list" />
-    </scopeInfo>
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="25" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="38" startPosition="59" endLine="54" endPosition="41" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="38" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="7060824959893064709" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="17" startPosition="45" endLine="18" endPosition="20" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="25" startPosition="24" endLine="26" endPosition="18" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="31" startPosition="45" endLine="32" endPosition="43" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="40" startPosition="27" endLine="41" endPosition="32" />
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="15" startPosition="33" endLine="19" endPosition="7">
-      <varInfo nodeId="7060824959893064709" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="29" startPosition="33" endLine="33" endPosition="7">
-      <varInfo nodeId="7060824959893064709" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="38" startPosition="49" endLine="43" endPosition="14">
-      <varInfo nodeId="7060824959893064709" varName="constant" />
-    </scopeInfo>
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="7060824959893064709" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="10" startPosition="44" endLine="21" endPosition="17">
-      <varInfo nodeId="7060824959893064709" varName="constants" />
-    </scopeInfo>
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="24" startPosition="47" endLine="35" endPosition="16">
-      <varInfo nodeId="7060824959893064709" varName="constants" />
-    </scopeInfo>
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="7060824959893064709" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="7060824959893064709" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="7060824959893064709" fileName="LookingDirection.java" startLine="9" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.samples.Kaja.structure.LookingDirection" />
-    <unitInfo nodeId="7060824959893064709" fileName="LookingDirection_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.samples.Kaja.structure.LookingDirection_PropertySupport" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root>
+    <file name="StructureAspectDescriptor.java">
+      <unit at="10,0,81,0" name="jetbrains.mps.samples.Kaja.structure.StructureAspectDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:b567205c-7e17-4168-b413-945a6e17f37d(jetbrains.mps.samples.Kaja.structure)/7060824959893064709">
+    <file name="LookingDirection_PropertySupport.java">
+      <node id="7060824959893064709" at="11,24,12,18" concept="6" />
+      <node id="7060824959893064709" at="13,5,14,109" concept="5" />
+      <node id="7060824959893064709" at="15,33,16,51" concept="5" />
+      <node id="7060824959893064709" at="17,45,18,20" concept="6" />
+      <node id="7060824959893064709" at="20,5,21,17" concept="6" />
+      <node id="7060824959893064709" at="25,24,26,18" concept="6" />
+      <node id="7060824959893064709" at="27,5,28,109" concept="5" />
+      <node id="7060824959893064709" at="29,33,30,51" concept="5" />
+      <node id="7060824959893064709" at="31,45,32,43" concept="6" />
+      <node id="7060824959893064709" at="34,5,35,16" concept="6" />
+      <node id="7060824959893064709" at="38,49,39,67" concept="5" />
+      <node id="7060824959893064709" at="40,27,41,32" concept="6" />
+      <node id="7060824959893064709" at="42,5,43,14" concept="6" />
+      <node id="7060824959893064709" at="10,44,13,5" concept="3" />
+      <node id="7060824959893064709" at="16,51,19,7" concept="3" />
+      <node id="7060824959893064709" at="24,47,27,5" concept="3" />
+      <node id="7060824959893064709" at="30,51,33,7" concept="3" />
+      <node id="7060824959893064709" at="39,67,42,5" concept="3" />
+      <node id="7060824959893064709" at="14,109,20,5" concept="8" />
+      <node id="7060824959893064709" at="28,109,34,5" concept="8" />
+      <node id="7060824959893064709" at="38,0,45,0" concept="4" trace="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="7060824959893064709" at="10,0,23,0" concept="4" trace="canSetValue#(Ljava/lang/String;)Z" />
+      <node id="7060824959893064709" at="24,0,37,0" concept="4" trace="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="7060824959893064709" at="11,24,12,18" />
+      <scope id="7060824959893064709" at="17,45,18,20" />
+      <scope id="7060824959893064709" at="25,24,26,18" />
+      <scope id="7060824959893064709" at="31,45,32,43" />
+      <scope id="7060824959893064709" at="40,27,41,32" />
+      <scope id="7060824959893064709" at="15,33,19,7">
+        <var name="constant" id="7060824959893064709" />
+      </scope>
+      <scope id="7060824959893064709" at="29,33,33,7">
+        <var name="constant" id="7060824959893064709" />
+      </scope>
+      <scope id="7060824959893064709" at="38,49,43,14">
+        <var name="constant" id="7060824959893064709" />
+      </scope>
+      <scope id="7060824959893064709" at="38,0,45,0">
+        <var name="value" id="7060824959893064709" />
+      </scope>
+      <scope id="7060824959893064709" at="10,44,21,17">
+        <var name="constants" id="7060824959893064709" />
+      </scope>
+      <scope id="7060824959893064709" at="24,47,35,16">
+        <var name="constants" id="7060824959893064709" />
+      </scope>
+      <scope id="7060824959893064709" at="10,0,23,0">
+        <var name="value" id="7060824959893064709" />
+      </scope>
+      <scope id="7060824959893064709" at="24,0,37,0">
+        <var name="value" id="7060824959893064709" />
+      </scope>
+      <unit id="7060824959893064709" at="9,0,46,0" name="jetbrains.mps.samples.Kaja.structure.LookingDirection_PropertySupport" />
+    </file>
+    <file name="LookingDirection.java">
+      <node id="7060824959893064709" at="15,0,16,0" concept="2" trace="myName" />
+      <node id="7060824959893064709" at="17,27,18,23" concept="6" />
+      <node id="7060824959893064709" at="21,36,22,24" concept="6" />
+      <node id="7060824959893064709" at="25,55,26,92" concept="5" />
+      <node id="7060824959893064709" at="26,92,27,67" concept="1" />
+      <node id="7060824959893064709" at="27,67,28,66" concept="1" />
+      <node id="7060824959893064709" at="28,66,29,67" concept="1" />
+      <node id="7060824959893064709" at="29,67,30,66" concept="1" />
+      <node id="7060824959893064709" at="30,66,31,16" concept="6" />
+      <node id="7060824959893064709" at="34,47,35,16" concept="6" />
+      <node id="7060824959893064709" at="39,24,40,43" concept="6" />
+      <node id="7060824959893064709" at="42,66,43,36" concept="6" />
+      <node id="7060824959893064709" at="45,65,46,35" concept="6" />
+      <node id="7060824959893064709" at="48,66,49,36" concept="6" />
+      <node id="7060824959893064709" at="51,65,52,35" concept="6" />
+      <node id="7060824959893064709" at="53,5,54,41" concept="6" />
+      <node id="7060824959893064709" at="57,0,58,0" concept="2" trace="myValue" />
+      <node id="7060824959893064709" at="59,47,60,23" concept="1" />
+      <node id="7060824959893064709" at="60,23,61,25" concept="1" />
+      <node id="7060824959893064709" at="64,28,65,24" concept="6" />
+      <node id="7060824959893064709" at="17,0,20,0" concept="4" trace="getName#()Ljava/lang/String;" />
+      <node id="7060824959893064709" at="21,0,24,0" concept="4" trace="getValueAsString#()Ljava/lang/String;" />
+      <node id="7060824959893064709" at="34,0,37,0" concept="7" trace="getDefault#()Ljetbrains/mps/samples/Kaja/structure/LookingDirection;" />
+      <node id="7060824959893064709" at="38,59,41,5" concept="3" />
+      <node id="7060824959893064709" at="41,5,44,5" concept="3" />
+      <node id="7060824959893064709" at="44,5,47,5" concept="3" />
+      <node id="7060824959893064709" at="47,5,50,5" concept="3" />
+      <node id="7060824959893064709" at="50,5,53,5" concept="3" />
+      <node id="7060824959893064709" at="64,0,67,0" concept="4" trace="getValue#()Ljava/lang/String;" />
+      <node id="7060824959893064709" at="59,0,63,0" concept="0" trace="LookingDirection#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="7060824959893064709" at="25,0,33,0" concept="7" trace="getConstants#()Ljava/util/List;" />
+      <node id="7060824959893064709" at="38,0,56,0" concept="7" trace="parseValue#(Ljava/lang/String;)Ljetbrains/mps/samples/Kaja/structure/LookingDirection;" />
+      <scope id="7060824959893064709" at="17,27,18,23" />
+      <scope id="7060824959893064709" at="21,36,22,24" />
+      <scope id="7060824959893064709" at="34,47,35,16" />
+      <scope id="7060824959893064709" at="39,24,40,43" />
+      <scope id="7060824959893064709" at="42,66,43,36" />
+      <scope id="7060824959893064709" at="45,65,46,35" />
+      <scope id="7060824959893064709" at="48,66,49,36" />
+      <scope id="7060824959893064709" at="51,65,52,35" />
+      <scope id="7060824959893064709" at="64,28,65,24" />
+      <scope id="7060824959893064709" at="59,47,61,25" />
+      <scope id="7060824959893064709" at="17,0,20,0" />
+      <scope id="7060824959893064709" at="21,0,24,0" />
+      <scope id="7060824959893064709" at="34,0,37,0" />
+      <scope id="7060824959893064709" at="64,0,67,0" />
+      <scope id="7060824959893064709" at="59,0,63,0">
+        <var name="name" id="7060824959893064709" />
+        <var name="value" id="7060824959893064709" />
+      </scope>
+      <scope id="7060824959893064709" at="25,55,31,16">
+        <var name="list" id="7060824959893064709" />
+      </scope>
+      <scope id="7060824959893064709" at="25,0,33,0" />
+      <scope id="7060824959893064709" at="38,59,54,41" />
+      <scope id="7060824959893064709" at="38,0,56,0">
+        <var name="value" id="7060824959893064709" />
+      </scope>
+      <unit id="7060824959893064709" at="9,0,68,0" name="jetbrains.mps.samples.Kaja.structure.LookingDirection" />
+    </file>
+  </root>
+</debug-info>
 

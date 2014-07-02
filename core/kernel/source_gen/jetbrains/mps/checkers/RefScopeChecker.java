@@ -6,10 +6,10 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.resolve.ReferenceResolverUtils;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
@@ -17,13 +17,10 @@ import jetbrains.mps.smodel.runtime.ReferenceScopeProvider;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.resolve.ResolverComponent;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class RefScopeChecker extends AbstractConstraintsChecker {
   public RefScopeChecker() {
@@ -39,9 +36,9 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       return;
     }
     SNode concept = SNodeOperations.getConceptDeclaration(node);
-    boolean executeImmediately = canExecuteImmediately(SNodeOperations.getModel(node), repository);
-    for (final SReference ref : SNodeOperations.getReferences(node)) {
-      final SNode target = SLinkOperations.getTargetNode(ref);
+    boolean executeImmediately = ReferenceResolverUtils.canExecuteImmediately(SNodeOperations.getModel(node), repository);
+    for (SReference ref : SNodeOperations.getReferences(node)) {
+      SNode target = SLinkOperations.getTargetNode(ref);
       SNode ld = SLinkOperations.findLinkDeclaration(ref);
       // don't check unresolved and broken references, they should already have an error message 
       if ((target == null) || ld == null) {
@@ -55,18 +52,10 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
       for (SNode c : SNodeOperations.getChildren(node)) {
         component.addDependency(c);
       }
-      final Scope refScope = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Scope>() {
-        public Scope invoke() {
-          return ModelConstraints.getScope(ref);
-        }
-      });
+      Scope refScope = ModelConstraints.getScope(ref);
       if (refScope instanceof ErrorScope) {
         component.addError(node, ((ErrorScope) refScope).getMessage(), null, new ReferenceMessageTarget(SLinkOperations.getRole(ref)));
-      } else if (!(component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
-        public Boolean invoke() {
-          return refScope.contains(target);
-        }
-      }))) {
+      } else if (!(refScope.contains(target))) {
         String name = target.getName();
         ReferenceScopeProvider scopeProvider = ModelConstraintsManager.getNodeReferentSearchScopeProvider(concept, ref.getRole());
         SNode ruleNode = null;
@@ -76,18 +65,6 @@ public class RefScopeChecker extends AbstractConstraintsChecker {
         component.addError(node, "reference" + ((name == null ? "" : " " + name)) + " (" + SLinkOperations.getRole(ref) + ") is out of search scope", ruleNode, new ReferenceMessageTarget(SLinkOperations.getRole(ref)), createResolveReferenceQuickfix(ref, repository, executeImmediately));
       }
     }
-  }
-
-  private boolean canExecuteImmediately(SModel model, SRepository repository) {
-    if (repository == null) {
-      return false;
-    }
-    for (SModelReference modelReference : ListSequence.fromList(SModelOperations.getImportedModelUIDs(model))) {
-      if (modelReference.resolve(repository) == null) {
-        return false;
-      }
-    }
-    return true;
   }
 
   protected QuickFixProvider createResolveReferenceQuickfix(SReference reference, SRepository repository, boolean executeImmediately) {

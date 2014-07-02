@@ -17,14 +17,14 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.extapi.model.EditableSModelBase;
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.extapi.module.TransientSModule;
 import jetbrains.mps.generator.TransientModelsProvider.TransientSwapSpace;
 import jetbrains.mps.generator.impl.ModelVault;
+import jetbrains.mps.module.SDependencyImpl;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.SDependencyAdapter;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -40,6 +40,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelSaveException;
@@ -54,7 +55,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicInteger;
 
-public class TransientModelsModule extends AbstractModule {
+public class TransientModelsModule extends AbstractModule implements TransientSModule {
   private static final Logger LOG = LogManager.getLogger(TransientModelsModule.class);
 
   private static final AtomicInteger ourModuleCounter = new AtomicInteger();
@@ -148,7 +149,7 @@ public class TransientModelsModule extends AbstractModule {
   }
 
   private void unloadModel(TransientSModelDescriptor model) {
-    if (model.unloadModel()) {
+    if (model.unloadModel(true)) {
       if (myPublished.contains(model)) {
 //            SModelRepository.getInstance().removeModelDescriptor(model);
       }
@@ -231,10 +232,7 @@ public class TransientModelsModule extends AbstractModule {
     if (myCachedDependencies == null) {
       myCachedDependencies = new HashSet<SDependency>();
       for (SModule module : new GlobalModuleDependenciesManager(myOriginalModule).getModules(Deptype.COMPILE)) {
-        Dependency dep = new Dependency();
-        dep.setModuleRef(module.getModuleReference());
-        dep.setReexport(false);
-        myCachedDependencies.add(new SDependencyAdapter(dep));
+        myCachedDependencies.add(new SDependencyImpl(module, SDependencyScope.DEFAULT, false));
       }
     }
     return myCachedDependencies;
@@ -253,7 +251,7 @@ public class TransientModelsModule extends AbstractModule {
     ((TransientSModelDescriptor) transientModel).changeModelReference(newRef);
   }
 
-  public class TransientSModelDescriptor extends EditableSModelBase {
+  public final class TransientSModelDescriptor extends EditableSModelBase implements jetbrains.mps.extapi.model.TransientSModel {
     protected volatile jetbrains.mps.smodel.SModel mySModel;
     private boolean wasUnloaded = false;
 
@@ -275,6 +273,11 @@ public class TransientModelsModule extends AbstractModule {
         if (mySModel == null) {
           mySModel = createModel();
           mySModel.setModelDescriptor(this);
+          if (wasUnloaded) {
+            // ensure imports are back
+            SModelOperations.validateLanguagesAndImports(this, false, false);
+            wasUnloaded = false;
+          }
           fireModelStateChanged(ModelLoadingState.FULLY_LOADED);
         }
       }
@@ -283,10 +286,10 @@ public class TransientModelsModule extends AbstractModule {
 
     @Override
     public boolean isLoaded() {
-      return mySModel != null;
+      return mySModel != null && getLoadingState() == ModelLoadingState.FULLY_LOADED;
     }
 
-    protected jetbrains.mps.smodel.SModel createModel() {
+    private jetbrains.mps.smodel.SModel createModel() {
       if (wasUnloaded) {
         LOG.debug("Re-loading " + getReference());
 
@@ -294,13 +297,11 @@ public class TransientModelsModule extends AbstractModule {
         if (swap == null) throw new IllegalStateException("no swap space");
 
         TransientSModel m = swap.restoreFromSwap(getReference(), new TransientSModel(getReference()));
-        if (m != null) {
-          // ensure imports are back
-          SModelOperations.validateLanguagesAndImports(m, false, false);
-          return m;
-        }
 
-        throw new IllegalStateException("lost swapped out model");
+        if (m == null) {
+          throw new IllegalStateException("lost swapped out model");
+        }
+        return m;
       } else {
         return new TransientSModel(getReference());
       }
@@ -308,10 +309,10 @@ public class TransientModelsModule extends AbstractModule {
 
     @Override
     protected void doUnload() {
-      unloadModel();
+      unloadModel(false);
     }
 
-    private boolean unloadModel() {
+    private boolean unloadModel(boolean fireLoadStateChange) {
       if (!wasUnloaded) {
         LOG.debug("Un-loading " + getReference());
 
@@ -321,6 +322,10 @@ public class TransientModelsModule extends AbstractModule {
         }
 
         dropModel();
+
+        if (fireLoadStateChange) {
+          fireModelStateChanged(ModelLoadingState.NOT_LOADED);
+        }
 
         wasUnloaded = true;
       }

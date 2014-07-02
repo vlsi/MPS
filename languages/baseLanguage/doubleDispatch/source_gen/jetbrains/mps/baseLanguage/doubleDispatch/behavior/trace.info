@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="DispatchModifier_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.behavior.DispatchModifier_BehaviorDescriptor" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,24,0" name="jetbrains.mps.baseLanguage.doubleDispatch.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="DispatchModifier_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.doubleDispatch.behavior.DispatchModifier_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

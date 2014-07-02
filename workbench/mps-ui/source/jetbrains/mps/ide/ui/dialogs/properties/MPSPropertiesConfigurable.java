@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -51,7 +51,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.models.DependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tabs.BaseTab;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SDependencyScope;
@@ -178,14 +177,14 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
   @Override
   public void apply() throws ConfigurationException {
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       @Override
       public void run() {
         for (Tab tab : myTabs)
           tab.apply();
         save();
       }
-    }, myProject);
+    });
   }
 
   @Override

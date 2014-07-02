@@ -15,16 +15,15 @@ import jetbrains.jetpad.model.property.Property;
 import jetbrains.jetpad.model.property.ValueProperty;
 import jetbrains.jetpad.projectional.diagram.view.PolyLineConnection;
 import jetbrains.jetpad.projectional.view.ViewTrait;
-import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.DiagramPalette;
+import jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.ui.DiagramPalette;
 import javax.swing.JPanel;
 import jetbrains.jetpad.base.Registration;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JComponent;
-import com.intellij.uiDesigner.core.GridLayoutManager;
-import com.intellij.uiDesigner.core.GridConstraints;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
 import java.awt.event.FocusListener;
 import java.awt.event.FocusEvent;
-import java.awt.Dimension;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.jetpad.projectional.view.ViewTraitBuilder;
 import jetbrains.jetpad.projectional.view.ViewEvents;
@@ -36,7 +35,6 @@ import jetbrains.jetpad.event.Key;
 import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 import java.util.List;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import java.util.ArrayList;
@@ -51,6 +49,7 @@ import java.util.Collections;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
 import java.awt.Window;
 import java.awt.Point;
+import java.awt.Dimension;
 import jetbrains.jetpad.event.ModifierKey;
 import jetbrains.jetpad.mapper.Synchronizers;
 import jetbrains.jetpad.model.property.WritableProperty;
@@ -96,15 +95,20 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   public JComponent getComponent() {
     if (myPanel == null) {
       int columnCount = (myPalettePanel == null ? 1 : 2);
-      myPanel = new JPanel(new GridLayoutManager(1, columnCount));
+      myPanel = new JPanel();
+      myPanel.setLayout(new GridBagLayout());
+      GridBagConstraints gridBagConstraints = new GridBagConstraints();
+      gridBagConstraints.gridheight = 1;
+      gridBagConstraints.gridwidth = columnCount;
+      gridBagConstraints.gridx = 0;
+      gridBagConstraints.gridy = 0;
+      gridBagConstraints.fill = GridBagConstraints.BOTH;
+      gridBagConstraints.anchor = GridBagConstraints.NORTHEAST;
       if (myPalettePanel != null) {
-        GridConstraints paletteConstraints = new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null);
-        myPanel.add(myPalettePanel, paletteConstraints);
+        myPanel.add(myPalettePanel, gridBagConstraints);
       }
-      GridConstraints constraints = new GridConstraints(0, columnCount - 1, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null);
-
-      myPanel.add(getContainerComponent(), constraints);
-
+      gridBagConstraints.gridx = columnCount - 1;
+      myPanel.add(getContainerComponent());
     }
     return myPanel;
   }
@@ -133,11 +137,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
   @Override
   protected void relayoutImpl() {
     super.relayoutImpl();
-    check_xnhqai_a1a91(getPalette(), this);
-    getContainerComponent().doLayout();
-    getComponent().doLayout();
-    Dimension preferredSize = getComponent().getPreferredSize();
-    getComponent().setSize(preferredSize);
     setWidth(getComponent().getWidth() + myGapLeft + myGapRight);
     setHeight(getComponent().getHeight());
   }
@@ -194,10 +193,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     return false;
   }
 
-  private DiagramPalette getPalette() {
-    return myPalettePanel;
-  }
-
   public void setPalette(DiagramPalette palette) {
     myPalettePanel = palette;
   }
@@ -246,12 +241,14 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
         public void handle(View view, MouseEvent event) {
           if (!(hasConnectionDragFeedback())) {
             View sourceView = view.viewAt(event.location());
-            if (sourceView == null || !(check_xnhqai_a0a1a0a0a0b0a0a0a0a0hb(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
+            if (sourceView == null || !(check_xnhqai_a0a1a0a0a0b0a0a0a0a0gb(sourceView.prop(JetpadUtils.CONNECTION_SOURCE).get()))) {
               return;
             }
             showConnectionDragFeedback(sourceView);
           }
           updateConnectionDragFeedback(event.location());
+          requestRelayout();
+          getEditor().relayout();
         }
       }).on(ViewEvents.MOUSE_RELEASED, new ViewEventHandler<MouseEvent>() {
         @Override
@@ -295,11 +292,11 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
     if (!(result[0])) {
       return false;
     }
-    ModelAccess.instance().executeCommand(new Runnable() {
+    getContext().executeCommand(new Runnable() {
       public void run() {
         theAction.substitute(getContext(), "");
       }
-    }, getOperationContext().getProject());
+    });
     hideConnectionDragFeedback();
     return true;
   }
@@ -632,13 +629,6 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
 
 
-  private static void check_xnhqai_a1a91(DiagramPalette checkedDotOperand, DiagramCell checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.doLayout();
-    }
-
-  }
-
   private static void check_xnhqai_a0a72(Registration checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.remove();
@@ -646,7 +636,7 @@ public abstract class DiagramCell extends AbstractJetpadCell implements EditorCe
 
   }
 
-  private static boolean check_xnhqai_a0a1a0a0a0b0a0a0a0a0hb(Boolean checkedDotOperand) {
+  private static boolean check_xnhqai_a0a1a0a0a0b0a0a0a0a0gb(Boolean checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.booleanValue();
     }

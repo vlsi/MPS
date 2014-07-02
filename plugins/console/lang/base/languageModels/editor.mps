@@ -198,7 +198,7 @@
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="1583916890557947353" nodeInfo="nn">
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ApplyStyleClass" typeId="tpc2.1950447826681509042" id="795210086019063122" nodeInfo="ng">
         <node role="target" roleId="tpc2.1950447826683828796" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="2491174914160683846" nodeInfo="ng">
-          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
+          <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7409036893176441979" resolveInfo="ReadOnly" />
         </node>
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="6783870023039364043" nodeInfo="nn">
@@ -230,7 +230,7 @@
         <link role="relationDeclaration" roleId="tpc2.1140103550593" targetNodeId="eynw.1583916890557930417" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.UnapplyStyle" typeId="tpc2.1950447826686048995" id="4122848433161827164" nodeInfo="ng">
           <node role="target" roleId="tpc2.1950447826686049051" type="tpc2.StyleReference" typeId="tpc2.9122903797312246523" id="2491174914160683972" nodeInfo="ng">
-            <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7409036893176441979" resolveInfo="readOnly" />
+            <link role="style" roleId="tpc2.9122903797312247166" targetNodeId="7409036893176441979" resolveInfo="ReadOnly" />
           </node>
         </node>
       </node>
@@ -323,9 +323,9 @@
     </node>
   </root>
   <root type="tpc2.StyleSheet" typeId="tpc2.1186402211651" id="7409036893176441835" nodeInfo="ng">
-    <property name="name" nameId="tpck.1169194664001" value="Console_Styles" />
+    <property name="name" nameId="tpck.1169194664001" value="ConsoleStyle" />
     <node role="styleClass" roleId="tpc2.1186402402630" type="tpc2.StyleClass" typeId="tpc2.3383245079137382180" id="7409036893176441979" nodeInfo="ng">
-      <property name="name" nameId="tpck.1169194664001" value="readOnly" />
+      <property name="name" nameId="tpck.1169194664001" value="ReadOnly" />
       <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ReadOnlyStyleClassItem" typeId="tpc2.795210086017940429" id="795210086018976096" nodeInfo="ng">
         <property name="flag" nameId="tpc2.1186414551515" value="true" />
       </node>

@@ -1,598 +1,650 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/1947450138886989116">
-    <nodeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="18" startPosition="88" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1947450138886989118" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_addQuery_RefNode_default_Test#()V" />
-    <nodeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_addQuery_RefNode_default#()V" />
-    <nodeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="14" startPosition="66" endLine="14" endPosition="66" />
-    <scopeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="18" startPosition="88" endLine="20" endPosition="145" />
-    <scopeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="73">
-      <varInfo nodeId="1947450138886989116" varName="editor" />
-      <varInfo nodeId="1947450138886989116" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_default_Test$TestBody" />
-    <unitInfo nodeId="1947450138886989116" fileName="ConditionalPresentation_addQuery_RefNode_default_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_default_Test" />
+    <file name="ConditionalPresentation_addQuery_RefNode_default_Test.java">
+      <node id="1947450138886989116" at="18,88,19,117" concept="1" />
+      <node id="1947450138886989116" at="19,117,20,145" concept="1" />
+      <node id="1947450138886989116" at="29,51,30,99" concept="3" />
+      <node id="1947450138886989116" at="30,99,31,93" concept="3" />
+      <node id="1947450138886989118" at="31,93,32,73" concept="1" />
+      <node id="1947450138886989116" at="14,0,16,0" concept="0" trace="ConditionalPresentation_addQuery_RefNode_default_Test#()V" />
+      <node id="1947450138886989116" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="1947450138886989116" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_addQuery_RefNode_default#()V" />
+      <node id="1947450138886989116" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="1947450138886989116" at="14,66,14,66" />
+      <scope id="1947450138886989116" at="25,23,25,23" />
+      <scope id="1947450138886989116" at="14,0,16,0" />
+      <scope id="1947450138886989116" at="18,88,20,145" />
+      <scope id="1947450138886989116" at="25,0,27,0" />
+      <scope id="1947450138886989116" at="29,51,32,73">
+        <var name="editor" id="1947450138886989116" />
+        <var name="editorComponent" id="1947450138886989116" />
+      </scope>
+      <scope id="1947450138886989116" at="17,0,22,0" />
+      <scope id="1947450138886989116" at="28,0,34,0" />
+      <unit id="1947450138886989116" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_default_Test$TestBody" />
+      <unit id="1947450138886989116" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_default_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/1947450138886989214">
-    <nodeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="18" startPosition="85" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1947450138886989216" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_addQuery_RefNode_rich_Test#()V" />
-    <nodeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_addQuery_RefNode_rich#()V" />
-    <nodeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="14" startPosition="63" endLine="14" endPosition="63" />
-    <scopeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="18" startPosition="85" endLine="20" endPosition="142" />
-    <scopeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="65">
-      <varInfo nodeId="1947450138886989214" varName="editor" />
-      <varInfo nodeId="1947450138886989214" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_rich_Test$TestBody" />
-    <unitInfo nodeId="1947450138886989214" fileName="ConditionalPresentation_addQuery_RefNode_rich_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_rich_Test" />
+    <file name="ConditionalPresentation_addQuery_RefNode_rich_Test.java">
+      <node id="1947450138886989214" at="18,85,19,117" concept="1" />
+      <node id="1947450138886989214" at="19,117,20,142" concept="1" />
+      <node id="1947450138886989214" at="29,51,30,99" concept="3" />
+      <node id="1947450138886989214" at="30,99,31,93" concept="3" />
+      <node id="1947450138886989216" at="31,93,32,65" concept="1" />
+      <node id="1947450138886989214" at="14,0,16,0" concept="0" trace="ConditionalPresentation_addQuery_RefNode_rich_Test#()V" />
+      <node id="1947450138886989214" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="1947450138886989214" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_addQuery_RefNode_rich#()V" />
+      <node id="1947450138886989214" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="1947450138886989214" at="14,63,14,63" />
+      <scope id="1947450138886989214" at="25,23,25,23" />
+      <scope id="1947450138886989214" at="14,0,16,0" />
+      <scope id="1947450138886989214" at="18,85,20,142" />
+      <scope id="1947450138886989214" at="25,0,27,0" />
+      <scope id="1947450138886989214" at="29,51,32,65">
+        <var name="editor" id="1947450138886989214" />
+        <var name="editorComponent" id="1947450138886989214" />
+      </scope>
+      <scope id="1947450138886989214" at="17,0,22,0" />
+      <scope id="1947450138886989214" at="28,0,34,0" />
+      <unit id="1947450138886989214" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_rich_Test$TestBody" />
+      <unit id="1947450138886989214" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_rich_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/1947450138886989480">
-    <nodeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="18" startPosition="87" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1947450138886989485" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886989486" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="32" startPosition="61" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886989488" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886989490" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="34" startPosition="107" endLine="35" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_addQuery_RefNode_switch_Test#()V" />
-    <nodeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_addQuery_RefNode_switch#()V" />
-    <nodeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="14" startPosition="65" endLine="14" endPosition="65" />
-    <scopeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="18" startPosition="87" endLine="20" endPosition="144" />
-    <scopeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="29" startPosition="51" endLine="35" endPosition="74">
-      <varInfo nodeId="1947450138886989480" varName="editor" />
-      <varInfo nodeId="1947450138886989480" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_switch_Test$TestBody" />
-    <unitInfo nodeId="1947450138886989480" fileName="ConditionalPresentation_addQuery_RefNode_switch_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_switch_Test" />
+    <file name="ConditionalPresentation_addQuery_RefNode_switch_Test.java">
+      <node id="1947450138886989480" at="18,87,19,117" concept="1" />
+      <node id="1947450138886989480" at="19,117,20,144" concept="1" />
+      <node id="1947450138886989480" at="29,51,30,99" concept="3" />
+      <node id="1947450138886989480" at="30,99,31,93" concept="3" />
+      <node id="1947450138886989485" at="31,93,32,61" concept="1" />
+      <node id="1947450138886989486" at="32,61,33,107" concept="1" />
+      <node id="1947450138886989488" at="33,107,34,107" concept="1" />
+      <node id="1947450138886989490" at="34,107,35,74" concept="1" />
+      <node id="1947450138886989480" at="14,0,16,0" concept="0" trace="ConditionalPresentation_addQuery_RefNode_switch_Test#()V" />
+      <node id="1947450138886989480" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="1947450138886989480" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_addQuery_RefNode_switch#()V" />
+      <node id="1947450138886989480" at="28,0,37,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="1947450138886989480" at="14,65,14,65" />
+      <scope id="1947450138886989480" at="25,23,25,23" />
+      <scope id="1947450138886989480" at="14,0,16,0" />
+      <scope id="1947450138886989480" at="18,87,20,144" />
+      <scope id="1947450138886989480" at="25,0,27,0" />
+      <scope id="1947450138886989480" at="17,0,22,0" />
+      <scope id="1947450138886989480" at="29,51,35,74">
+        <var name="editor" id="1947450138886989480" />
+        <var name="editorComponent" id="1947450138886989480" />
+      </scope>
+      <scope id="1947450138886989480" at="28,0,37,0" />
+      <unit id="1947450138886989480" at="23,0,38,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_switch_Test$TestBody" />
+      <unit id="1947450138886989480" at="12,0,39,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNode_switch_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/1947450138886994476">
-    <nodeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="18" startPosition="91" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1947450138886994478" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_removeQuery_RefNode_compact_Test#()V" />
-    <nodeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_removeQuery_RefNode_compact#()V" />
-    <nodeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="14" startPosition="69" endLine="14" endPosition="69" />
-    <scopeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="18" startPosition="91" endLine="20" endPosition="148" />
-    <scopeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="66">
-      <varInfo nodeId="1947450138886994476" varName="editor" />
-      <varInfo nodeId="1947450138886994476" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNode_compact_Test$TestBody" />
-    <unitInfo nodeId="1947450138886994476" fileName="ConditionalPresentation_removeQuery_RefNode_compact_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNode_compact_Test" />
+    <file name="ConditionalPresentation_removeQuery_RefNode_compact_Test.java">
+      <node id="1947450138886994476" at="18,91,19,117" concept="1" />
+      <node id="1947450138886994476" at="19,117,20,148" concept="1" />
+      <node id="1947450138886994476" at="29,51,30,99" concept="3" />
+      <node id="1947450138886994476" at="30,99,31,93" concept="3" />
+      <node id="1947450138886994478" at="31,93,32,66" concept="1" />
+      <node id="1947450138886994476" at="14,0,16,0" concept="0" trace="ConditionalPresentation_removeQuery_RefNode_compact_Test#()V" />
+      <node id="1947450138886994476" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="1947450138886994476" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_removeQuery_RefNode_compact#()V" />
+      <node id="1947450138886994476" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="1947450138886994476" at="14,69,14,69" />
+      <scope id="1947450138886994476" at="25,23,25,23" />
+      <scope id="1947450138886994476" at="14,0,16,0" />
+      <scope id="1947450138886994476" at="18,91,20,148" />
+      <scope id="1947450138886994476" at="25,0,27,0" />
+      <scope id="1947450138886994476" at="29,51,32,66">
+        <var name="editor" id="1947450138886994476" />
+        <var name="editorComponent" id="1947450138886994476" />
+      </scope>
+      <scope id="1947450138886994476" at="17,0,22,0" />
+      <scope id="1947450138886994476" at="28,0,34,0" />
+      <unit id="1947450138886994476" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNode_compact_Test$TestBody" />
+      <unit id="1947450138886994476" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNode_compact_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/1947450138886994765">
-    <nodeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="18" startPosition="90" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1947450138886994767" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886994768" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="32" startPosition="62" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886994770" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886994772" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="34" startPosition="107" endLine="35" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_removeQuery_RefNode_switch_Test#()V" />
-    <nodeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_removeQuery_RefNode_switch#()V" />
-    <nodeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="14" startPosition="68" endLine="14" endPosition="68" />
-    <scopeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="18" startPosition="90" endLine="20" endPosition="147" />
-    <scopeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="29" startPosition="51" endLine="35" endPosition="66">
-      <varInfo nodeId="1947450138886994765" varName="editor" />
-      <varInfo nodeId="1947450138886994765" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNode_switch_Test$TestBody" />
-    <unitInfo nodeId="1947450138886994765" fileName="ConditionalPresentation_removeQuery_RefNode_switch_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNode_switch_Test" />
+    <file name="ConditionalPresentation_removeQuery_RefNode_switch_Test.java">
+      <node id="1947450138886994765" at="18,90,19,117" concept="1" />
+      <node id="1947450138886994765" at="19,117,20,147" concept="1" />
+      <node id="1947450138886994765" at="29,51,30,99" concept="3" />
+      <node id="1947450138886994765" at="30,99,31,93" concept="3" />
+      <node id="1947450138886994767" at="31,93,32,62" concept="1" />
+      <node id="1947450138886994768" at="32,62,33,107" concept="1" />
+      <node id="1947450138886994770" at="33,107,34,107" concept="1" />
+      <node id="1947450138886994772" at="34,107,35,66" concept="1" />
+      <node id="1947450138886994765" at="14,0,16,0" concept="0" trace="ConditionalPresentation_removeQuery_RefNode_switch_Test#()V" />
+      <node id="1947450138886994765" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="1947450138886994765" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_removeQuery_RefNode_switch#()V" />
+      <node id="1947450138886994765" at="28,0,37,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="1947450138886994765" at="14,68,14,68" />
+      <scope id="1947450138886994765" at="25,23,25,23" />
+      <scope id="1947450138886994765" at="14,0,16,0" />
+      <scope id="1947450138886994765" at="18,90,20,147" />
+      <scope id="1947450138886994765" at="25,0,27,0" />
+      <scope id="1947450138886994765" at="17,0,22,0" />
+      <scope id="1947450138886994765" at="29,51,35,66">
+        <var name="editor" id="1947450138886994765" />
+        <var name="editorComponent" id="1947450138886994765" />
+      </scope>
+      <scope id="1947450138886994765" at="28,0,37,0" />
+      <unit id="1947450138886994765" at="23,0,38,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNode_switch_Test$TestBody" />
+      <unit id="1947450138886994765" at="12,0,39,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNode_switch_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/2601164129533059968">
-    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="18" startPosition="63" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2601164129533059976" fileName="UnsupportedPresentation_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UnsupportedPresentation_Test#()V" />
-    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_UnsupportedPresentation#()V" />
-    <nodeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
-    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="18" startPosition="63" endLine="20" endPosition="120" />
-    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="60">
-      <varInfo nodeId="2601164129533059968" varName="editor" />
-      <varInfo nodeId="2601164129533059968" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.UnsupportedPresentation_Test$TestBody" />
-    <unitInfo nodeId="2601164129533059968" fileName="UnsupportedPresentation_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.UnsupportedPresentation_Test" />
+    <file name="UnsupportedPresentation_Test.java">
+      <node id="2601164129533059968" at="18,63,19,117" concept="1" />
+      <node id="2601164129533059968" at="19,117,20,120" concept="1" />
+      <node id="2601164129533059968" at="29,51,30,99" concept="3" />
+      <node id="2601164129533059968" at="30,99,31,93" concept="3" />
+      <node id="2601164129533059976" at="31,93,32,60" concept="1" />
+      <node id="2601164129533059968" at="14,0,16,0" concept="0" trace="UnsupportedPresentation_Test#()V" />
+      <node id="2601164129533059968" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="2601164129533059968" at="17,0,22,0" concept="2" trace="test_UnsupportedPresentation#()V" />
+      <node id="2601164129533059968" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="2601164129533059968" at="14,41,14,41" />
+      <scope id="2601164129533059968" at="25,23,25,23" />
+      <scope id="2601164129533059968" at="14,0,16,0" />
+      <scope id="2601164129533059968" at="18,63,20,120" />
+      <scope id="2601164129533059968" at="25,0,27,0" />
+      <scope id="2601164129533059968" at="29,51,32,60">
+        <var name="editor" id="2601164129533059968" />
+        <var name="editorComponent" id="2601164129533059968" />
+      </scope>
+      <scope id="2601164129533059968" at="17,0,22,0" />
+      <scope id="2601164129533059968" at="28,0,34,0" />
+      <unit id="2601164129533059968" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.UnsupportedPresentation_Test$TestBody" />
+      <unit id="2601164129533059968" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.UnsupportedPresentation_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/554589055677209880">
-    <nodeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="18" startPosition="92" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="554589055677209888" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_addQuery_RefNodeList_default_Test#()V" />
-    <nodeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_addQuery_RefNodeList_default#()V" />
-    <nodeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="14" startPosition="70" endLine="14" endPosition="70" />
-    <scopeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="18" startPosition="92" endLine="20" endPosition="149" />
-    <scopeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="73">
-      <varInfo nodeId="554589055677209880" varName="editor" />
-      <varInfo nodeId="554589055677209880" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_default_Test$TestBody" />
-    <unitInfo nodeId="554589055677209880" fileName="ConditionalPresentation_addQuery_RefNodeList_default_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_default_Test" />
+    <file name="ConditionalPresentation_addQuery_RefNodeList_default_Test.java">
+      <node id="554589055677209880" at="18,92,19,117" concept="1" />
+      <node id="554589055677209880" at="19,117,20,149" concept="1" />
+      <node id="554589055677209880" at="29,51,30,97" concept="3" />
+      <node id="554589055677209880" at="30,97,31,93" concept="3" />
+      <node id="554589055677209888" at="31,93,32,73" concept="1" />
+      <node id="554589055677209880" at="14,0,16,0" concept="0" trace="ConditionalPresentation_addQuery_RefNodeList_default_Test#()V" />
+      <node id="554589055677209880" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="554589055677209880" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_addQuery_RefNodeList_default#()V" />
+      <node id="554589055677209880" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="554589055677209880" at="14,70,14,70" />
+      <scope id="554589055677209880" at="25,23,25,23" />
+      <scope id="554589055677209880" at="14,0,16,0" />
+      <scope id="554589055677209880" at="18,92,20,149" />
+      <scope id="554589055677209880" at="25,0,27,0" />
+      <scope id="554589055677209880" at="29,51,32,73">
+        <var name="editor" id="554589055677209880" />
+        <var name="editorComponent" id="554589055677209880" />
+      </scope>
+      <scope id="554589055677209880" at="17,0,22,0" />
+      <scope id="554589055677209880" at="28,0,34,0" />
+      <unit id="554589055677209880" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_default_Test$TestBody" />
+      <unit id="554589055677209880" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_default_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/554589055677210829">
-    <nodeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="18" startPosition="91" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="554589055677210834" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677210835" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="32" startPosition="61" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677210837" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677210839" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="34" startPosition="107" endLine="35" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_addQuery_RefNodeList_switch_Test#()V" />
-    <nodeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_addQuery_RefNodeList_switch#()V" />
-    <nodeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="14" startPosition="69" endLine="14" endPosition="69" />
-    <scopeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="18" startPosition="91" endLine="20" endPosition="148" />
-    <scopeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="29" startPosition="51" endLine="35" endPosition="74">
-      <varInfo nodeId="554589055677210829" varName="editor" />
-      <varInfo nodeId="554589055677210829" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_switch_Test$TestBody" />
-    <unitInfo nodeId="554589055677210829" fileName="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_switch_Test" />
+    <file name="ConditionalPresentation_addQuery_RefNodeList_switch_Test.java">
+      <node id="554589055677210829" at="18,91,19,117" concept="1" />
+      <node id="554589055677210829" at="19,117,20,148" concept="1" />
+      <node id="554589055677210829" at="29,51,30,97" concept="3" />
+      <node id="554589055677210829" at="30,97,31,93" concept="3" />
+      <node id="554589055677210834" at="31,93,32,61" concept="1" />
+      <node id="554589055677210835" at="32,61,33,107" concept="1" />
+      <node id="554589055677210837" at="33,107,34,107" concept="1" />
+      <node id="554589055677210839" at="34,107,35,74" concept="1" />
+      <node id="554589055677210829" at="14,0,16,0" concept="0" trace="ConditionalPresentation_addQuery_RefNodeList_switch_Test#()V" />
+      <node id="554589055677210829" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="554589055677210829" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_addQuery_RefNodeList_switch#()V" />
+      <node id="554589055677210829" at="28,0,37,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="554589055677210829" at="14,69,14,69" />
+      <scope id="554589055677210829" at="25,23,25,23" />
+      <scope id="554589055677210829" at="14,0,16,0" />
+      <scope id="554589055677210829" at="18,91,20,148" />
+      <scope id="554589055677210829" at="25,0,27,0" />
+      <scope id="554589055677210829" at="17,0,22,0" />
+      <scope id="554589055677210829" at="29,51,35,74">
+        <var name="editor" id="554589055677210829" />
+        <var name="editorComponent" id="554589055677210829" />
+      </scope>
+      <scope id="554589055677210829" at="28,0,37,0" />
+      <unit id="554589055677210829" at="23,0,38,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_switch_Test$TestBody" />
+      <unit id="554589055677210829" at="12,0,39,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_switch_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/554589055677397793">
-    <nodeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="18" startPosition="95" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="554589055677397795" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_removeQuery_RefNodeList_compact_Test#()V" />
-    <nodeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_removeQuery_RefNodeList_compact#()V" />
-    <nodeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="14" startPosition="73" endLine="14" endPosition="73" />
-    <scopeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="18" startPosition="95" endLine="20" endPosition="152" />
-    <scopeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="66">
-      <varInfo nodeId="554589055677397793" varName="editor" />
-      <varInfo nodeId="554589055677397793" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNodeList_compact_Test$TestBody" />
-    <unitInfo nodeId="554589055677397793" fileName="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNodeList_compact_Test" />
+    <file name="ConditionalPresentation_removeQuery_RefNodeList_compact_Test.java">
+      <node id="554589055677397793" at="18,95,19,117" concept="1" />
+      <node id="554589055677397793" at="19,117,20,152" concept="1" />
+      <node id="554589055677397793" at="29,51,30,97" concept="3" />
+      <node id="554589055677397793" at="30,97,31,93" concept="3" />
+      <node id="554589055677397795" at="31,93,32,66" concept="1" />
+      <node id="554589055677397793" at="14,0,16,0" concept="0" trace="ConditionalPresentation_removeQuery_RefNodeList_compact_Test#()V" />
+      <node id="554589055677397793" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="554589055677397793" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_removeQuery_RefNodeList_compact#()V" />
+      <node id="554589055677397793" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="554589055677397793" at="14,73,14,73" />
+      <scope id="554589055677397793" at="25,23,25,23" />
+      <scope id="554589055677397793" at="14,0,16,0" />
+      <scope id="554589055677397793" at="18,95,20,152" />
+      <scope id="554589055677397793" at="25,0,27,0" />
+      <scope id="554589055677397793" at="29,51,32,66">
+        <var name="editor" id="554589055677397793" />
+        <var name="editorComponent" id="554589055677397793" />
+      </scope>
+      <scope id="554589055677397793" at="17,0,22,0" />
+      <scope id="554589055677397793" at="28,0,34,0" />
+      <unit id="554589055677397793" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNodeList_compact_Test$TestBody" />
+      <unit id="554589055677397793" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNodeList_compact_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/554589055677398009">
-    <nodeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="18" startPosition="94" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="554589055677398011" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677398012" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="32" startPosition="62" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677398014" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677398016" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="34" startPosition="107" endLine="35" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_removeQuery_RefNodeList_switch_Test#()V" />
-    <nodeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_removeQuery_RefNodeList_switch#()V" />
-    <nodeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="14" startPosition="72" endLine="14" endPosition="72" />
-    <scopeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="18" startPosition="94" endLine="20" endPosition="151" />
-    <scopeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="29" startPosition="51" endLine="35" endPosition="66">
-      <varInfo nodeId="554589055677398009" varName="editor" />
-      <varInfo nodeId="554589055677398009" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNodeList_switch_Test$TestBody" />
-    <unitInfo nodeId="554589055677398009" fileName="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNodeList_switch_Test" />
+    <file name="ConditionalPresentation_removeQuery_RefNodeList_switch_Test.java">
+      <node id="554589055677398009" at="18,94,19,117" concept="1" />
+      <node id="554589055677398009" at="19,117,20,151" concept="1" />
+      <node id="554589055677398009" at="29,51,30,97" concept="3" />
+      <node id="554589055677398009" at="30,97,31,93" concept="3" />
+      <node id="554589055677398011" at="31,93,32,62" concept="1" />
+      <node id="554589055677398012" at="32,62,33,107" concept="1" />
+      <node id="554589055677398014" at="33,107,34,107" concept="1" />
+      <node id="554589055677398016" at="34,107,35,66" concept="1" />
+      <node id="554589055677398009" at="14,0,16,0" concept="0" trace="ConditionalPresentation_removeQuery_RefNodeList_switch_Test#()V" />
+      <node id="554589055677398009" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="554589055677398009" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_removeQuery_RefNodeList_switch#()V" />
+      <node id="554589055677398009" at="28,0,37,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="554589055677398009" at="14,72,14,72" />
+      <scope id="554589055677398009" at="25,23,25,23" />
+      <scope id="554589055677398009" at="14,0,16,0" />
+      <scope id="554589055677398009" at="18,94,20,151" />
+      <scope id="554589055677398009" at="25,0,27,0" />
+      <scope id="554589055677398009" at="17,0,22,0" />
+      <scope id="554589055677398009" at="29,51,35,66">
+        <var name="editor" id="554589055677398009" />
+        <var name="editorComponent" id="554589055677398009" />
+      </scope>
+      <scope id="554589055677398009" at="28,0,37,0" />
+      <unit id="554589055677398009" at="23,0,38,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNodeList_switch_Test$TestBody" />
+      <unit id="554589055677398009" at="12,0,39,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_RefNodeList_switch_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/5613016763942508875">
-    <nodeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="18" startPosition="89" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="30" startPosition="97" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5613016763942508880" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_addQuery_RefNodeList_rich_Test#()V" />
-    <nodeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_addQuery_RefNodeList_rich#()V" />
-    <nodeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="14" startPosition="67" endLine="14" endPosition="67" />
-    <scopeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="18" startPosition="89" endLine="20" endPosition="146" />
-    <scopeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="65">
-      <varInfo nodeId="5613016763942508875" varName="editor" />
-      <varInfo nodeId="5613016763942508875" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_rich_Test$TestBody" />
-    <unitInfo nodeId="5613016763942508875" fileName="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_rich_Test" />
+    <file name="ConditionalPresentation_addQuery_RefNodeList_rich_Test.java">
+      <node id="5613016763942508875" at="18,89,19,117" concept="1" />
+      <node id="5613016763942508875" at="19,117,20,146" concept="1" />
+      <node id="5613016763942508875" at="29,51,30,97" concept="3" />
+      <node id="5613016763942508875" at="30,97,31,93" concept="3" />
+      <node id="5613016763942508880" at="31,93,32,65" concept="1" />
+      <node id="5613016763942508875" at="14,0,16,0" concept="0" trace="ConditionalPresentation_addQuery_RefNodeList_rich_Test#()V" />
+      <node id="5613016763942508875" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="5613016763942508875" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_addQuery_RefNodeList_rich#()V" />
+      <node id="5613016763942508875" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5613016763942508875" at="14,67,14,67" />
+      <scope id="5613016763942508875" at="25,23,25,23" />
+      <scope id="5613016763942508875" at="14,0,16,0" />
+      <scope id="5613016763942508875" at="18,89,20,146" />
+      <scope id="5613016763942508875" at="25,0,27,0" />
+      <scope id="5613016763942508875" at="29,51,32,65">
+        <var name="editor" id="5613016763942508875" />
+        <var name="editorComponent" id="5613016763942508875" />
+      </scope>
+      <scope id="5613016763942508875" at="17,0,22,0" />
+      <scope id="5613016763942508875" at="28,0,34,0" />
+      <unit id="5613016763942508875" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_rich_Test$TestBody" />
+      <unit id="5613016763942508875" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_RefNodeList_rich_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/5861024100074454462">
-    <nodeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="18" startPosition="83" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5861024100074454470" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorSpecifiedBy_add_context_hints_RefNode_Test#()V" />
-    <nodeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_EditorSpecifiedBy_add_context_hints_RefNode#()V" />
-    <nodeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="14" startPosition="61" endLine="14" endPosition="61" />
-    <scopeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="18" startPosition="83" endLine="20" endPosition="140" />
-    <scopeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="60">
-      <varInfo nodeId="5861024100074454462" varName="editor" />
-      <varInfo nodeId="5861024100074454462" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_RefNode_Test$TestBody" />
-    <unitInfo nodeId="5861024100074454462" fileName="EditorSpecifiedBy_add_context_hints_RefNode_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_RefNode_Test" />
+    <file name="EditorSpecifiedBy_add_context_hints_RefNode_Test.java">
+      <node id="5861024100074454462" at="18,83,19,117" concept="1" />
+      <node id="5861024100074454462" at="19,117,20,140" concept="1" />
+      <node id="5861024100074454462" at="29,51,30,99" concept="3" />
+      <node id="5861024100074454462" at="30,99,31,93" concept="3" />
+      <node id="5861024100074454470" at="31,93,32,60" concept="1" />
+      <node id="5861024100074454462" at="14,0,16,0" concept="0" trace="EditorSpecifiedBy_add_context_hints_RefNode_Test#()V" />
+      <node id="5861024100074454462" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="5861024100074454462" at="17,0,22,0" concept="2" trace="test_EditorSpecifiedBy_add_context_hints_RefNode#()V" />
+      <node id="5861024100074454462" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5861024100074454462" at="14,61,14,61" />
+      <scope id="5861024100074454462" at="25,23,25,23" />
+      <scope id="5861024100074454462" at="14,0,16,0" />
+      <scope id="5861024100074454462" at="18,83,20,140" />
+      <scope id="5861024100074454462" at="25,0,27,0" />
+      <scope id="5861024100074454462" at="29,51,32,60">
+        <var name="editor" id="5861024100074454462" />
+        <var name="editorComponent" id="5861024100074454462" />
+      </scope>
+      <scope id="5861024100074454462" at="17,0,22,0" />
+      <scope id="5861024100074454462" at="28,0,34,0" />
+      <unit id="5861024100074454462" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_RefNode_Test$TestBody" />
+      <unit id="5861024100074454462" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_RefNode_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/5861024100074455062">
-    <nodeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="18" startPosition="90" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5861024100074455070" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test#()V" />
-    <nodeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_EditorSpecifiedBy_add_remove_context_hints_RefNode#()V" />
-    <nodeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="14" startPosition="68" endLine="14" endPosition="68" />
-    <scopeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="18" startPosition="90" endLine="20" endPosition="147" />
-    <scopeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="60">
-      <varInfo nodeId="5861024100074455062" varName="editor" />
-      <varInfo nodeId="5861024100074455062" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_RefNode_Test$TestBody" />
-    <unitInfo nodeId="5861024100074455062" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_RefNode_Test" />
+    <file name="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test.java">
+      <node id="5861024100074455062" at="18,90,19,117" concept="1" />
+      <node id="5861024100074455062" at="19,117,20,147" concept="1" />
+      <node id="5861024100074455062" at="29,51,30,99" concept="3" />
+      <node id="5861024100074455062" at="30,99,31,93" concept="3" />
+      <node id="5861024100074455070" at="31,93,32,60" concept="1" />
+      <node id="5861024100074455062" at="14,0,16,0" concept="0" trace="EditorSpecifiedBy_add_remove_context_hints_RefNode_Test#()V" />
+      <node id="5861024100074455062" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="5861024100074455062" at="17,0,22,0" concept="2" trace="test_EditorSpecifiedBy_add_remove_context_hints_RefNode#()V" />
+      <node id="5861024100074455062" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5861024100074455062" at="14,68,14,68" />
+      <scope id="5861024100074455062" at="25,23,25,23" />
+      <scope id="5861024100074455062" at="14,0,16,0" />
+      <scope id="5861024100074455062" at="18,90,20,147" />
+      <scope id="5861024100074455062" at="25,0,27,0" />
+      <scope id="5861024100074455062" at="29,51,32,60">
+        <var name="editor" id="5861024100074455062" />
+        <var name="editorComponent" id="5861024100074455062" />
+      </scope>
+      <scope id="5861024100074455062" at="17,0,22,0" />
+      <scope id="5861024100074455062" at="28,0,34,0" />
+      <unit id="5861024100074455062" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_RefNode_Test$TestBody" />
+      <unit id="5861024100074455062" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_RefNode_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/5950344441601491241">
-    <nodeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="18" startPosition="75" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5950344441601663779" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorSpecifiedBy_add_context_hints_Test#()V" />
-    <nodeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_EditorSpecifiedBy_add_context_hints#()V" />
-    <nodeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="14" startPosition="53" endLine="14" endPosition="53" />
-    <scopeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="18" startPosition="75" endLine="20" endPosition="132" />
-    <scopeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="60">
-      <varInfo nodeId="5950344441601491241" varName="editor" />
-      <varInfo nodeId="5950344441601491241" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_Test$TestBody" />
-    <unitInfo nodeId="5950344441601491241" fileName="EditorSpecifiedBy_add_context_hints_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_Test" />
+    <file name="EditorSpecifiedBy_add_context_hints_Test.java">
+      <node id="5950344441601491241" at="18,75,19,117" concept="1" />
+      <node id="5950344441601491241" at="19,117,20,132" concept="1" />
+      <node id="5950344441601491241" at="29,51,30,99" concept="3" />
+      <node id="5950344441601491241" at="30,99,31,93" concept="3" />
+      <node id="5950344441601663779" at="31,93,32,60" concept="1" />
+      <node id="5950344441601491241" at="14,0,16,0" concept="0" trace="EditorSpecifiedBy_add_context_hints_Test#()V" />
+      <node id="5950344441601491241" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="5950344441601491241" at="17,0,22,0" concept="2" trace="test_EditorSpecifiedBy_add_context_hints#()V" />
+      <node id="5950344441601491241" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5950344441601491241" at="14,53,14,53" />
+      <scope id="5950344441601491241" at="25,23,25,23" />
+      <scope id="5950344441601491241" at="14,0,16,0" />
+      <scope id="5950344441601491241" at="18,75,20,132" />
+      <scope id="5950344441601491241" at="25,0,27,0" />
+      <scope id="5950344441601491241" at="29,51,32,60">
+        <var name="editor" id="5950344441601491241" />
+        <var name="editorComponent" id="5950344441601491241" />
+      </scope>
+      <scope id="5950344441601491241" at="17,0,22,0" />
+      <scope id="5950344441601491241" at="28,0,34,0" />
+      <unit id="5950344441601491241" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_Test$TestBody" />
+      <unit id="5950344441601491241" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/5950344441601668447">
-    <nodeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="18" startPosition="53" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5950344441601668455" fileName="DefaultEditor_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultEditor_Test#()V" />
-    <nodeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_DefaultEditor#()V" />
-    <nodeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="14" startPosition="31" endLine="14" endPosition="31" />
-    <scopeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="18" startPosition="53" endLine="20" endPosition="110" />
-    <scopeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="60">
-      <varInfo nodeId="5950344441601668447" varName="editor" />
-      <varInfo nodeId="5950344441601668447" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.DefaultEditor_Test$TestBody" />
-    <unitInfo nodeId="5950344441601668447" fileName="DefaultEditor_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.DefaultEditor_Test" />
+    <file name="DefaultEditor_Test.java">
+      <node id="5950344441601668447" at="18,53,19,117" concept="1" />
+      <node id="5950344441601668447" at="19,117,20,110" concept="1" />
+      <node id="5950344441601668447" at="29,51,30,99" concept="3" />
+      <node id="5950344441601668447" at="30,99,31,93" concept="3" />
+      <node id="5950344441601668455" at="31,93,32,60" concept="1" />
+      <node id="5950344441601668447" at="14,0,16,0" concept="0" trace="DefaultEditor_Test#()V" />
+      <node id="5950344441601668447" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="5950344441601668447" at="17,0,22,0" concept="2" trace="test_DefaultEditor#()V" />
+      <node id="5950344441601668447" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5950344441601668447" at="14,31,14,31" />
+      <scope id="5950344441601668447" at="25,23,25,23" />
+      <scope id="5950344441601668447" at="14,0,16,0" />
+      <scope id="5950344441601668447" at="18,53,20,110" />
+      <scope id="5950344441601668447" at="25,0,27,0" />
+      <scope id="5950344441601668447" at="29,51,32,60">
+        <var name="editor" id="5950344441601668447" />
+        <var name="editorComponent" id="5950344441601668447" />
+      </scope>
+      <scope id="5950344441601668447" at="17,0,22,0" />
+      <scope id="5950344441601668447" at="28,0,34,0" />
+      <unit id="5950344441601668447" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.DefaultEditor_Test$TestBody" />
+      <unit id="5950344441601668447" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.DefaultEditor_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/5950344441601676487">
-    <nodeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="18" startPosition="82" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5950344441601676492" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorSpecifiedBy_add_remove_context_hints_Test#()V" />
-    <nodeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_EditorSpecifiedBy_add_remove_context_hints#()V" />
-    <nodeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="14" startPosition="60" endLine="14" endPosition="60" />
-    <scopeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="18" startPosition="82" endLine="20" endPosition="139" />
-    <scopeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="65">
-      <varInfo nodeId="5950344441601676487" varName="editor" />
-      <varInfo nodeId="5950344441601676487" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_Test$TestBody" />
-    <unitInfo nodeId="5950344441601676487" fileName="EditorSpecifiedBy_add_remove_context_hints_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_Test" />
+    <file name="EditorSpecifiedBy_add_remove_context_hints_Test.java">
+      <node id="5950344441601676487" at="18,82,19,117" concept="1" />
+      <node id="5950344441601676487" at="19,117,20,139" concept="1" />
+      <node id="5950344441601676487" at="29,51,30,99" concept="3" />
+      <node id="5950344441601676487" at="30,99,31,93" concept="3" />
+      <node id="5950344441601676492" at="31,93,32,65" concept="1" />
+      <node id="5950344441601676487" at="14,0,16,0" concept="0" trace="EditorSpecifiedBy_add_remove_context_hints_Test#()V" />
+      <node id="5950344441601676487" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="5950344441601676487" at="17,0,22,0" concept="2" trace="test_EditorSpecifiedBy_add_remove_context_hints#()V" />
+      <node id="5950344441601676487" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="5950344441601676487" at="14,60,14,60" />
+      <scope id="5950344441601676487" at="25,23,25,23" />
+      <scope id="5950344441601676487" at="14,0,16,0" />
+      <scope id="5950344441601676487" at="18,82,20,139" />
+      <scope id="5950344441601676487" at="25,0,27,0" />
+      <scope id="5950344441601676487" at="29,51,32,65">
+        <var name="editor" id="5950344441601676487" />
+        <var name="editorComponent" id="5950344441601676487" />
+      </scope>
+      <scope id="5950344441601676487" at="17,0,22,0" />
+      <scope id="5950344441601676487" at="28,0,34,0" />
+      <unit id="5950344441601676487" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_Test$TestBody" />
+      <unit id="5950344441601676487" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/6355695904178436203">
-    <nodeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="18" startPosition="58" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6355695904178440220" fileName="MostSpecificEditor_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MostSpecificEditor_Test#()V" />
-    <nodeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_MostSpecificEditor#()V" />
-    <nodeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="14" startPosition="36" endLine="14" endPosition="36" />
-    <scopeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="18" startPosition="58" endLine="20" endPosition="115" />
-    <scopeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="73">
-      <varInfo nodeId="6355695904178436203" varName="editor" />
-      <varInfo nodeId="6355695904178436203" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.MostSpecificEditor_Test$TestBody" />
-    <unitInfo nodeId="6355695904178436203" fileName="MostSpecificEditor_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.MostSpecificEditor_Test" />
+    <file name="MostSpecificEditor_Test.java">
+      <node id="6355695904178436203" at="18,58,19,117" concept="1" />
+      <node id="6355695904178436203" at="19,117,20,115" concept="1" />
+      <node id="6355695904178436203" at="29,51,30,99" concept="3" />
+      <node id="6355695904178436203" at="30,99,31,93" concept="3" />
+      <node id="6355695904178440220" at="31,93,32,73" concept="1" />
+      <node id="6355695904178436203" at="14,0,16,0" concept="0" trace="MostSpecificEditor_Test#()V" />
+      <node id="6355695904178436203" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="6355695904178436203" at="17,0,22,0" concept="2" trace="test_MostSpecificEditor#()V" />
+      <node id="6355695904178436203" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="6355695904178436203" at="14,36,14,36" />
+      <scope id="6355695904178436203" at="25,23,25,23" />
+      <scope id="6355695904178436203" at="14,0,16,0" />
+      <scope id="6355695904178436203" at="18,58,20,115" />
+      <scope id="6355695904178436203" at="25,0,27,0" />
+      <scope id="6355695904178436203" at="29,51,32,73">
+        <var name="editor" id="6355695904178436203" />
+        <var name="editorComponent" id="6355695904178436203" />
+      </scope>
+      <scope id="6355695904178436203" at="17,0,22,0" />
+      <scope id="6355695904178436203" at="28,0,34,0" />
+      <unit id="6355695904178436203" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.MostSpecificEditor_Test$TestBody" />
+      <unit id="6355695904178436203" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.MostSpecificEditor_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/7279578193769046188">
-    <nodeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="18" startPosition="87" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5613016763942494752" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorSpecifiedBy_add_context_hints_RefNodeList_Test#()V" />
-    <nodeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_EditorSpecifiedBy_add_context_hints_RefNodeList#()V" />
-    <nodeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="14" startPosition="65" endLine="14" endPosition="65" />
-    <scopeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="18" startPosition="87" endLine="20" endPosition="144" />
-    <scopeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="60">
-      <varInfo nodeId="7279578193769046188" varName="editor" />
-      <varInfo nodeId="7279578193769046188" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_RefNodeList_Test$TestBody" />
-    <unitInfo nodeId="7279578193769046188" fileName="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_RefNodeList_Test" />
+    <file name="EditorSpecifiedBy_add_context_hints_RefNodeList_Test.java">
+      <node id="7279578193769046188" at="18,87,19,117" concept="1" />
+      <node id="7279578193769046188" at="19,117,20,144" concept="1" />
+      <node id="7279578193769046188" at="29,51,30,99" concept="3" />
+      <node id="7279578193769046188" at="30,99,31,93" concept="3" />
+      <node id="5613016763942494752" at="31,93,32,60" concept="1" />
+      <node id="7279578193769046188" at="14,0,16,0" concept="0" trace="EditorSpecifiedBy_add_context_hints_RefNodeList_Test#()V" />
+      <node id="7279578193769046188" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="7279578193769046188" at="17,0,22,0" concept="2" trace="test_EditorSpecifiedBy_add_context_hints_RefNodeList#()V" />
+      <node id="7279578193769046188" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7279578193769046188" at="14,65,14,65" />
+      <scope id="7279578193769046188" at="25,23,25,23" />
+      <scope id="7279578193769046188" at="14,0,16,0" />
+      <scope id="7279578193769046188" at="18,87,20,144" />
+      <scope id="7279578193769046188" at="25,0,27,0" />
+      <scope id="7279578193769046188" at="29,51,32,60">
+        <var name="editor" id="7279578193769046188" />
+        <var name="editorComponent" id="7279578193769046188" />
+      </scope>
+      <scope id="7279578193769046188" at="17,0,22,0" />
+      <scope id="7279578193769046188" at="28,0,34,0" />
+      <unit id="7279578193769046188" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_RefNodeList_Test$TestBody" />
+      <unit id="7279578193769046188" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_context_hints_RefNodeList_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/7279578193769147476">
-    <nodeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="18" startPosition="94" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5613016763942494883" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test#()V" />
-    <nodeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_EditorSpecifiedBy_add_remove_context_hints_RefNodeList#()V" />
-    <nodeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="14" startPosition="72" endLine="14" endPosition="72" />
-    <scopeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="18" startPosition="94" endLine="20" endPosition="151" />
-    <scopeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="60">
-      <varInfo nodeId="7279578193769147476" varName="editor" />
-      <varInfo nodeId="7279578193769147476" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test$TestBody" />
-    <unitInfo nodeId="7279578193769147476" fileName="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test" />
+    <file name="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test.java">
+      <node id="7279578193769147476" at="18,94,19,117" concept="1" />
+      <node id="7279578193769147476" at="19,117,20,151" concept="1" />
+      <node id="7279578193769147476" at="29,51,30,99" concept="3" />
+      <node id="7279578193769147476" at="30,99,31,93" concept="3" />
+      <node id="5613016763942494883" at="31,93,32,60" concept="1" />
+      <node id="7279578193769147476" at="14,0,16,0" concept="0" trace="EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test#()V" />
+      <node id="7279578193769147476" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="7279578193769147476" at="17,0,22,0" concept="2" trace="test_EditorSpecifiedBy_add_remove_context_hints_RefNodeList#()V" />
+      <node id="7279578193769147476" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7279578193769147476" at="14,72,14,72" />
+      <scope id="7279578193769147476" at="25,23,25,23" />
+      <scope id="7279578193769147476" at="14,0,16,0" />
+      <scope id="7279578193769147476" at="18,94,20,151" />
+      <scope id="7279578193769147476" at="25,0,27,0" />
+      <scope id="7279578193769147476" at="29,51,32,60">
+        <var name="editor" id="7279578193769147476" />
+        <var name="editorComponent" id="7279578193769147476" />
+      </scope>
+      <scope id="7279578193769147476" at="17,0,22,0" />
+      <scope id="7279578193769147476" at="28,0,34,0" />
+      <unit id="7279578193769147476" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test$TestBody" />
+      <unit id="7279578193769147476" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.EditorSpecifiedBy_add_remove_context_hints_RefNodeList_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/7636045212390392321">
-    <nodeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="18" startPosition="80" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7636045212390401434" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_addQuery_default_Test#()V" />
-    <nodeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_addQuery_default#()V" />
-    <nodeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="14" startPosition="58" endLine="14" endPosition="58" />
-    <scopeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="18" startPosition="80" endLine="20" endPosition="137" />
-    <scopeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="73">
-      <varInfo nodeId="7636045212390392321" varName="editor" />
-      <varInfo nodeId="7636045212390392321" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_default_Test$TestBody" />
-    <unitInfo nodeId="7636045212390392321" fileName="ConditionalPresentation_addQuery_default_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_default_Test" />
+    <file name="ConditionalPresentation_addQuery_default_Test.java">
+      <node id="7636045212390392321" at="18,80,19,117" concept="1" />
+      <node id="7636045212390392321" at="19,117,20,137" concept="1" />
+      <node id="7636045212390392321" at="29,51,30,99" concept="3" />
+      <node id="7636045212390392321" at="30,99,31,93" concept="3" />
+      <node id="7636045212390401434" at="31,93,32,73" concept="1" />
+      <node id="7636045212390392321" at="14,0,16,0" concept="0" trace="ConditionalPresentation_addQuery_default_Test#()V" />
+      <node id="7636045212390392321" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="7636045212390392321" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_addQuery_default#()V" />
+      <node id="7636045212390392321" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7636045212390392321" at="14,58,14,58" />
+      <scope id="7636045212390392321" at="25,23,25,23" />
+      <scope id="7636045212390392321" at="14,0,16,0" />
+      <scope id="7636045212390392321" at="18,80,20,137" />
+      <scope id="7636045212390392321" at="25,0,27,0" />
+      <scope id="7636045212390392321" at="29,51,32,73">
+        <var name="editor" id="7636045212390392321" />
+        <var name="editorComponent" id="7636045212390392321" />
+      </scope>
+      <scope id="7636045212390392321" at="17,0,22,0" />
+      <scope id="7636045212390392321" at="28,0,34,0" />
+      <unit id="7636045212390392321" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_default_Test$TestBody" />
+      <unit id="7636045212390392321" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_default_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/7636045212390401481">
-    <nodeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="18" startPosition="77" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7636045212390401766" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_addQuery_rich_Test#()V" />
-    <nodeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_addQuery_rich#()V" />
-    <nodeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="14" startPosition="55" endLine="14" endPosition="55" />
-    <scopeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="18" startPosition="77" endLine="20" endPosition="134" />
-    <scopeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="65">
-      <varInfo nodeId="7636045212390401481" varName="editor" />
-      <varInfo nodeId="7636045212390401481" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_rich_Test$TestBody" />
-    <unitInfo nodeId="7636045212390401481" fileName="ConditionalPresentation_addQuery_rich_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_rich_Test" />
+    <file name="ConditionalPresentation_addQuery_rich_Test.java">
+      <node id="7636045212390401481" at="18,77,19,117" concept="1" />
+      <node id="7636045212390401481" at="19,117,20,134" concept="1" />
+      <node id="7636045212390401481" at="29,51,30,99" concept="3" />
+      <node id="7636045212390401481" at="30,99,31,93" concept="3" />
+      <node id="7636045212390401766" at="31,93,32,65" concept="1" />
+      <node id="7636045212390401481" at="14,0,16,0" concept="0" trace="ConditionalPresentation_addQuery_rich_Test#()V" />
+      <node id="7636045212390401481" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="7636045212390401481" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_addQuery_rich#()V" />
+      <node id="7636045212390401481" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7636045212390401481" at="14,55,14,55" />
+      <scope id="7636045212390401481" at="25,23,25,23" />
+      <scope id="7636045212390401481" at="14,0,16,0" />
+      <scope id="7636045212390401481" at="18,77,20,134" />
+      <scope id="7636045212390401481" at="25,0,27,0" />
+      <scope id="7636045212390401481" at="29,51,32,65">
+        <var name="editor" id="7636045212390401481" />
+        <var name="editorComponent" id="7636045212390401481" />
+      </scope>
+      <scope id="7636045212390401481" at="17,0,22,0" />
+      <scope id="7636045212390401481" at="28,0,34,0" />
+      <unit id="7636045212390401481" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_rich_Test$TestBody" />
+      <unit id="7636045212390401481" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_rich_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/7636045212390410965">
-    <nodeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="18" startPosition="83" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7636045212390410973" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_removeQuery_compact_Test#()V" />
-    <nodeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_removeQuery_compact#()V" />
-    <nodeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="14" startPosition="61" endLine="14" endPosition="61" />
-    <scopeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="18" startPosition="83" endLine="20" endPosition="140" />
-    <scopeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="66">
-      <varInfo nodeId="7636045212390410965" varName="editor" />
-      <varInfo nodeId="7636045212390410965" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="28" startPosition="0" endLine="34" endPosition="0" />
-    <unitInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="23" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_compact_Test$TestBody" />
-    <unitInfo nodeId="7636045212390410965" fileName="ConditionalPresentation_removeQuery_compact_Test.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_compact_Test" />
+    <file name="ConditionalPresentation_removeQuery_compact_Test.java">
+      <node id="7636045212390410965" at="18,83,19,117" concept="1" />
+      <node id="7636045212390410965" at="19,117,20,140" concept="1" />
+      <node id="7636045212390410965" at="29,51,30,99" concept="3" />
+      <node id="7636045212390410965" at="30,99,31,93" concept="3" />
+      <node id="7636045212390410973" at="31,93,32,66" concept="1" />
+      <node id="7636045212390410965" at="14,0,16,0" concept="0" trace="ConditionalPresentation_removeQuery_compact_Test#()V" />
+      <node id="7636045212390410965" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="7636045212390410965" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_removeQuery_compact#()V" />
+      <node id="7636045212390410965" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7636045212390410965" at="14,61,14,61" />
+      <scope id="7636045212390410965" at="25,23,25,23" />
+      <scope id="7636045212390410965" at="14,0,16,0" />
+      <scope id="7636045212390410965" at="18,83,20,140" />
+      <scope id="7636045212390410965" at="25,0,27,0" />
+      <scope id="7636045212390410965" at="29,51,32,66">
+        <var name="editor" id="7636045212390410965" />
+        <var name="editorComponent" id="7636045212390410965" />
+      </scope>
+      <scope id="7636045212390410965" at="17,0,22,0" />
+      <scope id="7636045212390410965" at="28,0,34,0" />
+      <unit id="7636045212390410965" at="23,0,35,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_compact_Test$TestBody" />
+      <unit id="7636045212390410965" at="12,0,36,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_compact_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/7636045212390416608">
-    <nodeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="18" startPosition="79" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7636045212390416999" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2601164129532540603" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="32" startPosition="61" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2601164129532784640" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390417648" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="34" startPosition="107" endLine="35" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_addQuery_switch_Test#()V" />
-    <nodeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_addQuery_switch#()V" />
-    <nodeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="14" startPosition="57" endLine="14" endPosition="57" />
-    <scopeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="18" startPosition="79" endLine="20" endPosition="136" />
-    <scopeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="29" startPosition="51" endLine="35" endPosition="74">
-      <varInfo nodeId="7636045212390416608" varName="editor" />
-      <varInfo nodeId="7636045212390416608" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_switch_Test$TestBody" />
-    <unitInfo nodeId="7636045212390416608" fileName="ConditionalPresentation_addQuery_switch_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_switch_Test" />
+    <file name="ConditionalPresentation_addQuery_switch_Test.java">
+      <node id="7636045212390416608" at="18,79,19,117" concept="1" />
+      <node id="7636045212390416608" at="19,117,20,136" concept="1" />
+      <node id="7636045212390416608" at="29,51,30,99" concept="3" />
+      <node id="7636045212390416608" at="30,99,31,93" concept="3" />
+      <node id="7636045212390416999" at="31,93,32,61" concept="1" />
+      <node id="2601164129532540603" at="32,61,33,107" concept="1" />
+      <node id="2601164129532784640" at="33,107,34,107" concept="1" />
+      <node id="7636045212390417648" at="34,107,35,74" concept="1" />
+      <node id="7636045212390416608" at="14,0,16,0" concept="0" trace="ConditionalPresentation_addQuery_switch_Test#()V" />
+      <node id="7636045212390416608" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="7636045212390416608" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_addQuery_switch#()V" />
+      <node id="7636045212390416608" at="28,0,37,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7636045212390416608" at="14,57,14,57" />
+      <scope id="7636045212390416608" at="25,23,25,23" />
+      <scope id="7636045212390416608" at="14,0,16,0" />
+      <scope id="7636045212390416608" at="18,79,20,136" />
+      <scope id="7636045212390416608" at="25,0,27,0" />
+      <scope id="7636045212390416608" at="17,0,22,0" />
+      <scope id="7636045212390416608" at="29,51,35,74">
+        <var name="editor" id="7636045212390416608" />
+        <var name="editorComponent" id="7636045212390416608" />
+      </scope>
+      <scope id="7636045212390416608" at="28,0,37,0" />
+      <unit id="7636045212390416608" at="23,0,38,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_switch_Test$TestBody" />
+      <unit id="7636045212390416608" at="12,0,39,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_addQuery_switch_Test" />
+    </file>
   </root>
   <root nodeRef="r:dbab6746-af91-4594-857e-d38a36667e17(jetbrains.mps.lang.editor.multiple.tests)/7636045212393364917">
-    <nodeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="18" startPosition="82" endLine="19" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="19" startPosition="117" endLine="20" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7636045212393365029" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2601164129532808938" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="32" startPosition="62" endLine="33" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2601164129532808955" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="33" startPosition="107" endLine="34" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212393364919" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="34" startPosition="107" endLine="35" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConditionalPresentation_removeQuery_switch_Test#()V" />
-    <nodeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
-    <nodeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ConditionalPresentation_removeQuery_switch#()V" />
-    <nodeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="testMethodImpl#()V" />
-    <scopeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="14" startPosition="60" endLine="14" endPosition="60" />
-    <scopeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="25" startPosition="23" endLine="25" endPosition="23" />
-    <scopeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="18" startPosition="82" endLine="20" endPosition="139" />
-    <scopeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="29" startPosition="51" endLine="35" endPosition="66">
-      <varInfo nodeId="7636045212393364917" varName="editor" />
-      <varInfo nodeId="7636045212393364917" varName="editorComponent" />
-    </scopeInfo>
-    <scopeInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="28" startPosition="0" endLine="37" endPosition="0" />
-    <unitInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="23" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_switch_Test$TestBody" />
-    <unitInfo nodeId="7636045212393364917" fileName="ConditionalPresentation_removeQuery_switch_Test.java" startLine="12" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_switch_Test" />
+    <file name="ConditionalPresentation_removeQuery_switch_Test.java">
+      <node id="7636045212393364917" at="18,82,19,117" concept="1" />
+      <node id="7636045212393364917" at="19,117,20,139" concept="1" />
+      <node id="7636045212393364917" at="29,51,30,99" concept="3" />
+      <node id="7636045212393364917" at="30,99,31,93" concept="3" />
+      <node id="7636045212393365029" at="31,93,32,62" concept="1" />
+      <node id="2601164129532808938" at="32,62,33,107" concept="1" />
+      <node id="2601164129532808955" at="33,107,34,107" concept="1" />
+      <node id="7636045212393364919" at="34,107,35,66" concept="1" />
+      <node id="7636045212393364917" at="14,0,16,0" concept="0" trace="ConditionalPresentation_removeQuery_switch_Test#()V" />
+      <node id="7636045212393364917" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="7636045212393364917" at="17,0,22,0" concept="2" trace="test_ConditionalPresentation_removeQuery_switch#()V" />
+      <node id="7636045212393364917" at="28,0,37,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7636045212393364917" at="14,60,14,60" />
+      <scope id="7636045212393364917" at="25,23,25,23" />
+      <scope id="7636045212393364917" at="14,0,16,0" />
+      <scope id="7636045212393364917" at="18,82,20,139" />
+      <scope id="7636045212393364917" at="25,0,27,0" />
+      <scope id="7636045212393364917" at="17,0,22,0" />
+      <scope id="7636045212393364917" at="29,51,35,66">
+        <var name="editor" id="7636045212393364917" />
+        <var name="editorComponent" id="7636045212393364917" />
+      </scope>
+      <scope id="7636045212393364917" at="28,0,37,0" />
+      <unit id="7636045212393364917" at="23,0,38,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_switch_Test$TestBody" />
+      <unit id="7636045212393364917" at="12,0,39,0" name="jetbrains.mps.lang.editor.multiple.tests.ConditionalPresentation_removeQuery_switch_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

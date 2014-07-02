@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,32 +15,28 @@
  */
 package jetbrains.mps.ide.vfs;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileTypes.FileTypeManager;
 import com.intellij.openapi.util.io.StreamUtil;
 import com.intellij.openapi.vfs.SafeWriteRequestor;
 import com.intellij.openapi.vfs.SavingRequestor;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.newvfs.NewVirtualFile;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.platform.watching.FileSystemListenersContainer;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.FileSystemProvider;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.impl.IoFileSystemProvider;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 /**
  * @author Evgeny Gerashchenko
@@ -49,9 +45,6 @@ public class IdeaFileSystemProvider extends FileSystemProviderComponent implemen
   static final Logger LOG = LogManager.getLogger(IdeaFileSystemProvider.class);
 
   private FileSystemListenersContainer myListeners = new FileSystemListenersContainer();
-
-  // Workaround for IDEA-75359
-  private static final Set<VirtualFile> ourJarRootsAccessedAtLeastOnce = new HashSet<VirtualFile>();
 
   public IdeaFileSystemProvider() {
   }
@@ -70,6 +63,12 @@ public class IdeaFileSystemProvider extends FileSystemProviderComponent implemen
   public void removeListener(FileSystemListener listener) {
     myListeners.removeListener(listener);
 
+  }
+
+  @Override
+  public void disposeComponent() {
+    super.disposeComponent();
+    FileSystem.getInstance().setFileSystemProvider(new IoFileSystemProvider());
   }
 
   public FileSystemListenersContainer getListenersContainer() {
@@ -127,26 +126,6 @@ public class IdeaFileSystemProvider extends FileSystemProviderComponent implemen
         ModelAccess.instance().requireWrite(r);
       }
     });
-  }
-
-  public void dispose() {
-    ourJarRootsAccessedAtLeastOnce.clear();
-  }
-
-  // Workaround for IDEA-75359
-  static void jarRootAccessed(final VirtualFile jarRootFile) {
-    synchronized (ourJarRootsAccessedAtLeastOnce) {
-      if (!ourJarRootsAccessedAtLeastOnce.contains(jarRootFile)) {
-        ourJarRootsAccessedAtLeastOnce.add(jarRootFile);
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            ((NewVirtualFile) jarRootFile).markDirtyRecursively();
-            jarRootFile.refresh(false, true);
-          }
-        });
-      }
-    }
   }
 
   @NotNull

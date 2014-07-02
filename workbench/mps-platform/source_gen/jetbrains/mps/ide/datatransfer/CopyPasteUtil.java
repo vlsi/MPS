@@ -21,6 +21,8 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.StaticReference;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import com.intellij.ide.CopyPasteManagerEx;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
@@ -176,7 +178,7 @@ public class CopyPasteUtil {
         } else {
           String resolveInfo = (oldTargetNode == null ? ((jetbrains.mps.smodel.SReference) sourceReference).getResolveInfo() : oldTargetNode.getName());
           if (resolveInfo != null) {
-            if (oldTargetNode != null && !(SNodeOperations.isDisposed(oldTargetNode)) && oldTargetNode.getModel() != null) {
+            if (oldTargetNode != null && SNodeUtil.isAccessible(oldTargetNode, MPSModuleRepository.getInstance())) {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getReference(), oldTargetNode.getNodeId(), resolveInfo);
             } else {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
@@ -198,8 +200,18 @@ public class CopyPasteUtil {
     CopyPasteManagerEx.getInstanceEx().setContents(new StringSelection(text));
   }
 
+
+
+  /**
+   * Deprecated since MPS 3.1 looks like not used anymore
+   */
+  @Deprecated
   public static void copyNodesAndTextToClipboard(List<SNode> nodes, String text) {
     setClipboardContents(new SNodeTransferable(nodes, text));
+  }
+
+  public static void copyTextAndNodeToClipboard(String text, SNode node) {
+    setClipboardContents(new SNodeTransferable(text, node));
   }
 
   public static void copyNodesAndTextToClipboard(List<SNode> nodes, Map<SNode, Set<SNode>> nodesAndAttributes, String text) {
@@ -249,7 +261,7 @@ public class CopyPasteUtil {
       }
       i++;
     }
-    CopyPasteUtil.copyNodesAndTextToClipboard(nodes, stringBuilder.toString());
+    setClipboardContents(new SNodeTransferable(nodes, stringBuilder.toString()));
   }
 
   public static void copyNodeToClipboard(SNode node) {
@@ -389,6 +401,30 @@ public class CopyPasteUtil {
     };
   }
 
+  public static boolean isStringOnTopOfClipboard() {
+    // This method was created in accordance with TextPasteUtil.hasStringInClipboard()/.getStringFromClipboard() 
+    // methods we should consider reimplementing these methods in order to iterrate over .getAllContents() collection 
+    // in case first available Transferable does not support neither stringFlavor nor sNode one. 
+    for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {
+      if (trf != null) {
+        for (DataFlavor nextFlavor : trf.getTransferDataFlavors()) {
+          if (nextFlavor == SModelDataFlavor.stringFlavor) {
+            return true;
+          }
+          if (nextFlavor == SModelDataFlavor.sNode) {
+            return false;
+          }
+        }
+      }
+      break;
+    }
+    return false;
+  }
+
+  /**
+   * Deprecated since MPS 3.1 looks like not used anymore
+   */
+  @Deprecated
   public static boolean doesClipboardContainNode() {
     Transferable content = null;
     for (Transferable trf : CopyPasteManagerEx.getInstanceEx().getAllContents()) {

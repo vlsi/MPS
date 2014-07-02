@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="Language.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="testDefaultEditor.Language" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="Language.java">
+      <unit at="15,0,60,0" name="testDefaultEditor.Language" />
+    </file>
+  </root>
+</debug-info>
 

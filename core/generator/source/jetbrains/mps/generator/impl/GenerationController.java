@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -169,7 +169,7 @@ public class GenerationController implements ITaskPoolProvider {
     final GenerationTrace genTrace = myOptions.isSaveTransientModels() ? new GenTraceImpl() : new GenerationTrace.NoOp();
 
     final TransientModelsModule transientModule = myTransientModelsProvider.getModule(module);
-    final GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, this, myLogger, transientModule, ttrace, myOptions, genTrace);
+    final GenerationSession generationSession = new GenerationSession(inputModel, myOperationContext.getProject(), this, myLogger, transientModule, ttrace, myOptions, genTrace);
 
     monitor.start(inputModel.getModelName(), 10);
     try {

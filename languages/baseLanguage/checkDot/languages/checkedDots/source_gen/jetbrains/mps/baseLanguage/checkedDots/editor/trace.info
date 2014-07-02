@@ -1,197 +1,216 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.EditorAspectDescriptorImpl" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="EditorAspectDescriptorImpl.java">
+      <unit at="13,0,33,0" name="jetbrains.mps.baseLanguage.checkedDots.editor.EditorAspectDescriptorImpl" />
+    </file>
+  </root>
   <root nodeRef="r:87dca7c3-9c03-4bb2-90a6-6d5e60f0974a(jetbrains.mps.baseLanguage.checkedDots.editor)/4079382982702596668">
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="27" startPosition="89" endLine="28" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="28" startPosition="96" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="29" startPosition="48" endLine="30" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="30" startPosition="28" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="30" startPosition="28" endLine="31" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="33" startPosition="80" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="37" startPosition="87" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="38" startPosition="81" endLine="39" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="39" startPosition="32" endLine="40" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="40" startPosition="45" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="41" startPosition="26" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="43" startPosition="39" endLine="44" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="45" startPosition="5" endLine="46" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="46" startPosition="73" endLine="47" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="47" startPosition="57" endLine="48" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="49" startPosition="35" endLine="50" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="50" startPosition="72" endLine="51" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="51" startPosition="78" endLine="52" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="53" startPosition="10" endLine="54" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4079382982702596672" fileName="CheckedDotExpression_Editor.java" startLine="57" startPosition="88" endLine="58" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596672" fileName="CheckedDotExpression_Editor.java" startLine="58" startPosition="88" endLine="59" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596672" fileName="CheckedDotExpression_Editor.java" startLine="59" startPosition="47" endLine="60" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596672" fileName="CheckedDotExpression_Editor.java" startLine="60" startPosition="34" endLine="61" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596672" fileName="CheckedDotExpression_Editor.java" startLine="61" startPosition="62" endLine="62" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596672" fileName="CheckedDotExpression_Editor.java" startLine="62" startPosition="48" endLine="63" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596672" fileName="CheckedDotExpression_Editor.java" startLine="63" startPosition="40" endLine="64" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596672" fileName="CheckedDotExpression_Editor.java" startLine="64" startPosition="85" endLine="65" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596672" fileName="CheckedDotExpression_Editor.java" startLine="65" startPosition="34" endLine="66" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="69" startPosition="87" endLine="70" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="70" startPosition="81" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="71" startPosition="34" endLine="72" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="72" startPosition="47" endLine="73" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="73" startPosition="26" endLine="74" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="75" startPosition="39" endLine="76" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="78" startPosition="15" endLine="79" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="80" startPosition="5" endLine="81" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="81" startPosition="90" endLine="82" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="82" startPosition="73" endLine="83" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="83" startPosition="57" endLine="84" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="85" startPosition="35" endLine="86" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="86" startPosition="72" endLine="87" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="87" startPosition="78" endLine="88" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="89" startPosition="10" endLine="90" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="42" startPosition="58" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="74" startPosition="58" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="77" startPosition="5" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="48" startPosition="59" endLine="54" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="84" startPosition="59" endLine="90" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="27" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_6ihim1_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4079382982702596672" fileName="CheckedDotExpression_Editor.java" startLine="57" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6ihim1_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="37" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_6ihim1_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="69" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_6ihim1_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <scopeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" />
-    <scopeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="30" startPosition="28" endLine="31" endPosition="80" />
-    <scopeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="31" startPosition="80" endLine="32" endPosition="81" />
-    <scopeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="80" />
-    <scopeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="43" startPosition="39" endLine="44" endPosition="36" />
-    <scopeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="75" startPosition="39" endLine="76" endPosition="38" />
-    <scopeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="78" startPosition="15" endLine="79" endPosition="96" />
-    <scopeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="4079382982702596668" varName="editorContext" />
-      <varInfo nodeId="4079382982702596668" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="49" startPosition="35" endLine="52" endPosition="109">
-      <varInfo nodeId="4079382982702596671" varName="manager" />
-      <varInfo nodeId="4079382982702596671" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="85" startPosition="35" endLine="88" endPosition="109">
-      <varInfo nodeId="4079382982702596673" varName="manager" />
-      <varInfo nodeId="4079382982702596673" varName="opContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="27" startPosition="89" endLine="34" endPosition="22">
-      <varInfo nodeId="4079382982702596668" varName="editorCell" />
-    </scopeInfo>
-    <scopeInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="27" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="4079382982702596668" varName="editorContext" />
-      <varInfo nodeId="4079382982702596668" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4079382982702596672" fileName="CheckedDotExpression_Editor.java" startLine="57" startPosition="88" endLine="66" endPosition="22">
-      <varInfo nodeId="4079382982702596672" varName="editorCell" />
-      <varInfo nodeId="4079382982702596672" varName="style" />
-    </scopeInfo>
-    <scopeInfo nodeId="4079382982702596672" fileName="CheckedDotExpression_Editor.java" startLine="57" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="4079382982702596672" varName="editorContext" />
-      <varInfo nodeId="4079382982702596672" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="37" startPosition="87" endLine="54" endPosition="22">
-      <varInfo nodeId="4079382982702596671" varName="attributeConcept" />
-      <varInfo nodeId="4079382982702596671" varName="attributeKind" />
-      <varInfo nodeId="4079382982702596671" varName="editorCell" />
-      <varInfo nodeId="4079382982702596671" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="4079382982702596671" fileName="CheckedDotExpression_Editor.java" startLine="37" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="4079382982702596671" varName="editorContext" />
-      <varInfo nodeId="4079382982702596671" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="69" startPosition="87" endLine="90" endPosition="22">
-      <varInfo nodeId="4079382982702596673" varName="attributeConcept" />
-      <varInfo nodeId="4079382982702596673" varName="attributeKind" />
-      <varInfo nodeId="4079382982702596673" varName="editorCell" />
-      <varInfo nodeId="4079382982702596673" varName="provider" />
-    </scopeInfo>
-    <scopeInfo nodeId="4079382982702596673" fileName="CheckedDotExpression_Editor.java" startLine="69" startPosition="0" endLine="92" endPosition="0">
-      <varInfo nodeId="4079382982702596673" varName="editorContext" />
-      <varInfo nodeId="4079382982702596673" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="4079382982702596668" fileName="CheckedDotExpression_Editor.java" startLine="22" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDotExpression_Editor" />
+    <file name="CheckedDotExpression_Editor.java">
+      <node id="4079382982702596668" at="23,79,24,63" concept="7" />
+      <node id="4079382982702596668" at="27,89,28,96" concept="6" />
+      <node id="4079382982702596668" at="28,96,29,48" concept="2" />
+      <node id="4079382982702596668" at="29,48,30,28" concept="2" />
+      <node id="4079382982702596668" at="30,28,31,80" concept="0" />
+      <node id="4079382982702596668" at="30,28,31,80" concept="2" />
+      <node id="4079382982702596668" at="31,80,32,81" concept="0" />
+      <node id="4079382982702596668" at="31,80,32,81" concept="2" />
+      <node id="4079382982702596668" at="32,81,33,80" concept="0" />
+      <node id="4079382982702596668" at="32,81,33,80" concept="2" />
+      <node id="4079382982702596668" at="33,80,34,22" concept="7" />
+      <node id="4079382982702596671" at="37,87,38,81" concept="6" />
+      <node id="4079382982702596671" at="38,81,39,32" concept="2" />
+      <node id="4079382982702596671" at="39,32,40,45" concept="2" />
+      <node id="4079382982702596671" at="40,45,41,26" concept="6" />
+      <node id="4079382982702596671" at="41,26,42,58" concept="2" />
+      <node id="4079382982702596671" at="43,39,44,36" concept="2" />
+      <node id="4079382982702596671" at="45,5,46,73" concept="2" />
+      <node id="4079382982702596671" at="46,73,47,57" concept="6" />
+      <node id="4079382982702596671" at="47,57,48,59" concept="6" />
+      <node id="4079382982702596671" at="49,35,50,72" concept="6" />
+      <node id="4079382982702596671" at="50,72,51,78" concept="6" />
+      <node id="4079382982702596671" at="51,78,52,109" concept="7" />
+      <node id="4079382982702596671" at="53,10,54,22" concept="7" />
+      <node id="4079382982702596672" at="57,88,58,88" concept="6" />
+      <node id="4079382982702596672" at="58,88,59,47" concept="2" />
+      <node id="4079382982702596672" at="59,47,60,34" concept="6" />
+      <node id="4079382982702596672" at="60,34,61,62" concept="2" />
+      <node id="4079382982702596672" at="61,62,62,48" concept="2" />
+      <node id="4079382982702596672" at="62,48,63,40" concept="2" />
+      <node id="4079382982702596672" at="63,40,64,85" concept="2" />
+      <node id="4079382982702596672" at="64,85,65,34" concept="2" />
+      <node id="4079382982702596672" at="65,34,66,22" concept="7" />
+      <node id="4079382982702596673" at="69,87,70,81" concept="6" />
+      <node id="4079382982702596673" at="70,81,71,34" concept="2" />
+      <node id="4079382982702596673" at="71,34,72,47" concept="2" />
+      <node id="4079382982702596673" at="72,47,73,26" concept="6" />
+      <node id="4079382982702596673" at="73,26,74,58" concept="2" />
+      <node id="4079382982702596673" at="75,39,76,38" concept="2" />
+      <node id="4079382982702596673" at="78,15,79,96" concept="2" />
+      <node id="4079382982702596673" at="80,5,81,90" concept="2" />
+      <node id="4079382982702596673" at="81,90,82,73" concept="2" />
+      <node id="4079382982702596673" at="82,73,83,57" concept="6" />
+      <node id="4079382982702596673" at="83,57,84,59" concept="6" />
+      <node id="4079382982702596673" at="85,35,86,72" concept="6" />
+      <node id="4079382982702596673" at="86,72,87,78" concept="6" />
+      <node id="4079382982702596673" at="87,78,88,109" concept="7" />
+      <node id="4079382982702596673" at="89,10,90,22" concept="7" />
+      <node id="4079382982702596668" at="23,0,26,0" concept="5" trace="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4079382982702596671" at="42,58,45,5" concept="4" />
+      <node id="4079382982702596673" at="74,58,77,5" concept="4" />
+      <node id="4079382982702596673" at="77,5,80,5" concept="4" />
+      <node id="4079382982702596671" at="48,59,54,22" concept="4" />
+      <node id="4079382982702596673" at="84,59,90,22" concept="4" />
+      <node id="4079382982702596668" at="27,0,36,0" concept="5" trace="createCollection_6ihim1_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4079382982702596672" at="57,0,68,0" concept="5" trace="createConstant_6ihim1_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4079382982702596671" at="37,0,56,0" concept="5" trace="createRefNode_6ihim1_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <node id="4079382982702596673" at="69,0,92,0" concept="5" trace="createRefNode_6ihim1_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+      <scope id="4079382982702596668" at="23,79,24,63" />
+      <scope id="4079382982702596668" at="30,28,31,80" />
+      <scope id="4079382982702596668" at="31,80,32,81" />
+      <scope id="4079382982702596668" at="32,81,33,80" />
+      <scope id="4079382982702596671" at="43,39,44,36" />
+      <scope id="4079382982702596673" at="75,39,76,38" />
+      <scope id="4079382982702596673" at="78,15,79,96" />
+      <scope id="4079382982702596668" at="23,0,26,0">
+        <var name="editorContext" id="4079382982702596668" />
+        <var name="node" id="4079382982702596668" />
+      </scope>
+      <scope id="4079382982702596671" at="49,35,52,109">
+        <var name="manager" id="4079382982702596671" />
+        <var name="opContext" id="4079382982702596671" />
+      </scope>
+      <scope id="4079382982702596673" at="85,35,88,109">
+        <var name="manager" id="4079382982702596673" />
+        <var name="opContext" id="4079382982702596673" />
+      </scope>
+      <scope id="4079382982702596668" at="27,89,34,22">
+        <var name="editorCell" id="4079382982702596668" />
+      </scope>
+      <scope id="4079382982702596668" at="27,0,36,0">
+        <var name="editorContext" id="4079382982702596668" />
+        <var name="node" id="4079382982702596668" />
+      </scope>
+      <scope id="4079382982702596672" at="57,88,66,22">
+        <var name="editorCell" id="4079382982702596672" />
+        <var name="style" id="4079382982702596672" />
+      </scope>
+      <scope id="4079382982702596672" at="57,0,68,0">
+        <var name="editorContext" id="4079382982702596672" />
+        <var name="node" id="4079382982702596672" />
+      </scope>
+      <scope id="4079382982702596671" at="37,87,54,22">
+        <var name="attributeConcept" id="4079382982702596671" />
+        <var name="attributeKind" id="4079382982702596671" />
+        <var name="editorCell" id="4079382982702596671" />
+        <var name="provider" id="4079382982702596671" />
+      </scope>
+      <scope id="4079382982702596671" at="37,0,56,0">
+        <var name="editorContext" id="4079382982702596671" />
+        <var name="node" id="4079382982702596671" />
+      </scope>
+      <scope id="4079382982702596673" at="69,87,90,22">
+        <var name="attributeConcept" id="4079382982702596673" />
+        <var name="attributeKind" id="4079382982702596673" />
+        <var name="editorCell" id="4079382982702596673" />
+        <var name="provider" id="4079382982702596673" />
+      </scope>
+      <scope id="4079382982702596673" at="69,0,92,0">
+        <var name="editorContext" id="4079382982702596673" />
+        <var name="node" id="4079382982702596673" />
+      </scope>
+      <unit id="4079382982702596668" at="22,0,93,0" name="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDotExpression_Editor" />
+    </file>
   </root>
   <root nodeRef="r:87dca7c3-9c03-4bb2-90a6-6d5e60f0974a(jetbrains.mps.baseLanguage.checkedDots.editor)/4549711462049999198">
-    <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="14" startPosition="95" endLine="15" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="21" startPosition="66" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="25" startPosition="40" endLine="26" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="29" startPosition="54" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4549711462049999202" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="33" startPosition="75" endLine="34" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckedDot_Actions_DeleteOperation_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="14" startPosition="95" endLine="15" endPosition="136" />
-    <scopeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="21" startPosition="66" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="25" startPosition="40" endLine="26" endPosition="32" />
-    <scopeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="29" startPosition="54" endLine="30" endPosition="56" />
-    <scopeInfo nodeId="4549711462049999201" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="33" startPosition="75" endLine="34" endPosition="97" />
-    <scopeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="4549711462049999198" varName="context" />
-      <varInfo nodeId="4549711462049999198" varName="editorCell" />
-      <varInfo nodeId="4549711462049999198" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="4549711462049999198" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="4549711462049999198" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="4549711462049999198" varName="editorContext" />
-      <varInfo nodeId="4549711462049999198" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_DeleteOperation$CheckedDot_Actions_DeleteOperation_DELETE" />
-    <unitInfo nodeId="4549711462049999198" fileName="CheckedDot_Actions_DeleteOperation.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_DeleteOperation" />
+    <file name="CheckedDot_Actions_DeleteOperation.java">
+      <node id="4549711462049999198" at="14,95,15,136" concept="2" />
+      <node id="4549711462049999198" at="19,0,20,0" concept="3" trace="myNode" />
+      <node id="4549711462049999198" at="21,66,22,25" concept="2" />
+      <node id="4549711462049999198" at="25,40,26,32" concept="7" />
+      <node id="4549711462049999198" at="29,54,30,56" concept="2" />
+      <node id="4549711462049999202" at="33,75,34,97" concept="2" />
+      <node id="4549711462049999198" at="14,0,17,0" concept="8" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4549711462049999198" at="21,0,24,0" concept="1" trace="CheckedDot_Actions_DeleteOperation_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4549711462049999198" at="25,0,28,0" concept="5" trace="getDescriptionText#()Ljava/lang/String;" />
+      <node id="4549711462049999198" at="29,0,32,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="4549711462049999198" at="33,0,36,0" concept="5" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="4549711462049999198" at="14,95,15,136" />
+      <scope id="4549711462049999198" at="21,66,22,25" />
+      <scope id="4549711462049999198" at="25,40,26,32" />
+      <scope id="4549711462049999198" at="29,54,30,56" />
+      <scope id="4549711462049999201" at="33,75,34,97" />
+      <scope id="4549711462049999198" at="14,0,17,0">
+        <var name="context" id="4549711462049999198" />
+        <var name="editorCell" id="4549711462049999198" />
+        <var name="node" id="4549711462049999198" />
+      </scope>
+      <scope id="4549711462049999198" at="21,0,24,0">
+        <var name="node" id="4549711462049999198" />
+      </scope>
+      <scope id="4549711462049999198" at="25,0,28,0" />
+      <scope id="4549711462049999198" at="29,0,32,0">
+        <var name="editorContext" id="4549711462049999198" />
+      </scope>
+      <scope id="4549711462049999198" at="33,0,36,0">
+        <var name="editorContext" id="4549711462049999198" />
+        <var name="node" id="4549711462049999198" />
+      </scope>
+      <unit id="4549711462049999198" at="18,0,37,0" name="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_DeleteOperation$CheckedDot_Actions_DeleteOperation_DELETE" />
+      <unit id="4549711462049999198" at="13,0,38,0" name="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_DeleteOperation" />
+    </file>
   </root>
   <root nodeRef="r:87dca7c3-9c03-4bb2-90a6-6d5e60f0974a(jetbrains.mps.baseLanguage.checkedDots.editor)/5314141825909190989">
-    <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="15" startPosition="95" endLine="16" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="22" startPosition="64" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="26" startPosition="40" endLine="27" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="30" startPosition="54" endLine="31" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5314141825909197141" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="34" startPosition="75" endLine="35" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5314141825909197147" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="35" startPosition="131" endLine="36" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5314141825909197156" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="36" startPosition="114" endLine="37" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5039685968159908682" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="37" startPosition="118" endLine="38" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckedDot_Actions_MakeUnchecked_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="15" startPosition="95" endLine="16" endPosition="132" />
-    <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="22" startPosition="64" endLine="23" endPosition="25" />
-    <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="26" startPosition="40" endLine="27" endPosition="36" />
-    <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="30" startPosition="54" endLine="31" endPosition="56" />
-    <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="5314141825909190989" varName="context" />
-      <varInfo nodeId="5314141825909190989" varName="editorCell" />
-      <varInfo nodeId="5314141825909190989" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="5314141825909190989" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="5314141825909190989" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5314141825909190992" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="34" startPosition="75" endLine="38" endPosition="87">
-      <varInfo nodeId="5314141825909197142" varName="dotExpression" />
-    </scopeInfo>
-    <scopeInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="34" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="5314141825909190989" varName="editorContext" />
-      <varInfo nodeId="5314141825909190989" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="19" startPosition="0" endLine="41" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_MakeUnchecked$CheckedDot_Actions_MakeUnchecked_DELETE" />
-    <unitInfo nodeId="5314141825909190989" fileName="CheckedDot_Actions_MakeUnchecked.java" startLine="14" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_MakeUnchecked" />
+    <file name="CheckedDot_Actions_MakeUnchecked.java">
+      <node id="5314141825909190989" at="15,95,16,132" concept="2" />
+      <node id="5314141825909190989" at="20,0,21,0" concept="3" trace="myNode" />
+      <node id="5314141825909190989" at="22,64,23,25" concept="2" />
+      <node id="5314141825909190989" at="26,40,27,36" concept="7" />
+      <node id="5314141825909190989" at="30,54,31,56" concept="2" />
+      <node id="5314141825909197141" at="34,75,35,131" concept="6" />
+      <node id="5314141825909197147" at="35,131,36,114" concept="2" />
+      <node id="5314141825909197156" at="36,114,37,118" concept="2" />
+      <node id="5039685968159908682" at="37,118,38,87" concept="2" />
+      <node id="5314141825909190989" at="15,0,18,0" concept="8" trace="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="5314141825909190989" at="22,0,25,0" concept="1" trace="CheckedDot_Actions_MakeUnchecked_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5314141825909190989" at="26,0,29,0" concept="5" trace="getDescriptionText#()Ljava/lang/String;" />
+      <node id="5314141825909190989" at="30,0,33,0" concept="5" trace="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <node id="5314141825909190989" at="34,0,40,0" concept="5" trace="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="5314141825909190989" at="15,95,16,132" />
+      <scope id="5314141825909190989" at="22,64,23,25" />
+      <scope id="5314141825909190989" at="26,40,27,36" />
+      <scope id="5314141825909190989" at="30,54,31,56" />
+      <scope id="5314141825909190989" at="15,0,18,0">
+        <var name="context" id="5314141825909190989" />
+        <var name="editorCell" id="5314141825909190989" />
+        <var name="node" id="5314141825909190989" />
+      </scope>
+      <scope id="5314141825909190989" at="22,0,25,0">
+        <var name="node" id="5314141825909190989" />
+      </scope>
+      <scope id="5314141825909190989" at="26,0,29,0" />
+      <scope id="5314141825909190989" at="30,0,33,0">
+        <var name="editorContext" id="5314141825909190989" />
+      </scope>
+      <scope id="5314141825909190992" at="34,75,38,87">
+        <var name="dotExpression" id="5314141825909197142" />
+      </scope>
+      <scope id="5314141825909190989" at="34,0,40,0">
+        <var name="editorContext" id="5314141825909190989" />
+        <var name="node" id="5314141825909190989" />
+      </scope>
+      <unit id="5314141825909190989" at="19,0,41,0" name="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_MakeUnchecked$CheckedDot_Actions_MakeUnchecked_DELETE" />
+      <unit id="5314141825909190989" at="14,0,42,0" name="jetbrains.mps.baseLanguage.checkedDots.editor.CheckedDot_Actions_MakeUnchecked" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

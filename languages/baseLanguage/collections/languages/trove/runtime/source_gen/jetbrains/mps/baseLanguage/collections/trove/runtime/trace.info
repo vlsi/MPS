@@ -1,16 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="TByteArrayListDecorator.java" startLine="179" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.runtime.TByteArrayListDecorator$TByteListIterator" />
-  <unitInfo fileName="TByteArrayListDecorator.java" startLine="14" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.runtime.TByteArrayListDecorator" />
-  <unitInfo fileName="TDoubleArrayListDecorator.java" startLine="179" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.runtime.TDoubleArrayListDecorator$TDoubleListIterator" />
-  <unitInfo fileName="TDoubleArrayListDecorator.java" startLine="14" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.runtime.TDoubleArrayListDecorator" />
-  <unitInfo fileName="TFloatArrayListDecorator.java" startLine="179" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.runtime.TFloatArrayListDecorator$TFloatListIterator" />
-  <unitInfo fileName="TFloatArrayListDecorator.java" startLine="14" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.runtime.TFloatArrayListDecorator" />
-  <unitInfo fileName="TIntArrayListDecorator.java" startLine="179" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.runtime.TIntArrayListDecorator$TIntegerListIterator" />
-  <unitInfo fileName="TIntArrayListDecorator.java" startLine="14" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.runtime.TIntArrayListDecorator" />
-  <unitInfo fileName="TLongArrayListDecorator.java" startLine="179" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.runtime.TLongArrayListDecorator$TLongListIterator" />
-  <unitInfo fileName="TLongArrayListDecorator.java" startLine="14" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.runtime.TLongArrayListDecorator" />
-  <unitInfo fileName="TShortArrayListDecorator.java" startLine="179" startPosition="0" endLine="228" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.runtime.TShortArrayListDecorator$TShortListIterator" />
-  <unitInfo fileName="TShortArrayListDecorator.java" startLine="14" startPosition="0" endLine="229" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.trove.runtime.TShortArrayListDecorator" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="TLongArrayListDecorator.java">
+      <unit at="179,0,228,0" name="jetbrains.mps.baseLanguage.collections.trove.runtime.TLongArrayListDecorator$TLongListIterator" />
+      <unit at="14,0,229,0" name="jetbrains.mps.baseLanguage.collections.trove.runtime.TLongArrayListDecorator" />
+    </file>
+    <file name="TByteArrayListDecorator.java">
+      <unit at="179,0,228,0" name="jetbrains.mps.baseLanguage.collections.trove.runtime.TByteArrayListDecorator$TByteListIterator" />
+      <unit at="14,0,229,0" name="jetbrains.mps.baseLanguage.collections.trove.runtime.TByteArrayListDecorator" />
+    </file>
+    <file name="TFloatArrayListDecorator.java">
+      <unit at="179,0,228,0" name="jetbrains.mps.baseLanguage.collections.trove.runtime.TFloatArrayListDecorator$TFloatListIterator" />
+      <unit at="14,0,229,0" name="jetbrains.mps.baseLanguage.collections.trove.runtime.TFloatArrayListDecorator" />
+    </file>
+    <file name="TDoubleArrayListDecorator.java">
+      <unit at="179,0,228,0" name="jetbrains.mps.baseLanguage.collections.trove.runtime.TDoubleArrayListDecorator$TDoubleListIterator" />
+      <unit at="14,0,229,0" name="jetbrains.mps.baseLanguage.collections.trove.runtime.TDoubleArrayListDecorator" />
+    </file>
+    <file name="TShortArrayListDecorator.java">
+      <unit at="179,0,228,0" name="jetbrains.mps.baseLanguage.collections.trove.runtime.TShortArrayListDecorator$TShortListIterator" />
+      <unit at="14,0,229,0" name="jetbrains.mps.baseLanguage.collections.trove.runtime.TShortArrayListDecorator" />
+    </file>
+    <file name="TIntArrayListDecorator.java">
+      <unit at="179,0,228,0" name="jetbrains.mps.baseLanguage.collections.trove.runtime.TIntArrayListDecorator$TIntegerListIterator" />
+      <unit at="14,0,229,0" name="jetbrains.mps.baseLanguage.collections.trove.runtime.TIntArrayListDecorator" />
+    </file>
+  </root>
+</debug-info>
 

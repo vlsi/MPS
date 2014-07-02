@@ -20,6 +20,7 @@
     <file name="Macro.java" />
   </source>
   <source id="4003657351907890119" name="JvmArgs" hash="dtrl19lr9au4y7jhyvde4yyu2ies871">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="JvmArgs.java" />
   </source>
   <source id="4003657351907890310" name="MpsLoadTask" hash="-dtaaekvalhpv52c6fpa65coij5h55j2">

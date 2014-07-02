@@ -15,11 +15,10 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class NullSafeIllegalBehaviorDescriptor implements BehaviorDescriptor {
   public static NullSafeIllegalBehaviorDescriptor INSTANCE = new NullSafeIllegalBehaviorDescriptor();
@@ -47,23 +46,5 @@ public class NullSafeIllegalBehaviorDescriptor implements BehaviorDescriptor {
   @Override
   public Object invokeStatic(@NotNull SAbstractConcept concept, String methodName, Object[] parameters) {
     throw new IllegalArgumentException();
-  }
-
-  @Override
-  public <T> T invoke(Class<T> returnType, SNode node, String methodName, Class[] parametersTypes, Object... parameters) {
-    if (node != null) {
-      throw new IllegalArgumentException();
-    } else {
-      return BehaviorReflection.defaultValue(returnType);
-    }
-  }
-
-  @Override
-  public <T> T invokeSuper(Class<T> returnType, SNode node, String callerConceptFqName, String methodName, Class[] parametersTypes, Object... parameters) {
-    if (node != null) {
-      throw new IllegalArgumentException();
-    } else {
-      return BehaviorReflection.defaultValue(returnType);
-    }
   }
 }

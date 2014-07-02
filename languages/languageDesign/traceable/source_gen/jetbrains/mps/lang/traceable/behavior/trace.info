@@ -1,77 +1,56 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="ScopeConcept_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor" />
-  <unitInfo fileName="TraceableConcept_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor" />
-  <unitInfo fileName="UnitConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="ScopeConcept_BehaviorDescriptor.java">
+      <unit at="8,0,11,0" name="jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor" />
+    </file>
+    <file name="UnitConcept_BehaviorDescriptor.java">
+      <unit at="7,0,10,0" name="jetbrains.mps.lang.traceable.behavior.UnitConcept_BehaviorDescriptor" />
+    </file>
+    <file name="TraceableConcept_BehaviorDescriptor.java">
+      <unit at="8,0,12,0" name="jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,22,0" name="jetbrains.mps.lang.traceable.behavior.BehaviorAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)/5067982036267369893">
-    <nodeInfo nodeId="5067982036267369893" fileName="ScopeConcept_Behavior.java" startLine="16" startPosition="88" endLine="17" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5067982036267369893" fileName="ScopeConcept_Behavior.java" startLine="21" startPosition="121" endLine="22" endPosition="297" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5067982036267369893" fileName="ScopeConcept_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5067982036267369893" fileName="ScopeConcept_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getScopeVariables_5067982036267369894#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="5067982036267369893" fileName="ScopeConcept_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getScopeVariables_5067982036267369894#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/List;" />
-    <scopeInfo nodeId="5067982036267369899" fileName="ScopeConcept_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="5067982036267369893" fileName="ScopeConcept_Behavior.java" startLine="16" startPosition="88" endLine="17" endPosition="164" />
-    <scopeInfo nodeId="5067982036267369893" fileName="ScopeConcept_Behavior.java" startLine="21" startPosition="121" endLine="22" endPosition="297" />
-    <scopeInfo nodeId="5067982036267369893" fileName="ScopeConcept_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="5067982036267369893" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5067982036267369893" fileName="ScopeConcept_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="5067982036267369893" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5067982036267369893" fileName="ScopeConcept_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="5067982036267369893" varName="callerConceptFqName" />
-      <varInfo nodeId="5067982036267369893" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="5067982036267369893" fileName="ScopeConcept_Behavior.java" startLine="11" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior" />
+    <file name="ScopeConcept_Behavior.java">
+      <node id="5067982036267369893" at="8,0,10,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="5067982036267369899" at="8,43,8,43" />
+      <scope id="5067982036267369893" at="8,0,10,0">
+        <var name="thisNode" id="5067982036267369893" />
+      </scope>
+      <unit id="5067982036267369893" at="7,0,11,0" name="jetbrains.mps.lang.traceable.behavior.ScopeConcept_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)/5067982036267369900">
-    <nodeInfo nodeId="5067982036267369905" fileName="TraceableConcept_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="21" startPosition="86" endLine="22" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="26" startPosition="119" endLine="27" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getTraceableProperty_5067982036267369901#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getTraceableProperty_5067982036267369901#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getTraceableProperty_5067982036267369901#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="5067982036267369909" fileName="TraceableConcept_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="5067982036267369904" fileName="TraceableConcept_Behavior.java" startLine="16" startPosition="89" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="21" startPosition="86" endLine="22" endPosition="136" />
-    <scopeInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="26" startPosition="119" endLine="27" endPosition="273" />
-    <scopeInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="5067982036267369900" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="5067982036267369900" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="5067982036267369900" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="5067982036267369900" varName="callerConceptFqName" />
-      <varInfo nodeId="5067982036267369900" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="5067982036267369900" fileName="TraceableConcept_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
+    <file name="TraceableConcept_Behavior.java">
+      <node id="5067982036267369905" at="13,89,14,16" concept="0" />
+      <node id="5067982036267369900" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5067982036267369900" at="12,0,16,0" concept="1" trace="virtual_getTraceableProperty_5067982036267369901#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <scope id="5067982036267369909" at="9,43,9,43" />
+      <scope id="5067982036267369904" at="13,89,14,16" />
+      <scope id="5067982036267369900" at="9,0,11,0">
+        <var name="thisNode" id="5067982036267369900" />
+      </scope>
+      <scope id="5067982036267369900" at="12,0,16,0">
+        <var name="thisNode" id="5067982036267369900" />
+      </scope>
+      <unit id="5067982036267369900" at="8,0,17,0" name="jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:95397225-9080-48bc-b1aa-0ce7c4f3d2ce(jetbrains.mps.lang.traceable.behavior)/5067982036267369910">
-    <nodeInfo nodeId="5067982036267369910" fileName="UnitConcept_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5067982036267369910" fileName="UnitConcept_Behavior.java" startLine="20" startPosition="110" endLine="21" endPosition="259" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5067982036267369910" fileName="UnitConcept_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5067982036267369910" fileName="UnitConcept_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getUnitName_5067982036267369911#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5067982036267369910" fileName="UnitConcept_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getUnitName_5067982036267369911#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="5067982036267369916" fileName="UnitConcept_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="5067982036267369910" fileName="UnitConcept_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="127" />
-    <scopeInfo nodeId="5067982036267369910" fileName="UnitConcept_Behavior.java" startLine="20" startPosition="110" endLine="21" endPosition="259" />
-    <scopeInfo nodeId="5067982036267369910" fileName="UnitConcept_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="5067982036267369910" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5067982036267369910" fileName="UnitConcept_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="5067982036267369910" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5067982036267369910" fileName="UnitConcept_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="5067982036267369910" varName="callerConceptFqName" />
-      <varInfo nodeId="5067982036267369910" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="5067982036267369910" fileName="UnitConcept_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.traceable.behavior.UnitConcept_Behavior" />
+    <file name="UnitConcept_Behavior.java">
+      <node id="5067982036267369910" at="8,0,10,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="5067982036267369916" at="8,43,8,43" />
+      <scope id="5067982036267369910" at="8,0,10,0">
+        <var name="thisNode" id="5067982036267369910" />
+      </scope>
+      <unit id="5067982036267369910" at="7,0,11,0" name="jetbrains.mps.lang.traceable.behavior.UnitConcept_Behavior" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

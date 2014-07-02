@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <root nodeRef="r:c78b7b07-f19e-466a-a1b2-aee680cd1d46(jetbrains.mps.textGenTest.test1.package2)/5257650213624905145">
-    <nodeInfo nodeId="5257650213624905147" fileName="Clazz.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Clazz#()V" />
-    <nodeInfo nodeId="5257650213624905155" fileName="Clazz.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Nested#()V" />
-    <scopeInfo nodeId="5257650213624905150" fileName="Clazz.java" startLine="7" startPosition="18" endLine="7" endPosition="18" />
-    <scopeInfo nodeId="5257650213624905158" fileName="Clazz.java" startLine="11" startPosition="21" endLine="11" endPosition="21" />
-    <scopeInfo nodeId="5257650213624905147" fileName="Clazz.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
-    <scopeInfo nodeId="5257650213624905155" fileName="Clazz.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
-    <unitInfo nodeId="5257650213624905153" fileName="Clazz.java" startLine="10" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.textGenTest.test1.package2.Clazz$Nested" />
-    <unitInfo nodeId="5257650213624905145" fileName="Clazz.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.textGenTest.test1.package2.Clazz" />
+    <file name="Clazz.java">
+      <node id="5257650213624905147" at="7,0,9,0" concept="0" trace="Clazz#()V" />
+      <node id="5257650213624905155" at="11,0,13,0" concept="0" trace="Nested#()V" />
+      <scope id="5257650213624905150" at="7,18,7,18" />
+      <scope id="5257650213624905158" at="11,21,11,21" />
+      <scope id="5257650213624905147" at="7,0,9,0" />
+      <scope id="5257650213624905155" at="11,0,13,0" />
+      <unit id="5257650213624905153" at="10,0,14,0" name="jetbrains.mps.textGenTest.test1.package2.Clazz$Nested" />
+      <unit id="5257650213624905145" at="6,0,15,0" name="jetbrains.mps.textGenTest.test1.package2.Clazz" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

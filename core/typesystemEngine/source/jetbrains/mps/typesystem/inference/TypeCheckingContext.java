@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.errors.IRuleConflictWarningProducer;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
@@ -135,6 +136,8 @@ public abstract class TypeCheckingContext {
   public abstract void createGreaterThanInequality(SNode node1, SNode node2, boolean checkOnly, boolean isWeak, boolean lessThan, EquationInfo equationInfo);
 
   public abstract SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType);
+
+  public abstract SNode getOverloadedOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType, IRuleConflictWarningProducer warningProducer);
 
   public abstract void whenConcrete(SNode argument, Runnable r, String nodeModel, String nodeId);
 

@@ -14,6 +14,10 @@ public class IfMacro_Condition_BehaviorDescriptor extends TemplateQueryBase_Beha
     return IfMacro_Condition_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return IfMacro_Condition_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
     return IfMacro_Condition_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
   }

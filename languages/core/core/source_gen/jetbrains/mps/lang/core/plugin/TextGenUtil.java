@@ -4,24 +4,41 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.project.SModuleOperations;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.FileSystem;
 
-public class TextGenUtil {
+public final class TextGenUtil {
   private TextGenUtil() {
   }
 
-  public static IFile getOutputDir(IFile root, SModel model, IFile override) {
-    if (override != null) {
-      return override;
+  public static IFile getOutputDir(SModel model) {
+    IFile forced = getOverriddenOutputDir(model);
+    if (forced != null) {
+      return forced;
+    }
+    IFile root = SModuleOperations.getOutputRoot(model);
+    if (root == null) {
+      throw new IllegalArgumentException(String.format("No output location for %s", model.getModelName()));
     }
     return FileGenerationUtil.getDefaultOutputDir(model, root);
   }
 
-  public static IFile getOverriddenOutputDir(SModel md) {
+  public static IFile getCachesDir(SModel model) {
+    // seems to be intentional that we don't look into overridden output dir when constriction location for caches 
+    // as we might direct output to a public location but still keep caches in our own space 
+    IFile root = SModuleOperations.getOutputRoot(model);
+    if (root == null) {
+      throw new IllegalArgumentException(String.format("No output location for %s", model.getModelName()));
+    }
+    IFile cachesDir = FileGenerationUtil.getCachesDir(root);
+    return FileGenerationUtil.getDefaultOutputDir(model, cachesDir);
+  }
+
+  private static IFile getOverriddenOutputDir(SModel md) {
     if (md instanceof GeneratableSModel) {
       boolean useModelFolder = ((GeneratableSModel) md).isGenerateIntoModelFolder();
       DataSource source = md.getSource();

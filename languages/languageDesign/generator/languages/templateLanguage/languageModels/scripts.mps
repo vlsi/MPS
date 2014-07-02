@@ -16,7 +16,7 @@
   <root type="tp33.MigrationScript" typeId="tp33.1177457067821" id="982871510076818109" nodeInfo="ng">
     <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     <property name="name" nameId="tpck.1169194664001" value="UpdateSwitchMacro" />
-    <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
+    <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.1" />
     <property name="title" nameId="tp33.1177457669450" value="Update SWITCH macro to support parameters " />
     <node role="part" roleId="tp33.1177458178889" type="tp33.MigrationScriptPart_Instance" typeId="tp33.1177457850499" id="982871510076825112" nodeInfo="ng">
       <property name="description" nameId="tp33.1177457972041" value="Replace SwitchMacro with TemplateSwitchMacro" />

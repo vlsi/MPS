@@ -26,13 +26,6 @@ import java.util.List;
 
 public interface ITemplateGenerator {
 
-  /**
-   * @deprecated There's no reason to access progress monitor this way. The monitor is passed as an argument where needed; cancellation is checked by generator impl
-   * The method will be removed after 3.1
-   */
-  @Deprecated
-  ProgressMonitor getProgressMonitor();
-
   SModel getInputModel();
 
   SModel getOutputModel();
@@ -54,18 +47,4 @@ public interface ITemplateGenerator {
   boolean isDirty(SNode node);
 
   IGeneratorLogger getLogger();
-
-  /**
-   * @deprecated shall use {@link IGeneratorLogger#error(org.jetbrains.mps.openapi.model.SNodeReference, String, jetbrains.mps.generator.IGeneratorLogger.ProblemDescription...)}  instead
-   */
-  @Deprecated
-  @ToRemove(version=3.1)
-  void showErrorMessage(SNode inputNode, SNode templateNode, String message);
-
-  /**
-   * @deprecated shall use {@link IGeneratorLogger#error(org.jetbrains.mps.openapi.model.SNodeReference, String, jetbrains.mps.generator.IGeneratorLogger.ProblemDescription...)}  instead
-   */
-  @Deprecated
-  @ToRemove(version=3.1)
-  void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message);
 }

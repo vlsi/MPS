@@ -1,19 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="DFABuilders.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.execution.settings.dataFlow.DFABuilders" />
-  <root nodeRef="r:470fa7be-e760-4359-9d80-fc3ff0249d52(jetbrains.mps.execution.settings.dataFlow)/946964771156067208">
-    <nodeInfo nodeId="946964771156067211" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="15" startPosition="102" endLine="16" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="946964771156067215" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="16" startPosition="107" endLine="17" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="946964771156067208" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReportConfigurationErrorStatement_DataFlow#()V" />
-    <nodeInfo nodeId="946964771156067208" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
-    <scopeInfo nodeId="946964771156067208" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="12" startPosition="55" endLine="12" endPosition="55" />
-    <scopeInfo nodeId="946964771156067208" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="946964771156067210" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="15" startPosition="102" endLine="17" endPosition="138" />
-    <scopeInfo nodeId="946964771156067208" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="946964771156067208" varName="_context" />
-      <varInfo nodeId="946964771156067208" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="946964771156067208" fileName="ReportConfigurationErrorStatement_DataFlow.java" startLine="11" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.execution.settings.dataFlow.ReportConfigurationErrorStatement_DataFlow" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <root>
+    <file name="DFABuilders.java">
+      <unit at="8,0,13,0" name="jetbrains.mps.execution.settings.dataFlow.DFABuilders" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:470fa7be-e760-4359-9d80-fc3ff0249d52(jetbrains.mps.execution.settings.dataFlow)/946964771156067208">
+    <file name="ReportConfigurationErrorStatement_DataFlow.java">
+      <node id="946964771156067211" at="15,102,16,107" concept="1" />
+      <node id="946964771156067215" at="16,107,17,138" concept="1" />
+      <node id="946964771156067208" at="12,0,14,0" concept="0" trace="ReportConfigurationErrorStatement_DataFlow#()V" />
+      <node id="946964771156067208" at="15,0,19,0" concept="2" trace="build#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/lang/dataFlow/DataFlowBuilderContext;)V" />
+      <scope id="946964771156067208" at="12,55,12,55" />
+      <scope id="946964771156067208" at="12,0,14,0" />
+      <scope id="946964771156067210" at="15,102,17,138" />
+      <scope id="946964771156067208" at="15,0,19,0">
+        <var name="_context" id="946964771156067208" />
+        <var name="operationContext" id="946964771156067208" />
+      </scope>
+      <unit id="946964771156067208" at="11,0,20,0" name="jetbrains.mps.execution.settings.dataFlow.ReportConfigurationErrorStatement_DataFlow" />
+    </file>
+  </root>
+</debug-info>
 

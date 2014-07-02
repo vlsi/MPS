@@ -17,12 +17,11 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -51,16 +50,16 @@ public class IStyle_Constraints extends BaseConstraintsDescriptor {
           }
         }
 
-        Iterable<SNode> styles = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, EditableSModelDescriptor>() {
-          public EditableSModelDescriptor select(Language it) {
+        Iterable<SNode> styles = SetSequence.fromSet(contextLanguages).select(new ISelector<Language, SModel>() {
+          public SModel select(Language it) {
             return LanguageAspect.EDITOR.get(it);
           }
-        }).where(new IWhereFilter<EditableSModelDescriptor>() {
-          public boolean accept(EditableSModelDescriptor it) {
+        }).where(new IWhereFilter<SModel>() {
+          public boolean accept(SModel it) {
             return it != null;
           }
-        }).translate(new ITranslator2<EditableSModelDescriptor, SNode>() {
-          public Iterable<SNode> translate(EditableSModelDescriptor it) {
+        }).translate(new ITranslator2<SModel, SNode>() {
+          public Iterable<SNode> translate(SModel it) {
             return SModelOperations.getNodes(((SModel) it), "jetbrains.mps.lang.editor.structure.IStyle");
           }
         });

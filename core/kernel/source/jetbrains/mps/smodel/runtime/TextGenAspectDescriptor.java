@@ -16,7 +16,16 @@
 package jetbrains.mps.smodel.runtime;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public interface TextGenAspectDescriptor {
+  /**
+   * @param concept input kind for textgen
+   * @return descriptor for the concept, or <code>null</code> if this aspect knows nothing about the concept
+   */
+  @Nullable
+  TextGenDescriptor getDescriptor(@NotNull SConcept concept);
+  @Deprecated
   TextGenDescriptor getDescriptor(@NotNull String conceptFqName);
 }

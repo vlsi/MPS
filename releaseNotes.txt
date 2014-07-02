@@ -1,7 +1,24 @@
 New Features in MPS 3.1
 
 - Diagram editor
+
 - Generator improvements
+  - In-place transformation
+  - New generation trace
+  - New configuration options
+  - The Ant generation task more configurable
+  - Support for arguments in SWITCH macros
+
 - Projectional Editor improvements
+  - Style priorities
+  - Style inheritance
+  - custom style attributes
+  - Automatic reference re-resolving
+  - Presentation mode
+  - Fluent parentheses editing in BaseLanguage expressions
+
+- Testing Framework Improvements
+  - Improved usability
+  - Constraints tests
 
 See more on MPS web site: http://www.jetbrains.com/mps/whatsnew/index.html

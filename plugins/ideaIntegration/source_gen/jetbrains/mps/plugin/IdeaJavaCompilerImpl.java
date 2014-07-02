@@ -6,7 +6,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.internal.make.runtime.java.IdeaJavaCompiler;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.make.MPSCompilationResult;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Set;
@@ -58,7 +58,7 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
 
   @Override
   public boolean isValid() {
-    return !(MPSCore.getInstance().isTestMode()) && myIdeaProjectHandler != null;
+    return !(RuntimeFlags.isTestMode()) && myIdeaProjectHandler != null;
   }
 
   @Override
@@ -84,7 +84,7 @@ public class IdeaJavaCompilerImpl implements ProjectComponent, IdeaJavaCompiler 
   }
 
   private IProjectHandler getIdeaProjectHandler() {
-    if (MPSCore.getInstance().isTestMode()) {
+    if (RuntimeFlags.isTestMode()) {
       return null;
     }
     return MPSPlugin.getInstance().getProjectHandler(myProject);

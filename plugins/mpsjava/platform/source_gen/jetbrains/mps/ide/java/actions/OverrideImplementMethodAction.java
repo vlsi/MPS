@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.actions;
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -33,17 +33,18 @@ public class OverrideImplementMethodAction {
   }
 
   public void run() {
-    final SNode contextClass = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+    ModelAccessHelper mah = new ModelAccessHelper(myProject.getModelAccess());
+    final SNode contextClass = mah.runReadAction(new Computable<SNode>() {
       public SNode compute() {
         return SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
       }
     });
-    final SNode contextMember = ModelAccess.instance().runReadAction(new Computable<SNode>() {
+    final SNode contextMember = mah.runReadAction(new Computable<SNode>() {
       public SNode compute() {
         return SNodeOperations.getAncestor(mySelectedNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember", true, false);
       }
     });
-    final SNodeReference[] methods = ModelAccess.instance().runReadAction(new Computable<SNodeReference[]>() {
+    final SNodeReference[] methods = mah.runReadAction(new Computable<SNodeReference[]>() {
       @Override
       public SNodeReference[] compute() {
         List<SNode> methodsToOverride = (myIsOverride ? BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass, "virtual_getMethodsToOverride_5418393554803767537", new Object[]{}) : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), contextClass, "virtual_getMethodsToImplement_5418393554803775106", new Object[]{}));
@@ -64,7 +65,7 @@ public class OverrideImplementMethodAction {
     if (dialog.isOK()) {
       final Iterable<SNodeReference> selectedElements = (Iterable<SNodeReference>) dialog.getSelectedElements();
 
-      ModelAccess.instance().runCommandInEDT(new Runnable() {
+      myProject.getModelAccess().executeCommandInEDT(new Runnable() {
         @Override
         public void run() {
           List<SNode> selection = Sequence.fromIterable(selectedElements).select(new ISelector<SNodeReference, SNode>() {
@@ -88,7 +89,7 @@ public class OverrideImplementMethodAction {
           myEditorContext.flushEvents();
           myEditorContext.getSelectionManager().setSelection(nodeToSelect);
         }
-      }, myProject);
+      });
     }
   }
 }

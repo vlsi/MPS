@@ -1,454 +1,535 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="AbstractArgument_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractArgument_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractDiagramCreation_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation_BehaviorDescriptor" />
-  <unitInfo fileName="AbstractFigureReference_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_BehaviorDescriptor" />
-  <unitInfo fileName="ActionGroup_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ActionGroup_BehaviorDescriptor" />
-  <unitInfo fileName="ActionReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ActionReference_BehaviorDescriptor" />
-  <unitInfo fileName="AttributedFigureReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_BehaviorDescriptor" />
-  <unitInfo fileName="BLQueryArgument_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.BLQueryArgument_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="CellModel_DiagramConnector_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_BehaviorDescriptor" />
-  <unitInfo fileName="CellModel_DiagramNode_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_BehaviorDescriptor" />
-  <unitInfo fileName="CellModel_DiagramPort_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramPort_BehaviorDescriptor" />
-  <unitInfo fileName="CellModel_Diagram_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_BehaviorDescriptor" />
-  <unitInfo fileName="ConnectionEndBLQuery_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ConnectionEndBLQuery_BehaviorDescriptor" />
-  <unitInfo fileName="ConnectionEnd_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ConnectionEnd_BehaviorDescriptor" />
-  <unitInfo fileName="CreationActionReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CreationActionReference_BehaviorDescriptor" />
-  <unitInfo fileName="CustomElementReference_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CustomElementReference_BehaviorDescriptor" />
-  <unitInfo fileName="DiagramConnectorCanCreateHandler_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCanCreateHandler_BehaviorDescriptor" />
-  <unitInfo fileName="DiagramConnectorCreationHandler_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreationHandler_BehaviorDescriptor" />
-  <unitInfo fileName="DiagramConnectorCreation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreation_BehaviorDescriptor" />
-  <unitInfo fileName="DiagramElementBLQuery_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementBLQuery_BehaviorDescriptor" />
-  <unitInfo fileName="DiagramElementCreationHandler_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementCreationHandler_BehaviorDescriptor" />
-  <unitInfo fileName="DiagramElement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElement_BehaviorDescriptor" />
-  <unitInfo fileName="DiagramElementsCreation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementsCreation_BehaviorDescriptor" />
-  <unitInfo fileName="ExternalFigureReference_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_BehaviorDescriptor" />
-  <unitInfo fileName="FigureParameterMapping_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_BehaviorDescriptor" />
-  <unitInfo fileName="FromIdFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FromIdFunctionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="FromNodeFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FromNodeFunctionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="LinkArgument_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.LinkArgument_BehaviorDescriptor" />
-  <unitInfo fileName="NodeFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.NodeFunctionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="PaletteElement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.PaletteElement_BehaviorDescriptor" />
-  <unitInfo fileName="Palette_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.Palette_BehaviorDescriptor" />
-  <unitInfo fileName="PropertyArgument_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.PropertyArgument_BehaviorDescriptor" />
-  <unitInfo fileName="Separator_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.Separator_BehaviorDescriptor" />
-  <unitInfo fileName="ThisEditorNodeExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ThisEditorNodeExpression_BehaviorDescriptor" />
-  <unitInfo fileName="ToIdFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ToIdFunctionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="ToNodeFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ToNodeFunctionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="XFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.XFunctionParameter_BehaviorDescriptor" />
-  <unitInfo fileName="YFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.YFunctionParameter_BehaviorDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="CellModel_Diagram_BehaviorDescriptor.java">
+      <unit at="9,0,34,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_BehaviorDescriptor" />
+    </file>
+    <file name="FromIdFunctionParameter_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.diagram.behavior.FromIdFunctionParameter_BehaviorDescriptor" />
+    </file>
+    <file name="DiagramConnectorCreation_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreation_BehaviorDescriptor" />
+    </file>
+    <file name="ThisEditorNodeExpression_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.diagram.behavior.ThisEditorNodeExpression_BehaviorDescriptor" />
+    </file>
+    <file name="LinkArgument_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.diagram.behavior.LinkArgument_BehaviorDescriptor" />
+    </file>
+    <file name="ToIdFunctionParameter_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.diagram.behavior.ToIdFunctionParameter_BehaviorDescriptor" />
+    </file>
+    <file name="PropertyArgument_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.diagram.behavior.PropertyArgument_BehaviorDescriptor" />
+    </file>
+    <file name="AbstractDiagramCreation_BehaviorDescriptor.java">
+      <unit at="10,0,23,0" name="jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation_BehaviorDescriptor" />
+    </file>
+    <file name="XFunctionParameter_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.diagram.behavior.XFunctionParameter_BehaviorDescriptor" />
+    </file>
+    <file name="AbstractArgument_BehaviorDescriptor.java">
+      <unit at="8,0,17,0" name="jetbrains.mps.lang.editor.diagram.behavior.AbstractArgument_BehaviorDescriptor" />
+    </file>
+    <file name="ExternalFigureReference_BehaviorDescriptor.java">
+      <unit at="8,0,25,0" name="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_BehaviorDescriptor" />
+    </file>
+    <file name="DiagramConnectorCreationHandler_BehaviorDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreationHandler_BehaviorDescriptor" />
+    </file>
+    <file name="FromNodeFunctionParameter_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.diagram.behavior.FromNodeFunctionParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ToNodeFunctionParameter_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.diagram.behavior.ToNodeFunctionParameter_BehaviorDescriptor" />
+    </file>
+    <file name="DiagramElementCreationHandler_BehaviorDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementCreationHandler_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,82,0" name="jetbrains.mps.lang.editor.diagram.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ActionReference_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.diagram.behavior.ActionReference_BehaviorDescriptor" />
+    </file>
+    <file name="AbstractFigureReference_BehaviorDescriptor.java">
+      <unit at="9,0,22,0" name="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_BehaviorDescriptor" />
+    </file>
+    <file name="Separator_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.diagram.behavior.Separator_BehaviorDescriptor" />
+    </file>
+    <file name="DiagramElementBLQuery_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementBLQuery_BehaviorDescriptor" />
+    </file>
+    <file name="DiagramElementsCreation_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementsCreation_BehaviorDescriptor" />
+    </file>
+    <file name="ConnectionEnd_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.diagram.behavior.ConnectionEnd_BehaviorDescriptor" />
+    </file>
+    <file name="CellModel_DiagramConnector_BehaviorDescriptor.java">
+      <unit at="9,0,34,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_BehaviorDescriptor" />
+    </file>
+    <file name="YFunctionParameter_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.diagram.behavior.YFunctionParameter_BehaviorDescriptor" />
+    </file>
+    <file name="DiagramConnectorCanCreateHandler_BehaviorDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCanCreateHandler_BehaviorDescriptor" />
+    </file>
+    <file name="ActionGroup_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.diagram.behavior.ActionGroup_BehaviorDescriptor" />
+    </file>
+    <file name="NodeFunctionParameter_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.diagram.behavior.NodeFunctionParameter_BehaviorDescriptor" />
+    </file>
+    <file name="ConnectionEndBLQuery_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.diagram.behavior.ConnectionEndBLQuery_BehaviorDescriptor" />
+    </file>
+    <file name="CustomElementReference_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.diagram.behavior.CustomElementReference_BehaviorDescriptor" />
+    </file>
+    <file name="PaletteElement_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.diagram.behavior.PaletteElement_BehaviorDescriptor" />
+    </file>
+    <file name="CellModel_DiagramPort_BehaviorDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramPort_BehaviorDescriptor" />
+    </file>
+    <file name="CreationActionReference_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.diagram.behavior.CreationActionReference_BehaviorDescriptor" />
+    </file>
+    <file name="Palette_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.diagram.behavior.Palette_BehaviorDescriptor" />
+    </file>
+    <file name="FigureParameterMapping_BehaviorDescriptor.java">
+      <unit at="11,0,24,0" name="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_BehaviorDescriptor" />
+    </file>
+    <file name="CellModel_DiagramNode_BehaviorDescriptor.java">
+      <unit at="9,0,34,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_BehaviorDescriptor" />
+    </file>
+    <file name="BLQueryArgument_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.editor.diagram.behavior.BLQueryArgument_BehaviorDescriptor" />
+    </file>
+    <file name="AttributedFigureReference_BehaviorDescriptor.java">
+      <unit at="8,0,25,0" name="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_BehaviorDescriptor" />
+    </file>
+    <file name="DiagramElement_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.diagram.behavior.DiagramElement_BehaviorDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/2154068179222282126">
-    <nodeInfo nodeId="2154068179222316124" fileName="AbstractDiagramCreation_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="432" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2154068179222429738" fileName="AbstractDiagramCreation_Behavior.java" startLine="17" startPosition="94" endLine="18" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2154068179222433771" fileName="AbstractDiagramCreation_Behavior.java" startLine="21" startPosition="87" endLine="22" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2154068179222324834" fileName="AbstractDiagramCreation_Behavior.java" startLine="25" startPosition="86" endLine="26" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getConceptForCreation_2154068179222282129#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getContainmentLinkDeclaration_2154068179222419430#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getContainerExpression_2154068179222420454#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getQueryDotExpression_2154068179222323285#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="2154068179222282128" fileName="AbstractDiagramCreation_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="2154068179222282132" fileName="AbstractDiagramCreation_Behavior.java" startLine="13" startPosition="86" endLine="14" endPosition="432" />
-    <scopeInfo nodeId="2154068179222419433" fileName="AbstractDiagramCreation_Behavior.java" startLine="17" startPosition="94" endLine="18" endPosition="264" />
-    <scopeInfo nodeId="2154068179222420457" fileName="AbstractDiagramCreation_Behavior.java" startLine="21" startPosition="87" endLine="22" endPosition="145" />
-    <scopeInfo nodeId="2154068179222323288" fileName="AbstractDiagramCreation_Behavior.java" startLine="25" startPosition="86" endLine="26" endPosition="136" />
-    <scopeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="2154068179222282126" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="2154068179222282126" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="2154068179222282126" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="2154068179222282126" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="2154068179222282126" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="2154068179222282126" fileName="AbstractDiagramCreation_Behavior.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation_Behavior" />
+    <file name="AbstractDiagramCreation_Behavior.java">
+      <node id="2154068179222316124" at="13,86,14,432" concept="4" />
+      <node id="2154068179222429738" at="17,94,18,264" concept="4" />
+      <node id="2154068179222433771" at="21,87,22,145" concept="4" />
+      <node id="2154068179222324834" at="25,86,26,136" concept="4" />
+      <node id="2154068179222282126" at="10,0,12,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2154068179222282126" at="13,0,16,0" concept="6" trace="call_getConceptForCreation_2154068179222282129#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2154068179222282126" at="17,0,20,0" concept="6" trace="call_getContainmentLinkDeclaration_2154068179222419430#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2154068179222282126" at="21,0,24,0" concept="6" trace="call_getContainerExpression_2154068179222420454#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2154068179222282126" at="25,0,28,0" concept="6" trace="call_getQueryDotExpression_2154068179222323285#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="2154068179222282128" at="10,43,10,43" />
+      <scope id="2154068179222282132" at="13,86,14,432" />
+      <scope id="2154068179222419433" at="17,94,18,264" />
+      <scope id="2154068179222420457" at="21,87,22,145" />
+      <scope id="2154068179222323288" at="25,86,26,136" />
+      <scope id="2154068179222282126" at="10,0,12,0">
+        <var name="thisNode" id="2154068179222282126" />
+      </scope>
+      <scope id="2154068179222282126" at="13,0,16,0">
+        <var name="thisNode" id="2154068179222282126" />
+      </scope>
+      <scope id="2154068179222282126" at="17,0,20,0">
+        <var name="thisNode" id="2154068179222282126" />
+      </scope>
+      <scope id="2154068179222282126" at="21,0,24,0">
+        <var name="thisNode" id="2154068179222282126" />
+      </scope>
+      <scope id="2154068179222282126" at="25,0,28,0">
+        <var name="thisNode" id="2154068179222282126" />
+      </scope>
+      <unit id="2154068179222282126" at="9,0,29,0" name="jetbrains.mps.lang.editor.diagram.behavior.AbstractDiagramCreation_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/3748979635599119476">
-    <nodeInfo nodeId="7140846024011929329" fileName="CellModel_DiagramNode_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7140846024011931601" fileName="CellModel_DiagramNode_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4052492221165685031" fileName="CellModel_DiagramNode_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4500758155551631637" fileName="CellModel_DiagramNode_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpeningText_1220339714057#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClosingText_1220339738643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_shellBeSynchronized_4500758155551546553#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="3748979635599119632" fileName="CellModel_DiagramNode_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="7140846024011929330" fileName="CellModel_DiagramNode_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" />
-    <scopeInfo nodeId="7140846024011929383" fileName="CellModel_DiagramNode_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" />
-    <scopeInfo nodeId="4052492221165685028" fileName="CellModel_DiagramNode_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="4500758155551631634" fileName="CellModel_DiagramNode_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="3748979635599119476" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="3748979635599119476" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="3748979635599119476" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="3748979635599119476" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="3748979635599119476" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="3748979635599119476" fileName="CellModel_DiagramNode_Behavior.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_Behavior" />
+    <file name="CellModel_DiagramNode_Behavior.java">
+      <node id="7140846024011929329" at="11,77,12,15" concept="4" />
+      <node id="7140846024011931601" at="15,77,16,15" concept="4" />
+      <node id="4052492221165685031" at="19,87,20,16" concept="4" />
+      <node id="4500758155551631637" at="23,89,24,16" concept="4" />
+      <node id="3748979635599119476" at="8,0,10,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3748979635599119476" at="11,0,14,0" concept="6" trace="virtual_getOpeningText_1220339714057#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="3748979635599119476" at="15,0,18,0" concept="6" trace="virtual_getClosingText_1220339738643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="3748979635599119476" at="19,0,22,0" concept="6" trace="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3748979635599119476" at="23,0,26,0" concept="6" trace="virtual_shellBeSynchronized_4500758155551546553#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="3748979635599119632" at="8,43,8,43" />
+      <scope id="7140846024011929330" at="11,77,12,15" />
+      <scope id="7140846024011929383" at="15,77,16,15" />
+      <scope id="4052492221165685028" at="19,87,20,16" />
+      <scope id="4500758155551631634" at="23,89,24,16" />
+      <scope id="3748979635599119476" at="8,0,10,0">
+        <var name="thisNode" id="3748979635599119476" />
+      </scope>
+      <scope id="3748979635599119476" at="11,0,14,0">
+        <var name="thisNode" id="3748979635599119476" />
+      </scope>
+      <scope id="3748979635599119476" at="15,0,18,0">
+        <var name="thisNode" id="3748979635599119476" />
+      </scope>
+      <scope id="3748979635599119476" at="19,0,22,0">
+        <var name="thisNode" id="3748979635599119476" />
+      </scope>
+      <scope id="3748979635599119476" at="23,0,26,0">
+        <var name="thisNode" id="3748979635599119476" />
+      </scope>
+      <unit id="3748979635599119476" at="7,0,27,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramNode_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/3748979635599843644">
-    <nodeInfo nodeId="1491555030355961670" fileName="FigureParameterMapping_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1491555030357028624" fileName="FigureParameterMapping_Behavior.java" startLine="19" startPosition="88" endLine="20" endPosition="326" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDiagramNodeCell_1491555030355957123#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getParameterDeclaration_4115105161238952352#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="3748979635599843646" fileName="FigureParameterMapping_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="1491555030355957280" fileName="FigureParameterMapping_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="138" />
-    <scopeInfo nodeId="4115105161238952355" fileName="FigureParameterMapping_Behavior.java" startLine="19" startPosition="88" endLine="20" endPosition="326" />
-    <scopeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="3748979635599843644" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="3748979635599843644" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="3748979635599843644" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="3748979635599843644" fileName="FigureParameterMapping_Behavior.java" startLine="11" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_Behavior" />
+    <file name="FigureParameterMapping_Behavior.java">
+      <node id="1491555030355961670" at="15,83,16,138" concept="4" />
+      <node id="1491555030357028624" at="19,88,20,326" concept="4" />
+      <node id="3748979635599843644" at="12,0,14,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="3748979635599843644" at="15,0,18,0" concept="6" trace="call_getDiagramNodeCell_1491555030355957123#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="3748979635599843644" at="19,0,22,0" concept="6" trace="call_getParameterDeclaration_4115105161238952352#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="3748979635599843646" at="12,43,12,43" />
+      <scope id="1491555030355957280" at="15,83,16,138" />
+      <scope id="4115105161238952355" at="19,88,20,326" />
+      <scope id="3748979635599843644" at="12,0,14,0">
+        <var name="thisNode" id="3748979635599843644" />
+      </scope>
+      <scope id="3748979635599843644" at="15,0,18,0">
+        <var name="thisNode" id="3748979635599843644" />
+      </scope>
+      <scope id="3748979635599843644" at="19,0,22,0">
+        <var name="thisNode" id="3748979635599843644" />
+      </scope>
+      <unit id="3748979635599843644" at="11,0,23,0" name="jetbrains.mps.lang.editor.diagram.behavior.FigureParameterMapping_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/4052492221165688944">
-    <nodeInfo nodeId="4052492221165688954" fileName="CellModel_DiagramPort_Behavior.java" startLine="11" startPosition="87" endLine="12" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4500758155551632102" fileName="CellModel_DiagramPort_Behavior.java" startLine="15" startPosition="89" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_shellBeSynchronized_4500758155551546553#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="4052492221165688946" fileName="CellModel_DiagramPort_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="4052492221165688951" fileName="CellModel_DiagramPort_Behavior.java" startLine="11" startPosition="87" endLine="12" endPosition="16" />
-    <scopeInfo nodeId="4500758155551632099" fileName="CellModel_DiagramPort_Behavior.java" startLine="15" startPosition="89" endLine="16" endPosition="16" />
-    <scopeInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="4052492221165688944" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="4052492221165688944" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="4052492221165688944" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="4052492221165688944" fileName="CellModel_DiagramPort_Behavior.java" startLine="7" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramPort_Behavior" />
+    <file name="CellModel_DiagramPort_Behavior.java">
+      <node id="4052492221165688954" at="11,87,12,16" concept="4" />
+      <node id="4500758155551632102" at="15,89,16,16" concept="4" />
+      <node id="4052492221165688944" at="8,0,10,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4052492221165688944" at="11,0,14,0" concept="6" trace="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="4052492221165688944" at="15,0,18,0" concept="6" trace="virtual_shellBeSynchronized_4500758155551546553#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="4052492221165688946" at="8,43,8,43" />
+      <scope id="4052492221165688951" at="11,87,12,16" />
+      <scope id="4500758155551632099" at="15,89,16,16" />
+      <scope id="4052492221165688944" at="8,0,10,0">
+        <var name="thisNode" id="4052492221165688944" />
+      </scope>
+      <scope id="4052492221165688944" at="11,0,14,0">
+        <var name="thisNode" id="4052492221165688944" />
+      </scope>
+      <scope id="4052492221165688944" at="15,0,18,0">
+        <var name="thisNode" id="4052492221165688944" />
+      </scope>
+      <unit id="4052492221165688944" at="7,0,19,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramPort_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/5422656561931890811">
-    <nodeInfo nodeId="5422656561931993301" fileName="AttributedFigureReference_Behavior.java" startLine="22" startPosition="38" endLine="23" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561932113535" fileName="AttributedFigureReference_Behavior.java" startLine="30" startPosition="39" endLine="31" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561932177446" fileName="AttributedFigureReference_Behavior.java" startLine="36" startPosition="69" endLine="37" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561931890811" fileName="AttributedFigureReference_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5422656561931992192" fileName="AttributedFigureReference_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5422656561932112690" fileName="AttributedFigureReference_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="5422656561932177446" fileName="AttributedFigureReference_Behavior.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_godh5_a0a0a0a0a0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5422656561931934158" fileName="AttributedFigureReference_Behavior.java" startLine="20" startPosition="98" endLine="25" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561932067223" fileName="AttributedFigureReference_Behavior.java" startLine="28" startPosition="105" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5422656561931890811" fileName="AttributedFigureReference_Behavior.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getFigureParameterNames_1491555030356445722#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="5422656561931890811" fileName="AttributedFigureReference_Behavior.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getFigureParameter_1491555030357120840#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="5422656561931890813" fileName="AttributedFigureReference_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="5422656561931992193" fileName="AttributedFigureReference_Behavior.java" startLine="22" startPosition="38" endLine="23" endPosition="269" />
-    <scopeInfo nodeId="5422656561932112691" fileName="AttributedFigureReference_Behavior.java" startLine="30" startPosition="39" endLine="31" endPosition="299" />
-    <scopeInfo nodeId="5422656561932177446" fileName="AttributedFigureReference_Behavior.java" startLine="36" startPosition="69" endLine="37" endPosition="46" />
-    <scopeInfo nodeId="5422656561931890811" fileName="AttributedFigureReference_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="5422656561931890811" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561931992192" fileName="AttributedFigureReference_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="5422656561931992192" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561932112690" fileName="AttributedFigureReference_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="5422656561932112690" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561932177446" fileName="AttributedFigureReference_Behavior.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="5422656561932177446" varName="a" />
-      <varInfo nodeId="5422656561932177446" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561931891126" fileName="AttributedFigureReference_Behavior.java" startLine="20" startPosition="98" endLine="25" endPosition="24" />
-    <scopeInfo nodeId="5422656561931891135" fileName="AttributedFigureReference_Behavior.java" startLine="28" startPosition="105" endLine="33" endPosition="7" />
-    <scopeInfo nodeId="5422656561931890811" fileName="AttributedFigureReference_Behavior.java" startLine="20" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="5422656561931890811" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561931890811" fileName="AttributedFigureReference_Behavior.java" startLine="28" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="5422656561931891136" varName="name" />
-      <varInfo nodeId="5422656561931890811" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="5422656561931992192" fileName="AttributedFigureReference_Behavior.java" startLine="21" startPosition="180" endLine="25" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_Behavior$1" />
-    <unitInfo nodeId="5422656561932112690" fileName="AttributedFigureReference_Behavior.java" startLine="29" startPosition="183" endLine="33" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_Behavior$2" />
-    <unitInfo nodeId="5422656561931890811" fileName="AttributedFigureReference_Behavior.java" startLine="16" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_Behavior" />
+    <file name="AttributedFigureReference_Behavior.java">
+      <node id="5422656561931993301" at="22,38,23,269" concept="4" />
+      <node id="5422656561932113535" at="30,39,31,299" concept="4" />
+      <node id="5422656561932177446" at="36,69,37,46" concept="4" />
+      <node id="5422656561931890811" at="17,0,19,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5422656561931992192" at="22,0,25,0" concept="2" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="5422656561932112690" at="30,0,33,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5422656561932177446" at="36,0,39,0" concept="6" trace="eq_godh5_a0a0a0a0a0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="5422656561931934158" at="20,98,25,24" concept="4" />
+      <node id="5422656561932067223" at="28,105,33,7" concept="4" />
+      <node id="5422656561931890811" at="20,0,27,0" concept="6" trace="virtual_getFigureParameterNames_1491555030356445722#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="5422656561931890811" at="28,0,35,0" concept="6" trace="virtual_getFigureParameter_1491555030357120840#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="5422656561931890813" at="17,43,17,43" />
+      <scope id="5422656561931992193" at="22,38,23,269" />
+      <scope id="5422656561932112691" at="30,39,31,299" />
+      <scope id="5422656561932177446" at="36,69,37,46" />
+      <scope id="5422656561931890811" at="17,0,19,0">
+        <var name="thisNode" id="5422656561931890811" />
+      </scope>
+      <scope id="5422656561931992192" at="22,0,25,0">
+        <var name="it" id="5422656561931992192" />
+      </scope>
+      <scope id="5422656561932112690" at="30,0,33,0">
+        <var name="it" id="5422656561932112690" />
+      </scope>
+      <scope id="5422656561932177446" at="36,0,39,0">
+        <var name="a" id="5422656561932177446" />
+        <var name="b" id="5422656561932177446" />
+      </scope>
+      <scope id="5422656561931891126" at="20,98,25,24" />
+      <scope id="5422656561931891135" at="28,105,33,7" />
+      <scope id="5422656561931890811" at="20,0,27,0">
+        <var name="thisNode" id="5422656561931890811" />
+      </scope>
+      <scope id="5422656561931890811" at="28,0,35,0">
+        <var name="name" id="5422656561931891136" />
+        <var name="thisNode" id="5422656561931890811" />
+      </scope>
+      <unit id="5422656561931992192" at="21,180,25,5" name="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_Behavior$1" />
+      <unit id="5422656561932112690" at="29,183,33,5" name="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_Behavior$2" />
+      <unit id="5422656561931890811" at="16,0,40,0" name="jetbrains.mps.lang.editor.diagram.behavior.AttributedFigureReference_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/7140846024011931670">
-    <nodeInfo nodeId="7140846024011931923" fileName="CellModel_Diagram_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7140846024011932139" fileName="CellModel_Diagram_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4052492221165676458" fileName="CellModel_Diagram_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4500758155551629673" fileName="CellModel_Diagram_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpeningText_1220339714057#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClosingText_1220339738643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_shellBeSynchronized_4500758155551546553#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="7140846024011931672" fileName="CellModel_Diagram_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="7140846024011931679" fileName="CellModel_Diagram_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" />
-    <scopeInfo nodeId="7140846024011931691" fileName="CellModel_Diagram_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" />
-    <scopeInfo nodeId="4052492221165676455" fileName="CellModel_Diagram_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="4500758155551629670" fileName="CellModel_Diagram_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="7140846024011931670" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="7140846024011931670" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="7140846024011931670" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="7140846024011931670" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="7140846024011931670" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="7140846024011931670" fileName="CellModel_Diagram_Behavior.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_Behavior" />
+    <file name="CellModel_Diagram_Behavior.java">
+      <node id="7140846024011931923" at="11,77,12,15" concept="4" />
+      <node id="7140846024011932139" at="15,77,16,15" concept="4" />
+      <node id="4052492221165676458" at="19,87,20,16" concept="4" />
+      <node id="4500758155551629673" at="23,89,24,16" concept="4" />
+      <node id="7140846024011931670" at="8,0,10,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7140846024011931670" at="11,0,14,0" concept="6" trace="virtual_getOpeningText_1220339714057#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="7140846024011931670" at="15,0,18,0" concept="6" trace="virtual_getClosingText_1220339738643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="7140846024011931670" at="19,0,22,0" concept="6" trace="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7140846024011931670" at="23,0,26,0" concept="6" trace="virtual_shellBeSynchronized_4500758155551546553#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="7140846024011931672" at="8,43,8,43" />
+      <scope id="7140846024011931679" at="11,77,12,15" />
+      <scope id="7140846024011931691" at="15,77,16,15" />
+      <scope id="4052492221165676455" at="19,87,20,16" />
+      <scope id="4500758155551629670" at="23,89,24,16" />
+      <scope id="7140846024011931670" at="8,0,10,0">
+        <var name="thisNode" id="7140846024011931670" />
+      </scope>
+      <scope id="7140846024011931670" at="11,0,14,0">
+        <var name="thisNode" id="7140846024011931670" />
+      </scope>
+      <scope id="7140846024011931670" at="15,0,18,0">
+        <var name="thisNode" id="7140846024011931670" />
+      </scope>
+      <scope id="7140846024011931670" at="19,0,22,0">
+        <var name="thisNode" id="7140846024011931670" />
+      </scope>
+      <scope id="7140846024011931670" at="23,0,26,0">
+        <var name="thisNode" id="7140846024011931670" />
+      </scope>
+      <unit id="7140846024011931670" at="7,0,27,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_Diagram_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/7140846024011932205">
-    <nodeInfo nodeId="7140846024011932458" fileName="CellModel_DiagramConnector_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7140846024011932621" fileName="CellModel_DiagramConnector_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4052492221165681115" fileName="CellModel_DiagramConnector_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4500758155551631142" fileName="CellModel_DiagramConnector_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOpeningText_1220339714057#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClosingText_1220339738643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_shellBeSynchronized_4500758155551546553#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="7140846024011932207" fileName="CellModel_DiagramConnector_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="7140846024011932214" fileName="CellModel_DiagramConnector_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="15" />
-    <scopeInfo nodeId="7140846024011932226" fileName="CellModel_DiagramConnector_Behavior.java" startLine="15" startPosition="77" endLine="16" endPosition="15" />
-    <scopeInfo nodeId="4052492221165681112" fileName="CellModel_DiagramConnector_Behavior.java" startLine="19" startPosition="87" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="4500758155551631139" fileName="CellModel_DiagramConnector_Behavior.java" startLine="23" startPosition="89" endLine="24" endPosition="16" />
-    <scopeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="7140846024011932205" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="7140846024011932205" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="7140846024011932205" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="7140846024011932205" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="7140846024011932205" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="7140846024011932205" fileName="CellModel_DiagramConnector_Behavior.java" startLine="7" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_Behavior" />
+    <file name="CellModel_DiagramConnector_Behavior.java">
+      <node id="7140846024011932458" at="11,77,12,15" concept="4" />
+      <node id="7140846024011932621" at="15,77,16,15" concept="4" />
+      <node id="4052492221165681115" at="19,87,20,16" concept="4" />
+      <node id="4500758155551631142" at="23,89,24,16" concept="4" />
+      <node id="7140846024011932205" at="8,0,10,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="7140846024011932205" at="11,0,14,0" concept="6" trace="virtual_getOpeningText_1220339714057#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="7140846024011932205" at="15,0,18,0" concept="6" trace="virtual_getClosingText_1220339738643#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="7140846024011932205" at="19,0,22,0" concept="6" trace="virtual_canBeSynchronized_4052492221165595783#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7140846024011932205" at="23,0,26,0" concept="6" trace="virtual_shellBeSynchronized_4500758155551546553#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="7140846024011932207" at="8,43,8,43" />
+      <scope id="7140846024011932214" at="11,77,12,15" />
+      <scope id="7140846024011932226" at="15,77,16,15" />
+      <scope id="4052492221165681112" at="19,87,20,16" />
+      <scope id="4500758155551631139" at="23,89,24,16" />
+      <scope id="7140846024011932205" at="8,0,10,0">
+        <var name="thisNode" id="7140846024011932205" />
+      </scope>
+      <scope id="7140846024011932205" at="11,0,14,0">
+        <var name="thisNode" id="7140846024011932205" />
+      </scope>
+      <scope id="7140846024011932205" at="15,0,18,0">
+        <var name="thisNode" id="7140846024011932205" />
+      </scope>
+      <scope id="7140846024011932205" at="19,0,22,0">
+        <var name="thisNode" id="7140846024011932205" />
+      </scope>
+      <scope id="7140846024011932205" at="23,0,26,0">
+        <var name="thisNode" id="7140846024011932205" />
+      </scope>
+      <unit id="7140846024011932205" at="7,0,27,0" name="jetbrains.mps.lang.editor.diagram.behavior.CellModel_DiagramConnector_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/8322026508615561874">
-    <nodeInfo nodeId="1491555030356615989" fileName="ExternalFigureReference_Behavior.java" startLine="19" startPosition="38" endLine="20" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1491555030357172065" fileName="ExternalFigureReference_Behavior.java" startLine="27" startPosition="39" endLine="28" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1491555030357182160" fileName="ExternalFigureReference_Behavior.java" startLine="33" startPosition="70" endLine="34" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1491555030356614912" fileName="ExternalFigureReference_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1491555030357171343" fileName="ExternalFigureReference_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="1491555030357182160" fileName="ExternalFigureReference_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_eglddm_a0a0a0a0a0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1491555030356457866" fileName="ExternalFigureReference_Behavior.java" startLine="17" startPosition="98" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1491555030357125814" fileName="ExternalFigureReference_Behavior.java" startLine="25" startPosition="105" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="17" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getFigureParameterNames_1491555030356445722#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="25" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getFigureParameter_1491555030357120840#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="8322026508615571806" fileName="ExternalFigureReference_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="1491555030356614913" fileName="ExternalFigureReference_Behavior.java" startLine="19" startPosition="38" endLine="20" endPosition="57" />
-    <scopeInfo nodeId="1491555030357171344" fileName="ExternalFigureReference_Behavior.java" startLine="27" startPosition="39" endLine="28" endPosition="88" />
-    <scopeInfo nodeId="1491555030357182160" fileName="ExternalFigureReference_Behavior.java" startLine="33" startPosition="70" endLine="34" endPosition="46" />
-    <scopeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="8322026508615561874" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1491555030356614912" fileName="ExternalFigureReference_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="1491555030356614912" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="1491555030357171343" fileName="ExternalFigureReference_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="1491555030357171343" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="1491555030357182160" fileName="ExternalFigureReference_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="1491555030357182160" varName="a" />
-      <varInfo nodeId="1491555030357182160" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="1491555030356448557" fileName="ExternalFigureReference_Behavior.java" startLine="17" startPosition="98" endLine="22" endPosition="24" />
-    <scopeInfo nodeId="1491555030357125568" fileName="ExternalFigureReference_Behavior.java" startLine="25" startPosition="105" endLine="30" endPosition="7" />
-    <scopeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="17" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="8322026508615561874" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="25" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1491555030357125569" varName="name" />
-      <varInfo nodeId="8322026508615561874" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1491555030356614912" fileName="ExternalFigureReference_Behavior.java" startLine="18" startPosition="142" endLine="22" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior$1" />
-    <unitInfo nodeId="1491555030357171343" fileName="ExternalFigureReference_Behavior.java" startLine="26" startPosition="145" endLine="30" endPosition="5" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior$2" />
-    <unitInfo nodeId="8322026508615561874" fileName="ExternalFigureReference_Behavior.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior" />
+    <file name="ExternalFigureReference_Behavior.java">
+      <node id="1491555030356615989" at="19,38,20,57" concept="4" />
+      <node id="1491555030357172065" at="27,39,28,88" concept="4" />
+      <node id="1491555030357182160" at="33,70,34,46" concept="4" />
+      <node id="8322026508615561874" at="14,0,16,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1491555030356614912" at="19,0,22,0" concept="2" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="1491555030357171343" at="27,0,30,0" concept="2" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1491555030357182160" at="33,0,36,0" concept="6" trace="eq_eglddm_a0a0a0a0a0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="1491555030356457866" at="17,98,22,24" concept="4" />
+      <node id="1491555030357125814" at="25,105,30,7" concept="4" />
+      <node id="8322026508615561874" at="17,0,24,0" concept="6" trace="virtual_getFigureParameterNames_1491555030356445722#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="8322026508615561874" at="25,0,32,0" concept="6" trace="virtual_getFigureParameter_1491555030357120840#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="8322026508615571806" at="14,43,14,43" />
+      <scope id="1491555030356614913" at="19,38,20,57" />
+      <scope id="1491555030357171344" at="27,39,28,88" />
+      <scope id="1491555030357182160" at="33,70,34,46" />
+      <scope id="8322026508615561874" at="14,0,16,0">
+        <var name="thisNode" id="8322026508615561874" />
+      </scope>
+      <scope id="1491555030356614912" at="19,0,22,0">
+        <var name="it" id="1491555030356614912" />
+      </scope>
+      <scope id="1491555030357171343" at="27,0,30,0">
+        <var name="it" id="1491555030357171343" />
+      </scope>
+      <scope id="1491555030357182160" at="33,0,36,0">
+        <var name="a" id="1491555030357182160" />
+        <var name="b" id="1491555030357182160" />
+      </scope>
+      <scope id="1491555030356448557" at="17,98,22,24" />
+      <scope id="1491555030357125568" at="25,105,30,7" />
+      <scope id="8322026508615561874" at="17,0,24,0">
+        <var name="thisNode" id="8322026508615561874" />
+      </scope>
+      <scope id="8322026508615561874" at="25,0,32,0">
+        <var name="name" id="1491555030357125569" />
+        <var name="thisNode" id="8322026508615561874" />
+      </scope>
+      <unit id="1491555030356614912" at="18,142,22,5" name="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior$1" />
+      <unit id="1491555030357171343" at="26,145,30,5" name="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior$2" />
+      <unit id="8322026508615561874" at="13,0,37,0" name="jetbrains.mps.lang.editor.diagram.behavior.ExternalFigureReference_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/8322026508615817440">
-    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="21" startPosition="128" endLine="22" endPosition="320" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="26" startPosition="96" endLine="27" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="31" startPosition="129" endLine="32" endPosition="326" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFigureParameterNames_1491555030356445722#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getFigureParameterNames_1491555030356445722#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFigureParameter_1491555030357120840#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getFigureParameter_1491555030357120840#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="8322026508615817442" fileName="AbstractFigureReference_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="16" startPosition="95" endLine="17" endPosition="171" />
-    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="21" startPosition="128" endLine="22" endPosition="320" />
-    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="26" startPosition="96" endLine="27" endPosition="163" />
-    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="31" startPosition="129" endLine="32" endPosition="326" />
-    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="8322026508615817440" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="8322026508615817440" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="8322026508615817440" varName="callerConceptFqName" />
-      <varInfo nodeId="8322026508615817440" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="25" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="1491555030357121118" varName="name" />
-      <varInfo nodeId="8322026508615817440" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="8322026508615817440" varName="callerConceptFqName" />
-      <varInfo nodeId="1491555030357121118" varName="name" />
-      <varInfo nodeId="8322026508615817440" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="8322026508615817440" fileName="AbstractFigureReference_Behavior.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_Behavior" />
+    <file name="AbstractFigureReference_Behavior.java">
+      <node id="8322026508615817440" at="8,0,10,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="8322026508615817442" at="8,43,8,43" />
+      <scope id="8322026508615817440" at="8,0,10,0">
+        <var name="thisNode" id="8322026508615817440" />
+      </scope>
+      <unit id="8322026508615817440" at="7,0,11,0" name="jetbrains.mps.lang.editor.diagram.behavior.AbstractFigureReference_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/8570854907290566950">
-    <nodeInfo nodeId="2028694650681103162" fileName="DiagramElementCreationHandler_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2028694650681103174" fileName="DiagramElementCreationHandler_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2028694650681103169" fileName="DiagramElementCreationHandler_Behavior.java" startLine="19" startPosition="157" endLine="20" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8570854907290719484" fileName="DiagramElementCreationHandler_Behavior.java" startLine="20" startPosition="154" endLine="21" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2028694650681103179" fileName="DiagramElementCreationHandler_Behavior.java" startLine="21" startPosition="154" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2028694650681099839" fileName="DiagramElementCreationHandler_Behavior.java" startLine="22" startPosition="18" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2028694650681124656" fileName="DiagramElementCreationHandler_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="30" startPosition="60" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="31" startPosition="63" endLine="32" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="32" startPosition="30" endLine="33" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="32" startPosition="30" endLine="33" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="32" startPosition="30" endLine="33" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="33" startPosition="132" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_78v23b_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="17" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <scopeInfo nodeId="8570854907290567103" fileName="DiagramElementCreationHandler_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="2028694650681123995" fileName="DiagramElementCreationHandler_Behavior.java" startLine="26" startPosition="83" endLine="27" endPosition="47" />
-    <scopeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="32" startPosition="30" endLine="33" endPosition="132" />
-    <scopeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="8570854907290566950" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="8570854907290566950" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="30" startPosition="60" endLine="34" endPosition="24">
-      <varInfo nodeId="2028694650681124671" varName="facade" />
-      <varInfo nodeId="2028694650681124671" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="2028694650681051032" fileName="DiagramElementCreationHandler_Behavior.java" startLine="17" startPosition="81" endLine="23" endPosition="0">
-      <varInfo nodeId="2028694650681103163" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="2028694650681124671" fileName="DiagramElementCreationHandler_Behavior.java" startLine="30" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="17" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="8570854907290566950" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="8570854907290566950" fileName="DiagramElementCreationHandler_Behavior.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementCreationHandler_Behavior" />
+    <file name="DiagramElementCreationHandler_Behavior.java">
+      <node id="2028694650681103162" at="17,81,18,71" concept="3" />
+      <node id="2028694650681103174" at="18,71,19,157" concept="1" />
+      <node id="2028694650681103169" at="19,157,20,154" concept="1" />
+      <node id="8570854907290719484" at="20,154,21,154" concept="1" />
+      <node id="2028694650681103179" at="21,154,22,18" concept="4" />
+      <node id="2028694650681099839" at="22,18,23,0" concept="5" />
+      <node id="2028694650681124656" at="26,83,27,47" concept="4" />
+      <node id="2028694650681124671" at="30,60,31,63" concept="3" />
+      <node id="2028694650681124671" at="31,63,32,30" concept="3" />
+      <node id="2028694650681124671" at="32,30,33,132" concept="0" />
+      <node id="2028694650681124671" at="32,30,33,132" concept="0" />
+      <node id="2028694650681124671" at="32,30,33,132" concept="1" />
+      <node id="2028694650681124671" at="33,132,34,24" concept="4" />
+      <node id="8570854907290566950" at="14,0,16,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8570854907290566950" at="26,0,29,0" concept="6" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2028694650681124671" at="30,0,36,0" concept="6" trace="_quotation_createNode_78v23b_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8570854907290566950" at="17,0,25,0" concept="6" trace="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <scope id="8570854907290567103" at="14,43,14,43" />
+      <scope id="2028694650681123995" at="26,83,27,47" />
+      <scope id="2028694650681124671" at="32,30,33,132" />
+      <scope id="8570854907290566950" at="14,0,16,0">
+        <var name="thisNode" id="8570854907290566950" />
+      </scope>
+      <scope id="8570854907290566950" at="26,0,29,0">
+        <var name="thisNode" id="8570854907290566950" />
+      </scope>
+      <scope id="2028694650681124671" at="30,60,34,24">
+        <var name="facade" id="2028694650681124671" />
+        <var name="quotedNode_1" id="2028694650681124671" />
+      </scope>
+      <scope id="2028694650681051032" at="17,81,23,0">
+        <var name="result" id="2028694650681103163" />
+      </scope>
+      <scope id="2028694650681124671" at="30,0,36,0" />
+      <scope id="8570854907290566950" at="17,0,25,0">
+        <var name="thisNode" id="8570854907290566950" />
+      </scope>
+      <unit id="8570854907290566950" at="13,0,37,0" name="jetbrains.mps.lang.editor.diagram.behavior.DiagramElementCreationHandler_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/939897302409085213">
-    <nodeInfo nodeId="939897302409085219" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="939897302409519468" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409659738" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="19" startPosition="157" endLine="20" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409519473" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="20" startPosition="161" endLine="21" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409519478" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="21" startPosition="159" endLine="22" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409519483" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="22" startPosition="159" endLine="23" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409519356" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="23" startPosition="157" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="939897302409085241" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="24" startPosition="0" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302409085243" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="25" startPosition="18" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="939897302409085248" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="29" startPosition="83" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="33" startPosition="60" endLine="34" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="34" startPosition="63" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="36" startPosition="132" endLine="37" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_d606ao_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="17" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <scopeInfo nodeId="939897302409085252" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="939897302409085247" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="29" startPosition="83" endLine="30" endPosition="47" />
-    <scopeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="35" startPosition="30" endLine="36" endPosition="132" />
-    <scopeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="939897302409085213" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="939897302409085213" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="33" startPosition="60" endLine="37" endPosition="24">
-      <varInfo nodeId="939897302409085249" varName="facade" />
-      <varInfo nodeId="939897302409085249" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="939897302409085249" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="939897302409085218" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="17" startPosition="81" endLine="26" endPosition="0">
-      <varInfo nodeId="939897302409085220" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="17" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="939897302409085213" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="939897302409085213" fileName="DiagramConnectorCreationHandler_Behavior.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreationHandler_Behavior" />
+    <file name="DiagramConnectorCreationHandler_Behavior.java">
+      <node id="939897302409085219" at="17,81,18,71" concept="3" />
+      <node id="939897302409519468" at="18,71,19,157" concept="1" />
+      <node id="939897302409659738" at="19,157,20,161" concept="1" />
+      <node id="939897302409519473" at="20,161,21,159" concept="1" />
+      <node id="939897302409519478" at="21,159,22,159" concept="1" />
+      <node id="939897302409519483" at="22,159,23,157" concept="1" />
+      <node id="939897302409519356" at="23,157,24,0" concept="5" />
+      <node id="939897302409085241" at="24,0,25,18" concept="4" />
+      <node id="939897302409085243" at="25,18,26,0" concept="5" />
+      <node id="939897302409085248" at="29,83,30,47" concept="4" />
+      <node id="939897302409085249" at="33,60,34,63" concept="3" />
+      <node id="939897302409085249" at="34,63,35,30" concept="3" />
+      <node id="939897302409085249" at="35,30,36,132" concept="0" />
+      <node id="939897302409085249" at="35,30,36,132" concept="0" />
+      <node id="939897302409085249" at="35,30,36,132" concept="1" />
+      <node id="939897302409085249" at="36,132,37,24" concept="4" />
+      <node id="939897302409085213" at="14,0,16,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="939897302409085213" at="29,0,32,0" concept="6" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="939897302409085249" at="33,0,39,0" concept="6" trace="_quotation_createNode_d606ao_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="939897302409085213" at="17,0,28,0" concept="6" trace="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <scope id="939897302409085252" at="14,43,14,43" />
+      <scope id="939897302409085247" at="29,83,30,47" />
+      <scope id="939897302409085249" at="35,30,36,132" />
+      <scope id="939897302409085213" at="14,0,16,0">
+        <var name="thisNode" id="939897302409085213" />
+      </scope>
+      <scope id="939897302409085213" at="29,0,32,0">
+        <var name="thisNode" id="939897302409085213" />
+      </scope>
+      <scope id="939897302409085249" at="33,60,37,24">
+        <var name="facade" id="939897302409085249" />
+        <var name="quotedNode_1" id="939897302409085249" />
+      </scope>
+      <scope id="939897302409085249" at="33,0,39,0" />
+      <scope id="939897302409085218" at="17,81,26,0">
+        <var name="result" id="939897302409085220" />
+      </scope>
+      <scope id="939897302409085213" at="17,0,28,0">
+        <var name="thisNode" id="939897302409085213" />
+      </scope>
+      <unit id="939897302409085213" at="13,0,40,0" name="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCreationHandler_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:211375ba-def6-476e-aef3-f53300581f0b(jetbrains.mps.lang.editor.diagram.behavior)/939897302409110471">
-    <nodeInfo nodeId="939897302409110477" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="17" startPosition="81" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="939897302409110484" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409517388" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="19" startPosition="161" endLine="20" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409517883" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="20" startPosition="159" endLine="21" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409518521" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="21" startPosition="159" endLine="22" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409110489" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="22" startPosition="157" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302409110491" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="23" startPosition="18" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="939897302409110496" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="31" startPosition="60" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="32" startPosition="63" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="34" startPosition="135" endLine="35" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_xy3eks_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <scopeInfo nodeId="939897302409110500" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="939897302409110495" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="27" startPosition="83" endLine="28" endPosition="47" />
-    <scopeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="33" startPosition="30" endLine="34" endPosition="135" />
-    <scopeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="939897302409110471" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="939897302409110471" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="31" startPosition="60" endLine="35" endPosition="24">
-      <varInfo nodeId="939897302409110497" varName="facade" />
-      <varInfo nodeId="939897302409110497" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="939897302409110497" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="31" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="939897302409110476" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="17" startPosition="81" endLine="24" endPosition="0">
-      <varInfo nodeId="939897302409110478" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="17" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="939897302409110471" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="939897302409110471" fileName="DiagramConnectorCanCreateHandler_Behavior.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCanCreateHandler_Behavior" />
+    <file name="DiagramConnectorCanCreateHandler_Behavior.java">
+      <node id="939897302409110477" at="17,81,18,71" concept="3" />
+      <node id="939897302409110484" at="18,71,19,161" concept="1" />
+      <node id="939897302409517388" at="19,161,20,159" concept="1" />
+      <node id="939897302409517883" at="20,159,21,159" concept="1" />
+      <node id="939897302409518521" at="21,159,22,157" concept="1" />
+      <node id="939897302409110489" at="22,157,23,18" concept="4" />
+      <node id="939897302409110491" at="23,18,24,0" concept="5" />
+      <node id="939897302409110496" at="27,83,28,47" concept="4" />
+      <node id="939897302409110497" at="31,60,32,63" concept="3" />
+      <node id="939897302409110497" at="32,63,33,30" concept="3" />
+      <node id="939897302409110497" at="33,30,34,135" concept="0" />
+      <node id="939897302409110497" at="33,30,34,135" concept="0" />
+      <node id="939897302409110497" at="33,30,34,135" concept="1" />
+      <node id="939897302409110497" at="34,135,35,24" concept="4" />
+      <node id="939897302409110471" at="14,0,16,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="939897302409110471" at="27,0,30,0" concept="6" trace="virtual_getExpectedReturnType_1213877374441#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="939897302409110497" at="31,0,37,0" concept="6" trace="_quotation_createNode_xy3eks_a0a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="939897302409110471" at="17,0,26,0" concept="6" trace="virtual_getParameters_1213877374450#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <scope id="939897302409110500" at="14,43,14,43" />
+      <scope id="939897302409110495" at="27,83,28,47" />
+      <scope id="939897302409110497" at="33,30,34,135" />
+      <scope id="939897302409110471" at="14,0,16,0">
+        <var name="thisNode" id="939897302409110471" />
+      </scope>
+      <scope id="939897302409110471" at="27,0,30,0">
+        <var name="thisNode" id="939897302409110471" />
+      </scope>
+      <scope id="939897302409110497" at="31,60,35,24">
+        <var name="facade" id="939897302409110497" />
+        <var name="quotedNode_1" id="939897302409110497" />
+      </scope>
+      <scope id="939897302409110497" at="31,0,37,0" />
+      <scope id="939897302409110476" at="17,81,24,0">
+        <var name="result" id="939897302409110478" />
+      </scope>
+      <scope id="939897302409110471" at="17,0,26,0">
+        <var name="thisNode" id="939897302409110471" />
+      </scope>
+      <unit id="939897302409110471" at="13,0,38,0" name="jetbrains.mps.lang.editor.diagram.behavior.DiagramConnectorCanCreateHandler_Behavior" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

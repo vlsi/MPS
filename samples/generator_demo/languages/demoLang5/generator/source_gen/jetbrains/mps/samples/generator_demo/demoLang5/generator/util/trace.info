@@ -1,36 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:d5b5743a-35a4-486d-873c-cecbc6ad99d5(jetbrains.mps.samples.generator_demo.demoLang5.generator.util)/3978102045101718900">
-    <nodeInfo nodeId="3978102045101719015" fileName="TextUtil.java" startLine="18" startPosition="44" endLine="19" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3978102045101720381" fileName="TextUtil.java" startLine="19" startPosition="38" endLine="20" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3978102045101783854" fileName="TextUtil.java" startLine="20" startPosition="113" endLine="21" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3978102045101783043" fileName="TextUtil.java" startLine="23" startPosition="39" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3978102045101784195" fileName="TextUtil.java" startLine="27" startPosition="52" endLine="28" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3978102045101784260" fileName="TextUtil.java" startLine="28" startPosition="43" endLine="29" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3978102045101718902" fileName="TextUtil.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextUtil#()V" />
-    <nodeInfo nodeId="3978102045101783041" fileName="TextUtil.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3978102045101784020" fileName="TextUtil.java" startLine="26" startPosition="7" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3978102045101783037" fileName="TextUtil.java" startLine="21" startPosition="27" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3978102045101718976" fileName="TextUtil.java" startLine="18" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fixText#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
-    <scopeInfo nodeId="3978102045101718905" fileName="TextUtil.java" startLine="15" startPosition="21" endLine="15" endPosition="21" />
-    <scopeInfo nodeId="3978102045101783042" fileName="TextUtil.java" startLine="23" startPosition="39" endLine="24" endPosition="76" />
-    <scopeInfo nodeId="3978102045101718902" fileName="TextUtil.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="3978102045101784026" fileName="TextUtil.java" startLine="27" startPosition="52" endLine="29" endPosition="104" />
-    <scopeInfo nodeId="3978102045101783041" fileName="TextUtil.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="3978102045101783041" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="3978102045101784020" fileName="TextUtil.java" startLine="26" startPosition="7" endLine="30" endPosition="5">
-      <varInfo nodeId="3978102045101784022" varName="mps" />
-    </scopeInfo>
-    <scopeInfo nodeId="3978102045101718980" fileName="TextUtil.java" startLine="18" startPosition="44" endLine="30" endPosition="5">
-      <varInfo nodeId="3978102045101783038" varName="mpses" />
-      <varInfo nodeId="3978102045101720382" varName="strings" />
-    </scopeInfo>
-    <scopeInfo nodeId="3978102045101718976" fileName="TextUtil.java" startLine="18" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="3978102045101719091" varName="model" />
-    </scopeInfo>
-    <unitInfo nodeId="3978102045101783041" fileName="TextUtil.java" startLine="22" startPosition="69" endLine="26" endPosition="5" unitName="jetbrains.mps.samples.generator_demo.demoLang5.generator.util.TextUtil$1" />
-    <unitInfo nodeId="3978102045101718900" fileName="TextUtil.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.generator_demo.demoLang5.generator.util.TextUtil" />
+    <file name="TextUtil.java">
+      <node id="3978102045101719015" at="18,44,19,38" concept="6" />
+      <node id="3978102045101720381" at="19,38,20,113" concept="4" />
+      <node id="3978102045101783854" at="20,113,21,27" concept="6" />
+      <node id="3978102045101783043" at="23,39,24,76" concept="5" />
+      <node id="3978102045101784195" at="27,52,28,43" concept="6" />
+      <node id="3978102045101784260" at="28,43,29,104" concept="1" />
+      <node id="3978102045101718902" at="15,0,17,0" concept="0" trace="TextUtil#()V" />
+      <node id="3978102045101783041" at="23,0,26,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3978102045101784020" at="26,7,30,5" concept="2" />
+      <node id="3978102045101783037" at="21,27,26,7" concept="4" />
+      <node id="3978102045101718976" at="18,0,32,0" concept="7" trace="fixText#(Lorg/jetbrains/mps/openapi/model/SModel;)V" />
+      <scope id="3978102045101718905" at="15,21,15,21" />
+      <scope id="3978102045101783042" at="23,39,24,76" />
+      <scope id="3978102045101718902" at="15,0,17,0" />
+      <scope id="3978102045101784026" at="27,52,29,104" />
+      <scope id="3978102045101783041" at="23,0,26,0">
+        <var name="it" id="3978102045101783041" />
+      </scope>
+      <scope id="3978102045101784020" at="26,7,30,5">
+        <var name="mps" id="3978102045101784022" />
+      </scope>
+      <scope id="3978102045101718980" at="18,44,30,5">
+        <var name="mpses" id="3978102045101783038" />
+        <var name="strings" id="3978102045101720382" />
+      </scope>
+      <scope id="3978102045101718976" at="18,0,32,0">
+        <var name="model" id="3978102045101719091" />
+      </scope>
+      <unit id="3978102045101783041" at="22,69,26,5" name="jetbrains.mps.samples.generator_demo.demoLang5.generator.util.TextUtil$1" />
+      <unit id="3978102045101718900" at="14,0,33,0" name="jetbrains.mps.samples.generator_demo.demoLang5.generator.util.TextUtil" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

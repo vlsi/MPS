@@ -1,313 +1,341 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489411750">
-    <nodeInfo nodeId="4480898598423846009" fileName="Order.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="value#()I" />
-    <scopeInfo nodeId="4480898598423846009" fileName="Order.java" startLine="16" startPosition="0" endLine="17" endPosition="0" />
-    <unitInfo nodeId="5294483648489411750" fileName="Order.java" startLine="10" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.testbench.junit.Order" />
+    <file name="Order.java">
+      <node id="4480898598423846009" at="16,0,17,0" concept="0" trace="value#()I" />
+      <scope id="4480898598423846009" at="16,0,17,0" />
+      <unit id="5294483648489411750" at="10,0,18,0" name="jetbrains.mps.testbench.junit.Order" />
+    </file>
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489411798">
-    <nodeInfo nodeId="5294483648489411801" fileName="DelegatingRunNotifier.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="delegate" />
-    <nodeInfo nodeId="5294483648489411810" fileName="DelegatingRunNotifier.java" startLine="18" startPosition="59" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411821" fileName="DelegatingRunNotifier.java" startLine="23" startPosition="49" endLine="24" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411832" fileName="DelegatingRunNotifier.java" startLine="28" startPosition="52" endLine="29" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411843" fileName="DelegatingRunNotifier.java" startLine="33" startPosition="59" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411854" fileName="DelegatingRunNotifier.java" startLine="38" startPosition="50" endLine="39" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411866" fileName="DelegatingRunNotifier.java" startLine="43" startPosition="86" endLine="44" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411877" fileName="DelegatingRunNotifier.java" startLine="48" startPosition="57" endLine="49" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411888" fileName="DelegatingRunNotifier.java" startLine="53" startPosition="48" endLine="54" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411899" fileName="DelegatingRunNotifier.java" startLine="58" startPosition="57" endLine="59" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411910" fileName="DelegatingRunNotifier.java" startLine="63" startPosition="56" endLine="64" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411919" fileName="DelegatingRunNotifier.java" startLine="68" startPosition="28" endLine="69" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411929" fileName="DelegatingRunNotifier.java" startLine="73" startPosition="54" endLine="74" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489411805" fileName="DelegatingRunNotifier.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DelegatingRunNotifier#(Lorg/junit/runner/notification/RunNotifier;)V" />
-    <nodeInfo nodeId="5294483648489411816" fileName="DelegatingRunNotifier.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Lorg/junit/runner/notification/RunListener;)V" />
-    <nodeInfo nodeId="5294483648489411827" fileName="DelegatingRunNotifier.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Lorg/junit/runner/notification/RunListener;)V" />
-    <nodeInfo nodeId="5294483648489411838" fileName="DelegatingRunNotifier.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTestRunStarted#(Lorg/junit/runner/Description;)V" />
-    <nodeInfo nodeId="5294483648489411849" fileName="DelegatingRunNotifier.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTestRunFinished#(Lorg/junit/runner/Result;)V" />
-    <nodeInfo nodeId="5294483648489411860" fileName="DelegatingRunNotifier.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTestStarted#(Lorg/junit/runner/Description;)V" />
-    <nodeInfo nodeId="5294483648489411872" fileName="DelegatingRunNotifier.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTestFinished#(Lorg/junit/runner/Description;)V" />
-    <nodeInfo nodeId="5294483648489411883" fileName="DelegatingRunNotifier.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTestFailure#(Lorg/junit/runner/notification/Failure;)V" />
-    <nodeInfo nodeId="5294483648489411894" fileName="DelegatingRunNotifier.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTestAssumptionFailed#(Lorg/junit/runner/notification/Failure;)V" />
-    <nodeInfo nodeId="5294483648489411905" fileName="DelegatingRunNotifier.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTestIgnored#(Lorg/junit/runner/Description;)V" />
-    <nodeInfo nodeId="5294483648489411916" fileName="DelegatingRunNotifier.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pleaseStop#()V" />
-    <nodeInfo nodeId="5294483648489411924" fileName="DelegatingRunNotifier.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addFirstListener#(Lorg/junit/runner/notification/RunListener;)V" />
-    <scopeInfo nodeId="5294483648489411809" fileName="DelegatingRunNotifier.java" startLine="18" startPosition="59" endLine="19" endPosition="29" />
-    <scopeInfo nodeId="5294483648489411820" fileName="DelegatingRunNotifier.java" startLine="23" startPosition="49" endLine="24" endPosition="35" />
-    <scopeInfo nodeId="5294483648489411831" fileName="DelegatingRunNotifier.java" startLine="28" startPosition="52" endLine="29" endPosition="38" />
-    <scopeInfo nodeId="5294483648489411842" fileName="DelegatingRunNotifier.java" startLine="33" startPosition="59" endLine="34" endPosition="45" />
-    <scopeInfo nodeId="5294483648489411853" fileName="DelegatingRunNotifier.java" startLine="38" startPosition="50" endLine="39" endPosition="41" />
-    <scopeInfo nodeId="5294483648489411865" fileName="DelegatingRunNotifier.java" startLine="43" startPosition="86" endLine="44" endPosition="42" />
-    <scopeInfo nodeId="5294483648489411876" fileName="DelegatingRunNotifier.java" startLine="48" startPosition="57" endLine="49" endPosition="43" />
-    <scopeInfo nodeId="5294483648489411887" fileName="DelegatingRunNotifier.java" startLine="53" startPosition="48" endLine="54" endPosition="38" />
-    <scopeInfo nodeId="5294483648489411898" fileName="DelegatingRunNotifier.java" startLine="58" startPosition="57" endLine="59" endPosition="47" />
-    <scopeInfo nodeId="5294483648489411909" fileName="DelegatingRunNotifier.java" startLine="63" startPosition="56" endLine="64" endPosition="42" />
-    <scopeInfo nodeId="5294483648489411918" fileName="DelegatingRunNotifier.java" startLine="68" startPosition="28" endLine="69" endPosition="26" />
-    <scopeInfo nodeId="5294483648489411928" fileName="DelegatingRunNotifier.java" startLine="73" startPosition="54" endLine="74" endPosition="40" />
-    <scopeInfo nodeId="5294483648489411805" fileName="DelegatingRunNotifier.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="5294483648489411807" varName="delegate" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411816" fileName="DelegatingRunNotifier.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="5294483648489411818" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411827" fileName="DelegatingRunNotifier.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="5294483648489411829" varName="listener" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411838" fileName="DelegatingRunNotifier.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="5294483648489411840" varName="description" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411849" fileName="DelegatingRunNotifier.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="5294483648489411851" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411860" fileName="DelegatingRunNotifier.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="5294483648489411862" varName="description" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411872" fileName="DelegatingRunNotifier.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="5294483648489411874" varName="description" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411883" fileName="DelegatingRunNotifier.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="5294483648489411885" varName="failure" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411894" fileName="DelegatingRunNotifier.java" startLine="57" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="5294483648489411896" varName="failure" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411905" fileName="DelegatingRunNotifier.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="5294483648489411907" varName="description" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489411916" fileName="DelegatingRunNotifier.java" startLine="67" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="5294483648489411924" fileName="DelegatingRunNotifier.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="5294483648489411926" varName="listener" />
-    </scopeInfo>
-    <unitInfo nodeId="5294483648489411798" fileName="DelegatingRunNotifier.java" startLine="12" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.testbench.junit.DelegatingRunNotifier" />
+    <file name="DelegatingRunNotifier.java">
+      <node id="5294483648489411801" at="16,0,17,0" concept="3" trace="delegate" />
+      <node id="5294483648489411810" at="18,59,19,29" concept="2" />
+      <node id="5294483648489411821" at="23,49,24,35" concept="2" />
+      <node id="5294483648489411832" at="28,52,29,38" concept="2" />
+      <node id="5294483648489411843" at="33,59,34,45" concept="2" />
+      <node id="5294483648489411854" at="38,50,39,41" concept="2" />
+      <node id="5294483648489411866" at="43,86,44,42" concept="2" />
+      <node id="5294483648489411877" at="48,57,49,43" concept="2" />
+      <node id="5294483648489411888" at="53,48,54,38" concept="2" />
+      <node id="5294483648489411899" at="58,57,59,47" concept="2" />
+      <node id="5294483648489411910" at="63,56,64,42" concept="2" />
+      <node id="5294483648489411919" at="68,28,69,26" concept="2" />
+      <node id="5294483648489411929" at="73,54,74,40" concept="2" />
+      <node id="5294483648489411805" at="18,0,21,0" concept="1" trace="DelegatingRunNotifier#(Lorg/junit/runner/notification/RunNotifier;)V" />
+      <node id="5294483648489411816" at="22,0,26,0" concept="6" trace="addListener#(Lorg/junit/runner/notification/RunListener;)V" />
+      <node id="5294483648489411827" at="27,0,31,0" concept="6" trace="removeListener#(Lorg/junit/runner/notification/RunListener;)V" />
+      <node id="5294483648489411838" at="32,0,36,0" concept="6" trace="fireTestRunStarted#(Lorg/junit/runner/Description;)V" />
+      <node id="5294483648489411849" at="37,0,41,0" concept="6" trace="fireTestRunFinished#(Lorg/junit/runner/Result;)V" />
+      <node id="5294483648489411860" at="42,0,46,0" concept="6" trace="fireTestStarted#(Lorg/junit/runner/Description;)V" />
+      <node id="5294483648489411872" at="47,0,51,0" concept="6" trace="fireTestFinished#(Lorg/junit/runner/Description;)V" />
+      <node id="5294483648489411883" at="52,0,56,0" concept="6" trace="fireTestFailure#(Lorg/junit/runner/notification/Failure;)V" />
+      <node id="5294483648489411894" at="57,0,61,0" concept="6" trace="fireTestAssumptionFailed#(Lorg/junit/runner/notification/Failure;)V" />
+      <node id="5294483648489411905" at="62,0,66,0" concept="6" trace="fireTestIgnored#(Lorg/junit/runner/Description;)V" />
+      <node id="5294483648489411916" at="67,0,71,0" concept="6" trace="pleaseStop#()V" />
+      <node id="5294483648489411924" at="72,0,76,0" concept="6" trace="addFirstListener#(Lorg/junit/runner/notification/RunListener;)V" />
+      <scope id="5294483648489411809" at="18,59,19,29" />
+      <scope id="5294483648489411820" at="23,49,24,35" />
+      <scope id="5294483648489411831" at="28,52,29,38" />
+      <scope id="5294483648489411842" at="33,59,34,45" />
+      <scope id="5294483648489411853" at="38,50,39,41" />
+      <scope id="5294483648489411865" at="43,86,44,42" />
+      <scope id="5294483648489411876" at="48,57,49,43" />
+      <scope id="5294483648489411887" at="53,48,54,38" />
+      <scope id="5294483648489411898" at="58,57,59,47" />
+      <scope id="5294483648489411909" at="63,56,64,42" />
+      <scope id="5294483648489411918" at="68,28,69,26" />
+      <scope id="5294483648489411928" at="73,54,74,40" />
+      <scope id="5294483648489411805" at="18,0,21,0">
+        <var name="delegate" id="5294483648489411807" />
+      </scope>
+      <scope id="5294483648489411816" at="22,0,26,0">
+        <var name="listener" id="5294483648489411818" />
+      </scope>
+      <scope id="5294483648489411827" at="27,0,31,0">
+        <var name="listener" id="5294483648489411829" />
+      </scope>
+      <scope id="5294483648489411838" at="32,0,36,0">
+        <var name="description" id="5294483648489411840" />
+      </scope>
+      <scope id="5294483648489411849" at="37,0,41,0">
+        <var name="result" id="5294483648489411851" />
+      </scope>
+      <scope id="5294483648489411860" at="42,0,46,0">
+        <var name="description" id="5294483648489411862" />
+      </scope>
+      <scope id="5294483648489411872" at="47,0,51,0">
+        <var name="description" id="5294483648489411874" />
+      </scope>
+      <scope id="5294483648489411883" at="52,0,56,0">
+        <var name="failure" id="5294483648489411885" />
+      </scope>
+      <scope id="5294483648489411894" at="57,0,61,0">
+        <var name="failure" id="5294483648489411896" />
+      </scope>
+      <scope id="5294483648489411905" at="62,0,66,0">
+        <var name="description" id="5294483648489411907" />
+      </scope>
+      <scope id="5294483648489411916" at="67,0,71,0" />
+      <scope id="5294483648489411924" at="72,0,76,0">
+        <var name="listener" id="5294483648489411926" />
+      </scope>
+      <unit id="5294483648489411798" at="12,0,77,0" name="jetbrains.mps.testbench.junit.DelegatingRunNotifier" />
+    </file>
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489411978">
-    <nodeInfo nodeId="4480898598409263160" fileName="ExpectLogEvent.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="level#()I" />
-    <nodeInfo nodeId="4480898598409266572" fileName="ExpectLogEvent.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration" propertyString="text#()[Ljava/lang/String;" />
-    <scopeInfo nodeId="4480898598409263160" fileName="ExpectLogEvent.java" startLine="14" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="4480898598409266572" fileName="ExpectLogEvent.java" startLine="15" startPosition="0" endLine="16" endPosition="0" />
-    <unitInfo nodeId="5294483648489411978" fileName="ExpectLogEvent.java" startLine="11" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.testbench.junit.ExpectLogEvent" />
+    <file name="ExpectLogEvent.java">
+      <node id="4480898598409263160" at="14,0,15,0" concept="0" trace="level#()I" />
+      <node id="4480898598409266572" at="15,0,16,0" concept="0" trace="text#()[Ljava/lang/String;" />
+      <scope id="4480898598409263160" at="14,0,15,0" />
+      <scope id="4480898598409266572" at="15,0,16,0" />
+      <unit id="5294483648489411978" at="11,0,17,0" name="jetbrains.mps.testbench.junit.ExpectLogEvent" />
+    </file>
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489412039">
-    <nodeInfo nodeId="5294483648489412063" fileName="OrderComparator.java" startLine="18" startPosition="47" endLine="19" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489412083" fileName="OrderComparator.java" startLine="21" startPosition="54" endLine="22" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489412086" fileName="OrderComparator.java" startLine="23" startPosition="5" endLine="24" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412093" fileName="OrderComparator.java" startLine="24" startPosition="45" endLine="25" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412104" fileName="OrderComparator.java" startLine="25" startPosition="50" endLine="26" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412111" fileName="OrderComparator.java" startLine="26" startPosition="45" endLine="27" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412131" fileName="OrderComparator.java" startLine="28" startPosition="37" endLine="29" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489412204" fileName="OrderComparator.java" startLine="30" startPosition="5" endLine="31" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5294483648489412147" fileName="OrderComparator.java" startLine="33" startPosition="50" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489412159" fileName="OrderComparator.java" startLine="36" startPosition="50" endLine="37" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489412168" fileName="OrderComparator.java" startLine="39" startPosition="5" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5294483648489412177" fileName="OrderComparator.java" startLine="40" startPosition="0" endLine="41" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="5294483648489412044" fileName="OrderComparator.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="OrderComparator#()V" />
-    <nodeInfo nodeId="5294483648489412055" fileName="OrderComparator.java" startLine="17" startPosition="52" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412074" fileName="OrderComparator.java" startLine="20" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412121" fileName="OrderComparator.java" startLine="27" startPosition="50" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412150" fileName="OrderComparator.java" startLine="35" startPosition="12" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412138" fileName="OrderComparator.java" startLine="32" startPosition="52" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412135" fileName="OrderComparator.java" startLine="31" startPosition="21" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489412048" fileName="OrderComparator.java" startLine="16" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Lorg/junit/runner/Description;Lorg/junit/runner/Description;)I" />
-    <scopeInfo nodeId="5294483648489412046" fileName="OrderComparator.java" startLine="13" startPosition="28" endLine="13" endPosition="28" />
-    <scopeInfo nodeId="5294483648489412062" fileName="OrderComparator.java" startLine="18" startPosition="47" endLine="19" endPosition="78" />
-    <scopeInfo nodeId="5294483648489412082" fileName="OrderComparator.java" startLine="21" startPosition="54" endLine="22" endPosition="15" />
-    <scopeInfo nodeId="5294483648489412130" fileName="OrderComparator.java" startLine="28" startPosition="37" endLine="29" endPosition="29" />
-    <scopeInfo nodeId="5294483648489412146" fileName="OrderComparator.java" startLine="33" startPosition="50" endLine="34" endPosition="18" />
-    <scopeInfo nodeId="5294483648489412158" fileName="OrderComparator.java" startLine="36" startPosition="50" endLine="37" endPosition="17" />
-    <scopeInfo nodeId="5294483648489412044" fileName="OrderComparator.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="5294483648489412137" fileName="OrderComparator.java" startLine="32" startPosition="52" endLine="38" endPosition="7" />
-    <scopeInfo nodeId="5294483648489412135" fileName="OrderComparator.java" startLine="31" startPosition="21" endLine="39" endPosition="5">
-      <varInfo nodeId="5294483648489412161" varName="m" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412054" fileName="OrderComparator.java" startLine="17" startPosition="52" endLine="41" endPosition="89">
-      <varInfo nodeId="5294483648489412085" varName="oaa" />
-      <varInfo nodeId="5294483648489412103" varName="oab" />
-      <varInfo nodeId="5294483648489412092" varName="orderA" />
-      <varInfo nodeId="5294483648489412110" varName="orderB" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412048" fileName="OrderComparator.java" startLine="16" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="5294483648489412050" varName="a" />
-      <varInfo nodeId="5294483648489412052" varName="b" />
-    </scopeInfo>
-    <unitInfo nodeId="5294483648489412039" fileName="OrderComparator.java" startLine="9" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.testbench.junit.OrderComparator" />
+    <file name="OrderComparator.java">
+      <node id="5294483648489412063" at="18,47,19,78" concept="8" />
+      <node id="5294483648489412083" at="21,54,22,15" concept="8" />
+      <node id="5294483648489412086" at="23,5,24,45" concept="7" />
+      <node id="5294483648489412093" at="24,45,25,50" concept="7" />
+      <node id="5294483648489412104" at="25,50,26,45" concept="7" />
+      <node id="5294483648489412111" at="26,45,27,50" concept="7" />
+      <node id="5294483648489412131" at="28,37,29,29" concept="8" />
+      <node id="5294483648489412204" at="30,5,31,21" concept="9" />
+      <node id="5294483648489412147" at="33,50,34,18" concept="8" />
+      <node id="5294483648489412159" at="36,50,37,17" concept="8" />
+      <node id="5294483648489412168" at="39,5,40,0" concept="10" />
+      <node id="5294483648489412177" at="40,0,41,89" concept="14" />
+      <node id="5294483648489412044" at="13,0,15,0" concept="1" trace="OrderComparator#()V" />
+      <node id="5294483648489412055" at="17,52,20,5" concept="5" />
+      <node id="5294483648489412074" at="20,5,23,5" concept="5" />
+      <node id="5294483648489412121" at="27,50,30,5" concept="5" />
+      <node id="5294483648489412150" at="35,12,38,7" concept="5" />
+      <node id="5294483648489412138" at="32,52,38,7" concept="5" />
+      <node id="5294483648489412135" at="31,21,39,5" concept="4" />
+      <node id="5294483648489412048" at="16,0,43,0" concept="6" trace="compare#(Lorg/junit/runner/Description;Lorg/junit/runner/Description;)I" />
+      <scope id="5294483648489412046" at="13,28,13,28" />
+      <scope id="5294483648489412062" at="18,47,19,78" />
+      <scope id="5294483648489412082" at="21,54,22,15" />
+      <scope id="5294483648489412130" at="28,37,29,29" />
+      <scope id="5294483648489412146" at="33,50,34,18" />
+      <scope id="5294483648489412158" at="36,50,37,17" />
+      <scope id="5294483648489412044" at="13,0,15,0" />
+      <scope id="5294483648489412137" at="32,52,38,7" />
+      <scope id="5294483648489412135" at="31,21,39,5">
+        <var name="m" id="5294483648489412161" />
+      </scope>
+      <scope id="5294483648489412054" at="17,52,41,89">
+        <var name="oaa" id="5294483648489412085" />
+        <var name="oab" id="5294483648489412103" />
+        <var name="orderA" id="5294483648489412092" />
+        <var name="orderB" id="5294483648489412110" />
+      </scope>
+      <scope id="5294483648489412048" at="16,0,43,0">
+        <var name="a" id="5294483648489412050" />
+        <var name="b" id="5294483648489412052" />
+      </scope>
+      <unit id="5294483648489412039" at="9,0,44,0" name="jetbrains.mps.testbench.junit.OrderComparator" />
+    </file>
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489412205">
-    <nodeInfo nodeId="5294483648489412209" fileName="WatchingRunNotifier.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WATCH_LEVEL" />
-    <nodeInfo nodeId="5294483648489412215" fileName="WatchingRunNotifier.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IGNORED_LOGGERS" />
-    <nodeInfo nodeId="1623579106307287713" fileName="WatchingRunNotifier.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="IGNORED_OUTPUT_PATTERNS" />
-    <nodeInfo nodeId="5294483648489412236" fileName="WatchingRunNotifier.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="oldLevel" />
-    <nodeInfo nodeId="5294483648489412240" fileName="WatchingRunNotifier.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cacheOut" />
-    <nodeInfo nodeId="5294483648489412244" fileName="WatchingRunNotifier.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="cacheErr" />
-    <nodeInfo nodeId="5294483648489412248" fileName="WatchingRunNotifier.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="app" />
-    <nodeInfo nodeId="5294483648489412252" fileName="WatchingRunNotifier.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="testsToIgnore" />
-    <nodeInfo nodeId="5294483648489412261" fileName="WatchingRunNotifier.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="threadWatcher" />
-    <nodeInfo nodeId="4480898598413871049" fileName="WatchingRunNotifier.java" startLine="32" startPosition="52" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4480898598413324801" fileName="WatchingRunNotifier.java" startLine="39" startPosition="29" endLine="40" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4480898598413340537" fileName="WatchingRunNotifier.java" startLine="40" startPosition="23" endLine="41" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412285" fileName="WatchingRunNotifier.java" startLine="41" startPosition="23" endLine="42" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412297" fileName="WatchingRunNotifier.java" startLine="42" startPosition="80" endLine="43" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412309" fileName="WatchingRunNotifier.java" startLine="43" startPosition="104" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412312" fileName="WatchingRunNotifier.java" startLine="44" startPosition="21" endLine="45" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412315" fileName="WatchingRunNotifier.java" startLine="45" startPosition="28" endLine="46" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412318" fileName="WatchingRunNotifier.java" startLine="46" startPosition="21" endLine="47" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412325" fileName="WatchingRunNotifier.java" startLine="50" startPosition="32" endLine="51" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412328" fileName="WatchingRunNotifier.java" startLine="51" startPosition="21" endLine="52" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412331" fileName="WatchingRunNotifier.java" startLine="52" startPosition="27" endLine="53" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412336" fileName="WatchingRunNotifier.java" startLine="53" startPosition="37" endLine="54" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412339" fileName="WatchingRunNotifier.java" startLine="54" startPosition="21" endLine="55" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412342" fileName="WatchingRunNotifier.java" startLine="55" startPosition="27" endLine="56" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412355" fileName="WatchingRunNotifier.java" startLine="60" startPosition="86" endLine="61" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412360" fileName="WatchingRunNotifier.java" startLine="62" startPosition="9" endLine="63" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412368" fileName="WatchingRunNotifier.java" startLine="64" startPosition="27" endLine="65" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412384" fileName="WatchingRunNotifier.java" startLine="71" startPosition="9" endLine="72" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412392" fileName="WatchingRunNotifier.java" startLine="73" startPosition="27" endLine="74" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412399" fileName="WatchingRunNotifier.java" startLine="75" startPosition="5" endLine="76" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412409" fileName="WatchingRunNotifier.java" startLine="80" startPosition="48" endLine="81" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412417" fileName="WatchingRunNotifier.java" startLine="81" startPosition="62" endLine="82" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412427" fileName="WatchingRunNotifier.java" startLine="86" startPosition="57" endLine="87" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412435" fileName="WatchingRunNotifier.java" startLine="87" startPosition="62" endLine="88" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412445" fileName="WatchingRunNotifier.java" startLine="92" startPosition="56" endLine="93" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412452" fileName="WatchingRunNotifier.java" startLine="93" startPosition="49" endLine="94" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412461" fileName="WatchingRunNotifier.java" startLine="97" startPosition="45" endLine="98" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412470" fileName="WatchingRunNotifier.java" startLine="98" startPosition="71" endLine="99" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412476" fileName="WatchingRunNotifier.java" startLine="99" startPosition="66" endLine="100" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412478" fileName="WatchingRunNotifier.java" startLine="100" startPosition="17" endLine="101" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412484" fileName="WatchingRunNotifier.java" startLine="101" startPosition="48" endLine="102" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412491" fileName="WatchingRunNotifier.java" startLine="102" startPosition="61" endLine="103" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412506" fileName="WatchingRunNotifier.java" startLine="105" startPosition="46" endLine="106" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412520" fileName="WatchingRunNotifier.java" startLine="109" startPosition="43" endLine="110" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412530" fileName="WatchingRunNotifier.java" startLine="111" startPosition="5" endLine="112" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412543" fileName="WatchingRunNotifier.java" startLine="115" startPosition="44" endLine="116" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412547" fileName="WatchingRunNotifier.java" startLine="116" startPosition="42" endLine="117" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412549" fileName="WatchingRunNotifier.java" startLine="117" startPosition="20" endLine="118" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412552" fileName="WatchingRunNotifier.java" startLine="118" startPosition="21" endLine="119" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412558" fileName="WatchingRunNotifier.java" startLine="119" startPosition="64" endLine="120" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412565" fileName="WatchingRunNotifier.java" startLine="120" startPosition="63" endLine="121" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412588" fileName="WatchingRunNotifier.java" startLine="122" startPosition="147" endLine="123" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412598" fileName="WatchingRunNotifier.java" startLine="124" startPosition="5" endLine="125" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412601" fileName="WatchingRunNotifier.java" startLine="125" startPosition="21" endLine="126" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412610" fileName="WatchingRunNotifier.java" startLine="127" startPosition="23" endLine="128" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412271" fileName="WatchingRunNotifier.java" startLine="36" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="5294483648489412265" fileName="WatchingRunNotifier.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="WatchingRunNotifier#(Lorg/junit/runner/notification/RunNotifier;)V" />
-    <nodeInfo nodeId="5294483648489412503" fileName="WatchingRunNotifier.java" startLine="104" startPosition="30" endLine="107" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489412517" fileName="WatchingRunNotifier.java" startLine="108" startPosition="5" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489412568" fileName="WatchingRunNotifier.java" startLine="121" startPosition="24" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412604" fileName="WatchingRunNotifier.java" startLine="126" startPosition="21" endLine="129" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412373" fileName="WatchingRunNotifier.java" startLine="61" startPosition="39" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5294483648489412397" fileName="WatchingRunNotifier.java" startLine="70" startPosition="57" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5294483648489412404" fileName="WatchingRunNotifier.java" startLine="79" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTestFailure#(Lorg/junit/runner/notification/Failure;)V" />
-    <nodeInfo nodeId="5294483648489412422" fileName="WatchingRunNotifier.java" startLine="85" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTestAssumptionFailed#(Lorg/junit/runner/notification/Failure;)V" />
-    <nodeInfo nodeId="5294483648489412440" fileName="WatchingRunNotifier.java" startLine="91" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTestIgnored#(Lorg/junit/runner/Description;)V" />
-    <nodeInfo nodeId="5294483648489412497" fileName="WatchingRunNotifier.java" startLine="103" startPosition="74" endLine="108" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412323" fileName="WatchingRunNotifier.java" startLine="50" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeCaches#()V" />
-    <nodeInfo nodeId="5294483648489412349" fileName="WatchingRunNotifier.java" startLine="59" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTestStarted#(Lorg/junit/runner/Description;)V" />
-    <nodeInfo nodeId="5294483648489412377" fileName="WatchingRunNotifier.java" startLine="69" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireTestFinished#(Lorg/junit/runner/Description;)V" />
-    <nodeInfo nodeId="5294483648489412275" fileName="WatchingRunNotifier.java" startLine="39" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initCaches#()V" />
-    <nodeInfo nodeId="5294483648489412539" fileName="WatchingRunNotifier.java" startLine="115" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="afterTest#(Lorg/junit/runner/Description;)V" />
-    <nodeInfo nodeId="5294483648489412457" fileName="WatchingRunNotifier.java" startLine="97" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeTest#(Lorg/junit/runner/Description;)V" />
-    <scopeInfo nodeId="5294483648489412272" fileName="WatchingRunNotifier.java" startLine="36" startPosition="25" endLine="36" endPosition="25" />
-    <scopeInfo nodeId="5294483648489412269" fileName="WatchingRunNotifier.java" startLine="32" startPosition="52" endLine="33" endPosition="20" />
-    <scopeInfo nodeId="5294483648489412359" fileName="WatchingRunNotifier.java" startLine="62" startPosition="9" endLine="63" endPosition="30" />
-    <scopeInfo nodeId="5294483648489412374" fileName="WatchingRunNotifier.java" startLine="64" startPosition="0" endLine="65" endPosition="57">
-      <varInfo nodeId="5294483648489412363" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412367" fileName="WatchingRunNotifier.java" startLine="64" startPosition="27" endLine="65" endPosition="57" />
-    <scopeInfo nodeId="5294483648489412383" fileName="WatchingRunNotifier.java" startLine="71" startPosition="9" endLine="72" endPosition="29" />
-    <scopeInfo nodeId="5294483648489412398" fileName="WatchingRunNotifier.java" startLine="73" startPosition="0" endLine="74" endPosition="57">
-      <varInfo nodeId="5294483648489412387" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412391" fileName="WatchingRunNotifier.java" startLine="73" startPosition="27" endLine="74" endPosition="57" />
-    <scopeInfo nodeId="5294483648489412505" fileName="WatchingRunNotifier.java" startLine="105" startPosition="46" endLine="106" endPosition="51" />
-    <scopeInfo nodeId="5294483648489412519" fileName="WatchingRunNotifier.java" startLine="109" startPosition="43" endLine="110" endPosition="35" />
-    <scopeInfo nodeId="5294483648489412587" fileName="WatchingRunNotifier.java" startLine="122" startPosition="147" endLine="123" endPosition="106" />
-    <scopeInfo nodeId="5294483648489412609" fileName="WatchingRunNotifier.java" startLine="127" startPosition="23" endLine="128" endPosition="34" />
-    <scopeInfo nodeId="5294483648489412271" fileName="WatchingRunNotifier.java" startLine="36" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="5294483648489412408" fileName="WatchingRunNotifier.java" startLine="80" startPosition="48" endLine="82" endPosition="35" />
-    <scopeInfo nodeId="5294483648489412426" fileName="WatchingRunNotifier.java" startLine="86" startPosition="57" endLine="88" endPosition="44" />
-    <scopeInfo nodeId="5294483648489412444" fileName="WatchingRunNotifier.java" startLine="92" startPosition="56" endLine="94" endPosition="39" />
-    <scopeInfo nodeId="5294483648489412265" fileName="WatchingRunNotifier.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="5294483648489412267" varName="delegate" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412502" fileName="WatchingRunNotifier.java" startLine="104" startPosition="30" endLine="107" endPosition="7" />
-    <scopeInfo nodeId="5294483648489412503" fileName="WatchingRunNotifier.java" startLine="104" startPosition="30" endLine="107" endPosition="7">
-      <varInfo nodeId="5294483648489412512" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412517" fileName="WatchingRunNotifier.java" startLine="108" startPosition="5" endLine="111" endPosition="5">
-      <varInfo nodeId="5294483648489412526" varName="ignore" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412404" fileName="WatchingRunNotifier.java" startLine="79" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="5294483648489412406" varName="failure" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412422" fileName="WatchingRunNotifier.java" startLine="85" startPosition="0" endLine="90" endPosition="0">
-      <varInfo nodeId="5294483648489412424" varName="failure" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412440" fileName="WatchingRunNotifier.java" startLine="91" startPosition="0" endLine="96" endPosition="0">
-      <varInfo nodeId="5294483648489412442" varName="description" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412324" fileName="WatchingRunNotifier.java" startLine="50" startPosition="32" endLine="56" endPosition="37" />
-    <scopeInfo nodeId="5294483648489412354" fileName="WatchingRunNotifier.java" startLine="60" startPosition="86" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="5294483648489412381" fileName="WatchingRunNotifier.java" startLine="70" startPosition="57" endLine="76" endPosition="40" />
-    <scopeInfo nodeId="5294483648489412276" fileName="WatchingRunNotifier.java" startLine="39" startPosition="29" endLine="47" endPosition="28" />
-    <scopeInfo nodeId="5294483648489412323" fileName="WatchingRunNotifier.java" startLine="50" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="5294483648489412349" fileName="WatchingRunNotifier.java" startLine="59" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="5294483648489412351" varName="description" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412377" fileName="WatchingRunNotifier.java" startLine="69" startPosition="0" endLine="78" endPosition="0">
-      <varInfo nodeId="5294483648489412379" varName="description" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412275" fileName="WatchingRunNotifier.java" startLine="39" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="5294483648489412542" fileName="WatchingRunNotifier.java" startLine="115" startPosition="44" endLine="129" endPosition="5">
-      <varInfo nodeId="5294483648489412564" varName="fail" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412460" fileName="WatchingRunNotifier.java" startLine="97" startPosition="45" endLine="112" endPosition="49">
-      <varInfo nodeId="5294483648489412490" varName="ignoreEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412539" fileName="WatchingRunNotifier.java" startLine="115" startPosition="0" endLine="131" endPosition="0">
-      <varInfo nodeId="5294483648489412540" varName="desc" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412457" fileName="WatchingRunNotifier.java" startLine="97" startPosition="0" endLine="114" endPosition="0">
-      <varInfo nodeId="5294483648489412458" varName="desc" />
-    </scopeInfo>
-    <unitInfo nodeId="5294483648489412205" fileName="WatchingRunNotifier.java" startLine="18" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
+    <file name="WatchingRunNotifier.java">
+      <node id="5294483648489412209" at="22,0,23,0" concept="11" trace="WATCH_LEVEL" />
+      <node id="5294483648489412215" at="23,0,24,0" concept="11" trace="IGNORED_LOGGERS" />
+      <node id="1623579106307287713" at="24,0,25,0" concept="11" trace="IGNORED_OUTPUT_PATTERNS" />
+      <node id="5294483648489412236" at="25,0,26,0" concept="3" trace="oldLevel" />
+      <node id="5294483648489412240" at="26,0,27,0" concept="3" trace="cacheOut" />
+      <node id="5294483648489412244" at="27,0,28,0" concept="3" trace="cacheErr" />
+      <node id="5294483648489412248" at="28,0,29,0" concept="3" trace="app" />
+      <node id="5294483648489412252" at="29,0,30,0" concept="3" trace="testsToIgnore" />
+      <node id="5294483648489412261" at="30,0,31,0" concept="3" trace="threadWatcher" />
+      <node id="4480898598413871049" at="32,52,33,20" concept="13" />
+      <node id="4480898598413324801" at="39,29,40,23" concept="2" />
+      <node id="4480898598413340537" at="40,23,41,23" concept="2" />
+      <node id="5294483648489412285" at="41,23,42,80" concept="2" />
+      <node id="5294483648489412297" at="42,80,43,104" concept="2" />
+      <node id="5294483648489412309" at="43,104,44,21" concept="2" />
+      <node id="5294483648489412312" at="44,21,45,28" concept="2" />
+      <node id="5294483648489412315" at="45,28,46,21" concept="2" />
+      <node id="5294483648489412318" at="46,21,47,28" concept="2" />
+      <node id="5294483648489412325" at="50,32,51,21" concept="2" />
+      <node id="5294483648489412328" at="51,21,52,27" concept="2" />
+      <node id="5294483648489412331" at="52,27,53,37" concept="2" />
+      <node id="5294483648489412336" at="53,37,54,21" concept="2" />
+      <node id="5294483648489412339" at="54,21,55,27" concept="2" />
+      <node id="5294483648489412342" at="55,27,56,37" concept="2" />
+      <node id="5294483648489412355" at="60,86,61,39" concept="2" />
+      <node id="5294483648489412360" at="62,9,63,30" concept="2" />
+      <node id="5294483648489412368" at="64,27,65,57" concept="2" />
+      <node id="5294483648489412384" at="71,9,72,29" concept="2" />
+      <node id="5294483648489412392" at="73,27,74,57" concept="2" />
+      <node id="5294483648489412399" at="75,5,76,40" concept="2" />
+      <node id="5294483648489412409" at="80,48,81,62" concept="2" />
+      <node id="5294483648489412417" at="81,62,82,35" concept="2" />
+      <node id="5294483648489412427" at="86,57,87,62" concept="2" />
+      <node id="5294483648489412435" at="87,62,88,44" concept="2" />
+      <node id="5294483648489412445" at="92,56,93,49" concept="2" />
+      <node id="5294483648489412452" at="93,49,94,39" concept="2" />
+      <node id="5294483648489412461" at="97,45,98,71" concept="2" />
+      <node id="5294483648489412470" at="98,71,99,66" concept="2" />
+      <node id="5294483648489412476" at="99,66,100,17" concept="2" />
+      <node id="5294483648489412478" at="100,17,101,48" concept="2" />
+      <node id="5294483648489412484" at="101,48,102,61" concept="2" />
+      <node id="5294483648489412491" at="102,61,103,74" concept="7" />
+      <node id="5294483648489412506" at="105,46,106,51" concept="2" />
+      <node id="5294483648489412520" at="109,43,110,35" concept="2" />
+      <node id="5294483648489412530" at="111,5,112,49" concept="2" />
+      <node id="5294483648489412543" at="115,44,116,42" concept="2" />
+      <node id="5294483648489412547" at="116,42,117,20" concept="2" />
+      <node id="5294483648489412549" at="117,20,118,21" concept="2" />
+      <node id="5294483648489412552" at="118,21,119,64" concept="2" />
+      <node id="5294483648489412558" at="119,64,120,63" concept="2" />
+      <node id="5294483648489412565" at="120,63,121,24" concept="7" />
+      <node id="5294483648489412588" at="122,147,123,106" concept="2" />
+      <node id="5294483648489412598" at="124,5,125,21" concept="2" />
+      <node id="5294483648489412601" at="125,21,126,21" concept="2" />
+      <node id="5294483648489412610" at="127,23,128,34" concept="2" />
+      <node id="5294483648489412271" at="36,0,38,0" concept="6" trace="dispose#()V" />
+      <node id="5294483648489412265" at="32,0,35,0" concept="1" trace="WatchingRunNotifier#(Lorg/junit/runner/notification/RunNotifier;)V" />
+      <node id="5294483648489412503" at="104,30,107,7" concept="4" />
+      <node id="5294483648489412517" at="108,5,111,5" concept="4" />
+      <node id="5294483648489412568" at="121,24,124,5" concept="5" />
+      <node id="5294483648489412604" at="126,21,129,5" concept="5" />
+      <node id="5294483648489412373" at="61,39,66,5" concept="15" />
+      <node id="5294483648489412397" at="70,57,75,5" concept="15" />
+      <node id="5294483648489412404" at="79,0,84,0" concept="6" trace="fireTestFailure#(Lorg/junit/runner/notification/Failure;)V" />
+      <node id="5294483648489412422" at="85,0,90,0" concept="6" trace="fireTestAssumptionFailed#(Lorg/junit/runner/notification/Failure;)V" />
+      <node id="5294483648489412440" at="91,0,96,0" concept="6" trace="fireTestIgnored#(Lorg/junit/runner/Description;)V" />
+      <node id="5294483648489412497" at="103,74,108,5" concept="5" />
+      <node id="5294483648489412323" at="50,0,58,0" concept="6" trace="disposeCaches#()V" />
+      <node id="5294483648489412349" at="59,0,68,0" concept="6" trace="fireTestStarted#(Lorg/junit/runner/Description;)V" />
+      <node id="5294483648489412377" at="69,0,78,0" concept="6" trace="fireTestFinished#(Lorg/junit/runner/Description;)V" />
+      <node id="5294483648489412275" at="39,0,49,0" concept="6" trace="initCaches#()V" />
+      <node id="5294483648489412539" at="115,0,131,0" concept="6" trace="afterTest#(Lorg/junit/runner/Description;)V" />
+      <node id="5294483648489412457" at="97,0,114,0" concept="6" trace="beforeTest#(Lorg/junit/runner/Description;)V" />
+      <scope id="5294483648489412272" at="36,25,36,25" />
+      <scope id="5294483648489412269" at="32,52,33,20" />
+      <scope id="5294483648489412359" at="62,9,63,30" />
+      <scope id="5294483648489412374" at="64,0,65,57">
+        <var name="e" id="5294483648489412363" />
+      </scope>
+      <scope id="5294483648489412367" at="64,27,65,57" />
+      <scope id="5294483648489412383" at="71,9,72,29" />
+      <scope id="5294483648489412398" at="73,0,74,57">
+        <var name="e" id="5294483648489412387" />
+      </scope>
+      <scope id="5294483648489412391" at="73,27,74,57" />
+      <scope id="5294483648489412505" at="105,46,106,51" />
+      <scope id="5294483648489412519" at="109,43,110,35" />
+      <scope id="5294483648489412587" at="122,147,123,106" />
+      <scope id="5294483648489412609" at="127,23,128,34" />
+      <scope id="5294483648489412271" at="36,0,38,0" />
+      <scope id="5294483648489412408" at="80,48,82,35" />
+      <scope id="5294483648489412426" at="86,57,88,44" />
+      <scope id="5294483648489412444" at="92,56,94,39" />
+      <scope id="5294483648489412265" at="32,0,35,0">
+        <var name="delegate" id="5294483648489412267" />
+      </scope>
+      <scope id="5294483648489412502" at="104,30,107,7" />
+      <scope id="5294483648489412503" at="104,30,107,7">
+        <var name="text" id="5294483648489412512" />
+      </scope>
+      <scope id="5294483648489412517" at="108,5,111,5">
+        <var name="ignore" id="5294483648489412526" />
+      </scope>
+      <scope id="5294483648489412404" at="79,0,84,0">
+        <var name="failure" id="5294483648489412406" />
+      </scope>
+      <scope id="5294483648489412422" at="85,0,90,0">
+        <var name="failure" id="5294483648489412424" />
+      </scope>
+      <scope id="5294483648489412440" at="91,0,96,0">
+        <var name="description" id="5294483648489412442" />
+      </scope>
+      <scope id="5294483648489412324" at="50,32,56,37" />
+      <scope id="5294483648489412354" at="60,86,66,5" />
+      <scope id="5294483648489412381" at="70,57,76,40" />
+      <scope id="5294483648489412276" at="39,29,47,28" />
+      <scope id="5294483648489412323" at="50,0,58,0" />
+      <scope id="5294483648489412349" at="59,0,68,0">
+        <var name="description" id="5294483648489412351" />
+      </scope>
+      <scope id="5294483648489412377" at="69,0,78,0">
+        <var name="description" id="5294483648489412379" />
+      </scope>
+      <scope id="5294483648489412275" at="39,0,49,0" />
+      <scope id="5294483648489412542" at="115,44,129,5">
+        <var name="fail" id="5294483648489412564" />
+      </scope>
+      <scope id="5294483648489412460" at="97,45,112,49">
+        <var name="ignoreEvent" id="5294483648489412490" />
+      </scope>
+      <scope id="5294483648489412539" at="115,0,131,0">
+        <var name="desc" id="5294483648489412540" />
+      </scope>
+      <scope id="5294483648489412457" at="97,0,114,0">
+        <var name="desc" id="5294483648489412458" />
+      </scope>
+      <unit id="5294483648489412205" at="18,0,132,0" name="jetbrains.mps.testbench.junit.WatchingRunNotifier" />
+    </file>
   </root>
   <root nodeRef="r:7eb6d2ae-f266-42d4-885f-016951b158e4(jetbrains.mps.testbench.junit)/5294483648489412683">
-    <nodeInfo nodeId="4480898598424032803" fileName="UncleanTestExecutionException.java" startLine="11" startPosition="59" endLine="12" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5294483648489412700" fileName="UncleanTestExecutionException.java" startLine="15" startPosition="60" endLine="16" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412704" fileName="UncleanTestExecutionException.java" startLine="16" startPosition="43" endLine="17" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5294483648489412715" fileName="UncleanTestExecutionException.java" startLine="19" startPosition="27" endLine="20" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412723" fileName="UncleanTestExecutionException.java" startLine="20" startPosition="50" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412731" fileName="UncleanTestExecutionException.java" startLine="23" startPosition="5" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412743" fileName="UncleanTestExecutionException.java" startLine="26" startPosition="27" endLine="27" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412754" fileName="UncleanTestExecutionException.java" startLine="27" startPosition="66" endLine="28" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412763" fileName="UncleanTestExecutionException.java" startLine="30" startPosition="5" endLine="31" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5294483648489412767" fileName="UncleanTestExecutionException.java" startLine="31" startPosition="32" endLine="32" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5294483648489412687" fileName="UncleanTestExecutionException.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UncleanTestExecutionException#(null)V" />
-    <nodeInfo nodeId="5294483648489412710" fileName="UncleanTestExecutionException.java" startLine="18" startPosition="30" endLine="22" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412738" fileName="UncleanTestExecutionException.java" startLine="25" startPosition="30" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5294483648489412707" fileName="UncleanTestExecutionException.java" startLine="17" startPosition="22" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489412735" fileName="UncleanTestExecutionException.java" startLine="24" startPosition="34" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5294483648489412694" fileName="UncleanTestExecutionException.java" startLine="15" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="outputToMessage#(null)Ljava/lang/String;" />
-    <scopeInfo nodeId="5294483648489412692" fileName="UncleanTestExecutionException.java" startLine="11" startPosition="59" endLine="12" endPosition="36" />
-    <scopeInfo nodeId="5294483648489412714" fileName="UncleanTestExecutionException.java" startLine="19" startPosition="27" endLine="21" endPosition="19" />
-    <scopeInfo nodeId="5294483648489412742" fileName="UncleanTestExecutionException.java" startLine="26" startPosition="27" endLine="28" endPosition="31" />
-    <scopeInfo nodeId="5294483648489412687" fileName="UncleanTestExecutionException.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="5294483648489412689" varName="outputs" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412709" fileName="UncleanTestExecutionException.java" startLine="18" startPosition="30" endLine="22" endPosition="7" />
-    <scopeInfo nodeId="5294483648489412737" fileName="UncleanTestExecutionException.java" startLine="25" startPosition="30" endLine="29" endPosition="7" />
-    <scopeInfo nodeId="5294483648489412707" fileName="UncleanTestExecutionException.java" startLine="17" startPosition="22" endLine="23" endPosition="5">
-      <varInfo nodeId="5294483648489412727" varName="f" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412735" fileName="UncleanTestExecutionException.java" startLine="24" startPosition="34" endLine="30" endPosition="5">
-      <varInfo nodeId="5294483648489412759" varName="f" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412698" fileName="UncleanTestExecutionException.java" startLine="15" startPosition="60" endLine="32" endPosition="25">
-      <varInfo nodeId="5294483648489412699" varName="sb" />
-      <varInfo nodeId="5294483648489412703" varName="sep" />
-    </scopeInfo>
-    <scopeInfo nodeId="5294483648489412694" fileName="UncleanTestExecutionException.java" startLine="15" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="5294483648489412695" varName="outputs" />
-    </scopeInfo>
-    <unitInfo nodeId="5294483648489412683" fileName="UncleanTestExecutionException.java" startLine="7" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.testbench.junit.UncleanTestExecutionException" />
+    <file name="UncleanTestExecutionException.java">
+      <node id="4480898598424032803" at="11,59,12,36" concept="13" />
+      <node id="5294483648489412700" at="15,60,16,43" concept="7" />
+      <node id="5294483648489412704" at="16,43,17,22" concept="7" />
+      <node id="5294483648489412715" at="19,27,20,50" concept="2" />
+      <node id="5294483648489412723" at="20,50,21,19" concept="2" />
+      <node id="5294483648489412731" at="23,5,24,34" concept="2" />
+      <node id="5294483648489412743" at="26,27,27,66" concept="2" />
+      <node id="5294483648489412754" at="27,66,28,31" concept="2" />
+      <node id="5294483648489412763" at="30,5,31,32" concept="2" />
+      <node id="5294483648489412767" at="31,32,32,25" concept="8" />
+      <node id="5294483648489412687" at="11,0,14,0" concept="1" trace="UncleanTestExecutionException#(null)V" />
+      <node id="5294483648489412710" at="18,30,22,7" concept="5" />
+      <node id="5294483648489412738" at="25,30,29,7" concept="5" />
+      <node id="5294483648489412707" at="17,22,23,5" concept="4" />
+      <node id="5294483648489412735" at="24,34,30,5" concept="4" />
+      <node id="5294483648489412694" at="15,0,34,0" concept="12" trace="outputToMessage#(null)Ljava/lang/String;" />
+      <scope id="5294483648489412692" at="11,59,12,36" />
+      <scope id="5294483648489412714" at="19,27,21,19" />
+      <scope id="5294483648489412742" at="26,27,28,31" />
+      <scope id="5294483648489412687" at="11,0,14,0">
+        <var name="outputs" id="5294483648489412689" />
+      </scope>
+      <scope id="5294483648489412709" at="18,30,22,7" />
+      <scope id="5294483648489412737" at="25,30,29,7" />
+      <scope id="5294483648489412707" at="17,22,23,5">
+        <var name="f" id="5294483648489412727" />
+      </scope>
+      <scope id="5294483648489412735" at="24,34,30,5">
+        <var name="f" id="5294483648489412759" />
+      </scope>
+      <scope id="5294483648489412698" at="15,60,32,25">
+        <var name="sb" id="5294483648489412699" />
+        <var name="sep" id="5294483648489412703" />
+      </scope>
+      <scope id="5294483648489412694" at="15,0,34,0">
+        <var name="outputs" id="5294483648489412695" />
+      </scope>
+      <unit id="5294483648489412683" at="7,0,35,0" name="jetbrains.mps.testbench.junit.UncleanTestExecutionException" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.ide.ui.UISettings;
+import com.intellij.ide.ui.UISettingsListener;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
@@ -75,11 +77,23 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
     myCaretBlinker = caretBlinker;
     myColorsManager = colorsManager;
     updateCachedValue();
+    registerUIListener();
   }
 
   private EditorSettings() {
     myColorsManager = null;
     updateCachedValue();
+    registerUIListener();
+  }
+
+  private void registerUIListener() {
+    UISettings.getInstance().addUISettingsListener(new UISettingsListener() {
+      @Override
+      public void uiSettingsChanged(UISettings source) {
+        updateCachedValue();
+        fireEditorSettingsChanged();
+      }
+    }, ApplicationManager.getApplication());
   }
 
   public double getLineSpacing() {
@@ -91,7 +105,13 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   }
 
   public int getFontSize() {
-    return myState.myFontSize;
+    int fontSize;
+    if (UISettings.getInstance().PRESENTATION_MODE) {
+      fontSize = UISettings.getInstance().PRESENTATION_MODE_FONT_SIZE;
+    } else {
+      fontSize = myState.myFontSize;
+    }
+    return fontSize;
   }
 
   public String getFontFamily() {
@@ -188,7 +208,8 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   }
 
   public Color getHyperlinkColor() {
-    return myColorsManager == null ? DEFAULT_HYPERLINK_COLOR : myColorsManager.getGlobalScheme().getAttributes(EditorColors.REFERENCE_HYPERLINK_COLOR).getForegroundColor();
+    return myColorsManager == null ? DEFAULT_HYPERLINK_COLOR : myColorsManager.getGlobalScheme().getAttributes(
+        EditorColors.REFERENCE_HYPERLINK_COLOR).getForegroundColor();
   }
 
   public Color getCaretColor() {
@@ -249,7 +270,7 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
   }
 
   void updateCachedValue() {
-    myDefaultEditorFont = new Font(myState.myFontFamily, 0, myState.myFontSize);
+    myDefaultEditorFont = new Font(myState.myFontFamily, 0, getFontSize());
     mySpaceWidth = -1;
   }
 
@@ -401,6 +422,14 @@ public class EditorSettings implements PersistentStateComponent<MyState> {
 
     public void setPowerSaveMode(boolean powerSaveMode) {
       myPowerSaveMode = powerSaveMode;
+    }
+
+    public boolean isAutoQuickFix() {
+      return myAutoQuickFix;
+    }
+
+    public void setAutoQuickFix(boolean autoQuickFix) {
+      myAutoQuickFix = autoQuickFix;
     }
 
     //setters are for persistence

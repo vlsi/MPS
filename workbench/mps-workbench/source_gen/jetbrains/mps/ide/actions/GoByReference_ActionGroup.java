@@ -17,9 +17,8 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.extensions.PluginId;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 import jetbrains.mps.resolve.ResolverComponent;
 import org.jetbrains.annotations.Nullable;
 
@@ -59,22 +58,23 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
         SNode targetNode = ref.getTargetNode();
         if (targetNode != null) {
           String text = "[" + ref.getRole() + "] -> " + ((jetbrains.mps.smodel.SReference) ref).getResolveInfo();
-          GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(new SNodePointer(targetNode), text), PluginId.getId("jetbrains.mps.ide"), new SNodePointer(targetNode), text);
+          GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(targetNode.getReference(), text), PluginId.getId("jetbrains.mps.ide"), targetNode.getReference(), text);
           continue;
         }
 
         final SReference finalRef = ref;
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
+        final ModelAccess modelAccess = context.getProject().getModelAccess();
+        modelAccess.runWriteInEDT(new Runnable() {
           @Override
           public void run() {
             String text = "Bad reference: [" + finalRef.getRole() + "] -> " + ((jetbrains.mps.smodel.SReference) finalRef).getResolveInfo();
 
-            ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+            modelAccess.executeUndoTransparentCommand(new Runnable() {
               @Override
               public void run() {
                 ResolverComponent.getInstance().resolve(finalRef, context.getProject().getRepository());
               }
-            }, context.getProject());
+            });
             String role = finalRef.getRole();
             SNode sourceNode = finalRef.getSourceNode();
             SReference newRef = sourceNode.getReference(role);
@@ -87,7 +87,7 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
               return;
             }
 
-            GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(new SNodePointer(newTarget), text), PluginId.getId("jetbrains.mps.ide"), new SNodePointer(newTarget), text);
+            GoByReference_ActionGroup.this.addParameterizedAction(new EditGivenNode_Action(newTarget.getReference(), text), PluginId.getId("jetbrains.mps.ide"), newTarget.getReference(), text);
           }
         });
 

@@ -24,7 +24,6 @@ import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
@@ -64,11 +63,6 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   }
 
   @Override
-  public void info(SNode node, String message) {
-    info(node == null ? null : node.getReference(), message);
-  }
-
-  @Override
   public void info(@Nullable SNodeReference node, @NotNull String message) {
     if (!myHandleInfo) {
       return;
@@ -100,22 +94,12 @@ public class GeneratorLoggerAdapter implements IGeneratorLogger {
   }
 
   @Override
-  public void warning(SNode node, String message, ProblemDescription... descriptions) {
-    warning(node == null ? null : node.getReference(), message, descriptions);
-  }
-
-  @Override
   public void warning(@Nullable SNodeReference node, @NotNull String message, @Nullable ProblemDescription... descriptions) {
     if (!myHandleWarnings) {
       return;
     }
     warningReported();
     report(MessageKind.WARNING, message, node, descriptions);
-  }
-
-  @Override
-  public void error(SNode node, String message, ProblemDescription... descriptions) {
-    error(node == null ? null : node.getReference(), message, descriptions);
   }
 
   @Override

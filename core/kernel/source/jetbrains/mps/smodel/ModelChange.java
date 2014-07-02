@@ -15,30 +15,37 @@
  */
 package jetbrains.mps.smodel;
 
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 class ModelChange {
   static void assertLegalNodeRegistration(SModel model, SNode node) {
-    if (((jetbrains.mps.smodel.SModelInternal) model).canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
+    if (model.canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
       throw new IllegalModelChangeError("node registration is only allowed inside undoable command  or in 'loading' model " + SNodeUtil.getDebugText(node));
     }
   }
 
   static void assertLegalNodeUnRegistration(SModel model, SNode node) {
-    if (((jetbrains.mps.smodel.SModelInternal) model).canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
+    if (model.canFireEvent() && !UndoHelper.getInstance().isInsideUndoableCommand()) {
       throw new IllegalModelChangeError("node un-registration is only allowed inside undoable command or in 'loading' model" + SNodeUtil.getDebugText(node));
     }
   }
 
   static void assertLegalChange(SModel model) {
-    if (((jetbrains.mps.smodel.SModelInternal) model).canFireEvent() && !ModelAccess.instance().canWrite()) {
+    // [artem] it's not quite obvious why it's legal to change models that can't fire write events.
+    if (model.canFireEvent() && !ModelAccess.instance().canWrite()) {
       throw new IllegalModelChangeError("You can change model only inside write actions");
     }
   }
 
-  static boolean needFireEvents(SModel model, SNode node) {
-    return node.getModel() != null && ((jetbrains.mps.smodel.SModelInternal) model).canFireEvent();
+  /**
+   * Models that are 'public' (published in a repository) need an actual write command to deem a change legal
+   */
+  static void assertLegalChange_new(org.jetbrains.mps.openapi.model.SModel model) {
+    SRepository repo = model.getRepository();
+    if (repo != null && model.isLoaded() && !repo.getModelAccess().canWrite()) {
+      throw new IllegalModelChangeError("You can change model only inside write actions");
+    }
   }
 }

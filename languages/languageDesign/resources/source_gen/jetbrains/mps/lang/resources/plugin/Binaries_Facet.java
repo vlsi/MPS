@@ -31,6 +31,7 @@ import java.util.Collections;
 import jetbrains.mps.make.facets.Make_Facet.Target_make;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -115,6 +116,7 @@ public class Binaries_Facet extends IFacet.Stub {
                         final IFile outputDir = FileGenerationUtil.getDefaultOutputDir(model, outputRoot);
                         final FilesDelta fd = new FilesDelta(outputDir);
                         ListSequence.fromList(deltaList).addElement(fd);
+                        new StaleFilesCollector(outputDir).updateDelta(fd);
                         return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.lang.resources.structure.Resource")).where(new IWhereFilter<SNode>() {
                           public boolean accept(SNode it) {
                             return isNotEmptyString(SPropertyOperations.getString(it, "path"));

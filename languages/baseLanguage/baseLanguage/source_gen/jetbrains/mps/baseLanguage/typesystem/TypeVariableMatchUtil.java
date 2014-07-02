@@ -163,7 +163,7 @@ public class TypeVariableMatchUtil {
                 intentionProvider.putArgument("expression", actualArgument);
                 _info_12389875345.addIntentionProvider(intentionProvider);
               }
-              typeCheckingContext.createGreaterThanInequality((SNode) _type, (SNode) typeCheckingContext.typeOf(argt_var, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5977092449933510855", true), true, true, _info_12389875345);
+              typeCheckingContext.createGreaterThanInequality((SNode) _type, (SNode) argt_var, true, true, _info_12389875345);
             }
           }
         }

@@ -120,7 +120,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
   @Nullable
   @NonNls
   public String getHelpTopic() {
-    return "Generator";
+    return "preferences.generator";
   }
 
   @Override
@@ -170,42 +170,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     return myState;
   }
 
-  /**
-   * @deprecated This option is not in use since Make is in the game, 3 years now
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public GenerateRequirementsPolicy getGenerateRequirementsPolicy() {
-    return GenerateRequirementsPolicy.NEVER;
-  }
-
-  /**
-   * @deprecated This option is not in use since Make is in the game, 3 years now
-   */
-  @Deprecated
-  @ToRemove(version = 3.1)
-  public void setGenerateRequirementsPolicy(GenerateRequirementsPolicy generateRequirementsPolicy) {
-    // no-op
-  }
-
-  /**
-   * @deprecated This option is not in use since Make is in the game, 3 years now
-   */
-  @Deprecated
-  public enum GenerateRequirementsPolicy {
-    ALWAYS("Always generate"), ASK("Ask"), NEVER("Never generate");
-
-    private String myRepresentation;
-
-    private GenerateRequirementsPolicy(String representation) {
-      myRepresentation = representation;
-    }
-
-    public String toString() {
-      return myRepresentation;
-    }
-  }
-
   public static class MyState {
     public boolean mySaveTransientModels;
     public boolean myCheckModelsBeforeGeneration;
@@ -224,7 +188,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     public boolean myShowBadChildWarning;
     public boolean myDebugIncrementalDependencies;
     public boolean myActiveInplaceTransform;
-    public boolean myTraceUseLegacy = false;
     public boolean myTraceGroupSteps;
     public boolean myTraceCompactTemplates;
     public boolean myTraceShowEmptySteps;
@@ -254,7 +217,6 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
       myDebugIncrementalDependencies = s.isDebugIncrementalDependencies();
       myActiveInplaceTransform = s.useInplaceTransofrmations();
       GenTraceSettings gts = s.getTraceSettings();
-      myTraceUseLegacy = GenerationFacade.isLegacyGenTraceEnabled();
       myTraceCompactTemplates = gts.isCompactTemplates();
       myTraceGroupSteps = gts.isGroupByStep();
       myTraceShowEmptySteps = gts.isShowEmptySteps();

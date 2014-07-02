@@ -1,52 +1,61 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:2d25e22e-2ee8-4e84-89da-295e3fc8de94(jetbrains.mps.lang.plugin.standalone.generator.util)/681855071694482336">
-    <nodeInfo nodeId="5023285075122028228" fileName="PluginUtils.java" startLine="16" startPosition="72" endLine="17" endPosition="1121" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5023285075122038876" fileName="PluginUtils.java" startLine="20" startPosition="76" endLine="21" endPosition="966" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6362460243896632403" fileName="PluginUtils.java" startLine="25" startPosition="165" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5115557898426114451" fileName="PluginUtils.java" startLine="28" startPosition="174" endLine="29" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6362460243896632408" fileName="PluginUtils.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="812693349008551611" fileName="PluginUtils.java" startLine="31" startPosition="0" endLine="32" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="812693349008551779" fileName="PluginUtils.java" startLine="32" startPosition="54" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6362460243896632414" fileName="PluginUtils.java" startLine="34" startPosition="80" endLine="35" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6362460243896632416" fileName="PluginUtils.java" startLine="36" startPosition="5" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="812693349008597362" fileName="PluginUtils.java" startLine="37" startPosition="0" endLine="38" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6362460243896632409" fileName="PluginUtils.java" startLine="41" startPosition="62" endLine="42" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="681855071694482338" fileName="PluginUtils.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginUtils#()V" />
-    <nodeInfo nodeId="681855071694482342" fileName="PluginUtils.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="needAppPlugin#(Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
-    <nodeInfo nodeId="681855071694482362" fileName="PluginUtils.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="needProjectPlugin#(Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
-    <nodeInfo nodeId="6362460243896632387" fileName="PluginUtils.java" startLine="24" startPosition="88" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5115557898426114449" fileName="PluginUtils.java" startLine="27" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="812693349008551481" fileName="PluginUtils.java" startLine="33" startPosition="71" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6362460243896632409" fileName="PluginUtils.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_l4wyvj_a0f0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="6362460243896604674" fileName="PluginUtils.java" startLine="24" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkPluginModelName#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="681855071694482341" fileName="PluginUtils.java" startLine="13" startPosition="24" endLine="13" endPosition="24" />
-    <scopeInfo nodeId="681855071694482345" fileName="PluginUtils.java" startLine="16" startPosition="72" endLine="17" endPosition="1121" />
-    <scopeInfo nodeId="681855071694482365" fileName="PluginUtils.java" startLine="20" startPosition="76" endLine="21" endPosition="966" />
-    <scopeInfo nodeId="6362460243896632388" fileName="PluginUtils.java" startLine="25" startPosition="165" endLine="26" endPosition="13" />
-    <scopeInfo nodeId="5115557898426114450" fileName="PluginUtils.java" startLine="28" startPosition="174" endLine="29" endPosition="13" />
-    <scopeInfo nodeId="812693349008551482" fileName="PluginUtils.java" startLine="34" startPosition="80" endLine="35" endPosition="13" />
-    <scopeInfo nodeId="6362460243896632409" fileName="PluginUtils.java" startLine="41" startPosition="62" endLine="42" endPosition="46" />
-    <scopeInfo nodeId="681855071694482338" fileName="PluginUtils.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="681855071694482342" fileName="PluginUtils.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="681855071694482347" varName="genContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="681855071694482362" fileName="PluginUtils.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="681855071694482366" varName="genContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="6362460243896632409" fileName="PluginUtils.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="6362460243896632409" varName="a" />
-      <varInfo nodeId="6362460243896632409" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="6362460243896604677" fileName="PluginUtils.java" startLine="24" startPosition="88" endLine="38" endPosition="172">
-      <varInfo nodeId="812693349008551780" varName="correctName" />
-      <varInfo nodeId="812693349008551612" varName="model" />
-    </scopeInfo>
-    <scopeInfo nodeId="6362460243896604674" fileName="PluginUtils.java" startLine="24" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="6362460243896632376" varName="genContext" />
-      <varInfo nodeId="6362460243896632374" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="681855071694482336" fileName="PluginUtils.java" startLine="12" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.lang.plugin.standalone.generator.util.PluginUtils" />
+    <file name="PluginUtils.java">
+      <node id="5023285075122028228" at="16,72,17,1121" concept="4" />
+      <node id="5023285075122038876" at="20,76,21,966" concept="4" />
+      <node id="6362460243896632403" at="25,165,26,13" concept="4" />
+      <node id="5115557898426114451" at="28,174,29,13" concept="4" />
+      <node id="6362460243896632408" at="30,5,31,0" concept="5" />
+      <node id="812693349008551611" at="31,0,32,54" concept="3" />
+      <node id="812693349008551779" at="32,54,33,71" concept="3" />
+      <node id="6362460243896632414" at="34,80,35,13" concept="4" />
+      <node id="6362460243896632416" at="36,5,37,0" concept="5" />
+      <node id="812693349008597362" at="37,0,38,172" concept="1" />
+      <node id="6362460243896632409" at="41,62,42,46" concept="4" />
+      <node id="681855071694482338" at="13,0,15,0" concept="0" trace="PluginUtils#()V" />
+      <node id="681855071694482342" at="16,0,19,0" concept="6" trace="needAppPlugin#(Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
+      <node id="681855071694482362" at="20,0,23,0" concept="6" trace="needProjectPlugin#(Ljetbrains/mps/generator/template/TemplateQueryContext;)Z" />
+      <node id="6362460243896632387" at="24,88,27,5" concept="2" />
+      <node id="5115557898426114449" at="27,5,30,5" concept="2" />
+      <node id="812693349008551481" at="33,71,36,5" concept="2" />
+      <node id="6362460243896632409" at="41,0,44,0" concept="6" trace="eq_l4wyvj_a0f0d#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+      <node id="6362460243896604674" at="24,0,40,0" concept="6" trace="checkPluginModelName#(Ljetbrains/mps/generator/template/TemplateQueryContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="681855071694482341" at="13,24,13,24" />
+      <scope id="681855071694482345" at="16,72,17,1121" />
+      <scope id="681855071694482365" at="20,76,21,966" />
+      <scope id="6362460243896632388" at="25,165,26,13" />
+      <scope id="5115557898426114450" at="28,174,29,13" />
+      <scope id="812693349008551482" at="34,80,35,13" />
+      <scope id="6362460243896632409" at="41,62,42,46" />
+      <scope id="681855071694482338" at="13,0,15,0" />
+      <scope id="681855071694482342" at="16,0,19,0">
+        <var name="genContext" id="681855071694482347" />
+      </scope>
+      <scope id="681855071694482362" at="20,0,23,0">
+        <var name="genContext" id="681855071694482366" />
+      </scope>
+      <scope id="6362460243896632409" at="41,0,44,0">
+        <var name="a" id="6362460243896632409" />
+        <var name="b" id="6362460243896632409" />
+      </scope>
+      <scope id="6362460243896604677" at="24,88,38,172">
+        <var name="correctName" id="812693349008551780" />
+        <var name="model" id="812693349008551612" />
+      </scope>
+      <scope id="6362460243896604674" at="24,0,40,0">
+        <var name="genContext" id="6362460243896632376" />
+        <var name="node" id="6362460243896632374" />
+      </scope>
+      <unit id="681855071694482336" at="12,0,45,0" name="jetbrains.mps.lang.plugin.standalone.generator.util.PluginUtils" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

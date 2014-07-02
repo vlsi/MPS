@@ -1,34 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:8b4f0747-4cce-403c-a9ed-8700a357a916(jetbrains.mps.execution.impl.configurations.runners)/5145867626676113213">
-    <nodeInfo nodeId="5145867626676113224" fileName="MPSProgramRunner.java" startLine="20" startPosition="31" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5145867626676113237" fileName="MPSProgramRunner.java" startLine="26" startPosition="9" endLine="27" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4089701389180409555" fileName="MPSProgramRunner.java" startLine="29" startPosition="42" endLine="30" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4089701389180483037" fileName="MPSProgramRunner.java" startLine="31" startPosition="7" endLine="32" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5145867626676113213" fileName="MPSProgramRunner.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="5145867626676113216" fileName="MPSProgramRunner.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MPSProgramRunner#()V" />
-    <nodeInfo nodeId="4089701389180409555" fileName="MPSProgramRunner.java" startLine="28" startPosition="35" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4089701389180409555" fileName="MPSProgramRunner.java" startLine="28" startPosition="35" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5145867626676113220" fileName="MPSProgramRunner.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getRunnerId#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4089701389180409547" fileName="MPSProgramRunner.java" startLine="25" startPosition="82" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5145867626676113227" fileName="MPSProgramRunner.java" startLine="24" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canRun#(Ljava/lang/String;Lcom/intellij/execution/configurations/RunProfile;)Z" />
-    <scopeInfo nodeId="5145867626676113219" fileName="MPSProgramRunner.java" startLine="15" startPosition="29" endLine="15" endPosition="29" />
-    <scopeInfo nodeId="5145867626676113223" fileName="MPSProgramRunner.java" startLine="20" startPosition="31" endLine="21" endPosition="28" />
-    <scopeInfo nodeId="4089701389180409548" fileName="MPSProgramRunner.java" startLine="26" startPosition="9" endLine="27" endPosition="178" />
-    <scopeInfo nodeId="4089701389180409555" fileName="MPSProgramRunner.java" startLine="29" startPosition="42" endLine="30" endPosition="77" />
-    <scopeInfo nodeId="5145867626676113216" fileName="MPSProgramRunner.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="4089701389180409555" fileName="MPSProgramRunner.java" startLine="28" startPosition="35" endLine="31" endPosition="7" />
-    <scopeInfo nodeId="4089701389180409550" fileName="MPSProgramRunner.java" startLine="28" startPosition="0" endLine="32" endPosition="19">
-      <varInfo nodeId="4089701389180409551" varName="throwable" />
-    </scopeInfo>
-    <scopeInfo nodeId="4089701389180409553" fileName="MPSProgramRunner.java" startLine="28" startPosition="35" endLine="32" endPosition="19" />
-    <scopeInfo nodeId="5145867626676113220" fileName="MPSProgramRunner.java" startLine="18" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="5145867626676113236" fileName="MPSProgramRunner.java" startLine="25" startPosition="82" endLine="33" endPosition="5" />
-    <scopeInfo nodeId="5145867626676113227" fileName="MPSProgramRunner.java" startLine="24" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="5145867626676113230" varName="executorId" />
-      <varInfo nodeId="5145867626676113233" varName="profile" />
-    </scopeInfo>
-    <unitInfo nodeId="5145867626676113213" fileName="MPSProgramRunner.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner" />
+    <file name="MPSProgramRunner.java">
+      <node id="5145867626676113224" at="20,31,21,28" concept="5" />
+      <node id="5145867626676113237" at="26,9,27,178" concept="5" />
+      <node id="4089701389180409555" at="29,42,30,77" concept="2" />
+      <node id="4089701389180483037" at="31,7,32,19" concept="5" />
+      <node id="5145867626676113213" at="36,0,37,0" concept="6" trace="LOG" />
+      <node id="5145867626676113216" at="15,0,17,0" concept="1" trace="MPSProgramRunner#()V" />
+      <node id="4089701389180409555" at="28,35,31,7" concept="0" />
+      <node id="4089701389180409555" at="28,35,31,7" concept="3" />
+      <node id="5145867626676113220" at="18,0,23,0" concept="4" trace="getRunnerId#()Ljava/lang/String;" />
+      <node id="4089701389180409547" at="25,82,33,5" concept="7" />
+      <node id="5145867626676113227" at="24,0,35,0" concept="4" trace="canRun#(Ljava/lang/String;Lcom/intellij/execution/configurations/RunProfile;)Z" />
+      <scope id="5145867626676113219" at="15,29,15,29" />
+      <scope id="5145867626676113223" at="20,31,21,28" />
+      <scope id="4089701389180409548" at="26,9,27,178" />
+      <scope id="4089701389180409555" at="29,42,30,77" />
+      <scope id="5145867626676113216" at="15,0,17,0" />
+      <scope id="4089701389180409555" at="28,35,31,7" />
+      <scope id="4089701389180409550" at="28,0,32,19">
+        <var name="throwable" id="4089701389180409551" />
+      </scope>
+      <scope id="4089701389180409553" at="28,35,32,19" />
+      <scope id="5145867626676113220" at="18,0,23,0" />
+      <scope id="5145867626676113236" at="25,82,33,5" />
+      <scope id="5145867626676113227" at="24,0,35,0">
+        <var name="executorId" id="5145867626676113230" />
+        <var name="profile" id="5145867626676113233" />
+      </scope>
+      <unit id="5145867626676113213" at="14,0,38,0" name="jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

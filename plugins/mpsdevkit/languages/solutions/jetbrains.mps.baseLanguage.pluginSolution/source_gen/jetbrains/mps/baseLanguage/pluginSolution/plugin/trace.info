@@ -1,305 +1,333 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)/3217566643542853018">
-    <nodeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
-    <nodeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="13" startPosition="52" endLine="14" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="14" startPosition="45" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="15" startPosition="30" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3217566643542871057" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="16" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FindNotMigratableLinksGroup_ActionGroup#()V" />
-    <scopeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="143" />
-    <scopeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
-      <varInfo nodeId="3217566643542853018" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
-    <scopeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="13" startPosition="52" endLine="21" endPosition="5" />
-    <scopeInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" />
-    <unitInfo nodeId="3217566643542853018" fileName="FindNotMigratableLinksGroup_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.FindNotMigratableLinksGroup_ActionGroup" />
+    <file name="FindNotMigratableLinksGroup_ActionGroup.java">
+      <node id="3217566643542853018" at="10,0,11,0" concept="11" trace="LOG" />
+      <node id="3217566643542853018" at="11,0,12,0" concept="11" trace="ID" />
+      <node id="3217566643542853018" at="13,52,14,45" concept="12" />
+      <node id="3217566643542853018" at="14,45,15,30" concept="2" />
+      <node id="3217566643542853018" at="15,30,16,25" concept="2" />
+      <node id="3217566643542871057" at="17,9,18,143" concept="2" />
+      <node id="3217566643542853018" at="19,27,20,39" concept="2" />
+      <node id="3217566643542853018" at="16,25,21,5" concept="13" />
+      <node id="3217566643542853018" at="13,0,23,0" concept="1" trace="FindNotMigratableLinksGroup_ActionGroup#()V" />
+      <scope id="3217566643542853018" at="17,9,18,143" />
+      <scope id="3217566643542853018" at="19,0,20,39">
+        <var name="t" id="3217566643542853018" />
+      </scope>
+      <scope id="3217566643542853018" at="19,27,20,39" />
+      <scope id="3217566643542853018" at="13,52,21,5" />
+      <scope id="3217566643542853018" at="13,0,23,0" />
+      <unit id="3217566643542853018" at="9,0,24,0" name="jetbrains.mps.baseLanguage.pluginSolution.plugin.FindNotMigratableLinksGroup_ActionGroup" />
+    </file>
   </root>
   <root nodeRef="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)/5909355414823772787">
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="33" startPosition="42" endLine="34" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="34" startPosition="101" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="35" startPosition="35" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="40" startPosition="32" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="45" startPosition="9" endLine="46" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="45" startPosition="9" endLine="46" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="48" startPosition="42" endLine="49" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="50" startPosition="7" endLine="51" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="56" startPosition="53" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="58" startPosition="5" endLine="59" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="60" startPosition="66" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="62" startPosition="5" endLine="63" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="64" startPosition="62" endLine="65" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="66" startPosition="5" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5909355414823781148" fileName="FindNotMigratableLinks_Action.java" startLine="71" startPosition="9" endLine="72" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5909355414823784320" fileName="FindNotMigratableLinks_Action.java" startLine="72" startPosition="97" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5909355414823947530" fileName="FindNotMigratableLinks_Action.java" startLine="77" startPosition="111" endLine="78" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5909355414823919446" fileName="FindNotMigratableLinks_Action.java" startLine="82" startPosition="9" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5909355414823894067" fileName="FindNotMigratableLinks_Action.java" startLine="83" startPosition="0" endLine="84" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="86" startPosition="42" endLine="87" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="92" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="55" startPosition="95" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="59" startPosition="91" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="63" startPosition="94" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5909355414823943258" fileName="FindNotMigratableLinks_Action.java" startLine="76" startPosition="771" endLine="79" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="85" startPosition="27" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="85" startPosition="27" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FindNotMigratableLinks_Action#()V" />
-    <nodeInfo nodeId="5909355414823784765" fileName="FindNotMigratableLinks_Action.java" startLine="75" startPosition="27" endLine="80" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5938312768538752206" fileName="FindNotMigratableLinks_Action.java" startLine="75" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="44" startPosition="89" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5938312768538718479" fileName="FindNotMigratableLinks_Action.java" startLine="73" startPosition="0" endLine="82" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="44" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="55" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="70" startPosition="96" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="70" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="40" startPosition="32" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="45" startPosition="9" endLine="46" endPosition="43" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="48" startPosition="42" endLine="49" endPosition="97" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="56" startPosition="53" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="60" startPosition="66" endLine="61" endPosition="19" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="64" startPosition="62" endLine="65" endPosition="19" />
-    <scopeInfo nodeId="5909355414823943264" fileName="FindNotMigratableLinks_Action.java" startLine="77" startPosition="111" endLine="78" endPosition="79" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="86" startPosition="42" endLine="87" endPosition="96" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="33" startPosition="42" endLine="36" endPosition="40" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="5909355414823784767" fileName="FindNotMigratableLinks_Action.java" startLine="76" startPosition="771" endLine="79" endPosition="13" />
-    <scopeInfo nodeId="5909355414823943258" fileName="FindNotMigratableLinks_Action.java" startLine="76" startPosition="771" endLine="79" endPosition="13">
-      <varInfo nodeId="5909355414823943260" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="85" startPosition="0" endLine="88" endPosition="7">
-      <varInfo nodeId="5909355414823772787" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="85" startPosition="27" endLine="88" endPosition="7" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44">
-      <varInfo nodeId="5909355414823772787" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="47" startPosition="27" endLine="51" endPosition="44" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="58" startPosition="5" endLine="62" endPosition="5" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="62" startPosition="5" endLine="66" endPosition="5" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="5909355414823784765" fileName="FindNotMigratableLinks_Action.java" startLine="75" startPosition="27" endLine="80" endPosition="11">
-      <varInfo nodeId="5909355414823784768" varName="link" />
-    </scopeInfo>
-    <scopeInfo nodeId="5938312768538752207" fileName="FindNotMigratableLinks_Action.java" startLine="75" startPosition="27" endLine="80" endPosition="11" />
-    <scopeInfo nodeId="5938312768538752206" fileName="FindNotMigratableLinks_Action.java" startLine="75" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="44" startPosition="89" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="44" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="5909355414823772787" varName="_params" />
-      <varInfo nodeId="5909355414823772787" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="55" startPosition="95" endLine="67" endPosition="16" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="71" startPosition="9" endLine="84" endPosition="119">
-      <varInfo nodeId="5909355414823781151" varName="usages" />
-    </scopeInfo>
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="55" startPosition="0" endLine="69" endPosition="0">
-      <varInfo nodeId="5909355414823772787" varName="_params" />
-      <varInfo nodeId="5909355414823772787" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="70" startPosition="96" endLine="89" endPosition="5" />
-    <scopeInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="70" startPosition="0" endLine="91" endPosition="0">
-      <varInfo nodeId="5909355414823772787" varName="_params" />
-      <varInfo nodeId="5909355414823772787" varName="event" />
-    </scopeInfo>
-    <unitInfo nodeId="5938312768538752206" fileName="FindNotMigratableLinks_Action.java" startLine="74" startPosition="116" endLine="82" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.FindNotMigratableLinks_Action$1" />
-    <unitInfo nodeId="5909355414823772787" fileName="FindNotMigratableLinks_Action.java" startLine="30" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.FindNotMigratableLinks_Action" />
+    <file name="FindNotMigratableLinks_Action.java">
+      <node id="5909355414823772787" at="31,0,32,0" concept="11" trace="ICON" />
+      <node id="5909355414823772787" at="33,42,34,101" concept="12" />
+      <node id="5909355414823772787" at="34,101,35,35" concept="2" />
+      <node id="5909355414823772787" at="35,35,36,40" concept="2" />
+      <node id="5909355414823772787" at="40,32,41,16" concept="8" />
+      <node id="5909355414823772787" at="45,9,46,43" concept="0" />
+      <node id="5909355414823772787" at="45,9,46,43" concept="2" />
+      <node id="5909355414823772787" at="48,42,49,97" concept="2" />
+      <node id="5909355414823772787" at="50,7,51,44" concept="2" />
+      <node id="5909355414823772787" at="56,53,57,19" concept="8" />
+      <node id="5909355414823772787" at="58,5,59,91" concept="2" />
+      <node id="5909355414823772787" at="60,66,61,19" concept="8" />
+      <node id="5909355414823772787" at="62,5,63,94" concept="2" />
+      <node id="5909355414823772787" at="64,62,65,19" concept="8" />
+      <node id="5909355414823772787" at="66,5,67,16" concept="8" />
+      <node id="5909355414823781148" at="71,9,72,97" concept="7" />
+      <node id="5909355414823784320" at="72,97,73,0" concept="10" />
+      <node id="5909355414823947530" at="77,111,78,79" concept="2" />
+      <node id="5909355414823919446" at="82,9,83,0" concept="10" />
+      <node id="5909355414823894067" at="83,0,84,119" concept="2" />
+      <node id="5909355414823772787" at="86,42,87,96" concept="2" />
+      <node id="5909355414823772787" at="92,0,93,0" concept="11" trace="LOG" />
+      <node id="5909355414823772787" at="47,27,50,7" concept="0" />
+      <node id="5909355414823772787" at="47,27,50,7" concept="5" />
+      <node id="5909355414823772787" at="55,95,58,5" concept="5" />
+      <node id="5909355414823772787" at="59,91,62,5" concept="5" />
+      <node id="5909355414823772787" at="63,94,66,5" concept="5" />
+      <node id="5909355414823943258" at="76,771,79,13" concept="4" />
+      <node id="5909355414823772787" at="85,27,88,7" concept="0" />
+      <node id="5909355414823772787" at="85,27,88,7" concept="5" />
+      <node id="5909355414823772787" at="39,0,43,0" concept="6" trace="isDumbAware#()Z" />
+      <node id="5909355414823772787" at="58,5,62,5" concept="0" />
+      <node id="5909355414823772787" at="62,5,66,5" concept="0" />
+      <node id="5909355414823772787" at="33,0,38,0" concept="1" trace="FindNotMigratableLinks_Action#()V" />
+      <node id="5909355414823784765" at="75,27,80,11" concept="4" />
+      <node id="5938312768538752206" at="75,0,82,0" concept="6" trace="run#()V" />
+      <node id="5909355414823772787" at="44,89,52,5" concept="13" />
+      <node id="5938312768538718479" at="73,0,82,9" concept="2" />
+      <node id="5909355414823772787" at="44,0,54,0" concept="6" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="5909355414823772787" at="55,0,69,0" concept="6" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <node id="5909355414823772787" at="70,96,89,5" concept="13" />
+      <node id="5909355414823772787" at="70,0,91,0" concept="6" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <scope id="5909355414823772787" at="40,32,41,16" />
+      <scope id="5909355414823772787" at="45,9,46,43" />
+      <scope id="5909355414823772787" at="48,42,49,97" />
+      <scope id="5909355414823772787" at="56,53,57,19" />
+      <scope id="5909355414823772787" at="60,66,61,19" />
+      <scope id="5909355414823772787" at="64,62,65,19" />
+      <scope id="5909355414823943264" at="77,111,78,79" />
+      <scope id="5909355414823772787" at="86,42,87,96" />
+      <scope id="5909355414823772787" at="33,42,36,40" />
+      <scope id="5909355414823772787" at="47,27,50,7" />
+      <scope id="5909355414823784767" at="76,771,79,13" />
+      <scope id="5909355414823943258" at="76,771,79,13">
+        <var name="node" id="5909355414823943260" />
+      </scope>
+      <scope id="5909355414823772787" at="85,0,88,7">
+        <var name="t" id="5909355414823772787" />
+      </scope>
+      <scope id="5909355414823772787" at="85,27,88,7" />
+      <scope id="5909355414823772787" at="39,0,43,0" />
+      <scope id="5909355414823772787" at="47,0,51,44">
+        <var name="t" id="5909355414823772787" />
+      </scope>
+      <scope id="5909355414823772787" at="47,27,51,44" />
+      <scope id="5909355414823772787" at="58,5,62,5" />
+      <scope id="5909355414823772787" at="62,5,66,5" />
+      <scope id="5909355414823772787" at="33,0,38,0" />
+      <scope id="5909355414823784765" at="75,27,80,11">
+        <var name="link" id="5909355414823784768" />
+      </scope>
+      <scope id="5938312768538752207" at="75,27,80,11" />
+      <scope id="5938312768538752206" at="75,0,82,0" />
+      <scope id="5909355414823772787" at="44,89,52,5" />
+      <scope id="5909355414823772787" at="44,0,54,0">
+        <var name="_params" id="5909355414823772787" />
+        <var name="event" id="5909355414823772787" />
+      </scope>
+      <scope id="5909355414823772787" at="55,95,67,16" />
+      <scope id="5909355414823772787" at="71,9,84,119">
+        <var name="usages" id="5909355414823781151" />
+      </scope>
+      <scope id="5909355414823772787" at="55,0,69,0">
+        <var name="_params" id="5909355414823772787" />
+        <var name="event" id="5909355414823772787" />
+      </scope>
+      <scope id="5909355414823772787" at="70,96,89,5" />
+      <scope id="5909355414823772787" at="70,0,91,0">
+        <var name="_params" id="5909355414823772787" />
+        <var name="event" id="5909355414823772787" />
+      </scope>
+      <unit id="5938312768538752206" at="74,116,82,7" name="jetbrains.mps.baseLanguage.pluginSolution.plugin.FindNotMigratableLinks_Action$1" />
+      <unit id="5909355414823772787" at="30,0,94,0" name="jetbrains.mps.baseLanguage.pluginSolution.plugin.FindNotMigratableLinks_Action" />
+    </file>
   </root>
   <root nodeRef="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)/6573807532044001855">
-    <nodeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BaseLanguageCustomPlugin_CustomProjectPlugin#()V" />
-    <nodeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doInit#(Ljetbrains/mps/project/MPSProject;)V" />
-    <nodeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doDispose#(Ljetbrains/mps/project/MPSProject;)V" />
-    <scopeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="9" startPosition="57" endLine="9" endPosition="57" />
-    <scopeInfo nodeId="6573807532044001875" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
-    <scopeInfo nodeId="6573807532044001928" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="15" startPosition="45" endLine="15" endPosition="45" />
-    <scopeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="6573807532044001855" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="6573807532044001855" varName="project" />
-    </scopeInfo>
-    <unitInfo nodeId="6573807532044001855" fileName="BaseLanguageCustomPlugin_CustomProjectPlugin.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
+    <file name="BaseLanguageCustomPlugin_CustomProjectPlugin.java">
+      <node id="6573807532044001855" at="9,0,11,0" concept="1" trace="BaseLanguageCustomPlugin_CustomProjectPlugin#()V" />
+      <node id="6573807532044001855" at="12,0,14,0" concept="6" trace="doInit#(Ljetbrains/mps/project/MPSProject;)V" />
+      <node id="6573807532044001855" at="15,0,17,0" concept="6" trace="doDispose#(Ljetbrains/mps/project/MPSProject;)V" />
+      <scope id="6573807532044001855" at="9,57,9,57" />
+      <scope id="6573807532044001875" at="12,42,12,42" />
+      <scope id="6573807532044001928" at="15,45,15,45" />
+      <scope id="6573807532044001855" at="9,0,11,0" />
+      <scope id="6573807532044001855" at="12,0,14,0">
+        <var name="project" id="6573807532044001855" />
+      </scope>
+      <scope id="6573807532044001855" at="15,0,17,0">
+        <var name="project" id="6573807532044001855" />
+      </scope>
+      <unit id="6573807532044001855" at="8,0,18,0" name="jetbrains.mps.baseLanguage.pluginSolution.plugin.BaseLanguageCustomPlugin_CustomProjectPlugin" />
+    </file>
   </root>
   <root nodeRef="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)/6573807532044005480">
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="33" startPosition="31" endLine="34" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="34" startPosition="41" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="35" startPosition="35" endLine="36" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="40" startPosition="32" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="45" startPosition="9" endLine="46" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="45" startPosition="9" endLine="46" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="48" startPosition="42" endLine="49" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="50" startPosition="7" endLine="51" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="56" startPosition="53" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="59" startPosition="5" endLine="60" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="62" startPosition="7" endLine="63" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="65" startPosition="59" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="67" startPosition="5" endLine="68" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="69" startPosition="62" endLine="70" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="71" startPosition="5" endLine="72" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="73" startPosition="66" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="75" startPosition="5" endLine="76" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="77" startPosition="62" endLine="78" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="79" startPosition="5" endLine="80" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5887161262767846193" fileName="ShowNullDFA_Action.java" startLine="84" startPosition="9" endLine="85" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1410818700511161410" fileName="ShowNullDFA_Action.java" startLine="85" startPosition="137" endLine="86" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5887161262767846186" fileName="ShowNullDFA_Action.java" startLine="88" startPosition="27" endLine="89" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4282822416100099611" fileName="ShowNullDFA_Action.java" startLine="89" startPosition="104" endLine="90" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1410818700511176460" fileName="ShowNullDFA_Action.java" startLine="92" startPosition="9" endLine="93" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="95" startPosition="42" endLine="96" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="101" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="60" startPosition="57" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="55" startPosition="95" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="64" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="68" startPosition="100" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="72" startPosition="91" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="76" startPosition="94" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="94" startPosition="27" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="94" startPosition="27" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="67" startPosition="5" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5938312768538858347" fileName="ShowNullDFA_Action.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ShowNullDFA_Action#()V" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="58" startPosition="5" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5938312768538823323" fileName="ShowNullDFA_Action.java" startLine="86" startPosition="126" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="44" startPosition="89" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="58" startPosition="5" endLine="67" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="44" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="83" startPosition="96" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="83" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="55" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="61" startPosition="25" endLine="61" endPosition="25" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="40" startPosition="32" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="45" startPosition="9" endLine="46" endPosition="43" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="48" startPosition="42" endLine="49" endPosition="86" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="56" startPosition="53" endLine="57" endPosition="19" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="65" startPosition="59" endLine="66" endPosition="19" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="69" startPosition="62" endLine="70" endPosition="19" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="73" startPosition="66" endLine="74" endPosition="19" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="77" startPosition="62" endLine="78" endPosition="19" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="95" startPosition="42" endLine="96" endPosition="85" />
-    <scopeInfo nodeId="5938312768538858348" fileName="ShowNullDFA_Action.java" startLine="88" startPosition="27" endLine="90" endPosition="136" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="33" startPosition="31" endLine="36" endPosition="40" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="47" startPosition="27" endLine="50" endPosition="7" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="94" startPosition="0" endLine="97" endPosition="7">
-      <varInfo nodeId="6573807532044005480" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="94" startPosition="27" endLine="97" endPosition="7" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="39" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="47" startPosition="0" endLine="51" endPosition="44">
-      <varInfo nodeId="6573807532044005480" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="47" startPosition="27" endLine="51" endPosition="44" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="59" startPosition="5" endLine="63" endPosition="53">
-      <varInfo nodeId="6573807532044005480" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="67" startPosition="5" endLine="71" endPosition="5" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="71" startPosition="5" endLine="75" endPosition="5" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="75" startPosition="5" endLine="79" endPosition="5" />
-    <scopeInfo nodeId="5938312768538858347" fileName="ShowNullDFA_Action.java" startLine="88" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="33" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="44" startPosition="89" endLine="52" endPosition="5" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="58" startPosition="5" endLine="67" endPosition="5" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="84" startPosition="9" endLine="93" endPosition="188">
-      <varInfo nodeId="1410818700511161411" varName="graph" />
-      <varInfo nodeId="5887161262767846194" varName="runner" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="44" startPosition="0" endLine="54" endPosition="0">
-      <varInfo nodeId="6573807532044005480" varName="_params" />
-      <varInfo nodeId="6573807532044005480" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="83" startPosition="96" endLine="98" endPosition="5" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="83" startPosition="0" endLine="100" endPosition="0">
-      <varInfo nodeId="6573807532044005480" varName="_params" />
-      <varInfo nodeId="6573807532044005480" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="55" startPosition="95" endLine="80" endPosition="16" />
-    <scopeInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="55" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="6573807532044005480" varName="_params" />
-      <varInfo nodeId="6573807532044005480" varName="event" />
-    </scopeInfo>
-    <unitInfo nodeId="5938312768538858347" fileName="ShowNullDFA_Action.java" startLine="87" startPosition="116" endLine="92" endPosition="7" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowNullDFA_Action$1" />
-    <unitInfo nodeId="6573807532044005480" fileName="ShowNullDFA_Action.java" startLine="30" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowNullDFA_Action" />
+    <file name="ShowNullDFA_Action.java">
+      <node id="6573807532044005480" at="31,0,32,0" concept="11" trace="ICON" />
+      <node id="6573807532044005480" at="33,31,34,41" concept="12" />
+      <node id="6573807532044005480" at="34,41,35,35" concept="2" />
+      <node id="6573807532044005480" at="35,35,36,40" concept="2" />
+      <node id="6573807532044005480" at="40,32,41,16" concept="8" />
+      <node id="6573807532044005480" at="45,9,46,43" concept="0" />
+      <node id="6573807532044005480" at="45,9,46,43" concept="2" />
+      <node id="6573807532044005480" at="48,42,49,86" concept="2" />
+      <node id="6573807532044005480" at="50,7,51,44" concept="2" />
+      <node id="6573807532044005480" at="56,53,57,19" concept="8" />
+      <node id="6573807532044005480" at="59,5,60,57" concept="7" />
+      <node id="6573807532044005480" at="62,7,63,53" concept="2" />
+      <node id="6573807532044005480" at="65,59,66,19" concept="8" />
+      <node id="6573807532044005480" at="67,5,68,100" concept="2" />
+      <node id="6573807532044005480" at="69,62,70,19" concept="8" />
+      <node id="6573807532044005480" at="71,5,72,91" concept="2" />
+      <node id="6573807532044005480" at="73,66,74,19" concept="8" />
+      <node id="6573807532044005480" at="75,5,76,94" concept="2" />
+      <node id="6573807532044005480" at="77,62,78,19" concept="8" />
+      <node id="6573807532044005480" at="79,5,80,16" concept="8" />
+      <node id="5887161262767846193" at="84,9,85,137" concept="7" />
+      <node id="1410818700511161410" at="85,137,86,126" concept="7" />
+      <node id="5887161262767846186" at="88,27,89,104" concept="2" />
+      <node id="4282822416100099611" at="89,104,90,136" concept="2" />
+      <node id="1410818700511176460" at="92,9,93,188" concept="2" />
+      <node id="6573807532044005480" at="95,42,96,85" concept="2" />
+      <node id="6573807532044005480" at="101,0,102,0" concept="11" trace="LOG" />
+      <node id="6573807532044005480" at="60,57,62,7" concept="5" />
+      <node id="6573807532044005480" at="47,27,50,7" concept="0" />
+      <node id="6573807532044005480" at="47,27,50,7" concept="5" />
+      <node id="6573807532044005480" at="55,95,58,5" concept="5" />
+      <node id="6573807532044005480" at="64,5,67,5" concept="5" />
+      <node id="6573807532044005480" at="68,100,71,5" concept="5" />
+      <node id="6573807532044005480" at="72,91,75,5" concept="5" />
+      <node id="6573807532044005480" at="76,94,79,5" concept="5" />
+      <node id="6573807532044005480" at="94,27,97,7" concept="0" />
+      <node id="6573807532044005480" at="94,27,97,7" concept="5" />
+      <node id="6573807532044005480" at="39,0,43,0" concept="6" trace="isDumbAware#()Z" />
+      <node id="6573807532044005480" at="67,5,71,5" concept="0" />
+      <node id="6573807532044005480" at="71,5,75,5" concept="0" />
+      <node id="6573807532044005480" at="75,5,79,5" concept="0" />
+      <node id="5938312768538858347" at="88,0,92,0" concept="6" trace="run#()V" />
+      <node id="6573807532044005480" at="33,0,38,0" concept="1" trace="ShowNullDFA_Action#()V" />
+      <node id="6573807532044005480" at="58,5,64,5" concept="0" />
+      <node id="5938312768538823323" at="86,126,92,9" concept="2" />
+      <node id="6573807532044005480" at="44,89,52,5" concept="13" />
+      <node id="6573807532044005480" at="58,5,67,5" concept="0" />
+      <node id="6573807532044005480" at="44,0,54,0" concept="6" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="6573807532044005480" at="83,96,98,5" concept="13" />
+      <node id="6573807532044005480" at="83,0,100,0" concept="6" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="6573807532044005480" at="55,0,82,0" concept="6" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <scope id="6573807532044005480" at="61,25,61,25" />
+      <scope id="6573807532044005480" at="40,32,41,16" />
+      <scope id="6573807532044005480" at="45,9,46,43" />
+      <scope id="6573807532044005480" at="48,42,49,86" />
+      <scope id="6573807532044005480" at="56,53,57,19" />
+      <scope id="6573807532044005480" at="65,59,66,19" />
+      <scope id="6573807532044005480" at="69,62,70,19" />
+      <scope id="6573807532044005480" at="73,66,74,19" />
+      <scope id="6573807532044005480" at="77,62,78,19" />
+      <scope id="6573807532044005480" at="95,42,96,85" />
+      <scope id="5938312768538858348" at="88,27,90,136" />
+      <scope id="6573807532044005480" at="33,31,36,40" />
+      <scope id="6573807532044005480" at="47,27,50,7" />
+      <scope id="6573807532044005480" at="94,0,97,7">
+        <var name="t" id="6573807532044005480" />
+      </scope>
+      <scope id="6573807532044005480" at="94,27,97,7" />
+      <scope id="6573807532044005480" at="39,0,43,0" />
+      <scope id="6573807532044005480" at="47,0,51,44">
+        <var name="t" id="6573807532044005480" />
+      </scope>
+      <scope id="6573807532044005480" at="47,27,51,44" />
+      <scope id="6573807532044005480" at="59,5,63,53">
+        <var name="node" id="6573807532044005480" />
+      </scope>
+      <scope id="6573807532044005480" at="67,5,71,5" />
+      <scope id="6573807532044005480" at="71,5,75,5" />
+      <scope id="6573807532044005480" at="75,5,79,5" />
+      <scope id="5938312768538858347" at="88,0,92,0" />
+      <scope id="6573807532044005480" at="33,0,38,0" />
+      <scope id="6573807532044005480" at="44,89,52,5" />
+      <scope id="6573807532044005480" at="58,5,67,5" />
+      <scope id="6573807532044005480" at="84,9,93,188">
+        <var name="graph" id="1410818700511161411" />
+        <var name="runner" id="5887161262767846194" />
+      </scope>
+      <scope id="6573807532044005480" at="44,0,54,0">
+        <var name="_params" id="6573807532044005480" />
+        <var name="event" id="6573807532044005480" />
+      </scope>
+      <scope id="6573807532044005480" at="83,96,98,5" />
+      <scope id="6573807532044005480" at="83,0,100,0">
+        <var name="_params" id="6573807532044005480" />
+        <var name="event" id="6573807532044005480" />
+      </scope>
+      <scope id="6573807532044005480" at="55,95,80,16" />
+      <scope id="6573807532044005480" at="55,0,82,0">
+        <var name="_params" id="6573807532044005480" />
+        <var name="event" id="6573807532044005480" />
+      </scope>
+      <unit id="5938312768538858347" at="87,116,92,7" name="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowNullDFA_Action$1" />
+      <unit id="6573807532044005480" at="30,0,103,0" name="jetbrains.mps.baseLanguage.pluginSolution.plugin.ShowNullDFA_Action" />
+    </file>
   </root>
   <root nodeRef="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)/6573807532044005513">
-    <nodeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ID" />
-    <nodeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="13" startPosition="41" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="14" startPosition="34" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="15" startPosition="30" endLine="16" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005516" fileName="AnalyzersActions_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="16" startPosition="25" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AnalyzersActions_ActionGroup#()V" />
-    <scopeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="17" startPosition="9" endLine="18" endPosition="121" />
-    <scopeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="19" startPosition="0" endLine="20" endPosition="39">
-      <varInfo nodeId="6573807532044005513" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="19" startPosition="27" endLine="20" endPosition="39" />
-    <scopeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="13" startPosition="41" endLine="21" endPosition="5" />
-    <scopeInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="13" startPosition="0" endLine="23" endPosition="0" />
-    <unitInfo nodeId="6573807532044005513" fileName="AnalyzersActions_ActionGroup.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.AnalyzersActions_ActionGroup" />
+    <file name="AnalyzersActions_ActionGroup.java">
+      <node id="6573807532044005513" at="10,0,11,0" concept="11" trace="LOG" />
+      <node id="6573807532044005513" at="11,0,12,0" concept="11" trace="ID" />
+      <node id="6573807532044005513" at="13,41,14,34" concept="12" />
+      <node id="6573807532044005513" at="14,34,15,30" concept="2" />
+      <node id="6573807532044005513" at="15,30,16,25" concept="2" />
+      <node id="6573807532044005516" at="17,9,18,121" concept="2" />
+      <node id="6573807532044005513" at="19,27,20,39" concept="2" />
+      <node id="6573807532044005513" at="16,25,21,5" concept="13" />
+      <node id="6573807532044005513" at="13,0,23,0" concept="1" trace="AnalyzersActions_ActionGroup#()V" />
+      <scope id="6573807532044005513" at="17,9,18,121" />
+      <scope id="6573807532044005513" at="19,0,20,39">
+        <var name="t" id="6573807532044005513" />
+      </scope>
+      <scope id="6573807532044005513" at="19,27,20,39" />
+      <scope id="6573807532044005513" at="13,41,21,5" />
+      <scope id="6573807532044005513" at="13,0,23,0" />
+      <unit id="6573807532044005513" at="9,0,24,0" name="jetbrains.mps.baseLanguage.pluginSolution.plugin.AnalyzersActions_ActionGroup" />
+    </file>
   </root>
   <root nodeRef="r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)/7162597690965088109">
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="16" startPosition="27" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="30" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="21" startPosition="30" endLine="22" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="22" startPosition="51" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="23" startPosition="40" endLine="24" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="24" startPosition="14" endLine="25" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="25" startPosition="49" endLine="26" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="29" startPosition="37" endLine="30" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="30" startPosition="107" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ApplicationPlugin#()V" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="adjustRegularGroups#()V" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createGroups#()V" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="17" startPosition="73" endLine="18" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="18" startPosition="104" endLine="19" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="20" startPosition="5" endLine="21" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="21" startPosition="90" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="22" startPosition="52" endLine="23" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="24" startPosition="5" endLine="25" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PluginSolution_ProjectPlugin#()V" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="19" startPosition="67" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="17" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initCustomParts#(Lcom/intellij/openapi/project/Project;)Ljava/util/List;" />
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="13" startPosition="45" endLine="13" endPosition="45" />
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="16" startPosition="27" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="29" startPosition="37" endLine="31" endPosition="93" />
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="30" endLine="26" endPosition="60" />
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="20" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="14" startPosition="41" endLine="14" endPosition="41" />
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="20" startPosition="5" endLine="23" endPosition="30">
-      <varInfo nodeId="7162597690965088109" varName="plugin" />
-    </scopeInfo>
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="17" startPosition="73" endLine="25" endPosition="15">
-      <varInfo nodeId="7162597690965088109" varName="mpsProject" />
-      <varInfo nodeId="7162597690965088109" varName="res" />
-    </scopeInfo>
-    <scopeInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="17" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="7162597690965088109" varName="project" />
-    </scopeInfo>
-    <unitInfo nodeId="7162597690965088109" fileName="PluginSolution_ApplicationPlugin.java" startLine="10" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
-    <unitInfo nodeId="7162597690965088109" fileName="PluginSolution_ProjectPlugin.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
+    <file name="PluginSolution_ProjectPlugin.java">
+      <node id="7162597690965088109" at="17,73,18,104" concept="7" />
+      <node id="7162597690965088109" at="18,104,19,67" concept="7" />
+      <node id="7162597690965088109" at="20,5,21,90" concept="7" />
+      <node id="7162597690965088109" at="21,90,22,52" concept="2" />
+      <node id="7162597690965088109" at="22,52,23,30" concept="2" />
+      <node id="7162597690965088109" at="24,5,25,15" concept="8" />
+      <node id="7162597690965088109" at="14,0,16,0" concept="1" trace="PluginSolution_ProjectPlugin#()V" />
+      <node id="7162597690965088109" at="19,67,24,5" concept="0" />
+      <node id="7162597690965088109" at="17,0,27,0" concept="6" trace="initCustomParts#(Lcom/intellij/openapi/project/Project;)Ljava/util/List;" />
+      <scope id="7162597690965088109" at="14,41,14,41" />
+      <scope id="7162597690965088109" at="14,0,16,0" />
+      <scope id="7162597690965088109" at="20,5,23,30">
+        <var name="plugin" id="7162597690965088109" />
+      </scope>
+      <scope id="7162597690965088109" at="17,73,25,15">
+        <var name="mpsProject" id="7162597690965088109" />
+        <var name="res" id="7162597690965088109" />
+      </scope>
+      <scope id="7162597690965088109" at="17,0,27,0">
+        <var name="project" id="7162597690965088109" />
+      </scope>
+      <unit id="7162597690965088109" at="13,0,28,0" name="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ProjectPlugin" />
+    </file>
+    <file name="PluginSolution_ApplicationPlugin.java">
+      <node id="7162597690965088109" at="11,0,12,0" concept="3" trace="myId" />
+      <node id="7162597690965088109" at="16,27,17,16" concept="8" />
+      <node id="7162597690965088109" at="20,30,21,30" concept="9" />
+      <node id="7162597690965088109" at="21,30,22,51" concept="2" />
+      <node id="7162597690965088109" at="22,51,23,40" concept="2" />
+      <node id="7162597690965088109" at="23,40,24,14" concept="9" />
+      <node id="7162597690965088109" at="24,14,25,49" concept="2" />
+      <node id="7162597690965088109" at="25,49,26,60" concept="2" />
+      <node id="7162597690965088109" at="29,37,30,107" concept="2" />
+      <node id="7162597690965088109" at="30,107,31,93" concept="2" />
+      <node id="7162597690965088109" at="13,0,15,0" concept="1" trace="PluginSolution_ApplicationPlugin#()V" />
+      <node id="7162597690965088109" at="16,0,19,0" concept="6" trace="getId#()Lcom/intellij/openapi/extensions/PluginId;" />
+      <node id="7162597690965088109" at="29,0,33,0" concept="6" trace="adjustRegularGroups#()V" />
+      <node id="7162597690965088109" at="20,0,28,0" concept="6" trace="createGroups#()V" />
+      <scope id="7162597690965088109" at="13,45,13,45" />
+      <scope id="7162597690965088109" at="16,27,17,16" />
+      <scope id="7162597690965088109" at="13,0,15,0" />
+      <scope id="7162597690965088109" at="29,37,31,93" />
+      <scope id="7162597690965088109" at="16,0,19,0" />
+      <scope id="7162597690965088109" at="29,0,33,0" />
+      <scope id="7162597690965088109" at="20,30,26,60" />
+      <scope id="7162597690965088109" at="20,0,28,0" />
+      <unit id="7162597690965088109" at="10,0,34,0" name="jetbrains.mps.baseLanguage.pluginSolution.plugin.PluginSolution_ApplicationPlugin" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

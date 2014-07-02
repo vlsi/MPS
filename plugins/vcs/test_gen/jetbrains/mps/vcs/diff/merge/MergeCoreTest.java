@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import org.junit.BeforeClass;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import java.util.Properties;
 import org.apache.log4j.PropertyConfigurator;
 import org.junit.AfterClass;
@@ -23,9 +23,8 @@ import jetbrains.mps.smodel.persistence.def.ModelReadException;
 @RunWith(Parameterized.class)
 public class MergeCoreTest extends WorkbenchMpsTest {
   private static final File TESTDATA_HOME = new File("testbench/modules/merge");
-  private static String ourPlayRefactoringWas;
+  private static boolean ourPlayRefactoringWas;
   private static boolean ourMergeDriverModeWas;
-  private static final String PLAY_REFACTORINGS_PROPERTY = "mps.playRefactorings";
   private String myZipName;
 
   public MergeCoreTest(String testName, String zipName) {
@@ -61,11 +60,11 @@ public class MergeCoreTest extends WorkbenchMpsTest {
 
   @BeforeClass
   public static void setUpClass() {
-    ourPlayRefactoringWas = System.getProperty(PLAY_REFACTORINGS_PROPERTY);
-    ourMergeDriverModeWas = MPSCore.getInstance().isMergeDriverMode();
+    ourPlayRefactoringWas = RuntimeFlags.isPlayRefactoringsMode();
+    ourMergeDriverModeWas = RuntimeFlags.isMergeDriverMode();
 
-    System.setProperty(PLAY_REFACTORINGS_PROPERTY, "false");
-    MPSCore.getInstance().setMergeDriverMode(true);
+    RuntimeFlags.setPlayRefactoringsMode(false);
+    RuntimeFlags.setMergeDriverMode(true);
 
     Properties p = new Properties();
     p.setProperty("log4j.rootLogger", "info, console");
@@ -78,12 +77,8 @@ public class MergeCoreTest extends WorkbenchMpsTest {
 
   @AfterClass
   public static void tearDownClass() {
-    if (ourPlayRefactoringWas == null) {
-      System.getProperties().remove(PLAY_REFACTORINGS_PROPERTY);
-    } else {
-      System.setProperty(PLAY_REFACTORINGS_PROPERTY, ourPlayRefactoringWas);
-    }
-    MPSCore.getInstance().setMergeDriverMode(ourMergeDriverModeWas);
+    RuntimeFlags.setPlayRefactoringsMode(ourPlayRefactoringWas);
+    RuntimeFlags.setMergeDriverMode(ourMergeDriverModeWas);
   }
 
   public static void main(String[] args) throws IOException, ModelReadException {

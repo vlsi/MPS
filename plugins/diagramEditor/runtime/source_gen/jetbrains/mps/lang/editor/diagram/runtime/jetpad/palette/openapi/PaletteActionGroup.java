@@ -6,5 +6,4 @@ package jetbrains.mps.lang.editor.diagram.runtime.jetpad.palette.openapi;
 public interface PaletteActionGroup extends PaletteElement {
   public PaletteElement[] getElements();
   public boolean isPopup();
-
 }

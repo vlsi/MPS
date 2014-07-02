@@ -12,78 +12,129 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.TransientModelsModule;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.typesystem.checking.HighlightUtil;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import java.util.HashSet;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.resolve.ResolverComponent;
+import jetbrains.mps.resolve.ReferenceResolverUtils;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Label;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SRepository;
-import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelOperations;
+import org.jetbrains.mps.openapi.model.EditableSModel;
+import jetbrains.mps.extapi.model.TransientSModel;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.checking.BaseEditorChecker;
 import jetbrains.mps.typesystem.checking.TypesEditorChecker;
+import jetbrains.mps.smodel.event.SModelPropertyEvent;
 
 public class AutoResolver extends EditorCheckerAdapter {
+  private boolean myForceAutofix = false;
+
+
   public AutoResolver() {
   }
 
   @Override
-  public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
+  public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, EditorContext editorContext) {
     Set<EditorMessage> messages = SetSequence.fromSet(new LinkedHashSet<EditorMessage>());
-    if (SNodeOperations.getModel(rootNode) == null || SNodeOperations.getModel(rootNode) == null) {
+    if (SNodeOperations.getModel(rootNode) == null || SNodeOperations.getModel(rootNode).getModule() == null) {
       return messages;
     }
-    if (SNodeOperations.getModel(rootNode).getModule() instanceof TransientModelsModule) {
-      return messages;
-    }
-    boolean autoresolve = !(hasUnresolvedImportedModels(SNodeOperations.getModel(rootNode), editorContext));
-    final Set<SReference> badReferences = collectBadReferences(rootNode);
+    // TODO: use same settings as in LanguageEritorChecker 
+    Set<SReference> badReferences = collectBadReferences(rootNode);
     for (SReference ref : SetSequence.fromSet(badReferences)) {
       EditorMessage message = HighlightUtil.createHighlighterMessage(ref.getSourceNode(), "Unresolved reference", this, editorContext);
       SetSequence.fromSet(messages).addElement(message);
     }
-    if (autoresolve) {
-      final IOperationContext operationContext = editorContext.getOperationContext();
-      if (operationContext != null) {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
-              @Override
-              public void run() {
-                // in case this becomes a performance bottleneck, consider reusing the editor's typechecking context  
-                ResolverComponent.getInstance().resolveScopesOnly(badReferences, editorContext.getRepository());
-              }
-            }, operationContext.getProject());
-          }
-        });
-
-      }
+    if (isAutofix(SNodeOperations.getModel(rootNode), editorContext.getRepository())) {
+      runAutofix(badReferences, editorContext);
     }
     return messages;
   }
 
-  private boolean hasUnresolvedImportedModels(SModel model, EditorContext editorContext) {
-    if (editorContext == null) {
-      return true;
+  private void runAutofix(final Set<SReference> badReferences, final EditorContext editorContext) {
+    if (editorContext.getOperationContext() == null) {
+      return;
     }
-    SRepository repository = editorContext.getRepository();
-    for (SModelReference modelReference : ListSequence.fromList(SModelOperations.getImportedModelUIDs(model))) {
-      if (modelReference.resolve(repository) == null) {
-        return true;
+    final Project project = editorContext.getOperationContext().getProject();
+
+    final EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
+    final Set<EditorCell> errorCells = SetSequence.fromSetWithValues(new HashSet<EditorCell>(), editorComponent.getCellTracker().getErrorCells());
+
+    final boolean wasForceAutofix = myForceAutofix;
+    myForceAutofix = false;
+
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        project.getModelAccess().executeUndoTransparentCommand(new Runnable() {
+          @Override
+          public void run() {
+            // in case this becomes a performance bottleneck, consider reusing the editor's typechecking context  
+            // <node> 
+            boolean doRecheckEditor = false;
+            // Trying to resolve all broken references using scope and then using substitute actions. 
+            for (SReference brokenRef : SetSequence.fromSet(badReferences)) {
+              boolean resolvedBySope = ResolverComponent.getInstance().resolveScopesOnly(brokenRef, editorContext.getRepository());
+              SNode sourceNode = brokenRef.getSourceNode();
+              if (sourceNode == null) {
+                continue;
+              }
+              String referenceRole = brokenRef.getRole();
+              EditorCell cellWithRole = editorComponent.findNodeCellWithRole(sourceNode, referenceRole);
+              if (!(resolvedBySope)) {
+                if (cellWithRole == null) {
+                  continue;
+                }
+                String resolveInfo = ReferenceResolverUtils.getResolveInfo(brokenRef, sourceNode);
+                if (resolveInfo == null) {
+                  continue;
+                }
+
+                if (EditorBasedReferenceResolverUtils.substituteCell(cellWithRole, resolveInfo, editorContext)) {
+                  doRecheckEditor = true;
+                }
+              }
+              // excluding reference cell which was substituted from the set of error cells 
+              SetSequence.fromSet(errorCells).removeElement(cellWithRole);
+            }
+
+            // Trying to substitute all other error cells by using substitute actions. 
+            for (EditorCell errorCell : SetSequence.fromSet(errorCells)) {
+              if (!(errorCell instanceof EditorCell_Label)) {
+                continue;
+              }
+              EditorCell_Label labelErrorCell = (EditorCell_Label) errorCell;
+              String errorText = labelErrorCell.getText();
+              if ((errorText == null || errorText.length() == 0)) {
+                continue;
+              }
+
+              if (EditorBasedReferenceResolverUtils.substituteCell(labelErrorCell, errorText, editorContext)) {
+                doRecheckEditor = true;
+              }
+            }
+
+            if (doRecheckEditor && wasForceAutofix) {
+              // re-running next checker in force autofix mode 
+              myForceAutofix = true;
+            }
+          }
+        });
       }
-    }
-    return false;
+    });
   }
 
   private Set<SReference> collectBadReferences(SNode cellNode) {
     jetbrains.mps.smodel.SReference.disableLogging();
     try {
       Set<SReference> result = SetSequence.fromSet(new LinkedHashSet<SReference>());
-      for (SNode node : jetbrains.mps.util.SNodeOperations.getDescendants(cellNode, null, true)) {
+      for (SNode node : SNodeUtil.getDescendants(cellNode)) {
         for (SReference ref : SNodeOperations.getReferences(node)) {
           if (jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(ref) == null) {
             SetSequence.fromSet(result).addElement(ref);
@@ -96,8 +147,26 @@ public class AutoResolver extends EditorCheckerAdapter {
     }
   }
 
+  private boolean isAutofix(SModel model, SRepository repository) {
+    return model instanceof EditableSModel && !(model instanceof TransientSModel) && ReferenceResolverUtils.canExecuteImmediately(model, repository) && (EditorSettings.getInstance().isAutoQuickFix() || myForceAutofix);
+  }
+
   @Override
   public boolean isLaterThan(BaseEditorChecker editorChecker) {
     return editorChecker instanceof TypesEditorChecker;
+  }
+
+  @Override
+  protected void resetCheckerState() {
+    myForceAutofix = true;
+    super.resetCheckerState();
+  }
+
+  @Override
+  protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {
+    if (EditorSettings.getInstance().isAutoQuickFix() && "name".equals(event.getPropertyName())) {
+      return true;
+    }
+    return super.isPropertyEventDramatical(event);
   }
 }

@@ -5,6 +5,7 @@ package jetbrains.mps.tool.builder.converter;
 import java.util.Map;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.persistence.MPSPersistence;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.LightModelEnvironmentInfoImpl;
 import java.io.IOException;
@@ -21,11 +22,13 @@ public class ConvertToBinaryWorker {
   }
 
   public void convert(Map<String, String> map, Boolean stripImplementation) {
-    MPSCore.getInstance().init();
-    MPSPersistence.getInstance().init();
-    MPSCore.getInstance().setMergeDriverMode(true);
+    final MPSCore mpsCore = new MPSCore();
+    mpsCore.init();
+    final MPSPersistence mpsPersistence = new MPSPersistence();
+    mpsPersistence.init();
+    RuntimeFlags.setMergeDriverMode(true);
     PersistenceRegistry.getInstance().setModelEnvironmentInfo(new LightModelEnvironmentInfoImpl());
-    System.setProperty("mps.playRefactorings", "false");
+    RuntimeFlags.setPlayRefactoringsMode(false);
     try {
       for (Map.Entry<String, String> entry : map.entrySet()) {
         convertModelToBinary(entry.getKey(), entry.getValue(), stripImplementation);
@@ -34,8 +37,8 @@ public class ConvertToBinaryWorker {
       throw new RuntimeException(ex);
     } finally {
       PersistenceRegistry.getInstance().setModelEnvironmentInfo(null);
-      MPSPersistence.getInstance().dispose();
-      MPSCore.getInstance().dispose();
+      mpsPersistence.dispose();
+      mpsCore.dispose();
     }
   }
 

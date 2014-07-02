@@ -7,11 +7,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGenerationResult;
-import jetbrains.mps.textGen.TextGenerationUtil;
-import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.tool.builder.FileMPSProject;
-import java.io.File;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -35,6 +31,9 @@ import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
 import java.util.Iterator;
 import java.util.ArrayList;
 import jetbrains.mps.ide.java.newparser.DirParser;
+import jetbrains.mps.tool.builder.FileMPSProject;
+import java.io.File;
+import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import java.io.IOException;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
@@ -53,7 +52,7 @@ public class Utils {
   }
 
   public static String generateCode(SNode node) {
-    TextGenerationResult res = TextGenerationUtil.generateText(new ProjectOperationContext(new FileMPSProject(new File(PathManager.getHomePath()))), node);
+    TextGenerationResult res = TextGen.generateText(node);
     return (String) res.getResult();
   }
 

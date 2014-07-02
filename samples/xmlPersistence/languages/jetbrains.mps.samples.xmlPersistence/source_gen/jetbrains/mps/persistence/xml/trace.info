@@ -1,529 +1,545 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
   <root nodeRef="r:ab12727e-9ae1-46c1-b91e-64b7e66fdf9e(jetbrains.mps.persistence.xml)/2518201674535467508">
-    <nodeInfo nodeId="8404865931441448502" fileName="XmlConverter.java" startLine="32" startPosition="71" endLine="33" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2518201674535505617" fileName="XmlConverter.java" startLine="33" startPosition="68" endLine="34" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4462860465182468917" fileName="XmlConverter.java" startLine="34" startPosition="100" endLine="35" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2518201674535513067" fileName="XmlConverter.java" startLine="35" startPosition="48" endLine="36" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2518201674535579046" fileName="XmlConverter.java" startLine="36" startPosition="98" endLine="37" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4070655637822218996" fileName="XmlConverter.java" startLine="37" startPosition="145" endLine="38" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2518201674535513026" fileName="XmlConverter.java" startLine="38" startPosition="78" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2518201674535614983" fileName="XmlConverter.java" startLine="44" startPosition="53" endLine="45" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8833932927907213405" fileName="XmlConverter.java" startLine="45" startPosition="105" endLine="46" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2518201674535616646" fileName="XmlConverter.java" startLine="46" startPosition="55" endLine="47" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2518201674535716985" fileName="XmlConverter.java" startLine="48" startPosition="87" endLine="49" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931441560761" fileName="XmlConverter.java" startLine="50" startPosition="5" endLine="51" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931441756621" fileName="XmlConverter.java" startLine="52" startPosition="70" endLine="53" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931441496335" fileName="XmlConverter.java" startLine="54" startPosition="5" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7604185310495774284" fileName="XmlConverter.java" startLine="55" startPosition="0" endLine="56" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7604185310495888972" fileName="XmlConverter.java" startLine="56" startPosition="59" endLine="57" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4462860465182251231" fileName="XmlConverter.java" startLine="58" startPosition="47" endLine="59" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4462860465182257034" fileName="XmlConverter.java" startLine="60" startPosition="28" endLine="61" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7604185310496101217" fileName="XmlConverter.java" startLine="62" startPosition="7" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4462860465182414548" fileName="XmlConverter.java" startLine="64" startPosition="5" endLine="65" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2518201674535616507" fileName="XmlConverter.java" startLine="65" startPosition="93" endLine="66" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4462860465182226204" fileName="XmlConverter.java" startLine="70" startPosition="31" endLine="71" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5054660862256892208" fileName="XmlConverter.java" startLine="72" startPosition="38" endLine="73" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256938336" fileName="XmlConverter.java" startLine="73" startPosition="51" endLine="74" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256892229" fileName="XmlConverter.java" startLine="76" startPosition="40" endLine="77" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5054660862256960480" fileName="XmlConverter.java" startLine="79" startPosition="10" endLine="80" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5054660862256957377" fileName="XmlConverter.java" startLine="80" startPosition="44" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5054660862256789536" fileName="XmlConverter.java" startLine="82" startPosition="52" endLine="83" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256859483" fileName="XmlConverter.java" startLine="83" startPosition="59" endLine="84" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5054660862256305075" fileName="XmlConverter.java" startLine="85" startPosition="36" endLine="86" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256294004" fileName="XmlConverter.java" startLine="86" startPosition="42" endLine="87" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5054660862256741672" fileName="XmlConverter.java" startLine="87" startPosition="79" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5054660862256139389" fileName="XmlConverter.java" startLine="89" startPosition="35" endLine="90" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5867793774239128929" fileName="XmlConverter.java" startLine="90" startPosition="41" endLine="91" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5867793774239543034" fileName="XmlConverter.java" startLine="91" startPosition="20" endLine="92" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5867793774239343205" fileName="XmlConverter.java" startLine="93" startPosition="46" endLine="94" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5867793774239639265" fileName="XmlConverter.java" startLine="96" startPosition="26" endLine="97" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5867793774239661677" fileName="XmlConverter.java" startLine="97" startPosition="26" endLine="98" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="5867793774239423116" fileName="XmlConverter.java" startLine="101" startPosition="52" endLine="102" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="5867793774239442972" fileName="XmlConverter.java" startLine="104" startPosition="7" endLine="105" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="997823284629314230" fileName="XmlConverter.java" startLine="105" startPosition="35" endLine="106" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="997823284629451458" fileName="XmlConverter.java" startLine="107" startPosition="34" endLine="108" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="997823284629734320" fileName="XmlConverter.java" startLine="109" startPosition="38" endLine="110" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="997823284629743265" fileName="XmlConverter.java" startLine="112" startPosition="7" endLine="113" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5054660862256212584" fileName="XmlConverter.java" startLine="114" startPosition="27" endLine="115" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8150655206051123393" fileName="XmlConverter.java" startLine="117" startPosition="77" endLine="118" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7604185310496619747" fileName="XmlConverter.java" startLine="121" startPosition="41" endLine="122" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5054660862256359545" fileName="XmlConverter.java" startLine="125" startPosition="40" endLine="126" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256348943" fileName="XmlConverter.java" startLine="126" startPosition="46" endLine="127" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4462860465182237968" fileName="XmlConverter.java" startLine="128" startPosition="5" endLine="129" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931402384208" fileName="XmlConverter.java" startLine="132" startPosition="62" endLine="133" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931402804986" fileName="XmlConverter.java" startLine="134" startPosition="44" endLine="135" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931402660435" fileName="XmlConverter.java" startLine="135" startPosition="26" endLine="136" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931405476394" fileName="XmlConverter.java" startLine="136" startPosition="27" endLine="137" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931402903126" fileName="XmlConverter.java" startLine="138" startPosition="37" endLine="139" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406048388" fileName="XmlConverter.java" startLine="141" startPosition="26" endLine="142" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406792876" fileName="XmlConverter.java" startLine="143" startPosition="11" endLine="144" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931403176337" fileName="XmlConverter.java" startLine="145" startPosition="25" endLine="146" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931404513717" fileName="XmlConverter.java" startLine="147" startPosition="18" endLine="148" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931404690232" fileName="XmlConverter.java" startLine="150" startPosition="24" endLine="151" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931404928846" fileName="XmlConverter.java" startLine="151" startPosition="30" endLine="152" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8404865931404944024" fileName="XmlConverter.java" startLine="153" startPosition="23" endLine="154" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931404944028" fileName="XmlConverter.java" startLine="154" startPosition="28" endLine="155" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8404865931405000586" fileName="XmlConverter.java" startLine="156" startPosition="23" endLine="157" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931405000590" fileName="XmlConverter.java" startLine="157" startPosition="28" endLine="158" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8404865931405095267" fileName="XmlConverter.java" startLine="159" startPosition="23" endLine="160" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931405095271" fileName="XmlConverter.java" startLine="160" startPosition="29" endLine="161" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8404865931405163600" fileName="XmlConverter.java" startLine="163" startPosition="13" endLine="164" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406297973" fileName="XmlConverter.java" startLine="168" startPosition="24" endLine="169" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931403775798" fileName="XmlConverter.java" startLine="171" startPosition="162" endLine="172" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931402523436" fileName="XmlConverter.java" startLine="174" startPosition="5" endLine="175" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931406956136" fileName="XmlConverter.java" startLine="178" startPosition="65" endLine="179" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956161" fileName="XmlConverter.java" startLine="179" startPosition="71" endLine="180" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956167" fileName="XmlConverter.java" startLine="180" startPosition="25" endLine="181" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956178" fileName="XmlConverter.java" startLine="182" startPosition="35" endLine="183" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956215" fileName="XmlConverter.java" startLine="185" startPosition="24" endLine="186" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956227" fileName="XmlConverter.java" startLine="187" startPosition="9" endLine="188" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956238" fileName="XmlConverter.java" startLine="189" startPosition="23" endLine="190" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956249" fileName="XmlConverter.java" startLine="191" startPosition="16" endLine="192" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956259" fileName="XmlConverter.java" startLine="194" startPosition="22" endLine="195" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956263" fileName="XmlConverter.java" startLine="195" startPosition="28" endLine="196" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8404865931406956267" fileName="XmlConverter.java" startLine="197" startPosition="21" endLine="198" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956271" fileName="XmlConverter.java" startLine="198" startPosition="26" endLine="199" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8404865931406956275" fileName="XmlConverter.java" startLine="200" startPosition="21" endLine="201" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956279" fileName="XmlConverter.java" startLine="201" startPosition="26" endLine="202" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8404865931406956283" fileName="XmlConverter.java" startLine="203" startPosition="21" endLine="204" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956287" fileName="XmlConverter.java" startLine="204" startPosition="27" endLine="205" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8404865931406956288" fileName="XmlConverter.java" startLine="207" startPosition="11" endLine="208" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956304" fileName="XmlConverter.java" startLine="212" startPosition="22" endLine="213" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956333" fileName="XmlConverter.java" startLine="214" startPosition="5" endLine="215" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931404113168" fileName="XmlConverter.java" startLine="218" startPosition="40" endLine="219" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931404113099" fileName="XmlConverter.java" startLine="219" startPosition="38" endLine="220" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2518201674535781526" fileName="XmlConverter.java" startLine="225" startPosition="57" endLine="226" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2518201674535781532" fileName="XmlConverter.java" startLine="226" startPosition="107" endLine="227" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931407298795" fileName="XmlConverter.java" startLine="227" startPosition="64" endLine="228" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2518201674535781558" fileName="XmlConverter.java" startLine="228" startPosition="151" endLine="229" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572058823050139976" fileName="XmlConverter.java" startLine="234" startPosition="48" endLine="235" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572058823050148222" fileName="XmlConverter.java" startLine="235" startPosition="100" endLine="236" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572058823050194564" fileName="XmlConverter.java" startLine="236" startPosition="48" endLine="237" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572058823050148161" fileName="XmlConverter.java" startLine="237" startPosition="94" endLine="238" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="241" startPosition="81" endLine="242" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="242" startPosition="63" endLine="243" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="243" startPosition="122" endLine="244" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="245" startPosition="42" endLine="246" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="247" startPosition="5" endLine="248" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="251" startPosition="78" endLine="252" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="252" startPosition="63" endLine="253" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="253" startPosition="124" endLine="254" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="253" startPosition="124" endLine="254" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="254" startPosition="47" endLine="255" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="258" startPosition="94" endLine="259" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="259" startPosition="63" endLine="260" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="260" startPosition="134" endLine="261" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="261" startPosition="49" endLine="262" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="262" startPosition="50" endLine="263" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="266" startPosition="67" endLine="267" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="267" startPosition="63" endLine="268" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="268" startPosition="118" endLine="269" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="268" startPosition="118" endLine="269" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="269" startPosition="50" endLine="270" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="273" startPosition="71" endLine="274" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="274" startPosition="63" endLine="275" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="275" startPosition="122" endLine="276" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="275" startPosition="122" endLine="276" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="276" startPosition="53" endLine="277" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="280" startPosition="71" endLine="281" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="281" startPosition="63" endLine="282" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="282" startPosition="117" endLine="283" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="282" startPosition="117" endLine="283" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="283" startPosition="48" endLine="284" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="287" startPosition="74" endLine="288" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="288" startPosition="63" endLine="289" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="289" startPosition="120" endLine="290" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="289" startPosition="120" endLine="290" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="290" startPosition="51" endLine="291" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="294" startPosition="77" endLine="295" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="295" startPosition="63" endLine="296" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="296" startPosition="122" endLine="297" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="296" startPosition="122" endLine="297" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="297" startPosition="53" endLine="298" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="301" startPosition="67" endLine="302" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="302" startPosition="63" endLine="303" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="303" startPosition="117" endLine="304" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="303" startPosition="117" endLine="304" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="304" startPosition="48" endLine="305" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="308" startPosition="58" endLine="309" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="309" startPosition="63" endLine="310" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="310" startPosition="117" endLine="311" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="310" startPosition="117" endLine="311" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="311" startPosition="32" endLine="312" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="315" startPosition="74" endLine="316" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="316" startPosition="63" endLine="317" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="317" startPosition="122" endLine="318" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="317" startPosition="122" endLine="318" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="318" startPosition="47" endLine="319" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="322" startPosition="77" endLine="323" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="323" startPosition="63" endLine="324" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="324" startPosition="125" endLine="325" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="324" startPosition="125" endLine="325" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="325" startPosition="51" endLine="326" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="329" startPosition="80" endLine="330" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="330" startPosition="63" endLine="331" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="331" startPosition="127" endLine="332" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="331" startPosition="127" endLine="332" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="332" startPosition="53" endLine="333" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="336" startPosition="70" endLine="337" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="337" startPosition="63" endLine="338" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="338" startPosition="122" endLine="339" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="338" startPosition="122" endLine="339" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="339" startPosition="47" endLine="340" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="343" startPosition="68" endLine="344" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="344" startPosition="63" endLine="345" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="346" startPosition="5" endLine="347" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="347" startPosition="122" endLine="348" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="347" startPosition="122" endLine="348" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="348" startPosition="52" endLine="349" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="350" startPosition="5" endLine="351" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="260" startPosition="134" endLine="262" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2518201674535716044" fileName="XmlConverter.java" startLine="47" startPosition="167" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8404865931441664078" fileName="XmlConverter.java" startLine="51" startPosition="92" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4462860465182253947" fileName="XmlConverter.java" startLine="59" startPosition="146" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5054660862256892227" fileName="XmlConverter.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5867793774239381442" fileName="XmlConverter.java" startLine="100" startPosition="9" endLine="103" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="997823284629654854" fileName="XmlConverter.java" startLine="108" startPosition="41" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5054660862256146017" fileName="XmlConverter.java" startLine="113" startPosition="38" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8150655206051087443" fileName="XmlConverter.java" startLine="116" startPosition="7" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5054660862256696865" fileName="XmlConverter.java" startLine="121" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8404865931405969983" fileName="XmlConverter.java" startLine="140" startPosition="84" endLine="143" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8404865931406297968" fileName="XmlConverter.java" startLine="167" startPosition="7" endLine="170" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8404865931403294446" fileName="XmlConverter.java" startLine="170" startPosition="7" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8404865931406956210" fileName="XmlConverter.java" startLine="184" startPosition="82" endLine="187" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8404865931406956299" fileName="XmlConverter.java" startLine="211" startPosition="5" endLine="214" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="244" startPosition="51" endLine="247" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5867793774239589703" fileName="XmlConverter.java" startLine="95" startPosition="25" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8404865931404097241" fileName="XmlConverter.java" startLine="218" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="toHex4#(C)Ljava/lang/String;" />
-    <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="243" startPosition="122" endLine="247" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5054660862256985912" fileName="XmlConverter.java" startLine="74" startPosition="104" endLine="79" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2061382571417847266" fileName="XmlConverter.java" startLine="119" startPosition="7" endLine="124" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="345" startPosition="121" endLine="350" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5867793774239567834" fileName="XmlConverter.java" startLine="94" startPosition="37" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="997823284629572826" fileName="XmlConverter.java" startLine="106" startPosition="28" endLine="112" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="2518201674535781523" fileName="XmlConverter.java" startLine="225" startPosition="0" endLine="231" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="convertAttribute#(Lorg/jdom/Attribute;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1572058823050138779" fileName="XmlConverter.java" startLine="234" startPosition="0" endLine="240" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="newDocument#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="251" startPosition="0" endLine="257" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlCommentLine_h7fa2c_a0a0a0a0c0a0a4#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="266" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlCDATA_h7fa2c_a0a1a2a0e#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="273" startPosition="0" endLine="279" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlEntityRef_h7fa2c_a0a1a4a0e#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="280" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlText_h7fa2c_a0a0a0a1a3a1a5#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="287" startPosition="0" endLine="293" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlCharRef_h7fa2c_a0a0a2a1a3a1a5#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="294" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlEntityRef_h7fa2c_a0a2a0c0b0d0b0f#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="301" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlText_h7fa2c_a0a0a4a1a5#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="308" startPosition="0" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlText_h7fa2c_a0a0a5a1a5#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="315" startPosition="0" endLine="321" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlTextValue_h7fa2c_a0a0a0a1a3a6#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="322" startPosition="0" endLine="328" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlCharRefValue_h7fa2c_a0a0a2a1a3a6#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="329" startPosition="0" endLine="335" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlEntityRefValue_h7fa2c_a0a2a0c0b0d0g#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="336" startPosition="0" endLine="342" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlTextValue_h7fa2c_a0a0a4a6#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="7604185310495989050" fileName="XmlConverter.java" startLine="57" startPosition="83" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="258" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlProcessingInstruction_h7fa2c_a0a1a1a0e#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2518201674535504331" fileName="XmlConverter.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="convertDocument#(Ljava/lang/String;Lorg/jdom/Document;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="241" startPosition="0" endLine="250" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlAttribute_h7fa2c_a0a0a5a3#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="343" startPosition="0" endLine="353" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createXmlDocument_h7fa2c_a0a2a11#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5867793774239309383" fileName="XmlConverter.java" startLine="92" startPosition="66" endLine="104" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8404865931404619629" fileName="XmlConverter.java" startLine="148" startPosition="33" endLine="163" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="8404865931406956253" fileName="XmlConverter.java" startLine="192" startPosition="31" endLine="207" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="8404865931405897173" fileName="XmlConverter.java" startLine="147" startPosition="16" endLine="165" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931406956247" fileName="XmlConverter.java" startLine="191" startPosition="14" endLine="209" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8404865931405790049" fileName="XmlConverter.java" startLine="144" startPosition="24" endLine="165" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8404865931406956233" fileName="XmlConverter.java" startLine="188" startPosition="22" endLine="209" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2518201674535501697" fileName="XmlConverter.java" startLine="44" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="convertElement#(Lorg/jdom/Element;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8404865931403076335" fileName="XmlConverter.java" startLine="139" startPosition="29" endLine="166" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8404865931406956185" fileName="XmlConverter.java" startLine="183" startPosition="27" endLine="210" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8404865931402563661" fileName="XmlConverter.java" startLine="137" startPosition="20" endLine="167" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8404865931406956171" fileName="XmlConverter.java" startLine="181" startPosition="18" endLine="211" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8404865931406956134" fileName="XmlConverter.java" startLine="178" startPosition="0" endLine="217" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="convertAttributeText#(Ljava/lang/String;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8404865931402183524" fileName="XmlConverter.java" startLine="133" startPosition="71" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="7604185310496587866" fileName="XmlConverter.java" startLine="132" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="convertText#([Ljava/lang/String;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4462860465182218089" fileName="XmlConverter.java" startLine="69" startPosition="88" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4462860465182206289" fileName="XmlConverter.java" startLine="69" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="convertContent#(Lorg/jdom/Content;Lorg/jdom/Content;Lorg/jdom/Content;)Ljava/lang/Iterable;" />
-    <scopeInfo nodeId="8404865931404619633" fileName="XmlConverter.java" startLine="162" startPosition="22" endLine="162" endPosition="22" />
-    <scopeInfo nodeId="8404865931406956255" fileName="XmlConverter.java" startLine="206" startPosition="20" endLine="206" endPosition="20" />
-    <scopeInfo nodeId="2518201674535716050" fileName="XmlConverter.java" startLine="48" startPosition="87" endLine="49" endPosition="116" />
-    <scopeInfo nodeId="8404865931441664084" fileName="XmlConverter.java" startLine="52" startPosition="70" endLine="53" endPosition="193" />
-    <scopeInfo nodeId="4462860465182253949" fileName="XmlConverter.java" startLine="60" startPosition="28" endLine="61" endPosition="127" />
-    <scopeInfo nodeId="4462860465182218091" fileName="XmlConverter.java" startLine="70" startPosition="31" endLine="71" endPosition="68" />
-    <scopeInfo nodeId="5054660862256892228" fileName="XmlConverter.java" startLine="76" startPosition="40" endLine="77" endPosition="64" />
-    <scopeInfo nodeId="5867793774239381444" fileName="XmlConverter.java" startLine="101" startPosition="52" endLine="102" endPosition="16" />
-    <scopeInfo nodeId="997823284629654856" fileName="XmlConverter.java" startLine="109" startPosition="38" endLine="110" endPosition="16" />
-    <scopeInfo nodeId="5054660862256146019" fileName="XmlConverter.java" startLine="114" startPosition="27" endLine="115" endPosition="20" />
-    <scopeInfo nodeId="8150655206051087445" fileName="XmlConverter.java" startLine="117" startPosition="77" endLine="118" endPosition="52" />
-    <scopeInfo nodeId="5054660862256696866" fileName="XmlConverter.java" startLine="121" startPosition="41" endLine="122" endPosition="51" />
-    <scopeInfo nodeId="8404865931405969985" fileName="XmlConverter.java" startLine="141" startPosition="26" endLine="142" endPosition="113" />
-    <scopeInfo nodeId="8404865931405790051" fileName="XmlConverter.java" startLine="145" startPosition="25" endLine="146" endPosition="104" />
-    <scopeInfo nodeId="8404865931406297972" fileName="XmlConverter.java" startLine="168" startPosition="24" endLine="169" endPosition="107" />
-    <scopeInfo nodeId="8404865931403294448" fileName="XmlConverter.java" startLine="171" startPosition="162" endLine="172" endPosition="84" />
-    <scopeInfo nodeId="8404865931406956214" fileName="XmlConverter.java" startLine="185" startPosition="24" endLine="186" endPosition="114" />
-    <scopeInfo nodeId="8404865931406956237" fileName="XmlConverter.java" startLine="189" startPosition="23" endLine="190" endPosition="105" />
-    <scopeInfo nodeId="8404865931406956303" fileName="XmlConverter.java" startLine="212" startPosition="22" endLine="213" endPosition="108" />
-    <scopeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="245" startPosition="42" endLine="246" endPosition="30" />
-    <scopeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="253" startPosition="124" endLine="254" endPosition="47" />
-    <scopeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="268" startPosition="118" endLine="269" endPosition="50" />
-    <scopeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="275" startPosition="122" endLine="276" endPosition="53" />
-    <scopeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="282" startPosition="117" endLine="283" endPosition="48" />
-    <scopeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="289" startPosition="120" endLine="290" endPosition="51" />
-    <scopeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="296" startPosition="122" endLine="297" endPosition="53" />
-    <scopeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="303" startPosition="117" endLine="304" endPosition="48" />
-    <scopeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="310" startPosition="117" endLine="311" endPosition="32" />
-    <scopeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="317" startPosition="122" endLine="318" endPosition="47" />
-    <scopeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="324" startPosition="125" endLine="325" endPosition="51" />
-    <scopeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="331" startPosition="127" endLine="332" endPosition="53" />
-    <scopeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="338" startPosition="122" endLine="339" endPosition="47" />
-    <scopeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="347" startPosition="122" endLine="348" endPosition="52" />
-    <scopeInfo nodeId="4462860465182239599" fileName="XmlConverter.java" startLine="82" startPosition="52" endLine="84" endPosition="118">
-      <varInfo nodeId="5054660862256789537" varName="pi" />
-    </scopeInfo>
-    <scopeInfo nodeId="5867793774239589705" fileName="XmlConverter.java" startLine="96" startPosition="26" endLine="98" endPosition="21" />
-    <scopeInfo nodeId="4462860465182239644" fileName="XmlConverter.java" startLine="125" startPosition="40" endLine="127" endPosition="82">
-      <varInfo nodeId="5054660862256359546" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931404648992" fileName="XmlConverter.java" startLine="150" startPosition="24" endLine="152" endPosition="22" />
-    <scopeInfo nodeId="8404865931404819270" fileName="XmlConverter.java" startLine="153" startPosition="23" endLine="155" endPosition="22" />
-    <scopeInfo nodeId="8404865931405000585" fileName="XmlConverter.java" startLine="156" startPosition="23" endLine="158" endPosition="22" />
-    <scopeInfo nodeId="8404865931405095266" fileName="XmlConverter.java" startLine="159" startPosition="23" endLine="161" endPosition="22" />
-    <scopeInfo nodeId="8404865931406956258" fileName="XmlConverter.java" startLine="194" startPosition="22" endLine="196" endPosition="20" />
-    <scopeInfo nodeId="8404865931406956266" fileName="XmlConverter.java" startLine="197" startPosition="21" endLine="199" endPosition="20" />
-    <scopeInfo nodeId="8404865931406956274" fileName="XmlConverter.java" startLine="200" startPosition="21" endLine="202" endPosition="20" />
-    <scopeInfo nodeId="8404865931406956282" fileName="XmlConverter.java" startLine="203" startPosition="21" endLine="205" endPosition="20" />
-    <scopeInfo nodeId="8404865931404097244" fileName="XmlConverter.java" startLine="218" startPosition="40" endLine="220" endPosition="44">
-      <varInfo nodeId="8404865931404113171" varName="r" />
-    </scopeInfo>
-    <scopeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="260" startPosition="134" endLine="262" endPosition="50" />
-    <scopeInfo nodeId="2518201674535716044" fileName="XmlConverter.java" startLine="47" startPosition="167" endLine="50" endPosition="5">
-      <varInfo nodeId="2518201674535716046" varName="a" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931441664078" fileName="XmlConverter.java" startLine="51" startPosition="92" endLine="54" endPosition="5">
-      <varInfo nodeId="8404865931441664080" varName="ns" />
-    </scopeInfo>
-    <scopeInfo nodeId="5054660862256892227" fileName="XmlConverter.java" startLine="76" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="5054660862256892227" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="4462860465182239619" fileName="XmlConverter.java" startLine="85" startPosition="36" endLine="88" endPosition="0">
-      <varInfo nodeId="5054660862256305076" varName="cdata" />
-    </scopeInfo>
-    <scopeInfo nodeId="5054660862256696865" fileName="XmlConverter.java" startLine="121" startPosition="0" endLine="124" endPosition="0">
-      <varInfo nodeId="5054660862256696865" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="244" startPosition="51" endLine="247" endPosition="5">
-      <varInfo nodeId="8404865931441854891" varName="n" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="346" startPosition="5" endLine="349" endPosition="37">
-      <varInfo nodeId="1572058823050264962" varName="n2" />
-    </scopeInfo>
-    <scopeInfo nodeId="5867793774239567836" fileName="XmlConverter.java" startLine="95" startPosition="25" endLine="99" endPosition="11" />
-    <scopeInfo nodeId="997823284629572832" fileName="XmlConverter.java" startLine="107" startPosition="34" endLine="111" endPosition="9">
-      <varInfo nodeId="997823284629451461" varName="ch" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931404097241" fileName="XmlConverter.java" startLine="218" startPosition="0" endLine="222" endPosition="0">
-      <varInfo nodeId="8404865931404112987" varName="c" />
-    </scopeInfo>
-    <scopeInfo nodeId="2518201674535781525" fileName="XmlConverter.java" startLine="225" startPosition="57" endLine="229" endPosition="18">
-      <varInfo nodeId="2518201674535781527" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572058823050138782" fileName="XmlConverter.java" startLine="234" startPosition="48" endLine="238" endPosition="16">
-      <varInfo nodeId="1572058823050139979" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="243" startPosition="122" endLine="247" endPosition="5" />
-    <scopeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="251" startPosition="78" endLine="255" endPosition="14">
-      <varInfo nodeId="5054660862256892230" varName="facade" />
-      <varInfo nodeId="5054660862256892230" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="266" startPosition="67" endLine="270" endPosition="14">
-      <varInfo nodeId="5054660862256294005" varName="facade" />
-      <varInfo nodeId="5054660862256294005" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="273" startPosition="71" endLine="277" endPosition="14">
-      <varInfo nodeId="5054660862256348944" varName="facade" />
-      <varInfo nodeId="5054660862256348944" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="280" startPosition="71" endLine="284" endPosition="14">
-      <varInfo nodeId="8404865931406138541" varName="facade" />
-      <varInfo nodeId="8404865931406138541" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="287" startPosition="74" endLine="291" endPosition="14">
-      <varInfo nodeId="8404865931404008835" varName="facade" />
-      <varInfo nodeId="8404865931404008835" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="294" startPosition="77" endLine="298" endPosition="14">
-      <varInfo nodeId="8404865931405351307" varName="facade" />
-      <varInfo nodeId="8404865931405351307" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="301" startPosition="67" endLine="305" endPosition="14">
-      <varInfo nodeId="8404865931406297976" varName="facade" />
-      <varInfo nodeId="8404865931406297976" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="308" startPosition="58" endLine="312" endPosition="14">
-      <varInfo nodeId="8404865931403864412" varName="facade" />
-      <varInfo nodeId="8404865931403864412" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="315" startPosition="74" endLine="319" endPosition="14">
-      <varInfo nodeId="8404865931406956218" varName="facade" />
-      <varInfo nodeId="8404865931406956218" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="322" startPosition="77" endLine="326" endPosition="14">
-      <varInfo nodeId="8404865931406956242" varName="facade" />
-      <varInfo nodeId="8404865931406956242" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="329" startPosition="80" endLine="333" endPosition="14">
-      <varInfo nodeId="8404865931406956291" varName="facade" />
-      <varInfo nodeId="8404865931406956291" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="336" startPosition="70" endLine="340" endPosition="14">
-      <varInfo nodeId="8404865931406956307" varName="facade" />
-      <varInfo nodeId="8404865931406956307" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="7604185310495989052" fileName="XmlConverter.java" startLine="58" startPosition="47" endLine="63" endPosition="0">
-      <varInfo nodeId="4462860465182251232" varName="content" />
-    </scopeInfo>
-    <scopeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="258" startPosition="94" endLine="263" endPosition="14">
-      <varInfo nodeId="5054660862256804471" varName="facade" />
-      <varInfo nodeId="5054660862256804471" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="997823284629572826" fileName="XmlConverter.java" startLine="106" startPosition="28" endLine="112" endPosition="7" />
-    <scopeInfo nodeId="2518201674535781523" fileName="XmlConverter.java" startLine="225" startPosition="0" endLine="231" endPosition="0">
-      <varInfo nodeId="2518201674535781561" varName="elem" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572058823050138779" fileName="XmlConverter.java" startLine="234" startPosition="0" endLine="240" endPosition="0">
-      <varInfo nodeId="1572058823050139871" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="5054660862256892230" fileName="XmlConverter.java" startLine="251" startPosition="0" endLine="257" endPosition="0">
-      <varInfo nodeId="5054660862256892230" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="5054660862256294005" fileName="XmlConverter.java" startLine="266" startPosition="0" endLine="272" endPosition="0">
-      <varInfo nodeId="5054660862256294005" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="5054660862256348944" fileName="XmlConverter.java" startLine="273" startPosition="0" endLine="279" endPosition="0">
-      <varInfo nodeId="5054660862256348944" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406138541" fileName="XmlConverter.java" startLine="280" startPosition="0" endLine="286" endPosition="0">
-      <varInfo nodeId="8404865931406138541" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931404008835" fileName="XmlConverter.java" startLine="287" startPosition="0" endLine="293" endPosition="0">
-      <varInfo nodeId="8404865931404008835" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931405351307" fileName="XmlConverter.java" startLine="294" startPosition="0" endLine="300" endPosition="0">
-      <varInfo nodeId="8404865931405351307" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406297976" fileName="XmlConverter.java" startLine="301" startPosition="0" endLine="307" endPosition="0">
-      <varInfo nodeId="8404865931406297976" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931403864412" fileName="XmlConverter.java" startLine="308" startPosition="0" endLine="314" endPosition="0" />
-    <scopeInfo nodeId="8404865931406956218" fileName="XmlConverter.java" startLine="315" startPosition="0" endLine="321" endPosition="0">
-      <varInfo nodeId="8404865931406956218" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406956242" fileName="XmlConverter.java" startLine="322" startPosition="0" endLine="328" endPosition="0">
-      <varInfo nodeId="8404865931406956242" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406956291" fileName="XmlConverter.java" startLine="329" startPosition="0" endLine="335" endPosition="0">
-      <varInfo nodeId="8404865931406956291" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406956307" fileName="XmlConverter.java" startLine="336" startPosition="0" endLine="342" endPosition="0">
-      <varInfo nodeId="8404865931406956307" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="2518201674535504334" fileName="XmlConverter.java" startLine="32" startPosition="71" endLine="39" endPosition="16">
-      <varInfo nodeId="2518201674535505620" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="7604185310495989050" fileName="XmlConverter.java" startLine="57" startPosition="83" endLine="64" endPosition="5">
-      <varInfo nodeId="7604185310495989053" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="241" startPosition="81" endLine="248" endPosition="14">
-      <varInfo nodeId="8404865931441854891" varName="facade" />
-      <varInfo nodeId="8404865931441854891" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="5054660862256804471" fileName="XmlConverter.java" startLine="258" startPosition="0" endLine="265" endPosition="0">
-      <varInfo nodeId="5054660862256804471" varName="p0" />
-      <varInfo nodeId="5054660862256804471" varName="p1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="343" startPosition="68" endLine="351" endPosition="14">
-      <varInfo nodeId="1572058823050264962" varName="facade" />
-      <varInfo nodeId="1572058823050264962" varName="n1" />
-    </scopeInfo>
-    <scopeInfo nodeId="2518201674535504331" fileName="XmlConverter.java" startLine="32" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="2518201674535504352" varName="document" />
-      <varInfo nodeId="4462860465182479993" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="4462860465182233693" fileName="XmlConverter.java" startLine="72" startPosition="38" endLine="81" endPosition="0">
-      <varInfo nodeId="5054660862256892209" varName="commentText" />
-      <varInfo nodeId="5054660862256938339" varName="res" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931441854891" fileName="XmlConverter.java" startLine="241" startPosition="0" endLine="250" endPosition="0">
-      <varInfo nodeId="8404865931441854891" varName="p0" />
-      <varInfo nodeId="8404865931441854891" varName="p1" />
-    </scopeInfo>
-    <scopeInfo nodeId="5867793774239309385" fileName="XmlConverter.java" startLine="93" startPosition="46" endLine="103" endPosition="9">
-      <varInfo nodeId="5867793774239343208" varName="ch" />
-    </scopeInfo>
-    <scopeInfo nodeId="1572058823050264962" fileName="XmlConverter.java" startLine="343" startPosition="0" endLine="353" endPosition="0">
-      <varInfo nodeId="1572058823050264962" varName="p0" />
-    </scopeInfo>
-    <scopeInfo nodeId="5867793774239309383" fileName="XmlConverter.java" startLine="92" startPosition="66" endLine="104" endPosition="7" />
-    <scopeInfo nodeId="8404865931405897174" fileName="XmlConverter.java" startLine="147" startPosition="18" endLine="164" endPosition="102">
-      <varInfo nodeId="8404865931404513720" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406956248" fileName="XmlConverter.java" startLine="191" startPosition="16" endLine="208" endPosition="103">
-      <varInfo nodeId="8404865931406956250" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="2518201674535501700" fileName="XmlConverter.java" startLine="44" startPosition="53" endLine="66" endPosition="18">
-      <varInfo nodeId="8404865931441560762" varName="additionalNamespaces" />
-      <varInfo nodeId="7604185310495888973" varName="contents" />
-      <varInfo nodeId="7604185310495774285" varName="list" />
-      <varInfo nodeId="8833932927907213406" varName="namespacePrefix" />
-      <varInfo nodeId="2518201674535614986" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="2518201674535501697" fileName="XmlConverter.java" startLine="44" startPosition="0" endLine="68" endPosition="0">
-      <varInfo nodeId="2518201674535501715" varName="elem" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931403076337" fileName="XmlConverter.java" startLine="140" startPosition="84" endLine="165" endPosition="11" />
-    <scopeInfo nodeId="8404865931406956209" fileName="XmlConverter.java" startLine="184" startPosition="82" endLine="209" endPosition="9" />
-    <scopeInfo nodeId="8404865931402563663" fileName="XmlConverter.java" startLine="138" startPosition="37" endLine="166" endPosition="9">
-      <varInfo nodeId="8404865931402903129" varName="c" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406956177" fileName="XmlConverter.java" startLine="182" startPosition="35" endLine="210" endPosition="7">
-      <varInfo nodeId="8404865931406956179" varName="c" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931402563661" fileName="XmlConverter.java" startLine="137" startPosition="20" endLine="167" endPosition="7">
-      <varInfo nodeId="8404865931402563664" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406956171" fileName="XmlConverter.java" startLine="181" startPosition="18" endLine="211" endPosition="5">
-      <varInfo nodeId="8404865931406956296" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4462860465182231359" fileName="XmlConverter.java" startLine="89" startPosition="35" endLine="124" endPosition="39">
-      <varInfo nodeId="5867793774239128932" varName="index" />
-      <varInfo nodeId="5867793774239543037" varName="nlSeen" />
-      <varInfo nodeId="5054660862256139390" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406956135" fileName="XmlConverter.java" startLine="178" startPosition="65" endLine="215" endPosition="18">
-      <varInfo nodeId="8404865931406956162" varName="len" />
-      <varInfo nodeId="8404865931406956137" varName="result" />
-      <varInfo nodeId="8404865931406956168" varName="start" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931402183526" fileName="XmlConverter.java" startLine="134" startPosition="44" endLine="173" endPosition="7">
-      <varInfo nodeId="8404865931402660438" varName="len" />
-      <varInfo nodeId="8404865931402804987" varName="s" />
-      <varInfo nodeId="8404865931405476397" varName="start" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931406956134" fileName="XmlConverter.java" startLine="178" startPosition="0" endLine="217" endPosition="0">
-      <varInfo nodeId="8404865931406956338" varName="s" />
-    </scopeInfo>
-    <scopeInfo nodeId="8404865931402183524" fileName="XmlConverter.java" startLine="133" startPosition="71" endLine="174" endPosition="5">
-      <varInfo nodeId="8404865931402183525" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="7604185310496587869" fileName="XmlConverter.java" startLine="132" startPosition="62" endLine="175" endPosition="18">
-      <varInfo nodeId="8404865931402384211" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="7604185310496587866" fileName="XmlConverter.java" startLine="132" startPosition="0" endLine="177" endPosition="0">
-      <varInfo nodeId="7604185310496595221" varName="lines" />
-    </scopeInfo>
-    <scopeInfo nodeId="4462860465182206291" fileName="XmlConverter.java" startLine="69" startPosition="88" endLine="129" endPosition="16" />
-    <scopeInfo nodeId="4462860465182206289" fileName="XmlConverter.java" startLine="69" startPosition="0" endLine="131" endPosition="0">
-      <varInfo nodeId="4462860465182206335" varName="c" />
-      <varInfo nodeId="7604185310495737221" varName="next" />
-      <varInfo nodeId="7604185310495692440" varName="prev" />
-    </scopeInfo>
-    <unitInfo nodeId="5054660862256892227" fileName="XmlConverter.java" startLine="75" startPosition="169" endLine="79" endPosition="7" unitName="jetbrains.mps.persistence.xml.XmlConverter$1" />
-    <unitInfo nodeId="5054660862256696865" fileName="XmlConverter.java" startLine="120" startPosition="110" endLine="124" endPosition="7" unitName="jetbrains.mps.persistence.xml.XmlConverter$2" />
-    <unitInfo nodeId="2518201674535467508" fileName="XmlConverter.java" startLine="29" startPosition="0" endLine="354" endPosition="0" unitName="jetbrains.mps.persistence.xml.XmlConverter" />
+    <file name="XmlConverter.java">
+      <node id="8404865931441448502" at="32,71,33,68" concept="10" />
+      <node id="2518201674535505617" at="33,68,34,100" concept="8" />
+      <node id="4462860465182468917" at="34,100,35,48" concept="3" />
+      <node id="2518201674535513067" at="35,48,36,98" concept="3" />
+      <node id="2518201674535579046" at="36,98,37,145" concept="3" />
+      <node id="4070655637822218996" at="37,145,38,78" concept="3" />
+      <node id="2518201674535513026" at="38,78,39,16" concept="9" />
+      <node id="2518201674535614983" at="44,53,45,105" concept="8" />
+      <node id="8833932927907213405" at="45,105,46,55" concept="8" />
+      <node id="2518201674535616646" at="46,55,47,167" concept="3" />
+      <node id="2518201674535716985" at="48,87,49,116" concept="3" />
+      <node id="8404865931441560761" at="50,5,51,92" concept="8" />
+      <node id="8404865931441756621" at="52,70,53,193" concept="3" />
+      <node id="8404865931441496335" at="54,5,55,0" concept="11" />
+      <node id="7604185310495774284" at="55,0,56,59" concept="8" />
+      <node id="7604185310495888972" at="56,59,57,83" concept="8" />
+      <node id="4462860465182251231" at="58,47,59,146" concept="8" />
+      <node id="4462860465182257034" at="60,28,61,127" concept="3" />
+      <node id="7604185310496101217" at="62,7,63,0" concept="11" />
+      <node id="4462860465182414548" at="64,5,65,93" concept="3" />
+      <node id="2518201674535616507" at="65,93,66,18" concept="9" />
+      <node id="4462860465182226204" at="70,31,71,68" concept="9" />
+      <node id="5054660862256892208" at="72,38,73,51" concept="8" />
+      <node id="5054660862256938336" at="73,51,74,104" concept="8" />
+      <node id="5054660862256892229" at="76,40,77,64" concept="9" />
+      <node id="5054660862256960480" at="79,10,80,44" concept="9" />
+      <node id="5054660862256957377" at="80,44,81,0" concept="11" />
+      <node id="5054660862256789536" at="82,52,83,59" concept="8" />
+      <node id="5054660862256859483" at="83,59,84,118" concept="9" />
+      <node id="5054660862256305075" at="85,36,86,42" concept="8" />
+      <node id="5054660862256294004" at="86,42,87,79" concept="9" />
+      <node id="5054660862256741672" at="87,79,88,0" concept="11" />
+      <node id="5054660862256139389" at="89,35,90,41" concept="8" />
+      <node id="5867793774239128929" at="90,41,91,20" concept="8" />
+      <node id="5867793774239543034" at="91,20,92,66" concept="8" />
+      <node id="5867793774239343205" at="93,46,94,37" concept="8" />
+      <node id="5867793774239639265" at="96,26,97,26" concept="3" />
+      <node id="5867793774239661677" at="97,26,98,21" concept="2" />
+      <node id="5867793774239423116" at="101,52,102,16" concept="1" />
+      <node id="5867793774239442972" at="104,7,105,35" concept="3" />
+      <node id="997823284629314230" at="105,35,106,28" concept="3" />
+      <node id="997823284629451458" at="107,34,108,41" concept="8" />
+      <node id="997823284629734320" at="109,38,110,16" concept="1" />
+      <node id="997823284629743265" at="112,7,113,38" concept="3" />
+      <node id="5054660862256212584" at="114,27,115,20" concept="9" />
+      <node id="8150655206051123393" at="117,77,118,52" concept="3" />
+      <node id="7604185310496619747" at="121,41,122,51" concept="9" />
+      <node id="5054660862256359545" at="125,40,126,46" concept="8" />
+      <node id="5054660862256348943" at="126,46,127,82" concept="9" />
+      <node id="4462860465182237968" at="128,5,129,16" concept="9" />
+      <node id="8404865931402384208" at="132,62,133,71" concept="8" />
+      <node id="8404865931402804986" at="134,44,135,26" concept="8" />
+      <node id="8404865931402660435" at="135,26,136,27" concept="8" />
+      <node id="8404865931405476394" at="136,27,137,20" concept="8" />
+      <node id="8404865931402903126" at="138,37,139,29" concept="8" />
+      <node id="8404865931406048388" at="141,26,142,113" concept="3" />
+      <node id="8404865931406792876" at="143,11,144,24" concept="3" />
+      <node id="8404865931403176337" at="145,25,146,104" concept="3" />
+      <node id="8404865931404513717" at="147,18,148,33" concept="8" />
+      <node id="8404865931404690232" at="150,24,151,30" concept="3" />
+      <node id="8404865931404928846" at="151,30,152,22" concept="1" />
+      <node id="8404865931404944024" at="153,23,154,28" concept="3" />
+      <node id="8404865931404944028" at="154,28,155,22" concept="1" />
+      <node id="8404865931405000586" at="156,23,157,28" concept="3" />
+      <node id="8404865931405000590" at="157,28,158,22" concept="1" />
+      <node id="8404865931405095267" at="159,23,160,29" concept="3" />
+      <node id="8404865931405095271" at="160,29,161,22" concept="1" />
+      <node id="8404865931405163600" at="163,13,164,102" concept="3" />
+      <node id="8404865931406297973" at="168,24,169,107" concept="3" />
+      <node id="8404865931403775798" at="171,162,172,84" concept="3" />
+      <node id="8404865931402523436" at="174,5,175,18" concept="9" />
+      <node id="8404865931406956136" at="178,65,179,71" concept="8" />
+      <node id="8404865931406956161" at="179,71,180,25" concept="8" />
+      <node id="8404865931406956167" at="180,25,181,18" concept="8" />
+      <node id="8404865931406956178" at="182,35,183,27" concept="8" />
+      <node id="8404865931406956215" at="185,24,186,114" concept="3" />
+      <node id="8404865931406956227" at="187,9,188,22" concept="3" />
+      <node id="8404865931406956238" at="189,23,190,105" concept="3" />
+      <node id="8404865931406956249" at="191,16,192,31" concept="8" />
+      <node id="8404865931406956259" at="194,22,195,28" concept="3" />
+      <node id="8404865931406956263" at="195,28,196,20" concept="1" />
+      <node id="8404865931406956267" at="197,21,198,26" concept="3" />
+      <node id="8404865931406956271" at="198,26,199,20" concept="1" />
+      <node id="8404865931406956275" at="200,21,201,26" concept="3" />
+      <node id="8404865931406956279" at="201,26,202,20" concept="1" />
+      <node id="8404865931406956283" at="203,21,204,27" concept="3" />
+      <node id="8404865931406956287" at="204,27,205,20" concept="1" />
+      <node id="8404865931406956288" at="207,11,208,103" concept="3" />
+      <node id="8404865931406956304" at="212,22,213,108" concept="3" />
+      <node id="8404865931406956333" at="214,5,215,18" concept="9" />
+      <node id="8404865931404113168" at="218,40,219,38" concept="8" />
+      <node id="8404865931404113099" at="219,38,220,44" concept="9" />
+      <node id="2518201674535781526" at="225,57,226,107" concept="8" />
+      <node id="2518201674535781532" at="226,107,227,64" concept="3" />
+      <node id="8404865931407298795" at="227,64,228,151" concept="3" />
+      <node id="2518201674535781558" at="228,151,229,18" concept="9" />
+      <node id="1572058823050139976" at="234,48,235,100" concept="8" />
+      <node id="1572058823050148222" at="235,100,236,48" concept="3" />
+      <node id="1572058823050194564" at="236,48,237,94" concept="3" />
+      <node id="1572058823050148161" at="237,94,238,16" concept="9" />
+      <node id="8404865931441854891" at="241,81,242,63" concept="8" />
+      <node id="8404865931441854891" at="242,63,243,122" concept="8" />
+      <node id="8404865931441854891" at="243,122,244,51" concept="3" />
+      <node id="8404865931441854891" at="245,42,246,30" concept="3" />
+      <node id="8404865931441854891" at="247,5,248,14" concept="9" />
+      <node id="5054660862256892230" at="251,78,252,63" concept="8" />
+      <node id="5054660862256892230" at="252,63,253,124" concept="8" />
+      <node id="5054660862256892230" at="253,124,254,47" concept="0" />
+      <node id="5054660862256892230" at="253,124,254,47" concept="3" />
+      <node id="5054660862256892230" at="254,47,255,14" concept="9" />
+      <node id="5054660862256804471" at="258,94,259,63" concept="8" />
+      <node id="5054660862256804471" at="259,63,260,134" concept="8" />
+      <node id="5054660862256804471" at="260,134,261,49" concept="3" />
+      <node id="5054660862256804471" at="261,49,262,50" concept="3" />
+      <node id="5054660862256804471" at="262,50,263,14" concept="9" />
+      <node id="5054660862256294005" at="266,67,267,63" concept="8" />
+      <node id="5054660862256294005" at="267,63,268,118" concept="8" />
+      <node id="5054660862256294005" at="268,118,269,50" concept="0" />
+      <node id="5054660862256294005" at="268,118,269,50" concept="3" />
+      <node id="5054660862256294005" at="269,50,270,14" concept="9" />
+      <node id="5054660862256348944" at="273,71,274,63" concept="8" />
+      <node id="5054660862256348944" at="274,63,275,122" concept="8" />
+      <node id="5054660862256348944" at="275,122,276,53" concept="0" />
+      <node id="5054660862256348944" at="275,122,276,53" concept="3" />
+      <node id="5054660862256348944" at="276,53,277,14" concept="9" />
+      <node id="8404865931406138541" at="280,71,281,63" concept="8" />
+      <node id="8404865931406138541" at="281,63,282,117" concept="8" />
+      <node id="8404865931406138541" at="282,117,283,48" concept="0" />
+      <node id="8404865931406138541" at="282,117,283,48" concept="3" />
+      <node id="8404865931406138541" at="283,48,284,14" concept="9" />
+      <node id="8404865931404008835" at="287,74,288,63" concept="8" />
+      <node id="8404865931404008835" at="288,63,289,120" concept="8" />
+      <node id="8404865931404008835" at="289,120,290,51" concept="0" />
+      <node id="8404865931404008835" at="289,120,290,51" concept="3" />
+      <node id="8404865931404008835" at="290,51,291,14" concept="9" />
+      <node id="8404865931405351307" at="294,77,295,63" concept="8" />
+      <node id="8404865931405351307" at="295,63,296,122" concept="8" />
+      <node id="8404865931405351307" at="296,122,297,53" concept="0" />
+      <node id="8404865931405351307" at="296,122,297,53" concept="3" />
+      <node id="8404865931405351307" at="297,53,298,14" concept="9" />
+      <node id="8404865931406297976" at="301,67,302,63" concept="8" />
+      <node id="8404865931406297976" at="302,63,303,117" concept="8" />
+      <node id="8404865931406297976" at="303,117,304,48" concept="0" />
+      <node id="8404865931406297976" at="303,117,304,48" concept="3" />
+      <node id="8404865931406297976" at="304,48,305,14" concept="9" />
+      <node id="8404865931403864412" at="308,58,309,63" concept="8" />
+      <node id="8404865931403864412" at="309,63,310,117" concept="8" />
+      <node id="8404865931403864412" at="310,117,311,32" concept="0" />
+      <node id="8404865931403864412" at="310,117,311,32" concept="3" />
+      <node id="8404865931403864412" at="311,32,312,14" concept="9" />
+      <node id="8404865931406956218" at="315,74,316,63" concept="8" />
+      <node id="8404865931406956218" at="316,63,317,122" concept="8" />
+      <node id="8404865931406956218" at="317,122,318,47" concept="0" />
+      <node id="8404865931406956218" at="317,122,318,47" concept="3" />
+      <node id="8404865931406956218" at="318,47,319,14" concept="9" />
+      <node id="8404865931406956242" at="322,77,323,63" concept="8" />
+      <node id="8404865931406956242" at="323,63,324,125" concept="8" />
+      <node id="8404865931406956242" at="324,125,325,51" concept="0" />
+      <node id="8404865931406956242" at="324,125,325,51" concept="3" />
+      <node id="8404865931406956242" at="325,51,326,14" concept="9" />
+      <node id="8404865931406956291" at="329,80,330,63" concept="8" />
+      <node id="8404865931406956291" at="330,63,331,127" concept="8" />
+      <node id="8404865931406956291" at="331,127,332,53" concept="0" />
+      <node id="8404865931406956291" at="331,127,332,53" concept="3" />
+      <node id="8404865931406956291" at="332,53,333,14" concept="9" />
+      <node id="8404865931406956307" at="336,70,337,63" concept="8" />
+      <node id="8404865931406956307" at="337,63,338,122" concept="8" />
+      <node id="8404865931406956307" at="338,122,339,47" concept="0" />
+      <node id="8404865931406956307" at="338,122,339,47" concept="3" />
+      <node id="8404865931406956307" at="339,47,340,14" concept="9" />
+      <node id="1572058823050264962" at="343,68,344,63" concept="8" />
+      <node id="1572058823050264962" at="344,63,345,121" concept="8" />
+      <node id="1572058823050264962" at="346,5,347,122" concept="8" />
+      <node id="1572058823050264962" at="347,122,348,52" concept="0" />
+      <node id="1572058823050264962" at="347,122,348,52" concept="3" />
+      <node id="1572058823050264962" at="348,52,349,37" concept="3" />
+      <node id="1572058823050264962" at="350,5,351,14" concept="9" />
+      <node id="5054660862256804471" at="260,134,262,50" concept="0" />
+      <node id="2518201674535716044" at="47,167,50,5" concept="5" />
+      <node id="8404865931441664078" at="51,92,54,5" concept="5" />
+      <node id="4462860465182253947" at="59,146,62,7" concept="6" />
+      <node id="5054660862256892227" at="76,0,79,0" concept="7" trace="select#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5867793774239381442" at="100,9,103,9" concept="6" />
+      <node id="997823284629654854" at="108,41,111,9" concept="6" />
+      <node id="5054660862256146017" at="113,38,116,7" concept="6" />
+      <node id="8150655206051087443" at="116,7,119,7" concept="6" />
+      <node id="5054660862256696865" at="121,0,124,0" concept="7" trace="select#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="8404865931405969983" at="140,84,143,11" concept="6" />
+      <node id="8404865931406297968" at="167,7,170,7" concept="6" />
+      <node id="8404865931403294446" at="170,7,173,7" concept="6" />
+      <node id="8404865931406956210" at="184,82,187,9" concept="6" />
+      <node id="8404865931406956299" at="211,5,214,5" concept="6" />
+      <node id="8404865931441854891" at="244,51,247,5" concept="5" />
+      <node id="5867793774239589703" at="95,25,99,11" concept="6" />
+      <node id="8404865931404097241" at="218,0,222,0" concept="12" trace="toHex4#(C)Ljava/lang/String;" />
+      <node id="8404865931441854891" at="243,122,247,5" concept="0" />
+      <node id="5054660862256985912" at="74,104,79,10" concept="3" />
+      <node id="2061382571417847266" at="119,7,124,39" concept="9" />
+      <node id="1572058823050264962" at="345,121,350,5" concept="0" />
+      <node id="5867793774239567834" at="94,37,100,9" concept="6" />
+      <node id="997823284629572826" at="106,28,112,7" concept="4" />
+      <node id="2518201674535781523" at="225,0,231,0" concept="12" trace="convertAttribute#(Lorg/jdom/Attribute;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1572058823050138779" at="234,0,240,0" concept="12" trace="newDocument#(Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5054660862256892230" at="251,0,257,0" concept="12" trace="createXmlCommentLine_h7fa2c_a0a0a0a0c0a0a4#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5054660862256294005" at="266,0,272,0" concept="12" trace="createXmlCDATA_h7fa2c_a0a1a2a0e#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5054660862256348944" at="273,0,279,0" concept="12" trace="createXmlEntityRef_h7fa2c_a0a1a4a0e#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8404865931406138541" at="280,0,286,0" concept="12" trace="createXmlText_h7fa2c_a0a0a0a1a3a1a5#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8404865931404008835" at="287,0,293,0" concept="12" trace="createXmlCharRef_h7fa2c_a0a0a2a1a3a1a5#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8404865931405351307" at="294,0,300,0" concept="12" trace="createXmlEntityRef_h7fa2c_a0a2a0c0b0d0b0f#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8404865931406297976" at="301,0,307,0" concept="12" trace="createXmlText_h7fa2c_a0a0a4a1a5#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8404865931403864412" at="308,0,314,0" concept="12" trace="createXmlText_h7fa2c_a0a0a5a1a5#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8404865931406956218" at="315,0,321,0" concept="12" trace="createXmlTextValue_h7fa2c_a0a0a0a1a3a6#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8404865931406956242" at="322,0,328,0" concept="12" trace="createXmlCharRefValue_h7fa2c_a0a0a2a1a3a6#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8404865931406956291" at="329,0,335,0" concept="12" trace="createXmlEntityRefValue_h7fa2c_a0a2a0c0b0d0g#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8404865931406956307" at="336,0,342,0" concept="12" trace="createXmlTextValue_h7fa2c_a0a0a4a6#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="7604185310495989050" at="57,83,64,5" concept="4" />
+      <node id="5054660862256804471" at="258,0,265,0" concept="12" trace="createXmlProcessingInstruction_h7fa2c_a0a1a1a0e#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="2518201674535504331" at="32,0,41,0" concept="12" trace="convertDocument#(Ljava/lang/String;Lorg/jdom/Document;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8404865931441854891" at="241,0,250,0" concept="12" trace="createXmlAttribute_h7fa2c_a0a0a5a3#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1572058823050264962" at="343,0,353,0" concept="12" trace="createXmlDocument_h7fa2c_a0a2a11#(Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5867793774239309383" at="92,66,104,7" concept="4" />
+      <node id="8404865931404619629" at="148,33,163,13" concept="13" />
+      <node id="8404865931406956253" at="192,31,207,11" concept="13" />
+      <node id="8404865931405897173" at="147,16,165,11" concept="0" />
+      <node id="8404865931406956247" at="191,14,209,9" concept="0" />
+      <node id="8404865931405790049" at="144,24,165,11" concept="6" />
+      <node id="8404865931406956233" at="188,22,209,9" concept="6" />
+      <node id="2518201674535501697" at="44,0,68,0" concept="12" trace="convertElement#(Lorg/jdom/Element;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8404865931403076335" at="139,29,166,9" concept="6" />
+      <node id="8404865931406956185" at="183,27,210,7" concept="6" />
+      <node id="8404865931402563661" at="137,20,167,7" concept="4" />
+      <node id="8404865931406956171" at="181,18,211,5" concept="4" />
+      <node id="8404865931406956134" at="178,0,217,0" concept="12" trace="convertAttributeText#(Ljava/lang/String;)Ljava/lang/Iterable;" />
+      <node id="8404865931402183524" at="133,71,174,5" concept="4" />
+      <node id="7604185310496587866" at="132,0,177,0" concept="12" trace="convertText#([Ljava/lang/String;)Ljava/lang/Iterable;" />
+      <node id="4462860465182218089" at="69,88,128,5" concept="6" />
+      <node id="4462860465182206289" at="69,0,131,0" concept="12" trace="convertContent#(Lorg/jdom/Content;Lorg/jdom/Content;Lorg/jdom/Content;)Ljava/lang/Iterable;" />
+      <scope id="8404865931404619633" at="162,22,162,22" />
+      <scope id="8404865931406956255" at="206,20,206,20" />
+      <scope id="2518201674535716050" at="48,87,49,116" />
+      <scope id="8404865931441664084" at="52,70,53,193" />
+      <scope id="4462860465182253949" at="60,28,61,127" />
+      <scope id="4462860465182218091" at="70,31,71,68" />
+      <scope id="5054660862256892228" at="76,40,77,64" />
+      <scope id="5867793774239381444" at="101,52,102,16" />
+      <scope id="997823284629654856" at="109,38,110,16" />
+      <scope id="5054660862256146019" at="114,27,115,20" />
+      <scope id="8150655206051087445" at="117,77,118,52" />
+      <scope id="5054660862256696866" at="121,41,122,51" />
+      <scope id="8404865931405969985" at="141,26,142,113" />
+      <scope id="8404865931405790051" at="145,25,146,104" />
+      <scope id="8404865931406297972" at="168,24,169,107" />
+      <scope id="8404865931403294448" at="171,162,172,84" />
+      <scope id="8404865931406956214" at="185,24,186,114" />
+      <scope id="8404865931406956237" at="189,23,190,105" />
+      <scope id="8404865931406956303" at="212,22,213,108" />
+      <scope id="8404865931441854891" at="245,42,246,30" />
+      <scope id="5054660862256892230" at="253,124,254,47" />
+      <scope id="5054660862256294005" at="268,118,269,50" />
+      <scope id="5054660862256348944" at="275,122,276,53" />
+      <scope id="8404865931406138541" at="282,117,283,48" />
+      <scope id="8404865931404008835" at="289,120,290,51" />
+      <scope id="8404865931405351307" at="296,122,297,53" />
+      <scope id="8404865931406297976" at="303,117,304,48" />
+      <scope id="8404865931403864412" at="310,117,311,32" />
+      <scope id="8404865931406956218" at="317,122,318,47" />
+      <scope id="8404865931406956242" at="324,125,325,51" />
+      <scope id="8404865931406956291" at="331,127,332,53" />
+      <scope id="8404865931406956307" at="338,122,339,47" />
+      <scope id="1572058823050264962" at="347,122,348,52" />
+      <scope id="4462860465182239599" at="82,52,84,118">
+        <var name="pi" id="5054660862256789537" />
+      </scope>
+      <scope id="5867793774239589705" at="96,26,98,21" />
+      <scope id="4462860465182239644" at="125,40,127,82">
+        <var name="name" id="5054660862256359546" />
+      </scope>
+      <scope id="8404865931404648992" at="150,24,152,22" />
+      <scope id="8404865931404819270" at="153,23,155,22" />
+      <scope id="8404865931405000585" at="156,23,158,22" />
+      <scope id="8404865931405095266" at="159,23,161,22" />
+      <scope id="8404865931406956258" at="194,22,196,20" />
+      <scope id="8404865931406956266" at="197,21,199,20" />
+      <scope id="8404865931406956274" at="200,21,202,20" />
+      <scope id="8404865931406956282" at="203,21,205,20" />
+      <scope id="8404865931404097244" at="218,40,220,44">
+        <var name="r" id="8404865931404113171" />
+      </scope>
+      <scope id="5054660862256804471" at="260,134,262,50" />
+      <scope id="2518201674535716044" at="47,167,50,5">
+        <var name="a" id="2518201674535716046" />
+      </scope>
+      <scope id="8404865931441664078" at="51,92,54,5">
+        <var name="ns" id="8404865931441664080" />
+      </scope>
+      <scope id="5054660862256892227" at="76,0,79,0">
+        <var name="it" id="5054660862256892227" />
+      </scope>
+      <scope id="4462860465182239619" at="85,36,88,0">
+        <var name="cdata" id="5054660862256305076" />
+      </scope>
+      <scope id="5054660862256696865" at="121,0,124,0">
+        <var name="it" id="5054660862256696865" />
+      </scope>
+      <scope id="8404865931441854891" at="244,51,247,5">
+        <var name="n" id="8404865931441854891" />
+      </scope>
+      <scope id="1572058823050264962" at="346,5,349,37">
+        <var name="n2" id="1572058823050264962" />
+      </scope>
+      <scope id="5867793774239567836" at="95,25,99,11" />
+      <scope id="997823284629572832" at="107,34,111,9">
+        <var name="ch" id="997823284629451461" />
+      </scope>
+      <scope id="8404865931404097241" at="218,0,222,0">
+        <var name="c" id="8404865931404112987" />
+      </scope>
+      <scope id="2518201674535781525" at="225,57,229,18">
+        <var name="result" id="2518201674535781527" />
+      </scope>
+      <scope id="1572058823050138782" at="234,48,238,16">
+        <var name="file" id="1572058823050139979" />
+      </scope>
+      <scope id="8404865931441854891" at="243,122,247,5" />
+      <scope id="5054660862256892230" at="251,78,255,14">
+        <var name="facade" id="5054660862256892230" />
+        <var name="n1" id="5054660862256892230" />
+      </scope>
+      <scope id="5054660862256294005" at="266,67,270,14">
+        <var name="facade" id="5054660862256294005" />
+        <var name="n1" id="5054660862256294005" />
+      </scope>
+      <scope id="5054660862256348944" at="273,71,277,14">
+        <var name="facade" id="5054660862256348944" />
+        <var name="n1" id="5054660862256348944" />
+      </scope>
+      <scope id="8404865931406138541" at="280,71,284,14">
+        <var name="facade" id="8404865931406138541" />
+        <var name="n1" id="8404865931406138541" />
+      </scope>
+      <scope id="8404865931404008835" at="287,74,291,14">
+        <var name="facade" id="8404865931404008835" />
+        <var name="n1" id="8404865931404008835" />
+      </scope>
+      <scope id="8404865931405351307" at="294,77,298,14">
+        <var name="facade" id="8404865931405351307" />
+        <var name="n1" id="8404865931405351307" />
+      </scope>
+      <scope id="8404865931406297976" at="301,67,305,14">
+        <var name="facade" id="8404865931406297976" />
+        <var name="n1" id="8404865931406297976" />
+      </scope>
+      <scope id="8404865931403864412" at="308,58,312,14">
+        <var name="facade" id="8404865931403864412" />
+        <var name="n1" id="8404865931403864412" />
+      </scope>
+      <scope id="8404865931406956218" at="315,74,319,14">
+        <var name="facade" id="8404865931406956218" />
+        <var name="n1" id="8404865931406956218" />
+      </scope>
+      <scope id="8404865931406956242" at="322,77,326,14">
+        <var name="facade" id="8404865931406956242" />
+        <var name="n1" id="8404865931406956242" />
+      </scope>
+      <scope id="8404865931406956291" at="329,80,333,14">
+        <var name="facade" id="8404865931406956291" />
+        <var name="n1" id="8404865931406956291" />
+      </scope>
+      <scope id="8404865931406956307" at="336,70,340,14">
+        <var name="facade" id="8404865931406956307" />
+        <var name="n1" id="8404865931406956307" />
+      </scope>
+      <scope id="7604185310495989052" at="58,47,63,0">
+        <var name="content" id="4462860465182251232" />
+      </scope>
+      <scope id="5054660862256804471" at="258,94,263,14">
+        <var name="facade" id="5054660862256804471" />
+        <var name="n1" id="5054660862256804471" />
+      </scope>
+      <scope id="997823284629572826" at="106,28,112,7" />
+      <scope id="2518201674535781523" at="225,0,231,0">
+        <var name="elem" id="2518201674535781561" />
+      </scope>
+      <scope id="1572058823050138779" at="234,0,240,0">
+        <var name="name" id="1572058823050139871" />
+      </scope>
+      <scope id="5054660862256892230" at="251,0,257,0">
+        <var name="p0" id="5054660862256892230" />
+      </scope>
+      <scope id="5054660862256294005" at="266,0,272,0">
+        <var name="p0" id="5054660862256294005" />
+      </scope>
+      <scope id="5054660862256348944" at="273,0,279,0">
+        <var name="p0" id="5054660862256348944" />
+      </scope>
+      <scope id="8404865931406138541" at="280,0,286,0">
+        <var name="p0" id="8404865931406138541" />
+      </scope>
+      <scope id="8404865931404008835" at="287,0,293,0">
+        <var name="p0" id="8404865931404008835" />
+      </scope>
+      <scope id="8404865931405351307" at="294,0,300,0">
+        <var name="p0" id="8404865931405351307" />
+      </scope>
+      <scope id="8404865931406297976" at="301,0,307,0">
+        <var name="p0" id="8404865931406297976" />
+      </scope>
+      <scope id="8404865931403864412" at="308,0,314,0" />
+      <scope id="8404865931406956218" at="315,0,321,0">
+        <var name="p0" id="8404865931406956218" />
+      </scope>
+      <scope id="8404865931406956242" at="322,0,328,0">
+        <var name="p0" id="8404865931406956242" />
+      </scope>
+      <scope id="8404865931406956291" at="329,0,335,0">
+        <var name="p0" id="8404865931406956291" />
+      </scope>
+      <scope id="8404865931406956307" at="336,0,342,0">
+        <var name="p0" id="8404865931406956307" />
+      </scope>
+      <scope id="2518201674535504334" at="32,71,39,16">
+        <var name="file" id="2518201674535505620" />
+      </scope>
+      <scope id="7604185310495989050" at="57,83,64,5">
+        <var name="i" id="7604185310495989053" />
+      </scope>
+      <scope id="8404865931441854891" at="241,81,248,14">
+        <var name="facade" id="8404865931441854891" />
+        <var name="n1" id="8404865931441854891" />
+      </scope>
+      <scope id="5054660862256804471" at="258,0,265,0">
+        <var name="p0" id="5054660862256804471" />
+        <var name="p1" id="5054660862256804471" />
+      </scope>
+      <scope id="1572058823050264962" at="343,68,351,14">
+        <var name="facade" id="1572058823050264962" />
+        <var name="n1" id="1572058823050264962" />
+      </scope>
+      <scope id="2518201674535504331" at="32,0,41,0">
+        <var name="document" id="2518201674535504352" />
+        <var name="name" id="4462860465182479993" />
+      </scope>
+      <scope id="4462860465182233693" at="72,38,81,0">
+        <var name="commentText" id="5054660862256892209" />
+        <var name="res" id="5054660862256938339" />
+      </scope>
+      <scope id="8404865931441854891" at="241,0,250,0">
+        <var name="p0" id="8404865931441854891" />
+        <var name="p1" id="8404865931441854891" />
+      </scope>
+      <scope id="5867793774239309385" at="93,46,103,9">
+        <var name="ch" id="5867793774239343208" />
+      </scope>
+      <scope id="1572058823050264962" at="343,0,353,0">
+        <var name="p0" id="1572058823050264962" />
+      </scope>
+      <scope id="5867793774239309383" at="92,66,104,7" />
+      <scope id="8404865931405897174" at="147,18,164,102">
+        <var name="name" id="8404865931404513720" />
+      </scope>
+      <scope id="8404865931406956248" at="191,16,208,103">
+        <var name="name" id="8404865931406956250" />
+      </scope>
+      <scope id="2518201674535501700" at="44,53,66,18">
+        <var name="additionalNamespaces" id="8404865931441560762" />
+        <var name="contents" id="7604185310495888973" />
+        <var name="list" id="7604185310495774285" />
+        <var name="namespacePrefix" id="8833932927907213406" />
+        <var name="result" id="2518201674535614986" />
+      </scope>
+      <scope id="2518201674535501697" at="44,0,68,0">
+        <var name="elem" id="2518201674535501715" />
+      </scope>
+      <scope id="8404865931403076337" at="140,84,165,11" />
+      <scope id="8404865931406956209" at="184,82,209,9" />
+      <scope id="8404865931402563663" at="138,37,166,9">
+        <var name="c" id="8404865931402903129" />
+      </scope>
+      <scope id="8404865931406956177" at="182,35,210,7">
+        <var name="c" id="8404865931406956179" />
+      </scope>
+      <scope id="8404865931402563661" at="137,20,167,7">
+        <var name="e" id="8404865931402563664" />
+      </scope>
+      <scope id="8404865931406956171" at="181,18,211,5">
+        <var name="e" id="8404865931406956296" />
+      </scope>
+      <scope id="4462860465182231359" at="89,35,124,39">
+        <var name="index" id="5867793774239128932" />
+        <var name="nlSeen" id="5867793774239543037" />
+        <var name="text" id="5054660862256139390" />
+      </scope>
+      <scope id="8404865931406956135" at="178,65,215,18">
+        <var name="len" id="8404865931406956162" />
+        <var name="result" id="8404865931406956137" />
+        <var name="start" id="8404865931406956168" />
+      </scope>
+      <scope id="8404865931402183526" at="134,44,173,7">
+        <var name="len" id="8404865931402660438" />
+        <var name="s" id="8404865931402804987" />
+        <var name="start" id="8404865931405476397" />
+      </scope>
+      <scope id="8404865931406956134" at="178,0,217,0">
+        <var name="s" id="8404865931406956338" />
+      </scope>
+      <scope id="8404865931402183524" at="133,71,174,5">
+        <var name="i" id="8404865931402183525" />
+      </scope>
+      <scope id="7604185310496587869" at="132,62,175,18">
+        <var name="result" id="8404865931402384211" />
+      </scope>
+      <scope id="7604185310496587866" at="132,0,177,0">
+        <var name="lines" id="7604185310496595221" />
+      </scope>
+      <scope id="4462860465182206291" at="69,88,129,16" />
+      <scope id="4462860465182206289" at="69,0,131,0">
+        <var name="c" id="4462860465182206335" />
+        <var name="next" id="7604185310495737221" />
+        <var name="prev" id="7604185310495692440" />
+      </scope>
+      <unit id="5054660862256892227" at="75,169,79,7" name="jetbrains.mps.persistence.xml.XmlConverter$1" />
+      <unit id="5054660862256696865" at="120,110,124,7" name="jetbrains.mps.persistence.xml.XmlConverter$2" />
+      <unit id="2518201674535467508" at="29,0,354,0" name="jetbrains.mps.persistence.xml.XmlConverter" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

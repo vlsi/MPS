@@ -4,9 +4,6 @@ package jetbrains.mps.lang.dataFlow.analyzers.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConceptCondition_Behavior {
   public static void init(SNode thisNode) {
@@ -14,15 +11,5 @@ public class ConceptCondition_Behavior {
 
   public static SNode virtual_getApplicableConcept_4413230749907681652(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "concept", false);
-  }
-
-  @Deprecated
-  public static SNode call_getApplicableConcept_4943044633101739075(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getApplicableConcept_4413230749907681652", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_getApplicableConcept_4943044633101739075(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), callerConceptFqName, "virtual_getApplicableConcept_4413230749907681652", new Class[]{SNode.class}, new Object[]{});
   }
 }

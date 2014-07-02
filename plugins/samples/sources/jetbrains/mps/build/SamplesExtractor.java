@@ -26,14 +26,13 @@ import com.intellij.openapi.util.BuildNumber;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.InternalFlag;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.build.SamplesExtractor.MyState;
-import org.apache.log4j.Logger;
-import org.apache.log4j.LogManager;
 import jetbrains.mps.samples.SamplesInfo;
-import jetbrains.mps.samples.SamplesManager;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.workbench.WorkbenchPathManager;
+import org.apache.log4j.LogManager;
+import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
@@ -52,7 +51,6 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   private static final Logger LOG = LogManager.getLogger(SamplesExtractor.class);
 
   private static final String SAMPLES_IN_MPS_HOME_DIR = "samples";
-  private static final String MPS = "MPS";
 
   public static SamplesExtractor getInstance() {
     return ((SamplesExtractor) ApplicationManager.getApplication().getComponent(SamplesInfo.class));
@@ -72,14 +70,12 @@ public class SamplesExtractor implements ApplicationComponent, PersistentStateCo
   }
 
   public void initComponent() {
-    SamplesManager.getInstance().registerSamplesInfo(this);
-
     if (myState == null) {
       myState = new MyState();
     }
     updateSamplesLocation();
 
-    if (MPSCore.getInstance().isTestMode()) return;
+    if (RuntimeFlags.isTestMode()) return;
 
     checkSamplesAndUpdateIfNeeded();
   }

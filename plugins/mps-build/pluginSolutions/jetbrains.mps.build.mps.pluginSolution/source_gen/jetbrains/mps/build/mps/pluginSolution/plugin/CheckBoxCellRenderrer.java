@@ -7,7 +7,7 @@ import javax.swing.tree.TreeCellRenderer;
 import javax.swing.JCheckBox;
 import javax.swing.JLabel;
 import java.awt.FlowLayout;
-import java.awt.Color;
+import com.intellij.util.ui.UIUtil;
 import java.awt.Component;
 import javax.swing.JTree;
 import java.awt.Dimension;
@@ -18,11 +18,9 @@ public class CheckBoxCellRenderrer extends JPanel implements TreeCellRenderer {
 
   public CheckBoxCellRenderrer() {
     super(new FlowLayout());
-    this.setBackground(Color.WHITE);
     this.myCheckBox = new JCheckBox();
+    this.myCheckBox.setBackground(UIUtil.getTreeBackground());
     this.myLabel = new JLabel();
-    this.myLabel.setBackground(Color.WHITE);
-    this.myCheckBox.setBackground(Color.WHITE);
     this.add(this.myCheckBox);
     this.add(this.myLabel);
   }

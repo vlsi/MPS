@@ -1,31 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:42278aae-7cc0-4e00-9041-018f7301c362(jetbrains.mps.debugger.java.api.state.customViewers)/3432969378036015275">
-    <nodeInfo nodeId="3432969378036017151" fileName="CustomViewersManager.java" startLine="22" startPosition="36" endLine="23" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036017168" fileName="CustomViewersManager.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addFactory#(Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;)V" />
-    <nodeInfo nodeId="3432969378036017179" fileName="CustomViewersManager.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeFactory#(Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;)V" />
-    <nodeInfo nodeId="7129857096177639286" fileName="CustomViewersManager.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromJdi#(Lcom/sun/jdi/Value;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debugger/java/api/state/proxy/JavaValue;" />
-    <nodeInfo nodeId="3432969378036017163" fileName="CustomViewersManager.java" startLine="32" startPosition="52" endLine="33" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3432969378036017139" fileName="CustomViewersManager.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CustomViewersManager#()V" />
-    <nodeInfo nodeId="3432969378036017159" fileName="CustomViewersManager.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/debugger/java/api/state/customViewers/CustomViewersManager;" />
-    <nodeInfo nodeId="3432969378036017147" fileName="CustomViewersManager.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getComponentName#()Ljava/lang/String;" />
-    <scopeInfo nodeId="3432969378036017142" fileName="CustomViewersManager.java" startLine="16" startPosition="33" endLine="16" endPosition="33" />
-    <scopeInfo nodeId="3432969378036017150" fileName="CustomViewersManager.java" startLine="22" startPosition="36" endLine="23" endPosition="36" />
-    <scopeInfo nodeId="3432969378036017168" fileName="CustomViewersManager.java" startLine="26" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="3432969378036017171" varName="factory" />
-    </scopeInfo>
-    <scopeInfo nodeId="3432969378036017179" fileName="CustomViewersManager.java" startLine="28" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="3432969378036017182" varName="factory" />
-    </scopeInfo>
-    <scopeInfo nodeId="7129857096177639286" fileName="CustomViewersManager.java" startLine="30" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="7129857096177639347" varName="threadReference" />
-      <varInfo nodeId="7129857096177639341" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="3432969378036017162" fileName="CustomViewersManager.java" startLine="32" startPosition="52" endLine="33" endPosition="88" />
-    <scopeInfo nodeId="3432969378036017139" fileName="CustomViewersManager.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="3432969378036017159" fileName="CustomViewersManager.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="3432969378036017147" fileName="CustomViewersManager.java" startLine="19" startPosition="0" endLine="25" endPosition="0" />
-    <unitInfo nodeId="3432969378036015275" fileName="CustomViewersManager.java" startLine="15" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager" />
+    <file name="CustomViewersManager.java">
+      <node id="3432969378036017151" at="22,36,23,36" concept="2" />
+      <node id="3432969378036017168" at="26,0,27,0" concept="1" trace="addFactory#(Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;)V" />
+      <node id="3432969378036017179" at="28,0,29,0" concept="1" trace="removeFactory#(Ljetbrains/mps/debugger/java/api/state/proxy/ValueWrapperFactory;)V" />
+      <node id="7129857096177639286" at="30,0,31,0" concept="1" trace="fromJdi#(Lcom/sun/jdi/Value;Lcom/sun/jdi/ThreadReference;)Ljetbrains/mps/debugger/java/api/state/proxy/JavaValue;" />
+      <node id="3432969378036017163" at="32,52,33,88" concept="2" />
+      <node id="3432969378036017139" at="16,0,18,0" concept="0" trace="CustomViewersManager#()V" />
+      <node id="3432969378036017159" at="32,0,35,0" concept="3" trace="getInstance#()Ljetbrains/mps/debugger/java/api/state/customViewers/CustomViewersManager;" />
+      <node id="3432969378036017147" at="19,0,25,0" concept="1" trace="getComponentName#()Ljava/lang/String;" />
+      <scope id="3432969378036017142" at="16,33,16,33" />
+      <scope id="3432969378036017150" at="22,36,23,36" />
+      <scope id="3432969378036017168" at="26,0,27,0">
+        <var name="factory" id="3432969378036017171" />
+      </scope>
+      <scope id="3432969378036017179" at="28,0,29,0">
+        <var name="factory" id="3432969378036017182" />
+      </scope>
+      <scope id="7129857096177639286" at="30,0,31,0">
+        <var name="threadReference" id="7129857096177639347" />
+        <var name="value" id="7129857096177639341" />
+      </scope>
+      <scope id="3432969378036017162" at="32,52,33,88" />
+      <scope id="3432969378036017139" at="16,0,18,0" />
+      <scope id="3432969378036017159" at="32,0,35,0" />
+      <scope id="3432969378036017147" at="19,0,25,0" />
+      <unit id="3432969378036015275" at="15,0,36,0" name="jetbrains.mps.debugger.java.api.state.customViewers.CustomViewersManager" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

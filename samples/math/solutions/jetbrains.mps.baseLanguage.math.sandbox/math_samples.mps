@@ -3,6 +3,7 @@
   <persistence version="8" />
   <language namespace="3304fc6e-7c6b-401e-a016-b944934bb21f(jetbrains.mps.baseLanguage.math)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
+  <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="fxg7" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="5" implicit="yes" />
@@ -10,6 +11,7 @@
   <import index="39kg" modelUID="r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)" version="-1" implicit="yes" />
   <import index="e2lc" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" implicit="yes" />
   <import index="fxg8" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" version="-1" implicit="yes" />
+  <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="2367141965016610273" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="Sample" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2367141965016610274" nodeInfo="nn" />
@@ -41,6 +43,35 @@
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="4535873288411505466" nodeInfo="nn">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lc.~Math%drandom()%cdouble" resolveInfo="random" />
               <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lc.~Math" resolveInfo="Math" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="672802406138780848" nodeInfo="nn">
+          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="672802406138780851" nodeInfo="nr">
+            <property name="name" nameId="tpck.1169194664001" value="list" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tp2q.ListType" typeId="tp2q.1151688443754" id="672802406138780844" nodeInfo="in">
+              <node role="elementType" roleId="tp2q.1151688676805" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="672802406138783526" nodeInfo="in">
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lc.~Integer" resolveInfo="Integer" />
+              </node>
+            </node>
+            <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="672802406138789462" nodeInfo="nn">
+              <node role="creator" roleId="tpee.1145553007750" type="tp2q.ListCreatorWithInit" typeId="tp2q.1160600644654" id="672802406138789458" nodeInfo="nn">
+                <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="672802406138789459" nodeInfo="in">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lc.~Integer" resolveInfo="Integer" />
+                </node>
+                <node role="initValue" roleId="tp2q.1237721435808" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="672802406138792189" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="1" />
+                </node>
+                <node role="initValue" roleId="tp2q.1237721435808" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="672802406138793000" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="2" />
+                </node>
+                <node role="initValue" roleId="tp2q.1237721435808" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="672802406138793218" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="3" />
+                </node>
+                <node role="initValue" roleId="tp2q.1237721435808" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="672802406138796673" nodeInfo="nn">
+                  <property name="value" nameId="tpee.1068580320021" value="4" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -101,6 +132,70 @@
                           <property name="value" nameId="tpee.1068580320021" value="0" />
                         </node>
                         <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="3399831755284009664" nodeInfo="nn">
+                          <property name="value" nameId="tpee.1068580320021" value="1" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="672802406138674047" nodeInfo="nn">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="672802406138677767" nodeInfo="nn">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="672802406138674046" nodeInfo="nn">
+              <link role="classifier" roleId="tpee.1144433057691" targetNodeId="e2lc.~System" resolveInfo="System" />
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="e2lc.~System%dout" resolveInfo="out" />
+            </node>
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="672802406138679330" nodeInfo="nn">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fxg8.~PrintStream%dprintln(java%dlang%dString)%cvoid" resolveInfo="println" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="672802406138681954" nodeInfo="nn">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lc.~String%dvalueOf(java%dlang%dObject)%cjava%dlang%dString" resolveInfo="valueOf" />
+                <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="e2lc.~String" resolveInfo="String" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParenthesizedExpression" typeId="tpee.1079359253375" id="672802406139613939" nodeInfo="nn">
+                  <node role="expression" roleId="tpee.1079359253376" type="39kg.BigSumExpression" typeId="39kg.1236439460603" id="672802406138684484" nodeInfo="nn">
+                    <node role="var" roleId="39kg.1236427007990" type="39kg.MathSymbolIndex" typeId="39kg.1236426976680" id="672802406138707273" nodeInfo="ng">
+                      <property name="name" nameId="tpck.1169194664001" value="k" />
+                      <node role="iterable" roleId="39kg.1236427140288" type="tpee.VariableReference" typeId="tpee.1068498886296" id="672802406138788255" nodeInfo="nn">
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="672802406138780851" resolveInfo="list" />
+                      </node>
+                    </node>
+                    <node role="expression" roleId="39kg.1236427008116" type="39kg.MatrixConstructor" typeId="39kg.4815887568697232005" id="672802406138771707" nodeInfo="nn">
+                      <property name="column" nameId="39kg.3498370411873418560" value="true" />
+                      <node role="components" roleId="39kg.4815887568697232013" type="39kg.MatrixConstructor" typeId="39kg.4815887568697232005" id="672802406138771708" nodeInfo="nn">
+                        <property name="column" nameId="39kg.3498370411873418560" value="false" />
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="672802406138771709" nodeInfo="nn">
+                          <property name="value" nameId="tpee.1068580320021" value="1" />
+                        </node>
+                        <node role="components" roleId="39kg.4815887568697232013" type="39kg.MathSymbolIndexReference" typeId="39kg.1236427936913" id="672802406138771710" nodeInfo="nn">
+                          <link role="indexRef" roleId="39kg.1236427955167" targetNodeId="672802406138707273" resolveInfo="k" />
+                        </node>
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="672802406138771711" nodeInfo="nn">
+                          <property name="value" nameId="tpee.1068580320021" value="0" />
+                        </node>
+                      </node>
+                      <node role="components" roleId="39kg.4815887568697232013" type="39kg.MatrixConstructor" typeId="39kg.4815887568697232005" id="672802406138771712" nodeInfo="nn">
+                        <property name="column" nameId="39kg.3498370411873418560" value="false" />
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="672802406138771713" nodeInfo="nn">
+                          <property name="value" nameId="tpee.1068580320021" value="0" />
+                        </node>
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.FloatingPointConstant" typeId="tpee.1111509017652" id="672802406138771714" nodeInfo="nn">
+                          <property name="value" nameId="tpee.1113006610751" value="1.0" />
+                        </node>
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="672802406138771715" nodeInfo="nn">
+                          <property name="value" nameId="tpee.1068580320021" value="0" />
+                        </node>
+                      </node>
+                      <node role="components" roleId="39kg.4815887568697232013" type="39kg.MatrixConstructor" typeId="39kg.4815887568697232005" id="672802406138771716" nodeInfo="nn">
+                        <property name="column" nameId="39kg.3498370411873418560" value="false" />
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="672802406138771717" nodeInfo="nn">
+                          <property name="value" nameId="tpee.1068580320021" value="0" />
+                        </node>
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="672802406138771718" nodeInfo="nn">
+                          <property name="value" nameId="tpee.1068580320021" value="0" />
+                        </node>
+                        <node role="components" roleId="39kg.4815887568697232013" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="672802406138771719" nodeInfo="nn">
                           <property name="value" nameId="tpee.1068580320021" value="1" />
                         </node>
                       </node>

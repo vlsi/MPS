@@ -1,169 +1,187 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.resources.typesystem.TypesystemDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="TypesystemDescriptor.java">
+      <unit at="8,0,24,0" name="jetbrains.mps.lang.resources.typesystem.TypesystemDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/8974276187400030193">
-    <nodeInfo nodeId="8974276187400030195" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030195" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="21" startPosition="46" endLine="22" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030195" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="22" startPosition="205" endLine="23" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="33" startPosition="130" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400030197" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="42" startPosition="61" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030197" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="43" startPosition="63" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030197" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400030197" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="45" startPosition="138" endLine="46" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400030197" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="46" startPosition="241" endLine="47" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_IconResourceExpression_InferenceRule#()V" />
-    <nodeInfo nodeId="8974276187400030197" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="46" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8974276187400030197" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="46" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8974276187400030195" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="19" startPosition="117" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <nodeInfo nodeId="8974276187400030197" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_j4wn0h_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="16" startPosition="56" endLine="16" endPosition="56" />
-    <scopeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="75" />
-    <scopeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" />
-    <scopeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
-      <varInfo nodeId="8974276187400030193" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030197" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="46" endPosition="241" />
-    <scopeInfo nodeId="8974276187400030195" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="20" startPosition="5" endLine="23" endPosition="282">
-      <varInfo nodeId="8974276187400030195" varName="_info_12389875345" />
-      <varInfo nodeId="8974276187400030195" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="8974276187400030194" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="19" startPosition="117" endLine="24" endPosition="5" />
-    <scopeInfo nodeId="8974276187400030197" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="42" startPosition="61" endLine="47" endPosition="24">
-      <varInfo nodeId="8974276187400030197" varName="facade" />
-      <varInfo nodeId="8974276187400030197" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="8974276187400030193" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="8974276187400030193" varName="icon" />
-      <varInfo nodeId="8974276187400030193" varName="status" />
-      <varInfo nodeId="8974276187400030193" varName="typeCheckingContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030197" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
-    <unitInfo nodeId="8974276187400030193" fileName="typeof_IconResourceExpression_InferenceRule.java" startLine="15" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.resources.typesystem.typeof_IconResourceExpression_InferenceRule" />
+    <file name="typeof_IconResourceExpression_InferenceRule.java">
+      <node id="8974276187400030195" at="20,5,21,46" concept="5" />
+      <node id="8974276187400030195" at="21,46,22,205" concept="5" />
+      <node id="8974276187400030195" at="22,205,23,282" concept="2" />
+      <node id="8974276187400030193" at="27,46,28,75" concept="6" />
+      <node id="8974276187400030193" at="32,5,33,130" concept="5" />
+      <node id="8974276187400030193" at="33,130,34,45" concept="6" />
+      <node id="8974276187400030193" at="38,30,39,17" concept="6" />
+      <node id="8974276187400030197" at="42,61,43,63" concept="5" />
+      <node id="8974276187400030197" at="43,63,44,30" concept="5" />
+      <node id="8974276187400030197" at="44,30,45,138" concept="2" />
+      <node id="8974276187400030197" at="45,138,46,241" concept="2" />
+      <node id="8974276187400030197" at="46,241,47,24" concept="6" />
+      <node id="8974276187400030193" at="16,0,18,0" concept="1" trace="typeof_IconResourceExpression_InferenceRule#()V" />
+      <node id="8974276187400030197" at="44,30,46,241" concept="0" />
+      <node id="8974276187400030197" at="44,30,46,241" concept="0" />
+      <node id="8974276187400030193" at="27,0,30,0" concept="4" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="8974276187400030193" at="38,0,41,0" concept="4" trace="overrides#()Z" />
+      <node id="8974276187400030193" at="31,68,35,5" concept="0" />
+      <node id="8974276187400030195" at="19,117,24,5" concept="0" />
+      <node id="8974276187400030193" at="31,0,37,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="8974276187400030193" at="19,0,26,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="8974276187400030197" at="42,0,49,0" concept="7" trace="_quotation_createNode_j4wn0h_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="8974276187400030193" at="16,56,16,56" />
+      <scope id="8974276187400030193" at="27,46,28,75" />
+      <scope id="8974276187400030193" at="38,30,39,17" />
+      <scope id="8974276187400030193" at="16,0,18,0" />
+      <scope id="8974276187400030193" at="32,5,34,45">
+        <var name="b" id="8974276187400030193" />
+      </scope>
+      <scope id="8974276187400030197" at="44,30,46,241" />
+      <scope id="8974276187400030195" at="20,5,23,282">
+        <var name="_info_12389875345" id="8974276187400030195" />
+        <var name="_nodeToCheck_1029348928467" id="8974276187400030195" />
+      </scope>
+      <scope id="8974276187400030193" at="27,0,30,0" />
+      <scope id="8974276187400030193" at="38,0,41,0" />
+      <scope id="8974276187400030193" at="31,68,35,5" />
+      <scope id="8974276187400030194" at="19,117,24,5" />
+      <scope id="8974276187400030197" at="42,61,47,24">
+        <var name="facade" id="8974276187400030197" />
+        <var name="quotedNode_1" id="8974276187400030197" />
+      </scope>
+      <scope id="8974276187400030193" at="31,0,37,0">
+        <var name="argument" id="8974276187400030193" />
+      </scope>
+      <scope id="8974276187400030193" at="19,0,26,0">
+        <var name="icon" id="8974276187400030193" />
+        <var name="status" id="8974276187400030193" />
+        <var name="typeCheckingContext" id="8974276187400030193" />
+      </scope>
+      <scope id="8974276187400030197" at="42,0,49,0" />
+      <unit id="8974276187400030193" at="15,0,50,0" name="jetbrains.mps.lang.resources.typesystem.typeof_IconResourceExpression_InferenceRule" />
+    </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/8974276187400030203">
-    <nodeInfo nodeId="8974276187400030205" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="22" startPosition="7" endLine="23" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030205" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="23" startPosition="98" endLine="24" endPosition="207" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030205" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="24" startPosition="207" endLine="25" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="30" startPosition="46" endLine="31" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="35" startPosition="5" endLine="36" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="36" startPosition="130" endLine="37" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="41" startPosition="30" endLine="42" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400030207" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="45" startPosition="61" endLine="46" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030207" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="46" startPosition="63" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030207" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="47" startPosition="30" endLine="48" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400030207" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="48" startPosition="138" endLine="49" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400030207" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="49" startPosition="241" endLine="50" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_IconResourceDeclaration_InferenceRule#()V" />
-    <nodeInfo nodeId="8974276187400030207" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="47" startPosition="30" endLine="49" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8974276187400030207" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="47" startPosition="30" endLine="49" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="34" startPosition="68" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8974276187400030205" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="21" startPosition="59" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="8974276187400030205" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="20" startPosition="116" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8974276187400030207" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_710b71_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="20" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="17" startPosition="57" endLine="17" endPosition="57" />
-    <scopeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="30" startPosition="46" endLine="31" endPosition="76" />
-    <scopeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="41" startPosition="30" endLine="42" endPosition="17" />
-    <scopeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="35" startPosition="5" endLine="37" endPosition="45">
-      <varInfo nodeId="8974276187400030203" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030207" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="47" startPosition="30" endLine="49" endPosition="241" />
-    <scopeInfo nodeId="8974276187400030205" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="22" startPosition="7" endLine="25" endPosition="306">
-      <varInfo nodeId="8974276187400030205" varName="_info_12389875345" />
-      <varInfo nodeId="8974276187400030205" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="34" startPosition="68" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="8974276187400030205" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="21" startPosition="59" endLine="26" endPosition="7" />
-    <scopeInfo nodeId="8974276187400030207" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="45" startPosition="61" endLine="50" endPosition="24">
-      <varInfo nodeId="8974276187400030207" varName="facade" />
-      <varInfo nodeId="8974276187400030207" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="34" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="8974276187400030203" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030204" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="20" startPosition="116" endLine="27" endPosition="5" />
-    <scopeInfo nodeId="8974276187400030207" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="45" startPosition="0" endLine="52" endPosition="0" />
-    <scopeInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="20" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="8974276187400030203" varName="ird" />
-      <varInfo nodeId="8974276187400030203" varName="status" />
-      <varInfo nodeId="8974276187400030203" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="8974276187400030203" fileName="typeof_IconResourceDeclaration_InferenceRule.java" startLine="16" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.lang.resources.typesystem.typeof_IconResourceDeclaration_InferenceRule" />
+    <file name="typeof_IconResourceDeclaration_InferenceRule.java">
+      <node id="8974276187400030205" at="22,7,23,98" concept="5" />
+      <node id="8974276187400030205" at="23,98,24,207" concept="5" />
+      <node id="8974276187400030205" at="24,207,25,306" concept="2" />
+      <node id="8974276187400030203" at="30,46,31,76" concept="6" />
+      <node id="8974276187400030203" at="35,5,36,130" concept="5" />
+      <node id="8974276187400030203" at="36,130,37,45" concept="6" />
+      <node id="8974276187400030203" at="41,30,42,17" concept="6" />
+      <node id="8974276187400030207" at="45,61,46,63" concept="5" />
+      <node id="8974276187400030207" at="46,63,47,30" concept="5" />
+      <node id="8974276187400030207" at="47,30,48,138" concept="2" />
+      <node id="8974276187400030207" at="48,138,49,241" concept="2" />
+      <node id="8974276187400030207" at="49,241,50,24" concept="6" />
+      <node id="8974276187400030203" at="17,0,19,0" concept="1" trace="typeof_IconResourceDeclaration_InferenceRule#()V" />
+      <node id="8974276187400030207" at="47,30,49,241" concept="0" />
+      <node id="8974276187400030207" at="47,30,49,241" concept="0" />
+      <node id="8974276187400030203" at="30,0,33,0" concept="4" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="8974276187400030203" at="41,0,44,0" concept="4" trace="overrides#()Z" />
+      <node id="8974276187400030203" at="34,68,38,5" concept="0" />
+      <node id="8974276187400030205" at="21,59,26,7" concept="0" />
+      <node id="8974276187400030203" at="34,0,40,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="8974276187400030205" at="20,116,27,5" concept="3" />
+      <node id="8974276187400030207" at="45,0,52,0" concept="7" trace="_quotation_createNode_710b71_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="8974276187400030203" at="20,0,29,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="8974276187400030203" at="17,57,17,57" />
+      <scope id="8974276187400030203" at="30,46,31,76" />
+      <scope id="8974276187400030203" at="41,30,42,17" />
+      <scope id="8974276187400030203" at="17,0,19,0" />
+      <scope id="8974276187400030203" at="35,5,37,45">
+        <var name="b" id="8974276187400030203" />
+      </scope>
+      <scope id="8974276187400030207" at="47,30,49,241" />
+      <scope id="8974276187400030205" at="22,7,25,306">
+        <var name="_info_12389875345" id="8974276187400030205" />
+        <var name="_nodeToCheck_1029348928467" id="8974276187400030205" />
+      </scope>
+      <scope id="8974276187400030203" at="30,0,33,0" />
+      <scope id="8974276187400030203" at="41,0,44,0" />
+      <scope id="8974276187400030203" at="34,68,38,5" />
+      <scope id="8974276187400030205" at="21,59,26,7" />
+      <scope id="8974276187400030207" at="45,61,50,24">
+        <var name="facade" id="8974276187400030207" />
+        <var name="quotedNode_1" id="8974276187400030207" />
+      </scope>
+      <scope id="8974276187400030203" at="34,0,40,0">
+        <var name="argument" id="8974276187400030203" />
+      </scope>
+      <scope id="8974276187400030204" at="20,116,27,5" />
+      <scope id="8974276187400030207" at="45,0,52,0" />
+      <scope id="8974276187400030203" at="20,0,29,0">
+        <var name="ird" id="8974276187400030203" />
+        <var name="status" id="8974276187400030203" />
+        <var name="typeCheckingContext" id="8974276187400030203" />
+      </scope>
+      <unit id="8974276187400030203" at="16,0,53,0" name="jetbrains.mps.lang.resources.typesystem.typeof_IconResourceDeclaration_InferenceRule" />
+    </file>
   </root>
   <root nodeRef="r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)/8974276187400030215">
-    <nodeInfo nodeId="8974276187400030217" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="20" startPosition="5" endLine="21" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030217" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="21" startPosition="45" endLine="22" endPosition="205" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030217" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="22" startPosition="205" endLine="23" endPosition="282" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="32" startPosition="5" endLine="33" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="33" startPosition="130" endLine="34" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400030219" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="42" startPosition="61" endLine="43" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030219" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="43" startPosition="63" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8974276187400030219" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400030219" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="45" startPosition="138" endLine="46" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8974276187400030219" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="46" startPosition="241" endLine="47" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_IconResourceReference_InferenceRule#()V" />
-    <nodeInfo nodeId="8974276187400030219" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="44" startPosition="30" endLine="46" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8974276187400030219" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="44" startPosition="30" endLine="46" endPosition="241" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8974276187400030217" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="19" startPosition="116" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <nodeInfo nodeId="8974276187400030219" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_xe6v4m_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="16" startPosition="55" endLine="16" endPosition="55" />
-    <scopeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="27" startPosition="46" endLine="28" endPosition="74" />
-    <scopeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="38" startPosition="30" endLine="39" endPosition="17" />
-    <scopeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="32" startPosition="5" endLine="34" endPosition="45">
-      <varInfo nodeId="8974276187400030215" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030219" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="44" startPosition="30" endLine="46" endPosition="241" />
-    <scopeInfo nodeId="8974276187400030217" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="20" startPosition="5" endLine="23" endPosition="282">
-      <varInfo nodeId="8974276187400030217" varName="_info_12389875345" />
-      <varInfo nodeId="8974276187400030217" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="31" startPosition="68" endLine="35" endPosition="5" />
-    <scopeInfo nodeId="8974276187400030216" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="19" startPosition="116" endLine="24" endPosition="5" />
-    <scopeInfo nodeId="8974276187400030219" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="42" startPosition="61" endLine="47" endPosition="24">
-      <varInfo nodeId="8974276187400030219" varName="facade" />
-      <varInfo nodeId="8974276187400030219" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="31" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="8974276187400030215" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="19" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="8974276187400030215" varName="irr" />
-      <varInfo nodeId="8974276187400030215" varName="status" />
-      <varInfo nodeId="8974276187400030215" varName="typeCheckingContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400030219" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="42" startPosition="0" endLine="49" endPosition="0" />
-    <unitInfo nodeId="8974276187400030215" fileName="typeof_IconResourceReference_InferenceRule.java" startLine="15" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.resources.typesystem.typeof_IconResourceReference_InferenceRule" />
+    <file name="typeof_IconResourceReference_InferenceRule.java">
+      <node id="8974276187400030217" at="20,5,21,45" concept="5" />
+      <node id="8974276187400030217" at="21,45,22,205" concept="5" />
+      <node id="8974276187400030217" at="22,205,23,282" concept="2" />
+      <node id="8974276187400030215" at="27,46,28,74" concept="6" />
+      <node id="8974276187400030215" at="32,5,33,130" concept="5" />
+      <node id="8974276187400030215" at="33,130,34,45" concept="6" />
+      <node id="8974276187400030215" at="38,30,39,17" concept="6" />
+      <node id="8974276187400030219" at="42,61,43,63" concept="5" />
+      <node id="8974276187400030219" at="43,63,44,30" concept="5" />
+      <node id="8974276187400030219" at="44,30,45,138" concept="2" />
+      <node id="8974276187400030219" at="45,138,46,241" concept="2" />
+      <node id="8974276187400030219" at="46,241,47,24" concept="6" />
+      <node id="8974276187400030215" at="16,0,18,0" concept="1" trace="typeof_IconResourceReference_InferenceRule#()V" />
+      <node id="8974276187400030219" at="44,30,46,241" concept="0" />
+      <node id="8974276187400030219" at="44,30,46,241" concept="0" />
+      <node id="8974276187400030215" at="27,0,30,0" concept="4" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="8974276187400030215" at="38,0,41,0" concept="4" trace="overrides#()Z" />
+      <node id="8974276187400030215" at="31,68,35,5" concept="0" />
+      <node id="8974276187400030217" at="19,116,24,5" concept="0" />
+      <node id="8974276187400030215" at="31,0,37,0" concept="4" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="8974276187400030215" at="19,0,26,0" concept="4" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <node id="8974276187400030219" at="42,0,49,0" concept="7" trace="_quotation_createNode_xe6v4m_a0a0b#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="8974276187400030215" at="16,55,16,55" />
+      <scope id="8974276187400030215" at="27,46,28,74" />
+      <scope id="8974276187400030215" at="38,30,39,17" />
+      <scope id="8974276187400030215" at="16,0,18,0" />
+      <scope id="8974276187400030215" at="32,5,34,45">
+        <var name="b" id="8974276187400030215" />
+      </scope>
+      <scope id="8974276187400030219" at="44,30,46,241" />
+      <scope id="8974276187400030217" at="20,5,23,282">
+        <var name="_info_12389875345" id="8974276187400030217" />
+        <var name="_nodeToCheck_1029348928467" id="8974276187400030217" />
+      </scope>
+      <scope id="8974276187400030215" at="27,0,30,0" />
+      <scope id="8974276187400030215" at="38,0,41,0" />
+      <scope id="8974276187400030215" at="31,68,35,5" />
+      <scope id="8974276187400030216" at="19,116,24,5" />
+      <scope id="8974276187400030219" at="42,61,47,24">
+        <var name="facade" id="8974276187400030219" />
+        <var name="quotedNode_1" id="8974276187400030219" />
+      </scope>
+      <scope id="8974276187400030215" at="31,0,37,0">
+        <var name="argument" id="8974276187400030215" />
+      </scope>
+      <scope id="8974276187400030215" at="19,0,26,0">
+        <var name="irr" id="8974276187400030215" />
+        <var name="status" id="8974276187400030215" />
+        <var name="typeCheckingContext" id="8974276187400030215" />
+      </scope>
+      <scope id="8974276187400030219" at="42,0,49,0" />
+      <unit id="8974276187400030215" at="15,0,50,0" name="jetbrains.mps.lang.resources.typesystem.typeof_IconResourceReference_InferenceRule" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

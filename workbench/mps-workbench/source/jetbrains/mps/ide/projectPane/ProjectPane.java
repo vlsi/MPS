@@ -44,13 +44,16 @@ import jetbrains.mps.ide.platform.watching.ReloadManager;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectPaneTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTree;
 import jetbrains.mps.ide.projectPane.logicalview.ProjectTreeFindHelper;
+import jetbrains.mps.ide.ui.tree.MPSTree;
 import jetbrains.mps.ide.ui.tree.MPSTreeNode;
 import jetbrains.mps.ide.ui.tree.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.tree.TreeHighlighterExtension;
 import jetbrains.mps.ide.ui.tree.smodel.SModelTreeNode;
+import jetbrains.mps.ide.ui.tree.smodel.SNodeTreeNode;
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.annotation.Hack;
 import org.apache.log4j.LogManager;
@@ -61,6 +64,7 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.util.Condition;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -115,7 +119,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   private Set<ComponentCreationListener> myComponentCreationListeners;
   private static boolean ourShowGenStatus = true;
 
-  public ProjectPane(Project project, ProjectView projectView) {
+  public ProjectPane(final Project project, ProjectView projectView) {
     super(project);
     myProjectView = projectView;
     myUpdateQueue.setRestartTimerOnAdd(true);
@@ -128,6 +132,13 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       @Override
       public void reloadFinished() {
         rebuild();
+      }
+    });
+    SNodeTreeNode.setShowStructureCondition(new Condition<MPSTree>() {
+      @Override
+      public boolean met(MPSTree tree) {
+        if (project.isDisposed()) return false;
+        return !(tree instanceof ProjectPaneTree) || ProjectPane.getInstance(project).showNodeStructure();
       }
     });
   }

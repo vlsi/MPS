@@ -1,143 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)/5164231775618799743">
-    <nodeInfo nodeId="5164231775618799754" fileName="FacetDescriptorsIO_Test.java" startLine="28" startPosition="48" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799759" fileName="FacetDescriptorsIO_Test.java" startLine="29" startPosition="56" endLine="30" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7113564998979616894" fileName="FacetDescriptorsIO_Test.java" startLine="30" startPosition="47" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7113564998979582805" fileName="FacetDescriptorsIO_Test.java" startLine="31" startPosition="0" endLine="32" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1537909269538584064" fileName="FacetDescriptorsIO_Test.java" startLine="34" startPosition="41" endLine="35" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7113564998979616900" fileName="FacetDescriptorsIO_Test.java" startLine="37" startPosition="7" endLine="38" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7113564998979582935" fileName="FacetDescriptorsIO_Test.java" startLine="40" startPosition="42" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7113564998979616903" fileName="FacetDescriptorsIO_Test.java" startLine="43" startPosition="7" endLine="44" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3323419009397602163" fileName="FacetDescriptorsIO_Test.java" startLine="44" startPosition="35" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799809" fileName="FacetDescriptorsIO_Test.java" startLine="45" startPosition="59" endLine="46" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799814" fileName="FacetDescriptorsIO_Test.java" startLine="46" startPosition="63" endLine="47" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799819" fileName="FacetDescriptorsIO_Test.java" startLine="47" startPosition="28" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799829" fileName="FacetDescriptorsIO_Test.java" startLine="52" startPosition="50" endLine="53" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799834" fileName="FacetDescriptorsIO_Test.java" startLine="53" startPosition="56" endLine="54" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799839" fileName="FacetDescriptorsIO_Test.java" startLine="54" startPosition="79" endLine="55" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799845" fileName="FacetDescriptorsIO_Test.java" startLine="55" startPosition="66" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799853" fileName="FacetDescriptorsIO_Test.java" startLine="60" startPosition="60" endLine="61" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799858" fileName="FacetDescriptorsIO_Test.java" startLine="61" startPosition="56" endLine="62" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799867" fileName="FacetDescriptorsIO_Test.java" startLine="62" startPosition="113" endLine="63" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799873" fileName="FacetDescriptorsIO_Test.java" startLine="63" startPosition="85" endLine="64" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799880" fileName="FacetDescriptorsIO_Test.java" startLine="64" startPosition="56" endLine="65" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799889" fileName="FacetDescriptorsIO_Test.java" startLine="69" startPosition="59" endLine="70" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799894" fileName="FacetDescriptorsIO_Test.java" startLine="70" startPosition="57" endLine="71" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799903" fileName="FacetDescriptorsIO_Test.java" startLine="71" startPosition="113" endLine="72" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799909" fileName="FacetDescriptorsIO_Test.java" startLine="72" startPosition="85" endLine="73" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799916" fileName="FacetDescriptorsIO_Test.java" startLine="73" startPosition="56" endLine="74" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799925" fileName="FacetDescriptorsIO_Test.java" startLine="80" startPosition="80" endLine="81" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5164231775618799940" fileName="FacetDescriptorsIO_Test.java" startLine="84" startPosition="59" endLine="85" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799945" fileName="FacetDescriptorsIO_Test.java" startLine="85" startPosition="77" endLine="86" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799950" fileName="FacetDescriptorsIO_Test.java" startLine="86" startPosition="79" endLine="87" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799955" fileName="FacetDescriptorsIO_Test.java" startLine="87" startPosition="61" endLine="88" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799962" fileName="FacetDescriptorsIO_Test.java" startLine="88" startPosition="56" endLine="89" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799969" fileName="FacetDescriptorsIO_Test.java" startLine="89" startPosition="106" endLine="90" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799976" fileName="FacetDescriptorsIO_Test.java" startLine="90" startPosition="54" endLine="91" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799995" fileName="FacetDescriptorsIO_Test.java" startLine="94" startPosition="82" endLine="95" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618800000" fileName="FacetDescriptorsIO_Test.java" startLine="95" startPosition="78" endLine="96" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618800012" fileName="FacetDescriptorsIO_Test.java" startLine="96" startPosition="106" endLine="97" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618800019" fileName="FacetDescriptorsIO_Test.java" startLine="97" startPosition="62" endLine="98" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618800039" fileName="FacetDescriptorsIO_Test.java" startLine="98" startPosition="209" endLine="99" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618800046" fileName="FacetDescriptorsIO_Test.java" startLine="99" startPosition="55" endLine="100" endPosition="184" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618799745" fileName="FacetDescriptorsIO_Test.java" startLine="77" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FacetDescriptorsIO_Test#()V" />
-    <nodeInfo nodeId="1537909269538584057" fileName="FacetDescriptorsIO_Test.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jdom/Element;)Z" />
-    <nodeInfo nodeId="7113564998979582931" fileName="FacetDescriptorsIO_Test.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jdom/Element;)Z" />
-    <nodeInfo nodeId="5164231775618799919" fileName="FacetDescriptorsIO_Test.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readRoot#(Ljetbrains/mps/vfs/IFile;)Lorg/jdom/Element;" />
-    <nodeInfo nodeId="842994667883032814" fileName="FacetDescriptorsIO_Test.java" startLine="32" startPosition="73" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7113564998979582898" fileName="FacetDescriptorsIO_Test.java" startLine="38" startPosition="39" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618799825" fileName="FacetDescriptorsIO_Test.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_ideaModule#()V" />
-    <nodeInfo nodeId="5164231775618799849" fileName="FacetDescriptorsIO_Test.java" startLine="59" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_solutionDescriptorIO#()V" />
-    <nodeInfo nodeId="5164231775618799885" fileName="FacetDescriptorsIO_Test.java" startLine="68" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_nofacetDescriptorIO#()V" />
-    <nodeInfo nodeId="5164231775618799987" fileName="FacetDescriptorsIO_Test.java" startLine="94" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertSolutionDescriptor#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/structure/modules/SolutionDescriptor;)V" />
-    <nodeInfo nodeId="5164231775618799934" fileName="FacetDescriptorsIO_Test.java" startLine="84" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="assertMpsCfg#(Ljetbrains/mps/project/foreign/MPSFacetConfiguration;)V" />
-    <nodeInfo nodeId="5164231775618799750" fileName="FacetDescriptorsIO_Test.java" startLine="27" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_mpsFacet#()V" />
-    <scopeInfo nodeId="5164231775618799748" fileName="FacetDescriptorsIO_Test.java" startLine="77" startPosition="36" endLine="77" endPosition="36" />
-    <scopeInfo nodeId="1537909269538584058" fileName="FacetDescriptorsIO_Test.java" startLine="34" startPosition="41" endLine="35" endPosition="67" />
-    <scopeInfo nodeId="7113564998979582932" fileName="FacetDescriptorsIO_Test.java" startLine="40" startPosition="42" endLine="41" endPosition="59" />
-    <scopeInfo nodeId="5164231775618799924" fileName="FacetDescriptorsIO_Test.java" startLine="80" startPosition="80" endLine="81" endPosition="62" />
-    <scopeInfo nodeId="5164231775618799745" fileName="FacetDescriptorsIO_Test.java" startLine="77" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1537909269538584057" fileName="FacetDescriptorsIO_Test.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="1537909269538584057" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="7113564998979582931" fileName="FacetDescriptorsIO_Test.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="7113564998979582931" varName="fct" />
-    </scopeInfo>
-    <scopeInfo nodeId="5164231775618799919" fileName="FacetDescriptorsIO_Test.java" startLine="80" startPosition="0" endLine="83" endPosition="0">
-      <varInfo nodeId="5164231775618799922" varName="moduleFile" />
-    </scopeInfo>
-    <scopeInfo nodeId="5164231775618799828" fileName="FacetDescriptorsIO_Test.java" startLine="52" startPosition="50" endLine="56" endPosition="25">
-      <varInfo nodeId="5164231775618799835" varName="imc" />
-      <varInfo nodeId="5164231775618799830" varName="moduleFile" />
-      <varInfo nodeId="5164231775618799840" varName="mpsCfg" />
-    </scopeInfo>
-    <scopeInfo nodeId="5164231775618799852" fileName="FacetDescriptorsIO_Test.java" startLine="60" startPosition="60" endLine="65" endPosition="45">
-      <varInfo nodeId="5164231775618799859" varName="io" />
-      <varInfo nodeId="5164231775618799854" varName="moduleFile" />
-      <varInfo nodeId="5164231775618799874" varName="sd" />
-    </scopeInfo>
-    <scopeInfo nodeId="5164231775618799888" fileName="FacetDescriptorsIO_Test.java" startLine="69" startPosition="59" endLine="74" endPosition="26">
-      <varInfo nodeId="5164231775618799895" varName="io" />
-      <varInfo nodeId="5164231775618799890" varName="moduleFile" />
-      <varInfo nodeId="5164231775618799910" varName="sd" />
-    </scopeInfo>
-    <scopeInfo nodeId="5164231775618799994" fileName="FacetDescriptorsIO_Test.java" startLine="94" startPosition="82" endLine="100" endPosition="184" />
-    <scopeInfo nodeId="5164231775618799825" fileName="FacetDescriptorsIO_Test.java" startLine="51" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="5164231775618799939" fileName="FacetDescriptorsIO_Test.java" startLine="84" startPosition="59" endLine="91" endPosition="179" />
-    <scopeInfo nodeId="5164231775618799849" fileName="FacetDescriptorsIO_Test.java" startLine="59" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="5164231775618799885" fileName="FacetDescriptorsIO_Test.java" startLine="68" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="5164231775618799987" fileName="FacetDescriptorsIO_Test.java" startLine="94" startPosition="0" endLine="102" endPosition="0">
-      <varInfo nodeId="5164231775618799990" varName="moduleFile" />
-      <varInfo nodeId="5164231775618799992" varName="sd" />
-    </scopeInfo>
-    <scopeInfo nodeId="5164231775618799934" fileName="FacetDescriptorsIO_Test.java" startLine="84" startPosition="0" endLine="93" endPosition="0">
-      <varInfo nodeId="5164231775618799937" varName="mpsCfg" />
-    </scopeInfo>
-    <scopeInfo nodeId="5164231775618799753" fileName="FacetDescriptorsIO_Test.java" startLine="28" startPosition="48" endLine="48" endPosition="30">
-      <varInfo nodeId="3323419009397602164" varName="cfg" />
-      <varInfo nodeId="7113564998979582806" varName="components" />
-      <varInfo nodeId="842994667883032815" varName="facetManager" />
-      <varInfo nodeId="5164231775618799760" varName="module" />
-      <varInfo nodeId="5164231775618799755" varName="moduleFile" />
-      <varInfo nodeId="5164231775618799810" varName="mpsCfg" />
-      <varInfo nodeId="7113564998979582899" varName="mpsFacet" />
-    </scopeInfo>
-    <scopeInfo nodeId="5164231775618799750" fileName="FacetDescriptorsIO_Test.java" startLine="27" startPosition="0" endLine="50" endPosition="0" />
-    <unitInfo nodeId="1537909269538584057" fileName="FacetDescriptorsIO_Test.java" startLine="33" startPosition="75" endLine="37" endPosition="5" unitName="jetbrains.mps.kernel.tests.iotests.FacetDescriptorsIO_Test$1" />
-    <unitInfo nodeId="7113564998979582931" fileName="FacetDescriptorsIO_Test.java" startLine="39" startPosition="100" endLine="43" endPosition="5" unitName="jetbrains.mps.kernel.tests.iotests.FacetDescriptorsIO_Test$2" />
-    <unitInfo nodeId="5164231775618799743" fileName="FacetDescriptorsIO_Test.java" startLine="26" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.kernel.tests.iotests.FacetDescriptorsIO_Test" />
+    <file name="FacetDescriptorsIO_Test.java">
+      <node id="5164231775618799754" at="28,48,29,56" concept="3" />
+      <node id="5164231775618799759" at="29,56,30,47" concept="3" />
+      <node id="7113564998979616894" at="30,47,31,0" concept="5" />
+      <node id="7113564998979582805" at="31,0,32,73" concept="3" />
+      <node id="1537909269538584064" at="34,41,35,67" concept="4" />
+      <node id="7113564998979616900" at="37,7,38,39" concept="1" />
+      <node id="7113564998979582935" at="40,42,41,59" concept="4" />
+      <node id="7113564998979616903" at="43,7,44,35" concept="1" />
+      <node id="3323419009397602163" at="44,35,45,59" concept="3" />
+      <node id="5164231775618799809" at="45,59,46,63" concept="3" />
+      <node id="5164231775618799814" at="46,63,47,28" concept="1" />
+      <node id="5164231775618799819" at="47,28,48,30" concept="1" />
+      <node id="5164231775618799829" at="52,50,53,56" concept="3" />
+      <node id="5164231775618799834" at="53,56,54,79" concept="3" />
+      <node id="5164231775618799839" at="54,79,55,66" concept="3" />
+      <node id="5164231775618799845" at="55,66,56,25" concept="1" />
+      <node id="5164231775618799853" at="60,60,61,56" concept="3" />
+      <node id="5164231775618799858" at="61,56,62,113" concept="3" />
+      <node id="5164231775618799867" at="62,113,63,85" concept="1" />
+      <node id="5164231775618799873" at="63,85,64,56" concept="3" />
+      <node id="5164231775618799880" at="64,56,65,45" concept="1" />
+      <node id="5164231775618799889" at="69,59,70,57" concept="3" />
+      <node id="5164231775618799894" at="70,57,71,113" concept="3" />
+      <node id="5164231775618799903" at="71,113,72,85" concept="1" />
+      <node id="5164231775618799909" at="72,85,73,56" concept="3" />
+      <node id="5164231775618799916" at="73,56,74,26" concept="1" />
+      <node id="5164231775618799925" at="80,80,81,62" concept="4" />
+      <node id="5164231775618799940" at="84,59,85,77" concept="1" />
+      <node id="5164231775618799945" at="85,77,86,79" concept="1" />
+      <node id="5164231775618799950" at="86,79,87,61" concept="1" />
+      <node id="5164231775618799955" at="87,61,88,56" concept="1" />
+      <node id="5164231775618799962" at="88,56,89,106" concept="1" />
+      <node id="5164231775618799969" at="89,106,90,54" concept="1" />
+      <node id="5164231775618799976" at="90,54,91,179" concept="1" />
+      <node id="5164231775618799995" at="94,82,95,78" concept="1" />
+      <node id="5164231775618800000" at="95,78,96,106" concept="1" />
+      <node id="5164231775618800012" at="96,106,97,62" concept="1" />
+      <node id="5164231775618800019" at="97,62,98,209" concept="1" />
+      <node id="5164231775618800039" at="98,209,99,55" concept="1" />
+      <node id="5164231775618800046" at="99,55,100,184" concept="1" />
+      <node id="5164231775618799745" at="77,0,79,0" concept="0" trace="FacetDescriptorsIO_Test#()V" />
+      <node id="1537909269538584057" at="34,0,37,0" concept="2" trace="accept#(Lorg/jdom/Element;)Z" />
+      <node id="7113564998979582931" at="40,0,43,0" concept="2" trace="accept#(Lorg/jdom/Element;)Z" />
+      <node id="5164231775618799919" at="80,0,83,0" concept="2" trace="readRoot#(Ljetbrains/mps/vfs/IFile;)Lorg/jdom/Element;" />
+      <node id="842994667883032814" at="32,73,37,7" concept="3" />
+      <node id="7113564998979582898" at="38,39,43,7" concept="3" />
+      <node id="5164231775618799825" at="51,0,58,0" concept="2" trace="test_ideaModule#()V" />
+      <node id="5164231775618799849" at="59,0,67,0" concept="2" trace="test_solutionDescriptorIO#()V" />
+      <node id="5164231775618799885" at="68,0,76,0" concept="2" trace="test_nofacetDescriptorIO#()V" />
+      <node id="5164231775618799987" at="94,0,102,0" concept="2" trace="assertSolutionDescriptor#(Ljetbrains/mps/vfs/IFile;Ljetbrains/mps/project/structure/modules/SolutionDescriptor;)V" />
+      <node id="5164231775618799934" at="84,0,93,0" concept="2" trace="assertMpsCfg#(Ljetbrains/mps/project/foreign/MPSFacetConfiguration;)V" />
+      <node id="5164231775618799750" at="27,0,50,0" concept="2" trace="test_mpsFacet#()V" />
+      <scope id="5164231775618799748" at="77,36,77,36" />
+      <scope id="1537909269538584058" at="34,41,35,67" />
+      <scope id="7113564998979582932" at="40,42,41,59" />
+      <scope id="5164231775618799924" at="80,80,81,62" />
+      <scope id="5164231775618799745" at="77,0,79,0" />
+      <scope id="1537909269538584057" at="34,0,37,0">
+        <var name="it" id="1537909269538584057" />
+      </scope>
+      <scope id="7113564998979582931" at="40,0,43,0">
+        <var name="fct" id="7113564998979582931" />
+      </scope>
+      <scope id="5164231775618799919" at="80,0,83,0">
+        <var name="moduleFile" id="5164231775618799922" />
+      </scope>
+      <scope id="5164231775618799828" at="52,50,56,25">
+        <var name="imc" id="5164231775618799835" />
+        <var name="moduleFile" id="5164231775618799830" />
+        <var name="mpsCfg" id="5164231775618799840" />
+      </scope>
+      <scope id="5164231775618799852" at="60,60,65,45">
+        <var name="io" id="5164231775618799859" />
+        <var name="moduleFile" id="5164231775618799854" />
+        <var name="sd" id="5164231775618799874" />
+      </scope>
+      <scope id="5164231775618799888" at="69,59,74,26">
+        <var name="io" id="5164231775618799895" />
+        <var name="moduleFile" id="5164231775618799890" />
+        <var name="sd" id="5164231775618799910" />
+      </scope>
+      <scope id="5164231775618799994" at="94,82,100,184" />
+      <scope id="5164231775618799825" at="51,0,58,0" />
+      <scope id="5164231775618799939" at="84,59,91,179" />
+      <scope id="5164231775618799849" at="59,0,67,0" />
+      <scope id="5164231775618799885" at="68,0,76,0" />
+      <scope id="5164231775618799987" at="94,0,102,0">
+        <var name="moduleFile" id="5164231775618799990" />
+        <var name="sd" id="5164231775618799992" />
+      </scope>
+      <scope id="5164231775618799934" at="84,0,93,0">
+        <var name="mpsCfg" id="5164231775618799937" />
+      </scope>
+      <scope id="5164231775618799753" at="28,48,48,30">
+        <var name="cfg" id="3323419009397602164" />
+        <var name="components" id="7113564998979582806" />
+        <var name="facetManager" id="842994667883032815" />
+        <var name="module" id="5164231775618799760" />
+        <var name="moduleFile" id="5164231775618799755" />
+        <var name="mpsCfg" id="5164231775618799810" />
+        <var name="mpsFacet" id="7113564998979582899" />
+      </scope>
+      <scope id="5164231775618799750" at="27,0,50,0" />
+      <unit id="1537909269538584057" at="33,75,37,5" name="jetbrains.mps.kernel.tests.iotests.FacetDescriptorsIO_Test$1" />
+      <unit id="7113564998979582931" at="39,100,43,5" name="jetbrains.mps.kernel.tests.iotests.FacetDescriptorsIO_Test$2" />
+      <unit id="5164231775618799743" at="26,0,103,0" name="jetbrains.mps.kernel.tests.iotests.FacetDescriptorsIO_Test" />
+    </file>
   </root>
   <root nodeRef="r:198fb72b-25b5-475c-b169-835ab6a82550(jetbrains.mps.kernel.tests.iotests@tests)/5164231775618800060">
-    <nodeInfo nodeId="5164231775618800071" fileName="TestUtils.java" startLine="18" startPosition="45" endLine="19" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618800085" fileName="TestUtils.java" startLine="19" startPosition="114" endLine="20" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5164231775618800096" fileName="TestUtils.java" startLine="23" startPosition="78" endLine="24" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5164231775618800114" fileName="TestUtils.java" startLine="27" startPosition="65" endLine="28" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5164231775618800120" fileName="TestUtils.java" startLine="28" startPosition="58" endLine="29" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5164231775618800124" fileName="TestUtils.java" startLine="29" startPosition="27" endLine="30" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5164231775618800062" fileName="TestUtils.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestUtils#()V" />
-    <nodeInfo nodeId="5164231775618800091" fileName="TestUtils.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="readXml#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5164231775618800066" fileName="TestUtils.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="dataFile#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-    <nodeInfo nodeId="5164231775618800109" fileName="TestUtils.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="tmpFile#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
-    <scopeInfo nodeId="5164231775618800065" fileName="TestUtils.java" startLine="15" startPosition="22" endLine="15" endPosition="22" />
-    <scopeInfo nodeId="5164231775618800095" fileName="TestUtils.java" startLine="23" startPosition="78" endLine="24" endPosition="114" />
-    <scopeInfo nodeId="5164231775618800062" fileName="TestUtils.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="5164231775618800070" fileName="TestUtils.java" startLine="18" startPosition="45" endLine="20" endPosition="36">
-      <varInfo nodeId="5164231775618800072" varName="data" />
-    </scopeInfo>
-    <scopeInfo nodeId="5164231775618800091" fileName="TestUtils.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="5164231775618800093" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="5164231775618800113" fileName="TestUtils.java" startLine="27" startPosition="65" endLine="30" endPosition="69">
-      <varInfo nodeId="5164231775618800115" varName="tmpFile" />
-    </scopeInfo>
-    <scopeInfo nodeId="5164231775618800066" fileName="TestUtils.java" startLine="18" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="5164231775618800068" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="5164231775618800109" fileName="TestUtils.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="5164231775618800111" varName="suffix" />
-    </scopeInfo>
-    <unitInfo nodeId="5164231775618800060" fileName="TestUtils.java" startLine="14" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.kernel.tests.iotests.TestUtils" />
+    <file name="TestUtils.java">
+      <node id="5164231775618800071" at="18,45,19,114" concept="3" />
+      <node id="5164231775618800085" at="19,114,20,36" concept="4" />
+      <node id="5164231775618800096" at="23,78,24,114" concept="4" />
+      <node id="5164231775618800114" at="27,65,28,58" concept="3" />
+      <node id="5164231775618800120" at="28,58,29,27" concept="1" />
+      <node id="5164231775618800124" at="29,27,30,69" concept="4" />
+      <node id="5164231775618800062" at="15,0,17,0" concept="0" trace="TestUtils#()V" />
+      <node id="5164231775618800091" at="23,0,26,0" concept="6" trace="readXml#(Ljetbrains/mps/vfs/IFile;)Ljava/lang/String;" />
+      <node id="5164231775618800066" at="18,0,22,0" concept="6" trace="dataFile#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
+      <node id="5164231775618800109" at="27,0,32,0" concept="6" trace="tmpFile#(Ljava/lang/String;)Ljetbrains/mps/vfs/IFile;" />
+      <scope id="5164231775618800065" at="15,22,15,22" />
+      <scope id="5164231775618800095" at="23,78,24,114" />
+      <scope id="5164231775618800062" at="15,0,17,0" />
+      <scope id="5164231775618800070" at="18,45,20,36">
+        <var name="data" id="5164231775618800072" />
+      </scope>
+      <scope id="5164231775618800091" at="23,0,26,0">
+        <var name="file" id="5164231775618800093" />
+      </scope>
+      <scope id="5164231775618800113" at="27,65,30,69">
+        <var name="tmpFile" id="5164231775618800115" />
+      </scope>
+      <scope id="5164231775618800066" at="18,0,22,0">
+        <var name="name" id="5164231775618800068" />
+      </scope>
+      <scope id="5164231775618800109" at="27,0,32,0">
+        <var name="suffix" id="5164231775618800111" />
+      </scope>
+      <unit id="5164231775618800060" at="14,0,33,0" name="jetbrains.mps.kernel.tests.iotests.TestUtils" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

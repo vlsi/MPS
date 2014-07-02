@@ -20,7 +20,7 @@ import com.intellij.openapi.editor.colors.EditorColorsManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.editor.runtime.impl.NodeSubstituteActionsComparator;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -39,7 +39,9 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
+import jetbrains.mps.typesystem.inference.NonReusableTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
@@ -173,7 +175,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
   public void setVisible(boolean visible) {
     if (myChooserActivated != visible) {
-      boolean canShowPopup = getEditorWindow() != null && getEditorWindow().isShowing() && !(MPSCore.getInstance().isTestMode());
+      boolean canShowPopup = getEditorWindow() != null && getEditorWindow().isShowing() && !(RuntimeFlags.isTestMode());
       if (visible) {
         getPatternEditor().activate(getEditorWindow(), myPatternEditorLocation, myPatternEditorSize, canShowPopup);
         myEditorComponent.pushKeyboardHandler(this);
@@ -204,7 +206,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
-    return TypeContextManager.getInstance().runTypeCheckingComputation(myEditorComponent.getTypecheckingContextOwner(), myEditorComponent.getEditedNode(),
+    final ITypeContextOwner contextOwner = myIsSmart ? new NonReusableTypecheckingContextOwner() :  myEditorComponent.getTypecheckingContextOwner();
+    return TypeContextManager.getInstance().runTypeCheckingComputation(contextOwner, myEditorComponent.getEditedNode(),
         new Computation<List<SubstituteAction>>() {
           @Override
           public List<SubstituteAction> compute(TypeCheckingContext context) {
@@ -390,7 +393,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (getPatternEditor().processKeyTyped(keyEvent)) {
       if (myPopupActivated) {
         rebuildMenuEntries();
-        if (getEditorWindow() != null && !MPSCore.getInstance().isTestMode()) {
+        if (getEditorWindow() != null && !RuntimeFlags.isTestMode()) {
           relayoutPopupMenu();
         }
         tryToApplyIntelligentInput();

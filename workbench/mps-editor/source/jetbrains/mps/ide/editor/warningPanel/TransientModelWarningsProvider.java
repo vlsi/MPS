@@ -16,18 +16,16 @@
 package jetbrains.mps.ide.editor.warningPanel;
 
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.extapi.model.TransientSModel;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class TransientModelWarningsProvider implements EditorWarningsProvider {
   @Override
   @Nullable
   public WarningPanel getWarningPanel(@NotNull SNode node, @NotNull Project project) {
-    SModel model = node.getModel();
-    if (model != null && model instanceof TransientSModelDescriptor) {
+    if (node.getModel() instanceof TransientSModel) {
       return new WarningPanel(this, "Warning: the node is in a transient model. Your changes won't be saved.");
     }
     return null;

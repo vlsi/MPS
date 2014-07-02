@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SReference;
@@ -52,7 +52,7 @@ public class SNodeType_Behavior {
   }
 
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
-    return Type_Behavior.call_getJavaType_1213877337345(thisNode);
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getJavaType_1213877337345", new Object[]{});
   }
 
   public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {

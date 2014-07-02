@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,32 +18,60 @@ package jetbrains.mps.smodel.structure;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.language.LanguageRuntime;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguage;
 
+// FIXME class loading shall be part of LanguageRuntime, rather than this standalone utility
 public class DescriptorUtils {
 
   private static Logger LOG = LogManager.getLogger(DescriptorUtils.class);
 
   @Nullable
-  public static Object getObjectByClassNameForLanguage(String className, @Nullable Language language, boolean avoidLogErrors) {
-    try {
-      if (language == null) {
-        return null;
-      }
+  public static <T> Class<T> getClassFromLanguage(String className, LanguageRuntime languageRuntime) {
+    if (languageRuntime == null) {
+      return null;
+    }
+    return getClassFromLanguage(className, ModuleRepositoryFacade.getInstance().getModule(languageRuntime.getNamespace(), Language.class));
+  }
 
-      Class clazz = ClassLoaderManager.getInstance().getClass(language, className);
+    @Nullable
+  public static <T> Class<T> getClassFromLanguage(String className, Language language) {
+    if (language == null) {
+      return null;
+    }
+    try {
+      return (Class<T>) ClassLoaderManager.getInstance().getClass(language, className);
+    } catch (Throwable e) {
+      LOG.debug(String.format("error loading class '%s' from module %s", className, language.getModuleName()), e);
+    }
+    return null;
+  }
+
+  @Nullable
+  public static Object getObjectByClassNameForLanguage(String className, @Nullable Language language) {
+    try {
+      Class clazz = getClassFromLanguage(className, language);
       if (clazz == null) {
         return null;
       }
 
       return clazz.newInstance();
     } catch (Throwable e) {
-      LOG.debug("error loading class\"" + className + "\"", e);
+      LOG.debug(String.format("error instantiating class '%s'", className), e);
     }
     return null;
+  }
+
+  /**
+   * @deprecated  use {@link #getObjectByClassNameForLanguage(String, jetbrains.mps.smodel.Language)} instead
+   */
+  @Deprecated
+  public static Object getObjectByClassNameForLanguage(String className, @Nullable Language language, boolean avoidLogErrors) {
+    return getObjectByClassNameForLanguage(className, language);
   }
 
   @Deprecated
@@ -56,33 +84,27 @@ public class DescriptorUtils {
   }
 
   @Nullable
-  public static <T> T getObjectByClassNameForLanguage(String className, Class<T> castTo, @NotNull Language language) {
+  public static <T> T getObjectByClassNameForLanguage(String className, @NotNull Class<T> castTo, @NotNull Language language) {
     try {
-      Class clazz = ClassLoaderManager.getInstance().getClass(language, className);
-      if (clazz == null) {
-        return null;
-      }
-
-      Object o = clazz.newInstance();
-      if (!castTo.isInstance(o)) {
+      Object o = getObjectByClassNameForLanguage(className, language);
+      if (o == null || !castTo.isInstance(o)) {
         return null;
       }
 
       return castTo.cast(o);
     } catch (Throwable e) {
-      LOG.debug("error loading class\"" + className + "\"", e);
+      LOG.debug(String.format("failed to cast class '%s' to %s", className, castTo.getName()), e);
     }
     return null;
   }
 
   @Nullable
   public static Object getObjectByClassNameForLanguageNamespace(String className, String languageNamespace, boolean avoidLogErrors) {
-    return getObjectByClassNameForLanguage(className, ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class), avoidLogErrors);
+    return getObjectByClassNameForLanguage(className, ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class));
   }
 
   @Nullable
   public static <T> T getObjectByClassNameForLanguageNamespace(String className, Class<T> castTo, String languageNamespace, boolean avoidLogErrors) {
-    return getObjectByClassNameForLanguage(className, castTo, ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class),
-        avoidLogErrors);
+    return getObjectByClassNameForLanguage(className, castTo, ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class));
   }
 }

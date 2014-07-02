@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="Generator.java" startLine="16" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.Generator" />
-  <unitInfo fileName="Language.java" startLine="16" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.transformation.test.outputLang.Language" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="Generator.java">
+      <unit at="16,0,77,0" name="jetbrains.mps.transformation.test.outputLang.Generator" />
+    </file>
+    <file name="Language.java">
+      <unit at="16,0,61,0" name="jetbrains.mps.transformation.test.outputLang.Language" />
+    </file>
+  </root>
+</debug-info>
 

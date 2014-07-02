@@ -9,7 +9,7 @@ import jetbrains.mps.generator.cache.BaseModelCache;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.textgen.trace.TraceInfoCache;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import org.jetbrains.annotations.NonNls;
@@ -20,7 +20,6 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.vfs.VirtualFileAdapter;
 import com.intellij.openapi.vfs.VirtualFileMoveEvent;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class ModelCacheReloader implements ApplicationComponent {
   private VirtualFileManager myVirtualFileManager;
@@ -86,10 +85,10 @@ public class ModelCacheReloader implements ApplicationComponent {
     }
   }
 
-  private static SModel check_hmm83z_a1a7(BaseModelCache checkedDotOperand, IFile file) {
+  private static void check_hmm83z_a1a7(BaseModelCache checkedDotOperand, IFile file) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.invalidateCacheForFile(file);
+      checkedDotOperand.invalidateCacheForFile(file);
     }
-    return null;
+
   }
 }

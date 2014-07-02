@@ -1,230 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363737">
-    <nodeInfo nodeId="6374450524837363741" fileName="ValueDouble.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValueName" />
-    <nodeInfo nodeId="6374450524837363750" fileName="ValueDouble.java" startLine="12" startPosition="40" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837363760" fileName="ValueDouble.java" startLine="17" startPosition="38" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374450524837363766" fileName="ValueDouble.java" startLine="18" startPosition="51" endLine="19" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374450524837363783" fileName="ValueDouble.java" startLine="20" startPosition="36" endLine="21" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837363790" fileName="ValueDouble.java" startLine="22" startPosition="5" endLine="23" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837363744" fileName="ValueDouble.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ValueDouble#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6374450524837363778" fileName="ValueDouble.java" startLine="19" startPosition="87" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6374450524837363754" fileName="ValueDouble.java" startLine="16" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
-    <scopeInfo nodeId="6374450524837363749" fileName="ValueDouble.java" startLine="12" startPosition="40" endLine="13" endPosition="28" />
-    <scopeInfo nodeId="6374450524837363782" fileName="ValueDouble.java" startLine="20" startPosition="36" endLine="21" endPosition="44" />
-    <scopeInfo nodeId="6374450524837363744" fileName="ValueDouble.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="6374450524837363747" varName="valueName" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837363759" fileName="ValueDouble.java" startLine="17" startPosition="38" endLine="23" endPosition="26">
-      <varInfo nodeId="6374450524837363761" varName="event" />
-      <varInfo nodeId="6374450524837363767" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837363754" fileName="ValueDouble.java" startLine="16" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="6374450524837363757" varName="parm" />
-    </scopeInfo>
-    <unitInfo nodeId="6374450524837363737" fileName="ValueDouble.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="formulaAdapter.ValueDouble" />
+    <file name="ValueDouble.java">
+      <node id="6374450524837363741" at="10,0,11,0" concept="2" trace="myValueName" />
+      <node id="6374450524837363750" at="12,40,13,28" concept="1" />
+      <node id="6374450524837363760" at="17,38,18,51" concept="5" />
+      <node id="6374450524837363766" at="18,51,19,87" concept="5" />
+      <node id="6374450524837363783" at="20,36,21,44" concept="6" />
+      <node id="6374450524837363790" at="22,5,23,26" concept="6" />
+      <node id="6374450524837363744" at="12,0,15,0" concept="0" trace="ValueDouble#(Ljava/lang/String;)V" />
+      <node id="6374450524837363778" at="19,87,22,5" concept="3" />
+      <node id="6374450524837363754" at="16,0,25,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
+      <scope id="6374450524837363749" at="12,40,13,28" />
+      <scope id="6374450524837363782" at="20,36,21,44" />
+      <scope id="6374450524837363744" at="12,0,15,0">
+        <var name="valueName" id="6374450524837363747" />
+      </scope>
+      <scope id="6374450524837363759" at="17,38,23,26">
+        <var name="event" id="6374450524837363761" />
+        <var name="value" id="6374450524837363767" />
+      </scope>
+      <scope id="6374450524837363754" at="16,0,25,0">
+        <var name="parm" id="6374450524837363757" />
+      </scope>
+      <unit id="6374450524837363737" at="9,0,26,0" name="formulaAdapter.ValueDouble" />
+    </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363794">
-    <nodeInfo nodeId="6374450524837363798" fileName="ValueQuantity.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValueName" />
-    <nodeInfo nodeId="6374450524837363807" fileName="ValueQuantity.java" startLine="12" startPosition="42" endLine="13" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837363817" fileName="ValueQuantity.java" startLine="17" startPosition="40" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374450524837363823" fileName="ValueQuantity.java" startLine="18" startPosition="51" endLine="19" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837363801" fileName="ValueQuantity.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ValueQuantity#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="6374450524837363811" fileName="ValueQuantity.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)Lmf/Quantity;" />
-    <scopeInfo nodeId="6374450524837363806" fileName="ValueQuantity.java" startLine="12" startPosition="42" endLine="13" endPosition="28" />
-    <scopeInfo nodeId="6374450524837363816" fileName="ValueQuantity.java" startLine="17" startPosition="40" endLine="19" endPosition="90">
-      <varInfo nodeId="6374450524837363818" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837363801" fileName="ValueQuantity.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="6374450524837363804" varName="valueName" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837363811" fileName="ValueQuantity.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="6374450524837363814" varName="parm" />
-    </scopeInfo>
-    <unitInfo nodeId="6374450524837363794" fileName="ValueQuantity.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="formulaAdapter.ValueQuantity" />
+    <file name="ValueQuantity.java">
+      <node id="6374450524837363798" at="10,0,11,0" concept="2" trace="myValueName" />
+      <node id="6374450524837363807" at="12,42,13,28" concept="1" />
+      <node id="6374450524837363817" at="17,40,18,51" concept="5" />
+      <node id="6374450524837363823" at="18,51,19,90" concept="6" />
+      <node id="6374450524837363801" at="12,0,15,0" concept="0" trace="ValueQuantity#(Ljava/lang/String;)V" />
+      <node id="6374450524837363811" at="16,0,21,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Quantity;" />
+      <scope id="6374450524837363806" at="12,42,13,28" />
+      <scope id="6374450524837363816" at="17,40,19,90">
+        <var name="event" id="6374450524837363818" />
+      </scope>
+      <scope id="6374450524837363801" at="12,0,15,0">
+        <var name="valueName" id="6374450524837363804" />
+      </scope>
+      <scope id="6374450524837363811" at="16,0,21,0">
+        <var name="parm" id="6374450524837363814" />
+      </scope>
+      <unit id="6374450524837363794" at="9,0,22,0" name="formulaAdapter.ValueQuantity" />
+    </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363835">
-    <nodeInfo nodeId="6374450524837363838" fileName="PostingRule_Formula.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFunction" />
-    <nodeInfo nodeId="6374450524837363853" fileName="PostingRule_Formula.java" startLine="14" startPosition="100" endLine="15" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6374450524837363856" fileName="PostingRule_Formula.java" startLine="15" startPosition="34" endLine="16" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837363866" fileName="PostingRule_Formula.java" startLine="20" startPosition="56" endLine="21" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837363842" fileName="PostingRule_Formula.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PostingRule_Formula#(Lpostingrules/AccountType;ZLjetbrains/mps/samples/formulaLanguage/api/Function;)V" />
-    <nodeInfo nodeId="6374450524837363860" fileName="PostingRule_Formula.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calculateAmount#(Lpostingrules/AccountingEvent;)Lmf/Money;" />
-    <scopeInfo nodeId="6374450524837363865" fileName="PostingRule_Formula.java" startLine="20" startPosition="56" endLine="21" endPosition="35" />
-    <scopeInfo nodeId="6374450524837363852" fileName="PostingRule_Formula.java" startLine="14" startPosition="100" endLine="16" endPosition="26" />
-    <scopeInfo nodeId="6374450524837363842" fileName="PostingRule_Formula.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="6374450524837363845" varName="accountType" />
-      <varInfo nodeId="6374450524837363849" varName="function" />
-      <varInfo nodeId="6374450524837363847" varName="isTaxable" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837363860" fileName="PostingRule_Formula.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="6374450524837363863" varName="evt" />
-    </scopeInfo>
-    <unitInfo nodeId="6374450524837363835" fileName="PostingRule_Formula.java" startLine="11" startPosition="0" endLine="24" endPosition="0" unitName="formulaAdapter.PostingRule_Formula" />
+    <file name="PostingRule_Formula.java">
+      <node id="6374450524837363838" at="12,0,13,0" concept="2" trace="myFunction" />
+      <node id="6374450524837363853" at="14,100,15,34" concept="7" />
+      <node id="6374450524837363856" at="15,34,16,26" concept="1" />
+      <node id="6374450524837363866" at="20,56,21,35" concept="6" />
+      <node id="6374450524837363842" at="14,0,18,0" concept="0" trace="PostingRule_Formula#(Lpostingrules/AccountType;ZLjetbrains/mps/samples/formulaLanguage/api/Function;)V" />
+      <node id="6374450524837363860" at="19,0,23,0" concept="4" trace="calculateAmount#(Lpostingrules/AccountingEvent;)Lmf/Money;" />
+      <scope id="6374450524837363865" at="20,56,21,35" />
+      <scope id="6374450524837363852" at="14,100,16,26" />
+      <scope id="6374450524837363842" at="14,0,18,0">
+        <var name="accountType" id="6374450524837363845" />
+        <var name="function" id="6374450524837363849" />
+        <var name="isTaxable" id="6374450524837363847" />
+      </scope>
+      <scope id="6374450524837363860" at="19,0,23,0">
+        <var name="evt" id="6374450524837363863" />
+      </scope>
+      <unit id="6374450524837363835" at="11,0,24,0" name="formulaAdapter.PostingRule_Formula" />
+    </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363871">
-    <nodeInfo nodeId="6374450524837363875" fileName="MoneyAdapter.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myAmount" />
-    <nodeInfo nodeId="6374450524837363879" fileName="MoneyAdapter.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCurrency" />
-    <nodeInfo nodeId="6374450524837363891" fileName="MoneyAdapter.java" startLine="13" startPosition="67" endLine="14" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837363895" fileName="MoneyAdapter.java" startLine="14" startPosition="22" endLine="15" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837363905" fileName="MoneyAdapter.java" startLine="19" startPosition="37" endLine="20" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374450524837363912" fileName="MoneyAdapter.java" startLine="20" startPosition="43" endLine="21" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837363882" fileName="MoneyAdapter.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyAdapter#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Lmf/Currency;)V" />
-    <nodeInfo nodeId="6374450524837363899" fileName="MoneyAdapter.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)Lmf/Money;" />
-    <scopeInfo nodeId="6374450524837363890" fileName="MoneyAdapter.java" startLine="13" startPosition="67" endLine="15" endPosition="26" />
-    <scopeInfo nodeId="6374450524837363904" fileName="MoneyAdapter.java" startLine="19" startPosition="37" endLine="21" endPosition="41">
-      <varInfo nodeId="6374450524837363906" varName="amount" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837363882" fileName="MoneyAdapter.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="6374450524837363885" varName="amount" />
-      <varInfo nodeId="6374450524837363888" varName="currency" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837363899" fileName="MoneyAdapter.java" startLine="18" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="6374450524837363902" varName="parm" />
-    </scopeInfo>
-    <unitInfo nodeId="6374450524837363871" fileName="MoneyAdapter.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="formulaAdapter.MoneyAdapter" />
+    <file name="MoneyAdapter.java">
+      <node id="6374450524837363875" at="10,0,11,0" concept="2" trace="myAmount" />
+      <node id="6374450524837363879" at="11,0,12,0" concept="2" trace="myCurrency" />
+      <node id="6374450524837363891" at="13,67,14,22" concept="1" />
+      <node id="6374450524837363895" at="14,22,15,26" concept="1" />
+      <node id="6374450524837363905" at="19,37,20,43" concept="5" />
+      <node id="6374450524837363912" at="20,43,21,41" concept="6" />
+      <node id="6374450524837363882" at="13,0,17,0" concept="0" trace="MoneyAdapter#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Lmf/Currency;)V" />
+      <node id="6374450524837363899" at="18,0,23,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
+      <scope id="6374450524837363890" at="13,67,15,26" />
+      <scope id="6374450524837363904" at="19,37,21,41">
+        <var name="amount" id="6374450524837363906" />
+      </scope>
+      <scope id="6374450524837363882" at="13,0,17,0">
+        <var name="amount" id="6374450524837363885" />
+        <var name="currency" id="6374450524837363888" />
+      </scope>
+      <scope id="6374450524837363899" at="18,0,23,0">
+        <var name="parm" id="6374450524837363902" />
+      </scope>
+      <unit id="6374450524837363871" at="9,0,24,0" name="formulaAdapter.MoneyAdapter" />
+    </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363917">
-    <nodeInfo nodeId="6374450524837363921" fileName="MoneyAddOperation.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeftOperand" />
-    <nodeInfo nodeId="6374450524837363925" fileName="MoneyAddOperation.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRightOperand" />
-    <nodeInfo nodeId="6374450524837363939" fileName="MoneyAddOperation.java" startLine="12" startPosition="87" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837363943" fileName="MoneyAddOperation.java" startLine="13" startPosition="32" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837363953" fileName="MoneyAddOperation.java" startLine="18" startPosition="37" endLine="19" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837363929" fileName="MoneyAddOperation.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyAddOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
-    <nodeInfo nodeId="6374450524837363947" fileName="MoneyAddOperation.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)Lmf/Money;" />
-    <scopeInfo nodeId="6374450524837363952" fileName="MoneyAddOperation.java" startLine="18" startPosition="37" endLine="19" endPosition="73" />
-    <scopeInfo nodeId="6374450524837363938" fileName="MoneyAddOperation.java" startLine="12" startPosition="87" endLine="14" endPosition="34" />
-    <scopeInfo nodeId="6374450524837363929" fileName="MoneyAddOperation.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="6374450524837363932" varName="leftOperand" />
-      <varInfo nodeId="6374450524837363935" varName="rightOperand" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837363947" fileName="MoneyAddOperation.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="6374450524837363950" varName="parm" />
-    </scopeInfo>
-    <unitInfo nodeId="6374450524837363917" fileName="MoneyAddOperation.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="formulaAdapter.MoneyAddOperation" />
+    <file name="MoneyAddOperation.java">
+      <node id="6374450524837363921" at="9,0,10,0" concept="2" trace="myLeftOperand" />
+      <node id="6374450524837363925" at="10,0,11,0" concept="2" trace="myRightOperand" />
+      <node id="6374450524837363939" at="12,87,13,32" concept="1" />
+      <node id="6374450524837363943" at="13,32,14,34" concept="1" />
+      <node id="6374450524837363953" at="18,37,19,73" concept="6" />
+      <node id="6374450524837363929" at="12,0,16,0" concept="0" trace="MoneyAddOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
+      <node id="6374450524837363947" at="17,0,21,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
+      <scope id="6374450524837363952" at="18,37,19,73" />
+      <scope id="6374450524837363938" at="12,87,14,34" />
+      <scope id="6374450524837363929" at="12,0,16,0">
+        <var name="leftOperand" id="6374450524837363932" />
+        <var name="rightOperand" id="6374450524837363935" />
+      </scope>
+      <scope id="6374450524837363947" at="17,0,21,0">
+        <var name="parm" id="6374450524837363950" />
+      </scope>
+      <unit id="6374450524837363917" at="8,0,22,0" name="formulaAdapter.MoneyAddOperation" />
+    </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363964">
-    <nodeInfo nodeId="6374450524837363978" fileName="UsageDouble.java" startLine="13" startPosition="38" endLine="14" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374450524837363984" fileName="UsageDouble.java" startLine="14" startPosition="36" endLine="15" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837363968" fileName="UsageDouble.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UsageDouble#()V" />
-    <nodeInfo nodeId="6374450524837363972" fileName="UsageDouble.java" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
-    <scopeInfo nodeId="6374450524837363971" fileName="UsageDouble.java" startLine="9" startPosition="24" endLine="9" endPosition="24" />
-    <scopeInfo nodeId="6374450524837363968" fileName="UsageDouble.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="6374450524837363977" fileName="UsageDouble.java" startLine="13" startPosition="38" endLine="15" endPosition="46">
-      <varInfo nodeId="6374450524837363979" varName="usageEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837363972" fileName="UsageDouble.java" startLine="12" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="6374450524837363975" varName="parm" />
-    </scopeInfo>
-    <unitInfo nodeId="6374450524837363964" fileName="UsageDouble.java" startLine="8" startPosition="0" endLine="18" endPosition="0" unitName="formulaAdapter.UsageDouble" />
+    <file name="UsageDouble.java">
+      <node id="6374450524837363978" at="13,38,14,36" concept="5" />
+      <node id="6374450524837363984" at="14,36,15,46" concept="6" />
+      <node id="6374450524837363968" at="9,0,11,0" concept="0" trace="UsageDouble#()V" />
+      <node id="6374450524837363972" at="12,0,17,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Double;" />
+      <scope id="6374450524837363971" at="9,24,9,24" />
+      <scope id="6374450524837363968" at="9,0,11,0" />
+      <scope id="6374450524837363977" at="13,38,15,46">
+        <var name="usageEvent" id="6374450524837363979" />
+      </scope>
+      <scope id="6374450524837363972" at="12,0,17,0">
+        <var name="parm" id="6374450524837363975" />
+      </scope>
+      <unit id="6374450524837363964" at="8,0,18,0" name="formulaAdapter.UsageDouble" />
+    </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837363990">
-    <nodeInfo nodeId="6374450524837363994" fileName="MoneyConstant.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMoney" />
-    <nodeInfo nodeId="6374450524837364005" fileName="MoneyConstant.java" startLine="12" startPosition="58" endLine="13" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837364018" fileName="MoneyConstant.java" startLine="17" startPosition="37" endLine="18" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837363997" fileName="MoneyConstant.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyConstant#(DLmf/Currency;)V" />
-    <nodeInfo nodeId="6374450524837364012" fileName="MoneyConstant.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)Lmf/Money;" />
-    <scopeInfo nodeId="6374450524837364004" fileName="MoneyConstant.java" startLine="12" startPosition="58" endLine="13" endPosition="42" />
-    <scopeInfo nodeId="6374450524837364017" fileName="MoneyConstant.java" startLine="17" startPosition="37" endLine="18" endPosition="19" />
-    <scopeInfo nodeId="6374450524837363997" fileName="MoneyConstant.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="6374450524837364000" varName="amount" />
-      <varInfo nodeId="6374450524837364002" varName="currency" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837364012" fileName="MoneyConstant.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="6374450524837364015" varName="parm" />
-    </scopeInfo>
-    <unitInfo nodeId="6374450524837363990" fileName="MoneyConstant.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="formulaAdapter.MoneyConstant" />
+    <file name="MoneyConstant.java">
+      <node id="6374450524837363994" at="10,0,11,0" concept="2" trace="myMoney" />
+      <node id="6374450524837364005" at="12,58,13,42" concept="1" />
+      <node id="6374450524837364018" at="17,37,18,19" concept="6" />
+      <node id="6374450524837363997" at="12,0,15,0" concept="0" trace="MoneyConstant#(DLmf/Currency;)V" />
+      <node id="6374450524837364012" at="16,0,20,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
+      <scope id="6374450524837364004" at="12,58,13,42" />
+      <scope id="6374450524837364017" at="17,37,18,19" />
+      <scope id="6374450524837363997" at="12,0,15,0">
+        <var name="amount" id="6374450524837364000" />
+        <var name="currency" id="6374450524837364002" />
+      </scope>
+      <scope id="6374450524837364012" at="16,0,20,0">
+        <var name="parm" id="6374450524837364015" />
+      </scope>
+      <unit id="6374450524837363990" at="9,0,21,0" name="formulaAdapter.MoneyConstant" />
+    </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837364020">
-    <nodeInfo nodeId="6374450524837364024" fileName="MoneyMultiplyOperation.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeftOperand" />
-    <nodeInfo nodeId="6374450524837364028" fileName="MoneyMultiplyOperation.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRightOperand" />
-    <nodeInfo nodeId="6374450524837364042" fileName="MoneyMultiplyOperation.java" startLine="12" startPosition="93" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837364046" fileName="MoneyMultiplyOperation.java" startLine="13" startPosition="32" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837364056" fileName="MoneyMultiplyOperation.java" startLine="18" startPosition="37" endLine="19" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837364032" fileName="MoneyMultiplyOperation.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MoneyMultiplyOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
-    <nodeInfo nodeId="6374450524837364050" fileName="MoneyMultiplyOperation.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)Lmf/Money;" />
-    <scopeInfo nodeId="6374450524837364055" fileName="MoneyMultiplyOperation.java" startLine="18" startPosition="37" endLine="19" endPosition="78" />
-    <scopeInfo nodeId="6374450524837364041" fileName="MoneyMultiplyOperation.java" startLine="12" startPosition="93" endLine="14" endPosition="34" />
-    <scopeInfo nodeId="6374450524837364032" fileName="MoneyMultiplyOperation.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="6374450524837364035" varName="leftOperand" />
-      <varInfo nodeId="6374450524837364038" varName="rightOperand" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837364050" fileName="MoneyMultiplyOperation.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="6374450524837364053" varName="parm" />
-    </scopeInfo>
-    <unitInfo nodeId="6374450524837364020" fileName="MoneyMultiplyOperation.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="formulaAdapter.MoneyMultiplyOperation" />
+    <file name="MoneyMultiplyOperation.java">
+      <node id="6374450524837364024" at="9,0,10,0" concept="2" trace="myLeftOperand" />
+      <node id="6374450524837364028" at="10,0,11,0" concept="2" trace="myRightOperand" />
+      <node id="6374450524837364042" at="12,93,13,32" concept="1" />
+      <node id="6374450524837364046" at="13,32,14,34" concept="1" />
+      <node id="6374450524837364056" at="18,37,19,78" concept="6" />
+      <node id="6374450524837364032" at="12,0,16,0" concept="0" trace="MoneyMultiplyOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
+      <node id="6374450524837364050" at="17,0,21,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
+      <scope id="6374450524837364055" at="18,37,19,78" />
+      <scope id="6374450524837364041" at="12,93,14,34" />
+      <scope id="6374450524837364032" at="12,0,16,0">
+        <var name="leftOperand" id="6374450524837364035" />
+        <var name="rightOperand" id="6374450524837364038" />
+      </scope>
+      <scope id="6374450524837364050" at="17,0,21,0">
+        <var name="parm" id="6374450524837364053" />
+      </scope>
+      <unit id="6374450524837364020" at="8,0,22,0" name="formulaAdapter.MoneyMultiplyOperation" />
+    </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837364067">
-    <nodeInfo nodeId="6374450524837364081" fileName="UsageQuantity.java" startLine="14" startPosition="40" endLine="15" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374450524837364087" fileName="UsageQuantity.java" startLine="15" startPosition="36" endLine="16" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837364071" fileName="UsageQuantity.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="UsageQuantity#()V" />
-    <nodeInfo nodeId="6374450524837364075" fileName="UsageQuantity.java" startLine="13" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)Lmf/Quantity;" />
-    <scopeInfo nodeId="6374450524837364074" fileName="UsageQuantity.java" startLine="10" startPosition="26" endLine="10" endPosition="26" />
-    <scopeInfo nodeId="6374450524837364071" fileName="UsageQuantity.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="6374450524837364080" fileName="UsageQuantity.java" startLine="14" startPosition="40" endLine="16" endPosition="34">
-      <varInfo nodeId="6374450524837364082" varName="usageEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837364075" fileName="UsageQuantity.java" startLine="13" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="6374450524837364078" varName="parm" />
-    </scopeInfo>
-    <unitInfo nodeId="6374450524837364067" fileName="UsageQuantity.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="formulaAdapter.UsageQuantity" />
+    <file name="UsageQuantity.java">
+      <node id="6374450524837364081" at="14,40,15,36" concept="5" />
+      <node id="6374450524837364087" at="15,36,16,34" concept="6" />
+      <node id="6374450524837364071" at="10,0,12,0" concept="0" trace="UsageQuantity#()V" />
+      <node id="6374450524837364075" at="13,0,18,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Quantity;" />
+      <scope id="6374450524837364074" at="10,26,10,26" />
+      <scope id="6374450524837364071" at="10,0,12,0" />
+      <scope id="6374450524837364080" at="14,40,16,34">
+        <var name="usageEvent" id="6374450524837364082" />
+      </scope>
+      <scope id="6374450524837364075" at="13,0,18,0">
+        <var name="parm" id="6374450524837364078" />
+      </scope>
+      <unit id="6374450524837364067" at="9,0,19,0" name="formulaAdapter.UsageQuantity" />
+    </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837364091">
-    <nodeInfo nodeId="6374450524837364095" fileName="QuantityConstant.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myQuantity" />
-    <nodeInfo nodeId="6374450524837364106" fileName="QuantityConstant.java" startLine="12" startPosition="53" endLine="13" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837364119" fileName="QuantityConstant.java" startLine="16" startPosition="46" endLine="17" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837364129" fileName="QuantityConstant.java" startLine="21" startPosition="40" endLine="22" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837364098" fileName="QuantityConstant.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuantityConstant#(DLmf/Unit;)V" />
-    <nodeInfo nodeId="6374450524837364113" fileName="QuantityConstant.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuantityConstant#(Lmf/Quantity;)V" />
-    <nodeInfo nodeId="6374450524837364123" fileName="QuantityConstant.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)Lmf/Quantity;" />
-    <scopeInfo nodeId="6374450524837364105" fileName="QuantityConstant.java" startLine="12" startPosition="53" endLine="13" endPosition="44" />
-    <scopeInfo nodeId="6374450524837364118" fileName="QuantityConstant.java" startLine="16" startPosition="46" endLine="17" endPosition="26" />
-    <scopeInfo nodeId="6374450524837364128" fileName="QuantityConstant.java" startLine="21" startPosition="40" endLine="22" endPosition="22" />
-    <scopeInfo nodeId="6374450524837364098" fileName="QuantityConstant.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="6374450524837364101" varName="amount" />
-      <varInfo nodeId="6374450524837364103" varName="unit" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837364113" fileName="QuantityConstant.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="6374450524837364116" varName="quantity" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837364123" fileName="QuantityConstant.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="6374450524837364126" varName="parm" />
-    </scopeInfo>
-    <unitInfo nodeId="6374450524837364091" fileName="QuantityConstant.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="formulaAdapter.QuantityConstant" />
+    <file name="QuantityConstant.java">
+      <node id="6374450524837364095" at="10,0,11,0" concept="2" trace="myQuantity" />
+      <node id="6374450524837364106" at="12,53,13,44" concept="1" />
+      <node id="6374450524837364119" at="16,46,17,26" concept="1" />
+      <node id="6374450524837364129" at="21,40,22,22" concept="6" />
+      <node id="6374450524837364098" at="12,0,15,0" concept="0" trace="QuantityConstant#(DLmf/Unit;)V" />
+      <node id="6374450524837364113" at="16,0,19,0" concept="0" trace="QuantityConstant#(Lmf/Quantity;)V" />
+      <node id="6374450524837364123" at="20,0,24,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Quantity;" />
+      <scope id="6374450524837364105" at="12,53,13,44" />
+      <scope id="6374450524837364118" at="16,46,17,26" />
+      <scope id="6374450524837364128" at="21,40,22,22" />
+      <scope id="6374450524837364098" at="12,0,15,0">
+        <var name="amount" id="6374450524837364101" />
+        <var name="unit" id="6374450524837364103" />
+      </scope>
+      <scope id="6374450524837364113" at="16,0,19,0">
+        <var name="quantity" id="6374450524837364116" />
+      </scope>
+      <scope id="6374450524837364123" at="20,0,24,0">
+        <var name="parm" id="6374450524837364126" />
+      </scope>
+      <unit id="6374450524837364091" at="9,0,25,0" name="formulaAdapter.QuantityConstant" />
+    </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837364131">
-    <nodeInfo nodeId="6374450524837364137" fileName="QuantityGreaterThanOperation.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeftOperand" />
-    <nodeInfo nodeId="6374450524837364141" fileName="QuantityGreaterThanOperation.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRightOperand" />
-    <nodeInfo nodeId="6374450524837364155" fileName="QuantityGreaterThanOperation.java" startLine="12" startPosition="90" endLine="13" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837364159" fileName="QuantityGreaterThanOperation.java" startLine="13" startPosition="32" endLine="14" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6374450524837364169" fileName="QuantityGreaterThanOperation.java" startLine="18" startPosition="39" endLine="19" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837364145" fileName="QuantityGreaterThanOperation.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuantityGreaterThanOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
-    <nodeInfo nodeId="6374450524837364163" fileName="QuantityGreaterThanOperation.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)Ljava/lang/Boolean;" />
-    <scopeInfo nodeId="6374450524837364168" fileName="QuantityGreaterThanOperation.java" startLine="18" startPosition="39" endLine="19" endPosition="83" />
-    <scopeInfo nodeId="6374450524837364154" fileName="QuantityGreaterThanOperation.java" startLine="12" startPosition="90" endLine="14" endPosition="34" />
-    <scopeInfo nodeId="6374450524837364145" fileName="QuantityGreaterThanOperation.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="6374450524837364148" varName="leftOperand" />
-      <varInfo nodeId="6374450524837364151" varName="rightOperand" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837364163" fileName="QuantityGreaterThanOperation.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="6374450524837364166" varName="parm" />
-    </scopeInfo>
-    <unitInfo nodeId="6374450524837364131" fileName="QuantityGreaterThanOperation.java" startLine="8" startPosition="0" endLine="22" endPosition="0" unitName="formulaAdapter.QuantityGreaterThanOperation" />
+    <file name="QuantityGreaterThanOperation.java">
+      <node id="6374450524837364137" at="9,0,10,0" concept="2" trace="myLeftOperand" />
+      <node id="6374450524837364141" at="10,0,11,0" concept="2" trace="myRightOperand" />
+      <node id="6374450524837364155" at="12,90,13,32" concept="1" />
+      <node id="6374450524837364159" at="13,32,14,34" concept="1" />
+      <node id="6374450524837364169" at="18,39,19,83" concept="6" />
+      <node id="6374450524837364145" at="12,0,16,0" concept="0" trace="QuantityGreaterThanOperation#(Ljetbrains/mps/samples/formulaLanguage/api/Function;Ljetbrains/mps/samples/formulaLanguage/api/Function;)V" />
+      <node id="6374450524837364163" at="17,0,21,0" concept="4" trace="compute#(Ljava/lang/Object;)Ljava/lang/Boolean;" />
+      <scope id="6374450524837364168" at="18,39,19,83" />
+      <scope id="6374450524837364154" at="12,90,14,34" />
+      <scope id="6374450524837364145" at="12,0,16,0">
+        <var name="leftOperand" id="6374450524837364148" />
+        <var name="rightOperand" id="6374450524837364151" />
+      </scope>
+      <scope id="6374450524837364163" at="17,0,21,0">
+        <var name="parm" id="6374450524837364166" />
+      </scope>
+      <unit id="6374450524837364131" at="8,0,22,0" name="formulaAdapter.QuantityGreaterThanOperation" />
+    </file>
   </root>
   <root nodeRef="r:450af4ca-ba22-4f57-89bb-35faca681f10(formulaAdapter)/6374450524837364180">
-    <nodeInfo nodeId="6374450524837364194" fileName="FeeMoney.java" startLine="14" startPosition="37" endLine="15" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6374450524837364200" fileName="FeeMoney.java" startLine="15" startPosition="55" endLine="16" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6374450524837364184" fileName="FeeMoney.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FeeMoney#()V" />
-    <nodeInfo nodeId="6374450524837364188" fileName="FeeMoney.java" startLine="13" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#(Ljava/lang/Object;)Lmf/Money;" />
-    <scopeInfo nodeId="6374450524837364187" fileName="FeeMoney.java" startLine="10" startPosition="21" endLine="10" endPosition="21" />
-    <scopeInfo nodeId="6374450524837364184" fileName="FeeMoney.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="6374450524837364193" fileName="FeeMoney.java" startLine="14" startPosition="37" endLine="16" endPosition="37">
-      <varInfo nodeId="6374450524837364195" varName="monetaryEvent" />
-    </scopeInfo>
-    <scopeInfo nodeId="6374450524837364188" fileName="FeeMoney.java" startLine="13" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="6374450524837364191" varName="parm" />
-    </scopeInfo>
-    <unitInfo nodeId="6374450524837364180" fileName="FeeMoney.java" startLine="9" startPosition="0" endLine="19" endPosition="0" unitName="formulaAdapter.FeeMoney" />
+    <file name="FeeMoney.java">
+      <node id="6374450524837364194" at="14,37,15,55" concept="5" />
+      <node id="6374450524837364200" at="15,55,16,37" concept="6" />
+      <node id="6374450524837364184" at="10,0,12,0" concept="0" trace="FeeMoney#()V" />
+      <node id="6374450524837364188" at="13,0,18,0" concept="4" trace="compute#(Ljava/lang/Object;)Lmf/Money;" />
+      <scope id="6374450524837364187" at="10,21,10,21" />
+      <scope id="6374450524837364184" at="10,0,12,0" />
+      <scope id="6374450524837364193" at="14,37,16,37">
+        <var name="monetaryEvent" id="6374450524837364195" />
+      </scope>
+      <scope id="6374450524837364188" at="13,0,18,0">
+        <var name="parm" id="6374450524837364191" />
+      </scope>
+      <unit id="6374450524837364180" at="9,0,19,0" name="formulaAdapter.FeeMoney" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -1,3 +1,63 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ni0mgvtusixbrmn18uwyo2xjz91igy" />
+<dependencies version="2" modelHash="ni0mgvtusixbrmn18uwyo2xjz91igy">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
+  <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <common hash="-3m81h1v05b7h466d55v84y5jaj022mc" dependsOnNodes="true">
+    <dep root="1702123884811354597" />
+    <dep root="1702123884811416051" />
+    <dep root="2550657305103395183" />
+    <dep root="2550657305103411658" />
+    <dep root="2550657305103442169" />
+    <dep root="2550657305103442509" />
+    <dep root="2747974755163525074" />
+    <dep root="3185679905989655160" />
+    <dep root="3185679905990200726" />
+    <dep root="3185679905990201737" />
+    <dep root="3185679905990201789" />
+    <dep root="3185679905990512080" />
+    <dep root="3213804652571075891" />
+    <dep root="4886882084760489344" />
+    <dep root="4886882084761150502" />
+    <dep root="4942308145797614619" />
+    <dep root="5164819300892360561" />
+    <dep root="5164819300892650829" />
+    <dep root="5164819300894579629" />
+    <dep root="8349639607730654093" />
+    <dep root="8349639607730661171" />
+    <dep root="8349639607730662869" />
+    <dep root="9187447745748949838" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="2550657305103395183" name="ActionTestContainer" hash="5if0addn5d5n400u9c8u68nb136tdl5" />
+  <source id="2550657305103411658" name="ActionTestAbstractChild" hash="2m29fu5ph5fagffv1c61gqklafs722f" />
+  <source id="2550657305103442169" name="ActionTestChild1" hash="-d4z3dz7xoabh43miso5ykzscu5hp2l8" />
+  <source id="2550657305103442509" name="ActionTestChild2" hash="dq75byxb5hwkb1gtmgdzkzmshiyjvu0" />
+  <source id="3213804652571075891" name="ActionTestChild1SubConcept" hash="2rlwfiesr4zsxvhmloq7lrd6is0l8xf" />
+  <source id="5164819300892360561" name="ActionTestAbstractChildWrapper" hash="db3pyfin0q9jg929uoq4lebfie7amks" />
+  <source id="5164819300892650829" name="ActionTestChildWrapper" hash="-bssvl525uyk6um49hplq65vviwgms9v" />
+  <source id="5164819300894579629" name="ActionTestChildToWrap1" hash="-5xj7u0gdkqc17jo38bx3jcrawpfli3q" />
+  <source id="2747974755163525074" name="ActionTestChildToWrap2" hash="-c47k1o8q2czyspjfqdbbmi55e94bdrf" />
+  <source id="8349639607730654093" name="ActionTestDefaultAbstractChild" hash="dzv9ht57nl2qf38o9y6a1rq3uwtio4x" />
+  <source id="8349639607730661171" name="ActionTestDefaultChild1" hash="-3xzpmng8eh1tjycx36j81dlcmahqra1" />
+  <source id="8349639607730662869" name="ActionTestDefaultChild2" hash="8hd8sxnw7p3vrvgiha7eewsf1xwimst" />
+  <source id="9187447745748949838" name="ActionTestChild1Child" hash="-7v3wd176fmuxktp0n6cr421ei1hkzpz" />
+  <source id="1702123884811354597" name="ActionTestSidetransformTestContainer" hash="-5et13opq2gtbrcdzoxt459ji90m999v" />
+  <source id="1702123884811416051" name="ActionTestSidetransformAbstractChild" hash="-5d6n7zjbkti8imxnmn1xnxkvbz0gnxi" />
+  <source id="4942308145797614619" name="ActionTestSidetransformChild1" hash="9wqr8pge8ac3wx2pgnv2hbmokfauyj8" />
+  <source id="3185679905989655160" name="ActionTestSidetransformTestAncestor" hash="6eoce40tatc5bnieh5s6v85tvdoaiba" />
+  <source id="3185679905990200726" name="ActionTestSidetransformAnotherAbstractChild" hash="-bf1ek17t68mfoewmfiy68ax0h709rm2" />
+  <source id="3185679905990201737" name="ActionTestSidetransformAnotherChild1" hash="-en5hvwebufid27z2ygnfa40xkfetu0n" />
+  <source id="3185679905990201789" name="ActionTestSidetransformAnotherChild2" hash="-58mz6n3a2i12seqko8xhmod1f62wb8o" />
+  <source id="3185679905990512080" name="ActionTestSidetransformAnotherChildCommonSuperConcept" hash="2vcnfhvwtcxwysfg786t78fb7a8or15" />
+  <source id="4886882084760489344" name="ActionTestSidetransformAddConceptAbstractChild" hash="-d24o9bhfjxu1yc45axk2qhmdhzkwa0x" />
+  <source id="4886882084761150502" name="ActionTestSidetransformAddConceptChild" hash="-91ai6en0qu3mpejvnqdrhw3njzhss6u" />
+</dependencies>
 

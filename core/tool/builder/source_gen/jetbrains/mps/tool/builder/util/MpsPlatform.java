@@ -8,23 +8,39 @@ import jetbrains.mps.typesystem.MPSTypesystem;
 import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 
-public class MpsPlatform {
-  private MpsPlatform() {
+public final class MpsPlatform {
+  private MPSCore myMPSCore;
+  private MPSPersistence myMPSPersistence;
+  private MPSTypesystem myMPSTypesystem;
+  private MPSGenerator myMPSGenerator;
+  private MPSBaseLanguage myMPSBaseLanguage;
+
+  public MpsPlatform() {
   }
 
-  public static void init() {
-    MPSCore.getInstance().init();
-    MPSPersistence.getInstance().init();
-    MPSTypesystem.getInstance().init();
-    MPSGenerator.getInstance().init();
-    MPSBaseLanguage.getInstance().init();
+  public void init() {
+    myMPSCore = new MPSCore();
+    myMPSPersistence = new MPSPersistence();
+    myMPSTypesystem = new MPSTypesystem();
+    myMPSGenerator = new MPSGenerator();
+    myMPSBaseLanguage = new MPSBaseLanguage();
+    myMPSCore.init();
+    myMPSPersistence.init();
+    myMPSTypesystem.init();
+    myMPSGenerator.init();
+    myMPSBaseLanguage.init();
   }
 
-  public static void dispose() {
-    MPSBaseLanguage.getInstance().dispose();
-    MPSGenerator.getInstance().dispose();
-    MPSTypesystem.getInstance().dispose();
-    MPSPersistence.getInstance().dispose();
-    MPSCore.getInstance().dispose();
+  public void dispose() {
+    myMPSBaseLanguage.dispose();
+    myMPSGenerator.dispose();
+    myMPSTypesystem.dispose();
+    myMPSPersistence.dispose();
+    myMPSCore.dispose();
+    myMPSBaseLanguage = null;
+    myMPSGenerator = null;
+    myMPSTypesystem = null;
+    myMPSPersistence = null;
+    myMPSCore = null;
   }
 }

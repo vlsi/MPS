@@ -17,7 +17,6 @@
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="typesystemIntegration" />
-    <orderEntry type="module" module-name="generator-engine" />
     <orderEntry type="module" module-name="findUsages-runtime" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="library" name="Annotations" level="project" />

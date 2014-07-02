@@ -14,7 +14,6 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.smodel.SNodePointer;
 
 @Generated
@@ -29,33 +28,23 @@ public class TemplateOutputRoot implements TemplateDeclaration {
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
     final SNode tnode1 = environment.createOutputNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
-      environment.getTracer().pushTemplateNode(templateNode_q702qm_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414086886");
       SNodeAccessUtil.setProperty(tnode1, "name", "OutputRoot");
       SNodeAccessUtil.setProperty(tnode1, "text", "chilren were generated from a single child in input node.");
-
       {
         Collection<SNode> tlist2 = null;
-        try {
-          environment.getTracer().pushMacro(copySrcListMacro_q702qm_a0a0a1a5a1a2);
-          final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_3893401255414086894(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_q702qm_a0a0a1a5a1a2));
-          tlist2 = environment.copyNodes(copyListInput2, copySrcListMacro_q702qm_a0a0a1a5a1a2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414086888", context);
-        } finally {
-          environment.getTracer().closeMacro(copySrcListMacro_q702qm_a0a0a1a5a1a2);
-        }
+        final Iterable<SNode> copyListInput2 = QueriesGenerated.sourceNodesQuery_3893401255414086894(new SourceSubstituteMacroNodesContext(context, copySrcListMacro_q702qm_b0a0a1a3a1a2));
+        tlist2 = environment.copyNodes(copyListInput2, copySrcListMacro_q702qm_b0a0a1a3a1a2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414086888", context);
         for (SNode child3 : TemplateUtil.asNotNull(tlist2)) {
           tnode1.addChild("outputChild", child3);
         }
         // TODO validate child 
       }
     } finally {
-      environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
-      environment.getTracer().closeTemplateNode(templateNode_q702qm_a0a0a1a2);
     }
     return TemplateUtil.singletonList(tnode1);
   }
 
   private static SNodePointer template_q702qm_a0a1 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086886");
-  private static SNodePointer templateNode_q702qm_a0a0a1a2 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086886");
-  private static SNodePointer copySrcListMacro_q702qm_a0a0a1a5a1a2 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086893");
+  private static SNodePointer copySrcListMacro_q702qm_b0a0a1a3a1a2 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "3893401255414086893");
 }

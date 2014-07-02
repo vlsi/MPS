@@ -1,119 +1,134 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="IntentionsDescriptor.java" startLine="10" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.lang.intentions.intentions.IntentionsDescriptor" />
-  <root nodeRef="r:5a8e1e6d-7386-4281-8e53-bda28bd8edf3(jetbrains.mps.lang.intentions.intentions)/4203998840477564642">
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="34" startPosition="41" endLine="35" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="42" startPosition="34" endLine="43" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="46" startPosition="44" endLine="47" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="53" startPosition="5" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477567001" fileName="MakeSurroundWith_Intention.java" startLine="57" startPosition="91" endLine="58" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="61" startPosition="53" endLine="62" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="65" startPosition="35" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="72" startPosition="5" endLine="73" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477566989" fileName="MakeSurroundWith_Intention.java" startLine="81" startPosition="123" endLine="82" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477566997" fileName="MakeSurroundWith_Intention.java" startLine="83" startPosition="14" endLine="84" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477567015" fileName="MakeSurroundWith_Intention.java" startLine="88" startPosition="78" endLine="89" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4203998840477567020" fileName="MakeSurroundWith_Intention.java" startLine="90" startPosition="123" endLine="91" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477567030" fileName="MakeSurroundWith_Intention.java" startLine="92" startPosition="14" endLine="93" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477567042" fileName="MakeSurroundWith_Intention.java" startLine="94" startPosition="7" endLine="95" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477567058" fileName="MakeSurroundWith_Intention.java" startLine="95" startPosition="87" endLine="96" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2957159279736519180" fileName="MakeSurroundWith_Intention.java" startLine="96" startPosition="111" endLine="97" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477567066" fileName="MakeSurroundWith_Intention.java" startLine="97" startPosition="89" endLine="98" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477567074" fileName="MakeSurroundWith_Intention.java" startLine="98" startPosition="107" endLine="99" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477567082" fileName="MakeSurroundWith_Intention.java" startLine="99" startPosition="133" endLine="100" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477567090" fileName="MakeSurroundWith_Intention.java" startLine="100" startPosition="119" endLine="101" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477567098" fileName="MakeSurroundWith_Intention.java" startLine="101" startPosition="111" endLine="102" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477567106" fileName="MakeSurroundWith_Intention.java" startLine="102" startPosition="127" endLine="103" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477567114" fileName="MakeSurroundWith_Intention.java" startLine="103" startPosition="127" endLine="104" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477567122" fileName="MakeSurroundWith_Intention.java" startLine="104" startPosition="129" endLine="105" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477567130" fileName="MakeSurroundWith_Intention.java" startLine="105" startPosition="119" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4203998840477567192" fileName="MakeSurroundWith_Intention.java" startLine="106" startPosition="0" endLine="107" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="110" startPosition="48" endLine="111" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeSurroundWith_Intention#()V" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="77" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="4203998840477566995" fileName="MakeSurroundWith_Intention.java" startLine="83" startPosition="12" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4203998840477567028" fileName="MakeSurroundWith_Intention.java" startLine="92" startPosition="12" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLanguageFqName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getType#()Ljetbrains/mps/intentions/IntentionType;" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="50" startPosition="84" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="69" startPosition="99" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="4203998840477566987" fileName="MakeSurroundWith_Intention.java" startLine="80" startPosition="87" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4203998840477567018" fileName="MakeSurroundWith_Intention.java" startLine="89" startPosition="15" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="80" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="88" startPosition="0" endLine="109" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="23" startPosition="39" endLine="23" endPosition="39" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="77" startPosition="38" endLine="77" endPosition="38" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="26" startPosition="30" endLine="27" endPosition="78" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="30" startPosition="35" endLine="31" endPosition="30" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="34" startPosition="41" endLine="35" endPosition="81" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="38" startPosition="37" endLine="39" endPosition="43" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="42" startPosition="34" endLine="43" endPosition="32" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="46" startPosition="44" endLine="47" endPosition="17" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="19" />
-    <scopeInfo nodeId="4203998840477567000" fileName="MakeSurroundWith_Intention.java" startLine="57" startPosition="91" endLine="58" endPosition="224" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="61" startPosition="53" endLine="62" endPosition="135" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="65" startPosition="35" endLine="66" endPosition="17" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="70" startPosition="37" endLine="71" endPosition="132" />
-    <scopeInfo nodeId="4203998840477566988" fileName="MakeSurroundWith_Intention.java" startLine="81" startPosition="123" endLine="82" endPosition="38" />
-    <scopeInfo nodeId="4203998840477566996" fileName="MakeSurroundWith_Intention.java" startLine="83" startPosition="14" endLine="84" endPosition="48" />
-    <scopeInfo nodeId="4203998840477567019" fileName="MakeSurroundWith_Intention.java" startLine="90" startPosition="123" endLine="91" endPosition="150" />
-    <scopeInfo nodeId="4203998840477567029" fileName="MakeSurroundWith_Intention.java" startLine="92" startPosition="14" endLine="93" endPosition="162" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="110" startPosition="48" endLine="111" endPosition="45" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="77" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="4203998840477564642" varName="editorContext" />
-      <varInfo nodeId="4203998840477564642" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="110" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="50" startPosition="84" endLine="54" endPosition="16" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="69" startPosition="99" endLine="73" endPosition="30" />
-    <scopeInfo nodeId="4203998840477564644" fileName="MakeSurroundWith_Intention.java" startLine="80" startPosition="87" endLine="85" endPosition="7" />
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="50" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="4203998840477564642" varName="editorContext" />
-      <varInfo nodeId="4203998840477564642" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="4203998840477564642" varName="context" />
-      <varInfo nodeId="4203998840477564642" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="80" startPosition="0" endLine="87" endPosition="0">
-      <varInfo nodeId="4203998840477564642" varName="editorContext" />
-      <varInfo nodeId="4203998840477564642" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4203998840477564646" fileName="MakeSurroundWith_Intention.java" startLine="88" startPosition="78" endLine="107" endPosition="39">
-      <varInfo nodeId="4203998840477567016" varName="sd" />
-    </scopeInfo>
-    <scopeInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="88" startPosition="0" endLine="109" endPosition="0">
-      <varInfo nodeId="4203998840477564642" varName="editorContext" />
-      <varInfo nodeId="4203998840477564642" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="76" startPosition="0" endLine="114" endPosition="0" unitName="jetbrains.mps.lang.intentions.intentions.MakeSurroundWith_Intention$IntentionImplementation" />
-    <unitInfo nodeId="4203998840477564642" fileName="MakeSurroundWith_Intention.java" startLine="20" startPosition="0" endLine="115" endPosition="0" unitName="jetbrains.mps.lang.intentions.intentions.MakeSurroundWith_Intention" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <root>
+    <file name="IntentionsDescriptor.java">
+      <unit at="10,0,19,0" name="jetbrains.mps.lang.intentions.intentions.IntentionsDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:5a8e1e6d-7386-4281-8e53-bda28bd8edf3(jetbrains.mps.lang.intentions.intentions)/4203998840477564642">
+    <file name="MakeSurroundWith_Intention.java">
+      <node id="4203998840477564642" at="21,0,22,0" concept="3" trace="myCachedExecutable" />
+      <node id="4203998840477564642" at="26,30,27,78" concept="7" />
+      <node id="4203998840477564642" at="30,35,31,30" concept="7" />
+      <node id="4203998840477564642" at="34,41,35,81" concept="7" />
+      <node id="4203998840477564642" at="38,37,39,43" concept="7" />
+      <node id="4203998840477564642" at="42,34,43,32" concept="7" />
+      <node id="4203998840477564642" at="46,44,47,17" concept="7" />
+      <node id="4203998840477564642" at="51,53,52,19" concept="7" />
+      <node id="4203998840477564642" at="53,5,54,16" concept="7" />
+      <node id="4203998840477567001" at="57,91,58,224" concept="7" />
+      <node id="4203998840477564642" at="61,53,62,135" concept="7" />
+      <node id="4203998840477564642" at="65,35,66,17" concept="7" />
+      <node id="4203998840477564642" at="70,37,71,132" concept="2" />
+      <node id="4203998840477564642" at="72,5,73,30" concept="7" />
+      <node id="4203998840477566989" at="81,123,82,38" concept="7" />
+      <node id="4203998840477566997" at="83,14,84,48" concept="7" />
+      <node id="4203998840477567015" at="88,78,89,15" concept="6" />
+      <node id="4203998840477567020" at="90,123,91,150" concept="2" />
+      <node id="4203998840477567030" at="92,14,93,162" concept="2" />
+      <node id="4203998840477567042" at="94,7,95,87" concept="2" />
+      <node id="4203998840477567058" at="95,87,96,111" concept="2" />
+      <node id="2957159279736519180" at="96,111,97,89" concept="2" />
+      <node id="4203998840477567066" at="97,89,98,107" concept="2" />
+      <node id="4203998840477567074" at="98,107,99,133" concept="2" />
+      <node id="4203998840477567082" at="99,133,100,119" concept="2" />
+      <node id="4203998840477567090" at="100,119,101,111" concept="2" />
+      <node id="4203998840477567098" at="101,111,102,127" concept="2" />
+      <node id="4203998840477567106" at="102,127,103,127" concept="2" />
+      <node id="4203998840477567114" at="103,127,104,129" concept="2" />
+      <node id="4203998840477567122" at="104,129,105,119" concept="2" />
+      <node id="4203998840477567130" at="105,119,106,0" concept="8" />
+      <node id="4203998840477567192" at="106,0,107,39" concept="2" />
+      <node id="4203998840477564642" at="110,48,111,45" concept="7" />
+      <node id="4203998840477564642" at="23,0,25,0" concept="1" trace="MakeSurroundWith_Intention#()V" />
+      <node id="4203998840477564642" at="77,0,79,0" concept="1" trace="IntentionImplementation#()V" />
+      <node id="4203998840477566995" at="83,12,85,7" concept="0" />
+      <node id="4203998840477567028" at="92,12,94,7" concept="0" />
+      <node id="4203998840477564642" at="26,0,29,0" concept="5" trace="getConcept#()Ljava/lang/String;" />
+      <node id="4203998840477564642" at="30,0,33,0" concept="5" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="4203998840477564642" at="34,0,37,0" concept="5" trace="getPersistentStateKey#()Ljava/lang/String;" />
+      <node id="4203998840477564642" at="38,0,41,0" concept="5" trace="getLanguageFqName#()Ljava/lang/String;" />
+      <node id="4203998840477564642" at="42,0,45,0" concept="5" trace="getType#()Ljetbrains/mps/intentions/IntentionType;" />
+      <node id="4203998840477564642" at="46,0,49,0" concept="5" trace="isAvailableInChildNodes#()Z" />
+      <node id="4203998840477564642" at="50,84,53,5" concept="4" />
+      <node id="4203998840477564642" at="57,0,60,0" concept="5" trace="isApplicableToNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="4203998840477564642" at="61,0,64,0" concept="5" trace="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4203998840477564642" at="65,0,68,0" concept="5" trace="isSurroundWith#()Z" />
+      <node id="4203998840477564642" at="69,99,72,5" concept="4" />
+      <node id="4203998840477564642" at="110,0,113,0" concept="5" trace="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+      <node id="4203998840477566987" at="80,87,85,7" concept="4" />
+      <node id="4203998840477567018" at="89,15,94,7" concept="4" />
+      <node id="4203998840477564642" at="50,0,56,0" concept="5" trace="isApplicable#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+      <node id="4203998840477564642" at="69,0,75,0" concept="5" trace="instances#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+      <node id="4203998840477564642" at="80,0,87,0" concept="5" trace="getDescription#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+      <node id="4203998840477564642" at="88,0,109,0" concept="5" trace="execute#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+      <scope id="4203998840477564642" at="23,39,23,39" />
+      <scope id="4203998840477564642" at="77,38,77,38" />
+      <scope id="4203998840477564642" at="26,30,27,78" />
+      <scope id="4203998840477564642" at="30,35,31,30" />
+      <scope id="4203998840477564642" at="34,41,35,81" />
+      <scope id="4203998840477564642" at="38,37,39,43" />
+      <scope id="4203998840477564642" at="42,34,43,32" />
+      <scope id="4203998840477564642" at="46,44,47,17" />
+      <scope id="4203998840477564642" at="51,53,52,19" />
+      <scope id="4203998840477567000" at="57,91,58,224" />
+      <scope id="4203998840477564642" at="61,53,62,135" />
+      <scope id="4203998840477564642" at="65,35,66,17" />
+      <scope id="4203998840477564642" at="70,37,71,132" />
+      <scope id="4203998840477566988" at="81,123,82,38" />
+      <scope id="4203998840477566996" at="83,14,84,48" />
+      <scope id="4203998840477567019" at="90,123,91,150" />
+      <scope id="4203998840477567029" at="92,14,93,162" />
+      <scope id="4203998840477564642" at="110,48,111,45" />
+      <scope id="4203998840477564642" at="23,0,25,0" />
+      <scope id="4203998840477564642" at="77,0,79,0" />
+      <scope id="4203998840477564642" at="26,0,29,0" />
+      <scope id="4203998840477564642" at="30,0,33,0" />
+      <scope id="4203998840477564642" at="34,0,37,0" />
+      <scope id="4203998840477564642" at="38,0,41,0" />
+      <scope id="4203998840477564642" at="42,0,45,0" />
+      <scope id="4203998840477564642" at="46,0,49,0" />
+      <scope id="4203998840477564642" at="57,0,60,0">
+        <var name="editorContext" id="4203998840477564642" />
+        <var name="node" id="4203998840477564642" />
+      </scope>
+      <scope id="4203998840477564642" at="61,0,64,0" />
+      <scope id="4203998840477564642" at="65,0,68,0" />
+      <scope id="4203998840477564642" at="110,0,113,0" />
+      <scope id="4203998840477564642" at="50,84,54,16" />
+      <scope id="4203998840477564642" at="69,99,73,30" />
+      <scope id="4203998840477564644" at="80,87,85,7" />
+      <scope id="4203998840477564642" at="50,0,56,0">
+        <var name="editorContext" id="4203998840477564642" />
+        <var name="node" id="4203998840477564642" />
+      </scope>
+      <scope id="4203998840477564642" at="69,0,75,0">
+        <var name="context" id="4203998840477564642" />
+        <var name="node" id="4203998840477564642" />
+      </scope>
+      <scope id="4203998840477564642" at="80,0,87,0">
+        <var name="editorContext" id="4203998840477564642" />
+        <var name="node" id="4203998840477564642" />
+      </scope>
+      <scope id="4203998840477564646" at="88,78,107,39">
+        <var name="sd" id="4203998840477567016" />
+      </scope>
+      <scope id="4203998840477564642" at="88,0,109,0">
+        <var name="editorContext" id="4203998840477564642" />
+        <var name="node" id="4203998840477564642" />
+      </scope>
+      <unit id="4203998840477564642" at="76,0,114,0" name="jetbrains.mps.lang.intentions.intentions.MakeSurroundWith_Intention$IntentionImplementation" />
+      <unit id="4203998840477564642" at="20,0,115,0" name="jetbrains.mps.lang.intentions.intentions.MakeSurroundWith_Intention" />
+    </file>
+  </root>
+</debug-info>
 

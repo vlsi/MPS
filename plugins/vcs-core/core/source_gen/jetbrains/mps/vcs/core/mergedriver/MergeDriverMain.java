@@ -59,8 +59,10 @@ public class MergeDriverMain {
       return;
     }
     configureLog4j();
-    MPSCore.getInstance().init();
-    MPSPersistence.getInstance().init();
+    final MPSCore mpsCore = new MPSCore();
+    mpsCore.init();
+    final MPSPersistence mpsPersistence = new MPSPersistence();
+    mpsPersistence.init();
 
     String systemPath = new File(System.getProperty(LOG_PROPERTY)).getParentFile().getParentFile().getAbsolutePath();
     MergeDriverBackupUtil.setMergeBackupDirPath(systemPath + File.separator + "merge-backup");
@@ -76,6 +78,8 @@ public class MergeDriverMain {
       }
     })));
     int status = FileMerger.mergeFiles(merger, baseFile, currentFile, otherFile, conflictStart, conflictEnd, conflictSeparator, overwrite, convertCRLF);
+    mpsPersistence.dispose();
+    mpsCore.dispose();
     System.exit(status);
   }
 

@@ -12,42 +12,38 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 5:
-        return new ConceptDeclaration_BehaviorDescriptor();
-      case 13:
-        return new LinkDeclaration_BehaviorDescriptor();
-      case 15:
-        return new PropertyDeclaration_BehaviorDescriptor();
-      case 7:
-        return new DataTypeDeclaration_BehaviorDescriptor();
-      case 9:
-        return new EnumerationDataTypeDeclaration_BehaviorDescriptor();
-      case 6:
-        return new ConstrainedDataTypeDeclaration_BehaviorDescriptor();
-      case 10:
-        return new EnumerationMemberDeclaration_BehaviorDescriptor();
-      case 14:
-        return new PrimitiveDataTypeDeclaration_BehaviorDescriptor();
-      case 0:
-        return new AggregationConceptLink_BehaviorDescriptor();
-      case 1:
-        return new AggregationConceptLinkDeclaration_BehaviorDescriptor();
-      case 11:
-        return new InterfaceConceptDeclaration_BehaviorDescriptor();
-      case 12:
-        return new InterfaceConceptReference_BehaviorDescriptor();
-      case 8:
-        return new DeprecatedNodeAnnotation_BehaviorDescriptor();
-      case 2:
-        return new AttributeInfo_BehaviorDescriptor();
-      case 4:
-        return new AttributeInfo_IsMultiple_BehaviorDescriptor();
       case 3:
+        return new ConceptDeclaration_BehaviorDescriptor();
+      case 11:
+        return new LinkDeclaration_BehaviorDescriptor();
+      case 13:
+        return new PropertyDeclaration_BehaviorDescriptor();
+      case 5:
+        return new DataTypeDeclaration_BehaviorDescriptor();
+      case 7:
+        return new EnumerationDataTypeDeclaration_BehaviorDescriptor();
+      case 4:
+        return new ConstrainedDataTypeDeclaration_BehaviorDescriptor();
+      case 8:
+        return new EnumerationMemberDeclaration_BehaviorDescriptor();
+      case 12:
+        return new PrimitiveDataTypeDeclaration_BehaviorDescriptor();
+      case 9:
+        return new InterfaceConceptDeclaration_BehaviorDescriptor();
+      case 10:
+        return new InterfaceConceptReference_BehaviorDescriptor();
+      case 6:
+        return new DeprecatedNodeAnnotation_BehaviorDescriptor();
+      case 0:
+        return new AttributeInfo_BehaviorDescriptor();
+      case 2:
+        return new AttributeInfo_IsMultiple_BehaviorDescriptor();
+      case 1:
         return new AttributeInfo_AttributedConcept_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.structure.structure.AggregationConceptLink", "jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration", "jetbrains.mps.lang.structure.structure.AttributeInfo", "jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept", "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.structure.structure.AttributeInfo", "jetbrains.mps.lang.structure.structure.AttributeInfo_AttributedConcept", "jetbrains.mps.lang.structure.structure.AttributeInfo_IsMultiple", "jetbrains.mps.lang.structure.structure.ConceptDeclaration", "jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DataTypeDeclaration", "jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", "jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration", "jetbrains.mps.lang.structure.structure.InterfaceConceptReference", "jetbrains.mps.lang.structure.structure.LinkDeclaration", "jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration"};
 }

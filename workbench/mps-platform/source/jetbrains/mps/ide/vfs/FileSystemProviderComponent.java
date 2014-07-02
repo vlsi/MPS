@@ -1,7 +1,7 @@
 package jetbrains.mps.ide.vfs;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemProvider;
 import org.jetbrains.annotations.NotNull;
@@ -14,7 +14,7 @@ abstract public class FileSystemProviderComponent implements ApplicationComponen
   // component stuff
   @Override
   public void initComponent() {
-    boolean useIoFile = MPSCore.getInstance().isTestMode() && "true".equals(System.getProperty("mps.vfs.useIoFile"));
+    boolean useIoFile = RuntimeFlags.isTestMode() && RuntimeFlags.isUseIOFile();
     if (!useIoFile) {
       // setup filesystem provider
       FileSystem.getInstance().setFileSystemProvider(this);

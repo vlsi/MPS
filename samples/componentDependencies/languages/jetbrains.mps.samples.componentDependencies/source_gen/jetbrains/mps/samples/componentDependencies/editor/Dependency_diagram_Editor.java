@@ -28,6 +28,8 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class Dependency_diagram_Editor extends DefaultNodeEditor {
@@ -175,8 +177,16 @@ public class Dependency_diagram_Editor extends DefaultNodeEditor {
 
 
     public void synchronize() {
-      myInputPort.set(MultiTuple.<SNode>from(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(getSNode()), "jetbrains.mps.samples.componentDependencies.structure.Component"), "out", true)).first()));
-      myOutputPort.set(MultiTuple.<SNode>from(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "to", false), "in", true)).first()));
+      myInputPort.set(MultiTuple.<SNode>from(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(getSNode()), "jetbrains.mps.samples.componentDependencies.structure.Component"), "out", true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SPropertyOperations.getString(it, "name").equals(SPropertyOperations.getString(SLinkOperations.getTarget(getSNode(), "to", false), "name"));
+        }
+      })));
+      myOutputPort.set(MultiTuple.<SNode>from(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(getSNode(), "to", false), "in", true)).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SPropertyOperations.getString(it, "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getParent(getSNode()), "jetbrains.mps.samples.componentDependencies.structure.Component"), "name"));
+        }
+      })));
     }
 
     private PolyLineConnection createConnection() {

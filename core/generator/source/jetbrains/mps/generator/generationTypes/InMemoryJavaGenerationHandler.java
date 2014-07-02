@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.generationTypes;
 
+import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.compiler.CompilationResultAdapter;
 import jetbrains.mps.compiler.CompilationResultListener;
 import jetbrains.mps.compiler.JavaCompiler;
@@ -22,24 +23,25 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.facets.JavaModuleOperations;
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelReference;import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.textGen.TextGen;
 import jetbrains.mps.textGen.TextGenerationResult;
-import jetbrains.mps.textGen.TextGenerationUtil;
-import org.jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.util.ProgressMonitor;
+import org.jetbrains.mps.util.Condition;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -115,14 +117,13 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     boolean wereErrors = false;
 
     myContextModules.add(context.getModule());
-    Iterable<SNode> iterable = new ConditionalIterable<SNode>(outputModel.getRootNodes(), new Condition<SNode>() {
+    for (SNode root : new ConditionalIterable<SNode>(outputModel.getRootNodes(), new Condition<SNode>() {
       @Override
       public boolean met(SNode node) {
         return node.getName() != null;
       }
-    });
-    for (SNode root : iterable) {
-      TextGenerationResult genResult = TextGenerationUtil.generateText(context, root);
+    })) {
+      TextGenerationResult genResult = TextGen.generateText(root);
       wereErrors |= genResult.hasErrors();
       String key = getKey(outputModel.getReference(), root);
       Object result = genResult.getResult();

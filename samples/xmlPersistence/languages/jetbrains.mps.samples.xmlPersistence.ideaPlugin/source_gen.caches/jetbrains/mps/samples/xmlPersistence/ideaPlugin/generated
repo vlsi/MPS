@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4l9pk5m883gna8onmqt6u2ddot4thux">
+<dependencies version="2" modelHash="-1tj4rgddd5tubwdyendb32vq1ztvfht">
   <common hash="-76pjdjz794mkywaaj3l6eq1s6u7g2ar" />
-  <source id="9212378209272341619" name="plugin" hash="4tm05rt5yrgnx5930d83jqfqa8jbcuq">
+  <source id="9212378209272341619" name="plugin" hash="8clhuddfbp70b18mr1ryikbmlv3phrz">
     <file name="plugin.xml" />
   </source>
 </dependencies>

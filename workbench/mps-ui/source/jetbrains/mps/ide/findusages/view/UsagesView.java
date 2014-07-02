@@ -25,7 +25,9 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataKey;
+import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
@@ -56,6 +58,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.util.Computable;
 import org.jdom.Element;
+import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -365,7 +368,7 @@ public abstract class UsagesView implements IExternalizeable {
     }
   }
 
-  private class RootPanel extends JPanel implements OccurenceNavigator {
+  private class RootPanel extends JPanel implements OccurenceNavigator, DataProvider {
     public RootPanel() {
       super(new BorderLayout());
     }
@@ -398,6 +401,15 @@ public abstract class UsagesView implements IExternalizeable {
     @Override
     public String getPreviousOccurenceActionName() {
       return myOccurenceNavigator != null ? myOccurenceNavigator.getPreviousOccurenceActionName() : "";
+    }
+
+    @Nullable
+    @Override
+    public Object getData(@NonNls String dataId) {
+      if (PlatformDataKeys.HELP_ID.is(dataId)) {
+        return "ideaInterface.usagesView";
+      }
+      return null;
     }
   }
 

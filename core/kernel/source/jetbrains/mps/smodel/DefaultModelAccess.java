@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -281,11 +281,6 @@ public class DefaultModelAccess extends ModelAccess {
   @Override
   public void runWriteActionInCommand(Runnable r, String name, Object groupId, boolean requestUndoConfirmation, Project project) {
     runWriteAction(r);
-  }
-
-  @Override
-  public void runWriteActionInCommandAsync(final Runnable r, final Project project) {
-    throw new UnsupportedOperationException();
   }
 
   @Override

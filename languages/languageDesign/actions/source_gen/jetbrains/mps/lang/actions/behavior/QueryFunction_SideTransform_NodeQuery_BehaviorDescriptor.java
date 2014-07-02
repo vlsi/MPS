@@ -15,6 +15,10 @@ public class QueryFunction_SideTransform_NodeQuery_BehaviorDescriptor extends Co
     return QueryFunction_SideTransform_NodeQuery_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
+  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return QueryFunction_SideTransform_NodeQuery_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
+  }
+
   public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
     return QueryFunction_SideTransform_NodeQuery_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
   }

@@ -1,204 +1,178 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.execution.common.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="IGeneratedToClass_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor" />
-  <root nodeRef="r:59b8a6cf-a3a9-4109-98b7-d13bb426ef49(jetbrains.mps.execution.common.behavior)/946964771156905389">
-    <nodeInfo nodeId="946964771156905492" fileName="IGeneratedToClass_Behavior.java" startLine="24" startPosition="89" endLine="25" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="946964771156905498" fileName="IGeneratedToClass_Behavior.java" startLine="25" startPosition="92" endLine="26" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156905507" fileName="IGeneratedToClass_Behavior.java" startLine="29" startPosition="79" endLine="30" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3754131050835940535" fileName="IGeneratedToClass_Behavior.java" startLine="33" startPosition="104" endLine="34" endPosition="258" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2572811016744662333" fileName="IGeneratedToClass_Behavior.java" startLine="38" startPosition="47" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156905566" fileName="IGeneratedToClass_Behavior.java" startLine="40" startPosition="5" endLine="41" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4366236229294148978" fileName="IGeneratedToClass_Behavior.java" startLine="44" startPosition="80" endLine="45" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2256484787298834698" fileName="IGeneratedToClass_Behavior.java" startLine="48" startPosition="78" endLine="49" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156905398" fileName="IGeneratedToClass_Behavior.java" startLine="52" startPosition="130" endLine="53" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="946964771156905408" fileName="IGeneratedToClass_Behavior.java" startLine="54" startPosition="37" endLine="55" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="946964771156905415" fileName="IGeneratedToClass_Behavior.java" startLine="55" startPosition="41" endLine="56" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="946964771156905423" fileName="IGeneratedToClass_Behavior.java" startLine="56" startPosition="42" endLine="57" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="946964771156905429" fileName="IGeneratedToClass_Behavior.java" startLine="58" startPosition="5" endLine="59" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156905440" fileName="IGeneratedToClass_Behavior.java" startLine="62" startPosition="126" endLine="63" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="946964771156905450" fileName="IGeneratedToClass_Behavior.java" startLine="63" startPosition="49" endLine="64" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3754131050835956053" fileName="IGeneratedToClass_Behavior.java" startLine="67" startPosition="118" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3754131050835940490" fileName="IGeneratedToClass_Behavior.java" startLine="68" startPosition="18" endLine="69" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3754131050835956056" fileName="IGeneratedToClass_Behavior.java" startLine="69" startPosition="106" endLine="70" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3754131050835940513" fileName="IGeneratedToClass_Behavior.java" startLine="70" startPosition="18" endLine="71" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3754131050835956059" fileName="IGeneratedToClass_Behavior.java" startLine="71" startPosition="106" endLine="72" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3754131050835956015" fileName="IGeneratedToClass_Behavior.java" startLine="72" startPosition="24" endLine="73" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3754131050835940531" fileName="IGeneratedToClass_Behavior.java" startLine="73" startPosition="106" endLine="74" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="78" startPosition="74" endLine="79" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="83" startPosition="107" endLine="84" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="88" startPosition="86" endLine="89" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="93" startPosition="119" endLine="94" endPosition="276" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="98" startPosition="76" endLine="99" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="103" startPosition="109" endLine="104" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="108" startPosition="77" endLine="109" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="113" startPosition="110" endLine="114" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3754131050835940496" fileName="IGeneratedToClass_Behavior.java" startLine="117" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_tq53pp_b0a1a9" />
-    <nodeInfo nodeId="3754131050835940518" fileName="IGeneratedToClass_Behavior.java" startLine="118" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_tq53pp_b0a3a9" />
-    <nodeInfo nodeId="3754131050835956026" fileName="IGeneratedToClass_Behavior.java" startLine="119" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="REGEXP_tq53pp_b0a5a9" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getFullName_946964771156905503#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getValidClassName_2572811016744662265#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2572811016744662328" fileName="IGeneratedToClass_Behavior.java" startLine="37" startPosition="99" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getBaseName_4366236229294148974#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getNamespace_2256484787298834694#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getGeneratedClassName_946964771156905488#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_makeUpperCase_946964771156905431#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;I)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getSuffix_946964771156905483#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="82" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getSuffix_946964771156905483#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="87" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedClassName_946964771156905488#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="92" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getGeneratedClassName_946964771156905488#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getFullName_946964771156905503#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getFullName_946964771156905503#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getBaseName_4366236229294148974#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="112" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getBaseName_4366236229294148974#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905402" fileName="IGeneratedToClass_Behavior.java" startLine="53" startPosition="25" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="37" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getGeneratedClassName_946964771156905516#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="52" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_replaceProhibitedSymbol_946964771156905390#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="67" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getValidClassName_3754131050835940481#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3754131050835940507" fileName="_Replacer_tq53pp_a0a0b0j.java" startLine="9" startPosition="42" endLine="10" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0j.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />
-    <nodeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0j.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_closureContext" />
-    <nodeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0j.java" startLine="16" startPosition="101" endLine="17" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0j.java" startLine="17" startPosition="42" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0j.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0j.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Replacer_tq53pp_a0a0b0j#(Ljetbrains/mps/execution/common/behavior/IGeneratedToClass_Behavior;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="3754131050835940528" fileName="_Replacer_tq53pp_a0a0d0j.java" startLine="9" startPosition="42" endLine="10" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0j.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />
-    <nodeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0j.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_closureContext" />
-    <nodeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0j.java" startLine="16" startPosition="101" endLine="17" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0j.java" startLine="17" startPosition="42" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0j.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0j.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Replacer_tq53pp_a0a0d0j#(Ljetbrains/mps/execution/common/behavior/IGeneratedToClass_Behavior;Ljava/lang/Object;)V" />
-    <nodeInfo nodeId="3754131050835956045" fileName="_Replacer_tq53pp_a0a0f0j.java" startLine="9" startPosition="42" endLine="10" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0j.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_enclosingClass" />
-    <nodeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0j.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_closureContext" />
-    <nodeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0j.java" startLine="16" startPosition="101" endLine="17" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0j.java" startLine="17" startPosition="42" endLine="18" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0j.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0j.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_Replacer_tq53pp_a0a0f0j#(Ljetbrains/mps/execution/common/behavior/IGeneratedToClass_Behavior;Ljava/lang/Object;)V" />
-    <scopeInfo nodeId="946964771156905515" fileName="IGeneratedToClass_Behavior.java" startLine="21" startPosition="43" endLine="21" endPosition="43" />
-    <scopeInfo nodeId="946964771156905506" fileName="IGeneratedToClass_Behavior.java" startLine="29" startPosition="79" endLine="30" endPosition="177" />
-    <scopeInfo nodeId="2572811016744662268" fileName="IGeneratedToClass_Behavior.java" startLine="33" startPosition="104" endLine="34" endPosition="258" />
-    <scopeInfo nodeId="2572811016744662332" fileName="IGeneratedToClass_Behavior.java" startLine="38" startPosition="47" endLine="39" endPosition="18" />
-    <scopeInfo nodeId="4366236229294148977" fileName="IGeneratedToClass_Behavior.java" startLine="44" startPosition="80" endLine="45" endPosition="59" />
-    <scopeInfo nodeId="2256484787298834697" fileName="IGeneratedToClass_Behavior.java" startLine="48" startPosition="78" endLine="49" endPosition="100" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="78" startPosition="74" endLine="79" endPosition="124" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="83" startPosition="107" endLine="84" endPosition="264" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="88" startPosition="86" endLine="89" endPosition="136" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="93" startPosition="119" endLine="94" endPosition="276" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="98" startPosition="76" endLine="99" endPosition="126" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="103" startPosition="109" endLine="104" endPosition="266" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="108" startPosition="77" endLine="109" endPosition="127" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="113" startPosition="110" endLine="114" endPosition="267" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="21" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905491" fileName="IGeneratedToClass_Behavior.java" startLine="24" startPosition="89" endLine="26" endPosition="100">
-      <varInfo nodeId="946964771156905493" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905439" fileName="IGeneratedToClass_Behavior.java" startLine="62" startPosition="126" endLine="64" endPosition="158" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="2572811016744662271" varName="name" />
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="44" startPosition="0" endLine="47" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="48" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905407" fileName="IGeneratedToClass_Behavior.java" startLine="54" startPosition="37" endLine="57" endPosition="266">
-      <varInfo nodeId="946964771156905409" varName="index" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="24" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905521" fileName="IGeneratedToClass_Behavior.java" startLine="37" startPosition="99" endLine="41" endPosition="176" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="946964771156905435" varName="index" />
-      <varInfo nodeId="946964771156905432" varName="string" />
-      <varInfo nodeId="946964771156905389" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="77" startPosition="0" endLine="81" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="82" startPosition="0" endLine="86" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="callerConceptFqName" />
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="87" startPosition="0" endLine="91" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="92" startPosition="0" endLine="96" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="callerConceptFqName" />
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="102" startPosition="0" endLine="106" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="callerConceptFqName" />
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="107" startPosition="0" endLine="111" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="112" startPosition="0" endLine="116" endPosition="0">
-      <varInfo nodeId="946964771156905389" varName="callerConceptFqName" />
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="37" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="946964771156905519" varName="name" />
-      <varInfo nodeId="946964771156905389" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905397" fileName="IGeneratedToClass_Behavior.java" startLine="52" startPosition="130" endLine="59" endPosition="18">
-      <varInfo nodeId="946964771156905399" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3754131050835940484" fileName="IGeneratedToClass_Behavior.java" startLine="67" startPosition="118" endLine="74" endPosition="256" />
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="52" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="946964771156905391" varName="name" />
-      <varInfo nodeId="946964771156905393" varName="symbol" />
-      <varInfo nodeId="946964771156905389" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="67" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="3754131050835940486" varName="name" />
-      <varInfo nodeId="946964771156905389" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="3754131050835940506" fileName="_Replacer_tq53pp_a0a0b0j.java" startLine="9" startPosition="42" endLine="10" endPosition="61" />
-    <scopeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0j.java" startLine="16" startPosition="101" endLine="18" endPosition="51" />
-    <scopeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0j.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="3754131050835940505" varName="matcher" />
-    </scopeInfo>
-    <scopeInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0j.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="3754131050835940505" varName="closureContext" />
-      <varInfo nodeId="3754131050835940505" varName="enclosingClass" />
-    </scopeInfo>
-    <scopeInfo nodeId="3754131050835940527" fileName="_Replacer_tq53pp_a0a0d0j.java" startLine="9" startPosition="42" endLine="10" endPosition="28" />
-    <scopeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0j.java" startLine="16" startPosition="101" endLine="18" endPosition="51" />
-    <scopeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0j.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="3754131050835940526" varName="matcher" />
-    </scopeInfo>
-    <scopeInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0j.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="3754131050835940526" varName="closureContext" />
-      <varInfo nodeId="3754131050835940526" varName="enclosingClass" />
-    </scopeInfo>
-    <scopeInfo nodeId="3754131050835956029" fileName="_Replacer_tq53pp_a0a0f0j.java" startLine="9" startPosition="42" endLine="10" endPosition="42" />
-    <scopeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0j.java" startLine="16" startPosition="101" endLine="18" endPosition="51" />
-    <scopeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0j.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="3754131050835956028" varName="matcher" />
-    </scopeInfo>
-    <scopeInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0j.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="3754131050835956028" varName="closureContext" />
-      <varInfo nodeId="3754131050835956028" varName="enclosingClass" />
-    </scopeInfo>
-    <unitInfo nodeId="946964771156905389" fileName="IGeneratedToClass_Behavior.java" startLine="20" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior" />
-    <unitInfo nodeId="3754131050835940505" fileName="_Replacer_tq53pp_a0a0b0j.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0b0j" />
-    <unitInfo nodeId="3754131050835940526" fileName="_Replacer_tq53pp_a0a0d0j.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0d0j" />
-    <unitInfo nodeId="3754131050835956028" fileName="_Replacer_tq53pp_a0a0f0j.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0f0j" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root>
+    <file name="IGeneratedToClass_BehaviorDescriptor.java">
+      <unit at="9,0,16,0" name="jetbrains.mps.execution.common.behavior.IGeneratedToClass_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,22,0" name="jetbrains.mps.execution.common.behavior.BehaviorAspectDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:59b8a6cf-a3a9-4109-98b7-d13bb426ef49(jetbrains.mps.execution.common.behavior)/946964771156905389">
+    <file name="_Replacer_tq53pp_a0a0d0j.java">
+      <node id="3754131050835940528" at="9,42,10,28" concept="7" />
+      <node id="3754131050835940526" at="13,0,14,0" concept="3" trace="_enclosingClass" />
+      <node id="3754131050835940526" at="14,0,15,0" concept="3" trace="_closureContext" />
+      <node id="3754131050835940526" at="16,101,17,42" concept="2" />
+      <node id="3754131050835940526" at="17,42,18,51" concept="2" />
+      <node id="3754131050835940526" at="9,0,12,0" concept="5" trace="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
+      <node id="3754131050835940526" at="16,0,20,0" concept="1" trace="_Replacer_tq53pp_a0a0d0j#(Ljetbrains/mps/execution/common/behavior/IGeneratedToClass_Behavior;Ljava/lang/Object;)V" />
+      <scope id="3754131050835940527" at="9,42,10,28" />
+      <scope id="3754131050835940526" at="16,101,18,51" />
+      <scope id="3754131050835940526" at="9,0,12,0">
+        <var name="matcher" id="3754131050835940526" />
+      </scope>
+      <scope id="3754131050835940526" at="16,0,20,0">
+        <var name="closureContext" id="3754131050835940526" />
+        <var name="enclosingClass" id="3754131050835940526" />
+      </scope>
+      <unit id="3754131050835940526" at="8,0,21,0" name="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0d0j" />
+    </file>
+    <file name="_Replacer_tq53pp_a0a0b0j.java">
+      <node id="3754131050835940507" at="9,42,10,61" concept="7" />
+      <node id="3754131050835940505" at="13,0,14,0" concept="3" trace="_enclosingClass" />
+      <node id="3754131050835940505" at="14,0,15,0" concept="3" trace="_closureContext" />
+      <node id="3754131050835940505" at="16,101,17,42" concept="2" />
+      <node id="3754131050835940505" at="17,42,18,51" concept="2" />
+      <node id="3754131050835940505" at="9,0,12,0" concept="5" trace="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
+      <node id="3754131050835940505" at="16,0,20,0" concept="1" trace="_Replacer_tq53pp_a0a0b0j#(Ljetbrains/mps/execution/common/behavior/IGeneratedToClass_Behavior;Ljava/lang/Object;)V" />
+      <scope id="3754131050835940506" at="9,42,10,61" />
+      <scope id="3754131050835940505" at="16,101,18,51" />
+      <scope id="3754131050835940505" at="9,0,12,0">
+        <var name="matcher" id="3754131050835940505" />
+      </scope>
+      <scope id="3754131050835940505" at="16,0,20,0">
+        <var name="closureContext" id="3754131050835940505" />
+        <var name="enclosingClass" id="3754131050835940505" />
+      </scope>
+      <unit id="3754131050835940505" at="8,0,21,0" name="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0b0j" />
+    </file>
+    <file name="IGeneratedToClass_Behavior.java">
+      <node id="946964771156905492" at="21,89,22,134" concept="6" />
+      <node id="946964771156905498" at="22,134,23,100" concept="7" />
+      <node id="946964771156905507" at="26,79,27,219" concept="7" />
+      <node id="3754131050835940535" at="30,104,31,258" concept="7" />
+      <node id="2572811016744662333" at="35,47,36,18" concept="7" />
+      <node id="946964771156905566" at="37,5,38,218" concept="7" />
+      <node id="4366236229294148978" at="41,80,42,59" concept="7" />
+      <node id="2256484787298834698" at="45,78,46,146" concept="7" />
+      <node id="946964771156905398" at="49,130,50,25" concept="6" />
+      <node id="946964771156905408" at="51,37,52,41" concept="6" />
+      <node id="946964771156905415" at="52,41,53,42" concept="2" />
+      <node id="946964771156905423" at="53,42,54,266" concept="2" />
+      <node id="946964771156905429" at="55,5,56,18" concept="7" />
+      <node id="946964771156905440" at="59,126,60,49" concept="0" />
+      <node id="946964771156905450" at="60,49,61,158" concept="7" />
+      <node id="3754131050835956053" at="64,118,65,18" concept="8" />
+      <node id="3754131050835940490" at="65,18,66,106" concept="2" />
+      <node id="3754131050835956056" at="66,106,67,18" concept="8" />
+      <node id="3754131050835940513" at="67,18,68,106" concept="2" />
+      <node id="3754131050835956059" at="68,106,69,24" concept="8" />
+      <node id="3754131050835956015" at="69,24,70,106" concept="2" />
+      <node id="3754131050835940531" at="70,106,71,256" concept="7" />
+      <node id="3754131050835940496" at="74,0,75,0" concept="9" trace="REGEXP_tq53pp_b0a1a9" />
+      <node id="3754131050835940518" at="75,0,76,0" concept="9" trace="REGEXP_tq53pp_b0a3a9" />
+      <node id="3754131050835956026" at="76,0,77,0" concept="9" trace="REGEXP_tq53pp_b0a5a9" />
+      <node id="946964771156905389" at="18,0,20,0" concept="10" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="946964771156905389" at="26,0,29,0" concept="10" trace="virtual_getFullName_946964771156905503#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="946964771156905389" at="30,0,33,0" concept="10" trace="call_getValidClassName_2572811016744662265#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="2572811016744662328" at="34,99,37,5" concept="4" />
+      <node id="946964771156905389" at="41,0,44,0" concept="10" trace="virtual_getBaseName_4366236229294148974#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="946964771156905389" at="45,0,48,0" concept="10" trace="call_getNamespace_2256484787298834694#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="946964771156905389" at="21,0,25,0" concept="10" trace="virtual_getGeneratedClassName_946964771156905488#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="946964771156905389" at="59,0,63,0" concept="10" trace="call_makeUpperCase_946964771156905431#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;I)Ljava/lang/String;" />
+      <node id="946964771156905402" at="50,25,55,5" concept="11" />
+      <node id="946964771156905389" at="34,0,40,0" concept="10" trace="call_getGeneratedClassName_946964771156905516#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="946964771156905389" at="49,0,58,0" concept="10" trace="call_replaceProhibitedSymbol_946964771156905390#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="946964771156905389" at="64,0,73,0" concept="10" trace="call_getValidClassName_3754131050835940481#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="946964771156905515" at="18,43,18,43" />
+      <scope id="946964771156905506" at="26,79,27,219" />
+      <scope id="2572811016744662268" at="30,104,31,258" />
+      <scope id="2572811016744662332" at="35,47,36,18" />
+      <scope id="4366236229294148977" at="41,80,42,59" />
+      <scope id="2256484787298834697" at="45,78,46,146" />
+      <scope id="946964771156905389" at="18,0,20,0">
+        <var name="thisNode" id="946964771156905389" />
+      </scope>
+      <scope id="946964771156905491" at="21,89,23,100">
+        <var name="name" id="946964771156905493" />
+      </scope>
+      <scope id="946964771156905439" at="59,126,61,158" />
+      <scope id="946964771156905389" at="26,0,29,0">
+        <var name="thisNode" id="946964771156905389" />
+      </scope>
+      <scope id="946964771156905389" at="30,0,33,0">
+        <var name="name" id="2572811016744662271" />
+        <var name="thisNode" id="946964771156905389" />
+      </scope>
+      <scope id="946964771156905389" at="41,0,44,0">
+        <var name="thisNode" id="946964771156905389" />
+      </scope>
+      <scope id="946964771156905389" at="45,0,48,0">
+        <var name="thisNode" id="946964771156905389" />
+      </scope>
+      <scope id="946964771156905407" at="51,37,54,266">
+        <var name="index" id="946964771156905409" />
+      </scope>
+      <scope id="946964771156905389" at="21,0,25,0">
+        <var name="thisNode" id="946964771156905389" />
+      </scope>
+      <scope id="946964771156905521" at="34,99,38,218" />
+      <scope id="946964771156905389" at="59,0,63,0">
+        <var name="index" id="946964771156905435" />
+        <var name="string" id="946964771156905432" />
+        <var name="thisConcept" id="946964771156905389" />
+      </scope>
+      <scope id="946964771156905389" at="34,0,40,0">
+        <var name="name" id="946964771156905519" />
+        <var name="thisNode" id="946964771156905389" />
+      </scope>
+      <scope id="946964771156905397" at="49,130,56,18">
+        <var name="result" id="946964771156905399" />
+      </scope>
+      <scope id="3754131050835940484" at="64,118,71,256" />
+      <scope id="946964771156905389" at="49,0,58,0">
+        <var name="name" id="946964771156905391" />
+        <var name="symbol" id="946964771156905393" />
+        <var name="thisConcept" id="946964771156905389" />
+      </scope>
+      <scope id="946964771156905389" at="64,0,73,0">
+        <var name="name" id="3754131050835940486" />
+        <var name="thisConcept" id="946964771156905389" />
+      </scope>
+      <unit id="946964771156905389" at="17,0,78,0" name="jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior" />
+    </file>
+    <file name="_Replacer_tq53pp_a0a0f0j.java">
+      <node id="3754131050835956045" at="9,42,10,42" concept="7" />
+      <node id="3754131050835956028" at="13,0,14,0" concept="3" trace="_enclosingClass" />
+      <node id="3754131050835956028" at="14,0,15,0" concept="3" trace="_closureContext" />
+      <node id="3754131050835956028" at="16,101,17,42" concept="2" />
+      <node id="3754131050835956028" at="17,42,18,51" concept="2" />
+      <node id="3754131050835956028" at="9,0,12,0" concept="5" trace="replace#(Ljava/util/regex/Matcher;)Ljava/lang/String;" />
+      <node id="3754131050835956028" at="16,0,20,0" concept="1" trace="_Replacer_tq53pp_a0a0f0j#(Ljetbrains/mps/execution/common/behavior/IGeneratedToClass_Behavior;Ljava/lang/Object;)V" />
+      <scope id="3754131050835956029" at="9,42,10,42" />
+      <scope id="3754131050835956028" at="16,101,18,51" />
+      <scope id="3754131050835956028" at="9,0,12,0">
+        <var name="matcher" id="3754131050835956028" />
+      </scope>
+      <scope id="3754131050835956028" at="16,0,20,0">
+        <var name="closureContext" id="3754131050835956028" />
+        <var name="enclosingClass" id="3754131050835956028" />
+      </scope>
+      <unit id="3754131050835956028" at="8,0,21,0" name="jetbrains.mps.execution.common.behavior._Replacer_tq53pp_a0a0f0j" />
+    </file>
+  </root>
+</debug-info>
 

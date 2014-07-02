@@ -18,7 +18,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IApplicableToNothing_Behavior {
   public static void init(SNode thisNode) {
@@ -71,15 +70,5 @@ public class IApplicableToNothing_Behavior {
       }
     }
     return jt;
-  }
-
-  @Deprecated
-  public static SNode call_expectedOperandType_6368025520509018230(SNode thisNode, SNode elementType) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expectedOperandType_6368025520509018230", new Object[]{elementType});
-  }
-
-  @Deprecated
-  public static SNode callSuper_expectedOperandType_6368025520509018230(SNode thisNode, String callerConceptFqName, SNode elementType) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToNothing"), callerConceptFqName, "virtual_expectedOperandType_6368025520509018230", new Class[]{SNode.class, SNode.class}, new Object[]{elementType});
   }
 }

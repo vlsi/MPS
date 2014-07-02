@@ -11,7 +11,6 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.util.Condition;
-import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class ModelAndImportedModelsScope extends AbstractSearchScope {
@@ -59,7 +58,7 @@ public class ModelAndImportedModelsScope extends AbstractSearchScope {
           }
           if (condition instanceof IsInstanceCondition) {
             IsInstanceCondition isInstance = (IsInstanceCondition) condition;
-            result.addAll(SNodeOperations.getModelFastFinder(model).getNodes(isInstance.getConceptFqName(), true));
+            result.addAll(SModelOperations.getNodes(model, isInstance.getConceptFqName()));
           } else {
             for (SNode node : SNodeUtil.getDescendants(model)) {
               if (condition.met(node)) {

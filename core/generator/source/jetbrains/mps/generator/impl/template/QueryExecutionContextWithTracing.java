@@ -47,7 +47,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
-import java.util.List;
 
 /**
  * Evgeny Gryaznov, May 13, 2010
@@ -81,40 +80,10 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public boolean checkCondition(SNode condition, boolean required, SNode inputNode, SNode ruleNode) throws GenerationFailureException {
-    try {
-      tracer.push(taskName("check condition(no context)", ruleNode), true);
-      return wrapped.checkCondition(condition, required, inputNode, ruleNode);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
-  public boolean checkCondition(SNode condition, boolean required, TemplateContext templateContext, SNode ruleNode) throws GenerationFailureException {
-    try {
-      tracer.push(taskName("check condition(with context)", ruleNode), true);
-      return wrapped.checkCondition(condition, required, templateContext, ruleNode);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
   public boolean evaluate(@NotNull InlineSwitchCaseCondition condition, @NotNull InlineSwitchCaseContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("check condition(with context)", context.getTemplateNode()), true);
       return wrapped.evaluate(condition, context);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  @Override
-  public boolean checkConditionForIfMacro(SNode inputNode, SNode ifMacro, @NotNull TemplateContext context) throws GenerationFailureException {
-    try {
-      tracer.push(taskName("check if condition", ifMacro), true);
-      return wrapped.checkConditionForIfMacro(inputNode, ifMacro, context);
     } finally {
       tracer.pop();
     }
@@ -150,16 +119,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     }
   }
 
-  @Override
-  public void expandPropertyMacro(SNode propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode, @NotNull TemplateContext context) throws GenerationFailureException {
-    try {
-      tracer.push(taskName(String.format("property macro(on %s)", templateNode.getConcept().getName()), templateNode), true);
-      wrapped.expandPropertyMacro(propertyMacro, inputNode, templateNode, outputNode, context);
-    } finally {
-      tracer.pop();
-    }
-  }
-
   @Nullable
   @Override
   public Object evaluate(@NotNull PropertyValueQuery query, @NotNull PropertyMacroContext context) throws GenerationFailureException {
@@ -171,32 +130,12 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     }
   }
 
-  @Override
-  public SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws GenerationFailureException {
-    try {
-      tracer.push(taskName("evaluate source node", query), true);
-      return wrapped.evaluateSourceNodeQuery(inputNode, macroNode, query, context);
-    } finally {
-      tracer.pop();
-    }
-  }
-
   @Nullable
   @Override
   public SNode evaluate(@NotNull SourceNodeQuery query, @NotNull SourceSubstituteMacroNodeContext context) throws GenerationFailureException {
     try {
       tracer.push(taskName("evaluate source node", context.getTemplateNode()), true);
       return wrapped.evaluate(query, context);
-    } finally {
-      tracer.pop();
-    }
-  }
-
-  public List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SNode query, @NotNull TemplateContext context) throws
-      GenerationFailureException {
-    try {
-      tracer.push(taskName("evaluate source nodes", query), true);
-      return wrapped.evaluateSourceNodesQuery(inputNode, ruleNode, macroNode, query, context);
     } finally {
       tracer.pop();
     }
@@ -284,12 +223,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
   }
 
   @Override
-  public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    assert environment == context.getEnvironment();
-    return tryToApply(rule, context);
-  }
-
-  @Override
   public Collection<SNode> tryToApply(TemplateReductionRule rule, TemplateContext context) throws GenerationException {
     try {
       String taskName = taskName(String.format("trying to apply rule(%s)", rule.getApplicableConcept()), rule.getRuleNode());
@@ -298,11 +231,6 @@ public class QueryExecutionContextWithTracing implements QueryExecutionContext {
     } finally {
       tracer.pop();
     }
-  }
-
-  @Override
-  public boolean isApplicable(TemplateRuleWithCondition rule, TemplateExecutionEnvironment environment, TemplateContext context) throws GenerationException {
-    return isApplicable(rule, context);
   }
 
   @Override

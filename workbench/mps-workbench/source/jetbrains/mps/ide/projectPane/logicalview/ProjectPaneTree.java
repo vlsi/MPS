@@ -141,7 +141,7 @@ public class ProjectPaneTree extends ProjectTree implements NodeChildrenProvider
 
   @Override
   public void populate(SNodeTreeNode treeNode) {
-    if (myProjectPane.isShowPropertiesAndReferences()) {
+    if (myProjectPane.showNodeStructure()) {
       SNode n = treeNode.getSNode();
       if (n == null || n.getModel() == null) return;
 

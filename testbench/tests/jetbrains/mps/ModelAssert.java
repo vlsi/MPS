@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,16 +15,31 @@
  */
 package jetbrains.mps;
 
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;
-import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
+import org.jetbrains.mps.openapi.model.SReference;
 import org.junit.Assert;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 public class ModelAssert {
   public static void assertDeepModelEquals(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
@@ -55,9 +70,7 @@ public class ModelAssert {
   }
 
   private static void assertSameModelImports(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
-    assertListsEqual(SModelOperations.getImportedModelUIDs(expectedModel),
-      SModelOperations.getImportedModelUIDs(actualModel),
-      "model import");
+    assertListsEqual(getImportedModelUIDs(expectedModel), getImportedModelUIDs(actualModel), "model import");
   }
 
   private static void assertSameLanguageAspects(jetbrains.mps.smodel.SModel expectedModel, jetbrains.mps.smodel.SModel actualModel) {
@@ -265,5 +278,14 @@ public class ModelAssert {
     }
     assertNotNull(errorString, actualNode);
     assertEquals(errorString, expectedNode.getNodeId(), actualNode.getNodeId());
+  }
+
+  @NotNull
+  private static List<org.jetbrains.mps.openapi.model.SModelReference> getImportedModelUIDs(jetbrains.mps.smodel.SModel sModel) {
+    List<org.jetbrains.mps.openapi.model.SModelReference> references = new ArrayList<org.jetbrains.mps.openapi.model.SModelReference>();
+    for (ImportElement importElement : sModel.importedModels()) {
+      references.add(importElement.getModelReference());
+    }
+    return Collections.unmodifiableList(references);
   }
 }

@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
 import jetbrains.mps.generator.impl.dependencies.GenerationRootDependencies;
 import jetbrains.mps.make.java.ModelDependencies;
-import jetbrains.mps.generator.impl.dependencies.GenerationDependencies;
-import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.traceInfo.DebugInfo;
+import jetbrains.mps.textgen.trace.DebugInfo;
 import jetbrains.mps.util.Status;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Collections;
 import java.util.List;
@@ -31,10 +31,10 @@ import java.util.List;
  * Oct 24, 2005
  */
 public class GenerationStatus extends Status {
-  private SModel myOutputModel;
-  private SModel myInputModel;
-  private boolean myCanceled;
-  private boolean myWarnings;
+  private final SModel myOutputModel;
+  private final SModel myInputModel;
+  private final boolean myCanceled;
+  private final boolean myWarnings;
   private DebugInfo myDebugInfo;
   private GenerationDependencies myDependencies;
   private ModelDependencies myBLDependencies;
@@ -65,18 +65,10 @@ public class GenerationStatus extends Status {
 
   @Nullable
   public SModel getOutputModel() {
-    return myOutputModel != null ? myOutputModel : null;
-  }
-
-  public SModel getInputModel() {
-    return myInputModel != null ? myInputModel : null;
-  }
-
-  public SModel getOutputModelDescriptor () {
     return myOutputModel;
   }
 
-  public SModel getInputModelDescriptor () {
+  public SModel getInputModel() {
     return myInputModel;
   }
 

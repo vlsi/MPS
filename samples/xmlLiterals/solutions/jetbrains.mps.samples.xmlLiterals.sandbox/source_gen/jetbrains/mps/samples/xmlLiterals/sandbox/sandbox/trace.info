@@ -1,102 +1,112 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
   <root nodeRef="r:63e559bf-39bb-4209-acb3-f4d189328793(jetbrains.mps.samples.xmlLiterals.sandbox.sandbox)/9152904044274358977">
-    <nodeInfo nodeId="7417816926334720594" fileName="Person.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="7417816926334720598" fileName="Person.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="lastName" />
-    <nodeInfo nodeId="7417816926334720602" fileName="Person.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="address" />
-    <nodeInfo nodeId="7417816926334720606" fileName="Person.java" startLine="17" startPosition="27" endLine="18" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7417816926334720642" fileName="Person.java" startLine="21" startPosition="39" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7417816926334720614" fileName="Person.java" startLine="25" startPosition="31" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7417816926334720662" fileName="Person.java" startLine="29" startPosition="47" endLine="30" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7417816926334720619" fileName="Person.java" startLine="33" startPosition="31" endLine="34" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7417816926334720681" fileName="Person.java" startLine="37" startPosition="46" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="43" startPosition="31" endLine="44" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="44" startPosition="67" endLine="45" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="45" startPosition="67" endLine="46" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="46" startPosition="67" endLine="47" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="47" startPosition="69" endLine="48" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="48" startPosition="71" endLine="49" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="49" startPosition="71" endLine="50" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="50" startPosition="69" endLine="51" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="51" startPosition="70" endLine="52" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="52" startPosition="79" endLine="53" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="53" startPosition="77" endLine="54" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="54" startPosition="76" endLine="55" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="55" startPosition="76" endLine="56" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="56" startPosition="76" endLine="57" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9152904044274358979" fileName="Person.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Person#()V" />
-    <nodeInfo nodeId="9152904044274516033" fileName="Person.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7417816926334720636" fileName="Person.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7417816926334720610" fileName="Person.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLastName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7417816926334720650" fileName="Person.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLastName#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="9152904044274541180" fileName="Person.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddress#()Ljetbrains/mps/samples/xmlLiterals/sandbox/sandbox/Address;" />
-    <nodeInfo nodeId="7417816926334720673" fileName="Person.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setAddress#(Ljetbrains/mps/samples/xmlLiterals/sandbox/sandbox/Address;)V" />
-    <nodeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="43" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Lorg/jdom/Element;" />
-    <nodeInfo nodeId="5081393330032881552" fileName="Person.java" startLine="41" startPosition="26" endLine="59" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9152904044274458171" fileName="Person.java" startLine="41" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toXml#()Lorg/jdom/Element;" />
-    <scopeInfo nodeId="9152904044274358982" fileName="Person.java" startLine="14" startPosition="19" endLine="14" endPosition="19" />
-    <scopeInfo nodeId="9152904044274516036" fileName="Person.java" startLine="17" startPosition="27" endLine="18" endPosition="21" />
-    <scopeInfo nodeId="7417816926334720639" fileName="Person.java" startLine="21" startPosition="39" endLine="22" endPosition="24" />
-    <scopeInfo nodeId="7417816926334720613" fileName="Person.java" startLine="25" startPosition="31" endLine="26" endPosition="25" />
-    <scopeInfo nodeId="7417816926334720653" fileName="Person.java" startLine="29" startPosition="47" endLine="30" endPosition="32" />
-    <scopeInfo nodeId="9152904044274541183" fileName="Person.java" startLine="33" startPosition="31" endLine="34" endPosition="24" />
-    <scopeInfo nodeId="7417816926334720676" fileName="Person.java" startLine="37" startPosition="46" endLine="38" endPosition="30" />
-    <scopeInfo nodeId="9152904044274358979" fileName="Person.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
-    <scopeInfo nodeId="9152904044274516033" fileName="Person.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="7417816926334720636" fileName="Person.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="7417816926334720640" varName="newName" />
-    </scopeInfo>
-    <scopeInfo nodeId="7417816926334720610" fileName="Person.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="7417816926334720650" fileName="Person.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="7417816926334720654" varName="newLastName" />
-    </scopeInfo>
-    <scopeInfo nodeId="9152904044274541180" fileName="Person.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="7417816926334720673" fileName="Person.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="7417816926334720677" varName="newAddress" />
-    </scopeInfo>
-    <scopeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="43" startPosition="31" endLine="57" endPosition="42">
-      <varInfo nodeId="5081393330032881550" varName="elementMacro_jqm3zu_a2a0a0k" />
-      <varInfo nodeId="5081393330032881550" varName="simpleElement_jqm3zu_a0a0a01" />
-      <varInfo nodeId="5081393330032881550" varName="simpleElement_jqm3zu_a0a0k" />
-      <varInfo nodeId="5081393330032881550" varName="simpleElement_jqm3zu_b0a0a01" />
-      <varInfo nodeId="5081393330032881550" varName="simpleElement_jqm3zu_c0a0a01" />
-      <varInfo nodeId="5081393330032881550" varName="text_jqm3zu_a0a0a0k" />
-      <varInfo nodeId="5081393330032881550" varName="text_jqm3zu_a1a0a0k" />
-    </scopeInfo>
-    <scopeInfo nodeId="5081393330032881550" fileName="Person.java" startLine="43" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="9152904044274458174" fileName="Person.java" startLine="41" startPosition="26" endLine="59" endPosition="15" />
-    <scopeInfo nodeId="9152904044274458171" fileName="Person.java" startLine="41" startPosition="0" endLine="61" endPosition="0" />
-    <unitInfo nodeId="5081393330032881550" fileName="Person.java" startLine="42" startPosition="15" endLine="59" endPosition="5" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Person$1" />
-    <unitInfo nodeId="9152904044274358977" fileName="Person.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Person" />
+    <file name="Person.java">
+      <node id="7417816926334720594" at="10,0,11,0" concept="2" trace="name" />
+      <node id="7417816926334720598" at="11,0,12,0" concept="2" trace="lastName" />
+      <node id="7417816926334720602" at="12,0,13,0" concept="2" trace="address" />
+      <node id="7417816926334720606" at="17,27,18,21" concept="5" />
+      <node id="7417816926334720642" at="21,39,22,24" concept="1" />
+      <node id="7417816926334720614" at="25,31,26,25" concept="5" />
+      <node id="7417816926334720662" at="29,47,30,32" concept="1" />
+      <node id="7417816926334720619" at="33,31,34,24" concept="5" />
+      <node id="7417816926334720681" at="37,46,38,30" concept="1" />
+      <node id="5081393330032881550" at="43,31,44,67" concept="4" />
+      <node id="5081393330032881550" at="44,67,45,67" concept="4" />
+      <node id="5081393330032881550" at="45,67,46,67" concept="4" />
+      <node id="5081393330032881550" at="46,67,47,69" concept="1" />
+      <node id="5081393330032881550" at="47,69,48,71" concept="4" />
+      <node id="5081393330032881550" at="48,71,49,71" concept="4" />
+      <node id="5081393330032881550" at="49,71,50,69" concept="1" />
+      <node id="5081393330032881550" at="50,69,51,70" concept="4" />
+      <node id="5081393330032881550" at="51,70,52,79" concept="4" />
+      <node id="5081393330032881550" at="52,79,53,77" concept="1" />
+      <node id="5081393330032881550" at="53,77,54,76" concept="1" />
+      <node id="5081393330032881550" at="54,76,55,76" concept="1" />
+      <node id="5081393330032881550" at="55,76,56,76" concept="1" />
+      <node id="5081393330032881550" at="56,76,57,42" concept="5" />
+      <node id="9152904044274358979" at="14,0,16,0" concept="0" trace="Person#()V" />
+      <node id="9152904044274516033" at="17,0,20,0" concept="3" trace="getName#()Ljava/lang/String;" />
+      <node id="7417816926334720636" at="21,0,24,0" concept="3" trace="setName#(Ljava/lang/String;)V" />
+      <node id="7417816926334720610" at="25,0,28,0" concept="3" trace="getLastName#()Ljava/lang/String;" />
+      <node id="7417816926334720650" at="29,0,32,0" concept="3" trace="setLastName#(Ljava/lang/String;)V" />
+      <node id="9152904044274541180" at="33,0,36,0" concept="3" trace="getAddress#()Ljetbrains/mps/samples/xmlLiterals/sandbox/sandbox/Address;" />
+      <node id="7417816926334720673" at="37,0,40,0" concept="3" trace="setAddress#(Ljetbrains/mps/samples/xmlLiterals/sandbox/sandbox/Address;)V" />
+      <node id="5081393330032881550" at="43,0,59,0" concept="3" trace="invoke#()Lorg/jdom/Element;" />
+      <node id="5081393330032881552" at="41,26,59,15" concept="5" />
+      <node id="9152904044274458171" at="41,0,61,0" concept="3" trace="toXml#()Lorg/jdom/Element;" />
+      <scope id="9152904044274358982" at="14,19,14,19" />
+      <scope id="9152904044274516036" at="17,27,18,21" />
+      <scope id="7417816926334720639" at="21,39,22,24" />
+      <scope id="7417816926334720613" at="25,31,26,25" />
+      <scope id="7417816926334720653" at="29,47,30,32" />
+      <scope id="9152904044274541183" at="33,31,34,24" />
+      <scope id="7417816926334720676" at="37,46,38,30" />
+      <scope id="9152904044274358979" at="14,0,16,0" />
+      <scope id="9152904044274516033" at="17,0,20,0" />
+      <scope id="7417816926334720636" at="21,0,24,0">
+        <var name="newName" id="7417816926334720640" />
+      </scope>
+      <scope id="7417816926334720610" at="25,0,28,0" />
+      <scope id="7417816926334720650" at="29,0,32,0">
+        <var name="newLastName" id="7417816926334720654" />
+      </scope>
+      <scope id="9152904044274541180" at="33,0,36,0" />
+      <scope id="7417816926334720673" at="37,0,40,0">
+        <var name="newAddress" id="7417816926334720677" />
+      </scope>
+      <scope id="5081393330032881550" at="43,31,57,42">
+        <var name="elementMacro_jqm3zu_a2a0a0k" id="5081393330032881550" />
+        <var name="simpleElement_jqm3zu_a0a0a01" id="5081393330032881550" />
+        <var name="simpleElement_jqm3zu_a0a0k" id="5081393330032881550" />
+        <var name="simpleElement_jqm3zu_b0a0a01" id="5081393330032881550" />
+        <var name="simpleElement_jqm3zu_c0a0a01" id="5081393330032881550" />
+        <var name="text_jqm3zu_a0a0a0k" id="5081393330032881550" />
+        <var name="text_jqm3zu_a1a0a0k" id="5081393330032881550" />
+      </scope>
+      <scope id="5081393330032881550" at="43,0,59,0" />
+      <scope id="9152904044274458174" at="41,26,59,15" />
+      <scope id="9152904044274458171" at="41,0,61,0" />
+      <unit id="5081393330032881550" at="42,15,59,5" name="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Person$1" />
+      <unit id="9152904044274358977" at="9,0,62,0" name="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Person" />
+    </file>
   </root>
   <root nodeRef="r:63e559bf-39bb-4209-acb3-f4d189328793(jetbrains.mps.samples.xmlLiterals.sandbox.sandbox)/9152904044274518176">
-    <nodeInfo nodeId="7417816926334720689" fileName="Address.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="addressString" />
-    <nodeInfo nodeId="7946777123643247292" fileName="Address.java" startLine="12" startPosition="40" endLine="13" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7417816926334720722" fileName="Address.java" startLine="16" startPosition="36" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5081393330032015852" fileName="Address.java" startLine="22" startPosition="31" endLine="23" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5081393330032015852" fileName="Address.java" startLine="23" startPosition="68" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5081393330032015852" fileName="Address.java" startLine="24" startPosition="76" endLine="25" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5081393330032015852" fileName="Address.java" startLine="25" startPosition="66" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9152904044274518178" fileName="Address.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Address#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7417816926334720717" fileName="Address.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAddressString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5081393330032015852" fileName="Address.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Lorg/jdom/Element;" />
-    <nodeInfo nodeId="5081393330032015854" fileName="Address.java" startLine="20" startPosition="26" endLine="28" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9152904044274518182" fileName="Address.java" startLine="20" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toXml#()Lorg/jdom/Element;" />
-    <scopeInfo nodeId="9152904044274518181" fileName="Address.java" startLine="12" startPosition="40" endLine="13" endPosition="39" />
-    <scopeInfo nodeId="7417816926334720720" fileName="Address.java" startLine="16" startPosition="36" endLine="17" endPosition="30" />
-    <scopeInfo nodeId="9152904044274518178" fileName="Address.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="7417816926334720697" varName="addressString" />
-    </scopeInfo>
-    <scopeInfo nodeId="7417816926334720717" fileName="Address.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="5081393330032015852" fileName="Address.java" startLine="22" startPosition="31" endLine="26" endPosition="42">
-      <varInfo nodeId="5081393330032015852" varName="simpleElement_49w4x6_a0a0d" />
-      <varInfo nodeId="5081393330032015852" varName="text_49w4x6_a0a0a3" />
-    </scopeInfo>
-    <scopeInfo nodeId="5081393330032015852" fileName="Address.java" startLine="22" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="9152904044274518185" fileName="Address.java" startLine="20" startPosition="26" endLine="28" endPosition="15" />
-    <scopeInfo nodeId="9152904044274518182" fileName="Address.java" startLine="20" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="5081393330032015852" fileName="Address.java" startLine="21" startPosition="15" endLine="28" endPosition="5" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address$1" />
-    <unitInfo nodeId="9152904044274518176" fileName="Address.java" startLine="9" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address" />
+    <file name="Address.java">
+      <node id="7417816926334720689" at="10,0,11,0" concept="2" trace="addressString" />
+      <node id="7946777123643247292" at="12,40,13,39" concept="1" />
+      <node id="7417816926334720722" at="16,36,17,30" concept="5" />
+      <node id="5081393330032015852" at="22,31,23,68" concept="4" />
+      <node id="5081393330032015852" at="23,68,24,76" concept="4" />
+      <node id="5081393330032015852" at="24,76,25,66" concept="1" />
+      <node id="5081393330032015852" at="25,66,26,42" concept="5" />
+      <node id="9152904044274518178" at="12,0,15,0" concept="0" trace="Address#(Ljava/lang/String;)V" />
+      <node id="7417816926334720717" at="16,0,19,0" concept="3" trace="getAddressString#()Ljava/lang/String;" />
+      <node id="5081393330032015852" at="22,0,28,0" concept="3" trace="invoke#()Lorg/jdom/Element;" />
+      <node id="5081393330032015854" at="20,26,28,15" concept="5" />
+      <node id="9152904044274518182" at="20,0,30,0" concept="3" trace="toXml#()Lorg/jdom/Element;" />
+      <scope id="9152904044274518181" at="12,40,13,39" />
+      <scope id="7417816926334720720" at="16,36,17,30" />
+      <scope id="9152904044274518178" at="12,0,15,0">
+        <var name="addressString" id="7417816926334720697" />
+      </scope>
+      <scope id="7417816926334720717" at="16,0,19,0" />
+      <scope id="5081393330032015852" at="22,31,26,42">
+        <var name="simpleElement_49w4x6_a0a0d" id="5081393330032015852" />
+        <var name="text_49w4x6_a0a0a3" id="5081393330032015852" />
+      </scope>
+      <scope id="5081393330032015852" at="22,0,28,0" />
+      <scope id="9152904044274518185" at="20,26,28,15" />
+      <scope id="9152904044274518182" at="20,0,30,0" />
+      <unit id="5081393330032015852" at="21,15,28,5" name="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address$1" />
+      <unit id="9152904044274518176" at="9,0,31,0" name="jetbrains.mps.samples.xmlLiterals.sandbox.sandbox.Address" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

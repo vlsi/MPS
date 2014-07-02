@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="d9iiivhou6lbc0zvqssbtv102mycqgq">
-  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
+<dependencies version="2" modelHash="-bl5acuggrt0ereaa9q24i36gcfqd1ki">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
-  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="-6irb241uclypyqbck1xyhuimii12zbl" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
@@ -12,7 +11,6 @@
     <dep root="6223439730610762144" />
     <dep root="6223439730610790725" />
     <dep root="6223439730610790758" />
-    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
@@ -21,9 +19,9 @@
     <file name="StructureAspectDescriptor.java" />
   </common>
   <source id="6223439730610283563" name="ComponentSet" hash="-87av2uhphh5ox8sy2pfnmxk54rza9cg" />
-  <source id="6223439730610336068" name="Component" hash="-4rye1e9oh8a61smxnm4938bbjr9cwon" />
+  <source id="6223439730610336068" name="Component" hash="-6lzdp97hty7dvjq60zl04cpjcizadhn" />
   <source id="6223439730610762144" name="Dependency" hash="-de7zac20s7jzz0m7drkdc60grk31ni3" />
-  <source id="6223439730610790725" name="OutPort" hash="-42qhfcoh0dkhwppdqfv06agd93zc7px" />
-  <source id="6223439730610790758" name="InPort" hash="cvs37qw6g7e6lmydrnab1g95kcq84d5" />
+  <source id="6223439730610790725" name="OutPort" hash="-36qldcggkb7dspm8zua785atecloksv" />
+  <source id="6223439730610790758" name="InPort" hash="1lw4cepvcvqdh833hugzo2tgjjoby7e" />
 </dependencies>
 

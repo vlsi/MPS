@@ -1,128 +1,144 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="TypesystemDescriptor.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.typesystem.TypesystemDescriptor" />
-  <root nodeRef="r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)/1987251859607011636">
-    <nodeInfo nodeId="1987251859607019360" fileName="typeof_DecisionTable_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607019360" fileName="typeof_DecisionTable_InferenceRule.java" startLine="23" startPosition="55" endLine="24" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607019360" fileName="typeof_DecisionTable_InferenceRule.java" startLine="24" startPosition="216" endLine="25" endPosition="345" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1987251859607092820" fileName="typeof_DecisionTable_InferenceRule.java" startLine="26" startPosition="5" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1987251859607015320" fileName="typeof_DecisionTable_InferenceRule.java" startLine="30" startPosition="9" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607015320" fileName="typeof_DecisionTable_InferenceRule.java" startLine="31" startPosition="47" endLine="32" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607015320" fileName="typeof_DecisionTable_InferenceRule.java" startLine="32" startPosition="220" endLine="33" endPosition="473" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1987251859607015341" fileName="typeof_DecisionTable_InferenceRule.java" startLine="39" startPosition="9" endLine="40" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607015341" fileName="typeof_DecisionTable_InferenceRule.java" startLine="40" startPosition="47" endLine="41" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607015341" fileName="typeof_DecisionTable_InferenceRule.java" startLine="41" startPosition="220" endLine="42" endPosition="473" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1987251859607015356" fileName="typeof_DecisionTable_InferenceRule.java" startLine="48" startPosition="9" endLine="49" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607015356" fileName="typeof_DecisionTable_InferenceRule.java" startLine="49" startPosition="47" endLine="50" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607015356" fileName="typeof_DecisionTable_InferenceRule.java" startLine="50" startPosition="220" endLine="51" endPosition="447" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1987251859607015373" fileName="typeof_DecisionTable_InferenceRule.java" startLine="56" startPosition="7" endLine="57" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607015373" fileName="typeof_DecisionTable_InferenceRule.java" startLine="57" startPosition="106" endLine="58" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607015373" fileName="typeof_DecisionTable_InferenceRule.java" startLine="58" startPosition="218" endLine="59" endPosition="445" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1987251859607015372" fileName="typeof_DecisionTable_InferenceRule.java" startLine="61" startPosition="5" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="65" startPosition="46" endLine="66" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="70" startPosition="5" endLine="71" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="71" startPosition="130" endLine="72" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="76" startPosition="30" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1987251859607015332" fileName="typeof_DecisionTable_InferenceRule.java" startLine="80" startPosition="64" endLine="81" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607015332" fileName="typeof_DecisionTable_InferenceRule.java" startLine="81" startPosition="63" endLine="82" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607015332" fileName="typeof_DecisionTable_InferenceRule.java" startLine="82" startPosition="30" endLine="83" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1987251859607015332" fileName="typeof_DecisionTable_InferenceRule.java" startLine="82" startPosition="30" endLine="83" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1987251859607015332" fileName="typeof_DecisionTable_InferenceRule.java" startLine="82" startPosition="30" endLine="83" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1987251859607015332" fileName="typeof_DecisionTable_InferenceRule.java" startLine="83" startPosition="135" endLine="84" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1987251859607015347" fileName="typeof_DecisionTable_InferenceRule.java" startLine="87" startPosition="64" endLine="88" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607015347" fileName="typeof_DecisionTable_InferenceRule.java" startLine="88" startPosition="63" endLine="89" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1987251859607015347" fileName="typeof_DecisionTable_InferenceRule.java" startLine="89" startPosition="30" endLine="90" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1987251859607015347" fileName="typeof_DecisionTable_InferenceRule.java" startLine="89" startPosition="30" endLine="90" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1987251859607015347" fileName="typeof_DecisionTable_InferenceRule.java" startLine="89" startPosition="30" endLine="90" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1987251859607015347" fileName="typeof_DecisionTable_InferenceRule.java" startLine="90" startPosition="135" endLine="91" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_DecisionTable_InferenceRule#()V" />
-    <nodeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="69" startPosition="68" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1987251859607019360" fileName="typeof_DecisionTable_InferenceRule.java" startLine="21" startPosition="126" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1987251859607015320" fileName="typeof_DecisionTable_InferenceRule.java" startLine="29" startPosition="61" endLine="34" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1987251859607015341" fileName="typeof_DecisionTable_InferenceRule.java" startLine="38" startPosition="61" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1987251859607015356" fileName="typeof_DecisionTable_InferenceRule.java" startLine="47" startPosition="61" endLine="52" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1987251859607015373" fileName="typeof_DecisionTable_InferenceRule.java" startLine="55" startPosition="59" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="69" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1987251859607015332" fileName="typeof_DecisionTable_InferenceRule.java" startLine="80" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ro75ql_a0a0a2a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1987251859607015347" fileName="typeof_DecisionTable_InferenceRule.java" startLine="87" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ro75ql_a0a0a3a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="1987251859607015320" fileName="typeof_DecisionTable_InferenceRule.java" startLine="28" startPosition="106" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1987251859607015341" fileName="typeof_DecisionTable_InferenceRule.java" startLine="37" startPosition="106" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1987251859607015356" fileName="typeof_DecisionTable_InferenceRule.java" startLine="46" startPosition="108" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1987251859607015373" fileName="typeof_DecisionTable_InferenceRule.java" startLine="54" startPosition="5" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1987251859607015306" fileName="typeof_DecisionTable_InferenceRule.java" startLine="27" startPosition="0" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1987251859607015335" fileName="typeof_DecisionTable_InferenceRule.java" startLine="36" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1987251859607015350" fileName="typeof_DecisionTable_InferenceRule.java" startLine="45" startPosition="5" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="21" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="18" startPosition="47" endLine="18" endPosition="47" />
-    <scopeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="65" startPosition="46" endLine="66" endPosition="77" />
-    <scopeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="76" startPosition="30" endLine="77" endPosition="17" />
-    <scopeInfo nodeId="1987251859607015332" fileName="typeof_DecisionTable_InferenceRule.java" startLine="82" startPosition="30" endLine="83" endPosition="135" />
-    <scopeInfo nodeId="1987251859607015347" fileName="typeof_DecisionTable_InferenceRule.java" startLine="89" startPosition="30" endLine="90" endPosition="135" />
-    <scopeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="70" startPosition="5" endLine="72" endPosition="45">
-      <varInfo nodeId="1987251859607011636" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="1987251859607019360" fileName="typeof_DecisionTable_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="345">
-      <varInfo nodeId="1987251859607019360" varName="_info_12389875345" />
-      <varInfo nodeId="1987251859607019360" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1987251859607015320" fileName="typeof_DecisionTable_InferenceRule.java" startLine="30" startPosition="9" endLine="33" endPosition="473">
-      <varInfo nodeId="1987251859607015320" varName="_info_12389875345" />
-      <varInfo nodeId="1987251859607015320" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1987251859607015341" fileName="typeof_DecisionTable_InferenceRule.java" startLine="39" startPosition="9" endLine="42" endPosition="473">
-      <varInfo nodeId="1987251859607015341" varName="_info_12389875345" />
-      <varInfo nodeId="1987251859607015341" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1987251859607015356" fileName="typeof_DecisionTable_InferenceRule.java" startLine="48" startPosition="9" endLine="51" endPosition="447">
-      <varInfo nodeId="1987251859607015356" varName="_info_12389875345" />
-      <varInfo nodeId="1987251859607015356" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1987251859607015373" fileName="typeof_DecisionTable_InferenceRule.java" startLine="56" startPosition="7" endLine="59" endPosition="445">
-      <varInfo nodeId="1987251859607015373" varName="_info_12389875345" />
-      <varInfo nodeId="1987251859607015373" varName="_nodeToCheck_1029348928467" />
-    </scopeInfo>
-    <scopeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="65" startPosition="0" endLine="68" endPosition="0" />
-    <scopeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="69" startPosition="68" endLine="73" endPosition="5" />
-    <scopeInfo nodeId="1987251859607015332" fileName="typeof_DecisionTable_InferenceRule.java" startLine="80" startPosition="64" endLine="84" endPosition="24">
-      <varInfo nodeId="1987251859607015332" varName="facade" />
-      <varInfo nodeId="1987251859607015332" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1987251859607015347" fileName="typeof_DecisionTable_InferenceRule.java" startLine="87" startPosition="64" endLine="91" endPosition="24">
-      <varInfo nodeId="1987251859607015347" varName="facade" />
-      <varInfo nodeId="1987251859607015347" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="1987251859607015320" fileName="typeof_DecisionTable_InferenceRule.java" startLine="29" startPosition="61" endLine="34" endPosition="9" />
-    <scopeInfo nodeId="1987251859607015341" fileName="typeof_DecisionTable_InferenceRule.java" startLine="38" startPosition="61" endLine="43" endPosition="9" />
-    <scopeInfo nodeId="1987251859607015356" fileName="typeof_DecisionTable_InferenceRule.java" startLine="47" startPosition="61" endLine="52" endPosition="9" />
-    <scopeInfo nodeId="1987251859607015373" fileName="typeof_DecisionTable_InferenceRule.java" startLine="55" startPosition="59" endLine="60" endPosition="7" />
-    <scopeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="69" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="1987251859607011636" varName="argument" />
-    </scopeInfo>
-    <scopeInfo nodeId="1987251859607015332" fileName="typeof_DecisionTable_InferenceRule.java" startLine="80" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="1987251859607015347" fileName="typeof_DecisionTable_InferenceRule.java" startLine="87" startPosition="0" endLine="93" endPosition="0" />
-    <scopeInfo nodeId="1987251859607015309" fileName="typeof_DecisionTable_InferenceRule.java" startLine="28" startPosition="106" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="1987251859607015340" fileName="typeof_DecisionTable_InferenceRule.java" startLine="37" startPosition="106" endLine="44" endPosition="7" />
-    <scopeInfo nodeId="1987251859607015355" fileName="typeof_DecisionTable_InferenceRule.java" startLine="46" startPosition="108" endLine="53" endPosition="7" />
-    <scopeInfo nodeId="1987251859607015306" fileName="typeof_DecisionTable_InferenceRule.java" startLine="27" startPosition="0" endLine="36" endPosition="5">
-      <varInfo nodeId="1987251859607015307" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1987251859607015335" fileName="typeof_DecisionTable_InferenceRule.java" startLine="36" startPosition="5" endLine="45" endPosition="5">
-      <varInfo nodeId="1987251859607015336" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1987251859607015350" fileName="typeof_DecisionTable_InferenceRule.java" startLine="45" startPosition="5" endLine="54" endPosition="5">
-      <varInfo nodeId="1987251859607015351" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1987251859607011637" fileName="typeof_DecisionTable_InferenceRule.java" startLine="21" startPosition="126" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="21" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="1987251859607011636" varName="decisionTable" />
-      <varInfo nodeId="1987251859607011636" varName="status" />
-      <varInfo nodeId="1987251859607011636" varName="typeCheckingContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1987251859607011636" fileName="typeof_DecisionTable_InferenceRule.java" startLine="17" startPosition="0" endLine="94" endPosition="0" unitName="org.jetbrains.mps.samples.DecisionTable.typesystem.typeof_DecisionTable_InferenceRule" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="TypesystemDescriptor.java">
+      <unit at="8,0,16,0" name="org.jetbrains.mps.samples.DecisionTable.typesystem.TypesystemDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:f348e313-94f1-424e-9233-5bd41095169e(org.jetbrains.mps.samples.DecisionTable.typesystem)/1987251859607011636">
+    <file name="typeof_DecisionTable_InferenceRule.java">
+      <node id="1987251859607019360" at="22,5,23,55" concept="6" />
+      <node id="1987251859607019360" at="23,55,24,216" concept="6" />
+      <node id="1987251859607019360" at="24,216,25,345" concept="2" />
+      <node id="1987251859607092820" at="26,5,27,0" concept="8" />
+      <node id="1987251859607015320" at="30,9,31,47" concept="6" />
+      <node id="1987251859607015320" at="31,47,32,220" concept="6" />
+      <node id="1987251859607015320" at="32,220,33,473" concept="2" />
+      <node id="1987251859607015341" at="39,9,40,47" concept="6" />
+      <node id="1987251859607015341" at="40,47,41,220" concept="6" />
+      <node id="1987251859607015341" at="41,220,42,473" concept="2" />
+      <node id="1987251859607015356" at="48,9,49,47" concept="6" />
+      <node id="1987251859607015356" at="49,47,50,220" concept="6" />
+      <node id="1987251859607015356" at="50,220,51,447" concept="2" />
+      <node id="1987251859607015373" at="56,7,57,106" concept="6" />
+      <node id="1987251859607015373" at="57,106,58,218" concept="6" />
+      <node id="1987251859607015373" at="58,218,59,445" concept="2" />
+      <node id="1987251859607015372" at="61,5,62,0" concept="8" />
+      <node id="1987251859607011636" at="65,46,66,77" concept="7" />
+      <node id="1987251859607011636" at="70,5,71,130" concept="6" />
+      <node id="1987251859607011636" at="71,130,72,45" concept="7" />
+      <node id="1987251859607011636" at="76,30,77,17" concept="7" />
+      <node id="1987251859607015332" at="80,64,81,63" concept="6" />
+      <node id="1987251859607015332" at="81,63,82,30" concept="6" />
+      <node id="1987251859607015332" at="82,30,83,135" concept="0" />
+      <node id="1987251859607015332" at="82,30,83,135" concept="0" />
+      <node id="1987251859607015332" at="82,30,83,135" concept="2" />
+      <node id="1987251859607015332" at="83,135,84,24" concept="7" />
+      <node id="1987251859607015347" at="87,64,88,63" concept="6" />
+      <node id="1987251859607015347" at="88,63,89,30" concept="6" />
+      <node id="1987251859607015347" at="89,30,90,135" concept="0" />
+      <node id="1987251859607015347" at="89,30,90,135" concept="0" />
+      <node id="1987251859607015347" at="89,30,90,135" concept="2" />
+      <node id="1987251859607015347" at="90,135,91,24" concept="7" />
+      <node id="1987251859607011636" at="18,0,20,0" concept="1" trace="typeof_DecisionTable_InferenceRule#()V" />
+      <node id="1987251859607011636" at="65,0,68,0" concept="5" trace="getApplicableConceptFQName#()Ljava/lang/String;" />
+      <node id="1987251859607011636" at="76,0,79,0" concept="5" trace="overrides#()Z" />
+      <node id="1987251859607011636" at="69,68,73,5" concept="0" />
+      <node id="1987251859607019360" at="21,126,26,5" concept="0" />
+      <node id="1987251859607015320" at="29,61,34,9" concept="0" />
+      <node id="1987251859607015341" at="38,61,43,9" concept="0" />
+      <node id="1987251859607015356" at="47,61,52,9" concept="0" />
+      <node id="1987251859607015373" at="55,59,60,7" concept="0" />
+      <node id="1987251859607011636" at="69,0,75,0" concept="5" trace="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+      <node id="1987251859607015332" at="80,0,86,0" concept="9" trace="_quotation_createNode_ro75ql_a0a0a2a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1987251859607015347" at="87,0,93,0" concept="9" trace="_quotation_createNode_ro75ql_a0a0a3a1#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1987251859607015320" at="28,106,35,7" concept="4" />
+      <node id="1987251859607015341" at="37,106,44,7" concept="4" />
+      <node id="1987251859607015356" at="46,108,53,7" concept="4" />
+      <node id="1987251859607015373" at="54,5,61,5" concept="4" />
+      <node id="1987251859607015306" at="27,0,36,5" concept="3" />
+      <node id="1987251859607015335" at="36,5,45,5" concept="3" />
+      <node id="1987251859607015350" at="45,5,54,5" concept="3" />
+      <node id="1987251859607011636" at="21,0,64,0" concept="5" trace="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+      <scope id="1987251859607011636" at="18,47,18,47" />
+      <scope id="1987251859607011636" at="65,46,66,77" />
+      <scope id="1987251859607011636" at="76,30,77,17" />
+      <scope id="1987251859607015332" at="82,30,83,135" />
+      <scope id="1987251859607015347" at="89,30,90,135" />
+      <scope id="1987251859607011636" at="18,0,20,0" />
+      <scope id="1987251859607011636" at="70,5,72,45">
+        <var name="b" id="1987251859607011636" />
+      </scope>
+      <scope id="1987251859607019360" at="22,5,25,345">
+        <var name="_info_12389875345" id="1987251859607019360" />
+        <var name="_nodeToCheck_1029348928467" id="1987251859607019360" />
+      </scope>
+      <scope id="1987251859607015320" at="30,9,33,473">
+        <var name="_info_12389875345" id="1987251859607015320" />
+        <var name="_nodeToCheck_1029348928467" id="1987251859607015320" />
+      </scope>
+      <scope id="1987251859607015341" at="39,9,42,473">
+        <var name="_info_12389875345" id="1987251859607015341" />
+        <var name="_nodeToCheck_1029348928467" id="1987251859607015341" />
+      </scope>
+      <scope id="1987251859607015356" at="48,9,51,447">
+        <var name="_info_12389875345" id="1987251859607015356" />
+        <var name="_nodeToCheck_1029348928467" id="1987251859607015356" />
+      </scope>
+      <scope id="1987251859607015373" at="56,7,59,445">
+        <var name="_info_12389875345" id="1987251859607015373" />
+        <var name="_nodeToCheck_1029348928467" id="1987251859607015373" />
+      </scope>
+      <scope id="1987251859607011636" at="65,0,68,0" />
+      <scope id="1987251859607011636" at="76,0,79,0" />
+      <scope id="1987251859607011636" at="69,68,73,5" />
+      <scope id="1987251859607015332" at="80,64,84,24">
+        <var name="facade" id="1987251859607015332" />
+        <var name="quotedNode_1" id="1987251859607015332" />
+      </scope>
+      <scope id="1987251859607015347" at="87,64,91,24">
+        <var name="facade" id="1987251859607015347" />
+        <var name="quotedNode_1" id="1987251859607015347" />
+      </scope>
+      <scope id="1987251859607015320" at="29,61,34,9" />
+      <scope id="1987251859607015341" at="38,61,43,9" />
+      <scope id="1987251859607015356" at="47,61,52,9" />
+      <scope id="1987251859607015373" at="55,59,60,7" />
+      <scope id="1987251859607011636" at="69,0,75,0">
+        <var name="argument" id="1987251859607011636" />
+      </scope>
+      <scope id="1987251859607015332" at="80,0,86,0" />
+      <scope id="1987251859607015347" at="87,0,93,0" />
+      <scope id="1987251859607015309" at="28,106,35,7" />
+      <scope id="1987251859607015340" at="37,106,44,7" />
+      <scope id="1987251859607015355" at="46,108,53,7" />
+      <scope id="1987251859607015306" at="27,0,36,5">
+        <var name="e" id="1987251859607015307" />
+      </scope>
+      <scope id="1987251859607015335" at="36,5,45,5">
+        <var name="e" id="1987251859607015336" />
+      </scope>
+      <scope id="1987251859607015350" at="45,5,54,5">
+        <var name="e" id="1987251859607015351" />
+      </scope>
+      <scope id="1987251859607011637" at="21,126,62,0" />
+      <scope id="1987251859607011636" at="21,0,64,0">
+        <var name="decisionTable" id="1987251859607011636" />
+        <var name="status" id="1987251859607011636" />
+        <var name="typeCheckingContext" id="1987251859607011636" />
+      </scope>
+      <unit id="1987251859607011636" at="17,0,94,0" name="org.jetbrains.mps.samples.DecisionTable.typesystem.typeof_DecisionTable_InferenceRule" />
+    </file>
+  </root>
+</debug-info>
 

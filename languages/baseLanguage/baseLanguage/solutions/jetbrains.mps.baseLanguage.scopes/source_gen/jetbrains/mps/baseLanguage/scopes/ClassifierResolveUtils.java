@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.StringTokenizer;
@@ -208,8 +209,7 @@ public class ClassifierResolveUtils {
   }
 
   private static Iterable<SNode> getClassifiersInModel(SModel model) {
-    Iterable<SNode> classifiers = jetbrains.mps.util.SNodeOperations.getModelFastFinder(model).getNodes("jetbrains.mps.baseLanguage.structure.Classifier", true);
-    return (Iterable<SNode>) Sequence.fromIterable(classifiers).where(new IWhereFilter<SNode>() {
+    return ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.Classifier")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.AnonymousClass"));
       }
@@ -327,34 +327,39 @@ public class ClassifierResolveUtils {
       // not found in single-type impors 
 
       // putting on-demand imports into model list 
-      List<SModel> javaImportedModels = ListSequence.fromList(new ArrayList<SModel>());
+      // element is either SModel or node<Classifier> 
+      List<Object> javaImportedThings = ListSequence.fromList(new ArrayList<Object>());
 
       // models with the same name as contextNodeModel (correspond to the same package in java) 
-      ListSequence.fromList(javaImportedModels).addElement(contextNodeModel);
+      ListSequence.fromList(javaImportedThings).addElement(contextNodeModel);
 
       String ourPkgName = SModelStereotype.withoutStereotype(contextNodeModel.getModelName());
-      ListSequence.fromList(javaImportedModels).addSequence(Sequence.fromIterable(getModelsByName(moduleScope, ourPkgName)).where(new IWhereFilter<SModel>() {
+      ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(getModelsByName(moduleScope, ourPkgName)).where(new IWhereFilter<SModel>() {
         public boolean accept(SModel it) {
           return it != contextNodeModel;
         }
       }));
 
-      ListSequence.fromList(javaImportedModels).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")));
+      ListSequence.fromList(javaImportedThings).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")));
 
       for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SPropertyOperations.getBoolean(it, "onDemand");
         }
       })) {
-        String pkgName = SPropertyOperations.getString(imp, "tokens");
-        ListSequence.fromList(javaImportedModels).addSequence(Sequence.fromIterable(getModelsByName(moduleScope, pkgName)));
+        String fqName = SPropertyOperations.getString(imp, "tokens");
+        Iterable<SModel> models = getModelsByName(moduleScope, fqName);
+        if (Sequence.fromIterable(models).isNotEmpty()) {
+          ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(models));
+        } else {
+          ListSequence.fromList(javaImportedThings).addSequence(Sequence.fromIterable(resolveClassifierByFqNameWithNonStubPriority(moduleScope.getModels(), fqName)));
+        }
       }
 
-
       // go through models which correspond to java imported packages 
-      for (SModel model : ListSequence.fromList(javaImportedModels)) {
+      for (Object thing : javaImportedThings) {
         // FIXME will be unnecessary when transient models live in a separate repository 
-        if (!(model.equals(contextNodeModel)) && model instanceof SModel && (model.getModule() instanceof TransientModelsModule)) {
+        if (!(thing.equals(contextNodeModel)) && thing instanceof SModel && (((SModel) thing).getModule() instanceof TransientModelsModule)) {
           continue;
         }
 
@@ -362,7 +367,8 @@ public class ClassifierResolveUtils {
         boolean wasResult = false;
 
         // TODO try to use some fast find support 
-        Iterable<? extends SNode> roots = model.getRootNodes();
+        Iterable<? extends SNode> roots = (thing instanceof SModel ? ((SModel) thing).getRootNodes() : SNodeOperations.ofConcept(SLinkOperations.getTargets(SNodeOperations.cast(((SNode) thing), "jetbrains.mps.baseLanguage.structure.Classifier"), "member", true), "jetbrains.mps.baseLanguage.structure.Classifier"));
+
         for (SNode r : roots) {
           if (!(SNodeOperations.isInstanceOf(r, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
             continue;
@@ -382,7 +388,6 @@ public class ClassifierResolveUtils {
           return theResult;
         }
       }
-
     }
 
     // try to use old logic 

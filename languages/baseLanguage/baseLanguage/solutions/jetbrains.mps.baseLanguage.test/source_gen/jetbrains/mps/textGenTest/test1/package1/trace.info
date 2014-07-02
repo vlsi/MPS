@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
   <root nodeRef="r:684db221-872d-4656-aa24-50cd8b2f5c09(jetbrains.mps.textGenTest.test1.package1)/5257650213624905139">
-    <nodeInfo nodeId="5257650213624905141" fileName="Clazz.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Clazz#()V" />
-    <scopeInfo nodeId="5257650213624905144" fileName="Clazz.java" startLine="7" startPosition="18" endLine="7" endPosition="18" />
-    <scopeInfo nodeId="5257650213624905141" fileName="Clazz.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
-    <unitInfo nodeId="5257650213624905139" fileName="Clazz.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.textGenTest.test1.package1.Clazz" />
+    <file name="Clazz.java">
+      <node id="5257650213624905141" at="7,0,9,0" concept="0" trace="Clazz#()V" />
+      <scope id="5257650213624905144" at="7,18,7,18" />
+      <scope id="5257650213624905141" at="7,0,9,0" />
+      <unit id="5257650213624905139" at="6,0,10,0" name="jetbrains.mps.textGenTest.test1.package1.Clazz" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

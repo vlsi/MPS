@@ -4,19 +4,17 @@ package jetbrains.mps.execution.settings.behavior;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.execution.common.behavior.IGeneratedToClass_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -31,11 +29,11 @@ public class PersistentConfiguration_Behavior {
   }
 
   public static String call_getGeneratedEditorName_946964771156066479(SNode thisNode) {
-    return IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905488(thisNode) + "_" + PersistentConfiguration_Behavior.call_getEditorSuffix_946964771156066551(thisNode);
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getGeneratedClassName_946964771156905488", new Object[]{}) + "_" + PersistentConfiguration_Behavior.call_getEditorSuffix_946964771156066551(thisNode);
   }
 
   public static String call_getFullEditorName_946964771156066491(SNode thisNode) {
-    return IGeneratedToClass_Behavior.call_getFullName_946964771156905503(thisNode) + "_" + PersistentConfiguration_Behavior.call_getEditorSuffix_946964771156066551(thisNode);
+    return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFullName_946964771156905503", new Object[]{}) + "_" + PersistentConfiguration_Behavior.call_getEditorSuffix_946964771156066551(thisNode);
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
@@ -95,16 +93,6 @@ public class PersistentConfiguration_Behavior {
 
   public static String call_getCheckMethodName_946964771156066466(SAbstractConcept thisConcept) {
     return "checkConfiguration";
-  }
-
-  @Deprecated
-  public static SNode call_createType_946964771156066501(SNode thisNode) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_createType_1213877527970", new Object[]{});
-  }
-
-  @Deprecated
-  public static SNode callSuper_createType_946964771156066501(SNode thisNode, String callerConceptFqName) {
-    return BehaviorManager.getInstance().invokeSuper((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(thisNode, "jetbrains.mps.execution.settings.structure.PersistentConfiguration"), callerConceptFqName, "virtual_createType_1213877527970", new Class[]{SNode.class}, new Object[]{});
   }
 
   private static SNode _quotation_createNode_4ves9l_a0a3(Object parameter_1) {

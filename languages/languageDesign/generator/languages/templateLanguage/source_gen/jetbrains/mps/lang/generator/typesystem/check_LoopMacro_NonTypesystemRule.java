@@ -26,7 +26,7 @@ public class check_LoopMacro_NonTypesystemRule extends AbstractNonTypesystemRule
         if (SPropertyOperations.hasValue(linkdecl, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(linkdecl, "sourceCardinality", "1", "0..1")) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(loopMacro, "Target role for $LOOP$ macro can contain max 1 element (role: " + SPropertyOperations.getString(linkdecl, "role") + ")", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1098116234534104047", null, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(loopMacro, "Node under $LOOP$ macro should have multiple cardinality (role: " + SPropertyOperations.getString(linkdecl, "role") + ")", "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1098116234534104047", null, errorTarget);
           }
         }
       }

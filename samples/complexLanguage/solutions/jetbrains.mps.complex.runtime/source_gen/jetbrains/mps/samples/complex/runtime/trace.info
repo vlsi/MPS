@@ -1,117 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:00000000-0000-4000-0000-011c89590428(jetbrains.mps.samples.complex.runtime)/1196259667740">
-    <nodeInfo nodeId="1196263513821" fileName="Complex.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EPSILON" />
-    <nodeInfo nodeId="1196434090541" fileName="Complex.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="I" />
-    <nodeInfo nodeId="1196259679368" fileName="Complex.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReal" />
-    <nodeInfo nodeId="1196259698235" fileName="Complex.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myImaginary" />
-    <nodeInfo nodeId="1196259780331" fileName="Complex.java" startLine="12" startPosition="49" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196259790100" fileName="Complex.java" startLine="13" startPosition="23" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1196259808379" fileName="Complex.java" startLine="17" startPosition="27" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196259842341" fileName="Complex.java" startLine="21" startPosition="32" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196262537486" fileName="Complex.java" startLine="25" startPosition="26" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196421747866" fileName="Complex.java" startLine="29" startPosition="26" endLine="30" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196421772507" fileName="Complex.java" startLine="31" startPosition="22" endLine="32" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196421808139" fileName="Complex.java" startLine="33" startPosition="35" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196421831255" fileName="Complex.java" startLine="35" startPosition="14" endLine="36" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196421854266" fileName="Complex.java" startLine="38" startPosition="12" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206621567262" fileName="Complex.java" startLine="45" startPosition="32" endLine="46" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1206621610725" fileName="Complex.java" startLine="48" startPosition="27" endLine="49" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196425827750" fileName="Complex.java" startLine="50" startPosition="5" endLine="51" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196419463546" fileName="Complex.java" startLine="54" startPosition="35" endLine="55" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196421565149" fileName="Complex.java" startLine="58" startPosition="32" endLine="59" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196266770854" fileName="Complex.java" startLine="62" startPosition="53" endLine="63" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196429523272" fileName="Complex.java" startLine="66" startPosition="56" endLine="67" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196429542803" fileName="Complex.java" startLine="67" startPosition="27" endLine="68" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196429611092" fileName="Complex.java" startLine="68" startPosition="72" endLine="69" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1196429639951" fileName="Complex.java" startLine="69" startPosition="72" endLine="70" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196268210171" fileName="Complex.java" startLine="73" startPosition="53" endLine="74" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196267088988" fileName="Complex.java" startLine="77" startPosition="57" endLine="78" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196421452498" fileName="Complex.java" startLine="81" startPosition="65" endLine="82" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196434188116" fileName="Complex.java" startLine="85" startPosition="32" endLine="86" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1196421819378" fileName="Complex.java" startLine="35" startPosition="12" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196421846545" fileName="Complex.java" startLine="38" startPosition="10" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1196259799664" fileName="Complex.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReal#()D" />
-    <nodeInfo nodeId="1196259824365" fileName="Complex.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getImaginary#()D" />
-    <nodeInfo nodeId="1196262508597" fileName="Complex.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAbs#()D" />
-    <nodeInfo nodeId="1206621555765" fileName="Complex.java" startLine="44" startPosition="28" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1206621580132" fileName="Complex.java" startLine="47" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196419386247" fileName="Complex.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConjugative#()Ljetbrains/mps/samples/complex/runtime/Complex;" />
-    <nodeInfo nodeId="1196421296201" fileName="Complex.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="degree#(I)Ljetbrains/mps/samples/complex/runtime/Complex;" />
-    <nodeInfo nodeId="1196266543480" fileName="Complex.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="sum#(Ljetbrains/mps/samples/complex/runtime/Complex;Ljetbrains/mps/samples/complex/runtime/Complex;)Ljetbrains/mps/samples/complex/runtime/Complex;" />
-    <nodeInfo nodeId="1196268155581" fileName="Complex.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="sub#(Ljetbrains/mps/samples/complex/runtime/Complex;Ljetbrains/mps/samples/complex/runtime/Complex;)Ljetbrains/mps/samples/complex/runtime/Complex;" />
-    <nodeInfo nodeId="1196266934341" fileName="Complex.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="product#(Ljetbrains/mps/samples/complex/runtime/Complex;Ljetbrains/mps/samples/complex/runtime/Complex;)Ljetbrains/mps/samples/complex/runtime/Complex;" />
-    <nodeInfo nodeId="1196421402037" fileName="Complex.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getComplexPolar#(DD)Ljetbrains/mps/samples/complex/runtime/Complex;" />
-    <nodeInfo nodeId="1196434175658" fileName="Complex.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getI#()Ljetbrains/mps/samples/complex/runtime/Complex;" />
-    <nodeInfo nodeId="1196259741498" fileName="Complex.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Complex#(DD)V" />
-    <nodeInfo nodeId="1196421796990" fileName="Complex.java" startLine="32" startPosition="49" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196429491430" fileName="Complex.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="divide#(Ljetbrains/mps/samples/complex/runtime/Complex;Ljetbrains/mps/samples/complex/runtime/Complex;)Ljetbrains/mps/samples/complex/runtime/Complex;" />
-    <nodeInfo nodeId="1196421760108" fileName="Complex.java" startLine="30" startPosition="29" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1196425808448" fileName="Complex.java" startLine="43" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1196421732846" fileName="Complex.java" startLine="29" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArg#()D" />
-    <scopeInfo nodeId="1196259799667" fileName="Complex.java" startLine="17" startPosition="27" endLine="18" endPosition="23" />
-    <scopeInfo nodeId="1196259824368" fileName="Complex.java" startLine="21" startPosition="32" endLine="22" endPosition="28" />
-    <scopeInfo nodeId="1196262508600" fileName="Complex.java" startLine="25" startPosition="26" endLine="26" endPosition="81" />
-    <scopeInfo nodeId="1196421796991" fileName="Complex.java" startLine="33" startPosition="35" endLine="34" endPosition="22" />
-    <scopeInfo nodeId="1196421819379" fileName="Complex.java" startLine="35" startPosition="14" endLine="36" endPosition="27" />
-    <scopeInfo nodeId="1196421846546" fileName="Complex.java" startLine="38" startPosition="12" endLine="39" endPosition="17" />
-    <scopeInfo nodeId="1206621555766" fileName="Complex.java" startLine="45" startPosition="32" endLine="46" endPosition="30" />
-    <scopeInfo nodeId="1206621580133" fileName="Complex.java" startLine="48" startPosition="27" endLine="49" endPosition="85" />
-    <scopeInfo nodeId="1196419386250" fileName="Complex.java" startLine="54" startPosition="35" endLine="55" endPosition="59" />
-    <scopeInfo nodeId="1196421296204" fileName="Complex.java" startLine="58" startPosition="32" endLine="59" endPosition="74" />
-    <scopeInfo nodeId="1196266543483" fileName="Complex.java" startLine="62" startPosition="53" endLine="63" endPosition="79" />
-    <scopeInfo nodeId="1196268155584" fileName="Complex.java" startLine="73" startPosition="53" endLine="74" endPosition="79" />
-    <scopeInfo nodeId="1196266934344" fileName="Complex.java" startLine="77" startPosition="57" endLine="78" endPosition="137" />
-    <scopeInfo nodeId="1196421402040" fileName="Complex.java" startLine="81" startPosition="65" endLine="82" endPosition="65" />
-    <scopeInfo nodeId="1196434175661" fileName="Complex.java" startLine="85" startPosition="32" endLine="86" endPosition="13" />
-    <scopeInfo nodeId="1196259741501" fileName="Complex.java" startLine="12" startPosition="49" endLine="14" endPosition="33" />
-    <scopeInfo nodeId="1196259799664" fileName="Complex.java" startLine="17" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="1196259824365" fileName="Complex.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1196262508597" fileName="Complex.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1196419386247" fileName="Complex.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="1196421296201" fileName="Complex.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
-      <varInfo nodeId="1196421312643" varName="n" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196266543480" fileName="Complex.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="1196266565798" varName="c1" />
-      <varInfo nodeId="1196266569518" varName="c2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196268155581" fileName="Complex.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="1196268171726" varName="c1" />
-      <varInfo nodeId="1196268174712" varName="c2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196266934341" fileName="Complex.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="1196267041548" varName="c1" />
-      <varInfo nodeId="1196267049036" varName="c2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196421402037" fileName="Complex.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="1196421433150" varName="abs" />
-      <varInfo nodeId="1196421439058" varName="arg" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196434175658" fileName="Complex.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="1196259741498" fileName="Complex.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="1196259750042" varName="imaginary" />
-      <varInfo nodeId="1196259746813" varName="real" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196429491433" fileName="Complex.java" startLine="66" startPosition="56" endLine="70" endPosition="39">
-      <varInfo nodeId="1196429542804" varName="a1" />
-      <varInfo nodeId="1196429611093" varName="a2" />
-      <varInfo nodeId="1196429523273" varName="r" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196421760109" fileName="Complex.java" startLine="31" startPosition="22" endLine="37" endPosition="7">
-      <varInfo nodeId="1196421772508" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196429491430" fileName="Complex.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
-      <varInfo nodeId="1196429497201" varName="c1" />
-      <varInfo nodeId="1196429499078" varName="c2" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196425808451" fileName="Complex.java" startLine="44" startPosition="28" endLine="51" endPosition="102" />
-    <scopeInfo nodeId="1196425808448" fileName="Complex.java" startLine="43" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="1196421732849" fileName="Complex.java" startLine="29" startPosition="26" endLine="40" endPosition="5">
-      <varInfo nodeId="1196421747867" varName="r" />
-    </scopeInfo>
-    <scopeInfo nodeId="1196421732846" fileName="Complex.java" startLine="29" startPosition="0" endLine="42" endPosition="0" />
-    <unitInfo nodeId="1196259667740" fileName="Complex.java" startLine="6" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.samples.complex.runtime.Complex" />
+    <file name="Complex.java">
+      <node id="1196263513821" at="7,0,8,0" concept="8" trace="EPSILON" />
+      <node id="1196434090541" at="8,0,9,0" concept="8" trace="I" />
+      <node id="1196259679368" at="9,0,10,0" concept="3" trace="myReal" />
+      <node id="1196259698235" at="10,0,11,0" concept="3" trace="myImaginary" />
+      <node id="1196259780331" at="12,49,13,23" concept="2" />
+      <node id="1196259790100" at="13,23,14,33" concept="2" />
+      <node id="1196259808379" at="17,27,18,23" concept="7" />
+      <node id="1196259842341" at="21,32,22,28" concept="7" />
+      <node id="1196262537486" at="25,26,26,81" concept="7" />
+      <node id="1196421747866" at="29,26,30,29" concept="6" />
+      <node id="1196421772507" at="31,22,32,49" concept="6" />
+      <node id="1196421808139" at="33,35,34,22" concept="7" />
+      <node id="1196421831255" at="35,14,36,27" concept="7" />
+      <node id="1196421854266" at="38,12,39,17" concept="7" />
+      <node id="1206621567262" at="45,32,46,30" concept="7" />
+      <node id="1206621610725" at="48,27,49,85" concept="7" />
+      <node id="1196425827750" at="50,5,51,102" concept="7" />
+      <node id="1196419463546" at="54,35,55,59" concept="7" />
+      <node id="1196421565149" at="58,32,59,74" concept="7" />
+      <node id="1196266770854" at="62,53,63,79" concept="7" />
+      <node id="1196429523272" at="66,56,67,27" concept="6" />
+      <node id="1196429542803" at="67,27,68,72" concept="6" />
+      <node id="1196429611092" at="68,72,69,72" concept="6" />
+      <node id="1196429639951" at="69,72,70,39" concept="7" />
+      <node id="1196268210171" at="73,53,74,79" concept="7" />
+      <node id="1196267088988" at="77,57,78,137" concept="7" />
+      <node id="1196421452498" at="81,65,82,65" concept="7" />
+      <node id="1196434188116" at="85,32,86,13" concept="7" />
+      <node id="1196421819378" at="35,12,37,7" concept="0" />
+      <node id="1196421846545" at="38,10,40,5" concept="0" />
+      <node id="1196259799664" at="17,0,20,0" concept="5" trace="getReal#()D" />
+      <node id="1196259824365" at="21,0,24,0" concept="5" trace="getImaginary#()D" />
+      <node id="1196262508597" at="25,0,28,0" concept="5" trace="getAbs#()D" />
+      <node id="1206621555765" at="44,28,47,5" concept="4" />
+      <node id="1206621580132" at="47,5,50,5" concept="4" />
+      <node id="1196419386247" at="54,0,57,0" concept="5" trace="getConjugative#()Ljetbrains/mps/samples/complex/runtime/Complex;" />
+      <node id="1196421296201" at="58,0,61,0" concept="5" trace="degree#(I)Ljetbrains/mps/samples/complex/runtime/Complex;" />
+      <node id="1196266543480" at="62,0,65,0" concept="9" trace="sum#(Ljetbrains/mps/samples/complex/runtime/Complex;Ljetbrains/mps/samples/complex/runtime/Complex;)Ljetbrains/mps/samples/complex/runtime/Complex;" />
+      <node id="1196268155581" at="73,0,76,0" concept="9" trace="sub#(Ljetbrains/mps/samples/complex/runtime/Complex;Ljetbrains/mps/samples/complex/runtime/Complex;)Ljetbrains/mps/samples/complex/runtime/Complex;" />
+      <node id="1196266934341" at="77,0,80,0" concept="9" trace="product#(Ljetbrains/mps/samples/complex/runtime/Complex;Ljetbrains/mps/samples/complex/runtime/Complex;)Ljetbrains/mps/samples/complex/runtime/Complex;" />
+      <node id="1196421402037" at="81,0,84,0" concept="9" trace="getComplexPolar#(DD)Ljetbrains/mps/samples/complex/runtime/Complex;" />
+      <node id="1196434175658" at="85,0,88,0" concept="9" trace="getI#()Ljetbrains/mps/samples/complex/runtime/Complex;" />
+      <node id="1196259741498" at="12,0,16,0" concept="1" trace="Complex#(DD)V" />
+      <node id="1196421796990" at="32,49,37,7" concept="4" />
+      <node id="1196429491430" at="66,0,72,0" concept="9" trace="divide#(Ljetbrains/mps/samples/complex/runtime/Complex;Ljetbrains/mps/samples/complex/runtime/Complex;)Ljetbrains/mps/samples/complex/runtime/Complex;" />
+      <node id="1196421760108" at="30,29,40,5" concept="4" />
+      <node id="1196425808448" at="43,0,53,0" concept="5" trace="toString#()Ljava/lang/String;" />
+      <node id="1196421732846" at="29,0,42,0" concept="5" trace="getArg#()D" />
+      <scope id="1196259799667" at="17,27,18,23" />
+      <scope id="1196259824368" at="21,32,22,28" />
+      <scope id="1196262508600" at="25,26,26,81" />
+      <scope id="1196421796991" at="33,35,34,22" />
+      <scope id="1196421819379" at="35,14,36,27" />
+      <scope id="1196421846546" at="38,12,39,17" />
+      <scope id="1206621555766" at="45,32,46,30" />
+      <scope id="1206621580133" at="48,27,49,85" />
+      <scope id="1196419386250" at="54,35,55,59" />
+      <scope id="1196421296204" at="58,32,59,74" />
+      <scope id="1196266543483" at="62,53,63,79" />
+      <scope id="1196268155584" at="73,53,74,79" />
+      <scope id="1196266934344" at="77,57,78,137" />
+      <scope id="1196421402040" at="81,65,82,65" />
+      <scope id="1196434175661" at="85,32,86,13" />
+      <scope id="1196259741501" at="12,49,14,33" />
+      <scope id="1196259799664" at="17,0,20,0" />
+      <scope id="1196259824365" at="21,0,24,0" />
+      <scope id="1196262508597" at="25,0,28,0" />
+      <scope id="1196419386247" at="54,0,57,0" />
+      <scope id="1196421296201" at="58,0,61,0">
+        <var name="n" id="1196421312643" />
+      </scope>
+      <scope id="1196266543480" at="62,0,65,0">
+        <var name="c1" id="1196266565798" />
+        <var name="c2" id="1196266569518" />
+      </scope>
+      <scope id="1196268155581" at="73,0,76,0">
+        <var name="c1" id="1196268171726" />
+        <var name="c2" id="1196268174712" />
+      </scope>
+      <scope id="1196266934341" at="77,0,80,0">
+        <var name="c1" id="1196267041548" />
+        <var name="c2" id="1196267049036" />
+      </scope>
+      <scope id="1196421402037" at="81,0,84,0">
+        <var name="abs" id="1196421433150" />
+        <var name="arg" id="1196421439058" />
+      </scope>
+      <scope id="1196434175658" at="85,0,88,0" />
+      <scope id="1196259741498" at="12,0,16,0">
+        <var name="imaginary" id="1196259750042" />
+        <var name="real" id="1196259746813" />
+      </scope>
+      <scope id="1196429491433" at="66,56,70,39">
+        <var name="a1" id="1196429542804" />
+        <var name="a2" id="1196429611093" />
+        <var name="r" id="1196429523273" />
+      </scope>
+      <scope id="1196421760109" at="31,22,37,7">
+        <var name="result" id="1196421772508" />
+      </scope>
+      <scope id="1196429491430" at="66,0,72,0">
+        <var name="c1" id="1196429497201" />
+        <var name="c2" id="1196429499078" />
+      </scope>
+      <scope id="1196425808451" at="44,28,51,102" />
+      <scope id="1196425808448" at="43,0,53,0" />
+      <scope id="1196421732849" at="29,26,40,5">
+        <var name="r" id="1196421747867" />
+      </scope>
+      <scope id="1196421732846" at="29,0,42,0" />
+      <unit id="1196259667740" at="6,0,89,0" name="jetbrains.mps.samples.complex.runtime.Complex" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

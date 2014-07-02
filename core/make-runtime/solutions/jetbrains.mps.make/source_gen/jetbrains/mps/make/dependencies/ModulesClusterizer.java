@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.smodel.language.GeneratorRuntime;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -32,6 +32,7 @@ import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import java.util.Collection;
+import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class ModulesClusterizer {
   private static Logger LOG = LogManager.getLogger(ModulesCluster.class);
@@ -100,7 +101,7 @@ public class ModulesClusterizer {
 
   private static Iterable<String> allNamespaces(Iterable<SModule> modules) {
     final Set<String> namespaces = SetSequence.fromSet(new HashSet<String>());
-    Set<TemplateModule> seen = SetSequence.fromSet(new HashSet<TemplateModule>());
+    Set<GeneratorRuntime> seen = SetSequence.fromSet(new HashSet<GeneratorRuntime>());
     Queue<String> nsq = QueueSequence.fromQueue(new LinkedList<String>());
     for (SModule mod : modules) {
       if (mod instanceof Generator) {
@@ -138,15 +139,15 @@ public class ModulesClusterizer {
         }
         if (!(SetSequence.fromSet(namespaces).contains(ns))) {
           SetSequence.fromSet(namespaces).addElement(ns);
-          Collection<TemplateModule> gens = lr.getGenerators();
+          Collection<? extends GeneratorRuntime> gens = lr.getGenerators();
           if (gens != null) {
-            for (TemplateModule tm : gens) {
-              if (tm == null) {
+            for (GeneratorRuntime gr : gens) {
+              if (gr instanceof TemplateModule == false) {
                 continue;
               }
-              if (!(SetSequence.fromSet(seen).contains(tm))) {
-                QueueSequence.fromQueue(nsq).addSequence(CollectionSequence.fromCollection(tm.getUsedLanguages()));
-                SetSequence.fromSet(seen).addElement(tm);
+              if (!(SetSequence.fromSet(seen).contains(gr))) {
+                QueueSequence.fromQueue(nsq).addSequence(CollectionSequence.fromCollection(((TemplateModule) gr).getUsedLanguages()));
+                SetSequence.fromSet(seen).addElement(gr);
               }
             }
           }

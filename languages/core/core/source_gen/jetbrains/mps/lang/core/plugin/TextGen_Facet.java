@@ -39,13 +39,13 @@ import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.internal.make.runtime.java.FileProcessor;
 import jetbrains.mps.generator.impl.textgen.TextFacility;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
+import jetbrains.mps.internal.make.runtime.util.StaleFilesCollector;
 import jetbrains.mps.internal.make.runtime.java.FileDeltaCollector;
 import jetbrains.mps.generator.impl.cache.CacheGenLayout;
 import jetbrains.mps.make.java.BLDependenciesCache;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
+import jetbrains.mps.textgen.trace.TraceInfoCache;
 import java.util.Iterator;
 import jetbrains.mps.smodel.resources.TResource;
 import jetbrains.mps.generator.TransientModelsModule;
@@ -58,7 +58,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGen;
-import jetbrains.mps.generator.template.TracingUtil;
+import jetbrains.mps.textgen.trace.TracingUtil;
 import jetbrains.mps.smodel.resources.FResource;
 import jetbrains.mps.util.JavaNameUtil;
 import org.apache.log4j.Logger;
@@ -170,17 +170,12 @@ public class TextGen_Facet extends IFacet.Stub {
 
                   //  prepare  
                   for (GResource resource : ListSequence.fromList(currentInput)) {
-                    Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedFilesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
+                    Iterable<IDelta> retainedFilesDelta = RetainedUtil.retainedDeltas(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
                       public boolean accept(SModel smd) {
                         return GenerationFacade.canGenerate(smd);
                       }
-                    }), resource.module(), Target_make.vars(pa.global()).pathToFile());
-                    Iterable<IDelta> retainedCachesDelta = RetainedUtil.retainedCachesDelta(Sequence.fromIterable(resource.retainedModels()).where(new IWhereFilter<SModel>() {
-                      public boolean accept(SModel smd) {
-                        return GenerationFacade.canGenerate(smd);
-                      }
-                    }), resource.module(), Target_make.vars(pa.global()).pathToFile());
-                    MapSequence.fromMap(deltas).put(resource, ListSequence.fromListWithValues(new ArrayList<IDelta>(), Sequence.fromIterable(retainedCachesDelta).concat(Sequence.fromIterable(retainedFilesDelta))));
+                    }), Target_make.vars(pa.global()).pathToFile());
+                    MapSequence.fromMap(deltas).put(resource, ListSequence.fromListWithValues(new ArrayList<IDelta>(), retainedFilesDelta));
                   }
 
                   // textgen 
@@ -198,12 +193,12 @@ public class TextGen_Facet extends IFacet.Stub {
 
                     ModelAccess.instance().runReadAction(new Runnable() {
                       public void run() {
-                        String output = SModuleOperations.getOutputPathFor(inputResource.model());
-
-                        final IFile javaOutputDir = TextGenUtil.getOutputDir(Target_make.vars(pa.global()).pathToFile().invoke(output), inputResource.model(), TextGenUtil.getOverriddenOutputDir(inputResource.model()));
-                        final IFile cacheOutputDir = TextGenUtil.getOutputDir(Target_make.vars(pa.global()).pathToFile().invoke(FileGenerationUtil.getCachesPath(output)), inputResource.model(), null);
-                        FilesDelta d1 = new FilesDelta(javaOutputDir, cacheOutputDir);
+                        final IFile javaOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(TextGenUtil.getOutputDir(inputResource.model()).getPath());
+                        final IFile cacheOutputDir = Target_make.vars(pa.global()).pathToFile().invoke(TextGenUtil.getCachesDir(inputResource.model()).getPath());
+                        FilesDelta d1 = new FilesDelta(javaOutputDir);
                         FilesDelta d2 = new FilesDelta(cacheOutputDir);
+                        StaleFilesCollector staleFileCollector = new StaleFilesCollector(javaOutputDir);
+                        staleFileCollector.recordGeneratedChildren(inputResource.model());
                         FileProcessor fp = new FileProcessor();
                         ListSequence.fromList(fileProcessors).addElement(fp);
                         FileDeltaCollector javaSourcesLoc = new FileDeltaCollector(javaOutputDir, d1, fp);
@@ -216,6 +211,8 @@ public class TextGen_Facet extends IFacet.Stub {
                           cgl.register(javaSourcesLoc, TraceInfoCache.getInstance().getGenerator());
                         }
                         tf.serializeCaches(cgl);
+                        staleFileCollector.updateDelta(d1);
+                        new StaleFilesCollector(cacheOutputDir).updateDelta(d2);
                         ListSequence.fromList(errors).addSequence(ListSequence.fromList(tf.getErrors()));
                         ListSequence.fromList(MapSequence.fromMap(deltas).get(inputResource)).addElement(d1);
                         ListSequence.fromList(MapSequence.fromMap(deltas).get(inputResource)).addElement(d2);
@@ -264,7 +261,7 @@ public class TextGen_Facet extends IFacet.Stub {
                         public void run() {
                           if (!(Boolean.TRUE.equals(Generate_Facet.Target_configure.vars(pa.global()).saveTransient()))) {
                             for (GResource resource : ListSequence.fromList(currentInput)) {
-                              SModel outputMD = resource.status().getOutputModelDescriptor();
+                              SModel outputMD = resource.status().getOutputModel();
                               if (outputMD instanceof TransientModelsModule.TransientSModelDescriptor) {
                                 ((TransientModelsModule) outputMD.getModule()).removeModel(outputMD);
                               }

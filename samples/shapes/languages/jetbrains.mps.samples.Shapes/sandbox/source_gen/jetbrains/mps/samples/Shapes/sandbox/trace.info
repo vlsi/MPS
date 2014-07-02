@@ -1,45 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:28a6d337-ad89-4400-b975-c1bd6e33dc8a(jetbrains.mps.samples.Shapes.sandbox)/5898776707557509373">
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="14" startPosition="54" endLine="15" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4191445539799725021" fileName="MyDrawing.java" startLine="15" startPosition="37" endLine="16" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4191445539799725021" fileName="MyDrawing.java" startLine="16" startPosition="36" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4191445539799725037" fileName="MyDrawing.java" startLine="17" startPosition="44" endLine="18" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4191445539799725037" fileName="MyDrawing.java" startLine="18" startPosition="37" endLine="19" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2601511096305620288" fileName="MyDrawing.java" startLine="19" startPosition="43" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2601511096305620288" fileName="MyDrawing.java" startLine="20" startPosition="35" endLine="21" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="26" startPosition="29" endLine="27" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="27" startPosition="31" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="28" startPosition="56" endLine="29" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="29" startPosition="20" endLine="30" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="30" startPosition="52" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="31" startPosition="16" endLine="32" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="37" startPosition="42" endLine="38" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="38" startPosition="39" endLine="39" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4191445539799725021" fileName="MyDrawing.java" startLine="15" startPosition="37" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4191445539799725037" fileName="MyDrawing.java" startLine="17" startPosition="44" endLine="19" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2601511096305620288" fileName="MyDrawing.java" startLine="19" startPosition="43" endLine="21" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="37" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="26" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initialize#()V" />
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="13" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paintComponent#(Ljava/awt/Graphics;)V" />
-    <nodeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="12" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="panel" />
-    <scopeInfo nodeId="4191445539799725021" fileName="MyDrawing.java" startLine="15" startPosition="37" endLine="17" endPosition="44" />
-    <scopeInfo nodeId="4191445539799725037" fileName="MyDrawing.java" startLine="17" startPosition="44" endLine="19" endPosition="43" />
-    <scopeInfo nodeId="2601511096305620288" fileName="MyDrawing.java" startLine="19" startPosition="43" endLine="21" endPosition="44" />
-    <scopeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="37" startPosition="42" endLine="39" endPosition="24">
-      <varInfo nodeId="5898776707557509373" varName="canvas" />
-    </scopeInfo>
-    <scopeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="37" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="5898776707557509373" varName="args" />
-    </scopeInfo>
-    <scopeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="26" startPosition="29" endLine="32" endPosition="26" />
-    <scopeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="14" startPosition="54" endLine="21" endPosition="44" />
-    <scopeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="26" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="13" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="5898776707557509373" varName="graphics" />
-    </scopeInfo>
-    <unitInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="12" startPosition="29" endLine="23" endPosition="3" unitName="jetbrains.mps.samples.Shapes.sandbox.MyDrawing$1" />
-    <unitInfo nodeId="5898776707557509373" fileName="MyDrawing.java" startLine="11" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.samples.Shapes.sandbox.MyDrawing" />
+    <file name="MyDrawing.java">
+      <node id="5898776707557509373" at="14,54,15,37" concept="1" />
+      <node id="4191445539799725021" at="15,37,16,36" concept="1" />
+      <node id="4191445539799725021" at="16,36,17,44" concept="1" />
+      <node id="4191445539799725037" at="17,44,18,37" concept="1" />
+      <node id="4191445539799725037" at="18,37,19,43" concept="1" />
+      <node id="2601511096305620288" at="19,43,20,35" concept="1" />
+      <node id="2601511096305620288" at="20,35,21,44" concept="1" />
+      <node id="5898776707557509373" at="26,29,27,31" concept="1" />
+      <node id="5898776707557509373" at="27,31,28,56" concept="1" />
+      <node id="5898776707557509373" at="28,56,29,20" concept="1" />
+      <node id="5898776707557509373" at="29,20,30,52" concept="1" />
+      <node id="5898776707557509373" at="30,52,31,16" concept="1" />
+      <node id="5898776707557509373" at="31,16,32,26" concept="1" />
+      <node id="5898776707557509373" at="37,42,38,39" concept="4" />
+      <node id="5898776707557509373" at="38,39,39,24" concept="1" />
+      <node id="4191445539799725021" at="15,37,17,44" concept="0" />
+      <node id="4191445539799725037" at="17,44,19,43" concept="0" />
+      <node id="2601511096305620288" at="19,43,21,44" concept="0" />
+      <node id="5898776707557509373" at="37,0,41,0" concept="5" trace="main#([Ljava/lang/String;)V" />
+      <node id="5898776707557509373" at="26,0,34,0" concept="3" trace="initialize#()V" />
+      <node id="5898776707557509373" at="13,0,23,0" concept="3" trace="paintComponent#(Ljava/awt/Graphics;)V" />
+      <node id="5898776707557509373" at="12,0,24,0" concept="2" trace="panel" />
+      <scope id="4191445539799725021" at="15,37,17,44" />
+      <scope id="4191445539799725037" at="17,44,19,43" />
+      <scope id="2601511096305620288" at="19,43,21,44" />
+      <scope id="5898776707557509373" at="37,42,39,24">
+        <var name="canvas" id="5898776707557509373" />
+      </scope>
+      <scope id="5898776707557509373" at="37,0,41,0">
+        <var name="args" id="5898776707557509373" />
+      </scope>
+      <scope id="5898776707557509373" at="26,29,32,26" />
+      <scope id="5898776707557509373" at="14,54,21,44" />
+      <scope id="5898776707557509373" at="26,0,34,0" />
+      <scope id="5898776707557509373" at="13,0,23,0">
+        <var name="graphics" id="5898776707557509373" />
+      </scope>
+      <unit id="5898776707557509373" at="12,29,23,3" name="jetbrains.mps.samples.Shapes.sandbox.MyDrawing$1" />
+      <unit id="5898776707557509373" at="11,0,42,0" name="jetbrains.mps.samples.Shapes.sandbox.MyDrawing" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

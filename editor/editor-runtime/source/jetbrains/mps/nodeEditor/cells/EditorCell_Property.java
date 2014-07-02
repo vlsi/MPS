@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,13 +18,14 @@ package jetbrains.mps.nodeEditor.cells;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModelAccessHelper;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.ModelAccess;
 
 /**
  * Author: Sergey Dmitriev
@@ -73,20 +74,16 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
     boolean oldSelected = isSelected();
     super.setSelected(selected);
     if (oldSelected && !selected && myModelAccessor instanceof TransactionalModelAccessor) {
+      final Runnable commitCommand = new Runnable() {
+        @Override
+        public void run() {
+          commit();
+        }
+      };
       if (myCommitInCommand) {
-        ModelAccess.instance().runCommandInEDT(new Runnable() {
-          @Override
-          public void run() {
-            commit();
-          }
-        }, getOperationContext().getProject());
+        getModelAccess().executeCommandInEDT(commitCommand);
       } else {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            commit();
-          }
-        });
+        getModelAccess().runWriteInEDT(commitCommand);
       }
     }
   }
@@ -95,7 +92,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
    * should be executed inside write action
    */
   public void commit() {
-    assert ModelAccess.instance().canWrite();
+    assert getModelAccess().canWrite();
     // a solution for MPS-13531
     // better solution is to redispatch all currently waiting EDT commands inside MPSProject.dispose() method
     // currently not available - not possible to redispatch all waiting commands from AWT Thread.
@@ -131,7 +128,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
 
   @Override
   public boolean isValidText(final String text) {
-    return ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+    return new ModelAccessHelper(getModelAccess()).runReadAction(new Computable<Boolean>() {
       @Override
       public Boolean compute() {
         return myModelAccessor.isValidText(text);
@@ -142,7 +139,7 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
   @Override
   public SubstituteInfo getSubstituteInfo() {
     final SubstituteInfo substituteInfo = super.getSubstituteInfo();
-    return ModelAccess.instance().runReadAction(new Computable<SubstituteInfo>() {
+    return new ModelAccessHelper(getModelAccess()).runReadAction(new Computable<SubstituteInfo>() {
       @Override
       public SubstituteInfo compute() {
         if (substituteInfo != null) {
@@ -168,9 +165,12 @@ public class EditorCell_Property extends EditorCell_Label implements Synchronize
 
   @Override
   public boolean canBeSynchronized() {
-    return true;
+    return false;
   }
 
+  private ModelAccess getModelAccess() {
+    return getContext().getRepository().getModelAccess();
+  }
   public static interface SynchronizationListener {
     public void cellSynchronizedViewWithModel(EditorCell_Property editorCell_property);
   }

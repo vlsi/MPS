@@ -1,240 +1,262 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.build.mps.tests.constraints.ConstraintsAspectDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,29,0" name="jetbrains.mps.build.mps.tests.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)/3655813416643585307">
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="20" startPosition="51" endLine="21" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="25" startPosition="43" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="30" startPosition="200" endLine="31" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="31" startPosition="96" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="33" startPosition="51" endLine="34" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="35" startPosition="5" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="36" startPosition="0" endLine="37" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3655813416644155304" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="41" startPosition="96" endLine="42" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3655813416644153362" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="42" startPosition="31" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6503355885715456168" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="46" startPosition="39" endLine="47" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3655813416644157576" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="49" startPosition="9" endLine="50" endPosition="121" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3655813416644172256" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="51" startPosition="28" endLine="52" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3655813416644186407" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="55" startPosition="41" endLine="56" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3655813416644217795" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="59" startPosition="5" endLine="60" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildMpsLayout_TestModules_Constraints#()V" />
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="32" startPosition="0" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6503355885715456166" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3655813416644168563" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="50" startPosition="121" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3655813416644184667" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="3655813416644153237" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="40" startPosition="148" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3655813416644216409" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="53" startPosition="7" endLine="58" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="29" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <nodeInfo nodeId="3655813416644157407" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="44" startPosition="5" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="40" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <scopeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="20" startPosition="51" endLine="21" endPosition="80" />
-    <scopeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="25" startPosition="43" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="33" startPosition="51" endLine="34" endPosition="67" />
-    <scopeInfo nodeId="6503355885715456167" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="46" startPosition="39" endLine="47" endPosition="114" />
-    <scopeInfo nodeId="3655813416644168566" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="51" startPosition="28" endLine="52" endPosition="21" />
-    <scopeInfo nodeId="3655813416644184668" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="55" startPosition="41" endLine="56" endPosition="73" />
-    <scopeInfo nodeId="3655813416644153240" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="41" startPosition="96" endLine="43" endPosition="18" />
-    <scopeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="6503355885715456166" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="6503355885715456166" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="3655813416644184667" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="3655813416644184667" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="30" startPosition="200" endLine="37" endPosition="18">
-      <varInfo nodeId="3655813416643585307" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3655813416644157410" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="49" startPosition="9" endLine="58" endPosition="17">
-      <varInfo nodeId="3655813416644157577" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="29" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="3655813416643585307" varName="checkingNodeContext" />
-      <varInfo nodeId="3655813416643585307" varName="childConcept" />
-      <varInfo nodeId="3655813416643585307" varName="link" />
-      <varInfo nodeId="3655813416643585307" varName="node" />
-      <varInfo nodeId="3655813416643585307" varName="operationContext" />
-      <varInfo nodeId="3655813416643585307" varName="parentNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="3655813416643597159" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="40" startPosition="148" endLine="60" endPosition="17" />
-    <scopeInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="40" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="3655813416643585307" varName="childConcept" />
-      <varInfo nodeId="3655813416643585307" varName="link" />
-      <varInfo nodeId="3655813416643585307" varName="node" />
-      <varInfo nodeId="3655813416643585307" varName="operationContext" />
-      <varInfo nodeId="3655813416643585307" varName="parentNode" />
-    </scopeInfo>
-    <unitInfo nodeId="6503355885715456166" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="45" startPosition="253" endLine="49" endPosition="5" unitName="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModules_Constraints$2" />
-    <unitInfo nodeId="3655813416644184667" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="54" startPosition="132" endLine="58" endPosition="7" unitName="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModules_Constraints$1" />
-    <unitInfo nodeId="3655813416643585307" fileName="BuildMpsLayout_TestModules_Constraints.java" startLine="19" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModules_Constraints" />
+    <file name="BuildMpsLayout_TestModules_Constraints.java">
+      <node id="3655813416643585307" at="20,51,21,80" concept="11" />
+      <node id="3655813416643585307" at="25,43,26,16" concept="6" />
+      <node id="3655813416643585307" at="30,200,31,96" concept="5" />
+      <node id="3655813416643585307" at="31,96,32,0" concept="8" />
+      <node id="3655813416643585307" at="33,51,34,67" concept="2" />
+      <node id="3655813416643585307" at="35,5,36,0" concept="8" />
+      <node id="3655813416643585307" at="36,0,37,18" concept="6" />
+      <node id="3655813416644155304" at="41,96,42,31" concept="7" />
+      <node id="3655813416644153362" at="42,31,43,18" concept="6" />
+      <node id="6503355885715456168" at="46,39,47,114" concept="6" />
+      <node id="3655813416644157576" at="49,9,50,121" concept="5" />
+      <node id="3655813416644172256" at="51,28,52,21" concept="6" />
+      <node id="3655813416644186407" at="55,41,56,73" concept="6" />
+      <node id="3655813416644217795" at="59,5,60,17" concept="6" />
+      <node id="3655813416643585307" at="63,0,64,0" concept="9" trace="canBeChildBreakingPoint" />
+      <node id="3655813416643585307" at="20,0,23,0" concept="1" trace="BuildMpsLayout_TestModules_Constraints#()V" />
+      <node id="3655813416643585307" at="32,0,35,5" concept="3" />
+      <node id="6503355885715456166" at="46,0,49,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3655813416644168563" at="50,121,53,7" concept="3" />
+      <node id="3655813416644184667" at="55,0,58,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="3655813416643585307" at="24,0,28,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
+      <node id="3655813416644153237" at="40,148,44,5" concept="3" />
+      <node id="3655813416644216409" at="53,7,58,17" concept="6" />
+      <node id="3655813416643585307" at="29,0,39,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <node id="3655813416644157407" at="44,5,59,5" concept="3" />
+      <node id="3655813416643585307" at="40,0,62,0" concept="10" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <scope id="3655813416643585307" at="20,51,21,80" />
+      <scope id="3655813416643585307" at="25,43,26,16" />
+      <scope id="3655813416643585307" at="33,51,34,67" />
+      <scope id="6503355885715456167" at="46,39,47,114" />
+      <scope id="3655813416644168566" at="51,28,52,21" />
+      <scope id="3655813416644184668" at="55,41,56,73" />
+      <scope id="3655813416644153240" at="41,96,43,18" />
+      <scope id="3655813416643585307" at="20,0,23,0" />
+      <scope id="6503355885715456166" at="46,0,49,0">
+        <var name="it" id="6503355885715456166" />
+      </scope>
+      <scope id="3655813416644184667" at="55,0,58,0">
+        <var name="it" id="3655813416644184667" />
+      </scope>
+      <scope id="3655813416643585307" at="24,0,28,0" />
+      <scope id="3655813416643585307" at="30,200,37,18">
+        <var name="result" id="3655813416643585307" />
+      </scope>
+      <scope id="3655813416644157410" at="49,9,58,17">
+        <var name="project" id="3655813416644157577" />
+      </scope>
+      <scope id="3655813416643585307" at="29,0,39,0">
+        <var name="checkingNodeContext" id="3655813416643585307" />
+        <var name="childConcept" id="3655813416643585307" />
+        <var name="link" id="3655813416643585307" />
+        <var name="node" id="3655813416643585307" />
+        <var name="operationContext" id="3655813416643585307" />
+        <var name="parentNode" id="3655813416643585307" />
+      </scope>
+      <scope id="3655813416643597159" at="40,148,60,17" />
+      <scope id="3655813416643585307" at="40,0,62,0">
+        <var name="childConcept" id="3655813416643585307" />
+        <var name="link" id="3655813416643585307" />
+        <var name="node" id="3655813416643585307" />
+        <var name="operationContext" id="3655813416643585307" />
+        <var name="parentNode" id="3655813416643585307" />
+      </scope>
+      <unit id="6503355885715456166" at="45,253,49,5" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModules_Constraints$2" />
+      <unit id="3655813416644184667" at="54,132,58,7" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModules_Constraints$1" />
+      <unit id="3655813416643585307" at="19,0,65,0" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModules_Constraints" />
+    </file>
   </root>
   <root nodeRef="r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)/8574011380719962596">
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="26" startPosition="50" endLine="27" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="31" startPosition="43" endLine="32" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="36" startPosition="200" endLine="37" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="37" startPosition="96" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="39" startPosition="51" endLine="40" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="41" startPosition="5" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="42" startPosition="0" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="47" startPosition="83" endLine="48" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="51" startPosition="44" endLine="52" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="60" startPosition="63" endLine="61" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7354447573579507972" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="68" startPosition="53" endLine="69" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="75" startPosition="7" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380873416462" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="79" startPosition="148" endLine="80" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="83" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="84" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_6428vo_a0a0a0a0a1a0b0a1a3" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildMpsLayout_TestModule_Constraints#()V" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="38" startPosition="0" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="79" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="59" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="8574011380720245889" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="67" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="65" startPosition="122" endLine="71" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8574011380720243335" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="65" startPosition="122" endLine="71" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="64" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="35" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="57" startPosition="56" endLine="73" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="55" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="48" startPosition="75" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="46" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="26" startPosition="50" endLine="27" endPosition="79" />
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="31" startPosition="43" endLine="32" endPosition="16" />
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="39" startPosition="51" endLine="40" endPosition="67" />
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="51" startPosition="44" endLine="52" endPosition="20" />
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="60" startPosition="63" endLine="61" endPosition="58" />
-    <scopeInfo nodeId="8574011380720245898" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="68" startPosition="53" endLine="69" endPosition="273" />
-    <scopeInfo nodeId="8574011380873415726" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="79" startPosition="148" endLine="80" endPosition="122" />
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="79" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="8574011380719962596" varName="childConcept" />
-      <varInfo nodeId="8574011380719962596" varName="link" />
-      <varInfo nodeId="8574011380719962596" varName="node" />
-      <varInfo nodeId="8574011380719962596" varName="operationContext" />
-      <varInfo nodeId="8574011380719962596" varName="parentNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="59" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="8574011380720245889" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="67" startPosition="0" endLine="71" endPosition="0">
-      <varInfo nodeId="8574011380720245895" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="65" startPosition="122" endLine="71" endPosition="14" />
-    <scopeInfo nodeId="8574011380720160748" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="65" startPosition="122" endLine="71" endPosition="14" />
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="36" startPosition="200" endLine="43" endPosition="18">
-      <varInfo nodeId="8574011380719962596" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="64" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="8574011380719962596" varName="_context" />
-      <varInfo nodeId="8574011380719962596" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="35" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="8574011380719962596" varName="checkingNodeContext" />
-      <varInfo nodeId="8574011380719962596" varName="childConcept" />
-      <varInfo nodeId="8574011380719962596" varName="link" />
-      <varInfo nodeId="8574011380719962596" varName="node" />
-      <varInfo nodeId="8574011380719962596" varName="operationContext" />
-      <varInfo nodeId="8574011380719962596" varName="parentNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="57" startPosition="56" endLine="73" endPosition="10" />
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="55" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="47" startPosition="83" endLine="76" endPosition="22">
-      <varInfo nodeId="8574011380719962596" varName="references" />
-    </scopeInfo>
-    <scopeInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="46" startPosition="0" endLine="78" endPosition="0" />
-    <unitInfo nodeId="8574011380720244694" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="66" startPosition="23" endLine="71" endPosition="13" unitName="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints$3" />
-    <unitInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="58" startPosition="19" endLine="73" endPosition="9" unitName="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints$2" />
-    <unitInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="49" startPosition="33" endLine="75" endPosition="5" unitName="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints$1" />
-    <unitInfo nodeId="8574011380719962596" fileName="BuildMpsLayout_TestModule_Constraints.java" startLine="25" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints" />
+    <file name="BuildMpsLayout_TestModule_Constraints.java">
+      <node id="8574011380719962596" at="26,50,27,79" concept="11" />
+      <node id="8574011380719962596" at="31,43,32,16" concept="6" />
+      <node id="8574011380719962596" at="36,200,37,96" concept="5" />
+      <node id="8574011380719962596" at="37,96,38,0" concept="8" />
+      <node id="8574011380719962596" at="39,51,40,67" concept="2" />
+      <node id="8574011380719962596" at="41,5,42,0" concept="8" />
+      <node id="8574011380719962596" at="42,0,43,18" concept="6" />
+      <node id="8574011380719962596" at="47,83,48,75" concept="5" />
+      <node id="8574011380719962596" at="51,44,52,20" concept="6" />
+      <node id="8574011380719962596" at="60,63,61,58" concept="6" />
+      <node id="7354447573579507972" at="68,53,69,273" concept="6" />
+      <node id="8574011380719962596" at="75,7,76,22" concept="6" />
+      <node id="8574011380873416462" at="79,148,80,122" concept="6" />
+      <node id="8574011380719962596" at="83,0,84,0" concept="9" trace="canBeChildBreakingPoint" />
+      <node id="8574011380719962596" at="84,0,85,0" concept="9" trace="breakingNode_6428vo_a0a0a0a0a1a0b0a1a3" />
+      <node id="8574011380719962596" at="26,0,29,0" concept="1" trace="BuildMpsLayout_TestModule_Constraints#()V" />
+      <node id="8574011380719962596" at="38,0,41,5" concept="3" />
+      <node id="8574011380719962596" at="79,0,82,0" concept="10" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="8574011380719962596" at="30,0,34,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
+      <node id="8574011380719962596" at="50,0,54,0" concept="4" trace="hasOwnScopeProvider#()Z" />
+      <node id="8574011380719962596" at="59,0,63,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="8574011380720245889" at="67,0,71,0" concept="4" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8574011380719962596" at="65,122,71,14" concept="0" />
+      <node id="8574011380720243335" at="65,122,71,14" concept="6" />
+      <node id="8574011380719962596" at="64,0,73,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="8574011380719962596" at="35,0,45,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <node id="8574011380719962596" at="57,56,73,10" concept="6" />
+      <node id="8574011380719962596" at="55,0,75,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="8574011380719962596" at="48,75,75,7" concept="2" />
+      <node id="8574011380719962596" at="46,0,78,0" concept="4" trace="getNotDefaultReferences#()Ljava/util/Map;" />
+      <scope id="8574011380719962596" at="26,50,27,79" />
+      <scope id="8574011380719962596" at="31,43,32,16" />
+      <scope id="8574011380719962596" at="39,51,40,67" />
+      <scope id="8574011380719962596" at="51,44,52,20" />
+      <scope id="8574011380719962596" at="60,63,61,58" />
+      <scope id="8574011380720245898" at="68,53,69,273" />
+      <scope id="8574011380873415726" at="79,148,80,122" />
+      <scope id="8574011380719962596" at="26,0,29,0" />
+      <scope id="8574011380719962596" at="79,0,82,0">
+        <var name="childConcept" id="8574011380719962596" />
+        <var name="link" id="8574011380719962596" />
+        <var name="node" id="8574011380719962596" />
+        <var name="operationContext" id="8574011380719962596" />
+        <var name="parentNode" id="8574011380719962596" />
+      </scope>
+      <scope id="8574011380719962596" at="30,0,34,0" />
+      <scope id="8574011380719962596" at="50,0,54,0" />
+      <scope id="8574011380719962596" at="59,0,63,0" />
+      <scope id="8574011380720245889" at="67,0,71,0">
+        <var name="node" id="8574011380720245895" />
+      </scope>
+      <scope id="8574011380719962596" at="65,122,71,14" />
+      <scope id="8574011380720160748" at="65,122,71,14" />
+      <scope id="8574011380719962596" at="36,200,43,18">
+        <var name="result" id="8574011380719962596" />
+      </scope>
+      <scope id="8574011380719962596" at="64,0,73,0">
+        <var name="_context" id="8574011380719962596" />
+        <var name="operationContext" id="8574011380719962596" />
+      </scope>
+      <scope id="8574011380719962596" at="35,0,45,0">
+        <var name="checkingNodeContext" id="8574011380719962596" />
+        <var name="childConcept" id="8574011380719962596" />
+        <var name="link" id="8574011380719962596" />
+        <var name="node" id="8574011380719962596" />
+        <var name="operationContext" id="8574011380719962596" />
+        <var name="parentNode" id="8574011380719962596" />
+      </scope>
+      <scope id="8574011380719962596" at="57,56,73,10" />
+      <scope id="8574011380719962596" at="55,0,75,0" />
+      <scope id="8574011380719962596" at="47,83,76,22">
+        <var name="references" id="8574011380719962596" />
+      </scope>
+      <scope id="8574011380719962596" at="46,0,78,0" />
+      <unit id="8574011380720244694" at="66,23,71,13" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints$3" />
+      <unit id="8574011380719962596" at="58,19,73,9" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints$2" />
+      <unit id="8574011380719962596" at="49,33,75,5" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints$1" />
+      <unit id="8574011380719962596" at="25,0,86,0" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModule_Constraints" />
+    </file>
   </root>
   <root nodeRef="r:09cf4c23-1b4d-4723-ac0b-a240d2fdcc67(jetbrains.mps.build.mps.tests.constraints)/8574011380873424207">
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="29" startPosition="55" endLine="30" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="34" startPosition="43" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="39" startPosition="200" endLine="40" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="40" startPosition="96" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="42" startPosition="51" endLine="43" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="44" startPosition="5" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="45" startPosition="0" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="50" startPosition="83" endLine="51" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="54" startPosition="44" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="63" startPosition="63" endLine="64" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7354447573579533361" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="73" startPosition="51" endLine="74" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="82" startPosition="7" endLine="83" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380873424433" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="86" startPosition="148" endLine="87" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="90" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="91" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_fhfy8y_a0a0a0a0a1a0b0a1a3" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BuildMpsLayout_TestModuleGroup_Constraints#()V" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="41" startPosition="0" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4005526075816234804" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="4005526075816140298" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="71" startPosition="53" endLine="76" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4005526075816140292" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="70" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="38" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <nodeInfo nodeId="4005526075816140281" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="68" startPosition="122" endLine="78" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="68" startPosition="122" endLine="78" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="67" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="60" startPosition="56" endLine="80" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="58" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="51" startPosition="75" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="49" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="29" startPosition="55" endLine="30" endPosition="84" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="34" startPosition="43" endLine="35" endPosition="16" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="42" startPosition="51" endLine="43" endPosition="67" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="54" startPosition="44" endLine="55" endPosition="20" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="63" startPosition="63" endLine="64" endPosition="58" />
-    <scopeInfo nodeId="4005526075816234805" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="73" startPosition="51" endLine="74" endPosition="267" />
-    <scopeInfo nodeId="8574011380873424209" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="86" startPosition="148" endLine="87" endPosition="122" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="4005526075816234804" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
-      <varInfo nodeId="4005526075816234804" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="86" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="8574011380873424207" varName="childConcept" />
-      <varInfo nodeId="8574011380873424207" varName="link" />
-      <varInfo nodeId="8574011380873424207" varName="node" />
-      <varInfo nodeId="8574011380873424207" varName="operationContext" />
-      <varInfo nodeId="8574011380873424207" varName="parentNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="62" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="4005526075816140297" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="71" startPosition="53" endLine="76" endPosition="27" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="39" startPosition="200" endLine="46" endPosition="18">
-      <varInfo nodeId="8574011380873424207" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4005526075816140292" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="70" startPosition="0" endLine="78" endPosition="0">
-      <varInfo nodeId="4005526075816140295" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="38" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="8574011380873424207" varName="checkingNodeContext" />
-      <varInfo nodeId="8574011380873424207" varName="childConcept" />
-      <varInfo nodeId="8574011380873424207" varName="link" />
-      <varInfo nodeId="8574011380873424207" varName="node" />
-      <varInfo nodeId="8574011380873424207" varName="operationContext" />
-      <varInfo nodeId="8574011380873424207" varName="parentNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4005526075816137910" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="68" startPosition="122" endLine="78" endPosition="14" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="68" startPosition="122" endLine="78" endPosition="14" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="67" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="8574011380873424207" varName="_context" />
-      <varInfo nodeId="8574011380873424207" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="60" startPosition="56" endLine="80" endPosition="10" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="58" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="50" startPosition="83" endLine="83" endPosition="22">
-      <varInfo nodeId="8574011380873424207" varName="references" />
-    </scopeInfo>
-    <scopeInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="49" startPosition="0" endLine="85" endPosition="0" />
-    <unitInfo nodeId="4005526075816234804" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="72" startPosition="184" endLine="76" endPosition="17" unitName="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$4" />
-    <unitInfo nodeId="4005526075816140285" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="69" startPosition="23" endLine="78" endPosition="13" unitName="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$3" />
-    <unitInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="61" startPosition="19" endLine="80" endPosition="9" unitName="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$2" />
-    <unitInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="52" startPosition="32" endLine="82" endPosition="5" unitName="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$1" />
-    <unitInfo nodeId="8574011380873424207" fileName="BuildMpsLayout_TestModuleGroup_Constraints.java" startLine="28" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints" />
+    <file name="BuildMpsLayout_TestModuleGroup_Constraints.java">
+      <node id="8574011380873424207" at="29,55,30,84" concept="11" />
+      <node id="8574011380873424207" at="34,43,35,16" concept="6" />
+      <node id="8574011380873424207" at="39,200,40,96" concept="5" />
+      <node id="8574011380873424207" at="40,96,41,0" concept="8" />
+      <node id="8574011380873424207" at="42,51,43,67" concept="2" />
+      <node id="8574011380873424207" at="44,5,45,0" concept="8" />
+      <node id="8574011380873424207" at="45,0,46,18" concept="6" />
+      <node id="8574011380873424207" at="50,83,51,75" concept="5" />
+      <node id="8574011380873424207" at="54,44,55,20" concept="6" />
+      <node id="8574011380873424207" at="63,63,64,58" concept="6" />
+      <node id="7354447573579533361" at="73,51,74,267" concept="6" />
+      <node id="8574011380873424207" at="82,7,83,22" concept="6" />
+      <node id="8574011380873424433" at="86,148,87,122" concept="6" />
+      <node id="8574011380873424207" at="90,0,91,0" concept="9" trace="canBeChildBreakingPoint" />
+      <node id="8574011380873424207" at="91,0,92,0" concept="9" trace="breakingNode_fhfy8y_a0a0a0a0a1a0b0a1a3" />
+      <node id="8574011380873424207" at="29,0,32,0" concept="1" trace="BuildMpsLayout_TestModuleGroup_Constraints#()V" />
+      <node id="8574011380873424207" at="41,0,44,5" concept="3" />
+      <node id="4005526075816234804" at="73,0,76,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8574011380873424207" at="86,0,89,0" concept="10" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="8574011380873424207" at="33,0,37,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
+      <node id="8574011380873424207" at="53,0,57,0" concept="4" trace="hasOwnScopeProvider#()Z" />
+      <node id="8574011380873424207" at="62,0,66,0" concept="4" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4005526075816140298" at="71,53,76,27" concept="6" />
+      <node id="4005526075816140292" at="70,0,78,0" concept="4" trace="isExcluded#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8574011380873424207" at="38,0,48,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <node id="4005526075816140281" at="68,122,78,14" concept="6" />
+      <node id="8574011380873424207" at="68,122,78,14" concept="0" />
+      <node id="8574011380873424207" at="67,0,80,0" concept="4" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="8574011380873424207" at="60,56,80,10" concept="6" />
+      <node id="8574011380873424207" at="58,0,82,0" concept="4" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="8574011380873424207" at="51,75,82,7" concept="2" />
+      <node id="8574011380873424207" at="49,0,85,0" concept="4" trace="getNotDefaultReferences#()Ljava/util/Map;" />
+      <scope id="8574011380873424207" at="29,55,30,84" />
+      <scope id="8574011380873424207" at="34,43,35,16" />
+      <scope id="8574011380873424207" at="42,51,43,67" />
+      <scope id="8574011380873424207" at="54,44,55,20" />
+      <scope id="8574011380873424207" at="63,63,64,58" />
+      <scope id="4005526075816234805" at="73,51,74,267" />
+      <scope id="8574011380873424209" at="86,148,87,122" />
+      <scope id="8574011380873424207" at="29,0,32,0" />
+      <scope id="4005526075816234804" at="73,0,76,0">
+        <var name="it" id="4005526075816234804" />
+      </scope>
+      <scope id="8574011380873424207" at="86,0,89,0">
+        <var name="childConcept" id="8574011380873424207" />
+        <var name="link" id="8574011380873424207" />
+        <var name="node" id="8574011380873424207" />
+        <var name="operationContext" id="8574011380873424207" />
+        <var name="parentNode" id="8574011380873424207" />
+      </scope>
+      <scope id="8574011380873424207" at="33,0,37,0" />
+      <scope id="8574011380873424207" at="53,0,57,0" />
+      <scope id="8574011380873424207" at="62,0,66,0" />
+      <scope id="4005526075816140297" at="71,53,76,27" />
+      <scope id="8574011380873424207" at="39,200,46,18">
+        <var name="result" id="8574011380873424207" />
+      </scope>
+      <scope id="4005526075816140292" at="70,0,78,0">
+        <var name="node" id="4005526075816140295" />
+      </scope>
+      <scope id="8574011380873424207" at="38,0,48,0">
+        <var name="checkingNodeContext" id="8574011380873424207" />
+        <var name="childConcept" id="8574011380873424207" />
+        <var name="link" id="8574011380873424207" />
+        <var name="node" id="8574011380873424207" />
+        <var name="operationContext" id="8574011380873424207" />
+        <var name="parentNode" id="8574011380873424207" />
+      </scope>
+      <scope id="4005526075816137910" at="68,122,78,14" />
+      <scope id="8574011380873424207" at="68,122,78,14" />
+      <scope id="8574011380873424207" at="67,0,80,0">
+        <var name="_context" id="8574011380873424207" />
+        <var name="operationContext" id="8574011380873424207" />
+      </scope>
+      <scope id="8574011380873424207" at="60,56,80,10" />
+      <scope id="8574011380873424207" at="58,0,82,0" />
+      <scope id="8574011380873424207" at="50,83,83,22">
+        <var name="references" id="8574011380873424207" />
+      </scope>
+      <scope id="8574011380873424207" at="49,0,85,0" />
+      <unit id="4005526075816234804" at="72,184,76,17" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$4" />
+      <unit id="4005526075816140285" at="69,23,78,13" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$3" />
+      <unit id="8574011380873424207" at="61,19,80,9" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$2" />
+      <unit id="8574011380873424207" at="52,32,82,5" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints$1" />
+      <unit id="8574011380873424207" at="28,0,93,0" name="jetbrains.mps.build.mps.tests.constraints.BuildMpsLayout_TestModuleGroup_Constraints" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -10,15 +10,10 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.resolve.ResolverComponent;
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
+import jetbrains.mps.resolve.ReferenceResolverUtils;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
-import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.constraints.ModelConstraints;
+import jetbrains.mps.openapi.editor.cells.SubstituteInfo;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.jetbrains.mps.openapi.model.SModel;
 
 public class RefScopeCheckerInEditor extends RefScopeChecker {
   private EditorComponent myEditorComponent;
@@ -55,23 +50,11 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
           if (sourceNode == null) {
             return;
           }
-          final String resolveInfo = getResolveInfo(myReference, sourceNode);
+          final String resolveInfo = ReferenceResolverUtils.getResolveInfo(myReference, sourceNode);
           if (resolveInfo == null) {
             return;
           }
-          EditorCell cellWithRole = myEditorComponent.findNodeCellWithRole(sourceNode, myReference.getRole());
-          if (cellWithRole == null) {
-            return;
-          }
-          SubstituteInfo substituteInfo = cellWithRole.getSubstituteInfo();
-          if (substituteInfo == null) {
-            return;
-          }
-          final SubstituteAction applicableSubstituteAction = getApplicableSubstituteAction(substituteInfo, resolveInfo);
-          if (applicableSubstituteAction == null) {
-            return;
-          }
-          applicableSubstituteAction.substitute(myEditorComponent.getEditorContext(), resolveInfo);
+          EditorBasedReferenceResolverUtils.resolveInEditor(myEditorComponent, sourceNode, resolveInfo, myReference.getRole());
         }
 
         @Override
@@ -79,20 +62,6 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
           return "Resolve \"" + myReference.getRole() + "\" reference";
         }
       };
-    }
-
-    private String getResolveInfo(SReference reference, SNode sourceNode) {
-      String result = ((jetbrains.mps.smodel.SReference) reference).getResolveInfo();
-      if (result != null) {
-        return result;
-      }
-      SModule module = check_thufhv_a0c0e4(SNodeOperations.getModel(sourceNode));
-      SNode target = jetbrains.mps.util.SNodeOperations.getTargetNodeSilently(reference);
-      if (target != null && module != null) {
-        Scope scope = ModelConstraints.getScope(reference);
-        result = scope.getReferenceText(sourceNode, target);
-      }
-      return result;
     }
 
     private SubstituteAction getApplicableSubstituteAction(SubstituteInfo substituteInfo, String resolveInfo) {
@@ -107,12 +76,5 @@ public class RefScopeCheckerInEditor extends RefScopeChecker {
       }
       return result;
     }
-  }
-
-  private static SModule check_thufhv_a0c0e4(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
   }
 }

@@ -7,7 +7,7 @@ import com.intellij.ide.impl.DataManagerImpl;
 import jetbrains.mps.openapi.editor.Editor;
 import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.command.impl.UndoManagerImpl;
 import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -22,6 +22,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import java.util.Map;
@@ -42,7 +43,6 @@ import jetbrains.mps.ide.editor.MPSEditorOpener;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import java.lang.reflect.InvocationTargetException;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
@@ -106,7 +106,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     if (!(after.equals(""))) {
       this.addNodeById(after);
     }
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    myProject.getModelAccess().runWriteAction(new Runnable() {
       public void run() {
         BaseEditorTestBody.this.myBefore = BaseEditorTestBody.this.getNodeById(before);
         BaseEditorTestBody.this.myStart = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(before));
@@ -119,6 +119,11 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
         }
         BaseEditorTestBody.this.myEditor = BaseEditorTestBody.openEditor(BaseEditorTestBody.this.myProject, BaseEditorTestBody.this.myModel, BaseEditorTestBody.this.myBefore);
         hackUndoManager(BaseEditorTestBody.this.myEditor);
+        if (BaseEditorTestBody.this.myEditor.getCurrentEditorComponent() instanceof EditorComponent) {
+          EditorComponent component = ((EditorComponent) BaseEditorTestBody.this.myEditor.getCurrentEditorComponent());
+          component.addNotify();
+          component.validate();
+        }
         BaseEditorTestBody.this.myStart.setupSelection(BaseEditorTestBody.this.myEditor);
       }
     });
@@ -165,7 +170,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   public void checkAssertion() throws Throwable {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
     ModelAccess.instance().flushEventQueue();
-    ModelAccess.instance().runCommandInEDT(new Runnable() {
+    myProject.getModelAccess().executeCommandInEDT(new Runnable() {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
           try {
@@ -180,7 +185,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
           }
         }
       }
-    }, myEditor.getOperationContext().getProject());
+    });
     ModelAccess.instance().flushEventQueue();
     if (throwable.value != null) {
       throw throwable.value;
@@ -209,12 +214,11 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
 
 
-  public static void invokeIntention(final String name, final Editor editor, final SNode node) throws Exception {
+  public void invokeIntention(final String name, final Editor editor, final SNode node) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
       public void run() {
-        org.jetbrains.mps.openapi.module.ModelAccess modelAccess = editor.getEditorContext().getRepository().getModelAccess();
-        modelAccess.executeCommand(new Runnable() {
+        myProject.getModelAccess().executeCommand(new Runnable() {
           public void run() {
             editor.getEditorContext().select(node);
             IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();

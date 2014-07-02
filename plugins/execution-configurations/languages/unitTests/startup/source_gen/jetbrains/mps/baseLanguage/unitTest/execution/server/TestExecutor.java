@@ -6,6 +6,5 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 public interface TestExecutor {
   public void init();
   public void execute();
-  public long getRunId();
   public void dispose();
 }

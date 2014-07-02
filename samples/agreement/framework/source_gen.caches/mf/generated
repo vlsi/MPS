@@ -17,7 +17,6 @@
     <file name="Registry.java" />
   </source>
   <source id="6531435794299650151" name="Money" hash="-472u9klmuufnlhnl3cu9qrgjiqg891z">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="Money.java" />
   </source>
   <source id="6531435794299650588" name="DoubleRangeTester" hash="-62n8ppd9o5kvqf30hzlxqt8f0veh0rp">

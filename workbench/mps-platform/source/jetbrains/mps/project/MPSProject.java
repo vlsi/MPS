@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.project;
 
+import jetbrains.mps.library.LibraryInitializer;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -96,6 +98,13 @@ public class MPSProject extends Project implements ProjectComponent {
   public void disposeComponent() {
     dispose();
     myProjectFile = null;
+// Temporary HACK for MPS 3.1: this code was moved here from ProjectLibraryManager.disposeComponent()
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        LibraryInitializer.getInstance().update();
+      }
+    });
   }
 
   //-----------project holder end

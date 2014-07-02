@@ -1,92 +1,110 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.actions.testLanguage.constraints.ConstraintsAspectDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,27,0" name="jetbrains.mps.lang.actions.testLanguage.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:51315b9d-b515-42e5-b0a0-21c0544c81b4(jetbrains.mps.lang.actions.testLanguage.constraints)/3185679905989886084">
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="14" startPosition="60" endLine="15" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="19" startPosition="46" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="24" startPosition="169" endLine="25" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="25" startPosition="84" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="30" startPosition="0" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3185679905989891674" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="34" startPosition="139" endLine="35" endPosition="466" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeAncesctorBreakingPoint" />
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ActionTestSidetransformTestAncestor_Constraints#()V" />
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAnAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeAncestorMethod#()Z" />
-    <nodeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <scopeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="14" startPosition="60" endLine="15" endPosition="99" />
-    <scopeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="19" startPosition="46" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="71" />
-    <scopeInfo nodeId="3185679905989886137" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="34" startPosition="139" endLine="35" endPosition="466" />
-    <scopeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="3185679905989886084" varName="childConcept" />
-      <varInfo nodeId="3185679905989886084" varName="childNode" />
-      <varInfo nodeId="3185679905989886084" varName="node" />
-      <varInfo nodeId="3185679905989886084" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="24" startPosition="169" endLine="31" endPosition="18">
-      <varInfo nodeId="3185679905989886084" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="3185679905989886084" varName="checkingNodeContext" />
-      <varInfo nodeId="3185679905989886084" varName="childConcept" />
-      <varInfo nodeId="3185679905989886084" varName="childNode" />
-      <varInfo nodeId="3185679905989886084" varName="context" />
-      <varInfo nodeId="3185679905989886084" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="3185679905989886084" fileName="ActionTestSidetransformTestAncestor_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.actions.testLanguage.constraints.ActionTestSidetransformTestAncestor_Constraints" />
+    <file name="ActionTestSidetransformTestAncestor_Constraints.java">
+      <node id="3185679905989886084" at="14,60,15,99" concept="9" />
+      <node id="3185679905989886084" at="19,46,20,16" concept="5" />
+      <node id="3185679905989886084" at="24,169,25,84" concept="4" />
+      <node id="3185679905989886084" at="25,84,26,0" concept="6" />
+      <node id="3185679905989886084" at="27,51,28,71" concept="1" />
+      <node id="3185679905989886084" at="29,5,30,0" concept="6" />
+      <node id="3185679905989886084" at="30,0,31,18" concept="5" />
+      <node id="3185679905989891674" at="34,139,35,466" concept="5" />
+      <node id="3185679905989886084" at="38,0,39,0" concept="7" trace="canBeAncesctorBreakingPoint" />
+      <node id="3185679905989886084" at="14,0,17,0" concept="0" trace="ActionTestSidetransformTestAncestor_Constraints#()V" />
+      <node id="3185679905989886084" at="26,0,29,5" concept="2" />
+      <node id="3185679905989886084" at="34,0,37,0" concept="8" trace="static_canBeAnAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="3185679905989886084" at="18,0,22,0" concept="3" trace="hasOwnCanBeAncestorMethod#()Z" />
+      <node id="3185679905989886084" at="23,0,33,0" concept="3" trace="canBeAncestor#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="3185679905989886084" at="14,60,15,99" />
+      <scope id="3185679905989886084" at="19,46,20,16" />
+      <scope id="3185679905989886084" at="27,51,28,71" />
+      <scope id="3185679905989886137" at="34,139,35,466" />
+      <scope id="3185679905989886084" at="14,0,17,0" />
+      <scope id="3185679905989886084" at="34,0,37,0">
+        <var name="childConcept" id="3185679905989886084" />
+        <var name="childNode" id="3185679905989886084" />
+        <var name="node" id="3185679905989886084" />
+        <var name="operationContext" id="3185679905989886084" />
+      </scope>
+      <scope id="3185679905989886084" at="18,0,22,0" />
+      <scope id="3185679905989886084" at="24,169,31,18">
+        <var name="result" id="3185679905989886084" />
+      </scope>
+      <scope id="3185679905989886084" at="23,0,33,0">
+        <var name="checkingNodeContext" id="3185679905989886084" />
+        <var name="childConcept" id="3185679905989886084" />
+        <var name="childNode" id="3185679905989886084" />
+        <var name="context" id="3185679905989886084" />
+        <var name="node" id="3185679905989886084" />
+      </scope>
+      <unit id="3185679905989886084" at="13,0,40,0" name="jetbrains.mps.lang.actions.testLanguage.constraints.ActionTestSidetransformTestAncestor_Constraints" />
+    </file>
   </root>
   <root nodeRef="r:51315b9d-b515-42e5-b0a0-21c0544c81b4(jetbrains.mps.lang.actions.testLanguage.constraints)/4942308145798610557">
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="15" startPosition="61" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="20" startPosition="44" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="25" startPosition="188" endLine="26" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="26" startPosition="96" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="30" startPosition="5" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="31" startPosition="0" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4942308145798644376" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="36" startPosition="316" endLine="37" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3185679905992050998" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="39" startPosition="337" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3185679905991405818" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="41" startPosition="5" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4942308145798611439" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="42" startPosition="0" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeParentBreakingPoint" />
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ActionTestSidetransformTestContainer_Constraints#()V" />
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4942308145798625397" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="35" startPosition="148" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3185679905992036559" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="38" startPosition="5" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeParentMethod#()Z" />
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="24" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <nodeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="35" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <scopeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="15" startPosition="61" endLine="16" endPosition="100" />
-    <scopeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="20" startPosition="44" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="28" startPosition="51" endLine="29" endPosition="68" />
-    <scopeInfo nodeId="4942308145798625400" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="36" startPosition="316" endLine="37" endPosition="19" />
-    <scopeInfo nodeId="3185679905992036562" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="39" startPosition="337" endLine="40" endPosition="19" />
-    <scopeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="19" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="25" startPosition="188" endLine="32" endPosition="18">
-      <varInfo nodeId="4942308145798610557" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="4942308145798610610" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="35" startPosition="148" endLine="43" endPosition="16" />
-    <scopeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="24" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="4942308145798610557" varName="checkingNodeContext" />
-      <varInfo nodeId="4942308145798610557" varName="childConcept" />
-      <varInfo nodeId="4942308145798610557" varName="childNode" />
-      <varInfo nodeId="4942308145798610557" varName="link" />
-      <varInfo nodeId="4942308145798610557" varName="node" />
-      <varInfo nodeId="4942308145798610557" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="35" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="4942308145798610557" varName="childConcept" />
-      <varInfo nodeId="4942308145798610557" varName="childNode" />
-      <varInfo nodeId="4942308145798610557" varName="link" />
-      <varInfo nodeId="4942308145798610557" varName="node" />
-      <varInfo nodeId="4942308145798610557" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="4942308145798610557" fileName="ActionTestSidetransformTestContainer_Constraints.java" startLine="14" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.lang.actions.testLanguage.constraints.ActionTestSidetransformTestContainer_Constraints" />
+    <file name="ActionTestSidetransformTestContainer_Constraints.java">
+      <node id="4942308145798610557" at="15,61,16,100" concept="9" />
+      <node id="4942308145798610557" at="20,44,21,16" concept="5" />
+      <node id="4942308145798610557" at="25,188,26,96" concept="4" />
+      <node id="4942308145798610557" at="26,96,27,0" concept="6" />
+      <node id="4942308145798610557" at="28,51,29,68" concept="1" />
+      <node id="4942308145798610557" at="30,5,31,0" concept="6" />
+      <node id="4942308145798610557" at="31,0,32,18" concept="5" />
+      <node id="4942308145798644376" at="36,316,37,19" concept="5" />
+      <node id="3185679905992050998" at="39,337,40,19" concept="5" />
+      <node id="3185679905991405818" at="41,5,42,0" concept="6" />
+      <node id="4942308145798611439" at="42,0,43,16" concept="5" />
+      <node id="4942308145798610557" at="46,0,47,0" concept="7" trace="canBeParentBreakingPoint" />
+      <node id="4942308145798610557" at="15,0,18,0" concept="0" trace="ActionTestSidetransformTestContainer_Constraints#()V" />
+      <node id="4942308145798610557" at="27,0,30,5" concept="2" />
+      <node id="4942308145798625397" at="35,148,38,5" concept="2" />
+      <node id="3185679905992036559" at="38,5,41,5" concept="2" />
+      <node id="4942308145798610557" at="19,0,23,0" concept="3" trace="hasOwnCanBeParentMethod#()Z" />
+      <node id="4942308145798610557" at="24,0,34,0" concept="3" trace="canBeParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <node id="4942308145798610557" at="35,0,45,0" concept="8" trace="static_canBeAParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <scope id="4942308145798610557" at="15,61,16,100" />
+      <scope id="4942308145798610557" at="20,44,21,16" />
+      <scope id="4942308145798610557" at="28,51,29,68" />
+      <scope id="4942308145798625400" at="36,316,37,19" />
+      <scope id="3185679905992036562" at="39,337,40,19" />
+      <scope id="4942308145798610557" at="15,0,18,0" />
+      <scope id="4942308145798610557" at="19,0,23,0" />
+      <scope id="4942308145798610557" at="25,188,32,18">
+        <var name="result" id="4942308145798610557" />
+      </scope>
+      <scope id="4942308145798610610" at="35,148,43,16" />
+      <scope id="4942308145798610557" at="24,0,34,0">
+        <var name="checkingNodeContext" id="4942308145798610557" />
+        <var name="childConcept" id="4942308145798610557" />
+        <var name="childNode" id="4942308145798610557" />
+        <var name="link" id="4942308145798610557" />
+        <var name="node" id="4942308145798610557" />
+        <var name="operationContext" id="4942308145798610557" />
+      </scope>
+      <scope id="4942308145798610557" at="35,0,45,0">
+        <var name="childConcept" id="4942308145798610557" />
+        <var name="childNode" id="4942308145798610557" />
+        <var name="link" id="4942308145798610557" />
+        <var name="node" id="4942308145798610557" />
+        <var name="operationContext" id="4942308145798610557" />
+      </scope>
+      <unit id="4942308145798610557" at="14,0,48,0" name="jetbrains.mps.lang.actions.testLanguage.constraints.ActionTestSidetransformTestContainer_Constraints" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -29,7 +29,7 @@ public class TestConvertMethodCallToTernaryOperatorIntention_Test extends BaseTr
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("7737741562085930048", "7737741562085948256");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.invokeIntention("jetbrains.mps.baseLanguage.intentions.ConvertIfConditionToTernaryOperator_Intention", editor, this.myStart.getNode());
+      invokeIntention("jetbrains.mps.baseLanguage.intentions.ConvertIfConditionToTernaryOperator_Intention", editor, myStart.getNode());
     }
   }
 }

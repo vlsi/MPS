@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="1z2jb0cscol6duntem261umaeykch0f">
+<dependencies version="2" modelHash="-4jwxrks3awn16nw3ot4q1fy9fv1oqqw">
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <common hash="evzbfc25gnt04py2hovcwj4gwf7uuxb" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
@@ -7,7 +7,7 @@
   <source id="121824560294376345" name="PaletteElement" hash="-89hhue3gpw3eboh30m7i8zig6yoks3l">
     <file name="PaletteElement.java" />
   </source>
-  <source id="121824560294376355" name="PaletteActionGroup" hash="1ydsjbzx03ukqtqvtghiqmzyk5s5eiw">
+  <source id="121824560294376355" name="PaletteActionGroup" hash="-ki2l784cs12k6lmeg3neydec2k7339">
     <file name="PaletteActionGroup.java" />
   </source>
   <source id="121824560294376372" name="PaletteAction" hash="-azvpalv9ov63v6xe1ro4a4mit2k88ow">

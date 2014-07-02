@@ -11,7 +11,6 @@ import com.intellij.execution.runners.ExecutionEnvironment;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.application.ModalityState;
 
@@ -52,11 +51,11 @@ public class MakeDeployScripts_BeforeTask extends BaseMpsBeforeTaskProvider<Make
 
       ApplicationManager.getApplication().invokeAndWait(new Runnable() {
         public void run() {
-          ModelAccess.instance().executeCommand(new Runnable() {
+          ProjectHelper.getModelAccess(projectFinal).executeCommand(new Runnable() {
             public void run() {
               script.value = new DeployScript(projectFinal, myPlugins);
             }
-          }, ProjectHelper.toMPSProject(projectFinal));
+          });
         }
       }, ModalityState.NON_MODAL);
 

@@ -26,15 +26,9 @@ import jetbrains.mps.typesystemEngine.checker.TypesystemCheckerComponent;
 /**
  * evgeny, 10/14/11
  */
-public class MPSTypesystem extends ComponentPlugin {
+public final class MPSTypesystem extends ComponentPlugin {
 
-  private static MPSTypesystem ourInstance = new MPSTypesystem();
-
-  public static MPSTypesystem getInstance() {
-    return ourInstance;
-  }
-
-  private MPSTypesystem() {
+  public MPSTypesystem() {
   }
 
   @Override

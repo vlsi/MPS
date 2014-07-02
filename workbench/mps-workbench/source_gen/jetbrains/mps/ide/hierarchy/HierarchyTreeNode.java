@@ -11,6 +11,8 @@ import jetbrains.mps.ide.icons.IconManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class HierarchyTreeNode extends MPSTreeNode {
   private SNode myNode;
@@ -82,7 +84,7 @@ public class HierarchyTreeNode extends MPSTreeNode {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (jetbrains.mps.util.SNodeOperations.isDisposed(myNode) || !(myNode.getModel() != null) || myNode.getModel() == null) {
+        if (!(SNodeUtil.isAccessible(myNode, MPSModuleRepository.getInstance())) || !(myNode.getModel() != null) || myNode.getModel() == null) {
           return;
         }
         AbstractHierarchyView hierarchyView = myHierarchyTree.getHierarchyView();

@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
   <root nodeRef="r:377d10f7-3b25-4fc8-965d-ff71d05a8c05(jetbrains.mps.debugger.java.evaluation.textGen)/948722627350505706">
-    <nodeInfo nodeId="948722627350505706" fileName="LowLevelVariable_TextGen.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="948722627350505706" fileName="LowLevelVariable_TextGen.java" startLine="9" startPosition="42" endLine="9" endPosition="42" />
-    <scopeInfo nodeId="948722627350505706" fileName="LowLevelVariable_TextGen.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="948722627350505706" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="948722627350505706" fileName="LowLevelVariable_TextGen.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.textGen.LowLevelVariable_TextGen" />
+    <file name="LowLevelVariable_TextGen.java">
+      <node id="948722627350505706" at="9,0,11,0" concept="0" trace="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="948722627350505706" at="9,42,9,42" />
+      <scope id="948722627350505706" at="9,0,11,0">
+        <var name="node" id="948722627350505706" />
+      </scope>
+      <unit id="948722627350505706" at="8,0,12,0" name="jetbrains.mps.debugger.java.evaluation.textGen.LowLevelVariable_TextGen" />
+    </file>
   </root>
   <root nodeRef="r:377d10f7-3b25-4fc8-965d-ff71d05a8c05(jetbrains.mps.debugger.java.evaluation.textGen)/948722627350506005">
-    <unitInfo nodeId="948722627350506005" fileName="EvaluationTextGen.java" startLine="7" startPosition="0" endLine="9" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.textGen.EvaluationTextGen" />
+    <file name="EvaluationTextGen.java">
+      <unit id="948722627350506005" at="7,0,9,0" name="jetbrains.mps.debugger.java.evaluation.textGen.EvaluationTextGen" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

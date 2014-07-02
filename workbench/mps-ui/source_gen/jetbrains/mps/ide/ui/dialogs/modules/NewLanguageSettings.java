@@ -62,6 +62,7 @@ public class NewLanguageSettings extends JPanel {
         if (!(myLangLocationChangedByUser)) {
           setLanguageLocation(path);
         }
+        fireChanged();
       }
     });
     this.add(myLanguageName, Util.getGridConstraints(1));
@@ -103,7 +104,7 @@ public class NewLanguageSettings extends JPanel {
 
   public void setLanguageName(String languageName) {
     myLanguageName.setText(languageName);
-    fireChaged();
+    fireChanged();
   }
 
   public String getLanguageLocation() {
@@ -114,7 +115,7 @@ public class NewLanguageSettings extends JPanel {
     myLangLocationDocListenerEnabled = false;
     myLanguageLocation.setText(languageLocation);
     myLangLocationDocListenerEnabled = true;
-    fireChaged();
+    fireChanged();
   }
 
   public boolean isRuntimeSolutionNeeded() {
@@ -141,7 +142,7 @@ public class NewLanguageSettings extends JPanel {
     } else {
       setLanguageLocation(myProjectPath + File.separator + "languages" + File.separator + getLanguageName());
     }
-    fireChaged();
+    fireChanged();
   }
 
 
@@ -150,7 +151,7 @@ public class NewLanguageSettings extends JPanel {
     myListener = listener;
   }
 
-  private void fireChaged() {
+  /*package*/ void fireChanged() {
     if (myListener != null) {
       myListener.changed();
     }

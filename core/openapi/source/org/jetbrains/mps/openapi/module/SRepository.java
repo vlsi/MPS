@@ -38,9 +38,6 @@ package org.jetbrains.mps.openapi.module;
  * </pre>
  */
 public interface SRepository {
-
-  SRepository getParent();
-
   SModule getModule(SModuleId ref);
 
   /**
@@ -51,6 +48,8 @@ public interface SRepository {
   ModelAccess getModelAccess();
 
   RepositoryAccess getRepositoryAccess();
+
+  DebugRegistry getDebugRegistry();
 
   void saveAll();
 

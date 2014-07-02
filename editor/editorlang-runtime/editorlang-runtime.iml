@@ -11,7 +11,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="editor-api" />
     <orderEntry type="module-library" scope="TEST">
@@ -20,12 +19,12 @@
           <root url="jar://$APPLICATION_HOME_DIR$/lib/junit-4.11.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.ideaLibSources/junit-4.10-sources.jar!/" />
-        </SOURCES>
+        <SOURCES />
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="collections-runtime" />
+    <orderEntry type="library" name="Annotations" level="project" />
+    <orderEntry type="library" scope="TEST" name="JUnit4" level="project" />
   </component>
 </module>
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-65ae6o4n7r69oro26gcgk2yie6niy1f">
+<dependencies version="2" modelHash="2g82863iga6q2s20xm9mknqqvska1eb">
   <dep model="f:java_stub#a3e4657f-a76c-45bb-bbda-c764596ecc65#org.apache.log4j(jetbrains.mps.baseLanguage.logging.runtime/org.apache.log4j@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" hash="esw4kfzqsep0i31uc99yts4q6nnhwtf" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
-  <common hash="-56w27ksrfvaxt1cyi49tqe6du33uke8" dependsOnNodes="true">
+  <common hash="-ajezbk6kbjknl955yokbcmykgc1sz61" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="4774692914340655529" name="PathManager" hash="ee6dhw1rqnw8csq32n6o1j80e5vylfx">
@@ -23,7 +23,7 @@
   <source id="5900076103425675110" name="SetLibraryContributor" hash="-8trrzk2bfuqgxs1kdppnh1smkmnft6i">
     <file name="SetLibraryContributor.java" />
   </source>
-  <source id="878521226300613674" name="MpsPlatform" hash="4smq9pv531havgaps3koestq8cz4y8p">
+  <source id="878521226300613674" name="MpsPlatform" hash="5u43cx9q8gb3lvz80ljgodw99xbuyg3">
     <file name="MpsPlatform.java" />
   </source>
   <source id="1365200781785613152" name="ClassloaderUtil" hash="aasz706dytmn0vrkeamgwsmwkgdsxm7">

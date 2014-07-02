@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,20 +15,17 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditor;
 import jetbrains.mps.openapi.editor.descriptor.ConceptEditorComponent;
-import jetbrains.mps.openapi.editor.descriptor.ConceptEditorHint;
 import jetbrains.mps.openapi.editor.descriptor.EditorAspectDescriptor;
-import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
+import jetbrains.mps.smodel.structure.DescriptorUtils;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
-import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SAbstractConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
@@ -71,12 +68,9 @@ class InterpretedEditorAspectDescriptor implements EditorAspectDescriptor {
   }
 
   private ConceptEditor loadEditor(ConceptDescriptor concept) {
-    Language language = ModuleRepositoryFacade.getInstance().getModule(myLanguageRuntime.getNamespace(), Language.class);
-    if (language == null) {
-      return null;
-    }
-    String editorClassName = LanguageAspect.getAspectNodeFqName(concept.getConceptFqName(), LanguageAspect.EDITOR) + "_Editor";
-    Class<? extends ConceptEditor> editorClass = ClassLoaderManager.getInstance().getClass(language, editorClassName);
+    final SAbstractConcept c = SConceptRepository.getInstance().getConcept(concept.getConceptFqName());
+    String editorClassName = LanguageAspect.EDITOR.getAspectQualifiedClassName(c) + "_Editor";
+    Class<? extends ConceptEditor> editorClass = DescriptorUtils.getClassFromLanguage(editorClassName, myLanguageRuntime);
     if (editorClass == null) {
       return null;
     }

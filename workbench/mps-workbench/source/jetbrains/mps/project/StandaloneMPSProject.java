@@ -24,9 +24,10 @@ import com.intellij.openapi.components.StoragePathMacros;
 import com.intellij.openapi.components.StorageScheme;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.MPSCore;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.fs.WatchRequestor;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -79,7 +80,9 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
   private final Map<SModuleReference, Path> myModuleToPath = new HashMap<SModuleReference, Path>();
 
-  public StandaloneMPSProject(Project project) {
+  private WatchRequestor myWatchRequestor;
+
+  public StandaloneMPSProject(final Project project) {
     super(project);
   }
 
@@ -116,6 +119,13 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   @Override
   public void initComponent() {
     super.initComponent();
+    myWatchRequestor = new WatchRequestor() {
+      private String path = myProject.getBaseDir().getPath();
+      @Override
+      public String getDirectory() {
+        return path;
+      }
+    };
   }
 
   @Override
@@ -297,7 +307,7 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
 
     //todo hack
     if (myProject != null) {
-      if (MPSCore.getInstance().isTestMode() && !(myProject.isDisposed())) {
+      if (RuntimeFlags.isTestMode() && !(myProject.isDisposed())) {
         //second check if for MPS-12881, we invoked this method recursively and tried to dispose a disposed project
         ProjectUtil.closeAndDispose(myProject);
       }
@@ -307,11 +317,11 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
   }
 
   private void startWatching() {
-    ApplicationManager.getApplication().getComponent(WatchedRoots.class).addProjectWatch(myProject);
+    ApplicationManager.getApplication().getComponent(WatchedRoots.class).addGlobalWatch(myWatchRequestor);
   }
 
   private void stopWatching() {
-    ApplicationManager.getApplication().getComponent(WatchedRoots.class).removeProjectWatch(myProject);
+    ApplicationManager.getApplication().getComponent(WatchedRoots.class).removeGlobalWatch(myWatchRequestor);
   }
 
   private Path getPathForModule(SModule module) {

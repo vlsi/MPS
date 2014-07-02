@@ -42,8 +42,6 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private final RoleValidation myValidation;
   private final GeneratorMappings myMappings;
 
-  protected final Set<SNodeReference> myFailedRules = new ConcurrentHashSet<SNodeReference>();
-
   protected AbstractTemplateGenerator(GenerationSessionContext operationContext, SModel inputModel, SModel outputModel) {
     myOperationContext = operationContext;
     myInputModel = inputModel;
@@ -57,33 +55,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
     return myOperationContext;
   }
 
-  @Override
-  public ProgressMonitor getProgressMonitor() {
-    return myProgressMonitor;
-  }
-
   protected void checkMonitorCanceled() throws GenerationCanceledException {
     if (myProgressMonitor != null && myProgressMonitor.isCanceled()) throw new GenerationCanceledException();
-  }
-
-  @Override
-  @Deprecated
-  public void showErrorMessage(SNode inputNode, SNode templateNode, String message) {
-    showErrorMessage(inputNode, templateNode, null, message);
-  }
-
-  @Override
-  @Deprecated
-  public void showErrorMessage(SNode inputNode, SNode templateNode, SNode ruleNode, String message) {
-    if (ruleNode != null && !myFailedRules.add(ruleNode.getReference())) {
-      // do not show duplicating messages
-      return;
-    }
-
-    getLogger().error((templateNode != null ? templateNode : ruleNode), message,
-        GeneratorUtil.describeIfExists(inputNode, "input node"),
-        GeneratorUtil.describeIfExists(ruleNode, "rule"),
-        GeneratorUtil.describeIfExists(templateNode, "template"));
   }
 
   @Override

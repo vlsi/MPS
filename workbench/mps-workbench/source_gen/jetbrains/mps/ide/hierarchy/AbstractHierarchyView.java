@@ -13,11 +13,12 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.pom.Navigatable;
 import javax.swing.tree.DefaultMutableTreeNode;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
@@ -40,6 +41,9 @@ import com.intellij.icons.AllIcons;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.ide.OccurenceNavigator;
+import com.intellij.openapi.actionSystem.DataProvider;
+import org.jetbrains.annotations.NonNls;
+import com.intellij.openapi.actionSystem.PlatformDataKeys;
 
 public abstract class AbstractHierarchyView extends BaseProjectTool {
   protected AbstractHierarchyTree myHierarchyTree;
@@ -73,23 +77,23 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         }
         final HierarchyTreeNode treeNode = (HierarchyTreeNode) node;
 
-        SNodeReference ptr = ModelAccess.instance().runReadAction(new Computable<SNodeReference>() {
-          @Override
-          public SNodeReference compute() {
+        final Wrappers._T<SNodeReference> ptr = new Wrappers._T<SNodeReference>(null);
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
             SNode node = treeNode.getNode();
-            if (node == null || SNodeOperations.isDisposed(node)) {
-              return null;
+            if (node == null || !(SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance()))) {
+              return;
             }
 
-            return new SNodePointer(node);
+            ptr.value = new SNodePointer(node);
           }
         });
 
-        if (ptr == null) {
+        if (ptr.value == null) {
           return null;
         }
 
-        Navigatable n = new NodeNavigatable(ProjectHelper.toMPSProject(getProject()), ptr);
+        Navigatable n = new NodeNavigatable(ProjectHelper.toMPSProject(getProject()), ptr.value);
         return (n.canNavigate() ? n : null);
       }
 
@@ -223,9 +227,17 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
     return myComponent;
   }
 
-  public class RootPanel extends JPanel implements OccurenceNavigator {
+  public class RootPanel extends JPanel implements OccurenceNavigator, DataProvider {
     public RootPanel() {
       super(new BorderLayout());
+    }
+
+    @Nullable
+    public Object getData(@NonNls String id) {
+      if (PlatformDataKeys.HELP_ID.is(id)) {
+        return "ideaInterface.hierarchyView";
+      }
+      return null;
     }
 
     @Override

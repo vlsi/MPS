@@ -1,103 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="27" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.constraints.ConstraintsAspectDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,27,0" name="org.jetbrains.mps.samples.ParallelFor.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:30f28ecb-3abe-411d-8f10-86fc65916e39(org.jetbrains.mps.samples.ParallelFor.constraints)/633195941006921799">
-    <nodeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="14" startPosition="35" endLine="15" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="23" startPosition="40" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="28" startPosition="70" endLine="29" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="29" startPosition="48" endLine="30" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="633195941006921803" fileName="ThreadPool_Constraints.java" startLine="29" startPosition="48" endLine="30" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="32" startPosition="7" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ThreadPool_Constraints#()V" />
-    <nodeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnValidator#()Z" />
-    <nodeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="20" startPosition="74" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <scopeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="14" startPosition="35" endLine="15" endPosition="72" />
-    <scopeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="23" startPosition="40" endLine="24" endPosition="20" />
-    <scopeInfo nodeId="633195941006921802" fileName="ThreadPool_Constraints.java" startLine="29" startPosition="48" endLine="30" endPosition="67" />
-    <scopeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="28" startPosition="70" endLine="30" endPosition="67">
-      <varInfo nodeId="633195941006921799" varName="propertyName" />
-    </scopeInfo>
-    <scopeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="633195941006921799" varName="node" />
-      <varInfo nodeId="633195941006921799" varName="propertyValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22">
-      <varInfo nodeId="633195941006921799" varName="properties" />
-    </scopeInfo>
-    <scopeInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="21" startPosition="42" endLine="32" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.constraints.ThreadPool_Constraints$1" />
-    <unitInfo nodeId="633195941006921799" fileName="ThreadPool_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.constraints.ThreadPool_Constraints" />
+    <file name="ThreadPool_Constraints.java">
+      <node id="633195941006921799" at="14,35,15,72" concept="10" />
+      <node id="633195941006921799" at="19,82,20,74" concept="5" />
+      <node id="633195941006921799" at="23,40,24,20" concept="6" />
+      <node id="633195941006921799" at="28,70,29,48" concept="5" />
+      <node id="633195941006921799" at="29,48,30,67" concept="0" />
+      <node id="633195941006921803" at="29,48,30,67" concept="6" />
+      <node id="633195941006921799" at="32,7,33,22" concept="6" />
+      <node id="633195941006921799" at="14,0,17,0" concept="1" trace="ThreadPool_Constraints#()V" />
+      <node id="633195941006921799" at="22,0,26,0" concept="4" trace="hasOwnValidator#()Z" />
+      <node id="633195941006921799" at="27,0,32,0" concept="4" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="633195941006921799" at="20,74,32,7" concept="2" />
+      <node id="633195941006921799" at="18,0,35,0" concept="4" trace="getNotDefaultProperties#()Ljava/util/Map;" />
+      <scope id="633195941006921799" at="14,35,15,72" />
+      <scope id="633195941006921799" at="23,40,24,20" />
+      <scope id="633195941006921802" at="29,48,30,67" />
+      <scope id="633195941006921799" at="28,70,30,67">
+        <var name="propertyName" id="633195941006921799" />
+      </scope>
+      <scope id="633195941006921799" at="14,0,17,0" />
+      <scope id="633195941006921799" at="22,0,26,0" />
+      <scope id="633195941006921799" at="27,0,32,0">
+        <var name="node" id="633195941006921799" />
+        <var name="propertyValue" id="633195941006921799" />
+      </scope>
+      <scope id="633195941006921799" at="19,82,33,22">
+        <var name="properties" id="633195941006921799" />
+      </scope>
+      <scope id="633195941006921799" at="18,0,35,0" />
+      <unit id="633195941006921799" at="21,42,32,5" name="org.jetbrains.mps.samples.ParallelFor.constraints.ThreadPool_Constraints$1" />
+      <unit id="633195941006921799" at="13,0,36,0" name="org.jetbrains.mps.samples.ParallelFor.constraints.ThreadPool_Constraints" />
+    </file>
   </root>
   <root nodeRef="r:30f28ecb-3abe-411d-8f10-86fc65916e39(org.jetbrains.mps.samples.ParallelFor.constraints)/7793246093816048068">
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="19" startPosition="45" endLine="20" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="29" startPosition="200" endLine="30" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="30" startPosition="96" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="32" startPosition="51" endLine="33" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="34" startPosition="5" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="35" startPosition="0" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="40" startPosition="82" endLine="41" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="44" startPosition="40" endLine="45" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="49" startPosition="70" endLine="50" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="50" startPosition="40" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7793246093816048072" fileName="ParallelLoopVariable_Constraints.java" startLine="50" startPosition="40" endLine="51" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="53" startPosition="7" endLine="54" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="47688671297852483" fileName="ParallelLoopVariable_Constraints.java" startLine="57" startPosition="148" endLine="58" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ParallelLoopVariable_Constraints#()V" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="31" startPosition="0" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="43" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnValidator#()Z" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="48" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="41" startPosition="74" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="39" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="19" startPosition="45" endLine="20" endPosition="82" />
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="24" startPosition="43" endLine="25" endPosition="16" />
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="32" startPosition="51" endLine="33" endPosition="67" />
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="44" startPosition="40" endLine="45" endPosition="20" />
-    <scopeInfo nodeId="7793246093816048071" fileName="ParallelLoopVariable_Constraints.java" startLine="50" startPosition="40" endLine="51" endPosition="63" />
-    <scopeInfo nodeId="47688671297852482" fileName="ParallelLoopVariable_Constraints.java" startLine="57" startPosition="148" endLine="58" endPosition="115" />
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="49" startPosition="70" endLine="51" endPosition="63">
-      <varInfo nodeId="7793246093816048068" varName="propertyName" />
-    </scopeInfo>
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="7793246093816048068" varName="childConcept" />
-      <varInfo nodeId="7793246093816048068" varName="link" />
-      <varInfo nodeId="7793246093816048068" varName="node" />
-      <varInfo nodeId="7793246093816048068" varName="operationContext" />
-      <varInfo nodeId="7793246093816048068" varName="parentNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="43" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="48" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="7793246093816048068" varName="node" />
-      <varInfo nodeId="7793246093816048068" varName="propertyValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="29" startPosition="200" endLine="36" endPosition="18">
-      <varInfo nodeId="7793246093816048068" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="28" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="7793246093816048068" varName="checkingNodeContext" />
-      <varInfo nodeId="7793246093816048068" varName="childConcept" />
-      <varInfo nodeId="7793246093816048068" varName="link" />
-      <varInfo nodeId="7793246093816048068" varName="node" />
-      <varInfo nodeId="7793246093816048068" varName="operationContext" />
-      <varInfo nodeId="7793246093816048068" varName="parentNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="40" startPosition="82" endLine="54" endPosition="22">
-      <varInfo nodeId="7793246093816048068" varName="properties" />
-    </scopeInfo>
-    <scopeInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="39" startPosition="0" endLine="56" endPosition="0" />
-    <unitInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="42" startPosition="34" endLine="53" endPosition="5" unitName="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelLoopVariable_Constraints$1" />
-    <unitInfo nodeId="7793246093816048068" fileName="ParallelLoopVariable_Constraints.java" startLine="18" startPosition="0" endLine="63" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelLoopVariable_Constraints" />
+    <file name="ParallelLoopVariable_Constraints.java">
+      <node id="7793246093816048068" at="19,45,20,82" concept="10" />
+      <node id="7793246093816048068" at="24,43,25,16" concept="6" />
+      <node id="7793246093816048068" at="29,200,30,96" concept="5" />
+      <node id="7793246093816048068" at="30,96,31,0" concept="7" />
+      <node id="7793246093816048068" at="32,51,33,67" concept="2" />
+      <node id="7793246093816048068" at="34,5,35,0" concept="7" />
+      <node id="7793246093816048068" at="35,0,36,18" concept="6" />
+      <node id="7793246093816048068" at="40,82,41,74" concept="5" />
+      <node id="7793246093816048068" at="44,40,45,20" concept="6" />
+      <node id="7793246093816048068" at="49,70,50,40" concept="5" />
+      <node id="7793246093816048068" at="50,40,51,63" concept="0" />
+      <node id="7793246093816048072" at="50,40,51,63" concept="6" />
+      <node id="7793246093816048068" at="53,7,54,22" concept="6" />
+      <node id="47688671297852483" at="57,148,58,115" concept="6" />
+      <node id="7793246093816048068" at="61,0,62,0" concept="8" trace="canBeChildBreakingPoint" />
+      <node id="7793246093816048068" at="19,0,22,0" concept="1" trace="ParallelLoopVariable_Constraints#()V" />
+      <node id="7793246093816048068" at="31,0,34,5" concept="3" />
+      <node id="7793246093816048068" at="57,0,60,0" concept="9" trace="static_canBeAChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="7793246093816048068" at="23,0,27,0" concept="4" trace="hasOwnCanBeChildMethod#()Z" />
+      <node id="7793246093816048068" at="43,0,47,0" concept="4" trace="hasOwnValidator#()Z" />
+      <node id="7793246093816048068" at="48,0,53,0" concept="4" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="7793246093816048068" at="28,0,38,0" concept="4" trace="canBeChild#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <node id="7793246093816048068" at="41,74,53,7" concept="2" />
+      <node id="7793246093816048068" at="39,0,56,0" concept="4" trace="getNotDefaultProperties#()Ljava/util/Map;" />
+      <scope id="7793246093816048068" at="19,45,20,82" />
+      <scope id="7793246093816048068" at="24,43,25,16" />
+      <scope id="7793246093816048068" at="32,51,33,67" />
+      <scope id="7793246093816048068" at="44,40,45,20" />
+      <scope id="7793246093816048071" at="50,40,51,63" />
+      <scope id="47688671297852482" at="57,148,58,115" />
+      <scope id="7793246093816048068" at="49,70,51,63">
+        <var name="propertyName" id="7793246093816048068" />
+      </scope>
+      <scope id="7793246093816048068" at="19,0,22,0" />
+      <scope id="7793246093816048068" at="57,0,60,0">
+        <var name="childConcept" id="7793246093816048068" />
+        <var name="link" id="7793246093816048068" />
+        <var name="node" id="7793246093816048068" />
+        <var name="operationContext" id="7793246093816048068" />
+        <var name="parentNode" id="7793246093816048068" />
+      </scope>
+      <scope id="7793246093816048068" at="23,0,27,0" />
+      <scope id="7793246093816048068" at="43,0,47,0" />
+      <scope id="7793246093816048068" at="48,0,53,0">
+        <var name="node" id="7793246093816048068" />
+        <var name="propertyValue" id="7793246093816048068" />
+      </scope>
+      <scope id="7793246093816048068" at="29,200,36,18">
+        <var name="result" id="7793246093816048068" />
+      </scope>
+      <scope id="7793246093816048068" at="28,0,38,0">
+        <var name="checkingNodeContext" id="7793246093816048068" />
+        <var name="childConcept" id="7793246093816048068" />
+        <var name="link" id="7793246093816048068" />
+        <var name="node" id="7793246093816048068" />
+        <var name="operationContext" id="7793246093816048068" />
+        <var name="parentNode" id="7793246093816048068" />
+      </scope>
+      <scope id="7793246093816048068" at="40,82,54,22">
+        <var name="properties" id="7793246093816048068" />
+      </scope>
+      <scope id="7793246093816048068" at="39,0,56,0" />
+      <unit id="7793246093816048068" at="42,34,53,5" name="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelLoopVariable_Constraints$1" />
+      <unit id="7793246093816048068" at="18,0,63,0" name="org.jetbrains.mps.samples.ParallelFor.constraints.ParallelLoopVariable_Constraints" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

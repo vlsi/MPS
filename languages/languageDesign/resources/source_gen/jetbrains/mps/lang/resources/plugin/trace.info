@@ -1,283 +1,305 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="FacetAspectDescriptor.java" startLine="17" startPosition="15" endLine="21" endPosition="5" unitName="jetbrains.mps.lang.resources.plugin.FacetAspectDescriptor$1" />
-  <unitInfo fileName="FacetAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.lang.resources.plugin.FacetAspectDescriptor" />
-  <unitInfo fileName="FacetManifest.java" startLine="24" startPosition="55" endLine="28" endPosition="5" unitName="jetbrains.mps.lang.resources.plugin.FacetManifest$1" />
-  <unitInfo fileName="FacetManifest.java" startLine="12" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.lang.resources.plugin.FacetManifest" />
-  <root nodeRef="r:b63b6f93-e29a-4718-8cc3-affacae32340(jetbrains.mps.lang.resources.plugin)/6648795410103988025">
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="targets" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="54" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="56" startPosition="27" endLine="57" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="60" startPosition="38" endLine="61" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="64" startPosition="43" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="68" startPosition="43" endLine="69" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="72" startPosition="43" endLine="73" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="76" startPosition="32" endLine="77" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="80" startPosition="57" endLine="81" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="85" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="name" />
-    <nodeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="93" startPosition="173" endLine="94" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="94" startPosition="56" endLine="95" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3776947097491409446" fileName="Binaries_Facet.java" startLine="97" startPosition="19" endLine="98" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3776947097491409528" fileName="Binaries_Facet.java" startLine="98" startPosition="60" endLine="99" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648795410103988034" fileName="Binaries_Facet.java" startLine="100" startPosition="19" endLine="101" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6648795410103988052" fileName="Binaries_Facet.java" startLine="103" startPosition="85" endLine="104" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4902420589302875734" fileName="Binaries_Facet.java" startLine="106" startPosition="86" endLine="107" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4902420589302875740" fileName="Binaries_Facet.java" startLine="107" startPosition="43" endLine="108" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4902420589302875749" fileName="Binaries_Facet.java" startLine="109" startPosition="45" endLine="110" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4902420589302875755" fileName="Binaries_Facet.java" startLine="110" startPosition="153" endLine="111" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2169032458076371672" fileName="Binaries_Facet.java" startLine="112" startPosition="25" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4902420589302875762" fileName="Binaries_Facet.java" startLine="113" startPosition="0" endLine="114" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4902420589302875770" fileName="Binaries_Facet.java" startLine="114" startPosition="101" endLine="115" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4902420589302875776" fileName="Binaries_Facet.java" startLine="115" startPosition="106" endLine="116" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4902420589302875782" fileName="Binaries_Facet.java" startLine="116" startPosition="72" endLine="117" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4902420589302875799" fileName="Binaries_Facet.java" startLine="119" startPosition="59" endLine="120" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4902420589302875810" fileName="Binaries_Facet.java" startLine="123" startPosition="59" endLine="124" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4902420589302875825" fileName="Binaries_Facet.java" startLine="127" startPosition="59" endLine="128" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4902420589302875834" fileName="Binaries_Facet.java" startLine="131" startPosition="75" endLine="132" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4902420589302875841" fileName="Binaries_Facet.java" startLine="132" startPosition="87" endLine="133" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4902420589302875852" fileName="Binaries_Facet.java" startLine="134" startPosition="55" endLine="135" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4902420589302875858" fileName="Binaries_Facet.java" startLine="135" startPosition="130" endLine="136" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4902420589302875866" fileName="Binaries_Facet.java" startLine="138" startPosition="82" endLine="139" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4902420589302875870" fileName="Binaries_Facet.java" startLine="139" startPosition="124" endLine="140" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4902420589302875881" fileName="Binaries_Facet.java" startLine="141" startPosition="29" endLine="142" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4902420589302875886" fileName="Binaries_Facet.java" startLine="142" startPosition="47" endLine="143" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4902420589302875895" fileName="Binaries_Facet.java" startLine="146" startPosition="77" endLine="147" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988061" fileName="Binaries_Facet.java" startLine="151" startPosition="23" endLine="152" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988195" fileName="Binaries_Facet.java" startLine="154" startPosition="19" endLine="155" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3776947097491473636" fileName="Binaries_Facet.java" startLine="155" startPosition="166" endLine="156" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3776947097491473666" fileName="Binaries_Facet.java" startLine="156" startPosition="43" endLine="157" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3776947097491473665" fileName="Binaries_Facet.java" startLine="157" startPosition="56" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6648795410103988217" fileName="Binaries_Facet.java" startLine="165" startPosition="74" endLine="166" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3776947097491473608" fileName="Binaries_Facet.java" startLine="173" startPosition="25" endLine="174" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648795410103988202" fileName="Binaries_Facet.java" startLine="175" startPosition="15" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="177" startPosition="20" endLine="178" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="184" startPosition="35" endLine="185" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="188" startPosition="46" endLine="189" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="192" startPosition="43" endLine="193" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="196" startPosition="47" endLine="197" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="200" startPosition="44" endLine="201" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="204" startPosition="35" endLine="205" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="208" startPosition="33" endLine="209" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="212" startPosition="36" endLine="213" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="216" startPosition="37" endLine="217" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="220" startPosition="65" endLine="221" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="221" startPosition="111" endLine="222" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="222" startPosition="60" endLine="223" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="226" startPosition="66" endLine="227" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="230" startPosition="49" endLine="231" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="234" startPosition="61" endLine="235" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="235" startPosition="34" endLine="236" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="239" startPosition="31" endLine="240" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4902420589302875804" fileName="Binaries_Facet.java" startLine="243" startPosition="57" endLine="244" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="87" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Target_copyBinaries#()V" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="249" startPosition="0" endLine="251" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetProperties#()V" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="252" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Binaries_Facet#()V" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="targets#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="optional#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="required#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="extended#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
-    <nodeInfo nodeId="4902420589302875797" fileName="Binaries_Facet.java" startLine="119" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="4902420589302875808" fileName="Binaries_Facet.java" startLine="123" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4902420589302875823" fileName="Binaries_Facet.java" startLine="127" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="4902420589302875893" fileName="Binaries_Facet.java" startLine="146" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
-    <nodeInfo nodeId="6648795410103988215" fileName="Binaries_Facet.java" startLine="165" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)V" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="184" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="188" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notAfter#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="192" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="after#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="196" startPosition="0" endLine="199" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="notBefore#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="200" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="before#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="204" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="208" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isOptional#()Z" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="212" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="requiresInput#()Z" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="216" startPosition="0" endLine="219" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="producesOutput#()Z" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="226" startPosition="0" endLine="229" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedOutput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="230" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;)null" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="239" startPosition="0" endLine="242" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="workEstimate#()I" />
-    <nodeInfo nodeId="4902420589302875804" fileName="Binaries_Facet.java" startLine="243" startPosition="0" endLine="246" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmptyString#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="255" startPosition="83" endLine="258" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4902420589302875747" fileName="Binaries_Facet.java" startLine="108" startPosition="80" endLine="112" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4902420589302875850" fileName="Binaries_Facet.java" startLine="133" startPosition="87" endLine="137" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4902420589302875864" fileName="Binaries_Facet.java" startLine="137" startPosition="29" endLine="141" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="234" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createParameters#(Ljava/lang/Class;null)null" />
-    <nodeInfo nodeId="6648795410103988209" fileName="Binaries_Facet.java" startLine="163" startPosition="41" endLine="168" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="220" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="expectedInput#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="255" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
-    <nodeInfo nodeId="3736430118459669527" fileName="Binaries_Facet.java" startLine="162" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="6648795410103988203" fileName="Binaries_Facet.java" startLine="160" startPosition="37" endLine="170" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1986840443401665513" fileName="Binaries_Facet.java" startLine="160" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="4902420589302875832" fileName="Binaries_Facet.java" startLine="131" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
-    <nodeInfo nodeId="1986840443401591195" fileName="Binaries_Facet.java" startLine="158" startPosition="0" endLine="172" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4902420589302875787" fileName="Binaries_Facet.java" startLine="117" startPosition="72" endLine="149" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4902420589302875732" fileName="Binaries_Facet.java" startLine="106" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4902420589302875725" fileName="Binaries_Facet.java" startLine="104" startPosition="56" endLine="151" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6648795410103988050" fileName="Binaries_Facet.java" startLine="103" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/resources/MResource;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="6648795410103988041" fileName="Binaries_Facet.java" startLine="101" startPosition="94" endLine="154" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3776947097491473591" fileName="Binaries_Facet.java" startLine="99" startPosition="49" endLine="175" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="95" startPosition="86" endLine="179" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="92" startPosition="0" endLine="181" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="90" startPosition="29" endLine="181" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="90" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createJob#()Ljetbrains/mps/make/script/IJob;" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="87" startPosition="34" endLine="87" endPosition="34" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="249" startPosition="31" endLine="249" endPosition="31" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="252" startPosition="84" endLine="252" endPosition="84" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="256" startPosition="11" endLine="256" endPosition="11" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="257" startPosition="0" endLine="257" endPosition="37">
-      <varInfo nodeId="6648795410103988025" varName="re" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="257" startPosition="37" endLine="257" endPosition="37" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="56" startPosition="27" endLine="57" endPosition="88" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="60" startPosition="38" endLine="61" endPosition="19" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="64" startPosition="43" endLine="65" endPosition="16" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="68" startPosition="43" endLine="69" endPosition="153" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="72" startPosition="43" endLine="73" endPosition="16" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="76" startPosition="32" endLine="77" endPosition="21" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="80" startPosition="57" endLine="81" endPosition="49" />
-    <scopeInfo nodeId="4902420589302875798" fileName="Binaries_Facet.java" startLine="119" startPosition="59" endLine="120" endPosition="95" />
-    <scopeInfo nodeId="4902420589302875809" fileName="Binaries_Facet.java" startLine="123" startPosition="59" endLine="124" endPosition="139" />
-    <scopeInfo nodeId="4902420589302875824" fileName="Binaries_Facet.java" startLine="127" startPosition="59" endLine="128" endPosition="45" />
-    <scopeInfo nodeId="4902420589302875894" fileName="Binaries_Facet.java" startLine="146" startPosition="77" endLine="147" endPosition="46" />
-    <scopeInfo nodeId="6648795410103988216" fileName="Binaries_Facet.java" startLine="165" startPosition="74" endLine="166" endPosition="75" />
-    <scopeInfo nodeId="3776947097491473594" fileName="Binaries_Facet.java" startLine="173" startPosition="25" endLine="174" endPosition="39" />
-    <scopeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="177" startPosition="20" endLine="178" endPosition="61" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="184" startPosition="35" endLine="185" endPosition="18" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="188" startPosition="46" endLine="189" endPosition="18" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="192" startPosition="43" endLine="193" endPosition="116" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="196" startPosition="47" endLine="197" endPosition="18" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="200" startPosition="44" endLine="201" endPosition="171" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="204" startPosition="35" endLine="205" endPosition="18" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="208" startPosition="33" endLine="209" endPosition="19" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="212" startPosition="36" endLine="213" endPosition="18" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="216" startPosition="37" endLine="217" endPosition="18" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="226" startPosition="66" endLine="227" endPosition="18" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="230" startPosition="49" endLine="231" endPosition="18" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="239" startPosition="31" endLine="240" endPosition="17" />
-    <scopeInfo nodeId="4902420589302875804" fileName="Binaries_Facet.java" startLine="243" startPosition="57" endLine="244" endPosition="45" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="87" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="4902420589302875748" fileName="Binaries_Facet.java" startLine="109" startPosition="45" endLine="111" endPosition="105" />
-    <scopeInfo nodeId="4902420589302875851" fileName="Binaries_Facet.java" startLine="134" startPosition="55" endLine="136" endPosition="42" />
-    <scopeInfo nodeId="4902420589302875865" fileName="Binaries_Facet.java" startLine="138" startPosition="82" endLine="140" endPosition="42" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="234" startPosition="61" endLine="236" endPosition="15">
-      <varInfo nodeId="6648795410103988026" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="249" startPosition="0" endLine="251" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="252" startPosition="0" endLine="254" endPosition="0">
-      <varInfo nodeId="6648795410103988025" varName="properties" />
-      <varInfo nodeId="6648795410103988025" varName="store" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="60" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="68" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="76" startPosition="0" endLine="79" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="4902420589302875797" fileName="Binaries_Facet.java" startLine="119" startPosition="0" endLine="122" endPosition="0">
-      <varInfo nodeId="4902420589302875797" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="4902420589302875808" fileName="Binaries_Facet.java" startLine="123" startPosition="0" endLine="126" endPosition="0">
-      <varInfo nodeId="4902420589302875808" varName="bin" />
-    </scopeInfo>
-    <scopeInfo nodeId="4902420589302875823" fileName="Binaries_Facet.java" startLine="127" startPosition="0" endLine="130" endPosition="0">
-      <varInfo nodeId="4902420589302875823" varName="p" />
-    </scopeInfo>
-    <scopeInfo nodeId="4902420589302875893" fileName="Binaries_Facet.java" startLine="146" startPosition="0" endLine="149" endPosition="0">
-      <varInfo nodeId="4902420589302875893" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988215" fileName="Binaries_Facet.java" startLine="165" startPosition="0" endLine="168" endPosition="0">
-      <varInfo nodeId="6648795410103988215" varName="ftc" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="184" startPosition="0" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="188" startPosition="0" endLine="191" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="192" startPosition="0" endLine="195" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="196" startPosition="0" endLine="199" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="200" startPosition="0" endLine="203" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="204" startPosition="0" endLine="207" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="208" startPosition="0" endLine="211" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="212" startPosition="0" endLine="215" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="216" startPosition="0" endLine="219" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="220" startPosition="65" endLine="223" endPosition="16">
-      <varInfo nodeId="6648795410103988026" varName="rv" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="226" startPosition="0" endLine="229" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="230" startPosition="0" endLine="233" endPosition="0">
-      <varInfo nodeId="6648795410103988026" varName="cls" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="239" startPosition="0" endLine="242" endPosition="0" />
-    <scopeInfo nodeId="4902420589302875804" fileName="Binaries_Facet.java" startLine="243" startPosition="0" endLine="246" endPosition="0">
-      <varInfo nodeId="4902420589302875804" varName="str" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="255" startPosition="83" endLine="258" endPosition="7" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="234" startPosition="0" endLine="238" endPosition="0">
-      <varInfo nodeId="6648795410103988026" varName="cls" />
-      <varInfo nodeId="6648795410103988026" varName="copyFrom" />
-    </scopeInfo>
-    <scopeInfo nodeId="3736430118459669530" fileName="Binaries_Facet.java" startLine="163" startPosition="41" endLine="168" endPosition="27" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="220" startPosition="0" endLine="225" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="255" startPosition="0" endLine="260" endPosition="0">
-      <varInfo nodeId="6648795410103988025" varName="properties" />
-      <varInfo nodeId="6648795410103988025" varName="store" />
-    </scopeInfo>
-    <scopeInfo nodeId="3736430118459669527" fileName="Binaries_Facet.java" startLine="162" startPosition="0" endLine="170" endPosition="0" />
-    <scopeInfo nodeId="1986840443401665514" fileName="Binaries_Facet.java" startLine="160" startPosition="37" endLine="170" endPosition="23" />
-    <scopeInfo nodeId="4902420589302875833" fileName="Binaries_Facet.java" startLine="131" startPosition="75" endLine="143" endPosition="82">
-      <varInfo nodeId="4902420589302875835" varName="fromFile" />
-      <varInfo nodeId="4902420589302875842" varName="toFile" />
-    </scopeInfo>
-    <scopeInfo nodeId="1986840443401665513" fileName="Binaries_Facet.java" startLine="160" startPosition="0" endLine="172" endPosition="0" />
-    <scopeInfo nodeId="4902420589302875832" fileName="Binaries_Facet.java" startLine="131" startPosition="0" endLine="145" endPosition="0">
-      <varInfo nodeId="4902420589302875832" varName="p" />
-    </scopeInfo>
-    <scopeInfo nodeId="4902420589302875733" fileName="Binaries_Facet.java" startLine="106" startPosition="86" endLine="149" endPosition="27">
-      <varInfo nodeId="4902420589302875777" varName="fd" />
-      <varInfo nodeId="4902420589302875735" varName="model" />
-      <varInfo nodeId="4902420589302875741" varName="output" />
-      <varInfo nodeId="4902420589302875771" varName="outputDir" />
-      <varInfo nodeId="4902420589302875763" varName="outputRoot" />
-    </scopeInfo>
-    <scopeInfo nodeId="4902420589302875732" fileName="Binaries_Facet.java" startLine="106" startPosition="0" endLine="151" endPosition="0">
-      <varInfo nodeId="4902420589302875732" varName="smd" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988051" fileName="Binaries_Facet.java" startLine="103" startPosition="85" endLine="152" endPosition="31">
-      <varInfo nodeId="6648795410103988053" varName="module" />
-      <varInfo nodeId="4902420589302875726" varName="seq" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988050" fileName="Binaries_Facet.java" startLine="103" startPosition="0" endLine="154" endPosition="0">
-      <varInfo nodeId="6648795410103988050" varName="res" />
-    </scopeInfo>
-    <scopeInfo nodeId="3776947097491473592" fileName="Binaries_Facet.java" startLine="100" startPosition="19" endLine="172" endPosition="19">
-      <varInfo nodeId="6648795410103988035" varName="deltaList" />
-      <varInfo nodeId="6648795410103988042" varName="filesToCopy" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="97" startPosition="19" endLine="176" endPosition="0" />
-    <scopeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="93" startPosition="173" endLine="179" endPosition="11">
-      <varInfo nodeId="6648795410103988032" varName="_output_8acy7z_a0a" />
-      <varInfo nodeId="6648795410103988032" varName="input" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="92" startPosition="0" endLine="181" endPosition="0">
-      <varInfo nodeId="6648795410103988032" varName="monitor" />
-      <varInfo nodeId="6648795410103988032" varName="pa" />
-      <varInfo nodeId="6648795410103988032" varName="progressMonitor" />
-      <varInfo nodeId="6648795410103988032" varName="rawInput" />
-    </scopeInfo>
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="90" startPosition="29" endLine="181" endPosition="8" />
-    <scopeInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="90" startPosition="0" endLine="183" endPosition="0" />
-    <unitInfo nodeId="4902420589302875797" fileName="Binaries_Facet.java" startLine="118" startPosition="148" endLine="122" endPosition="25" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
-    <unitInfo nodeId="4902420589302875808" fileName="Binaries_Facet.java" startLine="122" startPosition="38" endLine="126" endPosition="25" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
-    <unitInfo nodeId="4902420589302875823" fileName="Binaries_Facet.java" startLine="126" startPosition="37" endLine="130" endPosition="25" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
-    <unitInfo nodeId="4902420589302875893" fileName="Binaries_Facet.java" startLine="145" startPosition="37" endLine="149" endPosition="25" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
-    <unitInfo nodeId="6648795410103988215" fileName="Binaries_Facet.java" startLine="164" startPosition="89" endLine="168" endPosition="25" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
-    <unitInfo nodeId="3736430118459669525" fileName="Binaries_Facet.java" startLine="161" startPosition="60" endLine="170" endPosition="21" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$3" />
-    <unitInfo nodeId="1986840443401665513" fileName="Binaries_Facet.java" startLine="159" startPosition="53" endLine="172" endPosition="17" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$2" />
-    <unitInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="248" startPosition="0" endLine="261" endPosition="0" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$TargetProperties" />
-    <unitInfo nodeId="4902420589302875832" fileName="Binaries_Facet.java" startLine="130" startPosition="38" endLine="145" endPosition="25" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
-    <unitInfo nodeId="4902420589302875732" fileName="Binaries_Facet.java" startLine="105" startPosition="110" endLine="151" endPosition="21" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$3" />
-    <unitInfo nodeId="6648795410103988050" fileName="Binaries_Facet.java" startLine="102" startPosition="113" endLine="154" endPosition="17" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$2" />
-    <unitInfo nodeId="6648795410103988032" fileName="Binaries_Facet.java" startLine="91" startPosition="17" endLine="181" endPosition="7" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$1" />
-    <unitInfo nodeId="6648795410103988026" fileName="Binaries_Facet.java" startLine="84" startPosition="0" endLine="247" endPosition="0" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries" />
-    <unitInfo nodeId="6648795410103988025" fileName="Binaries_Facet.java" startLine="52" startPosition="0" endLine="262" endPosition="0" unitName="jetbrains.mps.lang.resources.plugin.Binaries_Facet" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
+  <root>
+    <file name="FacetAspectDescriptor.java">
+      <unit at="17,15,21,5" name="jetbrains.mps.lang.resources.plugin.FacetAspectDescriptor$1" />
+      <unit at="9,0,24,0" name="jetbrains.mps.lang.resources.plugin.FacetAspectDescriptor" />
+    </file>
+    <file name="FacetManifest.java">
+      <unit at="24,55,28,5" name="jetbrains.mps.lang.resources.plugin.FacetManifest$1" />
+      <unit at="12,0,31,0" name="jetbrains.mps.lang.resources.plugin.FacetManifest" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:b63b6f93-e29a-4718-8cc3-affacae32340(jetbrains.mps.lang.resources.plugin)/6648795410103988025">
+    <file name="Binaries_Facet.java">
+      <node id="6648795410103988025" at="54,0,55,0" concept="2" trace="targets" />
+      <node id="6648795410103988025" at="55,0,56,0" concept="2" trace="name" />
+      <node id="6648795410103988025" at="57,27,58,88" concept="1" />
+      <node id="6648795410103988025" at="61,38,62,19" concept="6" />
+      <node id="6648795410103988025" at="65,43,66,16" concept="6" />
+      <node id="6648795410103988025" at="69,43,70,153" concept="6" />
+      <node id="6648795410103988025" at="73,43,74,16" concept="6" />
+      <node id="6648795410103988025" at="77,32,78,21" concept="6" />
+      <node id="6648795410103988025" at="81,57,82,49" concept="6" />
+      <node id="6648795410103988026" at="86,0,87,0" concept="8" trace="name" />
+      <node id="6648795410103988032" at="94,173,95,56" concept="5" />
+      <node id="6648795410103988032" at="95,56,96,86" concept="5" />
+      <node id="3776947097491409446" at="98,19,99,60" concept="1" />
+      <node id="3776947097491409528" at="99,60,100,49" concept="1" />
+      <node id="6648795410103988034" at="101,19,102,94" concept="5" />
+      <node id="6648795410103988052" at="104,85,105,56" concept="5" />
+      <node id="4902420589302875734" at="107,86,108,43" concept="5" />
+      <node id="4902420589302875740" at="108,43,109,80" concept="5" />
+      <node id="4902420589302875749" at="110,45,111,153" concept="1" />
+      <node id="4902420589302875755" at="111,153,112,105" concept="6" />
+      <node id="2169032458076371672" at="113,25,114,0" concept="7" />
+      <node id="4902420589302875762" at="114,0,115,101" concept="5" />
+      <node id="4902420589302875770" at="115,101,116,106" concept="5" />
+      <node id="4902420589302875776" at="116,106,117,72" concept="5" />
+      <node id="4902420589302875782" at="117,72,118,72" concept="1" />
+      <node id="3713683100998986025" at="118,72,119,75" concept="1" />
+      <node id="4902420589302875799" at="121,59,122,95" concept="6" />
+      <node id="4902420589302875810" at="125,59,126,139" concept="6" />
+      <node id="4902420589302875825" at="129,59,130,45" concept="6" />
+      <node id="4902420589302875834" at="133,75,134,87" concept="5" />
+      <node id="4902420589302875841" at="134,87,135,87" concept="5" />
+      <node id="4902420589302875852" at="136,55,137,130" concept="1" />
+      <node id="4902420589302875858" at="137,130,138,42" concept="6" />
+      <node id="4902420589302875866" at="140,82,141,124" concept="1" />
+      <node id="4902420589302875870" at="141,124,142,42" concept="6" />
+      <node id="4902420589302875881" at="143,29,144,47" concept="1" />
+      <node id="4902420589302875886" at="144,47,145,82" concept="6" />
+      <node id="4902420589302875895" at="148,77,149,46" concept="6" />
+      <node id="6648795410103988061" at="153,23,154,31" concept="6" />
+      <node id="6648795410103988195" at="156,19,157,166" concept="1" />
+      <node id="3776947097491473636" at="157,166,158,43" concept="1" />
+      <node id="3776947097491473666" at="158,43,159,56" concept="1" />
+      <node id="3776947097491473665" at="159,56,160,0" concept="7" />
+      <node id="6648795410103988217" at="167,74,168,75" concept="1" />
+      <node id="3776947097491473608" at="175,25,176,39" concept="1" />
+      <node id="6648795410103988202" at="177,15,178,0" concept="7" />
+      <node id="6648795410103988032" at="179,20,180,61" concept="6" />
+      <node id="6648795410103988026" at="186,35,187,18" concept="6" />
+      <node id="6648795410103988026" at="190,46,191,18" concept="6" />
+      <node id="6648795410103988026" at="194,43,195,116" concept="6" />
+      <node id="6648795410103988026" at="198,47,199,18" concept="6" />
+      <node id="6648795410103988026" at="202,44,203,171" concept="6" />
+      <node id="6648795410103988026" at="206,35,207,18" concept="6" />
+      <node id="6648795410103988026" at="210,33,211,19" concept="6" />
+      <node id="6648795410103988026" at="214,36,215,18" concept="6" />
+      <node id="6648795410103988026" at="218,37,219,18" concept="6" />
+      <node id="6648795410103988026" at="222,65,223,111" concept="5" />
+      <node id="6648795410103988026" at="223,111,224,60" concept="1" />
+      <node id="6648795410103988026" at="224,60,225,16" concept="6" />
+      <node id="6648795410103988026" at="228,66,229,18" concept="6" />
+      <node id="6648795410103988026" at="232,49,233,18" concept="6" />
+      <node id="6648795410103988026" at="236,61,237,34" concept="5" />
+      <node id="6648795410103988026" at="237,34,238,15" concept="6" />
+      <node id="6648795410103988026" at="241,31,242,17" concept="6" />
+      <node id="4902420589302875804" at="245,57,246,45" concept="6" />
+      <node id="6648795410103988026" at="88,0,90,0" concept="0" trace="Target_copyBinaries#()V" />
+      <node id="6648795410103988025" at="251,0,253,0" concept="0" trace="TargetProperties#()V" />
+      <node id="6648795410103988025" at="254,0,256,0" concept="4" trace="storeValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+      <node id="6648795410103988025" at="57,0,60,0" concept="0" trace="Binaries_Facet#()V" />
+      <node id="6648795410103988025" at="61,0,64,0" concept="4" trace="targets#()Ljava/lang/Iterable;" />
+      <node id="6648795410103988025" at="65,0,68,0" concept="4" trace="optional#()Ljava/lang/Iterable;" />
+      <node id="6648795410103988025" at="69,0,72,0" concept="4" trace="required#()Ljava/lang/Iterable;" />
+      <node id="6648795410103988025" at="73,0,76,0" concept="4" trace="extended#()Ljava/lang/Iterable;" />
+      <node id="6648795410103988025" at="77,0,80,0" concept="4" trace="getName#()Ljetbrains/mps/make/facet/IFacet/Name;" />
+      <node id="6648795410103988025" at="81,0,84,0" concept="4" trace="propertiesPersistence#()Ljetbrains/mps/make/resources/IPropertiesPersistence;" />
+      <node id="4902420589302875797" at="121,0,124,0" concept="4" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="4902420589302875808" at="125,0,128,0" concept="4" trace="select#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="4902420589302875823" at="129,0,132,0" concept="4" trace="accept#(Ljava/lang/String;)Z" />
+      <node id="4902420589302875893" at="148,0,151,0" concept="4" trace="accept#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)Z" />
+      <node id="6648795410103988215" at="167,0,170,0" concept="4" trace="visit#(Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;)V" />
+      <node id="6648795410103988026" at="186,0,189,0" concept="4" trace="createConfig#()Ljetbrains/mps/make/script/IConfig;" />
+      <node id="6648795410103988026" at="190,0,193,0" concept="4" trace="notAfter#()Ljava/lang/Iterable;" />
+      <node id="6648795410103988026" at="194,0,197,0" concept="4" trace="after#()Ljava/lang/Iterable;" />
+      <node id="6648795410103988026" at="198,0,201,0" concept="4" trace="notBefore#()Ljava/lang/Iterable;" />
+      <node id="6648795410103988026" at="202,0,205,0" concept="4" trace="before#()Ljava/lang/Iterable;" />
+      <node id="6648795410103988026" at="206,0,209,0" concept="4" trace="getName#()Ljetbrains/mps/make/facet/ITarget/Name;" />
+      <node id="6648795410103988026" at="210,0,213,0" concept="4" trace="isOptional#()Z" />
+      <node id="6648795410103988026" at="214,0,217,0" concept="4" trace="requiresInput#()Z" />
+      <node id="6648795410103988026" at="218,0,221,0" concept="4" trace="producesOutput#()Z" />
+      <node id="6648795410103988026" at="228,0,231,0" concept="4" trace="expectedOutput#()Ljava/lang/Iterable;" />
+      <node id="6648795410103988026" at="232,0,235,0" concept="4" trace="createParameters#(Ljava/lang/Class;)null" />
+      <node id="6648795410103988026" at="241,0,244,0" concept="4" trace="workEstimate#()I" />
+      <node id="4902420589302875804" at="245,0,248,0" concept="9" trace="isNotEmptyString#(Ljava/lang/String;)Z" />
+      <node id="6648795410103988025" at="257,83,260,7" concept="11" />
+      <node id="4902420589302875747" at="109,80,113,25" concept="3" />
+      <node id="4902420589302875850" at="135,87,139,29" concept="3" />
+      <node id="4902420589302875864" at="139,29,143,29" concept="3" />
+      <node id="6648795410103988026" at="236,0,240,0" concept="4" trace="createParameters#(Ljava/lang/Class;null)null" />
+      <node id="6648795410103988209" at="165,41,170,27" concept="1" />
+      <node id="6648795410103988026" at="222,0,227,0" concept="4" trace="expectedInput#()Ljava/lang/Iterable;" />
+      <node id="6648795410103988025" at="257,0,262,0" concept="4" trace="loadValues#(Ljava/util/Map;Ljetbrains/mps/make/script/IPropertiesPool;)V" />
+      <node id="3736430118459669527" at="164,0,172,0" concept="4" trace="run#()V" />
+      <node id="6648795410103988203" at="162,37,172,23" concept="1" />
+      <node id="1986840443401665513" at="162,0,174,0" concept="4" trace="run#()V" />
+      <node id="4902420589302875832" at="133,0,147,0" concept="4" trace="select#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/tuples/runtime/Tuples/_2;" />
+      <node id="1986840443401591195" at="160,0,174,19" concept="1" />
+      <node id="4902420589302875787" at="119,75,151,27" concept="6" />
+      <node id="4902420589302875732" at="107,0,153,0" concept="4" trace="translate#(Lorg/jetbrains/mps/openapi/model/SModel;)Ljava/lang/Iterable;" />
+      <node id="4902420589302875725" at="105,56,153,23" concept="5" />
+      <node id="6648795410103988050" at="104,0,156,0" concept="4" trace="translate#(Ljetbrains/mps/smodel/resources/MResource;)Ljava/lang/Iterable;" />
+      <node id="6648795410103988041" at="102,94,156,19" concept="5" />
+      <node id="3776947097491473591" at="100,49,177,15" concept="12" />
+      <node id="6648795410103988032" at="96,86,181,11" concept="10" />
+      <node id="6648795410103988032" at="93,0,183,0" concept="4" trace="execute#(Ljava/lang/Iterable;Ljetbrains/mps/make/script/IJobMonitor;Ljetbrains/mps/make/resources/IPropertiesAccessor;Lorg/jetbrains/mps/openapi/util/ProgressMonitor;)Ljetbrains/mps/make/script/IResult;" />
+      <node id="6648795410103988026" at="91,29,183,8" concept="6" />
+      <node id="6648795410103988026" at="91,0,185,0" concept="4" trace="createJob#()Ljetbrains/mps/make/script/IJob;" />
+      <scope id="6648795410103988026" at="88,34,88,34" />
+      <scope id="6648795410103988025" at="251,31,251,31" />
+      <scope id="6648795410103988025" at="254,84,254,84" />
+      <scope id="6648795410103988025" at="258,11,258,11" />
+      <scope id="6648795410103988025" at="259,0,259,37">
+        <var name="re" id="6648795410103988025" />
+      </scope>
+      <scope id="6648795410103988025" at="259,37,259,37" />
+      <scope id="6648795410103988025" at="57,27,58,88" />
+      <scope id="6648795410103988025" at="61,38,62,19" />
+      <scope id="6648795410103988025" at="65,43,66,16" />
+      <scope id="6648795410103988025" at="69,43,70,153" />
+      <scope id="6648795410103988025" at="73,43,74,16" />
+      <scope id="6648795410103988025" at="77,32,78,21" />
+      <scope id="6648795410103988025" at="81,57,82,49" />
+      <scope id="4902420589302875798" at="121,59,122,95" />
+      <scope id="4902420589302875809" at="125,59,126,139" />
+      <scope id="4902420589302875824" at="129,59,130,45" />
+      <scope id="4902420589302875894" at="148,77,149,46" />
+      <scope id="6648795410103988216" at="167,74,168,75" />
+      <scope id="3776947097491473594" at="175,25,176,39" />
+      <scope id="6648795410103988032" at="179,20,180,61" />
+      <scope id="6648795410103988026" at="186,35,187,18" />
+      <scope id="6648795410103988026" at="190,46,191,18" />
+      <scope id="6648795410103988026" at="194,43,195,116" />
+      <scope id="6648795410103988026" at="198,47,199,18" />
+      <scope id="6648795410103988026" at="202,44,203,171" />
+      <scope id="6648795410103988026" at="206,35,207,18" />
+      <scope id="6648795410103988026" at="210,33,211,19" />
+      <scope id="6648795410103988026" at="214,36,215,18" />
+      <scope id="6648795410103988026" at="218,37,219,18" />
+      <scope id="6648795410103988026" at="228,66,229,18" />
+      <scope id="6648795410103988026" at="232,49,233,18" />
+      <scope id="6648795410103988026" at="241,31,242,17" />
+      <scope id="4902420589302875804" at="245,57,246,45" />
+      <scope id="6648795410103988026" at="88,0,90,0" />
+      <scope id="4902420589302875748" at="110,45,112,105" />
+      <scope id="4902420589302875851" at="136,55,138,42" />
+      <scope id="4902420589302875865" at="140,82,142,42" />
+      <scope id="6648795410103988026" at="236,61,238,15">
+        <var name="t" id="6648795410103988026" />
+      </scope>
+      <scope id="6648795410103988025" at="251,0,253,0" />
+      <scope id="6648795410103988025" at="254,0,256,0">
+        <var name="properties" id="6648795410103988025" />
+        <var name="store" id="6648795410103988025" />
+      </scope>
+      <scope id="6648795410103988025" at="57,0,60,0" />
+      <scope id="6648795410103988025" at="61,0,64,0" />
+      <scope id="6648795410103988025" at="65,0,68,0" />
+      <scope id="6648795410103988025" at="69,0,72,0" />
+      <scope id="6648795410103988025" at="73,0,76,0" />
+      <scope id="6648795410103988025" at="77,0,80,0" />
+      <scope id="6648795410103988025" at="81,0,84,0" />
+      <scope id="4902420589302875797" at="121,0,124,0">
+        <var name="it" id="4902420589302875797" />
+      </scope>
+      <scope id="4902420589302875808" at="125,0,128,0">
+        <var name="bin" id="4902420589302875808" />
+      </scope>
+      <scope id="4902420589302875823" at="129,0,132,0">
+        <var name="p" id="4902420589302875823" />
+      </scope>
+      <scope id="4902420589302875893" at="148,0,151,0">
+        <var name="it" id="4902420589302875893" />
+      </scope>
+      <scope id="6648795410103988215" at="167,0,170,0">
+        <var name="ftc" id="6648795410103988215" />
+      </scope>
+      <scope id="6648795410103988026" at="186,0,189,0" />
+      <scope id="6648795410103988026" at="190,0,193,0" />
+      <scope id="6648795410103988026" at="194,0,197,0" />
+      <scope id="6648795410103988026" at="198,0,201,0" />
+      <scope id="6648795410103988026" at="202,0,205,0" />
+      <scope id="6648795410103988026" at="206,0,209,0" />
+      <scope id="6648795410103988026" at="210,0,213,0" />
+      <scope id="6648795410103988026" at="214,0,217,0" />
+      <scope id="6648795410103988026" at="218,0,221,0" />
+      <scope id="6648795410103988026" at="222,65,225,16">
+        <var name="rv" id="6648795410103988026" />
+      </scope>
+      <scope id="6648795410103988026" at="228,0,231,0" />
+      <scope id="6648795410103988026" at="232,0,235,0">
+        <var name="cls" id="6648795410103988026" />
+      </scope>
+      <scope id="6648795410103988026" at="241,0,244,0" />
+      <scope id="4902420589302875804" at="245,0,248,0">
+        <var name="str" id="4902420589302875804" />
+      </scope>
+      <scope id="6648795410103988025" at="257,83,260,7" />
+      <scope id="6648795410103988026" at="236,0,240,0">
+        <var name="cls" id="6648795410103988026" />
+        <var name="copyFrom" id="6648795410103988026" />
+      </scope>
+      <scope id="3736430118459669530" at="165,41,170,27" />
+      <scope id="6648795410103988026" at="222,0,227,0" />
+      <scope id="6648795410103988025" at="257,0,262,0">
+        <var name="properties" id="6648795410103988025" />
+        <var name="store" id="6648795410103988025" />
+      </scope>
+      <scope id="3736430118459669527" at="164,0,172,0" />
+      <scope id="1986840443401665514" at="162,37,172,23" />
+      <scope id="4902420589302875833" at="133,75,145,82">
+        <var name="fromFile" id="4902420589302875835" />
+        <var name="toFile" id="4902420589302875842" />
+      </scope>
+      <scope id="1986840443401665513" at="162,0,174,0" />
+      <scope id="4902420589302875832" at="133,0,147,0">
+        <var name="p" id="4902420589302875832" />
+      </scope>
+      <scope id="4902420589302875733" at="107,86,151,27">
+        <var name="fd" id="4902420589302875777" />
+        <var name="model" id="4902420589302875735" />
+        <var name="output" id="4902420589302875741" />
+        <var name="outputDir" id="4902420589302875771" />
+        <var name="outputRoot" id="4902420589302875763" />
+      </scope>
+      <scope id="4902420589302875732" at="107,0,153,0">
+        <var name="smd" id="4902420589302875732" />
+      </scope>
+      <scope id="6648795410103988051" at="104,85,154,31">
+        <var name="module" id="6648795410103988053" />
+        <var name="seq" id="4902420589302875726" />
+      </scope>
+      <scope id="6648795410103988050" at="104,0,156,0">
+        <var name="res" id="6648795410103988050" />
+      </scope>
+      <scope id="3776947097491473592" at="101,19,174,19">
+        <var name="deltaList" id="6648795410103988035" />
+        <var name="filesToCopy" id="6648795410103988042" />
+      </scope>
+      <scope id="6648795410103988032" at="98,19,178,0" />
+      <scope id="6648795410103988032" at="94,173,181,11">
+        <var name="_output_8acy7z_a0a" id="6648795410103988032" />
+        <var name="input" id="6648795410103988032" />
+      </scope>
+      <scope id="6648795410103988032" at="93,0,183,0">
+        <var name="monitor" id="6648795410103988032" />
+        <var name="pa" id="6648795410103988032" />
+        <var name="progressMonitor" id="6648795410103988032" />
+        <var name="rawInput" id="6648795410103988032" />
+      </scope>
+      <scope id="6648795410103988026" at="91,29,183,8" />
+      <scope id="6648795410103988026" at="91,0,185,0" />
+      <unit id="4902420589302875797" at="120,148,124,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
+      <unit id="4902420589302875808" at="124,38,128,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
+      <unit id="4902420589302875823" at="128,37,132,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
+      <unit id="4902420589302875893" at="147,37,151,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
+      <unit id="6648795410103988215" at="166,89,170,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
+      <unit id="3736430118459669525" at="163,60,172,21" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$3" />
+      <unit id="1986840443401665513" at="161,53,174,17" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$2" />
+      <unit id="6648795410103988025" at="250,0,263,0" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$TargetProperties" />
+      <unit id="4902420589302875832" at="132,38,147,25" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$4" />
+      <unit id="4902420589302875732" at="106,110,153,21" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$3" />
+      <unit id="6648795410103988050" at="103,113,156,17" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$2" />
+      <unit id="6648795410103988032" at="92,17,183,7" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$1" />
+      <unit id="6648795410103988026" at="85,0,249,0" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet$Target_copyBinaries" />
+      <unit id="6648795410103988025" at="53,0,264,0" name="jetbrains.mps.lang.resources.plugin.Binaries_Facet" />
+    </file>
+  </root>
+</debug-info>
 

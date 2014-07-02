@@ -20,9 +20,9 @@ import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.EditableSModel;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -34,9 +34,9 @@ import java.util.Set;
 public class ImportedModelsTable extends MpsElementsTable<SModelReference> {
     public static Comparator<SModelReference> MODEL_REFERENCE_COMPARATOR = new ModelReferenceComparator();
 
-    private EditableSModelDescriptor myModelDescriptor;
+    private EditableSModel myModelDescriptor;
 
-    public void setDescriptor(EditableSModelDescriptor descriptor) {
+    public void setDescriptor(EditableSModel descriptor) {
         myModelDescriptor = descriptor;
     }
 

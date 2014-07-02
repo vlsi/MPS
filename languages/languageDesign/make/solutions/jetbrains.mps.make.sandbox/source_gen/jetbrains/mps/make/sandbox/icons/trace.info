@@ -1,74 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:ef18191f-f225-40c9-be24-85810875d16f(jetbrains.mps.make.sandbox.icons)/3564595993453230683">
-    <nodeInfo nodeId="3564595993453230685" fileName="Foo.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Foo#()V" />
-    <nodeInfo nodeId="3489438476157002972" fileName="Foo.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="bar#()V" />
-    <scopeInfo nodeId="3564595993453230688" fileName="Foo.java" startLine="7" startPosition="16" endLine="7" endPosition="16" />
-    <scopeInfo nodeId="3489438476157002975" fileName="Foo.java" startLine="10" startPosition="21" endLine="10" endPosition="21" />
-    <scopeInfo nodeId="3564595993453230685" fileName="Foo.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
-    <scopeInfo nodeId="3489438476157002972" fileName="Foo.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <unitInfo nodeId="3564595993453230683" fileName="Foo.java" startLine="6" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.make.sandbox.icons.Foo" />
+    <file name="Foo.java">
+      <node id="3564595993453230685" at="7,0,9,0" concept="1" trace="Foo#()V" />
+      <node id="3489438476157002972" at="10,0,12,0" concept="4" trace="bar#()V" />
+      <scope id="3564595993453230688" at="7,16,7,16" />
+      <scope id="3489438476157002975" at="10,21,10,21" />
+      <scope id="3564595993453230685" at="7,0,9,0" />
+      <scope id="3489438476157002972" at="10,0,12,0" />
+      <unit id="3564595993453230683" at="6,0,13,0" name="jetbrains.mps.make.sandbox.icons.Foo" />
+    </file>
   </root>
   <root nodeRef="r:ef18191f-f225-40c9-be24-85810875d16f(jetbrains.mps.make.sandbox.icons)/4176072814906255307">
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="18" startPosition="31" endLine="19" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="19" startPosition="29" endLine="20" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="20" startPosition="35" endLine="21" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="25" startPosition="32" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="30" startPosition="9" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="30" startPosition="9" endLine="31" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="33" startPosition="42" endLine="34" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="35" startPosition="7" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="41" startPosition="53" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="43" startPosition="5" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="50" startPosition="42" endLine="51" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="56" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="32" startPosition="27" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="32" startPosition="27" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="40" startPosition="95" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="24" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="18" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DummyAction_Action#()V" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="47" startPosition="96" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="29" startPosition="89" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="29" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="48" startPosition="9" endLine="48" endPosition="9" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="25" startPosition="32" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="30" startPosition="9" endLine="31" endPosition="43" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="33" startPosition="42" endLine="34" endPosition="86" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="41" startPosition="53" endLine="42" endPosition="19" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="50" startPosition="42" endLine="51" endPosition="85" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="18" startPosition="31" endLine="21" endPosition="41" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="32" startPosition="27" endLine="35" endPosition="7" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="49" startPosition="0" endLine="52" endPosition="7">
-      <varInfo nodeId="4176072814906255307" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="49" startPosition="27" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="24" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="32" startPosition="0" endLine="36" endPosition="44">
-      <varInfo nodeId="4176072814906255307" varName="t" />
-    </scopeInfo>
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="32" startPosition="27" endLine="36" endPosition="44" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="40" startPosition="95" endLine="44" endPosition="16" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="18" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="40" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="4176072814906255307" varName="_params" />
-      <varInfo nodeId="4176072814906255307" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="47" startPosition="96" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="29" startPosition="89" endLine="37" endPosition="5" />
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="4176072814906255307" varName="_params" />
-      <varInfo nodeId="4176072814906255307" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="29" startPosition="0" endLine="39" endPosition="0">
-      <varInfo nodeId="4176072814906255307" varName="_params" />
-      <varInfo nodeId="4176072814906255307" varName="event" />
-    </scopeInfo>
-    <unitInfo nodeId="4176072814906255307" fileName="DummyAction_Action.java" startLine="15" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.make.sandbox.icons.DummyAction_Action" />
+    <file name="DummyAction_Action.java">
+      <node id="4176072814906255307" at="16,0,17,0" concept="6" trace="ICON" />
+      <node id="4176072814906255307" at="18,31,19,29" concept="7" />
+      <node id="4176072814906255307" at="19,29,20,35" concept="2" />
+      <node id="4176072814906255307" at="20,35,21,41" concept="2" />
+      <node id="4176072814906255307" at="25,32,26,16" concept="5" />
+      <node id="4176072814906255307" at="30,9,31,43" concept="0" />
+      <node id="4176072814906255307" at="30,9,31,43" concept="2" />
+      <node id="4176072814906255307" at="33,42,34,86" concept="2" />
+      <node id="4176072814906255307" at="35,7,36,44" concept="2" />
+      <node id="4176072814906255307" at="41,53,42,19" concept="5" />
+      <node id="4176072814906255307" at="43,5,44,16" concept="5" />
+      <node id="4176072814906255307" at="50,42,51,85" concept="2" />
+      <node id="4176072814906255307" at="56,0,57,0" concept="6" trace="LOG" />
+      <node id="4176072814906255307" at="32,27,35,7" concept="0" />
+      <node id="4176072814906255307" at="32,27,35,7" concept="3" />
+      <node id="4176072814906255307" at="40,95,43,5" concept="3" />
+      <node id="4176072814906255307" at="49,27,52,7" concept="0" />
+      <node id="4176072814906255307" at="49,27,52,7" concept="3" />
+      <node id="4176072814906255307" at="24,0,28,0" concept="4" trace="isDumbAware#()Z" />
+      <node id="4176072814906255307" at="18,0,23,0" concept="1" trace="DummyAction_Action#()V" />
+      <node id="4176072814906255307" at="40,0,46,0" concept="4" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
+      <node id="4176072814906255307" at="47,96,53,5" concept="8" />
+      <node id="4176072814906255307" at="29,89,37,5" concept="8" />
+      <node id="4176072814906255307" at="47,0,55,0" concept="4" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="4176072814906255307" at="29,0,39,0" concept="4" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <scope id="4176072814906255307" at="48,9,48,9" />
+      <scope id="4176072814906255307" at="25,32,26,16" />
+      <scope id="4176072814906255307" at="30,9,31,43" />
+      <scope id="4176072814906255307" at="33,42,34,86" />
+      <scope id="4176072814906255307" at="41,53,42,19" />
+      <scope id="4176072814906255307" at="50,42,51,85" />
+      <scope id="4176072814906255307" at="18,31,21,41" />
+      <scope id="4176072814906255307" at="32,27,35,7" />
+      <scope id="4176072814906255307" at="49,0,52,7">
+        <var name="t" id="4176072814906255307" />
+      </scope>
+      <scope id="4176072814906255307" at="49,27,52,7" />
+      <scope id="4176072814906255307" at="24,0,28,0" />
+      <scope id="4176072814906255307" at="32,0,36,44">
+        <var name="t" id="4176072814906255307" />
+      </scope>
+      <scope id="4176072814906255307" at="32,27,36,44" />
+      <scope id="4176072814906255307" at="40,95,44,16" />
+      <scope id="4176072814906255307" at="18,0,23,0" />
+      <scope id="4176072814906255307" at="40,0,46,0">
+        <var name="_params" id="4176072814906255307" />
+        <var name="event" id="4176072814906255307" />
+      </scope>
+      <scope id="4176072814906255307" at="47,96,53,5" />
+      <scope id="4176072814906255307" at="29,89,37,5" />
+      <scope id="4176072814906255307" at="47,0,55,0">
+        <var name="_params" id="4176072814906255307" />
+        <var name="event" id="4176072814906255307" />
+      </scope>
+      <scope id="4176072814906255307" at="29,0,39,0">
+        <var name="_params" id="4176072814906255307" />
+        <var name="event" id="4176072814906255307" />
+      </scope>
+      <unit id="4176072814906255307" at="15,0,58,0" name="jetbrains.mps.make.sandbox.icons.DummyAction_Action" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

@@ -1,224 +1,229 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="DebuggedType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_BehaviorDescriptor" />
-  <unitInfo fileName="DoNotTransformAnnotation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation_BehaviorDescriptor" />
-  <unitInfo fileName="DownCastToLowLevel_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.DownCastToLowLevel_BehaviorDescriptor" />
-  <unitInfo fileName="EvaluatorConcept_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept_BehaviorDescriptor" />
-  <unitInfo fileName="Evaluator_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.Evaluator_BehaviorDescriptor" />
-  <unitInfo fileName="EvaluatorsSuperMethodCall_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="EvaluatorsThisExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsThisExpression_BehaviorDescriptor" />
-  <unitInfo fileName="GenerationHelperAnnotation_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.GenerationHelperAnnotation_BehaviorDescriptor" />
-  <unitInfo fileName="IEvaluatorConcept_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept_BehaviorDescriptor" />
-  <unitInfo fileName="LowLevelVariableReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariableReference_BehaviorDescriptor" />
-  <unitInfo fileName="LowLevelVariable_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable_BehaviorDescriptor" />
-  <unitInfo fileName="ToEvaluateAnnotation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.ToEvaluateAnnotation_BehaviorDescriptor" />
-  <unitInfo fileName="UnitNode_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.UnitNode_BehaviorDescriptor" />
-  <unitInfo fileName="UnprocessedAnnotation_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation_BehaviorDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="UnprocessedAnnotation_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation_BehaviorDescriptor" />
+    </file>
+    <file name="LowLevelVariableReference_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariableReference_BehaviorDescriptor" />
+    </file>
+    <file name="Evaluator_BehaviorDescriptor.java">
+      <unit at="11,0,32,0" name="jetbrains.mps.debugger.java.evaluation.behavior.Evaluator_BehaviorDescriptor" />
+    </file>
+    <file name="GenerationHelperAnnotation_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.debugger.java.evaluation.behavior.GenerationHelperAnnotation_BehaviorDescriptor" />
+    </file>
+    <file name="DoNotTransformAnnotation_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation_BehaviorDescriptor" />
+    </file>
+    <file name="LowLevelVariable_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable_BehaviorDescriptor" />
+    </file>
+    <file name="IEvaluatorConcept_BehaviorDescriptor.java">
+      <unit at="7,0,10,0" name="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept_BehaviorDescriptor" />
+    </file>
+    <file name="UnitNode_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.debugger.java.evaluation.behavior.UnitNode_BehaviorDescriptor" />
+    </file>
+    <file name="DebuggedType_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_BehaviorDescriptor" />
+    </file>
+    <file name="EvaluatorConcept_BehaviorDescriptor.java">
+      <unit at="11,0,48,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,48,0" name="jetbrains.mps.debugger.java.evaluation.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="EvaluatorsThisExpression_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsThisExpression_BehaviorDescriptor" />
+    </file>
+    <file name="EvaluatorsSuperMethodCall_BehaviorDescriptor.java">
+      <unit at="8,0,21,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall_BehaviorDescriptor" />
+    </file>
+    <file name="ToEvaluateAnnotation_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.debugger.java.evaluation.behavior.ToEvaluateAnnotation_BehaviorDescriptor" />
+    </file>
+    <file name="DownCastToLowLevel_BehaviorDescriptor.java">
+      <unit at="8,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DownCastToLowLevel_BehaviorDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/1262430001741643006">
-    <nodeInfo nodeId="1262430001741643006" fileName="ToEvaluateAnnotation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1262430001741643008" fileName="ToEvaluateAnnotation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1262430001741643006" fileName="ToEvaluateAnnotation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="1262430001741643006" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741643006" fileName="ToEvaluateAnnotation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.ToEvaluateAnnotation_Behavior" />
+    <file name="ToEvaluateAnnotation_Behavior.java">
+      <node id="1262430001741643006" at="8,0,10,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1262430001741643008" at="8,43,8,43" />
+      <scope id="1262430001741643006" at="8,0,10,0">
+        <var name="thisNode" id="1262430001741643006" />
+      </scope>
+      <unit id="1262430001741643006" at="7,0,11,0" name="jetbrains.mps.debugger.java.evaluation.behavior.ToEvaluateAnnotation_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/1262430001741646975">
-    <nodeInfo nodeId="1262430001741646975" fileName="DoNotTransformAnnotation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1262430001741646977" fileName="DoNotTransformAnnotation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1262430001741646975" fileName="DoNotTransformAnnotation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="1262430001741646975" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741646975" fileName="DoNotTransformAnnotation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation_Behavior" />
+    <file name="DoNotTransformAnnotation_Behavior.java">
+      <node id="1262430001741646975" at="8,0,10,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1262430001741646977" at="8,43,8,43" />
+      <scope id="1262430001741646975" at="8,0,10,0">
+        <var name="thisNode" id="1262430001741646975" />
+      </scope>
+      <unit id="1262430001741646975" at="7,0,11,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DoNotTransformAnnotation_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/1262430001741647095">
-    <nodeInfo nodeId="1262430001741647095" fileName="UnprocessedAnnotation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1262430001741647097" fileName="UnprocessedAnnotation_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1262430001741647095" fileName="UnprocessedAnnotation_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="1262430001741647095" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1262430001741647095" fileName="UnprocessedAnnotation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation_Behavior" />
+    <file name="UnprocessedAnnotation_Behavior.java">
+      <node id="1262430001741647095" at="8,0,10,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1262430001741647097" at="8,43,8,43" />
+      <scope id="1262430001741647095" at="8,0,10,0">
+        <var name="thisNode" id="1262430001741647095" />
+      </scope>
+      <unit id="1262430001741647095" at="7,0,11,0" name="jetbrains.mps.debugger.java.evaluation.behavior.UnprocessedAnnotation_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/4005274477404902656">
-    <nodeInfo nodeId="4005274477404903819" fileName="LowLevelVariable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4005274477404902656" fileName="LowLevelVariable_Behavior.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="4005274477404902658" fileName="LowLevelVariable_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="67" />
-    <scopeInfo nodeId="4005274477404902656" fileName="LowLevelVariable_Behavior.java" startLine="9" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="4005274477404902656" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="4005274477404902656" fileName="LowLevelVariable_Behavior.java" startLine="8" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable_Behavior" />
+    <file name="LowLevelVariable_Behavior.java">
+      <node id="4005274477404903819" at="9,43,10,67" concept="1" />
+      <node id="4005274477404902656" at="9,0,12,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="4005274477404902658" at="9,43,10,67" />
+      <scope id="4005274477404902656" at="9,0,12,0">
+        <var name="thisNode" id="4005274477404902656" />
+      </scope>
+      <unit id="4005274477404902656" at="8,0,13,0" name="jetbrains.mps.debugger.java.evaluation.behavior.LowLevelVariable_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/4544608336420723235">
-    <nodeInfo nodeId="4544608336420723259" fileName="DebuggedType_Behavior.java" startLine="14" startPosition="149" endLine="15" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4544608336420723288" fileName="DebuggedType_Behavior.java" startLine="17" startPosition="148" endLine="18" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4544608336420723299" fileName="DebuggedType_Behavior.java" startLine="19" startPosition="5" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4544608336420723321" fileName="DebuggedType_Behavior.java" startLine="24" startPosition="148" endLine="25" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4544608336420723332" fileName="DebuggedType_Behavior.java" startLine="26" startPosition="5" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4544608336420723235" fileName="DebuggedType_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4544608336420723243" fileName="DebuggedType_Behavior.java" startLine="13" startPosition="86" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4544608336420723271" fileName="DebuggedType_Behavior.java" startLine="16" startPosition="5" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4544608336420723319" fileName="DebuggedType_Behavior.java" startLine="23" startPosition="85" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4544608336420723235" fileName="DebuggedType_Behavior.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getLowClassifierType_4544608336420723302#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="4544608336420723235" fileName="DebuggedType_Behavior.java" startLine="13" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getHighClassifierType_4544608336420723238#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="4544608336420723237" fileName="DebuggedType_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="4544608336420723245" fileName="DebuggedType_Behavior.java" startLine="14" startPosition="149" endLine="15" endPosition="144" />
-    <scopeInfo nodeId="4544608336420723272" fileName="DebuggedType_Behavior.java" startLine="17" startPosition="148" endLine="18" endPosition="143" />
-    <scopeInfo nodeId="4544608336420723320" fileName="DebuggedType_Behavior.java" startLine="24" startPosition="148" endLine="25" endPosition="143" />
-    <scopeInfo nodeId="4544608336420723235" fileName="DebuggedType_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="4544608336420723235" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4544608336420723305" fileName="DebuggedType_Behavior.java" startLine="23" startPosition="85" endLine="27" endPosition="16" />
-    <scopeInfo nodeId="4544608336420723235" fileName="DebuggedType_Behavior.java" startLine="23" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="4544608336420723235" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="4544608336420723241" fileName="DebuggedType_Behavior.java" startLine="13" startPosition="86" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="4544608336420723235" fileName="DebuggedType_Behavior.java" startLine="13" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="4544608336420723235" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="4544608336420723235" fileName="DebuggedType_Behavior.java" startLine="9" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_Behavior" />
+    <file name="DebuggedType_Behavior.java">
+      <node id="4544608336420723259" at="14,149,15,144" concept="4" />
+      <node id="4544608336420723288" at="17,148,18,143" concept="4" />
+      <node id="4544608336420723299" at="19,5,20,16" concept="4" />
+      <node id="4544608336420723321" at="24,148,25,143" concept="4" />
+      <node id="4544608336420723332" at="26,5,27,16" concept="4" />
+      <node id="4544608336420723235" at="10,0,12,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="4544608336420723243" at="13,86,16,5" concept="2" />
+      <node id="4544608336420723271" at="16,5,19,5" concept="2" />
+      <node id="4544608336420723319" at="23,85,26,5" concept="2" />
+      <node id="4544608336420723235" at="23,0,29,0" concept="6" trace="call_getLowClassifierType_4544608336420723302#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="4544608336420723235" at="13,0,22,0" concept="6" trace="call_getHighClassifierType_4544608336420723238#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="4544608336420723237" at="10,43,10,43" />
+      <scope id="4544608336420723245" at="14,149,15,144" />
+      <scope id="4544608336420723272" at="17,148,18,143" />
+      <scope id="4544608336420723320" at="24,148,25,143" />
+      <scope id="4544608336420723235" at="10,0,12,0">
+        <var name="thisNode" id="4544608336420723235" />
+      </scope>
+      <scope id="4544608336420723305" at="23,85,27,16" />
+      <scope id="4544608336420723235" at="23,0,29,0">
+        <var name="thisNode" id="4544608336420723235" />
+      </scope>
+      <scope id="4544608336420723241" at="13,86,20,16" />
+      <scope id="4544608336420723235" at="13,0,22,0">
+        <var name="thisNode" id="4544608336420723235" />
+      </scope>
+      <unit id="4544608336420723235" at="9,0,30,0" name="jetbrains.mps.debugger.java.evaluation.behavior.DebuggedType_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/5211667636169798154">
-    <nodeInfo nodeId="5211667636169820149" fileName="EvaluatorConcept_Behavior.java" startLine="20" startPosition="91" endLine="21" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5211667636169820154" fileName="EvaluatorConcept_Behavior.java" startLine="24" startPosition="69" endLine="25" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5211667636169820168" fileName="EvaluatorConcept_Behavior.java" startLine="28" startPosition="80" endLine="29" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="317191294093636974" fileName="EvaluatorConcept_Behavior.java" startLine="32" startPosition="74" endLine="33" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="37" startPosition="88" endLine="38" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="42" startPosition="121" endLine="43" endPosition="311" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="47" startPosition="72" endLine="48" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="52" startPosition="105" endLine="53" endPosition="289" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="57" startPosition="83" endLine="58" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="62" startPosition="116" endLine="63" endPosition="300" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5211667636169846783" fileName="EvaluatorConcept_Behavior.java" startLine="66" startPosition="60" endLine="67" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5211667636169846783" fileName="EvaluatorConcept_Behavior.java" startLine="67" startPosition="63" endLine="68" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5211667636169846783" fileName="EvaluatorConcept_Behavior.java" startLine="68" startPosition="30" endLine="69" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5211667636169846783" fileName="EvaluatorConcept_Behavior.java" startLine="69" startPosition="138" endLine="70" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5211667636169846783" fileName="EvaluatorConcept_Behavior.java" startLine="70" startPosition="239" endLine="71" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5211667636169846783" fileName="EvaluatorConcept_Behavior.java" startLine="68" startPosition="30" endLine="70" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5211667636169846783" fileName="EvaluatorConcept_Behavior.java" startLine="68" startPosition="30" endLine="70" endPosition="239" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getThrowableTypes_6204026822016975623#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getBody_1239354440022#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedRetType_1239354342632#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getCode_317191294093624551#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getThrowableTypes_5211667636169798157#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getThrowableTypes_5211667636169798157#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Ljava/util/List;" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getBody_5211667636169798161#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getBody_5211667636169798161#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getExpectedRetType_5211667636169798165#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getExpectedRetType_5211667636169798165#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5211667636169846783" fileName="EvaluatorConcept_Behavior.java" startLine="66" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_29c8r0_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="5211667636169798156" fileName="EvaluatorConcept_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="5211667636169798159" fileName="EvaluatorConcept_Behavior.java" startLine="20" startPosition="91" endLine="21" endPosition="34" />
-    <scopeInfo nodeId="5211667636169798163" fileName="EvaluatorConcept_Behavior.java" startLine="24" startPosition="69" endLine="25" endPosition="76" />
-    <scopeInfo nodeId="5211667636169798167" fileName="EvaluatorConcept_Behavior.java" startLine="28" startPosition="80" endLine="29" endPosition="47" />
-    <scopeInfo nodeId="317191294093636877" fileName="EvaluatorConcept_Behavior.java" startLine="32" startPosition="74" endLine="33" endPosition="76" />
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="37" startPosition="88" endLine="38" endPosition="164" />
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="42" startPosition="121" endLine="43" endPosition="311" />
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="47" startPosition="72" endLine="48" endPosition="142" />
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="52" startPosition="105" endLine="53" endPosition="289" />
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="57" startPosition="83" endLine="58" endPosition="153" />
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="62" startPosition="116" endLine="63" endPosition="300" />
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="5211667636169798154" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5211667636169846783" fileName="EvaluatorConcept_Behavior.java" startLine="68" startPosition="30" endLine="70" endPosition="239" />
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="5211667636169798154" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="5211667636169798154" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="5211667636169798154" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="5211667636169798154" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="5211667636169798154" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="41" startPosition="0" endLine="45" endPosition="0">
-      <varInfo nodeId="5211667636169798154" varName="callerConceptFqName" />
-      <varInfo nodeId="5211667636169798154" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="46" startPosition="0" endLine="50" endPosition="0">
-      <varInfo nodeId="5211667636169798154" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="5211667636169798154" varName="callerConceptFqName" />
-      <varInfo nodeId="5211667636169798154" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="5211667636169798154" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
-      <varInfo nodeId="5211667636169798154" varName="callerConceptFqName" />
-      <varInfo nodeId="5211667636169798154" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="5211667636169846783" fileName="EvaluatorConcept_Behavior.java" startLine="66" startPosition="60" endLine="71" endPosition="24">
-      <varInfo nodeId="5211667636169846783" varName="facade" />
-      <varInfo nodeId="5211667636169846783" varName="quotedNode_1" />
-    </scopeInfo>
-    <scopeInfo nodeId="5211667636169846783" fileName="EvaluatorConcept_Behavior.java" startLine="66" startPosition="0" endLine="73" endPosition="0" />
-    <unitInfo nodeId="5211667636169798154" fileName="EvaluatorConcept_Behavior.java" startLine="16" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept_Behavior" />
+    <file name="EvaluatorConcept_Behavior.java">
+      <node id="5211667636169820149" at="17,91,18,34" concept="4" />
+      <node id="5211667636169820154" at="21,69,22,76" concept="4" />
+      <node id="5211667636169820168" at="25,80,26,47" concept="4" />
+      <node id="317191294093636974" at="29,74,30,76" concept="4" />
+      <node id="5211667636169846783" at="33,60,34,63" concept="3" />
+      <node id="5211667636169846783" at="34,63,35,30" concept="3" />
+      <node id="5211667636169846783" at="35,30,36,138" concept="1" />
+      <node id="5211667636169846783" at="36,138,37,239" concept="1" />
+      <node id="5211667636169846783" at="37,239,38,24" concept="4" />
+      <node id="5211667636169798154" at="14,0,16,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5211667636169846783" at="35,30,37,239" concept="0" />
+      <node id="5211667636169846783" at="35,30,37,239" concept="0" />
+      <node id="5211667636169798154" at="17,0,20,0" concept="6" trace="virtual_getThrowableTypes_6204026822016975623#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/List;" />
+      <node id="5211667636169798154" at="21,0,24,0" concept="6" trace="virtual_getBody_1239354440022#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5211667636169798154" at="25,0,28,0" concept="6" trace="virtual_getExpectedRetType_1239354342632#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5211667636169798154" at="29,0,32,0" concept="6" trace="virtual_getCode_317191294093624551#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5211667636169846783" at="33,0,40,0" concept="6" trace="_quotation_createNode_29c8r0_a0a2#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="5211667636169798156" at="14,43,14,43" />
+      <scope id="5211667636169798159" at="17,91,18,34" />
+      <scope id="5211667636169798163" at="21,69,22,76" />
+      <scope id="5211667636169798167" at="25,80,26,47" />
+      <scope id="317191294093636877" at="29,74,30,76" />
+      <scope id="5211667636169798154" at="14,0,16,0">
+        <var name="thisNode" id="5211667636169798154" />
+      </scope>
+      <scope id="5211667636169846783" at="35,30,37,239" />
+      <scope id="5211667636169798154" at="17,0,20,0">
+        <var name="thisNode" id="5211667636169798154" />
+      </scope>
+      <scope id="5211667636169798154" at="21,0,24,0">
+        <var name="thisNode" id="5211667636169798154" />
+      </scope>
+      <scope id="5211667636169798154" at="25,0,28,0">
+        <var name="thisNode" id="5211667636169798154" />
+      </scope>
+      <scope id="5211667636169798154" at="29,0,32,0">
+        <var name="thisNode" id="5211667636169798154" />
+      </scope>
+      <scope id="5211667636169846783" at="33,60,38,24">
+        <var name="facade" id="5211667636169846783" />
+        <var name="quotedNode_1" id="5211667636169846783" />
+      </scope>
+      <scope id="5211667636169846783" at="33,0,40,0" />
+      <unit id="5211667636169798154" at="13,0,41,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorConcept_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/6036237525966348398">
-    <nodeInfo nodeId="6036237525966348407" fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="296" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6036237525966348398" fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="6036237525966348398" fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getInstanceType_8008512149545154471#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="6036237525966348400" fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="6036237525966348404" fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="296" />
-    <scopeInfo nodeId="6036237525966348398" fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
-      <varInfo nodeId="6036237525966348398" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="6036237525966348398" fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="6036237525966348398" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="6036237525966348398" fileName="EvaluatorsSuperMethodCall_Behavior.java" startLine="9" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall_Behavior" />
+    <file name="EvaluatorsSuperMethodCall_Behavior.java">
+      <node id="6036237525966348407" at="13,83,14,296" concept="4" />
+      <node id="6036237525966348398" at="10,0,12,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="6036237525966348398" at="13,0,16,0" concept="6" trace="virtual_getInstanceType_8008512149545154471#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="6036237525966348400" at="10,43,10,43" />
+      <scope id="6036237525966348404" at="13,83,14,296" />
+      <scope id="6036237525966348398" at="10,0,12,0">
+        <var name="thisNode" id="6036237525966348398" />
+      </scope>
+      <scope id="6036237525966348398" at="13,0,16,0">
+        <var name="thisNode" id="6036237525966348398" />
+      </scope>
+      <unit id="6036237525966348398" at="9,0,17,0" name="jetbrains.mps.debugger.java.evaluation.behavior.EvaluatorsSuperMethodCall_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/846214144113560209">
-    <nodeInfo nodeId="846214144113560786" fileName="Evaluator_Behavior.java" startLine="14" startPosition="101" endLine="15" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="846214144113562484" fileName="Evaluator_Behavior.java" startLine="15" startPosition="183" endLine="16" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="317191294093647341" fileName="Evaluator_Behavior.java" startLine="19" startPosition="74" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="846214144113560209" fileName="Evaluator_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="846214144113560209" fileName="Evaluator_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getCode_317191294093624551#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="846214144113560209" fileName="Evaluator_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
-    <scopeInfo nodeId="846214144113560371" fileName="Evaluator_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="317191294093647340" fileName="Evaluator_Behavior.java" startLine="19" startPosition="74" endLine="20" endPosition="61" />
-    <scopeInfo nodeId="846214144113560209" fileName="Evaluator_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="846214144113560209" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="846214144113560780" fileName="Evaluator_Behavior.java" startLine="14" startPosition="101" endLine="16" endPosition="12" />
-    <scopeInfo nodeId="846214144113560209" fileName="Evaluator_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="846214144113560209" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="846214144113560209" fileName="Evaluator_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="846214144113560778" varName="child" />
-      <varInfo nodeId="846214144113560776" varName="kind" />
-      <varInfo nodeId="846214144113560209" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="846214144113560209" fileName="Evaluator_Behavior.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.Evaluator_Behavior" />
+    <file name="Evaluator_Behavior.java">
+      <node id="846214144113560786" at="14,101,15,183" concept="4" />
+      <node id="846214144113562484" at="15,183,16,12" concept="5" />
+      <node id="317191294093647341" at="19,74,20,61" concept="4" />
+      <node id="846214144113560209" at="11,0,13,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="846214144113560209" at="19,0,22,0" concept="6" trace="virtual_getCode_317191294093624551#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="846214144113560209" at="14,0,18,0" concept="6" trace="virtual_getScope_3734116213129936182#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/scope/Scope;" />
+      <scope id="846214144113560371" at="11,43,11,43" />
+      <scope id="317191294093647340" at="19,74,20,61" />
+      <scope id="846214144113560209" at="11,0,13,0">
+        <var name="thisNode" id="846214144113560209" />
+      </scope>
+      <scope id="846214144113560780" at="14,101,16,12" />
+      <scope id="846214144113560209" at="19,0,22,0">
+        <var name="thisNode" id="846214144113560209" />
+      </scope>
+      <scope id="846214144113560209" at="14,0,18,0">
+        <var name="child" id="846214144113560778" />
+        <var name="kind" id="846214144113560776" />
+        <var name="thisNode" id="846214144113560209" />
+      </scope>
+      <unit id="846214144113560209" at="10,0,23,0" name="jetbrains.mps.debugger.java.evaluation.behavior.Evaluator_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:23e91135-7369-4a41-8156-2843acab7aa3(jetbrains.mps.debugger.java.evaluation.behavior)/9172312269976647292">
-    <nodeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="15" startPosition="71" endLine="16" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="20" startPosition="104" endLine="21" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getCode_317191294093624551#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_getCode_317191294093624551#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="9172312269976647294" fileName="IEvaluatorConcept_Behavior.java" startLine="11" startPosition="43" endLine="11" endPosition="43" />
-    <scopeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="15" startPosition="71" endLine="16" endPosition="147" />
-    <scopeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="20" startPosition="104" endLine="21" endPosition="295" />
-    <scopeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
-      <varInfo nodeId="9172312269976647292" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="9172312269976647292" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="9172312269976647292" varName="callerConceptFqName" />
-      <varInfo nodeId="9172312269976647292" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="9172312269976647292" fileName="IEvaluatorConcept_Behavior.java" startLine="10" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept_Behavior" />
+    <file name="IEvaluatorConcept_Behavior.java">
+      <node id="9172312269976647292" at="8,0,10,0" concept="6" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="9172312269976647294" at="8,43,8,43" />
+      <scope id="9172312269976647292" at="8,0,10,0">
+        <var name="thisNode" id="9172312269976647292" />
+      </scope>
+      <unit id="9172312269976647292" at="7,0,11,0" name="jetbrains.mps.debugger.java.evaluation.behavior.IEvaluatorConcept_Behavior" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

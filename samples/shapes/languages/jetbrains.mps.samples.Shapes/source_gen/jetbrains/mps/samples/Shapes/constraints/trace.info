@@ -1,117 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.samples.Shapes.constraints.ConstraintsAspectDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,29,0" name="jetbrains.mps.samples.Shapes.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:9a002f3a-ecda-4647-be29-40b3a4e1a7cd(jetbrains.mps.samples.Shapes.constraints)/1082824515534700364">
-    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="14" startPosition="31" endLine="15" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="28" startPosition="62" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1082824515534702530" fileName="Square_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515534801735" fileName="Square_Constraints.java" startLine="30" startPosition="61" endLine="31" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="33" startPosition="7" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="29" startPosition="37" endLine="31" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Square_Constraints#()V" />
-    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnSetter#()Z" />
-    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="20" startPosition="74" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="14" startPosition="31" endLine="15" endPosition="59" />
-    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
-    <scopeInfo nodeId="1082824515534700465" fileName="Square_Constraints.java" startLine="29" startPosition="37" endLine="31" endPosition="102" />
-    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="28" startPosition="62" endLine="31" endPosition="102">
-      <varInfo nodeId="1082824515534700364" varName="propertyName" />
-    </scopeInfo>
-    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="1082824515534700364" varName="node" />
-      <varInfo nodeId="1082824515534700364" varName="propertyValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="19" startPosition="82" endLine="34" endPosition="22">
-      <varInfo nodeId="1082824515534700364" varName="properties" />
-    </scopeInfo>
-    <scopeInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="21" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.samples.Shapes.constraints.Square_Constraints$1" />
-    <unitInfo nodeId="1082824515534700364" fileName="Square_Constraints.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.Shapes.constraints.Square_Constraints" />
+    <file name="Square_Constraints.java">
+      <node id="1082824515534700364" at="14,31,15,59" concept="7" />
+      <node id="1082824515534700364" at="19,82,20,74" concept="4" />
+      <node id="1082824515534700364" at="23,37,24,20" concept="5" />
+      <node id="1082824515534700364" at="28,62,29,37" concept="4" />
+      <node id="1082824515534702530" at="29,37,30,61" concept="2" />
+      <node id="1082824515534801735" at="30,61,31,102" concept="2" />
+      <node id="1082824515534700364" at="33,7,34,22" concept="5" />
+      <node id="1082824515534700364" at="29,37,31,102" concept="0" />
+      <node id="1082824515534700364" at="14,0,17,0" concept="1" trace="Square_Constraints#()V" />
+      <node id="1082824515534700364" at="22,0,26,0" concept="3" trace="hasOwnSetter#()Z" />
+      <node id="1082824515534700364" at="27,0,33,0" concept="3" trace="setValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+      <node id="1082824515534700364" at="20,74,33,7" concept="2" />
+      <node id="1082824515534700364" at="18,0,36,0" concept="3" trace="getNotDefaultProperties#()Ljava/util/Map;" />
+      <scope id="1082824515534700364" at="14,31,15,59" />
+      <scope id="1082824515534700364" at="23,37,24,20" />
+      <scope id="1082824515534700465" at="29,37,31,102" />
+      <scope id="1082824515534700364" at="14,0,17,0" />
+      <scope id="1082824515534700364" at="28,62,31,102">
+        <var name="propertyName" id="1082824515534700364" />
+      </scope>
+      <scope id="1082824515534700364" at="22,0,26,0" />
+      <scope id="1082824515534700364" at="27,0,33,0">
+        <var name="node" id="1082824515534700364" />
+        <var name="propertyValue" id="1082824515534700364" />
+      </scope>
+      <scope id="1082824515534700364" at="19,82,34,22">
+        <var name="properties" id="1082824515534700364" />
+      </scope>
+      <scope id="1082824515534700364" at="18,0,36,0" />
+      <unit id="1082824515534700364" at="21,31,33,5" name="jetbrains.mps.samples.Shapes.constraints.Square_Constraints$1" />
+      <unit id="1082824515534700364" at="13,0,37,0" name="jetbrains.mps.samples.Shapes.constraints.Square_Constraints" />
+    </file>
   </root>
   <root nodeRef="r:9a002f3a-ecda-4647-be29-40b3a4e1a7cd(jetbrains.mps.samples.Shapes.constraints)/1082824515534982564">
-    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="14" startPosition="31" endLine="15" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="28" startPosition="62" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1082824515534982627" fileName="Circle_Constraints.java" startLine="29" startPosition="39" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515534988233" fileName="Circle_Constraints.java" startLine="30" startPosition="62" endLine="31" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="33" startPosition="7" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="29" startPosition="39" endLine="31" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Circle_Constraints#()V" />
-    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnSetter#()Z" />
-    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="20" startPosition="74" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="14" startPosition="31" endLine="15" endPosition="59" />
-    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="23" startPosition="37" endLine="24" endPosition="20" />
-    <scopeInfo nodeId="1082824515534982619" fileName="Circle_Constraints.java" startLine="29" startPosition="39" endLine="31" endPosition="104" />
-    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="28" startPosition="62" endLine="31" endPosition="104">
-      <varInfo nodeId="1082824515534982564" varName="propertyName" />
-    </scopeInfo>
-    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="27" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="1082824515534982564" varName="node" />
-      <varInfo nodeId="1082824515534982564" varName="propertyValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="19" startPosition="82" endLine="34" endPosition="22">
-      <varInfo nodeId="1082824515534982564" varName="properties" />
-    </scopeInfo>
-    <scopeInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="18" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="21" startPosition="33" endLine="33" endPosition="5" unitName="jetbrains.mps.samples.Shapes.constraints.Circle_Constraints$1" />
-    <unitInfo nodeId="1082824515534982564" fileName="Circle_Constraints.java" startLine="13" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.samples.Shapes.constraints.Circle_Constraints" />
+    <file name="Circle_Constraints.java">
+      <node id="1082824515534982564" at="14,31,15,59" concept="7" />
+      <node id="1082824515534982564" at="19,82,20,74" concept="4" />
+      <node id="1082824515534982564" at="23,37,24,20" concept="5" />
+      <node id="1082824515534982564" at="28,62,29,39" concept="4" />
+      <node id="1082824515534982627" at="29,39,30,62" concept="2" />
+      <node id="1082824515534988233" at="30,62,31,104" concept="2" />
+      <node id="1082824515534982564" at="33,7,34,22" concept="5" />
+      <node id="1082824515534982564" at="29,39,31,104" concept="0" />
+      <node id="1082824515534982564" at="14,0,17,0" concept="1" trace="Circle_Constraints#()V" />
+      <node id="1082824515534982564" at="22,0,26,0" concept="3" trace="hasOwnSetter#()Z" />
+      <node id="1082824515534982564" at="27,0,33,0" concept="3" trace="setValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)V" />
+      <node id="1082824515534982564" at="20,74,33,7" concept="2" />
+      <node id="1082824515534982564" at="18,0,36,0" concept="3" trace="getNotDefaultProperties#()Ljava/util/Map;" />
+      <scope id="1082824515534982564" at="14,31,15,59" />
+      <scope id="1082824515534982564" at="23,37,24,20" />
+      <scope id="1082824515534982619" at="29,39,31,104" />
+      <scope id="1082824515534982564" at="14,0,17,0" />
+      <scope id="1082824515534982564" at="28,62,31,104">
+        <var name="propertyName" id="1082824515534982564" />
+      </scope>
+      <scope id="1082824515534982564" at="22,0,26,0" />
+      <scope id="1082824515534982564" at="27,0,33,0">
+        <var name="node" id="1082824515534982564" />
+        <var name="propertyValue" id="1082824515534982564" />
+      </scope>
+      <scope id="1082824515534982564" at="19,82,34,22">
+        <var name="properties" id="1082824515534982564" />
+      </scope>
+      <scope id="1082824515534982564" at="18,0,36,0" />
+      <unit id="1082824515534982564" at="21,33,33,5" name="jetbrains.mps.samples.Shapes.constraints.Circle_Constraints$1" />
+      <unit id="1082824515534982564" at="13,0,37,0" name="jetbrains.mps.samples.Shapes.constraints.Circle_Constraints" />
+    </file>
   </root>
   <root nodeRef="r:9a002f3a-ecda-4647-be29-40b3a4e1a7cd(jetbrains.mps.samples.Shapes.constraints)/4191445539799302835">
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="25" startPosition="39" endLine="26" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="30" startPosition="83" endLine="31" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="34" startPosition="44" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="43" startPosition="63" endLine="44" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4191445539799459336" fileName="ColorReference_Constraints.java" startLine="50" startPosition="50" endLine="51" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="57" startPosition="7" endLine="58" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="61" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_xr9dxr_a0a0a0a0a1a0b0a1a1" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ColorReference_Constraints#()V" />
-    <nodeInfo nodeId="4191445539799423083" fileName="ColorReference_Constraints.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="33" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="48" startPosition="122" endLine="53" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4191445539799322084" fileName="ColorReference_Constraints.java" startLine="48" startPosition="122" endLine="53" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="40" startPosition="56" endLine="55" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="38" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="31" startPosition="75" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="29" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="25" startPosition="39" endLine="26" endPosition="67" />
-    <scopeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="34" startPosition="44" endLine="35" endPosition="20" />
-    <scopeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="43" startPosition="63" endLine="44" endPosition="58" />
-    <scopeInfo nodeId="4191445539799423089" fileName="ColorReference_Constraints.java" startLine="50" startPosition="50" endLine="51" endPosition="153" />
-    <scopeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="4191445539799423083" fileName="ColorReference_Constraints.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
-      <varInfo nodeId="4191445539799423087" varName="child" />
-    </scopeInfo>
-    <scopeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="33" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="48" startPosition="122" endLine="53" endPosition="14" />
-    <scopeInfo nodeId="4191445539799319541" fileName="ColorReference_Constraints.java" startLine="48" startPosition="122" endLine="53" endPosition="14" />
-    <scopeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="47" startPosition="0" endLine="55" endPosition="0">
-      <varInfo nodeId="4191445539799302835" varName="_context" />
-      <varInfo nodeId="4191445539799302835" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="40" startPosition="56" endLine="55" endPosition="10" />
-    <scopeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="38" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="30" startPosition="83" endLine="58" endPosition="22">
-      <varInfo nodeId="4191445539799302835" varName="references" />
-    </scopeInfo>
-    <scopeInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="29" startPosition="0" endLine="60" endPosition="0" />
-    <unitInfo nodeId="4191445539799423071" fileName="ColorReference_Constraints.java" startLine="49" startPosition="23" endLine="53" endPosition="13" unitName="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints$3" />
-    <unitInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="41" startPosition="19" endLine="55" endPosition="9" unitName="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints$2" />
-    <unitInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="32" startPosition="32" endLine="57" endPosition="5" unitName="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints$1" />
-    <unitInfo nodeId="4191445539799302835" fileName="ColorReference_Constraints.java" startLine="24" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints" />
+    <file name="ColorReference_Constraints.java">
+      <node id="4191445539799302835" at="25,39,26,67" concept="7" />
+      <node id="4191445539799302835" at="30,83,31,75" concept="4" />
+      <node id="4191445539799302835" at="34,44,35,20" concept="5" />
+      <node id="4191445539799302835" at="43,63,44,58" concept="5" />
+      <node id="4191445539799459336" at="50,50,51,153" concept="5" />
+      <node id="4191445539799302835" at="57,7,58,22" concept="5" />
+      <node id="4191445539799302835" at="61,0,62,0" concept="6" trace="breakingNode_xr9dxr_a0a0a0a0a1a0b0a1a1" />
+      <node id="4191445539799302835" at="25,0,28,0" concept="1" trace="ColorReference_Constraints#()V" />
+      <node id="4191445539799423083" at="50,0,53,0" concept="3" trace="getName#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/String;" />
+      <node id="4191445539799302835" at="33,0,37,0" concept="3" trace="hasOwnScopeProvider#()Z" />
+      <node id="4191445539799302835" at="42,0,46,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="4191445539799302835" at="48,122,53,14" concept="0" />
+      <node id="4191445539799322084" at="48,122,53,14" concept="5" />
+      <node id="4191445539799302835" at="47,0,55,0" concept="3" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="4191445539799302835" at="40,56,55,10" concept="5" />
+      <node id="4191445539799302835" at="38,0,57,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="4191445539799302835" at="31,75,57,7" concept="2" />
+      <node id="4191445539799302835" at="29,0,60,0" concept="3" trace="getNotDefaultReferences#()Ljava/util/Map;" />
+      <scope id="4191445539799302835" at="25,39,26,67" />
+      <scope id="4191445539799302835" at="34,44,35,20" />
+      <scope id="4191445539799302835" at="43,63,44,58" />
+      <scope id="4191445539799423089" at="50,50,51,153" />
+      <scope id="4191445539799302835" at="25,0,28,0" />
+      <scope id="4191445539799423083" at="50,0,53,0">
+        <var name="child" id="4191445539799423087" />
+      </scope>
+      <scope id="4191445539799302835" at="33,0,37,0" />
+      <scope id="4191445539799302835" at="42,0,46,0" />
+      <scope id="4191445539799302835" at="48,122,53,14" />
+      <scope id="4191445539799319541" at="48,122,53,14" />
+      <scope id="4191445539799302835" at="47,0,55,0">
+        <var name="_context" id="4191445539799302835" />
+        <var name="operationContext" id="4191445539799302835" />
+      </scope>
+      <scope id="4191445539799302835" at="40,56,55,10" />
+      <scope id="4191445539799302835" at="38,0,57,0" />
+      <scope id="4191445539799302835" at="30,83,58,22">
+        <var name="references" id="4191445539799302835" />
+      </scope>
+      <scope id="4191445539799302835" at="29,0,60,0" />
+      <unit id="4191445539799423071" at="49,23,53,13" name="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints$3" />
+      <unit id="4191445539799302835" at="41,19,55,9" name="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints$2" />
+      <unit id="4191445539799302835" at="32,32,57,5" name="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints$1" />
+      <unit id="4191445539799302835" at="24,0,63,0" name="jetbrains.mps.samples.Shapes.constraints.ColorReference_Constraints" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

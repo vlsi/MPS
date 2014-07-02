@@ -9,16 +9,13 @@ import org.jetbrains.mps.openapi.util.ProgressMonitor;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.ModelHolder;
 import org.jetbrains.mps.openapi.model.SModelReference;
-import jetbrains.mps.smodel.ModelsOnlyScope;
+import jetbrains.mps.ide.findusages.model.scopes.ModelsScope;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SModelId;
 import java.util.Set;
 import org.jetbrains.mps.openapi.module.FindUsagesFacade;
 import jetbrains.mps.project.GlobalScope;
@@ -36,8 +33,8 @@ public class ModelUsagesFinder implements IFinder {
     assert holder instanceof ModelHolder;
     SModelReference modelReference = ((ModelHolder) holder).getObject();
     searchResults.getSearchedNodes().add(modelReference);
-    if (query.getScope() instanceof ModelsOnlyScope) {
-      for (SModel modelDescriptor : (as_s8v3jk_a0a0a0f0b(query.getScope(), ModelsOnlyScope.class)).getModels()) {
+    if (query.getScope() instanceof ModelsScope) {
+      for (SModel modelDescriptor : (as_s8v3jk_a0a0a0f0b(query.getScope(), ModelsScope.class)).getModels()) {
         if (monitor.isCanceled()) {
           return searchResults;
         }
@@ -45,32 +42,6 @@ public class ModelUsagesFinder implements IFinder {
           continue;
         }
         for (SNode node : SNodeUtil.getDescendants(modelDescriptor)) {
-          for (SReference reference : node.getReferences()) {
-            if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
-              continue;
-            }
-            SModelReference targetModelReference = reference.getTargetSModelReference();
-            if (targetModelReference == null) {
-              continue;
-            }
-            if (targetModelReference.equals(modelReference)) {
-              searchResults.getSearchResults().add(new SearchResult<SNode>(node, "nodes from model"));
-            }
-          }
-        }
-      }
-    } else if (false && query.getScope() instanceof ModulesOnlyScope) {
-      // TODO: implement model search in Module Scope 
-      for (SModel scopeModel : (as_s8v3jk_a0a0b0a5a1(query.getScope(), ModulesOnlyScope.class)).getModels()) {
-        if (monitor.isCanceled()) {
-          return searchResults;
-        }
-        SModel descriptor = SModelRepository.getInstance().getModelDescriptor((SModelId) scopeModel.getModelId());
-        // <node> 
-        if (!(SModelStereotype.isUserModel(scopeModel))) {
-          continue;
-        }
-        for (SNode node : SNodeUtil.getDescendants(descriptor)) {
           for (SReference reference : node.getReferences()) {
             if (!(((jetbrains.mps.smodel.SReference) reference).isExternal())) {
               continue;
@@ -102,10 +73,6 @@ public class ModelUsagesFinder implements IFinder {
   }
 
   private static <T> T as_s8v3jk_a0a0a0f0b(Object o, Class<T> type) {
-    return (type.isInstance(o) ? (T) o : null);
-  }
-
-  private static <T> T as_s8v3jk_a0a0b0a5a1(Object o, Class<T> type) {
     return (type.isInstance(o) ? (T) o : null);
   }
 }

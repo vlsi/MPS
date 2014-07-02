@@ -22,9 +22,11 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.selection.SelectionInfoImpl;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.EqualUtil;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.awt.Point;
 import java.util.ArrayList;
@@ -69,8 +71,7 @@ class Memento {
   Memento(jetbrains.mps.openapi.editor.EditorContext context, boolean full) {
     EditorComponent nodeEditor = (EditorComponent) context.getEditorComponent();
     SNode editedNode = nodeEditor.getEditedNode();
-    if (editedNode == null || (!jetbrains.mps.util.SNodeOperations.isDisposed(editedNode) && editedNode.getModel() != null &&
-        !jetbrains.mps.util.SNodeOperations.isModelDisposed(editedNode.getModel()))) {
+    if (editedNode == null || SNodeUtil.isAccessible(editedNode, MPSModuleRepository.getInstance())) {
       mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
       ArrayList<EditorCell> foldedCells = new ArrayList<EditorCell>(nodeEditor.getFoldedCells());
       Collections.sort(foldedCells, FOLDED_CELLS_COMPARATOR);
@@ -190,6 +191,9 @@ class Memento {
   private static final String ENABLED_HINTS_ELEMENT = "enabledHintsElement";
   private static final String ENABLED_HINTS_ATTRIBUTE = "enabledHintsAttribute";
   private static final String USE_CUSTOM_HINTS = "useCustomHints";
+  private static final String ERROR_LABELS = "errorLabels";
+  private static final String ERROR_LABEL = "errorLabel";
+  private static final String ERROR_TEXT = "errorText";
 
   public void save(Element e) {
     Element selectionStack = new Element(SELECTION_STACK);
@@ -198,6 +202,15 @@ class Memento {
       Element stackElement = new Element(STACK_ELEMENT);
       ((SelectionInfoImpl) selectionInfo).persistToXML(stackElement);
       selectionStack.addContent(stackElement);
+    }
+
+    Element errorLabels = new Element(ERROR_LABELS);
+    e.addContent(errorLabels);
+    for (Entry<CellInfo, String> errorTextEntry : myErrorTexts.entrySet()) {
+      Element errorLabelElement = new Element(ERROR_LABEL);
+      errorLabelElement.setAttribute(ERROR_TEXT, errorTextEntry.getValue());
+      ((DefaultCellInfo) errorTextEntry.getKey()).saveTo(errorLabelElement);
+      errorLabels.addContent(errorLabelElement);
     }
 
     boolean success = true;
@@ -238,6 +251,16 @@ class Memento {
         memento.mySelectionStack.add(new SelectionInfoImpl((Element) o));
       }
     }
+
+    Element errorLabels = e.getChild(ERROR_LABELS);
+    if (errorLabels != null) {
+      for (Element errorLabelElement : errorLabels.getChildren(ERROR_LABEL)) {
+        String errorText = errorLabelElement.getAttributeValue(ERROR_TEXT);
+        CellInfo cellInfo = DefaultCellInfo.loadFrom(errorLabelElement);
+        memento.myErrorTexts.put(cellInfo, errorText);
+      }
+    }
+
     Element folded = e.getChild(FOLDED);
     if (folded != null) {
       List children = folded.getChildren(FOLDED_ELEMENT);

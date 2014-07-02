@@ -33,7 +33,7 @@ public class BaseLanguageStyle_StyleSheet {
     }
   }
 
-  public static void apply_CommentPG(Style style, EditorCell editorCell) {
+  public static void apply_Comment(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
       styleToPut = StyleRegistry.getInstance().getStyle("LINE_COMMENT");
@@ -41,17 +41,8 @@ public class BaseLanguageStyle_StyleSheet {
     }
   }
 
-  public static void apply_Comment(Style style, EditorCell editorCell) {
-    {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_CommentPG(styleToPut, editorCell);
-      style.putAll(styleToPut, 0);
-    }
-  }
-
-  public static void apply_TODO_PG(Style style, EditorCell editorCell) {
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0e((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
+  public static void apply_TODO(Style style, EditorCell editorCell) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0d((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       {
         Style styleToPut;
         styleToPut = StyleRegistry.getInstance().getStyle("TODO");
@@ -60,29 +51,11 @@ public class BaseLanguageStyle_StyleSheet {
     }
   }
 
-  public static void apply_TODO(Style style, EditorCell editorCell) {
-    {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_TODO_PG(styleToPut, editorCell);
-      style.putAll(styleToPut, 0);
-    }
-  }
-
-  public static void apply_BlockCommentPG(Style style, EditorCell editorCell) {
+  public static void apply_BlockComment(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
       styleToPut = StyleRegistry.getInstance().getStyle("BLOCK_COMMENT");
       style.putAll(styleToPut, 1);
-    }
-  }
-
-  public static void apply_BlockComment(Style style, EditorCell editorCell) {
-    {
-      Style styleToPut;
-      styleToPut = new StyleImpl();
-      BaseLanguageStyle_StyleSheet.apply_CommentPG(styleToPut, editorCell);
-      style.putAll(styleToPut, 0);
     }
   }
 
@@ -349,7 +322,7 @@ public class BaseLanguageStyle_StyleSheet {
       styleToPut = StyleRegistry.getInstance().getStyle("METHOD_CALL");
       style.putAll(styleToPut, 0);
     }
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1kb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1hb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       {
         Style styleToPut;
         styleToPut = StyleRegistry.getInstance().getStyle("STATIC_METHOD");
@@ -359,28 +332,28 @@ public class BaseLanguageStyle_StyleSheet {
   }
 
   public static void apply_VariableName(Style style, EditorCell editorCell) {
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0lb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       {
         Style styleToPut;
         styleToPut = StyleRegistry.getInstance().getStyle("STATIC_FINAL_FIELD");
         style.putAll(styleToPut, 0);
       }
     }
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1lb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a1ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       {
         Style styleToPut;
         styleToPut = StyleRegistry.getInstance().getStyle("STATIC_FIELD");
         style.putAll(styleToPut, 0);
       }
     }
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a2lb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a2ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       {
         Style styleToPut;
         styleToPut = StyleRegistry.getInstance().getStyle("INSTANCE_FIELD");
         style.putAll(styleToPut, 0);
       }
     }
-    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a3lb((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
+    if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a3ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       {
         Style styleToPut;
         styleToPut = StyleRegistry.getInstance().getStyle("LOCAL_VARIABLE");
@@ -469,15 +442,15 @@ public class BaseLanguageStyle_StyleSheet {
 
 
 
-  private static boolean _StyleParameter_QueryFunction_the604_a0e(EditorContext editorContext, SNode node) {
+  private static boolean _StyleParameter_QueryFunction_the604_a0d(EditorContext editorContext, SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.TextCommentPart") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.as(node, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), "virtual_isToDo_7236590470026152831", new Object[]{});
   }
 
-  private static boolean _StyleParameter_QueryFunction_the604_a1kb(EditorContext editorContext, SNode node) {
+  private static boolean _StyleParameter_QueryFunction_the604_a1hb(EditorContext editorContext, SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
   }
 
-  private static boolean _StyleParameter_QueryFunction_the604_a0lb(EditorContext editorContext, SNode node) {
+  private static boolean _StyleParameter_QueryFunction_the604_a0ib(EditorContext editorContext, SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_7405920559687241224", new Object[]{})) {
         if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "isFinal")) {
@@ -488,7 +461,7 @@ public class BaseLanguageStyle_StyleSheet {
     return false;
   }
 
-  private static boolean _StyleParameter_QueryFunction_the604_a1lb(EditorContext editorContext, SNode node) {
+  private static boolean _StyleParameter_QueryFunction_the604_a1ib(EditorContext editorContext, SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_7405920559687241224", new Object[]{})) {
         if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration") && SPropertyOperations.getBoolean(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "isFinal"))) {
@@ -499,7 +472,7 @@ public class BaseLanguageStyle_StyleSheet {
     return false;
   }
 
-  private static boolean _StyleParameter_QueryFunction_the604_a2lb(EditorContext editorContext, SNode node) {
+  private static boolean _StyleParameter_QueryFunction_the604_a2ib(EditorContext editorContext, SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_7405920559687241224", new Object[]{}))) {
         return true;
@@ -508,7 +481,7 @@ public class BaseLanguageStyle_StyleSheet {
     return false;
   }
 
-  private static boolean _StyleParameter_QueryFunction_the604_a3lb(EditorContext editorContext, SNode node) {
+  private static boolean _StyleParameter_QueryFunction_the604_a3ib(EditorContext editorContext, SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
       return true;
     }

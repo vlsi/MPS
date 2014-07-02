@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <root>
+    <file name="TestConceptWithStyleAttributes_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.styleTests.behavior.TestConceptWithStyleAttributes_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,26,0" name="jetbrains.mps.lang.editor.styleTests.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="NodeContainer_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.editor.styleTests.behavior.NodeContainer_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
+

@@ -1,352 +1,386 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.ConstraintsAspectDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,35,0" name="jetbrains.mps.build.workflow.constraints.ConstraintsAspectDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)/1117643560963218873">
-    <nodeInfo nodeId="1117643560963219144" fileName="TaskLibrariesHelper.java" startLine="27" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="project" />
-    <nodeInfo nodeId="1117643560963219147" fileName="TaskLibrariesHelper.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="genContext" />
-    <nodeInfo nodeId="1117643560963219128" fileName="TaskLibrariesHelper.java" startLine="30" startPosition="78" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963219134" fileName="TaskLibrariesHelper.java" startLine="31" startPosition="27" endLine="32" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963218939" fileName="TaskLibrariesHelper.java" startLine="35" startPosition="28" endLine="36" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963218948" fileName="TaskLibrariesHelper.java" startLine="37" startPosition="78" endLine="38" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963218960" fileName="TaskLibrariesHelper.java" startLine="39" startPosition="5" endLine="40" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963218963" fileName="TaskLibrariesHelper.java" startLine="40" startPosition="21" endLine="41" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963218991" fileName="TaskLibrariesHelper.java" startLine="44" startPosition="65" endLine="45" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963218999" fileName="TaskLibrariesHelper.java" startLine="46" startPosition="35" endLine="47" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963219016" fileName="TaskLibrariesHelper.java" startLine="48" startPosition="75" endLine="49" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963219045" fileName="TaskLibrariesHelper.java" startLine="55" startPosition="50" endLine="56" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963219047" fileName="TaskLibrariesHelper.java" startLine="58" startPosition="24" endLine="59" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963219056" fileName="TaskLibrariesHelper.java" startLine="59" startPosition="56" endLine="60" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963219068" fileName="TaskLibrariesHelper.java" startLine="60" startPosition="66" endLine="61" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963219084" fileName="TaskLibrariesHelper.java" startLine="63" startPosition="48" endLine="64" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963219092" fileName="TaskLibrariesHelper.java" startLine="65" startPosition="42" endLine="66" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4701820937132275165" fileName="TaskLibrariesHelper.java" startLine="67" startPosition="16" endLine="68" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4701820937132275201" fileName="TaskLibrariesHelper.java" startLine="69" startPosition="168" endLine="70" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5096397858823412428" fileName="TaskLibrariesHelper.java" startLine="74" startPosition="5" endLine="75" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="5096397858823412388" fileName="TaskLibrariesHelper.java" startLine="76" startPosition="49" endLine="77" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963218878" fileName="TaskLibrariesHelper.java" startLine="81" startPosition="47" endLine="82" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963218885" fileName="TaskLibrariesHelper.java" startLine="82" startPosition="74" endLine="83" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963218892" fileName="TaskLibrariesHelper.java" startLine="84" startPosition="57" endLine="85" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963218902" fileName="TaskLibrariesHelper.java" startLine="87" startPosition="80" endLine="88" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963218909" fileName="TaskLibrariesHelper.java" startLine="88" startPosition="68" endLine="89" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963218946" fileName="TaskLibrariesHelper.java" startLine="36" startPosition="52" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963219045" fileName="TaskLibrariesHelper.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="4701820937132275174" fileName="TaskLibrariesHelper.java" startLine="68" startPosition="64" endLine="71" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5096397858823412354" fileName="TaskLibrariesHelper.java" startLine="75" startPosition="42" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1117643560963219124" fileName="TaskLibrariesHelper.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TaskLibrariesHelper#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
-    <nodeInfo nodeId="1117643560963218900" fileName="TaskLibrariesHelper.java" startLine="86" startPosition="74" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1117643560963218997" fileName="TaskLibrariesHelper.java" startLine="45" startPosition="72" endLine="50" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1117643560963219038" fileName="TaskLibrariesHelper.java" startLine="53" startPosition="5" endLine="58" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4701820937132275140" fileName="TaskLibrariesHelper.java" startLine="67" startPosition="14" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1117643560963218898" fileName="TaskLibrariesHelper.java" startLine="85" startPosition="70" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963218983" fileName="TaskLibrariesHelper.java" startLine="43" startPosition="71" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963219090" fileName="TaskLibrariesHelper.java" startLine="64" startPosition="70" endLine="72" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1117643560963218890" fileName="TaskLibrariesHelper.java" startLine="83" startPosition="74" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1117643560963218973" fileName="TaskLibrariesHelper.java" startLine="42" startPosition="28" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963219076" fileName="TaskLibrariesHelper.java" startLine="62" startPosition="73" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963218971" fileName="TaskLibrariesHelper.java" startLine="41" startPosition="53" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963219074" fileName="TaskLibrariesHelper.java" startLine="61" startPosition="88" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1117643560963218874" fileName="TaskLibrariesHelper.java" startLine="81" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="closure#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="1117643560963218935" fileName="TaskLibrariesHelper.java" startLine="35" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="importLibs#()V" />
-    <scopeInfo nodeId="1117643560963218947" fileName="TaskLibrariesHelper.java" startLine="37" startPosition="78" endLine="38" endPosition="69" />
-    <scopeInfo nodeId="1117643560963218998" fileName="TaskLibrariesHelper.java" startLine="46" startPosition="35" endLine="47" endPosition="143" />
-    <scopeInfo nodeId="1117643560963219015" fileName="TaskLibrariesHelper.java" startLine="48" startPosition="75" endLine="49" endPosition="163" />
-    <scopeInfo nodeId="1117643560963219045" fileName="TaskLibrariesHelper.java" startLine="55" startPosition="50" endLine="56" endPosition="61" />
-    <scopeInfo nodeId="1117643560963219091" fileName="TaskLibrariesHelper.java" startLine="65" startPosition="42" endLine="66" endPosition="84" />
-    <scopeInfo nodeId="4701820937132275175" fileName="TaskLibrariesHelper.java" startLine="69" startPosition="168" endLine="70" endPosition="75" />
-    <scopeInfo nodeId="5096397858823412355" fileName="TaskLibrariesHelper.java" startLine="76" startPosition="49" endLine="77" endPosition="111" />
-    <scopeInfo nodeId="1117643560963219127" fileName="TaskLibrariesHelper.java" startLine="30" startPosition="78" endLine="32" endPosition="33" />
-    <scopeInfo nodeId="1117643560963218901" fileName="TaskLibrariesHelper.java" startLine="87" startPosition="80" endLine="89" endPosition="105" />
-    <scopeInfo nodeId="1117643560963218946" fileName="TaskLibrariesHelper.java" startLine="36" startPosition="52" endLine="39" endPosition="5">
-      <varInfo nodeId="1117643560963218955" varName="tldep" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963219045" fileName="TaskLibrariesHelper.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
-      <varInfo nodeId="1117643560963219045" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="5096397858823412354" fileName="TaskLibrariesHelper.java" startLine="75" startPosition="42" endLine="78" endPosition="5">
-      <varInfo nodeId="5096397858823412357" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963219124" fileName="TaskLibrariesHelper.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="1117643560963219142" varName="genContext" />
-      <varInfo nodeId="1117643560963219140" varName="project" />
-    </scopeInfo>
-    <scopeInfo nodeId="4701820937132275141" fileName="TaskLibrariesHelper.java" startLine="67" startPosition="16" endLine="71" endPosition="11">
-      <varInfo nodeId="4701820937132275166" varName="containingRoot" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218899" fileName="TaskLibrariesHelper.java" startLine="86" startPosition="74" endLine="90" endPosition="9" />
-    <scopeInfo nodeId="1117643560963218990" fileName="TaskLibrariesHelper.java" startLine="44" startPosition="65" endLine="50" endPosition="11">
-      <varInfo nodeId="1117643560963218992" varName="targetNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218898" fileName="TaskLibrariesHelper.java" startLine="85" startPosition="70" endLine="91" endPosition="7">
-      <varInfo nodeId="1117643560963218923" varName="dep" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218891" fileName="TaskLibrariesHelper.java" startLine="84" startPosition="57" endLine="91" endPosition="7">
-      <varInfo nodeId="1117643560963218893" varName="lib" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218982" fileName="TaskLibrariesHelper.java" startLine="43" startPosition="71" endLine="51" endPosition="9" />
-    <scopeInfo nodeId="1117643560963218983" fileName="TaskLibrariesHelper.java" startLine="43" startPosition="71" endLine="51" endPosition="9">
-      <varInfo nodeId="1117643560963218984" varName="ref" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963219083" fileName="TaskLibrariesHelper.java" startLine="63" startPosition="48" endLine="72" endPosition="9">
-      <varInfo nodeId="1117643560963219085" varName="targetNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218972" fileName="TaskLibrariesHelper.java" startLine="42" startPosition="28" endLine="52" endPosition="7" />
-    <scopeInfo nodeId="1117643560963218973" fileName="TaskLibrariesHelper.java" startLine="42" startPosition="28" endLine="52" endPosition="7">
-      <varInfo nodeId="1117643560963218974" varName="n" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963219075" fileName="TaskLibrariesHelper.java" startLine="62" startPosition="73" endLine="73" endPosition="7" />
-    <scopeInfo nodeId="1117643560963219076" fileName="TaskLibrariesHelper.java" startLine="62" startPosition="73" endLine="73" endPosition="7">
-      <varInfo nodeId="1117643560963219077" varName="ref" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218877" fileName="TaskLibrariesHelper.java" startLine="81" startPosition="47" endLine="92" endPosition="5">
-      <varInfo nodeId="1117643560963218879" varName="queue" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218971" fileName="TaskLibrariesHelper.java" startLine="41" startPosition="53" endLine="53" endPosition="5">
-      <varInfo nodeId="1117643560963219035" varName="lib" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963219074" fileName="TaskLibrariesHelper.java" startLine="61" startPosition="88" endLine="74" endPosition="5">
-      <varInfo nodeId="1117643560963219108" varName="n" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218874" fileName="TaskLibrariesHelper.java" startLine="81" startPosition="0" endLine="94" endPosition="0">
-      <varInfo nodeId="1117643560963218932" varName="libs" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218938" fileName="TaskLibrariesHelper.java" startLine="35" startPosition="28" endLine="78" endPosition="5">
-      <varInfo nodeId="1117643560963218964" varName="libs" />
-      <varInfo nodeId="1117643560963218940" varName="libsSet" />
-      <varInfo nodeId="1117643560963219048" varName="map" />
-      <varInfo nodeId="1117643560963219039" varName="parts" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963218935" fileName="TaskLibrariesHelper.java" startLine="35" startPosition="0" endLine="80" endPosition="0" />
-    <unitInfo nodeId="1117643560963219045" fileName="TaskLibrariesHelper.java" startLine="54" startPosition="66" endLine="58" endPosition="5" unitName="jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper$1" />
-    <unitInfo nodeId="1117643560963218873" fileName="TaskLibrariesHelper.java" startLine="26" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper" />
+    <file name="TaskLibrariesHelper.java">
+      <node id="1117643560963219144" at="28,0,29,0" concept="3" trace="project" />
+      <node id="1117643560963219147" at="29,0,30,0" concept="3" trace="genContext" />
+      <node id="1117643560963219128" at="31,78,32,27" concept="2" />
+      <node id="1117643560963219134" at="32,27,33,33" concept="2" />
+      <node id="1117643560963218939" at="36,28,37,52" concept="8" />
+      <node id="1117643560963218948" at="38,78,39,69" concept="2" />
+      <node id="1117643560963218960" at="40,5,41,21" concept="2" />
+      <node id="1117643560963218963" at="41,21,42,53" concept="8" />
+      <node id="1117643560963218991" at="45,65,46,72" concept="8" />
+      <node id="1117643560963218999" at="47,35,48,143" concept="2" />
+      <node id="1117643560963219016" at="49,75,50,163" concept="2" />
+      <node id="1117643560963219045" at="56,50,57,61" concept="9" />
+      <node id="1117643560963219047" at="59,24,60,56" concept="8" />
+      <node id="1117643560963219056" at="60,56,61,66" concept="2" />
+      <node id="1117643560963219068" at="61,66,62,88" concept="2" />
+      <node id="1117643560963219084" at="64,48,65,70" concept="8" />
+      <node id="1117643560963219092" at="66,42,67,84" concept="2" />
+      <node id="4701820937132275165" at="68,16,69,64" concept="8" />
+      <node id="4701820937132275201" at="70,168,71,75" concept="2" />
+      <node id="5096397858823412428" at="75,5,76,42" concept="10" />
+      <node id="5096397858823412388" at="77,49,78,111" concept="2" />
+      <node id="1117643560963218878" at="82,47,83,74" concept="8" />
+      <node id="1117643560963218885" at="83,74,84,74" concept="2" />
+      <node id="1117643560963218892" at="85,57,86,70" concept="8" />
+      <node id="1117643560963218902" at="88,80,89,68" concept="2" />
+      <node id="1117643560963218909" at="89,68,90,105" concept="2" />
+      <node id="1117643560963218946" at="37,52,40,5" concept="5" />
+      <node id="1117643560963219045" at="56,0,59,0" concept="7" trace="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+      <node id="4701820937132275174" at="69,64,72,11" concept="6" />
+      <node id="5096397858823412354" at="76,42,79,5" concept="4" />
+      <node id="1117643560963219124" at="31,0,35,0" concept="1" trace="TaskLibrariesHelper#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/generator/template/TemplateQueryContext;)V" />
+      <node id="1117643560963218900" at="87,74,91,9" concept="6" />
+      <node id="1117643560963218997" at="46,72,51,11" concept="6" />
+      <node id="1117643560963219038" at="54,5,59,24" concept="8" />
+      <node id="4701820937132275140" at="68,14,73,9" concept="0" />
+      <node id="1117643560963218898" at="86,70,92,7" concept="5" />
+      <node id="1117643560963218983" at="44,53,52,9" concept="5" />
+      <node id="1117643560963219090" at="65,70,73,9" concept="6" />
+      <node id="1117643560963218890" at="84,74,93,5" concept="15" />
+      <node id="1117643560963218973" at="43,28,53,7" concept="5" />
+      <node id="1117643560963219076" at="63,55,74,7" concept="5" />
+      <node id="1117643560963218971" at="42,53,54,5" concept="5" />
+      <node id="1117643560963219074" at="62,88,75,5" concept="5" />
+      <node id="1117643560963218874" at="82,0,95,0" concept="13" trace="closure#(Ljava/util/Set;)V" />
+      <node id="1117643560963218935" at="36,0,81,0" concept="7" trace="importLibs#()V" />
+      <scope id="1117643560963218947" at="38,78,39,69" />
+      <scope id="1117643560963218998" at="47,35,48,143" />
+      <scope id="1117643560963219015" at="49,75,50,163" />
+      <scope id="1117643560963219045" at="56,50,57,61" />
+      <scope id="1117643560963219091" at="66,42,67,84" />
+      <scope id="4701820937132275175" at="70,168,71,75" />
+      <scope id="5096397858823412355" at="77,49,78,111" />
+      <scope id="1117643560963219127" at="31,78,33,33" />
+      <scope id="1117643560963218901" at="88,80,90,105" />
+      <scope id="1117643560963218946" at="37,52,40,5">
+        <var name="tldep" id="1117643560963218955" />
+      </scope>
+      <scope id="1117643560963219045" at="56,0,59,0">
+        <var name="it" id="1117643560963219045" />
+      </scope>
+      <scope id="5096397858823412354" at="76,42,79,5">
+        <var name="i" id="5096397858823412357" />
+      </scope>
+      <scope id="1117643560963219124" at="31,0,35,0">
+        <var name="genContext" id="1117643560963219142" />
+        <var name="project" id="1117643560963219140" />
+      </scope>
+      <scope id="4701820937132275141" at="68,16,72,11">
+        <var name="containingRoot" id="4701820937132275166" />
+      </scope>
+      <scope id="1117643560963218899" at="87,74,91,9" />
+      <scope id="1117643560963218990" at="45,65,51,11">
+        <var name="targetNode" id="1117643560963218992" />
+      </scope>
+      <scope id="1117643560963218898" at="86,70,92,7">
+        <var name="dep" id="1117643560963218923" />
+      </scope>
+      <scope id="1117643560963218891" at="85,57,92,7">
+        <var name="lib" id="1117643560963218893" />
+      </scope>
+      <scope id="1117643560963218982" at="44,53,52,9" />
+      <scope id="1117643560963218983" at="44,53,52,9">
+        <var name="ref" id="1117643560963218984" />
+      </scope>
+      <scope id="1117643560963219083" at="64,48,73,9">
+        <var name="targetNode" id="1117643560963219085" />
+      </scope>
+      <scope id="1117643560963218972" at="43,28,53,7" />
+      <scope id="1117643560963218973" at="43,28,53,7">
+        <var name="n" id="1117643560963218974" />
+      </scope>
+      <scope id="1117643560963219075" at="63,55,74,7" />
+      <scope id="1117643560963219076" at="63,55,74,7">
+        <var name="ref" id="1117643560963219077" />
+      </scope>
+      <scope id="1117643560963218877" at="82,47,93,5">
+        <var name="queue" id="1117643560963218879" />
+      </scope>
+      <scope id="1117643560963218971" at="42,53,54,5">
+        <var name="lib" id="1117643560963219035" />
+      </scope>
+      <scope id="1117643560963219074" at="62,88,75,5">
+        <var name="n" id="1117643560963219108" />
+      </scope>
+      <scope id="1117643560963218874" at="82,0,95,0">
+        <var name="libs" id="1117643560963218932" />
+      </scope>
+      <scope id="1117643560963218938" at="36,28,79,5">
+        <var name="libs" id="1117643560963218964" />
+        <var name="libsSet" id="1117643560963218940" />
+        <var name="map" id="1117643560963219048" />
+        <var name="parts" id="1117643560963219039" />
+      </scope>
+      <scope id="1117643560963218935" at="36,0,81,0" />
+      <unit id="1117643560963219045" at="55,66,59,5" name="jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper$1" />
+      <unit id="1117643560963218873" at="27,0,96,0" name="jetbrains.mps.build.workflow.constraints.TaskLibrariesHelper" />
+    </file>
   </root>
   <root nodeRef="r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)/1117643560963285901">
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="14" startPosition="39" endLine="15" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="19" startPosition="44" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="24" startPosition="188" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="25" startPosition="96" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="30" startPosition="0" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963285904" fileName="BwfTaskLibrary_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="414" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeParentBreakingPoint" />
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfTaskLibrary_Constraints#()V" />
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeParentMethod#()Z" />
-    <nodeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <scopeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="14" startPosition="39" endLine="15" endPosition="67" />
-    <scopeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="19" startPosition="44" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="68" />
-    <scopeInfo nodeId="1117643560963285903" fileName="BwfTaskLibrary_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="414" />
-    <scopeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="1117643560963285901" varName="childConcept" />
-      <varInfo nodeId="1117643560963285901" varName="childNode" />
-      <varInfo nodeId="1117643560963285901" varName="link" />
-      <varInfo nodeId="1117643560963285901" varName="node" />
-      <varInfo nodeId="1117643560963285901" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="24" startPosition="188" endLine="31" endPosition="18">
-      <varInfo nodeId="1117643560963285901" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="1117643560963285901" varName="checkingNodeContext" />
-      <varInfo nodeId="1117643560963285901" varName="childConcept" />
-      <varInfo nodeId="1117643560963285901" varName="childNode" />
-      <varInfo nodeId="1117643560963285901" varName="link" />
-      <varInfo nodeId="1117643560963285901" varName="node" />
-      <varInfo nodeId="1117643560963285901" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="1117643560963285901" fileName="BwfTaskLibrary_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.BwfTaskLibrary_Constraints" />
+    <file name="BwfTaskLibrary_Constraints.java">
+      <node id="1117643560963285901" at="14,39,15,67" concept="14" />
+      <node id="1117643560963285901" at="19,44,20,16" concept="9" />
+      <node id="1117643560963285901" at="24,188,25,96" concept="8" />
+      <node id="1117643560963285901" at="25,96,26,0" concept="11" />
+      <node id="1117643560963285901" at="27,51,28,68" concept="2" />
+      <node id="1117643560963285901" at="29,5,30,0" concept="11" />
+      <node id="1117643560963285901" at="30,0,31,18" concept="9" />
+      <node id="1117643560963285904" at="34,148,35,414" concept="9" />
+      <node id="1117643560963285901" at="38,0,39,0" concept="12" trace="canBeParentBreakingPoint" />
+      <node id="1117643560963285901" at="14,0,17,0" concept="1" trace="BwfTaskLibrary_Constraints#()V" />
+      <node id="1117643560963285901" at="26,0,29,5" concept="6" />
+      <node id="1117643560963285901" at="34,0,37,0" concept="13" trace="static_canBeAParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="1117643560963285901" at="18,0,22,0" concept="7" trace="hasOwnCanBeParentMethod#()Z" />
+      <node id="1117643560963285901" at="23,0,33,0" concept="7" trace="canBeParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="1117643560963285901" at="14,39,15,67" />
+      <scope id="1117643560963285901" at="19,44,20,16" />
+      <scope id="1117643560963285901" at="27,51,28,68" />
+      <scope id="1117643560963285903" at="34,148,35,414" />
+      <scope id="1117643560963285901" at="14,0,17,0" />
+      <scope id="1117643560963285901" at="34,0,37,0">
+        <var name="childConcept" id="1117643560963285901" />
+        <var name="childNode" id="1117643560963285901" />
+        <var name="link" id="1117643560963285901" />
+        <var name="node" id="1117643560963285901" />
+        <var name="operationContext" id="1117643560963285901" />
+      </scope>
+      <scope id="1117643560963285901" at="18,0,22,0" />
+      <scope id="1117643560963285901" at="24,188,31,18">
+        <var name="result" id="1117643560963285901" />
+      </scope>
+      <scope id="1117643560963285901" at="23,0,33,0">
+        <var name="checkingNodeContext" id="1117643560963285901" />
+        <var name="childConcept" id="1117643560963285901" />
+        <var name="childNode" id="1117643560963285901" />
+        <var name="link" id="1117643560963285901" />
+        <var name="node" id="1117643560963285901" />
+        <var name="operationContext" id="1117643560963285901" />
+      </scope>
+      <unit id="1117643560963285901" at="13,0,40,0" name="jetbrains.mps.build.workflow.constraints.BwfTaskLibrary_Constraints" />
+    </file>
   </root>
   <root nodeRef="r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)/2769948622284605888">
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="23" startPosition="45" endLine="24" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="28" startPosition="83" endLine="29" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="47" startPosition="13" endLine="48" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="48" startPosition="225" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="54" startPosition="7" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_45r57v_a0a0a0a0a1a0b0a1a1" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfSubTaskDependency_Constraints#()V" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="29" startPosition="75" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="23" startPosition="45" endLine="24" endPosition="73" />
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="32" startPosition="44" endLine="33" endPosition="20" />
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="41" startPosition="63" endLine="42" endPosition="58" />
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="47" startPosition="13" endLine="49" endPosition="64">
-      <varInfo nodeId="2769948622284605888" varName="scope" />
-    </scopeInfo>
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="40" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="46" startPosition="122" endLine="50" endPosition="13" />
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="45" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="2769948622284605888" varName="_context" />
-      <varInfo nodeId="2769948622284605888" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="38" startPosition="56" endLine="52" endPosition="10" />
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="36" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="28" startPosition="83" endLine="55" endPosition="22">
-      <varInfo nodeId="2769948622284605888" varName="references" />
-    </scopeInfo>
-    <scopeInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="27" startPosition="0" endLine="57" endPosition="0" />
-    <unitInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="39" startPosition="19" endLine="52" endPosition="9" unitName="jetbrains.mps.build.workflow.constraints.BwfSubTaskDependency_Constraints$2" />
-    <unitInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="30" startPosition="33" endLine="54" endPosition="5" unitName="jetbrains.mps.build.workflow.constraints.BwfSubTaskDependency_Constraints$1" />
-    <unitInfo nodeId="2769948622284605888" fileName="BwfSubTaskDependency_Constraints.java" startLine="22" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.BwfSubTaskDependency_Constraints" />
+    <file name="BwfSubTaskDependency_Constraints.java">
+      <node id="2769948622284605888" at="23,45,24,73" concept="14" />
+      <node id="2769948622284605888" at="28,83,29,75" concept="8" />
+      <node id="2769948622284605888" at="32,44,33,20" concept="9" />
+      <node id="2769948622284605888" at="41,63,42,58" concept="9" />
+      <node id="2769948622284605888" at="47,13,48,225" concept="8" />
+      <node id="2769948622284605888" at="48,225,49,64" concept="9" />
+      <node id="2769948622284605888" at="54,7,55,22" concept="9" />
+      <node id="2769948622284605888" at="58,0,59,0" concept="12" trace="breakingNode_45r57v_a0a0a0a0a1a0b0a1a1" />
+      <node id="2769948622284605888" at="23,0,26,0" concept="1" trace="BwfSubTaskDependency_Constraints#()V" />
+      <node id="2769948622284605888" at="31,0,35,0" concept="7" trace="hasOwnScopeProvider#()Z" />
+      <node id="2769948622284605888" at="40,0,44,0" concept="7" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="2769948622284605888" at="46,122,50,13" concept="0" />
+      <node id="2769948622284605888" at="45,0,52,0" concept="7" trace="createScope#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljetbrains/mps/scope/Scope;" />
+      <node id="2769948622284605888" at="38,56,52,10" concept="9" />
+      <node id="2769948622284605888" at="36,0,54,0" concept="7" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="2769948622284605888" at="29,75,54,7" concept="2" />
+      <node id="2769948622284605888" at="27,0,57,0" concept="7" trace="getNotDefaultReferences#()Ljava/util/Map;" />
+      <scope id="2769948622284605888" at="23,45,24,73" />
+      <scope id="2769948622284605888" at="32,44,33,20" />
+      <scope id="2769948622284605888" at="41,63,42,58" />
+      <scope id="2769948622284605888" at="47,13,49,64">
+        <var name="scope" id="2769948622284605888" />
+      </scope>
+      <scope id="2769948622284605888" at="23,0,26,0" />
+      <scope id="2769948622284605888" at="31,0,35,0" />
+      <scope id="2769948622284605888" at="40,0,44,0" />
+      <scope id="2769948622284605888" at="46,122,50,13" />
+      <scope id="2769948622284605888" at="45,0,52,0">
+        <var name="_context" id="2769948622284605888" />
+        <var name="operationContext" id="2769948622284605888" />
+      </scope>
+      <scope id="2769948622284605888" at="38,56,52,10" />
+      <scope id="2769948622284605888" at="36,0,54,0" />
+      <scope id="2769948622284605888" at="28,83,55,22">
+        <var name="references" id="2769948622284605888" />
+      </scope>
+      <scope id="2769948622284605888" at="27,0,57,0" />
+      <unit id="2769948622284605888" at="39,19,52,9" name="jetbrains.mps.build.workflow.constraints.BwfSubTaskDependency_Constraints$2" />
+      <unit id="2769948622284605888" at="30,33,54,5" name="jetbrains.mps.build.workflow.constraints.BwfSubTaskDependency_Constraints$1" />
+      <unit id="2769948622284605888" at="22,0,60,0" name="jetbrains.mps.build.workflow.constraints.BwfSubTaskDependency_Constraints" />
+    </file>
   </root>
   <root nodeRef="r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)/2769948622284761820">
-    <nodeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="15" startPosition="32" endLine="16" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="20" startPosition="82" endLine="21" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="24" startPosition="40" endLine="25" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="29" startPosition="70" endLine="30" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2769948622284761824" fileName="BwfTask_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="33" startPosition="7" endLine="34" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfTask_Constraints#()V" />
-    <nodeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnValidator#()Z" />
-    <nodeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="21" startPosition="74" endLine="33" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <scopeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="15" startPosition="32" endLine="16" endPosition="60" />
-    <scopeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="24" startPosition="40" endLine="25" endPosition="20" />
-    <scopeInfo nodeId="2769948622284761823" fileName="BwfTask_Constraints.java" startLine="30" startPosition="37" endLine="31" endPosition="149" />
-    <scopeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="29" startPosition="70" endLine="31" endPosition="149">
-      <varInfo nodeId="2769948622284761820" varName="propertyName" />
-    </scopeInfo>
-    <scopeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="28" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="2769948622284761820" varName="node" />
-      <varInfo nodeId="2769948622284761820" varName="propertyValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="20" startPosition="82" endLine="34" endPosition="22">
-      <varInfo nodeId="2769948622284761820" varName="properties" />
-    </scopeInfo>
-    <scopeInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="19" startPosition="0" endLine="36" endPosition="0" />
-    <unitInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="22" startPosition="31" endLine="33" endPosition="5" unitName="jetbrains.mps.build.workflow.constraints.BwfTask_Constraints$1" />
-    <unitInfo nodeId="2769948622284761820" fileName="BwfTask_Constraints.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.BwfTask_Constraints" />
+    <file name="BwfTask_Constraints.java">
+      <node id="2769948622284761820" at="15,32,16,60" concept="14" />
+      <node id="2769948622284761820" at="20,82,21,74" concept="8" />
+      <node id="2769948622284761820" at="24,40,25,20" concept="9" />
+      <node id="2769948622284761820" at="29,70,30,37" concept="8" />
+      <node id="2769948622284761820" at="30,37,31,149" concept="0" />
+      <node id="2769948622284761824" at="30,37,31,149" concept="9" />
+      <node id="2769948622284761820" at="33,7,34,22" concept="9" />
+      <node id="2769948622284761820" at="15,0,18,0" concept="1" trace="BwfTask_Constraints#()V" />
+      <node id="2769948622284761820" at="23,0,27,0" concept="7" trace="hasOwnValidator#()Z" />
+      <node id="2769948622284761820" at="28,0,33,0" concept="7" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="2769948622284761820" at="21,74,33,7" concept="2" />
+      <node id="2769948622284761820" at="19,0,36,0" concept="7" trace="getNotDefaultProperties#()Ljava/util/Map;" />
+      <scope id="2769948622284761820" at="15,32,16,60" />
+      <scope id="2769948622284761820" at="24,40,25,20" />
+      <scope id="2769948622284761823" at="30,37,31,149" />
+      <scope id="2769948622284761820" at="29,70,31,149">
+        <var name="propertyName" id="2769948622284761820" />
+      </scope>
+      <scope id="2769948622284761820" at="15,0,18,0" />
+      <scope id="2769948622284761820" at="23,0,27,0" />
+      <scope id="2769948622284761820" at="28,0,33,0">
+        <var name="node" id="2769948622284761820" />
+        <var name="propertyValue" id="2769948622284761820" />
+      </scope>
+      <scope id="2769948622284761820" at="20,82,34,22">
+        <var name="properties" id="2769948622284761820" />
+      </scope>
+      <scope id="2769948622284761820" at="19,0,36,0" />
+      <unit id="2769948622284761820" at="22,31,33,5" name="jetbrains.mps.build.workflow.constraints.BwfTask_Constraints$1" />
+      <unit id="2769948622284761820" at="14,0,37,0" name="jetbrains.mps.build.workflow.constraints.BwfTask_Constraints" />
+    </file>
   </root>
   <root nodeRef="r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)/2769948622284761849">
-    <nodeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="14" startPosition="35" endLine="15" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="19" startPosition="82" endLine="20" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="23" startPosition="40" endLine="24" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="28" startPosition="70" endLine="29" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2769948622284761853" fileName="BwfSubTask_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="32" startPosition="7" endLine="33" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfSubTask_Constraints#()V" />
-    <nodeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnValidator#()Z" />
-    <nodeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="20" startPosition="74" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultProperties#()Ljava/util/Map;" />
-    <scopeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="14" startPosition="35" endLine="15" endPosition="63" />
-    <scopeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="23" startPosition="40" endLine="24" endPosition="20" />
-    <scopeInfo nodeId="2769948622284761852" fileName="BwfSubTask_Constraints.java" startLine="29" startPosition="37" endLine="30" endPosition="79" />
-    <scopeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="28" startPosition="70" endLine="30" endPosition="79">
-      <varInfo nodeId="2769948622284761849" varName="propertyName" />
-    </scopeInfo>
-    <scopeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="27" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="2769948622284761849" varName="node" />
-      <varInfo nodeId="2769948622284761849" varName="propertyValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="19" startPosition="82" endLine="33" endPosition="22">
-      <varInfo nodeId="2769948622284761849" varName="properties" />
-    </scopeInfo>
-    <scopeInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="18" startPosition="0" endLine="35" endPosition="0" />
-    <unitInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="21" startPosition="31" endLine="32" endPosition="5" unitName="jetbrains.mps.build.workflow.constraints.BwfSubTask_Constraints$1" />
-    <unitInfo nodeId="2769948622284761849" fileName="BwfSubTask_Constraints.java" startLine="13" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.BwfSubTask_Constraints" />
+    <file name="BwfSubTask_Constraints.java">
+      <node id="2769948622284761849" at="14,35,15,63" concept="14" />
+      <node id="2769948622284761849" at="19,82,20,74" concept="8" />
+      <node id="2769948622284761849" at="23,40,24,20" concept="9" />
+      <node id="2769948622284761849" at="28,70,29,37" concept="8" />
+      <node id="2769948622284761849" at="29,37,30,79" concept="0" />
+      <node id="2769948622284761853" at="29,37,30,79" concept="9" />
+      <node id="2769948622284761849" at="32,7,33,22" concept="9" />
+      <node id="2769948622284761849" at="14,0,17,0" concept="1" trace="BwfSubTask_Constraints#()V" />
+      <node id="2769948622284761849" at="22,0,26,0" concept="7" trace="hasOwnValidator#()Z" />
+      <node id="2769948622284761849" at="27,0,32,0" concept="7" trace="validateValue#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;)Z" />
+      <node id="2769948622284761849" at="20,74,32,7" concept="2" />
+      <node id="2769948622284761849" at="18,0,35,0" concept="7" trace="getNotDefaultProperties#()Ljava/util/Map;" />
+      <scope id="2769948622284761849" at="14,35,15,63" />
+      <scope id="2769948622284761849" at="23,40,24,20" />
+      <scope id="2769948622284761852" at="29,37,30,79" />
+      <scope id="2769948622284761849" at="28,70,30,79">
+        <var name="propertyName" id="2769948622284761849" />
+      </scope>
+      <scope id="2769948622284761849" at="14,0,17,0" />
+      <scope id="2769948622284761849" at="22,0,26,0" />
+      <scope id="2769948622284761849" at="27,0,32,0">
+        <var name="node" id="2769948622284761849" />
+        <var name="propertyValue" id="2769948622284761849" />
+      </scope>
+      <scope id="2769948622284761849" at="19,82,33,22">
+        <var name="properties" id="2769948622284761849" />
+      </scope>
+      <scope id="2769948622284761849" at="18,0,35,0" />
+      <unit id="2769948622284761849" at="21,31,32,5" name="jetbrains.mps.build.workflow.constraints.BwfSubTask_Constraints$1" />
+      <unit id="2769948622284761849" at="13,0,36,0" name="jetbrains.mps.build.workflow.constraints.BwfSubTask_Constraints" />
+    </file>
   </root>
   <root nodeRef="r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)/7926701909975791098">
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="14" startPosition="35" endLine="15" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="19" startPosition="44" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="24" startPosition="188" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="25" startPosition="96" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="30" startPosition="0" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7926701909975791101" fileName="BwfFileSet_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="206" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeParentBreakingPoint" />
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfFileSet_Constraints#()V" />
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeParentMethod#()Z" />
-    <nodeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <scopeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="14" startPosition="35" endLine="15" endPosition="63" />
-    <scopeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="19" startPosition="44" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="68" />
-    <scopeInfo nodeId="7926701909975791100" fileName="BwfFileSet_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="206" />
-    <scopeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="7926701909975791098" varName="childConcept" />
-      <varInfo nodeId="7926701909975791098" varName="childNode" />
-      <varInfo nodeId="7926701909975791098" varName="link" />
-      <varInfo nodeId="7926701909975791098" varName="node" />
-      <varInfo nodeId="7926701909975791098" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="24" startPosition="188" endLine="31" endPosition="18">
-      <varInfo nodeId="7926701909975791098" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="7926701909975791098" varName="checkingNodeContext" />
-      <varInfo nodeId="7926701909975791098" varName="childConcept" />
-      <varInfo nodeId="7926701909975791098" varName="childNode" />
-      <varInfo nodeId="7926701909975791098" varName="link" />
-      <varInfo nodeId="7926701909975791098" varName="node" />
-      <varInfo nodeId="7926701909975791098" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="7926701909975791098" fileName="BwfFileSet_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.BwfFileSet_Constraints" />
+    <file name="BwfFileSet_Constraints.java">
+      <node id="7926701909975791098" at="14,35,15,63" concept="14" />
+      <node id="7926701909975791098" at="19,44,20,16" concept="9" />
+      <node id="7926701909975791098" at="24,188,25,96" concept="8" />
+      <node id="7926701909975791098" at="25,96,26,0" concept="11" />
+      <node id="7926701909975791098" at="27,51,28,68" concept="2" />
+      <node id="7926701909975791098" at="29,5,30,0" concept="11" />
+      <node id="7926701909975791098" at="30,0,31,18" concept="9" />
+      <node id="7926701909975791101" at="34,148,35,206" concept="9" />
+      <node id="7926701909975791098" at="38,0,39,0" concept="12" trace="canBeParentBreakingPoint" />
+      <node id="7926701909975791098" at="14,0,17,0" concept="1" trace="BwfFileSet_Constraints#()V" />
+      <node id="7926701909975791098" at="26,0,29,5" concept="6" />
+      <node id="7926701909975791098" at="34,0,37,0" concept="13" trace="static_canBeAParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="7926701909975791098" at="18,0,22,0" concept="7" trace="hasOwnCanBeParentMethod#()Z" />
+      <node id="7926701909975791098" at="23,0,33,0" concept="7" trace="canBeParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="7926701909975791098" at="14,35,15,63" />
+      <scope id="7926701909975791098" at="19,44,20,16" />
+      <scope id="7926701909975791098" at="27,51,28,68" />
+      <scope id="7926701909975791100" at="34,148,35,206" />
+      <scope id="7926701909975791098" at="14,0,17,0" />
+      <scope id="7926701909975791098" at="34,0,37,0">
+        <var name="childConcept" id="7926701909975791098" />
+        <var name="childNode" id="7926701909975791098" />
+        <var name="link" id="7926701909975791098" />
+        <var name="node" id="7926701909975791098" />
+        <var name="operationContext" id="7926701909975791098" />
+      </scope>
+      <scope id="7926701909975791098" at="18,0,22,0" />
+      <scope id="7926701909975791098" at="24,188,31,18">
+        <var name="result" id="7926701909975791098" />
+      </scope>
+      <scope id="7926701909975791098" at="23,0,33,0">
+        <var name="checkingNodeContext" id="7926701909975791098" />
+        <var name="childConcept" id="7926701909975791098" />
+        <var name="childNode" id="7926701909975791098" />
+        <var name="link" id="7926701909975791098" />
+        <var name="node" id="7926701909975791098" />
+        <var name="operationContext" id="7926701909975791098" />
+      </scope>
+      <unit id="7926701909975791098" at="13,0,40,0" name="jetbrains.mps.build.workflow.constraints.BwfFileSet_Constraints" />
+    </file>
   </root>
   <root nodeRef="r:8c3c79a2-2377-4680-a62f-78d39fdded56(jetbrains.mps.build.workflow.constraints)/7926701909975915317">
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="14" startPosition="41" endLine="15" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="19" startPosition="44" endLine="20" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="24" startPosition="188" endLine="25" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="25" startPosition="96" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="29" startPosition="5" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="30" startPosition="0" endLine="31" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7926701909975915320" fileName="BwfJavaClassPath_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeParentBreakingPoint" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BwfJavaClassPath_Constraints#()V" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeParentMethod#()Z" />
-    <nodeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="14" startPosition="41" endLine="15" endPosition="69" />
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="19" startPosition="44" endLine="20" endPosition="16" />
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="27" startPosition="51" endLine="28" endPosition="68" />
-    <scopeInfo nodeId="7926701909975915319" fileName="BwfJavaClassPath_Constraints.java" startLine="34" startPosition="148" endLine="35" endPosition="308" />
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
-      <varInfo nodeId="7926701909975915317" varName="childConcept" />
-      <varInfo nodeId="7926701909975915317" varName="childNode" />
-      <varInfo nodeId="7926701909975915317" varName="link" />
-      <varInfo nodeId="7926701909975915317" varName="node" />
-      <varInfo nodeId="7926701909975915317" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="18" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="24" startPosition="188" endLine="31" endPosition="18">
-      <varInfo nodeId="7926701909975915317" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="23" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="7926701909975915317" varName="checkingNodeContext" />
-      <varInfo nodeId="7926701909975915317" varName="childConcept" />
-      <varInfo nodeId="7926701909975915317" varName="childNode" />
-      <varInfo nodeId="7926701909975915317" varName="link" />
-      <varInfo nodeId="7926701909975915317" varName="node" />
-      <varInfo nodeId="7926701909975915317" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="7926701909975915317" fileName="BwfJavaClassPath_Constraints.java" startLine="13" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.workflow.constraints.BwfJavaClassPath_Constraints" />
+    <file name="BwfJavaClassPath_Constraints.java">
+      <node id="7926701909975915317" at="14,41,15,69" concept="14" />
+      <node id="7926701909975915317" at="19,44,20,16" concept="9" />
+      <node id="7926701909975915317" at="24,188,25,96" concept="8" />
+      <node id="7926701909975915317" at="25,96,26,0" concept="11" />
+      <node id="7926701909975915317" at="27,51,28,68" concept="2" />
+      <node id="7926701909975915317" at="29,5,30,0" concept="11" />
+      <node id="7926701909975915317" at="30,0,31,18" concept="9" />
+      <node id="7926701909975915320" at="34,148,35,308" concept="9" />
+      <node id="7926701909975915317" at="38,0,39,0" concept="12" trace="canBeParentBreakingPoint" />
+      <node id="7926701909975915317" at="14,0,17,0" concept="1" trace="BwfJavaClassPath_Constraints#()V" />
+      <node id="7926701909975915317" at="26,0,29,5" concept="6" />
+      <node id="7926701909975915317" at="34,0,37,0" concept="13" trace="static_canBeAParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+      <node id="7926701909975915317" at="18,0,22,0" concept="7" trace="hasOwnCanBeParentMethod#()Z" />
+      <node id="7926701909975915317" at="23,0,33,0" concept="7" trace="canBeParent#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+      <scope id="7926701909975915317" at="14,41,15,69" />
+      <scope id="7926701909975915317" at="19,44,20,16" />
+      <scope id="7926701909975915317" at="27,51,28,68" />
+      <scope id="7926701909975915319" at="34,148,35,308" />
+      <scope id="7926701909975915317" at="14,0,17,0" />
+      <scope id="7926701909975915317" at="34,0,37,0">
+        <var name="childConcept" id="7926701909975915317" />
+        <var name="childNode" id="7926701909975915317" />
+        <var name="link" id="7926701909975915317" />
+        <var name="node" id="7926701909975915317" />
+        <var name="operationContext" id="7926701909975915317" />
+      </scope>
+      <scope id="7926701909975915317" at="18,0,22,0" />
+      <scope id="7926701909975915317" at="24,188,31,18">
+        <var name="result" id="7926701909975915317" />
+      </scope>
+      <scope id="7926701909975915317" at="23,0,33,0">
+        <var name="checkingNodeContext" id="7926701909975915317" />
+        <var name="childConcept" id="7926701909975915317" />
+        <var name="childNode" id="7926701909975915317" />
+        <var name="link" id="7926701909975915317" />
+        <var name="node" id="7926701909975915317" />
+        <var name="operationContext" id="7926701909975915317" />
+      </scope>
+      <unit id="7926701909975915317" at="13,0,40,0" name="jetbrains.mps.build.workflow.constraints.BwfJavaClassPath_Constraints" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

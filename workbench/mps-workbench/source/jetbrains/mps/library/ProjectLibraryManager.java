@@ -29,7 +29,6 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.MPSProjectMigrationComponent;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
@@ -74,12 +73,13 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
     if (myProject.isDefault() || application.isUnitTestMode() && application.isDisposeInProgress()) {
       return;
     }
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        LibraryInitializer.getInstance().update();
-      }
-    });
+// Temporary HACK for MPS 3.1: LibraryInitializer.getInstance().update() moved to MPSProject.disposeComponent()
+//    ModelAccess.instance().runWriteAction(new Runnable() {
+//      @Override
+//      public void run() {
+//        LibraryInitializer.getInstance().update();
+//      }
+//    });
   }
 
   @Override

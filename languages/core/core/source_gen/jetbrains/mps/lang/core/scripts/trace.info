@@ -1,45 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:e6842e57-909e-4595-b7d4-8a0ffd0d1e32(jetbrains.mps.lang.core.scripts)/5989998095154029688">
-    <nodeInfo nodeId="5989998095154029688" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="13" startPosition="101" endLine="14" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="16" startPosition="31" endLine="17" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="20" startPosition="41" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="24" startPosition="59" endLine="25" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2931648071864920980" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5989998095154069689" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="32" startPosition="52" endLine="33" endPosition="339" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="36" startPosition="42" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
-    <nodeInfo nodeId="5989998095154029688" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="14" startPosition="99" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="14" startPosition="99" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5989998095154029688" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="13" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MigrateIModuleCastToAbstractModuleCast_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
-    <scopeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="16" startPosition="31" endLine="17" endPosition="63" />
-    <scopeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="20" startPosition="41" endLine="21" endPosition="63" />
-    <scopeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="24" startPosition="59" endLine="25" endPosition="69" />
-    <scopeInfo nodeId="5989998095154034406" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="28" startPosition="59" endLine="29" endPosition="21" />
-    <scopeInfo nodeId="5989998095154034142" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="32" startPosition="52" endLine="33" endPosition="339" />
-    <scopeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="36" startPosition="42" endLine="37" endPosition="21" />
-    <scopeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="5989998095154034138" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="5989998095154034138" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="14" startPosition="99" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="5989998095154029688" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="13" startPosition="101" endLine="39" endPosition="7" />
-    <scopeInfo nodeId="5989998095154029688" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="13" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="5989998095154029688" varName="operationContext" />
-    </scopeInfo>
-    <unitInfo nodeId="5989998095154034138" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="15" startPosition="28" endLine="39" endPosition="5" unitName="jetbrains.mps.lang.core.scripts.MigrateIModuleCastToAbstractModuleCast_MigrationScript$1" />
-    <unitInfo nodeId="5989998095154029688" fileName="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java" startLine="12" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.lang.core.scripts.MigrateIModuleCastToAbstractModuleCast_MigrationScript" />
+    <file name="MigrateIModuleCastToAbstractModuleCast_MigrationScript.java">
+      <node id="5989998095154029688" at="13,101,14,99" concept="5" />
+      <node id="5989998095154034138" at="16,31,17,63" concept="4" />
+      <node id="5989998095154034138" at="20,41,21,63" concept="4" />
+      <node id="5989998095154034138" at="24,59,25,69" concept="4" />
+      <node id="2931648071864920980" at="28,59,29,21" concept="4" />
+      <node id="5989998095154069689" at="32,52,33,339" concept="2" />
+      <node id="5989998095154034138" at="36,42,37,21" concept="4" />
+      <node id="5989998095154034138" at="16,0,19,0" concept="3" trace="getName#()Ljava/lang/String;" />
+      <node id="5989998095154034138" at="20,0,23,0" concept="3" trace="getAdditionalInfo#()Ljava/lang/String;" />
+      <node id="5989998095154034138" at="24,0,27,0" concept="3" trace="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+      <node id="5989998095154034138" at="28,0,31,0" concept="3" trace="isApplicableInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="5989998095154034138" at="32,0,35,0" concept="3" trace="doUpdateInstanceNode#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5989998095154034138" at="36,0,39,0" concept="3" trace="isShowAsIntention#()Z" />
+      <node id="5989998095154029688" at="14,99,39,7" concept="0" />
+      <node id="5989998095154034138" at="14,99,39,7" concept="2" />
+      <node id="5989998095154029688" at="13,0,41,0" concept="1" trace="MigrateIModuleCastToAbstractModuleCast_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+      <scope id="5989998095154034138" at="16,31,17,63" />
+      <scope id="5989998095154034138" at="20,41,21,63" />
+      <scope id="5989998095154034138" at="24,59,25,69" />
+      <scope id="5989998095154034406" at="28,59,29,21" />
+      <scope id="5989998095154034142" at="32,52,33,339" />
+      <scope id="5989998095154034138" at="36,42,37,21" />
+      <scope id="5989998095154034138" at="16,0,19,0" />
+      <scope id="5989998095154034138" at="20,0,23,0" />
+      <scope id="5989998095154034138" at="24,0,27,0" />
+      <scope id="5989998095154034138" at="28,0,31,0">
+        <var name="node" id="5989998095154034138" />
+      </scope>
+      <scope id="5989998095154034138" at="32,0,35,0">
+        <var name="node" id="5989998095154034138" />
+      </scope>
+      <scope id="5989998095154034138" at="36,0,39,0" />
+      <scope id="5989998095154034138" at="14,99,39,7" />
+      <scope id="5989998095154029688" at="13,101,39,7" />
+      <scope id="5989998095154029688" at="13,0,41,0">
+        <var name="operationContext" id="5989998095154029688" />
+      </scope>
+      <unit id="5989998095154034138" at="15,28,39,5" name="jetbrains.mps.lang.core.scripts.MigrateIModuleCastToAbstractModuleCast_MigrationScript$1" />
+      <unit id="5989998095154029688" at="12,0,42,0" name="jetbrains.mps.lang.core.scripts.MigrateIModuleCastToAbstractModuleCast_MigrationScript" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

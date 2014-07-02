@@ -22,9 +22,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.apache.log4j.Level;
-import jetbrains.mps.traceInfo.DebugInfo;
-import jetbrains.mps.generator.traceInfo.TraceInfoCache;
-import jetbrains.mps.traceInfo.TraceablePositionInfo;
+import jetbrains.mps.textgen.trace.TraceablePositionInfo;
+import jetbrains.mps.textgen.trace.TraceInfo;
 import com.intellij.openapi.application.ApplicationManager;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
@@ -103,20 +102,15 @@ public class BreakpointCreatorsManager implements ApplicationComponent {
       return breakpoint;
     }
 
-    DebugInfo debugInfo = TraceInfoCache.getInstance().get(SNodeOperations.getModel(node));
-    if (debugInfo != null) {
-      TraceablePositionInfo position = debugInfo.getPositionForNode(node);
-      if (position != null) {
-        String conceptFqName = position.getConceptFqName();
-        if (conceptFqName == null) {
-          return null;
-        }
-        SNode concept = (SNode) SModelUtil.findConceptDeclaration(conceptFqName);
-
-        return createBreakpoint(concept, node, project);
+    TraceablePositionInfo position = TraceInfo.getPositionForNode(node);
+    if (position != null) {
+      String conceptFqName = position.getConceptFqName();
+      if (conceptFqName == null) {
+        return null;
       }
+      SNode concept = (SNode) SModelUtil.findConceptDeclaration(conceptFqName);
+      return createBreakpoint(concept, node, project);
     }
-
     return null;
   }
 

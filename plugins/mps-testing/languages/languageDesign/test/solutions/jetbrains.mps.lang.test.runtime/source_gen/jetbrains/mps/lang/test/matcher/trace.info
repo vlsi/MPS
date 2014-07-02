@@ -1,509 +1,538 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.Statement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190225578">
-    <nodeInfo nodeId="8984393347190225580" fileName="DifferanceItem.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DifferanceItem#()V" />
-    <scopeInfo nodeId="8984393347190225583" fileName="DifferanceItem.java" startLine="7" startPosition="27" endLine="7" endPosition="27" />
-    <scopeInfo nodeId="8984393347190225580" fileName="DifferanceItem.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
-    <unitInfo nodeId="8984393347190225578" fileName="DifferanceItem.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.DifferanceItem" />
+    <file name="DifferanceItem.java">
+      <node id="8984393347190225580" at="7,0,9,0" concept="1" trace="DifferanceItem#()V" />
+      <scope id="8984393347190225583" at="7,27,7,27" />
+      <scope id="8984393347190225580" at="7,0,9,0" />
+      <unit id="8984393347190225578" at="6,0,10,0" name="jetbrains.mps.lang.test.matcher.DifferanceItem" />
+    </file>
   </root>
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190225584">
-    <nodeInfo nodeId="8984393347190225587" fileName="NodeDifference.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="8984393347190225590" fileName="NodeDifference.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myDifference" />
-    <nodeInfo nodeId="8984393347190225606" fileName="NodeDifference.java" startLine="12" startPosition="66" endLine="13" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190225612" fileName="NodeDifference.java" startLine="13" startPosition="23" endLine="14" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190225625" fileName="NodeDifference.java" startLine="17" startPosition="36" endLine="18" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190225639" fileName="NodeDifference.java" startLine="19" startPosition="36" endLine="20" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190225643" fileName="NodeDifference.java" startLine="21" startPosition="5" endLine="22" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190225648" fileName="NodeDifference.java" startLine="22" startPosition="43" endLine="23" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190225682" fileName="NodeDifference.java" startLine="25" startPosition="43" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190225670" fileName="NodeDifference.java" startLine="27" startPosition="14" endLine="28" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190225695" fileName="NodeDifference.java" startLine="30" startPosition="5" endLine="31" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225703" fileName="NodeDifference.java" startLine="35" startPosition="28" endLine="36" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225717" fileName="NodeDifference.java" startLine="41" startPosition="22" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225726" fileName="NodeDifference.java" startLine="44" startPosition="45" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225728" fileName="NodeDifference.java" startLine="46" startPosition="5" endLine="47" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190225747" fileName="NodeDifference.java" startLine="48" startPosition="58" endLine="49" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225758" fileName="NodeDifference.java" startLine="51" startPosition="52" endLine="52" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225760" fileName="NodeDifference.java" startLine="53" startPosition="5" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190225668" fileName="NodeDifference.java" startLine="27" startPosition="12" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8984393347190225629" fileName="NodeDifference.java" startLine="18" startPosition="21" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8984393347190225712" fileName="NodeDifference.java" startLine="40" startPosition="37" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190225719" fileName="NodeDifference.java" startLine="43" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190225734" fileName="NodeDifference.java" startLine="47" startPosition="47" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190225749" fileName="NodeDifference.java" startLine="50" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190225597" fileName="NodeDifference.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodeDifference#(Ljava/lang/String;Ljava/util/List;)V" />
-    <nodeInfo nodeId="8984393347190225699" fileName="NodeDifference.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8984393347190225664" fileName="NodeDifference.java" startLine="24" startPosition="46" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190225659" fileName="NodeDifference.java" startLine="23" startPosition="49" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8984393347190225619" fileName="NodeDifference.java" startLine="17" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#(I)Ljava/lang/String;" />
-    <nodeInfo nodeId="8984393347190225706" fileName="NodeDifference.java" startLine="39" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="8984393347190225638" fileName="NodeDifference.java" startLine="19" startPosition="36" endLine="20" endPosition="19" />
-    <scopeInfo nodeId="8984393347190225681" fileName="NodeDifference.java" startLine="25" startPosition="43" endLine="26" endPosition="64" />
-    <scopeInfo nodeId="8984393347190225669" fileName="NodeDifference.java" startLine="27" startPosition="14" endLine="28" endPosition="47" />
-    <scopeInfo nodeId="8984393347190225702" fileName="NodeDifference.java" startLine="35" startPosition="28" endLine="36" endPosition="23" />
-    <scopeInfo nodeId="8984393347190225716" fileName="NodeDifference.java" startLine="41" startPosition="22" endLine="42" endPosition="19" />
-    <scopeInfo nodeId="8984393347190225725" fileName="NodeDifference.java" startLine="44" startPosition="45" endLine="45" endPosition="19" />
-    <scopeInfo nodeId="8984393347190225746" fileName="NodeDifference.java" startLine="48" startPosition="58" endLine="49" endPosition="19" />
-    <scopeInfo nodeId="8984393347190225757" fileName="NodeDifference.java" startLine="51" startPosition="52" endLine="52" endPosition="19" />
-    <scopeInfo nodeId="8984393347190225605" fileName="NodeDifference.java" startLine="12" startPosition="66" endLine="14" endPosition="56" />
-    <scopeInfo nodeId="8984393347190225629" fileName="NodeDifference.java" startLine="18" startPosition="21" endLine="21" endPosition="5">
-      <varInfo nodeId="8984393347190225633" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190225597" fileName="NodeDifference.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="8984393347190225602" varName="diffs" />
-      <varInfo nodeId="8984393347190225600" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190225699" fileName="NodeDifference.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="8984393347190225663" fileName="NodeDifference.java" startLine="24" startPosition="46" endLine="29" endPosition="7" />
-    <scopeInfo nodeId="8984393347190225659" fileName="NodeDifference.java" startLine="23" startPosition="49" endLine="30" endPosition="5">
-      <varInfo nodeId="8984393347190225661" varName="item" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190225624" fileName="NodeDifference.java" startLine="17" startPosition="36" endLine="31" endPosition="27">
-      <varInfo nodeId="8984393347190225644" varName="buff" />
-      <varInfo nodeId="8984393347190225626" varName="pref" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190225711" fileName="NodeDifference.java" startLine="40" startPosition="37" endLine="54" endPosition="16">
-      <varInfo nodeId="8984393347190225729" varName="diff" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190225619" fileName="NodeDifference.java" startLine="17" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="8984393347190225622" varName="deep" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190225706" fileName="NodeDifference.java" startLine="39" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="8984393347190225709" varName="obj" />
-    </scopeInfo>
-    <unitInfo nodeId="8984393347190225584" fileName="NodeDifference.java" startLine="8" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.NodeDifference" />
+    <file name="NodeDifference.java">
+      <node id="8984393347190225587" at="9,0,10,0" concept="4" trace="myName" />
+      <node id="8984393347190225590" at="10,0,11,0" concept="4" trace="myDifference" />
+      <node id="8984393347190225606" at="12,66,13,23" concept="3" />
+      <node id="8984393347190225612" at="13,23,14,56" concept="3" />
+      <node id="8984393347190225625" at="17,36,18,21" concept="9" />
+      <node id="8984393347190225639" at="19,36,20,19" concept="3" />
+      <node id="8984393347190225643" at="21,5,22,43" concept="9" />
+      <node id="8984393347190225648" at="22,43,23,49" concept="3" />
+      <node id="8984393347190225682" at="25,43,26,64" concept="3" />
+      <node id="8984393347190225670" at="27,14,28,47" concept="3" />
+      <node id="8984393347190225695" at="30,5,31,27" concept="10" />
+      <node id="8984393347190225703" at="35,28,36,23" concept="10" />
+      <node id="8984393347190225717" at="41,22,42,19" concept="10" />
+      <node id="8984393347190225726" at="44,45,45,19" concept="10" />
+      <node id="8984393347190225728" at="46,5,47,47" concept="9" />
+      <node id="8984393347190225747" at="48,58,49,19" concept="10" />
+      <node id="8984393347190225758" at="51,52,52,19" concept="10" />
+      <node id="8984393347190225760" at="53,5,54,16" concept="10" />
+      <node id="8984393347190225668" at="27,12,29,7" concept="0" />
+      <node id="8984393347190225629" at="18,21,21,5" concept="5" />
+      <node id="8984393347190225712" at="40,37,43,5" concept="7" />
+      <node id="8984393347190225719" at="43,5,46,5" concept="7" />
+      <node id="8984393347190225734" at="47,47,50,5" concept="7" />
+      <node id="8984393347190225749" at="50,5,53,5" concept="7" />
+      <node id="8984393347190225597" at="12,0,16,0" concept="1" trace="NodeDifference#(Ljava/lang/String;Ljava/util/List;)V" />
+      <node id="8984393347190225699" at="34,0,38,0" concept="8" trace="toString#()Ljava/lang/String;" />
+      <node id="8984393347190225664" at="24,46,29,7" concept="7" />
+      <node id="8984393347190225659" at="23,49,30,5" concept="6" />
+      <node id="8984393347190225619" at="17,0,33,0" concept="8" trace="toString#(I)Ljava/lang/String;" />
+      <node id="8984393347190225706" at="39,0,56,0" concept="8" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="8984393347190225638" at="19,36,20,19" />
+      <scope id="8984393347190225681" at="25,43,26,64" />
+      <scope id="8984393347190225669" at="27,14,28,47" />
+      <scope id="8984393347190225702" at="35,28,36,23" />
+      <scope id="8984393347190225716" at="41,22,42,19" />
+      <scope id="8984393347190225725" at="44,45,45,19" />
+      <scope id="8984393347190225746" at="48,58,49,19" />
+      <scope id="8984393347190225757" at="51,52,52,19" />
+      <scope id="8984393347190225605" at="12,66,14,56" />
+      <scope id="8984393347190225629" at="18,21,21,5">
+        <var name="i" id="8984393347190225633" />
+      </scope>
+      <scope id="8984393347190225597" at="12,0,16,0">
+        <var name="diffs" id="8984393347190225602" />
+        <var name="name" id="8984393347190225600" />
+      </scope>
+      <scope id="8984393347190225699" at="34,0,38,0" />
+      <scope id="8984393347190225663" at="24,46,29,7" />
+      <scope id="8984393347190225659" at="23,49,30,5">
+        <var name="item" id="8984393347190225661" />
+      </scope>
+      <scope id="8984393347190225624" at="17,36,31,27">
+        <var name="buff" id="8984393347190225644" />
+        <var name="pref" id="8984393347190225626" />
+      </scope>
+      <scope id="8984393347190225711" at="40,37,54,16">
+        <var name="diff" id="8984393347190225729" />
+      </scope>
+      <scope id="8984393347190225619" at="17,0,33,0">
+        <var name="deep" id="8984393347190225622" />
+      </scope>
+      <scope id="8984393347190225706" at="39,0,56,0">
+        <var name="obj" id="8984393347190225709" />
+      </scope>
+      <unit id="8984393347190225584" at="8,0,57,0" name="jetbrains.mps.lang.test.matcher.NodeDifference" />
+    </file>
   </root>
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190227556">
-    <nodeInfo nodeId="8984393347190227570" fileName="NodesMatcher.java" startLine="19" startPosition="61" endLine="20" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227577" fileName="NodesMatcher.java" startLine="20" startPosition="52" endLine="21" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227582" fileName="NodesMatcher.java" startLine="21" startPosition="17" endLine="22" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227589" fileName="NodesMatcher.java" startLine="22" startPosition="52" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227594" fileName="NodesMatcher.java" startLine="23" startPosition="17" endLine="24" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227610" fileName="NodesMatcher.java" startLine="25" startPosition="24" endLine="26" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190227607" fileName="NodesMatcher.java" startLine="27" startPosition="12" endLine="28" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190227626" fileName="NodesMatcher.java" startLine="32" startPosition="84" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227635" fileName="NodesMatcher.java" startLine="33" startPosition="60" endLine="34" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190227655" fileName="NodesMatcher.java" startLine="37" startPosition="107" endLine="38" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227662" fileName="NodesMatcher.java" startLine="38" startPosition="45" endLine="39" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227678" fileName="NodesMatcher.java" startLine="40" startPosition="56" endLine="41" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227687" fileName="NodesMatcher.java" startLine="42" startPosition="5" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227692" fileName="NodesMatcher.java" startLine="43" startPosition="41" endLine="44" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227698" fileName="NodesMatcher.java" startLine="44" startPosition="29" endLine="45" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227713" fileName="NodesMatcher.java" startLine="46" startPosition="56" endLine="47" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227734" fileName="NodesMatcher.java" startLine="49" startPosition="26" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227740" fileName="NodesMatcher.java" startLine="51" startPosition="9" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227745" fileName="NodesMatcher.java" startLine="54" startPosition="5" endLine="55" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190227770" fileName="NodesMatcher.java" startLine="59" startPosition="89" endLine="60" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190227771" fileName="NodesMatcher.java" startLine="61" startPosition="5" endLine="62" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227778" fileName="NodesMatcher.java" startLine="62" startPosition="50" endLine="63" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227785" fileName="NodesMatcher.java" startLine="63" startPosition="51" endLine="64" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7855208177631850063" fileName="NodesMatcher.java" startLine="65" startPosition="31" endLine="66" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177631862529" fileName="NodesMatcher.java" startLine="66" startPosition="75" endLine="67" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177632038911" fileName="NodesMatcher.java" startLine="68" startPosition="58" endLine="69" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227846" fileName="NodesMatcher.java" startLine="71" startPosition="5" endLine="72" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227864" fileName="NodesMatcher.java" startLine="75" startPosition="84" endLine="76" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227877" fileName="NodesMatcher.java" startLine="77" startPosition="55" endLine="78" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190227884" fileName="NodesMatcher.java" startLine="79" startPosition="5" endLine="80" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227889" fileName="NodesMatcher.java" startLine="80" startPosition="51" endLine="81" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227895" fileName="NodesMatcher.java" startLine="81" startPosition="54" endLine="82" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227908" fileName="NodesMatcher.java" startLine="83" startPosition="33" endLine="84" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190227915" fileName="NodesMatcher.java" startLine="85" startPosition="5" endLine="86" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190227939" fileName="NodesMatcher.java" startLine="90" startPosition="89" endLine="91" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227951" fileName="NodesMatcher.java" startLine="91" startPosition="114" endLine="92" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190227953" fileName="NodesMatcher.java" startLine="93" startPosition="5" endLine="94" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7855208177633060500" fileName="NodesMatcher.java" startLine="97" startPosition="71" endLine="98" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177633060511" fileName="NodesMatcher.java" startLine="99" startPosition="59" endLine="100" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7855208177633063376" fileName="NodesMatcher.java" startLine="101" startPosition="5" endLine="102" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7855208177633083381" fileName="NodesMatcher.java" startLine="105" startPosition="118" endLine="106" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177633096820" fileName="NodesMatcher.java" startLine="106" startPosition="62" endLine="107" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177632934330" fileName="NodesMatcher.java" startLine="107" startPosition="62" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8984393347190227970" fileName="NodesMatcher.java" startLine="108" startPosition="0" endLine="109" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227977" fileName="NodesMatcher.java" startLine="109" startPosition="50" endLine="110" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227984" fileName="NodesMatcher.java" startLine="110" startPosition="39" endLine="111" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7855208177633145941" fileName="NodesMatcher.java" startLine="112" startPosition="31" endLine="113" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190227996" fileName="NodesMatcher.java" startLine="113" startPosition="52" endLine="114" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228008" fileName="NodesMatcher.java" startLine="115" startPosition="31" endLine="116" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7855208177633165260" fileName="NodesMatcher.java" startLine="117" startPosition="7" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7855208177633168885" fileName="NodesMatcher.java" startLine="118" startPosition="0" endLine="119" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228017" fileName="NodesMatcher.java" startLine="119" startPosition="52" endLine="120" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228029" fileName="NodesMatcher.java" startLine="121" startPosition="31" endLine="122" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7855208177633178174" fileName="NodesMatcher.java" startLine="123" startPosition="7" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8984393347190228067" fileName="NodesMatcher.java" startLine="126" startPosition="60" endLine="127" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228050" fileName="NodesMatcher.java" startLine="130" startPosition="51" endLine="131" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7855208177632564304" fileName="NodesMatcher.java" startLine="137" startPosition="49" endLine="138" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8748073483045356585" fileName="NodesMatcher.java" startLine="139" startPosition="26" endLine="140" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7855208177632564440" fileName="NodesMatcher.java" startLine="140" startPosition="16" endLine="141" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7855208177632567274" fileName="NodesMatcher.java" startLine="142" startPosition="5" endLine="143" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228090" fileName="NodesMatcher.java" startLine="146" startPosition="116" endLine="147" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228097" fileName="NodesMatcher.java" startLine="147" startPosition="50" endLine="148" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228104" fileName="NodesMatcher.java" startLine="148" startPosition="51" endLine="149" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7855208177632254639" fileName="NodesMatcher.java" startLine="150" startPosition="31" endLine="151" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177632286313" fileName="NodesMatcher.java" startLine="151" startPosition="64" endLine="152" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177632585670" fileName="NodesMatcher.java" startLine="152" startPosition="64" endLine="153" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177632611469" fileName="NodesMatcher.java" startLine="153" startPosition="54" endLine="154" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177632647826" fileName="NodesMatcher.java" startLine="155" startPosition="27" endLine="156" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7855208177632647839" fileName="NodesMatcher.java" startLine="156" startPosition="72" endLine="157" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7855208177632637377" fileName="NodesMatcher.java" startLine="158" startPosition="7" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7855208177632066599" fileName="NodesMatcher.java" startLine="159" startPosition="0" endLine="160" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177632086806" fileName="NodesMatcher.java" startLine="160" startPosition="65" endLine="161" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177632123383" fileName="NodesMatcher.java" startLine="162" startPosition="58" endLine="163" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177632123401" fileName="NodesMatcher.java" startLine="164" startPosition="24" endLine="165" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228201" fileName="NodesMatcher.java" startLine="171" startPosition="95" endLine="172" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177632826108" fileName="NodesMatcher.java" startLine="172" startPosition="54" endLine="173" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7855208177632833707" fileName="NodesMatcher.java" startLine="173" startPosition="71" endLine="174" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228208" fileName="NodesMatcher.java" startLine="174" startPosition="71" endLine="175" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228215" fileName="NodesMatcher.java" startLine="175" startPosition="43" endLine="176" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228227" fileName="NodesMatcher.java" startLine="177" startPosition="34" endLine="178" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228236" fileName="NodesMatcher.java" startLine="178" startPosition="39" endLine="179" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1218582063869173809" fileName="NodesMatcher.java" startLine="180" startPosition="45" endLine="181" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1218582063869173853" fileName="NodesMatcher.java" startLine="183" startPosition="45" endLine="184" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="8984393347190228260" fileName="NodesMatcher.java" startLine="186" startPosition="57" endLine="187" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190227558" fileName="NodesMatcher.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NodesMatcher#()V" />
-    <nodeInfo nodeId="8984393347190227605" fileName="NodesMatcher.java" startLine="27" startPosition="10" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8984393347190227669" fileName="NodesMatcher.java" startLine="39" startPosition="45" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="8984393347190227729" fileName="NodesMatcher.java" startLine="48" startPosition="25" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190227759" fileName="NodesMatcher.java" startLine="58" startPosition="70" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7855208177631891305" fileName="NodesMatcher.java" startLine="67" startPosition="75" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="8984393347190227871" fileName="NodesMatcher.java" startLine="76" startPosition="75" endLine="79" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190227901" fileName="NodesMatcher.java" startLine="82" startPosition="56" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7855208177633060509" fileName="NodesMatcher.java" startLine="98" startPosition="79" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8984393347190228000" fileName="NodesMatcher.java" startLine="114" startPosition="36" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228021" fileName="NodesMatcher.java" startLine="120" startPosition="36" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228059" fileName="NodesMatcher.java" startLine="125" startPosition="46" endLine="128" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228045" fileName="NodesMatcher.java" startLine="129" startPosition="14" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7855208177632123396" fileName="NodesMatcher.java" startLine="163" startPosition="92" endLine="166" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218582063869173768" fileName="NodesMatcher.java" startLine="179" startPosition="39" endLine="182" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1218582063869173811" fileName="NodesMatcher.java" startLine="182" startPosition="7" endLine="185" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228245" fileName="NodesMatcher.java" startLine="185" startPosition="7" endLine="188" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190227615" fileName="NodesMatcher.java" startLine="32" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchNodes#(Ljava/util/List;Ljava/util/List;)Ljava/util/ArrayList;" />
-    <nodeInfo nodeId="8984393347190227928" fileName="NodesMatcher.java" startLine="89" startPosition="96" endLine="93" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228043" fileName="NodesMatcher.java" startLine="129" startPosition="12" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7855208177632563997" fileName="NodesMatcher.java" startLine="138" startPosition="20" endLine="142" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="7855208177632647817" fileName="NodesMatcher.java" startLine="154" startPosition="54" endLine="158" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190227601" fileName="NodesMatcher.java" startLine="24" startPosition="76" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190227724" fileName="NodesMatcher.java" startLine="47" startPosition="93" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7855208177632112361" fileName="NodesMatcher.java" startLine="161" startPosition="65" endLine="167" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="8984393347190227792" fileName="NodesMatcher.java" startLine="64" startPosition="51" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8984393347190227917" fileName="NodesMatcher.java" startLine="89" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/ArrayList;)Z" />
-    <nodeInfo nodeId="7855208177633043726" fileName="NodesMatcher.java" startLine="97" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getReferencesMap#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;" />
-    <nodeInfo nodeId="7855208177632559881" fileName="NodesMatcher.java" startLine="137" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="countElements#(Ljava/util/Iterator;)I" />
-    <nodeInfo nodeId="8984393347190227704" fileName="NodesMatcher.java" startLine="45" startPosition="29" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="8984393347190228038" fileName="NodesMatcher.java" startLine="124" startPosition="0" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190227562" fileName="NodesMatcher.java" startLine="19" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchNodes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/test/matcher/NodeDifference;" />
-    <nodeInfo nodeId="8984393347190227852" fileName="NodesMatcher.java" startLine="75" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchNodes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)Ljetbrains/mps/lang/test/matcher/NodeDifference;" />
-    <nodeInfo nodeId="8984393347190228222" fileName="NodesMatcher.java" startLine="176" startPosition="43" endLine="189" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8984393347190227747" fileName="NodesMatcher.java" startLine="58" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="match#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="8984393347190228111" fileName="NodesMatcher.java" startLine="149" startPosition="51" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8984393347190227640" fileName="NodesMatcher.java" startLine="37" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchNodes#(Ljava/util/List;Ljava/util/List;Ljava/util/Map;)Ljava/util/ArrayList;" />
-    <nodeInfo nodeId="8984393347190228190" fileName="NodesMatcher.java" startLine="171" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchProperties#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/ArrayList;)V" />
-    <nodeInfo nodeId="8984393347190227991" fileName="NodesMatcher.java" startLine="111" startPosition="39" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8984393347190228075" fileName="NodesMatcher.java" startLine="146" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchChildren#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;Ljava/util/ArrayList;)V" />
-    <nodeInfo nodeId="8984393347190227955" fileName="NodesMatcher.java" startLine="105" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="matchReferences#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;Ljava/util/ArrayList;)V" />
-    <scopeInfo nodeId="8984393347190227561" fileName="NodesMatcher.java" startLine="16" startPosition="25" endLine="16" endPosition="25" />
-    <scopeInfo nodeId="8984393347190227609" fileName="NodesMatcher.java" startLine="25" startPosition="24" endLine="26" endPosition="26" />
-    <scopeInfo nodeId="8984393347190227606" fileName="NodesMatcher.java" startLine="27" startPosition="12" endLine="28" endPosition="18" />
-    <scopeInfo nodeId="8984393347190227677" fileName="NodesMatcher.java" startLine="40" startPosition="56" endLine="41" endPosition="66" />
-    <scopeInfo nodeId="8984393347190227733" fileName="NodesMatcher.java" startLine="49" startPosition="26" endLine="50" endPosition="48" />
-    <scopeInfo nodeId="8984393347190227769" fileName="NodesMatcher.java" startLine="59" startPosition="89" endLine="60" endPosition="13" />
-    <scopeInfo nodeId="7855208177631891307" fileName="NodesMatcher.java" startLine="68" startPosition="58" endLine="69" endPosition="68" />
-    <scopeInfo nodeId="8984393347190227876" fileName="NodesMatcher.java" startLine="77" startPosition="55" endLine="78" endPosition="65" />
-    <scopeInfo nodeId="8984393347190227907" fileName="NodesMatcher.java" startLine="83" startPosition="33" endLine="84" endPosition="65" />
-    <scopeInfo nodeId="7855208177633060510" fileName="NodesMatcher.java" startLine="99" startPosition="59" endLine="100" endPosition="61" />
-    <scopeInfo nodeId="8984393347190228007" fileName="NodesMatcher.java" startLine="115" startPosition="31" endLine="116" endPosition="54" />
-    <scopeInfo nodeId="8984393347190228028" fileName="NodesMatcher.java" startLine="121" startPosition="31" endLine="122" endPosition="54" />
-    <scopeInfo nodeId="8984393347190228066" fileName="NodesMatcher.java" startLine="126" startPosition="60" endLine="127" endPosition="62" />
-    <scopeInfo nodeId="8984393347190228049" fileName="NodesMatcher.java" startLine="130" startPosition="51" endLine="131" endPosition="63" />
-    <scopeInfo nodeId="7855208177632123400" fileName="NodesMatcher.java" startLine="164" startPosition="24" endLine="165" endPosition="28" />
-    <scopeInfo nodeId="1218582063869173769" fileName="NodesMatcher.java" startLine="180" startPosition="45" endLine="181" endPosition="17" />
-    <scopeInfo nodeId="1218582063869173812" fileName="NodesMatcher.java" startLine="183" startPosition="45" endLine="184" endPosition="17" />
-    <scopeInfo nodeId="8984393347190228259" fileName="NodesMatcher.java" startLine="186" startPosition="57" endLine="187" endPosition="60" />
-    <scopeInfo nodeId="8984393347190227558" fileName="NodesMatcher.java" startLine="16" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="8984393347190227625" fileName="NodesMatcher.java" startLine="32" startPosition="84" endLine="34" endPosition="46">
-      <varInfo nodeId="8984393347190227627" varName="map" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227938" fileName="NodesMatcher.java" startLine="90" startPosition="89" endLine="92" endPosition="18" />
-    <scopeInfo nodeId="7855208177632563998" fileName="NodesMatcher.java" startLine="139" startPosition="26" endLine="141" endPosition="16" />
-    <scopeInfo nodeId="7855208177632647825" fileName="NodesMatcher.java" startLine="155" startPosition="27" endLine="157" endPosition="17" />
-    <scopeInfo nodeId="7855208177633060509" fileName="NodesMatcher.java" startLine="98" startPosition="79" endLine="101" endPosition="5">
-      <varInfo nodeId="7855208177633060519" varName="nextReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228058" fileName="NodesMatcher.java" startLine="125" startPosition="46" endLine="128" endPosition="9" />
-    <scopeInfo nodeId="8984393347190228044" fileName="NodesMatcher.java" startLine="129" startPosition="14" endLine="132" endPosition="9" />
-    <scopeInfo nodeId="8984393347190227615" fileName="NodesMatcher.java" startLine="32" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="8984393347190227619" varName="a" />
-      <varInfo nodeId="8984393347190227622" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227728" fileName="NodesMatcher.java" startLine="48" startPosition="25" endLine="52" endPosition="22" />
-    <scopeInfo nodeId="7855208177632112363" fileName="NodesMatcher.java" startLine="162" startPosition="58" endLine="166" endPosition="9">
-      <varInfo nodeId="7855208177632123384" varName="d" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227796" fileName="NodesMatcher.java" startLine="65" startPosition="31" endLine="70" endPosition="7">
-      <varInfo nodeId="7855208177631850064" varName="iterator1" />
-      <varInfo nodeId="7855208177631862530" varName="iterator2" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227927" fileName="NodesMatcher.java" startLine="89" startPosition="96" endLine="94" endPosition="17" />
-    <scopeInfo nodeId="7855208177633043729" fileName="NodesMatcher.java" startLine="97" startPosition="71" endLine="102" endPosition="22">
-      <varInfo nodeId="7855208177633060501" varName="references" />
-    </scopeInfo>
-    <scopeInfo nodeId="7855208177632559884" fileName="NodesMatcher.java" startLine="137" startPosition="49" endLine="143" endPosition="19">
-      <varInfo nodeId="7855208177632564307" varName="counter" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227712" fileName="NodesMatcher.java" startLine="46" startPosition="56" endLine="53" endPosition="7">
-      <varInfo nodeId="8984393347190227714" varName="diff" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227792" fileName="NodesMatcher.java" startLine="64" startPosition="51" endLine="71" endPosition="5">
-      <varInfo nodeId="8984393347190227794" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227917" fileName="NodesMatcher.java" startLine="89" startPosition="0" endLine="96" endPosition="0">
-      <varInfo nodeId="8984393347190227920" varName="a" />
-      <varInfo nodeId="8984393347190227922" varName="b" />
-      <varInfo nodeId="8984393347190227924" varName="difference" />
-    </scopeInfo>
-    <scopeInfo nodeId="7855208177633043726" fileName="NodesMatcher.java" startLine="97" startPosition="0" endLine="104" endPosition="0">
-      <varInfo nodeId="7855208177633059890" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7855208177632559881" fileName="NodesMatcher.java" startLine="137" startPosition="0" endLine="145" endPosition="0">
-      <varInfo nodeId="7855208177632563768" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227569" fileName="NodesMatcher.java" startLine="19" startPosition="61" endLine="29" endPosition="5">
-      <varInfo nodeId="8984393347190227571" varName="aList" />
-      <varInfo nodeId="8984393347190227583" varName="bList" />
-      <varInfo nodeId="8984393347190227595" varName="diffs" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227863" fileName="NodesMatcher.java" startLine="75" startPosition="84" endLine="86" endPosition="16">
-      <varInfo nodeId="8984393347190227865" varName="difference" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228226" fileName="NodesMatcher.java" startLine="177" startPosition="34" endLine="188" endPosition="7">
-      <varInfo nodeId="8984393347190228228" varName="p1" />
-      <varInfo nodeId="8984393347190228237" varName="p2" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227562" fileName="NodesMatcher.java" startLine="19" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="8984393347190227565" varName="a" />
-      <varInfo nodeId="8984393347190227567" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227852" fileName="NodesMatcher.java" startLine="75" startPosition="0" endLine="88" endPosition="0">
-      <varInfo nodeId="8984393347190227855" varName="a" />
-      <varInfo nodeId="8984393347190227857" varName="b" />
-      <varInfo nodeId="8984393347190227859" varName="map" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228222" fileName="NodesMatcher.java" startLine="176" startPosition="43" endLine="189" endPosition="5">
-      <varInfo nodeId="8984393347190228224" varName="key" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227758" fileName="NodesMatcher.java" startLine="58" startPosition="70" endLine="72" endPosition="18">
-      <varInfo nodeId="8984393347190227772" varName="roles" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227747" fileName="NodesMatcher.java" startLine="58" startPosition="0" endLine="74" endPosition="0">
-      <varInfo nodeId="8984393347190227750" varName="a" />
-      <varInfo nodeId="8984393347190227752" varName="b" />
-      <varInfo nodeId="8984393347190227754" varName="map" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228115" fileName="NodesMatcher.java" startLine="150" startPosition="31" endLine="167" endPosition="7">
-      <varInfo nodeId="7855208177632254640" varName="children1" />
-      <varInfo nodeId="7855208177632286314" varName="children2" />
-      <varInfo nodeId="7855208177632066600" varName="iterator1" />
-      <varInfo nodeId="7855208177632086807" varName="iterator2" />
-      <varInfo nodeId="7855208177632585673" varName="size1" />
-      <varInfo nodeId="7855208177632611472" varName="size2" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227654" fileName="NodesMatcher.java" startLine="37" startPosition="107" endLine="55" endPosition="15">
-      <varInfo nodeId="8984393347190227656" varName="iteratorA" />
-      <varInfo nodeId="8984393347190227663" varName="iteratorB" />
-      <varInfo nodeId="8984393347190227688" varName="ret" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228200" fileName="NodesMatcher.java" startLine="171" startPosition="95" endLine="189" endPosition="5">
-      <varInfo nodeId="8984393347190228202" varName="propertes" />
-      <varInfo nodeId="7855208177632826109" varName="properties1" />
-      <varInfo nodeId="7855208177632833708" varName="properties2" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228111" fileName="NodesMatcher.java" startLine="149" startPosition="51" endLine="168" endPosition="5">
-      <varInfo nodeId="8984393347190228113" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227640" fileName="NodesMatcher.java" startLine="37" startPosition="0" endLine="57" endPosition="0">
-      <varInfo nodeId="8984393347190227644" varName="a" />
-      <varInfo nodeId="8984393347190227647" varName="b" />
-      <varInfo nodeId="8984393347190227650" varName="map" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228190" fileName="NodesMatcher.java" startLine="171" startPosition="0" endLine="191" endPosition="0">
-      <varInfo nodeId="8984393347190228193" varName="a" />
-      <varInfo nodeId="8984393347190228195" varName="b" />
-      <varInfo nodeId="8984393347190228197" varName="difference" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227995" fileName="NodesMatcher.java" startLine="112" startPosition="31" endLine="133" endPosition="7">
-      <varInfo nodeId="7855208177633145942" varName="reference1" />
-      <varInfo nodeId="7855208177633168886" varName="reference2" />
-      <varInfo nodeId="8984393347190227997" varName="referenceTarget1" />
-      <varInfo nodeId="8984393347190228018" varName="referenceTarget2" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228089" fileName="NodesMatcher.java" startLine="146" startPosition="116" endLine="168" endPosition="5">
-      <varInfo nodeId="8984393347190228091" varName="roles" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227991" fileName="NodesMatcher.java" startLine="111" startPosition="39" endLine="134" endPosition="5">
-      <varInfo nodeId="8984393347190227993" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228075" fileName="NodesMatcher.java" startLine="146" startPosition="0" endLine="170" endPosition="0">
-      <varInfo nodeId="8984393347190228078" varName="a" />
-      <varInfo nodeId="8984393347190228080" varName="b" />
-      <varInfo nodeId="8984393347190228086" varName="difference" />
-      <varInfo nodeId="8984393347190228082" varName="map" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227969" fileName="NodesMatcher.java" startLine="105" startPosition="118" endLine="134" endPosition="5">
-      <varInfo nodeId="7855208177633083382" varName="references1" />
-      <varInfo nodeId="7855208177633096821" varName="references2" />
-      <varInfo nodeId="8984393347190227971" varName="roles" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190227955" fileName="NodesMatcher.java" startLine="105" startPosition="0" endLine="136" endPosition="0">
-      <varInfo nodeId="8984393347190227958" varName="a" />
-      <varInfo nodeId="8984393347190227960" varName="b" />
-      <varInfo nodeId="8984393347190227966" varName="difference" />
-      <varInfo nodeId="8984393347190227962" varName="map" />
-    </scopeInfo>
-    <unitInfo nodeId="8984393347190227556" fileName="NodesMatcher.java" startLine="15" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
+    <file name="NodesMatcher.java">
+      <node id="8984393347190227570" at="19,61,20,52" concept="9" />
+      <node id="8984393347190227577" at="20,52,21,17" concept="3" />
+      <node id="8984393347190227582" at="21,17,22,52" concept="9" />
+      <node id="8984393347190227589" at="22,52,23,17" concept="3" />
+      <node id="8984393347190227594" at="23,17,24,76" concept="9" />
+      <node id="8984393347190227610" at="25,24,26,26" concept="10" />
+      <node id="8984393347190227607" at="27,12,28,18" concept="10" />
+      <node id="8984393347190227626" at="32,84,33,60" concept="9" />
+      <node id="8984393347190227635" at="33,60,34,46" concept="10" />
+      <node id="8984393347190227655" at="37,107,38,45" concept="9" />
+      <node id="8984393347190227662" at="38,45,39,45" concept="9" />
+      <node id="8984393347190227678" at="40,56,41,66" concept="3" />
+      <node id="8984393347190227687" at="42,5,43,41" concept="9" />
+      <node id="8984393347190227692" at="43,41,44,29" concept="3" />
+      <node id="8984393347190227698" at="44,29,45,29" concept="3" />
+      <node id="8984393347190227713" at="46,56,47,93" concept="9" />
+      <node id="8984393347190227734" at="49,26,50,48" concept="3" />
+      <node id="8984393347190227740" at="51,9,52,22" concept="3" />
+      <node id="8984393347190227745" at="54,5,55,15" concept="10" />
+      <node id="8984393347190227770" at="59,89,60,13" concept="10" />
+      <node id="8984393347190227771" at="61,5,62,50" concept="9" />
+      <node id="8984393347190227778" at="62,50,63,51" concept="3" />
+      <node id="8984393347190227785" at="63,51,64,51" concept="3" />
+      <node id="7855208177631850063" at="65,31,66,75" concept="9" />
+      <node id="7855208177631862529" at="66,75,67,75" concept="9" />
+      <node id="7855208177632038911" at="68,58,69,68" concept="3" />
+      <node id="8984393347190227846" at="71,5,72,18" concept="3" />
+      <node id="8984393347190227864" at="75,84,76,75" concept="9" />
+      <node id="8984393347190227877" at="77,55,78,65" concept="10" />
+      <node id="8984393347190227884" at="79,5,80,51" concept="3" />
+      <node id="8984393347190227889" at="80,51,81,54" concept="3" />
+      <node id="8984393347190227895" at="81,54,82,56" concept="3" />
+      <node id="8984393347190227908" at="83,33,84,65" concept="10" />
+      <node id="8984393347190227915" at="85,5,86,16" concept="10" />
+      <node id="8984393347190227939" at="90,89,91,114" concept="3" />
+      <node id="8984393347190227951" at="91,114,92,18" concept="10" />
+      <node id="8984393347190227953" at="93,5,94,17" concept="10" />
+      <node id="7855208177633060500" at="97,71,98,79" concept="9" />
+      <node id="7855208177633060511" at="99,59,100,61" concept="3" />
+      <node id="7855208177633063376" at="101,5,102,22" concept="10" />
+      <node id="7855208177633083381" at="105,118,106,62" concept="9" />
+      <node id="7855208177633096820" at="106,62,107,62" concept="9" />
+      <node id="7855208177632934330" at="107,62,108,0" concept="11" />
+      <node id="8984393347190227970" at="108,0,109,50" concept="9" />
+      <node id="8984393347190227977" at="109,50,110,39" concept="3" />
+      <node id="8984393347190227984" at="110,39,111,39" concept="3" />
+      <node id="7855208177633145941" at="112,31,113,52" concept="9" />
+      <node id="8984393347190227996" at="113,52,114,36" concept="9" />
+      <node id="8984393347190228008" at="115,31,116,54" concept="3" />
+      <node id="7855208177633165260" at="117,7,118,0" concept="11" />
+      <node id="7855208177633168885" at="118,0,119,52" concept="9" />
+      <node id="8984393347190228017" at="119,52,120,36" concept="9" />
+      <node id="8984393347190228029" at="121,31,122,54" concept="3" />
+      <node id="7855208177633178174" at="123,7,124,0" concept="11" />
+      <node id="8984393347190228067" at="126,60,127,62" concept="3" />
+      <node id="8984393347190228050" at="130,51,131,63" concept="3" />
+      <node id="7855208177632564304" at="137,49,138,20" concept="9" />
+      <node id="8748073483045356585" at="139,26,140,16" concept="3" />
+      <node id="7855208177632564440" at="140,16,141,16" concept="3" />
+      <node id="7855208177632567274" at="142,5,143,19" concept="10" />
+      <node id="8984393347190228090" at="146,116,147,50" concept="9" />
+      <node id="8984393347190228097" at="147,50,148,51" concept="3" />
+      <node id="8984393347190228104" at="148,51,149,51" concept="3" />
+      <node id="7855208177632254639" at="150,31,151,64" concept="9" />
+      <node id="7855208177632286313" at="151,64,152,64" concept="9" />
+      <node id="7855208177632585670" at="152,64,153,54" concept="9" />
+      <node id="7855208177632611469" at="153,54,154,54" concept="9" />
+      <node id="7855208177632647826" at="155,27,156,72" concept="3" />
+      <node id="7855208177632647839" at="156,72,157,17" concept="2" />
+      <node id="7855208177632637377" at="158,7,159,0" concept="11" />
+      <node id="7855208177632066599" at="159,0,160,65" concept="9" />
+      <node id="7855208177632086806" at="160,65,161,65" concept="9" />
+      <node id="7855208177632123383" at="162,58,163,92" concept="9" />
+      <node id="7855208177632123401" at="164,24,165,28" concept="3" />
+      <node id="8984393347190228201" at="171,95,172,54" concept="9" />
+      <node id="7855208177632826108" at="172,54,173,71" concept="9" />
+      <node id="7855208177632833707" at="173,71,174,71" concept="9" />
+      <node id="8984393347190228208" at="174,71,175,43" concept="3" />
+      <node id="8984393347190228215" at="175,43,176,43" concept="3" />
+      <node id="8984393347190228227" at="177,34,178,39" concept="9" />
+      <node id="8984393347190228236" at="178,39,179,39" concept="9" />
+      <node id="1218582063869173809" at="180,45,181,17" concept="2" />
+      <node id="1218582063869173853" at="183,45,184,17" concept="2" />
+      <node id="8984393347190228260" at="186,57,187,60" concept="3" />
+      <node id="8984393347190227558" at="16,0,18,0" concept="1" trace="NodesMatcher#()V" />
+      <node id="8984393347190227605" at="27,10,29,5" concept="0" />
+      <node id="8984393347190227669" at="39,45,42,5" concept="14" />
+      <node id="8984393347190227729" at="48,25,51,9" concept="7" />
+      <node id="8984393347190227759" at="58,70,61,5" concept="7" />
+      <node id="7855208177631891305" at="67,75,70,7" concept="14" />
+      <node id="8984393347190227871" at="76,75,79,5" concept="7" />
+      <node id="8984393347190227901" at="82,56,85,5" concept="7" />
+      <node id="7855208177633060509" at="98,79,101,5" concept="6" />
+      <node id="8984393347190228000" at="114,36,117,7" concept="7" />
+      <node id="8984393347190228021" at="120,36,123,7" concept="7" />
+      <node id="8984393347190228059" at="125,46,128,9" concept="7" />
+      <node id="8984393347190228045" at="129,14,132,9" concept="7" />
+      <node id="7855208177632123396" at="163,92,166,9" concept="7" />
+      <node id="1218582063869173768" at="179,39,182,7" concept="7" />
+      <node id="1218582063869173811" at="182,7,185,7" concept="7" />
+      <node id="8984393347190228245" at="185,7,188,7" concept="7" />
+      <node id="8984393347190227615" at="32,0,36,0" concept="12" trace="matchNodes#(Ljava/util/List;Ljava/util/List;)Ljava/util/ArrayList;" />
+      <node id="8984393347190227928" at="89,96,93,5" concept="7" />
+      <node id="8984393347190228043" at="129,12,133,7" concept="0" />
+      <node id="7855208177632563997" at="138,20,142,5" concept="14" />
+      <node id="7855208177632647817" at="154,54,158,7" concept="7" />
+      <node id="8984393347190227601" at="24,76,29,5" concept="7" />
+      <node id="8984393347190227724" at="47,93,53,7" concept="7" />
+      <node id="7855208177632112361" at="161,65,167,7" concept="14" />
+      <node id="8984393347190227792" at="64,51,71,5" concept="6" />
+      <node id="8984393347190227917" at="89,0,96,0" concept="12" trace="matchConcepts#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/ArrayList;)Z" />
+      <node id="7855208177633043726" at="97,0,104,0" concept="12" trace="getReferencesMap#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/util/Map;" />
+      <node id="7855208177632559881" at="137,0,145,0" concept="12" trace="countElements#(Ljava/util/Iterator;)I" />
+      <node id="8984393347190227704" at="45,29,54,5" concept="14" />
+      <node id="8984393347190228038" at="124,0,133,7" concept="7" />
+      <node id="8984393347190227562" at="19,0,31,0" concept="12" trace="matchNodes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/test/matcher/NodeDifference;" />
+      <node id="8984393347190227852" at="75,0,88,0" concept="12" trace="matchNodes#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)Ljetbrains/mps/lang/test/matcher/NodeDifference;" />
+      <node id="8984393347190228222" at="176,43,189,5" concept="6" />
+      <node id="8984393347190227747" at="58,0,74,0" concept="12" trace="match#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;)V" />
+      <node id="8984393347190228111" at="149,51,168,5" concept="6" />
+      <node id="8984393347190227640" at="37,0,57,0" concept="12" trace="matchNodes#(Ljava/util/List;Ljava/util/List;Ljava/util/Map;)Ljava/util/ArrayList;" />
+      <node id="8984393347190228190" at="171,0,191,0" concept="12" trace="matchProperties#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/ArrayList;)V" />
+      <node id="8984393347190227991" at="111,39,134,5" concept="6" />
+      <node id="8984393347190228075" at="146,0,170,0" concept="12" trace="matchChildren#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;Ljava/util/ArrayList;)V" />
+      <node id="8984393347190227955" at="105,0,136,0" concept="12" trace="matchReferences#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/util/Map;Ljava/util/ArrayList;)V" />
+      <scope id="8984393347190227561" at="16,25,16,25" />
+      <scope id="8984393347190227609" at="25,24,26,26" />
+      <scope id="8984393347190227606" at="27,12,28,18" />
+      <scope id="8984393347190227677" at="40,56,41,66" />
+      <scope id="8984393347190227733" at="49,26,50,48" />
+      <scope id="8984393347190227769" at="59,89,60,13" />
+      <scope id="7855208177631891307" at="68,58,69,68" />
+      <scope id="8984393347190227876" at="77,55,78,65" />
+      <scope id="8984393347190227907" at="83,33,84,65" />
+      <scope id="7855208177633060510" at="99,59,100,61" />
+      <scope id="8984393347190228007" at="115,31,116,54" />
+      <scope id="8984393347190228028" at="121,31,122,54" />
+      <scope id="8984393347190228066" at="126,60,127,62" />
+      <scope id="8984393347190228049" at="130,51,131,63" />
+      <scope id="7855208177632123400" at="164,24,165,28" />
+      <scope id="1218582063869173769" at="180,45,181,17" />
+      <scope id="1218582063869173812" at="183,45,184,17" />
+      <scope id="8984393347190228259" at="186,57,187,60" />
+      <scope id="8984393347190227558" at="16,0,18,0" />
+      <scope id="8984393347190227625" at="32,84,34,46">
+        <var name="map" id="8984393347190227627" />
+      </scope>
+      <scope id="8984393347190227938" at="90,89,92,18" />
+      <scope id="7855208177632563998" at="139,26,141,16" />
+      <scope id="7855208177632647825" at="155,27,157,17" />
+      <scope id="7855208177633060509" at="98,79,101,5">
+        <var name="nextReference" id="7855208177633060519" />
+      </scope>
+      <scope id="8984393347190228058" at="125,46,128,9" />
+      <scope id="8984393347190228044" at="129,14,132,9" />
+      <scope id="8984393347190227615" at="32,0,36,0">
+        <var name="a" id="8984393347190227619" />
+        <var name="b" id="8984393347190227622" />
+      </scope>
+      <scope id="8984393347190227728" at="48,25,52,22" />
+      <scope id="7855208177632112363" at="162,58,166,9">
+        <var name="d" id="7855208177632123384" />
+      </scope>
+      <scope id="8984393347190227796" at="65,31,70,7">
+        <var name="iterator1" id="7855208177631850064" />
+        <var name="iterator2" id="7855208177631862530" />
+      </scope>
+      <scope id="8984393347190227927" at="89,96,94,17" />
+      <scope id="7855208177633043729" at="97,71,102,22">
+        <var name="references" id="7855208177633060501" />
+      </scope>
+      <scope id="7855208177632559884" at="137,49,143,19">
+        <var name="counter" id="7855208177632564307" />
+      </scope>
+      <scope id="8984393347190227712" at="46,56,53,7">
+        <var name="diff" id="8984393347190227714" />
+      </scope>
+      <scope id="8984393347190227792" at="64,51,71,5">
+        <var name="role" id="8984393347190227794" />
+      </scope>
+      <scope id="8984393347190227917" at="89,0,96,0">
+        <var name="a" id="8984393347190227920" />
+        <var name="b" id="8984393347190227922" />
+        <var name="difference" id="8984393347190227924" />
+      </scope>
+      <scope id="7855208177633043726" at="97,0,104,0">
+        <var name="node" id="7855208177633059890" />
+      </scope>
+      <scope id="7855208177632559881" at="137,0,145,0">
+        <var name="it" id="7855208177632563768" />
+      </scope>
+      <scope id="8984393347190227569" at="19,61,29,5">
+        <var name="aList" id="8984393347190227571" />
+        <var name="bList" id="8984393347190227583" />
+        <var name="diffs" id="8984393347190227595" />
+      </scope>
+      <scope id="8984393347190227863" at="75,84,86,16">
+        <var name="difference" id="8984393347190227865" />
+      </scope>
+      <scope id="8984393347190228226" at="177,34,188,7">
+        <var name="p1" id="8984393347190228228" />
+        <var name="p2" id="8984393347190228237" />
+      </scope>
+      <scope id="8984393347190227562" at="19,0,31,0">
+        <var name="a" id="8984393347190227565" />
+        <var name="b" id="8984393347190227567" />
+      </scope>
+      <scope id="8984393347190227852" at="75,0,88,0">
+        <var name="a" id="8984393347190227855" />
+        <var name="b" id="8984393347190227857" />
+        <var name="map" id="8984393347190227859" />
+      </scope>
+      <scope id="8984393347190228222" at="176,43,189,5">
+        <var name="key" id="8984393347190228224" />
+      </scope>
+      <scope id="8984393347190227758" at="58,70,72,18">
+        <var name="roles" id="8984393347190227772" />
+      </scope>
+      <scope id="8984393347190227747" at="58,0,74,0">
+        <var name="a" id="8984393347190227750" />
+        <var name="b" id="8984393347190227752" />
+        <var name="map" id="8984393347190227754" />
+      </scope>
+      <scope id="8984393347190228115" at="150,31,167,7">
+        <var name="children1" id="7855208177632254640" />
+        <var name="children2" id="7855208177632286314" />
+        <var name="iterator1" id="7855208177632066600" />
+        <var name="iterator2" id="7855208177632086807" />
+        <var name="size1" id="7855208177632585673" />
+        <var name="size2" id="7855208177632611472" />
+      </scope>
+      <scope id="8984393347190227654" at="37,107,55,15">
+        <var name="iteratorA" id="8984393347190227656" />
+        <var name="iteratorB" id="8984393347190227663" />
+        <var name="ret" id="8984393347190227688" />
+      </scope>
+      <scope id="8984393347190228200" at="171,95,189,5">
+        <var name="propertes" id="8984393347190228202" />
+        <var name="properties1" id="7855208177632826109" />
+        <var name="properties2" id="7855208177632833708" />
+      </scope>
+      <scope id="8984393347190228111" at="149,51,168,5">
+        <var name="role" id="8984393347190228113" />
+      </scope>
+      <scope id="8984393347190227640" at="37,0,57,0">
+        <var name="a" id="8984393347190227644" />
+        <var name="b" id="8984393347190227647" />
+        <var name="map" id="8984393347190227650" />
+      </scope>
+      <scope id="8984393347190228190" at="171,0,191,0">
+        <var name="a" id="8984393347190228193" />
+        <var name="b" id="8984393347190228195" />
+        <var name="difference" id="8984393347190228197" />
+      </scope>
+      <scope id="8984393347190227995" at="112,31,133,7">
+        <var name="reference1" id="7855208177633145942" />
+        <var name="reference2" id="7855208177633168886" />
+        <var name="referenceTarget1" id="8984393347190227997" />
+        <var name="referenceTarget2" id="8984393347190228018" />
+      </scope>
+      <scope id="8984393347190228089" at="146,116,168,5">
+        <var name="roles" id="8984393347190228091" />
+      </scope>
+      <scope id="8984393347190227991" at="111,39,134,5">
+        <var name="role" id="8984393347190227993" />
+      </scope>
+      <scope id="8984393347190228075" at="146,0,170,0">
+        <var name="a" id="8984393347190228078" />
+        <var name="b" id="8984393347190228080" />
+        <var name="difference" id="8984393347190228086" />
+        <var name="map" id="8984393347190228082" />
+      </scope>
+      <scope id="8984393347190227969" at="105,118,134,5">
+        <var name="references1" id="7855208177633083382" />
+        <var name="references2" id="7855208177633096821" />
+        <var name="roles" id="8984393347190227971" />
+      </scope>
+      <scope id="8984393347190227955" at="105,0,136,0">
+        <var name="a" id="8984393347190227958" />
+        <var name="b" id="8984393347190227960" />
+        <var name="difference" id="8984393347190227966" />
+        <var name="map" id="8984393347190227962" />
+      </scope>
+      <unit id="8984393347190227556" at="15,0,192,0" name="jetbrains.mps.lang.test.matcher.NodesMatcher" />
+    </file>
   </root>
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228267">
-    <nodeInfo nodeId="8984393347190228270" fileName="PropertyDifferense.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperty" />
-    <nodeInfo nodeId="3873095776498129305" fileName="PropertyDifferense.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myActualValue" />
-    <nodeInfo nodeId="3873095776498131133" fileName="PropertyDifferense.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExpectedValue" />
-    <nodeInfo nodeId="8984393347190228279" fileName="PropertyDifferense.java" startLine="12" startPosition="88" endLine="13" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3873095776498132259" fileName="PropertyDifferense.java" startLine="13" startPosition="26" endLine="14" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3873095776498133265" fileName="PropertyDifferense.java" startLine="14" startPosition="32" endLine="15" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228291" fileName="PropertyDifferense.java" startLine="18" startPosition="53" endLine="19" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8984393347190228296" fileName="PropertyDifferense.java" startLine="23" startPosition="28" endLine="24" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228311" fileName="PropertyDifferense.java" startLine="29" startPosition="22" endLine="30" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228320" fileName="PropertyDifferense.java" startLine="32" startPosition="49" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228322" fileName="PropertyDifferense.java" startLine="34" startPosition="5" endLine="35" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228328" fileName="PropertyDifferense.java" startLine="35" startPosition="55" endLine="36" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228283" fileName="PropertyDifferense.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertyDifferense#(Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="8984393347190228306" fileName="PropertyDifferense.java" startLine="28" startPosition="37" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228313" fileName="PropertyDifferense.java" startLine="31" startPosition="5" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228292" fileName="PropertyDifferense.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8984393347190228273" fileName="PropertyDifferense.java" startLine="12" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PropertyDifferense#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8984393347190228300" fileName="PropertyDifferense.java" startLine="27" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="8984393347190228290" fileName="PropertyDifferense.java" startLine="18" startPosition="53" endLine="19" endPosition="12" />
-    <scopeInfo nodeId="8984393347190228295" fileName="PropertyDifferense.java" startLine="23" startPosition="28" endLine="24" endPosition="106" />
-    <scopeInfo nodeId="8984393347190228310" fileName="PropertyDifferense.java" startLine="29" startPosition="22" endLine="30" endPosition="19" />
-    <scopeInfo nodeId="8984393347190228319" fileName="PropertyDifferense.java" startLine="32" startPosition="49" endLine="33" endPosition="19" />
-    <scopeInfo nodeId="8984393347190228278" fileName="PropertyDifferense.java" startLine="12" startPosition="88" endLine="15" endPosition="36" />
-    <scopeInfo nodeId="8984393347190228283" fileName="PropertyDifferense.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="8984393347190228288" varName="b" />
-      <varInfo nodeId="8984393347190228286" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228292" fileName="PropertyDifferense.java" startLine="22" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="8984393347190228273" fileName="PropertyDifferense.java" startLine="12" startPosition="0" endLine="17" endPosition="0">
-      <varInfo nodeId="3873095776498125461" varName="actualValue" />
-      <varInfo nodeId="3873095776498125613" varName="expectedValue" />
-      <varInfo nodeId="8984393347190228276" varName="property" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228305" fileName="PropertyDifferense.java" startLine="28" startPosition="37" endLine="36" endPosition="46">
-      <varInfo nodeId="8984393347190228323" varName="diff" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228300" fileName="PropertyDifferense.java" startLine="27" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="8984393347190228303" varName="obj" />
-    </scopeInfo>
-    <unitInfo nodeId="8984393347190228267" fileName="PropertyDifferense.java" startLine="6" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.PropertyDifferense" />
+    <file name="PropertyDifferense.java">
+      <node id="8984393347190228270" at="7,0,8,0" concept="4" trace="myProperty" />
+      <node id="3873095776498129305" at="8,0,9,0" concept="4" trace="myActualValue" />
+      <node id="3873095776498131133" at="9,0,10,0" concept="4" trace="myExpectedValue" />
+      <node id="8984393347190228279" at="12,88,13,26" concept="3" />
+      <node id="3873095776498132259" at="13,26,14,32" concept="3" />
+      <node id="3873095776498133265" at="14,32,15,36" concept="3" />
+      <node id="8984393347190228291" at="18,53,19,12" concept="13" />
+      <node id="8984393347190228296" at="23,28,24,106" concept="10" />
+      <node id="8984393347190228311" at="29,22,30,19" concept="10" />
+      <node id="8984393347190228320" at="32,49,33,19" concept="10" />
+      <node id="8984393347190228322" at="34,5,35,55" concept="9" />
+      <node id="8984393347190228328" at="35,55,36,46" concept="10" />
+      <node id="8984393347190228283" at="18,0,21,0" concept="1" trace="PropertyDifferense#(Ljava/lang/String;Z)V" />
+      <node id="8984393347190228306" at="28,37,31,5" concept="7" />
+      <node id="8984393347190228313" at="31,5,34,5" concept="7" />
+      <node id="8984393347190228292" at="22,0,26,0" concept="8" trace="toString#()Ljava/lang/String;" />
+      <node id="8984393347190228273" at="12,0,17,0" concept="1" trace="PropertyDifferense#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="8984393347190228300" at="27,0,38,0" concept="8" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="8984393347190228290" at="18,53,19,12" />
+      <scope id="8984393347190228295" at="23,28,24,106" />
+      <scope id="8984393347190228310" at="29,22,30,19" />
+      <scope id="8984393347190228319" at="32,49,33,19" />
+      <scope id="8984393347190228278" at="12,88,15,36" />
+      <scope id="8984393347190228283" at="18,0,21,0">
+        <var name="b" id="8984393347190228288" />
+        <var name="role" id="8984393347190228286" />
+      </scope>
+      <scope id="8984393347190228292" at="22,0,26,0" />
+      <scope id="8984393347190228273" at="12,0,17,0">
+        <var name="actualValue" id="3873095776498125461" />
+        <var name="expectedValue" id="3873095776498125613" />
+        <var name="property" id="8984393347190228276" />
+      </scope>
+      <scope id="8984393347190228305" at="28,37,36,46">
+        <var name="diff" id="8984393347190228323" />
+      </scope>
+      <scope id="8984393347190228300" at="27,0,38,0">
+        <var name="obj" id="8984393347190228303" />
+      </scope>
+      <unit id="8984393347190228267" at="6,0,39,0" name="jetbrains.mps.lang.test.matcher.PropertyDifferense" />
+    </file>
   </root>
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228335">
-    <nodeInfo nodeId="8984393347190228338" fileName="ReferenceDifferense.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
-    <nodeInfo nodeId="8984393347190228341" fileName="ReferenceDifferense.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myInternal" />
-    <nodeInfo nodeId="8984393347190228352" fileName="ReferenceDifferense.java" startLine="10" startPosition="61" endLine="11" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228356" fileName="ReferenceDifferense.java" startLine="11" startPosition="18" endLine="12" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228367" fileName="ReferenceDifferense.java" startLine="17" startPosition="21" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228371" fileName="ReferenceDifferense.java" startLine="19" startPosition="5" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8984393347190228373" fileName="ReferenceDifferense.java" startLine="19" startPosition="5" endLine="20" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228388" fileName="ReferenceDifferense.java" startLine="25" startPosition="22" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228397" fileName="ReferenceDifferense.java" startLine="28" startPosition="50" endLine="29" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228399" fileName="ReferenceDifferense.java" startLine="30" startPosition="5" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228405" fileName="ReferenceDifferense.java" startLine="31" startPosition="57" endLine="32" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228364" fileName="ReferenceDifferense.java" startLine="16" startPosition="28" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228383" fileName="ReferenceDifferense.java" startLine="24" startPosition="37" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228390" fileName="ReferenceDifferense.java" startLine="27" startPosition="5" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228344" fileName="ReferenceDifferense.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReferenceDifferense#(Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="8984393347190228360" fileName="ReferenceDifferense.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8984393347190228377" fileName="ReferenceDifferense.java" startLine="23" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="8984393347190228366" fileName="ReferenceDifferense.java" startLine="17" startPosition="21" endLine="18" endPosition="63" />
-    <scopeInfo nodeId="8984393347190228372" fileName="ReferenceDifferense.java" startLine="19" startPosition="5" endLine="20" endPosition="61" />
-    <scopeInfo nodeId="8984393347190228387" fileName="ReferenceDifferense.java" startLine="25" startPosition="22" endLine="26" endPosition="19" />
-    <scopeInfo nodeId="8984393347190228396" fileName="ReferenceDifferense.java" startLine="28" startPosition="50" endLine="29" endPosition="19" />
-    <scopeInfo nodeId="8984393347190228351" fileName="ReferenceDifferense.java" startLine="10" startPosition="61" endLine="12" endPosition="26" />
-    <scopeInfo nodeId="8984393347190228344" fileName="ReferenceDifferense.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="8984393347190228349" varName="internal" />
-      <varInfo nodeId="8984393347190228347" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228363" fileName="ReferenceDifferense.java" startLine="16" startPosition="28" endLine="20" endPosition="61" />
-    <scopeInfo nodeId="8984393347190228360" fileName="ReferenceDifferense.java" startLine="15" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="8984393347190228382" fileName="ReferenceDifferense.java" startLine="24" startPosition="37" endLine="32" endPosition="71">
-      <varInfo nodeId="8984393347190228400" varName="diff" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228377" fileName="ReferenceDifferense.java" startLine="23" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="8984393347190228380" varName="obj" />
-    </scopeInfo>
-    <unitInfo nodeId="8984393347190228335" fileName="ReferenceDifferense.java" startLine="6" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.ReferenceDifferense" />
+    <file name="ReferenceDifferense.java">
+      <node id="8984393347190228338" at="7,0,8,0" concept="4" trace="myRole" />
+      <node id="8984393347190228341" at="8,0,9,0" concept="4" trace="myInternal" />
+      <node id="8984393347190228352" at="10,61,11,18" concept="3" />
+      <node id="8984393347190228356" at="11,18,12,26" concept="3" />
+      <node id="8984393347190228367" at="17,21,18,63" concept="10" />
+      <node id="8984393347190228371" at="19,5,20,61" concept="0" />
+      <node id="8984393347190228373" at="19,5,20,61" concept="10" />
+      <node id="8984393347190228388" at="25,22,26,19" concept="10" />
+      <node id="8984393347190228397" at="28,50,29,19" concept="10" />
+      <node id="8984393347190228399" at="30,5,31,57" concept="9" />
+      <node id="8984393347190228405" at="31,57,32,71" concept="10" />
+      <node id="8984393347190228364" at="16,28,19,5" concept="7" />
+      <node id="8984393347190228383" at="24,37,27,5" concept="7" />
+      <node id="8984393347190228390" at="27,5,30,5" concept="7" />
+      <node id="8984393347190228344" at="10,0,14,0" concept="1" trace="ReferenceDifferense#(Ljava/lang/String;Z)V" />
+      <node id="8984393347190228360" at="15,0,22,0" concept="8" trace="toString#()Ljava/lang/String;" />
+      <node id="8984393347190228377" at="23,0,34,0" concept="8" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="8984393347190228366" at="17,21,18,63" />
+      <scope id="8984393347190228372" at="19,5,20,61" />
+      <scope id="8984393347190228387" at="25,22,26,19" />
+      <scope id="8984393347190228396" at="28,50,29,19" />
+      <scope id="8984393347190228351" at="10,61,12,26" />
+      <scope id="8984393347190228344" at="10,0,14,0">
+        <var name="internal" id="8984393347190228349" />
+        <var name="role" id="8984393347190228347" />
+      </scope>
+      <scope id="8984393347190228363" at="16,28,20,61" />
+      <scope id="8984393347190228360" at="15,0,22,0" />
+      <scope id="8984393347190228382" at="24,37,32,71">
+        <var name="diff" id="8984393347190228400" />
+      </scope>
+      <scope id="8984393347190228377" at="23,0,34,0">
+        <var name="obj" id="8984393347190228380" />
+      </scope>
+      <unit id="8984393347190228335" at="6,0,35,0" name="jetbrains.mps.lang.test.matcher.ReferenceDifferense" />
+    </file>
   </root>
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228418">
-    <nodeInfo nodeId="8984393347190228421" fileName="ConceptDifference.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConcept1" />
-    <nodeInfo nodeId="8984393347190228424" fileName="ConceptDifference.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myConcept2" />
-    <nodeInfo nodeId="8984393347190228435" fileName="ConceptDifference.java" startLine="10" startPosition="62" endLine="11" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228439" fileName="ConceptDifference.java" startLine="11" startPosition="26" endLine="12" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228447" fileName="ConceptDifference.java" startLine="16" startPosition="28" endLine="17" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228466" fileName="ConceptDifference.java" startLine="22" startPosition="22" endLine="23" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228475" fileName="ConceptDifference.java" startLine="25" startPosition="48" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228477" fileName="ConceptDifference.java" startLine="27" startPosition="5" endLine="28" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228483" fileName="ConceptDifference.java" startLine="28" startPosition="53" endLine="29" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228461" fileName="ConceptDifference.java" startLine="21" startPosition="37" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228468" fileName="ConceptDifference.java" startLine="24" startPosition="5" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228427" fileName="ConceptDifference.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConceptDifference#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="8984393347190228443" fileName="ConceptDifference.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8984393347190228455" fileName="ConceptDifference.java" startLine="20" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="8984393347190228446" fileName="ConceptDifference.java" startLine="16" startPosition="28" endLine="17" endPosition="67" />
-    <scopeInfo nodeId="8984393347190228465" fileName="ConceptDifference.java" startLine="22" startPosition="22" endLine="23" endPosition="19" />
-    <scopeInfo nodeId="8984393347190228474" fileName="ConceptDifference.java" startLine="25" startPosition="48" endLine="26" endPosition="19" />
-    <scopeInfo nodeId="8984393347190228434" fileName="ConceptDifference.java" startLine="10" startPosition="62" endLine="12" endPosition="26" />
-    <scopeInfo nodeId="8984393347190228427" fileName="ConceptDifference.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
-      <varInfo nodeId="8984393347190228430" varName="concept1" />
-      <varInfo nodeId="8984393347190228432" varName="concept2" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228443" fileName="ConceptDifference.java" startLine="15" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="8984393347190228460" fileName="ConceptDifference.java" startLine="21" startPosition="37" endLine="29" endPosition="84">
-      <varInfo nodeId="8984393347190228478" varName="diff" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228455" fileName="ConceptDifference.java" startLine="20" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="8984393347190228458" varName="obj" />
-    </scopeInfo>
-    <unitInfo nodeId="8984393347190228418" fileName="ConceptDifference.java" startLine="6" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.ConceptDifference" />
+    <file name="ConceptDifference.java">
+      <node id="8984393347190228421" at="7,0,8,0" concept="4" trace="myConcept1" />
+      <node id="8984393347190228424" at="8,0,9,0" concept="4" trace="myConcept2" />
+      <node id="8984393347190228435" at="10,62,11,26" concept="3" />
+      <node id="8984393347190228439" at="11,26,12,26" concept="3" />
+      <node id="8984393347190228447" at="16,28,17,67" concept="10" />
+      <node id="8984393347190228466" at="22,22,23,19" concept="10" />
+      <node id="8984393347190228475" at="25,48,26,19" concept="10" />
+      <node id="8984393347190228477" at="27,5,28,53" concept="9" />
+      <node id="8984393347190228483" at="28,53,29,84" concept="10" />
+      <node id="8984393347190228461" at="21,37,24,5" concept="7" />
+      <node id="8984393347190228468" at="24,5,27,5" concept="7" />
+      <node id="8984393347190228427" at="10,0,14,0" concept="1" trace="ConceptDifference#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <node id="8984393347190228443" at="15,0,19,0" concept="8" trace="toString#()Ljava/lang/String;" />
+      <node id="8984393347190228455" at="20,0,31,0" concept="8" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="8984393347190228446" at="16,28,17,67" />
+      <scope id="8984393347190228465" at="22,22,23,19" />
+      <scope id="8984393347190228474" at="25,48,26,19" />
+      <scope id="8984393347190228434" at="10,62,12,26" />
+      <scope id="8984393347190228427" at="10,0,14,0">
+        <var name="concept1" id="8984393347190228430" />
+        <var name="concept2" id="8984393347190228432" />
+      </scope>
+      <scope id="8984393347190228443" at="15,0,19,0" />
+      <scope id="8984393347190228460" at="21,37,29,84">
+        <var name="diff" id="8984393347190228478" />
+      </scope>
+      <scope id="8984393347190228455" at="20,0,31,0">
+        <var name="obj" id="8984393347190228458" />
+      </scope>
+      <unit id="8984393347190228418" at="6,0,32,0" name="jetbrains.mps.lang.test.matcher.ConceptDifference" />
+    </file>
   </root>
   <root nodeRef="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)/8984393347190228497">
-    <nodeInfo nodeId="8984393347190228500" fileName="ChildrenCountDifference.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
-    <nodeInfo nodeId="8984393347190228503" fileName="ChildrenCountDifference.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCount1" />
-    <nodeInfo nodeId="8984393347190228506" fileName="ChildrenCountDifference.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCount2" />
-    <nodeInfo nodeId="8984393347190228519" fileName="ChildrenCountDifference.java" startLine="11" startPosition="63" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228523" fileName="ChildrenCountDifference.java" startLine="12" startPosition="18" endLine="13" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228527" fileName="ChildrenCountDifference.java" startLine="13" startPosition="18" endLine="14" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8984393347190228535" fileName="ChildrenCountDifference.java" startLine="18" startPosition="28" endLine="19" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228560" fileName="ChildrenCountDifference.java" startLine="24" startPosition="22" endLine="25" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228569" fileName="ChildrenCountDifference.java" startLine="27" startPosition="54" endLine="28" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228571" fileName="ChildrenCountDifference.java" startLine="29" startPosition="5" endLine="30" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8984393347190228577" fileName="ChildrenCountDifference.java" startLine="30" startPosition="65" endLine="31" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8984393347190228555" fileName="ChildrenCountDifference.java" startLine="23" startPosition="37" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228562" fileName="ChildrenCountDifference.java" startLine="26" startPosition="5" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8984393347190228531" fileName="ChildrenCountDifference.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8984393347190228509" fileName="ChildrenCountDifference.java" startLine="11" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ChildrenCountDifference#(Ljava/lang/String;II)V" />
-    <nodeInfo nodeId="8984393347190228549" fileName="ChildrenCountDifference.java" startLine="22" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <scopeInfo nodeId="8984393347190228534" fileName="ChildrenCountDifference.java" startLine="18" startPosition="28" endLine="19" endPosition="99" />
-    <scopeInfo nodeId="8984393347190228559" fileName="ChildrenCountDifference.java" startLine="24" startPosition="22" endLine="25" endPosition="19" />
-    <scopeInfo nodeId="8984393347190228568" fileName="ChildrenCountDifference.java" startLine="27" startPosition="54" endLine="28" endPosition="19" />
-    <scopeInfo nodeId="8984393347190228518" fileName="ChildrenCountDifference.java" startLine="11" startPosition="63" endLine="14" endPosition="18" />
-    <scopeInfo nodeId="8984393347190228531" fileName="ChildrenCountDifference.java" startLine="17" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="8984393347190228509" fileName="ChildrenCountDifference.java" startLine="11" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="8984393347190228514" varName="c1" />
-      <varInfo nodeId="8984393347190228516" varName="c2" />
-      <varInfo nodeId="8984393347190228512" varName="role" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228554" fileName="ChildrenCountDifference.java" startLine="23" startPosition="37" endLine="31" endPosition="96">
-      <varInfo nodeId="8984393347190228572" varName="diff" />
-    </scopeInfo>
-    <scopeInfo nodeId="8984393347190228549" fileName="ChildrenCountDifference.java" startLine="22" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="8984393347190228552" varName="obj" />
-    </scopeInfo>
-    <unitInfo nodeId="8984393347190228497" fileName="ChildrenCountDifference.java" startLine="6" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.test.matcher.ChildrenCountDifference" />
+    <file name="ChildrenCountDifference.java">
+      <node id="8984393347190228500" at="7,0,8,0" concept="4" trace="myRole" />
+      <node id="8984393347190228503" at="8,0,9,0" concept="4" trace="myCount1" />
+      <node id="8984393347190228506" at="9,0,10,0" concept="4" trace="myCount2" />
+      <node id="8984393347190228519" at="11,63,12,18" concept="3" />
+      <node id="8984393347190228523" at="12,18,13,18" concept="3" />
+      <node id="8984393347190228527" at="13,18,14,18" concept="3" />
+      <node id="8984393347190228535" at="18,28,19,99" concept="10" />
+      <node id="8984393347190228560" at="24,22,25,19" concept="10" />
+      <node id="8984393347190228569" at="27,54,28,19" concept="10" />
+      <node id="8984393347190228571" at="29,5,30,65" concept="9" />
+      <node id="8984393347190228577" at="30,65,31,96" concept="10" />
+      <node id="8984393347190228555" at="23,37,26,5" concept="7" />
+      <node id="8984393347190228562" at="26,5,29,5" concept="7" />
+      <node id="8984393347190228531" at="17,0,21,0" concept="8" trace="toString#()Ljava/lang/String;" />
+      <node id="8984393347190228509" at="11,0,16,0" concept="1" trace="ChildrenCountDifference#(Ljava/lang/String;II)V" />
+      <node id="8984393347190228549" at="22,0,33,0" concept="8" trace="equals#(Ljava/lang/Object;)Z" />
+      <scope id="8984393347190228534" at="18,28,19,99" />
+      <scope id="8984393347190228559" at="24,22,25,19" />
+      <scope id="8984393347190228568" at="27,54,28,19" />
+      <scope id="8984393347190228518" at="11,63,14,18" />
+      <scope id="8984393347190228531" at="17,0,21,0" />
+      <scope id="8984393347190228509" at="11,0,16,0">
+        <var name="c1" id="8984393347190228514" />
+        <var name="c2" id="8984393347190228516" />
+        <var name="role" id="8984393347190228512" />
+      </scope>
+      <scope id="8984393347190228554" at="23,37,31,96">
+        <var name="diff" id="8984393347190228572" />
+      </scope>
+      <scope id="8984393347190228549" at="22,0,33,0">
+        <var name="obj" id="8984393347190228552" />
+      </scope>
+      <unit id="8984393347190228497" at="6,0,34,0" name="jetbrains.mps.lang.test.matcher.ChildrenCountDifference" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

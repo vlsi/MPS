@@ -5,6 +5,7 @@ package jetbrains.mps.lang.test.behavior;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 
 public class NodeRuleCheckOperation_Behavior {
@@ -15,7 +16,7 @@ public class NodeRuleCheckOperation_Behavior {
     if (Sequence.fromIterable(errorReporters).isEmpty()) {
       return false;
     }
-    SNode referencedRuleNode = IReferenceAttachable_Behavior.call_getReferencedRuleNode_2893471348147987869(thisNode);
+    SNode referencedRuleNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getReferencedRuleNode_2893471348147987869", new Object[]{});
     if ((referencedRuleNode == null)) {
       return true;
     }

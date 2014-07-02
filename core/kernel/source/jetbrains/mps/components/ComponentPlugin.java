@@ -31,6 +31,9 @@ public class ComponentPlugin {
   }
 
   public void dispose() {
+    if (myComponents == null) {
+      return;
+    }
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {

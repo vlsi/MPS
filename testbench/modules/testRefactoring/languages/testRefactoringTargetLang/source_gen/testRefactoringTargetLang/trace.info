@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="Language.java" startLine="14" startPosition="0" endLine="59" endPosition="0" unitName="testRefactoringTargetLang.Language" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="Language.java">
+      <unit at="14,0,59,0" name="testRefactoringTargetLang.Language" />
+    </file>
+  </root>
+</debug-info>
 

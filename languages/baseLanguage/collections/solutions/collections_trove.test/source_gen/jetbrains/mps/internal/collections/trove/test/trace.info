@@ -1,314 +1,335 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:9470f421-cec1-405a-b0c5-73491b129d8a(jetbrains.mps.internal.collections.trove.test)/2767227637715419112">
-    <nodeInfo nodeId="4485853999107907694" fileName="PrimList_Test.java" startLine="26" startPosition="49" endLine="27" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4485853999107907704" fileName="PrimList_Test.java" startLine="27" startPosition="112" endLine="28" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4485853999107907713" fileName="PrimList_Test.java" startLine="28" startPosition="99" endLine="29" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4485853999107907722" fileName="PrimList_Test.java" startLine="29" startPosition="96" endLine="30" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4485853999107907733" fileName="PrimList_Test.java" startLine="30" startPosition="94" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4485853999107906652" fileName="PrimList_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4485853999107935932" fileName="PrimList_Test.java" startLine="32" startPosition="96" endLine="33" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4485853999107935936" fileName="PrimList_Test.java" startLine="33" startPosition="29" endLine="34" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4485853999107935939" fileName="PrimList_Test.java" startLine="34" startPosition="29" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4485853999107935942" fileName="PrimList_Test.java" startLine="35" startPosition="29" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4485853999107935945" fileName="PrimList_Test.java" startLine="36" startPosition="29" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4485853999107935948" fileName="PrimList_Test.java" startLine="37" startPosition="29" endLine="38" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2767227637715419123" fileName="PrimList_Test.java" startLine="41" startPosition="48" endLine="42" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2767227637715555741" fileName="PrimList_Test.java" startLine="42" startPosition="93" endLine="43" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2767227637715555755" fileName="PrimList_Test.java" startLine="43" startPosition="51" endLine="44" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2767227637715555771" fileName="PrimList_Test.java" startLine="44" startPosition="52" endLine="45" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2767227637715621487" fileName="PrimList_Test.java" startLine="45" startPosition="53" endLine="46" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2767227637715621499" fileName="PrimList_Test.java" startLine="46" startPosition="60" endLine="47" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2767227637715654456" fileName="PrimList_Test.java" startLine="50" startPosition="47" endLine="51" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2921267027982585672" fileName="PrimList_Test.java" startLine="51" startPosition="98" endLine="52" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2921267027982585652" fileName="PrimList_Test.java" startLine="52" startPosition="74" endLine="53" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2921267027982585609" fileName="PrimList_Test.java" startLine="54" startPosition="43" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2921267027982585664" fileName="PrimList_Test.java" startLine="56" startPosition="5" endLine="57" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="789821184115913454" fileName="PrimList_Test.java" startLine="57" startPosition="34" endLine="58" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5699232652750172939" fileName="PrimList_Test.java" startLine="58" startPosition="83" endLine="59" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5699232652750172931" fileName="PrimList_Test.java" startLine="59" startPosition="42" endLine="60" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2921267027982585685" fileName="PrimList_Test.java" startLine="61" startPosition="43" endLine="62" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2921267027982585707" fileName="PrimList_Test.java" startLine="63" startPosition="5" endLine="64" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="789821184115969060" fileName="PrimList_Test.java" startLine="64" startPosition="34" endLine="65" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="789821184115941245" fileName="PrimList_Test.java" startLine="65" startPosition="59" endLine="66" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2921267027982585629" fileName="PrimList_Test.java" startLine="72" startPosition="29" endLine="73" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="789821184116080318" fileName="PrimList_Test.java" startLine="73" startPosition="16" endLine="74" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2921267027982585633" fileName="PrimList_Test.java" startLine="75" startPosition="9" endLine="76" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2921267027982585640" fileName="PrimList_Test.java" startLine="78" startPosition="5" endLine="79" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="789821184115546626" fileName="PrimList_Test.java" startLine="79" startPosition="16" endLine="80" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="789821184115830208" fileName="PrimList_Test.java" startLine="81" startPosition="6" endLine="82" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="789821184115546631" fileName="PrimList_Test.java" startLine="83" startPosition="6" endLine="84" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2767227637715419114" fileName="PrimList_Test.java" startLine="69" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrimList_Test#()V" />
-    <nodeInfo nodeId="2921267027982585593" fileName="PrimList_Test.java" startLine="53" startPosition="34" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="2921267027982585683" fileName="PrimList_Test.java" startLine="60" startPosition="34" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4485853999107906410" fileName="PrimList_Test.java" startLine="80" startPosition="60" endLine="83" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" />
-    <nodeInfo nodeId="2921267027982585631" fileName="PrimList_Test.java" startLine="74" startPosition="16" endLine="78" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="2767227637715419119" fileName="PrimList_Test.java" startLine="41" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_byteList#()V" />
-    <nodeInfo nodeId="4485853999107906411" fileName="PrimList_Test.java" startLine="26" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_primLists#()V" />
-    <nodeInfo nodeId="2921267027982585625" fileName="PrimList_Test.java" startLine="72" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUsedMem#()J" />
-    <nodeInfo nodeId="2767227637715625442" fileName="PrimList_Test.java" startLine="50" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_intList#()V" />
-    <scopeInfo nodeId="2767227637715419117" fileName="PrimList_Test.java" startLine="69" startPosition="26" endLine="69" endPosition="26" />
-    <scopeInfo nodeId="2921267027982585636" fileName="PrimList_Test.java" startLine="77" startPosition="0" endLine="77" endPosition="38">
-      <varInfo nodeId="2921267027982585637" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="2921267027982585639" fileName="PrimList_Test.java" startLine="77" startPosition="38" endLine="77" endPosition="38" />
-    <scopeInfo nodeId="2921267027982585594" fileName="PrimList_Test.java" startLine="54" startPosition="43" endLine="55" endPosition="50" />
-    <scopeInfo nodeId="2921267027982585684" fileName="PrimList_Test.java" startLine="61" startPosition="43" endLine="62" endPosition="49" />
-    <scopeInfo nodeId="2921267027982585632" fileName="PrimList_Test.java" startLine="75" startPosition="9" endLine="76" endPosition="25" />
-    <scopeInfo nodeId="2767227637715419114" fileName="PrimList_Test.java" startLine="69" startPosition="0" endLine="71" endPosition="0" />
-    <scopeInfo nodeId="2921267027982585593" fileName="PrimList_Test.java" startLine="53" startPosition="34" endLine="56" endPosition="5">
-      <varInfo nodeId="2921267027982585596" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="2921267027982585683" fileName="PrimList_Test.java" startLine="60" startPosition="34" endLine="63" endPosition="5">
-      <varInfo nodeId="2921267027982585690" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="2767227637715419122" fileName="PrimList_Test.java" startLine="41" startPosition="48" endLine="47" endPosition="104">
-      <varInfo nodeId="2767227637715419124" varName="lb" />
-    </scopeInfo>
-    <scopeInfo nodeId="2767227637715419119" fileName="PrimList_Test.java" startLine="41" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="4485853999107906414" fileName="PrimList_Test.java" startLine="26" startPosition="49" endLine="38" endPosition="29">
-      <varInfo nodeId="4485853999107907695" varName="lb" />
-      <varInfo nodeId="4485853999107907705" varName="ld" />
-      <varInfo nodeId="4485853999107907714" varName="lf" />
-      <varInfo nodeId="4485853999107907723" varName="li" />
-      <varInfo nodeId="4485853999107907734" varName="ll" />
-      <varInfo nodeId="4485853999107906653" varName="ls" />
-    </scopeInfo>
-    <scopeInfo nodeId="2921267027982585628" fileName="PrimList_Test.java" startLine="72" startPosition="29" endLine="84" endPosition="47">
-      <varInfo nodeId="789821184115546627" varName="bean" />
-    </scopeInfo>
-    <scopeInfo nodeId="4485853999107906411" fileName="PrimList_Test.java" startLine="26" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="2921267027982585625" fileName="PrimList_Test.java" startLine="72" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="2767227637715625445" fileName="PrimList_Test.java" startLine="50" startPosition="47" endLine="66" endPosition="82">
-      <varInfo nodeId="2921267027982585673" varName="liBox" />
-      <varInfo nodeId="2767227637715654457" varName="liPrim" />
-      <varInfo nodeId="2921267027982585655" varName="mem1" />
-      <varInfo nodeId="2921267027982585665" varName="mem2" />
-      <varInfo nodeId="5699232652750172932" varName="mem3" />
-      <varInfo nodeId="2921267027982585708" varName="mem4" />
-    </scopeInfo>
-    <scopeInfo nodeId="2767227637715625442" fileName="PrimList_Test.java" startLine="50" startPosition="0" endLine="68" endPosition="0" />
-    <unitInfo nodeId="2767227637715419112" fileName="PrimList_Test.java" startLine="25" startPosition="0" endLine="87" endPosition="0" unitName="jetbrains.mps.internal.collections.trove.test.PrimList_Test" />
+    <file name="PrimList_Test.java">
+      <node id="4485853999107907694" at="26,49,27,112" concept="11" />
+      <node id="4485853999107907704" at="27,112,28,99" concept="11" />
+      <node id="4485853999107907713" at="28,99,29,96" concept="11" />
+      <node id="4485853999107907722" at="29,96,30,94" concept="11" />
+      <node id="4485853999107907733" at="30,94,31,93" concept="11" />
+      <node id="4485853999107906652" at="31,93,32,96" concept="11" />
+      <node id="4485853999107935932" at="32,96,33,29" concept="6" />
+      <node id="4485853999107935936" at="33,29,34,29" concept="6" />
+      <node id="4485853999107935939" at="34,29,35,29" concept="6" />
+      <node id="4485853999107935942" at="35,29,36,29" concept="6" />
+      <node id="4485853999107935945" at="36,29,37,29" concept="6" />
+      <node id="4485853999107935948" at="37,29,38,29" concept="6" />
+      <node id="2767227637715419123" at="41,48,42,93" concept="11" />
+      <node id="2767227637715555741" at="42,93,43,51" concept="6" />
+      <node id="2767227637715555755" at="43,51,44,52" concept="6" />
+      <node id="2767227637715555771" at="44,52,45,53" concept="6" />
+      <node id="2767227637715621487" at="45,53,46,60" concept="6" />
+      <node id="2767227637715621499" at="46,60,47,104" concept="6" />
+      <node id="2767227637715654456" at="50,47,51,98" concept="11" />
+      <node id="2921267027982585672" at="51,98,52,74" concept="11" />
+      <node id="2921267027982585652" at="52,74,53,34" concept="11" />
+      <node id="2921267027982585609" at="54,43,55,50" concept="6" />
+      <node id="2921267027982585664" at="56,5,57,34" concept="11" />
+      <node id="789821184115913454" at="57,34,58,83" concept="6" />
+      <node id="5699232652750172939" at="58,83,59,42" concept="6" />
+      <node id="5699232652750172931" at="59,42,60,34" concept="11" />
+      <node id="2921267027982585685" at="61,43,62,49" concept="6" />
+      <node id="2921267027982585707" at="63,5,64,34" concept="11" />
+      <node id="789821184115969060" at="64,34,65,59" concept="6" />
+      <node id="789821184115941245" at="65,59,66,82" concept="6" />
+      <node id="2921267027982585629" at="72,29,73,16" concept="6" />
+      <node id="789821184116080318" at="73,16,74,16" concept="6" />
+      <node id="2921267027982585633" at="75,9,76,25" concept="6" />
+      <node id="2921267027982585640" at="78,5,79,16" concept="6" />
+      <node id="789821184115546626" at="79,16,80,60" concept="11" />
+      <node id="789821184115830208" at="81,6,82,82" concept="6" />
+      <node id="789821184115546631" at="83,6,84,47" concept="12" />
+      <node id="2767227637715419114" at="69,0,71,0" concept="4" trace="PrimList_Test#()V" />
+      <node id="2921267027982585593" at="53,34,56,5" concept="8" />
+      <node id="2921267027982585683" at="60,34,63,5" concept="8" />
+      <node id="4485853999107906410" at="80,60,83,6" concept="3" />
+      <node id="2921267027982585631" at="74,16,78,5" concept="14" />
+      <node id="2767227637715419119" at="41,0,49,0" concept="10" trace="test_byteList#()V" />
+      <node id="4485853999107906411" at="26,0,40,0" concept="10" trace="test_primLists#()V" />
+      <node id="2921267027982585625" at="72,0,86,0" concept="10" trace="getUsedMem#()J" />
+      <node id="2767227637715625442" at="50,0,68,0" concept="10" trace="test_intList#()V" />
+      <scope id="2767227637715419117" at="69,26,69,26" />
+      <scope id="2921267027982585636" at="77,0,77,38">
+        <var name="e" id="2921267027982585637" />
+      </scope>
+      <scope id="2921267027982585639" at="77,38,77,38" />
+      <scope id="2921267027982585594" at="54,43,55,50" />
+      <scope id="2921267027982585684" at="61,43,62,49" />
+      <scope id="2921267027982585632" at="75,9,76,25" />
+      <scope id="2767227637715419114" at="69,0,71,0" />
+      <scope id="2921267027982585593" at="53,34,56,5">
+        <var name="i" id="2921267027982585596" />
+      </scope>
+      <scope id="2921267027982585683" at="60,34,63,5">
+        <var name="i" id="2921267027982585690" />
+      </scope>
+      <scope id="2767227637715419122" at="41,48,47,104">
+        <var name="lb" id="2767227637715419124" />
+      </scope>
+      <scope id="2767227637715419119" at="41,0,49,0" />
+      <scope id="4485853999107906414" at="26,49,38,29">
+        <var name="lb" id="4485853999107907695" />
+        <var name="ld" id="4485853999107907705" />
+        <var name="lf" id="4485853999107907714" />
+        <var name="li" id="4485853999107907723" />
+        <var name="ll" id="4485853999107907734" />
+        <var name="ls" id="4485853999107906653" />
+      </scope>
+      <scope id="2921267027982585628" at="72,29,84,47">
+        <var name="bean" id="789821184115546627" />
+      </scope>
+      <scope id="4485853999107906411" at="26,0,40,0" />
+      <scope id="2921267027982585625" at="72,0,86,0" />
+      <scope id="2767227637715625445" at="50,47,66,82">
+        <var name="liBox" id="2921267027982585673" />
+        <var name="liPrim" id="2767227637715654457" />
+        <var name="mem1" id="2921267027982585655" />
+        <var name="mem2" id="2921267027982585665" />
+        <var name="mem3" id="5699232652750172932" />
+        <var name="mem4" id="2921267027982585708" />
+      </scope>
+      <scope id="2767227637715625442" at="50,0,68,0" />
+      <unit id="2767227637715419112" at="25,0,87,0" name="jetbrains.mps.internal.collections.trove.test.PrimList_Test" />
+    </file>
   </root>
   <root nodeRef="r:9470f421-cec1-405a-b0c5-73491b129d8a(jetbrains.mps.internal.collections.trove.test)/5332044122260427020">
-    <nodeInfo nodeId="5332044122260427031" fileName="PrimMap_Test.java" startLine="31" startPosition="48" endLine="32" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5332044122260427043" fileName="PrimMap_Test.java" startLine="32" startPosition="101" endLine="33" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5332044122260427086" fileName="PrimMap_Test.java" startLine="33" startPosition="53" endLine="34" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5332044122260427101" fileName="PrimMap_Test.java" startLine="37" startPosition="50" endLine="38" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6227590151851057355" fileName="PrimMap_Test.java" startLine="38" startPosition="115" endLine="39" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851057391" fileName="PrimMap_Test.java" startLine="39" startPosition="51" endLine="40" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851078726" fileName="PrimMap_Test.java" startLine="43" startPosition="52" endLine="44" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6227590151851078737" fileName="PrimMap_Test.java" startLine="44" startPosition="113" endLine="45" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6227590151851078750" fileName="PrimMap_Test.java" startLine="45" startPosition="122" endLine="46" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5232087255576259463" fileName="PrimMap_Test.java" startLine="46" startPosition="122" endLine="47" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5232087255576259468" fileName="PrimMap_Test.java" startLine="47" startPosition="23" endLine="48" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6227590151851078762" fileName="PrimMap_Test.java" startLine="48" startPosition="23" endLine="49" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851078795" fileName="PrimMap_Test.java" startLine="49" startPosition="40" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851078807" fileName="PrimMap_Test.java" startLine="50" startPosition="59" endLine="51" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851078830" fileName="PrimMap_Test.java" startLine="51" startPosition="42" endLine="52" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851078836" fileName="PrimMap_Test.java" startLine="52" startPosition="35" endLine="53" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5232087255576259456" fileName="PrimMap_Test.java" startLine="53" startPosition="164" endLine="54" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851173045" fileName="PrimMap_Test.java" startLine="57" startPosition="50" endLine="58" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6227590151851173056" fileName="PrimMap_Test.java" startLine="58" startPosition="107" endLine="59" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851173100" fileName="PrimMap_Test.java" startLine="59" startPosition="59" endLine="60" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851173117" fileName="PrimMap_Test.java" startLine="60" startPosition="59" endLine="61" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851174803" fileName="PrimMap_Test.java" startLine="64" startPosition="46" endLine="65" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6227590151851174846" fileName="PrimMap_Test.java" startLine="67" startPosition="40" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851176673" fileName="PrimMap_Test.java" startLine="70" startPosition="5" endLine="71" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851187353" fileName="PrimMap_Test.java" startLine="71" startPosition="89" endLine="72" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851187425" fileName="PrimMap_Test.java" startLine="72" startPosition="101" endLine="73" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851193124" fileName="PrimMap_Test.java" startLine="76" startPosition="48" endLine="77" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5232087255576278216" fileName="PrimMap_Test.java" startLine="77" startPosition="101" endLine="78" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5232087255576278227" fileName="PrimMap_Test.java" startLine="78" startPosition="27" endLine="79" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6227590151851193135" fileName="PrimMap_Test.java" startLine="79" startPosition="31" endLine="80" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5232087255576278233" fileName="PrimMap_Test.java" startLine="80" startPosition="44" endLine="81" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851201087" fileName="PrimMap_Test.java" startLine="84" startPosition="50" endLine="85" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6227590151851201098" fileName="PrimMap_Test.java" startLine="85" startPosition="107" endLine="86" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6227590151851201142" fileName="PrimMap_Test.java" startLine="86" startPosition="55" endLine="87" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5332044122260427022" fileName="PrimMap_Test.java" startLine="90" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrimMap_Test#()V" />
-    <nodeInfo nodeId="6227590151851174830" fileName="PrimMap_Test.java" startLine="66" startPosition="38" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="5332044122260427027" fileName="PrimMap_Test.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_byteByte#()V" />
-    <nodeInfo nodeId="5332044122260427097" fileName="PrimMap_Test.java" startLine="37" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_byteObject#()V" />
-    <nodeInfo nodeId="6227590151851174814" fileName="PrimMap_Test.java" startLine="65" startPosition="103" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6227590151851201083" fileName="PrimMap_Test.java" startLine="84" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_shortShort#()V" />
-    <nodeInfo nodeId="6227590151851173041" fileName="PrimMap_Test.java" startLine="57" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_floatFloat#()V" />
-    <nodeInfo nodeId="6227590151851193120" fileName="PrimMap_Test.java" startLine="76" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_longLong#()V" />
-    <nodeInfo nodeId="6227590151851174799" fileName="PrimMap_Test.java" startLine="64" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_intInt#()V" />
-    <nodeInfo nodeId="6227590151851078721" fileName="PrimMap_Test.java" startLine="43" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doubleDouble#()V" />
-    <scopeInfo nodeId="5332044122260427025" fileName="PrimMap_Test.java" startLine="90" startPosition="25" endLine="90" endPosition="25" />
-    <scopeInfo nodeId="6227590151851174831" fileName="PrimMap_Test.java" startLine="67" startPosition="40" endLine="68" endPosition="58" />
-    <scopeInfo nodeId="5332044122260427022" fileName="PrimMap_Test.java" startLine="90" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="5332044122260427030" fileName="PrimMap_Test.java" startLine="31" startPosition="48" endLine="34" endPosition="59">
-      <varInfo nodeId="5332044122260427032" varName="mbb" />
-    </scopeInfo>
-    <scopeInfo nodeId="5332044122260427100" fileName="PrimMap_Test.java" startLine="37" startPosition="50" endLine="40" endPosition="59">
-      <varInfo nodeId="5332044122260427102" varName="mbo" />
-    </scopeInfo>
-    <scopeInfo nodeId="6227590151851174815" fileName="PrimMap_Test.java" startLine="66" startPosition="38" endLine="69" endPosition="7" />
-    <scopeInfo nodeId="6227590151851174830" fileName="PrimMap_Test.java" startLine="66" startPosition="38" endLine="69" endPosition="7">
-      <varInfo nodeId="6227590151851174833" varName="y" />
-    </scopeInfo>
-    <scopeInfo nodeId="6227590151851201086" fileName="PrimMap_Test.java" startLine="84" startPosition="50" endLine="87" endPosition="74">
-      <varInfo nodeId="6227590151851201088" varName="mss" />
-    </scopeInfo>
-    <scopeInfo nodeId="6227590151851173044" fileName="PrimMap_Test.java" startLine="57" startPosition="50" endLine="61" endPosition="111">
-      <varInfo nodeId="6227590151851173046" varName="mff" />
-    </scopeInfo>
-    <scopeInfo nodeId="5332044122260427027" fileName="PrimMap_Test.java" startLine="31" startPosition="0" endLine="36" endPosition="0" />
-    <scopeInfo nodeId="5332044122260427097" fileName="PrimMap_Test.java" startLine="37" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="6227590151851174814" fileName="PrimMap_Test.java" startLine="65" startPosition="103" endLine="70" endPosition="5">
-      <varInfo nodeId="6227590151851174817" varName="x" />
-    </scopeInfo>
-    <scopeInfo nodeId="6227590151851193123" fileName="PrimMap_Test.java" startLine="76" startPosition="48" endLine="81" endPosition="79">
-      <varInfo nodeId="5232087255576278217" varName="bln" />
-      <varInfo nodeId="6227590151851193125" varName="mll" />
-      <varInfo nodeId="5232087255576278228" varName="trln" />
-    </scopeInfo>
-    <scopeInfo nodeId="6227590151851201083" fileName="PrimMap_Test.java" startLine="84" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="6227590151851173041" fileName="PrimMap_Test.java" startLine="57" startPosition="0" endLine="63" endPosition="0" />
-    <scopeInfo nodeId="6227590151851193120" fileName="PrimMap_Test.java" startLine="76" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="6227590151851174802" fileName="PrimMap_Test.java" startLine="64" startPosition="46" endLine="73" endPosition="101">
-      <varInfo nodeId="6227590151851174804" varName="mii" />
-    </scopeInfo>
-    <scopeInfo nodeId="6227590151851078724" fileName="PrimMap_Test.java" startLine="43" startPosition="52" endLine="54" endPosition="93">
-      <varInfo nodeId="5232087255576259469" varName="e" />
-      <varInfo nodeId="6227590151851078727" varName="mdd" />
-      <varInfo nodeId="6227590151851078738" varName="mdd2" />
-      <varInfo nodeId="6227590151851078751" varName="mdd3" />
-      <varInfo nodeId="5232087255576259464" varName="pi" />
-    </scopeInfo>
-    <scopeInfo nodeId="6227590151851174799" fileName="PrimMap_Test.java" startLine="64" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="6227590151851078721" fileName="PrimMap_Test.java" startLine="43" startPosition="0" endLine="56" endPosition="0" />
-    <unitInfo nodeId="5332044122260427020" fileName="PrimMap_Test.java" startLine="30" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.internal.collections.trove.test.PrimMap_Test" />
+    <file name="PrimMap_Test.java">
+      <node id="5332044122260427031" at="31,48,32,101" concept="11" />
+      <node id="5332044122260427043" at="32,101,33,53" concept="6" />
+      <node id="5332044122260427086" at="33,53,34,59" concept="6" />
+      <node id="5332044122260427101" at="37,50,38,115" concept="11" />
+      <node id="6227590151851057355" at="38,115,39,51" concept="6" />
+      <node id="6227590151851057391" at="39,51,40,59" concept="6" />
+      <node id="6227590151851078726" at="43,52,44,113" concept="11" />
+      <node id="6227590151851078737" at="44,113,45,122" concept="11" />
+      <node id="6227590151851078750" at="45,122,46,122" concept="11" />
+      <node id="5232087255576259463" at="46,122,47,23" concept="11" />
+      <node id="5232087255576259468" at="47,23,48,23" concept="11" />
+      <node id="6227590151851078762" at="48,23,49,40" concept="6" />
+      <node id="6227590151851078795" at="49,40,50,59" concept="6" />
+      <node id="6227590151851078807" at="50,59,51,42" concept="6" />
+      <node id="6227590151851078830" at="51,42,52,35" concept="6" />
+      <node id="6227590151851078836" at="52,35,53,164" concept="6" />
+      <node id="5232087255576259456" at="53,164,54,93" concept="6" />
+      <node id="6227590151851173045" at="57,50,58,107" concept="11" />
+      <node id="6227590151851173056" at="58,107,59,59" concept="6" />
+      <node id="6227590151851173100" at="59,59,60,59" concept="6" />
+      <node id="6227590151851173117" at="60,59,61,111" concept="6" />
+      <node id="6227590151851174803" at="64,46,65,103" concept="11" />
+      <node id="6227590151851174846" at="67,40,68,58" concept="6" />
+      <node id="6227590151851176673" at="70,5,71,89" concept="6" />
+      <node id="6227590151851187353" at="71,89,72,101" concept="6" />
+      <node id="6227590151851187425" at="72,101,73,101" concept="6" />
+      <node id="6227590151851193124" at="76,48,77,101" concept="11" />
+      <node id="5232087255576278216" at="77,101,78,27" concept="11" />
+      <node id="5232087255576278227" at="78,27,79,31" concept="11" />
+      <node id="6227590151851193135" at="79,31,80,44" concept="6" />
+      <node id="5232087255576278233" at="80,44,81,79" concept="6" />
+      <node id="6227590151851201087" at="84,50,85,107" concept="11" />
+      <node id="6227590151851201098" at="85,107,86,55" concept="6" />
+      <node id="6227590151851201142" at="86,55,87,74" concept="6" />
+      <node id="5332044122260427022" at="90,0,92,0" concept="4" trace="PrimMap_Test#()V" />
+      <node id="6227590151851174830" at="66,38,69,7" concept="8" />
+      <node id="5332044122260427027" at="31,0,36,0" concept="10" trace="test_byteByte#()V" />
+      <node id="5332044122260427097" at="37,0,42,0" concept="10" trace="test_byteObject#()V" />
+      <node id="6227590151851174814" at="65,103,70,5" concept="8" />
+      <node id="6227590151851201083" at="84,0,89,0" concept="10" trace="test_shortShort#()V" />
+      <node id="6227590151851173041" at="57,0,63,0" concept="10" trace="test_floatFloat#()V" />
+      <node id="6227590151851193120" at="76,0,83,0" concept="10" trace="test_longLong#()V" />
+      <node id="6227590151851174799" at="64,0,75,0" concept="10" trace="test_intInt#()V" />
+      <node id="6227590151851078721" at="43,0,56,0" concept="10" trace="test_doubleDouble#()V" />
+      <scope id="5332044122260427025" at="90,25,90,25" />
+      <scope id="6227590151851174831" at="67,40,68,58" />
+      <scope id="5332044122260427022" at="90,0,92,0" />
+      <scope id="5332044122260427030" at="31,48,34,59">
+        <var name="mbb" id="5332044122260427032" />
+      </scope>
+      <scope id="5332044122260427100" at="37,50,40,59">
+        <var name="mbo" id="5332044122260427102" />
+      </scope>
+      <scope id="6227590151851174815" at="66,38,69,7" />
+      <scope id="6227590151851174830" at="66,38,69,7">
+        <var name="y" id="6227590151851174833" />
+      </scope>
+      <scope id="6227590151851201086" at="84,50,87,74">
+        <var name="mss" id="6227590151851201088" />
+      </scope>
+      <scope id="6227590151851173044" at="57,50,61,111">
+        <var name="mff" id="6227590151851173046" />
+      </scope>
+      <scope id="5332044122260427027" at="31,0,36,0" />
+      <scope id="5332044122260427097" at="37,0,42,0" />
+      <scope id="6227590151851174814" at="65,103,70,5">
+        <var name="x" id="6227590151851174817" />
+      </scope>
+      <scope id="6227590151851193123" at="76,48,81,79">
+        <var name="bln" id="5232087255576278217" />
+        <var name="mll" id="6227590151851193125" />
+        <var name="trln" id="5232087255576278228" />
+      </scope>
+      <scope id="6227590151851201083" at="84,0,89,0" />
+      <scope id="6227590151851173041" at="57,0,63,0" />
+      <scope id="6227590151851193120" at="76,0,83,0" />
+      <scope id="6227590151851174802" at="64,46,73,101">
+        <var name="mii" id="6227590151851174804" />
+      </scope>
+      <scope id="6227590151851078724" at="43,52,54,93">
+        <var name="e" id="5232087255576259469" />
+        <var name="mdd" id="6227590151851078727" />
+        <var name="mdd2" id="6227590151851078738" />
+        <var name="mdd3" id="6227590151851078751" />
+        <var name="pi" id="5232087255576259464" />
+      </scope>
+      <scope id="6227590151851174799" at="64,0,75,0" />
+      <scope id="6227590151851078721" at="43,0,56,0" />
+      <unit id="5332044122260427020" at="30,0,93,0" name="jetbrains.mps.internal.collections.trove.test.PrimMap_Test" />
+    </file>
   </root>
   <root nodeRef="r:9470f421-cec1-405a-b0c5-73491b129d8a(jetbrains.mps.internal.collections.trove.test)/8269230326124799045">
-    <nodeInfo nodeId="8269230326124799195" fileName="PrimSet_Test.java" startLine="90" startPosition="27" endLine="90" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8269230326124799200" fileName="PrimSet_Test.java" startLine="93" startPosition="27" endLine="93" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8269230326124799056" fileName="PrimSet_Test.java" startLine="31" startPosition="47" endLine="32" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8269230326124799062" fileName="PrimSet_Test.java" startLine="32" startPosition="86" endLine="33" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799069" fileName="PrimSet_Test.java" startLine="33" startPosition="51" endLine="34" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799076" fileName="PrimSet_Test.java" startLine="34" startPosition="51" endLine="35" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799083" fileName="PrimSet_Test.java" startLine="35" startPosition="49" endLine="36" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799090" fileName="PrimSet_Test.java" startLine="36" startPosition="49" endLine="37" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799095" fileName="PrimSet_Test.java" startLine="37" startPosition="58" endLine="38" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799113" fileName="PrimSet_Test.java" startLine="41" startPosition="49" endLine="42" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8269230326124799124" fileName="PrimSet_Test.java" startLine="42" startPosition="125" endLine="43" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799129" fileName="PrimSet_Test.java" startLine="43" startPosition="58" endLine="44" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799141" fileName="PrimSet_Test.java" startLine="47" startPosition="48" endLine="48" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8269230326124799147" fileName="PrimSet_Test.java" startLine="48" startPosition="89" endLine="49" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8269230326124799159" fileName="PrimSet_Test.java" startLine="49" startPosition="101" endLine="50" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799164" fileName="PrimSet_Test.java" startLine="50" startPosition="66" endLine="51" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799169" fileName="PrimSet_Test.java" startLine="51" startPosition="66" endLine="52" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799174" fileName="PrimSet_Test.java" startLine="52" startPosition="58" endLine="53" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799181" fileName="PrimSet_Test.java" startLine="56" startPosition="46" endLine="57" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="63" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="70" startPosition="28" endLine="71" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="71" startPosition="54" endLine="72" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="73" startPosition="27" endLine="74" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="76" startPosition="42" endLine="77" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="77" startPosition="40" endLine="78" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="79" startPosition="23" endLine="80" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="80" startPosition="38" endLine="81" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="82" startPosition="27" endLine="83" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="83" startPosition="29" endLine="84" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="84" startPosition="38" endLine="85" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8269230326124799201" fileName="PrimSet_Test.java" startLine="86" startPosition="27" endLine="87" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799201" fileName="PrimSet_Test.java" startLine="87" startPosition="38" endLine="88" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799201" fileName="PrimSet_Test.java" startLine="88" startPosition="39" endLine="89" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8269230326124799195" fileName="PrimSet_Test.java" startLine="90" startPosition="27" endLine="91" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799195" fileName="PrimSet_Test.java" startLine="91" startPosition="38" endLine="92" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8269230326124799200" fileName="PrimSet_Test.java" startLine="93" startPosition="27" endLine="94" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799200" fileName="PrimSet_Test.java" startLine="94" startPosition="38" endLine="95" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="96" startPosition="28" endLine="97" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="99" startPosition="31" endLine="100" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8269230326124799197" fileName="PrimSet_Test.java" startLine="103" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_i" />
-    <nodeInfo nodeId="8269230326124799208" fileName="PrimSet_Test.java" startLine="108" startPosition="9" endLine="109" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799220" fileName="PrimSet_Test.java" startLine="112" startPosition="47" endLine="113" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8269230326124799231" fileName="PrimSet_Test.java" startLine="115" startPosition="33" endLine="116" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799263" fileName="PrimSet_Test.java" startLine="120" startPosition="37" endLine="121" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8269230326124799276" fileName="PrimSet_Test.java" startLine="126" startPosition="48" endLine="127" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8269230326124799282" fileName="PrimSet_Test.java" startLine="127" startPosition="90" endLine="128" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799289" fileName="PrimSet_Test.java" startLine="128" startPosition="55" endLine="129" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799296" fileName="PrimSet_Test.java" startLine="129" startPosition="52" endLine="130" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799047" fileName="PrimSet_Test.java" startLine="133" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PrimSet_Test#()V" />
-    <nodeInfo nodeId="8269230326124799229" fileName="PrimSet_Test.java" startLine="115" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljava/lang/Long;)V" />
-    <nodeInfo nodeId="8269230326124799261" fileName="PrimSet_Test.java" startLine="120" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="select#(Ljava/lang/Long;)Ljava/lang/Integer;" />
-    <nodeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="75" startPosition="27" endLine="79" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8269230326124799109" fileName="PrimSet_Test.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_doubleSet#()V" />
-    <nodeInfo nodeId="8269230326124799226" fileName="PrimSet_Test.java" startLine="113" startPosition="92" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799252" fileName="PrimSet_Test.java" startLine="118" startPosition="7" endLine="123" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799272" fileName="PrimSet_Test.java" startLine="126" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_shortSet#()V" />
-    <nodeInfo nodeId="8269230326124799137" fileName="PrimSet_Test.java" startLine="47" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_floatSet#()V" />
-    <nodeInfo nodeId="8269230326124799052" fileName="PrimSet_Test.java" startLine="31" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_byteSet#()V" />
-    <nodeInfo nodeId="8269230326124799216" fileName="PrimSet_Test.java" startLine="112" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_longSet#()V" />
-    <nodeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="67" startPosition="20" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="65" startPosition="46" endLine="99" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="65" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="61" startPosition="47" endLine="104" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="61" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="59" startPosition="43" endLine="106" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="59" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterable#()Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="8269230326124799187" fileName="PrimSet_Test.java" startLine="57" startPosition="87" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8269230326124799177" fileName="PrimSet_Test.java" startLine="56" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_intSet#()V" />
-    <scopeInfo nodeId="8269230326124799195" fileName="PrimSet_Test.java" startLine="90" startPosition="27" endLine="90" endPosition="27" />
-    <scopeInfo nodeId="8269230326124799200" fileName="PrimSet_Test.java" startLine="93" startPosition="27" endLine="93" endPosition="27" />
-    <scopeInfo nodeId="8269230326124799050" fileName="PrimSet_Test.java" startLine="133" startPosition="25" endLine="133" endPosition="25" />
-    <scopeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="73" startPosition="27" endLine="74" endPosition="36" />
-    <scopeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="96" startPosition="28" endLine="97" endPosition="37" />
-    <scopeInfo nodeId="8269230326124799230" fileName="PrimSet_Test.java" startLine="115" startPosition="33" endLine="116" endPosition="46" />
-    <scopeInfo nodeId="8269230326124799262" fileName="PrimSet_Test.java" startLine="120" startPosition="37" endLine="121" endPosition="30" />
-    <scopeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="70" startPosition="28" endLine="72" endPosition="35" />
-    <scopeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="76" startPosition="42" endLine="78" endPosition="30" />
-    <scopeInfo nodeId="8269230326124799195" fileName="PrimSet_Test.java" startLine="90" startPosition="27" endLine="92" endPosition="28" />
-    <scopeInfo nodeId="8269230326124799200" fileName="PrimSet_Test.java" startLine="93" startPosition="27" endLine="95" endPosition="28" />
-    <scopeInfo nodeId="8269230326124799047" fileName="PrimSet_Test.java" startLine="133" startPosition="0" endLine="135" endPosition="0" />
-    <scopeInfo nodeId="8269230326124799112" fileName="PrimSet_Test.java" startLine="41" startPosition="49" endLine="44" endPosition="95">
-      <varInfo nodeId="8269230326124799114" varName="ds" />
-    </scopeInfo>
-    <scopeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="82" startPosition="27" endLine="85" endPosition="28" />
-    <scopeInfo nodeId="8269230326124799201" fileName="PrimSet_Test.java" startLine="86" startPosition="27" endLine="89" endPosition="34" />
-    <scopeInfo nodeId="8269230326124799229" fileName="PrimSet_Test.java" startLine="115" startPosition="0" endLine="118" endPosition="0">
-      <varInfo nodeId="8269230326124799229" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="8269230326124799261" fileName="PrimSet_Test.java" startLine="120" startPosition="0" endLine="123" endPosition="0">
-      <varInfo nodeId="8269230326124799261" varName="l" />
-    </scopeInfo>
-    <scopeInfo nodeId="8269230326124799275" fileName="PrimSet_Test.java" startLine="126" startPosition="48" endLine="130" endPosition="59">
-      <varInfo nodeId="8269230326124799277" varName="shs" />
-    </scopeInfo>
-    <scopeInfo nodeId="8269230326124799109" fileName="PrimSet_Test.java" startLine="41" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="8269230326124799140" fileName="PrimSet_Test.java" startLine="47" startPosition="48" endLine="53" endPosition="33">
-      <varInfo nodeId="8269230326124799148" varName="exp" />
-      <varInfo nodeId="8269230326124799142" varName="fs" />
-    </scopeInfo>
-    <scopeInfo nodeId="8269230326124799196" fileName="PrimSet_Test.java" startLine="75" startPosition="27" endLine="81" endPosition="28" />
-    <scopeInfo nodeId="8269230326124799272" fileName="PrimSet_Test.java" startLine="126" startPosition="0" endLine="132" endPosition="0" />
-    <scopeInfo nodeId="8269230326124799055" fileName="PrimSet_Test.java" startLine="31" startPosition="47" endLine="38" endPosition="112">
-      <varInfo nodeId="8269230326124799057" varName="bs" />
-    </scopeInfo>
-    <scopeInfo nodeId="8269230326124799137" fileName="PrimSet_Test.java" startLine="47" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="8269230326124799052" fileName="PrimSet_Test.java" startLine="31" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="8269230326124799219" fileName="PrimSet_Test.java" startLine="112" startPosition="47" endLine="123" endPosition="8">
-      <varInfo nodeId="8269230326124799221" varName="ls" />
-    </scopeInfo>
-    <scopeInfo nodeId="8269230326124799216" fileName="PrimSet_Test.java" startLine="112" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="67" startPosition="20" endLine="98" endPosition="19" />
-    <scopeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="65" startPosition="46" endLine="100" endPosition="29" />
-    <scopeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="65" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="61" startPosition="47" endLine="104" endPosition="14" />
-    <scopeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="61" startPosition="0" endLine="106" endPosition="0" />
-    <scopeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="59" startPosition="43" endLine="106" endPosition="10" />
-    <scopeInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="59" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="8269230326124799180" fileName="PrimSet_Test.java" startLine="56" startPosition="46" endLine="109" endPosition="55">
-      <varInfo nodeId="8269230326124799182" varName="is" />
-    </scopeInfo>
-    <scopeInfo nodeId="8269230326124799177" fileName="PrimSet_Test.java" startLine="56" startPosition="0" endLine="111" endPosition="0" />
-    <unitInfo nodeId="8269230326124799229" fileName="PrimSet_Test.java" startLine="114" startPosition="104" endLine="118" endPosition="5" unitName="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$2" />
-    <unitInfo nodeId="8269230326124799261" fileName="PrimSet_Test.java" startLine="119" startPosition="85" endLine="123" endPosition="5" unitName="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$3" />
-    <unitInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="62" startPosition="23" endLine="104" endPosition="13" unitName="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$3" />
-    <unitInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="60" startPosition="19" endLine="106" endPosition="9" unitName="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$2" />
-    <unitInfo nodeId="8269230326124799194" fileName="PrimSet_Test.java" startLine="58" startPosition="87" endLine="108" endPosition="5" unitName="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$1" />
-    <unitInfo nodeId="8269230326124799045" fileName="PrimSet_Test.java" startLine="30" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.internal.collections.trove.test.PrimSet_Test" />
+    <file name="PrimSet_Test.java">
+      <node id="8269230326124799195" at="90,27,90,27" concept="1" />
+      <node id="8269230326124799200" at="93,27,93,27" concept="1" />
+      <node id="8269230326124799056" at="31,47,32,86" concept="11" />
+      <node id="8269230326124799062" at="32,86,33,51" concept="6" />
+      <node id="8269230326124799069" at="33,51,34,51" concept="6" />
+      <node id="8269230326124799076" at="34,51,35,49" concept="6" />
+      <node id="8269230326124799083" at="35,49,36,49" concept="6" />
+      <node id="8269230326124799090" at="36,49,37,58" concept="6" />
+      <node id="8269230326124799095" at="37,58,38,112" concept="6" />
+      <node id="8269230326124799113" at="41,49,42,125" concept="11" />
+      <node id="8269230326124799124" at="42,125,43,58" concept="6" />
+      <node id="8269230326124799129" at="43,58,44,95" concept="6" />
+      <node id="8269230326124799141" at="47,48,48,89" concept="11" />
+      <node id="8269230326124799147" at="48,89,49,101" concept="11" />
+      <node id="8269230326124799159" at="49,101,50,66" concept="6" />
+      <node id="8269230326124799164" at="50,66,51,66" concept="6" />
+      <node id="8269230326124799169" at="51,66,52,58" concept="6" />
+      <node id="8269230326124799174" at="52,58,53,33" concept="6" />
+      <node id="8269230326124799181" at="56,46,57,87" concept="11" />
+      <node id="8269230326124799194" at="63,0,64,0" concept="7" trace="__CP__" />
+      <node id="8269230326124799194" at="70,28,71,54" concept="0" />
+      <node id="8269230326124799194" at="71,54,72,35" concept="12" />
+      <node id="8269230326124799196" at="73,27,74,36" concept="6" />
+      <node id="8269230326124799196" at="76,42,77,40" concept="6" />
+      <node id="8269230326124799196" at="77,40,78,30" concept="2" />
+      <node id="8269230326124799196" at="79,23,80,38" concept="6" />
+      <node id="8269230326124799196" at="80,38,81,28" concept="2" />
+      <node id="8269230326124799196" at="82,27,83,29" concept="6" />
+      <node id="8269230326124799196" at="83,29,84,38" concept="6" />
+      <node id="8269230326124799196" at="84,38,85,28" concept="2" />
+      <node id="8269230326124799201" at="86,27,87,38" concept="6" />
+      <node id="8269230326124799201" at="87,38,88,39" concept="6" />
+      <node id="8269230326124799201" at="88,39,89,34" concept="12" />
+      <node id="8269230326124799195" at="90,27,91,38" concept="6" />
+      <node id="8269230326124799195" at="91,38,92,28" concept="2" />
+      <node id="8269230326124799200" at="93,27,94,38" concept="6" />
+      <node id="8269230326124799200" at="94,38,95,28" concept="2" />
+      <node id="8269230326124799194" at="96,28,97,37" concept="2" />
+      <node id="8269230326124799194" at="99,31,100,29" concept="12" />
+      <node id="8269230326124799197" at="103,0,104,0" concept="7" trace="_2_i" />
+      <node id="8269230326124799208" at="108,9,109,55" concept="6" />
+      <node id="8269230326124799220" at="112,47,113,92" concept="11" />
+      <node id="8269230326124799231" at="115,33,116,46" concept="6" />
+      <node id="8269230326124799263" at="120,37,121,30" concept="12" />
+      <node id="8269230326124799276" at="126,48,127,90" concept="11" />
+      <node id="8269230326124799282" at="127,90,128,55" concept="6" />
+      <node id="8269230326124799289" at="128,55,129,52" concept="6" />
+      <node id="8269230326124799296" at="129,52,130,59" concept="6" />
+      <node id="8269230326124799047" at="133,0,135,0" concept="4" trace="PrimSet_Test#()V" />
+      <node id="8269230326124799229" at="115,0,118,0" concept="10" trace="visit#(Ljava/lang/Long;)V" />
+      <node id="8269230326124799261" at="120,0,123,0" concept="10" trace="select#(Ljava/lang/Long;)Ljava/lang/Integer;" />
+      <node id="8269230326124799196" at="75,27,79,23" concept="9" />
+      <node id="8269230326124799109" at="41,0,46,0" concept="10" trace="test_doubleSet#()V" />
+      <node id="8269230326124799226" at="113,92,118,7" concept="6" />
+      <node id="8269230326124799252" at="118,7,123,8" concept="6" />
+      <node id="8269230326124799272" at="126,0,132,0" concept="10" trace="test_shortSet#()V" />
+      <node id="8269230326124799137" at="47,0,55,0" concept="10" trace="test_floatSet#()V" />
+      <node id="8269230326124799052" at="31,0,40,0" concept="10" trace="test_byteSet#()V" />
+      <node id="8269230326124799216" at="112,0,125,0" concept="10" trace="test_longSet#()V" />
+      <node id="8269230326124799194" at="67,20,98,19" concept="13" />
+      <node id="8269230326124799194" at="65,46,99,31" concept="5" />
+      <node id="8269230326124799194" at="65,0,102,0" concept="10" trace="moveToNext#()Z" />
+      <node id="8269230326124799194" at="61,47,104,14" concept="12" />
+      <node id="8269230326124799194" at="61,0,106,0" concept="10" trace="iterator#()Ljava/util/Iterator;" />
+      <node id="8269230326124799194" at="59,43,106,10" concept="12" />
+      <node id="8269230326124799194" at="59,0,108,0" concept="10" trace="iterable#()Ljava/lang/Iterable;" />
+      <node id="8269230326124799187" at="57,87,108,9" concept="6" />
+      <node id="8269230326124799177" at="56,0,111,0" concept="10" trace="test_intSet#()V" />
+      <scope id="8269230326124799195" at="90,27,90,27" />
+      <scope id="8269230326124799200" at="93,27,93,27" />
+      <scope id="8269230326124799050" at="133,25,133,25" />
+      <scope id="8269230326124799196" at="73,27,74,36" />
+      <scope id="8269230326124799194" at="96,28,97,37" />
+      <scope id="8269230326124799230" at="115,33,116,46" />
+      <scope id="8269230326124799262" at="120,37,121,30" />
+      <scope id="8269230326124799194" at="70,28,72,35" />
+      <scope id="8269230326124799196" at="76,42,78,30" />
+      <scope id="8269230326124799195" at="90,27,92,28" />
+      <scope id="8269230326124799200" at="93,27,95,28" />
+      <scope id="8269230326124799047" at="133,0,135,0" />
+      <scope id="8269230326124799112" at="41,49,44,95">
+        <var name="ds" id="8269230326124799114" />
+      </scope>
+      <scope id="8269230326124799196" at="82,27,85,28" />
+      <scope id="8269230326124799201" at="86,27,89,34" />
+      <scope id="8269230326124799229" at="115,0,118,0">
+        <var name="i" id="8269230326124799229" />
+      </scope>
+      <scope id="8269230326124799261" at="120,0,123,0">
+        <var name="l" id="8269230326124799261" />
+      </scope>
+      <scope id="8269230326124799275" at="126,48,130,59">
+        <var name="shs" id="8269230326124799277" />
+      </scope>
+      <scope id="8269230326124799109" at="41,0,46,0" />
+      <scope id="8269230326124799140" at="47,48,53,33">
+        <var name="exp" id="8269230326124799148" />
+        <var name="fs" id="8269230326124799142" />
+      </scope>
+      <scope id="8269230326124799196" at="75,27,81,28" />
+      <scope id="8269230326124799272" at="126,0,132,0" />
+      <scope id="8269230326124799055" at="31,47,38,112">
+        <var name="bs" id="8269230326124799057" />
+      </scope>
+      <scope id="8269230326124799137" at="47,0,55,0" />
+      <scope id="8269230326124799052" at="31,0,40,0" />
+      <scope id="8269230326124799219" at="112,47,123,8">
+        <var name="ls" id="8269230326124799221" />
+      </scope>
+      <scope id="8269230326124799216" at="112,0,125,0" />
+      <scope id="8269230326124799194" at="67,20,98,19" />
+      <scope id="8269230326124799194" at="65,46,100,29" />
+      <scope id="8269230326124799194" at="65,0,102,0" />
+      <scope id="8269230326124799194" at="61,47,104,14" />
+      <scope id="8269230326124799194" at="61,0,106,0" />
+      <scope id="8269230326124799194" at="59,43,106,10" />
+      <scope id="8269230326124799194" at="59,0,108,0" />
+      <scope id="8269230326124799180" at="56,46,109,55">
+        <var name="is" id="8269230326124799182" />
+      </scope>
+      <scope id="8269230326124799177" at="56,0,111,0" />
+      <unit id="8269230326124799229" at="114,104,118,5" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$2" />
+      <unit id="8269230326124799261" at="119,85,123,5" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$3" />
+      <unit id="8269230326124799194" at="62,23,104,13" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$3" />
+      <unit id="8269230326124799194" at="60,19,106,9" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$2" />
+      <unit id="8269230326124799194" at="58,87,108,5" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test$1" />
+      <unit id="8269230326124799045" at="30,0,136,0" name="jetbrains.mps.internal.collections.trove.test.PrimSet_Test" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

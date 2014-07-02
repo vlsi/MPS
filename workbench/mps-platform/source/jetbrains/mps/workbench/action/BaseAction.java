@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,8 +22,10 @@ import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.project.Project;
 import gnu.trove.THashMap;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.UndoRunnable;
 import jetbrains.mps.workbench.ActionPlace;
 import org.jetbrains.annotations.Nullable;
 
@@ -133,27 +135,23 @@ public abstract class BaseAction extends AnAction {
         collectActionData(event, params);
       }
     });
-    final ModelAccess access = ModelAccess.instance();
     if (myExecuteOutsideCommand) {
       doExecute(event, params);
     } else {
+      final Runnable r = new UndoRunnable.Base(getTemplatePresentation().getText(), null) {
+        @Override
+        public void run() {
+          doExecute(event, params);
+        }
+      };
       Project project = getEventProject(event);
       if (project != null) {
-        // modern API
-        access.runWriteActionInCommand(new Runnable() {
-          @Override
-          public void run() {
-            doExecute(event, params);
-          }
-        }, getTemplatePresentation().getText(), null, false, project.getComponent(MPSProject.class));
+        ProjectHelper.getModelAccess(project).executeCommand(r);
       } else {
-        // deprecated API
-        access.runWriteActionInCommand(new Runnable() {
-          @Override
-          public void run() {
-            doExecute(event, params);
-          }
-        });
+        // it's odd to have an action that runs without a project, but still wants a command.
+        // Present implementation of openapi.ModelAccess in global repository doesn't support commands,
+        // thus we run it as a mere write action
+        MPSModuleRepository.getInstance().getModelAccess().runWriteAction(r);
       }
     }
   }

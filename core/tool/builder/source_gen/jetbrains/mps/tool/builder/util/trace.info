@@ -1,890 +1,936 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.WhileStatement" />
   <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/1365200781785613152">
-    <nodeInfo nodeId="1365200781785613175" fileName="ClassloaderUtil.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_CLASS_ARRAY" />
-    <nodeInfo nodeId="1365200781785613205" fileName="ClassloaderUtil.java" startLine="37" startPosition="9" endLine="38" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1365200781785613207" fileName="ClassloaderUtil.java" startLine="38" startPosition="35" endLine="39" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1365200781785613209" fileName="ClassloaderUtil.java" startLine="39" startPosition="54" endLine="40" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1365200781785613211" fileName="ClassloaderUtil.java" startLine="40" startPosition="56" endLine="41" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1365200781785613213" fileName="ClassloaderUtil.java" startLine="41" startPosition="13" endLine="42" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1365200781785613215" fileName="ClassloaderUtil.java" startLine="42" startPosition="39" endLine="43" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613220" fileName="ClassloaderUtil.java" startLine="43" startPosition="86" endLine="44" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613227" fileName="ClassloaderUtil.java" startLine="44" startPosition="68" endLine="45" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613234" fileName="ClassloaderUtil.java" startLine="45" startPosition="66" endLine="46" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613239" fileName="ClassloaderUtil.java" startLine="46" startPosition="36" endLine="47" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613246" fileName="ClassloaderUtil.java" startLine="47" startPosition="41" endLine="48" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613251" fileName="ClassloaderUtil.java" startLine="48" startPosition="35" endLine="49" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613195" fileName="ClassloaderUtil.java" startLine="50" startPosition="27" endLine="51" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613200" fileName="ClassloaderUtil.java" startLine="51" startPosition="54" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1365200781785613262" fileName="ClassloaderUtil.java" startLine="56" startPosition="36" endLine="57" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1365200781785613272" fileName="ClassloaderUtil.java" startLine="60" startPosition="83" endLine="61" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613302" fileName="ClassloaderUtil.java" startLine="62" startPosition="9" endLine="63" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613305" fileName="ClassloaderUtil.java" startLine="63" startPosition="60" endLine="64" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613308" fileName="ClassloaderUtil.java" startLine="64" startPosition="58" endLine="65" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613277" fileName="ClassloaderUtil.java" startLine="66" startPosition="42" endLine="67" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613282" fileName="ClassloaderUtil.java" startLine="67" startPosition="49" endLine="68" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613289" fileName="ClassloaderUtil.java" startLine="69" startPosition="39" endLine="70" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613296" fileName="ClassloaderUtil.java" startLine="70" startPosition="56" endLine="71" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613311" fileName="ClassloaderUtil.java" startLine="72" startPosition="5" endLine="73" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613314" fileName="ClassloaderUtil.java" startLine="73" startPosition="55" endLine="74" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613345" fileName="ClassloaderUtil.java" startLine="75" startPosition="9" endLine="76" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613354" fileName="ClassloaderUtil.java" startLine="76" startPosition="79" endLine="77" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1365200781785613356" fileName="ClassloaderUtil.java" startLine="77" startPosition="26" endLine="78" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613321" fileName="ClassloaderUtil.java" startLine="79" startPosition="27" endLine="80" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613337" fileName="ClassloaderUtil.java" startLine="81" startPosition="27" endLine="82" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613331" fileName="ClassloaderUtil.java" startLine="83" startPosition="14" endLine="84" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613361" fileName="ClassloaderUtil.java" startLine="86" startPosition="5" endLine="87" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1365200781785613370" fileName="ClassloaderUtil.java" startLine="90" startPosition="73" endLine="91" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613380" fileName="ClassloaderUtil.java" startLine="92" startPosition="33" endLine="93" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1365200781785613381" fileName="ClassloaderUtil.java" startLine="94" startPosition="5" endLine="95" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613397" fileName="ClassloaderUtil.java" startLine="96" startPosition="72" endLine="97" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613403" fileName="ClassloaderUtil.java" startLine="97" startPosition="25" endLine="98" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613417" fileName="ClassloaderUtil.java" startLine="99" startPosition="41" endLine="100" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613428" fileName="ClassloaderUtil.java" startLine="105" startPosition="100" endLine="106" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613598" fileName="ClassloaderUtil.java" startLine="107" startPosition="43" endLine="108" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613604" fileName="ClassloaderUtil.java" startLine="108" startPosition="62" endLine="109" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613509" fileName="ClassloaderUtil.java" startLine="111" startPosition="11" endLine="112" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613551" fileName="ClassloaderUtil.java" startLine="113" startPosition="215" endLine="114" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1365200781785613553" fileName="ClassloaderUtil.java" startLine="114" startPosition="49" endLine="115" endPosition="151" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613567" fileName="ClassloaderUtil.java" startLine="115" startPosition="151" endLine="116" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613580" fileName="ClassloaderUtil.java" startLine="117" startPosition="45" endLine="118" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613586" fileName="ClassloaderUtil.java" startLine="118" startPosition="55" endLine="119" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613539" fileName="ClassloaderUtil.java" startLine="121" startPosition="16" endLine="122" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613443" fileName="ClassloaderUtil.java" startLine="124" startPosition="38" endLine="125" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613456" fileName="ClassloaderUtil.java" startLine="126" startPosition="42" endLine="127" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613471" fileName="ClassloaderUtil.java" startLine="128" startPosition="41" endLine="129" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613484" fileName="ClassloaderUtil.java" startLine="130" startPosition="42" endLine="131" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613497" fileName="ClassloaderUtil.java" startLine="132" startPosition="45" endLine="133" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613618" fileName="ClassloaderUtil.java" startLine="138" startPosition="68" endLine="139" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613622" fileName="ClassloaderUtil.java" startLine="139" startPosition="58" endLine="140" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613646" fileName="ClassloaderUtil.java" startLine="145" startPosition="9" endLine="146" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613651" fileName="ClassloaderUtil.java" startLine="146" startPosition="66" endLine="147" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613667" fileName="ClassloaderUtil.java" startLine="147" startPosition="119" endLine="148" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613679" fileName="ClassloaderUtil.java" startLine="148" startPosition="83" endLine="149" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613684" fileName="ClassloaderUtil.java" startLine="149" startPosition="33" endLine="150" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613694" fileName="ClassloaderUtil.java" startLine="150" startPosition="76" endLine="151" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613699" fileName="ClassloaderUtil.java" startLine="151" startPosition="70" endLine="152" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613706" fileName="ClassloaderUtil.java" startLine="152" startPosition="53" endLine="153" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613711" fileName="ClassloaderUtil.java" startLine="153" startPosition="67" endLine="154" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613721" fileName="ClassloaderUtil.java" startLine="154" startPosition="70" endLine="155" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613638" fileName="ClassloaderUtil.java" startLine="156" startPosition="39" endLine="157" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613741" fileName="ClassloaderUtil.java" startLine="161" startPosition="122" endLine="162" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613763" fileName="ClassloaderUtil.java" startLine="165" startPosition="50" endLine="166" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1365200781785613764" fileName="ClassloaderUtil.java" startLine="167" startPosition="9" endLine="168" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613778" fileName="ClassloaderUtil.java" startLine="169" startPosition="38" endLine="170" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1365200781785613779" fileName="ClassloaderUtil.java" startLine="171" startPosition="9" endLine="172" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613796" fileName="ClassloaderUtil.java" startLine="179" startPosition="29" endLine="180" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1365200781785613798" fileName="ClassloaderUtil.java" startLine="181" startPosition="5" endLine="182" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613804" fileName="ClassloaderUtil.java" startLine="182" startPosition="39" endLine="183" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1365200781785613834" fileName="ClassloaderUtil.java" startLine="187" startPosition="9" endLine="188" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1365200781785613836" fileName="ClassloaderUtil.java" startLine="188" startPosition="45" endLine="189" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613851" fileName="ClassloaderUtil.java" startLine="190" startPosition="41" endLine="191" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1365200781785613857" fileName="ClassloaderUtil.java" startLine="191" startPosition="48" endLine="192" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613826" fileName="ClassloaderUtil.java" startLine="194" startPosition="39" endLine="195" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781785613872" fileName="ClassloaderUtil.java" startLine="200" startPosition="62" endLine="201" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1365200781785613154" fileName="ClassloaderUtil.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FILE_CACHE" />
-    <nodeInfo nodeId="1365200781785613158" fileName="ClassloaderUtil.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="URL_CACHE" />
-    <nodeInfo nodeId="1365200781785613162" fileName="ClassloaderUtil.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_IGNORE_CLASSPATH" />
-    <nodeInfo nodeId="1365200781785613167" fileName="ClassloaderUtil.java" startLine="29" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ERROR" />
-    <nodeInfo nodeId="1365200781785613184" fileName="ClassloaderUtil.java" startLine="33" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassloaderUtil#()V" />
-    <nodeInfo nodeId="1365200781785613329" fileName="ClassloaderUtil.java" startLine="83" startPosition="12" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1365200781785613537" fileName="ClassloaderUtil.java" startLine="121" startPosition="14" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1365200781785613258" fileName="ClassloaderUtil.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLogger#()Lorg/apache/log4j/Logger;" />
-    <nodeInfo nodeId="1365200781785613375" fileName="ClassloaderUtil.java" startLine="91" startPosition="80" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1365200781785613409" fileName="ClassloaderUtil.java" startLine="98" startPosition="44" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1365200781785613758" fileName="ClassloaderUtil.java" startLine="164" startPosition="37" endLine="167" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1365200781785613772" fileName="ClassloaderUtil.java" startLine="168" startPosition="45" endLine="171" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1365200781785613791" fileName="ClassloaderUtil.java" startLine="178" startPosition="47" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1365200781785613575" fileName="ClassloaderUtil.java" startLine="116" startPosition="98" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1365200781785613611" fileName="ClassloaderUtil.java" startLine="138" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addIDEALibraries#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="1365200781785613846" fileName="ClassloaderUtil.java" startLine="189" startPosition="140" endLine="193" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1365200781785613868" fileName="ClassloaderUtil.java" startLine="199" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isLoadingOfExternalPluginsDisabled#()Z" />
-    <nodeInfo nodeId="1365200781785613325" fileName="ClassloaderUtil.java" startLine="80" startPosition="50" endLine="85" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1365200781785613386" fileName="ClassloaderUtil.java" startLine="95" startPosition="60" endLine="102" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="1365200781785613785" fileName="ClassloaderUtil.java" startLine="177" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isJarOrZip#(Ljava/io/File;)Z" />
-    <nodeInfo nodeId="1365200781785613753" fileName="ClassloaderUtil.java" startLine="163" startPosition="24" endLine="173" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1365200781785613823" fileName="ClassloaderUtil.java" startLine="186" startPosition="66" endLine="196" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1365200781785613274" fileName="ClassloaderUtil.java" startLine="61" startPosition="33" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1365200781785613514" fileName="ClassloaderUtil.java" startLine="112" startPosition="89" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1365200781785613318" fileName="ClassloaderUtil.java" startLine="74" startPosition="41" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1365200781785613748" fileName="ClassloaderUtil.java" startLine="162" startPosition="45" endLine="174" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1365200781785613816" fileName="ClassloaderUtil.java" startLine="186" startPosition="0" endLine="198" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addAdditionalClassPath#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="1365200781785613363" fileName="ClassloaderUtil.java" startLine="90" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="filterClassPath#(Ljava/util/List;)V" />
-    <nodeInfo nodeId="1365200781785613635" fileName="ClassloaderUtil.java" startLine="144" startPosition="89" endLine="158" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1365200781785613730" fileName="ClassloaderUtil.java" startLine="161" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addLibraries#(Ljava/util/List;Ljava/io/File;Ljava/net/URL;)V" />
-    <nodeInfo nodeId="1365200781785613192" fileName="ClassloaderUtil.java" startLine="36" startPosition="41" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1365200781785613626" fileName="ClassloaderUtil.java" startLine="143" startPosition="0" endLine="160" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addAllFromLibFolder#(Ljava/lang/String;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1365200781785613188" fileName="ClassloaderUtil.java" startLine="36" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="clearJarURLCache#()V" />
-    <nodeInfo nodeId="1365200781785613440" fileName="ClassloaderUtil.java" startLine="110" startPosition="12" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="1365200781785613438" fileName="ClassloaderUtil.java" startLine="110" startPosition="10" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1365200781785613265" fileName="ClassloaderUtil.java" startLine="60" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="initClassloader#(Ljava/util/List;)Ljetbrains/mps/tool/common/util/UrlClassLoader;" />
-    <nodeInfo nodeId="1365200781785613434" fileName="ClassloaderUtil.java" startLine="106" startPosition="70" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1365200781785613421" fileName="ClassloaderUtil.java" startLine="105" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addParentClasspath#(Ljava/util/List;)V" />
-    <scopeInfo nodeId="1365200781785613187" fileName="ClassloaderUtil.java" startLine="33" startPosition="29" endLine="33" endPosition="29" />
-    <scopeInfo nodeId="1365200781785613261" fileName="ClassloaderUtil.java" startLine="56" startPosition="36" endLine="57" endPosition="51" />
-    <scopeInfo nodeId="1365200781785613336" fileName="ClassloaderUtil.java" startLine="81" startPosition="27" endLine="82" endPosition="38" />
-    <scopeInfo nodeId="1365200781785613330" fileName="ClassloaderUtil.java" startLine="83" startPosition="14" endLine="84" endPosition="30" />
-    <scopeInfo nodeId="1365200781785613379" fileName="ClassloaderUtil.java" startLine="92" startPosition="33" endLine="93" endPosition="13" />
-    <scopeInfo nodeId="1365200781785613416" fileName="ClassloaderUtil.java" startLine="99" startPosition="41" endLine="100" endPosition="19" />
-    <scopeInfo nodeId="1365200781785613538" fileName="ClassloaderUtil.java" startLine="121" startPosition="16" endLine="122" endPosition="98" />
-    <scopeInfo nodeId="1365200781785613441" fileName="ClassloaderUtil.java" startLine="124" startPosition="0" endLine="125" endPosition="89">
-      <varInfo nodeId="1365200781785613452" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613442" fileName="ClassloaderUtil.java" startLine="124" startPosition="38" endLine="125" endPosition="89" />
-    <scopeInfo nodeId="1365200781785613454" fileName="ClassloaderUtil.java" startLine="126" startPosition="0" endLine="127" endPosition="103">
-      <varInfo nodeId="1365200781785613467" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613455" fileName="ClassloaderUtil.java" startLine="126" startPosition="42" endLine="127" endPosition="103" />
-    <scopeInfo nodeId="1365200781785613469" fileName="ClassloaderUtil.java" startLine="128" startPosition="0" endLine="129" endPosition="90">
-      <varInfo nodeId="1365200781785613480" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613470" fileName="ClassloaderUtil.java" startLine="128" startPosition="41" endLine="129" endPosition="90" />
-    <scopeInfo nodeId="1365200781785613482" fileName="ClassloaderUtil.java" startLine="130" startPosition="0" endLine="131" endPosition="89">
-      <varInfo nodeId="1365200781785613493" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613483" fileName="ClassloaderUtil.java" startLine="130" startPosition="42" endLine="131" endPosition="89" />
-    <scopeInfo nodeId="1365200781785613495" fileName="ClassloaderUtil.java" startLine="132" startPosition="0" endLine="133" endPosition="89">
-      <varInfo nodeId="1365200781785613506" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613496" fileName="ClassloaderUtil.java" startLine="132" startPosition="45" endLine="133" endPosition="89" />
-    <scopeInfo nodeId="1365200781785613636" fileName="ClassloaderUtil.java" startLine="156" startPosition="0" endLine="157" endPosition="49">
-      <varInfo nodeId="1365200781785613643" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613637" fileName="ClassloaderUtil.java" startLine="156" startPosition="39" endLine="157" endPosition="49" />
-    <scopeInfo nodeId="1365200781785613762" fileName="ClassloaderUtil.java" startLine="165" startPosition="50" endLine="166" endPosition="19" />
-    <scopeInfo nodeId="1365200781785613777" fileName="ClassloaderUtil.java" startLine="169" startPosition="38" endLine="170" endPosition="19" />
-    <scopeInfo nodeId="1365200781785613795" fileName="ClassloaderUtil.java" startLine="179" startPosition="29" endLine="180" endPosition="19" />
-    <scopeInfo nodeId="1365200781785613824" fileName="ClassloaderUtil.java" startLine="194" startPosition="0" endLine="195" endPosition="49">
-      <varInfo nodeId="1365200781785613831" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613825" fileName="ClassloaderUtil.java" startLine="194" startPosition="39" endLine="195" endPosition="49" />
-    <scopeInfo nodeId="1365200781785613871" fileName="ClassloaderUtil.java" startLine="200" startPosition="62" endLine="201" endPosition="87" />
-    <scopeInfo nodeId="1365200781785613184" fileName="ClassloaderUtil.java" startLine="33" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1365200781785613193" fileName="ClassloaderUtil.java" startLine="50" startPosition="0" endLine="52" endPosition="22">
-      <varInfo nodeId="1365200781785613202" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613194" fileName="ClassloaderUtil.java" startLine="50" startPosition="27" endLine="52" endPosition="22" />
-    <scopeInfo nodeId="1365200781785613275" fileName="ClassloaderUtil.java" startLine="66" startPosition="0" endLine="68" endPosition="21">
-      <varInfo nodeId="1365200781785613285" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613276" fileName="ClassloaderUtil.java" startLine="66" startPosition="42" endLine="68" endPosition="21" />
-    <scopeInfo nodeId="1365200781785613287" fileName="ClassloaderUtil.java" startLine="69" startPosition="0" endLine="71" endPosition="21">
-      <varInfo nodeId="1365200781785613299" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613288" fileName="ClassloaderUtil.java" startLine="69" startPosition="39" endLine="71" endPosition="21" />
-    <scopeInfo nodeId="1365200781785613597" fileName="ClassloaderUtil.java" startLine="107" startPosition="43" endLine="109" endPosition="73">
-      <varInfo nodeId="1365200781785613599" varName="urlClassLoader" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613579" fileName="ClassloaderUtil.java" startLine="117" startPosition="45" endLine="119" endPosition="68">
-      <varInfo nodeId="1365200781785613581" varName="token" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613617" fileName="ClassloaderUtil.java" startLine="138" startPosition="68" endLine="140" endPosition="73">
-      <varInfo nodeId="1365200781785613619" varName="ideaHomePath" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613850" fileName="ClassloaderUtil.java" startLine="190" startPosition="41" endLine="192" endPosition="58">
-      <varInfo nodeId="1365200781785613852" varName="pathItem" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613258" fileName="ClassloaderUtil.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1365200781785613301" fileName="ClassloaderUtil.java" startLine="62" startPosition="9" endLine="65" endPosition="64" />
-    <scopeInfo nodeId="1365200781785613344" fileName="ClassloaderUtil.java" startLine="75" startPosition="9" endLine="78" endPosition="67" />
-    <scopeInfo nodeId="1365200781785613611" fileName="ClassloaderUtil.java" startLine="138" startPosition="0" endLine="142" endPosition="0">
-      <varInfo nodeId="1365200781785613614" varName="classpathElements" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613868" fileName="ClassloaderUtil.java" startLine="199" startPosition="0" endLine="203" endPosition="0" />
-    <scopeInfo nodeId="1365200781785613396" fileName="ClassloaderUtil.java" startLine="96" startPosition="72" endLine="101" endPosition="7">
-      <varInfo nodeId="1365200781785613404" varName="u" />
-      <varInfo nodeId="1365200781785613398" varName="url" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613790" fileName="ClassloaderUtil.java" startLine="178" startPosition="47" endLine="183" endPosition="102">
-      <varInfo nodeId="1365200781785613799" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613319" fileName="ClassloaderUtil.java" startLine="79" startPosition="0" endLine="85" endPosition="7">
-      <varInfo nodeId="1365200781785613342" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613320" fileName="ClassloaderUtil.java" startLine="79" startPosition="27" endLine="85" endPosition="7">
-      <varInfo nodeId="1365200781785613322" varName="logger" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613833" fileName="ClassloaderUtil.java" startLine="187" startPosition="9" endLine="193" endPosition="7">
-      <varInfo nodeId="1365200781785613837" varName="tokenizer" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613386" fileName="ClassloaderUtil.java" startLine="95" startPosition="60" endLine="102" endPosition="5">
-      <varInfo nodeId="1365200781785613387" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613550" fileName="ClassloaderUtil.java" startLine="113" startPosition="215" endLine="120" endPosition="11">
-      <varInfo nodeId="1365200781785613554" varName="classpath" />
-      <varInfo nodeId="1365200781785613568" varName="tokenizer" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613757" fileName="ClassloaderUtil.java" startLine="164" startPosition="37" endLine="172" endPosition="27">
-      <varInfo nodeId="1365200781785613765" varName="url" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613785" fileName="ClassloaderUtil.java" startLine="177" startPosition="0" endLine="185" endPosition="0">
-      <varInfo nodeId="1365200781785613788" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613645" fileName="ClassloaderUtil.java" startLine="145" startPosition="9" endLine="155" endPosition="67">
-      <varInfo nodeId="1365200781785613647" varName="aClass" />
-      <varInfo nodeId="1365200781785613712" varName="antLib" />
-      <varInfo nodeId="1365200781785613700" varName="extLib" />
-      <varInfo nodeId="1365200781785613685" varName="libFolder" />
-      <varInfo nodeId="1365200781785613652" varName="selfRoot" />
-      <varInfo nodeId="1365200781785613668" varName="selfRootUrl" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613752" fileName="ClassloaderUtil.java" startLine="163" startPosition="24" endLine="173" endPosition="7" />
-    <scopeInfo nodeId="1365200781785613753" fileName="ClassloaderUtil.java" startLine="163" startPosition="24" endLine="173" endPosition="7">
-      <varInfo nodeId="1365200781785613755" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613822" fileName="ClassloaderUtil.java" startLine="186" startPosition="66" endLine="196" endPosition="5" />
-    <scopeInfo nodeId="1365200781785613204" fileName="ClassloaderUtil.java" startLine="37" startPosition="9" endLine="49" endPosition="40">
-      <varInfo nodeId="1365200781785613221" varName="fileCache" />
-      <varInfo nodeId="1365200781785613216" varName="jarFileFactory" />
-      <varInfo nodeId="1365200781785613228" varName="urlCache" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613369" fileName="ClassloaderUtil.java" startLine="90" startPosition="73" endLine="102" endPosition="5">
-      <varInfo nodeId="1365200781785613371" varName="ignoreProperty" />
-      <varInfo nodeId="1365200781785613382" varName="pattern" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613508" fileName="ClassloaderUtil.java" startLine="111" startPosition="11" endLine="123" endPosition="9">
-      <varInfo nodeId="1365200781785613510" varName="antClassLoaderClass" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613816" fileName="ClassloaderUtil.java" startLine="186" startPosition="0" endLine="198" endPosition="0">
-      <varInfo nodeId="1365200781785613819" varName="classPath" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613740" fileName="ClassloaderUtil.java" startLine="161" startPosition="122" endLine="174" endPosition="5">
-      <varInfo nodeId="1365200781785613742" varName="files" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613363" fileName="ClassloaderUtil.java" startLine="90" startPosition="0" endLine="104" endPosition="0">
-      <varInfo nodeId="1365200781785613366" varName="classpathElements" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613634" fileName="ClassloaderUtil.java" startLine="144" startPosition="89" endLine="158" endPosition="5" />
-    <scopeInfo nodeId="1365200781785613730" fileName="ClassloaderUtil.java" startLine="161" startPosition="0" endLine="176" endPosition="0">
-      <varInfo nodeId="1365200781785613733" varName="classPath" />
-      <varInfo nodeId="1365200781785613736" varName="fromDir" />
-      <varInfo nodeId="1365200781785613738" varName="selfRootUrl" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613191" fileName="ClassloaderUtil.java" startLine="36" startPosition="41" endLine="53" endPosition="5" />
-    <scopeInfo nodeId="1365200781785613626" fileName="ClassloaderUtil.java" startLine="143" startPosition="0" endLine="160" endPosition="0">
-      <varInfo nodeId="1365200781785613629" varName="aFolderPath" />
-      <varInfo nodeId="1365200781785613631" varName="classPath" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613188" fileName="ClassloaderUtil.java" startLine="36" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1365200781785613439" fileName="ClassloaderUtil.java" startLine="110" startPosition="12" endLine="134" endPosition="7" />
-    <scopeInfo nodeId="1365200781785613271" fileName="ClassloaderUtil.java" startLine="60" startPosition="83" endLine="87" endPosition="26">
-      <varInfo nodeId="1365200781785613315" varName="newClassLoader" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613265" fileName="ClassloaderUtil.java" startLine="60" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="1365200781785613268" varName="classpathElements" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613427" fileName="ClassloaderUtil.java" startLine="105" startPosition="100" endLine="135" endPosition="5">
-      <varInfo nodeId="1365200781785613429" varName="loader" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781785613421" fileName="ClassloaderUtil.java" startLine="105" startPosition="0" endLine="137" endPosition="0">
-      <varInfo nodeId="1365200781785613424" varName="aClasspathElements" />
-    </scopeInfo>
-    <unitInfo nodeId="1365200781785613152" fileName="ClassloaderUtil.java" startLine="22" startPosition="0" endLine="204" endPosition="0" unitName="jetbrains.mps.tool.builder.util.ClassloaderUtil" />
+    <file name="ClassloaderUtil.java">
+      <node id="1365200781785613175" at="31,0,32,0" concept="14" trace="EMPTY_CLASS_ARRAY" />
+      <node id="1365200781785613205" at="37,9,38,35" concept="13" />
+      <node id="1365200781785613207" at="38,35,39,54" concept="13" />
+      <node id="1365200781785613209" at="39,54,40,56" concept="13" />
+      <node id="1365200781785613211" at="40,56,41,13" concept="13" />
+      <node id="1365200781785613213" at="41,13,42,39" concept="13" />
+      <node id="1365200781785613215" at="42,39,43,86" concept="11" />
+      <node id="1365200781785613220" at="43,86,44,68" concept="11" />
+      <node id="1365200781785613227" at="44,68,45,66" concept="11" />
+      <node id="1365200781785613234" at="45,66,46,36" concept="5" />
+      <node id="1365200781785613239" at="46,36,47,41" concept="5" />
+      <node id="1365200781785613246" at="47,41,48,35" concept="5" />
+      <node id="1365200781785613251" at="48,35,49,40" concept="5" />
+      <node id="1365200781785613195" at="50,27,51,54" concept="5" />
+      <node id="1365200781785613200" at="51,54,52,22" concept="13" />
+      <node id="1365200781785613262" at="56,36,57,51" concept="12" />
+      <node id="1365200781785613272" at="60,83,61,33" concept="5" />
+      <node id="1365200781785613302" at="62,9,63,60" concept="5" />
+      <node id="1365200781785613305" at="63,60,64,58" concept="5" />
+      <node id="1365200781785613308" at="64,58,65,64" concept="5" />
+      <node id="1365200781785613277" at="66,42,67,49" concept="5" />
+      <node id="1365200781785613282" at="67,49,68,21" concept="5" />
+      <node id="1365200781785613289" at="69,39,70,56" concept="5" />
+      <node id="1365200781785613296" at="70,56,71,21" concept="5" />
+      <node id="1365200781785613311" at="72,5,73,55" concept="5" />
+      <node id="1365200781785613314" at="73,55,74,41" concept="11" />
+      <node id="1365200781785613345" at="75,9,76,79" concept="5" />
+      <node id="1365200781785613354" at="76,79,77,26" concept="13" />
+      <node id="1365200781785613356" at="77,26,78,67" concept="5" />
+      <node id="1365200781785613321" at="79,27,80,50" concept="11" />
+      <node id="1365200781785613337" at="81,27,82,38" concept="5" />
+      <node id="1365200781785613331" at="83,14,84,30" concept="5" />
+      <node id="1365200781785613361" at="86,5,87,26" concept="12" />
+      <node id="1365200781785613370" at="90,73,91,80" concept="11" />
+      <node id="1365200781785613380" at="92,33,93,13" concept="12" />
+      <node id="1365200781785613381" at="94,5,95,60" concept="11" />
+      <node id="1365200781785613397" at="96,72,97,25" concept="11" />
+      <node id="1365200781785613403" at="97,25,98,44" concept="11" />
+      <node id="1365200781785613417" at="99,41,100,19" concept="5" />
+      <node id="1365200781785613428" at="105,100,106,70" concept="11" />
+      <node id="1365200781785613598" at="107,43,108,62" concept="11" />
+      <node id="1365200781785613604" at="108,62,109,73" concept="5" />
+      <node id="1365200781785613509" at="111,11,112,89" concept="11" />
+      <node id="1365200781785613551" at="113,215,114,49" concept="13" />
+      <node id="1365200781785613553" at="114,49,115,151" concept="11" />
+      <node id="1365200781785613567" at="115,151,116,98" concept="11" />
+      <node id="1365200781785613580" at="117,45,118,55" concept="11" />
+      <node id="1365200781785613586" at="118,55,119,68" concept="5" />
+      <node id="1365200781785613539" at="121,16,122,98" concept="5" />
+      <node id="1365200781785613443" at="124,38,125,89" concept="5" />
+      <node id="1365200781785613456" at="126,42,127,103" concept="5" />
+      <node id="1365200781785613471" at="128,41,129,90" concept="5" />
+      <node id="1365200781785613484" at="130,42,131,89" concept="5" />
+      <node id="1365200781785613497" at="132,45,133,89" concept="5" />
+      <node id="1365200781785613618" at="138,68,139,58" concept="11" />
+      <node id="1365200781785613622" at="139,58,140,73" concept="5" />
+      <node id="1365200781785613646" at="145,9,146,66" concept="11" />
+      <node id="1365200781785613651" at="146,66,147,119" concept="11" />
+      <node id="1365200781785613667" at="147,119,148,83" concept="11" />
+      <node id="1365200781785613679" at="148,83,149,33" concept="5" />
+      <node id="1365200781785613684" at="149,33,150,76" concept="11" />
+      <node id="1365200781785613694" at="150,76,151,70" concept="5" />
+      <node id="1365200781785613699" at="151,70,152,53" concept="11" />
+      <node id="1365200781785613706" at="152,53,153,67" concept="5" />
+      <node id="1365200781785613711" at="153,67,154,70" concept="11" />
+      <node id="1365200781785613721" at="154,70,155,67" concept="5" />
+      <node id="1365200781785613638" at="156,39,157,49" concept="5" />
+      <node id="1365200781785613741" at="161,122,162,45" concept="11" />
+      <node id="1365200781785613763" at="165,50,166,19" concept="3" />
+      <node id="1365200781785613764" at="167,9,168,45" concept="11" />
+      <node id="1365200781785613778" at="169,38,170,19" concept="3" />
+      <node id="1365200781785613779" at="171,9,172,27" concept="5" />
+      <node id="1365200781785613796" at="179,29,180,19" concept="12" />
+      <node id="1365200781785613798" at="181,5,182,39" concept="11" />
+      <node id="1365200781785613804" at="182,39,183,102" concept="12" />
+      <node id="1365200781785613834" at="187,9,188,45" concept="13" />
+      <node id="1365200781785613836" at="188,45,189,140" concept="11" />
+      <node id="1365200781785613851" at="190,41,191,48" concept="11" />
+      <node id="1365200781785613857" at="191,48,192,58" concept="5" />
+      <node id="1365200781785613826" at="194,39,195,49" concept="5" />
+      <node id="1365200781785613872" at="200,62,201,87" concept="12" />
+      <node id="1365200781785613154" at="23,0,25,0" concept="14" trace="FILE_CACHE" />
+      <node id="1365200781785613158" at="25,0,27,0" concept="14" trace="URL_CACHE" />
+      <node id="1365200781785613162" at="27,0,29,0" concept="14" trace="PROPERTY_IGNORE_CLASSPATH" />
+      <node id="1365200781785613167" at="29,0,31,0" concept="14" trace="ERROR" />
+      <node id="1365200781785613184" at="33,0,35,0" concept="2" trace="ClassloaderUtil#()V" />
+      <node id="1365200781785613329" at="83,12,85,7" concept="1" />
+      <node id="1365200781785613537" at="121,14,123,9" concept="1" />
+      <node id="1365200781785613258" at="56,0,59,0" concept="15" trace="getLogger#()Lorg/apache/log4j/Logger;" />
+      <node id="1365200781785613375" at="91,80,94,5" concept="9" />
+      <node id="1365200781785613409" at="98,44,101,7" concept="9" />
+      <node id="1365200781785613758" at="164,37,167,9" concept="9" />
+      <node id="1365200781785613772" at="168,45,171,9" concept="9" />
+      <node id="1365200781785613791" at="178,47,181,5" concept="9" />
+      <node id="1365200781785613575" at="116,98,120,11" concept="18" />
+      <node id="1365200781785613611" at="138,0,142,0" concept="15" trace="addIDEALibraries#(Ljava/util/List;)V" />
+      <node id="1365200781785613846" at="189,140,193,7" concept="18" />
+      <node id="1365200781785613868" at="199,0,203,0" concept="15" trace="isLoadingOfExternalPluginsDisabled#()Z" />
+      <node id="1365200781785613325" at="80,50,85,7" concept="9" />
+      <node id="1365200781785613386" at="95,60,102,5" concept="7" />
+      <node id="1365200781785613785" at="177,0,185,0" concept="15" trace="isJarOrZip#(Ljava/io/File;)Z" />
+      <node id="1365200781785613753" at="163,24,173,7" concept="8" />
+      <node id="1365200781785613823" at="186,66,196,5" concept="16" />
+      <node id="1365200781785613274" at="61,33,72,5" concept="16" />
+      <node id="1365200781785613514" at="112,89,123,9" concept="9" />
+      <node id="1365200781785613318" at="74,41,86,5" concept="16" />
+      <node id="1365200781785613748" at="162,45,174,5" concept="9" />
+      <node id="1365200781785613816" at="186,0,198,0" concept="15" trace="addAdditionalClassPath#(Ljava/util/List;)V" />
+      <node id="1365200781785613363" at="90,0,104,0" concept="15" trace="filterClassPath#(Ljava/util/List;)V" />
+      <node id="1365200781785613635" at="144,89,158,5" concept="16" />
+      <node id="1365200781785613730" at="161,0,176,0" concept="15" trace="addLibraries#(Ljava/util/List;Ljava/io/File;Ljava/net/URL;)V" />
+      <node id="1365200781785613192" at="36,41,53,5" concept="16" />
+      <node id="1365200781785613626" at="143,0,160,0" concept="15" trace="addAllFromLibFolder#(Ljava/lang/String;Ljava/util/List;)V" />
+      <node id="1365200781785613188" at="36,0,55,0" concept="15" trace="clearJarURLCache#()V" />
+      <node id="1365200781785613440" at="110,12,134,7" concept="16" />
+      <node id="1365200781785613438" at="110,10,135,5" concept="1" />
+      <node id="1365200781785613265" at="60,0,89,0" concept="15" trace="initClassloader#(Ljava/util/List;)Ljetbrains/mps/tool/common/util/UrlClassLoader;" />
+      <node id="1365200781785613434" at="106,70,135,5" concept="9" />
+      <node id="1365200781785613421" at="105,0,137,0" concept="15" trace="addParentClasspath#(Ljava/util/List;)V" />
+      <scope id="1365200781785613187" at="33,29,33,29" />
+      <scope id="1365200781785613261" at="56,36,57,51" />
+      <scope id="1365200781785613336" at="81,27,82,38" />
+      <scope id="1365200781785613330" at="83,14,84,30" />
+      <scope id="1365200781785613379" at="92,33,93,13" />
+      <scope id="1365200781785613416" at="99,41,100,19" />
+      <scope id="1365200781785613538" at="121,16,122,98" />
+      <scope id="1365200781785613441" at="124,0,125,89">
+        <var name="e" id="1365200781785613452" />
+      </scope>
+      <scope id="1365200781785613442" at="124,38,125,89" />
+      <scope id="1365200781785613454" at="126,0,127,103">
+        <var name="e" id="1365200781785613467" />
+      </scope>
+      <scope id="1365200781785613455" at="126,42,127,103" />
+      <scope id="1365200781785613469" at="128,0,129,90">
+        <var name="e" id="1365200781785613480" />
+      </scope>
+      <scope id="1365200781785613470" at="128,41,129,90" />
+      <scope id="1365200781785613482" at="130,0,131,89">
+        <var name="e" id="1365200781785613493" />
+      </scope>
+      <scope id="1365200781785613483" at="130,42,131,89" />
+      <scope id="1365200781785613495" at="132,0,133,89">
+        <var name="e" id="1365200781785613506" />
+      </scope>
+      <scope id="1365200781785613496" at="132,45,133,89" />
+      <scope id="1365200781785613636" at="156,0,157,49">
+        <var name="e" id="1365200781785613643" />
+      </scope>
+      <scope id="1365200781785613637" at="156,39,157,49" />
+      <scope id="1365200781785613762" at="165,50,166,19" />
+      <scope id="1365200781785613777" at="169,38,170,19" />
+      <scope id="1365200781785613795" at="179,29,180,19" />
+      <scope id="1365200781785613824" at="194,0,195,49">
+        <var name="e" id="1365200781785613831" />
+      </scope>
+      <scope id="1365200781785613825" at="194,39,195,49" />
+      <scope id="1365200781785613871" at="200,62,201,87" />
+      <scope id="1365200781785613184" at="33,0,35,0" />
+      <scope id="1365200781785613193" at="50,0,52,22">
+        <var name="e" id="1365200781785613202" />
+      </scope>
+      <scope id="1365200781785613194" at="50,27,52,22" />
+      <scope id="1365200781785613275" at="66,0,68,21">
+        <var name="e" id="1365200781785613285" />
+      </scope>
+      <scope id="1365200781785613276" at="66,42,68,21" />
+      <scope id="1365200781785613287" at="69,0,71,21">
+        <var name="e" id="1365200781785613299" />
+      </scope>
+      <scope id="1365200781785613288" at="69,39,71,21" />
+      <scope id="1365200781785613597" at="107,43,109,73">
+        <var name="urlClassLoader" id="1365200781785613599" />
+      </scope>
+      <scope id="1365200781785613579" at="117,45,119,68">
+        <var name="token" id="1365200781785613581" />
+      </scope>
+      <scope id="1365200781785613617" at="138,68,140,73">
+        <var name="ideaHomePath" id="1365200781785613619" />
+      </scope>
+      <scope id="1365200781785613850" at="190,41,192,58">
+        <var name="pathItem" id="1365200781785613852" />
+      </scope>
+      <scope id="1365200781785613258" at="56,0,59,0" />
+      <scope id="1365200781785613301" at="62,9,65,64" />
+      <scope id="1365200781785613344" at="75,9,78,67" />
+      <scope id="1365200781785613611" at="138,0,142,0">
+        <var name="classpathElements" id="1365200781785613614" />
+      </scope>
+      <scope id="1365200781785613868" at="199,0,203,0" />
+      <scope id="1365200781785613396" at="96,72,101,7">
+        <var name="u" id="1365200781785613404" />
+        <var name="url" id="1365200781785613398" />
+      </scope>
+      <scope id="1365200781785613790" at="178,47,183,102">
+        <var name="name" id="1365200781785613799" />
+      </scope>
+      <scope id="1365200781785613319" at="79,0,85,7">
+        <var name="e" id="1365200781785613342" />
+      </scope>
+      <scope id="1365200781785613320" at="79,27,85,7">
+        <var name="logger" id="1365200781785613322" />
+      </scope>
+      <scope id="1365200781785613833" at="187,9,193,7">
+        <var name="tokenizer" id="1365200781785613837" />
+      </scope>
+      <scope id="1365200781785613386" at="95,60,102,5">
+        <var name="i" id="1365200781785613387" />
+      </scope>
+      <scope id="1365200781785613550" at="113,215,120,11">
+        <var name="classpath" id="1365200781785613554" />
+        <var name="tokenizer" id="1365200781785613568" />
+      </scope>
+      <scope id="1365200781785613757" at="164,37,172,27">
+        <var name="url" id="1365200781785613765" />
+      </scope>
+      <scope id="1365200781785613785" at="177,0,185,0">
+        <var name="file" id="1365200781785613788" />
+      </scope>
+      <scope id="1365200781785613645" at="145,9,155,67">
+        <var name="aClass" id="1365200781785613647" />
+        <var name="antLib" id="1365200781785613712" />
+        <var name="extLib" id="1365200781785613700" />
+        <var name="libFolder" id="1365200781785613685" />
+        <var name="selfRoot" id="1365200781785613652" />
+        <var name="selfRootUrl" id="1365200781785613668" />
+      </scope>
+      <scope id="1365200781785613752" at="163,24,173,7" />
+      <scope id="1365200781785613753" at="163,24,173,7">
+        <var name="file" id="1365200781785613755" />
+      </scope>
+      <scope id="1365200781785613822" at="186,66,196,5" />
+      <scope id="1365200781785613204" at="37,9,49,40">
+        <var name="fileCache" id="1365200781785613221" />
+        <var name="jarFileFactory" id="1365200781785613216" />
+        <var name="urlCache" id="1365200781785613228" />
+      </scope>
+      <scope id="1365200781785613369" at="90,73,102,5">
+        <var name="ignoreProperty" id="1365200781785613371" />
+        <var name="pattern" id="1365200781785613382" />
+      </scope>
+      <scope id="1365200781785613508" at="111,11,123,9">
+        <var name="antClassLoaderClass" id="1365200781785613510" />
+      </scope>
+      <scope id="1365200781785613816" at="186,0,198,0">
+        <var name="classPath" id="1365200781785613819" />
+      </scope>
+      <scope id="1365200781785613740" at="161,122,174,5">
+        <var name="files" id="1365200781785613742" />
+      </scope>
+      <scope id="1365200781785613363" at="90,0,104,0">
+        <var name="classpathElements" id="1365200781785613366" />
+      </scope>
+      <scope id="1365200781785613634" at="144,89,158,5" />
+      <scope id="1365200781785613730" at="161,0,176,0">
+        <var name="classPath" id="1365200781785613733" />
+        <var name="fromDir" id="1365200781785613736" />
+        <var name="selfRootUrl" id="1365200781785613738" />
+      </scope>
+      <scope id="1365200781785613191" at="36,41,53,5" />
+      <scope id="1365200781785613626" at="143,0,160,0">
+        <var name="aFolderPath" id="1365200781785613629" />
+        <var name="classPath" id="1365200781785613631" />
+      </scope>
+      <scope id="1365200781785613188" at="36,0,55,0" />
+      <scope id="1365200781785613439" at="110,12,134,7" />
+      <scope id="1365200781785613271" at="60,83,87,26">
+        <var name="newClassLoader" id="1365200781785613315" />
+      </scope>
+      <scope id="1365200781785613265" at="60,0,89,0">
+        <var name="classpathElements" id="1365200781785613268" />
+      </scope>
+      <scope id="1365200781785613427" at="105,100,135,5">
+        <var name="loader" id="1365200781785613429" />
+      </scope>
+      <scope id="1365200781785613421" at="105,0,137,0">
+        <var name="aClasspathElements" id="1365200781785613424" />
+      </scope>
+      <unit id="1365200781785613152" at="22,0,204,0" name="jetbrains.mps.tool.builder.util.ClassloaderUtil" />
+    </file>
   </root>
   <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/1365200781786323609">
-    <nodeInfo nodeId="1365200781786323627" fileName="ContainerUtil.java" startLine="12" startPosition="92" endLine="13" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1365200781786323634" fileName="ContainerUtil.java" startLine="14" startPosition="32" endLine="15" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1365200781786323610" fileName="ContainerUtil.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ContainerUtil#()V" />
-    <nodeInfo nodeId="1365200781786323629" fileName="ContainerUtil.java" startLine="13" startPosition="48" endLine="16" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1365200781786323614" fileName="ContainerUtil.java" startLine="12" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="addAll#(Ljava/util/Collection;null)V" />
-    <scopeInfo nodeId="1365200781786323613" fileName="ContainerUtil.java" startLine="9" startPosition="26" endLine="9" endPosition="26" />
-    <scopeInfo nodeId="1365200781786323633" fileName="ContainerUtil.java" startLine="14" startPosition="32" endLine="15" endPosition="30" />
-    <scopeInfo nodeId="1365200781786323610" fileName="ContainerUtil.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="1365200781786323629" fileName="ContainerUtil.java" startLine="13" startPosition="48" endLine="16" endPosition="5">
-      <varInfo nodeId="1365200781786323631" varName="element" />
-    </scopeInfo>
-    <scopeInfo nodeId="1365200781786323626" fileName="ContainerUtil.java" startLine="12" startPosition="92" endLine="16" endPosition="5" />
-    <scopeInfo nodeId="1365200781786323614" fileName="ContainerUtil.java" startLine="12" startPosition="0" endLine="18" endPosition="0">
-      <varInfo nodeId="1365200781786323618" varName="collection" />
-      <varInfo nodeId="1365200781786323622" varName="elements" />
-    </scopeInfo>
-    <unitInfo nodeId="1365200781786323609" fileName="ContainerUtil.java" startLine="8" startPosition="0" endLine="19" endPosition="0" unitName="jetbrains.mps.tool.builder.util.ContainerUtil" />
+    <file name="ContainerUtil.java">
+      <node id="1365200781786323627" at="12,92,13,48" concept="13" />
+      <node id="1365200781786323634" at="14,32,15,30" concept="5" />
+      <node id="1365200781786323610" at="9,0,11,0" concept="2" trace="ContainerUtil#()V" />
+      <node id="1365200781786323629" at="13,48,16,5" concept="8" />
+      <node id="1365200781786323614" at="12,0,18,0" concept="15" trace="addAll#(Ljava/util/Collection;null)V" />
+      <scope id="1365200781786323613" at="9,26,9,26" />
+      <scope id="1365200781786323633" at="14,32,15,30" />
+      <scope id="1365200781786323610" at="9,0,11,0" />
+      <scope id="1365200781786323629" at="13,48,16,5">
+        <var name="element" id="1365200781786323631" />
+      </scope>
+      <scope id="1365200781786323626" at="12,92,16,5" />
+      <scope id="1365200781786323614" at="12,0,18,0">
+        <var name="collection" id="1365200781786323618" />
+        <var name="elements" id="1365200781786323622" />
+      </scope>
+      <unit id="1365200781786323609" at="8,0,19,0" name="jetbrains.mps.tool.builder.util.ContainerUtil" />
+    </file>
   </root>
   <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/4774692914340655529">
-    <nodeInfo nodeId="4774692914340655631" fileName="PathManager.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MPS_DASH" />
-    <nodeInfo nodeId="4774692914340655635" fileName="PathManager.java" startLine="77" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DOT_JAR" />
-    <nodeInfo nodeId="4774692914340655639" fileName="PathManager.java" startLine="78" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MODULES_PREFIX" />
-    <nodeInfo nodeId="4774692914340655657" fileName="PathManager.java" startLine="81" startPosition="50" endLine="82" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340655677" fileName="PathManager.java" startLine="87" startPosition="50" endLine="88" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340655701" fileName="PathManager.java" startLine="96" startPosition="30" endLine="97" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340655804" fileName="PathManager.java" startLine="99" startPosition="57" endLine="100" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340655710" fileName="PathManager.java" startLine="101" startPosition="12" endLine="102" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340655714" fileName="PathManager.java" startLine="102" startPosition="45" endLine="103" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340655735" fileName="PathManager.java" startLine="104" startPosition="29" endLine="105" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340655752" fileName="PathManager.java" startLine="106" startPosition="12" endLine="107" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340655763" fileName="PathManager.java" startLine="108" startPosition="31" endLine="109" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340655765" fileName="PathManager.java" startLine="110" startPosition="11" endLine="111" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="4774692914340655782" fileName="PathManager.java" startLine="111" startPosition="142" endLine="112" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340655790" fileName="PathManager.java" startLine="112" startPosition="52" endLine="113" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4774692914340655792" fileName="PathManager.java" startLine="114" startPosition="64" endLine="115" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340655822" fileName="PathManager.java" startLine="119" startPosition="52" endLine="120" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340655813" fileName="PathManager.java" startLine="122" startPosition="29" endLine="123" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4774692914340655835" fileName="PathManager.java" startLine="124" startPosition="5" endLine="125" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340655843" fileName="PathManager.java" startLine="128" startPosition="54" endLine="129" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340655865" fileName="PathManager.java" startLine="132" startPosition="46" endLine="133" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340655876" fileName="PathManager.java" startLine="136" startPosition="37" endLine="137" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340655935" fileName="PathManager.java" startLine="141" startPosition="32" endLine="142" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340655953" fileName="PathManager.java" startLine="144" startPosition="59" endLine="145" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340655944" fileName="PathManager.java" startLine="146" startPosition="12" endLine="147" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340655970" fileName="PathManager.java" startLine="149" startPosition="9" endLine="150" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340655976" fileName="PathManager.java" startLine="150" startPosition="42" endLine="151" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340655963" fileName="PathManager.java" startLine="152" startPosition="27" endLine="153" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340655980" fileName="PathManager.java" startLine="154" startPosition="5" endLine="155" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340655988" fileName="PathManager.java" startLine="158" startPosition="83" endLine="159" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340655990" fileName="PathManager.java" startLine="159" startPosition="45" endLine="160" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656004" fileName="PathManager.java" startLine="161" startPosition="48" endLine="162" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656008" fileName="PathManager.java" startLine="162" startPosition="20" endLine="163" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656010" fileName="PathManager.java" startLine="164" startPosition="5" endLine="165" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656018" fileName="PathManager.java" startLine="168" startPosition="65" endLine="169" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656021" fileName="PathManager.java" startLine="169" startPosition="60" endLine="170" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656027" fileName="PathManager.java" startLine="173" startPosition="40" endLine="174" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656039" fileName="PathManager.java" startLine="178" startPosition="32" endLine="179" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656057" fileName="PathManager.java" startLine="181" startPosition="59" endLine="182" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656048" fileName="PathManager.java" startLine="183" startPosition="12" endLine="184" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656064" fileName="PathManager.java" startLine="185" startPosition="5" endLine="186" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656070" fileName="PathManager.java" startLine="189" startPosition="37" endLine="190" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656080" fileName="PathManager.java" startLine="193" startPosition="41" endLine="194" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656090" fileName="PathManager.java" startLine="197" startPosition="54" endLine="198" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656100" fileName="PathManager.java" startLine="201" startPosition="37" endLine="202" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656113" fileName="PathManager.java" startLine="203" startPosition="9" endLine="204" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656119" fileName="PathManager.java" startLine="206" startPosition="5" endLine="207" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656123" fileName="PathManager.java" startLine="207" startPosition="18" endLine="208" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656129" fileName="PathManager.java" startLine="211" startPosition="53" endLine="212" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656156" fileName="PathManager.java" startLine="217" startPosition="62" endLine="218" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656147" fileName="PathManager.java" startLine="219" startPosition="14" endLine="220" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656163" fileName="PathManager.java" startLine="222" startPosition="5" endLine="223" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656190" fileName="PathManager.java" startLine="228" startPosition="58" endLine="229" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656181" fileName="PathManager.java" startLine="230" startPosition="14" endLine="231" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656197" fileName="PathManager.java" startLine="233" startPosition="5" endLine="234" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656239" fileName="PathManager.java" startLine="238" startPosition="62" endLine="239" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656259" fileName="PathManager.java" startLine="246" startPosition="76" endLine="247" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656271" fileName="PathManager.java" startLine="248" startPosition="22" endLine="249" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656284" fileName="PathManager.java" startLine="251" startPosition="22" endLine="252" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656286" fileName="PathManager.java" startLine="253" startPosition="5" endLine="254" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656313" fileName="PathManager.java" startLine="262" startPosition="109" endLine="263" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4774692914340656315" fileName="PathManager.java" startLine="263" startPosition="45" endLine="264" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656322" fileName="PathManager.java" startLine="264" startPosition="65" endLine="265" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656324" fileName="PathManager.java" startLine="266" startPosition="5" endLine="267" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656330" fileName="PathManager.java" startLine="267" startPosition="48" endLine="268" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656391" fileName="PathManager.java" startLine="269" startPosition="32" endLine="270" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656397" fileName="PathManager.java" startLine="270" startPosition="42" endLine="271" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656405" fileName="PathManager.java" startLine="271" startPosition="54" endLine="272" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656418" fileName="PathManager.java" startLine="273" startPosition="70" endLine="274" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656345" fileName="PathManager.java" startLine="277" startPosition="31" endLine="278" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656351" fileName="PathManager.java" startLine="278" startPosition="46" endLine="279" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656363" fileName="PathManager.java" startLine="280" startPosition="27" endLine="281" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656377" fileName="PathManager.java" startLine="282" startPosition="90" endLine="283" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656437" fileName="PathManager.java" startLine="287" startPosition="29" endLine="288" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4774692914340656439" fileName="PathManager.java" startLine="288" startPosition="45" endLine="289" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656450" fileName="PathManager.java" startLine="289" startPosition="83" endLine="290" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656452" fileName="PathManager.java" startLine="291" startPosition="5" endLine="292" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656458" fileName="PathManager.java" startLine="292" startPosition="64" endLine="293" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656463" fileName="PathManager.java" startLine="293" startPosition="62" endLine="294" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656473" fileName="PathManager.java" startLine="298" startPosition="46" endLine="299" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656485" fileName="PathManager.java" startLine="302" startPosition="39" endLine="303" endPosition="253" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656506" fileName="PathManager.java" startLine="304" startPosition="27" endLine="305" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656543" fileName="PathManager.java" startLine="306" startPosition="11" endLine="307" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656551" fileName="PathManager.java" startLine="307" startPosition="69" endLine="308" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656557" fileName="PathManager.java" startLine="308" startPosition="78" endLine="309" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656563" fileName="PathManager.java" startLine="309" startPosition="50" endLine="310" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656581" fileName="PathManager.java" startLine="311" startPosition="50" endLine="312" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656587" fileName="PathManager.java" startLine="313" startPosition="9" endLine="314" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656596" fileName="PathManager.java" startLine="315" startPosition="40" endLine="316" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656613" fileName="PathManager.java" startLine="317" startPosition="61" endLine="318" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4774692914340656615" fileName="PathManager.java" startLine="318" startPosition="87" endLine="319" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656623" fileName="PathManager.java" startLine="319" startPosition="82" endLine="320" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656513" fileName="PathManager.java" startLine="323" startPosition="31" endLine="324" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="4774692914340656515" fileName="PathManager.java" startLine="324" startPosition="47" endLine="325" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656538" fileName="PathManager.java" startLine="328" startPosition="28" endLine="329" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656635" fileName="PathManager.java" startLine="337" startPosition="48" endLine="338" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656639" fileName="PathManager.java" startLine="338" startPosition="58" endLine="339" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656656" fileName="PathManager.java" startLine="343" startPosition="20" endLine="344" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656664" fileName="PathManager.java" startLine="346" startPosition="29" endLine="347" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656676" fileName="PathManager.java" startLine="348" startPosition="5" endLine="349" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656683" fileName="PathManager.java" startLine="349" startPosition="60" endLine="350" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656687" fileName="PathManager.java" startLine="350" startPosition="52" endLine="351" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656698" fileName="PathManager.java" startLine="352" startPosition="36" endLine="353" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656704" fileName="PathManager.java" startLine="353" startPosition="33" endLine="354" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656711" fileName="PathManager.java" startLine="354" startPosition="44" endLine="355" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656722" fileName="PathManager.java" startLine="356" startPosition="5" endLine="357" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656728" fileName="PathManager.java" startLine="360" startPosition="44" endLine="361" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656732" fileName="PathManager.java" startLine="361" startPosition="52" endLine="362" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656745" fileName="PathManager.java" startLine="365" startPosition="75" endLine="366" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656760" fileName="PathManager.java" startLine="367" startPosition="24" endLine="368" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656762" fileName="PathManager.java" startLine="369" startPosition="5" endLine="370" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656783" fileName="PathManager.java" startLine="373" startPosition="56" endLine="374" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656787" fileName="PathManager.java" startLine="374" startPosition="23" endLine="375" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656806" fileName="PathManager.java" startLine="376" startPosition="44" endLine="377" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656820" fileName="PathManager.java" startLine="378" startPosition="48" endLine="379" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656836" fileName="PathManager.java" startLine="381" startPosition="29" endLine="382" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656839" fileName="PathManager.java" startLine="384" startPosition="5" endLine="385" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656850" fileName="PathManager.java" startLine="388" startPosition="43" endLine="389" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656861" fileName="PathManager.java" startLine="392" startPosition="83" endLine="393" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656866" fileName="PathManager.java" startLine="393" startPosition="59" endLine="394" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656886" fileName="PathManager.java" startLine="396" startPosition="67" endLine="397" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656896" fileName="PathManager.java" startLine="397" startPosition="61" endLine="398" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656922" fileName="PathManager.java" startLine="401" startPosition="35" endLine="402" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656927" fileName="PathManager.java" startLine="403" startPosition="13" endLine="404" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656939" fileName="PathManager.java" startLine="406" startPosition="9" endLine="407" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656963" fileName="PathManager.java" startLine="409" startPosition="33" endLine="410" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656968" fileName="PathManager.java" startLine="411" startPosition="11" endLine="412" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340656978" fileName="PathManager.java" startLine="415" startPosition="5" endLine="416" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340656984" fileName="PathManager.java" startLine="419" startPosition="67" endLine="420" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340656991" fileName="PathManager.java" startLine="420" startPosition="42" endLine="421" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4774692914340657004" fileName="PathManager.java" startLine="422" startPosition="24" endLine="423" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340657017" fileName="PathManager.java" startLine="426" startPosition="11" endLine="427" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4774692914340657026" fileName="PathManager.java" startLine="430" startPosition="5" endLine="431" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4774692914340657038" fileName="PathManager.java" startLine="435" startPosition="0" endLine="436" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourPreinstalledPluginsPath" />
-    <nodeInfo nodeId="4774692914340655531" fileName="PathManager.java" startLine="34" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTIES_FILE" />
-    <nodeInfo nodeId="4774692914340655536" fileName="PathManager.java" startLine="36" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_SYSTEM_PATH" />
-    <nodeInfo nodeId="4774692914340655541" fileName="PathManager.java" startLine="38" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_CONFIG_PATH" />
-    <nodeInfo nodeId="4774692914340655546" fileName="PathManager.java" startLine="40" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_PLUGINS_PATH" />
-    <nodeInfo nodeId="4774692914340655551" fileName="PathManager.java" startLine="42" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_HOME_PATH" />
-    <nodeInfo nodeId="4774692914340655556" fileName="PathManager.java" startLine="44" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROPERTY_LOG_PATH" />
-    <nodeInfo nodeId="4774692914340655561" fileName="PathManager.java" startLine="46" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourHomePath" />
-    <nodeInfo nodeId="4774692914340655565" fileName="PathManager.java" startLine="48" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourSystemPath" />
-    <nodeInfo nodeId="4774692914340655569" fileName="PathManager.java" startLine="50" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourConfigPath" />
-    <nodeInfo nodeId="4774692914340655573" fileName="PathManager.java" startLine="52" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourPluginsPath" />
-    <nodeInfo nodeId="4774692914340655577" fileName="PathManager.java" startLine="54" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ourLogPath" />
-    <nodeInfo nodeId="4774692914340655581" fileName="PathManager.java" startLine="56" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="FILE" />
-    <nodeInfo nodeId="4774692914340655586" fileName="PathManager.java" startLine="58" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="JAR" />
-    <nodeInfo nodeId="4774692914340655591" fileName="PathManager.java" startLine="60" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="JAR_DELIMITER" />
-    <nodeInfo nodeId="4774692914340655596" fileName="PathManager.java" startLine="62" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PROTOCOL_DELIMITER" />
-    <nodeInfo nodeId="4774692914340655601" fileName="PathManager.java" startLine="64" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="DEFAULT_OPTIONS_FILE_NAME" />
-    <nodeInfo nodeId="4774692914340655606" fileName="PathManager.java" startLine="66" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LIB_FOLDER" />
-    <nodeInfo nodeId="4774692914340655611" fileName="PathManager.java" startLine="68" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PLUGINS_DIRECTORY" />
-    <nodeInfo nodeId="4774692914340655616" fileName="PathManager.java" startLine="70" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="BIN_FOLDER" />
-    <nodeInfo nodeId="4774692914340655621" fileName="PathManager.java" startLine="72" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG_DIRECTORY" />
-    <nodeInfo nodeId="4774692914340655626" fileName="PathManager.java" startLine="74" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="OPTIONS_FOLDER" />
-    <nodeInfo nodeId="4774692914340655688" fileName="PathManager.java" startLine="92" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PathManager#()V" />
-    <nodeInfo nodeId="4774692914340655942" fileName="PathManager.java" startLine="146" startPosition="10" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4774692914340656046" fileName="PathManager.java" startLine="183" startPosition="10" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4774692914340656145" fileName="PathManager.java" startLine="219" startPosition="12" endLine="221" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4774692914340656179" fileName="PathManager.java" startLine="230" startPosition="12" endLine="232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4774692914340657046" fileName="PathManager.java" startLine="437" startPosition="0" endLine="439" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StringHolder#()V" />
-    <nodeInfo nodeId="4774692914340655696" fileName="PathManager.java" startLine="95" startPosition="38" endLine="98" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340655758" fileName="PathManager.java" startLine="107" startPosition="49" endLine="110" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340655818" fileName="PathManager.java" startLine="118" startPosition="9" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340655837" fileName="PathManager.java" startLine="128" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isIdeaHome#(Ljava/io/File;)Z" />
-    <nodeInfo nodeId="4774692914340655859" fileName="PathManager.java" startLine="132" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMpsDir#(Ljava/io/File;)Z" />
-    <nodeInfo nodeId="4774692914340655872" fileName="PathManager.java" startLine="136" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLibPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340655930" fileName="PathManager.java" startLine="140" startPosition="40" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656023" fileName="PathManager.java" startLine="173" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConfigPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656034" fileName="PathManager.java" startLine="177" startPosition="54" endLine="180" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656066" fileName="PathManager.java" startLine="189" startPosition="0" endLine="192" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBinPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656076" fileName="PathManager.java" startLine="193" startPosition="0" endLine="196" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOptionsPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656086" fileName="PathManager.java" startLine="197" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOptionsPathWithoutDialog#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656125" fileName="PathManager.java" startLine="211" startPosition="0" endLine="214" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPreinstalledPluginsPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656266" fileName="PathManager.java" startLine="247" startPosition="40" endLine="250" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656279" fileName="PathManager.java" startLine="250" startPosition="5" endLine="253" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656413" fileName="PathManager.java" startLine="272" startPosition="70" endLine="275" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656371" fileName="PathManager.java" startLine="281" startPosition="62" endLine="284" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656572" fileName="PathManager.java" startLine="310" startPosition="67" endLine="313" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656533" fileName="PathManager.java" startLine="327" startPosition="13" endLine="330" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656651" fileName="PathManager.java" startLine="342" startPosition="76" endLine="345" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656658" fileName="PathManager.java" startLine="345" startPosition="5" endLine="348" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656755" fileName="PathManager.java" startLine="366" startPosition="83" endLine="369" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656812" fileName="PathManager.java" startLine="377" startPosition="38" endLine="380" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4774692914340656829" fileName="PathManager.java" startLine="380" startPosition="7" endLine="383" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656846" fileName="PathManager.java" startLine="388" startPosition="0" endLine="391" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLanguagesPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656917" fileName="PathManager.java" startLine="400" startPosition="48" endLine="403" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656958" fileName="PathManager.java" startLine="408" startPosition="60" endLine="411" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656999" fileName="PathManager.java" startLine="421" startPosition="39" endLine="424" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340655649" fileName="PathManager.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="4774692914340655669" fileName="PathManager.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="4774692914340655996" fileName="PathManager.java" startLine="160" startPosition="40" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656012" fileName="PathManager.java" startLine="168" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConfigPath#(Z)Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656107" fileName="PathManager.java" startLine="202" startPosition="63" endLine="206" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4774692914340656232" fileName="PathManager.java" startLine="237" startPosition="0" endLine="241" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getOptionsFile#(Ljava/lang/String;)Ljava/io/File;" />
-    <nodeInfo nodeId="4774692914340656469" fileName="PathManager.java" startLine="297" startPosition="0" endLine="301" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefaultOptionsFile#()Ljava/io/File;" />
-    <nodeInfo nodeId="4774692914340656629" fileName="PathManager.java" startLine="337" startPosition="0" endLine="341" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="substitueVars#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656724" fileName="PathManager.java" startLine="360" startPosition="0" endLine="364" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPluginTempPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340657011" fileName="PathManager.java" startLine="425" startPosition="31" endLine="429" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4774692914340655937" fileName="PathManager.java" startLine="143" startPosition="5" endLine="148" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656041" fileName="PathManager.java" startLine="180" startPosition="5" endLine="185" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656140" fileName="PathManager.java" startLine="216" startPosition="33" endLine="221" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656174" fileName="PathManager.java" startLine="227" startPosition="29" endLine="232" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656302" fileName="PathManager.java" startLine="261" startPosition="75" endLine="266" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656432" fileName="PathManager.java" startLine="286" startPosition="5" endLine="291" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656604" fileName="PathManager.java" startLine="316" startPosition="51" endLine="321" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656693" fileName="PathManager.java" startLine="351" startPosition="36" endLine="356" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4774692914340655643" fileName="PathManager.java" startLine="79" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="JARS" />
-    <nodeInfo nodeId="4774692914340655663" fileName="PathManager.java" startLine="85" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="MPS_JARS" />
-    <nodeInfo nodeId="4774692914340655960" fileName="PathManager.java" startLine="148" startPosition="5" endLine="154" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4774692914340656358" fileName="PathManager.java" startLine="279" startPosition="54" endLine="285" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656527" fileName="PathManager.java" startLine="326" startPosition="17" endLine="332" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4774692914340656909" fileName="PathManager.java" startLine="399" startPosition="48" endLine="405" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4774692914340656949" fileName="PathManager.java" startLine="407" startPosition="73" endLine="413" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340657006" fileName="PathManager.java" startLine="424" startPosition="5" endLine="430" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4774692914340655810" fileName="PathManager.java" startLine="117" startPosition="5" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4774692914340656135" fileName="PathManager.java" startLine="215" startPosition="41" endLine="222" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656169" fileName="PathManager.java" startLine="226" startPosition="37" endLine="233" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656738" fileName="PathManager.java" startLine="365" startPosition="0" endLine="372" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="findFileInLibDirectory#(Ljava/lang/String;)Ljava/io/File;" />
-    <nodeInfo nodeId="4774692914340656591" fileName="PathManager.java" startLine="314" startPosition="64" endLine="322" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4774692914340656900" fileName="PathManager.java" startLine="398" startPosition="39" endLine="406" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340655743" fileName="PathManager.java" startLine="105" startPosition="57" endLine="114" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="4774692914340655982" fileName="PathManager.java" startLine="158" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="ensureConfigFolderExists#(Z)Z" />
-    <nodeInfo nodeId="4774692914340656096" fileName="PathManager.java" startLine="201" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getIndexRoot#()Ljava/io/File;" />
-    <nodeInfo nodeId="4774692914340656797" fileName="PathManager.java" startLine="375" startPosition="64" endLine="384" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656131" fileName="PathManager.java" startLine="215" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getPluginsPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656165" fileName="PathManager.java" startLine="226" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getLogPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656339" fileName="PathManager.java" startLine="276" startPosition="10" endLine="286" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656030" fileName="PathManager.java" startLine="177" startPosition="0" endLine="188" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConfigPathWithoutDialog#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340655730" fileName="PathManager.java" startLine="103" startPosition="113" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656250" fileName="PathManager.java" startLine="242" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getResourceRoot#(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656778" fileName="PathManager.java" startLine="373" startPosition="0" endLine="387" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBootstrapPaths#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="4774692914340656981" fileName="PathManager.java" startLine="419" startPosition="0" endLine="433" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPluginClassLoader#(Ljava/io/File;)Ljetbrains/mps/tool/common/util/UrlClassLoader;" />
-    <nodeInfo nodeId="4774692914340655708" fileName="PathManager.java" startLine="101" startPosition="10" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4774692914340655926" fileName="PathManager.java" startLine="140" startPosition="0" endLine="157" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSystemPath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656643" fileName="PathManager.java" startLine="342" startPosition="0" endLine="359" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="substituteVars#(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656334" fileName="PathManager.java" startLine="268" startPosition="29" endLine="286" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340655703" fileName="PathManager.java" startLine="98" startPosition="5" endLine="117" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656878" fileName="PathManager.java" startLine="395" startPosition="30" endLine="414" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4774692914340656873" fileName="PathManager.java" startLine="394" startPosition="101" endLine="415" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340656856" fileName="PathManager.java" startLine="392" startPosition="0" endLine="418" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getExtensionsPaths#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="4774692914340656510" fileName="PathManager.java" startLine="305" startPosition="29" endLine="333" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="4774692914340656501" fileName="PathManager.java" startLine="303" startPosition="253" endLine="334" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4774692914340655692" fileName="PathManager.java" startLine="95" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getHomePath#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4774692914340656481" fileName="PathManager.java" startLine="302" startPosition="0" endLine="336" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="loadProperties#()V" />
-    <nodeInfo nodeId="4774692914340656294" fileName="PathManager.java" startLine="257" startPosition="0" endLine="296" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="extractRoot#(Ljava/net/URL;Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="4774692914340655691" fileName="PathManager.java" startLine="92" startPosition="24" endLine="92" endPosition="24" />
-    <scopeInfo nodeId="4774692914340656108" fileName="PathManager.java" startLine="205" startPosition="0" endLine="205" endPosition="35">
-      <varInfo nodeId="4774692914340656110" varName="ignored" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656109" fileName="PathManager.java" startLine="205" startPosition="35" endLine="205" endPosition="35" />
-    <scopeInfo nodeId="4774692914340656528" fileName="PathManager.java" startLine="331" startPosition="0" endLine="331" endPosition="33">
-      <varInfo nodeId="4774692914340656530" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656529" fileName="PathManager.java" startLine="331" startPosition="33" endLine="331" endPosition="33" />
-    <scopeInfo nodeId="4774692914340657012" fileName="PathManager.java" startLine="428" startPosition="0" endLine="428" endPosition="47">
-      <varInfo nodeId="4774692914340657014" varName="ignored" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340657013" fileName="PathManager.java" startLine="428" startPosition="47" endLine="428" endPosition="47" />
-    <scopeInfo nodeId="4774692914340657049" fileName="PathManager.java" startLine="437" startPosition="28" endLine="437" endPosition="28" />
-    <scopeInfo nodeId="4774692914340655656" fileName="PathManager.java" startLine="81" startPosition="50" endLine="82" endPosition="48" />
-    <scopeInfo nodeId="4774692914340655676" fileName="PathManager.java" startLine="87" startPosition="50" endLine="88" endPosition="89" />
-    <scopeInfo nodeId="4774692914340655700" fileName="PathManager.java" startLine="96" startPosition="30" endLine="97" endPosition="25" />
-    <scopeInfo nodeId="4774692914340655803" fileName="PathManager.java" startLine="99" startPosition="57" endLine="100" endPosition="85" />
-    <scopeInfo nodeId="4774692914340655762" fileName="PathManager.java" startLine="108" startPosition="31" endLine="109" endPosition="24" />
-    <scopeInfo nodeId="4774692914340655821" fileName="PathManager.java" startLine="119" startPosition="52" endLine="120" endPosition="94" />
-    <scopeInfo nodeId="4774692914340655811" fileName="PathManager.java" startLine="122" startPosition="0" endLine="123" endPosition="17">
-      <varInfo nodeId="4774692914340655815" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340655812" fileName="PathManager.java" startLine="122" startPosition="29" endLine="123" endPosition="17" />
-    <scopeInfo nodeId="4774692914340655842" fileName="PathManager.java" startLine="128" startPosition="54" endLine="129" endPosition="182" />
-    <scopeInfo nodeId="4774692914340655864" fileName="PathManager.java" startLine="132" startPosition="46" endLine="133" endPosition="51" />
-    <scopeInfo nodeId="4774692914340655875" fileName="PathManager.java" startLine="136" startPosition="37" endLine="137" endPosition="67" />
-    <scopeInfo nodeId="4774692914340655934" fileName="PathManager.java" startLine="141" startPosition="32" endLine="142" endPosition="27" />
-    <scopeInfo nodeId="4774692914340655952" fileName="PathManager.java" startLine="144" startPosition="59" endLine="145" endPosition="114" />
-    <scopeInfo nodeId="4774692914340655943" fileName="PathManager.java" startLine="146" startPosition="12" endLine="147" endPosition="76" />
-    <scopeInfo nodeId="4774692914340655961" fileName="PathManager.java" startLine="152" startPosition="0" endLine="153" endPosition="26">
-      <varInfo nodeId="4774692914340655967" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340655962" fileName="PathManager.java" startLine="152" startPosition="27" endLine="153" endPosition="26" />
-    <scopeInfo nodeId="4774692914340656026" fileName="PathManager.java" startLine="173" startPosition="40" endLine="174" endPosition="43" />
-    <scopeInfo nodeId="4774692914340656038" fileName="PathManager.java" startLine="178" startPosition="32" endLine="179" endPosition="27" />
-    <scopeInfo nodeId="4774692914340656056" fileName="PathManager.java" startLine="181" startPosition="59" endLine="182" endPosition="114" />
-    <scopeInfo nodeId="4774692914340656047" fileName="PathManager.java" startLine="183" startPosition="12" endLine="184" endPosition="76" />
-    <scopeInfo nodeId="4774692914340656069" fileName="PathManager.java" startLine="189" startPosition="37" endLine="190" endPosition="67" />
-    <scopeInfo nodeId="4774692914340656079" fileName="PathManager.java" startLine="193" startPosition="41" endLine="194" endPosition="73" />
-    <scopeInfo nodeId="4774692914340656089" fileName="PathManager.java" startLine="197" startPosition="54" endLine="198" endPosition="86" />
-    <scopeInfo nodeId="4774692914340656112" fileName="PathManager.java" startLine="203" startPosition="9" endLine="204" endPosition="37" />
-    <scopeInfo nodeId="4774692914340656128" fileName="PathManager.java" startLine="211" startPosition="53" endLine="212" endPosition="63" />
-    <scopeInfo nodeId="4774692914340656155" fileName="PathManager.java" startLine="217" startPosition="62" endLine="218" endPosition="118" />
-    <scopeInfo nodeId="4774692914340656146" fileName="PathManager.java" startLine="219" startPosition="14" endLine="220" endPosition="94" />
-    <scopeInfo nodeId="4774692914340656189" fileName="PathManager.java" startLine="228" startPosition="58" endLine="229" endPosition="110" />
-    <scopeInfo nodeId="4774692914340656180" fileName="PathManager.java" startLine="230" startPosition="14" endLine="231" endPosition="86" />
-    <scopeInfo nodeId="4774692914340656238" fileName="PathManager.java" startLine="238" startPosition="62" endLine="239" endPosition="91" />
-    <scopeInfo nodeId="4774692914340656270" fileName="PathManager.java" startLine="248" startPosition="22" endLine="249" endPosition="61" />
-    <scopeInfo nodeId="4774692914340656283" fileName="PathManager.java" startLine="251" startPosition="22" endLine="252" endPosition="18" />
-    <scopeInfo nodeId="4774692914340656417" fileName="PathManager.java" startLine="273" startPosition="70" endLine="274" endPosition="78" />
-    <scopeInfo nodeId="4774692914340656376" fileName="PathManager.java" startLine="282" startPosition="90" endLine="283" endPosition="90" />
-    <scopeInfo nodeId="4774692914340656472" fileName="PathManager.java" startLine="298" startPosition="46" endLine="299" endPosition="86" />
-    <scopeInfo nodeId="4774692914340656580" fileName="PathManager.java" startLine="311" startPosition="50" endLine="312" endPosition="82" />
-    <scopeInfo nodeId="4774692914340656537" fileName="PathManager.java" startLine="328" startPosition="28" endLine="329" endPosition="24" />
-    <scopeInfo nodeId="4774692914340656655" fileName="PathManager.java" startLine="343" startPosition="20" endLine="344" endPosition="18" />
-    <scopeInfo nodeId="4774692914340656663" fileName="PathManager.java" startLine="346" startPosition="29" endLine="347" endPosition="82" />
-    <scopeInfo nodeId="4774692914340656759" fileName="PathManager.java" startLine="367" startPosition="24" endLine="368" endPosition="18" />
-    <scopeInfo nodeId="4774692914340656819" fileName="PathManager.java" startLine="378" startPosition="48" endLine="379" endPosition="58" />
-    <scopeInfo nodeId="4774692914340656835" fileName="PathManager.java" startLine="381" startPosition="29" endLine="382" endPosition="57" />
-    <scopeInfo nodeId="4774692914340656849" fileName="PathManager.java" startLine="388" startPosition="43" endLine="389" endPosition="56" />
-    <scopeInfo nodeId="4774692914340656921" fileName="PathManager.java" startLine="401" startPosition="35" endLine="402" endPosition="54" />
-    <scopeInfo nodeId="4774692914340656962" fileName="PathManager.java" startLine="409" startPosition="33" endLine="410" endPosition="52" />
-    <scopeInfo nodeId="4774692914340657003" fileName="PathManager.java" startLine="422" startPosition="24" endLine="423" endPosition="18" />
-    <scopeInfo nodeId="4774692914340657016" fileName="PathManager.java" startLine="426" startPosition="11" endLine="427" endPosition="41" />
-    <scopeInfo nodeId="4774692914340655688" fileName="PathManager.java" startLine="92" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="4774692914340655969" fileName="PathManager.java" startLine="149" startPosition="9" endLine="151" endPosition="20">
-      <varInfo nodeId="4774692914340655971" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656003" fileName="PathManager.java" startLine="161" startPosition="48" endLine="163" endPosition="18" />
-    <scopeInfo nodeId="4774692914340656017" fileName="PathManager.java" startLine="168" startPosition="65" endLine="170" endPosition="25" />
-    <scopeInfo nodeId="4774692914340656511" fileName="PathManager.java" startLine="323" startPosition="0" endLine="325" endPosition="88">
-      <varInfo nodeId="4774692914340656524" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656512" fileName="PathManager.java" startLine="323" startPosition="31" endLine="325" endPosition="88" />
-    <scopeInfo nodeId="4774692914340656634" fileName="PathManager.java" startLine="337" startPosition="48" endLine="339" endPosition="55">
-      <varInfo nodeId="4774692914340656636" varName="ideaHomePath" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656727" fileName="PathManager.java" startLine="360" startPosition="44" endLine="362" endPosition="59">
-      <varInfo nodeId="4774692914340656729" varName="systemPath" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340657046" fileName="PathManager.java" startLine="437" startPosition="0" endLine="439" endPosition="0" />
-    <scopeInfo nodeId="4774692914340655817" fileName="PathManager.java" startLine="118" startPosition="9" endLine="121" endPosition="7" />
-    <scopeInfo nodeId="4774692914340655837" fileName="PathManager.java" startLine="128" startPosition="0" endLine="131" endPosition="0">
-      <varInfo nodeId="4774692914340655840" varName="root" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340655859" fileName="PathManager.java" startLine="132" startPosition="0" endLine="135" endPosition="0">
-      <varInfo nodeId="4774692914340655862" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340655872" fileName="PathManager.java" startLine="136" startPosition="0" endLine="139" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656023" fileName="PathManager.java" startLine="173" startPosition="0" endLine="176" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656066" fileName="PathManager.java" startLine="189" startPosition="0" endLine="192" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656076" fileName="PathManager.java" startLine="193" startPosition="0" endLine="196" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656086" fileName="PathManager.java" startLine="197" startPosition="0" endLine="200" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656125" fileName="PathManager.java" startLine="211" startPosition="0" endLine="214" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656312" fileName="PathManager.java" startLine="262" startPosition="109" endLine="265" endPosition="18" />
-    <scopeInfo nodeId="4774692914340656436" fileName="PathManager.java" startLine="287" startPosition="29" endLine="290" endPosition="18" />
-    <scopeInfo nodeId="4774692914340656612" fileName="PathManager.java" startLine="317" startPosition="61" endLine="320" endPosition="50">
-      <varInfo nodeId="4774692914340656616" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656532" fileName="PathManager.java" startLine="327" startPosition="13" endLine="330" endPosition="11" />
-    <scopeInfo nodeId="4774692914340656697" fileName="PathManager.java" startLine="352" startPosition="36" endLine="355" endPosition="57">
-      <varInfo nodeId="4774692914340656699" varName="key" />
-      <varInfo nodeId="4774692914340656705" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656812" fileName="PathManager.java" startLine="377" startPosition="38" endLine="380" endPosition="7">
-      <varInfo nodeId="4774692914340656817" varName="jar" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656846" fileName="PathManager.java" startLine="388" startPosition="0" endLine="391" endPosition="0" />
-    <scopeInfo nodeId="4774692914340655649" fileName="PathManager.java" startLine="80" startPosition="0" endLine="84" endPosition="0">
-      <varInfo nodeId="4774692914340655652" varName="dir" />
-      <varInfo nodeId="4774692914340655654" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340655669" fileName="PathManager.java" startLine="86" startPosition="0" endLine="90" endPosition="0">
-      <varInfo nodeId="4774692914340655672" varName="dir" />
-      <varInfo nodeId="4774692914340655674" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656012" fileName="PathManager.java" startLine="168" startPosition="0" endLine="172" endPosition="0">
-      <varInfo nodeId="4774692914340656015" varName="createIfNotExists" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656232" fileName="PathManager.java" startLine="237" startPosition="0" endLine="241" endPosition="0">
-      <varInfo nodeId="4774692914340656235" varName="fileName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656362" fileName="PathManager.java" startLine="280" startPosition="27" endLine="284" endPosition="9">
-      <varInfo nodeId="4774692914340656364" varName="archivePath" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656469" fileName="PathManager.java" startLine="297" startPosition="0" endLine="301" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656629" fileName="PathManager.java" startLine="337" startPosition="0" endLine="341" endPosition="0">
-      <varInfo nodeId="4774692914340656632" varName="s" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656724" fileName="PathManager.java" startLine="360" startPosition="0" endLine="364" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656916" fileName="PathManager.java" startLine="400" startPosition="48" endLine="404" endPosition="110" />
-    <scopeInfo nodeId="4774692914340656957" fileName="PathManager.java" startLine="408" startPosition="60" endLine="412" endPosition="97" />
-    <scopeInfo nodeId="4774692914340657010" fileName="PathManager.java" startLine="425" startPosition="31" endLine="429" endPosition="7" />
-    <scopeInfo nodeId="4774692914340656139" fileName="PathManager.java" startLine="216" startPosition="33" endLine="221" endPosition="7" />
-    <scopeInfo nodeId="4774692914340656173" fileName="PathManager.java" startLine="227" startPosition="29" endLine="232" endPosition="7" />
-    <scopeInfo nodeId="4774692914340656693" fileName="PathManager.java" startLine="351" startPosition="36" endLine="356" endPosition="5">
-      <varInfo nodeId="4774692914340656695" varName="key1" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656744" fileName="PathManager.java" startLine="365" startPosition="75" endLine="370" endPosition="135">
-      <varInfo nodeId="4774692914340656746" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656390" fileName="PathManager.java" startLine="269" startPosition="32" endLine="275" endPosition="7">
-      <varInfo nodeId="4774692914340656392" varName="path" />
-      <varInfo nodeId="4774692914340656398" varName="testPath" />
-      <varInfo nodeId="4774692914340656406" varName="testResourcePath" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656595" fileName="PathManager.java" startLine="315" startPosition="40" endLine="321" endPosition="11">
-      <varInfo nodeId="4774692914340656597" varName="key" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656526" fileName="PathManager.java" startLine="326" startPosition="17" endLine="332" endPosition="9" />
-    <scopeInfo nodeId="4774692914340656908" fileName="PathManager.java" startLine="399" startPosition="48" endLine="405" endPosition="11" />
-    <scopeInfo nodeId="4774692914340656909" fileName="PathManager.java" startLine="399" startPosition="48" endLine="405" endPosition="11">
-      <varInfo nodeId="4774692914340656914" varName="jar" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340657006" fileName="PathManager.java" startLine="424" startPosition="5" endLine="430" endPosition="5">
-      <varInfo nodeId="4774692914340657008" varName="libjar" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340655751" fileName="PathManager.java" startLine="106" startPosition="12" endLine="113" endPosition="42">
-      <varInfo nodeId="4774692914340655753" varName="parent" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340655987" fileName="PathManager.java" startLine="158" startPosition="83" endLine="165" endPosition="17">
-      <varInfo nodeId="4774692914340655991" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656099" fileName="PathManager.java" startLine="201" startPosition="37" endLine="208" endPosition="16">
-      <varInfo nodeId="4774692914340656101" varName="file" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656738" fileName="PathManager.java" startLine="365" startPosition="0" endLine="372" endPosition="0">
-      <varInfo nodeId="4774692914340656741" varName="relativePath" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656805" fileName="PathManager.java" startLine="376" startPosition="44" endLine="383" endPosition="7" />
-    <scopeInfo nodeId="4774692914340656134" fileName="PathManager.java" startLine="215" startPosition="41" endLine="223" endPosition="26" />
-    <scopeInfo nodeId="4774692914340656168" fileName="PathManager.java" startLine="226" startPosition="37" endLine="234" endPosition="22" />
-    <scopeInfo nodeId="4774692914340656258" fileName="PathManager.java" startLine="246" startPosition="76" endLine="254" endPosition="46">
-      <varInfo nodeId="4774692914340656260" varName="url" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656344" fileName="PathManager.java" startLine="277" startPosition="31" endLine="285" endPosition="7">
-      <varInfo nodeId="4774692914340656352" varName="delimiter" />
-      <varInfo nodeId="4774692914340656346" varName="fullPath" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340655982" fileName="PathManager.java" startLine="158" startPosition="0" endLine="167" endPosition="0">
-      <varInfo nodeId="4774692914340655985" varName="createIfNotExists" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656033" fileName="PathManager.java" startLine="177" startPosition="54" endLine="186" endPosition="25" />
-    <scopeInfo nodeId="4774692914340656096" fileName="PathManager.java" startLine="201" startPosition="0" endLine="210" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656131" fileName="PathManager.java" startLine="215" startPosition="0" endLine="225" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656165" fileName="PathManager.java" startLine="226" startPosition="0" endLine="236" endPosition="0" />
-    <scopeInfo nodeId="4774692914340655734" fileName="PathManager.java" startLine="104" startPosition="29" endLine="115" endPosition="69">
-      <varInfo nodeId="4774692914340655736" varName="root" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656030" fileName="PathManager.java" startLine="177" startPosition="0" endLine="188" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656782" fileName="PathManager.java" startLine="373" startPosition="56" endLine="385" endPosition="74">
-      <varInfo nodeId="4774692914340656788" varName="lib" />
-      <varInfo nodeId="4774692914340656784" varName="paths" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656983" fileName="PathManager.java" startLine="419" startPosition="67" endLine="431" endPosition="79">
-      <varInfo nodeId="4774692914340656992" varName="files" />
-      <varInfo nodeId="4774692914340656985" varName="urls" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656250" fileName="PathManager.java" startLine="242" startPosition="0" endLine="256" endPosition="0">
-      <varInfo nodeId="4774692914340656253" varName="context" />
-      <varInfo nodeId="4774692914340656255" varName="path" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656778" fileName="PathManager.java" startLine="373" startPosition="0" endLine="387" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656981" fileName="PathManager.java" startLine="419" startPosition="0" endLine="433" endPosition="0">
-      <varInfo nodeId="4774692914340657034" varName="lib" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340655709" fileName="PathManager.java" startLine="101" startPosition="12" endLine="116" endPosition="7">
-      <varInfo nodeId="4774692914340655711" varName="aClass" />
-      <varInfo nodeId="4774692914340655715" varName="rootPath" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340655929" fileName="PathManager.java" startLine="140" startPosition="40" endLine="155" endPosition="25" />
-    <scopeInfo nodeId="4774692914340656650" fileName="PathManager.java" startLine="342" startPosition="76" endLine="357" endPosition="13">
-      <varInfo nodeId="4774692914340656688" varName="keys" />
-      <varInfo nodeId="4774692914340656684" varName="props" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656542" fileName="PathManager.java" startLine="306" startPosition="11" endLine="322" endPosition="9">
-      <varInfo nodeId="4774692914340656552" varName="bundle" />
-      <varInfo nodeId="4774692914340656564" varName="home" />
-      <varInfo nodeId="4774692914340656558" varName="keys" />
-      <varInfo nodeId="4774692914340656588" varName="sysProperties" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340655926" fileName="PathManager.java" startLine="140" startPosition="0" endLine="157" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656643" fileName="PathManager.java" startLine="342" startPosition="0" endLine="359" endPosition="0">
-      <varInfo nodeId="4774692914340656648" varName="ideaHomePath" />
-      <varInfo nodeId="4774692914340656646" varName="s" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656885" fileName="PathManager.java" startLine="396" startPosition="67" endLine="413" endPosition="9">
-      <varInfo nodeId="4774692914340656940" varName="languages" />
-      <varInfo nodeId="4774692914340656887" varName="lib" />
-      <varInfo nodeId="4774692914340656897" varName="pluginCL" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656877" fileName="PathManager.java" startLine="395" startPosition="30" endLine="414" endPosition="7" />
-    <scopeInfo nodeId="4774692914340656878" fileName="PathManager.java" startLine="395" startPosition="30" endLine="414" endPosition="7">
-      <varInfo nodeId="4774692914340656883" varName="plugin" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656860" fileName="PathManager.java" startLine="392" startPosition="83" endLine="416" endPosition="53">
-      <varInfo nodeId="4774692914340656867" varName="paths" />
-      <varInfo nodeId="4774692914340656862" varName="pluginsPath" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656856" fileName="PathManager.java" startLine="392" startPosition="0" endLine="418" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656505" fileName="PathManager.java" startLine="304" startPosition="27" endLine="333" endPosition="7">
-      <varInfo nodeId="4774692914340656507" varName="fis" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340655695" fileName="PathManager.java" startLine="95" startPosition="38" endLine="125" endPosition="23" />
-    <scopeInfo nodeId="4774692914340655692" fileName="PathManager.java" startLine="95" startPosition="0" endLine="127" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656484" fileName="PathManager.java" startLine="302" startPosition="39" endLine="334" endPosition="5">
-      <varInfo nodeId="4774692914340656486" varName="propFile" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656301" fileName="PathManager.java" startLine="261" startPosition="75" endLine="294" endPosition="22">
-      <varInfo nodeId="4774692914340656325" varName="protocol" />
-      <varInfo nodeId="4774692914340656331" varName="resultPath" />
-    </scopeInfo>
-    <scopeInfo nodeId="4774692914340656481" fileName="PathManager.java" startLine="302" startPosition="0" endLine="336" endPosition="0" />
-    <scopeInfo nodeId="4774692914340656294" fileName="PathManager.java" startLine="257" startPosition="0" endLine="296" endPosition="0">
-      <varInfo nodeId="4774692914340656299" varName="resourcePath" />
-      <varInfo nodeId="4774692914340656297" varName="resourceURL" />
-    </scopeInfo>
-    <unitInfo nodeId="4774692914340655648" fileName="PathManager.java" startLine="79" startPosition="48" endLine="84" endPosition="3" unitName="jetbrains.mps.tool.builder.util.PathManager$1" />
-    <unitInfo nodeId="4774692914340655668" fileName="PathManager.java" startLine="85" startPosition="53" endLine="90" endPosition="3" unitName="jetbrains.mps.tool.builder.util.PathManager$2" />
-    <unitInfo nodeId="4774692914340657036" fileName="PathManager.java" startLine="434" startPosition="0" endLine="440" endPosition="0" unitName="jetbrains.mps.tool.builder.util.PathManager$StringHolder" />
-    <unitInfo nodeId="4774692914340655529" fileName="PathManager.java" startLine="33" startPosition="0" endLine="441" endPosition="0" unitName="jetbrains.mps.tool.builder.util.PathManager" />
+    <file name="PathManager.java">
+      <node id="4774692914340655631" at="76,0,77,0" concept="14" trace="MPS_DASH" />
+      <node id="4774692914340655635" at="77,0,78,0" concept="14" trace="DOT_JAR" />
+      <node id="4774692914340655639" at="78,0,79,0" concept="14" trace="MODULES_PREFIX" />
+      <node id="4774692914340655657" at="81,50,82,48" concept="12" />
+      <node id="4774692914340655677" at="87,50,88,89" concept="12" />
+      <node id="4774692914340655701" at="96,30,97,25" concept="12" />
+      <node id="4774692914340655804" at="99,57,100,85" concept="5" />
+      <node id="4774692914340655710" at="101,12,102,45" concept="11" />
+      <node id="4774692914340655714" at="102,45,103,113" concept="11" />
+      <node id="4774692914340655735" at="104,29,105,57" concept="11" />
+      <node id="4774692914340655752" at="106,12,107,49" concept="11" />
+      <node id="4774692914340655763" at="108,31,109,24" concept="12" />
+      <node id="4774692914340655765" at="110,11,111,142" concept="0" />
+      <node id="4774692914340655782" at="111,142,112,52" concept="5" />
+      <node id="4774692914340655790" at="112,52,113,42" concept="13" />
+      <node id="4774692914340655792" at="114,64,115,69" concept="5" />
+      <node id="4774692914340655822" at="119,52,120,94" concept="5" />
+      <node id="4774692914340655813" at="122,29,123,17" concept="13" />
+      <node id="4774692914340655835" at="124,5,125,23" concept="12" />
+      <node id="4774692914340655843" at="128,54,129,182" concept="12" />
+      <node id="4774692914340655865" at="132,46,133,51" concept="12" />
+      <node id="4774692914340655876" at="136,37,137,67" concept="12" />
+      <node id="4774692914340655935" at="141,32,142,27" concept="12" />
+      <node id="4774692914340655953" at="144,59,145,114" concept="5" />
+      <node id="4774692914340655944" at="146,12,147,76" concept="5" />
+      <node id="4774692914340655970" at="149,9,150,42" concept="11" />
+      <node id="4774692914340655976" at="150,42,151,20" concept="5" />
+      <node id="4774692914340655963" at="152,27,153,26" concept="5" />
+      <node id="4774692914340655980" at="154,5,155,25" concept="12" />
+      <node id="4774692914340655988" at="158,83,159,45" concept="5" />
+      <node id="4774692914340655990" at="159,45,160,40" concept="11" />
+      <node id="4774692914340656004" at="161,48,162,20" concept="5" />
+      <node id="4774692914340656008" at="162,20,163,18" concept="12" />
+      <node id="4774692914340656010" at="164,5,165,17" concept="12" />
+      <node id="4774692914340656018" at="168,65,169,60" concept="5" />
+      <node id="4774692914340656021" at="169,60,170,25" concept="12" />
+      <node id="4774692914340656027" at="173,40,174,43" concept="12" />
+      <node id="4774692914340656039" at="178,32,179,27" concept="12" />
+      <node id="4774692914340656057" at="181,59,182,114" concept="5" />
+      <node id="4774692914340656048" at="183,12,184,76" concept="5" />
+      <node id="4774692914340656064" at="185,5,186,25" concept="12" />
+      <node id="4774692914340656070" at="189,37,190,67" concept="12" />
+      <node id="4774692914340656080" at="193,41,194,73" concept="12" />
+      <node id="4774692914340656090" at="197,54,198,86" concept="12" />
+      <node id="4774692914340656100" at="201,37,202,63" concept="11" />
+      <node id="4774692914340656113" at="203,9,204,37" concept="5" />
+      <node id="4774692914340656119" at="206,5,207,18" concept="5" />
+      <node id="4774692914340656123" at="207,18,208,16" concept="12" />
+      <node id="4774692914340656129" at="211,53,212,63" concept="12" />
+      <node id="4774692914340656156" at="217,62,218,118" concept="5" />
+      <node id="4774692914340656147" at="219,14,220,94" concept="5" />
+      <node id="4774692914340656163" at="222,5,223,26" concept="12" />
+      <node id="4774692914340656190" at="228,58,229,110" concept="5" />
+      <node id="4774692914340656181" at="230,14,231,86" concept="5" />
+      <node id="4774692914340656197" at="233,5,234,22" concept="12" />
+      <node id="4774692914340656239" at="238,62,239,91" concept="12" />
+      <node id="4774692914340656259" at="246,76,247,40" concept="11" />
+      <node id="4774692914340656271" at="248,22,249,61" concept="5" />
+      <node id="4774692914340656284" at="251,22,252,18" concept="12" />
+      <node id="4774692914340656286" at="253,5,254,46" concept="12" />
+      <node id="4774692914340656313" at="262,109,263,45" concept="13" />
+      <node id="4774692914340656315" at="263,45,264,65" concept="5" />
+      <node id="4774692914340656322" at="264,65,265,18" concept="12" />
+      <node id="4774692914340656324" at="266,5,267,48" concept="11" />
+      <node id="4774692914340656330" at="267,48,268,29" concept="11" />
+      <node id="4774692914340656391" at="269,32,270,42" concept="11" />
+      <node id="4774692914340656397" at="270,42,271,54" concept="11" />
+      <node id="4774692914340656405" at="271,54,272,70" concept="11" />
+      <node id="4774692914340656418" at="273,70,274,78" concept="5" />
+      <node id="4774692914340656345" at="277,31,278,46" concept="11" />
+      <node id="4774692914340656351" at="278,46,279,54" concept="11" />
+      <node id="4774692914340656363" at="280,27,281,62" concept="11" />
+      <node id="4774692914340656377" at="282,90,283,90" concept="5" />
+      <node id="4774692914340656437" at="287,29,288,45" concept="13" />
+      <node id="4774692914340656439" at="288,45,289,83" concept="5" />
+      <node id="4774692914340656450" at="289,83,290,18" concept="12" />
+      <node id="4774692914340656452" at="291,5,292,64" concept="5" />
+      <node id="4774692914340656458" at="292,64,293,62" concept="5" />
+      <node id="4774692914340656463" at="293,62,294,22" concept="12" />
+      <node id="4774692914340656473" at="298,46,299,86" concept="12" />
+      <node id="4774692914340656485" at="302,39,303,253" concept="11" />
+      <node id="4774692914340656506" at="304,27,305,29" concept="11" />
+      <node id="4774692914340656543" at="306,11,307,69" concept="5" />
+      <node id="4774692914340656551" at="307,69,308,78" concept="11" />
+      <node id="4774692914340656557" at="308,78,309,50" concept="11" />
+      <node id="4774692914340656563" at="309,50,310,67" concept="11" />
+      <node id="4774692914340656581" at="311,50,312,82" concept="5" />
+      <node id="4774692914340656587" at="313,9,314,64" concept="11" />
+      <node id="4774692914340656596" at="315,40,316,51" concept="11" />
+      <node id="4774692914340656613" at="317,61,318,87" concept="13" />
+      <node id="4774692914340656615" at="318,87,319,82" concept="11" />
+      <node id="4774692914340656623" at="319,82,320,50" concept="5" />
+      <node id="4774692914340656513" at="323,31,324,47" concept="13" />
+      <node id="4774692914340656515" at="324,47,325,88" concept="5" />
+      <node id="4774692914340656538" at="328,28,329,24" concept="5" />
+      <node id="4774692914340656635" at="337,48,338,58" concept="11" />
+      <node id="4774692914340656639" at="338,58,339,55" concept="12" />
+      <node id="4774692914340656656" at="343,20,344,18" concept="12" />
+      <node id="4774692914340656664" at="346,29,347,82" concept="5" />
+      <node id="4774692914340656676" at="348,5,349,60" concept="5" />
+      <node id="4774692914340656683" at="349,60,350,52" concept="11" />
+      <node id="4774692914340656687" at="350,52,351,36" concept="11" />
+      <node id="4774692914340656698" at="352,36,353,33" concept="11" />
+      <node id="4774692914340656704" at="353,33,354,44" concept="11" />
+      <node id="4774692914340656711" at="354,44,355,57" concept="5" />
+      <node id="4774692914340656722" at="356,5,357,13" concept="12" />
+      <node id="4774692914340656728" at="360,44,361,52" concept="11" />
+      <node id="4774692914340656732" at="361,52,362,59" concept="12" />
+      <node id="4774692914340656745" at="365,75,366,83" concept="11" />
+      <node id="4774692914340656760" at="367,24,368,18" concept="12" />
+      <node id="4774692914340656762" at="369,5,370,135" concept="12" />
+      <node id="4774692914340656783" at="373,56,374,23" concept="11" />
+      <node id="4774692914340656787" at="374,23,375,64" concept="11" />
+      <node id="4774692914340656806" at="376,44,377,38" concept="5" />
+      <node id="4774692914340656820" at="378,48,379,58" concept="5" />
+      <node id="4774692914340656836" at="381,29,382,57" concept="12" />
+      <node id="4774692914340656839" at="384,5,385,74" concept="12" />
+      <node id="4774692914340656850" at="388,43,389,56" concept="12" />
+      <node id="4774692914340656861" at="392,83,393,59" concept="11" />
+      <node id="4774692914340656866" at="393,59,394,101" concept="11" />
+      <node id="4774692914340656886" at="396,67,397,61" concept="11" />
+      <node id="4774692914340656896" at="397,61,398,39" concept="11" />
+      <node id="4774692914340656922" at="401,35,402,54" concept="5" />
+      <node id="4774692914340656927" at="403,13,404,110" concept="5" />
+      <node id="4774692914340656939" at="406,9,407,73" concept="11" />
+      <node id="4774692914340656963" at="409,33,410,52" concept="5" />
+      <node id="4774692914340656968" at="411,11,412,97" concept="5" />
+      <node id="4774692914340656978" at="415,5,416,53" concept="12" />
+      <node id="4774692914340656984" at="419,67,420,42" concept="11" />
+      <node id="4774692914340656991" at="420,42,421,39" concept="11" />
+      <node id="4774692914340657004" at="422,24,423,18" concept="12" />
+      <node id="4774692914340657017" at="426,11,427,41" concept="5" />
+      <node id="4774692914340657026" at="430,5,431,79" concept="12" />
+      <node id="4774692914340657038" at="435,0,436,0" concept="14" trace="ourPreinstalledPluginsPath" />
+      <node id="4774692914340655531" at="34,0,36,0" concept="14" trace="PROPERTIES_FILE" />
+      <node id="4774692914340655536" at="36,0,38,0" concept="14" trace="PROPERTY_SYSTEM_PATH" />
+      <node id="4774692914340655541" at="38,0,40,0" concept="14" trace="PROPERTY_CONFIG_PATH" />
+      <node id="4774692914340655546" at="40,0,42,0" concept="14" trace="PROPERTY_PLUGINS_PATH" />
+      <node id="4774692914340655551" at="42,0,44,0" concept="14" trace="PROPERTY_HOME_PATH" />
+      <node id="4774692914340655556" at="44,0,46,0" concept="14" trace="PROPERTY_LOG_PATH" />
+      <node id="4774692914340655561" at="46,0,48,0" concept="14" trace="ourHomePath" />
+      <node id="4774692914340655565" at="48,0,50,0" concept="14" trace="ourSystemPath" />
+      <node id="4774692914340655569" at="50,0,52,0" concept="14" trace="ourConfigPath" />
+      <node id="4774692914340655573" at="52,0,54,0" concept="14" trace="ourPluginsPath" />
+      <node id="4774692914340655577" at="54,0,56,0" concept="14" trace="ourLogPath" />
+      <node id="4774692914340655581" at="56,0,58,0" concept="14" trace="FILE" />
+      <node id="4774692914340655586" at="58,0,60,0" concept="14" trace="JAR" />
+      <node id="4774692914340655591" at="60,0,62,0" concept="14" trace="JAR_DELIMITER" />
+      <node id="4774692914340655596" at="62,0,64,0" concept="14" trace="PROTOCOL_DELIMITER" />
+      <node id="4774692914340655601" at="64,0,66,0" concept="14" trace="DEFAULT_OPTIONS_FILE_NAME" />
+      <node id="4774692914340655606" at="66,0,68,0" concept="14" trace="LIB_FOLDER" />
+      <node id="4774692914340655611" at="68,0,70,0" concept="14" trace="PLUGINS_DIRECTORY" />
+      <node id="4774692914340655616" at="70,0,72,0" concept="14" trace="BIN_FOLDER" />
+      <node id="4774692914340655621" at="72,0,74,0" concept="14" trace="LOG_DIRECTORY" />
+      <node id="4774692914340655626" at="74,0,76,0" concept="14" trace="OPTIONS_FOLDER" />
+      <node id="4774692914340655688" at="92,0,94,0" concept="2" trace="PathManager#()V" />
+      <node id="4774692914340655942" at="146,10,148,5" concept="1" />
+      <node id="4774692914340656046" at="183,10,185,5" concept="1" />
+      <node id="4774692914340656145" at="219,12,221,7" concept="1" />
+      <node id="4774692914340656179" at="230,12,232,7" concept="1" />
+      <node id="4774692914340657046" at="437,0,439,0" concept="2" trace="StringHolder#()V" />
+      <node id="4774692914340655696" at="95,38,98,5" concept="9" />
+      <node id="4774692914340655758" at="107,49,110,11" concept="9" />
+      <node id="4774692914340655818" at="118,9,121,7" concept="9" />
+      <node id="4774692914340655837" at="128,0,131,0" concept="15" trace="isIdeaHome#(Ljava/io/File;)Z" />
+      <node id="4774692914340655859" at="132,0,135,0" concept="15" trace="isMpsDir#(Ljava/io/File;)Z" />
+      <node id="4774692914340655872" at="136,0,139,0" concept="15" trace="getLibPath#()Ljava/lang/String;" />
+      <node id="4774692914340655930" at="140,40,143,5" concept="9" />
+      <node id="4774692914340656023" at="173,0,176,0" concept="15" trace="getConfigPath#()Ljava/lang/String;" />
+      <node id="4774692914340656034" at="177,54,180,5" concept="9" />
+      <node id="4774692914340656066" at="189,0,192,0" concept="15" trace="getBinPath#()Ljava/lang/String;" />
+      <node id="4774692914340656076" at="193,0,196,0" concept="15" trace="getOptionsPath#()Ljava/lang/String;" />
+      <node id="4774692914340656086" at="197,0,200,0" concept="15" trace="getOptionsPathWithoutDialog#()Ljava/lang/String;" />
+      <node id="4774692914340656125" at="211,0,214,0" concept="15" trace="getPreinstalledPluginsPath#()Ljava/lang/String;" />
+      <node id="4774692914340656266" at="247,40,250,5" concept="9" />
+      <node id="4774692914340656279" at="250,5,253,5" concept="9" />
+      <node id="4774692914340656413" at="272,70,275,7" concept="9" />
+      <node id="4774692914340656371" at="281,62,284,9" concept="9" />
+      <node id="4774692914340656572" at="310,67,313,9" concept="9" />
+      <node id="4774692914340656533" at="327,13,330,11" concept="9" />
+      <node id="4774692914340656651" at="342,76,345,5" concept="9" />
+      <node id="4774692914340656658" at="345,5,348,5" concept="9" />
+      <node id="4774692914340656755" at="366,83,369,5" concept="9" />
+      <node id="4774692914340656812" at="377,38,380,7" concept="8" />
+      <node id="4774692914340656829" at="380,7,383,7" concept="9" />
+      <node id="4774692914340656846" at="388,0,391,0" concept="15" trace="getLanguagesPath#()Ljava/lang/String;" />
+      <node id="4774692914340656917" at="400,48,403,13" concept="9" />
+      <node id="4774692914340656958" at="408,60,411,11" concept="9" />
+      <node id="4774692914340656999" at="421,39,424,5" concept="9" />
+      <node id="4774692914340655649" at="80,0,84,0" concept="10" trace="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
+      <node id="4774692914340655669" at="86,0,90,0" concept="10" trace="accept#(Ljava/io/File;Ljava/lang/String;)Z" />
+      <node id="4774692914340655996" at="160,40,164,5" concept="9" />
+      <node id="4774692914340656012" at="168,0,172,0" concept="15" trace="getConfigPath#(Z)Ljava/lang/String;" />
+      <node id="4774692914340656107" at="202,63,206,5" concept="16" />
+      <node id="4774692914340656232" at="237,0,241,0" concept="15" trace="getOptionsFile#(Ljava/lang/String;)Ljava/io/File;" />
+      <node id="4774692914340656469" at="297,0,301,0" concept="15" trace="getDefaultOptionsFile#()Ljava/io/File;" />
+      <node id="4774692914340656629" at="337,0,341,0" concept="15" trace="substitueVars#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="4774692914340656724" at="360,0,364,0" concept="15" trace="getPluginTempPath#()Ljava/lang/String;" />
+      <node id="4774692914340657011" at="425,31,429,7" concept="16" />
+      <node id="4774692914340655937" at="143,5,148,5" concept="9" />
+      <node id="4774692914340656041" at="180,5,185,5" concept="9" />
+      <node id="4774692914340656140" at="216,33,221,7" concept="9" />
+      <node id="4774692914340656174" at="227,29,232,7" concept="9" />
+      <node id="4774692914340656302" at="261,75,266,5" concept="9" />
+      <node id="4774692914340656432" at="286,5,291,5" concept="9" />
+      <node id="4774692914340656604" at="316,51,321,11" concept="9" />
+      <node id="4774692914340656693" at="351,36,356,5" concept="8" />
+      <node id="4774692914340655643" at="79,0,85,0" concept="14" trace="JARS" />
+      <node id="4774692914340655663" at="85,0,91,0" concept="14" trace="MPS_JARS" />
+      <node id="4774692914340655960" at="148,5,154,5" concept="16" />
+      <node id="4774692914340656358" at="279,54,285,7" concept="9" />
+      <node id="4774692914340656527" at="326,17,332,9" concept="16" />
+      <node id="4774692914340656909" at="399,48,405,11" concept="8" />
+      <node id="4774692914340656949" at="407,73,413,9" concept="9" />
+      <node id="4774692914340657006" at="424,5,430,5" concept="8" />
+      <node id="4774692914340655810" at="117,5,124,5" concept="16" />
+      <node id="4774692914340656135" at="215,41,222,5" concept="9" />
+      <node id="4774692914340656169" at="226,37,233,5" concept="9" />
+      <node id="4774692914340656738" at="365,0,372,0" concept="15" trace="findFileInLibDirectory#(Ljava/lang/String;)Ljava/io/File;" />
+      <node id="4774692914340656591" at="314,64,322,9" concept="18" />
+      <node id="4774692914340656900" at="398,39,406,9" concept="9" />
+      <node id="4774692914340655743" at="105,57,114,64" concept="4" />
+      <node id="4774692914340655982" at="158,0,167,0" concept="15" trace="ensureConfigFolderExists#(Z)Z" />
+      <node id="4774692914340656096" at="201,0,210,0" concept="15" trace="getIndexRoot#()Ljava/io/File;" />
+      <node id="4774692914340656797" at="375,64,384,5" concept="9" />
+      <node id="4774692914340656131" at="215,0,225,0" concept="15" trace="getPluginsPath#()Ljava/lang/String;" />
+      <node id="4774692914340656165" at="226,0,236,0" concept="15" trace="getLogPath#()Ljava/lang/String;" />
+      <node id="4774692914340656339" at="276,10,286,5" concept="9" />
+      <node id="4774692914340656030" at="177,0,188,0" concept="15" trace="getConfigPathWithoutDialog#()Ljava/lang/String;" />
+      <node id="4774692914340655730" at="103,113,116,7" concept="9" />
+      <node id="4774692914340656250" at="242,0,256,0" concept="15" trace="getResourceRoot#(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="4774692914340656778" at="373,0,387,0" concept="15" trace="getBootstrapPaths#()Ljava/util/Collection;" />
+      <node id="4774692914340656981" at="419,0,433,0" concept="15" trace="createPluginClassLoader#(Ljava/io/File;)Ljetbrains/mps/tool/common/util/UrlClassLoader;" />
+      <node id="4774692914340655708" at="101,10,117,5" concept="1" />
+      <node id="4774692914340655926" at="140,0,157,0" concept="15" trace="getSystemPath#()Ljava/lang/String;" />
+      <node id="4774692914340656643" at="342,0,359,0" concept="15" trace="substituteVars#(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="4774692914340656334" at="268,29,286,5" concept="9" />
+      <node id="4774692914340655703" at="98,5,117,5" concept="9" />
+      <node id="4774692914340656878" at="395,30,414,7" concept="8" />
+      <node id="4774692914340656873" at="394,101,415,5" concept="9" />
+      <node id="4774692914340656856" at="392,0,418,0" concept="15" trace="getExtensionsPaths#()Ljava/util/Collection;" />
+      <node id="4774692914340656510" at="305,29,333,7" concept="17" />
+      <node id="4774692914340656501" at="303,253,334,5" concept="9" />
+      <node id="4774692914340655692" at="95,0,127,0" concept="15" trace="getHomePath#()Ljava/lang/String;" />
+      <node id="4774692914340656481" at="302,0,336,0" concept="15" trace="loadProperties#()V" />
+      <node id="4774692914340656294" at="257,0,296,0" concept="15" trace="extractRoot#(Ljava/net/URL;Ljava/lang/String;)Ljava/lang/String;" />
+      <scope id="4774692914340655691" at="92,24,92,24" />
+      <scope id="4774692914340656108" at="205,0,205,35">
+        <var name="ignored" id="4774692914340656110" />
+      </scope>
+      <scope id="4774692914340656109" at="205,35,205,35" />
+      <scope id="4774692914340656528" at="331,0,331,33">
+        <var name="e" id="4774692914340656530" />
+      </scope>
+      <scope id="4774692914340656529" at="331,33,331,33" />
+      <scope id="4774692914340657012" at="428,0,428,47">
+        <var name="ignored" id="4774692914340657014" />
+      </scope>
+      <scope id="4774692914340657013" at="428,47,428,47" />
+      <scope id="4774692914340657049" at="437,28,437,28" />
+      <scope id="4774692914340655656" at="81,50,82,48" />
+      <scope id="4774692914340655676" at="87,50,88,89" />
+      <scope id="4774692914340655700" at="96,30,97,25" />
+      <scope id="4774692914340655803" at="99,57,100,85" />
+      <scope id="4774692914340655762" at="108,31,109,24" />
+      <scope id="4774692914340655821" at="119,52,120,94" />
+      <scope id="4774692914340655811" at="122,0,123,17">
+        <var name="e" id="4774692914340655815" />
+      </scope>
+      <scope id="4774692914340655812" at="122,29,123,17" />
+      <scope id="4774692914340655842" at="128,54,129,182" />
+      <scope id="4774692914340655864" at="132,46,133,51" />
+      <scope id="4774692914340655875" at="136,37,137,67" />
+      <scope id="4774692914340655934" at="141,32,142,27" />
+      <scope id="4774692914340655952" at="144,59,145,114" />
+      <scope id="4774692914340655943" at="146,12,147,76" />
+      <scope id="4774692914340655961" at="152,0,153,26">
+        <var name="e" id="4774692914340655967" />
+      </scope>
+      <scope id="4774692914340655962" at="152,27,153,26" />
+      <scope id="4774692914340656026" at="173,40,174,43" />
+      <scope id="4774692914340656038" at="178,32,179,27" />
+      <scope id="4774692914340656056" at="181,59,182,114" />
+      <scope id="4774692914340656047" at="183,12,184,76" />
+      <scope id="4774692914340656069" at="189,37,190,67" />
+      <scope id="4774692914340656079" at="193,41,194,73" />
+      <scope id="4774692914340656089" at="197,54,198,86" />
+      <scope id="4774692914340656112" at="203,9,204,37" />
+      <scope id="4774692914340656128" at="211,53,212,63" />
+      <scope id="4774692914340656155" at="217,62,218,118" />
+      <scope id="4774692914340656146" at="219,14,220,94" />
+      <scope id="4774692914340656189" at="228,58,229,110" />
+      <scope id="4774692914340656180" at="230,14,231,86" />
+      <scope id="4774692914340656238" at="238,62,239,91" />
+      <scope id="4774692914340656270" at="248,22,249,61" />
+      <scope id="4774692914340656283" at="251,22,252,18" />
+      <scope id="4774692914340656417" at="273,70,274,78" />
+      <scope id="4774692914340656376" at="282,90,283,90" />
+      <scope id="4774692914340656472" at="298,46,299,86" />
+      <scope id="4774692914340656580" at="311,50,312,82" />
+      <scope id="4774692914340656537" at="328,28,329,24" />
+      <scope id="4774692914340656655" at="343,20,344,18" />
+      <scope id="4774692914340656663" at="346,29,347,82" />
+      <scope id="4774692914340656759" at="367,24,368,18" />
+      <scope id="4774692914340656819" at="378,48,379,58" />
+      <scope id="4774692914340656835" at="381,29,382,57" />
+      <scope id="4774692914340656849" at="388,43,389,56" />
+      <scope id="4774692914340656921" at="401,35,402,54" />
+      <scope id="4774692914340656962" at="409,33,410,52" />
+      <scope id="4774692914340657003" at="422,24,423,18" />
+      <scope id="4774692914340657016" at="426,11,427,41" />
+      <scope id="4774692914340655688" at="92,0,94,0" />
+      <scope id="4774692914340655969" at="149,9,151,20">
+        <var name="file" id="4774692914340655971" />
+      </scope>
+      <scope id="4774692914340656003" at="161,48,163,18" />
+      <scope id="4774692914340656017" at="168,65,170,25" />
+      <scope id="4774692914340656511" at="323,0,325,88">
+        <var name="e" id="4774692914340656524" />
+      </scope>
+      <scope id="4774692914340656512" at="323,31,325,88" />
+      <scope id="4774692914340656634" at="337,48,339,55">
+        <var name="ideaHomePath" id="4774692914340656636" />
+      </scope>
+      <scope id="4774692914340656727" at="360,44,362,59">
+        <var name="systemPath" id="4774692914340656729" />
+      </scope>
+      <scope id="4774692914340657046" at="437,0,439,0" />
+      <scope id="4774692914340655817" at="118,9,121,7" />
+      <scope id="4774692914340655837" at="128,0,131,0">
+        <var name="root" id="4774692914340655840" />
+      </scope>
+      <scope id="4774692914340655859" at="132,0,135,0">
+        <var name="file" id="4774692914340655862" />
+      </scope>
+      <scope id="4774692914340655872" at="136,0,139,0" />
+      <scope id="4774692914340656023" at="173,0,176,0" />
+      <scope id="4774692914340656066" at="189,0,192,0" />
+      <scope id="4774692914340656076" at="193,0,196,0" />
+      <scope id="4774692914340656086" at="197,0,200,0" />
+      <scope id="4774692914340656125" at="211,0,214,0" />
+      <scope id="4774692914340656312" at="262,109,265,18" />
+      <scope id="4774692914340656436" at="287,29,290,18" />
+      <scope id="4774692914340656612" at="317,61,320,50">
+        <var name="value" id="4774692914340656616" />
+      </scope>
+      <scope id="4774692914340656532" at="327,13,330,11" />
+      <scope id="4774692914340656697" at="352,36,355,57">
+        <var name="key" id="4774692914340656699" />
+        <var name="value" id="4774692914340656705" />
+      </scope>
+      <scope id="4774692914340656812" at="377,38,380,7">
+        <var name="jar" id="4774692914340656817" />
+      </scope>
+      <scope id="4774692914340656846" at="388,0,391,0" />
+      <scope id="4774692914340655649" at="80,0,84,0">
+        <var name="dir" id="4774692914340655652" />
+        <var name="name" id="4774692914340655654" />
+      </scope>
+      <scope id="4774692914340655669" at="86,0,90,0">
+        <var name="dir" id="4774692914340655672" />
+        <var name="name" id="4774692914340655674" />
+      </scope>
+      <scope id="4774692914340656012" at="168,0,172,0">
+        <var name="createIfNotExists" id="4774692914340656015" />
+      </scope>
+      <scope id="4774692914340656232" at="237,0,241,0">
+        <var name="fileName" id="4774692914340656235" />
+      </scope>
+      <scope id="4774692914340656362" at="280,27,284,9">
+        <var name="archivePath" id="4774692914340656364" />
+      </scope>
+      <scope id="4774692914340656469" at="297,0,301,0" />
+      <scope id="4774692914340656629" at="337,0,341,0">
+        <var name="s" id="4774692914340656632" />
+      </scope>
+      <scope id="4774692914340656724" at="360,0,364,0" />
+      <scope id="4774692914340656916" at="400,48,404,110" />
+      <scope id="4774692914340656957" at="408,60,412,97" />
+      <scope id="4774692914340657010" at="425,31,429,7" />
+      <scope id="4774692914340656139" at="216,33,221,7" />
+      <scope id="4774692914340656173" at="227,29,232,7" />
+      <scope id="4774692914340656693" at="351,36,356,5">
+        <var name="key1" id="4774692914340656695" />
+      </scope>
+      <scope id="4774692914340656744" at="365,75,370,135">
+        <var name="file" id="4774692914340656746" />
+      </scope>
+      <scope id="4774692914340656390" at="269,32,275,7">
+        <var name="path" id="4774692914340656392" />
+        <var name="testPath" id="4774692914340656398" />
+        <var name="testResourcePath" id="4774692914340656406" />
+      </scope>
+      <scope id="4774692914340656595" at="315,40,321,11">
+        <var name="key" id="4774692914340656597" />
+      </scope>
+      <scope id="4774692914340656526" at="326,17,332,9" />
+      <scope id="4774692914340656908" at="399,48,405,11" />
+      <scope id="4774692914340656909" at="399,48,405,11">
+        <var name="jar" id="4774692914340656914" />
+      </scope>
+      <scope id="4774692914340657006" at="424,5,430,5">
+        <var name="libjar" id="4774692914340657008" />
+      </scope>
+      <scope id="4774692914340655751" at="106,12,113,42">
+        <var name="parent" id="4774692914340655753" />
+      </scope>
+      <scope id="4774692914340655987" at="158,83,165,17">
+        <var name="file" id="4774692914340655991" />
+      </scope>
+      <scope id="4774692914340656099" at="201,37,208,16">
+        <var name="file" id="4774692914340656101" />
+      </scope>
+      <scope id="4774692914340656738" at="365,0,372,0">
+        <var name="relativePath" id="4774692914340656741" />
+      </scope>
+      <scope id="4774692914340656805" at="376,44,383,7" />
+      <scope id="4774692914340656134" at="215,41,223,26" />
+      <scope id="4774692914340656168" at="226,37,234,22" />
+      <scope id="4774692914340656258" at="246,76,254,46">
+        <var name="url" id="4774692914340656260" />
+      </scope>
+      <scope id="4774692914340656344" at="277,31,285,7">
+        <var name="delimiter" id="4774692914340656352" />
+        <var name="fullPath" id="4774692914340656346" />
+      </scope>
+      <scope id="4774692914340655982" at="158,0,167,0">
+        <var name="createIfNotExists" id="4774692914340655985" />
+      </scope>
+      <scope id="4774692914340656033" at="177,54,186,25" />
+      <scope id="4774692914340656096" at="201,0,210,0" />
+      <scope id="4774692914340656131" at="215,0,225,0" />
+      <scope id="4774692914340656165" at="226,0,236,0" />
+      <scope id="4774692914340655734" at="104,29,115,69">
+        <var name="root" id="4774692914340655736" />
+      </scope>
+      <scope id="4774692914340656030" at="177,0,188,0" />
+      <scope id="4774692914340656782" at="373,56,385,74">
+        <var name="lib" id="4774692914340656788" />
+        <var name="paths" id="4774692914340656784" />
+      </scope>
+      <scope id="4774692914340656983" at="419,67,431,79">
+        <var name="files" id="4774692914340656992" />
+        <var name="urls" id="4774692914340656985" />
+      </scope>
+      <scope id="4774692914340656250" at="242,0,256,0">
+        <var name="context" id="4774692914340656253" />
+        <var name="path" id="4774692914340656255" />
+      </scope>
+      <scope id="4774692914340656778" at="373,0,387,0" />
+      <scope id="4774692914340656981" at="419,0,433,0">
+        <var name="lib" id="4774692914340657034" />
+      </scope>
+      <scope id="4774692914340655709" at="101,12,116,7">
+        <var name="aClass" id="4774692914340655711" />
+        <var name="rootPath" id="4774692914340655715" />
+      </scope>
+      <scope id="4774692914340655929" at="140,40,155,25" />
+      <scope id="4774692914340656650" at="342,76,357,13">
+        <var name="keys" id="4774692914340656688" />
+        <var name="props" id="4774692914340656684" />
+      </scope>
+      <scope id="4774692914340656542" at="306,11,322,9">
+        <var name="bundle" id="4774692914340656552" />
+        <var name="home" id="4774692914340656564" />
+        <var name="keys" id="4774692914340656558" />
+        <var name="sysProperties" id="4774692914340656588" />
+      </scope>
+      <scope id="4774692914340655926" at="140,0,157,0" />
+      <scope id="4774692914340656643" at="342,0,359,0">
+        <var name="ideaHomePath" id="4774692914340656648" />
+        <var name="s" id="4774692914340656646" />
+      </scope>
+      <scope id="4774692914340656885" at="396,67,413,9">
+        <var name="languages" id="4774692914340656940" />
+        <var name="lib" id="4774692914340656887" />
+        <var name="pluginCL" id="4774692914340656897" />
+      </scope>
+      <scope id="4774692914340656877" at="395,30,414,7" />
+      <scope id="4774692914340656878" at="395,30,414,7">
+        <var name="plugin" id="4774692914340656883" />
+      </scope>
+      <scope id="4774692914340656860" at="392,83,416,53">
+        <var name="paths" id="4774692914340656867" />
+        <var name="pluginsPath" id="4774692914340656862" />
+      </scope>
+      <scope id="4774692914340656856" at="392,0,418,0" />
+      <scope id="4774692914340656505" at="304,27,333,7">
+        <var name="fis" id="4774692914340656507" />
+      </scope>
+      <scope id="4774692914340655695" at="95,38,125,23" />
+      <scope id="4774692914340655692" at="95,0,127,0" />
+      <scope id="4774692914340656484" at="302,39,334,5">
+        <var name="propFile" id="4774692914340656486" />
+      </scope>
+      <scope id="4774692914340656301" at="261,75,294,22">
+        <var name="protocol" id="4774692914340656325" />
+        <var name="resultPath" id="4774692914340656331" />
+      </scope>
+      <scope id="4774692914340656481" at="302,0,336,0" />
+      <scope id="4774692914340656294" at="257,0,296,0">
+        <var name="resourcePath" id="4774692914340656299" />
+        <var name="resourceURL" id="4774692914340656297" />
+      </scope>
+      <unit id="4774692914340655648" at="79,48,84,3" name="jetbrains.mps.tool.builder.util.PathManager$1" />
+      <unit id="4774692914340655668" at="85,53,90,3" name="jetbrains.mps.tool.builder.util.PathManager$2" />
+      <unit id="4774692914340657036" at="434,0,440,0" name="jetbrains.mps.tool.builder.util.PathManager$StringHolder" />
+      <unit id="4774692914340655529" at="33,0,441,0" name="jetbrains.mps.tool.builder.util.PathManager" />
+    </file>
   </root>
   <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/5900076103425047615">
-    <nodeInfo nodeId="5900076103425047618" fileName="MapPathMacrosProvider.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="macros" />
-    <nodeInfo nodeId="5900076103425047627" fileName="MapPathMacrosProvider.java" startLine="16" startPosition="60" endLine="17" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5900076103425047643" fileName="MapPathMacrosProvider.java" startLine="21" startPosition="39" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5900076103425047653" fileName="MapPathMacrosProvider.java" startLine="26" startPosition="37" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5900076103425047663" fileName="MapPathMacrosProvider.java" startLine="31" startPosition="33" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2329394428277189087" fileName="MapPathMacrosProvider.java" startLine="37" startPosition="39" endLine="38" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5900076103425047615" fileName="MapPathMacrosProvider.java" startLine="42" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
-    <nodeInfo nodeId="5900076103425047623" fileName="MapPathMacrosProvider.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MapPathMacrosProvider#(Ljava/util/Map;)V" />
-    <nodeInfo nodeId="2329394428277189087" fileName="MapPathMacrosProvider.java" startLine="36" startPosition="52" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2329394428277189087" fileName="MapPathMacrosProvider.java" startLine="36" startPosition="52" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5900076103425047637" fileName="MapPathMacrosProvider.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="5900076103425047648" fileName="MapPathMacrosProvider.java" startLine="25" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserNames#()Ljava/util/Set;" />
-    <nodeInfo nodeId="5900076103425047658" fileName="MapPathMacrosProvider.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNames#()Ljava/util/Set;" />
-    <nodeInfo nodeId="5900076103425047668" fileName="MapPathMacrosProvider.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="report#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <scopeInfo nodeId="5900076103425047626" fileName="MapPathMacrosProvider.java" startLine="16" startPosition="60" endLine="17" endPosition="25" />
-    <scopeInfo nodeId="5900076103425047642" fileName="MapPathMacrosProvider.java" startLine="21" startPosition="39" endLine="22" endPosition="28" />
-    <scopeInfo nodeId="5900076103425047652" fileName="MapPathMacrosProvider.java" startLine="26" startPosition="37" endLine="27" endPosition="56" />
-    <scopeInfo nodeId="5900076103425047662" fileName="MapPathMacrosProvider.java" startLine="31" startPosition="33" endLine="32" endPosition="56" />
-    <scopeInfo nodeId="2329394428277189087" fileName="MapPathMacrosProvider.java" startLine="37" startPosition="39" endLine="38" endPosition="61" />
-    <scopeInfo nodeId="5900076103425047623" fileName="MapPathMacrosProvider.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="5900076103425047633" varName="macros" />
-    </scopeInfo>
-    <scopeInfo nodeId="2329394428277189087" fileName="MapPathMacrosProvider.java" startLine="36" startPosition="52" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="5900076103425047675" fileName="MapPathMacrosProvider.java" startLine="36" startPosition="52" endLine="39" endPosition="5" />
-    <scopeInfo nodeId="5900076103425047637" fileName="MapPathMacrosProvider.java" startLine="20" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="5900076103425047640" varName="name" />
-    </scopeInfo>
-    <scopeInfo nodeId="5900076103425047648" fileName="MapPathMacrosProvider.java" startLine="25" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="5900076103425047658" fileName="MapPathMacrosProvider.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="5900076103425047668" fileName="MapPathMacrosProvider.java" startLine="35" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="5900076103425047673" varName="macro" />
-      <varInfo nodeId="5900076103425047671" varName="message" />
-    </scopeInfo>
-    <unitInfo nodeId="5900076103425047615" fileName="MapPathMacrosProvider.java" startLine="13" startPosition="0" endLine="44" endPosition="0" unitName="jetbrains.mps.tool.builder.util.MapPathMacrosProvider" />
+    <file name="MapPathMacrosProvider.java">
+      <node id="5900076103425047618" at="14,0,15,0" concept="6" trace="macros" />
+      <node id="5900076103425047627" at="16,60,17,25" concept="5" />
+      <node id="5900076103425047643" at="21,39,22,28" concept="12" />
+      <node id="5900076103425047653" at="26,37,27,56" concept="12" />
+      <node id="5900076103425047663" at="31,33,32,56" concept="12" />
+      <node id="2329394428277189087" at="37,39,38,61" concept="5" />
+      <node id="5900076103425047615" at="42,0,43,0" concept="14" trace="LOG" />
+      <node id="5900076103425047623" at="16,0,19,0" concept="2" trace="MapPathMacrosProvider#(Ljava/util/Map;)V" />
+      <node id="2329394428277189087" at="36,52,39,5" concept="1" />
+      <node id="2329394428277189087" at="36,52,39,5" concept="9" />
+      <node id="5900076103425047637" at="20,0,24,0" concept="10" trace="getValue#(Ljava/lang/String;)Ljava/lang/String;" />
+      <node id="5900076103425047648" at="25,0,29,0" concept="10" trace="getUserNames#()Ljava/util/Set;" />
+      <node id="5900076103425047658" at="30,0,34,0" concept="10" trace="getNames#()Ljava/util/Set;" />
+      <node id="5900076103425047668" at="35,0,41,0" concept="10" trace="report#(Ljava/lang/String;Ljava/lang/String;)V" />
+      <scope id="5900076103425047626" at="16,60,17,25" />
+      <scope id="5900076103425047642" at="21,39,22,28" />
+      <scope id="5900076103425047652" at="26,37,27,56" />
+      <scope id="5900076103425047662" at="31,33,32,56" />
+      <scope id="2329394428277189087" at="37,39,38,61" />
+      <scope id="5900076103425047623" at="16,0,19,0">
+        <var name="macros" id="5900076103425047633" />
+      </scope>
+      <scope id="2329394428277189087" at="36,52,39,5" />
+      <scope id="5900076103425047675" at="36,52,39,5" />
+      <scope id="5900076103425047637" at="20,0,24,0">
+        <var name="name" id="5900076103425047640" />
+      </scope>
+      <scope id="5900076103425047648" at="25,0,29,0" />
+      <scope id="5900076103425047658" at="30,0,34,0" />
+      <scope id="5900076103425047668" at="35,0,41,0">
+        <var name="macro" id="5900076103425047673" />
+        <var name="message" id="5900076103425047671" />
+      </scope>
+      <unit id="5900076103425047615" at="13,0,44,0" name="jetbrains.mps.tool.builder.util.MapPathMacrosProvider" />
+    </file>
   </root>
   <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/5900076103425675110">
-    <nodeInfo nodeId="5900076103425675113" fileName="SetLibraryContributor.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="libraryPaths" />
-    <nodeInfo nodeId="5900076103425675121" fileName="SetLibraryContributor.java" startLine="12" startPosition="84" endLine="13" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5900076103425675133" fileName="SetLibraryContributor.java" startLine="17" startPosition="63" endLine="18" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5900076103425675142" fileName="SetLibraryContributor.java" startLine="22" startPosition="36" endLine="23" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5900076103425675117" fileName="SetLibraryContributor.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SetLibraryContributor#(Ljava/util/Set;)V" />
-    <nodeInfo nodeId="5900076103425675130" fileName="SetLibraryContributor.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLibraries#()Ljava/util/Set;" />
-    <nodeInfo nodeId="5900076103425675138" fileName="SetLibraryContributor.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hiddenLanguages#()Z" />
-    <scopeInfo nodeId="5900076103425675120" fileName="SetLibraryContributor.java" startLine="12" startPosition="84" endLine="13" endPosition="37" />
-    <scopeInfo nodeId="5900076103425675132" fileName="SetLibraryContributor.java" startLine="17" startPosition="63" endLine="18" endPosition="53" />
-    <scopeInfo nodeId="5900076103425675141" fileName="SetLibraryContributor.java" startLine="22" startPosition="36" endLine="23" endPosition="17" />
-    <scopeInfo nodeId="5900076103425675117" fileName="SetLibraryContributor.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="5900076103425675127" varName="libraryPaths" />
-    </scopeInfo>
-    <scopeInfo nodeId="5900076103425675130" fileName="SetLibraryContributor.java" startLine="16" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="5900076103425675138" fileName="SetLibraryContributor.java" startLine="21" startPosition="0" endLine="25" endPosition="0" />
-    <unitInfo nodeId="5900076103425675110" fileName="SetLibraryContributor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.tool.builder.util.SetLibraryContributor" />
+    <file name="SetLibraryContributor.java">
+      <node id="5900076103425675113" at="10,0,11,0" concept="6" trace="libraryPaths" />
+      <node id="5900076103425675121" at="12,84,13,37" concept="5" />
+      <node id="5900076103425675133" at="17,63,18,53" concept="12" />
+      <node id="5900076103425675142" at="22,36,23,17" concept="12" />
+      <node id="5900076103425675117" at="12,0,15,0" concept="2" trace="SetLibraryContributor#(Ljava/util/Set;)V" />
+      <node id="5900076103425675130" at="16,0,20,0" concept="10" trace="getLibraries#()Ljava/util/Set;" />
+      <node id="5900076103425675138" at="21,0,25,0" concept="10" trace="hiddenLanguages#()Z" />
+      <scope id="5900076103425675120" at="12,84,13,37" />
+      <scope id="5900076103425675132" at="17,63,18,53" />
+      <scope id="5900076103425675141" at="22,36,23,17" />
+      <scope id="5900076103425675117" at="12,0,15,0">
+        <var name="libraryPaths" id="5900076103425675127" />
+      </scope>
+      <scope id="5900076103425675130" at="16,0,20,0" />
+      <scope id="5900076103425675138" at="21,0,25,0" />
+      <unit id="5900076103425675110" at="9,0,26,0" name="jetbrains.mps.tool.builder.util.SetLibraryContributor" />
+    </file>
   </root>
   <root nodeRef="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)/878521226300613674">
-    <nodeInfo nodeId="878521226300613683" fileName="MpsPlatform.java" startLine="15" startPosition="29" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226300613687" fileName="MpsPlatform.java" startLine="16" startPosition="33" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226300613691" fileName="MpsPlatform.java" startLine="17" startPosition="40" endLine="18" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226300613695" fileName="MpsPlatform.java" startLine="18" startPosition="39" endLine="19" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226300613699" fileName="MpsPlatform.java" startLine="19" startPosition="38" endLine="20" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226300613707" fileName="MpsPlatform.java" startLine="23" startPosition="32" endLine="24" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226300613711" fileName="MpsPlatform.java" startLine="24" startPosition="44" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226300613715" fileName="MpsPlatform.java" startLine="25" startPosition="41" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226300613719" fileName="MpsPlatform.java" startLine="26" startPosition="42" endLine="27" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226300613723" fileName="MpsPlatform.java" startLine="27" startPosition="43" endLine="28" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="878521226300613676" fileName="MpsPlatform.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsPlatform#()V" />
-    <nodeInfo nodeId="878521226300613680" fileName="MpsPlatform.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="878521226300613704" fileName="MpsPlatform.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="dispose#()V" />
-    <scopeInfo nodeId="878521226300613679" fileName="MpsPlatform.java" startLine="12" startPosition="25" endLine="12" endPosition="25" />
-    <scopeInfo nodeId="878521226300613676" fileName="MpsPlatform.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <scopeInfo nodeId="878521226300613682" fileName="MpsPlatform.java" startLine="15" startPosition="29" endLine="20" endPosition="41" />
-    <scopeInfo nodeId="878521226300613706" fileName="MpsPlatform.java" startLine="23" startPosition="32" endLine="28" endPosition="36" />
-    <scopeInfo nodeId="878521226300613680" fileName="MpsPlatform.java" startLine="15" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="878521226300613704" fileName="MpsPlatform.java" startLine="23" startPosition="0" endLine="30" endPosition="0" />
-    <unitInfo nodeId="878521226300613674" fileName="MpsPlatform.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.tool.builder.util.MpsPlatform" />
+    <file name="MpsPlatform.java">
+      <node id="1186687992399646112" at="12,0,13,0" concept="6" trace="myMPSCore" />
+      <node id="2155989524110326984" at="13,0,14,0" concept="6" trace="myMPSPersistence" />
+      <node id="3139729503293638908" at="14,0,15,0" concept="6" trace="myMPSTypesystem" />
+      <node id="3139729503293640511" at="15,0,16,0" concept="6" trace="myMPSGenerator" />
+      <node id="3139729503293715862" at="16,0,17,0" concept="6" trace="myMPSBaseLanguage" />
+      <node id="1186687992399646894" at="21,22,22,30" concept="5" />
+      <node id="2155989524110327860" at="22,30,23,44" concept="5" />
+      <node id="3139729503293641762" at="23,44,24,42" concept="5" />
+      <node id="3139729503293676885" at="24,42,25,40" concept="5" />
+      <node id="3139729503293717882" at="25,40,26,46" concept="5" />
+      <node id="878521226300613683" at="26,46,27,21" concept="5" />
+      <node id="878521226300613687" at="27,21,28,28" concept="5" />
+      <node id="3139729503293679492" at="28,28,29,27" concept="5" />
+      <node id="3139729503293681040" at="29,27,30,26" concept="5" />
+      <node id="3139729503293720130" at="30,26,31,29" concept="5" />
+      <node id="3139729503293722436" at="34,25,35,32" concept="5" />
+      <node id="3139729503293687117" at="35,32,36,29" concept="5" />
+      <node id="3139729503293689403" at="36,29,37,30" concept="5" />
+      <node id="878521226300613719" at="37,30,38,31" concept="5" />
+      <node id="878521226300613723" at="38,31,39,24" concept="5" />
+      <node id="3139729503293724905" at="39,24,40,29" concept="5" />
+      <node id="3139729503293684106" at="40,29,41,26" concept="5" />
+      <node id="3139729503293685541" at="41,26,42,27" concept="5" />
+      <node id="2155989524110335412" at="42,27,43,28" concept="5" />
+      <node id="1186687992399652355" at="43,28,44,21" concept="5" />
+      <node id="878521226300613676" at="18,0,20,0" concept="2" trace="MpsPlatform#()V" />
+      <node id="1186687992399646519" at="21,0,33,0" concept="10" trace="init#()V" />
+      <node id="1186687992399648909" at="34,0,46,0" concept="10" trace="dispose#()V" />
+      <scope id="878521226300613679" at="18,24,18,24" />
+      <scope id="878521226300613676" at="18,0,20,0" />
+      <scope id="878521226300613682" at="21,22,31,29" />
+      <scope id="878521226300613706" at="34,25,44,21" />
+      <scope id="1186687992399646519" at="21,0,33,0" />
+      <scope id="1186687992399648909" at="34,0,46,0" />
+      <unit id="878521226300613674" at="11,0,47,0" name="jetbrains.mps.tool.builder.util.MpsPlatform" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

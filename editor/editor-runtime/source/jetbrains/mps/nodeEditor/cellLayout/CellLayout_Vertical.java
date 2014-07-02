@@ -177,6 +177,9 @@ public class CellLayout_Vertical extends AbstractCellLayout {
         while ((lastCell instanceof EditorCell_Collection) && !((EditorCell_Collection) lastCell).isFolded()) {
           lastCell = ((EditorCell_Collection)lastCell).lastCell();
         }
+        if (lastCell == null) {
+          lastCell = editorCells.lastContentCell() != null ? editorCells.lastContentCell() : openingBrace;
+        }
         closingBrace.setX(lastCell.getX() + lastCell.getWidth()/*x + lastCellWidth*/);
         width = Math.max(width, (closingBrace.getX() - x) + closingBrace.getWidth());
       }

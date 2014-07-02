@@ -1,53 +1,82 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="MoneyCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyGetAmountMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyGetAmountMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyGetCurrencyMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyIsZeroMethodCall_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyIsZeroMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyLiteral_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyMethodCall_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyMethodCall_BehaviorDescriptor" />
-  <unitInfo fileName="MoneyType_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyType_BehaviorDescriptor" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="MoneyIsZeroMethodCall_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyIsZeroMethodCall_BehaviorDescriptor" />
+    </file>
+    <file name="MoneyGetAmountMethodCall_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetAmountMethodCall_BehaviorDescriptor" />
+    </file>
+    <file name="MoneyGetCurrencyMethodCall_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_BehaviorDescriptor" />
+    </file>
+    <file name="MoneyMethodCall_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyMethodCall_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,34,0" name="jetbrains.mps.baseLanguage.money.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="MoneyLiteral_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_BehaviorDescriptor" />
+    </file>
+    <file name="MoneyType_BehaviorDescriptor.java">
+      <unit at="8,0,21,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyType_BehaviorDescriptor" />
+    </file>
+    <file name="MoneyCreator_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_BehaviorDescriptor" />
+    </file>
+  </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)/1213877266178">
-    <nodeInfo nodeId="1213877266178" fileName="MoneyLiteral_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1213877266180" fileName="MoneyLiteral_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877266178" fileName="MoneyLiteral_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="1213877266178" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1213877266178" fileName="MoneyLiteral_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_Behavior" />
+    <file name="MoneyLiteral_Behavior.java">
+      <node id="1213877266178" at="8,0,10,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1213877266180" at="8,43,8,43" />
+      <scope id="1213877266178" at="8,0,10,0">
+        <var name="thisNode" id="1213877266178" />
+      </scope>
+      <unit id="1213877266178" at="7,0,11,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyLiteral_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)/1213877287607">
-    <nodeInfo nodeId="1213877287612" fileName="MoneyType_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877287618" fileName="MoneyType_Behavior.java" startLine="13" startPosition="118" endLine="14" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877287607" fileName="MoneyType_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1213877287607" fileName="MoneyType_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAbstractCreator_1213877337340#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="1213877287609" fileName="MoneyType_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1213877287607" fileName="MoneyType_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="1213877287607" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877287611" fileName="MoneyType_Behavior.java" startLine="12" startPosition="80" endLine="14" endPosition="19">
-      <varInfo nodeId="1213877287613" varName="creator" />
-    </scopeInfo>
-    <scopeInfo nodeId="1213877287607" fileName="MoneyType_Behavior.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
-      <varInfo nodeId="1213877287607" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1213877287607" fileName="MoneyType_Behavior.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyType_Behavior" />
+    <file name="MoneyType_Behavior.java">
+      <node id="1213877287612" at="12,80,13,118" concept="0" />
+      <node id="1213877287618" at="13,118,14,19" concept="1" />
+      <node id="1213877287607" at="9,0,11,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1213877287607" at="12,0,16,0" concept="2" trace="virtual_getAbstractCreator_1213877337340#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <scope id="1213877287609" at="9,43,9,43" />
+      <scope id="1213877287607" at="9,0,11,0">
+        <var name="thisNode" id="1213877287607" />
+      </scope>
+      <scope id="1213877287611" at="12,80,14,19">
+        <var name="creator" id="1213877287613" />
+      </scope>
+      <scope id="1213877287607" at="12,0,16,0">
+        <var name="thisNode" id="1213877287607" />
+      </scope>
+      <unit id="1213877287607" at="8,0,17,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyType_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)/1213877300004">
-    <nodeInfo nodeId="1213877300004" fileName="MoneyGetCurrencyMethodCall_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1213877300006" fileName="MoneyGetCurrencyMethodCall_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877300004" fileName="MoneyGetCurrencyMethodCall_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="1213877300004" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1213877300004" fileName="MoneyGetCurrencyMethodCall_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_Behavior" />
+    <file name="MoneyGetCurrencyMethodCall_Behavior.java">
+      <node id="1213877300004" at="8,0,10,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1213877300006" at="8,43,8,43" />
+      <scope id="1213877300004" at="8,0,10,0">
+        <var name="thisNode" id="1213877300004" />
+      </scope>
+      <unit id="1213877300004" at="7,0,11,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyGetCurrencyMethodCall_Behavior" />
+    </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)/1213877315451">
-    <nodeInfo nodeId="1213877315451" fileName="MoneyCreator_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1213877315453" fileName="MoneyCreator_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="1213877315451" fileName="MoneyCreator_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
-      <varInfo nodeId="1213877315451" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="1213877315451" fileName="MoneyCreator_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_Behavior" />
+    <file name="MoneyCreator_Behavior.java">
+      <node id="1213877315451" at="8,0,10,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <scope id="1213877315453" at="8,43,8,43" />
+      <scope id="1213877315451" at="8,0,10,0">
+        <var name="thisNode" id="1213877315451" />
+      </scope>
+      <unit id="1213877315451" at="7,0,11,0" name="jetbrains.mps.baseLanguage.money.behavior.MoneyCreator_Behavior" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

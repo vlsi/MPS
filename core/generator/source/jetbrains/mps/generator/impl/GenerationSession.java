@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.InternalFlag;
+import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationOptions;
 import jetbrains.mps.generator.GenerationParametersProvider;
@@ -45,10 +46,11 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.logging.MPSAppenderBase;
 import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.messages.NodeWithContext;
+import jetbrains.mps.project.Project;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.FastNodeFinderManager;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.Pair;
@@ -85,7 +87,7 @@ import java.util.Map;
 class GenerationSession {
   private final ITaskPoolProvider myTaskPoolProvider;
   private final SModel myOriginalInputModel;
-  private final IOperationContext myInvokeContext; // initial context the session was initiated within
+  private final Project myProject;
   private GenerationPlan myGenerationPlan;
 
   private final GenerationTrace myNewTrace;
@@ -104,7 +106,7 @@ class GenerationSession {
   private final GenerationOptions myGenerationOptions;
   private final List<SModel> myTransientModelsToRecycle = new ArrayList<SModel>();
 
-  GenerationSession(@NotNull SModel inputModel, IOperationContext invocationContext, ITaskPoolProvider taskPoolProvider,
+  GenerationSession(@NotNull SModel inputModel, @NotNull Project project, ITaskPoolProvider taskPoolProvider,
       GeneratorLoggerAdapter logger, TransientModelsModule transientModelsModule,
       IPerformanceTracer tracer, GenerationOptions generationOptions, GenerationTrace genTrace) {
     myTaskPoolProvider = taskPoolProvider;
@@ -114,8 +116,8 @@ class GenerationSession {
     myLogger = new GenerationSessionLogger(logger, myLogRecorder);
     ttrace = tracer;
     myGenerationOptions = generationOptions;
-    myInvokeContext = invocationContext;
-    mySessionContext = new GenerationSessionContext(invocationContext, generationOptions, myLogger, transientModelsModule, myOriginalInputModel, tracer);
+    myProject = project;
+    mySessionContext = new GenerationSessionContext(project, generationOptions, myLogger, transientModelsModule, myOriginalInputModel, tracer);
   }
 
   GenerationStatus generateModel(ProgressMonitor monitor) throws GenerationCanceledException {
@@ -150,7 +152,7 @@ class GenerationSession {
         generationParameters = null;
       }
 
-      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, myInvokeContext,
+      IncrementalGenerationHandler incrementalHandler = new IncrementalGenerationHandler(myOriginalInputModel, new ProjectOperationContext(myProject),
           myGenerationOptions, myGenerationPlan.getSignature(), generationParameters, null);
       myDependenciesBuilder = incrementalHandler.createDependenciesBuilder();
 
@@ -163,7 +165,7 @@ class GenerationSession {
           myLogger.info("generated files are up-to-date");
           ttrace.pop();
           return new GenerationStatus(myOriginalInputModel, null,
-              myDependenciesBuilder.getResult(myInvokeContext, myGenerationOptions.getIncrementalStrategy()), false, false, false);
+              myDependenciesBuilder.getResult(new ProjectOperationContext(myProject), myGenerationOptions.getIncrementalStrategy()), false, false, false);
         }
 
         if (!incrementalHandler.getRequiredRoots().isEmpty() || incrementalHandler.requireConditionals()) {
@@ -250,7 +252,7 @@ class GenerationSession {
         }
 
         GenerationStatus generationStatus = new GenerationStatus(myOriginalInputModel, currOutput,
-            myDependenciesBuilder.getResult(myInvokeContext, myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
+            myDependenciesBuilder.getResult(new ProjectOperationContext(myProject), myGenerationOptions.getIncrementalStrategy()), myLogger.getErrorCount() > 0,
             myLogger.getWarningCount() > 0, false);
         success = generationStatus.isOk();
         return generationStatus;
@@ -265,6 +267,7 @@ class GenerationSession {
         }
         String error = gfe.getMessage() == null ? gfe.toString() : gfe.getMessage();
         String msg = String.format("Generation failed for model '%s': %s. %s", myOriginalInputModel.getReference().getModelName(), error, nestedException);
+        myLogger.handleException(gfe);
         myLogger.error(msg);
         return new GenerationStatus.ERROR(myOriginalInputModel);
       } catch (Exception e) {
@@ -349,7 +352,6 @@ class GenerationSession {
 
   private SModel executeMajorStepInternal(SModel inputModel, RuleManager ruleManager, ProgressMonitor progress) throws GenerationFailureException, GenerationCanceledException {
     SModel currentInputModel = inputModel;
-    final IGenerationTracer tracer = mySessionContext.getGenerationTracer();
     final boolean cloneInputModel = myGenerationOptions.isSaveTransientModels() && myGenerationOptions.applyTransformationsInplace();
 
     // -----------------------
@@ -373,7 +375,6 @@ class GenerationSession {
         myLogger.info(String.format("next minor step '%s' --> '%s'",
             SModelStereotype.getStereotype(currentInputModel), SModelStereotype.getStereotype(currentOutputModel)));
       }
-      tracer.startTracing(currentInputModel, currentOutputModel);
       myNewTrace.nextStep(currentInputModel.getReference(), currentOutputModel.getReference());
 
       final SModel intactInputModelClone = cloneInputModel ? cloneTransientModel(currentInputModel) : null;
@@ -384,7 +385,6 @@ class GenerationSession {
       if (!somethingHasBeenGenerated) {
         // nothing has been generated
         myDependenciesBuilder.dropModel();
-        tracer.discardTracing(currentInputModel, currentOutputModel);
         myNewTrace.dropStep(currentInputModel.getReference(), currentOutputModel.getReference());
         recycleWasteModel(currentOutputModel, true);
         if (!isPrimary) {
@@ -419,7 +419,7 @@ class GenerationSession {
       if (realOutputModel == currentOutputModel) { // 'honest' transformation, not in-place
         recycleWasteModel(currentInputModel, cloneInputModel); // we can (or even shall, if it's a clone) forget about former input model here
         currentInputModel = currentOutputModel;
-        ((jetbrains.mps.smodel.SModelInternal) currentInputModel).disposeFastNodeFinder(); // why?!
+        FastNodeFinderManager.dispose(currentInputModel); // why?!
       } else {
         assert currentInputModel == realOutputModel;
         myDependenciesBuilder.dropModel();
@@ -507,7 +507,6 @@ class GenerationSession {
       new CloneUtil(currentInputModel, currentInputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
-      mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, ruleManager.getPreProcessScripts().getScripts());
       myNewTrace.nextStep(currentInputModel.getReference(), currentInputModel_clone.getReference());
 
       // probably we can forget about former input model here
@@ -515,7 +514,6 @@ class GenerationSession {
       currentInputModel = currentInputModel_clone;
       myDependenciesBuilder.scriptApplied(currentInputModel); // scriptApplied for a blank copy to record old root to new root mapping
     } else {
-      mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel, ruleManager.getPreProcessScripts().getScripts());
       myNewTrace.nextStep(currentInputModel.getReference(), currentInputModel.getReference());
     }
 
@@ -557,18 +555,14 @@ class GenerationSession {
       new CloneUtil(currentModel, currentOutputModel_clone).cloneModelWithImports();
       ttrace.pop();
 
-      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentOutputModel_clone, ruleManager.getPostProcessScripts().getScripts());
       myNewTrace.nextStep(currentModel.getReference(), currentOutputModel_clone.getReference());
       toRecycle = currentModel;
       currentModel = currentOutputModel_clone;
       myDependenciesBuilder.scriptApplied(currentModel);
     } else {
-      mySessionContext.getGenerationTracer().registerPostMappingScripts(currentModel, currentModel, ruleManager.getPostProcessScripts().getScripts());
       myNewTrace.nextStep(currentModel.getReference(), currentModel.getReference());
       // just in case post-script modifies model a lot, and we've got FNF there, prevent it being updated - it's cheaper to create new one at the next step
-      if (currentModel instanceof SModelInternal) {
-        ((SModelInternal) currentModel).disposeFastNodeFinder();
-      }
+      FastNodeFinderManager.dispose(currentModel);
     }
 
     // FIXME I don't need ruleManager, nor even DependencyManager to execute a script. Refactor QueryExecutionContext
@@ -629,7 +623,7 @@ class GenerationSession {
    */
   private void recycleWasteModel(@NotNull SModel model, boolean force) {
     assert (model.getModule() instanceof TransientModelsModule);
-    ((jetbrains.mps.smodel.SModelInternal) model).disposeFastNodeFinder();
+    FastNodeFinderManager.dispose(model);
     if (force) {
       mySessionContext.getModule().removeModel(model);
     } else {
@@ -704,7 +698,7 @@ class GenerationSession {
   }
 
   private boolean keepTransientForMessageNavigation() {
-    return !myInvokeContext.isTestMode();
+    return !RuntimeFlags.isTestMode();
   }
 
   public MPSAppenderBase getLoggingHandler() {

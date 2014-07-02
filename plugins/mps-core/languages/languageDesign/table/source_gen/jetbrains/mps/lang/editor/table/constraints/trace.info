@@ -1,112 +1,126 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="ConstraintsAspectDescriptor.java" startLine="9" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.lang.editor.table.constraints.ConstraintsAspectDescriptor" />
-  <root nodeRef="r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)/6216065619544939788">
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="26" startPosition="52" endLine="27" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="31" startPosition="83" endLine="32" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544941671" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="46" startPosition="47" endLine="47" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="53" startPosition="63" endLine="54" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="61" startPosition="44" endLine="62" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544944304" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="72" startPosition="47" endLine="73" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="79" startPosition="63" endLine="80" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="87" startPosition="44" endLine="88" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544946240" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="97" startPosition="113" endLine="98" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544946271" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="101" startPosition="47" endLine="102" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="108" startPosition="63" endLine="109" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="113" startPosition="7" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="117" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_6tiwsq_a0a1a0a0a1a0b0a1a1" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="118" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_6tiwsq_a0a1a0a0a1a0b0a2a1" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="119" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_6tiwsq_a0a1a0a0a1a0b0a3a1" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellModel_HierarchycalTable_Constraints#()V" />
-    <nodeInfo nodeId="6216065619544941667" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6216065619544944300" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6216065619544946226" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="96" startPosition="142" endLine="99" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6216065619544946267" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="34" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="86" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="107" startPosition="0" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="6216065619544944281" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="44" startPosition="142" endLine="49" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544944283" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="70" startPosition="142" endLine="75" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544946244" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="99" startPosition="13" endLine="104" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="43" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="69" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="95" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="41" startPosition="56" endLine="56" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="67" startPosition="56" endLine="82" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="93" startPosition="56" endLine="111" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="39" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="65" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="91" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="32" startPosition="75" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="58" startPosition="7" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="84" startPosition="7" endLine="113" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="30" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="26" startPosition="52" endLine="27" endPosition="83" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="35" startPosition="44" endLine="36" endPosition="20" />
-    <scopeInfo nodeId="6216065619544941670" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="46" startPosition="47" endLine="47" endPosition="85" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="53" startPosition="63" endLine="54" endPosition="58" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="61" startPosition="44" endLine="62" endPosition="20" />
-    <scopeInfo nodeId="6216065619544944301" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="72" startPosition="47" endLine="73" endPosition="85" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="79" startPosition="63" endLine="80" endPosition="58" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="87" startPosition="44" endLine="88" endPosition="20" />
-    <scopeInfo nodeId="6216065619544946228" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="97" startPosition="113" endLine="98" endPosition="26" />
-    <scopeInfo nodeId="6216065619544946268" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="101" startPosition="47" endLine="102" endPosition="85" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="108" startPosition="63" endLine="109" endPosition="58" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="6216065619544941667" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
-      <varInfo nodeId="6216065619544941667" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6216065619544944300" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="72" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="6216065619544944300" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6216065619544946267" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
-      <varInfo nodeId="6216065619544946267" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="34" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="52" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="86" startPosition="0" endLine="90" endPosition="0" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="107" startPosition="0" endLine="111" endPosition="0" />
-    <scopeInfo nodeId="6216065619544941640" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="44" startPosition="142" endLine="49" endPosition="32" />
-    <scopeInfo nodeId="6216065619544941681" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="70" startPosition="142" endLine="75" endPosition="15" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="43" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="6216065619544939788" varName="_context" />
-      <varInfo nodeId="6216065619544939788" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="69" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="6216065619544939788" varName="_context" />
-      <varInfo nodeId="6216065619544939788" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="6216065619544946225" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="96" startPosition="142" endLine="104" endPosition="15" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="95" startPosition="0" endLine="106" endPosition="0">
-      <varInfo nodeId="6216065619544939788" varName="_context" />
-      <varInfo nodeId="6216065619544939788" varName="operationContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="41" startPosition="56" endLine="56" endPosition="10" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="67" startPosition="56" endLine="82" endPosition="10" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="93" startPosition="56" endLine="111" endPosition="10" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="39" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="65" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="91" startPosition="0" endLine="113" endPosition="0" />
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="31" startPosition="83" endLine="114" endPosition="22">
-      <varInfo nodeId="6216065619544939788" varName="references" />
-    </scopeInfo>
-    <scopeInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="30" startPosition="0" endLine="116" endPosition="0" />
-    <unitInfo nodeId="6216065619544941667" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="45" startPosition="262" endLine="49" endPosition="13" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
-    <unitInfo nodeId="6216065619544944300" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="71" startPosition="262" endLine="75" endPosition="13" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$4" />
-    <unitInfo nodeId="6216065619544946267" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="100" startPosition="268" endLine="104" endPosition="13" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$5" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="42" startPosition="19" endLine="56" endPosition="9" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="68" startPosition="19" endLine="82" endPosition="9" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="94" startPosition="19" endLine="111" endPosition="9" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$4" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="33" startPosition="51" endLine="58" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$1" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="59" startPosition="46" endLine="84" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="85" startPosition="52" endLine="113" endPosition="5" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
-    <unitInfo nodeId="6216065619544939788" fileName="CellModel_HierarchycalTable_Constraints.java" startLine="25" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <root>
+    <file name="ConstraintsAspectDescriptor.java">
+      <unit at="9,0,25,0" name="jetbrains.mps.lang.editor.table.constraints.ConstraintsAspectDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:a310da22-eca6-4f58-b266-8f97a737583f(jetbrains.mps.lang.editor.table.constraints)/6216065619544939788">
+    <file name="CellModel_HierarchycalTable_Constraints.java">
+      <node id="6216065619544939788" at="26,52,27,83" concept="7" />
+      <node id="6216065619544939788" at="31,83,32,75" concept="4" />
+      <node id="6216065619544939788" at="35,44,36,20" concept="5" />
+      <node id="6216065619544941671" at="46,47,47,85" concept="5" />
+      <node id="6216065619544939788" at="53,63,54,58" concept="5" />
+      <node id="6216065619544939788" at="61,44,62,20" concept="5" />
+      <node id="6216065619544944304" at="72,47,73,85" concept="5" />
+      <node id="6216065619544939788" at="79,63,80,58" concept="5" />
+      <node id="6216065619544939788" at="87,44,88,20" concept="5" />
+      <node id="6216065619544946240" at="97,113,98,26" concept="5" />
+      <node id="6216065619544946271" at="101,47,102,85" concept="5" />
+      <node id="6216065619544939788" at="108,63,109,58" concept="5" />
+      <node id="6216065619544939788" at="113,7,114,22" concept="5" />
+      <node id="6216065619544939788" at="117,0,118,0" concept="6" trace="breakingNode_6tiwsq_a0a1a0a0a1a0b0a1a1" />
+      <node id="6216065619544939788" at="118,0,119,0" concept="6" trace="breakingNode_6tiwsq_a0a1a0a0a1a0b0a2a1" />
+      <node id="6216065619544939788" at="119,0,120,0" concept="6" trace="breakingNode_6tiwsq_a0a1a0a0a1a0b0a3a1" />
+      <node id="6216065619544939788" at="26,0,29,0" concept="0" trace="CellModel_HierarchycalTable_Constraints#()V" />
+      <node id="6216065619544941667" at="46,0,49,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6216065619544944300" at="72,0,75,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6216065619544946226" at="96,142,99,13" concept="2" />
+      <node id="6216065619544946267" at="101,0,104,0" concept="3" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="6216065619544939788" at="34,0,38,0" concept="3" trace="hasOwnScopeProvider#()Z" />
+      <node id="6216065619544939788" at="52,0,56,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="6216065619544939788" at="60,0,64,0" concept="3" trace="hasOwnScopeProvider#()Z" />
+      <node id="6216065619544939788" at="78,0,82,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="6216065619544939788" at="86,0,90,0" concept="3" trace="hasOwnScopeProvider#()Z" />
+      <node id="6216065619544939788" at="107,0,111,0" concept="3" trace="getSearchScopeValidatorNode#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
+      <node id="6216065619544944281" at="44,142,49,32" concept="5" />
+      <node id="6216065619544944283" at="70,142,75,15" concept="5" />
+      <node id="6216065619544946244" at="99,13,104,15" concept="5" />
+      <node id="6216065619544939788" at="43,0,51,0" concept="3" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+      <node id="6216065619544939788" at="69,0,77,0" concept="3" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+      <node id="6216065619544939788" at="95,0,106,0" concept="3" trace="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+      <node id="6216065619544939788" at="41,56,56,10" concept="5" />
+      <node id="6216065619544939788" at="67,56,82,10" concept="5" />
+      <node id="6216065619544939788" at="93,56,111,10" concept="5" />
+      <node id="6216065619544939788" at="39,0,58,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="6216065619544939788" at="65,0,84,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="6216065619544939788" at="91,0,113,0" concept="3" trace="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+      <node id="6216065619544939788" at="32,75,58,7" concept="1" />
+      <node id="6216065619544939788" at="58,7,84,7" concept="1" />
+      <node id="6216065619544939788" at="84,7,113,7" concept="1" />
+      <node id="6216065619544939788" at="30,0,116,0" concept="3" trace="getNotDefaultReferences#()Ljava/util/Map;" />
+      <scope id="6216065619544939788" at="26,52,27,83" />
+      <scope id="6216065619544939788" at="35,44,36,20" />
+      <scope id="6216065619544941670" at="46,47,47,85" />
+      <scope id="6216065619544939788" at="53,63,54,58" />
+      <scope id="6216065619544939788" at="61,44,62,20" />
+      <scope id="6216065619544944301" at="72,47,73,85" />
+      <scope id="6216065619544939788" at="79,63,80,58" />
+      <scope id="6216065619544939788" at="87,44,88,20" />
+      <scope id="6216065619544946228" at="97,113,98,26" />
+      <scope id="6216065619544946268" at="101,47,102,85" />
+      <scope id="6216065619544939788" at="108,63,109,58" />
+      <scope id="6216065619544939788" at="26,0,29,0" />
+      <scope id="6216065619544941667" at="46,0,49,0">
+        <var name="it" id="6216065619544941667" />
+      </scope>
+      <scope id="6216065619544944300" at="72,0,75,0">
+        <var name="it" id="6216065619544944300" />
+      </scope>
+      <scope id="6216065619544946267" at="101,0,104,0">
+        <var name="it" id="6216065619544946267" />
+      </scope>
+      <scope id="6216065619544939788" at="34,0,38,0" />
+      <scope id="6216065619544939788" at="52,0,56,0" />
+      <scope id="6216065619544939788" at="60,0,64,0" />
+      <scope id="6216065619544939788" at="78,0,82,0" />
+      <scope id="6216065619544939788" at="86,0,90,0" />
+      <scope id="6216065619544939788" at="107,0,111,0" />
+      <scope id="6216065619544941640" at="44,142,49,32" />
+      <scope id="6216065619544941681" at="70,142,75,15" />
+      <scope id="6216065619544939788" at="43,0,51,0">
+        <var name="_context" id="6216065619544939788" />
+        <var name="operationContext" id="6216065619544939788" />
+      </scope>
+      <scope id="6216065619544939788" at="69,0,77,0">
+        <var name="_context" id="6216065619544939788" />
+        <var name="operationContext" id="6216065619544939788" />
+      </scope>
+      <scope id="6216065619544946225" at="96,142,104,15" />
+      <scope id="6216065619544939788" at="95,0,106,0">
+        <var name="_context" id="6216065619544939788" />
+        <var name="operationContext" id="6216065619544939788" />
+      </scope>
+      <scope id="6216065619544939788" at="41,56,56,10" />
+      <scope id="6216065619544939788" at="67,56,82,10" />
+      <scope id="6216065619544939788" at="93,56,111,10" />
+      <scope id="6216065619544939788" at="39,0,58,0" />
+      <scope id="6216065619544939788" at="65,0,84,0" />
+      <scope id="6216065619544939788" at="91,0,113,0" />
+      <scope id="6216065619544939788" at="31,83,114,22">
+        <var name="references" id="6216065619544939788" />
+      </scope>
+      <scope id="6216065619544939788" at="30,0,116,0" />
+      <unit id="6216065619544941667" at="45,262,49,13" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
+      <unit id="6216065619544944300" at="71,262,75,13" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$4" />
+      <unit id="6216065619544946267" at="100,268,104,13" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$5" />
+      <unit id="6216065619544939788" at="42,19,56,9" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2" />
+      <unit id="6216065619544939788" at="68,19,82,9" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
+      <unit id="6216065619544939788" at="94,19,111,9" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$4" />
+      <unit id="6216065619544939788" at="33,51,58,5" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$1" />
+      <unit id="6216065619544939788" at="59,46,84,5" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$2" />
+      <unit id="6216065619544939788" at="85,52,113,5" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints$3" />
+      <unit id="6216065619544939788" at="25,0,121,0" name="jetbrains.mps.lang.editor.table.constraints.CellModel_HierarchycalTable_Constraints" />
+    </file>
+  </root>
+</debug-info>
 

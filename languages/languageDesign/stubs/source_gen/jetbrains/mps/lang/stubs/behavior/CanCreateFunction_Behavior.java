@@ -8,6 +8,8 @@ import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class CanCreateFunction_Behavior {
   public static void init(SNode thisNode) {
@@ -24,5 +26,16 @@ public class CanCreateFunction_Behavior {
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)", "4852427478417697644"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)", "4063774604867508743"));
     return result;
+  }
+
+  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+    return _quotation_createNode_wcu5l2_a0a2();
+  }
+
+  private static SNode _quotation_createNode_wcu5l2_a0a2() {
+    PersistenceFacade facade = PersistenceFacade.getInstance();
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
+    return quotedNode_1;
   }
 }

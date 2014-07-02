@@ -1,466 +1,489 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.IfStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
   <root nodeRef="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)/3102837338444216503">
-    <nodeInfo nodeId="3102837338444216506" fileName="ObjectValueProxy.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReferenceType" />
-    <nodeInfo nodeId="3102837338444216517" fileName="ObjectValueProxy.java" startLine="30" startPosition="46" endLine="31" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3102837338444216520" fileName="ObjectValueProxy.java" startLine="31" startPosition="13" endLine="32" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3102837338444216532" fileName="ObjectValueProxy.java" startLine="36" startPosition="44" endLine="37" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216543" fileName="ObjectValueProxy.java" startLine="42" startPosition="97" endLine="43" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216547" fileName="ObjectValueProxy.java" startLine="43" startPosition="45" endLine="44" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216553" fileName="ObjectValueProxy.java" startLine="44" startPosition="82" endLine="45" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216560" fileName="ObjectValueProxy.java" startLine="45" startPosition="37" endLine="46" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216573" fileName="ObjectValueProxy.java" startLine="49" startPosition="45" endLine="50" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216579" fileName="ObjectValueProxy.java" startLine="50" startPosition="83" endLine="51" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216591" fileName="ObjectValueProxy.java" startLine="52" startPosition="32" endLine="53" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3102837338444216603" fileName="ObjectValueProxy.java" startLine="54" startPosition="5" endLine="55" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216616" fileName="ObjectValueProxy.java" startLine="59" startPosition="145" endLine="60" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216620" fileName="ObjectValueProxy.java" startLine="60" startPosition="42" endLine="61" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216624" fileName="ObjectValueProxy.java" startLine="61" startPosition="20" endLine="62" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216644" fileName="ObjectValueProxy.java" startLine="66" startPosition="150" endLine="67" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216648" fileName="ObjectValueProxy.java" startLine="67" startPosition="42" endLine="68" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216659" fileName="ObjectValueProxy.java" startLine="69" startPosition="29" endLine="70" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444216669" fileName="ObjectValueProxy.java" startLine="71" startPosition="5" endLine="72" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216673" fileName="ObjectValueProxy.java" startLine="72" startPosition="52" endLine="73" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2743718125356832481" fileName="ObjectValueProxy.java" startLine="77" startPosition="75" endLine="78" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216712" fileName="ObjectValueProxy.java" startLine="81" startPosition="187" endLine="82" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3102837338444216714" fileName="ObjectValueProxy.java" startLine="82" startPosition="52" endLine="83" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216727" fileName="ObjectValueProxy.java" startLine="84" startPosition="25" endLine="85" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444216743" fileName="ObjectValueProxy.java" startLine="86" startPosition="5" endLine="87" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216766" fileName="ObjectValueProxy.java" startLine="90" startPosition="143" endLine="91" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444216776" fileName="ObjectValueProxy.java" startLine="91" startPosition="98" endLine="92" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216791" fileName="ObjectValueProxy.java" startLine="98" startPosition="48" endLine="99" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7866772524121901193" fileName="ObjectValueProxy.java" startLine="103" startPosition="45" endLine="104" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7866772524121903289" fileName="ObjectValueProxy.java" startLine="105" startPosition="5" endLine="106" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216586" fileName="ObjectValueProxy.java" startLine="51" startPosition="65" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3102837338444216654" fileName="ObjectValueProxy.java" startLine="68" startPosition="50" endLine="71" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444216722" fileName="ObjectValueProxy.java" startLine="83" startPosition="77" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7866772524121893761" fileName="ObjectValueProxy.java" startLine="102" startPosition="35" endLine="105" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444216509" fileName="ObjectValueProxy.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ObjectValueProxy#(Lcom/sun/jdi/ObjectReference;)V" />
-    <nodeInfo nodeId="3102837338444216528" fileName="ObjectValueProxy.java" startLine="35" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getObjectValue#()Lcom/sun/jdi/ObjectReference;" />
-    <nodeInfo nodeId="3102837338444216682" fileName="ObjectValueProxy.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInstanceOf#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="3102837338444216785" fileName="ObjectValueProxy.java" startLine="97" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="javaEquals#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
-    <nodeInfo nodeId="3102837338444216758" fileName="ObjectValueProxy.java" startLine="89" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="3102837338444216605" fileName="ObjectValueProxy.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="7866772524121889778" fileName="ObjectValueProxy.java" startLine="102" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3102837338444216752" fileName="ObjectValueProxy.java" startLine="87" startPosition="101" endLine="94" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216537" fileName="ObjectValueProxy.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="3102837338444216568" fileName="ObjectValueProxy.java" startLine="49" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValues#()Ljava/util/List;" />
-    <nodeInfo nodeId="3102837338444216633" fileName="ObjectValueProxy.java" startLine="65" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeSuperMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="3102837338444216697" fileName="ObjectValueProxy.java" startLine="81" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ClassType;ILcom/sun/jdi/ThreadReference;[Ljava/lang/Object;)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <scopeInfo nodeId="3102837338444216531" fileName="ObjectValueProxy.java" startLine="36" startPosition="44" endLine="37" endPosition="37" />
-    <scopeInfo nodeId="3102837338444216590" fileName="ObjectValueProxy.java" startLine="52" startPosition="32" endLine="53" endPosition="96" />
-    <scopeInfo nodeId="3102837338444216658" fileName="ObjectValueProxy.java" startLine="69" startPosition="29" endLine="70" endPosition="134" />
-    <scopeInfo nodeId="3102837338444216687" fileName="ObjectValueProxy.java" startLine="77" startPosition="75" endLine="78" endPosition="105" />
-    <scopeInfo nodeId="3102837338444216726" fileName="ObjectValueProxy.java" startLine="84" startPosition="25" endLine="85" endPosition="152" />
-    <scopeInfo nodeId="3102837338444216790" fileName="ObjectValueProxy.java" startLine="98" startPosition="48" endLine="99" endPosition="47" />
-    <scopeInfo nodeId="7866772524121893764" fileName="ObjectValueProxy.java" startLine="103" startPosition="45" endLine="104" endPosition="63" />
-    <scopeInfo nodeId="3102837338444216516" fileName="ObjectValueProxy.java" startLine="30" startPosition="46" endLine="32" endPosition="52" />
-    <scopeInfo nodeId="3102837338444216765" fileName="ObjectValueProxy.java" startLine="90" startPosition="143" endLine="92" endPosition="62">
-      <varInfo nodeId="3102837338444216767" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216586" fileName="ObjectValueProxy.java" startLine="51" startPosition="65" endLine="54" endPosition="5">
-      <varInfo nodeId="3102837338444216588" varName="field" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216615" fileName="ObjectValueProxy.java" startLine="59" startPosition="145" endLine="62" endPosition="81">
-      <varInfo nodeId="3102837338444216617" varName="classType" />
-      <varInfo nodeId="3102837338444216621" varName="options" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216509" fileName="ObjectValueProxy.java" startLine="30" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="3102837338444216512" varName="v" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216528" fileName="ObjectValueProxy.java" startLine="35" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="3102837338444216542" fileName="ObjectValueProxy.java" startLine="42" startPosition="97" endLine="46" endPosition="58">
-      <varInfo nodeId="3102837338444216548" varName="f" />
-      <varInfo nodeId="3102837338444216554" varName="result" />
-      <varInfo nodeId="3102837338444216544" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216682" fileName="ObjectValueProxy.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
-      <varInfo nodeId="3102837338444216685" varName="typename" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216785" fileName="ObjectValueProxy.java" startLine="97" startPosition="0" endLine="101" endPosition="0">
-      <varInfo nodeId="3102837338444216788" varName="proxy" />
-    </scopeInfo>
-    <scopeInfo nodeId="7866772524121889784" fileName="ObjectValueProxy.java" startLine="102" startPosition="35" endLine="106" endPosition="71" />
-    <scopeInfo nodeId="3102837338444216758" fileName="ObjectValueProxy.java" startLine="89" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="3102837338444216572" fileName="ObjectValueProxy.java" startLine="49" startPosition="45" endLine="55" endPosition="23">
-      <varInfo nodeId="3102837338444216580" varName="fieldValues" />
-      <varInfo nodeId="3102837338444216574" varName="fields" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216605" fileName="ObjectValueProxy.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
-      <varInfo nodeId="3102837338444216612" varName="args" />
-      <varInfo nodeId="3102837338444216610" varName="jniSignature" />
-      <varInfo nodeId="3102837338444216608" varName="name" />
-      <varInfo nodeId="4775046149728398430" varName="threadReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="7866772524121889778" fileName="ObjectValueProxy.java" startLine="102" startPosition="0" endLine="108" endPosition="0" />
-    <scopeInfo nodeId="3102837338444216643" fileName="ObjectValueProxy.java" startLine="66" startPosition="150" endLine="73" endPosition="82">
-      <varInfo nodeId="3102837338444216645" varName="classType" />
-      <varInfo nodeId="3102837338444216670" varName="options" />
-      <varInfo nodeId="3102837338444216649" varName="superclass" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216537" fileName="ObjectValueProxy.java" startLine="40" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="3102837338444216540" varName="fieldName" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216568" fileName="ObjectValueProxy.java" startLine="49" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="3102837338444216633" fileName="ObjectValueProxy.java" startLine="65" startPosition="0" endLine="75" endPosition="0">
-      <varInfo nodeId="3102837338444216640" varName="args" />
-      <varInfo nodeId="3102837338444216638" varName="jniSignature" />
-      <varInfo nodeId="3102837338444216636" varName="name" />
-      <varInfo nodeId="4775046149728398423" varName="threadReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216711" fileName="ObjectValueProxy.java" startLine="81" startPosition="187" endLine="94" endPosition="7">
-      <varInfo nodeId="3102837338444216744" varName="argValues" />
-      <varInfo nodeId="3102837338444216715" varName="method" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216697" fileName="ObjectValueProxy.java" startLine="81" startPosition="0" endLine="96" endPosition="0">
-      <varInfo nodeId="3102837338444216708" varName="args" />
-      <varInfo nodeId="3102837338444216704" varName="classType" />
-      <varInfo nodeId="3102837338444216702" varName="jniSignature" />
-      <varInfo nodeId="3102837338444216700" varName="name" />
-      <varInfo nodeId="3102837338444216706" varName="options" />
-      <varInfo nodeId="4775046149728398407" varName="threadReference" />
-    </scopeInfo>
-    <unitInfo nodeId="3102837338444216756" fileName="ObjectValueProxy.java" startLine="88" startPosition="58" endLine="94" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ObjectValueProxy$1" />
-    <unitInfo nodeId="3102837338444216503" fileName="ObjectValueProxy.java" startLine="27" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ObjectValueProxy" />
+    <file name="ObjectValueProxy.java">
+      <node id="3102837338444216506" at="28,0,29,0" concept="4" trace="myReferenceType" />
+      <node id="3102837338444216517" at="30,46,31,13" concept="11" />
+      <node id="3102837338444216520" at="31,13,32,52" concept="3" />
+      <node id="3102837338444216532" at="36,44,37,37" concept="9" />
+      <node id="3102837338444216543" at="42,97,43,45" concept="8" />
+      <node id="3102837338444216547" at="43,45,44,82" concept="8" />
+      <node id="3102837338444216553" at="44,82,45,37" concept="8" />
+      <node id="3102837338444216560" at="45,37,46,58" concept="9" />
+      <node id="3102837338444216573" at="49,45,50,83" concept="8" />
+      <node id="3102837338444216579" at="50,83,51,65" concept="8" />
+      <node id="3102837338444216591" at="52,32,53,96" concept="3" />
+      <node id="3102837338444216603" at="54,5,55,23" concept="9" />
+      <node id="3102837338444216616" at="59,145,60,42" concept="8" />
+      <node id="3102837338444216620" at="60,42,61,20" concept="8" />
+      <node id="3102837338444216624" at="61,20,62,81" concept="9" />
+      <node id="3102837338444216644" at="66,150,67,42" concept="8" />
+      <node id="3102837338444216648" at="67,42,68,50" concept="8" />
+      <node id="3102837338444216659" at="69,29,70,134" concept="13" />
+      <node id="3102837338444216669" at="71,5,72,52" concept="8" />
+      <node id="3102837338444216673" at="72,52,73,82" concept="9" />
+      <node id="2743718125356832481" at="77,75,78,105" concept="9" />
+      <node id="3102837338444216712" at="81,187,82,52" concept="10" />
+      <node id="3102837338444216714" at="82,52,83,77" concept="8" />
+      <node id="3102837338444216727" at="84,25,85,152" concept="13" />
+      <node id="3102837338444216743" at="86,5,87,101" concept="8" />
+      <node id="3102837338444216766" at="90,143,91,98" concept="8" />
+      <node id="3102837338444216776" at="91,98,92,62" concept="9" />
+      <node id="3102837338444216791" at="98,48,99,47" concept="9" />
+      <node id="7866772524121901193" at="103,45,104,63" concept="9" />
+      <node id="7866772524121903289" at="105,5,106,71" concept="9" />
+      <node id="3102837338444216586" at="51,65,54,5" concept="5" />
+      <node id="3102837338444216654" at="68,50,71,5" concept="6" />
+      <node id="3102837338444216722" at="83,77,86,5" concept="6" />
+      <node id="7866772524121893761" at="102,35,105,5" concept="6" />
+      <node id="3102837338444216509" at="30,0,34,0" concept="2" trace="ObjectValueProxy#(Lcom/sun/jdi/ObjectReference;)V" />
+      <node id="3102837338444216528" at="35,0,39,0" concept="7" trace="getObjectValue#()Lcom/sun/jdi/ObjectReference;" />
+      <node id="3102837338444216682" at="76,0,80,0" concept="7" trace="isInstanceOf#(Ljava/lang/String;)Z" />
+      <node id="3102837338444216785" at="97,0,101,0" concept="7" trace="javaEquals#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
+      <node id="3102837338444216758" at="89,0,94,0" concept="7" trace="invoke#()Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="3102837338444216605" at="58,0,64,0" concept="7" trace="invokeMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="7866772524121889778" at="102,0,108,0" concept="7" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="3102837338444216752" at="87,101,94,7" concept="9" />
+      <node id="3102837338444216537" at="40,0,48,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="3102837338444216568" at="49,0,57,0" concept="7" trace="getFieldValues#()Ljava/util/List;" />
+      <node id="3102837338444216633" at="65,0,75,0" concept="7" trace="invokeSuperMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="3102837338444216697" at="81,0,96,0" concept="7" trace="invoke#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ClassType;ILcom/sun/jdi/ThreadReference;[Ljava/lang/Object;)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <scope id="3102837338444216531" at="36,44,37,37" />
+      <scope id="3102837338444216590" at="52,32,53,96" />
+      <scope id="3102837338444216658" at="69,29,70,134" />
+      <scope id="3102837338444216687" at="77,75,78,105" />
+      <scope id="3102837338444216726" at="84,25,85,152" />
+      <scope id="3102837338444216790" at="98,48,99,47" />
+      <scope id="7866772524121893764" at="103,45,104,63" />
+      <scope id="3102837338444216516" at="30,46,32,52" />
+      <scope id="3102837338444216765" at="90,143,92,62">
+        <var name="result" id="3102837338444216767" />
+      </scope>
+      <scope id="3102837338444216586" at="51,65,54,5">
+        <var name="field" id="3102837338444216588" />
+      </scope>
+      <scope id="3102837338444216615" at="59,145,62,81">
+        <var name="classType" id="3102837338444216617" />
+        <var name="options" id="3102837338444216621" />
+      </scope>
+      <scope id="3102837338444216509" at="30,0,34,0">
+        <var name="v" id="3102837338444216512" />
+      </scope>
+      <scope id="3102837338444216528" at="35,0,39,0" />
+      <scope id="3102837338444216542" at="42,97,46,58">
+        <var name="f" id="3102837338444216548" />
+        <var name="result" id="3102837338444216554" />
+        <var name="value" id="3102837338444216544" />
+      </scope>
+      <scope id="3102837338444216682" at="76,0,80,0">
+        <var name="typename" id="3102837338444216685" />
+      </scope>
+      <scope id="3102837338444216785" at="97,0,101,0">
+        <var name="proxy" id="3102837338444216788" />
+      </scope>
+      <scope id="7866772524121889784" at="102,35,106,71" />
+      <scope id="3102837338444216758" at="89,0,94,0" />
+      <scope id="3102837338444216572" at="49,45,55,23">
+        <var name="fieldValues" id="3102837338444216580" />
+        <var name="fields" id="3102837338444216574" />
+      </scope>
+      <scope id="3102837338444216605" at="58,0,64,0">
+        <var name="args" id="3102837338444216612" />
+        <var name="jniSignature" id="3102837338444216610" />
+        <var name="name" id="3102837338444216608" />
+        <var name="threadReference" id="4775046149728398430" />
+      </scope>
+      <scope id="7866772524121889778" at="102,0,108,0" />
+      <scope id="3102837338444216643" at="66,150,73,82">
+        <var name="classType" id="3102837338444216645" />
+        <var name="options" id="3102837338444216670" />
+        <var name="superclass" id="3102837338444216649" />
+      </scope>
+      <scope id="3102837338444216537" at="40,0,48,0">
+        <var name="fieldName" id="3102837338444216540" />
+      </scope>
+      <scope id="3102837338444216568" at="49,0,57,0" />
+      <scope id="3102837338444216633" at="65,0,75,0">
+        <var name="args" id="3102837338444216640" />
+        <var name="jniSignature" id="3102837338444216638" />
+        <var name="name" id="3102837338444216636" />
+        <var name="threadReference" id="4775046149728398423" />
+      </scope>
+      <scope id="3102837338444216711" at="81,187,94,7">
+        <var name="argValues" id="3102837338444216744" />
+        <var name="method" id="3102837338444216715" />
+      </scope>
+      <scope id="3102837338444216697" at="81,0,96,0">
+        <var name="args" id="3102837338444216708" />
+        <var name="classType" id="3102837338444216704" />
+        <var name="jniSignature" id="3102837338444216702" />
+        <var name="name" id="3102837338444216700" />
+        <var name="options" id="3102837338444216706" />
+        <var name="threadReference" id="4775046149728398407" />
+      </scope>
+      <unit id="3102837338444216756" at="88,58,94,5" name="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ObjectValueProxy$1" />
+      <unit id="3102837338444216503" at="27,0,109,0" name="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ObjectValueProxy" />
+    </file>
   </root>
   <root nodeRef="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)/3102837338444216799">
-    <nodeInfo nodeId="3102837338444216810" fileName="NullValueProxy.java" startLine="17" startPosition="54" endLine="18" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444216830" fileName="NullValueProxy.java" startLine="22" startPosition="118" endLine="23" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444216854" fileName="NullValueProxy.java" startLine="27" startPosition="123" endLine="28" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444216873" fileName="NullValueProxy.java" startLine="32" startPosition="48" endLine="33" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216880" fileName="NullValueProxy.java" startLine="37" startPosition="30" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216887" fileName="NullValueProxy.java" startLine="42" startPosition="32" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216896" fileName="NullValueProxy.java" startLine="48" startPosition="46" endLine="49" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444216910" fileName="NullValueProxy.java" startLine="53" startPosition="79" endLine="54" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444216920" fileName="NullValueProxy.java" startLine="58" startPosition="26" endLine="59" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444216931" fileName="NullValueProxy.java" startLine="63" startPosition="48" endLine="64" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7866772524121888510" fileName="NullValueProxy.java" startLine="67" startPosition="35" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216801" fileName="NullValueProxy.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullValueProxy#()V" />
-    <nodeInfo nodeId="7866772524121888343" fileName="NullValueProxy.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3102837338444216804" fileName="NullValueProxy.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="3102837338444216819" fileName="NullValueProxy.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="3102837338444216843" fileName="NullValueProxy.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeSuperMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="3102837338444216867" fileName="NullValueProxy.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInstanceOf#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="3102837338444216876" fileName="NullValueProxy.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJDIValue#()Lcom/sun/jdi/Value;" />
-    <nodeInfo nodeId="3102837338444216883" fileName="NullValueProxy.java" startLine="41" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJavaValue#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="3102837338444216902" fileName="NullValueProxy.java" startLine="52" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setElement#(Lcom/sun/jdi/Value;I)V" />
-    <nodeInfo nodeId="3102837338444216916" fileName="NullValueProxy.java" startLine="57" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLength#()I" />
-    <nodeInfo nodeId="3102837338444216925" fileName="NullValueProxy.java" startLine="62" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="javaEquals#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
-    <nodeInfo nodeId="3102837338444216890" fileName="NullValueProxy.java" startLine="46" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementAt#(I)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <scopeInfo nodeId="3102837338444216803" fileName="NullValueProxy.java" startLine="13" startPosition="32" endLine="13" endPosition="32" />
-    <scopeInfo nodeId="3102837338444216809" fileName="NullValueProxy.java" startLine="17" startPosition="54" endLine="18" endPosition="86" />
-    <scopeInfo nodeId="3102837338444216829" fileName="NullValueProxy.java" startLine="22" startPosition="118" endLine="23" endPosition="118" />
-    <scopeInfo nodeId="3102837338444216853" fileName="NullValueProxy.java" startLine="27" startPosition="123" endLine="28" endPosition="124" />
-    <scopeInfo nodeId="3102837338444216872" fileName="NullValueProxy.java" startLine="32" startPosition="48" endLine="33" endPosition="17" />
-    <scopeInfo nodeId="3102837338444216879" fileName="NullValueProxy.java" startLine="37" startPosition="30" endLine="38" endPosition="16" />
-    <scopeInfo nodeId="3102837338444216886" fileName="NullValueProxy.java" startLine="42" startPosition="32" endLine="43" endPosition="16" />
-    <scopeInfo nodeId="3102837338444216895" fileName="NullValueProxy.java" startLine="48" startPosition="46" endLine="49" endPosition="74" />
-    <scopeInfo nodeId="3102837338444216909" fileName="NullValueProxy.java" startLine="53" startPosition="79" endLine="54" endPosition="74" />
-    <scopeInfo nodeId="3102837338444216919" fileName="NullValueProxy.java" startLine="58" startPosition="26" endLine="59" endPosition="73" />
-    <scopeInfo nodeId="3102837338444216930" fileName="NullValueProxy.java" startLine="63" startPosition="48" endLine="64" endPosition="44" />
-    <scopeInfo nodeId="7866772524121888351" fileName="NullValueProxy.java" startLine="67" startPosition="35" endLine="68" endPosition="18" />
-    <scopeInfo nodeId="3102837338444216801" fileName="NullValueProxy.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="7866772524121888343" fileName="NullValueProxy.java" startLine="67" startPosition="0" endLine="70" endPosition="0" />
-    <scopeInfo nodeId="3102837338444216804" fileName="NullValueProxy.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
-      <varInfo nodeId="3102837338444216807" varName="fieldName" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216819" fileName="NullValueProxy.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="3102837338444216826" varName="args" />
-      <varInfo nodeId="3102837338444216824" varName="jniSignature" />
-      <varInfo nodeId="3102837338444216822" varName="name" />
-      <varInfo nodeId="4775046149728398501" varName="threadReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216843" fileName="NullValueProxy.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="3102837338444216850" varName="args" />
-      <varInfo nodeId="3102837338444216848" varName="jniSignature" />
-      <varInfo nodeId="3102837338444216846" varName="name" />
-      <varInfo nodeId="4775046149728398498" varName="threadReference" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216867" fileName="NullValueProxy.java" startLine="31" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="3102837338444216870" varName="typename" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216876" fileName="NullValueProxy.java" startLine="36" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="3102837338444216883" fileName="NullValueProxy.java" startLine="41" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="3102837338444216902" fileName="NullValueProxy.java" startLine="52" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="3102837338444216905" varName="element" />
-      <varInfo nodeId="3102837338444216907" varName="index" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216916" fileName="NullValueProxy.java" startLine="57" startPosition="0" endLine="61" endPosition="0" />
-    <scopeInfo nodeId="3102837338444216925" fileName="NullValueProxy.java" startLine="62" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="3102837338444216928" varName="proxy" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216890" fileName="NullValueProxy.java" startLine="46" startPosition="0" endLine="51" endPosition="0">
-      <varInfo nodeId="3102837338444216893" varName="index" />
-    </scopeInfo>
-    <unitInfo nodeId="3102837338444216799" fileName="NullValueProxy.java" startLine="12" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.NullValueProxy" />
+    <file name="NullValueProxy.java">
+      <node id="3102837338444216810" at="17,54,18,86" concept="13" />
+      <node id="3102837338444216830" at="22,118,23,118" concept="13" />
+      <node id="3102837338444216854" at="27,123,28,124" concept="13" />
+      <node id="3102837338444216873" at="32,48,33,17" concept="9" />
+      <node id="3102837338444216880" at="37,30,38,16" concept="9" />
+      <node id="3102837338444216887" at="42,32,43,16" concept="9" />
+      <node id="3102837338444216896" at="48,46,49,74" concept="13" />
+      <node id="3102837338444216910" at="53,79,54,74" concept="13" />
+      <node id="3102837338444216920" at="58,26,59,73" concept="13" />
+      <node id="3102837338444216931" at="63,48,64,44" concept="9" />
+      <node id="7866772524121888510" at="67,35,68,18" concept="9" />
+      <node id="3102837338444216801" at="13,0,15,0" concept="2" trace="NullValueProxy#()V" />
+      <node id="7866772524121888343" at="67,0,70,0" concept="7" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="3102837338444216804" at="16,0,20,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="3102837338444216819" at="21,0,25,0" concept="7" trace="invokeMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="3102837338444216843" at="26,0,30,0" concept="7" trace="invokeSuperMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="3102837338444216867" at="31,0,35,0" concept="7" trace="isInstanceOf#(Ljava/lang/String;)Z" />
+      <node id="3102837338444216876" at="36,0,40,0" concept="7" trace="getJDIValue#()Lcom/sun/jdi/Value;" />
+      <node id="3102837338444216883" at="41,0,45,0" concept="7" trace="getJavaValue#()Ljava/lang/Object;" />
+      <node id="3102837338444216902" at="52,0,56,0" concept="7" trace="setElement#(Lcom/sun/jdi/Value;I)V" />
+      <node id="3102837338444216916" at="57,0,61,0" concept="7" trace="getLength#()I" />
+      <node id="3102837338444216925" at="62,0,66,0" concept="7" trace="javaEquals#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
+      <node id="3102837338444216890" at="46,0,51,0" concept="7" trace="getElementAt#(I)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <scope id="3102837338444216803" at="13,32,13,32" />
+      <scope id="3102837338444216809" at="17,54,18,86" />
+      <scope id="3102837338444216829" at="22,118,23,118" />
+      <scope id="3102837338444216853" at="27,123,28,124" />
+      <scope id="3102837338444216872" at="32,48,33,17" />
+      <scope id="3102837338444216879" at="37,30,38,16" />
+      <scope id="3102837338444216886" at="42,32,43,16" />
+      <scope id="3102837338444216895" at="48,46,49,74" />
+      <scope id="3102837338444216909" at="53,79,54,74" />
+      <scope id="3102837338444216919" at="58,26,59,73" />
+      <scope id="3102837338444216930" at="63,48,64,44" />
+      <scope id="7866772524121888351" at="67,35,68,18" />
+      <scope id="3102837338444216801" at="13,0,15,0" />
+      <scope id="7866772524121888343" at="67,0,70,0" />
+      <scope id="3102837338444216804" at="16,0,20,0">
+        <var name="fieldName" id="3102837338444216807" />
+      </scope>
+      <scope id="3102837338444216819" at="21,0,25,0">
+        <var name="args" id="3102837338444216826" />
+        <var name="jniSignature" id="3102837338444216824" />
+        <var name="name" id="3102837338444216822" />
+        <var name="threadReference" id="4775046149728398501" />
+      </scope>
+      <scope id="3102837338444216843" at="26,0,30,0">
+        <var name="args" id="3102837338444216850" />
+        <var name="jniSignature" id="3102837338444216848" />
+        <var name="name" id="3102837338444216846" />
+        <var name="threadReference" id="4775046149728398498" />
+      </scope>
+      <scope id="3102837338444216867" at="31,0,35,0">
+        <var name="typename" id="3102837338444216870" />
+      </scope>
+      <scope id="3102837338444216876" at="36,0,40,0" />
+      <scope id="3102837338444216883" at="41,0,45,0" />
+      <scope id="3102837338444216902" at="52,0,56,0">
+        <var name="element" id="3102837338444216905" />
+        <var name="index" id="3102837338444216907" />
+      </scope>
+      <scope id="3102837338444216916" at="57,0,61,0" />
+      <scope id="3102837338444216925" at="62,0,66,0">
+        <var name="proxy" id="3102837338444216928" />
+      </scope>
+      <scope id="3102837338444216890" at="46,0,51,0">
+        <var name="index" id="3102837338444216893" />
+      </scope>
+      <unit id="3102837338444216799" at="12,0,71,0" name="jetbrains.mps.debugger.java.runtime.evaluation.proxies.NullValueProxy" />
+    </file>
   </root>
   <root nodeRef="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)/3102837338444216936">
-    <nodeInfo nodeId="3102837338444216948" fileName="ArrayValueProxy.java" startLine="26" startPosition="48" endLine="27" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3102837338444216955" fileName="ArrayValueProxy.java" startLine="31" startPosition="42" endLine="32" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216966" fileName="ArrayValueProxy.java" startLine="36" startPosition="54" endLine="37" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="3102837338444216969" fileName="ArrayValueProxy.java" startLine="37" startPosition="47" endLine="38" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216978" fileName="ArrayValueProxy.java" startLine="43" startPosition="46" endLine="44" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217020" fileName="ArrayValueProxy.java" startLine="49" startPosition="9" endLine="50" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3102837338444216999" fileName="ArrayValueProxy.java" startLine="51" startPosition="38" endLine="52" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444217010" fileName="ArrayValueProxy.java" startLine="53" startPosition="41" endLine="54" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444217032" fileName="ArrayValueProxy.java" startLine="59" startPosition="26" endLine="60" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217048" fileName="ArrayValueProxy.java" startLine="64" startPosition="151" endLine="65" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3102837338444217050" fileName="ArrayValueProxy.java" startLine="65" startPosition="105" endLine="66" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444217060" fileName="ArrayValueProxy.java" startLine="66" startPosition="129" endLine="67" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444217067" fileName="ArrayValueProxy.java" startLine="67" startPosition="99" endLine="68" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444217090" fileName="ArrayValueProxy.java" startLine="71" startPosition="143" endLine="72" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444217100" fileName="ArrayValueProxy.java" startLine="72" startPosition="91" endLine="73" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217121" fileName="ArrayValueProxy.java" startLine="79" startPosition="121" endLine="80" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="2743718125356832457" fileName="ArrayValueProxy.java" startLine="84" startPosition="75" endLine="85" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217158" fileName="ArrayValueProxy.java" startLine="90" startPosition="60" endLine="91" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217160" fileName="ArrayValueProxy.java" startLine="92" startPosition="5" endLine="93" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7866772524121868668" fileName="ArrayValueProxy.java" startLine="96" startPosition="35" endLine="97" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444216940" fileName="ArrayValueProxy.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ArrayValueProxy#(Lcom/sun/jdi/ArrayReference;)V" />
-    <nodeInfo nodeId="3102837338444217149" fileName="ArrayValueProxy.java" startLine="89" startPosition="48" endLine="92" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7866772524121863286" fileName="ArrayValueProxy.java" startLine="96" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3102837338444216951" fileName="ArrayValueProxy.java" startLine="30" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getArrayValue#()Lcom/sun/jdi/ArrayReference;" />
-    <nodeInfo nodeId="3102837338444217028" fileName="ArrayValueProxy.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLength#()I" />
-    <nodeInfo nodeId="3102837338444217110" fileName="ArrayValueProxy.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeSuperMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="3102837338444217126" fileName="ArrayValueProxy.java" startLine="83" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInstanceOf#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="3102837338444216960" fileName="ArrayValueProxy.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="3102837338444216972" fileName="ArrayValueProxy.java" startLine="41" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getElementAt#(I)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="3102837338444217082" fileName="ArrayValueProxy.java" startLine="70" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="3102837338444216996" fileName="ArrayValueProxy.java" startLine="48" startPosition="79" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="3102837338444217076" fileName="ArrayValueProxy.java" startLine="68" startPosition="101" endLine="75" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217143" fileName="ArrayValueProxy.java" startLine="88" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="javaEquals#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
-    <nodeInfo nodeId="3102837338444216988" fileName="ArrayValueProxy.java" startLine="47" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setElement#(Lcom/sun/jdi/Value;I)V" />
-    <nodeInfo nodeId="3102837338444217037" fileName="ArrayValueProxy.java" startLine="63" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invokeMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <scopeInfo nodeId="3102837338444216947" fileName="ArrayValueProxy.java" startLine="26" startPosition="48" endLine="27" endPosition="17" />
-    <scopeInfo nodeId="3102837338444216954" fileName="ArrayValueProxy.java" startLine="31" startPosition="42" endLine="32" endPosition="36" />
-    <scopeInfo nodeId="3102837338444216977" fileName="ArrayValueProxy.java" startLine="43" startPosition="46" endLine="44" endPosition="123" />
-    <scopeInfo nodeId="3102837338444217019" fileName="ArrayValueProxy.java" startLine="49" startPosition="9" endLine="50" endPosition="47" />
-    <scopeInfo nodeId="3102837338444216997" fileName="ArrayValueProxy.java" startLine="51" startPosition="0" endLine="52" endPosition="82">
-      <varInfo nodeId="3102837338444217006" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216998" fileName="ArrayValueProxy.java" startLine="51" startPosition="38" endLine="52" endPosition="82" />
-    <scopeInfo nodeId="3102837338444217008" fileName="ArrayValueProxy.java" startLine="53" startPosition="0" endLine="54" endPosition="82">
-      <varInfo nodeId="3102837338444217017" varName="e" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217009" fileName="ArrayValueProxy.java" startLine="53" startPosition="41" endLine="54" endPosition="82" />
-    <scopeInfo nodeId="3102837338444217031" fileName="ArrayValueProxy.java" startLine="59" startPosition="26" endLine="60" endPosition="36" />
-    <scopeInfo nodeId="3102837338444217120" fileName="ArrayValueProxy.java" startLine="79" startPosition="121" endLine="80" endPosition="79" />
-    <scopeInfo nodeId="3102837338444217131" fileName="ArrayValueProxy.java" startLine="84" startPosition="75" endLine="85" endPosition="104" />
-    <scopeInfo nodeId="3102837338444217157" fileName="ArrayValueProxy.java" startLine="90" startPosition="60" endLine="91" endPosition="19" />
-    <scopeInfo nodeId="7866772524121863293" fileName="ArrayValueProxy.java" startLine="96" startPosition="35" endLine="97" endPosition="71" />
-    <scopeInfo nodeId="3102837338444216965" fileName="ArrayValueProxy.java" startLine="36" startPosition="54" endLine="38" endPosition="16" />
-    <scopeInfo nodeId="3102837338444217089" fileName="ArrayValueProxy.java" startLine="71" startPosition="143" endLine="73" endPosition="62">
-      <varInfo nodeId="3102837338444217091" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216940" fileName="ArrayValueProxy.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="3102837338444216943" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="7866772524121863286" fileName="ArrayValueProxy.java" startLine="96" startPosition="0" endLine="99" endPosition="0" />
-    <scopeInfo nodeId="3102837338444216951" fileName="ArrayValueProxy.java" startLine="30" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="3102837338444217028" fileName="ArrayValueProxy.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="3102837338444217110" fileName="ArrayValueProxy.java" startLine="78" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="3102837338444217117" varName="args" />
-      <varInfo nodeId="3102837338444217115" varName="jniSignature" />
-      <varInfo nodeId="3102837338444217113" varName="name" />
-      <varInfo nodeId="4775046149728398493" varName="threadRefence" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217126" fileName="ArrayValueProxy.java" startLine="83" startPosition="0" endLine="87" endPosition="0">
-      <varInfo nodeId="3102837338444217129" varName="typename" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217148" fileName="ArrayValueProxy.java" startLine="89" startPosition="48" endLine="93" endPosition="47" />
-    <scopeInfo nodeId="3102837338444216960" fileName="ArrayValueProxy.java" startLine="35" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="3102837338444216963" varName="fieldName" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216972" fileName="ArrayValueProxy.java" startLine="41" startPosition="0" endLine="46" endPosition="0">
-      <varInfo nodeId="3102837338444216975" varName="index" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217082" fileName="ArrayValueProxy.java" startLine="70" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="3102837338444216995" fileName="ArrayValueProxy.java" startLine="48" startPosition="79" endLine="55" endPosition="5" />
-    <scopeInfo nodeId="3102837338444217143" fileName="ArrayValueProxy.java" startLine="88" startPosition="0" endLine="95" endPosition="0">
-      <varInfo nodeId="3102837338444217146" varName="proxy" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444216988" fileName="ArrayValueProxy.java" startLine="47" startPosition="0" endLine="57" endPosition="0">
-      <varInfo nodeId="3102837338444216991" varName="element" />
-      <varInfo nodeId="3102837338444216993" varName="index" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217047" fileName="ArrayValueProxy.java" startLine="64" startPosition="151" endLine="75" endPosition="7">
-      <varInfo nodeId="3102837338444217068" varName="argValues" />
-      <varInfo nodeId="3102837338444217061" varName="method" />
-      <varInfo nodeId="3102837338444217051" varName="objectType" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217037" fileName="ArrayValueProxy.java" startLine="63" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="3102837338444217044" varName="args" />
-      <varInfo nodeId="3102837338444217042" varName="jniSignature" />
-      <varInfo nodeId="3102837338444217040" varName="name" />
-      <varInfo nodeId="4775046149728398453" varName="threadReference" />
-    </scopeInfo>
-    <unitInfo nodeId="3102837338444217080" fileName="ArrayValueProxy.java" startLine="69" startPosition="58" endLine="75" endPosition="5" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ArrayValueProxy$1" />
-    <unitInfo nodeId="3102837338444216936" fileName="ArrayValueProxy.java" startLine="25" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ArrayValueProxy" />
+    <file name="ArrayValueProxy.java">
+      <node id="3102837338444216948" at="26,48,27,17" concept="11" />
+      <node id="3102837338444216955" at="31,42,32,36" concept="9" />
+      <node id="3102837338444216966" at="36,54,37,47" concept="0" />
+      <node id="3102837338444216969" at="37,47,38,16" concept="9" />
+      <node id="3102837338444216978" at="43,46,44,123" concept="9" />
+      <node id="3102837338444217020" at="49,9,50,47" concept="3" />
+      <node id="3102837338444216999" at="51,38,52,82" concept="13" />
+      <node id="3102837338444217010" at="53,41,54,82" concept="13" />
+      <node id="3102837338444217032" at="59,26,60,36" concept="9" />
+      <node id="3102837338444217048" at="64,151,65,105" concept="10" />
+      <node id="3102837338444217050" at="65,105,66,129" concept="8" />
+      <node id="3102837338444217060" at="66,129,67,99" concept="8" />
+      <node id="3102837338444217067" at="67,99,68,101" concept="8" />
+      <node id="3102837338444217090" at="71,143,72,91" concept="8" />
+      <node id="3102837338444217100" at="72,91,73,62" concept="9" />
+      <node id="3102837338444217121" at="79,121,80,79" concept="13" />
+      <node id="2743718125356832457" at="84,75,85,104" concept="9" />
+      <node id="3102837338444217158" at="90,60,91,19" concept="9" />
+      <node id="3102837338444217160" at="92,5,93,47" concept="9" />
+      <node id="7866772524121868668" at="96,35,97,71" concept="9" />
+      <node id="3102837338444216940" at="26,0,29,0" concept="2" trace="ArrayValueProxy#(Lcom/sun/jdi/ArrayReference;)V" />
+      <node id="3102837338444217149" at="89,48,92,5" concept="6" />
+      <node id="7866772524121863286" at="96,0,99,0" concept="7" trace="getPresentation#()Ljava/lang/String;" />
+      <node id="3102837338444216951" at="30,0,34,0" concept="7" trace="getArrayValue#()Lcom/sun/jdi/ArrayReference;" />
+      <node id="3102837338444217028" at="58,0,62,0" concept="7" trace="getLength#()I" />
+      <node id="3102837338444217110" at="78,0,82,0" concept="7" trace="invokeSuperMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="3102837338444217126" at="83,0,87,0" concept="7" trace="isInstanceOf#(Ljava/lang/String;)Z" />
+      <node id="3102837338444216960" at="35,0,40,0" concept="7" trace="getFieldValue#(Ljava/lang/String;)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="3102837338444216972" at="41,0,46,0" concept="7" trace="getElementAt#(I)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="3102837338444217082" at="70,0,75,0" concept="7" trace="invoke#()Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="3102837338444216996" at="48,79,55,5" concept="14" />
+      <node id="3102837338444217076" at="68,101,75,7" concept="9" />
+      <node id="3102837338444217143" at="88,0,95,0" concept="7" trace="javaEquals#(Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;)Z" />
+      <node id="3102837338444216988" at="47,0,57,0" concept="7" trace="setElement#(Lcom/sun/jdi/Value;I)V" />
+      <node id="3102837338444217037" at="63,0,77,0" concept="7" trace="invokeMethod#(Ljava/lang/String;Ljava/lang/String;Lcom/sun/jdi/ThreadReference;null)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <scope id="3102837338444216947" at="26,48,27,17" />
+      <scope id="3102837338444216954" at="31,42,32,36" />
+      <scope id="3102837338444216977" at="43,46,44,123" />
+      <scope id="3102837338444217019" at="49,9,50,47" />
+      <scope id="3102837338444216997" at="51,0,52,82">
+        <var name="e" id="3102837338444217006" />
+      </scope>
+      <scope id="3102837338444216998" at="51,38,52,82" />
+      <scope id="3102837338444217008" at="53,0,54,82">
+        <var name="e" id="3102837338444217017" />
+      </scope>
+      <scope id="3102837338444217009" at="53,41,54,82" />
+      <scope id="3102837338444217031" at="59,26,60,36" />
+      <scope id="3102837338444217120" at="79,121,80,79" />
+      <scope id="3102837338444217131" at="84,75,85,104" />
+      <scope id="3102837338444217157" at="90,60,91,19" />
+      <scope id="7866772524121863293" at="96,35,97,71" />
+      <scope id="3102837338444216965" at="36,54,38,16" />
+      <scope id="3102837338444217089" at="71,143,73,62">
+        <var name="result" id="3102837338444217091" />
+      </scope>
+      <scope id="3102837338444216940" at="26,0,29,0">
+        <var name="value" id="3102837338444216943" />
+      </scope>
+      <scope id="7866772524121863286" at="96,0,99,0" />
+      <scope id="3102837338444216951" at="30,0,34,0" />
+      <scope id="3102837338444217028" at="58,0,62,0" />
+      <scope id="3102837338444217110" at="78,0,82,0">
+        <var name="args" id="3102837338444217117" />
+        <var name="jniSignature" id="3102837338444217115" />
+        <var name="name" id="3102837338444217113" />
+        <var name="threadRefence" id="4775046149728398493" />
+      </scope>
+      <scope id="3102837338444217126" at="83,0,87,0">
+        <var name="typename" id="3102837338444217129" />
+      </scope>
+      <scope id="3102837338444217148" at="89,48,93,47" />
+      <scope id="3102837338444216960" at="35,0,40,0">
+        <var name="fieldName" id="3102837338444216963" />
+      </scope>
+      <scope id="3102837338444216972" at="41,0,46,0">
+        <var name="index" id="3102837338444216975" />
+      </scope>
+      <scope id="3102837338444217082" at="70,0,75,0" />
+      <scope id="3102837338444216995" at="48,79,55,5" />
+      <scope id="3102837338444217143" at="88,0,95,0">
+        <var name="proxy" id="3102837338444217146" />
+      </scope>
+      <scope id="3102837338444216988" at="47,0,57,0">
+        <var name="element" id="3102837338444216991" />
+        <var name="index" id="3102837338444216993" />
+      </scope>
+      <scope id="3102837338444217047" at="64,151,75,7">
+        <var name="argValues" id="3102837338444217068" />
+        <var name="method" id="3102837338444217061" />
+        <var name="objectType" id="3102837338444217051" />
+      </scope>
+      <scope id="3102837338444217037" at="63,0,77,0">
+        <var name="args" id="3102837338444217044" />
+        <var name="jniSignature" id="3102837338444217042" />
+        <var name="name" id="3102837338444217040" />
+        <var name="threadReference" id="4775046149728398453" />
+      </scope>
+      <unit id="3102837338444217080" at="69,58,75,5" name="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ArrayValueProxy$1" />
+      <unit id="3102837338444216936" at="25,0,100,0" name="jetbrains.mps.debugger.java.runtime.evaluation.proxies.ArrayValueProxy" />
+    </file>
   </root>
   <root nodeRef="r:88da44e4-ffd4-490b-bf61-1da15124dd34(jetbrains.mps.debugger.java.runtime.evaluation.proxies)/3102837338444217168">
-    <nodeInfo nodeId="3102837338444217186" fileName="MirrorUtilImpl.java" startLine="37" startPosition="24" endLine="38" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217315" fileName="MirrorUtilImpl.java" startLine="40" startPosition="35" endLine="41" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217304" fileName="MirrorUtilImpl.java" startLine="43" startPosition="32" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217293" fileName="MirrorUtilImpl.java" startLine="46" startPosition="35" endLine="47" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217282" fileName="MirrorUtilImpl.java" startLine="49" startPosition="33" endLine="50" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217271" fileName="MirrorUtilImpl.java" startLine="52" startPosition="33" endLine="53" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217260" fileName="MirrorUtilImpl.java" startLine="55" startPosition="32" endLine="56" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217249" fileName="MirrorUtilImpl.java" startLine="58" startPosition="34" endLine="59" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217238" fileName="MirrorUtilImpl.java" startLine="61" startPosition="37" endLine="62" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217230" fileName="MirrorUtilImpl.java" startLine="64" startPosition="34" endLine="65" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217226" fileName="MirrorUtilImpl.java" startLine="66" startPosition="12" endLine="67" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444217338" fileName="MirrorUtilImpl.java" startLine="74" startPosition="46" endLine="75" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217448" fileName="MirrorUtilImpl.java" startLine="77" startPosition="45" endLine="78" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444217459" fileName="MirrorUtilImpl.java" startLine="79" startPosition="51" endLine="80" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217468" fileName="MirrorUtilImpl.java" startLine="82" startPosition="49" endLine="83" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217477" fileName="MirrorUtilImpl.java" startLine="85" startPosition="48" endLine="86" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217486" fileName="MirrorUtilImpl.java" startLine="88" startPosition="48" endLine="89" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217495" fileName="MirrorUtilImpl.java" startLine="91" startPosition="50" endLine="92" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217504" fileName="MirrorUtilImpl.java" startLine="94" startPosition="49" endLine="95" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217513" fileName="MirrorUtilImpl.java" startLine="97" startPosition="51" endLine="98" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217522" fileName="MirrorUtilImpl.java" startLine="100" startPosition="48" endLine="101" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217354" fileName="MirrorUtilImpl.java" startLine="104" startPosition="46" endLine="105" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444217422" fileName="MirrorUtilImpl.java" startLine="106" startPosition="352" endLine="107" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444217434" fileName="MirrorUtilImpl.java" startLine="107" startPosition="84" endLine="108" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444217444" fileName="MirrorUtilImpl.java" startLine="108" startPosition="64" endLine="109" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217526" fileName="MirrorUtilImpl.java" startLine="111" startPosition="5" endLine="112" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444217539" fileName="MirrorUtilImpl.java" startLine="117" startPosition="96" endLine="118" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444217547" fileName="MirrorUtilImpl.java" startLine="118" startPosition="53" endLine="119" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217567" fileName="MirrorUtilImpl.java" startLine="125" startPosition="24" endLine="126" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217575" fileName="MirrorUtilImpl.java" startLine="128" startPosition="37" endLine="129" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217614" fileName="MirrorUtilImpl.java" startLine="131" startPosition="42" endLine="132" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217606" fileName="MirrorUtilImpl.java" startLine="134" startPosition="43" endLine="135" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217598" fileName="MirrorUtilImpl.java" startLine="137" startPosition="42" endLine="138" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217594" fileName="MirrorUtilImpl.java" startLine="139" startPosition="12" endLine="140" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="3102837338444217632" fileName="MirrorUtilImpl.java" startLine="146" startPosition="72" endLine="147" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444217644" fileName="MirrorUtilImpl.java" startLine="148" startPosition="29" endLine="149" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3102837338444217662" fileName="MirrorUtilImpl.java" startLine="150" startPosition="38" endLine="151" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3102837338444217653" fileName="MirrorUtilImpl.java" startLine="152" startPosition="14" endLine="153" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3102837338444217671" fileName="MirrorUtilImpl.java" startLine="154" startPosition="7" endLine="155" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3102837338444217676" fileName="MirrorUtilImpl.java" startLine="156" startPosition="5" endLine="157" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3102837338444217685" fileName="MirrorUtilImpl.java" startLine="162" startPosition="25" endLine="163" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3102837338444217693" fileName="MirrorUtilImpl.java" startLine="169" startPosition="25" endLine="170" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3102837338444217169" fileName="MirrorUtilImpl.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MirrorUtilImpl#()V" />
-    <nodeInfo nodeId="3102837338444217224" fileName="MirrorUtilImpl.java" startLine="66" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3102837338444217592" fileName="MirrorUtilImpl.java" startLine="139" startPosition="10" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3102837338444217651" fileName="MirrorUtilImpl.java" startLine="152" startPosition="12" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3102837338444217181" fileName="MirrorUtilImpl.java" startLine="36" startPosition="79" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217333" fileName="MirrorUtilImpl.java" startLine="73" startPosition="55" endLine="76" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217454" fileName="MirrorUtilImpl.java" startLine="78" startPosition="64" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217463" fileName="MirrorUtilImpl.java" startLine="81" startPosition="7" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217472" fileName="MirrorUtilImpl.java" startLine="84" startPosition="7" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217481" fileName="MirrorUtilImpl.java" startLine="87" startPosition="7" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217490" fileName="MirrorUtilImpl.java" startLine="90" startPosition="7" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217499" fileName="MirrorUtilImpl.java" startLine="93" startPosition="7" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217508" fileName="MirrorUtilImpl.java" startLine="96" startPosition="7" endLine="99" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217517" fileName="MirrorUtilImpl.java" startLine="99" startPosition="7" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217562" fileName="MirrorUtilImpl.java" startLine="124" startPosition="59" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217570" fileName="MirrorUtilImpl.java" startLine="127" startPosition="5" endLine="130" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7494124042451491854" fileName="MirrorUtilImpl.java" startLine="161" startPosition="25" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="7494124042451491849" fileName="MirrorUtilImpl.java" startLine="168" startPosition="22" endLine="171" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="3102837338444217220" fileName="MirrorUtilImpl.java" startLine="63" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217365" fileName="MirrorUtilImpl.java" startLine="105" startPosition="76" endLine="110" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217588" fileName="MirrorUtilImpl.java" startLine="136" startPosition="10" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217647" fileName="MirrorUtilImpl.java" startLine="149" startPosition="14" endLine="154" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217531" fileName="MirrorUtilImpl.java" startLine="115" startPosition="0" endLine="121" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueProxyFromJava#(Ljava/lang/Object;Lcom/sun/jdi/VirtualMachine;)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="3102837338444217681" fileName="MirrorUtilImpl.java" startLine="160" startPosition="0" endLine="166" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="3102837338444217689" fileName="MirrorUtilImpl.java" startLine="167" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
-    <nodeInfo nodeId="3102837338444217216" fileName="MirrorUtilImpl.java" startLine="60" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217349" fileName="MirrorUtilImpl.java" startLine="103" startPosition="10" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217584" fileName="MirrorUtilImpl.java" startLine="133" startPosition="10" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217639" fileName="MirrorUtilImpl.java" startLine="147" startPosition="51" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3102837338444217212" fileName="MirrorUtilImpl.java" startLine="57" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217580" fileName="MirrorUtilImpl.java" startLine="130" startPosition="5" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217208" fileName="MirrorUtilImpl.java" startLine="54" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217623" fileName="MirrorUtilImpl.java" startLine="144" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValues#(Lcom/sun/jdi/VirtualMachine;null)Ljava/util/List;" />
-    <nodeInfo nodeId="3102837338444217204" fileName="MirrorUtilImpl.java" startLine="51" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217200" fileName="MirrorUtilImpl.java" startLine="48" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217553" fileName="MirrorUtilImpl.java" startLine="122" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueProxy#(Lcom/sun/jdi/Value;)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
-    <nodeInfo nodeId="3102837338444217196" fileName="MirrorUtilImpl.java" startLine="45" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217192" fileName="MirrorUtilImpl.java" startLine="42" startPosition="10" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217188" fileName="MirrorUtilImpl.java" startLine="39" startPosition="5" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217173" fileName="MirrorUtilImpl.java" startLine="35" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJDIValueFromRaw#(Ljava/lang/Object;Lcom/sun/jdi/VirtualMachine;)Lcom/sun/jdi/Value;" />
-    <nodeInfo nodeId="3102837338444217345" fileName="MirrorUtilImpl.java" startLine="76" startPosition="5" endLine="111" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3102837338444217327" fileName="MirrorUtilImpl.java" startLine="71" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getJavaValue#(Lcom/sun/jdi/Value;)Ljava/lang/Object;" />
-    <scopeInfo nodeId="3102837338444217172" fileName="MirrorUtilImpl.java" startLine="32" startPosition="27" endLine="32" endPosition="27" />
-    <scopeInfo nodeId="3102837338444217185" fileName="MirrorUtilImpl.java" startLine="37" startPosition="24" endLine="38" endPosition="18" />
-    <scopeInfo nodeId="3102837338444217314" fileName="MirrorUtilImpl.java" startLine="40" startPosition="35" endLine="41" endPosition="55" />
-    <scopeInfo nodeId="3102837338444217303" fileName="MirrorUtilImpl.java" startLine="43" startPosition="32" endLine="44" endPosition="53" />
-    <scopeInfo nodeId="3102837338444217292" fileName="MirrorUtilImpl.java" startLine="46" startPosition="35" endLine="47" endPosition="59" />
-    <scopeInfo nodeId="3102837338444217281" fileName="MirrorUtilImpl.java" startLine="49" startPosition="33" endLine="50" endPosition="55" />
-    <scopeInfo nodeId="3102837338444217270" fileName="MirrorUtilImpl.java" startLine="52" startPosition="33" endLine="53" endPosition="55" />
-    <scopeInfo nodeId="3102837338444217259" fileName="MirrorUtilImpl.java" startLine="55" startPosition="32" endLine="56" endPosition="53" />
-    <scopeInfo nodeId="3102837338444217248" fileName="MirrorUtilImpl.java" startLine="58" startPosition="34" endLine="59" endPosition="57" />
-    <scopeInfo nodeId="3102837338444217237" fileName="MirrorUtilImpl.java" startLine="61" startPosition="37" endLine="62" endPosition="58" />
-    <scopeInfo nodeId="3102837338444217229" fileName="MirrorUtilImpl.java" startLine="64" startPosition="34" endLine="65" endPosition="41" />
-    <scopeInfo nodeId="3102837338444217225" fileName="MirrorUtilImpl.java" startLine="66" startPosition="12" endLine="67" endPosition="48" />
-    <scopeInfo nodeId="3102837338444217337" fileName="MirrorUtilImpl.java" startLine="74" startPosition="46" endLine="75" endPosition="50" />
-    <scopeInfo nodeId="3102837338444217458" fileName="MirrorUtilImpl.java" startLine="79" startPosition="51" endLine="80" endPosition="45" />
-    <scopeInfo nodeId="3102837338444217467" fileName="MirrorUtilImpl.java" startLine="82" startPosition="49" endLine="83" endPosition="43" />
-    <scopeInfo nodeId="3102837338444217476" fileName="MirrorUtilImpl.java" startLine="85" startPosition="48" endLine="86" endPosition="42" />
-    <scopeInfo nodeId="3102837338444217485" fileName="MirrorUtilImpl.java" startLine="88" startPosition="48" endLine="89" endPosition="42" />
-    <scopeInfo nodeId="3102837338444217494" fileName="MirrorUtilImpl.java" startLine="91" startPosition="50" endLine="92" endPosition="44" />
-    <scopeInfo nodeId="3102837338444217503" fileName="MirrorUtilImpl.java" startLine="94" startPosition="49" endLine="95" endPosition="43" />
-    <scopeInfo nodeId="3102837338444217512" fileName="MirrorUtilImpl.java" startLine="97" startPosition="51" endLine="98" endPosition="41" />
-    <scopeInfo nodeId="3102837338444217521" fileName="MirrorUtilImpl.java" startLine="100" startPosition="48" endLine="101" endPosition="42" />
-    <scopeInfo nodeId="3102837338444217566" fileName="MirrorUtilImpl.java" startLine="125" startPosition="24" endLine="126" endPosition="34" />
-    <scopeInfo nodeId="3102837338444217574" fileName="MirrorUtilImpl.java" startLine="128" startPosition="37" endLine="129" endPosition="39" />
-    <scopeInfo nodeId="3102837338444217613" fileName="MirrorUtilImpl.java" startLine="131" startPosition="42" endLine="132" endPosition="57" />
-    <scopeInfo nodeId="3102837338444217605" fileName="MirrorUtilImpl.java" startLine="134" startPosition="43" endLine="135" endPosition="59" />
-    <scopeInfo nodeId="3102837338444217597" fileName="MirrorUtilImpl.java" startLine="137" startPosition="42" endLine="138" endPosition="61" />
-    <scopeInfo nodeId="3102837338444217593" fileName="MirrorUtilImpl.java" startLine="139" startPosition="12" endLine="140" endPosition="48" />
-    <scopeInfo nodeId="3102837338444217661" fileName="MirrorUtilImpl.java" startLine="150" startPosition="38" endLine="151" endPosition="46" />
-    <scopeInfo nodeId="3102837338444217652" fileName="MirrorUtilImpl.java" startLine="152" startPosition="14" endLine="153" endPosition="45" />
-    <scopeInfo nodeId="7494124042451491856" fileName="MirrorUtilImpl.java" startLine="162" startPosition="25" endLine="163" endPosition="22" />
-    <scopeInfo nodeId="7494124042451491851" fileName="MirrorUtilImpl.java" startLine="169" startPosition="25" endLine="170" endPosition="22" />
-    <scopeInfo nodeId="3102837338444217169" fileName="MirrorUtilImpl.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="3102837338444217538" fileName="MirrorUtilImpl.java" startLine="117" startPosition="96" endLine="119" endPosition="28">
-      <varInfo nodeId="3102837338444217540" varName="v" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217421" fileName="MirrorUtilImpl.java" startLine="106" startPosition="352" endLine="109" endPosition="36">
-      <varInfo nodeId="3102837338444217423" varName="f" />
-      <varInfo nodeId="3102837338444217435" varName="result" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217684" fileName="MirrorUtilImpl.java" startLine="161" startPosition="25" endLine="164" endPosition="5" />
-    <scopeInfo nodeId="3102837338444217692" fileName="MirrorUtilImpl.java" startLine="168" startPosition="22" endLine="171" endPosition="5" />
-    <scopeInfo nodeId="3102837338444217353" fileName="MirrorUtilImpl.java" startLine="104" startPosition="46" endLine="110" endPosition="7">
-      <varInfo nodeId="3102837338444217355" varName="typename" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217531" fileName="MirrorUtilImpl.java" startLine="115" startPosition="0" endLine="121" endPosition="0">
-      <varInfo nodeId="3102837338444217533" varName="javaValue" />
-      <varInfo nodeId="3102837338444217536" varName="machine" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217681" fileName="MirrorUtilImpl.java" startLine="160" startPosition="0" endLine="166" endPosition="0" />
-    <scopeInfo nodeId="3102837338444217689" fileName="MirrorUtilImpl.java" startLine="167" startPosition="0" endLine="173" endPosition="0" />
-    <scopeInfo nodeId="3102837338444217643" fileName="MirrorUtilImpl.java" startLine="148" startPosition="29" endLine="155" endPosition="23">
-      <varInfo nodeId="3102837338444217645" varName="v" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217639" fileName="MirrorUtilImpl.java" startLine="147" startPosition="51" endLine="156" endPosition="5">
-      <varInfo nodeId="3102837338444217641" varName="arg" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217631" fileName="MirrorUtilImpl.java" startLine="146" startPosition="72" endLine="157" endPosition="21">
-      <varInfo nodeId="3102837338444217633" varName="argValues" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217623" fileName="MirrorUtilImpl.java" startLine="144" startPosition="0" endLine="159" endPosition="0">
-      <varInfo nodeId="3102837338444217628" varName="args" />
-      <varInfo nodeId="4775046149728398365" varName="machine" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217561" fileName="MirrorUtilImpl.java" startLine="124" startPosition="59" endLine="141" endPosition="5" />
-    <scopeInfo nodeId="3102837338444217553" fileName="MirrorUtilImpl.java" startLine="122" startPosition="0" endLine="143" endPosition="0">
-      <varInfo nodeId="3102837338444217555" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217447" fileName="MirrorUtilImpl.java" startLine="77" startPosition="45" endLine="102" endPosition="7">
-      <varInfo nodeId="3102837338444217449" varName="primitiveValue" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217180" fileName="MirrorUtilImpl.java" startLine="36" startPosition="79" endLine="68" endPosition="5" />
-    <scopeInfo nodeId="3102837338444217173" fileName="MirrorUtilImpl.java" startLine="35" startPosition="0" endLine="70" endPosition="0">
-      <varInfo nodeId="3102837338444217175" varName="value" />
-      <varInfo nodeId="3102837338444217178" varName="vm" />
-    </scopeInfo>
-    <scopeInfo nodeId="3102837338444217332" fileName="MirrorUtilImpl.java" startLine="73" startPosition="55" endLine="112" endPosition="46" />
-    <scopeInfo nodeId="3102837338444217327" fileName="MirrorUtilImpl.java" startLine="71" startPosition="0" endLine="114" endPosition="0">
-      <varInfo nodeId="3102837338444217329" varName="jdiValue" />
-    </scopeInfo>
-    <unitInfo nodeId="3102837338444217168" fileName="MirrorUtilImpl.java" startLine="31" startPosition="0" endLine="174" endPosition="0" unitName="jetbrains.mps.debugger.java.runtime.evaluation.proxies.MirrorUtilImpl" />
+    <file name="MirrorUtilImpl.java">
+      <node id="3102837338444217186" at="37,24,38,18" concept="9" />
+      <node id="3102837338444217315" at="40,35,41,55" concept="9" />
+      <node id="3102837338444217304" at="43,32,44,53" concept="9" />
+      <node id="3102837338444217293" at="46,35,47,59" concept="9" />
+      <node id="3102837338444217282" at="49,33,50,55" concept="9" />
+      <node id="3102837338444217271" at="52,33,53,55" concept="9" />
+      <node id="3102837338444217260" at="55,32,56,53" concept="9" />
+      <node id="3102837338444217249" at="58,34,59,57" concept="9" />
+      <node id="3102837338444217238" at="61,37,62,58" concept="9" />
+      <node id="3102837338444217230" at="64,34,65,41" concept="9" />
+      <node id="3102837338444217226" at="66,12,67,48" concept="13" />
+      <node id="3102837338444217338" at="74,46,75,50" concept="9" />
+      <node id="3102837338444217448" at="77,45,78,64" concept="8" />
+      <node id="3102837338444217459" at="79,51,80,45" concept="9" />
+      <node id="3102837338444217468" at="82,49,83,43" concept="9" />
+      <node id="3102837338444217477" at="85,48,86,42" concept="9" />
+      <node id="3102837338444217486" at="88,48,89,42" concept="9" />
+      <node id="3102837338444217495" at="91,50,92,44" concept="9" />
+      <node id="3102837338444217504" at="94,49,95,43" concept="9" />
+      <node id="3102837338444217513" at="97,51,98,41" concept="9" />
+      <node id="3102837338444217522" at="100,48,101,42" concept="9" />
+      <node id="3102837338444217354" at="104,46,105,76" concept="8" />
+      <node id="3102837338444217422" at="106,352,107,84" concept="8" />
+      <node id="3102837338444217434" at="107,84,108,64" concept="8" />
+      <node id="3102837338444217444" at="108,64,109,36" concept="9" />
+      <node id="3102837338444217526" at="111,5,112,46" concept="13" />
+      <node id="3102837338444217539" at="117,96,118,53" concept="8" />
+      <node id="3102837338444217547" at="118,53,119,28" concept="9" />
+      <node id="3102837338444217567" at="125,24,126,34" concept="9" />
+      <node id="3102837338444217575" at="128,37,129,39" concept="9" />
+      <node id="3102837338444217614" at="131,42,132,57" concept="9" />
+      <node id="3102837338444217606" at="134,43,135,59" concept="9" />
+      <node id="3102837338444217598" at="137,42,138,61" concept="9" />
+      <node id="3102837338444217594" at="139,12,140,48" concept="13" />
+      <node id="3102837338444217632" at="146,72,147,51" concept="8" />
+      <node id="3102837338444217644" at="148,29,149,14" concept="8" />
+      <node id="3102837338444217662" at="150,38,151,46" concept="3" />
+      <node id="3102837338444217653" at="152,14,153,45" concept="3" />
+      <node id="3102837338444217671" at="154,7,155,23" concept="3" />
+      <node id="3102837338444217676" at="156,5,157,21" concept="9" />
+      <node id="3102837338444217685" at="162,25,163,22" concept="3" />
+      <node id="3102837338444217693" at="169,25,170,22" concept="3" />
+      <node id="3102837338444217169" at="32,0,34,0" concept="2" trace="MirrorUtilImpl#()V" />
+      <node id="3102837338444217224" at="66,10,68,5" concept="1" />
+      <node id="3102837338444217592" at="139,10,141,5" concept="1" />
+      <node id="3102837338444217651" at="152,12,154,7" concept="1" />
+      <node id="3102837338444217181" at="36,79,39,5" concept="6" />
+      <node id="3102837338444217333" at="73,55,76,5" concept="6" />
+      <node id="3102837338444217454" at="78,64,81,7" concept="6" />
+      <node id="3102837338444217463" at="81,7,84,7" concept="6" />
+      <node id="3102837338444217472" at="84,7,87,7" concept="6" />
+      <node id="3102837338444217481" at="87,7,90,7" concept="6" />
+      <node id="3102837338444217490" at="90,7,93,7" concept="6" />
+      <node id="3102837338444217499" at="93,7,96,7" concept="6" />
+      <node id="3102837338444217508" at="96,7,99,7" concept="6" />
+      <node id="3102837338444217517" at="99,7,102,7" concept="6" />
+      <node id="3102837338444217562" at="124,59,127,5" concept="6" />
+      <node id="3102837338444217570" at="127,5,130,5" concept="6" />
+      <node id="7494124042451491854" at="161,25,164,5" concept="12" />
+      <node id="7494124042451491849" at="168,22,171,5" concept="12" />
+      <node id="3102837338444217220" at="63,10,68,5" concept="6" />
+      <node id="3102837338444217365" at="105,76,110,7" concept="6" />
+      <node id="3102837338444217588" at="136,10,141,5" concept="6" />
+      <node id="3102837338444217647" at="149,14,154,7" concept="6" />
+      <node id="3102837338444217531" at="115,0,121,0" concept="7" trace="getValueProxyFromJava#(Ljava/lang/Object;Lcom/sun/jdi/VirtualMachine;)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="3102837338444217681" at="160,0,166,0" concept="7" trace="dispose#()V" />
+      <node id="3102837338444217689" at="167,0,173,0" concept="7" trace="init#()V" />
+      <node id="3102837338444217216" at="60,10,68,5" concept="6" />
+      <node id="3102837338444217349" at="103,10,111,5" concept="6" />
+      <node id="3102837338444217584" at="133,10,141,5" concept="6" />
+      <node id="3102837338444217639" at="147,51,156,5" concept="5" />
+      <node id="3102837338444217212" at="57,10,68,5" concept="6" />
+      <node id="3102837338444217580" at="130,5,141,5" concept="6" />
+      <node id="3102837338444217208" at="54,10,68,5" concept="6" />
+      <node id="3102837338444217623" at="144,0,159,0" concept="7" trace="getValues#(Lcom/sun/jdi/VirtualMachine;null)Ljava/util/List;" />
+      <node id="3102837338444217204" at="51,10,68,5" concept="6" />
+      <node id="3102837338444217200" at="48,10,68,5" concept="6" />
+      <node id="3102837338444217553" at="122,0,143,0" concept="7" trace="getValueProxy#(Lcom/sun/jdi/Value;)Ljetbrains/mps/debugger/java/api/evaluation/proxies/IValueProxy;" />
+      <node id="3102837338444217196" at="45,10,68,5" concept="6" />
+      <node id="3102837338444217192" at="42,10,68,5" concept="6" />
+      <node id="3102837338444217188" at="39,5,68,5" concept="6" />
+      <node id="3102837338444217173" at="35,0,70,0" concept="7" trace="getJDIValueFromRaw#(Ljava/lang/Object;Lcom/sun/jdi/VirtualMachine;)Lcom/sun/jdi/Value;" />
+      <node id="3102837338444217345" at="76,5,111,5" concept="6" />
+      <node id="3102837338444217327" at="71,0,114,0" concept="7" trace="getJavaValue#(Lcom/sun/jdi/Value;)Ljava/lang/Object;" />
+      <scope id="3102837338444217172" at="32,27,32,27" />
+      <scope id="3102837338444217185" at="37,24,38,18" />
+      <scope id="3102837338444217314" at="40,35,41,55" />
+      <scope id="3102837338444217303" at="43,32,44,53" />
+      <scope id="3102837338444217292" at="46,35,47,59" />
+      <scope id="3102837338444217281" at="49,33,50,55" />
+      <scope id="3102837338444217270" at="52,33,53,55" />
+      <scope id="3102837338444217259" at="55,32,56,53" />
+      <scope id="3102837338444217248" at="58,34,59,57" />
+      <scope id="3102837338444217237" at="61,37,62,58" />
+      <scope id="3102837338444217229" at="64,34,65,41" />
+      <scope id="3102837338444217225" at="66,12,67,48" />
+      <scope id="3102837338444217337" at="74,46,75,50" />
+      <scope id="3102837338444217458" at="79,51,80,45" />
+      <scope id="3102837338444217467" at="82,49,83,43" />
+      <scope id="3102837338444217476" at="85,48,86,42" />
+      <scope id="3102837338444217485" at="88,48,89,42" />
+      <scope id="3102837338444217494" at="91,50,92,44" />
+      <scope id="3102837338444217503" at="94,49,95,43" />
+      <scope id="3102837338444217512" at="97,51,98,41" />
+      <scope id="3102837338444217521" at="100,48,101,42" />
+      <scope id="3102837338444217566" at="125,24,126,34" />
+      <scope id="3102837338444217574" at="128,37,129,39" />
+      <scope id="3102837338444217613" at="131,42,132,57" />
+      <scope id="3102837338444217605" at="134,43,135,59" />
+      <scope id="3102837338444217597" at="137,42,138,61" />
+      <scope id="3102837338444217593" at="139,12,140,48" />
+      <scope id="3102837338444217661" at="150,38,151,46" />
+      <scope id="3102837338444217652" at="152,14,153,45" />
+      <scope id="7494124042451491856" at="162,25,163,22" />
+      <scope id="7494124042451491851" at="169,25,170,22" />
+      <scope id="3102837338444217169" at="32,0,34,0" />
+      <scope id="3102837338444217538" at="117,96,119,28">
+        <var name="v" id="3102837338444217540" />
+      </scope>
+      <scope id="3102837338444217421" at="106,352,109,36">
+        <var name="f" id="3102837338444217423" />
+        <var name="result" id="3102837338444217435" />
+      </scope>
+      <scope id="3102837338444217684" at="161,25,164,5" />
+      <scope id="3102837338444217692" at="168,22,171,5" />
+      <scope id="3102837338444217353" at="104,46,110,7">
+        <var name="typename" id="3102837338444217355" />
+      </scope>
+      <scope id="3102837338444217531" at="115,0,121,0">
+        <var name="javaValue" id="3102837338444217533" />
+        <var name="machine" id="3102837338444217536" />
+      </scope>
+      <scope id="3102837338444217681" at="160,0,166,0" />
+      <scope id="3102837338444217689" at="167,0,173,0" />
+      <scope id="3102837338444217643" at="148,29,155,23">
+        <var name="v" id="3102837338444217645" />
+      </scope>
+      <scope id="3102837338444217639" at="147,51,156,5">
+        <var name="arg" id="3102837338444217641" />
+      </scope>
+      <scope id="3102837338444217631" at="146,72,157,21">
+        <var name="argValues" id="3102837338444217633" />
+      </scope>
+      <scope id="3102837338444217623" at="144,0,159,0">
+        <var name="args" id="3102837338444217628" />
+        <var name="machine" id="4775046149728398365" />
+      </scope>
+      <scope id="3102837338444217561" at="124,59,141,5" />
+      <scope id="3102837338444217553" at="122,0,143,0">
+        <var name="value" id="3102837338444217555" />
+      </scope>
+      <scope id="3102837338444217447" at="77,45,102,7">
+        <var name="primitiveValue" id="3102837338444217449" />
+      </scope>
+      <scope id="3102837338444217180" at="36,79,68,5" />
+      <scope id="3102837338444217173" at="35,0,70,0">
+        <var name="value" id="3102837338444217175" />
+        <var name="vm" id="3102837338444217178" />
+      </scope>
+      <scope id="3102837338444217332" at="73,55,112,46" />
+      <scope id="3102837338444217327" at="71,0,114,0">
+        <var name="jdiValue" id="3102837338444217329" />
+      </scope>
+      <unit id="3102837338444217168" at="31,0,174,0" name="jetbrains.mps.debugger.java.runtime.evaluation.proxies.MirrorUtilImpl" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

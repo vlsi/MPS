@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="testMoveElements.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="DummyBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="testMoveElements.behavior.DummyBlock_BehaviorDescriptor" />
-  <unitInfo fileName="ManyStatements_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="testMoveElements.behavior.ManyStatements_BehaviorDescriptor" />
-</debugInfo>
+<debug-info>
+  <root>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,26,0" name="testMoveElements.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="ManyStatements_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="testMoveElements.behavior.ManyStatements_BehaviorDescriptor" />
+    </file>
+    <file name="DummyBlock_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="testMoveElements.behavior.DummyBlock_BehaviorDescriptor" />
+    </file>
+  </root>
+</debug-info>
 

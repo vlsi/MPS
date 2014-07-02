@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -90,7 +90,7 @@ public class DefaultSModel extends LazySModel {
 
   @Deprecated
   public void setRefactoringHistoryElement(Element history) {
-    ModelChange.assertLegalChange(getModelDescriptor());
+    ModelChange.assertLegalChange(this);
 
     myStructureModificationHistory = history;
   }

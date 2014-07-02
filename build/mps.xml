@@ -3,7 +3,7 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/mps" />
   <property name="build.layout" location="${build.dir}/artifacts/mps" />
-  <property name="build.number" value="MPS-135.SNAPSHOT" />
+  <property name="build.number" value="MPS-136.SNAPSHOT" />
   <tstamp>
     <format property="date" pattern="yyyyMMdd" />
   </tstamp>
@@ -52,7 +52,7 @@
     <mkdir dir="${build.tmp}/default/branding.jar/idea" />
     <echoxml file="${build.tmp}/default/branding.jar/idea/IdeaApplicationInfo.xml">
       <component>
-        <version codename="MPS" major="3" minor="1" eap="true" update-channel="MPS31" />
+        <version codename="MPS" major="3" minor="2" eap="true" update-channel="MPS32" />
         <build date="${date}" number="${build.number}" />
         <logo url="/splash.png" textcolor="002387" />
         <about url="/mpsAbout.png" />

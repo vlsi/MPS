@@ -1,29 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
-  <unitInfo fileName="BaseExecuteCommandStatementSync_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.BaseExecuteCommandStatementSync_BehaviorDescriptor" />
-  <unitInfo fileName="BaseExecuteCommandStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.BaseExecuteCommandStatement_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="CommandClosureLiteral_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.CommandClosureLiteral_BehaviorDescriptor" />
-  <unitInfo fileName="ExecuteCommandInEDTStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.ExecuteCommandInEDTStatement_BehaviorDescriptor" />
-  <unitInfo fileName="ExecuteCommandStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.ExecuteCommandStatement_BehaviorDescriptor" />
-  <unitInfo fileName="ExecuteEDTCommandStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.ExecuteEDTCommandStatement_BehaviorDescriptor" />
-  <unitInfo fileName="ExecuteLightweightCommandStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.ExecuteLightweightCommandStatement_BehaviorDescriptor" />
-  <unitInfo fileName="ExecuteTransparentCommandStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.ExecuteTransparentCommandStatement_BehaviorDescriptor" />
-  <unitInfo fileName="ExecuteWriteActionStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.ExecuteWriteActionStatement_BehaviorDescriptor" />
-  <unitInfo fileName="IExecuteCommandStatementSync_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.IExecuteCommandStatementSync_BehaviorDescriptor" />
-  <root nodeRef="r:f9d5a2b1-004e-4138-bf2b-916114888196(jetbrains.mps.lang.access.behavior)/8974276187400348215">
-    <nodeInfo nodeId="8974276187400348218" fileName="CommandClosureLiteral_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8974276187400348215" fileName="CommandClosureLiteral_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8974276187400348215" fileName="CommandClosureLiteral_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_isExecuteSynchronous_1230212745736#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <scopeInfo nodeId="8974276187400348228" fileName="CommandClosureLiteral_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="8974276187400348217" fileName="CommandClosureLiteral_Behavior.java" startLine="12" startPosition="84" endLine="13" endPosition="148" />
-    <scopeInfo nodeId="8974276187400348215" fileName="CommandClosureLiteral_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
-      <varInfo nodeId="8974276187400348215" varName="thisNode" />
-    </scopeInfo>
-    <scopeInfo nodeId="8974276187400348215" fileName="CommandClosureLiteral_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
-      <varInfo nodeId="8974276187400348215" varName="thisNode" />
-    </scopeInfo>
-    <unitInfo nodeId="8974276187400348215" fileName="CommandClosureLiteral_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.access.behavior.CommandClosureLiteral_Behavior" />
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
+  <root>
+    <file name="ExecuteCommandInEDTStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.access.behavior.ExecuteCommandInEDTStatement_BehaviorDescriptor" />
+    </file>
+    <file name="BaseExecuteCommandStatement_BehaviorDescriptor.java">
+      <unit at="7,0,16,0" name="jetbrains.mps.lang.access.behavior.BaseExecuteCommandStatement_BehaviorDescriptor" />
+    </file>
+    <file name="ExecuteEDTCommandStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.access.behavior.ExecuteEDTCommandStatement_BehaviorDescriptor" />
+    </file>
+    <file name="ExecuteLightweightCommandStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.access.behavior.ExecuteLightweightCommandStatement_BehaviorDescriptor" />
+    </file>
+    <file name="CommandClosureLiteral_BehaviorDescriptor.java">
+      <unit at="8,0,21,0" name="jetbrains.mps.lang.access.behavior.CommandClosureLiteral_BehaviorDescriptor" />
+    </file>
+    <file name="ExecuteTransparentCommandStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.access.behavior.ExecuteTransparentCommandStatement_BehaviorDescriptor" />
+    </file>
+    <file name="BehaviorAspectDescriptor.java">
+      <unit at="9,0,40,0" name="jetbrains.mps.lang.access.behavior.BehaviorAspectDescriptor" />
+    </file>
+    <file name="BaseExecuteCommandStatementSync_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.access.behavior.BaseExecuteCommandStatementSync_BehaviorDescriptor" />
+    </file>
+    <file name="IExecuteCommandStatementSync_BehaviorDescriptor.java">
+      <unit at="6,0,8,0" name="jetbrains.mps.lang.access.behavior.IExecuteCommandStatementSync_BehaviorDescriptor" />
+    </file>
+    <file name="ExecuteWriteActionStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.access.behavior.ExecuteWriteActionStatement_BehaviorDescriptor" />
+    </file>
+    <file name="ExecuteCommandStatement_BehaviorDescriptor.java">
+      <unit at="6,0,15,0" name="jetbrains.mps.lang.access.behavior.ExecuteCommandStatement_BehaviorDescriptor" />
+    </file>
   </root>
-</debugInfo>
+  <root nodeRef="r:f9d5a2b1-004e-4138-bf2b-916114888196(jetbrains.mps.lang.access.behavior)/8974276187400348215">
+    <file name="CommandClosureLiteral_Behavior.java">
+      <node id="8974276187400348218" at="12,84,13,148" concept="0" />
+      <node id="8974276187400348215" at="9,0,11,0" concept="1" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="8974276187400348215" at="12,0,15,0" concept="1" trace="virtual_isExecuteSynchronous_1230212745736#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="8974276187400348228" at="9,43,9,43" />
+      <scope id="8974276187400348217" at="12,84,13,148" />
+      <scope id="8974276187400348215" at="9,0,11,0">
+        <var name="thisNode" id="8974276187400348215" />
+      </scope>
+      <scope id="8974276187400348215" at="12,0,15,0">
+        <var name="thisNode" id="8974276187400348215" />
+      </scope>
+      <unit id="8974276187400348215" at="8,0,16,0" name="jetbrains.mps.lang.access.behavior.CommandClosureLiteral_Behavior" />
+    </file>
+  </root>
+</debug-info>
 

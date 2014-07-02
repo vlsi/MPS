@@ -1,70 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root nodeRef="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)/1813663789079454564">
-    <nodeInfo nodeId="1813663789079454565" fileName="TestLightRunState.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="1813663789079454571" fileName="TestLightRunState.java" startLine="10" startPosition="31" endLine="11" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1813663789079454578" fileName="TestLightRunState.java" startLine="14" startPosition="44" endLine="15" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1813663789079454587" fileName="TestLightRunState.java" startLine="18" startPosition="48" endLine="19" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1813663789079454597" fileName="TestLightRunState.java" startLine="22" startPosition="52" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1813663789079454604" fileName="TestLightRunState.java" startLine="23" startPosition="40" endLine="24" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1813663789079454611" fileName="TestLightRunState.java" startLine="27" startPosition="24" endLine="28" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1813663789079454621" fileName="TestLightRunState.java" startLine="31" startPosition="57" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1813663789079454635" fileName="TestLightRunState.java" startLine="35" startPosition="53" endLine="36" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1813663789079454651" fileName="TestLightRunState.java" startLine="40" startPosition="60" endLine="41" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1813663789079454662" fileName="TestLightRunState.java" startLine="44" startPosition="34" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1813663789079454670" fileName="TestLightRunState.java" startLine="48" startPosition="30" endLine="49" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1813663789079454678" fileName="TestLightRunState.java" startLine="52" startPosition="34" endLine="53" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1813663789079454686" fileName="TestLightRunState.java" startLine="56" startPosition="33" endLine="57" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1813663789079454568" fileName="TestLightRunState.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestLightRunState#()V" />
-    <nodeInfo nodeId="1813663789079454576" fileName="TestLightRunState.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="create#()Ljetbrains/mps/lang/test/util/TestLightRunState;" />
-    <nodeInfo nodeId="1813663789079454583" fileName="TestLightRunState.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="set#(Ljetbrains/mps/lang/test/util/TestLightRunStateEnum;)V" />
-    <nodeInfo nodeId="1813663789079454609" fileName="TestLightRunState.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ordinal#()I" />
-    <nodeInfo nodeId="1813663789079454617" fileName="TestLightRunState.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="greater#(Ljetbrains/mps/lang/test/util/TestLightRunStateEnum;)Z" />
-    <nodeInfo nodeId="1813663789079454631" fileName="TestLightRunState.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="greater#(Ljetbrains/mps/lang/test/util/TestLightRunState;)Z" />
-    <nodeInfo nodeId="1813663789079454660" fileName="TestLightRunState.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInitialized#()Z" />
-    <nodeInfo nodeId="1813663789079454668" fileName="TestLightRunState.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isRunning#()Z" />
-    <nodeInfo nodeId="1813663789079454676" fileName="TestLightRunState.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTerminating#()Z" />
-    <nodeInfo nodeId="1813663789079454684" fileName="TestLightRunState.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTerminated#()Z" />
-    <nodeInfo nodeId="1813663789079454593" fileName="TestLightRunState.java" startLine="22" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="advance#(Ljetbrains/mps/lang/test/util/TestLightRunStateEnum;)V" />
-    <nodeInfo nodeId="1813663789079454645" fileName="TestLightRunState.java" startLine="39" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compareTo#(Ljetbrains/mps/lang/test/util/TestLightRunState;)I" />
-    <scopeInfo nodeId="1813663789079454570" fileName="TestLightRunState.java" startLine="10" startPosition="31" endLine="11" endPosition="41" />
-    <scopeInfo nodeId="1813663789079454577" fileName="TestLightRunState.java" startLine="14" startPosition="44" endLine="15" endPosition="35" />
-    <scopeInfo nodeId="1813663789079454586" fileName="TestLightRunState.java" startLine="18" startPosition="48" endLine="19" endPosition="20" />
-    <scopeInfo nodeId="1813663789079454610" fileName="TestLightRunState.java" startLine="27" startPosition="24" endLine="28" endPosition="29" />
-    <scopeInfo nodeId="1813663789079454620" fileName="TestLightRunState.java" startLine="31" startPosition="57" endLine="32" endPosition="46" />
-    <scopeInfo nodeId="1813663789079454634" fileName="TestLightRunState.java" startLine="35" startPosition="53" endLine="36" endPosition="46" />
-    <scopeInfo nodeId="1813663789079454650" fileName="TestLightRunState.java" startLine="40" startPosition="60" endLine="41" endPosition="46" />
-    <scopeInfo nodeId="1813663789079454661" fileName="TestLightRunState.java" startLine="44" startPosition="34" endLine="45" endPosition="56" />
-    <scopeInfo nodeId="1813663789079454669" fileName="TestLightRunState.java" startLine="48" startPosition="30" endLine="49" endPosition="52" />
-    <scopeInfo nodeId="1813663789079454677" fileName="TestLightRunState.java" startLine="52" startPosition="34" endLine="53" endPosition="56" />
-    <scopeInfo nodeId="1813663789079454685" fileName="TestLightRunState.java" startLine="56" startPosition="33" endLine="57" endPosition="55" />
-    <scopeInfo nodeId="1813663789079454596" fileName="TestLightRunState.java" startLine="22" startPosition="52" endLine="24" endPosition="15" />
-    <scopeInfo nodeId="1813663789079454568" fileName="TestLightRunState.java" startLine="10" startPosition="0" endLine="13" endPosition="0" />
-    <scopeInfo nodeId="1813663789079454576" fileName="TestLightRunState.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="1813663789079454583" fileName="TestLightRunState.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="1813663789079454584" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1813663789079454609" fileName="TestLightRunState.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
-    <scopeInfo nodeId="1813663789079454617" fileName="TestLightRunState.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="1813663789079454618" varName="another" />
-    </scopeInfo>
-    <scopeInfo nodeId="1813663789079454631" fileName="TestLightRunState.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
-      <varInfo nodeId="1813663789079454632" varName="another" />
-    </scopeInfo>
-    <scopeInfo nodeId="1813663789079454660" fileName="TestLightRunState.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="1813663789079454668" fileName="TestLightRunState.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="1813663789079454676" fileName="TestLightRunState.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="1813663789079454684" fileName="TestLightRunState.java" startLine="56" startPosition="0" endLine="59" endPosition="0" />
-    <scopeInfo nodeId="1813663789079454593" fileName="TestLightRunState.java" startLine="22" startPosition="0" endLine="26" endPosition="0">
-      <varInfo nodeId="1813663789079454594" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1813663789079454645" fileName="TestLightRunState.java" startLine="39" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="1813663789079454647" varName="another" />
-    </scopeInfo>
-    <unitInfo nodeId="1813663789079454564" fileName="TestLightRunState.java" startLine="7" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.test.util.TestLightRunState" />
+    <file name="TestLightRunState.java">
+      <node id="1813663789079454565" at="8,0,9,0" concept="3" trace="myValue" />
+      <node id="1813663789079454571" at="10,31,11,41" concept="2" />
+      <node id="1813663789079454578" at="14,44,15,35" concept="5" />
+      <node id="1813663789079454587" at="18,48,19,20" concept="2" />
+      <node id="1813663789079454597" at="22,52,23,40" concept="0" />
+      <node id="1813663789079454604" at="23,40,24,15" concept="2" />
+      <node id="1813663789079454611" at="27,24,28,29" concept="5" />
+      <node id="1813663789079454621" at="31,57,32,46" concept="5" />
+      <node id="1813663789079454635" at="35,53,36,46" concept="5" />
+      <node id="1813663789079454651" at="40,60,41,46" concept="5" />
+      <node id="1813663789079454662" at="44,34,45,56" concept="5" />
+      <node id="1813663789079454670" at="48,30,49,52" concept="5" />
+      <node id="1813663789079454678" at="52,34,53,56" concept="5" />
+      <node id="1813663789079454686" at="56,33,57,55" concept="5" />
+      <node id="1813663789079454568" at="10,0,13,0" concept="1" trace="TestLightRunState#()V" />
+      <node id="1813663789079454576" at="14,0,17,0" concept="6" trace="create#()Ljetbrains/mps/lang/test/util/TestLightRunState;" />
+      <node id="1813663789079454583" at="18,0,21,0" concept="4" trace="set#(Ljetbrains/mps/lang/test/util/TestLightRunStateEnum;)V" />
+      <node id="1813663789079454609" at="27,0,30,0" concept="4" trace="ordinal#()I" />
+      <node id="1813663789079454617" at="31,0,34,0" concept="4" trace="greater#(Ljetbrains/mps/lang/test/util/TestLightRunStateEnum;)Z" />
+      <node id="1813663789079454631" at="35,0,38,0" concept="4" trace="greater#(Ljetbrains/mps/lang/test/util/TestLightRunState;)Z" />
+      <node id="1813663789079454660" at="44,0,47,0" concept="4" trace="isInitialized#()Z" />
+      <node id="1813663789079454668" at="48,0,51,0" concept="4" trace="isRunning#()Z" />
+      <node id="1813663789079454676" at="52,0,55,0" concept="4" trace="isTerminating#()Z" />
+      <node id="1813663789079454684" at="56,0,59,0" concept="4" trace="isTerminated#()Z" />
+      <node id="1813663789079454593" at="22,0,26,0" concept="4" trace="advance#(Ljetbrains/mps/lang/test/util/TestLightRunStateEnum;)V" />
+      <node id="1813663789079454645" at="39,0,43,0" concept="4" trace="compareTo#(Ljetbrains/mps/lang/test/util/TestLightRunState;)I" />
+      <scope id="1813663789079454570" at="10,31,11,41" />
+      <scope id="1813663789079454577" at="14,44,15,35" />
+      <scope id="1813663789079454586" at="18,48,19,20" />
+      <scope id="1813663789079454610" at="27,24,28,29" />
+      <scope id="1813663789079454620" at="31,57,32,46" />
+      <scope id="1813663789079454634" at="35,53,36,46" />
+      <scope id="1813663789079454650" at="40,60,41,46" />
+      <scope id="1813663789079454661" at="44,34,45,56" />
+      <scope id="1813663789079454669" at="48,30,49,52" />
+      <scope id="1813663789079454677" at="52,34,53,56" />
+      <scope id="1813663789079454685" at="56,33,57,55" />
+      <scope id="1813663789079454596" at="22,52,24,15" />
+      <scope id="1813663789079454568" at="10,0,13,0" />
+      <scope id="1813663789079454576" at="14,0,17,0" />
+      <scope id="1813663789079454583" at="18,0,21,0">
+        <var name="value" id="1813663789079454584" />
+      </scope>
+      <scope id="1813663789079454609" at="27,0,30,0" />
+      <scope id="1813663789079454617" at="31,0,34,0">
+        <var name="another" id="1813663789079454618" />
+      </scope>
+      <scope id="1813663789079454631" at="35,0,38,0">
+        <var name="another" id="1813663789079454632" />
+      </scope>
+      <scope id="1813663789079454660" at="44,0,47,0" />
+      <scope id="1813663789079454668" at="48,0,51,0" />
+      <scope id="1813663789079454676" at="52,0,55,0" />
+      <scope id="1813663789079454684" at="56,0,59,0" />
+      <scope id="1813663789079454593" at="22,0,26,0">
+        <var name="value" id="1813663789079454594" />
+      </scope>
+      <scope id="1813663789079454645" at="39,0,43,0">
+        <var name="another" id="1813663789079454647" />
+      </scope>
+      <unit id="1813663789079454564" at="7,0,62,0" name="jetbrains.mps.lang.test.util.TestLightRunState" />
+    </file>
   </root>
   <root nodeRef="r:5217bde7-686e-45b2-a47f-62b7d63f0fe9(jetbrains.mps.lang.test.util)/1813663789079454696">
-    <unitInfo nodeId="1813663789079454696" fileName="TestLightRunStateEnum.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="jetbrains.mps.lang.test.util.TestLightRunStateEnum" />
+    <file name="TestLightRunStateEnum.java">
+      <unit id="1813663789079454696" at="6,0,14,0" name="jetbrains.mps.lang.test.util.TestLightRunStateEnum" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 

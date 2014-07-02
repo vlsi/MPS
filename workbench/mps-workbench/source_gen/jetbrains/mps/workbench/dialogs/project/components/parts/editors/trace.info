@@ -1,62 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.FieldDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
   <root nodeRef="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)/1560298786499489240">
-    <nodeInfo nodeId="1560298786499490391" fileName="BooleanEditor.java" startLine="12" startPosition="26" endLine="13" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499490409" fileName="BooleanEditor.java" startLine="16" startPosition="118" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499490425" fileName="BooleanEditor.java" startLine="21" startPosition="135" endLine="22" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1560298786499490436" fileName="BooleanEditor.java" startLine="22" startPosition="113" endLine="23" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499490443" fileName="BooleanEditor.java" startLine="23" startPosition="60" endLine="24" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499490450" fileName="BooleanEditor.java" startLine="24" startPosition="60" endLine="25" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499490462" fileName="BooleanEditor.java" startLine="25" startPosition="78" endLine="26" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499490388" fileName="BooleanEditor.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BooleanEditor#()V" />
-    <nodeInfo nodeId="1560298786499490395" fileName="BooleanEditor.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEnabledFor#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Z" />
-    <nodeInfo nodeId="1560298786499490411" fileName="BooleanEditor.java" startLine="20" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTableCellEditorComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;" />
-    <scopeInfo nodeId="1560298786499490390" fileName="BooleanEditor.java" startLine="12" startPosition="26" endLine="13" endPosition="29" />
-    <scopeInfo nodeId="1560298786499490408" fileName="BooleanEditor.java" startLine="16" startPosition="118" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="1560298786499490388" fileName="BooleanEditor.java" startLine="12" startPosition="0" endLine="15" endPosition="0" />
-    <scopeInfo nodeId="1560298786499490395" fileName="BooleanEditor.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
-      <varInfo nodeId="1560298786499490406" varName="column" />
-      <varInfo nodeId="1560298786499490402" varName="isSelected" />
-      <varInfo nodeId="1560298786499490404" varName="row" />
-      <varInfo nodeId="1560298786499490398" varName="table" />
-      <varInfo nodeId="1560298786499490400" varName="value" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499490424" fileName="BooleanEditor.java" startLine="21" startPosition="135" endLine="26" endPosition="21">
-      <varInfo nodeId="1560298786499490426" varName="component" />
-    </scopeInfo>
-    <scopeInfo nodeId="1560298786499490411" fileName="BooleanEditor.java" startLine="20" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="1560298786499490422" varName="column" />
-      <varInfo nodeId="1560298786499490418" varName="isSelected" />
-      <varInfo nodeId="1560298786499490420" varName="row" />
-      <varInfo nodeId="1560298786499490414" varName="table" />
-      <varInfo nodeId="1560298786499490416" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="1560298786499489240" fileName="BooleanEditor.java" startLine="11" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.BooleanEditor" />
+    <file name="BooleanEditor.java">
+      <node id="1560298786499490391" at="12,26,13,29" concept="6" />
+      <node id="1560298786499490409" at="16,118,17,16" concept="5" />
+      <node id="1560298786499490425" at="21,135,22,113" concept="4" />
+      <node id="1560298786499490436" at="22,113,23,60" concept="1" />
+      <node id="1560298786499490443" at="23,60,24,60" concept="1" />
+      <node id="1560298786499490450" at="24,60,25,78" concept="1" />
+      <node id="1560298786499490462" at="25,78,26,21" concept="5" />
+      <node id="1560298786499490388" at="12,0,15,0" concept="0" trace="BooleanEditor#()V" />
+      <node id="1560298786499490395" at="16,0,19,0" concept="3" trace="isEnabledFor#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Z" />
+      <node id="1560298786499490411" at="20,0,28,0" concept="3" trace="getTableCellEditorComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;" />
+      <scope id="1560298786499490390" at="12,26,13,29" />
+      <scope id="1560298786499490408" at="16,118,17,16" />
+      <scope id="1560298786499490388" at="12,0,15,0" />
+      <scope id="1560298786499490395" at="16,0,19,0">
+        <var name="column" id="1560298786499490406" />
+        <var name="isSelected" id="1560298786499490402" />
+        <var name="row" id="1560298786499490404" />
+        <var name="table" id="1560298786499490398" />
+        <var name="value" id="1560298786499490400" />
+      </scope>
+      <scope id="1560298786499490424" at="21,135,26,21">
+        <var name="component" id="1560298786499490426" />
+      </scope>
+      <scope id="1560298786499490411" at="20,0,28,0">
+        <var name="column" id="1560298786499490422" />
+        <var name="isSelected" id="1560298786499490418" />
+        <var name="row" id="1560298786499490420" />
+        <var name="table" id="1560298786499490414" />
+        <var name="value" id="1560298786499490416" />
+      </scope>
+      <unit id="1560298786499489240" at="11,0,29,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.editors.BooleanEditor" />
+    </file>
   </root>
   <root nodeRef="r:d1501473-d2f6-4ebd-8668-0544150e6216(jetbrains.mps.workbench.dialogs.project.components.parts.editors)/1560298786499490028">
-    <nodeInfo nodeId="1560298786499490031" fileName="ModuleEditor.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTextField" />
-    <nodeInfo nodeId="1560298786499490037" fileName="ModuleEditor.java" startLine="14" startPosition="25" endLine="15" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1560298786499490040" fileName="ModuleEditor.java" startLine="15" startPosition="28" endLine="16" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499490048" fileName="ModuleEditor.java" startLine="16" startPosition="52" endLine="17" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499490059" fileName="ModuleEditor.java" startLine="21" startPosition="38" endLine="22" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499490079" fileName="ModuleEditor.java" startLine="26" startPosition="135" endLine="27" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1560298786499490091" fileName="ModuleEditor.java" startLine="27" startPosition="67" endLine="28" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1560298786499490055" fileName="ModuleEditor.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCellEditorValue#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="1560298786499490034" fileName="ModuleEditor.java" startLine="14" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleEditor#()V" />
-    <nodeInfo nodeId="1560298786499490065" fileName="ModuleEditor.java" startLine="25" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTableCellEditorComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;" />
-    <scopeInfo nodeId="1560298786499490058" fileName="ModuleEditor.java" startLine="21" startPosition="38" endLine="22" endPosition="33" />
-    <scopeInfo nodeId="1560298786499490078" fileName="ModuleEditor.java" startLine="26" startPosition="135" endLine="28" endPosition="84" />
-    <scopeInfo nodeId="1560298786499490036" fileName="ModuleEditor.java" startLine="14" startPosition="25" endLine="17" endPosition="33" />
-    <scopeInfo nodeId="1560298786499490055" fileName="ModuleEditor.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1560298786499490034" fileName="ModuleEditor.java" startLine="14" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1560298786499490065" fileName="ModuleEditor.java" startLine="25" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="1560298786499490076" varName="column" />
-      <varInfo nodeId="1560298786499490072" varName="isSelected" />
-      <varInfo nodeId="1560298786499490074" varName="row" />
-      <varInfo nodeId="1560298786499490068" varName="table" />
-      <varInfo nodeId="1560298786499490070" varName="value" />
-    </scopeInfo>
-    <unitInfo nodeId="1560298786499490028" fileName="ModuleEditor.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ModuleEditor" />
+    <file name="ModuleEditor.java">
+      <node id="1560298786499490031" at="12,0,13,0" concept="2" trace="myTextField" />
+      <node id="1560298786499490037" at="14,25,15,28" concept="6" />
+      <node id="1560298786499490040" at="15,28,16,52" concept="1" />
+      <node id="1560298786499490048" at="16,52,17,33" concept="1" />
+      <node id="1560298786499490059" at="21,38,22,33" concept="5" />
+      <node id="1560298786499490079" at="26,135,27,67" concept="1" />
+      <node id="1560298786499490091" at="27,67,28,84" concept="5" />
+      <node id="1560298786499490055" at="20,0,24,0" concept="3" trace="getCellEditorValue#()Ljava/lang/Object;" />
+      <node id="1560298786499490034" at="14,0,19,0" concept="0" trace="ModuleEditor#()V" />
+      <node id="1560298786499490065" at="25,0,30,0" concept="3" trace="getTableCellEditorComponent#(Ljavax/swing/JTable;Ljava/lang/Object;ZII)Ljava/awt/Component;" />
+      <scope id="1560298786499490058" at="21,38,22,33" />
+      <scope id="1560298786499490078" at="26,135,28,84" />
+      <scope id="1560298786499490036" at="14,25,17,33" />
+      <scope id="1560298786499490055" at="20,0,24,0" />
+      <scope id="1560298786499490034" at="14,0,19,0" />
+      <scope id="1560298786499490065" at="25,0,30,0">
+        <var name="column" id="1560298786499490076" />
+        <var name="isSelected" id="1560298786499490072" />
+        <var name="row" id="1560298786499490074" />
+        <var name="table" id="1560298786499490068" />
+        <var name="value" id="1560298786499490070" />
+      </scope>
+      <unit id="1560298786499490028" at="11,0,31,0" name="jetbrains.mps.workbench.dialogs.project.components.parts.editors.ModuleEditor" />
+    </file>
   </root>
-</debugInfo>
+</debug-info>
 
