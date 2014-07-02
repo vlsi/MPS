@@ -51,18 +51,23 @@ public class ModuleClassLoadersHolder {
   @Nullable
   public ClassLoader getClassLoader(SModule module) {
     try {
+      return getModuleClassLoader(module);
+    } catch (ClassLoaderNotFoundException e) {
+      // do nothing, there is no MPS ModuleClassLoader for this module
+    }
+
+    try {
       return getNonReloadableClassLoader(module);
     } catch (ClassLoaderNotFoundException e) {
-      // do nothing, there is no non-reloadable facet for this module
+      // do nothing, there is no IDEA ClassLoader for this module
     }
 
     if (!javaIsCompiledInMps(module)) {
-      // core module, nobody manages class loading for it
+      // nobody manages class loading for this module
       LOG.warn("Module " + module.getModuleName() + " is not compiled in mps and doesn't have non-reloadable facet");
-      return ClassLoaderManager.class.getClassLoader();
     }
 
-    return getModuleClassLoader(module);
+    return null;
   }
 
   @Nullable
@@ -80,7 +85,9 @@ public class ModuleClassLoadersHolder {
   }
 
   @Nullable
-  private ClassLoader getModuleClassLoader(SModule module) {
+  private ClassLoader getModuleClassLoader(SModule module) throws ClassLoaderNotFoundException {
+    if (!myClassLoaders.containsKey(module))
+      throw new ClassLoaderNotFoundException();
     return myClassLoaders.get(module);
   }
 

@@ -77,9 +77,7 @@
   <source id="1210261200088" name="main" hash="-b3ca95ekdp2o8u4uiyjcha7xl82hj7n">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1210689334611" name="reduce_TestNodeReference" hash="-cthqd80bmxhndvb0slnjo996sdm2wyw">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1210689334611" name="reduce_TestNodeReference" hash="-cthqd80bmxhndvb0slnjo996sdm2wyw" />
   <source id="1215702526483" name="reduce_AssertMatch" hash="-1g8qdltipdniw80a72x5esojib3hitf" />
   <source id="1216994643104" name="TestCaseName" hash="-8ktxl1ffuzfnhn53lisu1svtl37fvrw">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />

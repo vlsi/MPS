@@ -291,15 +291,10 @@ public class StandaloneMPSProject extends MPSProject implements FileSystemListen
     ModelAccess.instance().runWriteAction(new Runnable() {
       @Override
       public void run() {
-        final ClassLoaderManager manager = ClassLoaderManager.getInstance();
-        manager.stopListening();
-        Collection<SModule> projectModules = ModuleRepositoryFacade.getInstance().getModules(StandaloneMPSProject.this, SModule.class);
-        manager.unloadModules(projectModules, new EmptyProgressMonitor());
         ModuleRepositoryFacade.getInstance().unregisterModules(StandaloneMPSProject.this);
-        manager.startListening();
         CleanupManager.getInstance().cleanup();
         if (ProjectManager.getInstance().getOpenProjects().length > 0) {
-          manager.reloadAll(new EmptyProgressMonitor());
+          ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
         }
       }
     });

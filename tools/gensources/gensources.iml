@@ -301,6 +301,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.multiple.extension.testLanguage/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.multiple.testLanguage/generator/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/jetbrains.mps.lang.editor.multiple.tests/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/make/languages/facet/generator/classes_gen" />

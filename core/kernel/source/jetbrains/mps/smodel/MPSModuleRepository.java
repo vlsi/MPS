@@ -137,9 +137,8 @@ public class MPSModuleRepository extends SRepositoryBase implements CoreComponen
         modulesToDispose.add(module);
       }
     }
-    if (modulesToDispose.isEmpty()) {
-      return;
-    }
+    if (modulesToDispose.isEmpty()) return;
+
     invalidateCaches();
     for (SModule module : modulesToDispose) {
       fireModuleRemoved(module.getModuleReference());

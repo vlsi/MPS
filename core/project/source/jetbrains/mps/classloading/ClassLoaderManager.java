@@ -67,7 +67,6 @@ public class ClassLoaderManager implements CoreComponent {
 
   private final ClassLoadingBroadCaster myBroadCaster;
 
-
   // listening for module adding/removing
   private final SRepositoryListener myRepositoryListener = new ClassLoaderManagerRepositoryListener(this);
 
@@ -119,6 +118,12 @@ public class ClassLoaderManager implements CoreComponent {
     return SModuleOperations.isReloadable(module) && ModuleClassLoaderSupport.canCreate(module);
   }
 
+  private void assertCanLoad(SModule module) {
+    if (!canLoad(module)) {
+      throw new IllegalArgumentException("Classes of the module " + module.getModuleName() + " are unavailable within the MPS class loading system");
+    }
+  }
+
   /**
    * Contract: if the module's classes are managed within MPS, then it will return the class you need
    * So if @canLoad method returned true, you'll get your class
@@ -155,12 +160,6 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  private void assertCanLoad(SModule module) {
-    if (!canLoad(module)) {
-      throw new IllegalArgumentException("Classes of the module " + module.getModuleName() + " are unavailable within the MPS class loading system");
-    }
-  }
-
   /**
    * Returns a class loader associated with the module.
    * Also can return a class loader of the IDEA plugin which manages the module's classes
@@ -190,11 +189,11 @@ public class ClassLoaderManager implements CoreComponent {
     Set<SModule> modulesToLoad = new HashSet<SModule>();
     for (SModule module : modules) {
       assert !(module.getRepository() == null) : "Cannot get class from disposed module";
+      if (!canLoad(module)) throw new IllegalArgumentException("Contract is broken: canLoad method returned false");
       if (getClassLoader(module) != null) {
         LOG.error("Module " + module + " classes are already being managed by " + getClassLoader(module) + " class loader", new Throwable());
       }
 //      if (ModuleClassLoaderSupport.canCreate(module)) {
-      if (!canLoad(module)) throw new IllegalArgumentException("Contract is broken: canLoad method returned false");
       modulesToLoad.add(module);
 //      }
     }
@@ -217,15 +216,14 @@ public class ClassLoaderManager implements CoreComponent {
 
   /**
    * Removes ModuleClassLoaders for all the {@code modules}.
-   * The {@code modules} need to be all manageable within the MPS class loading system
-   * (means {@link #canLoad(SModule)} would return true for each of them)
+   * The {@code modules} need NOT to be all manageable within the MPS class loading system.
+   * That means we can unload everything we want.
    */
   @NotNull
   public Set<SModule> unloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     ModelAccess.assertLegalWrite();
     Set<SModule> modulesToUnload = new HashSet<SModule>();
     for (SModule module : modules) {
-      assertCanLoad(module);
       modulesToUnload.add(module);
     }
 
@@ -256,44 +254,15 @@ public class ClassLoaderManager implements CoreComponent {
     }
   }
 
-  public Set<SModule> loadClasses(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
-    Set<SModule> modulesToLoad = new HashSet<SModule>();
-    for (SModule module : modules) {
-      assert module.getRepository() != null : "Cannot get class from disposed module";
-      if (getClassLoader(module) != null) {
-        LOG.error("Module " + module + " classes are already being managed by " + getClassLoader(module) + " class loader", new Throwable());
-      }
-//      if (ModuleClassLoaderSupport.canCreate(module)) {
-      if (!canLoad(module)) throw new IllegalArgumentException("Contact is broken: @canLoad returned false");
-      modulesToLoad.add(module);
-//      }
-    }
-
-    if (modulesToLoad.isEmpty()) return modulesToLoad;
-
-    for (SModule module : modulesToLoad) {
-      createClassLoader(module);
-    }
-    monitor.start("Load classes...", 1);
-    try {
-      myBroadCaster.onLoad(modulesToLoad);
-      monitor.advance(1);
-    } finally {
-      monitor.done();
-    }
-
-    return modulesToLoad;
-  }
-
   // todo: review all usages
-  public void loadAllPossibleClasses(@NotNull ProgressMonitor monitor) {
+  public Set<SModule> loadAllPossibleClasses(@NotNull ProgressMonitor monitor) {
     Set<SModule> modulesToLoad = new HashSet<SModule>();
     for (SModule module : myRepository.getModules()) {
       if (!myClassLoadersHolder.isModuleLoaded(module) && canLoad(module)) {
         modulesToLoad.add(module);
       }
     }
-    loadModules(modulesToLoad, monitor);
+    return loadModules(modulesToLoad, monitor);
   }
 
   //---------------reload handlers------------------
@@ -313,13 +282,13 @@ public class ClassLoaderManager implements CoreComponent {
   public Set<SModule> reloadModules(Iterable<? extends SModule> modules, @NotNull ProgressMonitor monitor) {
     try {
       monitor.start("Reloading modules' class loaders...", 2);
+      Set<SModule> unloadedModules = unloadModules(modules, monitor.subTask(1));
       Set<SModule> modulesToReload = new HashSet<SModule>();
-      for (SModule module : modules) {
+      for (SModule module : unloadedModules) {
         if (canLoad(module))
           modulesToReload.add(module);
       }
-      Set<SModule> unloadedModules = unloadModules(modulesToReload, monitor.subTask(1));
-      return loadModules(unloadedModules, monitor.subTask(1));
+      return loadModules(modulesToReload, monitor.subTask(1));
     } finally {
       monitor.done();
     }
@@ -340,7 +309,7 @@ public class ClassLoaderManager implements CoreComponent {
   @ToRemove(version = 3.2)
   public void reloadAll(@NotNull ProgressMonitor monitor) {
     reloadModules(myRepository.getModules(), monitor);
-//    loadAllPossibleClasses(new EmptyProgressMonitor());
+    loadAllPossibleClasses(new EmptyProgressMonitor());
   }
 
   @Deprecated
