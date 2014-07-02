@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -19,19 +19,23 @@ import jetbrains.mps.util.iterable.DistinctIterator;
 import jetbrains.mps.util.iterable.MergeIterator;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
 
 public class IterableUtil {
 
   public static <T> Iterable<T> distinct(Iterable<T> t) {
-    return new DistinctIterator(t.iterator());
+    return new DistinctIterator<T>(t);
   }
 
   public static <T> Iterable<T> merge(@NotNull Iterable<T>... its) {
     if (its.length == 1) {
       return its[1];
     } else if (its.length == 2) {
-      return new MergeIterator(its[0].iterator(), its[1].iterator());
+      return new MergeIterator<T>(its[0], its[1]);
     }
     return new FlattenIterable<T>(Arrays.asList(its));
   }

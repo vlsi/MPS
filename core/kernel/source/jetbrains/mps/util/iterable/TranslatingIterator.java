@@ -18,6 +18,7 @@ package jetbrains.mps.util.iterable;
 import java.util.Iterator;
 
 /**
+ * FIXME Iterable which produces incorrect result for any but first #iterator()
  * Evgeny Gryaznov, 9/13/11
  */
 public abstract class TranslatingIterator<E, T> implements Iterable<T>, Iterator<T> {

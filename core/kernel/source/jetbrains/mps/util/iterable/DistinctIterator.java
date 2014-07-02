@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,45 +15,49 @@
  */
 package jetbrains.mps.util.iterable;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
 /**
- * Evgeny Gryaznov, 9/13/11
+ * {@link java.lang.Iterable} with filtering capability, each distinct element of initial sequence is reported only once.
+ * Note, <code>null</code> elements get filtered out and are not reported at all.
+ * XXX why not ConditionalIterable with appropriate condition (although would need state-aware condition, to reset on each #iterator())
  */
 public class DistinctIterator<T> implements Iterable<T>, Iterator<T> {
-  private T current;
-  private final Iterator<T> inner;
-  private Set<T> seen = new HashSet<T>();
+  private final Iterable<T> mySource;
+  private final Set<T> mySeen = new HashSet<T>();
+  private T myNext;
+  private Iterator<T> myCurrent;
 
-  public DistinctIterator(Iterator<T> inner) {
-    this.inner = inner;
-    current = nextElement();
+  public DistinctIterator(@NotNull Iterable<T> inner) {
+    mySource = inner;
   }
 
   protected T nextElement() {
-    while (inner.hasNext()) {
-      final T next = inner.next();
+    while (myCurrent.hasNext()) {
+      final T next = myCurrent.next();
       if (next != null) {
-        if (seen.add(next)) {
+        if (mySeen.add(next)) {
           return next;
         }
       }
     }
-    seen = null;
+    mySeen.clear();
     return null;
   }
 
   @Override
   public final boolean hasNext() {
-    return current != null;
+    return myNext != null;
   }
 
   @Override
   public final T next() {
-    final T result = current;
-    current = nextElement();
+    final T result = myNext;
+    myNext = nextElement();
     return result;
   }
 
@@ -64,6 +68,9 @@ public class DistinctIterator<T> implements Iterable<T>, Iterator<T> {
 
   @Override
   public Iterator<T> iterator() {
+    mySeen.clear();
+    myCurrent = mySource.iterator();
+    myNext = nextElement();
     return this;
   }
 }

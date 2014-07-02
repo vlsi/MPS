@@ -15,58 +15,61 @@
  */
 package jetbrains.mps.util.iterable;
 
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-import java.util.Stack;
 
 /**
- * Evgeny Gryaznov, 9/13/11
+ * {@link java.lang.Iterable} to walk recursive sequences of identical objects.
  */
 public abstract class RecursiveIterator<T> implements Iterable<T>, Iterator<T> {
 
-  private Stack<Iterator<T>> stack = new Stack<Iterator<T>>();
-  private T current;
-  private final boolean onlyLeaves;
-  private Set<T> seen = new HashSet<T>();
+  private final Iterable<T> myRoot;
+  private final boolean myLeavesOnly;
+  private final Set<T> mySeen = new HashSet<T>();
+  private final Deque<Iterator<T>> myStack = new ArrayDeque<Iterator<T>>();
+  private T myNext;
 
-  public RecursiveIterator(Iterator<T> root, boolean onlyLeaves) {
-    this.onlyLeaves = onlyLeaves;
-    stack.push(root);
-    current = nextElement();
+  public RecursiveIterator(@NotNull Iterable<T> root, boolean leavesOnly) {
+    myRoot = root;
+    myLeavesOnly = leavesOnly;
   }
 
   protected T nextElement() {
-    while(!stack.isEmpty()) {
-      final Iterator<T> top = stack.peek();
+    while(!myStack.isEmpty()) {
+      final Iterator<T> top = myStack.peek();
       if(top.hasNext()) {
         final T next = top.next();
-        if(next == null || !seen.add(next)) {
+        if(next == null || !mySeen.add(next)) {
           continue;
         }
         Iterator<T> new_ = children(next);
         if(new_ != null) {
-          stack.push(new_);
-          if(onlyLeaves) {
+          myStack.push(new_);
+          if(myLeavesOnly) {
             continue;
           }
         }
         return next;
       }
-      stack.pop();
+      myStack.pop();
     }
     return null;
   }
 
   @Override
   public final boolean hasNext() {
-    return current != null;
+    return myNext != null;
   }
 
   @Override
   public final T next() {
-    final T result = current;
-    current = nextElement();
+    final T result = myNext;
+    myNext = nextElement();
     return result;
   }
 
@@ -77,6 +80,10 @@ public abstract class RecursiveIterator<T> implements Iterable<T>, Iterator<T> {
 
   @Override
   public Iterator<T> iterator() {
+    mySeen.clear();
+    myStack.clear();
+    myStack.push(myRoot.iterator());
+    myNext = nextElement();
     return this;
   }
 
