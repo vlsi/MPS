@@ -28,6 +28,7 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -189,6 +190,21 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
 
   @Override
   public final void addLanguage(SModuleReference ref) {
+    getSModelInternal().addLanguage(ref);
+  }
+
+  @Override
+  public Iterable<SLanguageId> importedLanguageIds() {
+    return getSModelInternal().usedLanguages();
+  }
+
+  @Override
+  public void deleteLanguageId(@NotNull SLanguageId ref) {
+    getSModelInternal().deleteLanguage(ref);
+  }
+
+  @Override
+  public void addLanguageId(SLanguageId ref) {
     getSModelInternal().addLanguage(ref);
   }
 

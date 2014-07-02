@@ -20,6 +20,7 @@ import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -41,11 +42,20 @@ public interface SModelInternal extends ModelWithDisposeInfo {
 
   ModelDependenciesManager getModelDepsManager();
 
+  @Deprecated
   List<SModuleReference> importedLanguages();
 
+  @Deprecated
   void deleteLanguage(@NotNull SModuleReference ref);
 
+  @Deprecated
   void addLanguage(SModuleReference ref);
+
+  Iterable<SLanguageId> importedLanguageIds();
+
+  void deleteLanguageId(@NotNull SLanguageId ref);
+
+  void addLanguageId(SLanguageId ref);
 
   List<SModuleReference> importedDevkits();
 
