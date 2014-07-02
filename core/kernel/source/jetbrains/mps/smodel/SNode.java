@@ -1240,8 +1240,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   //----------------USAGES IN REFACTORINGS ONLY---------------
   //----------------------------------------------------------
 
-  public void setConceptFqName(@NotNull String conceptFQName) {
-    //remove method after 3.2
+  //remove method after 3.2
+  public void setConceptFqName(String conceptFQName) {
+    if (conceptFQName==null) {
+      myConceptFqName=null;
+      return;
+    }
     myConceptFqName = InternUtil.intern(conceptFQName);
     //MihMuh: that's strange since we try not to mark models as changed after refactorings
     SModelRepository.getInstance().markChanged(getModel());
