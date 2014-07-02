@@ -184,6 +184,7 @@ public class VisibleArtifacts {
       if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
         throw new IllegalArgumentException("findArtifact() cannot be called for transient nodes: " + node);
       }
+      id = node;
     }
     if (dependenciesHelper == null) {
       throw new IllegalStateException("findArtifact() should be called in generation context only: ");

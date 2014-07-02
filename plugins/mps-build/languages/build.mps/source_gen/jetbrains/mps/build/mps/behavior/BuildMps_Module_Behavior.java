@@ -95,7 +95,7 @@ public class BuildMps_Module_Behavior {
     }
 
     for (SNode path : ListSequence.fromList(requiredJars)) {
-      Tuples._2<SNode, String> resource = artifacts.getResource(path);
+      Tuples._2<SNode, String> resource = artifacts.getResource(SNodeOperations.cast(artifacts.toOriginalNode(path), "jetbrains.mps.build.structure.BuildSourcePath"));
       SNode artifact = SNodeOperations.as(resource._0(), "jetbrains.mps.build.structure.BuildLayout_Node");
       if (artifact != null) {
         if (isNotEmptyString(resource._1())) {

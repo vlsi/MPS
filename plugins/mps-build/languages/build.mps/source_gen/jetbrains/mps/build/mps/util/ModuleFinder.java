@@ -9,11 +9,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -26,7 +26,11 @@ public class ModuleFinder {
     }
 
     final DependenciesHelper helper = new DependenciesHelper(genContext, project);
-    return Sequence.fromIterable(modules).select(new ISelector<SNode, String>() {
+    return Sequence.fromIterable(modules).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_Module")) || BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "virtual_isCompilable_7454762407073969360", new Object[]{});
+      }
+    }).select(new ISelector<SNode, String>() {
       public String select(SNode module) {
         SNode mpsModule = SNodeOperations.as(DependenciesHelper.getOriginalNode(module, genContext), "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule");
         SNode layoutNode = helper.artifacts().get(mpsModule);

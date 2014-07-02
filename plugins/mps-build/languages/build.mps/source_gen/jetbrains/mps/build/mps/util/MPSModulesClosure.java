@@ -12,13 +12,14 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.build.mps.behavior.BuildMps_Generator_Behavior;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.RecursiveIterator;
 import java.util.Iterator;
 import java.util.HashSet;
-import jetbrains.mps.build.mps.behavior.BuildMps_Generator_Behavior;
+import java.util.List;
 
 public class MPSModulesClosure {
   private LinkedHashSet<SNode> modules = new LinkedHashSet<SNode>();
@@ -94,7 +95,7 @@ public class MPSModulesClosure {
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return SLinkOperations.getTarget(it, "module", false);
+        return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Generator") ? BuildMps_Generator_Behavior.call_getSourceLanguage_9200313594510517119(SNodeOperations.cast(SLinkOperations.getTarget(it, "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Generator")) : SLinkOperations.getTarget(it, "module", false));
       }
     });
 
@@ -160,7 +161,7 @@ public class MPSModulesClosure {
   }
 
   private Iterable<SNode> includingExtended(Iterable<SNode> devkits) {
-    return new RecursiveIterator<SNode>(Sequence.fromIterable(devkits).iterator(), false) {
+    return new RecursiveIterator<SNode>(devkits, false) {
       @Override
       protected Iterator<SNode> children(SNode node) {
         return ListSequence.fromList(SLinkOperations.getTargets(node, "extends", true)).where(new IWhereFilter<SNode>() {
@@ -177,7 +178,7 @@ public class MPSModulesClosure {
   }
 
   private Iterable<SNode> includingExtendedLanguages(Iterable<SNode> langs) {
-    return new RecursiveIterator<SNode>(Sequence.fromIterable(langs).iterator(), false) {
+    return new RecursiveIterator<SNode>(langs, false) {
       @Override
       protected Iterator<SNode> children(SNode node) {
         return Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(node), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage")).select(new ISelector<SNode, SNode>() {
@@ -190,7 +191,7 @@ public class MPSModulesClosure {
   }
 
   private Iterable<SNode> usedGenerators(Iterable<SNode> generators) {
-    return new RecursiveIterator<SNode>(Sequence.fromIterable(generators).iterator(), false) {
+    return new RecursiveIterator<SNode>(generators, false) {
       protected Iterator<SNode> children(SNode generator) {
         return Sequence.fromIterable(SNodeOperations.ofConcept(Sequence.fromIterable(SNodeOperations.ofConcept(dependencies(generator), "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule")).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -291,9 +292,10 @@ public class MPSModulesClosure {
     Set<SNode> solutions = SetSequence.fromSet(new HashSet<SNode>());
 
     for (SNode module : Sequence.fromIterable(initialModules)) {
-      Iterable<SNode> dependencies = getDependencies(module, false);
-      collectDependencies(dependencies, true);
+      List<SNode> firstLevelDeps = Sequence.fromIterable(getDependencies(module, false)).toListSequence();
+      collectDependencies(firstLevelDeps, true);
       fillUsedLanguageRuntimes(module, langs, solutions);
+      modules.addAll(firstLevelDeps);
     }
     modules.addAll(solutions);
     languagesWithRuntime.addAll(langs);
