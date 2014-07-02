@@ -54,10 +54,6 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     mySourceNode = sourceNode;
   }
 
-  /**
-   * role must be "genuine", interned
-   */
-  @Deprecated
   protected SReference(SReferenceLinkId role, SNode sourceNode) {
     myRoleId = role;
     mySourceNode = sourceNode;
@@ -122,6 +118,10 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   public void setRole(String newRole) {
     myRole = InternUtil.intern(newRole);
+  }
+
+  public void setRoleId(SReferenceLinkId newRole) {
+    myRoleId = newRole;
   }
 
   //-------------------------
