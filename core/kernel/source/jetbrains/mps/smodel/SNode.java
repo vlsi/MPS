@@ -74,7 +74,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private volatile Object[] myUserObjects; // key,value,key,value ; copy-on-write (!)
 
-  private final SConceptId myConceptId;
+  private SConceptId myConceptId; //todo make final after 3.2
   private String myConceptFqName;
 
 
@@ -1243,6 +1243,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public void setConceptFqName(@NotNull String conceptFQName) {
     //remove method after 3.2
     myConceptFqName = InternUtil.intern(conceptFQName);
+    //MihMuh: that's strange since we try not to mark models as changed after refactorings
+    SModelRepository.getInstance().markChanged(getModel());
+  }
+
+  public void setConceptId(@NotNull SConceptId conceptId) {
+    //remove method after 3.2
+    myConceptId = conceptId;
     //MihMuh: that's strange since we try not to mark models as changed after refactorings
     SModelRepository.getInstance().markChanged(getModel());
   }
