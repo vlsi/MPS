@@ -1555,6 +1555,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   public void setRoleInParent(String newRoleInParent) {//todo add undo
+    if (newRoleInParent==null){
+      myRoleInParent=null;
+      return;
+    }
     myRoleInParent = InternUtil.intern(newRoleInParent);
   }
 }

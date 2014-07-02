@@ -117,6 +117,10 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   public void setRole(String newRole) {
+    if (newRole == null) {
+      myRole = null;
+      return;
+    }
     myRole = InternUtil.intern(newRole);
   }
 
