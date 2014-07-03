@@ -388,7 +388,14 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SNode firstChild = firstChild();
 
     if (role != null) {
-      while (firstChild != null && !firstChild.myRoleInParent.equals(role)) {
+      while (firstChild != null) {
+        String childRole = firstChild.myRoleInParent;
+        if (childRole==null){
+          SContainmentLinkId roleId = firstChild.myRoleInParentId;
+          assert roleId!=null;
+          childRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(roleId);
+        }
+        if (childRole.equals(role)) break;
         firstChild = firstChild.treeNext();
       }
     }
