@@ -115,7 +115,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
     }
 
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
-    return new FilePerRootSModel((MultiStreamDataSource) dataSource, ref, new SModelHeader());
+    return new FilePerRootSModel((MultiStreamDataSource) dataSource, ref, SModelHeader.create(ModelPersistence.LAST_VERSION));
   }
 
   @Override

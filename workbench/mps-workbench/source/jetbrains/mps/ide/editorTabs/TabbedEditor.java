@@ -83,7 +83,12 @@ public class TabbedEditor extends BaseNodeEditor {
       if (comp != null) {
         getComponent().remove(comp);
       }
-      installTabsComponent();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          installTabsComponent();
+        }
+      });
       if (node != null) {
         myTabsComponent.setLastNode(node);
       }
