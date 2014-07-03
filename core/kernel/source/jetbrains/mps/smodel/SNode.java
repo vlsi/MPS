@@ -389,12 +389,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     if (role != null) {
       while (firstChild != null) {
-        String childRole = firstChild.myRoleInParent;
-        if (childRole==null){
-          SContainmentLinkId roleId = firstChild.myRoleInParentId;
-          assert roleId!=null;
-          childRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(roleId);
-        }
+        String childRole = getNodeRoleString(firstChild);
         if (childRole.equals(role)) break;
         firstChild = firstChild.treeNext();
       }
@@ -403,6 +398,17 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (firstChild == null) return Collections.emptyList();
 
     return new ChildrenList(firstChild, role);
+  }
+
+  private static String getNodeRoleString(SNode child) {
+    if (child.parent==null) return null;
+    String childRole = child.myRoleInParent;
+    if (childRole==null){
+      SContainmentLinkId roleId = child.myRoleInParentId;
+      assert roleId!=null;
+      childRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(roleId);
+    }
+    return childRole;
   }
 
   /**
@@ -643,7 +649,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     SReference result = null;
     int count = 0; // paranoid check
     for (SReference reference : myReferences) {
-      if (reference.getRole().equals(role)) {
+      String refRole = reference.getRole();
+      if(refRole==null){
+        SReferenceLinkId rid = reference.getRoleId();
+        assert rid !=null;
+        refRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
+      }
+      if (refRole.equals(role)) {
         result = reference;
         count++;
       }
@@ -971,12 +983,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     nodeRead();
 
     if (getParent() == null) {
-      if (!EqualUtil.equals(myRoleInParent, getUserObject("role"))) {
+      if (!EqualUtil.equals(getNodeRoleString(this), getUserObject("role"))) {
         LOG.error(new IllegalStateException());
       }
       return null;
     }
-    return myRoleInParent;
+    return getNodeRoleString(this);
   }
 
   @Override
@@ -1413,7 +1425,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
         do {
           node = node.treeNext();
-        } while (node != null && !node.myRoleInParent.equals(myRole));
+        } while (node != null && !getNodeRoleString(node).equals(myRole));
         return node;
       }
 
@@ -1427,9 +1439,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
         do {
           node = node.treePrevious();
-        } while (node != fc && !node.myRoleInParent.equals(myRole));
+        } while (node != fc && !getNodeRoleString(node).equals(myRole));
 
-        return node.myRoleInParent.equals(myRole) ? node : null;
+        return getNodeRoleString(node).equals(myRole) ? node : null;
       }
 
       @Override
@@ -1475,7 +1487,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   protected SNode firstChildInRole(@NotNull String role) {
     for (SNode current = first; current != null; current = current.treeNext()) {
-      if (role.equals(current.myRoleInParent)) {
+      if (role.equals(getNodeRoleString(current))) {
         return current;
       }
     }

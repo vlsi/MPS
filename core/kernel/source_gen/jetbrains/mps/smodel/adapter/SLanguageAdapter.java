@@ -12,6 +12,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.LangUtil;
@@ -50,7 +51,7 @@ public class SLanguageAdapter implements SLanguage {
 
   @Override
   public String getQualifiedName() {
-    return myLanguageFqName == null ? ConceptRepository.getInstance().getLanguage(myLanguage).getQualifiedName() : myLanguageFqName;
+    return myLanguageFqName == null ? MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(myLanguage) : myLanguageFqName;
   }
 
   @Override
