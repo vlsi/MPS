@@ -793,7 +793,9 @@ public final class TemplateProcessor implements ITemplateProcessor {
       myTracer.pushTemplateNode(invokedTemplateRef);
 
       try {
-        return tc.processRuleConsequence(newcontext);
+        final List<SNode> rv = tc.processRuleConsequence(newcontext);
+        templateContext.getEnvironment().getTrace().trace(newInputNode.getNodeId(), GenerationTracerUtil.translateOutput(rv), getMacroNodeRef());
+        return rv;
       } finally {
         myTracer.closeTemplateNode(invokedTemplateRef);
         if (inputChanged) {

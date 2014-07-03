@@ -31,7 +31,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.LinkedHashMap;
+import java.util.LinkedHashSet;
+import java.util.Set;
 
 /**
  * Visitor to compose trace tree. Either resort to
@@ -53,10 +54,12 @@ import java.util.LinkedHashMap;
 public class TraceBuilderUI implements GenerationTrace.Visitor {
   private Collection<TraceNodeUI> myResult;
   private TraceNodeUI myStepNode;
-  private MultiMap<Pair<SNodeReference,SNodeReference>, TraceNodeUI> myGroupedChanges;
+  private StepChanges myStepChange;
   private boolean myExcludeEmptySteps = true;
   private boolean myCompactTemplates = false;
   private boolean myGroupByStep = true;
+  private enum NodeGrouping { Change, Input, Output };
+  private NodeGrouping myChangeGrouping = NodeGrouping.Change;
 
   public TraceBuilderUI() {
     myResult = new ArrayList<TraceNodeUI>();
@@ -76,6 +79,15 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
     myGroupByStep = groupByStep;
     return this;
   }
+  public TraceBuilderUI groupByInputNode() {
+    myChangeGrouping = NodeGrouping.Input;
+    return this;
+  }
+  public TraceBuilderUI groupByOutputNode() {
+    myChangeGrouping = NodeGrouping.Output;
+    return this;
+  }
+
 
   /*package*/ Collection<TraceNodeUI> getResult() {
     closeStepNode();
@@ -95,7 +107,7 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
   @Override
   public void beginStep(@NotNull SModelReference input, @NotNull SModelReference output) {
     myStepNode = new TraceNodeUI(String.format("Phase %s->%s", input.getModelName(), output.getModelName()), Icons.COLLECTION, null);
-    myGroupedChanges = new MultiMap<Pair<SNodeReference, SNodeReference>, TraceNodeUI>();
+    myStepChange = new StepChanges();
   }
 
   @Override
@@ -104,22 +116,24 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
   }
 
   @Override
-  public void change(@NotNull SNodeReference input, @NotNull SNodeReference output, SNodeReference template) {
-    myGroupedChanges.putValue(new Pair<SNodeReference, SNodeReference>(input, output), new TraceNodeUI(Kind.TEMPLATE, template));
+  public void change(@NotNull SNodeReference input, @NotNull SNodeReference output, @NotNull SNodeReference template) {
+    myStepChange.record(input, output, template);
   }
 
   private void closeStepNode() {
     if (myStepNode == null) {
       return;
     }
-    for (Pair<SNodeReference,SNodeReference> p : myGroupedChanges.keySet()) {
-      TraceNodeUI in = new TraceNodeUI(Kind.INPUT, p.o1);
-      TraceNodeUI out = new TraceNodeUI(Kind.OUTPUT, p.o2);
-      for (TraceNodeUI templates : compactTemplates(myGroupedChanges.get(p))) {
-        out.addChild(templates);
-      }
-      in.addChild(out);
-      myStepNode.addChild(in);
+    switch (myChangeGrouping) {
+      case Change:
+        addIndividualChanges();
+        break;
+      case Input:
+        addChangesByInput();
+        break;
+      case Output:
+        addChangesByOutput();
+        break;
     }
     if (myGroupByStep) {
       myResult.add(myStepNode);
@@ -131,27 +145,67 @@ public class TraceBuilderUI implements GenerationTrace.Visitor {
     myStepNode = null;
   }
 
-  private Iterable<TraceNodeUI> compactTemplates(Iterable<TraceNodeUI> templateNodes) {
+  private void addIndividualChanges() {
+    for (Pair<SNodeReference,SNodeReference> p : myStepChange.individualChanges()) {
+      TraceNodeUI in = new TraceNodeUI(Kind.INPUT, p.o1);
+      TraceNodeUI out = new TraceNodeUI(Kind.OUTPUT, p.o2);
+      for (TraceNodeUI templates : compactTemplates(myStepChange.templates(p))) {
+        in.addChild(templates);
+      }
+      in.addChild(out);
+      myStepNode.addChild(in);
+    }
+  }
+
+  private void addChangesByInput() {
+    for (SNodeReference in : myStepChange.inputs()) {
+      TraceNodeUI inNode = new TraceNodeUI(Kind.INPUT, in);
+      for (SNodeReference out : myStepChange.outputForInput(in)) {
+        inNode.addChild(new TraceNodeUI(Kind.OUTPUT, out));
+      }
+      for (TraceNodeUI templateNode : compactTemplates(myStepChange.templatesForInput(in))) {
+        inNode.addChild(templateNode);
+      }
+      myStepNode.addChild(inNode);
+    }
+  }
+
+  private void addChangesByOutput() {
+    for (SNodeReference out : myStepChange.outputs()) {
+      TraceNodeUI outNode = new TraceNodeUI(Kind.OUTPUT, out);
+      for (SNodeReference in : myStepChange.inputsForOutput(out)) {
+        outNode.addChild(new TraceNodeUI(Kind.INPUT, in));
+      }
+      for (TraceNodeUI templateNode : compactTemplates(myStepChange.templatesForOutput(out))) {
+        outNode.addChild(templateNode);
+      }
+      myStepNode.addChild(outNode);
+    }
+  }
+
+  private Collection<TraceNodeUI> compactTemplates(Collection<SNodeReference> templateNodes) {
+    ArrayList<TraceNodeUI> rv = new ArrayList<TraceNodeUI>();
     if (!myCompactTemplates) {
-      return templateNodes;
+      for (SNodeReference r : templateNodes) {
+        rv.add(new TraceNodeUI(Kind.TEMPLATE, r));
+      }
+      return rv;
     }
     // compactByNavigateTarget();
-    ArrayList<TraceNodeUI> rv = new ArrayList<TraceNodeUI>();
-    LinkedHashMap<SNode, TraceNodeUI> mostSpecificTemplates = new LinkedHashMap<SNode, TraceNodeUI>();
-L1:   for (TraceNodeUI n : templateNodes) {
-      SNodeReference t = n.getNavigateTarget();
+    LinkedHashSet<SNode> mostSpecificTemplates = new LinkedHashSet<SNode>();
+L1:   for (SNodeReference t : templateNodes) {
       SNode templateNode = t == null ? null : t.resolve(MPSModuleRepository.getInstance());
       if (templateNode == null) {
-        rv.add(n);
+        rv.add(new TraceNodeUI(Kind.TEMPLATE, t));
         continue;
       }
-      for (SNode tn : new ArrayList<SNode>(mostSpecificTemplates.keySet())) {
+      for (SNode tn : new ArrayList<SNode>(mostSpecificTemplates)) {
         if (tn.getContainingRoot() == templateNode.getContainingRoot()) {
           // within same hierarchy
           if (SNodeOperations.isAncestor(tn, templateNode)) {
             // templateNode is more specific template than the one we already got in mostSpecificTemplates
             mostSpecificTemplates.remove(tn);
-            mostSpecificTemplates.put(templateNode, n);
+            mostSpecificTemplates.add(templateNode);
             continue L1;
           } else if (SNodeOperations.isAncestor(templateNode, tn)) {
             // templateNode is enclosing template, forget it
@@ -160,9 +214,11 @@ L1:   for (TraceNodeUI n : templateNodes) {
         }
       }
       // no related templates found, record present one
-      mostSpecificTemplates.put(templateNode, n);
+      mostSpecificTemplates.add(templateNode);
     }
-    rv.addAll(mostSpecificTemplates.values());
+    for (SNode n : mostSpecificTemplates) {
+      rv.add(new TraceNodeUI(Kind.TEMPLATE, n.getReference()));
+    }
     return rv;
   }
 
@@ -171,12 +227,18 @@ L1:   for (TraceNodeUI n : templateNodes) {
    */
   public static Collection<TraceNodeUI> buildTrace(@NotNull GenerationTrace trace, @NotNull SNode node) {
     final TraceBuilderUI v = defaults();
+    if (!GenerationSettings.getInstance().getTraceSettings().isGroupByChange()) {
+      v.groupByInputNode();
+    }
     trace.walkForward(node, v);
     return v.getResult();
   }
 
   public static Collection<TraceNodeUI> buildBackTrace(@NotNull GenerationTrace trace, @NotNull final SNode node) {
     final TraceBuilderUI v = defaults();
+    if (!GenerationSettings.getInstance().getTraceSettings().isGroupByChange()) {
+      v.groupByOutputNode();
+    }
     trace.walkBackward(node, v);
     return v.getResult();
   }
@@ -188,5 +250,89 @@ L1:   for (TraceNodeUI n : templateNodes) {
       // assert s != null : "if we got this far, new trace has to be turned on, and settings present";
     }
     return new TraceBuilderUI().excludeEmptySteps(!s.isShowEmptySteps()).compactTemplates(s.isCompactTemplates()).groupByStep(s.isGroupByStep());
+  }
+
+  private static class StepChanges {
+    private final MultiMap<Pair<SNodeReference, SNodeReference>, SNodeReference> myGroupedChanges;
+    private final Set<SNodeReference> myInputs, myOutputs;
+
+    public StepChanges() {
+      myGroupedChanges = new MultiMap<Pair<SNodeReference, SNodeReference>, SNodeReference>();
+      myInputs = new LinkedHashSet<SNodeReference>();
+      myOutputs = new LinkedHashSet<SNodeReference>();
+    }
+
+    public void record(@NotNull SNodeReference input, @NotNull SNodeReference output, @NotNull SNodeReference template) {
+      myGroupedChanges.putValue(new Pair<SNodeReference, SNodeReference>(input, output), template);
+      myInputs.add(input);
+      myOutputs.add(output);
+    }
+
+    public Collection<Pair<SNodeReference, SNodeReference>> individualChanges() {
+      return myGroupedChanges.keySet();
+    }
+
+    public Collection<SNodeReference> templates(Pair<SNodeReference, SNodeReference> change) {
+      return myGroupedChanges.get(change);
+    }
+
+    public Collection<SNodeReference> inputs() {
+      return myInputs;
+    }
+
+    public Collection<SNodeReference> outputs() {
+      return myOutputs;
+    }
+
+    public Collection<SNodeReference> outputForInput(SNodeReference in) {
+      assert myInputs.contains(in);
+      LinkedHashSet<SNodeReference> rv = new LinkedHashSet<SNodeReference>();
+      for (Pair<SNodeReference, SNodeReference> change : filter(in, null)) {
+        rv.add(change.o2);
+      }
+      assert !rv.isEmpty();
+      return rv;
+    }
+
+    public Collection<SNodeReference> inputsForOutput(SNodeReference out) {
+      assert myOutputs.contains(out);
+      LinkedHashSet<SNodeReference> rv = new LinkedHashSet<SNodeReference>();
+      for (Pair<SNodeReference, SNodeReference> change : filter(null, out)) {
+        rv.add(change.o1);
+      }
+      assert !rv.isEmpty();
+      return rv;
+    }
+
+    public Collection<SNodeReference> templatesForInput(SNodeReference in) {
+      assert myInputs.contains(in);
+      return templates(filter(in, null));
+    }
+
+    public Collection<SNodeReference> templatesForOutput(SNodeReference out) {
+      assert myOutputs.contains(out);
+      return templates(filter(null, out));
+    }
+    private Collection<SNodeReference> templates(Collection<Pair<SNodeReference, SNodeReference>> filter) {
+      LinkedHashSet<SNodeReference> rv = new LinkedHashSet<SNodeReference>();
+      for (Pair<SNodeReference, SNodeReference> change : filter) {
+        rv.addAll(myGroupedChanges.get(change));
+      }
+      assert filter.isEmpty() || !rv.isEmpty();
+      return rv;
+    }
+
+    // if both in and out set, treated as OR
+    private Collection<Pair<SNodeReference, SNodeReference>> filter(SNodeReference in, SNodeReference out) {
+      ArrayList<Pair<SNodeReference, SNodeReference>> rv = new ArrayList<Pair<SNodeReference, SNodeReference>>();
+      for (Pair<SNodeReference, SNodeReference> change : myGroupedChanges.keySet()) {
+        boolean match1 = in != null && change.o1.equals(in);
+        boolean match2 = out != null && change.o2.equals(out);
+        if (match1 || match2) {
+          rv.add(change);
+        }
+      }
+      return rv;
+    }
   }
 }
