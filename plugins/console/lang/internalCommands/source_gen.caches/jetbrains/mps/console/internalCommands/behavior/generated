@@ -14,7 +14,7 @@
   <dep model="r:90445206-a973-4c1d-b760-30e5c77b7497(jetbrains.mps.console.internalCommands.structure)" hash="ahzwi78vv1nuuej5vomv71rb5txe29h" />
   <dep model="r:935ba0ee-7291-4caa-a807-d76e8fc69391(jetbrains.mps.console.blCommand.structure)" hash="-5xo40eytr1sacqnd7w4vnphe61k90fl" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
-  <dep model="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)" hash="4q43iv2swypt1rcwmwaff1i9rwr4zmz" />
+  <dep model="r:de40a5a4-f08c-4c67-ac43-e1f5c384f7d6(jetbrains.mps.console.tool)" hash="-5bjilncwbvjtbvmiu64jifwlmvws0gd" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common hash="-3jphddrs79yojoa56kiz6iz1vqzoa7d" dependsOnNodes="true">
     <dep root="5582028874770305521" />
