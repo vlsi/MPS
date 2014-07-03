@@ -211,9 +211,10 @@ public class MPSModulesClosure {
       return;
     }
     Set<SNode> dependencies = SetSequence.fromSet(new HashSet<SNode>());
-    for (SNode module : Sequence.fromIterable(sequence).subtract(SetSequence.fromSet(modules))) {
+    for (SNode module : Sequence.fromIterable(sequence)) {
       SetSequence.fromSet(dependencies).addSequence(Sequence.fromIterable(getDependencies(module, reexportOnly)));
     }
+    SetSequence.fromSet(dependencies).removeSequence(SetSequence.fromSet(modules));
     modules.addAll(dependencies);
     collectDependencies(dependencies, reexportOnly);
   }
