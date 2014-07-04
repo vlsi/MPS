@@ -186,6 +186,21 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
 
   @Deprecated
   @Override
+  @NotNull
+  public SConcept getInstanceConcept(@NotNull String id,SConceptId sid) {
+    SAbstractConcept concept = getConcept(id);
+    if (concept instanceof SInterfaceConcept) {
+      return new SInterfaceInstanceAdapter((SInterfaceConcept) concept);
+    }
+    if (concept == null) {
+      // TODO separate implementation for an "invalid" concept?
+      return new SConceptAdapter(id,sid);
+    }
+    return (SConcept) concept;
+  }
+
+  @Deprecated
+  @Override
   public SAbstractConcept getConcept(@NotNull String id) {
     ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(id);
     if (desc instanceof IllegalConceptDescriptor) return null;

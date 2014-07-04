@@ -8,11 +8,17 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLink;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 
 public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SContainmentLink {
   @Deprecated
   public SContainmentLinkAdapter(String conceptName, String role) {
     super(conceptName, role);
+  }
+
+  @Deprecated
+  public SContainmentLinkAdapter(String conceptName, String role, SContainmentLinkId id) {
+    super(conceptName, role,id);
   }
 
 

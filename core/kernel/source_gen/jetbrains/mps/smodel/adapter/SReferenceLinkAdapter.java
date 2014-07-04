@@ -4,6 +4,7 @@ package jetbrains.mps.smodel.adapter;
 
 import org.jetbrains.mps.openapi.language.SAbstractLinkId;
 import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.language.SScope;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.scope.Scope;
@@ -16,6 +17,10 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
   @Deprecated
   public SReferenceLinkAdapter(String conceptName, String role) {
     super(conceptName, role);
+  }
+  @Deprecated
+  public SReferenceLinkAdapter(String conceptName, String role,SReferenceLinkId id) {
+    super(conceptName, role,id);
   }
 
 

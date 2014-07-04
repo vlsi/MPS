@@ -27,6 +27,13 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     this.role = role;
   }
 
+  @Deprecated
+  public SAbstractLinkAdapter(String conceptName, String role,SAbstractLinkId id) {
+    roleId = id;
+    this.conceptName = conceptName;
+    this.role = role;
+  }
+
 
   public SAbstractLinkAdapter(SAbstractLinkId roleId) {
     this.roleId = roleId;

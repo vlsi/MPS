@@ -42,6 +42,10 @@ public abstract class SConceptRepository {
 
   @Deprecated // since 3.2
   @NotNull
+  public abstract SConcept getInstanceConcept(@NotNull String qualifiedName, SConceptId id);
+
+  @Deprecated // since 3.2
+  @NotNull
   public abstract SConcept getInstanceConcept(@NotNull String qualifiedName);
 
   @Deprecated // since 3.2

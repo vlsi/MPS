@@ -24,6 +24,11 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
     super(concept);
   }
 
+  @Deprecated
+  public SConceptAdapter(@NotNull String concept,SConceptId id) {
+    super(concept,id);
+  }
+
   @Override
   public SConcept getSuperConcept() {
     ConceptDescriptor d = myConceptName==null?ConceptRegistry.getInstance().getConceptDescriptor(myConceptId):ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);

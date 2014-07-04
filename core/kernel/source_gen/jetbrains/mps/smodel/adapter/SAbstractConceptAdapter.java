@@ -45,6 +45,12 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     myConceptName = conceptName;
   }
 
+  @Deprecated
+  public SAbstractConceptAdapter(@NotNull String conceptName, SConceptId conceptId) {
+    myConceptName = conceptName;
+    myConceptId = conceptId;
+  }
+
   public SAbstractConceptAdapter(@NotNull SConceptId conceptId) {
     myConceptId = conceptId;
   }
@@ -79,9 +85,11 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
     SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, role);
     if (d.hasChild(role)) {
-      return myConceptName==null?new SContainmentLinkAdapter(id):new SContainmentLinkAdapter(myConceptName, role);
+      return myConceptName==null?new SContainmentLinkAdapter(id):new SContainmentLinkAdapter(myConceptName, role,
+          (org.jetbrains.mps.openapi.language.SContainmentLinkId) id);
     } else if (d.hasReference(role)) {
-      return myConceptName==null?new SReferenceLinkAdapter(id):new SReferenceLinkAdapter(myConceptName, role);
+      return myConceptName==null?new SReferenceLinkAdapter(id):new SReferenceLinkAdapter(myConceptName, role,
+          (org.jetbrains.mps.openapi.language.SReferenceLinkId) id);
     }
     return null;
   }
@@ -115,21 +123,21 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
     Iterable<SAbstractLink> seq = SetSequence.fromSet(((Set<String>) d.getChildrenNames())).select(new ISelector<String, SAbstractLink>() {
       public SAbstractLink select(String it) {
+        SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, it);
         if (myConceptName==null) {
-          SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, it);
           return (SAbstractLink) new SContainmentLinkAdapter(id);
         } else{
-          return (SAbstractLink) (new SContainmentLinkAdapter(myConceptName, it));
+          return (SAbstractLink) (new SContainmentLinkAdapter(myConceptName, it, (org.jetbrains.mps.openapi.language.SContainmentLinkId) id));
         }
       }
     });
     return Sequence.fromIterable(seq).concat(SetSequence.fromSet(((Set<String>) d.getReferenceNames())).select(new ISelector<String, SReferenceLinkAdapter>() {
       public SReferenceLinkAdapter select(String it) {
+        SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, it);
         if (myConceptName==null) {
-          SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, it);
           return new SReferenceLinkAdapter(id);
         } else{
-          return new SReferenceLinkAdapter(myConceptName, it);
+          return new SReferenceLinkAdapter(myConceptName, it, (org.jetbrains.mps.openapi.language.SReferenceLinkId) id);
         }
       }
     }));
