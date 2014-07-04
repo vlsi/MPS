@@ -945,7 +945,11 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_7259033139236497711(final SourceSubstituteMacroNodesContext _context) {
     MPSModulesClosure.RequiredJavaModules requiredAndReexp = ((MPSModulesClosure) _context.getVariable("var:mdeps")).getRequiredJava();
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode mod : requiredAndReexp.getModules()) {
+    for (SNode mod : Sequence.fromIterable(requiredAndReexp.getModules()).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return SPropertyOperations.getString(it, "name");
+      }
+    }, true)) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule");
       SLinkOperations.setTarget(loopnode, "targetModule", mod, false);
       SPropertyOperations.set(loopnode, "targetReexport", "" + (requiredAndReexp.isReexported(mod)));
