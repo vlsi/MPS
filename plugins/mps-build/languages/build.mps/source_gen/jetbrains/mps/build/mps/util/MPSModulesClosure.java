@@ -225,9 +225,10 @@ public class MPSModulesClosure {
     }
     Set<SNode> langs = SetSequence.fromSet(new HashSet<SNode>());
     Set<SNode> solutions = SetSequence.fromSet(new HashSet<SNode>());
-    for (SNode module : Sequence.fromIterable(sequence).subtract(SetSequence.fromSet(modules))) {
+    for (SNode module : Sequence.fromIterable(sequence)) {
       fillUsedLanguageRuntimes(module, langs, solutions);
     }
+    SetSequence.fromSet(solutions).removeSequence(SetSequence.fromSet(modules));
     modules.addAll(solutions);
     languagesWithRuntime.addAll(langs);
     collectDependencies(((Iterable<SNode>) solutions), false);
