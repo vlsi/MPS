@@ -462,14 +462,11 @@
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" />
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.general-purpose.devkit" />
       <pathelement location="${artifacts.mps}/languages/devkits/jetbrains.mps.devkit.language-design.devkit" />
-      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.access.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
-      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
@@ -503,7 +500,6 @@
       <pathelement location="${artifacts.mps}/lib/mps-test.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-tool.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-tuples.jar" />
-      <pathelement location="${artifacts.mps}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram.jar" />
       <pathelement location="${artifacts.mps}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.diagram.runtime.jar" />
       <pathelement location="${artifacts.mps}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures.jar" />
       <pathelement location="${artifacts.mps}/plugins/diagramEditor/languages/jetbrains.mps.lang.editor.figures.library.jar" />
