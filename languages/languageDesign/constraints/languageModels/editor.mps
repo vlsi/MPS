@@ -1408,7 +1408,7 @@
         <property name="text" nameId="tpc2.1073389577007" value="inherited" />
       </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8401916545537438649" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="- search for" />
+        <property name="text" nameId="tpc2.1073389577007" value="for" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="8401916545537480526" nodeInfo="nn">
           <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
         </node>

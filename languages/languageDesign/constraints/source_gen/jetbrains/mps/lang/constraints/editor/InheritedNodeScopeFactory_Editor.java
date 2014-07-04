@@ -43,7 +43,7 @@ public class InheritedNodeScopeFactory_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_cp9vsd_b0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "- search for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
     editorCell.setCellId("Constant_cp9vsd_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
