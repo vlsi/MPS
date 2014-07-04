@@ -24,6 +24,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.project.structure.modules.VersionedElement;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.language.LangUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -81,6 +82,7 @@ public class SModelOperations {
         continue;
       }
       SModuleReference ref = lang.getModuleReference();
+      int version = lang.getLanguageVersion();
       if (!usedLanguages.contains(ref)) {
         if (module != null) {
           if (respectModulesScopes && !declaredUsedLanguages.contains(lang)) {
@@ -89,7 +91,7 @@ public class SModelOperations {
         }
 
         usedLanguages.add(ref);
-        ((jetbrains.mps.smodel.SModelInternal) model).addLanguage(ref);
+        ((jetbrains.mps.smodel.SModelInternal) model).addLanguageId(LangUtil.getLanguageId(ref.getModuleId()), version);
       }
 
       for (SReference reference : node.getReferences()) {
@@ -405,6 +407,7 @@ public class SModelOperations {
           continue;
         }
         SModuleReference ref = lang.getModuleReference();
+        int version = lang.getLanguageVersion();
         if (!usedLanguages.contains(ref)) {
           if (module != null) {
             if (respectModulesScopes && !declaredUsedLanguages.contains(lang)) {
@@ -413,7 +416,7 @@ public class SModelOperations {
           }
 
           usedLanguages.add(ref);
-          model.addLanguage(ref);
+          model.addLanguage(LangUtil.getLanguageId(ref.getModuleId()), version);
         }
 
         for (SReference reference : node.getReferences()) {
