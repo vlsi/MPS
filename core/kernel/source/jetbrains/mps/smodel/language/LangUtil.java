@@ -49,7 +49,7 @@ public abstract class LangUtil {
   public static SConceptId getConceptId(SNode c) {
     SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof jetbrains.mps.smodel.SNodeId.Regular;
-    int id = (int) ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId();
+    long id =  ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId();
     return new SConceptId(LangUtil.getLanguageId(((Language) c.getModel().getModule())), id);
   }
 
