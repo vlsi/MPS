@@ -29,6 +29,9 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
     super(conceptName);
   }
 
+  public SInterfaceConceptAdapter(String id, SConceptId sid) {
+    super(id, sid);
+  }
 
 
   @Override

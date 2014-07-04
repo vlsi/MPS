@@ -52,6 +52,9 @@ public abstract class SConceptRepository {
   public abstract SAbstractConcept getConcept(@NotNull String qualifiedName);
 
   @Deprecated // since 3.2
+  public abstract SAbstractConcept getConcept(@NotNull String qualifiedName, SConceptId sid);
+
+  @Deprecated // since 3.2
   public abstract SEnumeration getEnumeration(@NotNull String qualifiedName);
 
   @Deprecated // since 3.2
