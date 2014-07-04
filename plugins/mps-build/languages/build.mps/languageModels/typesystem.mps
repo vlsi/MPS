@@ -223,7 +223,6 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="2531699772406302651" nodeInfo="nn">
                 <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="2531699772406302329" resolveInfo="buildProject" />
               </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="2531699772406302668" nodeInfo="nn" />
             </node>
           </node>
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2531699772406302614" nodeInfo="in">
@@ -619,7 +618,6 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363095033" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4278635856200790050" resolveInfo="project" />
                     </node>
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5780287594867972900" nodeInfo="nn" />
                   </node>
                 </node>
               </node>

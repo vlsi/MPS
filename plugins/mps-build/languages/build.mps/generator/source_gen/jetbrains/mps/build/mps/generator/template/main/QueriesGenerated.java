@@ -1421,7 +1421,7 @@ public class QueriesGenerated {
       }
       PathConverter pathConverter = new PathConverter(originalProject);
 
-      VisibleModules visibleModules = new VisibleModules(project, _context);
+      VisibleModules visibleModules = new VisibleModules(project);
       visibleModules.collect();
 
       ModuleChecker.Reporter reporter = new ModuleChecker.Reporter(_context);

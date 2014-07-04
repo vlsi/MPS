@@ -127,7 +127,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
       modelAccess.executeCommandInEDT(new Runnable() {
         public void run() {
           List<ModulesMiner.ModuleHandle> modules = ModulesMiner.getInstance().collectModules(dir, false);
-          VisibleModules visible = new VisibleModules(((SNode) MapSequence.fromMap(_params).get("node")), null);
+          VisibleModules visible = new VisibleModules(((SNode) MapSequence.fromMap(_params).get("node")));
           visible.collect();
 
           PathConverter converter = new PathConverter(((SNode) MapSequence.fromMap(_params).get("node")));
@@ -143,7 +143,7 @@ public class ImportAllModulesFromFolder_Action extends BaseAction {
             helper.create();
             helpers.add(helper);
           }
-          visible = new VisibleModules(((SNode) MapSequence.fromMap(_params).get("node")), null);
+          visible = new VisibleModules(((SNode) MapSequence.fromMap(_params).get("node")));
           visible.collect();
 
           for (ImportModuleHelper helper : helpers) {

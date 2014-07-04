@@ -40,7 +40,7 @@ public class ReloadRequired_QuickFix extends QuickFix_Runtime {
     PathConverter pathConverter = new PathConverter(project);
 
     try {
-      VisibleModules visible = new VisibleModules(project, null);
+      VisibleModules visible = new VisibleModules(project);
       visible.collect();
       ModuleLoader.createModuleChecker(module, visible, pathConverter).check(ModuleChecker.CheckType.LOAD_IMPORTANT_PART);
     } catch (ModuleLoaderException ex) {

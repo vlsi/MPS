@@ -7,10 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.generator.template.TemplateQueryContext;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.generator.TransientModelsModule;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
@@ -18,11 +14,14 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SReference;
-import jetbrains.mps.build.util.DependenciesHelper;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.log4j.Level;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 public class VisibleModules {
@@ -30,14 +29,9 @@ public class VisibleModules {
   private Map<String, SNode> moduleByName = new HashMap<String, SNode>();
   private Map<String, SNode> moduleById = new HashMap<String, SNode>();
   private SNode project;
-  private TemplateQueryContext genContext;
 
-  public VisibleModules(SNode project, @Nullable TemplateQueryContext genContext) {
+  public VisibleModules(SNode project) {
     this.project = project;
-    this.genContext = genContext;
-    if (genContext == null && SNodeOperations.getModel(project).getModule() instanceof TransientModelsModule) {
-      throw new IllegalArgumentException("cannot instantiate VisibleModules for transient model without generation context");
-    }
   }
 
   public void collect() {
@@ -55,9 +49,7 @@ public class VisibleModules {
         SNode depproj = SLinkOperations.getTarget(projectDependency, "script", false);
         if ((depproj == null)) {
           SReference ref = SNodeOperations.getReference(projectDependency, SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProjectDependency", "script"));
-          report("cannot find dependency build script " + SLinkOperations.getResolveInfo(ref) + " in model " + check_xuwpka_a0a1a4a1a3a6(ref.getTargetSModelReference()), projectDependency);
-        } else {
-          depproj = SNodeOperations.as(DependenciesHelper.getOriginalNode(depproj, genContext), "jetbrains.mps.build.structure.BuildProject");
+          report("cannot find dependency build script " + SLinkOperations.getResolveInfo(ref) + " in model " + check_xuwpka_a0a1a4a1a3a5(ref.getTargetSModelReference()), projectDependency);
         }
         if (depproj != null && seen.add(depproj)) {
           QueueSequence.fromQueue(queue).addLastElement(depproj);
@@ -66,22 +58,26 @@ public class VisibleModules {
       ListSequence.fromList(allModules).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(project, "jetbrains.mps.build.mps.structure.BuildMps_AbstractModule", false, new String[]{})));
     }
     for (SNode module : allModules) {
+      SNode currProj = SNodeOperations.getAncestor(module, "jetbrains.mps.build.structure.BuildProject", false, false);
       if (moduleById.containsKey(SPropertyOperations.getString(module, "uuid"))) {
-        report("found two modules with the same id: " + SPropertyOperations.getString(module, "uuid"), module);
-        report("found two modules with the same id: " + SPropertyOperations.getString(module, "uuid"), moduleById.get(SPropertyOperations.getString(module, "uuid")));
+        SNode other = moduleById.get(SPropertyOperations.getString(module, "uuid"));
+        SNode otherProj = SNodeOperations.getAncestor(other, "jetbrains.mps.build.structure.BuildProject", false, false);
+        report("found two modules with the same id: " + SPropertyOperations.getString(module, "uuid") + ". First module " + SPropertyOperations.getString(module, "name") + " from project " + currProj + ", second module " + SPropertyOperations.getString(other, "name") + " from project " + otherProj, module);
       }
       moduleById.put(SPropertyOperations.getString(module, "uuid"), module);
       if (moduleByName.containsKey(SPropertyOperations.getString(module, "name"))) {
-        report("found two modules with the same name: " + SPropertyOperations.getString(module, "name"), module);
-        report("found two modules with the same name: " + SPropertyOperations.getString(module, "name"), moduleByName.get(SPropertyOperations.getString(module, "name")));
+        SNode other = moduleByName.get(SPropertyOperations.getString(module, "name"));
+        SNode otherProj = SNodeOperations.getAncestor(other, "jetbrains.mps.build.structure.BuildProject", false, false);
+        report("found two modules with the same name: " + SPropertyOperations.getString(module, "name") + ". First module " + SPropertyOperations.getString(module, "uuid") + " from project " + currProj + ", second module " + SPropertyOperations.getString(other, "uuid") + " from project " + otherProj, other);
       }
       moduleByName.put(SPropertyOperations.getString(module, "name"), module);
     }
   }
 
   protected void report(String message, SNode anchor) {
-    if (genContext != null) {
-      genContext.showErrorMessage(anchor, message);
+    // FIXME use (share) reported interface from ModuleChecker to report directly to gencontext, if available 
+    if (LOG.isEnabledFor(Level.ERROR)) {
+      LOG.error(message);
     }
   }
 
@@ -101,7 +97,9 @@ public class VisibleModules {
     return result;
   }
 
-  private static String check_xuwpka_a0a1a4a1a3a6(SModelReference checkedDotOperand) {
+  protected static Logger LOG = LogManager.getLogger(VisibleModules.class);
+
+  private static String check_xuwpka_a0a1a4a1a3a5(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelName();
     }

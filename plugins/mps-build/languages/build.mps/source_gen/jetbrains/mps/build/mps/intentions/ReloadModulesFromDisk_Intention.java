@@ -89,7 +89,7 @@ public class ReloadModulesFromDisk_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      VisibleModules visible = new VisibleModules(node, null);
+      VisibleModules visible = new VisibleModules(node);
       visible.collect();
 
       PathConverter pathConverter = new PathConverter(node);

@@ -3695,7 +3695,6 @@
                     <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363114000" nodeInfo="nn">
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3189788309732145598" resolveInfo="project" />
                     </node>
-                    <node role="actualArgument" roleId="tpee.1068499141038" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="5780287594867972810" nodeInfo="nn" />
                   </node>
                 </node>
               </node>
