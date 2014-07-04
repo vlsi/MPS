@@ -231,15 +231,15 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       if (newLength == 0) {
         myNewProperties = null;
       } else {
-        myNewProperties = new String[newLength];
+        myNewProperties = new Object[newLength];
         System.arraycopy(oldProperties, 0, myNewProperties, 0, index);
         System.arraycopy(oldProperties, index + 2, myNewProperties, index, newLength - index);
       }
     } else if (oldValue == null) {
       Object[] oldProperties = myNewProperties == null ? EMPTY_ARRAY : myNewProperties;
-      myNewProperties = new String[oldProperties.length + 2];
+      myNewProperties = new Object[oldProperties.length + 2];
       System.arraycopy(oldProperties, 0, myNewProperties, 0, oldProperties.length);
-      myNewProperties[myNewProperties.length - 2] = name;
+      myNewProperties[myNewProperties.length - 2] = property;
       myNewProperties[myNewProperties.length - 1] = propertyValue;
     } else {
       myNewProperties[index + 1] = propertyValue;
