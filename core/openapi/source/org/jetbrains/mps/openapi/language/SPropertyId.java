@@ -17,9 +17,9 @@ package org.jetbrains.mps.openapi.language;
 
 public final class SPropertyId {
   private final SConceptId myConceptId;
-  private final int myPropertyId;
+  private final long myPropertyId;
 
-  public SPropertyId(SConceptId conceptId, int propertyId) {
+  public SPropertyId(SConceptId conceptId, long propertyId) {
     myConceptId = conceptId;
     myPropertyId = propertyId;
   }
@@ -28,7 +28,7 @@ public final class SPropertyId {
     return myConceptId;
   }
 
-  public int getPropertyId() {
+  public long getPropertyId() {
     return myPropertyId;
   }
 
@@ -48,7 +48,7 @@ public final class SPropertyId {
   @Override
   public int hashCode() {
     int result = myConceptId != null ? myConceptId.hashCode() : 0;
-    result = 31 * result + myPropertyId;
+    result = (int) (31 * result + myPropertyId);
     return result;
   }
 

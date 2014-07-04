@@ -16,14 +16,14 @@
 package org.jetbrains.mps.openapi.language;
 
 public final class SReferenceLinkId extends SAbstractLinkId {
-  private final int myRefLinkId;
+  private final long myRefLinkId;
 
-  public SReferenceLinkId(SConceptId conceptId, int refLinkId) {
+  public SReferenceLinkId(SConceptId conceptId, long refLinkId) {
     super(conceptId);
     myRefLinkId = refLinkId;
   }
 
-  public int getReferenceLinkId() {
+  public long getReferenceLinkId() {
     return myRefLinkId;
   }
 

@@ -57,7 +57,7 @@ public abstract class LangUtil {
   public static SContainmentLinkId getNodeRoleId(SNode c) {
     SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof jetbrains.mps.smodel.SNodeId.Regular;
-    int id = (int) ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId();
+    long id =  ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId();
     return new SContainmentLinkId(getConceptId(c.getContainingRoot()), id);
   }
 
@@ -65,7 +65,7 @@ public abstract class LangUtil {
   public static SReferenceLinkId getRefRoleId(SNode c) {
     SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof jetbrains.mps.smodel.SNodeId.Regular;
-    int id = (int) ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId();
+    long id =  ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId();
     return new SReferenceLinkId(getConceptId(c.getContainingRoot()), id);
   }
 
@@ -73,7 +73,7 @@ public abstract class LangUtil {
   public static SPropertyId getPropId(SNode c) {
     SNodeId nodeId = c.getNodeId();
     assert nodeId instanceof jetbrains.mps.smodel.SNodeId.Regular;
-    int id = (int) ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId();
+    long id =  ((jetbrains.mps.smodel.SNodeId.Regular) nodeId).getId();
     return new SPropertyId(getConceptId(c.getContainingRoot()), id);
   }
 }

@@ -16,14 +16,14 @@
 package org.jetbrains.mps.openapi.language;
 
 public final class SContainmentLinkId extends SAbstractLinkId {
-  private final int myLinkId;
+  private final long myLinkId;
 
-  public SContainmentLinkId(SConceptId conceptId, int linkId) {
+  public SContainmentLinkId(SConceptId conceptId, long linkId) {
     super(conceptId);
     myLinkId = linkId;
   }
 
-  public int getContainmentLinkId() {
+  public long getContainmentLinkId() {
     return myLinkId;
   }
 
@@ -41,7 +41,7 @@ public final class SContainmentLinkId extends SAbstractLinkId {
 
   @Override
   public int hashCode() {
-    return myLinkId;
+    return (int) myLinkId;
   }
 
   public String serialize() {
