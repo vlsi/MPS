@@ -61,7 +61,11 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   @Override
   public String getRole() {
-    return myRole;
+    if (myRole!=null) return myRole;
+    if (myRoleId!=null){
+      return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(myRoleId);
+    }
+    return null;
   }
 
   @Override
