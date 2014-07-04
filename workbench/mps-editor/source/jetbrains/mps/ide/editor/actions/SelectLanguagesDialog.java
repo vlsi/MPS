@@ -97,26 +97,26 @@ public class SelectLanguagesDialog extends DialogWrapper {
 
   private static class MyDefaultListCellRenderer extends DefaultListCellRenderer {
     public String getItemLabel(Object value) {
-      SModuleReference moduleReference = (SModuleReference) value;
-      final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+      VersionedElement<SModuleReference> moduleReference = (VersionedElement<SModuleReference>) value;
+      final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference.getElement());
       if (module == null) {
-        String moduleName = moduleReference.getModuleName();
+        String moduleName = moduleReference.getElement().getModuleName();
         return (moduleName.equals("") ?
           "<no name>" :
           moduleName
         );
       }
-      return moduleReference.getModuleName();
+      return moduleReference.getElement().getModuleName();
     }
 
     @Override
     public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
       final Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-      SModuleReference moduleReference = (SModuleReference) value;
+      VersionedElement<SModuleReference> moduleReference = (VersionedElement<SModuleReference>) value;
       if (moduleReference == null) return result;
       setText(getItemLabel(value));
       setIcon(FileIcons.PROJECT_LANGUAGE_ICON);
-      final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
+      final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference.getElement());
       if (module == null && !(isSelected)) {
         setForeground(Color.RED);
       }
