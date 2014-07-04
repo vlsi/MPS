@@ -20,8 +20,8 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.ConceptKind;
@@ -44,7 +44,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   private ModelReader9Handler.Debug_ref_roleElementHandler debug_ref_rolehandler = new ModelReader9Handler.Debug_ref_roleElementHandler();
   private ModelReader9Handler.Debug_child_roleElementHandler debug_child_rolehandler = new ModelReader9Handler.Debug_child_roleElementHandler();
   private ModelReader9Handler.LanguagesElementHandler languageshandler = new ModelReader9Handler.LanguagesElementHandler();
-  private ModelReader9Handler.Language_idElementHandler language_idhandler = new ModelReader9Handler.Language_idElementHandler();
+  private ModelReader9Handler.Used_languageElementHandler used_languagehandler = new ModelReader9Handler.Used_languageElementHandler();
   private ModelReader9Handler.Module_referenceElementHandler module_referencehandler = new ModelReader9Handler.Module_referenceElementHandler();
   private ModelReader9Handler.ImportsElementHandler importshandler = new ModelReader9Handler.ImportsElementHandler();
   private ModelReader9Handler.Model_importElementHandler model_importhandler = new ModelReader9Handler.Model_importElementHandler();
@@ -447,7 +447,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
             handleChild_7167172773708890285(resultObject, value);
           }
         });
-        return language_idhandler;
+        return used_languagehandler;
       }
       if ("generationPart".equals(tagName)) {
         myChildHandlersStack.push(new ModelReader9Handler.ChildHandler() {
@@ -471,8 +471,8 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     private void handleChild_7167172773708890285(Object resultObject, Object value) throws SAXException {
-      SLanguageId child = (SLanguageId) value;
-      fieldmodel.addLanguage(child);
+      Tuples._2<SLanguageId, Integer> child = (Tuples._2<SLanguageId, Integer>) value;
+      fieldmodel.addLanguage(child._0(), (int) child._1());
     }
 
     private void handleChild_7167172773708890293(Object resultObject, Object value) throws SAXException {
@@ -486,15 +486,15 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
   }
 
-  public class Language_idElementHandler extends ModelReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"id"};
+  public class Used_languageElementHandler extends ModelReader9Handler.ElementHandler {
+    private String[] requiredAttributes = new String[]{"id", "version"};
 
-    public Language_idElementHandler() {
+    public Used_languageElementHandler() {
     }
 
     @Override
-    protected SLanguageId createObject(Attributes attrs) throws SAXException {
-      return SLanguageId.deserialize(attrs.getValue("id"));
+    protected Tuples._2<SLanguageId, Integer> createObject(Attributes attrs) throws SAXException {
+      return MultiTuple.<SLanguageId,Integer>from(SLanguageId.deserialize(attrs.getValue("id")), Integer.parseInt(attrs.getValue("version")));
     }
 
     @Override
@@ -504,8 +504,11 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      SLanguageId result = (SLanguageId) resultObject;
+      Tuples._2<SLanguageId, Integer> result = (Tuples._2<SLanguageId, Integer>) resultObject;
       if ("id".equals(name)) {
+        return;
+      }
+      if ("version".equals(name)) {
         return;
       }
       super.handleAttribute(resultObject, name, value);
