@@ -25,7 +25,6 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;

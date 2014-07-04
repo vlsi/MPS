@@ -47,6 +47,7 @@ public class ModelPersistence9 implements IModelPersistence {
   public static final String USE_INDEX = "index";
   public static final String IMPLICIT = "implicit";
   public static final String CONTENTS = "contents";
+  public static final String VERSION = "version";
   // nodes
   public static final String NODE = "node";
   public static final String CONCEPT_ID = "concept";

@@ -35,7 +35,7 @@ public class Dependency {
 
   }
 
-  public Dependency(SModuleReference ref, boolean reexport) {
+  public Dependency(@NotNull SModuleReference ref, boolean reexport) {
     myModuleRef = ref;
     myReexport = reexport;
   }

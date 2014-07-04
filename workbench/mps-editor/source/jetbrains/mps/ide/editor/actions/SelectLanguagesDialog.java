@@ -20,6 +20,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.fileTypes.FileIcons;
+import jetbrains.mps.project.structure.modules.VersionedElement;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -32,9 +33,9 @@ import java.util.Set;
 public class SelectLanguagesDialog extends DialogWrapper {
   private JList myList;
   private Project myProject;
-  private Set<SModuleReference> myCandidates;
+  private Set<VersionedElement<SModuleReference>> myCandidates;
 
-  public SelectLanguagesDialog(Project project, Set<SModuleReference> candidates) {
+  public SelectLanguagesDialog(Project project, Set<VersionedElement<SModuleReference>> candidates) {
     super(project);
     myProject = project;
     myCandidates = candidates;
@@ -86,10 +87,10 @@ public class SelectLanguagesDialog extends DialogWrapper {
     return myList;
   }
 
-  public Set<SModuleReference> getSelectedModules() {
-    HashSet<SModuleReference> res = new HashSet<SModuleReference>();
+  public Set<VersionedElement<SModuleReference>> getSelectedModules() {
+    HashSet<VersionedElement<SModuleReference>> res = new HashSet<VersionedElement<SModuleReference>>();
     for (Object o : myList.getSelectedValues()) {
-      res.add((SModuleReference) o);
+      res.add((VersionedElement<SModuleReference>) o);
     }
     return res;
   }

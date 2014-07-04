@@ -260,8 +260,13 @@ public class Language extends AbstractModule implements MPSModuleOwner {
     return LibraryInitializer.getInstance().getBootstrapModules(Language.class).contains(this);
   }
 
+  @Deprecated
   public int getVersion() {
     return ((RefactorableSModelDescriptor) getStructureModelDescriptor()).getVersion();
+  }
+
+  public int getLanguageVersion() {
+    return getModuleDescriptor().getVersion();
   }
 
   public Collection<Generator> getGenerators() {

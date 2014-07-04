@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.extapi.model.ModelWithDisposeInfo;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
+import jetbrains.mps.project.structure.modules.VersionedElement;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.event.SModelListener;
 import org.jetbrains.annotations.NotNull;
@@ -51,11 +52,11 @@ public interface SModelInternal extends ModelWithDisposeInfo {
   @Deprecated
   void addLanguage(SModuleReference ref);
 
-  Iterable<SLanguageId> importedLanguageIds();
+  Iterable<VersionedElement<SLanguageId>> importedLanguageIds();
 
   void deleteLanguageId(@NotNull SLanguageId ref);
 
-  void addLanguageId(SLanguageId ref);
+  void addLanguageId(SLanguageId ref, int version);
 
   List<SModuleReference> importedDevkits();
 
@@ -73,6 +74,9 @@ public interface SModelInternal extends ModelWithDisposeInfo {
 
   // create new implicit import list based on used models, explicit import and old implicit import list
   void calculateImplicitImports();
+
+  // create new implicit languages list based on imported devkits
+  void calculateImplicitUsedLanguages();
 
   List<SModuleReference> engagedOnGenerationLanguages();
 

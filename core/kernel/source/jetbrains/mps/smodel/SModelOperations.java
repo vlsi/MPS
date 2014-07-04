@@ -22,11 +22,13 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.project.structure.modules.VersionedElement;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -490,6 +492,26 @@ public class SModelOperations {
     }
 
     return new ArrayList<Language>(languages);
+  }
+
+  @Nullable
+  public static VersionedElement<SLanguageId> getUsedLanguage(jetbrains.mps.smodel.SModel model, SLanguageId id) {
+    for (VersionedElement<SLanguageId> ve : model.usedLanguages()) {
+      if (ve.getElement().equals(id)) {
+        return ve;
+      }
+    }
+    return null;
+  }
+
+  @Nullable
+  public static VersionedElement<SLanguageId> getImplicitUsedLanguage(jetbrains.mps.smodel.SModel model, SLanguageId id) {
+    for (VersionedElement<SLanguageId> ve : model.implicitUsedLanguages()) {
+      if (ve.getElement().equals(id)) {
+        return ve;
+      }
+    }
+    return null;
   }
 
 }
