@@ -612,7 +612,7 @@ public class SModel implements SModelData {
 
   //language
 
-  public Iterable<VersionedElement<SLanguageId>> implicitUsedLanguages() {
+  public List<VersionedElement<SLanguageId>> implicitUsedLanguages() {
     return Collections.unmodifiableList(myImplicitLanguagesIds);
   }
 
@@ -644,7 +644,7 @@ public class SModel implements SModelData {
     myImplicitLanguagesIds.addAll(newImplicitUsedLanguageIds);
   }
 
-  public Iterable<VersionedElement<SLanguageId>> usedLanguages() {
+  public List<VersionedElement<SLanguageId>> usedLanguages() {
     return Collections.unmodifiableList(myLanguagesIds);
   }
 
@@ -1164,8 +1164,8 @@ public class SModel implements SModelData {
     for (SModuleReference mr : importedDevkits()) {
       to.addDevKit(mr);
     }
-    for (SModuleReference mr : importedLanguages()) {
-      to.addLanguage(mr);
+    for (VersionedElement<SLanguageId> mr : usedLanguages()) {
+      to.addLanguage(mr.getElement(), mr.getVersion());
     }
     for (SModuleReference mr : engagedOnGenerationLanguages()) {
       to.addEngagedOnGenerationLanguage(mr);
