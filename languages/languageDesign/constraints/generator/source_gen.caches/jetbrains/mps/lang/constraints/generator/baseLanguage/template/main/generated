@@ -52,8 +52,12 @@
   <source id="1147476728864" name="mc_main" hash="8915ddxwh6kg7t83kg2wzdp3xwympli">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1198585361787" name="reduce_PropertyValueParameter_to_MethodParameterReference_by_Alias_old" hash="-bdvravf1grotocb91xksx2gvz80wf1h" />
-  <source id="1198766482059" name="reduce_PropertyValueParameter_to_MethodParameterReference_by_Alias" hash="a7m3jmpiavglkpwv3np9i7sqqkmqbeo" />
+  <source id="1198585361787" name="reduce_PropertyValueParameter_to_MethodParameterReference_by_Alias_old" hash="-bdvravf1grotocb91xksx2gvz80wf1h">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
+  <source id="1198766482059" name="reduce_PropertyValueParameter_to_MethodParameterReference_by_Alias" hash="a7m3jmpiavglkpwv3np9i7sqqkmqbeo">
+    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
+  </source>
   <source id="1213106217514" name="ConstraintsClass" hash="75s5an8n4vlmwnpbdcrcskl8kk122fw">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
   </source>

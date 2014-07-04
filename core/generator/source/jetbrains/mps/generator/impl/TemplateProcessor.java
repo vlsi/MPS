@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.IGeneratorLogger;
 import jetbrains.mps.generator.impl.RoleValidation.RoleValidator;
 import jetbrains.mps.generator.impl.RoleValidation.Status;
@@ -731,7 +732,9 @@ public final class TemplateProcessor implements ITemplateProcessor {
       }
 
       final TemplateContainer tc = getTemplates();
-      return tc.processRuleConsequence(newcontext);
+      final List<SNode> rv = tc.processRuleConsequence(newcontext);
+      templateContext.getEnvironment().getTrace().trace(newInputNode.getNodeId(), GenerationTracerUtil.translateOutput(rv), getMacroNodeRef());
+      return rv;
     }
   }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,11 +23,9 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.options.SearchableConfigurable;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
-import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.IGenerationSettings.GenTraceSettings;
 import jetbrains.mps.generator.IModifiableGenerationSettings;
 import jetbrains.mps.ide.generator.GenerationSettings.MyState;
-import jetbrains.mps.util.annotation.ToRemove;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -102,6 +100,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     gts.setCompactTemplates(state.myTraceCompactTemplates);
     gts.setGroupByStep(state.myTraceGroupSteps);
     gts.setShowEmptySteps(state.myTraceShowEmptySteps);
+    gts.setGroupByChange(state.myTraceGroupByChange);
     myState.setTraceSettings(gts);
   }
 
@@ -191,6 +190,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     public boolean myTraceGroupSteps;
     public boolean myTraceCompactTemplates;
     public boolean myTraceShowEmptySteps;
+    public boolean myTraceGroupByChange;
 
     public MyState() {
       // use defaults from a single place. PersistentStateComponent demands no-arg cons with default values set (case: no xml file yet)
@@ -220,6 +220,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
       myTraceCompactTemplates = gts.isCompactTemplates();
       myTraceGroupSteps = gts.isGroupByStep();
       myTraceShowEmptySteps = gts.isShowEmptySteps();
+      myTraceGroupByChange = gts.isGroupByChange();
     }
   }
 }
