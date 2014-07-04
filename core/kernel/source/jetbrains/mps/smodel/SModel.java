@@ -720,6 +720,8 @@ public class SModel implements SModelData {
     invalidateModelDepsManager();
     fireLanguageAddedEvent(convertLanguageRef(id));
     markChanged();
+
+    addLanguage(LangUtil.getModuleReference(id));
   }
 
   //devkit
