@@ -30,13 +30,21 @@ public class InheritedNodeScopeFactory_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_cp9vsd_a");
     editorCell.setBig(true);
     editorCell.addEditorCell(this.createConstant_cp9vsd_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_cp9vsd_b0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_cp9vsd_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefCell_cp9vsd_c0(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_cp9vsd_a0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "search for");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "inherited");
     editorCell.setCellId("Constant_cp9vsd_a0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_cp9vsd_b0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "- search for");
+    editorCell.setCellId("Constant_cp9vsd_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.TEXT_COLOR, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_BLUE));
     editorCell.getStyle().putAll(style);
@@ -44,12 +52,12 @@ public class InheritedNodeScopeFactory_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_cp9vsd_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_cp9vsd_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("kind");
     provider.setNoTargetText("<no kind>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new InheritedNodeScopeFactory_Editor._Inline_cp9vsd_a1a());
+    provider.setAuxiliaryCellProvider(new InheritedNodeScopeFactory_Editor._Inline_cp9vsd_a2a());
     editorCell = provider.createEditorCell(editorContext);
     if (editorCell.getRole() == null) {
       editorCell.setReferenceCell(true);
@@ -66,8 +74,8 @@ public class InheritedNodeScopeFactory_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  public static class _Inline_cp9vsd_a1a extends InlineCellProvider {
-    public _Inline_cp9vsd_a1a() {
+  public static class _Inline_cp9vsd_a2a extends InlineCellProvider {
+    public _Inline_cp9vsd_a2a() {
       super();
     }
 
@@ -76,10 +84,10 @@ public class InheritedNodeScopeFactory_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_cp9vsd_a0b0(editorContext, node);
+      return this.createProperty_cp9vsd_a0c0(editorContext, node);
     }
 
-    private EditorCell createProperty_cp9vsd_a0b0(EditorContext editorContext, SNode node) {
+    private EditorCell createProperty_cp9vsd_a0c0(EditorContext editorContext, SNode node) {
       CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
       provider.setRole("name");
       provider.setNoTargetText("<no name>");
