@@ -12,13 +12,13 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.build.mps.behavior.BuildMps_Generator_Behavior;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.RecursiveIterator;
 import java.util.Iterator;
 import java.util.HashSet;
+import jetbrains.mps.build.mps.behavior.BuildMps_Generator_Behavior;
 import java.util.List;
 
 public class MPSModulesClosure {
@@ -95,7 +95,7 @@ public class MPSModulesClosure {
       }
     }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Generator") ? BuildMps_Generator_Behavior.call_getSourceLanguage_9200313594510517119(SNodeOperations.cast(SLinkOperations.getTarget(it, "module", false), "jetbrains.mps.build.mps.structure.BuildMps_Generator")) : SLinkOperations.getTarget(it, "module", false));
+        return SLinkOperations.getTarget(it, "module", false);
       }
     });
 
