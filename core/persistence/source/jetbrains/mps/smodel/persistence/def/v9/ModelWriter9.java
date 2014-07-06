@@ -148,7 +148,7 @@ public class ModelWriter9 implements IModelWriter {
         String conceptName = conceptNode != null ? conceptNode.getName() : debugRegistry.getConceptName(conceptId);
         conceptIds.put(conceptId, conceptName);
 
-        if (n.getParent()!=null) {
+        if (n.getParent() != null) {
           SContainmentLinkId roleId = n.getRoleInParentId();
           SContainmentLinkAdapter role = new SContainmentLinkAdapter(roleId);
           SNode roleNode = role.getLinkNode();
@@ -274,7 +274,9 @@ public class ModelWriter9 implements IModelWriter {
   protected void saveNode(Element nodeElement, SNode node, boolean saveChildren) {
     nodeElement.setAttribute(ModelPersistence9.CONCEPT_ID, myHelper.getConceptIndex(node.getConcept().getId()));
     nodeElement.setAttribute(ModelPersistence9.ID, node.getNodeId().toString());
-    DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.ROLE_ID, myHelper.getNodeRoleIndex(node.getRoleInParentId()));
+    if (node.getParent() != null) {
+      DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.ROLE_ID, myHelper.getNodeRoleIndex(node.getRoleInParentId()));
+    }
     String info = Util9.genNodeInfo(PersistenceRegistry.getInstance().getModelEnvironmentInfo(), node);
     DocUtil.setNotNullAttribute(nodeElement, ModelPersistence9.NODE_INFO, info);
 
