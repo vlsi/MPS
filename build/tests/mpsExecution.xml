@@ -468,6 +468,7 @@
       <pathelement location="${artifacts.mps}/plugins/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.baseLanguage.execution.startup.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-execution-configurations/languages/mps-execution-configurations/jetbrains.mps.baseLanguage.unitTest.execution.startup.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-execution-configurations/lib/execution-configurations.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.commands.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-execution-languages/lib/execution-languages.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />

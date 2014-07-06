@@ -321,6 +321,7 @@ public class MPSModulesClosure {
       Iterable<SNode> usedLanguages = getUsedLanguages(m);
       collectDependencies(usedLanguages, false);
       collectAllUsedLanguageRuntimesAndTheirDeps(usedLanguages);
+      modules.addAll(Sequence.fromIterable(usedLanguages).toListSequence());
     }
     modules.removeAll(Sequence.fromIterable(initialModules).toListSequence());
     return this;

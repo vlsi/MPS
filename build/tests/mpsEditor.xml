@@ -1149,6 +1149,8 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.descriptor.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
@@ -1172,6 +1174,7 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       <pathelement location="${artifacts.mps}/languages/make/jetbrains.mps.make.reduced.jar" />
       <pathelement location="${artifacts.mps}/languages/make/jetbrains.mps.tool.gentest.jar" />
+      <pathelement location="${artifacts.mps}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <pathelement location="${artifacts.mps}/languages/xml/jetbrains.mps.core.xml.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-closures.jar" />
       <pathelement location="${artifacts.mps}/lib/mps-collections.jar" />
@@ -1185,10 +1188,14 @@
       <pathelement location="${artifacts.mps}/lib/mps-workbench.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.table.runtime.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
+      <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.editor.editorTest.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.jar" />
       <pathelement location="${artifacts.mps}/plugins/mps-testing/languages/languageDesign/jetbrains.mps.lang.test.runtime.jar" />
+      <pathelement location="${build.layout}/languages/jetbrains.mps.lang.actions.testLanguage.jar" />
       <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.multiple.testLanguage.jar" />
+      <pathelement location="${build.layout}/languages/jetbrains.mps.lang.editor.tableTests.jar" />
       <pathelement location="${build.layout}/languages/testDefaultEditor.jar" />
+      <pathelement location="${build.layout}/languages/testMoveElements.jar" />
     </path>
     <pathconvert pathsep="${path.separator}" property="mps.libraries.path.string" refid="mps.libraries.path" />
     <path id="mps.plugins.path">

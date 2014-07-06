@@ -441,6 +441,7 @@
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.stubs.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+      <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.operations.jar" />
       <pathelement location="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       <pathelement location="${artifacts.mps}/languages/make/jetbrains.mps.make.reduced.jar" />
       <pathelement location="${artifacts.mps}/languages/make/jetbrains.mps.tool.gentest.jar" />
