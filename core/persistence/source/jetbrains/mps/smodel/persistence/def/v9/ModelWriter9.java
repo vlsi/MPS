@@ -257,8 +257,10 @@ public class ModelWriter9 implements IModelWriter {
 
   private void saveUsedLanguages(Element rootElement, SModel sourceModel) {
     for (SLanguageId id : sourceModel.usedLanguages()) {
+      myHelper.addLanguage(id);
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
       languageElem.setAttribute(ModelPersistence9.ID, id.serialize());
+      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(id));
       rootElement.addContent(languageElem);
     }
   }

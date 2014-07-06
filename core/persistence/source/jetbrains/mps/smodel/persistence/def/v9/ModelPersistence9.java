@@ -44,6 +44,7 @@ public class ModelPersistence9 implements IModelPersistence {
   public static final String IMPORTS = "imports";
   public static final String IMPORT = "import";
   public static final String IMPORT_INDEX = "index";
+  public static final String USE_INDEX = "index";
   public static final String IMPLICIT = "implicit";
   public static final String CONTENTS = "contents";
   // nodes
