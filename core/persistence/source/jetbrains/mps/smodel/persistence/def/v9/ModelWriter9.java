@@ -28,11 +28,13 @@ import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
+import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectConsumer;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -47,12 +49,18 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
+import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
 
 public class ModelWriter9 implements IModelWriter {
   public static final int VERSION = 9;
@@ -263,6 +271,27 @@ public class ModelWriter9 implements IModelWriter {
       languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(id));
       rootElement.addContent(languageElem);
     }
+    for (SLanguageId id : getAdditionalLanguages(sourceModel)) {
+      myHelper.addLanguage(id);
+      Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
+      languageElem.setAttribute(ModelPersistence9.ID, id.serialize());
+      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(id));
+      languageElem.setAttribute(ModelPersistence9.IMPLICIT, "true");
+      rootElement.addContent(languageElem);
+    }
+  }
+
+  private Set<SLanguageId> getAdditionalLanguages(SModel sourceModel) {
+    Set<SLanguageId> res = new HashSet<SLanguageId>();
+    Collection<SLanguageId> langs = IterableUtil.asCollection(sourceModel.usedLanguages());
+    for (SNode node : SNodeUtil.getDescendants(sourceModel.getModelDescriptor())) {
+      Language conceptLang = (Language) node.getConcept().getLanguage().getSourceModule();
+      SLanguageId lid = LangUtil.getLanguageId(conceptLang);
+      if (!langs.contains(lid)) {
+        res.add(lid);
+      }
+    }
+    return res;
   }
 
   protected void saveModelNodes(Element parent, SModel sourceModel) {
