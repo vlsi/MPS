@@ -53,7 +53,7 @@ public final class SConceptId {
   }
 
   public String serialize() {
-    return myLanguageId.toString() + "/" + myConceptId;
+    return myLanguageId.serialize() + "/" + myConceptId;
   }
 
   public static SConceptId deserialize(String s) {
