@@ -152,7 +152,7 @@ public class ModelWriter9 implements IModelWriter {
           SContainmentLinkId roleId = n.getRoleInParentId();
           SContainmentLinkAdapter role = new SContainmentLinkAdapter(roleId);
           SNode roleNode = role.getLinkNode();
-          String roleName = roleNode != null ? roleNode.getName() : debugRegistry.getLinkName(roleId);
+          String roleName = roleNode != null ? roleNode.getProperty("role") : debugRegistry.getLinkName(roleId);
           roleIds.put(roleId, roleName);
         }
 
@@ -167,7 +167,7 @@ public class ModelWriter9 implements IModelWriter {
           SReferenceLinkId refId = ref.getRoleId();
           SReferenceLinkAdapter refRole = new SReferenceLinkAdapter(refId);
           SNode refNode = refRole.getLinkNode();
-          String refName = refNode != null ? refNode.getName() : debugRegistry.getLinkName(refId);
+          String refName = refNode != null ? refNode.getProperty("role") : debugRegistry.getLinkName(refId);
           refIds.put(refId, refName);
         }
       }
