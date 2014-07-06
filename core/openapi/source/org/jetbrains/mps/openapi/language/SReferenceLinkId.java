@@ -27,6 +27,26 @@ public final class SReferenceLinkId extends SAbstractLinkId {
     return myRefLinkId;
   }
 
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    SReferenceLinkId that = (SReferenceLinkId) o;
+
+    if (myRefLinkId != that.myRefLinkId) return false;
+    if (!myConceptId.equals(that.myConceptId)) return false;
+
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    int result = myConceptId.hashCode();
+    result = 31 * result + (int) (myRefLinkId ^ (myRefLinkId >>> 32));
+    return result;
+  }
+
   public String serialize() {
     return myConceptId.toString() + "/" + myRefLinkId;
   }

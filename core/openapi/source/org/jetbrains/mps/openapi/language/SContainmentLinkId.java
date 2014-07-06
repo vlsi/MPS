@@ -35,13 +35,16 @@ public final class SContainmentLinkId extends SAbstractLinkId {
     SContainmentLinkId that = (SContainmentLinkId) o;
 
     if (myLinkId != that.myLinkId) return false;
+    if (!myConceptId.equals(that.myConceptId)) return false;
 
     return true;
   }
 
   @Override
   public int hashCode() {
-    return (int) myLinkId;
+    int result = myConceptId.hashCode();
+    result = 31 * result + (int) (myLinkId ^ (myLinkId >>> 32));
+    return result;
   }
 
   public String serialize() {
