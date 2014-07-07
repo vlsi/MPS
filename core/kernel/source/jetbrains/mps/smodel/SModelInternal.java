@@ -54,6 +54,8 @@ public interface SModelInternal extends ModelWithDisposeInfo {
 
   Iterable<VersionedElement<SLanguageId>> importedLanguageIds();
 
+  Iterable<VersionedElement<SLanguageId>> implicitImportedLanguageIds();
+
   void deleteLanguageId(@NotNull SLanguageId ref);
 
   void addLanguageId(SLanguageId ref, int version);

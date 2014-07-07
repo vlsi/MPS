@@ -200,6 +200,11 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
   }
 
   @Override
+  public Iterable<VersionedElement<SLanguageId>> implicitImportedLanguageIds() {
+    return getSModelInternal().implicitUsedLanguages();
+  }
+
+  @Override
   public void deleteLanguageId(@NotNull SLanguageId ref) {
     getSModelInternal().deleteLanguage(ref);
   }

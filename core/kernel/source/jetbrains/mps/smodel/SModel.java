@@ -712,7 +712,7 @@ public class SModel implements SModelData {
 
     VersionedElement<SLanguageId> versionedElement = SModelOperations.getUsedLanguage(this, id);
     if (versionedElement != null) {
-      assert versionedElement.getVersion() == version;
+      assert version == -1 || versionedElement.getVersion() == version;
       return;
     }
 
@@ -721,7 +721,24 @@ public class SModel implements SModelData {
     fireLanguageAddedEvent(convertLanguageRef(id));
     markChanged();
 
-    addLanguage(LangUtil.getModuleReference(id));
+    addLanguage(convertLanguageRef(id));
+  }
+
+  public void addImplicitLanguage(SLanguageId id, int version) {
+    if (myModelDescriptor != null) {
+      ModelChange.assertLegalChange(myModelDescriptor);
+    }
+
+    VersionedElement<SLanguageId> versionedElement = SModelOperations.getImplicitUsedLanguage(this, id);
+    if (versionedElement != null) {
+      assert versionedElement.getVersion() == version;
+      return;
+    }
+
+    myImplicitLanguagesIds.add(new VersionedElement<SLanguageId>(id, version));
+    invalidateModelDepsManager();
+    fireLanguageAddedEvent(convertLanguageRef(id));
+    markChanged();
   }
 
   //devkit

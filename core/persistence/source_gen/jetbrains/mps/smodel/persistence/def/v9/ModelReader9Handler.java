@@ -471,8 +471,12 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     private void handleChild_7167172773708890285(Object resultObject, Object value) throws SAXException {
-      Tuples._2<SLanguageId, Integer> child = (Tuples._2<SLanguageId, Integer>) value;
-      fieldmodel.addLanguage(child._0(), (int) child._1());
+      Tuples._3<SLanguageId, Integer, Boolean> child = (Tuples._3<SLanguageId, Integer, Boolean>) value;
+      if ((boolean) child._2()) {
+        fieldmodel.addImplicitLanguage(child._0(), (int) child._1());
+      } else {
+        fieldmodel.addLanguage(child._0(), (int) child._1());
+      }
     }
 
     private void handleChild_7167172773708890293(Object resultObject, Object value) throws SAXException {
@@ -493,8 +497,8 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     @Override
-    protected Tuples._2<SLanguageId, Integer> createObject(Attributes attrs) throws SAXException {
-      return MultiTuple.<SLanguageId,Integer>from(SLanguageId.deserialize(attrs.getValue("id")), Integer.parseInt(attrs.getValue("version")));
+    protected Tuples._3<SLanguageId, Integer, Boolean> createObject(Attributes attrs) throws SAXException {
+      return MultiTuple.<SLanguageId,Integer,Boolean>from(SLanguageId.deserialize(attrs.getValue("id")), Integer.parseInt(attrs.getValue("version")), Boolean.parseBoolean(attrs.getValue("implicit")));
     }
 
     @Override
@@ -504,11 +508,14 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      Tuples._2<SLanguageId, Integer> result = (Tuples._2<SLanguageId, Integer>) resultObject;
+      Tuples._3<SLanguageId, Integer, Boolean> result = (Tuples._3<SLanguageId, Integer, Boolean>) resultObject;
       if ("id".equals(name)) {
         return;
       }
       if ("version".equals(name)) {
+        return;
+      }
+      if ("implicit".equals(name)) {
         return;
       }
       super.handleAttribute(resultObject, name, value);
