@@ -427,6 +427,8 @@ public class ModelPersistence {
           String value = attributes.getValue(idx);
           if (MODEL_UID.equals(name)) {
             myResult.setUID(value);
+          } else if (ModelPersistence9.REF.equals(name)) {
+            myResult.setUID(value);
           } else if (SModelHeader.VERSION.equals(name)) {
             try {
               myResult.setVersion(Integer.parseInt(value));
