@@ -59,7 +59,7 @@ public final class SConceptId {
   public static SConceptId deserialize(String s) {
     int split = s.lastIndexOf("/");
     SLanguageId lang = SLanguageId.deserialize(s.substring(0, split));
-    int concept = Integer.parseInt(s.substring(split + 1));
+    long concept = Long.parseLong(s.substring(split + 1));
     return new SConceptId(lang, concept);
   }
 }
