@@ -213,7 +213,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
         if (modelRoot instanceof DefaultModelRoot && ((DefaultModelRoot) modelRoot).isLanguageAspectsSourceRoot(sr)) {
           continue;
         }
-        if(FileUtil.isSubPath(sr, sourceRoot)) {
+        if(sourceRoot != null && FileUtil.isSubPath(sr, sourceRoot)) {
           tmpSR = sourceRoot;
           break;
         }
@@ -222,7 +222,7 @@ public class FilePerRootModelPersistence implements CoreComponent, ModelFactory,
       if (tmpSR == null) {
         throw new IOException("no suitable source root found");
       }
-      sourceRoot = sourceRoot.equals(tmpSR) ? sourceRoot : tmpSR;
+      sourceRoot = (sourceRoot != null && sourceRoot.equals(tmpSR)) ? sourceRoot : tmpSR;
     }
 
     IFile folder = FileSystem.getInstance().getFileByPath(sourceRoot);

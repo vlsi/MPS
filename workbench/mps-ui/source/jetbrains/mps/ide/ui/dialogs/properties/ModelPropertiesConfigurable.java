@@ -29,6 +29,7 @@ import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.extapi.persistence.FolderDataSource;
 import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -524,6 +525,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
         DataSource source = myModelDescriptor.getSource();
         if (source instanceof FileDataSource) {
           filePath = FileUtil.getCanonicalPath(((FileDataSource) source).getFile().getPath());
+        } else if (source instanceof FolderDataSource) {
+          filePath = FileUtil.getCanonicalPath(((FolderDataSource) source).getFolder().getPath());
         }
       }
       JTextField textField = new JTextField();
