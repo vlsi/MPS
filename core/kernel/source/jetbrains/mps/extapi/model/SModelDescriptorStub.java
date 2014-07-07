@@ -255,11 +255,6 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
   }
 
   @Override
-  public final void calculateImplicitUsedLanguages() {
-    getSModelInternal().calculateImplicitUsedLanguages();
-  }
-
-  @Override
   public final List<SModuleReference> engagedOnGenerationLanguages() {
     return getSModelInternal().engagedOnGenerationLanguages();
   }

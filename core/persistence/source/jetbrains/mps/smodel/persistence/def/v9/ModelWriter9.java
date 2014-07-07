@@ -276,6 +276,7 @@ public class ModelWriter9 implements IModelWriter {
       rootElement.addContent(languageElem);
     }
     for (VersionedElement<SLanguageId> language : sourceModel.implicitUsedLanguages()) {
+      myHelper.addLanguage(language.getElement());
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
       languageElem.setAttribute(ModelPersistence9.ID, language.getElement().serialize());
       languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(language.getVersion()));

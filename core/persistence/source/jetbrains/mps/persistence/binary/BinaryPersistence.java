@@ -129,9 +129,7 @@ public class BinaryPersistence {
 
   private static void loadModelProperties(BinarySModel model, ModelInputStream is) throws IOException {
     for (Pair<VersionedElement<SLanguageId>, Boolean> ref : loadUsedLanguagesList(is)) {
-      if (ref.o2) {
-        model.addImplicitLanguage(ref.o1.getElement(), ref.o1.getVersion());
-      } else {
+      if (!ref.o2) {
         model.addLanguage(ref.o1.getElement(), ref.o1.getVersion());
       }
     }

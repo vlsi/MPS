@@ -77,9 +77,6 @@ public interface SModelInternal extends ModelWithDisposeInfo {
   // create new implicit import list based on used models, explicit import and old implicit import list
   void calculateImplicitImports();
 
-  // create new implicit languages list based on imported devkits
-  void calculateImplicitUsedLanguages();
-
   List<SModuleReference> engagedOnGenerationLanguages();
 
   void addEngagedOnGenerationLanguage(SModuleReference ref);

@@ -40,6 +40,7 @@ import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -58,6 +59,7 @@ import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.security.SecureRandom;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -81,7 +83,6 @@ public class SModel implements SModelData {
   private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
 
   private List<VersionedElement<SLanguageId>> myLanguagesIds = new ArrayList<VersionedElement<SLanguageId>>();
-  private List<VersionedElement<SLanguageId>> myImplicitLanguagesIds = new ArrayList<VersionedElement<SLanguageId>>();
 
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
@@ -613,35 +614,16 @@ public class SModel implements SModelData {
   //language
 
   public List<VersionedElement<SLanguageId>> implicitUsedLanguages() {
-    return Collections.unmodifiableList(myImplicitLanguagesIds);
-  }
-
-  public void calculateImplicitUsedLanguages() {
-    List<VersionedElement<SLanguageId>> newImplicitUsedLanguageIds = new ArrayList<VersionedElement<SLanguageId>>();
-    for (SModuleReference dk : myDevKits) {
-      DevKit devKit = ((DevKit) dk.resolve(MPSModuleRepository.getInstance()));
-      if (devKit == null) continue;
-      for (SLanguageId exported : devKit.getAllExportedLanguageIds()) {
-        Language lang = new SLanguageAdapter(exported).getSourceModule();
-        int languageVersion;
-        if (lang == null) {
-          LOG.error("DevKit" + devKit.getName() + " exports language" + MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(exported) + "which cannot be resolved");
-          VersionedElement<SLanguageId> oldElement = SModelOperations.getImplicitUsedLanguage(this, exported);
-          if (oldElement == null) {
-            continue;
-          }
-          languageVersion = oldElement.getVersion();
-        } else {
-          languageVersion = lang.getLanguageVersion();
-        }
-        VersionedElement<SLanguageId> ve = new VersionedElement<SLanguageId>(exported, languageVersion);
-        if (!newImplicitUsedLanguageIds.contains(ve)) {
-          newImplicitUsedLanguageIds.add(ve);
-        }
+    List<VersionedElement<SLanguageId>> res = new ArrayList<VersionedElement<SLanguageId>>();
+    for (org.jetbrains.mps.openapi.model.SNode node : SNodeUtil.getDescendants(getModelDescriptor())) {
+      Language conceptLang = (Language) node.getConcept().getLanguage().getSourceModule();
+      SLanguageId lid = LangUtil.getLanguageId(conceptLang);
+      VersionedElement<SLanguageId> usedLanguage = SModelOperations.getUsedLanguage(this, lid);
+      if (usedLanguage == null) {
+        res.add(new VersionedElement<SLanguageId>(lid, conceptLang.getLanguageVersion()));
       }
     }
-    myImplicitLanguagesIds.clear();
-    myImplicitLanguagesIds.addAll(newImplicitUsedLanguageIds);
+    return res;
   }
 
   public List<VersionedElement<SLanguageId>> usedLanguages() {
@@ -724,23 +706,6 @@ public class SModel implements SModelData {
     markChanged();
 
     addLanguage(convertLanguageRef(id));
-  }
-
-  public void addImplicitLanguage(SLanguageId id, int version) {
-    if (myModelDescriptor != null) {
-      ModelChange.assertLegalChange(myModelDescriptor);
-    }
-
-    VersionedElement<SLanguageId> versionedElement = SModelOperations.getImplicitUsedLanguage(this, id);
-    if (versionedElement != null) {
-      assert versionedElement.getVersion() == version;
-      return;
-    }
-
-    myImplicitLanguagesIds.add(new VersionedElement<SLanguageId>(id, version));
-    invalidateModelDepsManager();
-    fireLanguageAddedEvent(convertLanguageRef(id));
-    markChanged();
   }
 
   //devkit

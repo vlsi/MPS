@@ -473,7 +473,6 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_7167172773708890285(Object resultObject, Object value) throws SAXException {
       Tuples._3<SLanguageId, Integer, Boolean> child = (Tuples._3<SLanguageId, Integer, Boolean>) value;
       if ((boolean) child._2()) {
-        fieldmodel.addImplicitLanguage(child._0(), (int) child._1());
       } else {
         fieldmodel.addLanguage(child._0(), (int) child._1());
       }
