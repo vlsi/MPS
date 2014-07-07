@@ -53,7 +53,7 @@ public final class SPropertyId {
   }
 
   public String serialize() {
-    return myConceptId.toString() + "/" + myPropertyId;
+    return myConceptId.serialize() + "/" + myPropertyId;
   }
 
   public static SPropertyId deserialize(String s) {

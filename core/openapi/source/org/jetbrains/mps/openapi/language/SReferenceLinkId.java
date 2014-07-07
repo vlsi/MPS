@@ -48,7 +48,7 @@ public final class SReferenceLinkId extends SAbstractLinkId {
   }
 
   public String serialize() {
-    return myConceptId.toString() + "/" + myRefLinkId;
+    return myConceptId.serialize() + "/" + myRefLinkId;
   }
 
   public static SReferenceLinkId deserialize(String s) {

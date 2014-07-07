@@ -48,7 +48,7 @@ public final class SContainmentLinkId extends SAbstractLinkId {
   }
 
   public String serialize() {
-    return myConceptId.toString() + "/" + myLinkId;
+    return myConceptId.serialize() + "/" + myLinkId;
   }
 
   public static SContainmentLinkId deserialize(String s) {
