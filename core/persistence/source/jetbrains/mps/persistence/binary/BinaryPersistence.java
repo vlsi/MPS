@@ -203,13 +203,12 @@ public class BinaryPersistence {
   }
 
   private static void saveUsedLanguagesList(Collection<VersionedElement<SLanguageId>> refs, Collection<VersionedElement<SLanguageId>> implicit, ModelOutputStream os) throws IOException {
-    os.writeInt(refs.size());
+    os.writeInt(refs.size() + implicit.size());
     for (VersionedElement<SLanguageId> ref : refs) {
       os.writeString(ref.getElement().serialize());
       os.writeInt(ref.getVersion());
       os.writeBoolean(false);
     }
-    os.writeInt(implicit.size());
     for (VersionedElement<SLanguageId> ref : implicit) {
       os.writeString(ref.getElement().serialize());
       os.writeInt(ref.getVersion());
