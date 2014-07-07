@@ -7,13 +7,13 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import java.util.Collection;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
@@ -26,6 +26,9 @@ public class CheckForReexportExtendedClassifier_NonTypesystemRule extends Abstra
   }
 
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
+    if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
+      return;
+    }
     SModule module = classifier.getModel().getModule();
     GlobalModuleDependenciesManager depManager = new GlobalModuleDependenciesManager(module);
     Collection<SModule> deps = depManager.getModules(GlobalModuleDependenciesManager.Deptype.COMPILE);
@@ -40,7 +43,7 @@ public class CheckForReexportExtendedClassifier_NonTypesystemRule extends Abstra
       if (deps.contains(classifierModule) && !(depsReexport.contains(classifierModule))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(extendedClassifierType, "If " + classifier + " is in use outside " + module.getModuleName() + " set 'reexport' flag to the dependency of " + classifierModule, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9721774220123915", null, errorTarget);
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(extendedClassifierType, "If " + classifier + " is used outside " + module.getModuleName() + " set 'reexport' flag to the dependency " + classifierModule, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "9721774220123915", null, errorTarget);
           {
             BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.PutReexportForExtendedClassifier_QuickFix", false);
             intentionProvider.putArgument("module", ((AbstractModule) module));

@@ -6,6 +6,9 @@ import jetbrains.mps.errors.QuickFix_Runtime;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.classloading.ClassLoaderManager;
+import java.util.Collections;
+import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class PutReexportForExtendedClassifier_QuickFix extends QuickFix_Runtime {
   public PutReexportForExtendedClassifier_QuickFix() {
@@ -19,5 +22,6 @@ public class PutReexportForExtendedClassifier_QuickFix extends QuickFix_Runtime 
     assert ((SModule) PutReexportForExtendedClassifier_QuickFix.this.getField("moduleToImport")[0]) != null;
     boolean reexport = true;
     ((AbstractModule) PutReexportForExtendedClassifier_QuickFix.this.getField("module")[0]).addDependency(((SModule) PutReexportForExtendedClassifier_QuickFix.this.getField("moduleToImport")[0]).getModuleReference(), reexport);
+    ClassLoaderManager.getInstance().reloadClasses(Collections.singleton(((AbstractModule) PutReexportForExtendedClassifier_QuickFix.this.getField("module")[0])), new EmptyProgressMonitor());
   }
 }

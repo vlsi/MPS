@@ -542,6 +542,9 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.typesystem.PutReexportForExtendedClassifier_QuickFix" file="PutReexportForExtendedClassifier_QuickFix.java">
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.classloading.ClassLoaderManager" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.project.AbstractModule" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
