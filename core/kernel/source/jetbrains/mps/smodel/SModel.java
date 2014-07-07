@@ -712,8 +712,10 @@ public class SModel implements SModelData {
 
     VersionedElement<SLanguageId> versionedElement = SModelOperations.getUsedLanguage(this, id);
     if (versionedElement != null) {
-      assert version == -1 || versionedElement.getVersion() == version;
-      return;
+      if (version == -1 || versionedElement.getVersion() == version) {
+        return;
+      }
+      assert versionedElement.getVersion() == -1;
     }
 
     myLanguagesIds.add(new VersionedElement<SLanguageId>(id, version));
