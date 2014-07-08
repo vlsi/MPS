@@ -54,8 +54,7 @@ public abstract class BaseTransformationTest4 implements TransformationTest {
   @Override
   public void init() {
     this.myTransientModel = TemporaryModels.getInstance().create(false, TempModuleOptions.forDefaultModule());
-    new CloneUtil(this.myModel, this.myTransientModel).cloneModelWithImports();
-    TemporaryModels.getInstance().addMissingImports(myTransientModel);
+    new CloneUtil(this.myModel, this.myTransientModel).cloneModelWithAllImports();
   }
 
   @Override
