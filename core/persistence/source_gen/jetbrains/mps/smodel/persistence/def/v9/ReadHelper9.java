@@ -182,7 +182,7 @@ public class ReadHelper9 {
   public SContainmentLinkId readNodeRole(String s) {
     int ix = s.lastIndexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     SConceptId concept = readConceptId(s.substring(0, ix));
-    return new SContainmentLinkId(concept, Integer.parseInt(s.substring(ix + 1)));
+    return new SContainmentLinkId(concept, Long.parseLong(s.substring(ix + 1)));
   }
 
 
@@ -190,7 +190,7 @@ public class ReadHelper9 {
   public SReferenceLinkId readRefRole(String s) {
     int ix = s.lastIndexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     SConceptId concept = readConceptId(s.substring(0, ix));
-    return new SReferenceLinkId(concept, Integer.parseInt(s.substring(ix + 1)));
+    return new SReferenceLinkId(concept, Long.parseLong(s.substring(ix + 1)));
   }
 
 
@@ -198,7 +198,7 @@ public class ReadHelper9 {
   public SPropertyId readPropId(String s) {
     int ix = s.lastIndexOf(WriteHelper.MODEL_SEPARATOR_CHAR);
     SConceptId concept = readConceptId(s.substring(0, ix));
-    return new SPropertyId(concept, Integer.parseInt(s.substring(ix + 1)));
+    return new SPropertyId(concept, Long.parseLong(s.substring(ix + 1)));
   }
 
   protected static Logger LOG = LogManager.getLogger(ReadHelper9.class);

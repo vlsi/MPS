@@ -63,13 +63,13 @@
     <nodeInfo nodeId="4362914091961476098" fileName="ReadHelper9.java" startLine="175" startPosition="12" endLine="176" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4072482659874949003" fileName="ReadHelper9.java" startLine="182" startPosition="52" endLine="183" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4072482659874968499" fileName="ReadHelper9.java" startLine="183" startPosition="61" endLine="184" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4072482659874979774" fileName="ReadHelper9.java" startLine="184" startPosition="59" endLine="185" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4072482659874979774" fileName="ReadHelper9.java" startLine="184" startPosition="59" endLine="185" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4072482659875236141" fileName="ReadHelper9.java" startLine="190" startPosition="49" endLine="191" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4072482659875236148" fileName="ReadHelper9.java" startLine="191" startPosition="61" endLine="192" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4072482659875236157" fileName="ReadHelper9.java" startLine="192" startPosition="59" endLine="193" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4072482659875236157" fileName="ReadHelper9.java" startLine="192" startPosition="59" endLine="193" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4072482659875306559" fileName="ReadHelper9.java" startLine="198" startPosition="43" endLine="199" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4072482659875306581" fileName="ReadHelper9.java" startLine="199" startPosition="61" endLine="200" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4072482659875306590" fileName="ReadHelper9.java" startLine="200" startPosition="59" endLine="201" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4072482659875306590" fileName="ReadHelper9.java" startLine="200" startPosition="59" endLine="201" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4362914091961475519" fileName="ReadHelper9.java" startLine="204" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4362914091961475679" fileName="ReadHelper9.java" startLine="47" startPosition="10" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="9105127192430024485" fileName="ReadHelper9.java" startLine="151" startPosition="12" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -140,15 +140,15 @@
     </scopeInfo>
     <scopeInfo nodeId="2615562934856440536" fileName="ReadHelper9.java" startLine="163" startPosition="38" endLine="166" endPosition="7" />
     <scopeInfo nodeId="4362914091961476046" fileName="ReadHelper9.java" startLine="170" startPosition="25" endLine="173" endPosition="7" />
-    <scopeInfo nodeId="4362914091961476132" fileName="ReadHelper9.java" startLine="182" startPosition="52" endLine="185" endPosition="82">
+    <scopeInfo nodeId="4362914091961476132" fileName="ReadHelper9.java" startLine="182" startPosition="52" endLine="185" endPosition="80">
       <varInfo nodeId="4072482659874968500" varName="concept" />
       <varInfo nodeId="4072482659874949004" varName="ix" />
     </scopeInfo>
-    <scopeInfo nodeId="4072482659875236140" fileName="ReadHelper9.java" startLine="190" startPosition="49" endLine="193" endPosition="80">
+    <scopeInfo nodeId="4072482659875236140" fileName="ReadHelper9.java" startLine="190" startPosition="49" endLine="193" endPosition="78">
       <varInfo nodeId="4072482659875236149" varName="concept" />
       <varInfo nodeId="4072482659875236142" varName="ix" />
     </scopeInfo>
-    <scopeInfo nodeId="4072482659873620267" fileName="ReadHelper9.java" startLine="198" startPosition="43" endLine="201" endPosition="75">
+    <scopeInfo nodeId="4072482659873620267" fileName="ReadHelper9.java" startLine="198" startPosition="43" endLine="201" endPosition="73">
       <varInfo nodeId="4072482659875306582" varName="concept" />
       <varInfo nodeId="4072482659875306560" varName="ix" />
     </scopeInfo>
