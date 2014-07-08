@@ -5,6 +5,7 @@ package jetbrains.mps.smodel.adapter;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.DebugInfoUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
@@ -76,7 +77,7 @@ public class SPropertyAdapter implements SProperty {
     String name;
 
     if (conceptName == null) {
-      concept = SModelUtil.findConceptDeclaration(MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(myPropertyId.getConceptId()));
+      concept = SModelUtil.findConceptDeclaration(DebugInfoUtil.getConceptFqName(myPropertyId.getConceptId()));
       name = getName();
     } else{
       concept = SModelUtil.findConceptDeclaration(conceptName);
@@ -94,7 +95,7 @@ public class SPropertyAdapter implements SProperty {
     String cname;
     String propName;
     if (conceptName == null) {
-      cname = MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(myPropertyId.getConceptId());
+      cname = DebugInfoUtil.getConceptFqName(myPropertyId.getConceptId());
       propName = getName();
     } else {
       cname = conceptName;

@@ -6,6 +6,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.DebugInfoUtil;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
@@ -104,7 +105,7 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     String cname;
     String linkRole;
     if (conceptName == null) {
-      cname = MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(roleId.getConceptId());
+      cname = DebugInfoUtil.getConceptFqName(roleId.getConceptId());
       linkRole = getRole();
     } else {
       cname = conceptName;

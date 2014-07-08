@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.DebugInfoUtil;
 import jetbrains.mps.smodel.DebugRegistryImpl;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -106,7 +107,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
 
   @NotNull
   public ConceptDescriptor getConceptDescriptor(@Nullable SConceptId id) {
-    return getConceptDescriptor(MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(id));
+    return getConceptDescriptor(DebugInfoUtil.getConceptFqName(id));
   }
 
   @Deprecated

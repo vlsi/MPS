@@ -1162,7 +1162,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanRead();
 
     if (myRepository == null) return null;
-    return myRepository.getDebugRegistry().getConceptName(myConceptId);
+    return DebugInfoUtil.getConceptFqName(myConceptId);
   }
 
   public SModel getPersistentModel() {
@@ -1237,7 +1237,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   //----------------------------------------------------------
 
   public SNode getConceptDeclarationNode() {
-    String name  = myConceptFqName==null?MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(myConceptId):myConceptFqName;
+    String name  = myConceptFqName==null?DebugInfoUtil.getConceptFqName(myConceptId):myConceptFqName;
     return (SNode) SModelUtil.findConceptDeclaration(name);
   }
 
