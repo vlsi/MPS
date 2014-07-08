@@ -496,10 +496,10 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     private void handleChild_7167172773708890285(Object resultObject, Object value) throws SAXException {
-      Tuples._3<SLanguageId, Integer, Boolean> child = (Tuples._3<SLanguageId, Integer, Boolean>) value;
-      if ((boolean) child._2()) {
+      Tuples._4<SLanguageId, String, Integer, Boolean> child = (Tuples._4<SLanguageId, String, Integer, Boolean>) value;
+      if ((boolean) child._3()) {
       } else {
-        fieldmodel.addLanguage(child._0(), (int) child._1());
+        fieldhelper.addUsedLanguage(fieldmodel, child._1(), child._0(), (int) child._2());
       }
     }
 
@@ -515,14 +515,14 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   }
 
   public class Used_languageElementHandler extends ModelReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"id", "version"};
+    private String[] requiredAttributes = new String[]{"id", "index", "version"};
 
     public Used_languageElementHandler() {
     }
 
     @Override
-    protected Tuples._3<SLanguageId, Integer, Boolean> createObject(Attributes attrs) throws SAXException {
-      return MultiTuple.<SLanguageId,Integer,Boolean>from(SLanguageId.deserialize(attrs.getValue("id")), Integer.parseInt(attrs.getValue("version")), Boolean.parseBoolean(attrs.getValue("implicit")));
+    protected Tuples._4<SLanguageId, String, Integer, Boolean> createObject(Attributes attrs) throws SAXException {
+      return MultiTuple.<SLanguageId,String,Integer,Boolean>from(SLanguageId.deserialize(attrs.getValue("id")), attrs.getValue("index"), Integer.parseInt(attrs.getValue("version")), Boolean.parseBoolean(attrs.getValue("implicit")));
     }
 
     @Override
@@ -532,8 +532,11 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      Tuples._3<SLanguageId, Integer, Boolean> result = (Tuples._3<SLanguageId, Integer, Boolean>) resultObject;
+      Tuples._4<SLanguageId, String, Integer, Boolean> result = (Tuples._4<SLanguageId, String, Integer, Boolean>) resultObject;
       if ("id".equals(name)) {
+        return;
+      }
+      if ("index".equals(name)) {
         return;
       }
       if ("version".equals(name)) {
