@@ -22,7 +22,6 @@ import jetbrains.mps.project.GlobalScope;
 public class RenameMethod extends BaseRefactoring {
   public RenameMethod() {
     this.addTransientParameter("newName");
-    this.addTransientParameter("refactorOverriding");
   }
 
   public IRefactoringTarget getRefactoringTarget() {
@@ -39,10 +38,8 @@ public class RenameMethod extends BaseRefactoring {
 
   public void refactor(final RefactoringContext refactoringContext) {
     SNode method = MethodRefactoringUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
-    if (((Boolean) refactoringContext.getParameter("refactorOverriding"))) {
-      for (SNode node : ListSequence.fromList(MethodRefactoringUtils.findOverridingMethods(method, new EmptyProgressMonitor()))) {
-        SPropertyOperations.set(node, "name", ((String) refactoringContext.getParameter("newName")));
-      }
+    for (SNode node : ListSequence.fromList(MethodRefactoringUtils.findOverridingMethods(method, new EmptyProgressMonitor()))) {
+      SPropertyOperations.set(node, "name", ((String) refactoringContext.getParameter("newName")));
     }
     SPropertyOperations.set(method, "name", ((String) refactoringContext.getParameter("newName")));
   }
@@ -56,7 +53,7 @@ public class RenameMethod extends BaseRefactoring {
     if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
       return FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder", "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
     } else {
-      return (((Boolean) refactoringContext.getParameter("refactorOverriding")) != null && ((Boolean) refactoringContext.getParameter("refactorOverriding")) ? FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder") : FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder"));
+      return FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder");
     }
   }
 }
