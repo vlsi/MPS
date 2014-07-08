@@ -908,7 +908,7 @@
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7167172773708890359" nodeInfo="nn">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1768088633166236888" resolveInfo="isImplementationNode" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="nv7r.XMLSAXAttributeReference" typeId="nv7r.2264311582634140361" id="7167172773708890360" nodeInfo="nn">
-                        <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890768" resolveInfo="nodeInfo" />
+                        <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890768" resolveInfo="info" />
                       </node>
                     </node>
                   </node>
@@ -1194,7 +1194,7 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7167172773708890681" nodeInfo="nn">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1768088633166236888" resolveInfo="isImplementationNode" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="nv7r.XMLSAXAttributeReference" typeId="nv7r.2264311582634140361" id="7167172773708890682" nodeInfo="nn">
-                      <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890768" resolveInfo="nodeInfo" />
+                      <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890768" resolveInfo="info" />
                     </node>
                   </node>
                 </node>
@@ -1206,7 +1206,7 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7167172773708890686" nodeInfo="nn">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1910945748543280883" resolveInfo="isInterfaceNode" />
                     <node role="actualArgument" roleId="tpee.1068499141038" type="nv7r.XMLSAXAttributeReference" typeId="nv7r.2264311582634140361" id="7167172773708890687" nodeInfo="nn">
-                      <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890768" resolveInfo="nodeInfo" />
+                      <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890768" resolveInfo="info" />
                     </node>
                   </node>
                   <node role="operand" roleId="tpee.1197027771414" type="nv7r.XMLSAXFieldReference" typeId="nv7r.2264311582634140384" id="7167172773708890688" nodeInfo="nn">
@@ -1395,7 +1395,7 @@
         <property name="name" nameId="tpck.1169194664001" value="role" />
       </node>
       <node role="attrs" roleId="nv7r.2264311582634140404" type="nv7r.XMLSAXAttributeRule" typeId="nv7r.2264311582634140363" id="7167172773708890768" nodeInfo="ng">
-        <property name="name" nameId="tpck.1169194664001" value="nodeInfo" />
+        <property name="name" nameId="tpck.1169194664001" value="info" />
         <property name="isRequired" nameId="nv7r.2264311582634140364" value="true" />
       </node>
       <node role="type" roleId="nv7r.2264311582634140403" type="cx9y.IndexedTupleType" typeId="cx9y.1238852151516" id="4072482659873471701" nodeInfo="in">
@@ -1415,7 +1415,7 @@
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7167172773708890826" nodeInfo="nn">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5351433512193252759" resolveInfo="readNodeInfo" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="nv7r.XMLSAXAttributeReference" typeId="nv7r.2264311582634140361" id="7167172773708890827" nodeInfo="nn">
-                    <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890768" resolveInfo="nodeInfo" />
+                    <link role="attribute" roleId="nv7r.2264311582634140362" targetNodeId="7167172773708890768" resolveInfo="info" />
                   </node>
                 </node>
                 <node role="operand" roleId="tpee.1197027771414" type="nv7r.XMLSAXFieldReference" typeId="nv7r.2264311582634140384" id="7167172773708890828" nodeInfo="nn">

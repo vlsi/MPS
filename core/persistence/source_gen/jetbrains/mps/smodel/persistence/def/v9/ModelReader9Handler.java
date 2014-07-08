@@ -660,7 +660,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     }
 
     private boolean checknode_7167172773708890351(Object resultObject, Attributes attrs) {
-      return !(fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("nodeInfo")));
+      return !(fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("info")));
     }
 
     private void handleChild_7167172773708890339(Object resultObject, Object value) throws SAXException {
@@ -681,14 +681,14 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   }
 
   public class NodeElementHandler extends ModelReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"concept", "nodeInfo"};
+    private String[] requiredAttributes = new String[]{"concept", "info"};
 
     public NodeElementHandler() {
     }
 
     @Override
     protected Tuples._2<SNode, SContainmentLinkId> createObject(Attributes attrs) throws SAXException {
-      Tuples._3<ConceptKind, StaticScope, Boolean> parsed = fieldhelper.readNodeInfo(attrs.getValue("nodeInfo"));
+      Tuples._3<ConceptKind, StaticScope, Boolean> parsed = fieldhelper.readNodeInfo(attrs.getValue("info"));
       if (parsed == null) {
         throw new SAXParseException("bad typeInfo attribute", null);
       }
@@ -720,7 +720,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("role".equals(name)) {
         return;
       }
-      if ("nodeInfo".equals(name)) {
+      if ("info".equals(name)) {
         return;
       }
       super.handleAttribute(resultObject, name, value);
@@ -769,10 +769,10 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
 
     private boolean checknode_7167172773708890671(Object resultObject, Attributes attrs) {
       Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
-      if (fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("nodeInfo"))) {
+      if (fieldstripImplementation && fieldhelper.isImplementationNode(attrs.getValue("info"))) {
         return false;
       }
-      return !(result._0() instanceof InterfaceSNode) || fieldhelper.isInterfaceNode(attrs.getValue("nodeInfo"));
+      return !(result._0() instanceof InterfaceSNode) || fieldhelper.isInterfaceNode(attrs.getValue("info"));
     }
 
     private void handleChild_7167172773708890516(Object resultObject, Object value) throws SAXException {
