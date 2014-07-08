@@ -15,12 +15,22 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
 
 public abstract class DebugInfoUtil {
   public static String getConceptFqName(SConceptId id){
     DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
     return dr.getLanguageName(id.getLanguageId())+".structure."+dr.getConceptName(id);
+  }
+
+  public static SConceptId getConceptId(String fqName){
+    DebugRegistryImpl  dr = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry());
+    SLanguageId lang = dr.getLanguageId(NameUtil.namespaceFromConceptFQName(fqName));
+    if(lang==null) return null;
+    return dr.getConceptId(lang,NameUtil.shortNameFromLongName(fqName));
   }
 }

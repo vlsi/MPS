@@ -131,10 +131,13 @@ public class DebugRegistryImpl implements DebugRegistry {
     return null;
   }
 
-  public SConceptId getConceptId(String name) {
+  public SConceptId getConceptId(SLanguageId lang, String name) {
     List<SConceptId> ids = myConcepts.getKeysByValue(name);
     if (ids == null || ids.isEmpty()) return null;
-    return (SConceptId) ids.get(0);
+    for (SConceptId id:ids){
+      if (id.getLanguageId().equals(lang)) return id;
+    }
+    return null;
   }
 
   public SLanguageId getLanguageId(String name) {
