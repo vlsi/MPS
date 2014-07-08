@@ -13,8 +13,10 @@ import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept {
@@ -28,25 +30,29 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
   }
 
   @Deprecated
-  public SConceptAdapter(@NotNull String concept,SConceptId id) {
-    super(concept,id);
+  public SConceptAdapter(@NotNull String concept, SConceptId id) {
+    super(concept, id);
   }
 
   @Override
   public SConcept getSuperConcept() {
-    ConceptDescriptor d = myConceptName==null?ConceptRegistry.getInstance().getConceptDescriptor(myConceptId):ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    ConceptDescriptor d = myConceptName == null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
+        ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
       return null;
     }
 
     String superConcept = d.getSuperConcept();
-    return (superConcept == null ? null : (SConcept) new SConceptAdapter(DebugInfoUtil.getConceptId(superConcept)));
+    if (superConcept == null) return null;
+    if (myConceptName != null) return new SConceptAdapter(superConcept);
+    return new SConceptAdapter(DebugInfoUtil.getConceptId(superConcept));
   }
 
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
-    ConceptDescriptor d = myConceptName==null?ConceptRegistry.getInstance().getConceptDescriptor(myConceptId):ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    ConceptDescriptor d = myConceptName == null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
+        ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
       return null;
@@ -54,8 +60,8 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
 
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (String name : d.getParentsNames()) {
-      SConceptId id = DebugInfoUtil.getConceptId(name);
-      SAbstractConcept resolved = SConceptRepository.getInstance().getConcept(id);
+      SAbstractConcept resolved = myConceptName != null ? SConceptRepository.getInstance().getConcept(name) :
+          SConceptRepository.getInstance().getConcept(DebugInfoUtil.getConceptId(name));
       if (resolved instanceof SInterfaceConcept) {
         res.add((SInterfaceConcept) resolved);
       }

@@ -14,8 +14,10 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
+
 import java.util.List;
 import java.util.ArrayList;
+
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
@@ -47,16 +49,17 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
 
   @Override
   public SAbstractLink getLink(SAbstractLinkId id) {
-    String name =  MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(id);
+    String name = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(id);
     if (SNodeUtil.link_BaseConcept_smodelAttribute.equals(name)) {
-      return new SContainmentLinkAdapter(((SAbstractLinkId) id));
+      return new SContainmentLinkAdapter(id);
     }
     return super.getLink(id);
   }
 
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
-    ConceptDescriptor d = myConceptName==null?ConceptRegistry.getInstance().getConceptDescriptor(myConceptId):ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    ConceptDescriptor d = myConceptName == null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
+        ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
       return null;
@@ -64,7 +67,8 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
 
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (String name : d.getParentsNames()) {
-      SAbstractConcept resolved = SConceptRepository.getInstance().getConcept(DebugInfoUtil.getConceptId(name));
+      SAbstractConcept resolved = myConceptName != null ? SConceptRepository.getInstance().getConcept(name) :
+          SConceptRepository.getInstance().getConcept(DebugInfoUtil.getConceptId(name));
       if (resolved instanceof SInterfaceConcept) {
         res.add((SInterfaceConcept) resolved);
       }
