@@ -289,6 +289,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       if (index != -1) {
         propertyValue = myProperties[index + 1];
       }
+    }else{
+      //by id
+      SPropertyId pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(myConceptId, propertyName);
+      if(pid!=null){
+        propertyValue = getProperty(pid);
+      }
     }
     fireNodePropertyReadAccess(propertyName, propertyValue);
     return propertyValue;
