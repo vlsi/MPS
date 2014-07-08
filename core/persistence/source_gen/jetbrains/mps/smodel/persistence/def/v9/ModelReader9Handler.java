@@ -172,7 +172,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   }
 
   public class ModelElementHandler extends ModelReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{"ref", "doNotGenerate"};
+    private String[] requiredAttributes = new String[]{"ref"};
 
     public ModelElementHandler() {
     }
@@ -184,7 +184,6 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
       fieldhasSkippedNodes = false;
       fieldmodel.setPersistenceVersion(9);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
-      fieldmodel.getSModelHeader().setDoNotGenerate(Boolean.parseBoolean(attrs.getValue("doNotGenerate")));
       fieldhelper = new ReadHelper9(fieldmodel.getReference());
       ModelLoadResult result = new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
       result.setState((fieldhasSkippedNodes ? ((fieldinterfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.NO_IMPLEMENTATION)) : ModelLoadingState.FULLY_LOADED));
@@ -203,6 +202,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
         return;
       }
       if ("doNotGenerate".equals(name)) {
+        fieldmodel.getSModelHeader().setDoNotGenerate(Boolean.parseBoolean(value));
         return;
       }
       super.handleAttribute(resultObject, name, value);
@@ -308,7 +308,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   }
 
   public class Debug_modelElementHandler extends ModelReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
+    private String[] requiredAttributes = new String[]{"ref", "name"};
 
     public Debug_modelElementHandler() {
     }
@@ -317,6 +317,11 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     protected Object createObject(Attributes attrs) throws SAXException {
       MPSModuleRepository.getInstance().getDebugRegistry().addModelName(jetbrains.mps.smodel.SModelReference.parseReference(attrs.getValue("ref")), attrs.getValue("name"));
       return null;
+    }
+
+    @Override
+    protected String[] requiredAttributes() {
+      return requiredAttributes;
     }
 
     @Override
@@ -333,7 +338,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   }
 
   public class Debug_conceptElementHandler extends ModelReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
+    private String[] requiredAttributes = new String[]{"id", "name"};
 
     public Debug_conceptElementHandler() {
     }
@@ -342,6 +347,11 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     protected Object createObject(Attributes attrs) throws SAXException {
       MPSModuleRepository.getInstance().getDebugRegistry().addConceptName(SConceptId.deserialize(attrs.getValue("id")), attrs.getValue("name"));
       return null;
+    }
+
+    @Override
+    protected String[] requiredAttributes() {
+      return requiredAttributes;
     }
 
     @Override
@@ -358,7 +368,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   }
 
   public class Debug_propertyElementHandler extends ModelReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
+    private String[] requiredAttributes = new String[]{"id", "name"};
 
     public Debug_propertyElementHandler() {
     }
@@ -367,6 +377,11 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     protected Object createObject(Attributes attrs) throws SAXException {
       MPSModuleRepository.getInstance().getDebugRegistry().addPropertyName(SPropertyId.deserialize(attrs.getValue("id")), attrs.getValue("name"));
       return null;
+    }
+
+    @Override
+    protected String[] requiredAttributes() {
+      return requiredAttributes;
     }
 
     @Override
@@ -383,7 +398,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   }
 
   public class Debug_ref_roleElementHandler extends ModelReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
+    private String[] requiredAttributes = new String[]{"id", "name"};
 
     public Debug_ref_roleElementHandler() {
     }
@@ -392,6 +407,11 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     protected Object createObject(Attributes attrs) throws SAXException {
       MPSModuleRepository.getInstance().getDebugRegistry().addLinkName(SReferenceLinkId.deserialize(attrs.getValue("id")), attrs.getValue("name"));
       return null;
+    }
+
+    @Override
+    protected String[] requiredAttributes() {
+      return requiredAttributes;
     }
 
     @Override
@@ -408,7 +428,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   }
 
   public class Debug_child_roleElementHandler extends ModelReader9Handler.ElementHandler {
-    private String[] requiredAttributes = new String[]{};
+    private String[] requiredAttributes = new String[]{"id", "name"};
 
     public Debug_child_roleElementHandler() {
     }
@@ -417,6 +437,11 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     protected Object createObject(Attributes attrs) throws SAXException {
       MPSModuleRepository.getInstance().getDebugRegistry().addLinkName(SContainmentLinkId.deserialize(attrs.getValue("id")), attrs.getValue("name"));
       return null;
+    }
+
+    @Override
+    protected String[] requiredAttributes() {
+      return requiredAttributes;
     }
 
     @Override
