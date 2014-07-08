@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.persistence.def.v9;
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.modules.VersionedElement;
-import jetbrains.mps.project.structure.modules.VersionedElement;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -30,13 +29,11 @@ import jetbrains.mps.smodel.adapter.SContainmentLinkAdapter;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.adapter.SPropertyAdapter;
 import jetbrains.mps.smodel.adapter.SReferenceLinkAdapter;
-import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.persistence.def.DocUtil;
 import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectConsumer;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -51,18 +48,12 @@ import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
-import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.LinkedHashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Set;
 
 public class ModelWriter9 implements IModelWriter {
   public static final int VERSION = 9;
@@ -275,7 +266,7 @@ public class ModelWriter9 implements IModelWriter {
       languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(language.getElement()));
       rootElement.addContent(languageElem);
     }
-    for (VersionedElement<SLanguageId> language : sourceModel.implicitUsedLanguages()) {
+    for (VersionedElement<SLanguageId> language : sourceModel.implicitlyUsedLanguages()) {
       myHelper.addLanguage(language.getElement());
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
       languageElem.setAttribute(ModelPersistence9.ID, language.getElement().serialize());

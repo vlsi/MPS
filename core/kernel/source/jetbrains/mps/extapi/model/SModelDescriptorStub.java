@@ -201,7 +201,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
 
   @Override
   public Iterable<VersionedElement<SLanguageId>> implicitImportedLanguageIds() {
-    return getSModelInternal().implicitUsedLanguages();
+    return getSModelInternal().implicitlyUsedLanguages();
   }
 
   @Override

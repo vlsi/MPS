@@ -613,14 +613,20 @@ public class SModel implements SModelData {
 
   //language
 
-  public List<VersionedElement<SLanguageId>> implicitUsedLanguages() {
-    List<VersionedElement<SLanguageId>> res = new ArrayList<VersionedElement<SLanguageId>>();
+  public Collection<VersionedElement<SLanguageId>> implicitlyUsedLanguages() {
+    Set<VersionedElement<SLanguageId>> res = new HashSet<VersionedElement<SLanguageId>>();
     for (org.jetbrains.mps.openapi.model.SNode node : SNodeUtil.getDescendants(getModelDescriptor())) {
       Language conceptLang = (Language) node.getConcept().getLanguage().getSourceModule();
-      SLanguageId lid = LangUtil.getLanguageId(conceptLang);
-      VersionedElement<SLanguageId> usedLanguage = SModelOperations.getUsedLanguage(this, lid);
-      if (usedLanguage == null) {
-        res.add(new VersionedElement<SLanguageId>(lid, conceptLang.getLanguageVersion()));
+
+      Set<Language> langs = conceptLang.getAllExtendedLanguages();
+      langs.add(conceptLang);
+
+      for (Language l: langs){
+        SLanguageId lid = LangUtil.getLanguageId(l);
+        VersionedElement<SLanguageId> usedLanguage = SModelOperations.getUsedLanguage(this, lid);
+        if (usedLanguage == null) {
+          res.add(new VersionedElement<SLanguageId>(lid, l.getLanguageVersion()));
+        }
       }
     }
     return res;

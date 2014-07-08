@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.persistence.binary;
 
-import com.sun.org.apache.xpath.internal.operations.Bool;
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.modules.VersionedElement;
@@ -189,7 +188,7 @@ public class BinaryPersistence {
     os.writeBoolean((md instanceof GeneratableSModel) && ((GeneratableSModel) md).isDoNotGenerate());
     os.writeInt(0xabab);
 
-    saveUsedLanguagesList(model.usedLanguages(), model.implicitUsedLanguages(), os);
+    saveUsedLanguagesList(model.usedLanguages(), model.implicitlyUsedLanguages(), os);
     saveModuleRefList(model.engagedOnGenerationLanguages(), os);
     saveModuleRefList(model.importedDevkits(), os);
 

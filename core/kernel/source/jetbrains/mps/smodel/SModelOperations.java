@@ -509,7 +509,7 @@ public class SModelOperations {
 
   @Nullable
   public static VersionedElement<SLanguageId> getImplicitUsedLanguage(jetbrains.mps.smodel.SModel model, SLanguageId id) {
-    for (VersionedElement<SLanguageId> ve : model.implicitUsedLanguages()) {
+    for (VersionedElement<SLanguageId> ve : model.implicitlyUsedLanguages()) {
       if (ve.getElement().equals(id)) {
         return ve;
       }
