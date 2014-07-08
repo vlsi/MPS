@@ -94,30 +94,15 @@ public class StorageIndexHelper9 {
   }
 
   public String getPropertyIndex(@NotNull SPropertyId prop) {
-    // return fqName prefixed with "." if we can't find model or name of concept
-    String index = getConceptIndex(prop.getConceptId());
-    if (index == null) {
-      return MODEL_SEPARATOR_CHAR + prop.serialize();
-    }
-    return index + MODEL_SEPARATOR_CHAR + prop.getPropertyId();
+    return getConceptIndex(prop.getConceptId()) + MODEL_SEPARATOR_CHAR + prop.getPropertyId();
   }
 
   public String getNodeRoleIndex(@NotNull SContainmentLinkId linkId) {
-    // return fqName prefixed with "." if we can't find model or name of concept
-    String index = getConceptIndex(linkId.getConceptId());
-    if (index == null) {
-      return MODEL_SEPARATOR_CHAR + linkId.serialize();
-    }
-    return index + MODEL_SEPARATOR_CHAR + linkId.getContainmentLinkId();
+    return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getContainmentLinkId();
   }
 
   public String getReferenceRoleIndex(@NotNull SReferenceLinkId linkId) {
-    // return fqName prefixed with "." if we can't find model or name of concept
-    String index = getConceptIndex(linkId.getConceptId());
-    if (index == null) {
-      return MODEL_SEPARATOR_CHAR + linkId.serialize();
-    }
-    return index + MODEL_SEPARATOR_CHAR + linkId.getReferenceLinkId();
+    return getConceptIndex(linkId.getConceptId()) + MODEL_SEPARATOR_CHAR + linkId.getReferenceLinkId();
   }
 
   private void addInternalObject(Map<Object, String> index, Set<Integer> usedIndices, Object toStore, int initialHash) {
