@@ -41,7 +41,6 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
     }
 
     String superConcept = d.getSuperConcept();
-    DebugRegistryImpl dr = (DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry();
     return (superConcept == null ? null : (SConcept) new SConceptAdapter(DebugInfoUtil.getConceptId(superConcept)));
   }
 
@@ -54,8 +53,9 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
     }
 
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
-    for (String i : d.getParentsNames()) {
-      SAbstractConcept resolved = SConceptRepository.getInstance().getConcept(i);
+    for (String name : d.getParentsNames()) {
+      SConceptId id = DebugInfoUtil.getConceptId(name);
+      SAbstractConcept resolved = SConceptRepository.getInstance().getConcept(id);
       if (resolved instanceof SInterfaceConcept) {
         res.add((SInterfaceConcept) resolved);
       }
