@@ -17,7 +17,6 @@ package jetbrains.mps.smodel.persistence.def.v9;
 
 import jetbrains.mps.persistence.FilePerRootDataSource;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.structure.modules.VersionedElement;
 import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -110,8 +109,8 @@ public class ModelWriter9 implements IModelWriter {
     DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
 
     //save used languages info
-    for (VersionedElement<SLanguageId> ve : sourceModel.usedLanguages()) {
-      SLanguageId id = ve.getElement();
+    for (SLanguageId ve : sourceModel.usedLanguages()) {
+      SLanguageId id = ve;
       Language lang = new SLanguageAdapter(id).getSourceModule();
       String name = lang != null ? lang.getModuleName() : debugRegistry.getLanguageName(id);
 
@@ -294,21 +293,21 @@ public class ModelWriter9 implements IModelWriter {
   }
 
   private void saveUsedLanguages(Element rootElement, SModel sourceModel) {
-    for (VersionedElement<SLanguageId> language : sourceModel.usedLanguages()) {
-      myHelper.addLanguage(language.getElement());
+    for (Entry<SLanguageId, Integer> language : sourceModel.usedLanguagesWithVersions().entrySet()) {
+      myHelper.addLanguage(language.getKey());
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
-      languageElem.setAttribute(ModelPersistence9.ID, language.getElement().serialize());
-      languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(language.getVersion()));
-      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(language.getElement()));
+      languageElem.setAttribute(ModelPersistence9.ID, language.getKey().serialize());
+      languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(language.getValue()));
+      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(language.getKey()));
       rootElement.addContent(languageElem);
     }
-    for (VersionedElement<SLanguageId> language : sourceModel.implicitlyUsedLanguages()) {
-      myHelper.addLanguage(language.getElement());
+    for (Entry<SLanguageId, Integer> language : sourceModel.implicitlyUsedLanguagesWithVersions().entrySet()) {
+      myHelper.addLanguage(language.getKey());
       Element languageElem = new Element(ModelPersistence9.USED_LANGUAGE);
-      languageElem.setAttribute(ModelPersistence9.ID, language.getElement().serialize());
-      languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(language.getVersion()));
+      languageElem.setAttribute(ModelPersistence9.ID, language.getKey().serialize());
+      languageElem.setAttribute(ModelPersistence9.VERSION, Integer.toString(language.getValue()));
       languageElem.setAttribute(ModelPersistence9.IMPLICIT, "true");
-      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(language.getElement()));
+      languageElem.setAttribute(ModelPersistence9.USE_INDEX, myHelper.getUsedLanguageIndex(language.getKey()));
       rootElement.addContent(languageElem);
     }
   }

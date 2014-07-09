@@ -20,13 +20,10 @@ import jetbrains.mps.extapi.model.SModelBase;
 import jetbrains.mps.extapi.model.SModelData;
 import jetbrains.mps.persistence.ModelEnvironmentInfo;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
-import jetbrains.mps.project.structure.modules.VersionedElement;
-import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.descriptor.RefactorableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
@@ -40,7 +37,6 @@ import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.NameUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -61,10 +57,13 @@ import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -82,7 +81,7 @@ public class SModel implements SModelData {
   private List<SModuleReference> myLanguages = new ArrayList<SModuleReference>();
   private List<SModuleReference> myLanguagesEngagedOnGeneration = new ArrayList<SModuleReference>();
 
-  private List<VersionedElement<SLanguageId>> myLanguagesIds = new ArrayList<VersionedElement<SLanguageId>>();
+  private Map<SLanguageId, Integer> myLanguagesIds = new HashMap<SLanguageId, Integer>();
 
   private List<SModuleReference> myDevKits = new ArrayList<SModuleReference>();
   private List<ImportElement> myImports = new ArrayList<ImportElement>();
@@ -613,27 +612,30 @@ public class SModel implements SModelData {
 
   //language
 
-  public Collection<VersionedElement<SLanguageId>> implicitlyUsedLanguages() {
-    Set<VersionedElement<SLanguageId>> res = new HashSet<VersionedElement<SLanguageId>>();
+  public Map<SLanguageId, Integer> implicitlyUsedLanguagesWithVersions() {
+    Map<SLanguageId, Integer> res = new HashMap<SLanguageId, Integer>();
     for (org.jetbrains.mps.openapi.model.SNode node : SNodeUtil.getDescendants(getModelDescriptor())) {
       Language conceptLang = (Language) node.getConcept().getLanguage().getSourceModule();
 
       Set<Language> langs = conceptLang.getAllExtendedLanguages();
       langs.add(conceptLang);
 
-      for (Language l: langs){
+      for (Language l : langs){
         SLanguageId lid = LangUtil.getLanguageId(l);
-        VersionedElement<SLanguageId> usedLanguage = SModelOperations.getUsedLanguage(this, lid);
-        if (usedLanguage == null) {
-          res.add(new VersionedElement<SLanguageId>(lid, l.getLanguageVersion()));
+        if (!myLanguagesIds.containsKey(lid)) {
+          res.put(lid, l.getLanguageVersion());
         }
       }
     }
     return res;
   }
 
-  public List<VersionedElement<SLanguageId>> usedLanguages() {
-    return Collections.unmodifiableList(myLanguagesIds);
+  public Collection<SLanguageId> usedLanguages() {
+    return Collections.unmodifiableSet(myLanguagesIds.keySet());
+  }
+
+  public Map<SLanguageId, Integer> usedLanguagesWithVersions() {
+    return Collections.unmodifiableMap(myLanguagesIds);
   }
 
   @Deprecated
@@ -661,15 +663,11 @@ public class SModel implements SModelData {
       ModelChange.assertLegalChange(myModelDescriptor);
     }
 
-    VersionedElement<SLanguageId> versionedElement = SModelOperations.getUsedLanguage(this, id);
-    if (versionedElement == null) {
-      return;
+    if (myLanguagesIds.remove(id) != null) {
+      invalidateModelDepsManager();
+      fireLanguageRemovedEvent(convertLanguageRef(id));
+      markChanged();
     }
-
-    myLanguagesIds.remove(versionedElement);
-    invalidateModelDepsManager();
-    fireLanguageRemovedEvent(convertLanguageRef(id));
-    markChanged();
   }
 
   @Deprecated
@@ -693,24 +691,28 @@ public class SModel implements SModelData {
     addLanguage(LangUtil.getLanguageId(ref.getModuleId()), -1);
   }
 
+  public void addLanguage(Language language) {
+    addLanguage(LangUtil.getLanguageId(language), language.getLanguageVersion());
+  }
+
   public void addLanguage(SLanguageId id, int version) {
     if (myModelDescriptor != null) {
       ModelChange.assertLegalChange(myModelDescriptor);
     }
 
-    VersionedElement<SLanguageId> versionedElement = SModelOperations.getUsedLanguage(this, id);
-    if (versionedElement != null) {
-      if (version == -1 || versionedElement.getVersion() == version) {
+    Integer existingVersion = myLanguagesIds.get(id);
+    if (existingVersion != null) {
+      if (version == -1 || existingVersion == version) {
         return;
       }
-      if (versionedElement.getVersion() == -1) {
-        myLanguagesIds.remove(versionedElement);
+      if (existingVersion == -1) {
+        myLanguagesIds.remove(id);
       } else {
         assert false;
       }
     }
 
-    myLanguagesIds.add(new VersionedElement<SLanguageId>(id, version));
+    myLanguagesIds.put(id, version);
     invalidateModelDepsManager();
     fireLanguageAddedEvent(convertLanguageRef(id));
     markChanged();
@@ -1158,8 +1160,8 @@ public class SModel implements SModelData {
     for (SModuleReference mr : importedDevkits()) {
       to.addDevKit(mr);
     }
-    for (VersionedElement<SLanguageId> mr : usedLanguages()) {
-      to.addLanguage(mr.getElement(), mr.getVersion());
+    for (Entry<SLanguageId, Integer> mr : usedLanguagesWithVersions().entrySet()) {
+      to.addLanguage(mr.getKey(), mr.getValue());
     }
     for (SModuleReference mr : engagedOnGenerationLanguages()) {
       to.addEngagedOnGenerationLanguage(mr);

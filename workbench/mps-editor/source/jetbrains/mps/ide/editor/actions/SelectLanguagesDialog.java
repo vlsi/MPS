@@ -20,7 +20,6 @@ import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.fileTypes.FileIcons;
-import jetbrains.mps.project.structure.modules.VersionedElement;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -33,9 +32,9 @@ import java.util.Set;
 public class SelectLanguagesDialog extends DialogWrapper {
   private JList myList;
   private Project myProject;
-  private Set<VersionedElement<SModuleReference>> myCandidates;
+  private Set<SModuleReference> myCandidates;
 
-  public SelectLanguagesDialog(Project project, Set<VersionedElement<SModuleReference>> candidates) {
+  public SelectLanguagesDialog(Project project, Set<SModuleReference> candidates) {
     super(project);
     myProject = project;
     myCandidates = candidates;
@@ -87,36 +86,36 @@ public class SelectLanguagesDialog extends DialogWrapper {
     return myList;
   }
 
-  public Set<VersionedElement<SModuleReference>> getSelectedModules() {
-    HashSet<VersionedElement<SModuleReference>> res = new HashSet<VersionedElement<SModuleReference>>();
+  public Set<SModuleReference> getSelectedModules() {
+    HashSet<SModuleReference> res = new HashSet<SModuleReference>();
     for (Object o : myList.getSelectedValues()) {
-      res.add((VersionedElement<SModuleReference>) o);
+      res.add((SModuleReference) o);
     }
     return res;
   }
 
   private static class MyDefaultListCellRenderer extends DefaultListCellRenderer {
     public String getItemLabel(Object value) {
-      VersionedElement<SModuleReference> moduleReference = (VersionedElement<SModuleReference>) value;
-      final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference.getElement());
+      SModuleReference moduleReference = (SModuleReference) value;
+      final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
       if (module == null) {
-        String moduleName = moduleReference.getElement().getModuleName();
+        String moduleName = moduleReference.getModuleName();
         return (moduleName.equals("") ?
           "<no name>" :
           moduleName
         );
       }
-      return moduleReference.getElement().getModuleName();
+      return moduleReference.getModuleName();
     }
 
     @Override
     public Component getListCellRendererComponent(JList list, final Object value, int index, boolean isSelected, boolean cellHasFocus) {
       final Component result = super.getListCellRendererComponent(list, value, index, isSelected, cellHasFocus);
-      VersionedElement<SModuleReference> moduleReference = (VersionedElement<SModuleReference>) value;
+      SModuleReference moduleReference = (SModuleReference) value;
       if (moduleReference == null) return result;
       setText(getItemLabel(value));
       setIcon(FileIcons.PROJECT_LANGUAGE_ICON);
-      final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference.getElement());
+      final SModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
       if (module == null && !(isSelected)) {
         setForeground(Color.RED);
       }

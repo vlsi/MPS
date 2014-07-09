@@ -29,7 +29,6 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
-import jetbrains.mps.project.structure.modules.VersionedElement;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -37,7 +36,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -60,7 +58,6 @@ import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTar
 import org.jetbrains.mps.util.Condition;
 
 import javax.swing.JOptionPane;
-import javax.xml.bind.ValidationEvent;
 import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -129,7 +126,7 @@ public class ImportHelper {
       @Override
       public NavigationItem doGetNavigationItem(SModuleReference ref) {
         SModule module = ModuleRepositoryFacade.getInstance().getModule(ref);
-        return new AddLanguageItem(project, ref, ((Language) module).getLanguageVersion(), contextModule, model);
+        return new AddLanguageItem(project, ref, contextModule, model);
       }
 
       @Override
@@ -170,21 +167,19 @@ public class ImportHelper {
     private Project myProject;
     private SModule myContextModule;
     private SModel myModel;
-    private int myLanguageVersion;
 
-    public AddLanguageItem(Project project, SModuleReference language, int languageVersion, SModule contextModule, SModel model) {
+    public AddLanguageItem(Project project, SModuleReference language, SModule contextModule, SModel model) {
       super(language);
       myProject = project;
       myContextModule = contextModule;
       myModel = model;
-      myLanguageVersion = languageVersion;
     }
 
     @Override
     public void navigate(boolean requestFocus) {
       assert !ModelAccess.instance().canRead();
 
-      final Set<VersionedElement<SModuleReference>> importCandidates = new HashSet<VersionedElement<SModuleReference>>();
+      final Set<SModuleReference> importCandidates = new HashSet<SModuleReference>();
       ModelAccess.instance().runWriteAction(new Runnable() {
         @Override
         public void run() {
@@ -201,40 +196,40 @@ public class ImportHelper {
               Collection<SModuleReference> impLangs = ((jetbrains.mps.smodel.SModelInternal) myModel).getModelDepsManager().getAllImportedLanguages();
               if (impLangs.contains(l.getModuleReference())) continue;
             }
-            importCandidates.add(new VersionedElement<SModuleReference>(l.getModuleReference(), l.getLanguageVersion()));
+            importCandidates.add(l.getModuleReference());
           }
         }
       });
 
-      final Set<VersionedElement<SModuleReference>> toImport = new HashSet<VersionedElement<SModuleReference>>();
+      final Set<SModuleReference> toImport = new HashSet<SModuleReference>();
 
       if (!importCandidates.isEmpty()) {
-        Set<VersionedElement<SModuleReference>> modules = chooseModulesToImport(myProject, importCandidates);
+        Set<SModuleReference> modules = chooseModulesToImport(myProject, importCandidates);
         if (modules != null) {
           toImport.addAll(modules);
         }
       }
 
-      toImport.add(new VersionedElement<SModuleReference>(getModuleReference(), myLanguageVersion));
+      toImport.add(getModuleReference());
 
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         @Override
         public void run() {
           boolean reload = false;
-          for (VersionedElement<SModuleReference> ref : toImport) {
+          for (SModuleReference ref : toImport) {
+            Language lang = ((Language) ref.resolve(MPSModuleRepository.getInstance()));
+            if (lang == null) continue;
             if (myContextModule instanceof DevKit) {
-              ((DevKit) myContextModule).getModuleDescriptor().getExportedLanguages().add(ref.getElement());
+              ((DevKit) myContextModule).getModuleDescriptor().getExportedLanguages().add(ref);
               ((DevKit) myContextModule).setChanged();
             } else {
-              Language lang = ((Language) ref.getElement().resolve(MPSModuleRepository.getInstance()));
-              if (lang == null) continue;
               if (!new GlobalModuleDependenciesManager(myContextModule).getUsedLanguages().contains(lang)) {
-                ((AbstractModule) myContextModule).addUsedLanguage(ref.getElement());
+                ((AbstractModule) myContextModule).addUsedLanguage(ref);
                 reload = true;
               }
             }
             if (myModel != null) {
-              ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguageId(LangUtil.getLanguageId(ref.getElement().getModuleId()), ref.getVersion());
+              ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage(lang);
             }
           }
           if (reload) {
@@ -246,7 +241,7 @@ public class ImportHelper {
     }
   }
 
-  private static Set<VersionedElement<SModuleReference>> chooseModulesToImport(Project project, Set<VersionedElement<SModuleReference>> candidates) {
+  private static Set<SModuleReference> chooseModulesToImport(Project project, Set<SModuleReference> candidates) {
     SelectLanguagesDialog dialog = new SelectLanguagesDialog(project, candidates);
     dialog.show();
     if (!dialog.isOK()) return null;

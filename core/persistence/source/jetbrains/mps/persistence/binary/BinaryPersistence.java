@@ -17,7 +17,6 @@ package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.extapi.model.GeneratableSModel;
 import jetbrains.mps.persistence.PersistenceRegistry;
-import jetbrains.mps.project.structure.modules.VersionedElement;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -44,6 +43,8 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import static jetbrains.mps.smodel.SModel.ImportElement;
 
@@ -127,9 +128,9 @@ public class BinaryPersistence {
   }
 
   private static void loadModelProperties(BinarySModel model, ModelInputStream is) throws IOException {
-    for (Pair<VersionedElement<SLanguageId>, Boolean> ref : loadUsedLanguagesList(is)) {
+    for (Pair<Pair<SLanguageId, Integer>, Boolean> ref : loadUsedLanguagesList(is)) {
       if (!ref.o2) {
-        model.addLanguage(ref.o1.getElement(), ref.o1.getVersion());
+        model.addLanguage(ref.o1.o1, ref.o1.o2);
       }
     }
     for (SModuleReference ref : loadModuleRefList(is)) model.addEngagedOnGenerationLanguage(ref);
@@ -188,7 +189,7 @@ public class BinaryPersistence {
     os.writeBoolean((md instanceof GeneratableSModel) && ((GeneratableSModel) md).isDoNotGenerate());
     os.writeInt(0xabab);
 
-    saveUsedLanguagesList(model.usedLanguages(), model.implicitlyUsedLanguages(), os);
+    saveUsedLanguagesList(model.usedLanguagesWithVersions(), model.implicitlyUsedLanguagesWithVersions(), os);
     saveModuleRefList(model.engagedOnGenerationLanguages(), os);
     saveModuleRefList(model.importedDevkits(), os);
 
@@ -199,16 +200,16 @@ public class BinaryPersistence {
     os.writeInt(0xbaba);
   }
 
-  private static void saveUsedLanguagesList(Collection<VersionedElement<SLanguageId>> refs, Collection<VersionedElement<SLanguageId>> implicit, ModelOutputStream os) throws IOException {
+  private static void saveUsedLanguagesList(Map<SLanguageId, Integer> refs, Map<SLanguageId, Integer> implicit, ModelOutputStream os) throws IOException {
     os.writeInt(refs.size() + implicit.size());
-    for (VersionedElement<SLanguageId> ref : refs) {
-      os.writeString(ref.getElement().serialize());
-      os.writeInt(ref.getVersion());
+    for (Entry<SLanguageId, Integer> ref : refs.entrySet()) {
+      os.writeString(ref.getKey().serialize());
+      os.writeInt(ref.getValue());
       os.writeBoolean(false);
     }
-    for (VersionedElement<SLanguageId> ref : implicit) {
-      os.writeString(ref.getElement().serialize());
-      os.writeInt(ref.getVersion());
+    for (Entry<SLanguageId, Integer> ref : implicit.entrySet()) {
+      os.writeString(ref.getKey().serialize());
+      os.writeInt(ref.getValue());
       os.writeBoolean(true);
     }
   }
@@ -220,14 +221,14 @@ public class BinaryPersistence {
     }
   }
 
-  private static Collection<Pair<VersionedElement<SLanguageId>, Boolean>> loadUsedLanguagesList(ModelInputStream is) throws IOException {
+  private static Collection<Pair<Pair<SLanguageId, Integer>, Boolean>> loadUsedLanguagesList(ModelInputStream is) throws IOException {
     int size = is.readInt();
-    List<Pair<VersionedElement<SLanguageId>, Boolean>> result = new ArrayList<Pair<VersionedElement<SLanguageId>, Boolean>>();
+    List<Pair<Pair<SLanguageId, Integer>, Boolean>> result = new ArrayList<Pair<Pair<SLanguageId, Integer>, Boolean>>();
     for (int i = 0; i < size; i++) {
       SLanguageId id = SLanguageId.deserialize(is.readString());
       int version = is.readInt();
       boolean implicit = is.readBoolean();
-      result.add(new Pair<VersionedElement<SLanguageId>, Boolean>(new VersionedElement<SLanguageId>(id, version), implicit));
+      result.add(new Pair<Pair<SLanguageId, Integer>, Boolean>(new Pair<SLanguageId, Integer>(id, version), implicit));
     }
     return result;
   }

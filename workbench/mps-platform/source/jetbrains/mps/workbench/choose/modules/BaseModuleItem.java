@@ -19,6 +19,7 @@ import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public abstract class BaseModuleItem implements NavigationItem {

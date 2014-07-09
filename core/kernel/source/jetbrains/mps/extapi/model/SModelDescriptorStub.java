@@ -16,8 +16,8 @@
 package jetbrains.mps.extapi.model;
 
 import jetbrains.mps.project.dependency.ModelDependenciesManager;
-import jetbrains.mps.project.structure.modules.VersionedElement;
 import jetbrains.mps.smodel.FastNodeFinder;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
@@ -195,18 +195,18 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
   }
 
   @Override
-  public Iterable<VersionedElement<SLanguageId>> importedLanguageIds() {
+  public java.util.Collection<SLanguageId> importedLanguageIds() {
     return getSModelInternal().usedLanguages();
-  }
-
-  @Override
-  public Iterable<VersionedElement<SLanguageId>> implicitImportedLanguageIds() {
-    return getSModelInternal().implicitlyUsedLanguages();
   }
 
   @Override
   public void deleteLanguageId(@NotNull SLanguageId ref) {
     getSModelInternal().deleteLanguage(ref);
+  }
+
+  @Override
+  public void addLanguage(Language language) {
+    getSModelInternal().addLanguage(language);
   }
 
   @Override
