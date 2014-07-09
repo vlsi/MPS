@@ -48,4 +48,9 @@ public abstract class DefaultSimpleSubstituteAction extends DefaultChildNodeSubs
   protected boolean canSubstitute_internal(String pattern, boolean strictly) {
     return false;
   }
+
+  @Override
+  public int compareTo(AbstractNodeSubstituteAction action, String pattern) {
+    return 0;
+  }
 }

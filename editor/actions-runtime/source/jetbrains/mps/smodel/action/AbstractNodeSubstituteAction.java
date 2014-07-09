@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -27,6 +28,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAction {
   private static final Logger LOG = LogManager.getLogger(AbstractNodeSubstituteAction.class);
@@ -148,14 +152,95 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
       LOG.error(null, e);
     }
     if (matchingText == null || matchingText.length() == 0) return false;
-    // first char must be the same
-    if (matchingText.charAt(0) != pattern.charAt(0)) return false;
+    return matches(pattern, matchingText) || matchingText.toLowerCase().contains(pattern.toLowerCase());
+  }
+  private boolean matches(String pattern, String matchingText) {
+    return matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false).toString() + ".*");
+  }
 
-    if (matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false).toString() + ".*")) {
-      return true;
+  public int compareTo(AbstractNodeSubstituteAction action, String pattern) {
+    if (pattern == null || pattern.length() == 0) {
+      return 0;
     }
+    String matchingText = null;
+    String otherMatchingText = null;
+    try {
+      matchingText = getMatchingText(pattern);
+      otherMatchingText = action.getMatchingText(pattern);
+    } catch (Exception e) {
+      LOG.error(null, e);
+    }
+    assert matchingText != null;
+    assert otherMatchingText != null;
 
-    return matchingText.startsWith(pattern);
+    boolean matches = matches(pattern, matchingText);
+    boolean otherMatches = matches(pattern, otherMatchingText);
+
+    if (matches) {
+      if (otherMatches) {
+        return -1;
+      } else {
+        return 0;
+      }
+    } else {
+      if (otherMatches) {
+        return  1;
+      }
+      return 0;
+    }
+  }
+  public String createText(String pattern, String color){
+    String matchingText = getVisibleMatchingText(pattern);
+    List<Integer> indexes = getIndexes(pattern);
+    if (indexes.size() == 0) {
+      return matchingText;
+    }
+    StringBuilder builder = new StringBuilder("<html>");
+    int next = 0;
+    int curIndex = indexes.get(next);
+    boolean isColored = false;
+    for (int i = 0 ; i < matchingText.length(); i++) {
+      if (i == curIndex && !isColored) {
+        builder.append("<font color='");
+        builder.append(color);
+        builder.append("'>");
+        isColored = true;
+      }
+      if (isColored) {
+        next++;
+      }
+      char c = matchingText.charAt(i);
+      if (c == '<') {
+        builder.append("&lt;");
+      }
+      if (c == '>') {
+        builder.append("&gt;");
+      } else {
+        builder.append(c);
+      }
+      if (next < indexes.size()) {
+        curIndex = indexes.get(next);
+      }
+      if (next >= indexes.size() || curIndex > i+1) {
+        builder.append("</font>");
+        isColored = false;
+      }
+    }
+    return builder.toString();
+  }
+  private List<Integer> getIndexes(String pattern) {
+    List<Integer> indexList = new ArrayList<Integer>();
+    String matchingText = getMatchingText(pattern);
+    if (matches(pattern, matchingText)) {
+      return PatternUtil.getIndexes(pattern, false, matchingText);
+    } else if (matchingText.toLowerCase().contains(pattern.toLowerCase())) {
+      int curIndex= matchingText.toLowerCase().indexOf(pattern.toLowerCase());
+      indexList.add(curIndex);
+      for (int i = 1 ; i < pattern.length(); i++) {
+        indexList.add(curIndex + i);
+      }
+    }
+    return Collections.unmodifiableList(indexList);
   }
 
   @Override

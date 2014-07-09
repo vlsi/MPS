@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * evgeny, 11/18/11
  */
@@ -111,5 +114,38 @@ public class PatternUtil {
       b.append("\\E");
     }
     return b;
+  }
+
+  public static List<Integer> getIndexes(String pattern, boolean useDots, String matchingText) {
+    List<Integer> indexList = new ArrayList<Integer>();
+    int curIndex = 0;
+    StringBuilder nextSubstring = new StringBuilder();
+    for (int i = 0 ; i < pattern.length(); i++) {
+      char c = pattern.charAt(i);
+      if (c == '*' || c == '?') {
+        if (!addIndexes(matchingText, indexList, curIndex, nextSubstring.toString())) return new ArrayList<Integer>();
+        curIndex += nextSubstring.length();
+        nextSubstring = new StringBuilder();
+      } else if (useDots && c == '.' || c == '@' || Character.isUpperCase(c)) {
+        if (!addIndexes(matchingText, indexList, curIndex, nextSubstring.toString())) return new ArrayList<Integer>();
+        nextSubstring = new StringBuilder();
+        if (!addIndexes(matchingText, indexList, curIndex, new String(new char[]{c}))) return new ArrayList<Integer>();
+      } else {
+        nextSubstring.append(c);
+      }
+    }
+    if (!addIndexes(matchingText, indexList, curIndex, nextSubstring.toString())) return new ArrayList<Integer>();
+    return indexList;
+  }
+
+  private static boolean addIndexes(String matchingText, List<Integer> indexList, int curIndex, String nextSubstring) {
+    int indexOf = matchingText.indexOf(nextSubstring, curIndex);
+    if (curIndex == -1) {
+      return false;
+    }
+    for (int j = 0; j < nextSubstring.length(); ++j) {
+      indexList.add(indexOf + j);
+    }
+    return true;
   }
 }

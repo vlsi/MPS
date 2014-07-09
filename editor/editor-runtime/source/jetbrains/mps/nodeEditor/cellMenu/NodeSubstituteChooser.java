@@ -209,7 +209,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private List<SubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
-    final ITypeContextOwner contextOwner = myIsSmart ? new NonReusableTypecheckingContextOwner() :  myEditorComponent.getTypecheckingContextOwner();
+    final ITypeContextOwner contextOwner = myIsSmart ? new NonReusableTypecheckingContextOwner() : myEditorComponent.getTypecheckingContextOwner();
     return TypeContextManager.getInstance().runTypeCheckingComputation(contextOwner, myEditorComponent.getEditedNode(),
         new Computation<List<SubstituteAction>>() {
           @Override
@@ -281,6 +281,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
             return strictly1 ? -1 : 1;
           }
 
+          boolean startsWith1 = i1.getVisibleMatchingText(pattern).startsWith(pattern);
+          boolean startsWith2 = i2.getVisibleMatchingText(pattern).startsWith(pattern);
+          if (startsWith1 != startsWith2) {
+            return startsWith1 ? -1 : 1;
+          }
           int p1 = getSortPriority(i1);
           int p2 = getSortPriority(i2);
           if (p1 != p2) {
@@ -295,13 +300,12 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           if (null_s1 && null_s2) return 0;
           if (null_s1) return 1;
           if (null_s2) return -1;
-          int comparisonResult = s1.compareTo(s2);
 
-          if (comparisonResult == 0) {
-            return 0;
+          if (i1 instanceof AbstractNodeSubstituteAction && i2 instanceof AbstractNodeSubstituteAction) {
+            return ((AbstractNodeSubstituteAction) i1).compareTo(((AbstractNodeSubstituteAction) i2), pattern);
           }
 
-          return comparisonResult;
+          return s1.compareTo(s2);
         }
       });
 
@@ -502,7 +506,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       int oldPosition = myPatternEditor.getCaretPosition();
       String oldPattern = myPatternEditor.getPattern();
       String newText = getPopupWindow().getSelectedText(oldPattern);
-      myPatternEditor.setText(newText);
+//      myPatternEditor.setText(newText);
       myPatternEditor.setCaretPosition(Math.min(newText.length(), oldPosition));
     }
   }
@@ -840,7 +844,11 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       }
 
       try {
-        myLeft.setText(action.getVisibleMatchingText(pattern));
+        if (action instanceof AbstractNodeSubstituteAction && !isSelected) {
+          myLeft.setText(((AbstractNodeSubstituteAction) action).createText(pattern,colorToHtml(Color.BLUE)));
+        } else {
+          myLeft.setText(action.getVisibleMatchingText(pattern));
+        }
       } catch (Throwable t) {
         myLeft.setText("!Exception was thrown!");
         LOG.error(null, t);
@@ -869,6 +877,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myLeft.setPreferredSize(null);
       Dimension oldPreferredSize = myLeft.getPreferredSize();
       myLeft.setPreferredSize(new Dimension(oldPreferredSize.width + 1, oldPreferredSize.height));
+    }
+    private String colorToHtml(Color color) {
+      String rgb = Integer.toHexString(color.getRGB());
+      return rgb.substring(2, rgb.length());
     }
 
     public void setLightweightMode(boolean isLightweightMode) {
