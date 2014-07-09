@@ -18,11 +18,6 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
   public SReferenceLinkAdapter(String conceptName, String role) {
     super(conceptName, role);
   }
-  @Deprecated
-  public SReferenceLinkAdapter(String conceptName, String role,SReferenceLinkId id) {
-    super(conceptName, role,id);
-  }
-
 
   public SReferenceLinkAdapter(SAbstractLinkId roleId) {
     super(roleId);

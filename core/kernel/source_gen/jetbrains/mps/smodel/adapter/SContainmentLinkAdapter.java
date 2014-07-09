@@ -16,16 +16,10 @@ public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SCo
     super(conceptName, role);
   }
 
-  @Deprecated
-  public SContainmentLinkAdapter(String conceptName, String role, SContainmentLinkId id) {
-    super(conceptName, role,id);
-  }
-
 
   public SContainmentLinkAdapter(SAbstractLinkId roleId) {
     super(roleId);
   }
-
 
 
   @Override
@@ -34,25 +28,23 @@ public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SCo
   }
 
 
-
   @Override
   public boolean isMultiple() {
-    if (conceptName==null) {
+    if (roleId != null) {
       ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(roleId.getConceptId());
       return d.isMultipleChild(getRole());
-    }else{
+    } else {
       ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(conceptName);
       return d.isMultipleChild(role);
     }
   }
 
 
-
   public boolean isUnordered() {
-    if (conceptName==null) {
+    if (roleId != null) {
       ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(roleId.getConceptId());
       return d.isUnorderedChild(getRole());
-    }else{
+    } else {
       ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(conceptName);
       return d.isUnorderedChild(role);
     }

@@ -6,9 +6,12 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.DebugInfoUtil;
+import jetbrains.mps.smodel.DebugRegistryImpl;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
@@ -25,6 +28,12 @@ public class SPropertyAdapter implements SProperty {
   public SPropertyAdapter(String conceptName, String name) {
     this.conceptName = conceptName;
     this.propertyName = name;
+
+    SNode concept = SModelUtil.findConceptDeclaration(conceptName);
+    if (concept != null) {
+      SConceptId cid = LangUtil.getConceptId(concept);
+      myPropertyId = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(cid, name);
+    }
   }
 
 
@@ -40,7 +49,7 @@ public class SPropertyAdapter implements SProperty {
 
   @Override
   public String getName() {
-    return propertyName == null ? MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(myPropertyId) : propertyName;
+    return myPropertyId != null ? MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(myPropertyId) : propertyName;
   }
 
   @Override
@@ -76,10 +85,10 @@ public class SPropertyAdapter implements SProperty {
     SNode concept;
     String name;
 
-    if (conceptName == null) {
+    if (myPropertyId != null) {
       concept = SModelUtil.findConceptDeclaration(DebugInfoUtil.getConceptFqName(myPropertyId.getConceptId()));
       name = getName();
-    } else{
+    } else {
       concept = SModelUtil.findConceptDeclaration(conceptName);
       name = propertyName;
     }
@@ -94,7 +103,7 @@ public class SPropertyAdapter implements SProperty {
   public SNode getPropNode() {
     String cname;
     String propName;
-    if (conceptName == null) {
+    if (myPropertyId != null) {
       cname = DebugInfoUtil.getConceptFqName(myPropertyId.getConceptId());
       propName = getName();
     } else {

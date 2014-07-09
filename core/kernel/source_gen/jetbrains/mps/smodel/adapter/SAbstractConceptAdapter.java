@@ -92,11 +92,9 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
     SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, role);
     if (d.hasChild(role)) {
-      return myConceptId != null ? new SContainmentLinkAdapter(id) : new SContainmentLinkAdapter(myConceptName, role,
-          (org.jetbrains.mps.openapi.language.SContainmentLinkId) id);
+      return myConceptId != null ? new SContainmentLinkAdapter(id) : new SContainmentLinkAdapter(myConceptName, role);
     } else if (d.hasReference(role)) {
-      return myConceptId != null ? new SReferenceLinkAdapter(id) : new SReferenceLinkAdapter(myConceptName, role,
-          (org.jetbrains.mps.openapi.language.SReferenceLinkId) id);
+      return myConceptId != null ? new SReferenceLinkAdapter(id) : new SReferenceLinkAdapter(myConceptName, role);
     }
     return null;
   }
@@ -134,7 +132,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
         if (myConceptId != null) {
           return (SAbstractLink) new SContainmentLinkAdapter(id);
         } else {
-          return (SAbstractLink) (new SContainmentLinkAdapter(myConceptName, it, (org.jetbrains.mps.openapi.language.SContainmentLinkId) id));
+          return (SAbstractLink) (new SContainmentLinkAdapter(myConceptName, it));
         }
       }
     });
@@ -144,7 +142,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
         if (myConceptId != null) {
           return new SReferenceLinkAdapter(id);
         } else {
-          return new SReferenceLinkAdapter(myConceptName, it, (org.jetbrains.mps.openapi.language.SReferenceLinkId) id);
+          return new SReferenceLinkAdapter(myConceptName, it);
         }
       }
     }));
