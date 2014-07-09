@@ -46,7 +46,7 @@ public class InterfaceSNode extends SNode {
 
   @Override
   protected SNode firstChildInRole(@NotNull String role) {
-    if (skippedRoles != null && skippedRoles.contains(role)) {
+    if (skippedRoles != null && skippedRoles.contains(role) || skippedRolesIds != null) {
       enforceModelLoad();
     }
     return super.firstChildInRole(role);
@@ -82,7 +82,7 @@ public class InterfaceSNode extends SNode {
   }
 
   public boolean hasSkippedChildren() {
-    return skippedRoles != null || skippedRolesIds!=null;
+    return skippedRoles != null || skippedRolesIds != null;
   }
 
   public void cleanSkippedRoles() {
