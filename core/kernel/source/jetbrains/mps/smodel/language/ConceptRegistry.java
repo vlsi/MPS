@@ -106,13 +106,13 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
   }
 
   @NotNull
-  public ConceptDescriptor getConceptDescriptor(@Nullable SConceptId id) {
+  public ConceptDescriptor getConceptDescriptor(@NotNull SConceptId id) {
     return getConceptDescriptor(DebugInfoUtil.getConceptFqName(id));
   }
 
   @Deprecated
   @NotNull
-  public ConceptDescriptor getConceptDescriptor(@Nullable String fqName) {
+  public ConceptDescriptor getConceptDescriptor(@NotNull String fqName) {
     ConceptDescriptor descriptor = conceptDescriptors.get(fqName);
 
     if (descriptor != null) {
