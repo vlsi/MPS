@@ -203,6 +203,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
     //e.g. when we get a hierarchy for some concept (need to convert generated parent names into ids)
     if (module instanceof Language) {
       Language l = ((Language) module);
+      MPSModuleRepository.getInstance().getDebugRegistry().addLanguageName(LangUtil.getLanguageId(l),module.getModuleName());
       for (org.jetbrains.mps.openapi.model.SModel m : l.getModels()) {
         if (!m.getReference().getModelName().endsWith(".structure")) continue;
 
