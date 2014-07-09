@@ -181,7 +181,7 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
       SModelReference ref = PersistenceFacade.getInstance().createModelReference(attrs.getValue("ref"));
       fieldmodel = new DefaultSModel(ref);
-      fieldhasSkippedNodes = false;
+      fieldhasSkippedNodes = true;
       fieldmodel.setPersistenceVersion(9);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldhelper = new ReadHelper9(fieldmodel.getReference());
