@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.persistence.def.FilePerRootFormatUtil;
 import jetbrains.mps.smodel.persistence.def.IModelWriter;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectConsumer;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.StringUtil;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -109,7 +110,7 @@ public class ModelWriter9 implements IModelWriter {
     DebugRegistry debugRegistry = MPSModuleRepository.getInstance().getDebugRegistry();
 
     //save used languages info
-    for (SLanguageId ve : sourceModel.usedLanguages()) {
+    for (SLanguageId ve : IterableUtil.merge(sourceModel.usedLanguages(), sourceModel.implicitlyUsedLanguagesWithVersions().keySet())) {
       SLanguageId id = ve;
       Language lang = new SLanguageAdapter(id).getSourceModule();
       String name = lang != null ? lang.getModuleName() : debugRegistry.getLanguageName(id);
