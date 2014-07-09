@@ -53,13 +53,13 @@ public abstract class DebugInfoUtil {
   }
 
   //finds property id given its name and an inheritor of an original concept
-  public static SReferenceLinkId getRefId(SConceptId id, String refName) {
+  public static SAbstractLinkId getLinkId(SConceptId id, String refName) {
     SAbstractLinkId rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
-    if (rid instanceof SReferenceLinkId) return ((SReferenceLinkId) rid);
+    if (rid != null) return rid;
 
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
       rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
-      if (rid instanceof SReferenceLinkId) return ((SReferenceLinkId) rid);
+      if (rid != null) return rid;
     }
     return null;
   }

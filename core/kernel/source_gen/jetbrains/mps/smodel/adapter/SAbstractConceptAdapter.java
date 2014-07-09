@@ -90,7 +90,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       return null;
     }
 
-    SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, role);
+    SAbstractLinkId id = DebugInfoUtil.getLinkId(myConceptId, role);
     if (d.hasChild(role)) {
       return myConceptId != null ? new SContainmentLinkAdapter(id) : new SContainmentLinkAdapter(myConceptName, role);
     } else if (d.hasReference(role)) {
