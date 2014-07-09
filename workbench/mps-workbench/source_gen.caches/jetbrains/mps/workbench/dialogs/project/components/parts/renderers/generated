@@ -31,7 +31,6 @@
     <file name="ProjectPathRenderer.java" />
   </source>
   <source id="1560298786499492721" name="ProjectLevelRenderer" hash="-7l5pxqdbhig7gqbm32n38frls1pyc27">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="ProjectLevelRenderer.java" />
   </source>
   <source id="1560298786499492799" name="StringPathRenderer" hash="-1j9ubdaluuj0o85wvb1ny7u8rd0b3wr">

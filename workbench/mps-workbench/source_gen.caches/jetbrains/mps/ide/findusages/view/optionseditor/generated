@@ -19,7 +19,6 @@
     <file name="DefaultOptionsContainer.java" />
   </source>
   <source id="28859145781927652" name="DefaultSearchOptionsComponent" hash="1ctwwcsimphogd0b2aopxzt71h5jid0">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <file name="DefaultSearchOptionsComponent.java" />
   </source>
 </dependencies>

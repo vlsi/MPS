@@ -8,12 +8,11 @@
   </common>
   <source id="1560298786499490568" name="DiffRowTable" hash="av70065e21199brfpcxlaeyrfo1pnnj">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="DiffRowTable.java" />
   </source>
   <source id="1560298786499496072" name="BasicDiffRowTableUI" hash="-19nvwzceghj5zb5mf6aicbz25g99ilg">
-    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="BasicDiffRowTableUI.java" />
   </source>
 </dependencies>

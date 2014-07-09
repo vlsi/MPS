@@ -225,7 +225,7 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
         this.displayInfo(msg);
         return new FutureValue<IResult>(new IResult.FAILURE(null));
       } else {
-        this.displayInfo("Everything is up to date");
+        this.displayInfo("Everything up to date");
         return new FutureValue<IResult>(new IResult.SUCCESS(null));
       }
     }
