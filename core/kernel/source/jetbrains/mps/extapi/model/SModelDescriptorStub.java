@@ -35,6 +35,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
@@ -180,6 +181,7 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
   }
 
   @Override
+  @Deprecated
   public final List<SModuleReference> importedLanguages() {
     return getSModelInternal().importedLanguages();
   }
@@ -197,6 +199,11 @@ public abstract class SModelDescriptorStub implements SModelInternal, SModel {
   @Override
   public java.util.Collection<SLanguageId> importedLanguageIds() {
     return getSModelInternal().usedLanguages();
+  }
+
+  @Override
+  public Map<SLanguageId, Integer> importedLanguageIdsWithVersions() {
+    return getSModelInternal().usedLanguagesWithVersions();
   }
 
   @Override

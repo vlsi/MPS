@@ -25,6 +25,7 @@ import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.List;
+import java.util.Map;
 
 public interface SModelInternal extends ModelWithDisposeInfo {
 
@@ -52,6 +53,8 @@ public interface SModelInternal extends ModelWithDisposeInfo {
   void addLanguage(SModuleReference ref);
 
   java.util.Collection<SLanguageId> importedLanguageIds();
+
+  Map<SLanguageId, Integer> importedLanguageIdsWithVersions();
 
   void deleteLanguageId(@NotNull SLanguageId ref);
 

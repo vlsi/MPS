@@ -23,11 +23,13 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.language.LangUtil;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -472,8 +474,8 @@ public class SModelOperations {
   public static List<Language> getLanguages(jetbrains.mps.smodel.SModel model) {
     Set<Language> languages = new LinkedHashSet<Language>();
 
-    for (SModuleReference lang : ( model).importedLanguages()) {
-      Language language = (Language) lang.resolve(MPSModuleRepository.getInstance());
+    for (SLanguageId lang : model.usedLanguages()) {
+      Language language = new SLanguageAdapter(lang).getSourceModule();
 
       if (language != null) {
         languages.add(language);
@@ -481,7 +483,7 @@ public class SModelOperations {
       }
     }
 
-    for (SModuleReference dk : ( model).importedDevkits()) {
+    for (SModuleReference dk : model.importedDevkits()) {
       DevKit devKit = (DevKit) dk.resolve(MPSModuleRepository.getInstance());
       if (devKit != null) {
         for (Language l : devKit.getAllExportedLanguages()) {
