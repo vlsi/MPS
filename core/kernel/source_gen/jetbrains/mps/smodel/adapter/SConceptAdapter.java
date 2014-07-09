@@ -14,6 +14,7 @@ import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.ArrayList;
 
@@ -55,7 +56,7 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
         ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
-      return null;
+      return Collections.emptyList();
     }
 
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
