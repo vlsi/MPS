@@ -904,10 +904,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
 
-    if (myConceptFqName == null) {
+    if (myConceptId != null) {
       return SConceptRepository.getInstance().getInstanceConcept(myConceptId);
     } else {
-      return SConceptRepository.getInstance().getInstanceConcept(myConceptFqName, myConceptId);
+      return SConceptRepository.getInstance().getInstanceConcept(myConceptFqName);
     }
   }
 

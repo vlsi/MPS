@@ -32,10 +32,6 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
     super(conceptName);
   }
 
-  public SInterfaceConceptAdapter(String id, SConceptId sid) {
-    super(id, sid);
-  }
-
 
   @Override
   public SAbstractLink getLink(String role) {
@@ -58,7 +54,7 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
 
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
-    ConceptDescriptor d = myConceptName == null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
+    ConceptDescriptor d = myConceptId != null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
         ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
@@ -67,7 +63,7 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
 
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (String name : d.getParentsNames()) {
-      SAbstractConcept resolved = myConceptName != null ? SConceptRepository.getInstance().getConcept(name) :
+      SAbstractConcept resolved = myConceptId == null ? SConceptRepository.getInstance().getConcept(name) :
           SConceptRepository.getInstance().getConcept(DebugInfoUtil.getConceptId(name));
       if (resolved instanceof SInterfaceConcept) {
         res.add((SInterfaceConcept) resolved);

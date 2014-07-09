@@ -30,14 +30,9 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
     super(concept);
   }
 
-  @Deprecated
-  public SConceptAdapter(@NotNull String concept, SConceptId id) {
-    super(concept, id);
-  }
-
   @Override
   public SConcept getSuperConcept() {
-    ConceptDescriptor d = myConceptName == null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
+    ConceptDescriptor d = myConceptId != null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
         ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
@@ -46,13 +41,13 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
 
     String superConcept = d.getSuperConcept();
     if (superConcept == null) return null;
-    if (myConceptName != null) return new SConceptAdapter(superConcept);
+    if (myConceptId == null) return new SConceptAdapter(superConcept);
     return new SConceptAdapter(DebugInfoUtil.getConceptId(superConcept));
   }
 
   @Override
   public Iterable<SInterfaceConcept> getSuperInterfaces() {
-    ConceptDescriptor d = myConceptName == null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
+    ConceptDescriptor d = myConceptId  != null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
         ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
@@ -61,7 +56,7 @@ public class SConceptAdapter extends SAbstractConceptAdapter implements SConcept
 
     List<SInterfaceConcept> res = new ArrayList<SInterfaceConcept>();
     for (String name : d.getParentsNames()) {
-      SAbstractConcept resolved = myConceptName != null ? SConceptRepository.getInstance().getConcept(name) :
+      SAbstractConcept resolved = myConceptId == null ? SConceptRepository.getInstance().getConcept(name) :
           SConceptRepository.getInstance().getConcept(DebugInfoUtil.getConceptId(name));
       if (resolved instanceof SInterfaceConcept) {
         res.add((SInterfaceConcept) resolved);
