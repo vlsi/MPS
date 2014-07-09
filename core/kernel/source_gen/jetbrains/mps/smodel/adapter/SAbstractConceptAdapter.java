@@ -253,7 +253,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
     reportedLanguages.add(languageName);
     if (LOG.isEnabledFor(Level.WARN)) {
-      LOG.warn("No concept found for id " + myConceptId.serialize() + ". Please check the language " + languageName + " is built and compiled.", new Throwable());
+      LOG.warn("No concept found for id " + myConceptId + ". Please check the language " + languageName + " is built and compiled.", new Throwable());
     }
   }
 
