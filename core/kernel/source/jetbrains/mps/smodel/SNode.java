@@ -22,6 +22,7 @@ import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
+import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractSequentialList;
@@ -315,6 +316,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public void setProperty(String propertyName, String propertyValue) {
     assertCanChange();
+
+    org.jetbrains.mps.openapi.model.SNode concept = getConceptDeclarationNode();
+    if (concept!=null){
+      SConceptId cid = LangUtil.getConceptId(concept);
+      SPropertyId propId = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(cid, propertyName);
+      setProperty(propId, propertyValue);
+    }
 
     propertyName = InternUtil.intern(propertyName);
     propertyValue = InternUtil.intern(propertyValue);
