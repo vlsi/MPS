@@ -47,11 +47,15 @@ public class SLanguageAdapter implements SLanguage {
   @Deprecated
   public SLanguageAdapter(@NotNull String language) {
     this.myLanguageFqName = language;
+    Language module = ModuleRepositoryFacade.getInstance().getModule(language, Language.class);
+    if (module!=null){
+      myLanguage = LangUtil.getLanguageId(module);
+    }
   }
 
   @Override
   public String getQualifiedName() {
-    return myLanguageFqName == null ? MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(myLanguage) : myLanguageFqName;
+    return myLanguage != null ? MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(myLanguage) : myLanguageFqName;
   }
 
   @Override
@@ -79,7 +83,7 @@ public class SLanguageAdapter implements SLanguage {
       }
     }).select(new ISelector<SNode, SInterfaceConceptAdapter>() {
       public SInterfaceConceptAdapter select(SNode it) {
-        if (myLanguageFqName == null) {
+        if (myLanguage != null) {
           return new SInterfaceConceptAdapter(LangUtil.getConceptId(it));
         } else {
           return new SInterfaceConceptAdapter(NameUtil.nodeFQName(it));
@@ -119,7 +123,7 @@ public class SLanguageAdapter implements SLanguage {
 
   @Override
   public Language getSourceModule() {
-    if (myLanguageFqName == null) {
+    if (myLanguage != null) {
       return (Language) ModuleRepositoryFacade.getInstance().getModule(new ModuleReference("", ModuleId.regular(myLanguage.getId())));
     } else {
       return (Language) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(myLanguageFqName));
@@ -128,10 +132,10 @@ public class SLanguageAdapter implements SLanguage {
 
   @Override
   public int hashCode() {
-    if (myLanguageFqName == null) {
-      return myLanguage.hashCode();
-    } else {
+    if (myLanguage == null) {
       return myLanguageFqName.hashCode();
+    } else {
+      return myLanguage.hashCode();
     }
   }
 
@@ -139,10 +143,10 @@ public class SLanguageAdapter implements SLanguage {
   public boolean equals(Object object) {
     if (!(object instanceof SLanguageAdapter)) return false;
 
-    if (myLanguageFqName == null) {
-      return myLanguage.equals(((SLanguageAdapter) object).myLanguage);
-    }else{
+    if (myLanguage == null) {
       return myLanguageFqName.equals(((SLanguageAdapter) object).myLanguageFqName);
+    } else {
+      return myLanguage.equals(((SLanguageAdapter) object).myLanguage);
     }
   }
 }
