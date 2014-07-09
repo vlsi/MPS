@@ -217,7 +217,7 @@ public class SModuleOperations {
   }
 
   /**
-   * Unload classes of module. If you want load classes back call ClassLoaderManager#loadAllPossibleClasses
+   * Unload classes of module.
    */
   public static void reloadFromDisk(AbstractModule module) {
     ModelAccess.assertLegalWrite();

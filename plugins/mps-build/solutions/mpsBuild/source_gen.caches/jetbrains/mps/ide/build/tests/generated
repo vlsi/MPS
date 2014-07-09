@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7yneg27hbkpfljhjeiw2i3534lfht62">
+<dependencies version="2" modelHash="-b7mmr24nwtr7h0nw060r8h3lmdcm9s2">
   <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="6a65syq44kblzhi5tim7rz264w1p7a0" />
   <dep model="r:707b7eb5-6dae-4291-ab4d-8d1bac7cbc86(jetbrains.mps.build.mps.tests.generator.template.main@generator)" hash="-6v7d7mu30m45iooxisrd5jxaxhfohhj" />
   <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" hash="4lw2qk4mdag8dat8c9ncpj1ex6vy1n2" />
@@ -16,7 +16,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsExecution.xml" />
   </source>
-  <source id="5833628797344916224" name="mpsEditor" hash="2l6wokhvwf1oz12zytjsxfbu3ck2ogy">
+  <source id="5833628797344916224" name="mpsEditor" hash="et3fq3yc0elvjlogwpxhnvwdu9dvkje">
     <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
     <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />
@@ -24,7 +24,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="mpsEditor.xml" />
   </source>
-  <source id="7210153263370654627" name="mpsBaseLanguage" hash="-6rcdlrvqc8prj2fvi75oxulp4g8zfoh">
+  <source id="7210153263370654627" name="mpsBaseLanguage" hash="-ay8zmcshev9qvotpdnyxyjk59hnepce">
     <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" />
     <dep model="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
     <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" />

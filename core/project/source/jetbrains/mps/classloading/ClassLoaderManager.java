@@ -110,7 +110,7 @@ public class ClassLoaderManager implements CoreComponent {
   }
 
   /** main api
-   * should get true before calling @getClass method
+   * should get true before calling #getClass method
    * returns "true" whenever the module's classes can be managed within the MPS class loading system
    * TODO: should be just MPS_FACET
    */
@@ -126,7 +126,7 @@ public class ClassLoaderManager implements CoreComponent {
 
   /**
    * Contract: if the module's classes are managed within MPS, then it will return the class you need
-   * So if @canLoad method returned true, you'll get your class
+   * So if #canLoad method returned true, you'll get your class
    */
   @Nullable
   public Class getClass(SModule module, String classFqName) {

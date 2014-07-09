@@ -33,7 +33,6 @@ public class ConflictableModuleAdapter extends Conflictable {
   @Override
   public void reloadFromDisk() {
     SModuleOperations.reloadFromDisk(myModule);
-    //TODO get rid of this
     ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
   }
 
