@@ -170,7 +170,7 @@ public class ModelWriter9 implements IModelWriter {
           roleIds.put(roleId, roleName);
         }
 
-        for (SPropertyId pid : root.getPropertyIds()) {
+        for (SPropertyId pid : n.getPropertyIds()) {
           SPropertyAdapter propId = new SPropertyAdapter(pid);
           SConceptId propConceptId = pid.getConceptId();
           SNode propNode = propId.getPropNode();
@@ -189,7 +189,7 @@ public class ModelWriter9 implements IModelWriter {
           propIds.put(pid, propName);
         }
 
-        for (SReference ref : root.getReferences()) {
+        for (SReference ref : n.getReferences()) {
           SReferenceLinkId refId = ref.getRoleId();
           SReferenceLinkAdapter refRole = new SReferenceLinkAdapter(refId);
           SNode refNode = refRole.getLinkNode();
