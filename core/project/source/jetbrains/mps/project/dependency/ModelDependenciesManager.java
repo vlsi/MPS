@@ -20,18 +20,23 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelInternal;
+import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
+import jetbrains.mps.smodel.language.LangUtil;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryContentAdapter;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
+import java.util.List;
 
 /**
  * Build (and optionally maintain) set of all languages, imported directly and indirectly.
@@ -65,7 +70,7 @@ public class ModelDependenciesManager {
   private MyModuleWatcher myModuleWatcher;
   private MySModelWatcher myModelWatcher;
 
-  private volatile Collection<SModuleReference> myCachedDeps;
+  private volatile Collection<SLanguageId> myCachedDeps;
 
   public ModelDependenciesManager(SModel model) {
     myModel = model;
@@ -74,18 +79,26 @@ public class ModelDependenciesManager {
   /**
    * @return snapshot of model dependencies (up-to-date state depends on listeners installed)
    */
-  public Collection<SModuleReference> getAllImportedLanguages() {
+  public Collection<SLanguageId> getAllImportedLanguagesIds() {
     final SModel model = myModel;
     if (model == null) throw new IllegalStateException("access after disposal");
 
-    Collection<SModuleReference> tlVal = myCachedDeps;
+    Collection<SLanguageId> tlVal = myCachedDeps;
     if (tlVal == null) {
       // I can live with expense of two+ threads building identical set simultaneously (microseconds)
       // and competing to set it to save use of synchronization primitives
-      tlVal = buildAllLanguages(model, new LinkedHashSet<SModuleReference>());
+      tlVal = buildAllLanguages(model, new LinkedHashSet<SLanguageId>());
       myCachedDeps = tlVal = Collections.unmodifiableCollection(tlVal);
     }
     return tlVal;
+  }
+
+  public Collection<SModuleReference> getAllImportedLanguages() {
+    List<SModuleReference> result = new ArrayList<SModuleReference>();
+    for (SLanguageId id : getAllImportedLanguagesIds()) {
+      result.add(new SLanguageAdapter(id).getSourceModule().getModuleReference());
+    }
+    return result;
   }
 
   public void dispose() {
@@ -105,17 +118,17 @@ public class ModelDependenciesManager {
     return myModel;
   }
 
-  protected boolean isDependency(SModuleReference langRef) {
-    Collection<SModuleReference> tlVal = myCachedDeps;
-    return tlVal != null && tlVal.contains(langRef);
+  protected boolean isDependency(SLanguageId langId) {
+    Collection<SLanguageId> tlVal = myCachedDeps;
+    return tlVal != null && tlVal.contains(langId);
   }
 
   public void invalidate() {
     myCachedDeps = null;
   }
 
-  protected Collection<SModuleReference> buildAllLanguages(@NotNull SModel model, @NotNull Collection<SModuleReference> result) {
-    for (SModuleReference lang : ((jetbrains.mps.smodel.SModelInternal) model).importedLanguages()) {
+  protected Collection<SLanguageId> buildAllLanguages(@NotNull SModel model, @NotNull Collection<SLanguageId> result) {
+    for (SLanguageId lang : ((jetbrains.mps.smodel.SModelInternal) model).importedLanguageIds()) {
       handle(lang, result);
     }
 
@@ -133,7 +146,7 @@ public class ModelDependenciesManager {
    * @param lang   reference to language module, never <code>null</code>. Language it points to not necessarily resolves
    * @param retval collection to fill with languages of interest
    */
-  protected void handle(SModuleReference lang, Collection<SModuleReference> retval) {
+  protected void handle(SLanguageId lang, Collection<SLanguageId> retval) {
     retval.add(lang);
   }
 
@@ -143,9 +156,9 @@ public class ModelDependenciesManager {
    * @param devkit reference to devkit, not <code>null</code>.
    * @param retval collection to fill with languages of interest
    */
-  protected void handle(DevKit devkit, Collection<SModuleReference> retval) {
+  protected void handle(DevKit devkit, Collection<SLanguageId> retval) {
     for (Language dkLang : devkit.getAllExportedLanguages()) {
-      handle(dkLang.getModuleReference(), retval);
+      handle(LangUtil.getLanguageId(dkLang.getModuleReference().getModuleId()), retval);
     }
   }
 
@@ -244,7 +257,8 @@ public class ModelDependenciesManager {
     }
 
     private void invalidateIfWatching(SModuleReference moduleRef) {
-      if (myDepManager.isDependency(moduleRef)) {
+      SLanguageId languageId = LangUtil.getLanguageId(moduleRef.getModuleId());
+      if (languageId != null && myDepManager.isDependency(languageId)) {
         myDepManager.invalidate();
       }
     }

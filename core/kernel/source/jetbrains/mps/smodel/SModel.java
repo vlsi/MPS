@@ -643,6 +643,7 @@ public class SModel implements SModelData {
     return Collections.unmodifiableList(myLanguages);
   }
 
+  @Deprecated
   public void deleteLanguage(@NotNull SModuleReference ref) {
     if (myModelDescriptor != null) {
       ModelChange.assertLegalChange(myModelDescriptor);
