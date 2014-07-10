@@ -49,8 +49,4 @@ public abstract class DefaultSimpleSubstituteAction extends DefaultChildNodeSubs
     return false;
   }
 
-  @Override
-  public int compareTo(AbstractNodeSubstituteAction action, String pattern) {
-    return 0;
-  }
 }

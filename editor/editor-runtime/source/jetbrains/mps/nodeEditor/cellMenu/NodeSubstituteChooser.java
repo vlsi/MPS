@@ -30,6 +30,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.IntelligentInputUtil;
 import jetbrains.mps.nodeEditor.KeyboardHandler;
+import jetbrains.mps.nodeEditor.SubstituteActionUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -301,8 +302,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
           if (null_s1) return 1;
           if (null_s2) return -1;
 
-          if (i1 instanceof AbstractNodeSubstituteAction && i2 instanceof AbstractNodeSubstituteAction) {
-            return ((AbstractNodeSubstituteAction) i1).compareTo(((AbstractNodeSubstituteAction) i2), pattern);
+          int compareResult = SubstituteActionUtil.compare(i1, i2, pattern);
+          if (compareResult != 0) {
+            return compareResult;
           }
 
           return s1.compareTo(s2);
@@ -421,7 +423,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
     List<SubstituteAction> matchingActions = new ArrayList<SubstituteAction>();
     for (SubstituteAction item : mySubstituteActions) {
-      if (item.canSubstitute(pattern)) {
+      if (SubstituteActionUtil.canSubstitute(item, pattern)) {
         matchingActions.add(item);
       }
     }
@@ -844,8 +846,8 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       }
 
       try {
-        if (action instanceof AbstractNodeSubstituteAction && !isSelected) {
-          myLeft.setText(((AbstractNodeSubstituteAction) action).createText(pattern,colorToHtml(Color.BLUE)));
+        if (!isSelected) {
+          myLeft.setText(SubstituteActionUtil.createText(action, pattern,colorToHtml(Color.BLUE)));
         } else {
           myLeft.setText(action.getVisibleMatchingText(pattern));
         }
