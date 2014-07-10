@@ -182,6 +182,7 @@ final class GenerationTracerView {
           case 1 : settings.setGroupByStep(value); break;
           case 2 : settings.setCompactTemplates(value); break;
           case 3 : settings.setShowEmptySteps(value); break;
+          case 4 : settings.setGroupByChange(value);
         }
         viewSettingsChanged();
       }
@@ -189,18 +190,27 @@ final class GenerationTracerView {
     final GenTraceSettings settings = GenerationSettings.getInstance().getTraceSettings();
     final JPopupMenu menu = new JPopupMenu();
     JCheckBoxMenuItem menuItem = new JCheckBoxMenuItem("Group changes by step");
+    menuItem.setToolTipText("Changes grouped by generation steps");
     menuItem.setSelected(settings.isGroupByStep());
     menuItem.setActionCommand(String.valueOf(1));
     menuItem.addActionListener(l);
     menu.add(menuItem);
     menuItem = new JCheckBoxMenuItem("Show change-specific templates only");
+    menuItem.setToolTipText("Hides template elements except those closest to effective template node");
     menuItem.setSelected(settings.isCompactTemplates());
     menuItem.setActionCommand(String.valueOf(2));
     menuItem.addActionListener(l);
     menu.add(menuItem);
     menuItem = new JCheckBoxMenuItem("Show steps without changes");
+    menuItem.setToolTipText("Reveal steps with no changes to selected node");
     menuItem.setSelected(settings.isShowEmptySteps());
     menuItem.setActionCommand(String.valueOf(3));
+    menuItem.addActionListener(l);
+    menu.add(menuItem);
+    menuItem = new JCheckBoxMenuItem("Show individual changes");
+    menuItem.setToolTipText("Each change entry (input-output pair) shown individually");
+    menuItem.setSelected(settings.isGroupByChange());
+    menuItem.setActionCommand(String.valueOf(4));
     menuItem.addActionListener(l);
     menu.add(menuItem);
     return menu;

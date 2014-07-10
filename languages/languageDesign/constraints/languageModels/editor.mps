@@ -1404,8 +1404,11 @@
   <root type="tpc2.ConceptEditorDeclaration" typeId="tpc2.1071666914219" id="8401916545537438644" nodeInfo="ng">
     <link role="conceptDeclaration" roleId="tpc2.1166049300910" targetNodeId="tp1t.8401916545537438642" resolveInfo="InheritedNodeScopeFactory" />
     <node role="cellModel" roleId="tpc2.1080736633877" type="tpc2.CellModel_Collection" typeId="tpc2.1073389446423" id="8401916545537438646" nodeInfo="nn">
+      <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="3264187749032923065" nodeInfo="nn">
+        <property name="text" nameId="tpc2.1073389577007" value="inherited" />
+      </node>
       <node role="childCellModel" roleId="tpc2.1073389446424" type="tpc2.CellModel_Constant" typeId="tpc2.1073389577006" id="8401916545537438649" nodeInfo="nn">
-        <property name="text" nameId="tpc2.1073389577007" value="search for" />
+        <property name="text" nameId="tpc2.1073389577007" value="for" />
         <node role="styleItem" roleId="tpc2.1219418656006" type="tpc2.ForegroundColorStyleClassItem" typeId="tpc2.1186404549998" id="8401916545537480526" nodeInfo="nn">
           <property name="color" nameId="tpc2.1186403713874" value="DARK_BLUE" />
         </node>

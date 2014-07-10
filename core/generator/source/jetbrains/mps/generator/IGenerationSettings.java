@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2013 JetBrains s.r.o.
+ * Copyright 2003-2014 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,10 +58,17 @@ public interface IGenerationSettings {
   @NotNull
   GenTraceSettings getTraceSettings();
 
+  /**
+   * <tt>group by steps</tt> - changes within individual generation phases are grouped under 'step' nodes
+   * <tt>show empty steps</tt> - when generation phases are grouped under step nodes, decides whether to show empty ones.
+   * <tt>compact templates</tt> - whether to show only template node closest to the output node.
+   * <tt>group by change</tt> - individual changes grouped by either pair (input, output) or just input (forward trace) or output (for backward trace) node.
+   */
   public static class GenTraceSettings {
     private boolean myGroupSteps = true;
     private boolean myCompactTemplates = false;
     private boolean myShowEmptySteps = false;
+    private boolean myGroupByChange = true;
 
     public boolean isGroupByStep() {
       return myGroupSteps;
@@ -73,7 +80,6 @@ public interface IGenerationSettings {
     public boolean isCompactTemplates() {
       return myCompactTemplates;
     }
-
     public void setCompactTemplates(boolean compactTemplates) {
       myCompactTemplates = compactTemplates;
     }
@@ -81,9 +87,15 @@ public interface IGenerationSettings {
     public boolean isShowEmptySteps() {
       return myShowEmptySteps;
     }
-
     public void setShowEmptySteps(boolean showEmptySteps) {
       myShowEmptySteps = showEmptySteps;
+    }
+
+    public boolean isGroupByChange() {
+      return myGroupByChange;
+    }
+    public void setGroupByChange(boolean groupByChange) {
+      myGroupByChange = groupByChange;
     }
   }
 }
