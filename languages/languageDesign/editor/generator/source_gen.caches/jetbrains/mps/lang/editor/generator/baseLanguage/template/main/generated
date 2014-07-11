@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="50wpapr90ik8ev3pb7zrqs681vmzuyf">
+<dependencies version="2" modelHash="-1sow60fq0b5gcg9cw59czenhp5xd0n8">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -100,6 +100,7 @@
     <dep root="4755152624710441322" />
     <dep root="4820515453827608594" />
     <dep root="4820515453828757973" />
+    <dep root="4911702205467697533" />
     <dep root="5170495790389304146" />
     <dep root="5299592197031388192" />
     <dep root="5861024100074850862" />
@@ -159,12 +160,9 @@
   <source id="1096647705671" name="reduce_CellModel_Collection" hash="31cmslm0haz12fejuloenpq6dvupbti">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1097139242515" name="reduce_CellModel_Alternation" hash="3k8zyek3zygv1geduoxhzi05ee7icyc">
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
-  </source>
+  <source id="1097139242515" name="reduce_CellModel_Alternation" hash="3k8zyek3zygv1geduoxhzi05ee7icyc" />
   <source id="1097143944735" name="class_EditorComponentDeclaration" hash="-9l3xbydl5yi62h1w3lg7lgwlr6cwzdp">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)" />
-    <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="1097151314077" name="reduce_CellModel_Constant" hash="-7umedykfic2vhky47lwt7lufi6aycx4" />
   <source id="1097158831835" name="reduce_CellModel_Custom" hash="tfbp5c3gl2xoqoaa9ng0gxcbh2v2bx" />
@@ -223,7 +221,7 @@
   </source>
   <source id="1198257250013" name="reduce_CellModel_Indent" hash="ajkavb9bmn8lspbcw05w8w0ixfeg9u6" />
   <source id="1198258144506" name="reduce_CellModel_BlockStart" hash="-2q6si4ae293yt606ep83amtocf4qmge" />
-  <source id="1198258322917" name="MAPPING_Sugar" hash="bw4z00tozwdutdrsak5y0lh602yj7pc" />
+  <source id="1198258322917" name="MAPPING_Sugar" hash="b1cvhy1fy4lxlasp03bw8r9cvm1jway" />
   <source id="1198258380049" name="reduce_CellModel_BlockEnd" hash="aeiuyiz3q1keezsi7c0qvbdwwiedkc3" />
   <source id="1198490666793" name="reduce_CellModel_Block" hash="9y460boc4kqio28ev9ylgj5ijt1zjla" />
   <source id="1201269922332" name="MAPPING_nodesOperations" hash="34afchnlabs89pc4x5t4h6sdqwrrlf4" />
@@ -271,5 +269,6 @@
   <source id="6029276237642832162" name="reduce_StyleAttributeDeclaration" hash="-754nrokd4i9l57spoxsneekjb4fajns" />
   <source id="5299592197031388192" name="SetBigCellProperty" hash="7fa1mun3kj13y3kerfxggum73tlmqgb" />
   <source id="5299592197032597843" name="SetBigCellForImportedCell" hash="-e0b2hqtuyx5fjgnfljv2s3moopmn4ji" />
+  <source id="4911702205467697533" name="SugaredCellActionMapDeclaration" hash="enejg1ruj0hyk02hrl47iyol73tjssa" />
 </dependencies>
 
