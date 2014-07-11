@@ -86,6 +86,7 @@ public class EditorCell_STHint extends EditorCell_Constant {
     RemoveSTHintAction removeSTHintAction = new RemoveSTHintAction();
     // delete the hint when pressed ctrl-delete, delete or backspace
     setAction(CellActionType.DELETE, removeSTHintAction);
+    setAction(CellActionType.BACKSPACE, removeSTHintAction);
     // delete the hint when double press 'space'
     setAction(CellActionType.RIGHT_TRANSFORM, removeSTHintAction);
     setAction(CellActionType.LEFT_TRANSFORM, removeSTHintAction);
