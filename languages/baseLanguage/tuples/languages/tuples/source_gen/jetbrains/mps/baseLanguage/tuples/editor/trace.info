@@ -3302,35 +3302,57 @@
   </root>
   <root nodeRef="r:a841fea4-52c0-4064-96f2-7687a509aba5(jetbrains.mps.baseLanguage.tuples.editor)/1240400999425">
     <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="13" startPosition="95" endLine="14" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="20" startPosition="49" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240401033211" fileName="NTCD_delete_final.java" startLine="28" startPosition="75" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NTCD_delete_final_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="13" startPosition="95" endLine="14" endPosition="102" />
-    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="20" startPosition="49" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="1240401003114" fileName="NTCD_delete_final.java" startLine="28" startPosition="75" endLine="29" endPosition="59" />
-    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="14" startPosition="102" endLine="15" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="21" startPosition="49" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240401033211" fileName="NTCD_delete_final.java" startLine="29" startPosition="75" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="37" startPosition="52" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="41" startPosition="54" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240401033211" fileName="NTCD_delete_final.java" startLine="45" startPosition="75" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NTCD_delete_final_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NTCD_delete_final_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="21" startPosition="49" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="1240401003114" fileName="NTCD_delete_final.java" startLine="29" startPosition="75" endLine="30" endPosition="59" />
+    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="37" startPosition="52" endLine="38" endPosition="25" />
+    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="41" startPosition="54" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="1240401003114" fileName="NTCD_delete_final.java" startLine="45" startPosition="75" endLine="46" endPosition="59" />
+    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="13" startPosition="95" endLine="15" endPosition="108" />
+    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1240400999425" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1240400999425" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1240400999425" varName="editorContext" />
+      <varInfo nodeId="1240400999425" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1240400999425" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1240400999425" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1240400999425" varName="editorContext" />
+      <varInfo nodeId="1240400999425" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1240400999425" varName="context" />
       <varInfo nodeId="1240400999425" varName="editorCell" />
       <varInfo nodeId="1240400999425" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="1240400999425" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="1240400999425" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="1240400999425" varName="editorContext" />
-      <varInfo nodeId="1240400999425" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.editor.NTCD_delete_final$NTCD_delete_final_DELETE" />
-    <unitInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.editor.NTCD_delete_final" />
+    <unitInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.editor.NTCD_delete_final$NTCD_delete_final_DELETE" />
+    <unitInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="34" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.editor.NTCD_delete_final$NTCD_delete_final_BACKSPACE" />
+    <unitInfo nodeId="1240400999425" fileName="NTCD_delete_final.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.tuples.editor.NTCD_delete_final" />
   </root>
 </debugInfo>
 

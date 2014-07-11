@@ -5708,35 +5708,57 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)/1225209508867">
     <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="13" startPosition="95" endLine="14" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="20" startPosition="66" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225209569142" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="28" startPosition="75" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeprecatedNodeAnnotation_ActionMap_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="13" startPosition="95" endLine="14" endPosition="136" />
-    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="20" startPosition="66" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="1225209540469" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="28" startPosition="75" endLine="29" endPosition="39" />
-    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="14" startPosition="136" endLine="15" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="21" startPosition="66" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225209569142" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="29" startPosition="75" endLine="30" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="37" startPosition="69" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="41" startPosition="54" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225209569142" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="45" startPosition="75" endLine="46" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeprecatedNodeAnnotation_ActionMap_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeprecatedNodeAnnotation_ActionMap_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="21" startPosition="66" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="1225209540469" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="29" startPosition="75" endLine="30" endPosition="39" />
+    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="37" startPosition="69" endLine="38" endPosition="25" />
+    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="41" startPosition="54" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="1225209540469" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="45" startPosition="75" endLine="46" endPosition="39" />
+    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="13" startPosition="95" endLine="15" endPosition="142" />
+    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="1225209508867" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1225209508867" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="1225209508867" varName="editorContext" />
+      <varInfo nodeId="1225209508867" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="1225209508867" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="1225209508867" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="1225209508867" varName="editorContext" />
+      <varInfo nodeId="1225209508867" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1225209508867" varName="context" />
       <varInfo nodeId="1225209508867" varName="editorCell" />
       <varInfo nodeId="1225209508867" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="1225209508867" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="1225209508867" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="1225209508867" varName="editorContext" />
-      <varInfo nodeId="1225209508867" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.DeprecatedNodeAnnotation_ActionMap$DeprecatedNodeAnnotation_ActionMap_DELETE" />
-    <unitInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.DeprecatedNodeAnnotation_ActionMap" />
+    <unitInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.DeprecatedNodeAnnotation_ActionMap$DeprecatedNodeAnnotation_ActionMap_DELETE" />
+    <unitInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="34" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.DeprecatedNodeAnnotation_ActionMap$DeprecatedNodeAnnotation_ActionMap_BACKSPACE" />
+    <unitInfo nodeId="1225209508867" fileName="DeprecatedNodeAnnotation_ActionMap.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.structure.editor.DeprecatedNodeAnnotation_ActionMap" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)/2992811758678973858">
     <nodeInfo nodeId="2992811758678973858" fileName="AttributeInfo_Editor.java" startLine="30" startPosition="79" endLine="31" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -6060,67 +6082,111 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)/4672725010143236048">
     <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="13" startPosition="95" endLine="14" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="20" startPosition="73" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010143237487" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="28" startPosition="75" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_ConceptDeclaration_DeleteAbstract_Action_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="13" startPosition="95" endLine="14" endPosition="150" />
-    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="20" startPosition="73" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="4672725010143237482" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="28" startPosition="75" endLine="29" endPosition="62" />
-    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="14" startPosition="150" endLine="15" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="21" startPosition="73" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010143237487" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="29" startPosition="75" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="37" startPosition="76" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="41" startPosition="54" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010143237487" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="45" startPosition="75" endLine="46" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_ConceptDeclaration_DeleteAbstract_Action_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_ConceptDeclaration_DeleteAbstract_Action_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="21" startPosition="73" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="4672725010143237482" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="29" startPosition="75" endLine="30" endPosition="62" />
+    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="37" startPosition="76" endLine="38" endPosition="25" />
+    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="41" startPosition="54" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="4672725010143237482" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="45" startPosition="75" endLine="46" endPosition="62" />
+    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="13" startPosition="95" endLine="15" endPosition="156" />
+    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="4672725010143236048" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="4672725010143236048" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="4672725010143236048" varName="editorContext" />
+      <varInfo nodeId="4672725010143236048" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4672725010143236048" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4672725010143236048" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="4672725010143236048" varName="editorContext" />
+      <varInfo nodeId="4672725010143236048" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="4672725010143236048" varName="context" />
       <varInfo nodeId="4672725010143236048" varName="editorCell" />
       <varInfo nodeId="4672725010143236048" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="4672725010143236048" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="4672725010143236048" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="4672725010143236048" varName="editorContext" />
-      <varInfo nodeId="4672725010143236048" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.editor._ConceptDeclaration_DeleteAbstract_Action$_ConceptDeclaration_DeleteAbstract_Action_DELETE" />
-    <unitInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.structure.editor._ConceptDeclaration_DeleteAbstract_Action" />
+    <unitInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.structure.editor._ConceptDeclaration_DeleteAbstract_Action$_ConceptDeclaration_DeleteAbstract_Action_DELETE" />
+    <unitInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="34" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.structure.editor._ConceptDeclaration_DeleteAbstract_Action$_ConceptDeclaration_DeleteAbstract_Action_BACKSPACE" />
+    <unitInfo nodeId="4672725010143236048" fileName="_ConceptDeclaration_DeleteAbstract_Action.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.structure.editor._ConceptDeclaration_DeleteAbstract_Action" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)/4672725010144759972">
     <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="13" startPosition="95" endLine="14" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="20" startPosition="70" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010144768586" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="28" startPosition="75" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_ConceptDeclaration_DeleteFinal_Action_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="13" startPosition="95" endLine="14" endPosition="144" />
-    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="20" startPosition="70" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="4672725010144768583" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="28" startPosition="75" endLine="29" endPosition="59" />
-    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="14" startPosition="144" endLine="15" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="21" startPosition="70" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010144768586" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="29" startPosition="75" endLine="30" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="37" startPosition="73" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="41" startPosition="54" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010144768586" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="45" startPosition="75" endLine="46" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_ConceptDeclaration_DeleteFinal_Action_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="_ConceptDeclaration_DeleteFinal_Action_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="21" startPosition="70" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="4672725010144768583" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="29" startPosition="75" endLine="30" endPosition="59" />
+    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="37" startPosition="73" endLine="38" endPosition="25" />
+    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="41" startPosition="54" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="4672725010144768583" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="45" startPosition="75" endLine="46" endPosition="59" />
+    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="13" startPosition="95" endLine="15" endPosition="150" />
+    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="4672725010144759972" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="4672725010144759972" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="4672725010144759972" varName="editorContext" />
+      <varInfo nodeId="4672725010144759972" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="4672725010144759972" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="4672725010144759972" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="4672725010144759972" varName="editorContext" />
+      <varInfo nodeId="4672725010144759972" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="4672725010144759972" varName="context" />
       <varInfo nodeId="4672725010144759972" varName="editorCell" />
       <varInfo nodeId="4672725010144759972" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="4672725010144759972" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="4672725010144759972" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="4672725010144759972" varName="editorContext" />
-      <varInfo nodeId="4672725010144759972" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.lang.structure.editor._ConceptDeclaration_DeleteFinal_Action$_ConceptDeclaration_DeleteFinal_Action_DELETE" />
-    <unitInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.structure.editor._ConceptDeclaration_DeleteFinal_Action" />
+    <unitInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.structure.editor._ConceptDeclaration_DeleteFinal_Action$_ConceptDeclaration_DeleteFinal_Action_DELETE" />
+    <unitInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="34" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.lang.structure.editor._ConceptDeclaration_DeleteFinal_Action$_ConceptDeclaration_DeleteFinal_Action_BACKSPACE" />
+    <unitInfo nodeId="4672725010144759972" fileName="_ConceptDeclaration_DeleteFinal_Action.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.structure.editor._ConceptDeclaration_DeleteFinal_Action" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959028d(jetbrains.mps.lang.structure.editor)/5404671619589029740">
     <nodeInfo nodeId="5404671619589029740" fileName="AbstractConceptDeclaration_deprecatedStuff.java" startLine="28" startPosition="47" endLine="29" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -3,60 +3,107 @@
   <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/1594211126127664034">
     <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="17" startPosition="95" endLine="18" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="24" startPosition="56" endLine="25" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="28" startPosition="40" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="32" startPosition="54" endLine="33" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127664045" fileName="RedirectOutputExpression.java" startLine="36" startPosition="75" endLine="37" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1594211126127664053" fileName="RedirectOutputExpression.java" startLine="37" startPosition="81" endLine="38" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127664062" fileName="RedirectOutputExpression.java" startLine="38" startPosition="59" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1594211126127664115" fileName="RedirectOutputExpression.java" startLine="39" startPosition="0" endLine="40" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1594211126127664119" fileName="RedirectOutputExpression.java" startLine="40" startPosition="51" endLine="41" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1594211126127664067" fileName="RedirectOutputExpression.java" startLine="41" startPosition="43" endLine="42" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127664071" fileName="RedirectOutputExpression.java" startLine="42" startPosition="34" endLine="43" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1594211126127664077" fileName="RedirectOutputExpression.java" startLine="43" startPosition="66" endLine="44" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1594211126127664089" fileName="RedirectOutputExpression.java" startLine="45" startPosition="25" endLine="46" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1594211126127664096" fileName="RedirectOutputExpression.java" startLine="46" startPosition="120" endLine="47" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127664103" fileName="RedirectOutputExpression.java" startLine="48" startPosition="51" endLine="49" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1594211126127664063" fileName="RedirectOutputExpression.java" startLine="51" startPosition="7" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RedirectOutputExpression_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1594211126127664101" fileName="RedirectOutputExpression.java" startLine="47" startPosition="41" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1594211126127664084" fileName="RedirectOutputExpression.java" startLine="44" startPosition="56" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="36" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="17" startPosition="95" endLine="18" endPosition="116" />
-    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="24" startPosition="56" endLine="25" endPosition="25" />
-    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="28" startPosition="40" endLine="29" endPosition="56" />
-    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="32" startPosition="54" endLine="33" endPosition="56" />
-    <scopeInfo nodeId="1594211126127664102" fileName="RedirectOutputExpression.java" startLine="48" startPosition="51" endLine="49" endPosition="46" />
-    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="18" startPosition="116" endLine="19" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="25" startPosition="56" endLine="26" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="29" startPosition="40" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="33" startPosition="54" endLine="34" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664045" fileName="RedirectOutputExpression.java" startLine="37" startPosition="75" endLine="38" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1594211126127664053" fileName="RedirectOutputExpression.java" startLine="38" startPosition="81" endLine="39" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664062" fileName="RedirectOutputExpression.java" startLine="39" startPosition="59" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1594211126127664115" fileName="RedirectOutputExpression.java" startLine="40" startPosition="0" endLine="41" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1594211126127664119" fileName="RedirectOutputExpression.java" startLine="41" startPosition="51" endLine="42" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1594211126127664067" fileName="RedirectOutputExpression.java" startLine="42" startPosition="43" endLine="43" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664071" fileName="RedirectOutputExpression.java" startLine="43" startPosition="34" endLine="44" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1594211126127664077" fileName="RedirectOutputExpression.java" startLine="44" startPosition="66" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1594211126127664089" fileName="RedirectOutputExpression.java" startLine="46" startPosition="25" endLine="47" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1594211126127664096" fileName="RedirectOutputExpression.java" startLine="47" startPosition="120" endLine="48" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664103" fileName="RedirectOutputExpression.java" startLine="49" startPosition="51" endLine="50" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664063" fileName="RedirectOutputExpression.java" startLine="52" startPosition="7" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="58" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="60" startPosition="59" endLine="61" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="64" startPosition="40" endLine="65" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="68" startPosition="54" endLine="69" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664045" fileName="RedirectOutputExpression.java" startLine="72" startPosition="75" endLine="73" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1594211126127664053" fileName="RedirectOutputExpression.java" startLine="73" startPosition="81" endLine="74" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664062" fileName="RedirectOutputExpression.java" startLine="74" startPosition="59" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1594211126127664115" fileName="RedirectOutputExpression.java" startLine="75" startPosition="0" endLine="76" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1594211126127664119" fileName="RedirectOutputExpression.java" startLine="76" startPosition="51" endLine="77" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="1594211126127664067" fileName="RedirectOutputExpression.java" startLine="77" startPosition="43" endLine="78" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664071" fileName="RedirectOutputExpression.java" startLine="78" startPosition="34" endLine="79" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1594211126127664077" fileName="RedirectOutputExpression.java" startLine="79" startPosition="66" endLine="80" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1594211126127664089" fileName="RedirectOutputExpression.java" startLine="81" startPosition="25" endLine="82" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1594211126127664096" fileName="RedirectOutputExpression.java" startLine="82" startPosition="120" endLine="83" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664103" fileName="RedirectOutputExpression.java" startLine="84" startPosition="51" endLine="85" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1594211126127664063" fileName="RedirectOutputExpression.java" startLine="87" startPosition="7" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RedirectOutputExpression_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1594211126127664101" fileName="RedirectOutputExpression.java" startLine="48" startPosition="41" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RedirectOutputExpression_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1594211126127664101" fileName="RedirectOutputExpression.java" startLine="83" startPosition="41" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1594211126127664084" fileName="RedirectOutputExpression.java" startLine="45" startPosition="56" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1594211126127664084" fileName="RedirectOutputExpression.java" startLine="80" startPosition="56" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="37" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="72" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="25" startPosition="56" endLine="26" endPosition="25" />
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="29" startPosition="40" endLine="30" endPosition="56" />
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="33" startPosition="54" endLine="34" endPosition="56" />
+    <scopeInfo nodeId="1594211126127664102" fileName="RedirectOutputExpression.java" startLine="49" startPosition="51" endLine="50" endPosition="46" />
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="60" startPosition="59" endLine="61" endPosition="25" />
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="64" startPosition="40" endLine="65" endPosition="56" />
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="68" startPosition="54" endLine="69" endPosition="56" />
+    <scopeInfo nodeId="1594211126127664102" fileName="RedirectOutputExpression.java" startLine="84" startPosition="51" endLine="85" endPosition="46" />
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="17" startPosition="95" endLine="19" endPosition="122" />
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="1594211126127664034" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="1594211126127664034" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
+      <varInfo nodeId="1594211126127664034" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
+      <varInfo nodeId="1594211126127664034" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1594211126127664034" varName="context" />
       <varInfo nodeId="1594211126127664034" varName="editorCell" />
       <varInfo nodeId="1594211126127664034" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="1594211126127664034" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="1594211126127664034" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1594211126127664088" fileName="RedirectOutputExpression.java" startLine="45" startPosition="25" endLine="50" endPosition="9">
+    <scopeInfo nodeId="1594211126127664088" fileName="RedirectOutputExpression.java" startLine="46" startPosition="25" endLine="51" endPosition="9">
       <varInfo nodeId="1594211126127664090" varName="lastLeaf" />
     </scopeInfo>
-    <scopeInfo nodeId="1594211126127664037" fileName="RedirectOutputExpression.java" startLine="36" startPosition="75" endLine="52" endPosition="0">
+    <scopeInfo nodeId="1594211126127664088" fileName="RedirectOutputExpression.java" startLine="81" startPosition="25" endLine="86" endPosition="9">
+      <varInfo nodeId="1594211126127664090" varName="lastLeaf" />
+    </scopeInfo>
+    <scopeInfo nodeId="1594211126127664037" fileName="RedirectOutputExpression.java" startLine="37" startPosition="75" endLine="53" endPosition="0">
       <varInfo nodeId="1594211126127664078" varName="cell" />
       <varInfo nodeId="1594211126127664072" varName="editor" />
       <varInfo nodeId="1594211126127664046" varName="expression" />
     </scopeInfo>
-    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="36" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="1594211126127664037" fileName="RedirectOutputExpression.java" startLine="72" startPosition="75" endLine="88" endPosition="0">
+      <varInfo nodeId="1594211126127664078" varName="cell" />
+      <varInfo nodeId="1594211126127664072" varName="editor" />
+      <varInfo nodeId="1594211126127664046" varName="expression" />
+    </scopeInfo>
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="37" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="1594211126127664034" varName="editorContext" />
       <varInfo nodeId="1594211126127664034" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="21" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.RedirectOutputExpression$RedirectOutputExpression_DELETE" />
-    <unitInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="16" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.RedirectOutputExpression" />
+    <scopeInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="72" startPosition="0" endLine="90" endPosition="0">
+      <varInfo nodeId="1594211126127664034" varName="editorContext" />
+      <varInfo nodeId="1594211126127664034" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="22" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.RedirectOutputExpression$RedirectOutputExpression_DELETE" />
+    <unitInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="57" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.RedirectOutputExpression$RedirectOutputExpression_BACKSPACE" />
+    <unitInfo nodeId="1594211126127664034" fileName="RedirectOutputExpression.java" startLine="16" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.execution.commands.editor.RedirectOutputExpression" />
   </root>
   <root nodeRef="r:e255c21e-d39c-4295-8088-dd96816b455c(jetbrains.mps.execution.commands.editor)/1616228152992023916">
     <nodeInfo nodeId="1616228152992023916" fileName="CommandPartLengthOperation_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

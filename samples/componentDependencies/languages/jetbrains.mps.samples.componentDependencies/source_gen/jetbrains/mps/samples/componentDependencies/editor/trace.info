@@ -2332,92 +2332,161 @@
   </root>
   <root nodeRef="r:7ef60438-f5cb-4ce3-b173-829ec8cb68a1(jetbrains.mps.samples.componentDependencies.editor)/7433225748202896286">
     <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="19" startPosition="95" endLine="20" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="26" startPosition="44" endLine="27" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="30" startPosition="54" endLine="31" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7433225748202957165" fileName="delComponent.java" startLine="38" startPosition="45" endLine="39" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7433225748202967985" fileName="delComponent.java" startLine="45" startPosition="37" endLine="46" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7433225748202971187" fileName="delComponent.java" startLine="48" startPosition="9" endLine="49" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="delComponent_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="7433225748202957163" fileName="delComponent.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="7433225748202967743" fileName="delComponent.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7433225748202957157" fileName="delComponent.java" startLine="36" startPosition="52" endLine="41" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7433225748202898563" fileName="delComponent.java" startLine="43" startPosition="26" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7433225748202957155" fileName="delComponent.java" startLine="36" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="7433225748202957143" fileName="delComponent.java" startLine="34" startPosition="81" endLine="43" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="34" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="19" startPosition="95" endLine="20" endPosition="92" />
-    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="26" startPosition="44" endLine="27" endPosition="25" />
-    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="30" startPosition="54" endLine="31" endPosition="56" />
-    <scopeInfo nodeId="7433225748202957164" fileName="delComponent.java" startLine="38" startPosition="45" endLine="39" endPosition="72" />
-    <scopeInfo nodeId="7433225748202967744" fileName="delComponent.java" startLine="45" startPosition="37" endLine="46" endPosition="41" />
-    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="20" startPosition="92" endLine="21" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="27" startPosition="44" endLine="28" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="31" startPosition="54" endLine="32" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202957165" fileName="delComponent.java" startLine="39" startPosition="45" endLine="40" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7433225748202967985" fileName="delComponent.java" startLine="46" startPosition="37" endLine="47" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202971187" fileName="delComponent.java" startLine="49" startPosition="9" endLine="50" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="55" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="57" startPosition="47" endLine="58" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="61" startPosition="54" endLine="62" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202957165" fileName="delComponent.java" startLine="69" startPosition="45" endLine="70" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7433225748202967985" fileName="delComponent.java" startLine="76" startPosition="37" endLine="77" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202971187" fileName="delComponent.java" startLine="79" startPosition="9" endLine="80" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="delComponent_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7433225748202957163" fileName="delComponent.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7433225748202967743" fileName="delComponent.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="delComponent_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7433225748202957163" fileName="delComponent.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="7433225748202967743" fileName="delComponent.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7433225748202957157" fileName="delComponent.java" startLine="37" startPosition="52" endLine="42" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7433225748202898563" fileName="delComponent.java" startLine="44" startPosition="26" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202957157" fileName="delComponent.java" startLine="67" startPosition="52" endLine="72" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7433225748202898563" fileName="delComponent.java" startLine="74" startPosition="26" endLine="79" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202957155" fileName="delComponent.java" startLine="37" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7433225748202957155" fileName="delComponent.java" startLine="67" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="7433225748202957143" fileName="delComponent.java" startLine="35" startPosition="81" endLine="44" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7433225748202957143" fileName="delComponent.java" startLine="65" startPosition="81" endLine="74" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="35" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="65" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="27" startPosition="44" endLine="28" endPosition="25" />
+    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="31" startPosition="54" endLine="32" endPosition="56" />
+    <scopeInfo nodeId="7433225748202957164" fileName="delComponent.java" startLine="39" startPosition="45" endLine="40" endPosition="72" />
+    <scopeInfo nodeId="7433225748202967744" fileName="delComponent.java" startLine="46" startPosition="37" endLine="47" endPosition="41" />
+    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="57" startPosition="47" endLine="58" endPosition="25" />
+    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="61" startPosition="54" endLine="62" endPosition="56" />
+    <scopeInfo nodeId="7433225748202957164" fileName="delComponent.java" startLine="69" startPosition="45" endLine="70" endPosition="72" />
+    <scopeInfo nodeId="7433225748202967744" fileName="delComponent.java" startLine="76" startPosition="37" endLine="77" endPosition="41" />
+    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="19" startPosition="95" endLine="21" endPosition="98" />
+    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="7433225748202896286" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
+      <varInfo nodeId="7433225748202896286" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202957163" fileName="delComponent.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="7433225748202957163" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202967743" fileName="delComponent.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="7433225748202967743" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
+      <varInfo nodeId="7433225748202896286" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+      <varInfo nodeId="7433225748202896286" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202957163" fileName="delComponent.java" startLine="69" startPosition="0" endLine="72" endPosition="0">
+      <varInfo nodeId="7433225748202957163" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202967743" fileName="delComponent.java" startLine="76" startPosition="0" endLine="79" endPosition="0">
+      <varInfo nodeId="7433225748202967743" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="7433225748202896286" varName="context" />
       <varInfo nodeId="7433225748202896286" varName="editorCell" />
       <varInfo nodeId="7433225748202896286" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="7433225748202896286" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
-      <varInfo nodeId="7433225748202896286" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7433225748202957163" fileName="delComponent.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
-      <varInfo nodeId="7433225748202957163" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="7433225748202967743" fileName="delComponent.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="7433225748202967743" varName="it" />
-    </scopeInfo>
-    <scopeInfo nodeId="7433225748202957156" fileName="delComponent.java" startLine="36" startPosition="52" endLine="41" endPosition="13" />
-    <scopeInfo nodeId="7433225748202957155" fileName="delComponent.java" startLine="36" startPosition="0" endLine="43" endPosition="0">
+    <scopeInfo nodeId="7433225748202957156" fileName="delComponent.java" startLine="37" startPosition="52" endLine="42" endPosition="13" />
+    <scopeInfo nodeId="7433225748202957156" fileName="delComponent.java" startLine="67" startPosition="52" endLine="72" endPosition="13" />
+    <scopeInfo nodeId="7433225748202957155" fileName="delComponent.java" startLine="37" startPosition="0" endLine="44" endPosition="0">
       <varInfo nodeId="7433225748202957155" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="7433225748202898558" fileName="delComponent.java" startLine="34" startPosition="81" endLine="49" endPosition="39">
+    <scopeInfo nodeId="7433225748202957155" fileName="delComponent.java" startLine="67" startPosition="0" endLine="74" endPosition="0">
+      <varInfo nodeId="7433225748202957155" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202898558" fileName="delComponent.java" startLine="35" startPosition="81" endLine="50" endPosition="39">
       <varInfo nodeId="7433225748202957144" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="34" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="7433225748202898558" fileName="delComponent.java" startLine="65" startPosition="81" endLine="80" endPosition="39">
+      <varInfo nodeId="7433225748202957144" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="35" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="7433225748202896286" varName="editorContext" />
       <varInfo nodeId="7433225748202896286" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7433225748202957163" fileName="delComponent.java" startLine="37" startPosition="94" endLine="41" endPosition="11" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent$2" />
-    <unitInfo nodeId="7433225748202967743" fileName="delComponent.java" startLine="44" startPosition="47" endLine="48" endPosition="7" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent$2" />
-    <unitInfo nodeId="7433225748202957155" fileName="delComponent.java" startLine="35" startPosition="227" endLine="43" endPosition="7" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent$1" />
-    <unitInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="23" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent$delComponent_DELETE" />
-    <unitInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="18" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent" />
+    <scopeInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="65" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="7433225748202896286" varName="editorContext" />
+      <varInfo nodeId="7433225748202896286" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="7433225748202957163" fileName="delComponent.java" startLine="38" startPosition="94" endLine="42" endPosition="11" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent$2" />
+    <unitInfo nodeId="7433225748202967743" fileName="delComponent.java" startLine="45" startPosition="47" endLine="49" endPosition="7" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent$2" />
+    <unitInfo nodeId="7433225748202957163" fileName="delComponent.java" startLine="68" startPosition="94" endLine="72" endPosition="11" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent$2" />
+    <unitInfo nodeId="7433225748202967743" fileName="delComponent.java" startLine="75" startPosition="47" endLine="79" endPosition="7" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent$2" />
+    <unitInfo nodeId="7433225748202957155" fileName="delComponent.java" startLine="36" startPosition="227" endLine="44" endPosition="7" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent$1" />
+    <unitInfo nodeId="7433225748202957155" fileName="delComponent.java" startLine="66" startPosition="227" endLine="74" endPosition="7" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent$1" />
+    <unitInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="24" startPosition="0" endLine="53" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent$delComponent_DELETE" />
+    <unitInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="54" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent$delComponent_BACKSPACE" />
+    <unitInfo nodeId="7433225748202896286" fileName="delComponent.java" startLine="18" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.editor.delComponent" />
   </root>
   <root nodeRef="r:7ef60438-f5cb-4ce3-b173-829ec8cb68a1(jetbrains.mps.samples.componentDependencies.editor)/7433225748202976550">
     <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="13" startPosition="95" endLine="14" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="20" startPosition="44" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7433225748202976558" fileName="delConnector.java" startLine="28" startPosition="75" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="delConnector_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="13" startPosition="95" endLine="14" endPosition="92" />
-    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="20" startPosition="44" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="7433225748202976553" fileName="delConnector.java" startLine="28" startPosition="75" endLine="29" endPosition="39" />
-    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="14" startPosition="92" endLine="15" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="21" startPosition="44" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202976558" fileName="delConnector.java" startLine="29" startPosition="75" endLine="30" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="37" startPosition="47" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="41" startPosition="54" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202976558" fileName="delConnector.java" startLine="45" startPosition="75" endLine="46" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="delConnector_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="delConnector_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="21" startPosition="44" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="7433225748202976553" fileName="delConnector.java" startLine="29" startPosition="75" endLine="30" endPosition="39" />
+    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="37" startPosition="47" endLine="38" endPosition="25" />
+    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="41" startPosition="54" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="7433225748202976553" fileName="delConnector.java" startLine="45" startPosition="75" endLine="46" endPosition="39" />
+    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="13" startPosition="95" endLine="15" endPosition="98" />
+    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="7433225748202976550" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="7433225748202976550" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="7433225748202976550" varName="editorContext" />
+      <varInfo nodeId="7433225748202976550" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="7433225748202976550" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="7433225748202976550" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="7433225748202976550" varName="editorContext" />
+      <varInfo nodeId="7433225748202976550" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="7433225748202976550" varName="context" />
       <varInfo nodeId="7433225748202976550" varName="editorCell" />
       <varInfo nodeId="7433225748202976550" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="7433225748202976550" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="7433225748202976550" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="7433225748202976550" varName="editorContext" />
-      <varInfo nodeId="7433225748202976550" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.editor.delConnector$delConnector_DELETE" />
-    <unitInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.editor.delConnector" />
+    <unitInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.editor.delConnector$delConnector_DELETE" />
+    <unitInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="34" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.editor.delConnector$delConnector_BACKSPACE" />
+    <unitInfo nodeId="7433225748202976550" fileName="delConnector.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.samples.componentDependencies.editor.delConnector" />
   </root>
   <root nodeRef="r:7ef60438-f5cb-4ce3-b173-829ec8cb68a1(jetbrains.mps.samples.componentDependencies.editor)/8153794773742077348">
     <nodeInfo nodeId="8153794773742077348" fileName="InPort_diagram_Editor.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />

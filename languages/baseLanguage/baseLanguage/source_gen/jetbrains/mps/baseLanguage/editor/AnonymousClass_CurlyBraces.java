@@ -16,12 +16,45 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class AnonymousClass_CurlyBraces {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new AnonymousClass_CurlyBraces.AnonymousClass_CurlyBraces_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new AnonymousClass_CurlyBraces.AnonymousClass_CurlyBraces_BACKSPACE(node));
   }
 
   public static class AnonymousClass_CurlyBraces_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public AnonymousClass_CurlyBraces_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator")) {
+        SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
+        final SNode classCreator = SNodeFactoryOperations.replaceWithNewChild(parent, "jetbrains.mps.baseLanguage.structure.ClassCreator");
+        SLinkOperations.setTarget(classCreator, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
+        ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            ListSequence.fromList(SLinkOperations.getTargets(classCreator, "typeParameter", true)).addElement(it);
+          }
+        });
+        ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            ListSequence.fromList(SLinkOperations.getTargets(classCreator, "actualArgument", true)).addElement(it);
+          }
+        });
+      } else {
+        SNodeOperations.detachNode(node);
+      }
+    }
+  }
+
+  public static class AnonymousClass_CurlyBraces_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public AnonymousClass_CurlyBraces_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

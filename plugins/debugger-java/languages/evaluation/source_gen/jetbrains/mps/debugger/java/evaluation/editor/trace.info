@@ -1670,39 +1670,65 @@
   </root>
   <root nodeRef="r:1725327f-608f-49f4-82f5-b90b00e35b3f(jetbrains.mps.debugger.java.evaluation.editor)/7915630211773497105">
     <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="14" startPosition="95" endLine="15" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="21" startPosition="58" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="25" startPosition="40" endLine="26" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="29" startPosition="54" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7915630211773498495" fileName="DownCastToLowLevel_Actions.java" startLine="33" startPosition="75" endLine="34" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DownCastToLowLevel_Actions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="14" startPosition="95" endLine="15" endPosition="120" />
-    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="21" startPosition="58" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="25" startPosition="40" endLine="26" endPosition="31" />
-    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="29" startPosition="54" endLine="30" endPosition="56" />
-    <scopeInfo nodeId="7915630211773497108" fileName="DownCastToLowLevel_Actions.java" startLine="33" startPosition="75" endLine="34" endPosition="100" />
-    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="15" startPosition="120" endLine="16" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="22" startPosition="58" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="26" startPosition="40" endLine="27" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="30" startPosition="54" endLine="31" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7915630211773498495" fileName="DownCastToLowLevel_Actions.java" startLine="34" startPosition="75" endLine="35" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="42" startPosition="61" endLine="43" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="46" startPosition="40" endLine="47" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="50" startPosition="54" endLine="51" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7915630211773498495" fileName="DownCastToLowLevel_Actions.java" startLine="54" startPosition="75" endLine="55" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DownCastToLowLevel_Actions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DownCastToLowLevel_Actions_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="22" startPosition="58" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="26" startPosition="40" endLine="27" endPosition="31" />
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="30" startPosition="54" endLine="31" endPosition="56" />
+    <scopeInfo nodeId="7915630211773497108" fileName="DownCastToLowLevel_Actions.java" startLine="34" startPosition="75" endLine="35" endPosition="100" />
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="42" startPosition="61" endLine="43" endPosition="25" />
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="46" startPosition="40" endLine="47" endPosition="31" />
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="50" startPosition="54" endLine="51" endPosition="56" />
+    <scopeInfo nodeId="7915630211773497108" fileName="DownCastToLowLevel_Actions.java" startLine="54" startPosition="75" endLine="55" endPosition="100" />
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="14" startPosition="95" endLine="16" endPosition="126" />
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="7915630211773497105" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="7915630211773497105" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="7915630211773497105" varName="editorContext" />
+      <varInfo nodeId="7915630211773497105" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="7915630211773497105" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="7915630211773497105" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="7915630211773497105" varName="editorContext" />
+      <varInfo nodeId="7915630211773497105" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="7915630211773497105" varName="context" />
       <varInfo nodeId="7915630211773497105" varName="editorCell" />
       <varInfo nodeId="7915630211773497105" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="7915630211773497105" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="7915630211773497105" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="7915630211773497105" varName="editorContext" />
-      <varInfo nodeId="7915630211773497105" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.editor.DownCastToLowLevel_Actions$DownCastToLowLevel_Actions_DELETE" />
-    <unitInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.editor.DownCastToLowLevel_Actions" />
+    <unitInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="19" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.editor.DownCastToLowLevel_Actions$DownCastToLowLevel_Actions_DELETE" />
+    <unitInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="39" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.editor.DownCastToLowLevel_Actions$DownCastToLowLevel_Actions_BACKSPACE" />
+    <unitInfo nodeId="7915630211773497105" fileName="DownCastToLowLevel_Actions.java" startLine="13" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.debugger.java.evaluation.editor.DownCastToLowLevel_Actions" />
   </root>
   <root nodeRef="r:1725327f-608f-49f4-82f5-b90b00e35b3f(jetbrains.mps.debugger.java.evaluation.editor)/846214144113533548">
     <nodeInfo nodeId="846214144113533548" fileName="Evaluator_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

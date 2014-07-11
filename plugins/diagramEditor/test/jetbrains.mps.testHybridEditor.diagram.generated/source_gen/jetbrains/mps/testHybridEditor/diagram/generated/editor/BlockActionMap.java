@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class BlockActionMap {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new BlockActionMap.BlockActionMap_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new BlockActionMap.BlockActionMap_BACKSPACE(node));
   }
 
   public static class BlockActionMap_DELETE extends AbstractCellAction {
@@ -55,6 +56,49 @@ public class BlockActionMap {
     }
 
     private static boolean eq_dpv54c_a0a0a0a3b_0(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
+    }
+  }
+
+  public static class BlockActionMap_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public BlockActionMap_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      for (SNode connector : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.testHybridEditor.structure.Diagram"), "newConnectors", true))) {
+        if (eq_dpv54c_a0a0a0a3c(check_dpv54c_a0a0a0a0a(SLinkOperations.getTarget(connector, "source", true)), node) || eq_dpv54c_a0a0a0a3c_0(check_dpv54c_a0a0a0a0a_0(SLinkOperations.getTarget(connector, "target", true)), node)) {
+          SNodeOperations.deleteNode(connector);
+        }
+      }
+      SNodeOperations.deleteNode(node);
+    }
+
+    private static SNode check_dpv54c_a0a0a0a0a(SNode checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return SLinkOperations.getTarget(checkedDotOperand, "block", false);
+      }
+      return null;
+    }
+
+    private static SNode check_dpv54c_a0a0a0a0a_0(SNode checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return SLinkOperations.getTarget(checkedDotOperand, "block", false);
+      }
+      return null;
+    }
+
+    private static boolean eq_dpv54c_a0a0a0a3c(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
+    }
+
+    private static boolean eq_dpv54c_a0a0a0a3c_0(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

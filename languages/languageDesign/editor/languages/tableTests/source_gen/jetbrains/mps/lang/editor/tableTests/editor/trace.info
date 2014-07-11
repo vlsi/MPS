@@ -3,38 +3,63 @@
   <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:08318e8b-b87d-4355-b53c-ed3d06786f3d(jetbrains.mps.lang.editor.tableTests.editor)/2361546520930481310">
     <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="12" startPosition="95" endLine="13" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="19" startPosition="49" endLine="20" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="23" startPosition="40" endLine="24" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="27" startPosition="54" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="31" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DataCellActionMap_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <scopeInfo nodeId="2361546520930481313" fileName="DataCellActionMap.java" startLine="31" startPosition="75" endLine="31" endPosition="75" />
-    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="12" startPosition="95" endLine="13" endPosition="102" />
-    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="19" startPosition="49" endLine="20" endPosition="25" />
-    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="23" startPosition="40" endLine="24" endPosition="22" />
-    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="27" startPosition="54" endLine="28" endPosition="56" />
-    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="31" startPosition="0" endLine="33" endPosition="0">
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="13" startPosition="102" endLine="14" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="20" startPosition="49" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="24" startPosition="40" endLine="25" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="28" startPosition="54" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="39" startPosition="52" endLine="40" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="43" startPosition="40" endLine="44" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="47" startPosition="54" endLine="48" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="51" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DataCellActionMap_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DataCellActionMap_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="2361546520930481313" fileName="DataCellActionMap.java" startLine="32" startPosition="75" endLine="32" endPosition="75" />
+    <scopeInfo nodeId="2361546520930481313" fileName="DataCellActionMap.java" startLine="51" startPosition="75" endLine="51" endPosition="75" />
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="20" startPosition="49" endLine="21" endPosition="25" />
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="24" startPosition="40" endLine="25" endPosition="22" />
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="28" startPosition="54" endLine="29" endPosition="56" />
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="39" startPosition="52" endLine="40" endPosition="25" />
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="43" startPosition="40" endLine="44" endPosition="22" />
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="47" startPosition="54" endLine="48" endPosition="56" />
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="12" startPosition="95" endLine="14" endPosition="108" />
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="32" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="2361546520930481310" varName="editorContext" />
       <varInfo nodeId="2361546520930481310" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="51" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="2361546520930481310" varName="editorContext" />
+      <varInfo nodeId="2361546520930481310" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="2361546520930481310" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="2361546520930481310" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="39" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="2361546520930481310" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="47" startPosition="0" endLine="50" endPosition="0">
+      <varInfo nodeId="2361546520930481310" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="2361546520930481310" varName="context" />
       <varInfo nodeId="2361546520930481310" varName="editorCell" />
       <varInfo nodeId="2361546520930481310" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
-      <varInfo nodeId="2361546520930481310" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
-      <varInfo nodeId="2361546520930481310" varName="editorContext" />
-    </scopeInfo>
-    <unitInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="16" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.DataCellActionMap$DataCellActionMap_DELETE" />
-    <unitInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="11" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.DataCellActionMap" />
+    <unitInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="17" startPosition="0" endLine="35" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.DataCellActionMap$DataCellActionMap_DELETE" />
+    <unitInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="36" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.DataCellActionMap$DataCellActionMap_BACKSPACE" />
+    <unitInfo nodeId="2361546520930481310" fileName="DataCellActionMap.java" startLine="11" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.DataCellActionMap" />
   </root>
   <root nodeRef="r:08318e8b-b87d-4355-b53c-ed3d06786f3d(jetbrains.mps.lang.editor.tableTests.editor)/2882388703616228143">
     <nodeInfo nodeId="2882388703616228143" fileName="DataCell_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -844,39 +869,65 @@
   </root>
   <root nodeRef="r:08318e8b-b87d-4355-b53c-ed3d06786f3d(jetbrains.mps.lang.editor.tableTests.editor)/5877647854348551180">
     <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="13" startPosition="95" endLine="14" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="20" startPosition="49" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="24" startPosition="40" endLine="25" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="28" startPosition="54" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5877647854348551184" fileName="transitionActions.java" startLine="32" startPosition="75" endLine="33" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="transitionActions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="13" startPosition="95" endLine="14" endPosition="102" />
-    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="20" startPosition="49" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="24" startPosition="40" endLine="25" endPosition="32" />
-    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="28" startPosition="54" endLine="29" endPosition="56" />
-    <scopeInfo nodeId="5877647854348551183" fileName="transitionActions.java" startLine="32" startPosition="75" endLine="33" endPosition="39" />
-    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="14" startPosition="102" endLine="15" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="21" startPosition="49" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="25" startPosition="40" endLine="26" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="29" startPosition="54" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5877647854348551184" fileName="transitionActions.java" startLine="33" startPosition="75" endLine="34" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="41" startPosition="52" endLine="42" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="45" startPosition="40" endLine="46" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="49" startPosition="54" endLine="50" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5877647854348551184" fileName="transitionActions.java" startLine="53" startPosition="75" endLine="54" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="transitionActions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="transitionActions_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="21" startPosition="49" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="25" startPosition="40" endLine="26" endPosition="32" />
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="29" startPosition="54" endLine="30" endPosition="56" />
+    <scopeInfo nodeId="5877647854348551183" fileName="transitionActions.java" startLine="33" startPosition="75" endLine="34" endPosition="39" />
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="41" startPosition="52" endLine="42" endPosition="25" />
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="45" startPosition="40" endLine="46" endPosition="32" />
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="49" startPosition="54" endLine="50" endPosition="56" />
+    <scopeInfo nodeId="5877647854348551183" fileName="transitionActions.java" startLine="53" startPosition="75" endLine="54" endPosition="39" />
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="13" startPosition="95" endLine="15" endPosition="108" />
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="5877647854348551180" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="5877647854348551180" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="5877647854348551180" varName="editorContext" />
+      <varInfo nodeId="5877647854348551180" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="5877647854348551180" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
+      <varInfo nodeId="5877647854348551180" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
+      <varInfo nodeId="5877647854348551180" varName="editorContext" />
+      <varInfo nodeId="5877647854348551180" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="5877647854348551180" varName="context" />
       <varInfo nodeId="5877647854348551180" varName="editorCell" />
       <varInfo nodeId="5877647854348551180" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="5877647854348551180" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="5877647854348551180" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
-      <varInfo nodeId="5877647854348551180" varName="editorContext" />
-      <varInfo nodeId="5877647854348551180" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="17" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.transitionActions$transitionActions_DELETE" />
-    <unitInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.transitionActions" />
+    <unitInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.transitionActions$transitionActions_DELETE" />
+    <unitInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="38" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.transitionActions$transitionActions_BACKSPACE" />
+    <unitInfo nodeId="5877647854348551180" fileName="transitionActions.java" startLine="12" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.editor.tableTests.editor.transitionActions" />
   </root>
   <root nodeRef="r:08318e8b-b87d-4355-b53c-ed3d06786f3d(jetbrains.mps.lang.editor.tableTests.editor)/7483705179651268326">
     <nodeInfo nodeId="7483705179651268326" fileName="StateMachine_Editor.java" startLine="35" startPosition="79" endLine="36" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

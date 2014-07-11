@@ -620,35 +620,57 @@
   </root>
   <root nodeRef="r:328ff5ee-9330-4068-906e-6e3bb50e6e1d(jetbrains.mps.execution.settings.editor)/9191251033651652541">
     <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="13" startPosition="95" endLine="14" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="20" startPosition="62" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9191251033651652545" fileName="DeprecatedAnnotation_ActionMap.java" startLine="28" startPosition="75" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeprecatedAnnotation_ActionMap_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="13" startPosition="95" endLine="14" endPosition="128" />
-    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="20" startPosition="62" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="9191251033651652544" fileName="DeprecatedAnnotation_ActionMap.java" startLine="28" startPosition="75" endLine="29" endPosition="39" />
-    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="14" startPosition="128" endLine="15" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="21" startPosition="62" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9191251033651652545" fileName="DeprecatedAnnotation_ActionMap.java" startLine="29" startPosition="75" endLine="30" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="37" startPosition="65" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="41" startPosition="54" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9191251033651652545" fileName="DeprecatedAnnotation_ActionMap.java" startLine="45" startPosition="75" endLine="46" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeprecatedAnnotation_ActionMap_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeprecatedAnnotation_ActionMap_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="21" startPosition="62" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="9191251033651652544" fileName="DeprecatedAnnotation_ActionMap.java" startLine="29" startPosition="75" endLine="30" endPosition="39" />
+    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="37" startPosition="65" endLine="38" endPosition="25" />
+    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="41" startPosition="54" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="9191251033651652544" fileName="DeprecatedAnnotation_ActionMap.java" startLine="45" startPosition="75" endLine="46" endPosition="39" />
+    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="13" startPosition="95" endLine="15" endPosition="134" />
+    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="9191251033651652541" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="9191251033651652541" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="9191251033651652541" varName="editorContext" />
+      <varInfo nodeId="9191251033651652541" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="9191251033651652541" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="9191251033651652541" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="9191251033651652541" varName="editorContext" />
+      <varInfo nodeId="9191251033651652541" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="9191251033651652541" varName="context" />
       <varInfo nodeId="9191251033651652541" varName="editorCell" />
       <varInfo nodeId="9191251033651652541" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="9191251033651652541" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="9191251033651652541" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="9191251033651652541" varName="editorContext" />
-      <varInfo nodeId="9191251033651652541" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.DeprecatedAnnotation_ActionMap$DeprecatedAnnotation_ActionMap_DELETE" />
-    <unitInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.DeprecatedAnnotation_ActionMap" />
+    <unitInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.DeprecatedAnnotation_ActionMap$DeprecatedAnnotation_ActionMap_DELETE" />
+    <unitInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="34" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.DeprecatedAnnotation_ActionMap$DeprecatedAnnotation_ActionMap_BACKSPACE" />
+    <unitInfo nodeId="9191251033651652541" fileName="DeprecatedAnnotation_ActionMap.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.execution.settings.editor.DeprecatedAnnotation_ActionMap" />
   </root>
   <root nodeRef="r:328ff5ee-9330-4068-906e-6e3bb50e6e1d(jetbrains.mps.execution.settings.editor)/943668161921781814">
     <nodeInfo nodeId="943668161921781814" fileName="ExecutionSettings_StyleSheet.java" startLine="12" startPosition="91" endLine="13" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

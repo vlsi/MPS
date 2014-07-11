@@ -2903,35 +2903,57 @@
   </root>
   <root nodeRef="r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)/7219266275016613902">
     <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="13" startPosition="95" endLine="14" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="20" startPosition="62" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7219266275016613906" fileName="TargetDeclaration_makeRequired.java" startLine="28" startPosition="75" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetDeclaration_makeRequired_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="13" startPosition="95" endLine="14" endPosition="128" />
-    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="20" startPosition="62" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="7219266275016613905" fileName="TargetDeclaration_makeRequired.java" startLine="28" startPosition="75" endLine="29" endPosition="62" />
-    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="14" startPosition="128" endLine="15" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="21" startPosition="62" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7219266275016613906" fileName="TargetDeclaration_makeRequired.java" startLine="29" startPosition="75" endLine="30" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="37" startPosition="65" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="41" startPosition="54" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7219266275016613906" fileName="TargetDeclaration_makeRequired.java" startLine="45" startPosition="75" endLine="46" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetDeclaration_makeRequired_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetDeclaration_makeRequired_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="21" startPosition="62" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="7219266275016613905" fileName="TargetDeclaration_makeRequired.java" startLine="29" startPosition="75" endLine="30" endPosition="62" />
+    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="37" startPosition="65" endLine="38" endPosition="25" />
+    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="41" startPosition="54" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="7219266275016613905" fileName="TargetDeclaration_makeRequired.java" startLine="45" startPosition="75" endLine="46" endPosition="62" />
+    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="13" startPosition="95" endLine="15" endPosition="134" />
+    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="7219266275016613902" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="7219266275016613902" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="7219266275016613902" varName="editorContext" />
+      <varInfo nodeId="7219266275016613902" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="7219266275016613902" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="7219266275016613902" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="7219266275016613902" varName="editorContext" />
+      <varInfo nodeId="7219266275016613902" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="7219266275016613902" varName="context" />
       <varInfo nodeId="7219266275016613902" varName="editorCell" />
       <varInfo nodeId="7219266275016613902" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="7219266275016613902" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="7219266275016613902" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="7219266275016613902" varName="editorContext" />
-      <varInfo nodeId="7219266275016613902" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_makeRequired$TargetDeclaration_makeRequired_DELETE" />
-    <unitInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_makeRequired" />
+    <unitInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_makeRequired$TargetDeclaration_makeRequired_DELETE" />
+    <unitInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="34" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_makeRequired$TargetDeclaration_makeRequired_BACKSPACE" />
+    <unitInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetDeclaration_makeRequired" />
   </root>
   <root nodeRef="r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)/7320828025189345663">
     <nodeInfo nodeId="7320828025189345663" fileName="ParametersDeclaration_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -3409,35 +3431,57 @@
   </root>
   <root nodeRef="r:53dc5a43-c15e-4a00-8af6-c42420ba30d9(jetbrains.mps.make.facet.editor)/8703512757937161296">
     <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="14" startPosition="95" endLine="15" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="21" startPosition="64" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8703512757937162713" fileName="TargetReferenceExpression_DELETE.java" startLine="29" startPosition="75" endLine="30" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetReferenceExpression_DELETE_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="14" startPosition="95" endLine="15" endPosition="132" />
-    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="21" startPosition="64" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="8703512757937161303" fileName="TargetReferenceExpression_DELETE.java" startLine="29" startPosition="75" endLine="30" endPosition="98" />
-    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="15" startPosition="132" endLine="16" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="22" startPosition="64" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8703512757937162713" fileName="TargetReferenceExpression_DELETE.java" startLine="30" startPosition="75" endLine="31" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="38" startPosition="67" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="42" startPosition="54" endLine="43" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8703512757937162713" fileName="TargetReferenceExpression_DELETE.java" startLine="46" startPosition="75" endLine="47" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetReferenceExpression_DELETE_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetReferenceExpression_DELETE_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="22" startPosition="64" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="8703512757937161303" fileName="TargetReferenceExpression_DELETE.java" startLine="30" startPosition="75" endLine="31" endPosition="98" />
+    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="38" startPosition="67" endLine="39" endPosition="25" />
+    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="42" startPosition="54" endLine="43" endPosition="56" />
+    <scopeInfo nodeId="8703512757937161303" fileName="TargetReferenceExpression_DELETE.java" startLine="46" startPosition="75" endLine="47" endPosition="98" />
+    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="14" startPosition="95" endLine="16" endPosition="138" />
+    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="8703512757937161296" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="8703512757937161296" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="8703512757937161296" varName="editorContext" />
+      <varInfo nodeId="8703512757937161296" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="8703512757937161296" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="8703512757937161296" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="8703512757937161296" varName="editorContext" />
+      <varInfo nodeId="8703512757937161296" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="8703512757937161296" varName="context" />
       <varInfo nodeId="8703512757937161296" varName="editorCell" />
       <varInfo nodeId="8703512757937161296" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="8703512757937161296" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="8703512757937161296" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="8703512757937161296" varName="editorContext" />
-      <varInfo nodeId="8703512757937161296" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetReferenceExpression_DELETE$TargetReferenceExpression_DELETE_DELETE" />
-    <unitInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetReferenceExpression_DELETE" />
+    <unitInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="19" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetReferenceExpression_DELETE$TargetReferenceExpression_DELETE_DELETE" />
+    <unitInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="35" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetReferenceExpression_DELETE$TargetReferenceExpression_DELETE_BACKSPACE" />
+    <unitInfo nodeId="8703512757937161296" fileName="TargetReferenceExpression_DELETE.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.make.facet.editor.TargetReferenceExpression_DELETE" />
   </root>
 </debugInfo>
 

@@ -13,12 +13,29 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SEnumOperations;
 public class delete_sourcesKind {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new delete_sourcesKind.delete_sourcesKind_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new delete_sourcesKind.delete_sourcesKind_BACKSPACE(node));
   }
 
   public static class delete_sourcesKind_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public delete_sourcesKind_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SPropertyOperations.set(node, "sourcesKind", "" + (SEnumOperations.getEnumMember(SEnumOperations.getEnum("r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)", "BuildMps_ModuleSourcesKind"), "sources")));
+    }
+  }
+
+  public static class delete_sourcesKind_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public delete_sourcesKind_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

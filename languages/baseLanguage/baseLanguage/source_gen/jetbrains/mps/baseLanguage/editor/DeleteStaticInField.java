@@ -18,12 +18,38 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class DeleteStaticInField {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DeleteStaticInField.DeleteStaticInField_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new DeleteStaticInField.DeleteStaticInField_BACKSPACE(node));
   }
 
   public static class DeleteStaticInField_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public DeleteStaticInField_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      final SNode field = SNodeFactoryOperations.insertNewNextSiblingChild(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+      SLinkOperations.setTarget(field, "type", SLinkOperations.getTarget(node, "type", true), true);
+      SLinkOperations.setTarget(field, "visibility", SLinkOperations.getTarget(node, "visibility", true), true);
+      SLinkOperations.setTarget(field, "initializer", SLinkOperations.getTarget(node, "initializer", true), true);
+      SPropertyOperations.set(field, "isDeprecated", "" + (SPropertyOperations.getBoolean(node, "isDeprecated")));
+      SPropertyOperations.set(field, "name", SPropertyOperations.getString(node, "name"));
+      SPropertyOperations.set(field, "isFinal", "" + (SPropertyOperations.getBoolean(node, "isFinal")));
+      ListSequence.fromList(SLinkOperations.getTargets(field, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)));
+      AttributeOperations.setAttribute(field, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment"), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")));
+      SNodeOperations.deleteNode(node);
+    }
+  }
+
+  public static class DeleteStaticInField_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public DeleteStaticInField_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

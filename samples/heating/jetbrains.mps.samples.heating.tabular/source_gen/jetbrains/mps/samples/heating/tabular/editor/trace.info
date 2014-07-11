@@ -77,35 +77,57 @@
   </root>
   <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/2161719505005242389">
     <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="13" startPosition="95" endLine="14" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="20" startPosition="56" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935069066462802873" fileName="DeleteCustomizeInTabular.java" startLine="28" startPosition="75" endLine="29" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteCustomizeInTabular_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="13" startPosition="95" endLine="14" endPosition="116" />
-    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="20" startPosition="56" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="2161719505005242392" fileName="DeleteCustomizeInTabular.java" startLine="28" startPosition="75" endLine="29" endPosition="64" />
-    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="14" startPosition="116" endLine="15" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="21" startPosition="56" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066462802873" fileName="DeleteCustomizeInTabular.java" startLine="29" startPosition="75" endLine="30" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="37" startPosition="59" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="41" startPosition="54" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066462802873" fileName="DeleteCustomizeInTabular.java" startLine="45" startPosition="75" endLine="46" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteCustomizeInTabular_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteCustomizeInTabular_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="21" startPosition="56" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="2161719505005242392" fileName="DeleteCustomizeInTabular.java" startLine="29" startPosition="75" endLine="30" endPosition="64" />
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="37" startPosition="59" endLine="38" endPosition="25" />
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="41" startPosition="54" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="2161719505005242392" fileName="DeleteCustomizeInTabular.java" startLine="45" startPosition="75" endLine="46" endPosition="64" />
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="13" startPosition="95" endLine="15" endPosition="122" />
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="2161719505005242389" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="2161719505005242389" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="2161719505005242389" varName="editorContext" />
+      <varInfo nodeId="2161719505005242389" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="2161719505005242389" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="2161719505005242389" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="2161719505005242389" varName="editorContext" />
+      <varInfo nodeId="2161719505005242389" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="2161719505005242389" varName="context" />
       <varInfo nodeId="2161719505005242389" varName="editorCell" />
       <varInfo nodeId="2161719505005242389" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="2161719505005242389" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="2161719505005242389" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="2161719505005242389" varName="editorContext" />
-      <varInfo nodeId="2161719505005242389" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.heating.tabular.editor.DeleteCustomizeInTabular$DeleteCustomizeInTabular_DELETE" />
-    <unitInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.heating.tabular.editor.DeleteCustomizeInTabular" />
+    <unitInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.heating.tabular.editor.DeleteCustomizeInTabular$DeleteCustomizeInTabular_DELETE" />
+    <unitInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="34" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.samples.heating.tabular.editor.DeleteCustomizeInTabular$DeleteCustomizeInTabular_BACKSPACE" />
+    <unitInfo nodeId="2161719505005242389" fileName="DeleteCustomizeInTabular.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.samples.heating.tabular.editor.DeleteCustomizeInTabular" />
   </root>
   <root nodeRef="r:95e92d5c-6235-488e-83d6-2c12aa581230(jetbrains.mps.samples.heating.tabular.editor)/3409470686614952150">
     <nodeInfo nodeId="3409470686614952150" fileName="HeatingPlan_tabular_Editor.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />

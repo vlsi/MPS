@@ -14,6 +14,7 @@ public class AddCustomSetterToDefaultGetter {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.INSERT, new AddCustomSetterToDefaultGetter.AddCustomSetterToDefaultGetter_INSERT(node));
     editorCell.setAction(CellActionType.DELETE, new AddCustomSetterToDefaultGetter.AddCustomSetterToDefaultGetter_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new AddCustomSetterToDefaultGetter.AddCustomSetterToDefaultGetter_BACKSPACE(node));
   }
 
   public static class AddCustomSetterToDefaultGetter_INSERT extends AbstractCellAction {
@@ -38,6 +39,22 @@ public class AddCustomSetterToDefaultGetter {
     /*package*/ SNode myNode;
 
     public AddCustomSetterToDefaultGetter_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation");
+    }
+  }
+
+  public static class AddCustomSetterToDefaultGetter_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public AddCustomSetterToDefaultGetter_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

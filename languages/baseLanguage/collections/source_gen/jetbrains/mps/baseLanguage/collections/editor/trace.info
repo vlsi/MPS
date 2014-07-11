@@ -5026,35 +5026,57 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)/1228229067051">
     <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="14" startPosition="95" endLine="15" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="21" startPosition="57" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228229093419" fileName="DowncastExpression_DELETE.java" startLine="29" startPosition="75" endLine="30" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DowncastExpression_DELETE_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="14" startPosition="95" endLine="15" endPosition="118" />
-    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="21" startPosition="57" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="1228229070813" fileName="DowncastExpression_DELETE.java" startLine="29" startPosition="75" endLine="30" endPosition="100" />
-    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="15" startPosition="118" endLine="16" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="22" startPosition="57" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228229093419" fileName="DowncastExpression_DELETE.java" startLine="30" startPosition="75" endLine="31" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="38" startPosition="60" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="42" startPosition="54" endLine="43" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228229093419" fileName="DowncastExpression_DELETE.java" startLine="46" startPosition="75" endLine="47" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DowncastExpression_DELETE_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DowncastExpression_DELETE_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="22" startPosition="57" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="1228229070813" fileName="DowncastExpression_DELETE.java" startLine="30" startPosition="75" endLine="31" endPosition="100" />
+    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="38" startPosition="60" endLine="39" endPosition="25" />
+    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="42" startPosition="54" endLine="43" endPosition="56" />
+    <scopeInfo nodeId="1228229070813" fileName="DowncastExpression_DELETE.java" startLine="46" startPosition="75" endLine="47" endPosition="100" />
+    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="14" startPosition="95" endLine="16" endPosition="124" />
+    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1228229067051" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1228229067051" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1228229067051" varName="editorContext" />
+      <varInfo nodeId="1228229067051" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1228229067051" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1228229067051" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1228229067051" varName="editorContext" />
+      <varInfo nodeId="1228229067051" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1228229067051" varName="context" />
       <varInfo nodeId="1228229067051" varName="editorCell" />
       <varInfo nodeId="1228229067051" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="1228229067051" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="1228229067051" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1228229067051" varName="editorContext" />
-      <varInfo nodeId="1228229067051" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.DowncastExpression_DELETE$DowncastExpression_DELETE_DELETE" />
-    <unitInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.DowncastExpression_DELETE" />
+    <unitInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="19" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.DowncastExpression_DELETE$DowncastExpression_DELETE_DELETE" />
+    <unitInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="35" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.DowncastExpression_DELETE$DowncastExpression_DELETE_BACKSPACE" />
+    <unitInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.DowncastExpression_DELETE" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)/1229428441559">
     <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="18" startPosition="44" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -9822,39 +9844,65 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)/5332044122260273162">
     <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="14" startPosition="95" endLine="15" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="21" startPosition="75" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="25" startPosition="40" endLine="26" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="29" startPosition="54" endLine="30" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5332044122260273169" fileName="ListElementAccessExpression_delete_brackets.java" startLine="33" startPosition="75" endLine="34" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListElementAccessExpression_delete_brackets_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="14" startPosition="95" endLine="15" endPosition="154" />
-    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="21" startPosition="75" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="25" startPosition="40" endLine="26" endPosition="35" />
-    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="29" startPosition="54" endLine="30" endPosition="56" />
-    <scopeInfo nodeId="5332044122260273168" fileName="ListElementAccessExpression_delete_brackets.java" startLine="33" startPosition="75" endLine="34" endPosition="94" />
-    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="15" startPosition="154" endLine="16" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="22" startPosition="75" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="26" startPosition="40" endLine="27" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="30" startPosition="54" endLine="31" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332044122260273169" fileName="ListElementAccessExpression_delete_brackets.java" startLine="34" startPosition="75" endLine="35" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="40" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="42" startPosition="78" endLine="43" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="46" startPosition="40" endLine="47" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="50" startPosition="54" endLine="51" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332044122260273169" fileName="ListElementAccessExpression_delete_brackets.java" startLine="54" startPosition="75" endLine="55" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListElementAccessExpression_delete_brackets_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ListElementAccessExpression_delete_brackets_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="22" startPosition="75" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="26" startPosition="40" endLine="27" endPosition="35" />
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="30" startPosition="54" endLine="31" endPosition="56" />
+    <scopeInfo nodeId="5332044122260273168" fileName="ListElementAccessExpression_delete_brackets.java" startLine="34" startPosition="75" endLine="35" endPosition="94" />
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="42" startPosition="78" endLine="43" endPosition="25" />
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="46" startPosition="40" endLine="47" endPosition="35" />
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="50" startPosition="54" endLine="51" endPosition="56" />
+    <scopeInfo nodeId="5332044122260273168" fileName="ListElementAccessExpression_delete_brackets.java" startLine="54" startPosition="75" endLine="55" endPosition="94" />
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="14" startPosition="95" endLine="16" endPosition="160" />
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5332044122260273162" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="5332044122260273162" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+      <varInfo nodeId="5332044122260273162" varName="editorContext" />
+      <varInfo nodeId="5332044122260273162" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="5332044122260273162" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
+      <varInfo nodeId="5332044122260273162" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="5332044122260273162" varName="editorContext" />
+      <varInfo nodeId="5332044122260273162" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="5332044122260273162" varName="context" />
       <varInfo nodeId="5332044122260273162" varName="editorCell" />
       <varInfo nodeId="5332044122260273162" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="5332044122260273162" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="5332044122260273162" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
-      <varInfo nodeId="5332044122260273162" varName="editorContext" />
-      <varInfo nodeId="5332044122260273162" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="18" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ListElementAccessExpression_delete_brackets$ListElementAccessExpression_delete_brackets_DELETE" />
-    <unitInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="13" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ListElementAccessExpression_delete_brackets" />
+    <unitInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="19" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ListElementAccessExpression_delete_brackets$ListElementAccessExpression_delete_brackets_DELETE" />
+    <unitInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="39" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ListElementAccessExpression_delete_brackets$ListElementAccessExpression_delete_brackets_BACKSPACE" />
+    <unitInfo nodeId="5332044122260273162" fileName="ListElementAccessExpression_delete_brackets.java" startLine="13" startPosition="0" endLine="59" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.ListElementAccessExpression_delete_brackets" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)/540871147943773367">
     <nodeInfo nodeId="540871147943773367" fileName="SingleArgumentSequenceOperation_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -11796,35 +11844,57 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)/9201346465041659430">
     <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="14" startPosition="95" endLine="15" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="21" startPosition="49" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9201346465041659434" fileName="MapElement_DELETE.java" startLine="29" startPosition="75" endLine="30" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MapElement_DELETE_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="14" startPosition="95" endLine="15" endPosition="102" />
-    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="21" startPosition="49" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="9201346465041659433" fileName="MapElement_DELETE.java" startLine="29" startPosition="75" endLine="30" endPosition="93" />
-    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="15" startPosition="102" endLine="16" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="22" startPosition="49" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9201346465041659434" fileName="MapElement_DELETE.java" startLine="30" startPosition="75" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="38" startPosition="52" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="42" startPosition="54" endLine="43" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9201346465041659434" fileName="MapElement_DELETE.java" startLine="46" startPosition="75" endLine="47" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MapElement_DELETE_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MapElement_DELETE_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="22" startPosition="49" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="9201346465041659433" fileName="MapElement_DELETE.java" startLine="30" startPosition="75" endLine="31" endPosition="93" />
+    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="38" startPosition="52" endLine="39" endPosition="25" />
+    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="42" startPosition="54" endLine="43" endPosition="56" />
+    <scopeInfo nodeId="9201346465041659433" fileName="MapElement_DELETE.java" startLine="46" startPosition="75" endLine="47" endPosition="93" />
+    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="14" startPosition="95" endLine="16" endPosition="108" />
+    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="9201346465041659430" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="9201346465041659430" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="9201346465041659430" varName="editorContext" />
+      <varInfo nodeId="9201346465041659430" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="9201346465041659430" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="9201346465041659430" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="9201346465041659430" varName="editorContext" />
+      <varInfo nodeId="9201346465041659430" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="9201346465041659430" varName="context" />
       <varInfo nodeId="9201346465041659430" varName="editorCell" />
       <varInfo nodeId="9201346465041659430" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="9201346465041659430" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="9201346465041659430" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="9201346465041659430" varName="editorContext" />
-      <varInfo nodeId="9201346465041659430" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.MapElement_DELETE$MapElement_DELETE_DELETE" />
-    <unitInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.MapElement_DELETE" />
+    <unitInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="19" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.MapElement_DELETE$MapElement_DELETE_DELETE" />
+    <unitInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="35" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.MapElement_DELETE$MapElement_DELETE_BACKSPACE" />
+    <unitInfo nodeId="9201346465041659430" fileName="MapElement_DELETE.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.MapElement_DELETE" />
   </root>
 </debugInfo>
 

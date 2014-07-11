@@ -12,12 +12,29 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class Annotation_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new Annotation_Actions.Annotation_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new Annotation_Actions.Annotation_Actions_BACKSPACE(node));
   }
 
   public static class Annotation_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public Annotation_Actions_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNodeOperations.deleteNode(node);
+    }
+  }
+
+  public static class Annotation_Actions_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public Annotation_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

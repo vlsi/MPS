@@ -3,67 +3,111 @@
   <unitInfo fileName="EditorAspectDescriptorImpl.java" startLine="13" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.EditorAspectDescriptorImpl" />
   <root nodeRef="r:6aa6f228-56c3-4d3a-b03e-4204df10c967(jetbrains.mps.samples.KajaAndOr.editor)/1412244050168669831">
     <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="14" startPosition="95" endLine="15" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="21" startPosition="53" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1412244050168675760" fileName="DeleteLogicalOperator.java" startLine="29" startPosition="75" endLine="30" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteLogicalOperator_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="14" startPosition="95" endLine="15" endPosition="110" />
-    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="21" startPosition="53" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="1412244050168675338" fileName="DeleteLogicalOperator.java" startLine="29" startPosition="75" endLine="30" endPosition="94" />
-    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="15" startPosition="110" endLine="16" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="22" startPosition="53" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050168675760" fileName="DeleteLogicalOperator.java" startLine="30" startPosition="75" endLine="31" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="38" startPosition="56" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="42" startPosition="54" endLine="43" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050168675760" fileName="DeleteLogicalOperator.java" startLine="46" startPosition="75" endLine="47" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteLogicalOperator_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteLogicalOperator_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="22" startPosition="53" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="1412244050168675338" fileName="DeleteLogicalOperator.java" startLine="30" startPosition="75" endLine="31" endPosition="94" />
+    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="38" startPosition="56" endLine="39" endPosition="25" />
+    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="42" startPosition="54" endLine="43" endPosition="56" />
+    <scopeInfo nodeId="1412244050168675338" fileName="DeleteLogicalOperator.java" startLine="46" startPosition="75" endLine="47" endPosition="94" />
+    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="14" startPosition="95" endLine="16" endPosition="116" />
+    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1412244050168669831" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1412244050168669831" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1412244050168669831" varName="editorContext" />
+      <varInfo nodeId="1412244050168669831" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1412244050168669831" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1412244050168669831" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1412244050168669831" varName="editorContext" />
+      <varInfo nodeId="1412244050168669831" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1412244050168669831" varName="context" />
       <varInfo nodeId="1412244050168669831" varName="editorCell" />
       <varInfo nodeId="1412244050168669831" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="1412244050168669831" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="1412244050168669831" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1412244050168669831" varName="editorContext" />
-      <varInfo nodeId="1412244050168669831" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.DeleteLogicalOperator$DeleteLogicalOperator_DELETE" />
-    <unitInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.DeleteLogicalOperator" />
+    <unitInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="19" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.DeleteLogicalOperator$DeleteLogicalOperator_DELETE" />
+    <unitInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="35" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.DeleteLogicalOperator$DeleteLogicalOperator_BACKSPACE" />
+    <unitInfo nodeId="1412244050168669831" fileName="DeleteLogicalOperator.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.DeleteLogicalOperator" />
   </root>
   <root nodeRef="r:6aa6f228-56c3-4d3a-b03e-4204df10c967(jetbrains.mps.samples.KajaAndOr.editor)/1412244050169717137">
     <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="14" startPosition="95" endLine="15" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="21" startPosition="63" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1412244050169717145" fileName="DeleteLogicalOperatorFromBehind.java" startLine="29" startPosition="75" endLine="30" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteLogicalOperatorFromBehind_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="14" startPosition="95" endLine="15" endPosition="130" />
-    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="21" startPosition="63" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="1412244050169717140" fileName="DeleteLogicalOperatorFromBehind.java" startLine="29" startPosition="75" endLine="30" endPosition="95" />
-    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="15" startPosition="130" endLine="16" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="22" startPosition="63" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050169717145" fileName="DeleteLogicalOperatorFromBehind.java" startLine="30" startPosition="75" endLine="31" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="38" startPosition="66" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="42" startPosition="54" endLine="43" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050169717145" fileName="DeleteLogicalOperatorFromBehind.java" startLine="46" startPosition="75" endLine="47" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteLogicalOperatorFromBehind_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteLogicalOperatorFromBehind_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="22" startPosition="63" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="1412244050169717140" fileName="DeleteLogicalOperatorFromBehind.java" startLine="30" startPosition="75" endLine="31" endPosition="95" />
+    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="38" startPosition="66" endLine="39" endPosition="25" />
+    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="42" startPosition="54" endLine="43" endPosition="56" />
+    <scopeInfo nodeId="1412244050169717140" fileName="DeleteLogicalOperatorFromBehind.java" startLine="46" startPosition="75" endLine="47" endPosition="95" />
+    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="14" startPosition="95" endLine="16" endPosition="136" />
+    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1412244050169717137" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1412244050169717137" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1412244050169717137" varName="editorContext" />
+      <varInfo nodeId="1412244050169717137" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1412244050169717137" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1412244050169717137" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1412244050169717137" varName="editorContext" />
+      <varInfo nodeId="1412244050169717137" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1412244050169717137" varName="context" />
       <varInfo nodeId="1412244050169717137" varName="editorCell" />
       <varInfo nodeId="1412244050169717137" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="1412244050169717137" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="1412244050169717137" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1412244050169717137" varName="editorContext" />
-      <varInfo nodeId="1412244050169717137" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.DeleteLogicalOperatorFromBehind$DeleteLogicalOperatorFromBehind_DELETE" />
-    <unitInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.DeleteLogicalOperatorFromBehind" />
+    <unitInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="19" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.DeleteLogicalOperatorFromBehind$DeleteLogicalOperatorFromBehind_DELETE" />
+    <unitInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="35" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.DeleteLogicalOperatorFromBehind$DeleteLogicalOperatorFromBehind_BACKSPACE" />
+    <unitInfo nodeId="1412244050169717137" fileName="DeleteLogicalOperatorFromBehind.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.samples.KajaAndOr.editor.DeleteLogicalOperatorFromBehind" />
   </root>
   <root nodeRef="r:6aa6f228-56c3-4d3a-b03e-4204df10c967(jetbrains.mps.samples.KajaAndOr.editor)/1904811872814253787">
     <nodeInfo nodeId="1904811872814253787" fileName="LogicalOperator_Editor.java" startLine="25" startPosition="79" endLine="26" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -425,39 +425,65 @@
   </root>
   <root nodeRef="r:e4d83561-5cd9-4b01-bf95-b441a061d0de(jetbrains.mps.lang.editor.figures.editor)/5422656561928696623">
     <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="15" startPosition="95" endLine="16" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="22" startPosition="55" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5422656561931207971" fileName="AttributeDelete_Actions.java" startLine="30" startPosition="75" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5422656561928696698" fileName="AttributeDelete_Actions.java" startLine="31" startPosition="59" endLine="32" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5422656561931208255" fileName="AttributeDelete_Actions.java" startLine="32" startPosition="39" endLine="33" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AttributeDelete_Actions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="30" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="15" startPosition="95" endLine="16" endPosition="114" />
-    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="22" startPosition="55" endLine="23" endPosition="25" />
-    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
-    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="16" startPosition="114" endLine="17" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="23" startPosition="55" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="27" startPosition="54" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5422656561931207971" fileName="AttributeDelete_Actions.java" startLine="31" startPosition="75" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5422656561928696698" fileName="AttributeDelete_Actions.java" startLine="32" startPosition="59" endLine="33" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5422656561931208255" fileName="AttributeDelete_Actions.java" startLine="33" startPosition="39" endLine="34" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="41" startPosition="58" endLine="42" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="45" startPosition="54" endLine="46" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5422656561931207971" fileName="AttributeDelete_Actions.java" startLine="49" startPosition="75" endLine="50" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5422656561928696698" fileName="AttributeDelete_Actions.java" startLine="50" startPosition="59" endLine="51" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5422656561931208255" fileName="AttributeDelete_Actions.java" startLine="51" startPosition="39" endLine="52" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AttributeDelete_Actions_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AttributeDelete_Actions_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="49" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="23" startPosition="55" endLine="24" endPosition="25" />
+    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="27" startPosition="54" endLine="28" endPosition="56" />
+    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="41" startPosition="58" endLine="42" endPosition="25" />
+    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="45" startPosition="54" endLine="46" endPosition="56" />
+    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="15" startPosition="95" endLine="17" endPosition="120" />
+    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="5422656561928696623" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="5422656561928696623" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5422656561928696658" fileName="AttributeDelete_Actions.java" startLine="31" startPosition="75" endLine="34" endPosition="98">
+      <varInfo nodeId="5422656561931207972" varName="nodeToSelect" />
+    </scopeInfo>
+    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="5422656561928696623" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="5422656561928696623" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5422656561928696658" fileName="AttributeDelete_Actions.java" startLine="49" startPosition="75" endLine="52" endPosition="98">
+      <varInfo nodeId="5422656561931207972" varName="nodeToSelect" />
+    </scopeInfo>
+    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="5422656561928696623" varName="context" />
       <varInfo nodeId="5422656561928696623" varName="editorCell" />
       <varInfo nodeId="5422656561928696623" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="5422656561928696623" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="5422656561928696623" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561928696658" fileName="AttributeDelete_Actions.java" startLine="30" startPosition="75" endLine="33" endPosition="98">
-      <varInfo nodeId="5422656561931207972" varName="nodeToSelect" />
-    </scopeInfo>
-    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="30" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="5422656561928696623" varName="editorContext" />
       <varInfo nodeId="5422656561928696623" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="19" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.editor.AttributeDelete_Actions$AttributeDelete_Actions_DELETE" />
-    <unitInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="14" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.editor.AttributeDelete_Actions" />
+    <scopeInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="49" startPosition="0" endLine="54" endPosition="0">
+      <varInfo nodeId="5422656561928696623" varName="editorContext" />
+      <varInfo nodeId="5422656561928696623" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="20" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.editor.AttributeDelete_Actions$AttributeDelete_Actions_DELETE" />
+    <unitInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="38" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.editor.AttributeDelete_Actions$AttributeDelete_Actions_BACKSPACE" />
+    <unitInfo nodeId="5422656561928696623" fileName="AttributeDelete_Actions.java" startLine="14" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.editor.figures.editor.AttributeDelete_Actions" />
   </root>
   <root nodeRef="r:e4d83561-5cd9-4b01-bf95-b441a061d0de(jetbrains.mps.lang.editor.figures.editor)/5422656561931607936">
     <nodeInfo nodeId="5422656561931607936" fileName="FigureParameterAttribute_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
