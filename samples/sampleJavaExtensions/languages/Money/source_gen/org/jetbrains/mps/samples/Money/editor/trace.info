@@ -164,28 +164,29 @@
     <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="68" startPosition="87" endLine="69" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="73" startPosition="96" endLine="74" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="75" startPosition="34" endLine="76" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="78" startPosition="131" endLine="79" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="76" startPosition="95" endLine="77" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="79" startPosition="131" endLine="80" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="unitsListHandler_6q11gp_b0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="74" startPosition="134" endLine="77" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="77" startPosition="9" endLine="80" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="78" startPosition="9" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="74" startPosition="134" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="59" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3607579524910560676" fileName="CurrencyDefTable_Editor.java" startLine="34" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_6q11gp_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="65" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="41" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_6q11gp_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="25" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_6q11gp_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="72" startPosition="132" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="72" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="72" startPosition="132" endLine="82" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="72" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" />
     <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="28" startPosition="28" endLine="29" endPosition="81" />
     <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="29" startPosition="81" endLine="30" endPosition="84" />
     <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="50" startPosition="97" endLine="51" endPosition="50" />
-    <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="75" startPosition="34" endLine="76" endPosition="95" />
-    <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="78" startPosition="131" endLine="79" endPosition="139" />
+    <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="79" startPosition="131" endLine="80" endPosition="139" />
     <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="54" startPosition="66" endLine="56" endPosition="93">
       <varInfo nodeId="3607579524910560671" varName="listOwner" />
     </scopeInfo>
+    <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="75" startPosition="34" endLine="77" endPosition="98" />
     <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="3607579524910560671" varName="editorContext" />
       <varInfo nodeId="3607579524910560671" varName="node" />
@@ -229,20 +230,20 @@
       <varInfo nodeId="3607579524910560671" varName="editorContext" />
       <varInfo nodeId="3607579524910560671" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="73" startPosition="96" endLine="80" endPosition="9" />
     <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="25" startPosition="0" endLine="33" endPosition="0">
       <varInfo nodeId="3607579524910560671" varName="editorContext" />
       <varInfo nodeId="3607579524910560671" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="72" startPosition="132" endLine="81" endPosition="7" />
-    <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="72" startPosition="0" endLine="83" endPosition="0">
+    <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="73" startPosition="96" endLine="81" endPosition="9" />
+    <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="72" startPosition="132" endLine="82" endPosition="7" />
+    <scopeInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="72" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="3607579524910560671" varName="editorContext" />
       <varInfo nodeId="3607579524910560671" varName="elementCell" />
       <varInfo nodeId="3607579524910560671" varName="elementNode" />
       <varInfo nodeId="3607579524910560671" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="49" startPosition="0" endLine="84" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_Editor$unitsListHandler_6q11gp_b0" />
-    <unitInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="20" startPosition="0" endLine="85" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_Editor" />
+    <unitInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="49" startPosition="0" endLine="85" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_Editor$unitsListHandler_6q11gp_b0" />
+    <unitInfo nodeId="3607579524910560671" fileName="CurrencyDefTable_Editor.java" startLine="20" startPosition="0" endLine="86" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.CurrencyDefTable_Editor" />
   </root>
   <root nodeRef="r:363920dc-2dd0-49fc-94ed-f20b88b2ec02(org.jetbrains.mps.samples.Money.editor)/4001135958233291894">
     <nodeInfo nodeId="4001135958233291894" fileName="CurrentStockPrice_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -291,18 +292,19 @@
     <nodeInfo nodeId="4001135958233884817" fileName="CurrentStockPrice_Editor.java" startLine="87" startPosition="31" endLine="88" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="94" startPosition="44" endLine="95" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="97" startPosition="13" endLine="98" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="98" startPosition="79" endLine="99" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="99" startPosition="60" endLine="100" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="100" startPosition="34" endLine="101" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="101" startPosition="66" endLine="102" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="102" startPosition="40" endLine="103" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="106" startPosition="88" endLine="107" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="107" startPosition="87" endLine="108" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="108" startPosition="47" endLine="109" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="109" startPosition="34" endLine="110" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="110" startPosition="66" endLine="111" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="111" startPosition="40" endLine="112" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="112" startPosition="34" endLine="113" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="98" startPosition="79" endLine="99" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="99" startPosition="82" endLine="100" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="100" startPosition="60" endLine="101" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="101" startPosition="34" endLine="102" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="102" startPosition="66" endLine="103" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="103" startPosition="40" endLine="104" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="107" startPosition="88" endLine="108" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="108" startPosition="87" endLine="109" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="109" startPosition="47" endLine="110" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="110" startPosition="34" endLine="111" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="111" startPosition="66" endLine="112" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="112" startPosition="40" endLine="113" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="113" startPosition="34" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="91" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setText#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="4001135958233291894" fileName="CurrentStockPrice_Editor.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4001135958235847920" fileName="CurrentStockPrice_Editor.java" startLine="60" startPosition="58" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -312,11 +314,11 @@
     <nodeInfo nodeId="4001135958233291985" fileName="CurrentStockPrice_Editor.java" startLine="48" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_w8qb9s_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4001135958235847920" fileName="CurrentStockPrice_Editor.java" startLine="66" startPosition="59" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4001135958234152357" fileName="CurrentStockPrice_Editor.java" startLine="75" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_w8qb9s_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="106" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_w8qb9s_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="107" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_w8qb9s_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4001135958233291894" fileName="CurrentStockPrice_Editor.java" startLine="30" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_w8qb9s_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="85" startPosition="113" endLine="97" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4001135958235847920" fileName="CurrentStockPrice_Editor.java" startLine="55" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_w8qb9s_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="85" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReadOnlyModelAccessor_w8qb9s_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="85" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createReadOnlyModelAccessor_w8qb9s_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="91" startPosition="37" endLine="91" endPosition="37" />
     <scopeInfo nodeId="4001135958233291894" fileName="CurrentStockPrice_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" />
     <scopeInfo nodeId="4001135958233291894" fileName="CurrentStockPrice_Editor.java" startLine="33" startPosition="28" endLine="34" endPosition="82" />
@@ -361,7 +363,7 @@
       <varInfo nodeId="4001135958234152357" varName="editorCell" />
       <varInfo nodeId="4001135958234152357" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="106" startPosition="88" endLine="113" endPosition="22">
+    <scopeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="107" startPosition="88" endLine="114" endPosition="22">
       <varInfo nodeId="4001135958234154099" varName="editorCell" />
       <varInfo nodeId="4001135958234154099" varName="style" />
     </scopeInfo>
@@ -369,7 +371,7 @@
       <varInfo nodeId="4001135958234152357" varName="editorContext" />
       <varInfo nodeId="4001135958234152357" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="106" startPosition="0" endLine="115" endPosition="0">
+    <scopeInfo nodeId="4001135958234154099" fileName="CurrentStockPrice_Editor.java" startLine="107" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="4001135958234154099" varName="editorContext" />
       <varInfo nodeId="4001135958234154099" varName="node" />
     </scopeInfo>
@@ -386,20 +388,20 @@
       <varInfo nodeId="4001135958235847920" varName="editorCell" />
       <varInfo nodeId="4001135958235847920" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="85" startPosition="113" endLine="103" endPosition="22">
-      <varInfo nodeId="4001135958233884135" varName="editorCell" />
-      <varInfo nodeId="4001135958233884135" varName="style" />
-    </scopeInfo>
     <scopeInfo nodeId="4001135958235847920" fileName="CurrentStockPrice_Editor.java" startLine="55" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="4001135958235847920" varName="editorContext" />
       <varInfo nodeId="4001135958235847920" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="85" startPosition="0" endLine="105" endPosition="0">
+    <scopeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="85" startPosition="113" endLine="104" endPosition="22">
+      <varInfo nodeId="4001135958233884135" varName="editorCell" />
+      <varInfo nodeId="4001135958233884135" varName="style" />
+    </scopeInfo>
+    <scopeInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="85" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="4001135958233884135" varName="editorContext" />
       <varInfo nodeId="4001135958233884135" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="4001135958233884135" fileName="CurrentStockPrice_Editor.java" startLine="86" startPosition="83" endLine="97" endPosition="5" unitName="org.jetbrains.mps.samples.Money.editor.CurrentStockPrice_Editor$1" />
-    <unitInfo nodeId="4001135958233291894" fileName="CurrentStockPrice_Editor.java" startLine="25" startPosition="0" endLine="116" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.CurrentStockPrice_Editor" />
+    <unitInfo nodeId="4001135958233291894" fileName="CurrentStockPrice_Editor.java" startLine="25" startPosition="0" endLine="117" endPosition="0" unitName="org.jetbrains.mps.samples.Money.editor.CurrentStockPrice_Editor" />
   </root>
   <root nodeRef="r:363920dc-2dd0-49fc-94ed-f20b88b2ec02(org.jetbrains.mps.samples.Money.editor)/4001135958235786241">
     <nodeInfo nodeId="4001135958235786241" fileName="StockSymbol_Editor.java" startLine="17" startPosition="79" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

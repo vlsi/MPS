@@ -1045,12 +1045,13 @@
     <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="112" startPosition="87" endLine="113" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="117" startPosition="96" endLine="118" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="119" startPosition="34" endLine="120" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="122" startPosition="131" endLine="123" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="120" startPosition="95" endLine="121" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="123" startPosition="131" endLine="124" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="94" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="watchableListHandler_8ahkcj_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="118" startPosition="134" endLine="121" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="121" startPosition="9" endLine="124" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="122" startPosition="9" endLine="125" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="98" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="118" startPosition="134" endLine="122" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="103" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4089989733346843031" fileName="CustomWatchablesContainer_Editor.java" startLine="53" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_8ahkcj_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4089989733346843035" fileName="CustomWatchablesContainer_Editor.java" startLine="69" startPosition="59" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -1058,9 +1059,9 @@
     <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="109" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="85" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_8ahkcj_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_8ahkcj_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="116" startPosition="132" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="42" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_8ahkcj_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="116" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="116" startPosition="132" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="116" startPosition="0" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="4089989733346843035" fileName="CustomWatchablesContainer_Editor.java" startLine="60" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_8ahkcj_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="35" startPosition="28" endLine="36" endPosition="83" />
@@ -1069,11 +1070,11 @@
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="47" startPosition="40" endLine="48" endPosition="82" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="48" startPosition="82" endLine="49" endPosition="82" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="94" startPosition="101" endLine="95" endPosition="50" />
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="119" startPosition="34" endLine="120" endPosition="95" />
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="122" startPosition="131" endLine="123" endPosition="139" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="123" startPosition="131" endLine="124" endPosition="139" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="98" startPosition="66" endLine="100" endPosition="93">
       <varInfo nodeId="5117350825036256319" varName="listOwner" />
     </scopeInfo>
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="119" startPosition="34" endLine="121" endPosition="98" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="5117350825036256319" varName="editorContext" />
       <varInfo nodeId="5117350825036256319" varName="node" />
@@ -1128,21 +1129,21 @@
       <varInfo nodeId="5117350825036256319" varName="editorContext" />
       <varInfo nodeId="5117350825036256319" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="117" startPosition="96" endLine="124" endPosition="9" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="42" startPosition="90" endLine="50" endPosition="22">
       <varInfo nodeId="5117350825036256319" varName="editorCell" />
       <varInfo nodeId="5117350825036256319" varName="style" />
     </scopeInfo>
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="117" startPosition="96" endLine="125" endPosition="9" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="32" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="5117350825036256319" varName="editorContext" />
       <varInfo nodeId="5117350825036256319" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="116" startPosition="132" endLine="125" endPosition="7" />
     <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="42" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="5117350825036256319" varName="editorContext" />
       <varInfo nodeId="5117350825036256319" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="116" startPosition="0" endLine="127" endPosition="0">
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="116" startPosition="132" endLine="126" endPosition="7" />
+    <scopeInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="116" startPosition="0" endLine="128" endPosition="0">
       <varInfo nodeId="5117350825036256319" varName="editorContext" />
       <varInfo nodeId="5117350825036256319" varName="elementCell" />
       <varInfo nodeId="5117350825036256319" varName="elementNode" />
@@ -1158,8 +1159,8 @@
       <varInfo nodeId="4089989733346843035" varName="editorContext" />
       <varInfo nodeId="4089989733346843035" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="93" startPosition="0" endLine="128" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.editor.CustomWatchablesContainer_Editor$watchableListHandler_8ahkcj_c0" />
-    <unitInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="27" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.editor.CustomWatchablesContainer_Editor" />
+    <unitInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="93" startPosition="0" endLine="129" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.editor.CustomWatchablesContainer_Editor$watchableListHandler_8ahkcj_c0" />
+    <unitInfo nodeId="5117350825036256319" fileName="CustomWatchablesContainer_Editor.java" startLine="27" startPosition="0" endLine="130" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.editor.CustomWatchablesContainer_Editor" />
   </root>
   <root nodeRef="r:5b646244-9348-4892-8868-7e2e5cb2c7d9(jetbrains.mps.debugger.java.customViewers.editor)/5117350825036256335">
     <nodeInfo nodeId="5117350825036256335" fileName="WatchableType_Editor.java" startLine="12" startPosition="79" endLine="13" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

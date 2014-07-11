@@ -95,6 +95,7 @@ public class InequationReference_Editor extends DefaultNodeEditor {
       };
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ModelAccess_boi5ax_a0a0a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, false);

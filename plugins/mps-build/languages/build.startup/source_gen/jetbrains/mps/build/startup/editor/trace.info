@@ -57,31 +57,32 @@
     <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="104" startPosition="87" endLine="105" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="109" startPosition="96" endLine="110" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="111" startPosition="34" endLine="112" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="114" startPosition="131" endLine="115" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="112" startPosition="95" endLine="113" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="115" startPosition="131" endLine="116" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="linesListHandler_fmnf9t_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="110" startPosition="134" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="113" startPosition="9" endLine="116" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="114" startPosition="9" endLine="117" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="110" startPosition="134" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="95" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1731640411964560167" fileName="TextFile_Editor.java" startLine="54" startPosition="59" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="101" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_fmnf9t_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="108" startPosition="132" endLine="117" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1731640411970929396" fileName="TextFile_Editor.java" startLine="63" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_fmnf9t_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="74" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_fmnf9t_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="108" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="108" startPosition="132" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="108" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1731640411964560167" fileName="TextFile_Editor.java" startLine="42" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_fmnf9t_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" />
     <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="35" startPosition="28" endLine="36" endPosition="81" />
     <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="36" startPosition="81" endLine="37" endPosition="81" />
     <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="37" startPosition="81" endLine="38" endPosition="84" />
     <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="86" startPosition="97" endLine="87" endPosition="50" />
-    <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="111" startPosition="34" endLine="112" endPosition="95" />
-    <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="114" startPosition="131" endLine="115" endPosition="139" />
+    <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="115" startPosition="131" endLine="116" endPosition="139" />
     <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="90" startPosition="66" endLine="92" endPosition="93">
       <varInfo nodeId="1731640411964205288" varName="listOwner" />
     </scopeInfo>
+    <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="111" startPosition="34" endLine="113" endPosition="98" />
     <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="1731640411964205288" varName="editorContext" />
       <varInfo nodeId="1731640411964205288" varName="node" />
@@ -114,7 +115,6 @@
     <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="32" startPosition="89" endLine="39" endPosition="22">
       <varInfo nodeId="1731640411964205288" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="109" startPosition="96" endLine="116" endPosition="9" />
     <scopeInfo nodeId="1731640411970929396" fileName="TextFile_Editor.java" startLine="63" startPosition="88" endLine="71" endPosition="22">
       <varInfo nodeId="1731640411970929396" varName="editorCell" />
       <varInfo nodeId="1731640411970929396" varName="style" />
@@ -124,11 +124,11 @@
       <varInfo nodeId="1731640411964205288" varName="handler" />
       <varInfo nodeId="1731640411964205288" varName="style" />
     </scopeInfo>
+    <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="109" startPosition="96" endLine="117" endPosition="9" />
     <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="32" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="1731640411964205288" varName="editorContext" />
       <varInfo nodeId="1731640411964205288" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="108" startPosition="132" endLine="117" endPosition="7" />
     <scopeInfo nodeId="1731640411970929396" fileName="TextFile_Editor.java" startLine="63" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="1731640411970929396" varName="editorContext" />
       <varInfo nodeId="1731640411970929396" varName="node" />
@@ -137,7 +137,8 @@
       <varInfo nodeId="1731640411964205288" varName="editorContext" />
       <varInfo nodeId="1731640411964205288" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="108" startPosition="0" endLine="119" endPosition="0">
+    <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="108" startPosition="132" endLine="118" endPosition="7" />
+    <scopeInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="108" startPosition="0" endLine="120" endPosition="0">
       <varInfo nodeId="1731640411964205288" varName="editorContext" />
       <varInfo nodeId="1731640411964205288" varName="elementCell" />
       <varInfo nodeId="1731640411964205288" varName="elementNode" />
@@ -154,8 +155,8 @@
       <varInfo nodeId="1731640411964560167" varName="editorContext" />
       <varInfo nodeId="1731640411964560167" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="85" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.build.startup.editor.TextFile_Editor$linesListHandler_fmnf9t_c0" />
-    <unitInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="27" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.build.startup.editor.TextFile_Editor" />
+    <unitInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="85" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.build.startup.editor.TextFile_Editor$linesListHandler_fmnf9t_c0" />
+    <unitInfo nodeId="1731640411964205288" fileName="TextFile_Editor.java" startLine="27" startPosition="0" endLine="122" endPosition="0" unitName="jetbrains.mps.build.startup.editor.TextFile_Editor" />
   </root>
   <root nodeRef="r:557b6444-752b-478f-a018-f0abe80a35cd(jetbrains.mps.build.startup.editor)/1731640411964243238">
     <nodeInfo nodeId="1731640411964243238" fileName="TextLine_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -341,108 +342,111 @@
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="210" startPosition="87" endLine="211" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="215" startPosition="96" endLine="216" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="217" startPosition="34" endLine="218" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="220" startPosition="131" endLine="221" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="227" startPosition="88" endLine="228" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="228" startPosition="86" endLine="229" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="229" startPosition="47" endLine="230" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="230" startPosition="34" endLine="231" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="231" startPosition="49" endLine="232" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="232" startPosition="40" endLine="233" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="233" startPosition="34" endLine="234" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="237" startPosition="88" endLine="238" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="238" startPosition="105" endLine="239" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="239" startPosition="47" endLine="240" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="240" startPosition="34" endLine="241" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="244" startPosition="90" endLine="245" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="245" startPosition="99" endLine="246" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="246" startPosition="49" endLine="247" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="247" startPosition="34" endLine="248" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="248" startPosition="49" endLine="249" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="249" startPosition="40" endLine="250" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="249" startPosition="40" endLine="250" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="250" startPosition="84" endLine="251" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="250" startPosition="84" endLine="251" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="251" startPosition="85" endLine="252" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2693344784283250896" fileName="MpsStartupScript_Editor.java" startLine="255" startPosition="91" endLine="256" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2693344784283250896" fileName="MpsStartupScript_Editor.java" startLine="256" startPosition="78" endLine="257" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="260" startPosition="92" endLine="261" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="261" startPosition="136" endLine="262" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="262" startPosition="108" endLine="263" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="263" startPosition="52" endLine="264" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="264" startPosition="49" endLine="265" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="269" startPosition="104" endLine="270" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="273" startPosition="66" endLine="274" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="274" startPosition="41" endLine="275" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="278" startPosition="86" endLine="279" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="279" startPosition="80" endLine="280" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="280" startPosition="95" endLine="281" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="284" startPosition="68" endLine="285" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="285" startPosition="34" endLine="286" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="286" startPosition="55" endLine="287" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="287" startPosition="87" endLine="288" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="292" startPosition="96" endLine="293" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="294" startPosition="34" endLine="295" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="297" startPosition="131" endLine="298" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="304" startPosition="88" endLine="305" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="305" startPosition="86" endLine="306" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="306" startPosition="47" endLine="307" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="307" startPosition="34" endLine="308" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="308" startPosition="49" endLine="309" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="309" startPosition="40" endLine="310" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="310" startPosition="34" endLine="311" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="314" startPosition="88" endLine="315" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="315" startPosition="105" endLine="316" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="316" startPosition="47" endLine="317" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="317" startPosition="34" endLine="318" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="321" startPosition="90" endLine="322" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="322" startPosition="99" endLine="323" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="323" startPosition="49" endLine="324" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="324" startPosition="34" endLine="325" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="325" startPosition="49" endLine="326" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="326" startPosition="40" endLine="327" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="326" startPosition="40" endLine="327" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="327" startPosition="85" endLine="328" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="327" startPosition="85" endLine="328" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="328" startPosition="86" endLine="329" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582717" fileName="MpsStartupScript_Editor.java" startLine="332" startPosition="92" endLine="333" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582717" fileName="MpsStartupScript_Editor.java" startLine="333" startPosition="78" endLine="334" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="337" startPosition="93" endLine="338" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="338" startPosition="133" endLine="339" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="339" startPosition="108" endLine="340" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="340" startPosition="50" endLine="341" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="341" startPosition="49" endLine="342" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="346" startPosition="103" endLine="347" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="350" startPosition="66" endLine="351" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="351" startPosition="41" endLine="352" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="355" startPosition="86" endLine="356" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="356" startPosition="80" endLine="357" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="357" startPosition="95" endLine="358" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="361" startPosition="68" endLine="362" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="362" startPosition="34" endLine="363" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="363" startPosition="55" endLine="364" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="364" startPosition="87" endLine="365" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="369" startPosition="96" endLine="370" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="371" startPosition="34" endLine="372" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="374" startPosition="131" endLine="375" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="218" startPosition="95" endLine="219" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="221" startPosition="131" endLine="222" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="228" startPosition="88" endLine="229" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="229" startPosition="86" endLine="230" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="230" startPosition="47" endLine="231" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="231" startPosition="34" endLine="232" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="232" startPosition="49" endLine="233" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="233" startPosition="40" endLine="234" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="234" startPosition="34" endLine="235" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="238" startPosition="88" endLine="239" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="239" startPosition="105" endLine="240" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="240" startPosition="47" endLine="241" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="241" startPosition="34" endLine="242" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="245" startPosition="90" endLine="246" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="246" startPosition="99" endLine="247" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="247" startPosition="49" endLine="248" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="248" startPosition="34" endLine="249" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="249" startPosition="49" endLine="250" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="250" startPosition="40" endLine="251" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="250" startPosition="40" endLine="251" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="251" startPosition="84" endLine="252" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="251" startPosition="84" endLine="252" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="252" startPosition="85" endLine="253" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2693344784283250896" fileName="MpsStartupScript_Editor.java" startLine="256" startPosition="91" endLine="257" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2693344784283250896" fileName="MpsStartupScript_Editor.java" startLine="257" startPosition="78" endLine="258" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="261" startPosition="92" endLine="262" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="262" startPosition="136" endLine="263" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="263" startPosition="108" endLine="264" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="264" startPosition="52" endLine="265" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="265" startPosition="49" endLine="266" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="270" startPosition="104" endLine="271" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="274" startPosition="66" endLine="275" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="275" startPosition="41" endLine="276" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="279" startPosition="86" endLine="280" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="280" startPosition="80" endLine="281" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="281" startPosition="95" endLine="282" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="285" startPosition="68" endLine="286" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="286" startPosition="34" endLine="287" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="287" startPosition="55" endLine="288" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="288" startPosition="87" endLine="289" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="293" startPosition="96" endLine="294" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="295" startPosition="34" endLine="296" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="296" startPosition="95" endLine="297" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="299" startPosition="131" endLine="300" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="306" startPosition="88" endLine="307" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="307" startPosition="86" endLine="308" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="308" startPosition="47" endLine="309" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="309" startPosition="34" endLine="310" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="310" startPosition="49" endLine="311" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="311" startPosition="40" endLine="312" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="312" startPosition="34" endLine="313" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="316" startPosition="88" endLine="317" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="317" startPosition="105" endLine="318" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="318" startPosition="47" endLine="319" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="319" startPosition="34" endLine="320" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="323" startPosition="90" endLine="324" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="324" startPosition="99" endLine="325" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="325" startPosition="49" endLine="326" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="326" startPosition="34" endLine="327" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="327" startPosition="49" endLine="328" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="328" startPosition="40" endLine="329" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="328" startPosition="40" endLine="329" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="329" startPosition="85" endLine="330" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="329" startPosition="85" endLine="330" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="330" startPosition="86" endLine="331" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582717" fileName="MpsStartupScript_Editor.java" startLine="334" startPosition="92" endLine="335" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582717" fileName="MpsStartupScript_Editor.java" startLine="335" startPosition="78" endLine="336" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="339" startPosition="93" endLine="340" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="340" startPosition="133" endLine="341" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="341" startPosition="108" endLine="342" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="342" startPosition="50" endLine="343" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="343" startPosition="49" endLine="344" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="348" startPosition="103" endLine="349" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="352" startPosition="66" endLine="353" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="353" startPosition="41" endLine="354" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="357" startPosition="86" endLine="358" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="358" startPosition="80" endLine="359" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="359" startPosition="95" endLine="360" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="363" startPosition="68" endLine="364" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="364" startPosition="34" endLine="365" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="365" startPosition="55" endLine="366" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="366" startPosition="87" endLine="367" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="371" startPosition="96" endLine="372" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="373" startPosition="34" endLine="374" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="374" startPosition="95" endLine="375" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="377" startPosition="131" endLine="378" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="192" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="bootClasspathListHandler_gszs7u_b6a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="216" startPosition="134" endLine="219" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="219" startPosition="9" endLine="222" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="269" startPosition="0" endLine="272" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="vmOptions64ListHandler_gszs7u_b9a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="293" startPosition="134" endLine="296" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="296" startPosition="9" endLine="299" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="346" startPosition="0" endLine="349" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="vmOptionsListHandler_gszs7u_b21a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="370" startPosition="134" endLine="373" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="373" startPosition="9" endLine="376" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="220" startPosition="9" endLine="223" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="270" startPosition="0" endLine="273" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="vmOptions64ListHandler_gszs7u_b9a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="298" startPosition="9" endLine="301" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="348" startPosition="0" endLine="351" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="vmOptionsListHandler_gszs7u_b21a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="376" startPosition="9" endLine="379" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3885435385580582711" fileName="MpsStartupScript_Editor.java" startLine="178" startPosition="0" endLine="182" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_gszs7u_a6a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="196" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="2693344784283250896" fileName="MpsStartupScript_Editor.java" startLine="255" startPosition="0" endLine="259" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_gszs7u_a9a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="273" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="3885435385580582717" fileName="MpsStartupScript_Editor.java" startLine="332" startPosition="0" endLine="336" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_gszs7u_a21a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="350" startPosition="0" endLine="354" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="216" startPosition="134" endLine="220" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2693344784283250896" fileName="MpsStartupScript_Editor.java" startLine="256" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_gszs7u_a9a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="274" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="294" startPosition="134" endLine="298" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3885435385580582717" fileName="MpsStartupScript_Editor.java" startLine="334" startPosition="0" endLine="338" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_gszs7u_a21a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="352" startPosition="0" endLine="356" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="372" startPosition="134" endLine="376" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="201" startPosition="0" endLine="206" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="278" startPosition="0" endLine="283" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="355" startPosition="0" endLine="360" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="279" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="357" startPosition="0" endLine="362" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580582166" fileName="MpsStartupScript_Editor.java" startLine="62" startPosition="59" endLine="68" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3885435385580631192" fileName="MpsStartupScript_Editor.java" startLine="92" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gszs7u_a2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580631194" fileName="MpsStartupScript_Editor.java" startLine="108" startPosition="59" endLine="114" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -450,28 +454,28 @@
     <nodeInfo nodeId="3885435385580582689" fileName="MpsStartupScript_Editor.java" startLine="144" startPosition="59" endLine="150" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3885435385580582694" fileName="MpsStartupScript_Editor.java" startLine="163" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gszs7u_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="207" startPosition="0" endLine="213" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="237" startPosition="0" endLine="243" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gszs7u_i0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="284" startPosition="0" endLine="290" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="314" startPosition="0" endLine="320" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gszs7u_l0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="361" startPosition="0" endLine="367" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="238" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gszs7u_i0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="285" startPosition="0" endLine="291" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="316" startPosition="0" endLine="322" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gszs7u_l0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="363" startPosition="0" endLine="369" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="170" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gszs7u_g0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="183" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_gszs7u_b6a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="260" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_gszs7u_b9a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="337" startPosition="0" endLine="344" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_gszs7u_b21a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="261" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_gszs7u_b9a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="339" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_gszs7u_b21a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580582171" fileName="MpsStartupScript_Editor.java" startLine="71" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gszs7u_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580582691" fileName="MpsStartupScript_Editor.java" startLine="153" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gszs7u_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="214" startPosition="132" endLine="223" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="227" startPosition="0" endLine="236" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gszs7u_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="291" startPosition="132" endLine="300" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="304" startPosition="0" endLine="313" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gszs7u_k0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="368" startPosition="132" endLine="377" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="228" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gszs7u_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="306" startPosition="0" endLine="315" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_gszs7u_k0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="81" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gszs7u_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="117" startPosition="0" endLine="127" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gszs7u_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="244" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gszs7u_j0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="321" startPosition="0" endLine="331" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gszs7u_m0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="214" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="291" startPosition="0" endLine="302" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="368" startPosition="0" endLine="379" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="214" startPosition="132" endLine="224" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="245" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gszs7u_j0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="292" startPosition="132" endLine="302" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="323" startPosition="0" endLine="333" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_gszs7u_m0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="370" startPosition="132" endLine="380" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="214" startPosition="0" endLine="226" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="292" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="370" startPosition="0" endLine="382" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="3885435385580582166" fileName="MpsStartupScript_Editor.java" startLine="53" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_gszs7u_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580631194" fileName="MpsStartupScript_Editor.java" startLine="99" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_gszs7u_b2a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3885435385580582689" fileName="MpsStartupScript_Editor.java" startLine="135" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_gszs7u_b3a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -497,36 +501,36 @@
     <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="172" startPosition="49" endLine="173" endPosition="84" />
     <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="173" startPosition="84" endLine="174" endPosition="85" />
     <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="192" startPosition="106" endLine="193" endPosition="50" />
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="217" startPosition="34" endLine="218" endPosition="95" />
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="220" startPosition="131" endLine="221" endPosition="139" />
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="249" startPosition="40" endLine="250" endPosition="84" />
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="250" startPosition="84" endLine="251" endPosition="85" />
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="269" startPosition="104" endLine="270" endPosition="50" />
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="294" startPosition="34" endLine="295" endPosition="95" />
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="297" startPosition="131" endLine="298" endPosition="139" />
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="326" startPosition="40" endLine="327" endPosition="85" />
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="327" startPosition="85" endLine="328" endPosition="86" />
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="346" startPosition="103" endLine="347" endPosition="50" />
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="371" startPosition="34" endLine="372" endPosition="95" />
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="374" startPosition="131" endLine="375" endPosition="139" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="221" startPosition="131" endLine="222" endPosition="139" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="250" startPosition="40" endLine="251" endPosition="84" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="251" startPosition="84" endLine="252" endPosition="85" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="270" startPosition="104" endLine="271" endPosition="50" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="299" startPosition="131" endLine="300" endPosition="139" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="328" startPosition="40" endLine="329" endPosition="85" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="329" startPosition="85" endLine="330" endPosition="86" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="348" startPosition="103" endLine="349" endPosition="50" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="377" startPosition="131" endLine="378" endPosition="139" />
     <scopeInfo nodeId="3885435385580582711" fileName="MpsStartupScript_Editor.java" startLine="178" startPosition="91" endLine="180" endPosition="22">
       <varInfo nodeId="3885435385580582711" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="196" startPosition="66" endLine="198" endPosition="93">
       <varInfo nodeId="3885435385580582161" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="2693344784283250896" fileName="MpsStartupScript_Editor.java" startLine="255" startPosition="91" endLine="257" endPosition="22">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="217" startPosition="34" endLine="219" endPosition="98" />
+    <scopeInfo nodeId="2693344784283250896" fileName="MpsStartupScript_Editor.java" startLine="256" startPosition="91" endLine="258" endPosition="22">
       <varInfo nodeId="2693344784283250896" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="273" startPosition="66" endLine="275" endPosition="93">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="274" startPosition="66" endLine="276" endPosition="93">
       <varInfo nodeId="3885435385580582161" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582717" fileName="MpsStartupScript_Editor.java" startLine="332" startPosition="92" endLine="334" endPosition="22">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="295" startPosition="34" endLine="297" endPosition="98" />
+    <scopeInfo nodeId="3885435385580582717" fileName="MpsStartupScript_Editor.java" startLine="334" startPosition="92" endLine="336" endPosition="22">
       <varInfo nodeId="3885435385580582717" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="350" startPosition="66" endLine="352" endPosition="93">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="352" startPosition="66" endLine="354" endPosition="93">
       <varInfo nodeId="3885435385580582161" varName="listOwner" />
     </scopeInfo>
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="373" startPosition="34" endLine="375" endPosition="98" />
     <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="node" />
@@ -551,20 +555,20 @@
     <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="201" startPosition="86" endLine="204" endPosition="25">
       <varInfo nodeId="3885435385580582161" varName="elementCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="269" startPosition="0" endLine="272" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="270" startPosition="0" endLine="273" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="childRole" />
       <varInfo nodeId="3885435385580582161" varName="context" />
       <varInfo nodeId="3885435385580582161" varName="ownerNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="278" startPosition="86" endLine="281" endPosition="25">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="279" startPosition="86" endLine="282" endPosition="25">
       <varInfo nodeId="3885435385580582161" varName="elementCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="346" startPosition="0" endLine="349" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="348" startPosition="0" endLine="351" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="childRole" />
       <varInfo nodeId="3885435385580582161" varName="context" />
       <varInfo nodeId="3885435385580582161" varName="ownerNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="355" startPosition="86" endLine="358" endPosition="25">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="357" startPosition="86" endLine="360" endPosition="25">
       <varInfo nodeId="3885435385580582161" varName="elementCell" />
     </scopeInfo>
     <scopeInfo nodeId="3885435385580631192" fileName="MpsStartupScript_Editor.java" startLine="92" startPosition="89" endLine="96" endPosition="22">
@@ -586,30 +590,30 @@
     <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="207" startPosition="68" endLine="211" endPosition="23">
       <varInfo nodeId="3885435385580582161" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="237" startPosition="88" endLine="241" endPosition="22">
+    <scopeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="238" startPosition="88" endLine="242" endPosition="22">
       <varInfo nodeId="2693344784283250893" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2693344784283250896" fileName="MpsStartupScript_Editor.java" startLine="255" startPosition="0" endLine="259" endPosition="0">
+    <scopeInfo nodeId="2693344784283250896" fileName="MpsStartupScript_Editor.java" startLine="256" startPosition="0" endLine="260" endPosition="0">
       <varInfo nodeId="2693344784283250896" varName="editorContext" />
       <varInfo nodeId="2693344784283250896" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="273" startPosition="0" endLine="277" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="274" startPosition="0" endLine="278" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="284" startPosition="68" endLine="288" endPosition="23">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="285" startPosition="68" endLine="289" endPosition="23">
       <varInfo nodeId="3885435385580582161" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="314" startPosition="88" endLine="318" endPosition="22">
+    <scopeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="316" startPosition="88" endLine="320" endPosition="22">
       <varInfo nodeId="3885435385580582704" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582717" fileName="MpsStartupScript_Editor.java" startLine="332" startPosition="0" endLine="336" endPosition="0">
+    <scopeInfo nodeId="3885435385580582717" fileName="MpsStartupScript_Editor.java" startLine="334" startPosition="0" endLine="338" endPosition="0">
       <varInfo nodeId="3885435385580582717" varName="editorContext" />
       <varInfo nodeId="3885435385580582717" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="350" startPosition="0" endLine="354" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="352" startPosition="0" endLine="356" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="361" startPosition="68" endLine="365" endPosition="23">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="363" startPosition="68" endLine="367" endPosition="23">
       <varInfo nodeId="3885435385580582161" varName="emptyCell" />
     </scopeInfo>
     <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="170" startPosition="90" endLine="175" endPosition="22">
@@ -623,19 +627,19 @@
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="elementNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="260" startPosition="92" endLine="265" endPosition="22">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="261" startPosition="92" endLine="266" endPosition="22">
       <varInfo nodeId="3885435385580582161" varName="editorCell" />
       <varInfo nodeId="3885435385580582161" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="278" startPosition="0" endLine="283" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="279" startPosition="0" endLine="284" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="elementNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="337" startPosition="93" endLine="342" endPosition="22">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="339" startPosition="93" endLine="344" endPosition="22">
       <varInfo nodeId="3885435385580582161" varName="editorCell" />
       <varInfo nodeId="3885435385580582161" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="355" startPosition="0" endLine="360" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="357" startPosition="0" endLine="362" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="elementNode" />
     </scopeInfo>
@@ -654,18 +658,18 @@
     <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="207" startPosition="0" endLine="213" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="237" startPosition="0" endLine="243" endPosition="0">
+    <scopeInfo nodeId="2693344784283250893" fileName="MpsStartupScript_Editor.java" startLine="238" startPosition="0" endLine="244" endPosition="0">
       <varInfo nodeId="2693344784283250893" varName="editorContext" />
       <varInfo nodeId="2693344784283250893" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="284" startPosition="0" endLine="290" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="285" startPosition="0" endLine="291" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="314" startPosition="0" endLine="320" endPosition="0">
+    <scopeInfo nodeId="3885435385580582704" fileName="MpsStartupScript_Editor.java" startLine="316" startPosition="0" endLine="322" endPosition="0">
       <varInfo nodeId="3885435385580582704" varName="editorContext" />
       <varInfo nodeId="3885435385580582704" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="361" startPosition="0" endLine="367" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="363" startPosition="0" endLine="369" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="3885435385580582171" fileName="MpsStartupScript_Editor.java" startLine="71" startPosition="88" endLine="78" endPosition="22">
@@ -684,25 +688,22 @@
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="215" startPosition="96" endLine="222" endPosition="9" />
-    <scopeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="227" startPosition="88" endLine="234" endPosition="22">
+    <scopeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="228" startPosition="88" endLine="235" endPosition="22">
       <varInfo nodeId="2693344784283250891" varName="editorCell" />
       <varInfo nodeId="2693344784283250891" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="260" startPosition="0" endLine="267" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="261" startPosition="0" endLine="268" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="292" startPosition="96" endLine="299" endPosition="9" />
-    <scopeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="304" startPosition="88" endLine="311" endPosition="22">
+    <scopeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="306" startPosition="88" endLine="313" endPosition="22">
       <varInfo nodeId="3885435385580582701" varName="editorCell" />
       <varInfo nodeId="3885435385580582701" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="337" startPosition="0" endLine="344" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="339" startPosition="0" endLine="346" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="369" startPosition="96" endLine="376" endPosition="9" />
     <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="81" startPosition="90" endLine="89" endPosition="22">
       <varInfo nodeId="3885435385580582161" varName="editorCell" />
       <varInfo nodeId="3885435385580582161" varName="style" />
@@ -711,14 +712,17 @@
       <varInfo nodeId="3885435385580582161" varName="editorCell" />
       <varInfo nodeId="3885435385580582161" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="244" startPosition="90" endLine="252" endPosition="22">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="215" startPosition="96" endLine="223" endPosition="9" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="245" startPosition="90" endLine="253" endPosition="22">
       <varInfo nodeId="3885435385580582161" varName="editorCell" />
       <varInfo nodeId="3885435385580582161" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="321" startPosition="90" endLine="329" endPosition="22">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="293" startPosition="96" endLine="301" endPosition="9" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="323" startPosition="90" endLine="331" endPosition="22">
       <varInfo nodeId="3885435385580582161" varName="editorCell" />
       <varInfo nodeId="3885435385580582161" varName="style" />
     </scopeInfo>
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="371" startPosition="96" endLine="379" endPosition="9" />
     <scopeInfo nodeId="3885435385580582171" fileName="MpsStartupScript_Editor.java" startLine="71" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="3885435385580582171" varName="editorContext" />
       <varInfo nodeId="3885435385580582171" varName="node" />
@@ -727,17 +731,14 @@
       <varInfo nodeId="3885435385580582691" varName="editorContext" />
       <varInfo nodeId="3885435385580582691" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="214" startPosition="132" endLine="223" endPosition="7" />
-    <scopeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="227" startPosition="0" endLine="236" endPosition="0">
+    <scopeInfo nodeId="2693344784283250891" fileName="MpsStartupScript_Editor.java" startLine="228" startPosition="0" endLine="237" endPosition="0">
       <varInfo nodeId="2693344784283250891" varName="editorContext" />
       <varInfo nodeId="2693344784283250891" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="291" startPosition="132" endLine="300" endPosition="7" />
-    <scopeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="304" startPosition="0" endLine="313" endPosition="0">
+    <scopeInfo nodeId="3885435385580582701" fileName="MpsStartupScript_Editor.java" startLine="306" startPosition="0" endLine="315" endPosition="0">
       <varInfo nodeId="3885435385580582701" varName="editorContext" />
       <varInfo nodeId="3885435385580582701" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="368" startPosition="132" endLine="377" endPosition="7" />
     <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="81" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="node" />
@@ -746,27 +747,30 @@
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="244" startPosition="0" endLine="254" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="214" startPosition="132" endLine="224" endPosition="7" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="245" startPosition="0" endLine="255" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="321" startPosition="0" endLine="331" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="292" startPosition="132" endLine="302" endPosition="7" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="323" startPosition="0" endLine="333" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="214" startPosition="0" endLine="225" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="370" startPosition="132" endLine="380" endPosition="7" />
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="214" startPosition="0" endLine="226" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="elementCell" />
       <varInfo nodeId="3885435385580582161" varName="elementNode" />
       <varInfo nodeId="3885435385580582161" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="291" startPosition="0" endLine="302" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="292" startPosition="0" endLine="304" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="elementCell" />
       <varInfo nodeId="3885435385580582161" varName="elementNode" />
       <varInfo nodeId="3885435385580582161" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="368" startPosition="0" endLine="379" endPosition="0">
+    <scopeInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="370" startPosition="0" endLine="382" endPosition="0">
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="elementCell" />
       <varInfo nodeId="3885435385580582161" varName="elementNode" />
@@ -809,10 +813,10 @@
       <varInfo nodeId="3885435385580582161" varName="editorContext" />
       <varInfo nodeId="3885435385580582161" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="191" startPosition="0" endLine="226" endPosition="0" unitName="jetbrains.mps.build.startup.editor.MpsStartupScript_Editor$bootClasspathListHandler_gszs7u_b6a" />
-    <unitInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="268" startPosition="0" endLine="303" endPosition="0" unitName="jetbrains.mps.build.startup.editor.MpsStartupScript_Editor$vmOptions64ListHandler_gszs7u_b9a" />
-    <unitInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="345" startPosition="0" endLine="380" endPosition="0" unitName="jetbrains.mps.build.startup.editor.MpsStartupScript_Editor$vmOptionsListHandler_gszs7u_b21a" />
-    <unitInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="28" startPosition="0" endLine="381" endPosition="0" unitName="jetbrains.mps.build.startup.editor.MpsStartupScript_Editor" />
+    <unitInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="191" startPosition="0" endLine="227" endPosition="0" unitName="jetbrains.mps.build.startup.editor.MpsStartupScript_Editor$bootClasspathListHandler_gszs7u_b6a" />
+    <unitInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="269" startPosition="0" endLine="305" endPosition="0" unitName="jetbrains.mps.build.startup.editor.MpsStartupScript_Editor$vmOptions64ListHandler_gszs7u_b9a" />
+    <unitInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="347" startPosition="0" endLine="383" endPosition="0" unitName="jetbrains.mps.build.startup.editor.MpsStartupScript_Editor$vmOptionsListHandler_gszs7u_b21a" />
+    <unitInfo nodeId="3885435385580582161" fileName="MpsStartupScript_Editor.java" startLine="28" startPosition="0" endLine="384" endPosition="0" unitName="jetbrains.mps.build.startup.editor.MpsStartupScript_Editor" />
   </root>
   <root nodeRef="r:557b6444-752b-478f-a018-f0abe80a35cd(jetbrains.mps.build.startup.editor)/3885435385580582741">
     <nodeInfo nodeId="3885435385580582741" fileName="SimpleVmOptions_Editor.java" startLine="18" startPosition="79" endLine="19" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
