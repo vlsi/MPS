@@ -1568,7 +1568,7 @@
             </node>
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3575782568432719793" nodeInfo="nn">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3575782568432719794" nodeInfo="nr">
-                <property name="name" nameId="tpck.1169194664001" value="hasFailedTest" />
+                <property name="name" nameId="tpck.1169194664001" value="hasTestNotPassed" />
                 <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="3575782568432719795" nodeInfo="in" />
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3575782568432719796" nodeInfo="nn">
                   <property name="value" nameId="tpee.1068580123138" value="false" />
@@ -1665,12 +1665,14 @@
                 </node>
                 <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3575782568432719838" nodeInfo="nn">
                   <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3575782568432719839" nodeInfo="nr">
-                    <property name="name" nameId="tpck.1169194664001" value="isFailedMethod" />
+                    <property name="name" nameId="tpck.1169194664001" value="isNotPassedMethod" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="3575782568432719840" nodeInfo="in" />
-                    <node role="initializer" roleId="tpee.1068431790190" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="4923130412071497780" nodeInfo="nn">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432719198" resolveInfo="isFailed" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363075243" nodeInfo="nn">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719830" resolveInfo="methodTreeNode" />
+                    <node role="initializer" roleId="tpee.1068431790190" type="tpee.NotExpression" typeId="tpee.1081516740877" id="2947550643735191747" nodeInfo="nn">
+                      <node role="expression" roleId="tpee.1081516765348" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="2947550643735191749" nodeInfo="nn">
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432719238" resolveInfo="isPassed" />
+                        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2947550643735191750" nodeInfo="nn">
+                          <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719830" resolveInfo="methodTreeNode" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -1679,14 +1681,14 @@
                   <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3575782568432719844" nodeInfo="nn">
                     <node role="rValue" roleId="tpee.1068498886297" type="tpee.OrExpression" typeId="tpee.1080223426719" id="3575782568432719845" nodeInfo="nn">
                       <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363086581" nodeInfo="nn">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719839" resolveInfo="isFailedMethod" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719839" resolveInfo="isNotPassedMethod" />
                       </node>
                       <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363066286" nodeInfo="nn">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719794" resolveInfo="hasFailedTest" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719794" resolveInfo="hasTestNotPassed" />
                       </node>
                     </node>
                     <node role="lValue" roleId="tpee.1068498886295" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363113460" nodeInfo="nn">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719794" resolveInfo="hasFailedTest" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719794" resolveInfo="hasTestNotPassed" />
                     </node>
                   </node>
                 </node>
@@ -1741,7 +1743,7 @@
                       <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719279" resolveInfo="isAllTree" />
                     </node>
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363087887" nodeInfo="nn">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719839" resolveInfo="isFailedMethod" />
+                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719839" resolveInfo="isNotPassedMethod" />
                     </node>
                   </node>
                   <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="3575782568432719874" nodeInfo="nn">
@@ -1807,7 +1809,7 @@
               </node>
               <node role="condition" roleId="tpee.1068580123160" type="tpee.OrExpression" typeId="tpee.1080223426719" id="3575782568432719897" nodeInfo="nn">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.VariableReference" typeId="tpee.1068498886296" id="4265636116363105956" nodeInfo="nn">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719794" resolveInfo="hasFailedTest" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719794" resolveInfo="hasTestNotPassed" />
                 </node>
                 <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3021153905120329925" nodeInfo="nn">
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432719279" resolveInfo="isAllTree" />

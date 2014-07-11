@@ -3738,39 +3738,6 @@
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fnd7.1813663789079454564" resolveInfo="TestLightRunState" />
       </node>
     </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticMethodDeclaration" typeId="tpee.1081236700938" id="6796535740154100638" nodeInfo="igu">
-      <property name="name" nameId="tpck.1169194664001" value="getRunState" />
-      <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-      <property name="isSynchronized" nameId="tpee.4276006055363816570" value="false" />
-      <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="6796535740154100639" nodeInfo="nn">
-        <link role="annotation" roleId="tpee.1188208074048" targetNodeId="as9o.~NotNull" resolveInfo="NotNull" />
-      </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6796535740154100640" nodeInfo="ir">
-        <property name="name" nameId="tpck.1169194664001" value="threadId" />
-        <property name="isFinal" nameId="tpee.1176718929932" value="false" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.LongType" typeId="tpee.1068581242867" id="6796535740154100641" nodeInfo="in" />
-      </node>
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="6796535740154100642" nodeInfo="sn">
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="6796535740154100643" nodeInfo="nn">
-          <node role="expression" roleId="tpee.1068581517676" type="tpee.CastExpression" typeId="tpee.1070534934090" id="6796535740154100644" nodeInfo="nn">
-            <node role="expression" roleId="tpee.1070534934092" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6796535740154100645" nodeInfo="nn">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4rkw.~TestRunStorage" resolveInfo="TestRunStorage" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4rkw.~TestRunStorage%dgetUserObject(long)%cjava%dlang%dObject" resolveInfo="getUserObject" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="6796535740154100646" nodeInfo="nn">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6796535740154100640" resolveInfo="threadId" />
-              </node>
-            </node>
-            <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6796535740154100647" nodeInfo="in">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fnd7.1813663789079454564" resolveInfo="TestLightRunState" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6796535740154100648" nodeInfo="nn" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6796535740154100649" nodeInfo="in">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fnd7.1813663789079454564" resolveInfo="TestLightRunState" />
-      </node>
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="6796535740154100650" nodeInfo="ngu" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6796535740154100651" nodeInfo="nn" />
     <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6796535740154100652" nodeInfo="in">

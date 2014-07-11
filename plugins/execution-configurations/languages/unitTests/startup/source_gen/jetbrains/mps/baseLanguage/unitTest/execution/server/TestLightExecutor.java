@@ -126,11 +126,6 @@ public class TestLightExecutor extends AbstractTestExecutor {
     return myTestRunState;
   }
 
-  @NotNull
-  public static TestLightRunState getRunState(long threadId) {
-    return (TestLightRunState) TestRunStorage.getUserObject(threadId);
-  }
-
 
   protected static Logger LOG = LogManager.getLogger(TestLightExecutor.class);
 }

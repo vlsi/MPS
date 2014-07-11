@@ -163,14 +163,14 @@ public class TestTree extends MPSTree implements TestView, Disposable {
         testCaseTreeNode = new TestCaseTreeNode(myOperationContext, testCase);
       }
       testCaseTreeNode.removeAllChildren();
-      boolean hasFailedTest = false;
+      boolean hasTestNotPassed = false;
       for (ITestNodeWrapper method : ListSequence.fromList(MapSequence.fromMap(myState.getTestsMap()).get(testCase))) {
         TestMethodTreeNode oldMethodTreeNode = myMap.get(testCase.getFqName(), method.getName());
         TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(myOperationContext, method);
         TestMethodTreeNode methodTreeNode = (oldMethodTreeNode == null ? newMethodTreeNode : oldMethodTreeNode);
-        boolean isFailedMethod = isFailed(methodTreeNode);
-        hasFailedTest = hasFailedTest || isFailedMethod;
-        if (isAllTree || isFailedMethod) {
+        boolean isNotPassedMethod = !(isPassed(methodTreeNode));
+        hasTestNotPassed = hasTestNotPassed || isNotPassedMethod;
+        if (isAllTree || isNotPassedMethod) {
           if (methodTreeNode == null) {
             continue;
           }
@@ -180,7 +180,7 @@ public class TestTree extends MPSTree implements TestView, Disposable {
           temp.put(testCase, method, methodTreeNode);
         }
       }
-      if (isAllTree || hasFailedTest) {
+      if (isAllTree || hasTestNotPassed) {
         root.add(testCaseTreeNode);
         temp.put(testCase, testCaseTreeNode);
       } else {

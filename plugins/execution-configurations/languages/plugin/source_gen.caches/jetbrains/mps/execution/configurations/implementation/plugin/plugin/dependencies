@@ -367,7 +367,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaConfigurationEditorComponent" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitConfigurationEditorComponent" />
-    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitJavaEditorSynchronizer" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration_Editor" />
     <classNode dependClassName="jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitTests_Configuration" />
     <classNode dependClassName="jetbrains.mps.ide.common.LayoutUtil" />

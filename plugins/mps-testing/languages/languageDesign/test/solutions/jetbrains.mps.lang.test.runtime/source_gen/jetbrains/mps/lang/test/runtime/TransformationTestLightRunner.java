@@ -27,6 +27,7 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
 
   private boolean isRunTerminating() {
     TestLightRunState runState = getRunState(Thread.currentThread().getId());
+
     return runState.isTerminating();
   }
 
