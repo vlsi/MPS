@@ -1164,6 +1164,25 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     insertChildBefore(role, child, null);
   }
 
+  @Override
+  @NotNull
+  public List<SNode> getChildren(SContainmentLinkId role) {
+    SNode firstChild = firstChild();
+
+    if (role != null) {
+      while (firstChild != null) {
+        SContainmentLinkId childRole = firstChild.getRoleInParentId();
+        if (childRole.equals(role)) break;
+        firstChild = firstChild.treeNext();
+      }
+    }
+
+    if (firstChild == null) return Collections.emptyList();
+
+    return new ChildrenList_byId(firstChild, role);
+  }
+
+
   //-------------old methods working by name---------------
 
   @Deprecated
@@ -1509,6 +1528,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     insertChildBefore(role, child, null);
   }
 
+  @Deprecated
   @Override
   @NotNull
   public List<SNode> getChildren(String role) {
@@ -1516,7 +1536,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     if (role != null) {
       while (firstChild != null) {
-        String childRole = getNodeRoleString(firstChild);
+        String childRole = firstChild.getRoleInParent();
         if (childRole.equals(role)) break;
         firstChild = firstChild.treeNext();
       }
@@ -1544,12 +1564,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private String getRoleInParent_byName() {
     if (getParent() == null) {
       //this is for persistence v8
-      if (!EqualUtil.equals(getNodeRoleString(this), getUserObject("role"))) {
+      if (!EqualUtil.equals(this.getRoleInParent(), getUserObject("role"))) {
         LOG.error(new IllegalStateException());
       }
       return null;
     }
-    return getNodeRoleString(this);
+    return myRoleInParent;
   }
 
   private SContainmentLinkId getRoleInParentId_byId() {
@@ -1754,18 +1774,5 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private String lid2name(SContainmentLinkId lid) {
     return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(lid);
-  }
-
-//  -----
-
-  private static String getNodeRoleString(SNode child) {
-    if (child.parent == null) return null;
-    String childRole = child.myRoleInParent;
-    if (childRole == null) {
-      SContainmentLinkId roleId = child.myRoleInParentId;
-      assert roleId != null;
-      childRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(roleId);
-    }
-    return childRole;
   }
 }
