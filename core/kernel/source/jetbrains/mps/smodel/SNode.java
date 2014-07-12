@@ -385,7 +385,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public List<SNode> getChildren() {
-    return getChildren(null);
+    return getChildren((SContainmentLinkId)null);
   }
 
   @Override
@@ -873,9 +873,16 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     List<SPropertyId> result = new ArrayList<SPropertyId>(5);
-    if (myNewProperties == null) return result;
-    for (int i = 0; i < myNewProperties.length; i += 2) {
-      result.add((SPropertyId) myNewProperties[i]);
+    if(isWorkingById()==Mode.NAME){
+      if (myProperties == null) return result;
+      for (int i = 0; i < myProperties.length; i += 2) {
+        result.add(name2pid((String)myNewProperties[i]));
+      }
+    }else {
+      if (myNewProperties == null) return result;
+      for (int i = 0; i < myNewProperties.length; i += 2) {
+        result.add((SPropertyId) myNewProperties[i]);
+      }
     }
     return result;
   }
@@ -1221,7 +1228,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     propertyChanged(propertyName, isSet.o2, propertyValue);
   }
 
-  //todo rewrite using real iterable after 3.0. Set is here only for migration purposes
   @Deprecated
   @Override
   public Set<String> getPropertyNames() {
@@ -1230,9 +1236,16 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     LinkedHashSet<String> result = new LinkedHashSet<String>();
-    if (myProperties == null) return result;
-    for (int i = 0; i < myProperties.length; i += 2) {
-      result.add(myProperties[i]);
+    if (isWorkingById()==Mode.ID){
+      if (myNewProperties == null) return result;
+      for (int i = 0; i < myNewProperties.length; i += 2) {
+        result.add(pid2name(((SPropertyId) myNewProperties[i])));
+      }
+    }else {
+      if (myProperties == null) return result;
+      for (int i = 0; i < myProperties.length; i += 2) {
+        result.add(myProperties[i]);
+      }
     }
     return result;
   }
