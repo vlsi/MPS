@@ -241,11 +241,20 @@ public class EditorCellLabelSelection extends EditorCellSelection {
       }
 
       if (target == null) return false;
+      /*
+        Was commented out (again) to let some of our unit-tests be green.
+        in particular - pressing BackSpace at this situation:
+          <code>
+            int a = 1;
+            --|a;
+          <code>
+        where "|" is a position of cursor;
       if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
         public Boolean compute() {
           return jetbrains.mps.util.SNodeOperations.isAncestor(target.getSNode(), selectedCell.getSNode());
         }
       })) return false;
+        */
       return getEditorComponent().getActionHandler().executeAction(target, type);
     }
     return false;
