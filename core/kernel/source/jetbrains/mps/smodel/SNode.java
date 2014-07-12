@@ -30,6 +30,7 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.containers.EmptyIterable;
 import org.apache.log4j.LogManager;
@@ -838,54 +839,31 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return propertyValue;
   }
 
-
   @Override
-  public void setProperty(SPropertyId property, String propertyValue) {
+  public void setProperty(final SPropertyId property, String propertyValue) {
     assertCanChange();
 
-    String name = MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(property);
-    if (name == null) {
-      name = property.toString();
-    }
-
     propertyValue = InternUtil.intern(propertyValue);
-    int index = getPropertyIndex(property);
-    final String oldValue = index == -1 ? null : (String) myNewProperties[index + 1];
-    if (EqualUtil.equals(oldValue, propertyValue)) return;
-
-    if (propertyValue == null) {
-      Object[] oldProperties = myNewProperties;
-      int newLength = oldProperties.length - 2;
-      if (newLength == 0) {
-        myNewProperties = null;
-      } else {
-        myNewProperties = new Object[newLength];
-        System.arraycopy(oldProperties, 0, myNewProperties, 0, index);
-        System.arraycopy(oldProperties, index + 2, myNewProperties, index, newLength - index);
-      }
-    } else if (oldValue == null) {
-      Object[] oldProperties = myNewProperties == null ? EMPTY_ARRAY : myNewProperties;
-      myNewProperties = new Object[oldProperties.length + 2];
-      System.arraycopy(oldProperties, 0, myNewProperties, 0, oldProperties.length);
-      myNewProperties[myNewProperties.length - 2] = property;
-      myNewProperties[myNewProperties.length - 1] = propertyValue;
-    } else {
-      myNewProperties[index + 1] = propertyValue;
+    final Pair<Boolean, String> isSet;
+    if (isWorkingById()==Mode.NAME){
+      isSet = setProperty_byName(pid2name(property), propertyValue);
+    }else {
+      isSet = setProperty_byId(property, propertyValue);
     }
+    if(!isSet.o1) return;
 
     final String finalPropertyValue = propertyValue;
-    final String finalPropertyName = name;
     performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
-        return new PropertyChangeUndoableAction(SNode.this, finalPropertyName, oldValue, finalPropertyValue);
+        return new PropertyChangeUndoableAction(SNode.this, pid2name(property), isSet.o2, finalPropertyValue);
       }
     });
 
     if (needFireEvent()) {
-      myModel.firePropertyChangedEvent(this, name, oldValue, propertyValue);
+      myModel.firePropertyChangedEvent(this, pid2name(property), isSet.o2, propertyValue);
     }
-    propertyChanged(name, oldValue, propertyValue);
+    propertyChanged(property, isSet.o2, propertyValue);
   }
 
   @Override
@@ -1212,66 +1190,35 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return propertyValue;
   }
 
-
   @Deprecated
   @Override
   public void setProperty(String propertyName, String propertyValue) {
     assertCanChange();
-
-    org.jetbrains.mps.openapi.model.SNode concept = getConceptDeclarationNode();
-    if (concept != null) {
-      SConceptId cid = LangUtil.getConceptId(concept);
-      SPropertyId propId = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(cid, propertyName);
-      setProperty(propId, propertyValue);
-    }
-
-    propertyName = InternUtil.intern(propertyName);
     propertyValue = InternUtil.intern(propertyValue);
-    //this is a trash code which works only when the model is loaded
-    //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
-    if (ourMemberAccessModifier != null) {
-      String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
-      if (conceptName != null) {
-        propertyName = ourMemberAccessModifier.getNewPropertyName(getModel(), conceptName, propertyName);
-      }
-    }
-    int index = getPropertyIndex(propertyName);
-    final String oldValue = index == -1 ? null : myProperties[index + 1];
-    if (EqualUtil.equals(oldValue, propertyValue)) return;
 
-    if (propertyValue == null) {
-      String[] oldProperties = myProperties;
-      int newLength = oldProperties.length - 2;
-      if (newLength == 0) {
-        myProperties = null;
-      } else {
-        myProperties = new String[newLength];
-        System.arraycopy(oldProperties, 0, myProperties, 0, index);
-        System.arraycopy(oldProperties, index + 2, myProperties, index, newLength - index);
-      }
-    } else if (oldValue == null) {
-      String[] oldProperties = myProperties == null ? EMPTY_ARRAY : myProperties;
-      myProperties = new String[oldProperties.length + 2];
-      System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
-      myProperties[myProperties.length - 2] = propertyName;
-      myProperties[myProperties.length - 1] = propertyValue;
-    } else {
-      myProperties[index + 1] = propertyValue;
+    String pname = ourMemberAccessModifier != null ? ourMemberAccessModifier.getNewPropertyName(getModel(), myConceptFqName, propertyName) :
+        InternUtil.intern(propertyName);
+    final Pair<Boolean, String> isSet;
+    if (isWorkingById()==Mode.ID){
+      isSet = setProperty_byId(name2pid(propertyName), propertyValue);
+    }else {
+      isSet = setProperty_byName(propertyName, propertyValue);
     }
+    if(!isSet.o1) return;
 
     final String finalPropertyValue = propertyValue;
-    final String finalPropertyName = propertyName;
+    final String finalPropertyName = pname;
     performUndoableAction(new Computable<SNodeUndoableAction>() {
       @Override
       public SNodeUndoableAction compute() {
-        return new PropertyChangeUndoableAction(SNode.this, finalPropertyName, oldValue, finalPropertyValue);
+        return new PropertyChangeUndoableAction(SNode.this, finalPropertyName, isSet.o2, finalPropertyValue);
       }
     });
 
     if (needFireEvent()) {
-      myModel.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
+      myModel.firePropertyChangedEvent(this, propertyName, isSet.o2, propertyValue);
     }
-    propertyChanged(propertyName, oldValue, propertyValue);
+    propertyChanged(propertyName, isSet.o2, propertyValue);
   }
 
   //todo rewrite using real iterable after 3.0. Set is here only for migration purposes
@@ -1625,6 +1572,62 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
     return propertyValue;
+  }
+
+  public Pair<Boolean,String> setProperty_byName(String pname, String propertyValue) {
+    //this is a trash code which works only when the model is loaded
+    //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
+    int index = getPropertyIndex(pname);
+    final String oldValue = index == -1 ? null : myProperties[index + 1];
+    if (EqualUtil.equals(oldValue, propertyValue)) return new Pair<Boolean, String>(false,null);
+
+    if (propertyValue == null) {
+      String[] oldProperties = myProperties;
+      int newLength = oldProperties.length - 2;
+      if (newLength == 0) {
+        myProperties = null;
+      } else {
+        myProperties = new String[newLength];
+        System.arraycopy(oldProperties, 0, myProperties, 0, index);
+        System.arraycopy(oldProperties, index + 2, myProperties, index, newLength - index);
+      }
+    } else if (oldValue == null) {
+      String[] oldProperties = myProperties == null ? EMPTY_ARRAY : myProperties;
+      myProperties = new String[oldProperties.length + 2];
+      System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
+      myProperties[myProperties.length - 2] = pname;
+      myProperties[myProperties.length - 1] = propertyValue;
+    } else {
+      myProperties[index + 1] = propertyValue;
+    }
+    return new Pair<Boolean, String>(true,oldValue);
+  }
+
+  public Pair<Boolean,String> setProperty_byId(SPropertyId pname, String propertyValue) {
+    int index = getPropertyIndex(pname);
+    final String oldValue = index == -1 ? null : (String) myNewProperties[index + 1];
+    if (EqualUtil.equals(oldValue, propertyValue)) return new Pair<Boolean, String>(false, null);
+
+    if (propertyValue == null) {
+      Object[] oldProperties = myNewProperties;
+      int newLength = oldProperties.length - 2;
+      if (newLength == 0) {
+        myNewProperties = null;
+      } else {
+        myNewProperties = new Object[newLength];
+        System.arraycopy(oldProperties, 0, myNewProperties, 0, index);
+        System.arraycopy(oldProperties, index + 2, myNewProperties, index, newLength - index);
+      }
+    } else if (oldValue == null) {
+      Object[] oldProperties = myNewProperties == null ? EMPTY_ARRAY : myNewProperties;
+      myNewProperties = new Object[oldProperties.length + 2];
+      System.arraycopy(oldProperties, 0, myNewProperties, 0, oldProperties.length);
+      myNewProperties[myNewProperties.length - 2] = pname;
+      myNewProperties[myNewProperties.length - 1] = propertyValue;
+    } else {
+      myNewProperties[index + 1] = propertyValue;
+    }
+    return new Pair<Boolean, String>(true, oldValue);
   }
 
   private static class ChildrenList_byName extends AbstractSequentialList<SNode> {
