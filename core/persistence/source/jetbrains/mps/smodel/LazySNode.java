@@ -31,12 +31,6 @@ public final class LazySNode extends SNode {
   }
 
   @Override
-  protected SNode firstChildInRole(@NotNull String role) {
-    enforceModelLoad();
-    return super.firstChildInRole(role);
-  }
-
-  @Override
   public void insertChildBefore(String role, org.jetbrains.mps.openapi.model.SNode child, @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     enforceModelLoad();
     super.insertChildBefore(role, child, anchor);

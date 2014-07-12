@@ -50,7 +50,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -196,35 +195,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       parent.fireNodeUnclassifiedReadAccess();
     }
     return parent;
-  }
-
-  @Override
-  @NotNull
-  public List<SNode> getChildren(String role) {
-    SNode firstChild = firstChild();
-
-    if (role != null) {
-      while (firstChild != null) {
-        String childRole = getNodeRoleString(firstChild);
-        if (childRole.equals(role)) break;
-        firstChild = firstChild.treeNext();
-      }
-    }
-
-    if (firstChild == null) return Collections.emptyList();
-
-    return new ChildrenList(firstChild, role);
-  }
-
-  private static String getNodeRoleString(SNode child) {
-    if (child.parent == null) return null;
-    String childRole = child.myRoleInParent;
-    if (childRole == null) {
-      SContainmentLinkId roleId = child.myRoleInParentId;
-      assert roleId != null;
-      childRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(roleId);
-    }
-    return childRole;
   }
 
   /**
@@ -817,87 +787,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, propertyExistenceCheck);
   }
 
-  //--------private classes-------
-
-  private static class ChildrenList extends AbstractSequentialList<SNode> {
-    @Nullable
-    private final String myRole;
-
-    public ChildrenList(SNode first, @Nullable String role) {
-      super(first);
-      myRole = role;
-    }
-
-    @Override
-    protected AbstractSequentialIterator<SNode> createIterator(SNode first) {
-      return new ChildrenIterator(first, myRole);
-    }
-
-    @NotNull
-    @Override
-    public List<SNode> subList(int fromIndex, int toIndex) {
-      if (fromIndex < toIndex) {
-        return new ChildrenList(get(fromIndex), myRole);
-      } else {
-        return Collections.emptyList();
-      }
-    }
-
-    private class ChildrenIterator extends AbstractSequentialIterator<SNode> {
-      @Nullable
-      private String myRole;
-
-      public ChildrenIterator(@NotNull SNode first, @Nullable String role) {
-        super(first);
-        myRole = role;
-      }
-
-      @Override
-      protected SNode getNext(SNode node) {
-        if (myRole == null) return node.treeNext();
-
-        do {
-          node = node.treeNext();
-        } while (node != null && !getNodeRoleString(node).equals(myRole));
-        return node;
-      }
-
-      @Override
-      protected SNode getPrev(SNode node) {
-        if (node.treeParent() == null) return null;
-        SNode fc = node.treeParent().firstChild();
-
-        if (node == fc) return null;
-        if (myRole == null) return node.treePrevious();
-
-        do {
-          node = node.treePrevious();
-        } while (node != fc && !getNodeRoleString(node).equals(myRole));
-
-        return getNodeRoleString(node).equals(myRole) ? node : null;
-      }
-
-      @Override
-      protected SNode getCurrent() {
-        return readNode(super.getCurrent());
-      }
-
-      @Override
-      protected SNode getPrev() {
-        return readNode(super.getPrev());
-      }
-
-      private SNode readNode(SNode node) {
-        if (node != null) {
-          node.nodeRead();
-          node.fireNodeReadAccess();
-          node.fireNodeUnclassifiedReadAccess();
-        }
-        return node;
-      }
-    }
-  }
-
   //---------tree structure-------------
 
   private SNode parent;
@@ -916,15 +805,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       first.attach(myRepository);
     }
     return first;
-  }
-
-  protected SNode firstChildInRole(@NotNull String role) {
-    for (SNode current = first; current != null; current = current.treeNext()) {
-      if (role.equals(getNodeRoleString(current))) {
-        return current;
-      }
-    }
-    return null;
   }
 
   protected SNode treePrevious() {
@@ -1004,22 +884,24 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   //-------------new methods working by id-----------------
 
-  public void setRoleInParentId(SContainmentLinkId role) {//todo add undo
-    setRoleInParent_byId(role);
+  public void setRoleInParentId(SContainmentLinkId newRole) {//todo add undo
+    if (isWorkingById() == Mode.NAME) {
+      setRoleInParent_byId(newRole);
+    } else {
+      setRoleInParent_byName(lid2name(newRole));
+    }
   }
 
   @Override
   public SContainmentLinkId getRoleInParentId() {
     nodeRead();
-
-    if (getParent() == null) {
-      if (!EqualUtil.equals(myRoleInParentId, getUserObject("roleId"))) {
-        LOG.error(new IllegalStateException());
-      }
-      return null;
+    if(isWorkingById()==Mode.NAME){
+      return name2lid(getRoleInParent_byName());
+    }else{
+      return getRoleInParentId_byId();
     }
-    return myRoleInParentId;
   }
+
 
   @Override
   public boolean hasProperty(SPropertyId property) {
@@ -1286,9 +1168,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   public void setRoleInParent(String newRole) {
-    if (isWorkingById()==Mode.ID){
+    if (isWorkingById() == Mode.ID) {
       setRoleInParent_byId(name2lid(newRole));
-    }else{
+    } else {
       setRoleInParent_byName(newRole);
     }
   }
@@ -1297,14 +1179,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public String getRoleInParent() {
     nodeRead();
-
-    if (getParent() == null) {
-      if (!EqualUtil.equals(getNodeRoleString(this), getUserObject("role"))) {
-        LOG.error(new IllegalStateException());
-      }
-      return null;
+    if(isWorkingById()==Mode.ID){
+      return lid2name(getRoleInParentId_byId());
+    }else{
+      return getRoleInParent_byName();
     }
-    return getNodeRoleString(this);
   }
 
   @Deprecated
@@ -1630,6 +1509,24 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     insertChildBefore(role, child, null);
   }
 
+  @Override
+  @NotNull
+  public List<SNode> getChildren(String role) {
+    SNode firstChild = firstChild();
+
+    if (role != null) {
+      while (firstChild != null) {
+        String childRole = getNodeRoleString(firstChild);
+        if (childRole.equals(role)) break;
+        firstChild = firstChild.treeNext();
+      }
+    }
+
+    if (firstChild == null) return Collections.emptyList();
+
+    return new ChildrenList_byName(firstChild, role);
+  }
+
   //---------------private methods working with ids and names---------------
 
   private void setRoleInParent_byName(String newRoleInParent) {
@@ -1642,6 +1539,179 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private void setRoleInParent_byId(SContainmentLinkId role) {
     myRoleInParentId = role;
+  }
+
+  private String getRoleInParent_byName() {
+    if (getParent() == null) {
+      //this is for persistence v8
+      if (!EqualUtil.equals(getNodeRoleString(this), getUserObject("role"))) {
+        LOG.error(new IllegalStateException());
+      }
+      return null;
+    }
+    return getNodeRoleString(this);
+  }
+
+  private SContainmentLinkId getRoleInParentId_byId() {
+    return myRoleInParentId;
+  }
+
+  private static class ChildrenList_byName extends AbstractSequentialList<SNode> {
+    @Nullable
+    private final String myRole;
+
+    public ChildrenList_byName(SNode first, @Nullable String role) {
+      super(first);
+      myRole = role;
+    }
+
+    @Override
+    protected AbstractSequentialIterator<SNode> createIterator(SNode first) {
+      return new ChildrenIterator_byName(first, myRole);
+    }
+
+    @NotNull
+    @Override
+    public List<SNode> subList(int fromIndex, int toIndex) {
+      if (fromIndex < toIndex) {
+        return new ChildrenList_byName(get(fromIndex), myRole);
+      } else {
+        return Collections.emptyList();
+      }
+    }
+
+    private class ChildrenIterator_byName extends AbstractSequentialIterator<SNode> {
+      @Nullable
+      private String myRole;
+
+      public ChildrenIterator_byName(@NotNull SNode first, @Nullable String role) {
+        super(first);
+        myRole = role;
+      }
+
+      @Override
+      protected SNode getNext(SNode node) {
+        if (myRole == null) return node.treeNext();
+
+        do {
+          node = node.treeNext();
+        } while (node != null && !node.getRoleInParent().equals(myRole));
+        return node;
+      }
+
+      @Override
+      protected SNode getPrev(SNode node) {
+        if (node.treeParent() == null) return null;
+        SNode fc = node.treeParent().firstChild();
+
+        if (node == fc) return null;
+        if (myRole == null) return node.treePrevious();
+
+        do {
+          node = node.treePrevious();
+        } while (node != fc && !node.getRoleInParent().equals(myRole));
+
+        return node.getRoleInParent().equals(myRole) ? node : null;
+      }
+
+      @Override
+      protected SNode getCurrent() {
+        return readNode(super.getCurrent());
+      }
+
+      @Override
+      protected SNode getPrev() {
+        return readNode(super.getPrev());
+      }
+
+      private SNode readNode(SNode node) {
+        if (node != null) {
+          node.nodeRead();
+          node.fireNodeReadAccess();
+          node.fireNodeUnclassifiedReadAccess();
+        }
+        return node;
+      }
+    }
+  }
+
+  private static class ChildrenList_byId extends AbstractSequentialList<SNode> {
+    @Nullable
+    private final SContainmentLinkId myRole;
+
+    public ChildrenList_byId(SNode first, @Nullable SContainmentLinkId role) {
+      super(first);
+      myRole = role;
+    }
+
+    @Override
+    protected AbstractSequentialIterator<SNode> createIterator(SNode first) {
+      return new ChildrenIterator_byId(first, myRole);
+    }
+
+    @NotNull
+    @Override
+    public List<SNode> subList(int fromIndex, int toIndex) {
+      if (fromIndex < toIndex) {
+        return new ChildrenList_byId(get(fromIndex), myRole);
+      } else {
+        return Collections.emptyList();
+      }
+    }
+
+    private class ChildrenIterator_byId extends AbstractSequentialIterator<SNode> {
+      @Nullable
+      private SContainmentLinkId myRole;
+
+      public ChildrenIterator_byId(@NotNull SNode first, @Nullable SContainmentLinkId role) {
+        super(first);
+        myRole = role;
+      }
+
+      @Override
+      protected SNode getNext(SNode node) {
+        if (myRole == null) return node.treeNext();
+
+        do {
+          node = node.treeNext();
+        } while (node != null && !node.getRoleInParentId().equals(myRole));
+        return node;
+      }
+
+      @Override
+      protected SNode getPrev(SNode node) {
+        if (node.treeParent() == null) return null;
+        SNode fc = node.treeParent().firstChild();
+
+        if (node == fc) return null;
+        if (myRole == null) return node.treePrevious();
+
+        do {
+          node = node.treePrevious();
+        } while (node != fc && !node.getRoleInParentId().equals(myRole));
+
+        return node.getRoleInParentId().equals(myRole) ? node : null;
+      }
+
+      @Override
+      protected SNode getCurrent() {
+        return readNode(super.getCurrent());
+      }
+
+      @Override
+      protected SNode getPrev() {
+        return readNode(super.getPrev());
+      }
+
+      private SNode readNode(SNode node) {
+        if (node != null) {
+          node.nodeRead();
+          node.fireNodeReadAccess();
+          node.fireNodeUnclassifiedReadAccess();
+        }
+        return node;
+      }
+    }
   }
 
 //-------------tmp private methods to help migrating to ids--------------
@@ -1684,5 +1754,18 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private String lid2name(SContainmentLinkId lid) {
     return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(lid);
+  }
+
+//  -----
+
+  private static String getNodeRoleString(SNode child) {
+    if (child.parent == null) return null;
+    String childRole = child.myRoleInParent;
+    if (childRole == null) {
+      SContainmentLinkId roleId = child.myRoleInParentId;
+      assert roleId != null;
+      childRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(roleId);
+    }
+    return childRole;
   }
 }

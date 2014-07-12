@@ -164,7 +164,7 @@ public interface SNode {
    * Does not produce read on current as current is already obtained, produces read accesses to child nodes lazily (when really accessed),
    * does not produce read accesses for skipped children
    */
-  Iterable<? extends SNode> getChildren(String role);
+  Iterable<? extends SNode> getChildren(SContainmentLinkId role);
 
   /**
    * Returns an immutable collection of all children.
@@ -289,4 +289,7 @@ public interface SNode {
 
   @Deprecated
   void addChild(String role, SNode child);
+
+  @Deprecated
+  Iterable<? extends SNode> getChildren(String role);
 }
