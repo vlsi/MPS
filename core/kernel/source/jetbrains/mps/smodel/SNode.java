@@ -920,6 +920,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
+  public SConceptId getConceptId() {
+    return myConceptId;
+  }
+
+  @Override
   public Object getUserObject(Object key) {
     final Object[] userObjects = myUserObjects;
     if (userObjects == null) return null;

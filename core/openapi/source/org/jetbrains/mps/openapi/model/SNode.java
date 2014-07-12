@@ -18,6 +18,7 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
@@ -51,9 +52,6 @@ import org.jetbrains.mps.openapi.language.SReferenceLinkId;
  * SEE ALSO SNodeUtil, SNodeAccessUtil
  */
 public interface SNode {
-
-  //common properties
-
   /**
    * Containing model or null if the node is not contained in any model
    * Does not produce node read event as the function depending on model is not a pure node function.
@@ -75,10 +73,13 @@ public interface SNode {
    */
   SNodeReference getReference();
 
+  SConceptId getConceptId();
+
   /**
    * The concept that this node represents. Concepts can be compared using the "==" operator.
    * Does not produce node read event as the result value can't be changed.
    */
+  // deprecate? [Mihail Muhin]
   @NotNull
   SConcept getConcept();
 
@@ -96,9 +97,6 @@ public interface SNode {
 
   void addChild(SContainmentLinkId role, SNode child);
 
-  @Deprecated
-  void addChild(String role, SNode child);
-
   /**
    * Inserts the given node as a child of the current node of the specified role directly behind the anchor node.<br/>
    *
@@ -108,17 +106,6 @@ public interface SNode {
    *               a new child is inserted as a last child
    */
   void insertChildBefore(SContainmentLinkId role, SNode child, @Nullable SNode anchor);
-
-  /**
-   * Inserts the given node as a child of the current node of the specified role directly behind the anchor node.<br/>
-   *
-   * @param role   a role to insert new child into
-   * @param child  a node to insert
-   * @param anchor a new child node will be inserted just before this node. If anchor is not specified,
-   *               a new child is inserted as a last child
-   */
-  @Deprecated
-  void insertChildBefore(String role, SNode child, @Nullable SNode anchor);
 
   /**
    * Removes the child of this node. See "node manipulation" section in class doc
@@ -155,12 +142,6 @@ public interface SNode {
    * Returns role of this node in parent node
    */
   SContainmentLinkId getRoleInParentId();
-
-  /**
-   * Returns role of this node in parent node
-   */
-  @Deprecated
-  String getRoleInParent();
 
   SNode getFirstChild();
 
@@ -252,6 +233,12 @@ public interface SNode {
 
   //------------deprecated, remove after 3.2-----------
 
+  /**
+   * Returns role of this node in parent node
+   */
+  @Deprecated
+  String getRoleInParent();
+
   @Deprecated
   boolean hasProperty(String propertyName);
 
@@ -296,4 +283,10 @@ public interface SNode {
    */
   @Deprecated
   void setReference(String role, SReference reference);
+
+  @Deprecated
+  void insertChildBefore(String role, SNode child, @Nullable SNode anchor);
+
+  @Deprecated
+  void addChild(String role, SNode child);
 }
