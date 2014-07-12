@@ -43,6 +43,9 @@
   <projectService serviceInterface="com.intellij.ui.EditorTextFieldProvider"
                   serviceImplementation="jetbrains.mps.EditorTextFieldProviderImpl"/>
 
+  <projectService serviceInterface="com.intellij.codeHighlighting.TextEditorHighlightingPassRegistrar"
+                  serviceImplementation="com.intellij.codeInsight.daemon.impl.TextEditorHighlightingPassRegistrarImpl"/>
+
   <projectService serviceInterface="com.intellij.psi.PsiFileFactory"
                   serviceImplementation="jetbrains.mps.EmptyPsiFileFactory"/>
 
