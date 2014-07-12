@@ -168,6 +168,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     }
   }
 
+  public void setRoleInParentId(SContainmentLinkId role) {//todo add undo
+    myRoleInParentId = role;
+  }
+
   @Override
   public String getName() {
     return SNodeAccessUtil.getProperty(this, SNodeUtil.property_INamedConcept_name);
@@ -264,115 +268,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     propertyChanged(name, oldValue, propertyValue);
   }
 
-  @Override
-  public final boolean hasProperty(String propertyName) {
-    propertyRead(propertyName);
-
-    firePropertyReadAccessInEditor(propertyName, true);
-    String property_internal = getProperty(propertyName);
-    return !SModelUtil_new.isEmptyPropertyValue(property_internal);
-  }
-
-  @Override
-  public final String getProperty(String propertyName) {
-    propertyRead(propertyName);
-
-    firePropertyReadAccessInEditor(propertyName, false);
-
-    String propertyValue = null;
-    if (myProperties != null) {
-      //this is a trash code which works only when the model is loaded
-      //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
-      if (ourMemberAccessModifier != null) {
-        String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
-        if (conceptName != null) {
-          propertyName = ourMemberAccessModifier.getNewPropertyName(getModel(), conceptName, propertyName);
-        }
-      }
-      int index = getPropertyIndex(propertyName);
-      if (index != -1) {
-        propertyValue = myProperties[index + 1];
-      }
-    } else if (myConceptId != null) {
-      //by id
-      SPropertyId pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(myConceptId, propertyName);
-      if (pid != null) {
-        propertyValue = getProperty(pid);
-      } else {
-        for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(myConceptId))) {
-          pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(c.getId(), propertyName);
-          if (pid != null) {
-            propertyValue = getProperty(pid);
-            break;
-          }
-        }
-      }
-
-    }
-    fireNodePropertyReadAccess(propertyName, propertyValue);
-    return propertyValue;
-  }
-
-  @Override
-  public void setProperty(String propertyName, String propertyValue) {
-    assertCanChange();
-
-    org.jetbrains.mps.openapi.model.SNode concept = getConceptDeclarationNode();
-    if (concept!=null){
-      SConceptId cid = LangUtil.getConceptId(concept);
-      SPropertyId propId = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(cid, propertyName);
-      setProperty(propId, propertyValue);
-    }
-
-    propertyName = InternUtil.intern(propertyName);
-    propertyValue = InternUtil.intern(propertyValue);
-    //this is a trash code which works only when the model is loaded
-    //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
-    if (ourMemberAccessModifier != null) {
-      String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
-      if (conceptName != null) {
-        propertyName = ourMemberAccessModifier.getNewPropertyName(getModel(), conceptName, propertyName);
-      }
-    }
-    int index = getPropertyIndex(propertyName);
-    final String oldValue = index == -1 ? null : myProperties[index + 1];
-    if (EqualUtil.equals(oldValue, propertyValue)) return;
-
-    if (propertyValue == null) {
-      String[] oldProperties = myProperties;
-      int newLength = oldProperties.length - 2;
-      if (newLength == 0) {
-        myProperties = null;
-      } else {
-        myProperties = new String[newLength];
-        System.arraycopy(oldProperties, 0, myProperties, 0, index);
-        System.arraycopy(oldProperties, index + 2, myProperties, index, newLength - index);
-      }
-    } else if (oldValue == null) {
-      String[] oldProperties = myProperties == null ? EMPTY_ARRAY : myProperties;
-      myProperties = new String[oldProperties.length + 2];
-      System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
-      myProperties[myProperties.length - 2] = propertyName;
-      myProperties[myProperties.length - 1] = propertyValue;
-    } else {
-      myProperties[index + 1] = propertyValue;
-    }
-
-    final String finalPropertyValue = propertyValue;
-    final String finalPropertyName = propertyName;
-    performUndoableAction(new Computable<SNodeUndoableAction>() {
-      @Override
-      public SNodeUndoableAction compute() {
-        return new PropertyChangeUndoableAction(SNode.this, finalPropertyName, oldValue, finalPropertyValue);
-      }
-    });
-
-    if (needFireEvent()) {
-      myModel.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
-    }
-    propertyChanged(propertyName, oldValue, propertyValue);
-  }
-
   private void performUndoableAction(Computable<SNodeUndoableAction> computable) {
     if (myModelForUndo != null) {
       myModelForUndo.performUndoableAction(computable);
@@ -400,11 +295,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public void addChild(SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child) {
-    insertChildBefore(role, child, null);
-  }
-
-  @Override
-  public void addChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
     insertChildBefore(role, child, null);
   }
 
@@ -603,122 +493,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
-    assertCanChange();
-
-    //this is a trash code which works only when the model is loaded
-    //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
-    if (ourMemberAccessModifier != null) {
-      String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
-      if (conceptName != null) {
-        role = ourMemberAccessModifier.getNewReferentRole(getModel(), conceptName, role);
-      }
-    }
-
-    if (target == null) {
-      if (myReferences == null) return;
-
-      for (SReference reference : myReferences) {
-        if (!reference.getRole().equals(role)) continue;
-        removeReferenceInternal(reference);
-        referenceChanged(role, reference, null);
-        return;
-      }
-      return;
-    }
-
-    // remove old references
-    SReference toDelete = null;
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (!reference.getRole().equals(role)) continue;
-
-        toDelete = reference;
-        break;
-      }
-    }
-
-    SReference newValue = SReference.create(role, this, target);
-
-    if (toDelete != null) {
-      removeReferenceInternal(toDelete);
-    }
-    addReferenceInternal(newValue);
-    referenceChanged(role, toDelete, newValue);
-  }
-
-  @Override
-  public SNode getReferenceTarget(String role) {
-    referenceRead(role);
-
-    SReference reference = getReference(role);
-    SNode result = reference == null ? null : (SNode) reference.getTargetNode();
-    if (result != null) {
-      fireNodeReferentReadAccess(role, result);
-    }
-    return result;
-  }
-
-  @Override
-  public SReference getReference(String role) {
-    referenceRead(role);
-
-    //this is a trash code which works only when the model is loaded
-    //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
-    if (ourMemberAccessModifier != null) {
-      String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
-      if (conceptName != null) {
-        role = ourMemberAccessModifier.getNewReferentRole(getModel(), conceptName, role);
-      }
-    }
-    fireNodeReadAccess();
-    SReference result = null;
-    int count = 0; // paranoid check
-    for (SReference reference : myReferences) {
-      String refRole = reference.getRole();
-      if (refRole == null) {
-        SReferenceLinkId rid = reference.getRoleId();
-        assert rid != null;
-        refRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
-      }
-      if (refRole.equals(role)) {
-        result = reference;
-        count++;
-      }
-    }
-
-    if (count > 1) {
-      String msg = String.format("ERROR: %d referents for role '%s' in %s", count, role, org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
-      LOG.error(msg, new Throwable(msg), getReference());
-    }
-
-    fireNodeReferentReadAccess(role, null);
-    return result;
-  }
-
-  @Override
-  public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
-    assertCanChange();
-
-    SReference toRemove = null;
-    for (SReference r : myReferences) {
-      if (!r.getRole().equals(role)) continue;
-      toRemove = r;
-      break;
-    }
-
-    if (toRemove != null) {
-      removeReferenceInternal(toRemove);
-    }
-
-    if (reference != null) {
-      assert reference.getSourceNode() == this;
-      addReferenceInternal((SReference) reference);
-    }
-    referenceChanged(role, toRemove, reference);
-  }
-
-  @Override
   public String getPresentation() {
     if (SNodeOperations.isUnknown(this)) {
       String persistentName = getProperty(SNodeUtil.property_INamedConcept_name);
@@ -812,74 +586,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       myModel.fireChildAddedEvent(this, name, schild, ((SNode) anchor));
     }
     nodeAdded(name, child);
-  }
-
-  public void insertChildBefore(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child,
-      @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
-    assertCanChange();
-
-    //this is a trash code which works only when the model is loaded
-    //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
-    if (ourMemberAccessModifier != null) {
-      String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
-      if (conceptName != null) {
-        role = ourMemberAccessModifier.getNewChildRole(getModel(), conceptName, role);
-      }
-    }
-    final SNode schild = (SNode) child;
-    SNode parentOfChild = schild.getParent();
-    if (parentOfChild != null) {
-      throw new RuntimeException(
-          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
-              schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
-              parentOfChild) + "\n" +
-              "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
-      );
-    }
-
-    if (getContainingRoot() == child) {
-      throw new RuntimeException("Trying to create a cyclic tree");
-    }
-
-    if (anchor != null) {
-      if (anchor.getParent() != this) {
-        throw new RuntimeException(
-            "anchor is not a child of this node" + " | " +
-                "this: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this) + " | " +
-                "anchor: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(anchor)
-        );
-      }
-    }
-
-    children_insertBefore(((SNode) anchor), schild);
-    schild.myRoleInParent = role;
-
-    //if child is in unregistered nodes, add this one too to track undo for it
-    UnregisteredNodes un = UnregisteredNodes.instance();
-    if (un.contains(child) && myModelForUndo == null && !un.contains(this)) {
-      startUndoTracking(getContainingRoot(), ((SNode) child).myRepository);
-    }
-
-    if (myModel == null) {
-      if (schild.myModel != null) {
-        schild.clearModel();
-      }
-    } else {
-      schild.registerInModel(myModel);
-    }
-
-    final String finalRole = role;
-    performUndoableAction(new Computable<SNodeUndoableAction>() {
-      @Override
-      public SNodeUndoableAction compute() {
-        return new InsertChildAtUndoableAction(SNode.this, anchor, finalRole, schild);
-      }
-    });
-
-    if (needFireEvent()) {
-      myModel.fireChildAddedEvent(this, role, schild, ((SNode) anchor));
-    }
-    nodeAdded(role, child);
   }
 
   private void startUndoTracking(SNode root, SRepository repo) {
@@ -1010,19 +716,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   @Override
-  public String getRoleInParent() {
-    nodeRead();
-
-    if (getParent() == null) {
-      if (!EqualUtil.equals(getNodeRoleString(this), getUserObject("role"))) {
-        LOG.error(new IllegalStateException());
-      }
-      return null;
-    }
-    return getNodeRoleString(this);
-  }
-
-  @Override
   public org.jetbrains.mps.openapi.model.SNode getFirstChild() {
     assertCanRead();
 
@@ -1108,21 +801,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
         };
       }
     };
-  }
-
-  //todo rewrite using real iterable after 3.0. Set is here only for migration purposes
-  @Override
-  public Set<String> getPropertyNames() {
-    nodeRead();
-
-    fireNodeReadAccess();
-    fireNodeUnclassifiedReadAccess();
-    LinkedHashSet<String> result = new LinkedHashSet<String>();
-    if (myProperties == null) return result;
-    for (int i = 0; i < myProperties.length; i += 2) {
-      result.add(myProperties[i]);
-    }
-    return result;
   }
 
   @Override
@@ -1602,15 +1280,351 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     node.parent = null;
   }
 
-  public void setRoleInParentId(SContainmentLinkId role) {//todo add undo
-    myRoleInParentId = role;
-  }
+  //---------------DEPRECATED---------------
 
+  @Deprecated
   public void setRoleInParent(String newRoleInParent) {//todo add undo
     if (newRoleInParent == null) {
       myRoleInParent = null;
       return;
     }
     myRoleInParent = InternUtil.intern(newRoleInParent);
+  }
+
+  @Deprecated
+  @Override
+  public String getRoleInParent() {
+    nodeRead();
+
+    if (getParent() == null) {
+      if (!EqualUtil.equals(getNodeRoleString(this), getUserObject("role"))) {
+        LOG.error(new IllegalStateException());
+      }
+      return null;
+    }
+    return getNodeRoleString(this);
+  }
+
+  @Deprecated
+  @Override
+  public final boolean hasProperty(String propertyName) {
+    propertyRead(propertyName);
+
+    firePropertyReadAccessInEditor(propertyName, true);
+    String property_internal = getProperty(propertyName);
+    return !SModelUtil_new.isEmptyPropertyValue(property_internal);
+  }
+
+  @Deprecated
+  @Override
+  public final String getProperty(String propertyName) {
+    propertyRead(propertyName);
+
+    firePropertyReadAccessInEditor(propertyName, false);
+
+    String propertyValue = null;
+    if (myProperties != null) {
+      //this is a trash code which works only when the model is loaded
+      //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
+      if (ourMemberAccessModifier != null) {
+        String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
+        if (conceptName != null) {
+          propertyName = ourMemberAccessModifier.getNewPropertyName(getModel(), conceptName, propertyName);
+        }
+      }
+      int index = getPropertyIndex(propertyName);
+      if (index != -1) {
+        propertyValue = myProperties[index + 1];
+      }
+    } else if (myConceptId != null) {
+      //by id
+      SPropertyId pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(myConceptId, propertyName);
+      if (pid != null) {
+        propertyValue = getProperty(pid);
+      } else {
+        for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(myConceptId))) {
+          pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(c.getId(), propertyName);
+          if (pid != null) {
+            propertyValue = getProperty(pid);
+            break;
+          }
+        }
+      }
+
+    }
+    fireNodePropertyReadAccess(propertyName, propertyValue);
+    return propertyValue;
+  }
+
+  @Deprecated
+  @Override
+  public void setProperty(String propertyName, String propertyValue) {
+    assertCanChange();
+
+    org.jetbrains.mps.openapi.model.SNode concept = getConceptDeclarationNode();
+    if (concept != null) {
+      SConceptId cid = LangUtil.getConceptId(concept);
+      SPropertyId propId = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(cid, propertyName);
+      setProperty(propId, propertyValue);
+    }
+
+    propertyName = InternUtil.intern(propertyName);
+    propertyValue = InternUtil.intern(propertyValue);
+    //this is a trash code which works only when the model is loaded
+    //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
+    if (ourMemberAccessModifier != null) {
+      String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
+      if (conceptName != null) {
+        propertyName = ourMemberAccessModifier.getNewPropertyName(getModel(), conceptName, propertyName);
+      }
+    }
+    int index = getPropertyIndex(propertyName);
+    final String oldValue = index == -1 ? null : myProperties[index + 1];
+    if (EqualUtil.equals(oldValue, propertyValue)) return;
+
+    if (propertyValue == null) {
+      String[] oldProperties = myProperties;
+      int newLength = oldProperties.length - 2;
+      if (newLength == 0) {
+        myProperties = null;
+      } else {
+        myProperties = new String[newLength];
+        System.arraycopy(oldProperties, 0, myProperties, 0, index);
+        System.arraycopy(oldProperties, index + 2, myProperties, index, newLength - index);
+      }
+    } else if (oldValue == null) {
+      String[] oldProperties = myProperties == null ? EMPTY_ARRAY : myProperties;
+      myProperties = new String[oldProperties.length + 2];
+      System.arraycopy(oldProperties, 0, myProperties, 0, oldProperties.length);
+      myProperties[myProperties.length - 2] = propertyName;
+      myProperties[myProperties.length - 1] = propertyValue;
+    } else {
+      myProperties[index + 1] = propertyValue;
+    }
+
+    final String finalPropertyValue = propertyValue;
+    final String finalPropertyName = propertyName;
+    performUndoableAction(new Computable<SNodeUndoableAction>() {
+      @Override
+      public SNodeUndoableAction compute() {
+        return new PropertyChangeUndoableAction(SNode.this, finalPropertyName, oldValue, finalPropertyValue);
+      }
+    });
+
+    if (needFireEvent()) {
+      myModel.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
+    }
+    propertyChanged(propertyName, oldValue, propertyValue);
+  }
+
+  //todo rewrite using real iterable after 3.0. Set is here only for migration purposes
+  @Deprecated
+  @Override
+  public Set<String> getPropertyNames() {
+    nodeRead();
+
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
+    LinkedHashSet<String> result = new LinkedHashSet<String>();
+    if (myProperties == null) return result;
+    for (int i = 0; i < myProperties.length; i += 2) {
+      result.add(myProperties[i]);
+    }
+    return result;
+  }
+
+  @Deprecated
+  @Override
+  public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
+    assertCanChange();
+
+    //this is a trash code which works only when the model is loaded
+    //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
+    if (ourMemberAccessModifier != null) {
+      String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
+      if (conceptName != null) {
+        role = ourMemberAccessModifier.getNewReferentRole(getModel(), conceptName, role);
+      }
+    }
+
+    if (target == null) {
+      if (myReferences == null) return;
+
+      for (SReference reference : myReferences) {
+        if (!reference.getRole().equals(role)) continue;
+        removeReferenceInternal(reference);
+        referenceChanged(role, reference, null);
+        return;
+      }
+      return;
+    }
+
+    // remove old references
+    SReference toDelete = null;
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (!reference.getRole().equals(role)) continue;
+
+        toDelete = reference;
+        break;
+      }
+    }
+
+    SReference newValue = SReference.create(role, this, target);
+
+    if (toDelete != null) {
+      removeReferenceInternal(toDelete);
+    }
+    addReferenceInternal(newValue);
+    referenceChanged(role, toDelete, newValue);
+  }
+
+  @Deprecated
+  @Override
+  public SNode getReferenceTarget(String role) {
+    referenceRead(role);
+
+    SReference reference = getReference(role);
+    SNode result = reference == null ? null : (SNode) reference.getTargetNode();
+    if (result != null) {
+      fireNodeReferentReadAccess(role, result);
+    }
+    return result;
+  }
+
+  @Deprecated
+  @Override
+  public SReference getReference(String role) {
+    referenceRead(role);
+
+    //this is a trash code which works only when the model is loaded
+    //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
+    if (ourMemberAccessModifier != null) {
+      String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
+      if (conceptName != null) {
+        role = ourMemberAccessModifier.getNewReferentRole(getModel(), conceptName, role);
+      }
+    }
+    fireNodeReadAccess();
+    SReference result = null;
+    int count = 0; // paranoid check
+    for (SReference reference : myReferences) {
+      String refRole = reference.getRole();
+      if (refRole == null) {
+        SReferenceLinkId rid = reference.getRoleId();
+        assert rid != null;
+        refRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
+      }
+      if (refRole.equals(role)) {
+        result = reference;
+        count++;
+      }
+    }
+
+    if (count > 1) {
+      String msg = String.format("ERROR: %d referents for role '%s' in %s", count, role, org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+      LOG.error(msg, new Throwable(msg), getReference());
+    }
+
+    fireNodeReferentReadAccess(role, null);
+    return result;
+  }
+
+  @Deprecated
+  @Override
+  public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
+    assertCanChange();
+
+    SReference toRemove = null;
+    for (SReference r : myReferences) {
+      if (!r.getRole().equals(role)) continue;
+      toRemove = r;
+      break;
+    }
+
+    if (toRemove != null) {
+      removeReferenceInternal(toRemove);
+    }
+
+    if (reference != null) {
+      assert reference.getSourceNode() == this;
+      addReferenceInternal((SReference) reference);
+    }
+    referenceChanged(role, toRemove, reference);
+  }
+
+  @Deprecated
+  public void insertChildBefore(@NotNull String role, org.jetbrains.mps.openapi.model.SNode child,
+      @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
+    assertCanChange();
+
+    //this is a trash code which works only when the model is loaded
+    //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
+    if (ourMemberAccessModifier != null) {
+      String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
+      if (conceptName != null) {
+        role = ourMemberAccessModifier.getNewChildRole(getModel(), conceptName, role);
+      }
+    }
+    final SNode schild = (SNode) child;
+    SNode parentOfChild = schild.getParent();
+    if (parentOfChild != null) {
+      throw new RuntimeException(
+          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              parentOfChild) + "\n" +
+              "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
+      );
+    }
+
+    if (getContainingRoot() == child) {
+      throw new RuntimeException("Trying to create a cyclic tree");
+    }
+
+    if (anchor != null) {
+      if (anchor.getParent() != this) {
+        throw new RuntimeException(
+            "anchor is not a child of this node" + " | " +
+                "this: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this) + " | " +
+                "anchor: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(anchor)
+        );
+      }
+    }
+
+    children_insertBefore(((SNode) anchor), schild);
+    schild.myRoleInParent = role;
+
+    //if child is in unregistered nodes, add this one too to track undo for it
+    UnregisteredNodes un = UnregisteredNodes.instance();
+    if (un.contains(child) && myModelForUndo == null && !un.contains(this)) {
+      startUndoTracking(getContainingRoot(), ((SNode) child).myRepository);
+    }
+
+    if (myModel == null) {
+      if (schild.myModel != null) {
+        schild.clearModel();
+      }
+    } else {
+      schild.registerInModel(myModel);
+    }
+
+    final String finalRole = role;
+    performUndoableAction(new Computable<SNodeUndoableAction>() {
+      @Override
+      public SNodeUndoableAction compute() {
+        return new InsertChildAtUndoableAction(SNode.this, anchor, finalRole, schild);
+      }
+    });
+
+    if (needFireEvent()) {
+      myModel.fireChildAddedEvent(this, role, schild, ((SNode) anchor));
+    }
+    nodeAdded(role, child);
+  }
+
+  @Deprecated
+  @Override
+  public void addChild(String role, org.jetbrains.mps.openapi.model.SNode child) {
+    insertChildBefore(role, child, null);
   }
 }
