@@ -10,17 +10,6 @@ import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
-import jetbrains.mps.util.annotation.ToRemove;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.util.ProgressMonitor;
-import jetbrains.mps.make.dependencies.MakeSequence;
-import jetbrains.mps.make.dependencies.Cluster;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.make.script.IConfigMonitor;
 import jetbrains.mps.internal.make.runtime.script.MessageFeedbackStrategy;
 import jetbrains.mps.make.script.IFeedback;
@@ -45,62 +34,6 @@ public abstract class AbstractMakeService implements IMakeService {
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller) {
     return make(session, resources, script, controller, new EmptyProgressMonitor());
   }
-
-
-
-  @Deprecated
-  @ToRemove(version = 3.1)
-  protected abstract class AbstractInputProcessor {
-    @Deprecated
-    protected AbstractInputProcessor() {
-    }
-
-    @Deprecated
-    protected final Future<IResult> processRawInput(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller) {
-      // use the one with progress monitor 
-      // TODO remove (deprecated in 3.0) 
-      return processRawInput(inputRes, defaultScript, controller, new EmptyProgressMonitor());
-    }
-
-    protected final Future<IResult> processRawInput(Iterable<? extends IResource> inputRes, IScript defaultScript, IScriptController controller, @NotNull ProgressMonitor monitor) {
-      MakeSequence makeSeq = new MakeSequence();
-      makeSeq.prepareClusters(inputRes);
-      makeSeq.prepareScipts(defaultScript, null);
-      Iterable<Cluster> clInput = makeSeq.getClusters();
-      Iterable<IScript> scripts = Sequence.fromIterable(clInput).select(new ISelector<Cluster, IScript>() {
-        public IScript select(Cluster cluster) {
-          return cluster.getScript();
-        }
-      });
-
-      List<List<IResource>> clusteredInput = ListSequence.fromList(new ArrayList<List<IResource>>());
-      for (Cluster cc : clInput) {
-        List<IResource> l = ListSequence.fromList(new ArrayList<IResource>());
-        ListSequence.fromList(l).addSequence(Sequence.fromIterable(cc.getResources()));
-        ListSequence.fromList(clusteredInput).addElement(l);
-      }
-      return processClusteredInput(clusteredInput, scripts, controller, monitor);
-    }
-
-    protected IScript toScript(ScriptBuilder scriptBuilder) {
-      return scriptBuilder.toScript();
-    }
-
-    @Deprecated
-    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller) {
-      // TODO remove (deprecated in 3.0) 
-      // override the one with progress monitor 
-      return null;
-    }
-
-    protected Future<IResult> processClusteredInput(Iterable<? extends Iterable<IResource>> clustRes, Iterable<IScript> scripts, IScriptController controller, @NotNull ProgressMonitor monitor) {
-      // compatibility 
-      return this.processClusteredInput(clustRes, scripts, controller);
-    }
-  }
-
-
-
 
   /**
    * Reasonable defaults when no IScriptController is supplied by client

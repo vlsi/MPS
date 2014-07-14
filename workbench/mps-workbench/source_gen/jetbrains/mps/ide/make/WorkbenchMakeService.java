@@ -18,8 +18,6 @@ import java.util.Collections;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.ide.platform.watching.ReloadManagerComponent;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import org.jetbrains.annotations.NonNls;
@@ -34,6 +32,7 @@ import jetbrains.mps.make.MakeNotification;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.concurrent.ExecutionException;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.messages.Message;
 import jetbrains.mps.messages.MessageKind;
@@ -57,6 +56,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.application.impl.ApplicationImpl;
 import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.script.IOption;
 import jetbrains.mps.make.script.IQuery;
 import jetbrains.mps.make.script.IProgress;
@@ -71,11 +71,6 @@ public class WorkbenchMakeService extends AbstractMakeService implements IMakeSe
 
   public WorkbenchMakeService(ReloadManagerComponent reloadManager) {
     this.reloadManager = reloadManager;
-  }
-
-  @Deprecated
-  public WorkbenchMakeService(IOperationContext context, boolean cleanMake) {
-    this.currentSessionStickyMark.set(new MakeSession(context, context.getComponent(MessagesViewTool.class).newHandler("Make"), cleanMake), false);
   }
 
   @Override
