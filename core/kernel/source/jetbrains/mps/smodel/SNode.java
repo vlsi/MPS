@@ -22,7 +22,6 @@ import jetbrains.mps.extapi.model.SNodeBase;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
-import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.references.UnregisteredNodes;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractSequentialList;
@@ -36,12 +35,9 @@ import jetbrains.mps.util.containers.EmptyIterable;
 import org.apache.log4j.LogManager;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
-import org.jetbrains.mps.openapi.language.SConceptUtil;
-import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
@@ -939,25 +935,14 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public void setReference(SReferenceLinkId role, org.jetbrains.mps.openapi.model.SReference reference) {
     assertCanChange();
 
-    String name = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(role);
-
-    SReference toRemove = null;
-    for (SReference r : myReferences) {
-      if (!r.getRoleId().equals(role)) continue;
-      toRemove = r;
-      break;
+    SReference toRemove;
+    if (isWorkingById() == Mode.NAME) {
+      toRemove = setReference_byName(rid2name(role), reference);
+    } else {
+      toRemove = setReference_byId(role, reference);
     }
 
-    if (toRemove != null) {
-      removeReferenceInternal(toRemove);
-    }
-
-    if (reference != null) {
-      assert reference.getSourceNode() == this;
-      addReferenceInternal((SReference) reference);
-    }
-
-    referenceChanged(name, toRemove, reference);
+    referenceChanged(role, toRemove, reference);
   }
 
   public void insertChildBefore(@NotNull SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child,
@@ -1278,21 +1263,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public void setReference(String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
     assertCanChange();
 
-    SReference toRemove = null;
-    for (SReference r : myReferences) {
-      if (!r.getRole().equals(role)) continue;
-      toRemove = r;
-      break;
+    SReference toRemove;
+    if (isWorkingById() == Mode.ID) {
+      toRemove = setReference_byId(name2rid(role), reference);
+    } else {
+      toRemove = setReference_byName(role, reference);
     }
 
-    if (toRemove != null) {
-      removeReferenceInternal(toRemove);
-    }
-
-    if (reference != null) {
-      assert reference.getSourceNode() == this;
-      addReferenceInternal((SReference) reference);
-    }
     referenceChanged(role, toRemove, reference);
   }
 
@@ -1633,6 +1610,44 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
     return result;
+  }
+
+  private SReference setReference_byName(String role, org.jetbrains.mps.openapi.model.SReference reference) {
+    SReference toRemove = null;
+    for (SReference r : myReferences) {
+      if (!r.getRole().equals(role)) continue;
+      toRemove = r;
+      break;
+    }
+
+    if (toRemove != null) {
+      removeReferenceInternal(toRemove);
+    }
+
+    if (reference != null) {
+      assert reference.getSourceNode() == this;
+      addReferenceInternal((SReference) reference);
+    }
+    return toRemove;
+  }
+
+  private SReference setReference_byId(SReferenceLinkId role, org.jetbrains.mps.openapi.model.SReference reference) {
+    SReference toRemove = null;
+    for (SReference r : myReferences) {
+      if (!r.getRoleId().equals(role)) continue;
+      toRemove = r;
+      break;
+    }
+
+    if (toRemove != null) {
+      removeReferenceInternal(toRemove);
+    }
+
+    if (reference != null) {
+      assert reference.getSourceNode() == this;
+      addReferenceInternal((SReference) reference);
+    }
+    return toRemove;
   }
 
   private static class ChildrenList_byName extends AbstractSequentialList<SNode> {
