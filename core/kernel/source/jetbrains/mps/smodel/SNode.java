@@ -1835,7 +1835,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SConceptId name2cid(String name) {
-    return ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(pid);
+    return DebugInfoUtil.getConceptId(name);
   }
 
   private String cid2name(SConceptId cid) {
@@ -1843,19 +1843,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SPropertyId name2pid(String name) {
-//      SPropertyId pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(myConceptId, propertyName);
-//      if (pid != null) {
-//        propertyValue = getProperty(pid);
-//      } else {
-//        for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(myConceptId))) {
-//          pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(c.getId(), propertyName);
-//          if (pid != null) {
-//            propertyValue = getProperty(pid);
-//            break;
-//          }
-//        }
-//      }
-
+    return DebugInfoUtil.getPropId(myConceptId,name);
   }
 
   private String pid2name(SPropertyId pid) {
@@ -1863,16 +1851,15 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SReferenceLinkId name2rid(String name) {
-
+    return ((SReferenceLinkId) DebugInfoUtil.getLinkId(myConceptId, name));
   }
 
   private String rid2name(SReferenceLinkId rid) {
     return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
-
   }
 
   private SContainmentLinkId name2lid(String name) {
-
+    return ((SContainmentLinkId) DebugInfoUtil.getLinkId(myConceptId, name));
   }
 
   private String lid2name(SContainmentLinkId lid) {
