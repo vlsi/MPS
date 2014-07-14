@@ -52,6 +52,7 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
     };
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ModelAccess_x1gmbt_a0");
     TextCommentLinePart_ActionMap.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");

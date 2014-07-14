@@ -71,6 +71,7 @@ public class SolutionRef_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new SolutionRef_Editor.ReplaceWith_SolutionRef_cellMenu_ns5ajd_a0b0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_ns5ajd_b0");
     return editorCell;

@@ -15,12 +15,39 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class TryStatement_FinallyBlock_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new TryStatement_FinallyBlock_Actions.TryStatement_FinallyBlock_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new TryStatement_FinallyBlock_Actions.TryStatement_FinallyBlock_Actions_BACKSPACE(node));
   }
 
   public static class TryStatement_FinallyBlock_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public TryStatement_FinallyBlock_Actions_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public String getDescriptionText() {
+      return "remove finally ";
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(node, "catchClause", true)).isNotEmpty()) {
+        SNode tryCatchStatement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
+        SLinkOperations.setTarget(tryCatchStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
+        ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).clear();
+        ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "catchClause", true)));
+        SNodeOperations.deleteNode(node);
+      }
+    }
+  }
+
+  public static class TryStatement_FinallyBlock_Actions_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public TryStatement_FinallyBlock_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

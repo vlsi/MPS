@@ -35,8 +35,10 @@ public class URLCellProvider extends PropertyCellProvider {
     editorCell.setDefaultText(myNoTargetText);
     if (!myReadOnly) {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeletePropertyOrNode(getSNode(), getPropertyName()));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeletePropertyOrNode(getSNode(), getPropertyName()));
     } else {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode()));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode()));
     }
     return editorCell;
   }

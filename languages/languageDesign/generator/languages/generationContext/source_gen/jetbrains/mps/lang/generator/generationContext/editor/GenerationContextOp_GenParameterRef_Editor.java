@@ -92,6 +92,7 @@ public class GenerationContextOp_GenParameterRef_Editor extends DefaultNodeEdito
         }
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_h52dks_a0a0");
       return editorCell;
     }

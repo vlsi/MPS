@@ -15,12 +15,37 @@ import jetbrains.mps.util.NameUtil;
 public class AssignmentExpression_RightArgument_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new AssignmentExpression_RightArgument_Actions.AssignmentExpression_RightArgument_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new AssignmentExpression_RightArgument_Actions.AssignmentExpression_RightArgument_Actions_BACKSPACE(node));
   }
 
   public static class AssignmentExpression_RightArgument_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public AssignmentExpression_RightArgument_Actions_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public String getDescriptionText() {
+      return "Delete right argument";
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "rValue", true)), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression")))) {
+        SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "lValue", true));
+      } else {
+        SLinkOperations.setTarget(node, "rValue", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
+      }
+    }
+  }
+
+  public static class AssignmentExpression_RightArgument_Actions_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public AssignmentExpression_RightArgument_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

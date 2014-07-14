@@ -96,6 +96,12 @@ public class EditorCell_Table extends EditorCell_Collection {
                 myModel.deleteColumn(finalColumn);
               }
             });
+            editorCell.setAction(CellActionType.BACKSPACE, new AbstractCellAction() {
+              @Override
+              public void execute(EditorContext editorContext) {
+                myModel.deleteColumn(finalColumn);
+              }
+            });
             editorCell.setAction(CellActionType.INSERT, new AbstractCellAction() {
               @Override
               public void execute(EditorContext editorContext) {
@@ -218,12 +224,19 @@ public class EditorCell_Table extends EditorCell_Collection {
         myModel.deleteRow(row);
       }
     });
+    rowCell.setAction(CellActionType.BACKSPACE, new AbstractCellAction() {
+      @Override
+      public void execute(EditorContext p0) {
+        myModel.deleteRow(row);
+      }
+    });
     return rowCell;
   }
 
   private EditorCell createRowOutermostCell(final int rowNumber, String cellId, boolean beggining) {
     EditorCell emptyCell = new EditorCell_Empty(getContext(), getSNode());
     emptyCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(getSNode()));
+    emptyCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(getSNode()));
     if (beggining) {
       emptyCell.getStyle().set(StyleAttributes.LAST_POSITION_ALLOWED, false);
     } else {

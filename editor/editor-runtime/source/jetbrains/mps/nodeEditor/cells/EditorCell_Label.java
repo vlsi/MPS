@@ -112,7 +112,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     if (!selected && !getEditor().selectionStackContains(this)) {
       myTextLine.resetSelection();
     }
-    myCaretIsVisible = true;
   }
 
   @Override
@@ -451,9 +450,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
       side = null;
     }
 
-    myCaretIsVisible = true;
-
-
     ModelAccess modelAccess = getContext().getRepository().getModelAccess();
     if (isEditable()) {
       final boolean result[] = new boolean[1];
@@ -532,16 +528,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
 
   @Override
   public boolean executeTextAction(CellActionType type, boolean allowErrors) {
-    // only following actions are supported on text
-    switch (type) {
-      case DELETE:
-      case BACKSPACE:
-        break;
-      default:
-        return false;
-    }
-    // TODO: perform only if action was executed
-    myCaretIsVisible = true;
+    assert type == CellActionType.DELETE || type == CellActionType.BACKSPACE;
     if (!isEditable()) {
       return false;
     }
@@ -591,7 +578,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic implements jetbr
     assert CellActionType.DELETE == actionType || CellActionType.BACKSPACE == actionType;
     if ("".equals(getText()) && getStyle().get(StyleAttributes.AUTO_DELETABLE)) {
       // TODO: just use delete action (do not call getSNode().delete()) in the end if acton was not found or is not applicable
-      CellAction deleteAction = getEditorComponent().getActionHandler().getApplicableCellAction(this, CellActionType.DELETE);
+      CellAction deleteAction = getEditorComponent().getActionHandler().getApplicableCellAction(this, actionType);
       if (deleteAction != null && deleteAction.canExecute(getContext())) {
         deleteAction.execute(getContext());
       }

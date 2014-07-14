@@ -72,6 +72,7 @@ public class CustomMapCreator_component implements ConceptEditorComponent {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new CustomMapCreator_component.ReplaceWith_HashMapCreator_cellMenu_n2wc8f_a0a0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_n2wc8f_a0");
     Style style = new StyleImpl();

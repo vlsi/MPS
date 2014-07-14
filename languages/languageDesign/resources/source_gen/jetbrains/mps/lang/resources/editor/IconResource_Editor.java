@@ -162,6 +162,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
   private EditorCell createEmpty_79r3b6_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_79r3b6_a0a");
     return editorCell;
   }
@@ -209,6 +210,7 @@ public class IconResource_Editor extends DefaultNodeEditor {
   private EditorCell createEmpty_79r3b6_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_79r3b6_a1a");
     return editorCell;
   }

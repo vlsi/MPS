@@ -168,59 +168,59 @@
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/7390982340086718154">
     <file name="TargetConceptChecker.java">
-      <node id="7390982340086718180" at="24,39,25,50" concept="9" />
-      <node id="7390982340086718188" at="27,9,28,71" concept="8" />
-      <node id="7390982340086718206" at="29,104,30,38" concept="3" />
-      <node id="7390982340086718213" at="31,170,32,137" concept="3" />
-      <node id="7390982340086718236" at="35,5,36,0" concept="11" />
-      <node id="7390982340086718243" at="37,93,38,66" concept="8" />
-      <node id="5977602449467191844" at="39,105,40,17" concept="2" />
-      <node id="7390982340086718261" at="41,7,42,62" concept="8" />
-      <node id="5977602449467191885" at="43,27,44,17" concept="2" />
-      <node id="7390982340086718267" at="45,7,46,36" concept="3" />
-      <node id="7390982340086718274" at="47,169,48,125" concept="3" />
-      <node id="7390982340086718156" at="18,0,20,0" concept="1" trace="TargetConceptChecker#()V" />
-      <node id="7390982340086718178" at="24,0,27,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="7390982340086718211" at="30,38,33,9" concept="6" />
-      <node id="5977602449467159420" at="38,66,41,7" concept="6" />
-      <node id="5977602449467191852" at="42,62,45,7" concept="6" />
-      <node id="7390982340086718272" at="46,36,49,7" concept="6" />
-      <node id="7390982340086718194" at="28,71,34,7" concept="6" />
-      <node id="7390982340086718171" at="22,96,35,5" concept="5" />
-      <node id="7390982340086718237" at="36,0,50,5" concept="5" />
-      <node id="7390982340086718161" at="21,0,52,0" concept="7" trace="checkNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/checkers/LanguageErrorsComponent;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
-      <scope id="7390982340086718159" at="18,33,18,33" />
-      <scope id="7390982340086718179" at="24,39,25,50" />
-      <scope id="7390982340086718212" at="31,170,32,137" />
-      <scope id="5977602449467159421" at="39,105,40,17" />
-      <scope id="5977602449467191853" at="43,27,44,17" />
-      <scope id="7390982340086718273" at="47,169,48,125" />
-      <scope id="7390982340086718156" at="18,0,20,0" />
-      <scope id="7390982340086718178" at="24,0,27,0">
+      <node id="7390982340086718180" at="25,39,26,50" concept="9" />
+      <node id="7390982340086718188" at="28,9,29,71" concept="8" />
+      <node id="7390982340086718206" at="30,104,31,38" concept="3" />
+      <node id="7390982340086718213" at="32,170,33,287" concept="3" />
+      <node id="7390982340086718236" at="36,5,37,0" concept="11" />
+      <node id="7390982340086718243" at="38,93,39,66" concept="8" />
+      <node id="5977602449467191844" at="40,105,41,17" concept="2" />
+      <node id="7390982340086718261" at="42,7,43,62" concept="8" />
+      <node id="5977602449467191885" at="44,27,45,17" concept="2" />
+      <node id="7390982340086718267" at="46,7,47,36" concept="3" />
+      <node id="7390982340086718274" at="48,169,49,348" concept="3" />
+      <node id="7390982340086718156" at="19,0,21,0" concept="1" trace="TargetConceptChecker#()V" />
+      <node id="7390982340086718178" at="25,0,28,0" concept="7" trace="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="7390982340086718211" at="31,38,34,9" concept="6" />
+      <node id="5977602449467159420" at="39,66,42,7" concept="6" />
+      <node id="5977602449467191852" at="43,62,46,7" concept="6" />
+      <node id="7390982340086718272" at="47,36,50,7" concept="6" />
+      <node id="7390982340086718194" at="29,71,35,7" concept="6" />
+      <node id="7390982340086718171" at="23,96,36,5" concept="5" />
+      <node id="7390982340086718237" at="37,0,51,5" concept="5" />
+      <node id="7390982340086718161" at="22,0,53,0" concept="7" trace="checkNode#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/checkers/LanguageErrorsComponent;Lorg/jetbrains/mps/openapi/module/SRepository;)V" />
+      <scope id="7390982340086718159" at="19,33,19,33" />
+      <scope id="7390982340086718179" at="25,39,26,50" />
+      <scope id="7390982340086718212" at="32,170,33,287" />
+      <scope id="5977602449467159421" at="40,105,41,17" />
+      <scope id="5977602449467191853" at="44,27,45,17" />
+      <scope id="7390982340086718273" at="48,169,49,348" />
+      <scope id="7390982340086718156" at="19,0,21,0" />
+      <scope id="7390982340086718178" at="25,0,28,0">
         <var name="it" id="7390982340086718178" />
       </scope>
-      <scope id="7390982340086718205" at="29,104,33,9" />
-      <scope id="7390982340086718187" at="27,9,34,7">
+      <scope id="7390982340086718205" at="30,104,34,9" />
+      <scope id="7390982340086718187" at="28,9,35,7">
         <var name="link" id="7390982340086718189" />
       </scope>
-      <scope id="7390982340086718242" at="37,93,49,7">
+      <scope id="7390982340086718242" at="38,93,50,7">
         <var name="link" id="7390982340086718244" />
         <var name="target" id="7390982340086718262" />
       </scope>
-      <scope id="7390982340086718171" at="22,96,35,5">
+      <scope id="7390982340086718171" at="23,96,36,5">
         <var name="child" id="7390982340086718172" />
       </scope>
-      <scope id="7390982340086718237" at="36,0,50,5">
+      <scope id="7390982340086718237" at="37,0,51,5">
         <var name="reference" id="7390982340086718238" />
       </scope>
-      <scope id="7390982340086718170" at="22,96,50,5" />
-      <scope id="7390982340086718161" at="21,0,52,0">
+      <scope id="7390982340086718170" at="23,96,51,5" />
+      <scope id="7390982340086718161" at="22,0,53,0">
         <var name="component" id="7390982340086718166" />
         <var name="node" id="7390982340086718164" />
         <var name="repository" id="3678491607201777519" />
       </scope>
-      <unit id="7390982340086718178" at="23,90,27,5" name="jetbrains.mps.checkers.TargetConceptChecker$1" />
-      <unit id="7390982340086718154" at="17,0,53,0" name="jetbrains.mps.checkers.TargetConceptChecker" />
+      <unit id="7390982340086718178" at="24,90,28,5" name="jetbrains.mps.checkers.TargetConceptChecker$1" />
+      <unit id="7390982340086718154" at="18,0,54,0" name="jetbrains.mps.checkers.TargetConceptChecker" />
     </file>
   </root>
   <root nodeRef="r:ba41e9c6-15ca-4a47-95f2-6a81c2318547(jetbrains.mps.checkers)/7390982340086718297">

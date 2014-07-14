@@ -85,6 +85,7 @@ public class ActionCallGlobalParameter_Editor extends DefaultNodeEditor {
         }
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_ifpjgt_a0a0");
       return editorCell;
     }

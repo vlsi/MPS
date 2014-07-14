@@ -55,6 +55,7 @@ public class ExecuteConfiguration_Function_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_ydtnyj_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);

@@ -10,7 +10,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="OrPattern_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.pattern.behavior.OrPattern_BehaviorDescriptor" />
+      <unit at="8,0,21,0" name="jetbrains.mps.lang.pattern.behavior.OrPattern_BehaviorDescriptor" />
     </file>
     <file name="InsertPosition_BehaviorDescriptor.java">
       <unit at="7,0,16,0" name="jetbrains.mps.lang.pattern.behavior.InsertPosition_BehaviorDescriptor" />
@@ -152,6 +152,23 @@
         <var name="thisNode" id="1262430001741642795" />
       </scope>
       <unit id="1262430001741642795" at="7,0,11,0" name="jetbrains.mps.lang.pattern.behavior.AsPattern_Behavior" />
+    </file>
+  </root>
+  <root nodeRef="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)/2282718273647088392">
+    <file name="OrPattern_Behavior.java">
+      <node id="2282718273647090668" at="11,91,12,29" concept="6" />
+      <node id="2282718273647088392" at="8,0,10,0" concept="7" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="2282718273647088392" at="11,0,14,0" concept="7" trace="virtual_suppress_3393165121846091591#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <scope id="2282718273647088545" at="8,43,8,43" />
+      <scope id="2282718273647088884" at="11,91,12,29" />
+      <scope id="2282718273647088392" at="8,0,10,0">
+        <var name="thisNode" id="2282718273647088392" />
+      </scope>
+      <scope id="2282718273647088392" at="11,0,14,0">
+        <var name="child" id="2282718273647088885" />
+        <var name="thisNode" id="2282718273647088392" />
+      </scope>
+      <unit id="2282718273647088392" at="7,0,15,0" name="jetbrains.mps.lang.pattern.behavior.OrPattern_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)/534621188390792429">

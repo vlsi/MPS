@@ -14,12 +14,41 @@ import jetbrains.mps.editor.runtime.selection.SelectionUtil;
 public class Classifier_StaticKeyWord {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new Classifier_StaticKeyWord.Classifier_StaticKeyWord_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new Classifier_StaticKeyWord.Classifier_StaticKeyWord_BACKSPACE(node));
   }
 
   public static class Classifier_StaticKeyWord_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public Classifier_StaticKeyWord_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SPropertyOperations.set(node, "nonStatic", "" + (true));
+      if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        if (SPropertyOperations.getBoolean(classConcept, "abstractClass")) {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, classConcept, "abstractKeyword", 0);
+        } else if (SPropertyOperations.getBoolean(classConcept, "isFinal")) {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, classConcept, "finalKeyword", 0);
+        } else {
+          SelectionUtil.selectLabelCellAnSetCaret(editorContext, classConcept, "classKeyword", 0);
+        }
+      } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface")) {
+        SelectionUtil.selectLabelCellAnSetCaret(editorContext, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.Interface"), "interfaceKeyword", 0);
+      }
+    }
+  }
+
+  public static class Classifier_StaticKeyWord_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public Classifier_StaticKeyWord_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

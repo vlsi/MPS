@@ -2703,17 +2703,25 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       patternEditor.toggleReplaceMode();
     }
     String pattern = patternEditor.getPattern();
-    boolean trySubstituteNow =
-        !patternEditor.getText().equals(substituteInfo.getOriginalText()) || // user changed text or cell has no text
-            pattern.equals(patternEditor.getText()); // caret at the end
 
-
+    // user changed text within this cell before pressing Ctrl+Space
+    // or cell has no text at this moment
+    boolean originalTextChanged = !patternEditor.getText().equals(substituteInfo.getOriginalText());
+    // caret is at the end of line
+    boolean atTheEndOfLine = pattern.equals(patternEditor.getText());
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
-    if (trySubstituteNow) {
+    if (originalTextChanged || atTheEndOfLine) {
       List<SubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfo, isSmart, pattern);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
-        matchingActions.get(0).substitute(this.getEditorContext(), pattern);
-        return true;
+        // Just one applicable action in the completion menu
+        SubstituteAction theAction = matchingActions.get(0);
+        // Invoking this action immediately if originalText was changed or
+        // the cursor is at the end of line and !theAction.canSubstituteStrictly(pattern)
+        // [means, action will change underlying code]
+        if (originalTextChanged || editorCell.isErrorState() || (atTheEndOfLine && !theAction.canSubstituteStrictly(pattern))) {
+          theAction.substitute(this.getEditorContext(), pattern);
+          return true;
+        }
       }
     }
 

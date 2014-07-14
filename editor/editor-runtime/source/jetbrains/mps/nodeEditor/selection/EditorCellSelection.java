@@ -150,11 +150,7 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
 
   @Override
   public boolean canExecuteAction(CellActionType type) {
-    if (type == CellActionType.BACKSPACE) {
-      type = CellActionType.DELETE;
-    }
-
-    if (type == CellActionType.DELETE && suppressDelete()) {
+    if ((type == CellActionType.DELETE || type == CellActionType.BACKSPACE) && suppressDelete(type)) {
       return false;
     }
 
@@ -166,16 +162,13 @@ public class EditorCellSelection extends AbstractSelection implements SingularSe
   @Override
   public void executeAction(CellActionType type) {
     ((jetbrains.mps.nodeEditor.EditorComponent) getEditorComponent()).assertModelNotDisposed();
-    if (type == CellActionType.BACKSPACE) {
-      type = CellActionType.DELETE;
-    }
     if (canExecuteAction(type)) {
       getEditorComponent().getActionHandler().executeAction(myEditorCell, type);
     }
   }
 
-  protected boolean suppressDelete() {
-    return !myEditorCell.isBig() && myEditorCell.getAction(CellActionType.DELETE) == null;
+  protected boolean suppressDelete(CellActionType type) {
+    return !myEditorCell.isBig() && myEditorCell.getAction(type) == null;
   }
 
   @NotNull

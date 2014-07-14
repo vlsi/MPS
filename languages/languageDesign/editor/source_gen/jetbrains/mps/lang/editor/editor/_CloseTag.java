@@ -43,6 +43,7 @@ public class _CloseTag implements ConceptEditorComponent {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_abi8e8_a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_bordered(style, editorCell);

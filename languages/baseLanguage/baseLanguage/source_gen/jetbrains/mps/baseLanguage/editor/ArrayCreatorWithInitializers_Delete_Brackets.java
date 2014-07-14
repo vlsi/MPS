@@ -14,12 +14,37 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 public class ArrayCreatorWithInitializers_Delete_Brackets {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new ArrayCreatorWithInitializers_Delete_Brackets.ArrayCreatorWithInitializers_Delete_Brackets_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new ArrayCreatorWithInitializers_Delete_Brackets.ArrayCreatorWithInitializers_Delete_Brackets_BACKSPACE(node));
   }
 
   public static class ArrayCreatorWithInitializers_Delete_Brackets_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public ArrayCreatorWithInitializers_Delete_Brackets_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode componentType = SLinkOperations.getTarget(node, "componentType", true);
+      if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+        SNodeOperations.replaceWithAnother(SLinkOperations.getTarget(node, "componentType", true), SLinkOperations.getTarget(SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true));
+      } else {
+        SNode classCreator = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.DefaultClassCreator");
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "componentType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+          SLinkOperations.setTarget(classCreator, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "componentType", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), false);
+        }
+      }
+    }
+  }
+
+  public static class ArrayCreatorWithInitializers_Delete_Brackets_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public ArrayCreatorWithInitializers_Delete_Brackets_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

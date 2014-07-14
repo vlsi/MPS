@@ -59,14 +59,18 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     if (myIsCardinality1) {
       if (ReferenceConceptUtil.getCharacteristicReference(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode()) != null) {
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
+        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node));
       } else {
         editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+        editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       }
     } else {
       if (myIsAggregation) {
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
+        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(node));
       } else {
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(node, myGenuineRole));
+        editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(node, myGenuineRole));
       }
     }
     return editorCell;
@@ -89,6 +93,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
   protected EditorCell createErrorCell(String error, SNode node, EditorContext context) {
     EditorCell_Error errorCell = new EditorCell_Error(context, node, error, true);
     errorCell.setAction(CellActionType.DELETE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));
+    errorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteOnErrorReference(node, myGenuineRole));
     return errorCell;
   }
 }

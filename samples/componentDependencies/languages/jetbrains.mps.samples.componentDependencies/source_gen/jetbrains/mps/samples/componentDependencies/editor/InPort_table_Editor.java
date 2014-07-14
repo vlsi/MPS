@@ -42,6 +42,7 @@ public class InPort_table_Editor extends DefaultNodeEditor {
     };
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ModelAccess_24bp2j_a");
     editorCell.setBig(true);
     editorCell.setDefaultText("");

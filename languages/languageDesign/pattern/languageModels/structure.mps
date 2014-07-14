@@ -184,6 +184,9 @@
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.AttributeInfo" typeId="tpce.2992811758677295509" id="7588821453551758769" nodeInfo="ng">
       <property name="role" nameId="tpce.7588428831955550663" value="" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2282718273647087988" nodeInfo="ig">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.3393165121846091587" resolveInfo="ISuppressErrors" />
+    </node>
   </root>
   <root type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4855904478356877904" nodeInfo="ig">
     <property name="name" nameId="tpck.1169194664001" value="OrPatternClause" />

@@ -243,6 +243,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new Quotation_Editor.Quotation_component_cellMenu_29llnk_a0b0a()}));
     editorCell.setCellId("ReadOnlyModelAccessor_29llnk_b0a");
     return editorCell;

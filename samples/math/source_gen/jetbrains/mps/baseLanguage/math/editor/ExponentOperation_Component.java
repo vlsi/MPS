@@ -93,6 +93,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new ExponentOperation_Component.ExponentialOperation_generic_cellMenu_spngij_a0b0()}));
     editorCell.setCellId("ReadOnlyModelAccessor_spngij_b0");
     Style style = new StyleImpl();
@@ -148,6 +149,7 @@ public class ExponentOperation_Component implements ConceptEditorComponent {
   private EditorCell createEmpty_spngij_c0(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_spngij_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.PUNCTUATION_LEFT, true);
