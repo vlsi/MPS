@@ -8,9 +8,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
 
 public class CellAction_DeleteSmart extends AbstractCellAction {
   private SNode mySource;
@@ -25,21 +24,21 @@ public class CellAction_DeleteSmart extends AbstractCellAction {
 
   @Override
   public boolean canExecute(EditorContext context) {
-    return true;
+    // This action used only for aggregation links 
+    SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLink);
+    if (SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "1", "0..1") && SNodeOperations.getConceptDeclaration(myTarget) == SLinkOperations.getTarget(myLink, "target", false)) {
+      return false;
+    }
+    return SPropertyOperations.hasValue(genuineLinkDeclaration, "metaClass", "aggregation", "reference") && (SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "1", "0..1"));
   }
 
   @Override
   public void execute(EditorContext context) {
     SNode genuineLinkDeclaration = SModelUtil.getGenuineLinkDeclaration(myLink);
-    if (SPropertyOperations.hasValue(genuineLinkDeclaration, "metaClass", "aggregation", "reference")) {
-      SNodeOperations.deleteNode(myTarget);
-      if (SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "1", "0..1")) {
-        SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(SLinkOperations.getTarget(myLink, "target", false), SNodeOperations.getModel(mySource));
-        SLinkOperations.setTarget(mySource, SPropertyOperations.getString(genuineLinkDeclaration, "role"), defaultTarget, true);
-      }
-    } else {
-      // <node> 
-      SNodeAccessUtil.setReferenceTarget(mySource, SPropertyOperations.getString(genuineLinkDeclaration, "role"), null);
+    SNodeOperations.deleteNode(myTarget);
+    if (SPropertyOperations.hasValue(genuineLinkDeclaration, "sourceCardinality", "1", "0..1")) {
+      SNode defaultTarget = SModelUtil_new.instantiateConceptDeclaration(SLinkOperations.getTarget(myLink, "target", false), SNodeOperations.getModel(mySource));
+      SLinkOperations.setTarget(mySource, SPropertyOperations.getString(genuineLinkDeclaration, "role"), defaultTarget, true);
     }
   }
 }
