@@ -26,7 +26,7 @@ import java.io.InputStream;
 import java.net.URL;
 
 /**
- * Facility to mimin try-with-resource clause, to ensure streams are closed once parse is complete
+ * Facility to mimic try-with-resource clause, to ensure streams are closed once parse is complete
  * @author Artem Tikhomirov
  */
 public final class ParseFacility<T> {
@@ -55,7 +55,7 @@ public final class ParseFacility<T> {
 
   public boolean isValidInput() {
     if (myFile != null) {
-      return myFile.exists();
+      return myFile.exists() && myFile.length() > 0;
     }
     if (myUrl != null) {
       return true;
