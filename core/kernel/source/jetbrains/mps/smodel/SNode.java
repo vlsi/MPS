@@ -969,20 +969,13 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(SContainmentLinkId role) {
-    SNode firstChild = firstChild();
-
-    if (role != null) {
-      while (firstChild != null) {
-        SContainmentLinkId childRole = firstChild.getRoleInParentId();
-        if (childRole.equals(role)) break;
-        firstChild = firstChild.treeNext();
-      }
+    if (isWorkingById() == Mode.NAME) {
+      return getChildren_byName(lid2name(role));
+    } else {
+      return getChildren_byId(role);
     }
-
-    if (firstChild == null) return Collections.emptyList();
-
-    return new ChildrenList_byId(firstChild, role);
   }
+
 
   private int getPropertyIndex(SPropertyId id) {
     if (myNewProperties == null) return -1;
@@ -1259,19 +1252,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(String role) {
-    SNode firstChild = firstChild();
-
-    if (role != null) {
-      while (firstChild != null) {
-        String childRole = firstChild.getRoleInParent();
-        if (childRole.equals(role)) break;
-        firstChild = firstChild.treeNext();
-      }
+    if (isWorkingById() == Mode.ID) {
+      return getChildren_byId(name2lid(role));
+    } else {
+      return getChildren_byName(role);
     }
-
-    if (firstChild == null) return Collections.emptyList();
-
-    return new ChildrenList_byName(firstChild, role);
   }
 
   private int getPropertyIndex(String propertyName) {
@@ -1661,6 +1646,38 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     });
     return schild;
+  }
+
+  private List<SNode> getChildren_byName(String role) {
+    SNode firstChild = firstChild();
+
+    if (role != null) {
+      while (firstChild != null) {
+        String childRole = firstChild.getRoleInParent();
+        if (childRole.equals(role)) break;
+        firstChild = firstChild.treeNext();
+      }
+    }
+
+    if (firstChild == null) return Collections.emptyList();
+
+    return new ChildrenList_byName(firstChild, role);
+  }
+
+  private List<SNode> getChildren_byId(SContainmentLinkId role) {
+    SNode firstChild = firstChild();
+
+    if (role != null) {
+      while (firstChild != null) {
+        SContainmentLinkId childRole = firstChild.getRoleInParentId();
+        if (childRole.equals(role)) break;
+        firstChild = firstChild.treeNext();
+      }
+    }
+
+    if (firstChild == null) return Collections.emptyList();
+
+    return new ChildrenList_byId(firstChild, role);
   }
 
   private static class ChildrenList_byName extends AbstractSequentialList<SNode> {
