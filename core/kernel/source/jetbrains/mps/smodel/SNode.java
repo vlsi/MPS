@@ -385,7 +385,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Override
   public List<SNode> getChildren() {
-    return getChildren((SContainmentLinkId)null);
+    return getChildren((SContainmentLinkId) null);
   }
 
   @Override
@@ -845,12 +845,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     propertyValue = InternUtil.intern(propertyValue);
     final Pair<Boolean, String> isSet;
-    if (isWorkingById()==Mode.NAME){
+    if (isWorkingById() == Mode.NAME) {
       isSet = setProperty_byName(pid2name(property), propertyValue);
-    }else {
+    } else {
       isSet = setProperty_byId(property, propertyValue);
     }
-    if(!isSet.o1) return;
+    if (!isSet.o1) return;
 
     final String finalPropertyValue = propertyValue;
     performUndoableAction(new Computable<SNodeUndoableAction>() {
@@ -873,12 +873,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     List<SPropertyId> result = new ArrayList<SPropertyId>(5);
-    if(isWorkingById()==Mode.NAME){
+    if (isWorkingById() == Mode.NAME) {
       if (myProperties == null) return result;
       for (int i = 0; i < myProperties.length; i += 2) {
-        result.add(name2pid((String)myNewProperties[i]));
+        result.add(name2pid((String) myNewProperties[i]));
       }
-    }else {
+    } else {
       if (myNewProperties == null) return result;
       for (int i = 0; i < myNewProperties.length; i += 2) {
         result.add((SPropertyId) myNewProperties[i]);
@@ -891,38 +891,15 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public void setReferenceTarget(SReferenceLinkId role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     assertCanChange();
 
-    String name = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(role);
-
-    if (target == null) {
-      if (myReferences == null) return;
-
-      for (SReference reference : myReferences) {
-        if (!reference.getRoleId().equals(role)) continue;
-        removeReferenceInternal(reference);
-        referenceChanged(name, reference, null);
-        return;
-      }
-      return;
+    Pair<SReference, SReference> res;
+    if (isWorkingById()==Mode.NAME){
+      res = setReferenceTarget_byName(rid2name(role), target);
+    }else {
+      res = setReferenceTarget_byId(role, target);
     }
+    if (res == null) return;
 
-    // remove old references
-    SReference toDelete = null;
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (!reference.getRoleId().equals(role)) continue;
-
-        toDelete = reference;
-        break;
-      }
-    }
-
-    SReference newValue = SReference.create(role, this, target);
-
-    if (toDelete != null) {
-      removeReferenceInternal(toDelete);
-    }
-    addReferenceInternal(newValue);
-    referenceChanged(name, toDelete, newValue);
+    referenceChanged(role, res.o1, res.o2);
   }
 
   @Override
@@ -1206,12 +1183,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     String pname = ourMemberAccessModifier != null ? ourMemberAccessModifier.getNewPropertyName(getModel(), myConceptFqName, propertyName) :
         InternUtil.intern(propertyName);
     final Pair<Boolean, String> isSet;
-    if (isWorkingById()==Mode.ID){
+    if (isWorkingById() == Mode.ID) {
       isSet = setProperty_byId(name2pid(propertyName), propertyValue);
-    }else {
+    } else {
       isSet = setProperty_byName(propertyName, propertyValue);
     }
-    if(!isSet.o1) return;
+    if (!isSet.o1) return;
 
     final String finalPropertyValue = propertyValue;
     final String finalPropertyName = pname;
@@ -1236,12 +1213,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     LinkedHashSet<String> result = new LinkedHashSet<String>();
-    if (isWorkingById()==Mode.ID){
+    if (isWorkingById() == Mode.ID) {
       if (myNewProperties == null) return result;
       for (int i = 0; i < myNewProperties.length; i += 2) {
         result.add(pid2name(((SPropertyId) myNewProperties[i])));
       }
-    }else {
+    } else {
       if (myProperties == null) return result;
       for (int i = 0; i < myProperties.length; i += 2) {
         result.add(myProperties[i]);
@@ -1255,45 +1232,18 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     assertCanChange();
 
-    //this is a trash code which works only when the model is loaded
-    //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
-    if (ourMemberAccessModifier != null) {
-      String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
-      if (conceptName != null) {
-        role = ourMemberAccessModifier.getNewReferentRole(getModel(), conceptName, role);
-      }
+    String correctedRole =
+        ourMemberAccessModifier != null ? ourMemberAccessModifier.getNewReferentRole(getModel(), myConceptFqName, role) : InternUtil.intern(role);
+
+    Pair<SReference, SReference> res;
+    if (isWorkingById()==Mode.ID){
+      res = setReferenceTarget_byId(name2rid(correctedRole), target);
+    }else {
+      res = setReferenceTarget_byName(correctedRole, target);
     }
+    if (res == null) return;
 
-    if (target == null) {
-      if (myReferences == null) return;
-
-      for (SReference reference : myReferences) {
-        if (!reference.getRole().equals(role)) continue;
-        removeReferenceInternal(reference);
-        referenceChanged(role, reference, null);
-        return;
-      }
-      return;
-    }
-
-    // remove old references
-    SReference toDelete = null;
-    if (myReferences != null) {
-      for (SReference reference : myReferences) {
-        if (!reference.getRole().equals(role)) continue;
-
-        toDelete = reference;
-        break;
-      }
-    }
-
-    SReference newValue = SReference.create(role, this, target);
-
-    if (toDelete != null) {
-      removeReferenceInternal(toDelete);
-    }
-    addReferenceInternal(newValue);
-    referenceChanged(role, toDelete, newValue);
+    referenceChanged(role, res.o1, res.o2);
   }
 
   @Deprecated
@@ -1587,12 +1537,12 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return propertyValue;
   }
 
-  public Pair<Boolean,String> setProperty_byName(String pname, String propertyValue) {
+  public Pair<Boolean, String> setProperty_byName(String pname, String propertyValue) {
     //this is a trash code which works only when the model is loaded
     //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
     int index = getPropertyIndex(pname);
     final String oldValue = index == -1 ? null : myProperties[index + 1];
-    if (EqualUtil.equals(oldValue, propertyValue)) return new Pair<Boolean, String>(false,null);
+    if (EqualUtil.equals(oldValue, propertyValue)) return new Pair<Boolean, String>(false, null);
 
     if (propertyValue == null) {
       String[] oldProperties = myProperties;
@@ -1613,10 +1563,10 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     } else {
       myProperties[index + 1] = propertyValue;
     }
-    return new Pair<Boolean, String>(true,oldValue);
+    return new Pair<Boolean, String>(true, oldValue);
   }
 
-  public Pair<Boolean,String> setProperty_byId(SPropertyId pname, String propertyValue) {
+  public Pair<Boolean, String> setProperty_byId(SPropertyId pname, String propertyValue) {
     int index = getPropertyIndex(pname);
     final String oldValue = index == -1 ? null : (String) myNewProperties[index + 1];
     if (EqualUtil.equals(oldValue, propertyValue)) return new Pair<Boolean, String>(false, null);
@@ -1641,6 +1591,50 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       myNewProperties[index + 1] = propertyValue;
     }
     return new Pair<Boolean, String>(true, oldValue);
+  }
+
+  public Pair<SReference, SReference> setReferenceTarget_byName(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
+    SReference toDelete = null;
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (!reference.getRole().equals(role)) continue;
+        toDelete = reference;
+        break;
+      }
+    }
+    if (toDelete == null && target == null) return null;
+
+    if (toDelete != null) {
+      removeReferenceInternal(toDelete);
+    }
+    SReference newValue = null;
+    if (target != null) {
+      newValue = SReference.create(role, this, target);
+      addReferenceInternal(newValue);
+    }
+    return new Pair<SReference, SReference>(toDelete, newValue);
+  }
+
+  public Pair<SReference, SReference> setReferenceTarget_byId(SReferenceLinkId role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
+    SReference toDelete = null;
+    if (myReferences != null) {
+      for (SReference reference : myReferences) {
+        if (!reference.getRoleId().equals(role)) continue;
+        toDelete = reference;
+        break;
+      }
+    }
+    if (toDelete == null && target == null) return null;
+
+    if (toDelete != null) {
+      removeReferenceInternal(toDelete);
+    }
+    SReference newValue = null;
+    if (target != null) {
+      newValue = SReference.create(role, this, target);
+      addReferenceInternal(newValue);
+    }
+    return new Pair<SReference, SReference>(toDelete, newValue);
   }
 
   private static class ChildrenList_byName extends AbstractSequentialList<SNode> {
