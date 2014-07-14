@@ -91,14 +91,14 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     // 1) without read action 2) we must not use deployed version of the concept
     // ?? may be we need a separate getConceptQualifiedName() method here
     if (RuntimeFlags.isMergeDriverMode() || /* for indexing */ !ModelAccess.instance().canRead()) {
-      if (isWorkingById() == Mode.NAME) {
+      if (workingMode() == Mode.NAME) {
         return new SConceptAdapter(myConceptFqName);
       } else {
         return new SConceptAdapter(myConceptId);
       }
     }
 
-    if (isWorkingById() == Mode.NAME) {
+    if (workingMode() == Mode.NAME) {
       return SConceptRepository.getInstance().getInstanceConcept(myConceptFqName);
     } else {
       return SConceptRepository.getInstance().getInstanceConcept(myConceptId);
@@ -795,7 +795,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   public void setRoleInParentId(SContainmentLinkId newRole) {//todo add undo
-    if (isWorkingById() == Mode.NAME) {
+    if (workingMode() == Mode.NAME) {
       setRoleInParent_byId(newRole);
     } else {
       setRoleInParent_byName(lid2name(newRole));
@@ -805,7 +805,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public SContainmentLinkId getRoleInParentId() {
     nodeRead();
-    if (isWorkingById() == Mode.NAME) {
+    if (workingMode() == Mode.NAME) {
       return name2lid(getRoleInParent_byName());
     } else {
       return getRoleInParentId_byId();
@@ -826,7 +826,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     firePropertyReadAccessInEditor(property, false);
 
     String propertyValue;
-    if (isWorkingById() == Mode.NAME) {
+    if (workingMode() == Mode.NAME) {
       propertyValue = getProperty_byName(pid2name(property));
     } else {
       propertyValue = getProperty_byId(property);
@@ -841,7 +841,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     propertyValue = InternUtil.intern(propertyValue);
     final Pair<Boolean, String> isSet;
-    if (isWorkingById() == Mode.NAME) {
+    if (workingMode() == Mode.NAME) {
       isSet = setProperty_byName(pid2name(property), propertyValue);
     } else {
       isSet = setProperty_byId(property, propertyValue);
@@ -869,7 +869,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     List<SPropertyId> result = new ArrayList<SPropertyId>(5);
-    if (isWorkingById() == Mode.NAME) {
+    if (workingMode() == Mode.NAME) {
       if (myProperties == null) return result;
       for (int i = 0; i < myProperties.length; i += 2) {
         result.add(name2pid((String) myNewProperties[i]));
@@ -888,7 +888,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanChange();
 
     Pair<SReference, SReference> res;
-    if (isWorkingById() == Mode.NAME) {
+    if (workingMode() == Mode.NAME) {
       res = setReferenceTarget_byName(rid2name(role), target);
     } else {
       res = setReferenceTarget_byId(role, target);
@@ -920,7 +920,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     SReference result;
 
-    if (isWorkingById() == Mode.NAME) {
+    if (workingMode() == Mode.NAME) {
       result = getReference_byName(rid2name(role));
     } else {
       result = getReference_byId(role);
@@ -935,7 +935,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanChange();
 
     SReference toRemove;
-    if (isWorkingById() == Mode.NAME) {
+    if (workingMode() == Mode.NAME) {
       toRemove = setReference_byName(rid2name(role), reference);
     } else {
       toRemove = setReference_byId(role, reference);
@@ -949,7 +949,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanChange();
 
     SNode schild;
-    if (isWorkingById() == Mode.NAME) {
+    if (workingMode() == Mode.NAME) {
       schild = insertChildBefore_byName(lid2name(role), child, anchor);
     } else {
       schild = insertChildBefore_byId(role, child, anchor);
@@ -969,7 +969,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(SContainmentLinkId role) {
-    if (isWorkingById() == Mode.NAME) {
+    if (workingMode() == Mode.NAME) {
       return getChildren_byName(lid2name(role));
     } else {
       return getChildren_byId(role);
@@ -978,7 +978,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
 
   private int getPropertyIndex(SPropertyId id) {
-    if (isWorkingById() == Mode.NAME) {
+    if (workingMode() == Mode.NAME) {
       return getPropertyIndex_byName(pid2name(id));
     } else {
       return getPropertyIndex_byId(id);
@@ -1028,7 +1028,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   @Deprecated
   public void setRoleInParent(String newRole) {
-    if (isWorkingById() == Mode.ID) {
+    if (workingMode() == Mode.ID) {
       setRoleInParent_byId(name2lid(newRole));
     } else {
       setRoleInParent_byName(newRole);
@@ -1039,7 +1039,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   public String getRoleInParent() {
     nodeRead();
-    if (isWorkingById() == Mode.ID) {
+    if (workingMode() == Mode.ID) {
       return lid2name(getRoleInParentId_byId());
     } else {
       return getRoleInParent_byName();
@@ -1061,7 +1061,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     propertyRead(propertyName);
     firePropertyReadAccessInEditor(propertyName, false);
     String propertyValue;
-    if (isWorkingById() == Mode.ID) {
+    if (workingMode() == Mode.ID) {
       propertyValue = getProperty_byId(name2pid(propertyName));
     } else {
       propertyValue = getProperty_byName(propertyName);
@@ -1079,7 +1079,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     String pname = ourMemberAccessModifier != null ? ourMemberAccessModifier.getNewPropertyName(getModel(), myConceptFqName, propertyName) :
         InternUtil.intern(propertyName);
     final Pair<Boolean, String> isSet;
-    if (isWorkingById() == Mode.ID) {
+    if (workingMode() == Mode.ID) {
       isSet = setProperty_byId(name2pid(propertyName), propertyValue);
     } else {
       isSet = setProperty_byName(propertyName, propertyValue);
@@ -1109,7 +1109,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
     LinkedHashSet<String> result = new LinkedHashSet<String>();
-    if (isWorkingById() == Mode.ID) {
+    if (workingMode() == Mode.ID) {
       if (myNewProperties == null) return result;
       for (int i = 0; i < myNewProperties.length; i += 2) {
         result.add(pid2name(((SPropertyId) myNewProperties[i])));
@@ -1130,7 +1130,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
 
     Pair<SReference, SReference> res;
-    if (isWorkingById() == Mode.ID) {
+    if (workingMode() == Mode.ID) {
       res = setReferenceTarget_byId(name2rid(role), target);
     } else {
       String correctedRole =
@@ -1164,7 +1164,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     fireNodeReadAccess();
     SReference result;
 
-    if (isWorkingById() == Mode.ID) {
+    if (workingMode() == Mode.ID) {
       result = getReference_byId(name2rid(role));
     } else {
       if (ourMemberAccessModifier != null) {
@@ -1183,7 +1183,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanChange();
 
     SReference toRemove;
-    if (isWorkingById() == Mode.ID) {
+    if (workingMode() == Mode.ID) {
       toRemove = setReference_byId(name2rid(role), reference);
     } else {
       toRemove = setReference_byName(role, reference);
@@ -1198,7 +1198,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanChange();
 
     SNode schild;
-    if (isWorkingById() == Mode.ID) {
+    if (workingMode() == Mode.ID) {
       schild = insertChildBefore_byId(name2lid(role), child, anchor);
     } else {
       if (ourMemberAccessModifier != null) {
@@ -1223,7 +1223,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Override
   @NotNull
   public List<SNode> getChildren(String role) {
-    if (isWorkingById() == Mode.ID) {
+    if (workingMode() == Mode.ID) {
       return getChildren_byId(name2lid(role));
     } else {
       return getChildren_byName(role);
@@ -1231,7 +1231,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private int getPropertyIndex(String propertyName) {
-    if (isWorkingById() == Mode.ID) {
+    if (workingMode() == Mode.ID) {
       return getPropertyIndex_byId(name2pid(propertyName));
     } else {
       return getPropertyIndex_byName(propertyName);
@@ -1829,7 +1829,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private enum Mode {ID, NAME, UNKNOWN}
 
-  private Mode isWorkingById() {
+  private Mode workingMode() {
     if (!(myModel instanceof DefaultSModel)) return Mode.UNKNOWN;
     return ((DefaultSModel) myModel).getSModelHeader().getVersion() > 8 ? Mode.ID : Mode.NAME;
   }
