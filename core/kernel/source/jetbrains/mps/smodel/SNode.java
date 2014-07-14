@@ -986,65 +986,36 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private void referenceRead(SReferenceLinkId role) {
-    assertCanRead();
-//    SModelBase md = getRealModel();
-//    if (md == null) return;
-//    md.fireReferenceRead(this, role);
+    referenceRead(rid2name(role));
   }
 
   private void propertyRead(SPropertyId property) {
-    assertCanRead();
-//    SModelBase md = getRealModel();
-//    if (md == null) return;
-//    md.firePropertyRead(this, propertyName);
+    propertyRead(pid2name(property));
   }
 
   private void referenceChanged(SReferenceLinkId role, org.jetbrains.mps.openapi.model.SReference reference,
       org.jetbrains.mps.openapi.model.SReference newValue) {
-    if (myModel != null && myModel.isUpdateMode()) return;
-//    SModelBase md = getRealModel();
-//    if (md == null) return;
-//    EditableSModelBase emd = (EditableSModelBase) md;
-//    emd.fireReferenceChanged(this, role, reference, newValue);
+    referenceChanged(rid2name(role), reference, newValue);
   }
 
   private void propertyChanged(SPropertyId propertyName, String oldValue, String newValue) {
-    if (myModel != null && myModel.isUpdateMode()) return;
-//    SModelBase md = getRealModel();
-//    if (md == null) return;
-//    EditableSModelBase emd = (EditableSModelBase) md;
-//    emd.firePropertyChanged(this, propertyName, oldValue, newValue);
+    propertyChanged(pid2name(propertyName), oldValue, newValue);
   }
 
   private void nodeAdded(SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child) {
-    if (myModel != null && myModel.isUpdateMode()) return;
-//    SModelBase md = getRealModel();
-//    if (md == null) return;
-//    EditableSModelBase emd = (EditableSModelBase) md;
-//    emd.fireNodeAdded(this, role, child);
-  }
-
-  private void nodeRemoved(org.jetbrains.mps.openapi.model.SNode child, SContainmentLinkId role) {
-    if (myModel != null && myModel.isUpdateMode()) return;
-//    SModelBase md = getRealModel();
-//    if (md == null) return;
-//    EditableSModelBase emd = (EditableSModelBase) md;
-//    emd.fireNodeRemoved(this, role, child);
+    nodeAdded(lid2name(role), child);
   }
 
   private void fireNodePropertyReadAccess(SPropertyId propertyName, String propertyValue) {
-    if (myModel == null || !myModel.canFireReadEvent()) return;
-    //NodeReadEventsCaster.fireNodePropertyReadAccess(this, propertyName, propertyValue);
+    fireNodePropertyReadAccess(pid2name(propertyName), propertyValue);
   }
 
   private void fireNodeReferentReadAccess(SReferenceLinkId referentRole, SNode referent) {
-    if (myModel == null || !myModel.canFireReadEvent()) return;
-    // NodeReadEventsCaster.fireNodeReferentReadAccess(this, referentRole, referent);
+    fireNodeReferentReadAccess(rid2name(referentRole), referent);
   }
 
   private void firePropertyReadAccessInEditor(SPropertyId propertyName, boolean propertyExistenceCheck) {
-    if (myModel == null || !myModel.canFireReadEvent()) return;
-    //NodeReadAccessCasterInEditor.firePropertyReadAccessed(this, propertyName, propertyExistenceCheck);
+    firePropertyReadAccessInEditor(pid2name(propertyName), propertyExistenceCheck);
   }
 
   //-------------old methods working by name---------------
