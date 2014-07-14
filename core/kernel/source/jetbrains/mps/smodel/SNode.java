@@ -930,7 +930,6 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return result;
   }
 
-
   @Override
   public void setReference(SReferenceLinkId role, org.jetbrains.mps.openapi.model.SReference reference) {
     assertCanChange();
@@ -945,65 +944,21 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     referenceChanged(role, toRemove, reference);
   }
 
-  public void insertChildBefore(@NotNull SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child,
+  public void insertChildBefore(@NotNull final SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child,
       @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     assertCanChange();
 
-    final String name = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(role);
-
-    final SNode schild = (SNode) child;
-    SNode parentOfChild = schild.getParent();
-    if (parentOfChild != null) {
-      throw new RuntimeException(
-          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
-              schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
-              parentOfChild) + "\n" +
-              "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
-      );
-    }
-
-    if (getContainingRoot() == child) {
-      throw new RuntimeException("Trying to create a cyclic tree");
-    }
-
-    if (anchor != null) {
-      if (anchor.getParent() != this) {
-        throw new RuntimeException(
-            "anchor is not a child of this node" + " | " +
-                "this: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this) + " | " +
-                "anchor: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(anchor)
-        );
-      }
-    }
-
-    children_insertBefore(((SNode) anchor), schild);
-    schild.myRoleInParentId = role;
-
-    //if child is in unregistered nodes, add this one too to track undo for it
-    UnregisteredNodes un = UnregisteredNodes.instance();
-    if (un.contains(child) && myModelForUndo == null && !un.contains(this)) {
-      startUndoTracking(getContainingRoot(), ((SNode) child).myRepository);
-    }
-
-    if (myModel == null) {
-      if (schild.myModel != null) {
-        schild.clearModel();
-      }
+    SNode schild;
+    if (isWorkingById() == Mode.NAME) {
+      schild = insertChildBefore_byName(lid2name(role), child, anchor);
     } else {
-      schild.registerInModel(myModel);
+      schild = insertChildBefore_byId(role, child, anchor);
     }
-
-    performUndoableAction(new Computable<SNodeUndoableAction>() {
-      @Override
-      public SNodeUndoableAction compute() {
-        return new InsertChildAtUndoableAction(SNode.this, anchor, name, schild);
-      }
-    });
 
     if (needFireEvent()) {
-      myModel.fireChildAddedEvent(this, name, schild, ((SNode) anchor));
+      myModel.fireChildAddedEvent(this, lid2name(role), schild, ((SNode) anchor));
     }
-    nodeAdded(name, child);
+    nodeAdded(role, child);
   }
 
   @Override
@@ -1278,63 +1233,15 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       @Nullable final org.jetbrains.mps.openapi.model.SNode anchor) {
     assertCanChange();
 
-    //this is a trash code which works only when the model is loaded
-    //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
-    if (ourMemberAccessModifier != null) {
-      String conceptName = myConceptFqName == null ? getConceptNameFromDebugInfo() : myConceptFqName;
-      if (conceptName != null) {
-        role = ourMemberAccessModifier.getNewChildRole(getModel(), conceptName, role);
-      }
-    }
-    final SNode schild = (SNode) child;
-    SNode parentOfChild = schild.getParent();
-    if (parentOfChild != null) {
-      throw new RuntimeException(
-          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
-              schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
-              parentOfChild) + "\n" +
-              "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
-      );
-    }
-
-    if (getContainingRoot() == child) {
-      throw new RuntimeException("Trying to create a cyclic tree");
-    }
-
-    if (anchor != null) {
-      if (anchor.getParent() != this) {
-        throw new RuntimeException(
-            "anchor is not a child of this node" + " | " +
-                "this: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this) + " | " +
-                "anchor: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(anchor)
-        );
-      }
-    }
-
-    children_insertBefore(((SNode) anchor), schild);
-    schild.myRoleInParent = role;
-
-    //if child is in unregistered nodes, add this one too to track undo for it
-    UnregisteredNodes un = UnregisteredNodes.instance();
-    if (un.contains(child) && myModelForUndo == null && !un.contains(this)) {
-      startUndoTracking(getContainingRoot(), ((SNode) child).myRepository);
-    }
-
-    if (myModel == null) {
-      if (schild.myModel != null) {
-        schild.clearModel();
-      }
+    SNode schild;
+    if (isWorkingById() == Mode.ID) {
+      schild = insertChildBefore_byId(name2lid(role), child, anchor);
     } else {
-      schild.registerInModel(myModel);
-    }
-
-    final String finalRole = role;
-    performUndoableAction(new Computable<SNodeUndoableAction>() {
-      @Override
-      public SNodeUndoableAction compute() {
-        return new InsertChildAtUndoableAction(SNode.this, anchor, finalRole, schild);
+      if (ourMemberAccessModifier != null) {
+        role = ourMemberAccessModifier.getNewChildRole(getModel(), myConceptFqName, role);
       }
-    });
+      schild = insertChildBefore_byName(role, child, anchor);
+    }
 
     if (needFireEvent()) {
       myModel.fireChildAddedEvent(this, role, schild, ((SNode) anchor));
@@ -1648,6 +1555,112 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       addReferenceInternal((SReference) reference);
     }
     return toRemove;
+  }
+
+  private SNode insertChildBefore_byName(final String role, org.jetbrains.mps.openapi.model.SNode child,
+      final org.jetbrains.mps.openapi.model.SNode anchor) {
+    final SNode schild = (SNode) child;
+    SNode parentOfChild = schild.getParent();
+    if (parentOfChild != null) {
+      throw new RuntimeException(
+          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              parentOfChild) + "\n" +
+              "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
+      );
+    }
+
+    if (getContainingRoot() == child) {
+      throw new RuntimeException("Trying to create a cyclic tree");
+    }
+
+    if (anchor != null) {
+      if (anchor.getParent() != this) {
+        throw new RuntimeException(
+            "anchor is not a child of this node" + " | " +
+                "this: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this) + " | " +
+                "anchor: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(anchor)
+        );
+      }
+    }
+
+    schild.myRoleInParent = role;
+    children_insertBefore(((SNode) anchor), schild);
+
+    //if child is in unregistered nodes, add this one too to track undo for it
+    UnregisteredNodes un = UnregisteredNodes.instance();
+    if (un.contains(child) && myModelForUndo == null && !un.contains(this)) {
+      startUndoTracking(getContainingRoot(), ((SNode) child).myRepository);
+    }
+
+    if (myModel == null) {
+      if (schild.myModel != null) {
+        schild.clearModel();
+      }
+    } else {
+      schild.registerInModel(myModel);
+    }
+
+    performUndoableAction(new Computable<SNodeUndoableAction>() {
+      @Override
+      public SNodeUndoableAction compute() {
+        return new InsertChildAtUndoableAction(SNode.this, anchor, role, schild);
+      }
+    });
+    return schild;
+  }
+
+  private SNode insertChildBefore_byId(final SContainmentLinkId role, org.jetbrains.mps.openapi.model.SNode child,
+      final org.jetbrains.mps.openapi.model.SNode anchor) {
+    final SNode schild = (SNode) child;
+    SNode parentOfChild = schild.getParent();
+    if (parentOfChild != null) {
+      throw new RuntimeException(
+          org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(
+              parentOfChild) + "\n" +
+              "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this)
+      );
+    }
+
+    if (getContainingRoot() == child) {
+      throw new RuntimeException("Trying to create a cyclic tree");
+    }
+
+    if (anchor != null) {
+      if (anchor.getParent() != this) {
+        throw new RuntimeException(
+            "anchor is not a child of this node" + " | " +
+                "this: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this) + " | " +
+                "anchor: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(anchor)
+        );
+      }
+    }
+
+    schild.myRoleInParentId = role;
+    children_insertBefore(((SNode) anchor), schild);
+
+    //if child is in unregistered nodes, add this one too to track undo for it
+    UnregisteredNodes un = UnregisteredNodes.instance();
+    if (un.contains(child) && myModelForUndo == null && !un.contains(this)) {
+      startUndoTracking(getContainingRoot(), ((SNode) child).myRepository);
+    }
+
+    if (myModel == null) {
+      if (schild.myModel != null) {
+        schild.clearModel();
+      }
+    } else {
+      schild.registerInModel(myModel);
+    }
+
+    performUndoableAction(new Computable<SNodeUndoableAction>() {
+      @Override
+      public SNodeUndoableAction compute() {
+        return new InsertChildAtUndoableAction(SNode.this, anchor, lid2name(role), schild);
+      }
+    });
+    return schild;
   }
 
   private static class ChildrenList_byName extends AbstractSequentialList<SNode> {
