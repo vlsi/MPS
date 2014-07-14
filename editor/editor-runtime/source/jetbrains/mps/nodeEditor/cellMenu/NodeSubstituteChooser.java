@@ -248,68 +248,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     }
 
     try {
-      Collections.sort(matchingActions, new Comparator<SubstituteAction>() {
-        private Map<SubstituteAction, Integer> mySortPriorities = new HashMap<SubstituteAction, Integer>();
-        private Map<SubstituteAction, String> myVisibleMatchingTexts = new HashMap<SubstituteAction, String>();
-
-        private int getSortPriority(SubstituteAction a) {
-          Integer result = mySortPriorities.get(a);
-          if (result == null) {
-            if (a.getParameterObject() instanceof SNode) {
-              result = NodePresentationUtil.getSortPriority(a.getSourceNode(), (SNode) a.getParameterObject());
-            } else {
-              result = 0;
-            }
-            mySortPriorities.put(a, result);
-          }
-          return result;
-        }
-
-        private String getVisibleMatchingText(SubstituteAction a) {
-          String result = myVisibleMatchingTexts.get(a);
-          if (result == null) {
-            result = a.getVisibleMatchingText(pattern);
-            myVisibleMatchingTexts.put(a, result);
-          }
-          return result;
-        }
-
-        @Override
-        public int compare(SubstituteAction i1, SubstituteAction i2) {
-          boolean strictly1 = i1.canSubstituteStrictly(pattern);
-          boolean strictly2 = i2.canSubstituteStrictly(pattern);
-          if (strictly1 != strictly2) {
-            return strictly1 ? -1 : 1;
-          }
-
-          boolean startsWith1 = i1.getVisibleMatchingText(pattern).startsWith(pattern);
-          boolean startsWith2 = i2.getVisibleMatchingText(pattern).startsWith(pattern);
-          if (startsWith1 != startsWith2) {
-            return startsWith1 ? -1 : 1;
-          }
-          int p1 = getSortPriority(i1);
-          int p2 = getSortPriority(i2);
-          if (p1 != p2) {
-            return p1 - p2;
-          }
-
-          String s1 = getVisibleMatchingText(i1);
-          String s2 = getVisibleMatchingText(i2);
-
-          boolean null_s1 = (s1 == null || s1.length() == 0);
-          boolean null_s2 = (s2 == null || s2.length() == 0);
-          if (null_s1 && null_s2) return 0;
-          if (null_s1) return 1;
-          if (null_s2) return -1;
-
-          int compareResult = SubstituteActionUtil.compare(i1, i2, pattern);
-          if (compareResult != 0) {
-            return compareResult;
-          }
-
-          return s1.compareTo(s2);
-        }
-      });
+      Collections.sort(matchingActions, SubstituteActionUtil.createComparator(pattern));
 
       if (myIsSmart /*&& false*/) {
         sortSmartActions(matchingActions);

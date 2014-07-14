@@ -16,11 +16,16 @@
 package jetbrains.mps.nodeEditor;
 
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.PatternUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class SubstituteActionUtil {
   private static final int CAN_SUBSTITUTE_VIA_PATTERN = 2;
@@ -31,12 +36,125 @@ public class SubstituteActionUtil {
   private SubstituteActionUtil() {
   }
 
-  public static int getSubstituteRate(SubstituteAction action, String pattern) {
+  public static Comparator<SubstituteAction> createComparator(String pattern) {
+    return new SubstituteActionComparator(pattern);
+  }
+
+  private static class SubstituteActionComparator implements Comparator<SubstituteAction> {
+
+    private Map<SubstituteAction, Integer> myNodeSortPriorities = new HashMap<SubstituteAction, Integer>();
+    private Map<SubstituteAction, Integer> myRateSortPriorities = new HashMap<SubstituteAction, Integer>();
+    private Map<SubstituteAction, String> myVisibleMatchingTexts = new HashMap<SubstituteAction, String>();
+    private Map<SubstituteAction, Boolean> myCanSubstituteStrictlyMap = new HashMap<SubstituteAction, Boolean>();
+    private String myPattern;
+    public SubstituteActionComparator(String pattern) {
+      this.myPattern = pattern;
+    }
+
+    private int getNodeSortPriority(SubstituteAction a) {
+      Integer result = myNodeSortPriorities.get(a);
+      if (result == null) {
+        if (a.getParameterObject() instanceof SNode) {
+          result = NodePresentationUtil.getSortPriority(a.getSourceNode(), (SNode) a.getParameterObject());
+        } else {
+          result = 0;
+        }
+        myNodeSortPriorities.put(a, result);
+      }
+      return result;
+    }
+
+    private String getVisibleMatchingText(SubstituteAction a) {
+      String result = myVisibleMatchingTexts.get(a);
+      if (result == null) {
+        result = a.getVisibleMatchingText(myPattern);
+        myVisibleMatchingTexts.put(a, result);
+      }
+      return result;
+    }
+
+    private boolean canSubstituteStrictly(SubstituteAction action) {
+      Boolean result = myCanSubstituteStrictlyMap.get(action);
+      if (result == null)  {
+        result = action.canSubstituteStrictly(myPattern);
+        myCanSubstituteStrictlyMap.put(action, result);
+      }
+      return result;
+    }
+    private int getCachedRate(SubstituteAction action) {
+      Integer result = myRateSortPriorities.get(action);
+      if (result == null) {
+        result = getSubstituteRate(action, myPattern);
+        myRateSortPriorities.put(action, result);
+      }
+      return result;
+    }
+    private int compareByRate(SubstituteAction firstAction, SubstituteAction secondAction) {
+      if (myPattern == null || myPattern.length() == 0) {
+        return 0;
+      }
+      int firstSubstituteRate = getCachedRate(firstAction);
+      int secondSubstituteRate = getCachedRate(secondAction);
+      return secondSubstituteRate - firstSubstituteRate;
+    }
+
+    private int compareByStrictly(SubstituteAction i1, SubstituteAction i2) {
+      boolean strictly1 = canSubstituteStrictly(i1);
+      boolean strictly2 = canSubstituteStrictly(i2);
+      if (strictly1 != strictly2) {
+        return strictly1 ? -1 : 1;
+      }
+      return 0;
+    }
+
+    private int compareByStartsWith(SubstituteAction i1, SubstituteAction i2) {
+      boolean startsWith1 = getVisibleMatchingText(i1).startsWith(myPattern);
+      boolean startsWith2 = getVisibleMatchingText(i2).startsWith(myPattern);
+      if (startsWith1 != startsWith2) {
+        return startsWith1 ? -1 : 1;
+      }
+      return 0;
+    }
+
+    private int compareByNodeSortPriority(SubstituteAction i1, SubstituteAction i2) {
+      int p1 = getNodeSortPriority(i1);
+      int p2 = getNodeSortPriority(i2);
+      return p1 - p2;
+    }
+
+    @Override
+    public int compare(SubstituteAction i1, SubstituteAction i2) {
+      int result = compareByStrictly(i1, i2);
+      if (result != 0) return result;
+
+      result = compareByStartsWith(i1, i2);
+      if (result != 0) return result;
+
+      result = compareByNodeSortPriority(i1, i2);
+      if (result != 0) return result;
+
+      String s1 = getVisibleMatchingText(i1);
+      String s2 = getVisibleMatchingText(i2);
+
+      boolean null_s1 = (s1 == null || s1.length() == 0);
+      boolean null_s2 = (s2 == null || s2.length() == 0);
+      if (null_s1 && null_s2) return 0;
+      if (null_s1) return 1;
+      if (null_s2) return -1;
+
+      result = compareByRate(i1, i2);
+      if (result != 0) return result;
+
+      return s1.compareTo(s2);
+    }
+  }
+
+  private static int getSubstituteRate(SubstituteAction action, String pattern) {
     boolean canSubstitute = action.canSubstitute(pattern);
     if (canSubstitute) {
       return CAN_SUBSTITUTE_VIA_PATTERN;
     } else {
-      if (pattern.isEmpty() || pattern == null) {
+      if (pattern == null || pattern.isEmpty()) {
         return CANT_SUBSTITUTE;
       }
       String visibleMatchingText = action.getVisibleMatchingText(pattern);
@@ -53,15 +171,6 @@ public class SubstituteActionUtil {
 
   public static boolean canSubstitute(SubstituteAction action, String pattern) {
     return getSubstituteRate(action, pattern) != CANT_SUBSTITUTE;
-  }
-
-  public static int compare(SubstituteAction firstAction, SubstituteAction secondAction, String pattern) {
-    if (pattern == null || pattern.length() == 0) {
-      return 0;
-    }
-    int firstSubstituteRate = getSubstituteRate(firstAction, pattern);
-    int secondSubstituteRate = getSubstituteRate(secondAction, pattern);
-    return firstSubstituteRate - secondSubstituteRate;
   }
 
   public static String createText(SubstituteAction action, String pattern, String color) {
