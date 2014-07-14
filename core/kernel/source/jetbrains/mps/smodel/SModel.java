@@ -33,7 +33,6 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.nodeidmap.INodeIdToNodeMap;
 import jetbrains.mps.smodel.nodeidmap.UniversalOptimizedNodeIdMap;
 import jetbrains.mps.util.Computable;
@@ -621,7 +620,7 @@ public class SModel implements SModelData {
       langs.add(conceptLang);
 
       for (Language l : langs){
-        SLanguageId lid = LangUtil.getLanguageId(l);
+        SLanguageId lid = IdUtil.getLanguageId(l);
         if (!myLanguagesIds.containsKey(lid)) {
           res.put(lid, l.getLanguageVersion());
         }
@@ -656,7 +655,7 @@ public class SModel implements SModelData {
       markChanged();
     }
 
-    deleteLanguage(LangUtil.getLanguageId(ref.getModuleId()));
+    deleteLanguage(IdUtil.getLanguageId(ref.getModuleId()));
   }
 
   public void deleteLanguage(@NotNull SLanguageId id) {
@@ -689,11 +688,11 @@ public class SModel implements SModelData {
       markChanged();
     }
 
-    addLanguage(LangUtil.getLanguageId(ref.getModuleId()), -1);
+    addLanguage(IdUtil.getLanguageId(ref.getModuleId()), -1);
   }
 
   public void addLanguage(Language language) {
-    addLanguage(LangUtil.getLanguageId(language), language.getLanguageVersion());
+    addLanguage(IdUtil.getLanguageId(language), language.getLanguageVersion());
   }
 
   public void addLanguage(SLanguageId id, int version) {

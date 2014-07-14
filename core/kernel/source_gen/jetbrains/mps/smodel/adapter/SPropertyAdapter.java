@@ -5,11 +5,10 @@ package jetbrains.mps.smodel.adapter;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.DebugInfoUtil;
+import jetbrains.mps.smodel.IdUtil;
 import jetbrains.mps.smodel.DebugRegistryImpl;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SDataType;
@@ -31,7 +30,7 @@ public class SPropertyAdapter implements SProperty {
 
     SNode concept = SModelUtil.findConceptDeclaration(conceptName);
     if (concept != null) {
-      SConceptId cid = LangUtil.getConceptId(concept);
+      SConceptId cid = IdUtil.getConceptId(concept);
       myPropertyId = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(cid, name);
     }
   }
@@ -86,7 +85,7 @@ public class SPropertyAdapter implements SProperty {
     String name;
 
     if (myPropertyId != null) {
-      concept = SModelUtil.findConceptDeclaration(DebugInfoUtil.getConceptFqName(myPropertyId.getConceptId()));
+      concept = SModelUtil.findConceptDeclaration(IdUtil.getConceptFqName(myPropertyId.getConceptId()));
       name = getName();
     } else {
       concept = SModelUtil.findConceptDeclaration(conceptName);
@@ -104,7 +103,7 @@ public class SPropertyAdapter implements SProperty {
     String cname;
     String propName;
     if (myPropertyId != null) {
-      cname = DebugInfoUtil.getConceptFqName(myPropertyId.getConceptId());
+      cname = IdUtil.getConceptFqName(myPropertyId.getConceptId());
       propName = getName();
     } else {
       cname = conceptName;

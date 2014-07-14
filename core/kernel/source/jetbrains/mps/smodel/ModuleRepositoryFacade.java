@@ -25,14 +25,11 @@ import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.language.LangUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SPropertyId;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.util.Condition;
 
 import java.util.ArrayList;
@@ -203,7 +200,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
     //e.g. when we get a hierarchy for some concept (need to convert generated parent names into ids)
     if (module instanceof Language) {
       Language l = ((Language) module);
-      MPSModuleRepository.getInstance().getDebugRegistry().addLanguageName(LangUtil.getLanguageId(l),module.getModuleName());
+      MPSModuleRepository.getInstance().getDebugRegistry().addLanguageName(IdUtil.getLanguageId(l),module.getModuleName());
       for (org.jetbrains.mps.openapi.model.SModel m : l.getModels()) {
         if (!m.getReference().getModelName().endsWith(".structure")) continue;
 
@@ -211,7 +208,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
           //we won't filter out non-concept just because this is a temporary code
           String pval = root.getProperty(SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001"));
           if (pval==null) continue;
-          MPSModuleRepository.getInstance().getDebugRegistry().addConceptName(LangUtil.getConceptId(root), pval);
+          MPSModuleRepository.getInstance().getDebugRegistry().addConceptName(IdUtil.getConceptId(root), pval);
         }
         break;
       }

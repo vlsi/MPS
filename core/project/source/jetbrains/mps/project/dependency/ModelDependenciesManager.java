@@ -16,6 +16,7 @@
 package jetbrains.mps.project.dependency;
 
 import jetbrains.mps.project.DevKit;
+import jetbrains.mps.smodel.IdUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelAdapter;
@@ -23,7 +24,6 @@ import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import jetbrains.mps.smodel.event.SModelDevKitEvent;
 import jetbrains.mps.smodel.event.SModelLanguageEvent;
-import jetbrains.mps.smodel.language.LangUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -158,7 +158,7 @@ public class ModelDependenciesManager {
    */
   protected void handle(DevKit devkit, Collection<SLanguageId> retval) {
     for (Language dkLang : devkit.getAllExportedLanguages()) {
-      handle(LangUtil.getLanguageId(dkLang.getModuleReference().getModuleId()), retval);
+      handle(IdUtil.getLanguageId(dkLang.getModuleReference().getModuleId()), retval);
     }
   }
 
@@ -257,7 +257,7 @@ public class ModelDependenciesManager {
     }
 
     private void invalidateIfWatching(SModuleReference moduleRef) {
-      SLanguageId languageId = LangUtil.getLanguageId(moduleRef.getModuleId());
+      SLanguageId languageId = IdUtil.getLanguageId(moduleRef.getModuleId());
       if (languageId != null && myDepManager.isDependency(languageId)) {
         myDepManager.invalidate();
       }

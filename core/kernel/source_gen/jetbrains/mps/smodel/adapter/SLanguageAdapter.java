@@ -10,12 +10,11 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.IdUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.language.ConceptRepository;
-import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 import jetbrains.mps.util.NameUtil;
@@ -49,7 +48,7 @@ public class SLanguageAdapter implements SLanguage {
     this.myLanguageFqName = language;
     Language module = ModuleRepositoryFacade.getInstance().getModule(language, Language.class);
     if (module!=null){
-      myLanguage = LangUtil.getLanguageId(module);
+      myLanguage = IdUtil.getLanguageId(module);
     }
   }
 
@@ -84,7 +83,7 @@ public class SLanguageAdapter implements SLanguage {
     }).select(new ISelector<SNode, SInterfaceConceptAdapter>() {
       public SInterfaceConceptAdapter select(SNode it) {
         if (myLanguage != null) {
-          return new SInterfaceConceptAdapter(LangUtil.getConceptId(it));
+          return new SInterfaceConceptAdapter(IdUtil.getConceptId(it));
         } else {
           return new SInterfaceConceptAdapter(NameUtil.nodeFQName(it));
         }

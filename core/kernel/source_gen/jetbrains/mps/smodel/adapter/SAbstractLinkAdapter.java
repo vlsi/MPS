@@ -6,10 +6,9 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.DebugInfoUtil;
+import jetbrains.mps.smodel.IdUtil;
 import jetbrains.mps.smodel.DebugRegistryImpl;
 import jetbrains.mps.smodel.MPSModuleRepository;
-import jetbrains.mps.smodel.language.LangUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -31,7 +30,7 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
 
     SNode concept = SModelUtil.findConceptDeclaration(conceptName);
     if (concept!=null){
-      SConceptId cid = LangUtil.getConceptId(concept);
+      SConceptId cid = IdUtil.getConceptId(concept);
       roleId = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(cid,role);
     }
   }
@@ -70,7 +69,7 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     }
     SNode t = SLinkOperations.getTarget(link, "target", false);
     SInterfaceConceptAdapter res =
-        LangUtil.getConceptId(t) != null ? new SInterfaceConceptAdapter(LangUtil.getConceptId(t)) : new SInterfaceConceptAdapter(NameUtil.nodeFQName(t));
+        IdUtil.getConceptId(t) != null ? new SInterfaceConceptAdapter(IdUtil.getConceptId(t)) : new SInterfaceConceptAdapter(NameUtil.nodeFQName(t));
     return (SNodeOperations.isInstanceOf(t, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") ? res :
         SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(t)));
   }
@@ -105,7 +104,7 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     String cname;
     String linkRole;
     if (roleId != null) {
-      cname = DebugInfoUtil.getConceptFqName(roleId.getConceptId());
+      cname = IdUtil.getConceptFqName(roleId.getConceptId());
       linkRole = getRole();
     } else {
       cname = conceptName;

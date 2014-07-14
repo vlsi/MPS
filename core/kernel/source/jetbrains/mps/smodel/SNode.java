@@ -503,7 +503,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     assertCanRead();
 
     if (myRepository == null) return null;
-    return DebugInfoUtil.getConceptFqName(myConceptId);
+    return IdUtil.getConceptFqName(myConceptId);
   }
 
   public SModel getPersistentModel() {
@@ -580,7 +580,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   //----------------------------------------------------------
 
   public SNode getConceptDeclarationNode() {
-    String name = myConceptFqName == null ? DebugInfoUtil.getConceptFqName(myConceptId) : myConceptFqName;
+    String name = myConceptFqName == null ? IdUtil.getConceptFqName(myConceptId) : myConceptFqName;
     return (SNode) SModelUtil.findConceptDeclaration(name);
   }
 
@@ -1835,7 +1835,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SConceptId name2cid(String name) {
-    return DebugInfoUtil.getConceptId(name);
+    return IdUtil.getConceptId(name);
   }
 
   private String cid2name(SConceptId cid) {
@@ -1843,7 +1843,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SPropertyId name2pid(String name) {
-    return DebugInfoUtil.getPropId(myConceptId,name);
+    return IdUtil.getPropId(myConceptId, name);
   }
 
   private String pid2name(SPropertyId pid) {
@@ -1851,7 +1851,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SReferenceLinkId name2rid(String name) {
-    return ((SReferenceLinkId) DebugInfoUtil.getLinkId(myConceptId, name));
+    return ((SReferenceLinkId) IdUtil.getLinkId(myConceptId, name));
   }
 
   private String rid2name(SReferenceLinkId rid) {
@@ -1859,7 +1859,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SContainmentLinkId name2lid(String name) {
-    return ((SContainmentLinkId) DebugInfoUtil.getLinkId(myConceptId, name));
+    return ((SContainmentLinkId) IdUtil.getLinkId(myConceptId, name));
   }
 
   private String lid2name(SContainmentLinkId lid) {
