@@ -978,11 +978,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
 
   private int getPropertyIndex(SPropertyId id) {
-    if (myNewProperties == null) return -1;
-    for (int i = 0; i < myNewProperties.length; i += 2) {
-      if (EqualUtil.equals(myNewProperties[i], id)) return i;
+    if (isWorkingById() == Mode.NAME) {
+      return getPropertyIndex_byName(pid2name(id));
+    } else {
+      return getPropertyIndex_byId(id);
     }
-    return -1;
   }
 
   private void referenceRead(SReferenceLinkId role) {
@@ -1260,11 +1260,11 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private int getPropertyIndex(String propertyName) {
-    if (myProperties == null) return -1;
-    for (int i = 0; i < myProperties.length; i += 2) {
-      if (EqualUtil.equals(myProperties[i], propertyName)) return i;
+    if (isWorkingById() == Mode.ID) {
+      return getPropertyIndex_byId(name2pid(propertyName));
+    } else {
+      return getPropertyIndex_byName(propertyName);
     }
-    return -1;
   }
 
   private void referenceRead(String role) {
@@ -1678,6 +1678,22 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (firstChild == null) return Collections.emptyList();
 
     return new ChildrenList_byId(firstChild, role);
+  }
+
+  private int getPropertyIndex_byName(String propertyName) {
+    if (myProperties == null) return -1;
+    for (int i = 0; i < myProperties.length; i += 2) {
+      if (EqualUtil.equals(myProperties[i], propertyName)) return i;
+    }
+    return -1;
+  }
+
+  private int getPropertyIndex_byId(SPropertyId id) {
+    if (myNewProperties == null) return -1;
+    for (int i = 0; i < myNewProperties.length; i += 2) {
+      if (EqualUtil.equals(myNewProperties[i], id)) return i;
+    }
+    return -1;
   }
 
   private static class ChildrenList_byName extends AbstractSequentialList<SNode> {
