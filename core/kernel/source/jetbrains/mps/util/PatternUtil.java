@@ -119,6 +119,11 @@ public class PatternUtil {
   public static List<Integer> getIndexes(String pattern, boolean useDots, String matchingText) {
     List<Integer> indexList = new ArrayList<Integer>();
     int curIndex = 0;
+    if (addIndexes(matchingText, indexList, curIndex, pattern)) {
+      return new ArrayList<Integer>(indexList);
+    } else {
+      indexList = new ArrayList<Integer>();
+    }
     StringBuilder nextSubstring = new StringBuilder();
     for (int i = 0 ; i < pattern.length(); i++) {
       char c = pattern.charAt(i);
@@ -135,12 +140,12 @@ public class PatternUtil {
       }
     }
     if (!addIndexes(matchingText, indexList, curIndex, nextSubstring.toString())) return new ArrayList<Integer>();
-    return indexList;
+    return new ArrayList<Integer>(indexList);
   }
 
   private static boolean addIndexes(String matchingText, List<Integer> indexList, int curIndex, String nextSubstring) {
     int indexOf = matchingText.indexOf(nextSubstring, curIndex);
-    if (curIndex == -1) {
+    if (indexOf == -1) {
       return false;
     }
     for (int j = 0; j < nextSubstring.length(); ++j) {

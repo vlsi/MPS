@@ -154,7 +154,7 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     return !(matchingText == null || matchingText.length() == 0) && matches(pattern, matchingText);
   }
   private boolean matches(String pattern, String matchingText) {
-    return matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false).toString() + ".*");
+    return matchingText.startsWith(pattern) || matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false).toString() + ".*");
   }
 
 

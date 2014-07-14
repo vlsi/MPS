@@ -196,9 +196,10 @@ public class SubstituteActionUtil {
       char c = visibleMatchingText.charAt(i);
       if (c == '<') {
         builder.append("&lt;");
-      }
-      if (c == '>') {
+      } else if (c == '>') {
         builder.append("&gt;");
+      } else if (c == ' ') {
+        builder.append("&nbsp;");
       } else {
         builder.append(c);
       }
