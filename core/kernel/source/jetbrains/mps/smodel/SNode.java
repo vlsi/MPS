@@ -1851,7 +1851,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SReferenceLinkId name2rid(String name) {
-    return ((SReferenceLinkId) IdUtil.getLinkId(myConceptId, name));
+    return IdUtil.getReferenceLinkId(myConceptId, name);
   }
 
   private String rid2name(SReferenceLinkId rid) {
@@ -1859,7 +1859,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SContainmentLinkId name2lid(SNode sNode, String name) {
-    return ((SContainmentLinkId) IdUtil.getLinkId(sNode.getConceptId(), name));
+    return IdUtil.getContainmentLinkId(sNode.getConceptId(), name);
   }
 
   private String lid2name(SContainmentLinkId lid) {

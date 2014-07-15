@@ -35,6 +35,8 @@ import org.jetbrains.mps.openapi.module.DebugRegistry;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
+import java.util.UUID;
+
 // This class is needed during migration only
 // It provides ways to obtain meta-ids
 // After migration, all conversions should become one-side: from id to name, which is done by DebugRegistry
@@ -42,6 +44,10 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 //todo: remove after 3.2
 
 public abstract class IdUtil {
+  private static final SPropertyId UNKNOWN_PROPERTY_ID = new SPropertyId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
+  private static final SReferenceLinkId UNKNOWN_REFERENCE_ID = new SReferenceLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
+  private static final SContainmentLinkId UNKNOWN_LINK_ID = new SContainmentLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
+
   public static String getConceptFqName(SConceptId id) {
     DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
     return dr.getLanguageName(id.getLanguageId()) + ".structure." + dr.getConceptName(id);
@@ -63,19 +69,29 @@ public abstract class IdUtil {
       pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(c.getId(), propName);
       if (pid != null) return pid;
     }
-    return null;
+    return UNKNOWN_PROPERTY_ID;
   }
 
-  //finds property id given its name and an inheritor of an original concept
-  public static SAbstractLinkId getLinkId(SConceptId id, String refName) {
+  public static SContainmentLinkId getContainmentLinkId(SConceptId id, String refName) {
     SAbstractLinkId rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
-    if (rid != null) return rid;
+    if (rid != null) return (SContainmentLinkId) rid;
 
     for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
       rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
-      if (rid != null) return rid;
+      if (rid != null) return (SContainmentLinkId) rid;
     }
-    return null;
+    return UNKNOWN_LINK_ID;
+  }
+
+  public static SReferenceLinkId getReferenceLinkId(SConceptId id, String refName) {
+    SAbstractLinkId rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(id, refName);
+    if (rid != null) return (SReferenceLinkId) rid;
+
+    for (SAbstractConcept c : SConceptUtil.getAllSuperConcepts(new SConceptAdapter(id))) {
+      rid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(c.getId(), refName);
+      if (rid != null) return (SReferenceLinkId) rid;
+    }
+    return UNKNOWN_REFERENCE_ID;
   }
 
   public static SLanguageId getLanguageId(Language l) {

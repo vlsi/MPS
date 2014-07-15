@@ -48,9 +48,8 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @Deprecated
   protected SReference(String role, SNode sourceNode) {
     myRole = role;
-    if ((sourceNode instanceof jetbrains.mps.smodel.SNode) && ((jetbrains.mps.smodel.SNode) sourceNode).workingMode()==Mode.ID){
-      myRoleId = ((SReferenceLinkId) IdUtil.getLinkId(sourceNode.getConceptId(), myRole));
-    }
+    if ((sourceNode instanceof jetbrains.mps.smodel.SNode) && ((jetbrains.mps.smodel.SNode) sourceNode).workingMode()==Mode.ID)
+      myRoleId = IdUtil.getReferenceLinkId(sourceNode.getConceptId(), myRole);
     mySourceNode = sourceNode;
   }
 
@@ -74,7 +73,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @Override
   public SReferenceLinkId getRoleId() {
     if (workingMode() == Mode.NAME) {
-      return ((SReferenceLinkId) IdUtil.getLinkId(mySourceNode.getConceptId(), myRole));
+      return IdUtil.getReferenceLinkId(mySourceNode.getConceptId(), myRole);
     } else {
       return myRoleId;
     }
@@ -129,7 +128,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   public void setRole(String newRole) {
     if (workingMode() == Mode.ID) {
-      myRoleId = ((SReferenceLinkId) IdUtil.getLinkId(mySourceNode.getConceptId(), newRole));
+      myRoleId = IdUtil.getReferenceLinkId(mySourceNode.getConceptId(), newRole);
     } else {
       if (newRole == null) {
         myRole = null;
