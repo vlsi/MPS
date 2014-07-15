@@ -17,10 +17,12 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsDescriptor;
+import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.smodel.runtime.illegal.IllegalConceptDescriptor;
@@ -37,7 +39,6 @@ import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashSet;
@@ -117,7 +118,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
       try {
         LanguageRuntime languageRuntime = myLanguageRegistry.getLanguage(NameUtil.namespaceFromConceptFQName(fqName));
         if (languageRuntime != null) {
-          descriptor = languageRuntime.getStructureAspectDescriptor().getDescriptor(fqName);
+          descriptor = languageRuntime.getAspect(StructureAspectDescriptor.class).getDescriptor(fqName);
         }
       } catch (Throwable e) {
         LOG.warn("Exception while structure descriptor creating: " + fqName, e);
@@ -155,7 +156,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         if (languageRuntime == null) {
           LOG.warn("No language for: " + fqName + ", while looking for behavior descriptor.", new Throwable());
         } else {
-          descriptor = languageRuntime.getBehaviorAspectDescriptor().getDescriptor(fqName);
+          descriptor = languageRuntime.getAspect(BehaviorAspectDescriptor.class).getDescriptor(fqName);
         }
       } catch (Throwable e) {
         LOG.warn("Exception while behavior descriptor creating", e);
@@ -203,7 +204,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
           LOG.warn("No language for: " + fqName + ", while looking for constraints descriptor.", new Throwable());
           constraintsAspectDescriptor = ConstraintsAspectInterpreted.getInstance();
         } else {
-          constraintsAspectDescriptor = languageRuntime.getConstraintsAspectDescriptor();
+          constraintsAspectDescriptor = languageRuntime.getAspect(ConstraintsAspectDescriptor.class);
         }
         descriptor = constraintsAspectDescriptor.getDescriptor(fqName);
       } catch (Throwable e) {
@@ -251,7 +252,7 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
         LOG.warn(String.format("No language for concept %s, while looking for textgen descriptor.", fqName), new Throwable());
         textGenAspectDescriptor = new TextGenAspectInterpreted();
       } else {
-        textGenAspectDescriptor = languageRuntime.getTextGenAspectDescriptor();
+        textGenAspectDescriptor = languageRuntime.getAspect(TextGenAspectDescriptor.class);
       }
       descriptor = textGenAspectDescriptor.getDescriptor(concept);
 

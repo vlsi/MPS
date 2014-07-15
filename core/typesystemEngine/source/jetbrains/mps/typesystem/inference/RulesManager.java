@@ -121,7 +121,7 @@ public class RulesManager {
       if (myLoadedLanguages.contains(namespace)) continue;
       IHelginsDescriptor typesystem = null;
       try {
-        typesystem = language.getTypesystem();
+        typesystem = language.getAspect(IHelginsDescriptor.class);
       } catch (Throwable t) {
         LOG.error("Error while loading language: " + namespace, t);
       }

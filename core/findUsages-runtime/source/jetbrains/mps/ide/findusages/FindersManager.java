@@ -168,7 +168,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
 
   private void initFindersDescriptor(LanguageRuntime language) {
     try {
-      FindUsageAspectDescriptor descr = language.getFindUsages();
+      FindUsageAspectDescriptor descr = language.getAspect(FindUsageAspectDescriptor.class);
       if (descr instanceof BaseFindUsagesDescriptor) {
         ((BaseFindUsagesDescriptor) descr).init();
       }

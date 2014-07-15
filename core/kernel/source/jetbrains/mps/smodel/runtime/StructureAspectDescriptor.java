@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.runtime;
 
+// XXX perhaps, would be handy to have a list of all concepts defined in this aspect -
+// otherwise it's unclear where from shall I take fqName I pass in here
 public interface StructureAspectDescriptor extends LanguageAspectDescriptor {
   ConceptDescriptor getDescriptor(String fqName);
 }

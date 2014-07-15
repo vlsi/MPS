@@ -15,12 +15,13 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
+import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
 
 import java.util.Set;
 
-public interface IHelginsDescriptor {
+public interface IHelginsDescriptor extends LanguageAspectDescriptor {
   public Set<InferenceRule_Runtime> getInferenceRules();
 
   public Set<NonTypesystemRule_Runtime> getNonTypesystemRules();
