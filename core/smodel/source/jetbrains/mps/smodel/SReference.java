@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.SNode.Mode;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.WeakSet;
 import org.apache.log4j.LogManager;
@@ -32,10 +33,6 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Set;
 
-/**
- * User: Sergey Dmitriev
- * Date: Aug 2, 2003
- */
 public abstract class SReference implements org.jetbrains.mps.openapi.model.SReference {
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
 
@@ -61,16 +58,20 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
 
   @Override
   public String getRole() {
-    if (myRole!=null) return myRole;
-    if (myRoleId!=null){
+    if (workingMode() == Mode.ID) {
       return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(myRoleId);
+    } else {
+      return myRole;
     }
-    return null;
   }
 
   @Override
   public SReferenceLinkId getRoleId() {
-    return myRoleId;
+    if (workingMode() == Mode.NAME) {
+      return ((SReferenceLinkId) IdUtil.getLinkId(mySourceNode.getConceptId(), myRole));
+    } else {
+      return myRoleId;
+    }
   }
 
   @Override
@@ -121,15 +122,23 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   }
 
   public void setRole(String newRole) {
-    if (newRole == null) {
-      myRole = null;
-      return;
+    if (workingMode() == Mode.ID) {
+      myRoleId = ((SReferenceLinkId) IdUtil.getLinkId(mySourceNode.getConceptId(), newRole));
+    } else {
+      if (newRole == null) {
+        myRole = null;
+        return;
+      }
+      myRole = InternUtil.intern(newRole);
     }
-    myRole = InternUtil.intern(newRole);
   }
 
   public void setRoleId(SReferenceLinkId newRole) {
-    myRoleId = newRole;
+    if (workingMode() == Mode.NAME) {
+      myRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(newRole);
+    } else {
+      myRoleId = newRole;
+    }
   }
 
   //-------------------------
@@ -229,6 +238,11 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
         }
       }
     }
+  }
+
+  protected Mode workingMode() {
+    if (!(mySourceNode instanceof jetbrains.mps.smodel.SNode)) return Mode.UNKNOWN;
+    return ((jetbrains.mps.smodel.SNode) mySourceNode).workingMode();
   }
 
   @Immutable
