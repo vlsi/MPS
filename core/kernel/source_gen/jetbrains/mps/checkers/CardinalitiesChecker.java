@@ -41,8 +41,10 @@ public class CardinalitiesChecker extends AbstractConstraintsChecker {
           }
         }
       } else if (SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "0..1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1", "0..1")) {
-        if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
-          component.addError(node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", null);
+        if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
+          if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() > 1) {
+            component.addError(node, ListSequence.fromList(SNodeOperations.getChildren(node, link)).count() + " children in role \"" + SPropertyOperations.getString(link, "role") + "\" (declared cardinality is " + SPropertyOperations.getString_def(link, "sourceCardinality", "0..1") + ")", null);
+          }
         }
       }
     }
