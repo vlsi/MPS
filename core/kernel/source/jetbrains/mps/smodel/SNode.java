@@ -1333,7 +1333,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     if (myProperties != null) {
       //this is a trash code which works only when the model is loaded
       //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
-      String pname = ourMemberAccessModifier != null ? propertyName : ourMemberAccessModifier.getNewPropertyName(getModel(), myConceptFqName, propertyName);
+      String pname = ourMemberAccessModifier == null ? propertyName : ourMemberAccessModifier.getNewPropertyName(getModel(), myConceptFqName, propertyName);
       int index = getPropertyIndex(pname);
       if (index != -1) {
         propertyValue = myProperties[index + 1];
