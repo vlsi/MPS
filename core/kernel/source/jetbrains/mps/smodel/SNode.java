@@ -98,7 +98,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
 
-    if (myConceptId==null) {
+    if (myConceptId == null) {
       return SConceptRepository.getInstance().getInstanceConcept(myConceptFqName);
     } else {
       return SConceptRepository.getInstance().getInstanceConcept(myConceptId);
@@ -806,7 +806,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public SContainmentLinkId getRoleInParentId() {
     nodeRead();
     if (workingMode() == Mode.NAME) {
-      return name2lid(getRoleInParent_byName());
+      return name2lid(getParent(), getRoleInParent_byName());
     } else {
       return getRoleInParentId_byId();
     }
@@ -1029,7 +1029,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @Deprecated
   public void setRoleInParent(String newRole) {
     if (workingMode() == Mode.ID) {
-      setRoleInParent_byId(name2lid(newRole));
+      setRoleInParent_byId(name2lid(getParent(), newRole));
     } else {
       setRoleInParent_byName(newRole);
     }
@@ -1199,7 +1199,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
     SNode schild;
     if (workingMode() == Mode.ID) {
-      schild = insertChildBefore_byId(name2lid(role), child, anchor);
+      schild = insertChildBefore_byId(name2lid(this, role), child, anchor);
     } else {
       if (ourMemberAccessModifier != null) {
         role = ourMemberAccessModifier.getNewChildRole(getModel(), myConceptFqName, role);
@@ -1224,7 +1224,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   @NotNull
   public List<SNode> getChildren(String role) {
     if (workingMode() == Mode.ID) {
-      return getChildren_byId(name2lid(role));
+      return getChildren_byId(name2lid(this, role));
     } else {
       return getChildren_byName(role);
     }
@@ -1858,8 +1858,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(rid);
   }
 
-  private SContainmentLinkId name2lid(String name) {
-    return ((SContainmentLinkId) IdUtil.getLinkId(myConceptId, name));
+  private SContainmentLinkId name2lid(SNode sNode, String name) {
+    return ((SContainmentLinkId) IdUtil.getLinkId(sNode.getConceptId(), name));
   }
 
   private String lid2name(SContainmentLinkId lid) {
