@@ -141,6 +141,10 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
     }
   }
 
+  public void setRoleId_direct(SReferenceLinkId newRole){
+    myRoleId = newRole;
+  }
+
   //-------------------------
 
   @Deprecated
