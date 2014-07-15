@@ -663,7 +663,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="770502481210891289" nodeInfo="nn">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SReference%dsetRoleId(org%djetbrains%dmps%dopenapi%dlanguage%dSReferenceLinkId)%cvoid" resolveInfo="setRoleId" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SReference%dsetRoleId_direct(org%djetbrains%dmps%dopenapi%dlanguage%dSReferenceLinkId)%cvoid" resolveInfo="setRoleId_direct" />
                                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="9173496362251051139" nodeInfo="nn">
                                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9173496362251051131" resolveInfo="rid" />
                                   </node>
