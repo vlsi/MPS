@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.util;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -116,11 +118,11 @@ public class PatternUtil {
     return b;
   }
 
-  public static List<Integer> getIndexes(String pattern, boolean useDots, String matchingText) {
+  public static List<Integer> getIndexes(@NotNull String pattern, boolean useDots, @NotNull String matchingText) {
     List<Integer> indexList = new ArrayList<Integer>();
     int curIndex = 0;
     if (addIndexes(matchingText, indexList, curIndex, pattern)) {
-      return new ArrayList<Integer>(indexList);
+      return indexList;
     } else {
       indexList = new ArrayList<Integer>();
     }
@@ -140,7 +142,7 @@ public class PatternUtil {
       }
     }
     if (!addIndexes(matchingText, indexList, curIndex, nextSubstring.toString())) return new ArrayList<Integer>();
-    return new ArrayList<Integer>(indexList);
+    return indexList;
   }
 
   private static boolean addIndexes(String matchingText, List<Integer> indexList, int curIndex, String nextSubstring) {

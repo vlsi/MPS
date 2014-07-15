@@ -92,7 +92,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
       public Boolean compute() {
         int count = 0;
         for (SubstituteAction action : getActionsFromCache(pattern, strictMatching)) {
-          if (strictMatching ? action.canSubstituteStrictly(pattern) : SubstituteActionUtil.canSubstitute(action, pattern)) {
+          if (strictMatching ? action.canSubstituteStrictly(pattern) : action.canSubstitute(pattern)) {
             count++;
           }
 

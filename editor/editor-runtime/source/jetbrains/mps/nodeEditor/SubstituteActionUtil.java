@@ -18,6 +18,8 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.PatternUtil;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
@@ -173,10 +175,13 @@ public class SubstituteActionUtil {
     return getSubstituteRate(action, pattern) != CANT_SUBSTITUTE;
   }
 
-  public static String createText(SubstituteAction action, String pattern, String color) {
+  public static String createText(@NotNull SubstituteAction action, @Nullable String pattern, @NotNull String color) {
     String visibleMatchingText = action.getVisibleMatchingText(pattern);
+    if (pattern == null) {
+      return visibleMatchingText;
+    }
     List<Integer> indexes = getIndexes(action, pattern, visibleMatchingText);
-    if (indexes.size() == 0) {
+    if (indexes.isEmpty()) {
       return visibleMatchingText;
     }
     StringBuilder builder = new StringBuilder("<html>");
@@ -214,11 +219,12 @@ public class SubstituteActionUtil {
     return builder.toString();
   }
 
+  @NotNull
   private static List<Integer> getIndexes(SubstituteAction action, String pattern, String visibleMatchingText) {
     List<Integer> indexList = new ArrayList<Integer>();
     int substituteRate = getSubstituteRate(action, pattern);
     if (substituteRate == CANT_SUBSTITUTE) {
-      return Collections.unmodifiableList(indexList);
+      return indexList;
     }
     if (substituteRate == CAN_SUBSTITUTE_VIA_PATTERN) {
       return PatternUtil.getIndexes(pattern, false, visibleMatchingText);
@@ -229,6 +235,6 @@ public class SubstituteActionUtil {
         indexList.add(curIndex + i);
       }
     }
-    return Collections.unmodifiableList(indexList);
+    return indexList;
   }
 }

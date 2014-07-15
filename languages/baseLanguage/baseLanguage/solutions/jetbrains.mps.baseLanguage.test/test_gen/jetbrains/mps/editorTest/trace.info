@@ -2826,7 +2826,7 @@
     <nodeInfo nodeId="4439253381394558442" fileName="SubstitudeAmbigousActions_Test.java" startLine="19" startPosition="107" endLine="20" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4439253381394558442" fileName="SubstitudeAmbigousActions_Test.java" startLine="29" startPosition="51" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4439253381394558442" fileName="SubstitudeAmbigousActions_Test.java" startLine="30" startPosition="99" endLine="31" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4439253381394559672" fileName="SubstitudeAmbigousActions_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4439253381394559672" fileName="SubstitudeAmbigousActions_Test.java" startLine="31" startPosition="93" endLine="32" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4439253381394558442" fileName="SubstitudeAmbigousActions_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubstitudeAmbigousActions_Test#()V" />
     <nodeInfo nodeId="4439253381394558442" fileName="SubstitudeAmbigousActions_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBody#()V" />
     <nodeInfo nodeId="4439253381394558442" fileName="SubstitudeAmbigousActions_Test.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_SubstitudeAmbigousActions#()V" />
@@ -2836,7 +2836,7 @@
     <scopeInfo nodeId="4439253381394558442" fileName="SubstitudeAmbigousActions_Test.java" startLine="14" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="4439253381394558442" fileName="SubstitudeAmbigousActions_Test.java" startLine="18" startPosition="65" endLine="20" endPosition="106" />
     <scopeInfo nodeId="4439253381394558442" fileName="SubstitudeAmbigousActions_Test.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="4439253381394558442" fileName="SubstitudeAmbigousActions_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="63">
+    <scopeInfo nodeId="4439253381394558442" fileName="SubstitudeAmbigousActions_Test.java" startLine="29" startPosition="51" endLine="32" endPosition="64">
       <varInfo nodeId="4439253381394558442" varName="editor" />
       <varInfo nodeId="4439253381394558442" varName="editorComponent" />
     </scopeInfo>
