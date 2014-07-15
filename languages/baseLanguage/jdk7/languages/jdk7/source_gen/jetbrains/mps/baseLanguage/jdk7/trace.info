@@ -5,7 +5,7 @@
       <unit at="16,0,81,0" name="jetbrains.mps.baseLanguage.jdk7.Generator" />
     </file>
     <file name="Language.java">
-      <unit at="14,0,52,0" name="jetbrains.mps.baseLanguage.jdk7.Language" />
+      <unit at="14,0,46,0" name="jetbrains.mps.baseLanguage.jdk7.Language" />
     </file>
   </root>
 </debug-info>

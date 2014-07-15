@@ -4,12 +4,18 @@
   <dep model="r:27e66384-1be4-449f-9e15-e25da79aa65f(sampleFacet.editor)" hash="-avkvnnxf2ab425d051rx0ok4p6pmvp0" />
   <dep model="r:39f8657b-b535-46e0-8816-0d372df2609d(sampleFacet.typesystem)" hash="-4i6ppa7pc3rhdoln5twymppt5bpu7h" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:db8b81de-f10e-4210-8145-1d71b7824d00(sampleFacet.behavior)" hash="6z2ai24n1b5xy5imbmgzabr1kdh4yhg" />
+  <dep model="r:ee865879-8e09-4027-8d62-d483a0f0f0d9(sampleFacet.constraints)" hash="-5np952i4ebpuacqnpnmrv92vuuwqn6h" />
+  <dep model="r:ef3bdd93-260b-4a16-89d1-13a87cfa78c9(sampleFacet.structure)" hash="-66mf1u24uhkueyva7gauirvgfr59mc3" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:27e66384-1be4-449f-9e15-e25da79aa65f(sampleFacet.editor)" />
     <dep model="r:39f8657b-b535-46e0-8816-0d372df2609d(sampleFacet.typesystem)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:db8b81de-f10e-4210-8145-1d71b7824d00(sampleFacet.behavior)" />
+    <dep model="r:ee865879-8e09-4027-8d62-d483a0f0f0d9(sampleFacet.constraints)" />
+    <dep model="r:ef3bdd93-260b-4a16-89d1-13a87cfa78c9(sampleFacet.structure)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Language.java" />
   </common>

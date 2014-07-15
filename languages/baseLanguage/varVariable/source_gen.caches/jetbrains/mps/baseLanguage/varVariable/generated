@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-bhse144pa7fl303a8idt96dzpj7hnxd">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:0944faf1-7722-484f-9a37-701b1951c563(jetbrains.mps.baseLanguage.varVariable.constraints)" hash="-53fbj00mr0zajogb763oi4lj83euubf" />
+  <dep model="r:0a38ab0b-2418-49af-a1c6-9c9545eb461f(jetbrains.mps.baseLanguage.varVariable.behavior)" hash="e7jocazh69gd0amg3gzk9l4ek9gvrrb" />
   <dep model="r:376aaabb-efff-403a-9afa-fc63fa67c6b3(jetbrains.mps.baseLanguage.varVariable.typesystem)" hash="-ylyvrz9flts7i2bv1cpz6g9f7kv5ao" />
+  <dep model="r:931e38db-856b-4b95-8ae0-a7cd13da6d32(jetbrains.mps.baseLanguage.varVariable.structure)" hash="-b9fdue1m6dhmte4yfe3rs37j4d79pox" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:c7cd0bd2-9f1a-40db-94ef-4882de6f36b2(jetbrains.mps.baseLanguage.varVariable.editor)" hash="6517lf7jhb0ksiu9odh6mtnyl2eg5v8" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:0944faf1-7722-484f-9a37-701b1951c563(jetbrains.mps.baseLanguage.varVariable.constraints)" />
+    <dep model="r:0a38ab0b-2418-49af-a1c6-9c9545eb461f(jetbrains.mps.baseLanguage.varVariable.behavior)" />
     <dep model="r:376aaabb-efff-403a-9afa-fc63fa67c6b3(jetbrains.mps.baseLanguage.varVariable.typesystem)" />
+    <dep model="r:931e38db-856b-4b95-8ae0-a7cd13da6d32(jetbrains.mps.baseLanguage.varVariable.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:c7cd0bd2-9f1a-40db-94ef-4882de6f36b2(jetbrains.mps.baseLanguage.varVariable.editor)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />

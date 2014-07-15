@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="Language.java">
-      <unit at="14,0,59,0" name="jetbrains.mps.samples.heating.tabular.Language" />
+      <unit at="12,0,41,0" name="jetbrains.mps.samples.heating.tabular.Language" />
     </file>
   </root>
 </debug-info>
