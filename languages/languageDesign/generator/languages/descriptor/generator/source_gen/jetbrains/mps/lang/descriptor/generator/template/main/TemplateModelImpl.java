@@ -25,7 +25,7 @@ public class TemplateModelImpl implements TemplateModel {
 
   public TemplateModelImpl(TemplateModule module) {
     mappings = TemplateUtil.<TemplateMappingConfiguration>asCollection(new Mappingmain(this));
-    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new SwitchreturnLanguageAspectDescriptor(), new SwitchlanguageAspectDescriptorVariable());
+    switches = TemplateUtil.<TemplateSwitchMapping>asCollection(new SwitchreturnLanguageAspectDescriptor());
     templateModule = module;
     model = PersistenceFacade.getInstance().createModelReference("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)");
   }

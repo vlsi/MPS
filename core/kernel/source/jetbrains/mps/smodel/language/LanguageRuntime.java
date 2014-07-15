@@ -182,7 +182,7 @@ public abstract class LanguageRuntime {
     return null;
   }
 
-  public <T extends LanguageAspectDescriptor> T getAspect(@NotNull Class<T> descriptorInterface) {
+  public final <T extends LanguageAspectDescriptor> T getAspect(@NotNull Class<T> descriptorInterface) {
     @SuppressWarnings("unchecked")
     T aspectDescriptor = (T) myAspectDescriptors.get(descriptorInterface);
     if (aspectDescriptor == null) {
@@ -203,7 +203,7 @@ public abstract class LanguageRuntime {
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorInterface) {
     // compatibility with 3.1 descriptors, e.g. getStructureAspectDescriptor call has been replaced with getAspect(StructureAspectDescriptor.class)
     // and 3.2 language runtime code supply one in generated createAspectDescriptor. However, for 3.1 descriptors we do it here explicitly.
-    // The body of this method shall be cleared (or method made abstract) past 3.2
+    // The body of this method shall be cleared (or method made abstract) past 3.2, and generated override methods won't need to delegate to this super.
     if (descriptorInterface == IHelginsDescriptor.class) {
       return (T) getTypesystem();
     }
