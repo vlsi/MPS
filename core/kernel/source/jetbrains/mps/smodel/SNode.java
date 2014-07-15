@@ -1839,7 +1839,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private String cid2name(SConceptId cid) {
-    return MPSModuleRepository.getInstance().getDebugRegistry().getConceptName(cid);
+    return IdUtil.getConceptFqName(cid);
   }
 
   private SPropertyId name2pid(String name) {
