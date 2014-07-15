@@ -38,6 +38,7 @@ public class IRuleReference_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_w39r7n_a");
     editorCell.setBig(true);
     Style style = new StyleImpl();

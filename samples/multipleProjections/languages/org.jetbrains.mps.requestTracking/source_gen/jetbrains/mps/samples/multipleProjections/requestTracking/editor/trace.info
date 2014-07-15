@@ -55,31 +55,32 @@
     <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="102" startPosition="87" endLine="103" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="107" startPosition="96" endLine="108" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="109" startPosition="34" endLine="110" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="112" startPosition="131" endLine="113" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="110" startPosition="95" endLine="111" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="113" startPosition="131" endLine="114" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="workflowsListHandler_p8hb45_c0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="108" startPosition="134" endLine="111" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="111" startPosition="9" endLine="114" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="112" startPosition="9" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="88" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="108" startPosition="134" endLine="112" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="93" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3675491646420739448" fileName="WorkflowContainer_Editor.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_p8hb45_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3675491646420739449" fileName="WorkflowContainer_Editor.java" startLine="61" startPosition="59" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="99" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="32" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_p8hb45_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="106" startPosition="132" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="106" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="106" startPosition="132" endLine="116" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="70" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_p8hb45_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="106" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="3675491646420739449" fileName="WorkflowContainer_Editor.java" startLine="49" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_p8hb45_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="28" startPosition="79" endLine="29" endPosition="63" />
     <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="35" startPosition="28" endLine="36" endPosition="81" />
     <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="36" startPosition="81" endLine="37" endPosition="81" />
     <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="37" startPosition="81" endLine="38" endPosition="84" />
     <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="84" startPosition="101" endLine="85" endPosition="50" />
-    <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="109" startPosition="34" endLine="110" endPosition="95" />
-    <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="112" startPosition="131" endLine="113" endPosition="139" />
+    <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="113" startPosition="131" endLine="114" endPosition="139" />
     <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="88" startPosition="66" endLine="90" endPosition="93">
       <varInfo nodeId="3675491646420733859" varName="listOwner" />
     </scopeInfo>
+    <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="109" startPosition="34" endLine="111" endPosition="98" />
     <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="3675491646420733859" varName="editorContext" />
       <varInfo nodeId="3675491646420733859" varName="node" />
@@ -119,26 +120,26 @@
     <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="32" startPosition="89" endLine="39" endPosition="22">
       <varInfo nodeId="3675491646420733859" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="107" startPosition="96" endLine="114" endPosition="9" />
+    <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="107" startPosition="96" endLine="115" endPosition="9" />
     <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="32" startPosition="0" endLine="41" endPosition="0">
       <varInfo nodeId="3675491646420733859" varName="editorContext" />
       <varInfo nodeId="3675491646420733859" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="106" startPosition="132" endLine="115" endPosition="7" />
     <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="70" startPosition="91" endLine="80" endPosition="22">
       <varInfo nodeId="3675491646420733859" varName="editorCell" />
       <varInfo nodeId="3675491646420733859" varName="handler" />
       <varInfo nodeId="3675491646420733859" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="106" startPosition="0" endLine="117" endPosition="0">
+    <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="106" startPosition="132" endLine="116" endPosition="7" />
+    <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="70" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="3675491646420733859" varName="editorContext" />
+      <varInfo nodeId="3675491646420733859" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="106" startPosition="0" endLine="118" endPosition="0">
       <varInfo nodeId="3675491646420733859" varName="editorContext" />
       <varInfo nodeId="3675491646420733859" varName="elementCell" />
       <varInfo nodeId="3675491646420733859" varName="elementNode" />
       <varInfo nodeId="3675491646420733859" varName="listOwner" />
-    </scopeInfo>
-    <scopeInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="70" startPosition="0" endLine="82" endPosition="0">
-      <varInfo nodeId="3675491646420733859" varName="editorContext" />
-      <varInfo nodeId="3675491646420733859" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3675491646420739449" fileName="WorkflowContainer_Editor.java" startLine="49" startPosition="88" endLine="67" endPosition="22">
       <varInfo nodeId="3675491646420739449" varName="attributeConcept" />
@@ -151,8 +152,8 @@
       <varInfo nodeId="3675491646420739449" varName="editorContext" />
       <varInfo nodeId="3675491646420739449" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="83" startPosition="0" endLine="118" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowContainer_Editor$workflowsListHandler_p8hb45_c0" />
-    <unitInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="27" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowContainer_Editor" />
+    <unitInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="83" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowContainer_Editor$workflowsListHandler_p8hb45_c0" />
+    <unitInfo nodeId="3675491646420733859" fileName="WorkflowContainer_Editor.java" startLine="27" startPosition="0" endLine="120" endPosition="0" unitName="jetbrains.mps.samples.multipleProjections.requestTracking.editor.WorkflowContainer_Editor" />
   </root>
   <root nodeRef="r:94330202-b33f-456a-85ea-8a2bb978933f(jetbrains.mps.samples.multipleProjections.requestTracking.editor)/3675491646420739356">
     <nodeInfo nodeId="3675491646420739356" fileName="Workflow_Editor.java" startLine="26" startPosition="79" endLine="27" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

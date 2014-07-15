@@ -201,7 +201,8 @@ public class FilePerRootFormatUtil {
     return result;
   }
 
-  public static String asFileName(String s) {
+  private static String asFileName(String s) {
+    if(s == null) return "";
     StringBuilder sb = new StringBuilder(s.length());
     for (int i = 0; i < s.length(); i++) {
       int c = (int) s.charAt(i);

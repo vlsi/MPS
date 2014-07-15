@@ -557,14 +557,15 @@
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="222" startPosition="87" endLine="223" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="227" startPosition="96" endLine="228" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="229" startPosition="34" endLine="230" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="232" startPosition="131" endLine="233" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="239" startPosition="88" endLine="240" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="240" startPosition="86" endLine="241" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="241" startPosition="47" endLine="242" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="242" startPosition="34" endLine="243" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="243" startPosition="63" endLine="244" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="244" startPosition="40" endLine="245" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="245" startPosition="34" endLine="246" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="230" startPosition="95" endLine="231" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="233" startPosition="131" endLine="234" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="240" startPosition="88" endLine="241" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="241" startPosition="86" endLine="242" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="242" startPosition="47" endLine="243" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="243" startPosition="34" endLine="244" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="244" startPosition="63" endLine="245" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="245" startPosition="40" endLine="246" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="246" startPosition="34" endLine="247" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="45" startPosition="80" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="45" startPosition="80" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -582,9 +583,9 @@
     <nodeInfo nodeId="935069066462873980" fileName="DailyPlan_Editor.java" startLine="156" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ApplySideTransforms_left_cellMenu_dgzt1x_a0e0#()V" />
     <nodeInfo nodeId="2161719505005264309" fileName="DailyPlan_Editor.java" startLine="173" startPosition="0" endLine="176" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_dgzt1x_a5a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="197" startPosition="0" endLine="200" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="itemsListHandler_dgzt1x_a6a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="228" startPosition="134" endLine="231" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="231" startPosition="9" endLine="234" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="232" startPosition="9" endLine="235" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="201" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="228" startPosition="134" endLine="232" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="213" startPosition="0" endLine="218" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4664795093170436235" fileName="DailyPlan_Editor.java" startLine="87" startPosition="59" endLine="93" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="125" startPosition="59" endLine="131" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -592,13 +593,13 @@
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="219" startPosition="0" endLine="225" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="188" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_dgzt1x_a6a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5063359128232955433" fileName="DailyPlan_Editor.java" startLine="63" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgzt1x_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="226" startPosition="132" endLine="235" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="239" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgzt1x_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="240" startPosition="0" endLine="249" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgzt1x_h0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="96" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgzt1x_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="177" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_dgzt1x_g0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="226" startPosition="132" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="161" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgzt1x_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="226" startPosition="0" endLine="237" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="138" startPosition="0" endLine="150" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_dgzt1x_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="226" startPosition="0" endLine="238" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="40" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_dgzt1x_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4664795093170436235" fileName="DailyPlan_Editor.java" startLine="73" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_dgzt1x_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="111" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_dgzt1x_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -620,11 +621,11 @@
     <scopeInfo nodeId="2161719505005264310" fileName="DailyPlan_Editor.java" startLine="173" startPosition="97" endLine="174" endPosition="73" />
     <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="183" startPosition="40" endLine="184" endPosition="85" />
     <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="197" startPosition="98" endLine="198" endPosition="50" />
-    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="229" startPosition="34" endLine="230" endPosition="95" />
-    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="232" startPosition="131" endLine="233" endPosition="139" />
+    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="233" startPosition="131" endLine="234" endPosition="139" />
     <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="201" startPosition="66" endLine="203" endPosition="56">
       <varInfo nodeId="5063359128232955353" varName="listOwner" />
     </scopeInfo>
+    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="229" startPosition="34" endLine="231" endPosition="98" />
     <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="5063359128232955353" varName="editorContext" />
       <varInfo nodeId="5063359128232955353" varName="node" />
@@ -698,8 +699,7 @@
       <varInfo nodeId="5063359128232955353" varName="editorContext" />
       <varInfo nodeId="5063359128232955353" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="227" startPosition="96" endLine="234" endPosition="9" />
-    <scopeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="239" startPosition="88" endLine="246" endPosition="22">
+    <scopeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="240" startPosition="88" endLine="247" endPosition="22">
       <varInfo nodeId="5063359128233223358" varName="editorCell" />
       <varInfo nodeId="5063359128233223358" varName="style" />
     </scopeInfo>
@@ -711,6 +711,7 @@
       <varInfo nodeId="5063359128232955353" varName="editorCell" />
       <varInfo nodeId="5063359128232955353" varName="style" />
     </scopeInfo>
+    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="227" startPosition="96" endLine="235" endPosition="9" />
     <scopeInfo nodeId="5063359128232955433" fileName="DailyPlan_Editor.java" startLine="63" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="5063359128232955433" varName="editorContext" />
       <varInfo nodeId="5063359128232955433" varName="node" />
@@ -719,8 +720,7 @@
       <varInfo nodeId="5063359128232955353" varName="editorCell" />
       <varInfo nodeId="5063359128232955353" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="226" startPosition="132" endLine="235" endPosition="7" />
-    <scopeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="239" startPosition="0" endLine="248" endPosition="0">
+    <scopeInfo nodeId="5063359128233223358" fileName="DailyPlan_Editor.java" startLine="240" startPosition="0" endLine="249" endPosition="0">
       <varInfo nodeId="5063359128233223358" varName="editorContext" />
       <varInfo nodeId="5063359128233223358" varName="node" />
     </scopeInfo>
@@ -736,19 +736,20 @@
       <varInfo nodeId="5063359128232955353" varName="editorContext" />
       <varInfo nodeId="5063359128232955353" varName="node" />
     </scopeInfo>
+    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="226" startPosition="132" endLine="236" endPosition="7" />
     <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="161" startPosition="0" endLine="172" endPosition="0">
       <varInfo nodeId="5063359128232955353" varName="editorContext" />
       <varInfo nodeId="5063359128232955353" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="226" startPosition="0" endLine="237" endPosition="0">
+    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="138" startPosition="0" endLine="150" endPosition="0">
+      <varInfo nodeId="5063359128232955353" varName="editorContext" />
+      <varInfo nodeId="5063359128232955353" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="226" startPosition="0" endLine="238" endPosition="0">
       <varInfo nodeId="5063359128232955353" varName="editorContext" />
       <varInfo nodeId="5063359128232955353" varName="elementCell" />
       <varInfo nodeId="5063359128232955353" varName="elementNode" />
       <varInfo nodeId="5063359128232955353" varName="listOwner" />
-    </scopeInfo>
-    <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="138" startPosition="0" endLine="150" endPosition="0">
-      <varInfo nodeId="5063359128232955353" varName="editorContext" />
-      <varInfo nodeId="5063359128232955353" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="40" startPosition="89" endLine="60" endPosition="22">
       <varInfo nodeId="5063359128232955353" varName="editorCell" />
@@ -780,8 +781,8 @@
       <varInfo nodeId="5063359128232955353" varName="node" />
     </scopeInfo>
     <unitInfo nodeId="935069066462873980" fileName="DailyPlan_Editor.java" startLine="155" startPosition="0" endLine="160" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.DailyPlan_Editor$ApplySideTransforms_left_cellMenu_dgzt1x_a0e0" />
-    <unitInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="196" startPosition="0" endLine="238" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.DailyPlan_Editor$itemsListHandler_dgzt1x_a6a" />
-    <unitInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="35" startPosition="0" endLine="249" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.DailyPlan_Editor" />
+    <unitInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="196" startPosition="0" endLine="239" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.DailyPlan_Editor$itemsListHandler_dgzt1x_a6a" />
+    <unitInfo nodeId="5063359128232955353" fileName="DailyPlan_Editor.java" startLine="35" startPosition="0" endLine="250" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.DailyPlan_Editor" />
   </root>
   <root nodeRef="r:4b82218b-d47e-4120-8b44-e2530c2efcf5(jetbrains.mps.samples.heating.editor)/5063359128232955516">
     <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -841,32 +842,33 @@
     <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="109" startPosition="87" endLine="110" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="114" startPosition="96" endLine="115" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="116" startPosition="34" endLine="117" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="117" startPosition="95" endLine="118" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="120" startPosition="131" endLine="121" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="127" startPosition="104" endLine="128" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="128" startPosition="100" endLine="129" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="129" startPosition="38" endLine="130" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="130" startPosition="36" endLine="131" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="131" startPosition="55" endLine="132" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="132" startPosition="56" endLine="133" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="133" startPosition="42" endLine="134" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="134" startPosition="90" endLine="135" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="135" startPosition="87" endLine="136" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="117" startPosition="95" endLine="118" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="118" startPosition="98" endLine="119" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="121" startPosition="131" endLine="122" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="128" startPosition="104" endLine="129" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="129" startPosition="100" endLine="130" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="130" startPosition="38" endLine="131" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="131" startPosition="36" endLine="132" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="132" startPosition="55" endLine="133" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="133" startPosition="56" endLine="134" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="134" startPosition="42" endLine="135" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="135" startPosition="90" endLine="136" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="136" startPosition="87" endLine="137" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="dailyPlansListHandler_16fuhk_d0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="119" startPosition="9" endLine="122" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="120" startPosition="9" endLine="123" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="95" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="115" startPosition="134" endLine="119" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="100" startPosition="0" endLine="105" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="115" startPosition="134" endLine="120" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5063359128232955525" fileName="HeatingPlan_Editor.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_16fuhk_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5063359128232955531" fileName="HeatingPlan_Editor.java" startLine="63" startPosition="59" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="106" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="82" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_16fuhk_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5063359128233115129" fileName="HeatingPlan_Editor.java" startLine="72" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_16fuhk_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="33" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_16fuhk_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="113" startPosition="132" endLine="123" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="113" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="126" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="113" startPosition="132" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="127" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="113" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="5063359128232955531" fileName="HeatingPlan_Editor.java" startLine="51" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_16fuhk_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="29" startPosition="79" endLine="30" endPosition="63" />
     <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="36" startPosition="28" endLine="37" endPosition="81" />
@@ -874,11 +876,10 @@
     <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="38" startPosition="81" endLine="39" endPosition="81" />
     <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="39" startPosition="81" endLine="40" endPosition="84" />
     <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="91" startPosition="102" endLine="92" endPosition="50" />
-    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="120" startPosition="131" endLine="121" endPosition="139" />
+    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="121" startPosition="131" endLine="122" endPosition="139" />
     <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="95" startPosition="66" endLine="97" endPosition="93">
       <varInfo nodeId="5063359128232955516" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="116" startPosition="34" endLine="118" endPosition="80" />
     <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="5063359128232955516" varName="editorContext" />
       <varInfo nodeId="5063359128232955516" varName="node" />
@@ -895,6 +896,7 @@
     <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="100" startPosition="86" endLine="103" endPosition="25">
       <varInfo nodeId="5063359128232955516" varName="elementCell" />
     </scopeInfo>
+    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="116" startPosition="34" endLine="119" endPosition="80" />
     <scopeInfo nodeId="5063359128232955525" fileName="HeatingPlan_Editor.java" startLine="44" startPosition="88" endLine="48" endPosition="22">
       <varInfo nodeId="5063359128232955525" varName="editorCell" />
     </scopeInfo>
@@ -930,12 +932,12 @@
     <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="33" startPosition="89" endLine="41" endPosition="22">
       <varInfo nodeId="5063359128232955516" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="114" startPosition="96" endLine="122" endPosition="9" />
     <scopeInfo nodeId="5063359128233115129" fileName="HeatingPlan_Editor.java" startLine="72" startPosition="0" endLine="81" endPosition="0">
       <varInfo nodeId="5063359128233115129" varName="editorContext" />
       <varInfo nodeId="5063359128233115129" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="127" startPosition="104" endLine="136" endPosition="24">
+    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="114" startPosition="96" endLine="123" endPosition="9" />
+    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="128" startPosition="104" endLine="137" endPosition="24">
       <varInfo nodeId="5063359128232955516" varName="editorCell" />
       <varInfo nodeId="5063359128232955516" varName="style" />
     </scopeInfo>
@@ -943,17 +945,17 @@
       <varInfo nodeId="5063359128232955516" varName="editorContext" />
       <varInfo nodeId="5063359128232955516" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="113" startPosition="132" endLine="123" endPosition="7" />
-    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="113" startPosition="0" endLine="125" endPosition="0">
+    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="113" startPosition="132" endLine="124" endPosition="7" />
+    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="127" startPosition="0" endLine="139" endPosition="0">
+      <varInfo nodeId="5063359128232955516" varName="editorContext" />
+      <varInfo nodeId="5063359128232955516" varName="nextNode" />
+      <varInfo nodeId="5063359128232955516" varName="prevNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="113" startPosition="0" endLine="126" endPosition="0">
       <varInfo nodeId="5063359128232955516" varName="editorContext" />
       <varInfo nodeId="5063359128232955516" varName="elementCell" />
       <varInfo nodeId="5063359128232955516" varName="elementNode" />
       <varInfo nodeId="5063359128232955516" varName="listOwner" />
-    </scopeInfo>
-    <scopeInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="126" startPosition="0" endLine="138" endPosition="0">
-      <varInfo nodeId="5063359128232955516" varName="editorContext" />
-      <varInfo nodeId="5063359128232955516" varName="nextNode" />
-      <varInfo nodeId="5063359128232955516" varName="prevNode" />
     </scopeInfo>
     <scopeInfo nodeId="5063359128232955531" fileName="HeatingPlan_Editor.java" startLine="51" startPosition="88" endLine="69" endPosition="22">
       <varInfo nodeId="5063359128232955531" varName="attributeConcept" />
@@ -966,8 +968,8 @@
       <varInfo nodeId="5063359128232955531" varName="editorContext" />
       <varInfo nodeId="5063359128232955531" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="90" startPosition="0" endLine="139" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.HeatingPlan_Editor$dailyPlansListHandler_16fuhk_d0" />
-    <unitInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="28" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.HeatingPlan_Editor" />
+    <unitInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="90" startPosition="0" endLine="140" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.HeatingPlan_Editor$dailyPlansListHandler_16fuhk_d0" />
+    <unitInfo nodeId="5063359128232955516" fileName="HeatingPlan_Editor.java" startLine="28" startPosition="0" endLine="141" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.HeatingPlan_Editor" />
   </root>
   <root nodeRef="r:4b82218b-d47e-4120-8b44-e2530c2efcf5(jetbrains.mps.samples.heating.editor)/5726447348463731349">
     <nodeInfo nodeId="5726447348463731349" fileName="Slot_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1227,35 +1229,57 @@
   </root>
   <root nodeRef="r:4b82218b-d47e-4120-8b44-e2530c2efcf5(jetbrains.mps.samples.heating.editor)/935069066462802861">
     <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="13" startPosition="95" endLine="14" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="20" startPosition="48" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935069066462802873" fileName="DeleteCustomizes.java" startLine="28" startPosition="75" endLine="29" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteCustomizes_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="13" startPosition="95" endLine="14" endPosition="100" />
-    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="20" startPosition="48" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="935069066462802864" fileName="DeleteCustomizes.java" startLine="28" startPosition="75" endLine="29" endPosition="64" />
-    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="14" startPosition="100" endLine="15" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="21" startPosition="48" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066462802873" fileName="DeleteCustomizes.java" startLine="29" startPosition="75" endLine="30" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="37" startPosition="51" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="41" startPosition="54" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066462802873" fileName="DeleteCustomizes.java" startLine="45" startPosition="75" endLine="46" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteCustomizes_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteCustomizes_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="21" startPosition="48" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="935069066462802864" fileName="DeleteCustomizes.java" startLine="29" startPosition="75" endLine="30" endPosition="64" />
+    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="37" startPosition="51" endLine="38" endPosition="25" />
+    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="41" startPosition="54" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="935069066462802864" fileName="DeleteCustomizes.java" startLine="45" startPosition="75" endLine="46" endPosition="64" />
+    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="13" startPosition="95" endLine="15" endPosition="106" />
+    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="935069066462802861" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="935069066462802861" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="935069066462802861" varName="editorContext" />
+      <varInfo nodeId="935069066462802861" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="935069066462802861" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="935069066462802861" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="935069066462802861" varName="editorContext" />
+      <varInfo nodeId="935069066462802861" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="935069066462802861" varName="context" />
       <varInfo nodeId="935069066462802861" varName="editorCell" />
       <varInfo nodeId="935069066462802861" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="935069066462802861" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="935069066462802861" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="935069066462802861" varName="editorContext" />
-      <varInfo nodeId="935069066462802861" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.DeleteCustomizes$DeleteCustomizes_DELETE" />
-    <unitInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.DeleteCustomizes" />
+    <unitInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.DeleteCustomizes$DeleteCustomizes_DELETE" />
+    <unitInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="34" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.DeleteCustomizes$DeleteCustomizes_BACKSPACE" />
+    <unitInfo nodeId="935069066462802861" fileName="DeleteCustomizes.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.samples.heating.editor.DeleteCustomizes" />
   </root>
 </debugInfo>
 

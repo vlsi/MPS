@@ -18,12 +18,40 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 public class DeleteStaticInMethodDeclaration {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DeleteStaticInMethodDeclaration.DeleteStaticInMethodDeclaration_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new DeleteStaticInMethodDeclaration.DeleteStaticInMethodDeclaration_BACKSPACE(node));
   }
 
   public static class DeleteStaticInMethodDeclaration_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public DeleteStaticInMethodDeclaration_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      final SNode method = SNodeFactoryOperations.insertNewNextSiblingChild(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+      SLinkOperations.setTarget(method, "returnType", SLinkOperations.getTarget(node, "returnType", true), true);
+      ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)));
+      SLinkOperations.setTarget(method, "body", SLinkOperations.getTarget(node, "body", true), true);
+      ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)));
+      SLinkOperations.setTarget(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "visibility", SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "visibility", true), true);
+      SPropertyOperations.set(method, "name", SPropertyOperations.getString(node, "name"));
+      SPropertyOperations.set(method, "isFinal", "" + (SPropertyOperations.getBoolean(node, "isFinal")));
+      ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)));
+      ListSequence.fromList(SLinkOperations.getTargets(method, "typeVariableDeclaration", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)));
+      AttributeOperations.setAttribute(method, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"), AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")));
+      SNodeOperations.deleteNode(node);
+    }
+  }
+
+  public static class DeleteStaticInMethodDeclaration_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public DeleteStaticInMethodDeclaration_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

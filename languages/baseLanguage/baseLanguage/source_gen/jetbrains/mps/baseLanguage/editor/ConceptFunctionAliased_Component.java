@@ -70,6 +70,7 @@ public class ConceptFunctionAliased_Component implements ConceptEditorComponent 
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_ohhbpy_b0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, true);

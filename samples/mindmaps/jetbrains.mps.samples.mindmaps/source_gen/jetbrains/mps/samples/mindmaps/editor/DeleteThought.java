@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class DeleteThought {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new DeleteThought.DeleteThought_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new DeleteThought.DeleteThought_BACKSPACE(node));
   }
 
   public static class DeleteThought_DELETE extends AbstractCellAction {
@@ -49,6 +50,41 @@ public class DeleteThought {
     }
 
     private static boolean eq_tcgyjr_a0a0a0a0a0a0c0d1_0(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
+    }
+  }
+
+  public static class DeleteThought_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public DeleteThought_BACKSPACE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, final SNode node) {
+      SNode mindMap = SNodeOperations.getAncestor(node, "jetbrains.mps.samples.mindmaps.structure.MindMap", false, false);
+
+      ListSequence.fromList(SLinkOperations.getTargets(mindMap, "relationships", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return eq_tcgyjr_a0a0a0a0a0a0c0d2_0(SLinkOperations.getTarget(it, "target", false), node) || eq_tcgyjr_a0a0a0a0a0a0c0d2(SLinkOperations.getTarget(it, "source", false), node);
+        }
+      }).visitAll(new IVisitor<SNode>() {
+        public void visit(SNode it) {
+          SNodeOperations.deleteNode(it);
+        }
+      });
+      SNodeOperations.deleteNode(node);
+    }
+
+    private static boolean eq_tcgyjr_a0a0a0a0a0a0c0d2(Object a, Object b) {
+      return (a != null ? a.equals(b) : a == b);
+    }
+
+    private static boolean eq_tcgyjr_a0a0a0a0a0a0c0d2_0(Object a, Object b) {
       return (a != null ? a.equals(b) : a == b);
     }
   }

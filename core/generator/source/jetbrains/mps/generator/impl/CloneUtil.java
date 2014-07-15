@@ -17,9 +17,12 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
+import jetbrains.mps.project.structure.modules.Dependency;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelInternal;
 import org.apache.log4j.LogManager;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModel.ImportElement;
@@ -28,6 +31,7 @@ import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.smodel.StaticReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class CloneUtil {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(CloneUtil.class));
@@ -74,6 +78,26 @@ public class CloneUtil {
     }
     for (SModuleReference devKit : inputModel.importedDevkits()) {
       outputModel.addDevKit(devKit);
+    }
+  }
+
+  /**
+   * The same as above, but also clones all module imports
+   */
+  public void cloneModelWithAllImports() {
+    cloneModelWithImports();
+    AbstractModule inputModule = (AbstractModule) myInputModel.getModule();
+    assert !(inputModule instanceof Language);
+    ModuleDescriptor moduleDescriptor = inputModule.getModuleDescriptor();
+    AbstractModule outputModule = (AbstractModule) myOutputModel.getModule();
+    for (Dependency dependency : moduleDescriptor.getDependencies()) {
+      outputModule.addDependency(dependency.getModuleRef(), dependency.isReexport());
+    }
+    for (SModuleReference language : moduleDescriptor.getUsedLanguages()) {
+      outputModule.addUsedLanguage(language);
+    }
+    for (SModuleReference devkit : moduleDescriptor.getUsedDevkits()){
+      outputModule.addUsedDevkit(devkit);
     }
   }
 

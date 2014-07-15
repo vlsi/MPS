@@ -89,6 +89,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       };
       editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("TransactionalProperty_6h6dhy_a0");
       Style style = new StyleImpl();
       BaseLanguageStyle_StyleSheet.apply_Field(style, editorCell);
@@ -280,6 +281,7 @@ public class LinkDeclaration_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_6h6dhy_d2a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);

@@ -39,11 +39,14 @@ public class RefNodeCellProvider extends AbstractReferentCellProvider {
     }
     if (myIsCardinality1) {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
     }
     if (myIsAggregation) {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(referencedNode));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(referencedNode));
     } else {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(node, myGenuineRole));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteReference(node, myGenuineRole));
     }
     return editorCell;
   }

@@ -1000,107 +1000,191 @@
   </root>
   <root nodeRef="r:71352b9e-a946-4771-b87e-4431430937ee(jetbrains.mps.testHybridEditor.diagram.generated.editor)/5827780068500780337">
     <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="15" startPosition="95" endLine="16" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="22" startPosition="46" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5827780068500918523" fileName="BlockActionMap.java" startLine="32" startPosition="229" endLine="33" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5827780068500923923" fileName="BlockActionMap.java" startLine="35" startPosition="7" endLine="36" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="40" startPosition="38" endLine="41" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="42" startPosition="7" endLine="43" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="47" startPosition="38" endLine="48" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="49" startPosition="7" endLine="50" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5827780068500917809" fileName="BlockActionMap.java" startLine="53" startPosition="68" endLine="54" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5827780068504348596" fileName="BlockActionMap.java" startLine="57" startPosition="70" endLine="58" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BlockActionMap_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5827780068500827007" fileName="BlockActionMap.java" startLine="31" startPosition="211" endLine="34" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="39" startPosition="74" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="46" startPosition="76" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5827780068500917809" fileName="BlockActionMap.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_dpv54c_a0a0a0a3b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5827780068504348596" fileName="BlockActionMap.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_dpv54c_a0a0a0a3b_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="5827780068500818711" fileName="BlockActionMap.java" startLine="30" startPosition="75" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_dpv54c_a0a0a0a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="46" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_dpv54c_a0a0a0a0a_0#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="30" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="15" startPosition="95" endLine="16" endPosition="96" />
-    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="22" startPosition="46" endLine="23" endPosition="25" />
-    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
-    <scopeInfo nodeId="5827780068500827008" fileName="BlockActionMap.java" startLine="32" startPosition="229" endLine="33" endPosition="48" />
-    <scopeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="40" startPosition="38" endLine="41" endPosition="76" />
-    <scopeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="47" startPosition="38" endLine="48" endPosition="76" />
-    <scopeInfo nodeId="5827780068500917809" fileName="BlockActionMap.java" startLine="53" startPosition="68" endLine="54" endPosition="48" />
-    <scopeInfo nodeId="5827780068504348596" fileName="BlockActionMap.java" startLine="57" startPosition="70" endLine="58" endPosition="48" />
-    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="16" startPosition="96" endLine="17" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="23" startPosition="46" endLine="24" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="27" startPosition="54" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068500918523" fileName="BlockActionMap.java" startLine="33" startPosition="229" endLine="34" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068500923923" fileName="BlockActionMap.java" startLine="36" startPosition="7" endLine="37" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="41" startPosition="38" endLine="42" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="43" startPosition="7" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="48" startPosition="38" endLine="49" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="50" startPosition="7" endLine="51" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827780068500917809" fileName="BlockActionMap.java" startLine="54" startPosition="68" endLine="55" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827780068504348596" fileName="BlockActionMap.java" startLine="58" startPosition="70" endLine="59" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="64" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="66" startPosition="49" endLine="67" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="70" startPosition="54" endLine="71" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068500918523" fileName="BlockActionMap.java" startLine="76" startPosition="229" endLine="77" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068500923923" fileName="BlockActionMap.java" startLine="79" startPosition="7" endLine="80" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="84" startPosition="38" endLine="85" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="86" startPosition="7" endLine="87" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="91" startPosition="38" endLine="92" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="93" startPosition="7" endLine="94" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827780068500917809" fileName="BlockActionMap.java" startLine="97" startPosition="68" endLine="98" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827780068504348596" fileName="BlockActionMap.java" startLine="101" startPosition="70" endLine="102" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BlockActionMap_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5827780068500827007" fileName="BlockActionMap.java" startLine="32" startPosition="211" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="40" startPosition="74" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="47" startPosition="76" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5827780068500917809" fileName="BlockActionMap.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_dpv54c_a0a0a0a3b#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5827780068504348596" fileName="BlockActionMap.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_dpv54c_a0a0a0a3b_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BlockActionMap_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5827780068500827007" fileName="BlockActionMap.java" startLine="75" startPosition="211" endLine="78" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="83" startPosition="74" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="90" startPosition="76" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5827780068500917809" fileName="BlockActionMap.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_dpv54c_a0a0a0a3c#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5827780068504348596" fileName="BlockActionMap.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="eq_dpv54c_a0a0a0a3c_0#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="15" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5827780068500818711" fileName="BlockActionMap.java" startLine="31" startPosition="75" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5827780068500818711" fileName="BlockActionMap.java" startLine="74" startPosition="75" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="40" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_dpv54c_a0a0a0a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_dpv54c_a0a0a0a0a_0#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="83" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_dpv54c_a0a0a0a0a#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="90" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_dpv54c_a0a0a0a0a_0#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="31" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="74" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="23" startPosition="46" endLine="24" endPosition="25" />
+    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="27" startPosition="54" endLine="28" endPosition="56" />
+    <scopeInfo nodeId="5827780068500827008" fileName="BlockActionMap.java" startLine="33" startPosition="229" endLine="34" endPosition="48" />
+    <scopeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="41" startPosition="38" endLine="42" endPosition="76" />
+    <scopeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="48" startPosition="38" endLine="49" endPosition="76" />
+    <scopeInfo nodeId="5827780068500917809" fileName="BlockActionMap.java" startLine="54" startPosition="68" endLine="55" endPosition="48" />
+    <scopeInfo nodeId="5827780068504348596" fileName="BlockActionMap.java" startLine="58" startPosition="70" endLine="59" endPosition="48" />
+    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="66" startPosition="49" endLine="67" endPosition="25" />
+    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="70" startPosition="54" endLine="71" endPosition="56" />
+    <scopeInfo nodeId="5827780068500827008" fileName="BlockActionMap.java" startLine="76" startPosition="229" endLine="77" endPosition="48" />
+    <scopeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="84" startPosition="38" endLine="85" endPosition="76" />
+    <scopeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="91" startPosition="38" endLine="92" endPosition="76" />
+    <scopeInfo nodeId="5827780068500917809" fileName="BlockActionMap.java" startLine="97" startPosition="68" endLine="98" endPosition="48" />
+    <scopeInfo nodeId="5827780068504348596" fileName="BlockActionMap.java" startLine="101" startPosition="70" endLine="102" endPosition="48" />
+    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="15" startPosition="95" endLine="17" endPosition="102" />
+    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="5827780068500780337" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="5827780068500780337" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068500818714" fileName="BlockActionMap.java" startLine="32" startPosition="211" endLine="35" endPosition="9" />
+    <scopeInfo nodeId="5827780068500917809" fileName="BlockActionMap.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
+      <varInfo nodeId="5827780068500917809" varName="a" />
+      <varInfo nodeId="5827780068500917809" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068504348596" fileName="BlockActionMap.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
+      <varInfo nodeId="5827780068504348596" varName="a" />
+      <varInfo nodeId="5827780068504348596" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="66" startPosition="0" endLine="69" endPosition="0">
+      <varInfo nodeId="5827780068500780337" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="70" startPosition="0" endLine="73" endPosition="0">
+      <varInfo nodeId="5827780068500780337" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068500818714" fileName="BlockActionMap.java" startLine="75" startPosition="211" endLine="78" endPosition="9" />
+    <scopeInfo nodeId="5827780068500917809" fileName="BlockActionMap.java" startLine="97" startPosition="0" endLine="100" endPosition="0">
+      <varInfo nodeId="5827780068500917809" varName="a" />
+      <varInfo nodeId="5827780068500917809" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068504348596" fileName="BlockActionMap.java" startLine="101" startPosition="0" endLine="104" endPosition="0">
+      <varInfo nodeId="5827780068504348596" varName="a" />
+      <varInfo nodeId="5827780068504348596" varName="b" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="15" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="5827780068500780337" varName="context" />
       <varInfo nodeId="5827780068500780337" varName="editorCell" />
       <varInfo nodeId="5827780068500780337" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
-      <varInfo nodeId="5827780068500780337" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
-      <varInfo nodeId="5827780068500780337" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5827780068500818714" fileName="BlockActionMap.java" startLine="31" startPosition="211" endLine="34" endPosition="9" />
-    <scopeInfo nodeId="5827780068500917809" fileName="BlockActionMap.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="5827780068500917809" varName="a" />
-      <varInfo nodeId="5827780068500917809" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="5827780068504348596" fileName="BlockActionMap.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
-      <varInfo nodeId="5827780068504348596" varName="a" />
-      <varInfo nodeId="5827780068504348596" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="39" startPosition="74" endLine="43" endPosition="18" />
-    <scopeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="46" startPosition="76" endLine="50" endPosition="18" />
-    <scopeInfo nodeId="5827780068500818711" fileName="BlockActionMap.java" startLine="30" startPosition="75" endLine="35" endPosition="7">
+    <scopeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="40" startPosition="74" endLine="44" endPosition="18" />
+    <scopeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="47" startPosition="76" endLine="51" endPosition="18" />
+    <scopeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="83" startPosition="74" endLine="87" endPosition="18" />
+    <scopeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="90" startPosition="76" endLine="94" endPosition="18" />
+    <scopeInfo nodeId="5827780068500818711" fileName="BlockActionMap.java" startLine="31" startPosition="75" endLine="36" endPosition="7">
       <varInfo nodeId="5827780068500818712" varName="connector" />
     </scopeInfo>
-    <scopeInfo nodeId="5827780068500782131" fileName="BlockActionMap.java" startLine="30" startPosition="75" endLine="36" endPosition="39" />
-    <scopeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="39" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="5827780068500818711" fileName="BlockActionMap.java" startLine="74" startPosition="75" endLine="79" endPosition="7">
+      <varInfo nodeId="5827780068500818712" varName="connector" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068500782131" fileName="BlockActionMap.java" startLine="31" startPosition="75" endLine="37" endPosition="39" />
+    <scopeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="40" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="5827780068504341202" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="46" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="47" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="5827780068504348597" varName="checkedDotOperand" />
     </scopeInfo>
-    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="30" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="5827780068500782131" fileName="BlockActionMap.java" startLine="74" startPosition="75" endLine="80" endPosition="39" />
+    <scopeInfo nodeId="5827780068504341202" fileName="BlockActionMap.java" startLine="83" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="5827780068504341202" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068504348597" fileName="BlockActionMap.java" startLine="90" startPosition="0" endLine="96" endPosition="0">
+      <varInfo nodeId="5827780068504348597" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="31" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="5827780068500780337" varName="editorContext" />
       <varInfo nodeId="5827780068500780337" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="19" startPosition="0" endLine="61" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockActionMap$BlockActionMap_DELETE" />
-    <unitInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="14" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockActionMap" />
+    <scopeInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="74" startPosition="0" endLine="82" endPosition="0">
+      <varInfo nodeId="5827780068500780337" varName="editorContext" />
+      <varInfo nodeId="5827780068500780337" varName="node" />
+    </scopeInfo>
+    <unitInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="20" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockActionMap$BlockActionMap_DELETE" />
+    <unitInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="63" startPosition="0" endLine="105" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockActionMap$BlockActionMap_BACKSPACE" />
+    <unitInfo nodeId="5827780068500780337" fileName="BlockActionMap.java" startLine="14" startPosition="0" endLine="106" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.BlockActionMap" />
   </root>
   <root nodeRef="r:71352b9e-a946-4771-b87e-4431430937ee(jetbrains.mps.testHybridEditor.diagram.generated.editor)/5827780068505641714">
     <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="13" startPosition="95" endLine="14" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="20" startPosition="50" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5827780068505641748" fileName="ConnectorActionMap.java" startLine="28" startPosition="75" endLine="29" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConnectorActionMap_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="13" startPosition="95" endLine="14" endPosition="104" />
-    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="20" startPosition="50" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="5827780068505641717" fileName="ConnectorActionMap.java" startLine="28" startPosition="75" endLine="29" endPosition="39" />
-    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="14" startPosition="104" endLine="15" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="21" startPosition="50" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068505641748" fileName="ConnectorActionMap.java" startLine="29" startPosition="75" endLine="30" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="37" startPosition="53" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="41" startPosition="54" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068505641748" fileName="ConnectorActionMap.java" startLine="45" startPosition="75" endLine="46" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConnectorActionMap_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConnectorActionMap_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="21" startPosition="50" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="5827780068505641717" fileName="ConnectorActionMap.java" startLine="29" startPosition="75" endLine="30" endPosition="39" />
+    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="37" startPosition="53" endLine="38" endPosition="25" />
+    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="41" startPosition="54" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="5827780068505641717" fileName="ConnectorActionMap.java" startLine="45" startPosition="75" endLine="46" endPosition="39" />
+    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="13" startPosition="95" endLine="15" endPosition="110" />
+    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="5827780068505641714" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="5827780068505641714" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="5827780068505641714" varName="editorContext" />
+      <varInfo nodeId="5827780068505641714" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="5827780068505641714" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="5827780068505641714" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="5827780068505641714" varName="editorContext" />
+      <varInfo nodeId="5827780068505641714" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="5827780068505641714" varName="context" />
       <varInfo nodeId="5827780068505641714" varName="editorCell" />
       <varInfo nodeId="5827780068505641714" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="5827780068505641714" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="5827780068505641714" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="5827780068505641714" varName="editorContext" />
-      <varInfo nodeId="5827780068505641714" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorActionMap$ConnectorActionMap_DELETE" />
-    <unitInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorActionMap" />
+    <unitInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorActionMap$ConnectorActionMap_DELETE" />
+    <unitInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="34" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorActionMap$ConnectorActionMap_BACKSPACE" />
+    <unitInfo nodeId="5827780068505641714" fileName="ConnectorActionMap.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.testHybridEditor.diagram.generated.editor.ConnectorActionMap" />
   </root>
   <root nodeRef="r:71352b9e-a946-4771-b87e-4431430937ee(jetbrains.mps.testHybridEditor.diagram.generated.editor)/6306886970785124034">
     <nodeInfo nodeId="6306886970785124034" fileName="InputPort_diagram_Editor.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myContextHints" />

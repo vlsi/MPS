@@ -15,12 +15,37 @@ import jetbrains.mps.util.NameUtil;
 public class ExpressionStatement_Expression_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new ExpressionStatement_Expression_Actions.ExpressionStatement_Expression_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new ExpressionStatement_Expression_Actions.ExpressionStatement_Expression_Actions_BACKSPACE(node));
   }
 
   public static class ExpressionStatement_Expression_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public ExpressionStatement_Expression_Actions_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public String getDescriptionText() {
+      return "delete whole statement";
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "expression", true)), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression")))) {
+        SNodeOperations.deleteNode(node);
+      } else {
+        SLinkOperations.setTarget(node, "expression", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Expression", null), true);
+      }
+    }
+  }
+
+  public static class ExpressionStatement_Expression_Actions_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public ExpressionStatement_Expression_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

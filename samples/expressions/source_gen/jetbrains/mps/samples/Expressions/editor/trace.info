@@ -266,28 +266,29 @@
     <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="77" startPosition="87" endLine="78" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="82" startPosition="96" endLine="83" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="84" startPosition="34" endLine="85" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="87" startPosition="131" endLine="88" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="85" startPosition="95" endLine="86" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="88" startPosition="131" endLine="89" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="expressionsListHandler_y4utgp_b0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="83" startPosition="134" endLine="86" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="86" startPosition="9" endLine="89" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="87" startPosition="9" endLine="90" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="83" startPosition="134" endLine="87" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="68" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_y4utgp_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="2073504467208335805" fileName="SimpleMathWrapper_Editor.java" startLine="37" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_y4utgp_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="81" startPosition="132" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="47" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_y4utgp_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="81" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="81" startPosition="132" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="81" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="24" startPosition="79" endLine="25" endPosition="63" />
     <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="31" startPosition="28" endLine="32" endPosition="81" />
     <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="32" startPosition="81" endLine="33" endPosition="84" />
     <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="59" startPosition="103" endLine="60" endPosition="50" />
-    <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="84" startPosition="34" endLine="85" endPosition="95" />
-    <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="87" startPosition="131" endLine="88" endPosition="139" />
+    <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="88" startPosition="131" endLine="89" endPosition="139" />
     <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="63" startPosition="66" endLine="65" endPosition="93">
       <varInfo nodeId="2073504467208335742" varName="listOwner" />
     </scopeInfo>
+    <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="84" startPosition="34" endLine="86" endPosition="98" />
     <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="2073504467208335742" varName="editorContext" />
       <varInfo nodeId="2073504467208335742" varName="node" />
@@ -320,7 +321,6 @@
       <varInfo nodeId="2073504467208335805" varName="editorCell" />
       <varInfo nodeId="2073504467208335805" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="82" startPosition="96" endLine="89" endPosition="9" />
     <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="28" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="2073504467208335742" varName="editorContext" />
       <varInfo nodeId="2073504467208335742" varName="node" />
@@ -330,23 +330,24 @@
       <varInfo nodeId="2073504467208335742" varName="handler" />
       <varInfo nodeId="2073504467208335742" varName="style" />
     </scopeInfo>
+    <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="82" startPosition="96" endLine="90" endPosition="9" />
     <scopeInfo nodeId="2073504467208335805" fileName="SimpleMathWrapper_Editor.java" startLine="37" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="2073504467208335805" varName="editorContext" />
       <varInfo nodeId="2073504467208335805" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="81" startPosition="132" endLine="90" endPosition="7" />
     <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="47" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="2073504467208335742" varName="editorContext" />
       <varInfo nodeId="2073504467208335742" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="81" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="81" startPosition="132" endLine="91" endPosition="7" />
+    <scopeInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="81" startPosition="0" endLine="93" endPosition="0">
       <varInfo nodeId="2073504467208335742" varName="editorContext" />
       <varInfo nodeId="2073504467208335742" varName="elementCell" />
       <varInfo nodeId="2073504467208335742" varName="elementNode" />
       <varInfo nodeId="2073504467208335742" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="58" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.samples.Expressions.editor.SimpleMathWrapper_Editor$expressionsListHandler_y4utgp_b0" />
-    <unitInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="23" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.samples.Expressions.editor.SimpleMathWrapper_Editor" />
+    <unitInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="58" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.samples.Expressions.editor.SimpleMathWrapper_Editor$expressionsListHandler_y4utgp_b0" />
+    <unitInfo nodeId="2073504467208335742" fileName="SimpleMathWrapper_Editor.java" startLine="23" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.samples.Expressions.editor.SimpleMathWrapper_Editor" />
   </root>
   <root nodeRef="r:e219e784-986b-4445-84f5-19e78ea5a924(jetbrains.mps.samples.Expressions.editor)/2073504467208540140">
     <nodeInfo nodeId="2073504467208540140" fileName="SimpleMathBooleanConstant_Editor.java" startLine="15" startPosition="79" endLine="16" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

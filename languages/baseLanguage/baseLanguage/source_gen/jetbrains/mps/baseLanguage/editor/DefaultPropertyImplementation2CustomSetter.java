@@ -13,6 +13,7 @@ public class DefaultPropertyImplementation2CustomSetter {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.INSERT, new DefaultPropertyImplementation2CustomSetter.DefaultPropertyImplementation2CustomSetter_INSERT(node));
     editorCell.setAction(CellActionType.DELETE, new DefaultPropertyImplementation2CustomSetter.DefaultPropertyImplementation2CustomSetter_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new DefaultPropertyImplementation2CustomSetter.DefaultPropertyImplementation2CustomSetter_BACKSPACE(node));
   }
 
   public static class DefaultPropertyImplementation2CustomSetter_INSERT extends AbstractCellAction {
@@ -36,6 +37,22 @@ public class DefaultPropertyImplementation2CustomSetter {
     /*package*/ SNode myNode;
 
     public DefaultPropertyImplementation2CustomSetter_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
+    }
+  }
+
+  public static class DefaultPropertyImplementation2CustomSetter_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public DefaultPropertyImplementation2CustomSetter_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

@@ -203,67 +203,111 @@
   </root>
   <root nodeRef="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)/633195941006997134">
     <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="13" startPosition="95" endLine="14" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="20" startPosition="57" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="633195941006997140" fileName="RemoveThreadPoolReference.java" startLine="28" startPosition="75" endLine="29" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveThreadPoolReference_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="13" startPosition="95" endLine="14" endPosition="118" />
-    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="20" startPosition="57" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="633195941006997139" fileName="RemoveThreadPoolReference.java" startLine="28" startPosition="75" endLine="29" endPosition="64" />
-    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="14" startPosition="118" endLine="15" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="21" startPosition="57" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="633195941006997140" fileName="RemoveThreadPoolReference.java" startLine="29" startPosition="75" endLine="30" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="37" startPosition="60" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="41" startPosition="54" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="633195941006997140" fileName="RemoveThreadPoolReference.java" startLine="45" startPosition="75" endLine="46" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveThreadPoolReference_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveThreadPoolReference_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="21" startPosition="57" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="633195941006997139" fileName="RemoveThreadPoolReference.java" startLine="29" startPosition="75" endLine="30" endPosition="64" />
+    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="37" startPosition="60" endLine="38" endPosition="25" />
+    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="41" startPosition="54" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="633195941006997139" fileName="RemoveThreadPoolReference.java" startLine="45" startPosition="75" endLine="46" endPosition="64" />
+    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="13" startPosition="95" endLine="15" endPosition="124" />
+    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="633195941006997134" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="633195941006997134" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="633195941006997134" varName="editorContext" />
+      <varInfo nodeId="633195941006997134" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="633195941006997134" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="633195941006997134" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="633195941006997134" varName="editorContext" />
+      <varInfo nodeId="633195941006997134" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="633195941006997134" varName="context" />
       <varInfo nodeId="633195941006997134" varName="editorCell" />
       <varInfo nodeId="633195941006997134" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="633195941006997134" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="633195941006997134" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="633195941006997134" varName="editorContext" />
-      <varInfo nodeId="633195941006997134" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.RemoveThreadPoolReference$RemoveThreadPoolReference_DELETE" />
-    <unitInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.RemoveThreadPoolReference" />
+    <unitInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.RemoveThreadPoolReference$RemoveThreadPoolReference_DELETE" />
+    <unitInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="34" startPosition="0" endLine="49" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.RemoveThreadPoolReference$RemoveThreadPoolReference_BACKSPACE" />
+    <unitInfo nodeId="633195941006997134" fileName="RemoveThreadPoolReference.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.RemoveThreadPoolReference" />
   </root>
   <root nodeRef="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)/7704855178158867368">
     <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="13" startPosition="95" endLine="14" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="20" startPosition="44" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7704855178158871614" fileName="DeleteNoWait.java" startLine="28" startPosition="75" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteNoWait_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="13" startPosition="95" endLine="14" endPosition="92" />
-    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="20" startPosition="44" endLine="21" endPosition="25" />
-    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="7704855178158871609" fileName="DeleteNoWait.java" startLine="28" startPosition="75" endLine="29" endPosition="60" />
-    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="14" startPosition="92" endLine="15" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="21" startPosition="44" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704855178158871614" fileName="DeleteNoWait.java" startLine="29" startPosition="75" endLine="30" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="35" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="37" startPosition="47" endLine="38" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="41" startPosition="54" endLine="42" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704855178158871614" fileName="DeleteNoWait.java" startLine="45" startPosition="75" endLine="46" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteNoWait_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DeleteNoWait_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="13" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="21" startPosition="44" endLine="22" endPosition="25" />
+    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
+    <scopeInfo nodeId="7704855178158871609" fileName="DeleteNoWait.java" startLine="29" startPosition="75" endLine="30" endPosition="60" />
+    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="37" startPosition="47" endLine="38" endPosition="25" />
+    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="41" startPosition="54" endLine="42" endPosition="56" />
+    <scopeInfo nodeId="7704855178158871609" fileName="DeleteNoWait.java" startLine="45" startPosition="75" endLine="46" endPosition="60" />
+    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="13" startPosition="95" endLine="15" endPosition="98" />
+    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+      <varInfo nodeId="7704855178158867368" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="7704855178158867368" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
+      <varInfo nodeId="7704855178158867368" varName="editorContext" />
+      <varInfo nodeId="7704855178158867368" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="7704855178158867368" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+      <varInfo nodeId="7704855178158867368" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="7704855178158867368" varName="editorContext" />
+      <varInfo nodeId="7704855178158867368" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="13" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="7704855178158867368" varName="context" />
       <varInfo nodeId="7704855178158867368" varName="editorCell" />
       <varInfo nodeId="7704855178158867368" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
-      <varInfo nodeId="7704855178158867368" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="7704855178158867368" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="7704855178158867368" varName="editorContext" />
-      <varInfo nodeId="7704855178158867368" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="17" startPosition="0" endLine="32" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.DeleteNoWait$DeleteNoWait_DELETE" />
-    <unitInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="12" startPosition="0" endLine="33" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.DeleteNoWait" />
+    <unitInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.DeleteNoWait$DeleteNoWait_DELETE" />
+    <unitInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="34" startPosition="0" endLine="49" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.DeleteNoWait$DeleteNoWait_BACKSPACE" />
+    <unitInfo nodeId="7704855178158867368" fileName="DeleteNoWait.java" startLine="12" startPosition="0" endLine="50" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.editor.DeleteNoWait" />
   </root>
   <root nodeRef="r:356cdff9-223c-480e-a34e-0b9eab641194(org.jetbrains.mps.samples.ParallelFor.editor)/8923957828369515244">
     <nodeInfo nodeId="8923957828369515244" fileName="ParallelLoopVariable_Editor.java" startLine="23" startPosition="79" endLine="24" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

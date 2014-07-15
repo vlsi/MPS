@@ -93,6 +93,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_xpsq7t_a0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);
@@ -141,6 +142,7 @@ public class ActionParameter_Hint implements ConceptEditorComponent {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_xpsq7t_c0a");
     Style style = new StyleImpl();
     style.set(StyleAttributes.SELECTABLE, false);

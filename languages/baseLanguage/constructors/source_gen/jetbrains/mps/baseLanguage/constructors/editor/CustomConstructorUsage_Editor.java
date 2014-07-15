@@ -58,6 +58,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
     };
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ModelAccess_pubti2_a0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);
@@ -98,6 +99,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
                   elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
                   if (elementNode != null) {
                     elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+                    elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
                     elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, SPropertyOperations.getString(SLinkOperations.getTarget(node, "customConstructor", false), "separator")));
                   }
                   if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
@@ -140,6 +142,7 @@ public class CustomConstructorUsage_Editor extends DefaultNodeEditor {
     };
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ModelAccess_pubti2_c0");
     Style style = new StyleImpl();
     style.set(StyleAttributes.EDITABLE, false);

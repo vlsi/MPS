@@ -13,12 +13,30 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class IntervalSymbolClassPart_removeLeft {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new IntervalSymbolClassPart_removeLeft.IntervalSymbolClassPart_removeLeft_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new IntervalSymbolClassPart_removeLeft.IntervalSymbolClassPart_removeLeft_BACKSPACE(node));
   }
 
   public static class IntervalSymbolClassPart_removeLeft_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public IntervalSymbolClassPart_removeLeft_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode cn = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart");
+      SPropertyOperations.set(cn, "character", SPropertyOperations.getString(node, "end"));
+    }
+  }
+
+  public static class IntervalSymbolClassPart_removeLeft_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public IntervalSymbolClassPart_removeLeft_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

@@ -41,35 +41,36 @@
     <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="82" startPosition="87" endLine="83" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="87" startPosition="96" endLine="88" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="89" startPosition="34" endLine="90" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="92" startPosition="131" endLine="93" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="90" startPosition="95" endLine="91" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="93" startPosition="131" endLine="94" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="importedLanguageListHandler_ioe0e8_b1a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="88" startPosition="134" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="91" startPosition="9" endLine="94" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="92" startPosition="9" endLine="95" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="368569065472988623" fileName="ModelCreationSettings_Editor.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_ioe0e8_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="68" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="88" startPosition="134" endLine="92" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="73" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="368569065472988621" fileName="ModelCreationSettings_Editor.java" startLine="35" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_ioe0e8_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="79" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_ioe0e8_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="55" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_ioe0e8_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="26" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_ioe0e8_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="86" startPosition="132" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="86" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="86" startPosition="132" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="86" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="22" startPosition="79" endLine="23" endPosition="63" />
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="29" startPosition="28" endLine="30" endPosition="81" />
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="30" startPosition="81" endLine="31" endPosition="83" />
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="44" startPosition="49" endLine="45" endPosition="84" />
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="45" startPosition="84" endLine="46" endPosition="85" />
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="64" startPosition="109" endLine="65" endPosition="50" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="89" startPosition="34" endLine="90" endPosition="95" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="92" startPosition="131" endLine="93" endPosition="139" />
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="93" startPosition="131" endLine="94" endPosition="139" />
     <scopeInfo nodeId="368569065472988623" fileName="ModelCreationSettings_Editor.java" startLine="50" startPosition="91" endLine="52" endPosition="22">
       <varInfo nodeId="368569065472988623" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="68" startPosition="66" endLine="70" endPosition="93">
       <varInfo nodeId="368569065472988616" varName="listOwner" />
     </scopeInfo>
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="89" startPosition="34" endLine="91" endPosition="98" />
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="368569065472988616" varName="editorContext" />
       <varInfo nodeId="368569065472988616" varName="node" />
@@ -124,20 +125,20 @@
       <varInfo nodeId="368569065472988616" varName="editorContext" />
       <varInfo nodeId="368569065472988616" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="87" startPosition="96" endLine="94" endPosition="9" />
     <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="26" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="368569065472988616" varName="editorContext" />
       <varInfo nodeId="368569065472988616" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="86" startPosition="132" endLine="95" endPosition="7" />
-    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="86" startPosition="0" endLine="97" endPosition="0">
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="87" startPosition="96" endLine="95" endPosition="9" />
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="86" startPosition="132" endLine="96" endPosition="7" />
+    <scopeInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="86" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="368569065472988616" varName="editorContext" />
       <varInfo nodeId="368569065472988616" varName="elementCell" />
       <varInfo nodeId="368569065472988616" varName="elementNode" />
       <varInfo nodeId="368569065472988616" varName="listOwner" />
     </scopeInfo>
-    <unitInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="63" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelCreationSettings_Editor$importedLanguageListHandler_ioe0e8_b1a" />
-    <unitInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="21" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelCreationSettings_Editor" />
+    <unitInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="63" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelCreationSettings_Editor$importedLanguageListHandler_ioe0e8_b1a" />
+    <unitInfo nodeId="368569065472988616" fileName="ModelCreationSettings_Editor.java" startLine="21" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelCreationSettings_Editor" />
   </root>
   <root nodeRef="r:962014de-b79f-4dca-a99e-cf09dffd17cf(jetbrains.mps.lang.stubs.editor)/368569065472988631">
     <nodeInfo nodeId="368569065472988631" fileName="LanguageRef_Editor.java" startLine="27" startPosition="79" endLine="28" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -465,64 +466,66 @@
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="229" startPosition="89" endLine="230" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="234" startPosition="96" endLine="235" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="236" startPosition="34" endLine="237" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="239" startPosition="131" endLine="240" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="245" startPosition="93" endLine="246" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="246" startPosition="96" endLine="247" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="247" startPosition="52" endLine="248" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="248" startPosition="36" endLine="249" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="249" startPosition="68" endLine="250" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="250" startPosition="42" endLine="251" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="251" startPosition="36" endLine="252" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="256" startPosition="90" endLine="257" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="257" startPosition="86" endLine="258" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="258" startPosition="49" endLine="259" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="259" startPosition="34" endLine="260" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="263" startPosition="93" endLine="264" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="264" startPosition="134" endLine="265" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="265" startPosition="108" endLine="266" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="266" startPosition="47" endLine="267" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="267" startPosition="49" endLine="268" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="272" startPosition="100" endLine="273" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="276" startPosition="66" endLine="277" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="277" startPosition="41" endLine="278" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="281" startPosition="86" endLine="282" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="282" startPosition="80" endLine="283" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="283" startPosition="95" endLine="284" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="287" startPosition="68" endLine="288" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="288" startPosition="34" endLine="289" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="289" startPosition="80" endLine="290" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="290" startPosition="87" endLine="291" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="294" startPosition="89" endLine="295" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="299" startPosition="96" endLine="300" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="301" startPosition="34" endLine="302" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="302" startPosition="95" endLine="303" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="305" startPosition="131" endLine="306" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="312" startPosition="104" endLine="313" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="313" startPosition="100" endLine="314" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="314" startPosition="38" endLine="315" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="315" startPosition="36" endLine="316" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="316" startPosition="55" endLine="317" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="317" startPosition="56" endLine="318" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="318" startPosition="42" endLine="319" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="319" startPosition="90" endLine="320" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="320" startPosition="87" endLine="321" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="324" startPosition="93" endLine="325" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="325" startPosition="97" endLine="326" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="326" startPosition="52" endLine="327" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="327" startPosition="36" endLine="328" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="328" startPosition="68" endLine="329" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="329" startPosition="42" endLine="330" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="330" startPosition="36" endLine="331" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="335" startPosition="88" endLine="336" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="336" startPosition="87" endLine="337" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="337" startPosition="47" endLine="338" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="338" startPosition="34" endLine="339" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="339" startPosition="55" endLine="340" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="340" startPosition="59" endLine="341" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="341" startPosition="58" endLine="342" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="342" startPosition="40" endLine="343" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="343" startPosition="34" endLine="344" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="347" startPosition="97" endLine="348" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="237" startPosition="95" endLine="238" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="240" startPosition="131" endLine="241" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="246" startPosition="93" endLine="247" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="247" startPosition="96" endLine="248" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="248" startPosition="52" endLine="249" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="249" startPosition="36" endLine="250" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="250" startPosition="68" endLine="251" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="251" startPosition="42" endLine="252" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="252" startPosition="36" endLine="253" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="257" startPosition="90" endLine="258" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="258" startPosition="86" endLine="259" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="259" startPosition="49" endLine="260" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="260" startPosition="34" endLine="261" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="264" startPosition="93" endLine="265" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="265" startPosition="134" endLine="266" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="266" startPosition="108" endLine="267" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="267" startPosition="47" endLine="268" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="268" startPosition="49" endLine="269" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="273" startPosition="100" endLine="274" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="277" startPosition="66" endLine="278" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="278" startPosition="41" endLine="279" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="282" startPosition="86" endLine="283" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="283" startPosition="80" endLine="284" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="284" startPosition="95" endLine="285" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="288" startPosition="68" endLine="289" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="289" startPosition="34" endLine="290" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="290" startPosition="80" endLine="291" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="291" startPosition="87" endLine="292" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="295" startPosition="89" endLine="296" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="300" startPosition="96" endLine="301" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="302" startPosition="34" endLine="303" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="303" startPosition="95" endLine="304" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="304" startPosition="98" endLine="305" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="307" startPosition="131" endLine="308" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="314" startPosition="104" endLine="315" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="315" startPosition="100" endLine="316" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="316" startPosition="38" endLine="317" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="317" startPosition="36" endLine="318" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="318" startPosition="55" endLine="319" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="319" startPosition="56" endLine="320" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="320" startPosition="42" endLine="321" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="321" startPosition="90" endLine="322" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="322" startPosition="87" endLine="323" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="326" startPosition="93" endLine="327" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="327" startPosition="97" endLine="328" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="328" startPosition="52" endLine="329" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="329" startPosition="36" endLine="330" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="330" startPosition="68" endLine="331" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="331" startPosition="42" endLine="332" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="332" startPosition="36" endLine="333" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="337" startPosition="88" endLine="338" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="338" startPosition="87" endLine="339" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="339" startPosition="47" endLine="340" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="340" startPosition="34" endLine="341" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="341" startPosition="55" endLine="342" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="342" startPosition="59" endLine="343" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="343" startPosition="58" endLine="344" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="344" startPosition="40" endLine="345" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="345" startPosition="34" endLine="346" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="349" startPosition="97" endLine="350" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="46" startPosition="83" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="46" startPosition="83" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -533,18 +536,18 @@
     <nodeInfo nodeId="4063774604867659316" fileName="ModelManagerDeclaration_Editor.java" startLine="176" startPosition="58" endLine="179" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="207" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="fieldListHandler_asco8r_e1b0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="229" startPosition="0" endLine="232" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="235" startPosition="134" endLine="238" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="238" startPosition="9" endLine="241" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="272" startPosition="0" endLine="275" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="methodListHandler_asco8r_g1b0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="294" startPosition="0" endLine="297" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="304" startPosition="9" endLine="307" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="347" startPosition="0" endLine="350" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_asco8r_a2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="239" startPosition="9" endLine="242" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="273" startPosition="0" endLine="276" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="methodListHandler_asco8r_g1b0#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="295" startPosition="0" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="306" startPosition="9" endLine="309" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="349" startPosition="0" endLine="352" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="renderingCondition_asco8r_a2a#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="126" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createIndentCell_asco8r_a1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="211" startPosition="0" endLine="215" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="276" startPosition="0" endLine="280" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="300" startPosition="134" endLine="304" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="235" startPosition="134" endLine="239" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="277" startPosition="0" endLine="281" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeToInsert#(Ljetbrains/mps/openapi/editor/EditorContext;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="216" startPosition="0" endLine="221" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="281" startPosition="0" endLine="286" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="282" startPosition="0" endLine="287" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNodeCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="301" startPosition="134" endLine="306" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5553449326502622469" fileName="ModelManagerDeclaration_Editor.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_asco8r_a0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5553449326502622470" fileName="ModelManagerDeclaration_Editor.java" startLine="90" startPosition="59" endLine="96" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4063774604867657104" fileName="ModelManagerDeclaration_Editor.java" startLine="155" startPosition="59" endLine="161" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -552,23 +555,23 @@
     <nodeInfo nodeId="4063774604867659316" fileName="ModelManagerDeclaration_Editor.java" startLine="182" startPosition="59" endLine="188" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5553449326502622481" fileName="ModelManagerDeclaration_Editor.java" startLine="191" startPosition="0" endLine="197" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_asco8r_d1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="222" startPosition="0" endLine="228" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="256" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_asco8r_f1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="287" startPosition="0" endLine="293" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="257" startPosition="0" endLine="263" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_asco8r_f1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="288" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEmptyCell#(Ljetbrains/mps/openapi/editor/EditorContext;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="66" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_asco8r_a0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="198" startPosition="0" endLine="205" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_asco8r_e1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="263" startPosition="0" endLine="270" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_asco8r_g1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="233" startPosition="132" endLine="242" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="245" startPosition="0" endLine="254" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_asco8r_a4b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="324" startPosition="0" endLine="333" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_asco8r_a6b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="264" startPosition="0" endLine="271" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNodeList_asco8r_g1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="246" startPosition="0" endLine="255" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_asco8r_a4b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="326" startPosition="0" endLine="335" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_asco8r_a6b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="115" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_asco8r_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="298" startPosition="132" endLine="308" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="233" startPosition="132" endLine="243" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="99" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_asco8r_b0a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="233" startPosition="0" endLine="244" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="335" startPosition="0" endLine="346" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_asco8r_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="299" startPosition="132" endLine="310" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="337" startPosition="0" endLine="348" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_asco8r_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="53" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_asco8r_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="131" startPosition="0" endLine="143" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_asco8r_b1a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="298" startPosition="0" endLine="310" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="311" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="233" startPosition="0" endLine="245" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="313" startPosition="0" endLine="325" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSeparatorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
+    <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="299" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="installElementCellActions#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="38" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_asco8r_a#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="5553449326502622470" fileName="ModelManagerDeclaration_Editor.java" startLine="81" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_asco8r_b0a0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
     <nodeInfo nodeId="4063774604867657104" fileName="ModelManagerDeclaration_Editor.java" startLine="144" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createRefNode_asco8r_a1b0#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/openapi/editor/cells/EditorCell;" />
@@ -595,22 +598,21 @@
     <scopeInfo nodeId="4063774604867659316" fileName="ModelManagerDeclaration_Editor.java" startLine="177" startPosition="39" endLine="178" endPosition="40" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="207" startPosition="99" endLine="208" endPosition="50" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="229" startPosition="89" endLine="230" endPosition="67" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="236" startPosition="34" endLine="237" endPosition="95" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="239" startPosition="131" endLine="240" endPosition="139" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="272" startPosition="100" endLine="273" endPosition="50" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="294" startPosition="89" endLine="295" endPosition="67" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="305" startPosition="131" endLine="306" endPosition="139" />
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="347" startPosition="97" endLine="348" endPosition="34" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="240" startPosition="131" endLine="241" endPosition="139" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="273" startPosition="100" endLine="274" endPosition="50" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="295" startPosition="89" endLine="296" endPosition="67" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="307" startPosition="131" endLine="308" endPosition="139" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="349" startPosition="97" endLine="350" endPosition="34" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="126" startPosition="91" endLine="128" endPosition="22">
       <varInfo nodeId="5553449326502622465" varName="editorCell" />
     </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="211" startPosition="66" endLine="213" endPosition="93">
       <varInfo nodeId="5553449326502622465" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="276" startPosition="66" endLine="278" endPosition="93">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="236" startPosition="34" endLine="238" endPosition="98" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="277" startPosition="66" endLine="279" endPosition="93">
       <varInfo nodeId="5553449326502622465" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="301" startPosition="34" endLine="303" endPosition="80" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="node" />
@@ -645,19 +647,20 @@
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="272" startPosition="0" endLine="275" endPosition="0">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="273" startPosition="0" endLine="276" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="childRole" />
       <varInfo nodeId="5553449326502622465" varName="context" />
       <varInfo nodeId="5553449326502622465" varName="ownerNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="281" startPosition="86" endLine="284" endPosition="25">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="282" startPosition="86" endLine="285" endPosition="25">
       <varInfo nodeId="5553449326502622465" varName="elementCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="294" startPosition="0" endLine="297" endPosition="0">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="295" startPosition="0" endLine="298" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="347" startPosition="0" endLine="350" endPosition="0">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="302" startPosition="34" endLine="305" endPosition="80" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="349" startPosition="0" endLine="352" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="node" />
     </scopeInfo>
@@ -680,13 +683,13 @@
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="222" startPosition="68" endLine="226" endPosition="23">
       <varInfo nodeId="5553449326502622465" varName="emptyCell" />
     </scopeInfo>
-    <scopeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="256" startPosition="90" endLine="260" endPosition="22">
+    <scopeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="257" startPosition="90" endLine="261" endPosition="22">
       <varInfo nodeId="4063774604867744452" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="276" startPosition="0" endLine="280" endPosition="0">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="277" startPosition="0" endLine="281" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="287" startPosition="68" endLine="291" endPosition="23">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="288" startPosition="68" endLine="292" endPosition="23">
       <varInfo nodeId="5553449326502622465" varName="emptyCell" />
     </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="66" startPosition="91" endLine="71" endPosition="22">
@@ -700,11 +703,11 @@
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="elementNode" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="263" startPosition="93" endLine="268" endPosition="22">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="264" startPosition="93" endLine="269" endPosition="22">
       <varInfo nodeId="5553449326502622465" varName="editorCell" />
       <varInfo nodeId="5553449326502622465" varName="handler" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="281" startPosition="0" endLine="286" endPosition="0">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="282" startPosition="0" endLine="287" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="elementNode" />
     </scopeInfo>
@@ -723,11 +726,11 @@
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="222" startPosition="0" endLine="228" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="256" startPosition="0" endLine="262" endPosition="0">
+    <scopeInfo nodeId="4063774604867744452" fileName="ModelManagerDeclaration_Editor.java" startLine="257" startPosition="0" endLine="263" endPosition="0">
       <varInfo nodeId="4063774604867744452" varName="editorContext" />
       <varInfo nodeId="4063774604867744452" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="287" startPosition="0" endLine="293" endPosition="0">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="288" startPosition="0" endLine="294" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
     </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="66" startPosition="0" endLine="73" endPosition="0">
@@ -738,16 +741,15 @@
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="234" startPosition="96" endLine="241" endPosition="9" />
-    <scopeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="245" startPosition="93" endLine="252" endPosition="24">
+    <scopeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="246" startPosition="93" endLine="253" endPosition="24">
       <varInfo nodeId="4063774604867750910" varName="editorCell" />
       <varInfo nodeId="4063774604867750910" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="263" startPosition="0" endLine="270" endPosition="0">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="264" startPosition="0" endLine="271" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="324" startPosition="93" endLine="331" endPosition="24">
+    <scopeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="326" startPosition="93" endLine="333" endPosition="24">
       <varInfo nodeId="4063774604867750911" varName="editorCell" />
       <varInfo nodeId="4063774604867750911" varName="style" />
     </scopeInfo>
@@ -755,25 +757,25 @@
       <varInfo nodeId="5553449326502622465" varName="editorCell" />
       <varInfo nodeId="5553449326502622465" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="299" startPosition="96" endLine="307" endPosition="9" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="234" startPosition="96" endLine="242" endPosition="9" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="99" startPosition="89" endLine="108" endPosition="22">
       <varInfo nodeId="5553449326502622465" varName="editorCell" />
       <varInfo nodeId="5553449326502622465" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="233" startPosition="132" endLine="242" endPosition="7" />
-    <scopeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="245" startPosition="0" endLine="254" endPosition="0">
+    <scopeInfo nodeId="4063774604867750910" fileName="ModelManagerDeclaration_Editor.java" startLine="246" startPosition="0" endLine="255" endPosition="0">
       <varInfo nodeId="4063774604867750910" varName="editorContext" />
       <varInfo nodeId="4063774604867750910" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="312" startPosition="104" endLine="321" endPosition="24">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="300" startPosition="96" endLine="309" endPosition="9" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="314" startPosition="104" endLine="323" endPosition="24">
       <varInfo nodeId="5553449326502622465" varName="editorCell" />
       <varInfo nodeId="5553449326502622465" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="324" startPosition="0" endLine="333" endPosition="0">
+    <scopeInfo nodeId="4063774604867750911" fileName="ModelManagerDeclaration_Editor.java" startLine="326" startPosition="0" endLine="335" endPosition="0">
       <varInfo nodeId="4063774604867750911" varName="editorContext" />
       <varInfo nodeId="4063774604867750911" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="335" startPosition="88" endLine="344" endPosition="22">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="337" startPosition="88" endLine="346" endPosition="22">
       <varInfo nodeId="5553449326502622465" varName="editorCell" />
       <varInfo nodeId="5553449326502622465" varName="style" />
     </scopeInfo>
@@ -788,18 +790,13 @@
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="131" startPosition="91" endLine="141" endPosition="22">
       <varInfo nodeId="5553449326502622465" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="298" startPosition="132" endLine="308" endPosition="7" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="233" startPosition="132" endLine="243" endPosition="7" />
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="99" startPosition="0" endLine="110" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="233" startPosition="0" endLine="244" endPosition="0">
-      <varInfo nodeId="5553449326502622465" varName="editorContext" />
-      <varInfo nodeId="5553449326502622465" varName="elementCell" />
-      <varInfo nodeId="5553449326502622465" varName="elementNode" />
-      <varInfo nodeId="5553449326502622465" varName="listOwner" />
-    </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="335" startPosition="0" endLine="346" endPosition="0">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="299" startPosition="132" endLine="310" endPosition="7" />
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="337" startPosition="0" endLine="348" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="node" />
     </scopeInfo>
@@ -815,16 +812,22 @@
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="298" startPosition="0" endLine="310" endPosition="0">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="233" startPosition="0" endLine="245" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="elementCell" />
       <varInfo nodeId="5553449326502622465" varName="elementNode" />
       <varInfo nodeId="5553449326502622465" varName="listOwner" />
     </scopeInfo>
-    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="311" startPosition="0" endLine="323" endPosition="0">
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="313" startPosition="0" endLine="325" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
       <varInfo nodeId="5553449326502622465" varName="nextNode" />
       <varInfo nodeId="5553449326502622465" varName="prevNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="299" startPosition="0" endLine="312" endPosition="0">
+      <varInfo nodeId="5553449326502622465" varName="editorContext" />
+      <varInfo nodeId="5553449326502622465" varName="elementCell" />
+      <varInfo nodeId="5553449326502622465" varName="elementNode" />
+      <varInfo nodeId="5553449326502622465" varName="listOwner" />
     </scopeInfo>
     <scopeInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="38" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="5553449326502622465" varName="editorContext" />
@@ -860,9 +863,9 @@
       <varInfo nodeId="4063774604867659316" varName="editorContext" />
       <varInfo nodeId="4063774604867659316" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="206" startPosition="0" endLine="255" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelManagerDeclaration_Editor$fieldListHandler_asco8r_e1b0" />
-    <unitInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="271" startPosition="0" endLine="334" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelManagerDeclaration_Editor$methodListHandler_asco8r_g1b0" />
-    <unitInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="33" startPosition="0" endLine="351" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelManagerDeclaration_Editor" />
+    <unitInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="206" startPosition="0" endLine="256" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelManagerDeclaration_Editor$fieldListHandler_asco8r_e1b0" />
+    <unitInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="272" startPosition="0" endLine="336" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelManagerDeclaration_Editor$methodListHandler_asco8r_g1b0" />
+    <unitInfo nodeId="5553449326502622465" fileName="ModelManagerDeclaration_Editor.java" startLine="33" startPosition="0" endLine="353" endPosition="0" unitName="jetbrains.mps.lang.stubs.editor.ModelManagerDeclaration_Editor" />
   </root>
 </debugInfo>
 

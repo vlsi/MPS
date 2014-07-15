@@ -329,12 +329,6 @@ public abstract class AbstractModule extends SModuleBase implements EditableSMod
 
   //----get deps
 
-  @Deprecated
-  public final DependenciesManager getDependenciesManager() {
-    assertCanRead();
-    throw new UnsupportedOperationException();
-  }
-
   public final List<Dependency> getDependencies() {
     assertCanRead();
     List<Dependency> dependencies = new ArrayList<Dependency>();

@@ -14,12 +14,38 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ArrayCreator_Delete {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new ArrayCreator_Delete.ArrayCreator_Delete_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new ArrayCreator_Delete.ArrayCreator_Delete_BACKSPACE(node));
   }
 
   public static class ArrayCreator_Delete_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public ArrayCreator_Delete_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode creator = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer", true, false);
+      if ((creator != null)) {
+        SNode replacingCreator = SNodeFactoryOperations.replaceWithNewChild(creator, "jetbrains.mps.baseLanguage.structure.ArrayCreator");
+        SNode componentType = SLinkOperations.getTarget(creator, "componentType", true);
+        while (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
+          componentType = SLinkOperations.getTarget(SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true);
+          SNodeFactoryOperations.addNewChild(replacingCreator, "dimensionExpression", "jetbrains.mps.baseLanguage.structure.DimensionExpression");
+        }
+        SLinkOperations.setTarget(replacingCreator, "componentType", componentType, true);
+      }
+    }
+  }
+
+  public static class ArrayCreator_Delete_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public ArrayCreator_Delete_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

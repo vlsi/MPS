@@ -1261,35 +1261,57 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590379(jetbrains.mps.lang.dataFlow.editor)/1207318139353">
     <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="14" startPosition="95" endLine="15" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
-    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="21" startPosition="75" endLine="22" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="25" startPosition="54" endLine="26" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207318182220" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="29" startPosition="75" endLine="30" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DataFlowEditorAction_DeleteMayBeUnreachable_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="14" startPosition="95" endLine="15" endPosition="154" />
-    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="21" startPosition="75" endLine="22" endPosition="25" />
-    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="25" startPosition="54" endLine="26" endPosition="56" />
-    <scopeInfo nodeId="1207318150953" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="29" startPosition="75" endLine="30" endPosition="103" />
-    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="15" startPosition="154" endLine="16" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="22" startPosition="75" endLine="23" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="26" startPosition="54" endLine="27" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207318182220" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="30" startPosition="75" endLine="31" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="38" startPosition="78" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="42" startPosition="54" endLine="43" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207318182220" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="46" startPosition="75" endLine="47" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DataFlowEditorAction_DeleteMayBeUnreachable_DELETE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DataFlowEditorAction_DeleteMayBeUnreachable_BACKSPACE#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljetbrains/mps/openapi/editor/EditorContext;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="22" startPosition="75" endLine="23" endPosition="25" />
+    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="26" startPosition="54" endLine="27" endPosition="56" />
+    <scopeInfo nodeId="1207318150953" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="30" startPosition="75" endLine="31" endPosition="103" />
+    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="38" startPosition="78" endLine="39" endPosition="25" />
+    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="42" startPosition="54" endLine="43" endPosition="56" />
+    <scopeInfo nodeId="1207318150953" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="46" startPosition="75" endLine="47" endPosition="103" />
+    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="14" startPosition="95" endLine="16" endPosition="160" />
+    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="1207318139353" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1207318139353" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1207318139353" varName="editorContext" />
+      <varInfo nodeId="1207318139353" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1207318139353" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+      <varInfo nodeId="1207318139353" varName="editorContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="46" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="1207318139353" varName="editorContext" />
+      <varInfo nodeId="1207318139353" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1207318139353" varName="context" />
       <varInfo nodeId="1207318139353" varName="editorCell" />
       <varInfo nodeId="1207318139353" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
-      <varInfo nodeId="1207318139353" varName="node" />
-    </scopeInfo>
-    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
-      <varInfo nodeId="1207318139353" varName="editorContext" />
-    </scopeInfo>
-    <scopeInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
-      <varInfo nodeId="1207318139353" varName="editorContext" />
-      <varInfo nodeId="1207318139353" varName="node" />
-    </scopeInfo>
-    <unitInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="18" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable$DataFlowEditorAction_DeleteMayBeUnreachable_DELETE" />
-    <unitInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable" />
+    <unitInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="19" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable$DataFlowEditorAction_DeleteMayBeUnreachable_DELETE" />
+    <unitInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="35" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable$DataFlowEditorAction_DeleteMayBeUnreachable_BACKSPACE" />
+    <unitInfo nodeId="1207318139353" fileName="DataFlowEditorAction_DeleteMayBeUnreachable.java" startLine="13" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.lang.dataFlow.editor.DataFlowEditorAction_DeleteMayBeUnreachable" />
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c89590379(jetbrains.mps.lang.dataFlow.editor)/1230468316202">
     <nodeInfo nodeId="1230468316202" fileName="EmitWriteStatement_Editor.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
