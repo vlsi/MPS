@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.language;
+package jetbrains.mps.smodel.runtime;
 
 /**
  * Marker interface for a usage finder for a language.
@@ -22,5 +22,5 @@ package jetbrains.mps.smodel.language;
  *
  * @author Artem Tikhomirov
  */
-public interface FindUsageDescriptor {
+public interface FindUsageAspectDescriptor extends LanguageAspectDescriptor {
 }

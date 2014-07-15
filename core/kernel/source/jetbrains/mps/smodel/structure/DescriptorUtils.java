@@ -23,7 +23,6 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.language.SLanguage;
 
 // FIXME class loading shall be part of LanguageRuntime, rather than this standalone utility
 public class DescriptorUtils {
@@ -66,23 +65,6 @@ public class DescriptorUtils {
     return null;
   }
 
-  /**
-   * @deprecated  use {@link #getObjectByClassNameForLanguage(String, jetbrains.mps.smodel.Language)} instead
-   */
-  @Deprecated
-  public static Object getObjectByClassNameForLanguage(String className, @Nullable Language language, boolean avoidLogErrors) {
-    return getObjectByClassNameForLanguage(className, language);
-  }
-
-  @Deprecated
-  @Nullable
-  public static <T> T getObjectByClassNameForLanguage(String className, Class<T> castTo, @Nullable Language language, boolean avoidLogErrors) {
-    if (language == null) {
-      return null;
-    }
-    return getObjectByClassNameForLanguage(className, castTo, language);
-  }
-
   @Nullable
   public static <T> T getObjectByClassNameForLanguage(String className, @NotNull Class<T> castTo, @NotNull Language language) {
     try {
@@ -96,15 +78,5 @@ public class DescriptorUtils {
       LOG.debug(String.format("failed to cast class '%s' to %s", className, castTo.getName()), e);
     }
     return null;
-  }
-
-  @Nullable
-  public static Object getObjectByClassNameForLanguageNamespace(String className, String languageNamespace, boolean avoidLogErrors) {
-    return getObjectByClassNameForLanguage(className, ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class));
-  }
-
-  @Nullable
-  public static <T> T getObjectByClassNameForLanguageNamespace(String className, Class<T> castTo, String languageNamespace, boolean avoidLogErrors) {
-    return getObjectByClassNameForLanguage(className, castTo, ModuleRepositoryFacade.getInstance().getModule(languageNamespace, Language.class));
   }
 }

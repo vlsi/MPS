@@ -15,6 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-public interface BehaviorAspectDescriptor {
+public interface BehaviorAspectDescriptor extends LanguageAspectDescriptor {
   BehaviorDescriptor getDescriptor(String fqName);
 }

@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
+import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
@@ -30,10 +31,9 @@ import jetbrains.mps.smodel.runtime.interpreted.ConstraintsAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 import jetbrains.mps.smodel.runtime.interpreted.TextGenAspectInterpreted;
 import jetbrains.mps.smodel.structure.DescriptorProvider;
-import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import jetbrains.mps.smodel.structure.FacetDescriptor;
 import jetbrains.mps.smodel.structure.InterpretedFacetProvider;
-import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 
@@ -47,20 +47,16 @@ import java.util.Queue;
 import java.util.Set;
 
 import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguage;
-import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNameForLanguageNamespace;
 
 /**
  * evgeny, 3/11/11
  */
 public abstract class LanguageRuntime {
-  public static final DescriptorProvider<FacetDescriptor> INTERPRETED_FACET_PROVIDER = new InterpretedFacetProvider();
-
   private DescriptorProvider<FacetDescriptor> facetDescriptor;
 
   private StructureAspectDescriptor structureDescriptor;
   private BehaviorAspectDescriptor behaviorDescriptor;
   private ConstraintsAspectDescriptor constraintsDescriptor;
-  private ExtensionDescriptor myExtensionDescriptor;
   protected TextGenAspectDescriptor myTextGenDescriptor;
   private Map<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor> myAspectDescriptors =
       new HashMap<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor>();
@@ -69,40 +65,32 @@ public abstract class LanguageRuntime {
   public abstract String getNamespace();
 
   public IHelginsDescriptor getTypesystem() {
-    Language language = ModuleRepositoryFacade.getInstance().getModule(getNamespace(), Language.class);
+    Language language = getLanguage();
 
     SModel helginsModelDescriptor = LanguageAspect.TYPESYSTEM.get(language);
     if (helginsModelDescriptor == null) return null;
-    String packageName = SNodeOperations.getModelLongName(helginsModelDescriptor);
+    String packageName = NameUtil.getModelLongName(helginsModelDescriptor);
 
-    Object helginsDescriptor = getObjectByClassNameForLanguage(packageName + ".TypesystemDescriptor", IHelginsDescriptor.class, language, true);
+    Object helginsDescriptor = getObjectByClassNameForLanguage(packageName + ".TypesystemDescriptor", IHelginsDescriptor.class, language);
 
     if (helginsDescriptor != null) {
       return (IHelginsDescriptor) helginsDescriptor;
     } else {
-      return getObjectByClassNameForLanguage(packageName + ".HelginsDescriptor", IHelginsDescriptor.class, language, true);
+      return getObjectByClassNameForLanguage(packageName + ".HelginsDescriptor", IHelginsDescriptor.class, language);
     }
   }
 
-  public FindUsageDescriptor getFindUsages() {
+  public FindUsageAspectDescriptor getFindUsages() {
     return null;
   }
 
   public abstract Collection<? extends GeneratorRuntime> getGenerators();
 
-  @Deprecated
-  private <T> DescriptorProvider<T> getDescriptorProvider(String aspectName, DescriptorProvider<T> defaultProvider) {
-    String className = getNamespace() + "." + aspectName;
-    DescriptorProvider<T> compiled =
-        (DescriptorProvider<T>) getObjectByClassNameForLanguageNamespace(className, DescriptorProvider.class, getNamespace(), true);
-    return compiled != null ? compiled : defaultProvider;
-  }
-
   public DescriptorProvider<FacetDescriptor> getFacetProvider() {
     if (facetDescriptor == null) {
-      facetDescriptor = getDescriptorProvider("plugin.FacetAspectDescriptor", INTERPRETED_FACET_PROVIDER);
+      facetDescriptor = getObjectByClassNameForLanguage(getNamespace() + ".plugin.FacetAspectDescriptor", DescriptorProvider.class, getLanguage());
     }
-    return facetDescriptor;
+    return facetDescriptor == null ? new InterpretedFacetProvider() : facetDescriptor;
   }
 
   @NotNull
@@ -110,7 +98,7 @@ public abstract class LanguageRuntime {
 //    return StructureAspectInterpreted.getInstance();
     if (structureDescriptor == null) {
       String className = getNamespace() + ".structure.StructureAspectDescriptor";
-      Object compiled = getObjectByClassNameForLanguageNamespace(className, getNamespace(), true);
+      Object compiled = getObjectByClassNameForLanguage(className, getLanguage());
 
       if (compiled instanceof StructureAspectDescriptor) {
         structureDescriptor = (StructureAspectDescriptor) compiled;
@@ -126,7 +114,7 @@ public abstract class LanguageRuntime {
 //    return BehaviorAspectInterpreted.getInstance();
     if (behaviorDescriptor == null) {
       String className = getNamespace() + ".behavior.BehaviorAspectDescriptor";
-      Object compiled = getObjectByClassNameForLanguageNamespace(className, getNamespace(), true);
+      Object compiled = getObjectByClassNameForLanguage(className, getLanguage());
 
       if (compiled instanceof BehaviorAspectDescriptor) {
         behaviorDescriptor = (BehaviorAspectDescriptor) compiled;
@@ -142,7 +130,7 @@ public abstract class LanguageRuntime {
 //    return ConstraintsAspectInterpreted.getInstance();
     if (constraintsDescriptor == null) {
       String className = getNamespace() + ".constraints.ConstraintsAspectDescriptor";
-      Object compiled = getObjectByClassNameForLanguageNamespace(className, getNamespace(), true);
+      Object compiled = getObjectByClassNameForLanguage(className, getLanguage());
 
       if (compiled instanceof ConstraintsAspectDescriptor) {
         constraintsDescriptor = (ConstraintsAspectDescriptor) compiled;
@@ -200,6 +188,10 @@ public abstract class LanguageRuntime {
         extendedLanguageIDs.addAll(Arrays.asList(extendedLanguage.getExtendedLanguageIDs()));
       }
     }
+  }
+
+  protected Language getLanguage() {
+    return ModuleRepositoryFacade.getInstance().getModule(getNamespace(), Language.class);
   }
 
   void deinitialize() {

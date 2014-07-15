@@ -19,7 +19,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 
-public interface TextGenAspectDescriptor {
+public interface TextGenAspectDescriptor extends LanguageAspectDescriptor {
   /**
    * @param concept input kind for textgen
    * @return descriptor for the concept, or <code>null</code> if this aspect knows nothing about the concept

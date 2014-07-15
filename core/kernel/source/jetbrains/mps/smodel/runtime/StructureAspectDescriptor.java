@@ -15,6 +15,6 @@
  */
 package jetbrains.mps.smodel.runtime;
 
-public interface StructureAspectDescriptor {
+public interface StructureAspectDescriptor extends LanguageAspectDescriptor {
   ConceptDescriptor getDescriptor(String fqName);
 }
