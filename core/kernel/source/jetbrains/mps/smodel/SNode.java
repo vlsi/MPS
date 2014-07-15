@@ -1316,7 +1316,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   private String getRoleInParent_byName() {
     if (getParent() == null) {
       //this is for persistence v8
-      if (!EqualUtil.equals(this.getRoleInParent(), getUserObject("role"))) {
+      if (!EqualUtil.equals(myRoleInParent, getUserObject("role"))) {
         LOG.error(new IllegalStateException());
       }
       return null;
