@@ -48,11 +48,17 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @Deprecated
   protected SReference(String role, SNode sourceNode) {
     myRole = role;
+    if ((sourceNode instanceof jetbrains.mps.smodel.SNode) && ((jetbrains.mps.smodel.SNode) sourceNode).workingMode()==Mode.ID){
+      myRoleId = ((SReferenceLinkId) IdUtil.getLinkId(sourceNode.getConceptId(), myRole));
+    }
     mySourceNode = sourceNode;
   }
 
   protected SReference(SReferenceLinkId role, SNode sourceNode) {
     myRoleId = role;
+    if ((sourceNode instanceof jetbrains.mps.smodel.SNode) && ((jetbrains.mps.smodel.SNode) sourceNode).workingMode()==Mode.NAME){
+      myRole = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(myRoleId);
+    }
     mySourceNode = sourceNode;
   }
 
