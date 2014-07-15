@@ -1356,7 +1356,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   public Pair<Boolean, String> setProperty_byName(String pname, String propertyValue) {
     //this is a trash code which works only when the model is loaded
     //should be removed after 3.2 when conceptId, propertyId etc are introduced, together with all the loggable refactorings stuff
-    int index = getPropertyIndex(pname);
+    int index = getPropertyIndex_byName(pname);
     final String oldValue = index == -1 ? null : myProperties[index + 1];
     if (EqualUtil.equals(oldValue, propertyValue)) return new Pair<Boolean, String>(false, null);
 
@@ -1383,7 +1383,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   public Pair<Boolean, String> setProperty_byId(SPropertyId pname, String propertyValue) {
-    int index = getPropertyIndex(pname);
+    int index = getPropertyIndex_byId(pname);
     final String oldValue = index == -1 ? null : (String) myNewProperties[index + 1];
     if (EqualUtil.equals(oldValue, propertyValue)) return new Pair<Boolean, String>(false, null);
 
