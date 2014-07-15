@@ -1309,7 +1309,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     myRoleInParent = InternUtil.intern(newRoleInParent);
   }
 
-  private void setRoleInParent_byId(SContainmentLinkId role) {
+  public void setRoleInParent_byId(SContainmentLinkId role) {
     myRoleInParentId = role;
   }
 
@@ -1494,7 +1494,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
     return toRemove;
   }
 
-  private SReference setReference_byId(SReferenceLinkId role, org.jetbrains.mps.openapi.model.SReference reference) {
+  public SReference setReference_byId(SReferenceLinkId role, org.jetbrains.mps.openapi.model.SReference reference) {
     SReference toRemove = null;
     for (SReference r : myReferences) {
       if (!r.getRoleId().equals(role)) continue;
@@ -1827,9 +1827,9 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
 //-------------tmp private methods to help migrating to ids--------------
 
-  private enum Mode {ID, NAME, UNKNOWN}
+  public enum Mode {ID, NAME, UNKNOWN}
 
-  private Mode workingMode() {
+  public Mode workingMode() {
     if (!(myModel instanceof DefaultSModel)) return Mode.UNKNOWN;
     return ((DefaultSModel) myModel).getSModelHeader().getPersistenceVersion() > 8 ? Mode.ID : Mode.NAME;
   }
