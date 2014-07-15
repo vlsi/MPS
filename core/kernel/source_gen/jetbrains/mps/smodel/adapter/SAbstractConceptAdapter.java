@@ -86,11 +86,10 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       return null;
     }
 
-    SAbstractLinkId id = IdUtil.getLinkId(myConceptId, role);
     if (d.hasChild(role)) {
-      return myConceptId != null ? new SContainmentLinkAdapter(id) : new SContainmentLinkAdapter(myConceptName, role);
+      return myConceptId != null ? new SContainmentLinkAdapter(IdUtil.getLinkId(myConceptId, role)) : new SContainmentLinkAdapter(myConceptName, role);
     } else if (d.hasReference(role)) {
-      return myConceptId != null ? new SReferenceLinkAdapter(id) : new SReferenceLinkAdapter(myConceptName, role);
+      return myConceptId != null ? new SReferenceLinkAdapter(IdUtil.getLinkId(myConceptId, role)) : new SReferenceLinkAdapter(myConceptName, role);
     }
     return null;
   }
@@ -124,7 +123,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
     Iterable<SAbstractLink> seq = SetSequence.fromSet(((Set<String>) d.getChildrenNames())).select(new ISelector<String, SAbstractLink>() {
       public SAbstractLink select(String it) {
-        SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, it);
+        SAbstractLinkId id = IdUtil.getLinkId(myConceptId, it);
         if (myConceptId != null) {
           return (SAbstractLink) new SContainmentLinkAdapter(id);
         } else {
@@ -134,7 +133,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     });
     return Sequence.fromIterable(seq).concat(SetSequence.fromSet(((Set<String>) d.getReferenceNames())).select(new ISelector<String, SReferenceLinkAdapter>() {
       public SReferenceLinkAdapter select(String it) {
-        SAbstractLinkId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(myConceptId, it);
+        SAbstractLinkId id = IdUtil.getLinkId(myConceptId, it);
         if (myConceptId != null) {
           return new SReferenceLinkAdapter(id);
         } else {
@@ -168,7 +167,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
 
     if (myConceptId != null) {
-      SPropertyId pid = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(myConceptId, name);
+      SPropertyId pid = IdUtil.getPropId(myConceptId, name);
       return (d.hasProperty(name) ? new SPropertyAdapter(pid) : null);
     } else {
       return (d.hasProperty(name) ? new SPropertyAdapter(myConceptName, name) : null);
@@ -188,7 +187,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     return SetSequence.fromSet(((Set<String>) d.getPropertyNames())).select(new ISelector<String, SProperty>() {
       public SProperty select(String it) {
         if (myConceptId != null) {
-          SPropertyId id = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(myConceptId, it);
+          SPropertyId id = IdUtil.getPropId(myConceptId, it);
           return (SProperty) new SPropertyAdapter(id);
         } else {
           return (SProperty) (new SPropertyAdapter(myConceptName, it));
@@ -251,7 +250,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
     reportedLanguages.add(languageName);
     if (LOG.isEnabledFor(Level.WARN)) {
-      LOG.warn("No concept found for id " + myConceptId + ". Please check the language " + languageName + " is built and compiled.", new Throwable());
+      LOG.warn("No concept found for id " + myConceptId.serialize() + ". Please check the language " + languageName + " is built and compiled.", new Throwable());
     }
   }
 
