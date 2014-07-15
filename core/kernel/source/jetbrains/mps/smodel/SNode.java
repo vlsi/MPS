@@ -98,7 +98,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
       }
     }
 
-    if (workingMode() == Mode.NAME) {
+    if (myConceptId==null) {
       return SConceptRepository.getInstance().getInstanceConcept(myConceptFqName);
     } else {
       return SConceptRepository.getInstance().getInstanceConcept(myConceptId);
@@ -1831,7 +1831,7 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
 
   private Mode workingMode() {
     if (!(myModel instanceof DefaultSModel)) return Mode.UNKNOWN;
-    return ((DefaultSModel) myModel).getSModelHeader().getVersion() > 8 ? Mode.ID : Mode.NAME;
+    return ((DefaultSModel) myModel).getSModelHeader().getPersistenceVersion() > 8 ? Mode.ID : Mode.NAME;
   }
 
   private SConceptId name2cid(String name) {
