@@ -4,6 +4,7 @@ package jetbrains.mps.lang.core.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
+import jetbrains.mps.smodel.adapter.IdHelper;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -35,7 +36,7 @@ public class check_AllUsedLanguagesAreImported_NonTypesystemRule extends Abstrac
     }
     Set<SLanguage> importedLanguages = new HashSet<SLanguage>();
     for (SModuleReference importedLanguageReference : CollectionSequence.fromCollection(((SModelBase) SNodeOperations.getModel(root)).getModelDepsManager().getAllImportedLanguages())) {
-      SLanguage language = SConceptRepository.getInstance().getLanguage(importedLanguageReference.getModuleName());
+      SLanguage language = SConceptRepository.getInstance().getLanguage(IdHelper.getLanguageId(importedLanguageReference.getModuleId()));
       importedLanguages.add(language);
     }
 
