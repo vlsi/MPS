@@ -50,7 +50,6 @@ import jetbrains.mps.smodel.SNodeAccessUtilImpl;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
-import jetbrains.mps.smodel.language.InterpretedLanguageAspectsRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.references.ImmatureReferences;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
@@ -128,7 +127,6 @@ public final class MPSCore extends ComponentPlugin {
     init(new ValidationSettings());
 
     init(new BootstrapMakeFacets());
-    init(new InterpretedLanguageAspectsRegistry());
   }
 
   /**
