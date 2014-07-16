@@ -6,6 +6,8 @@ import jetbrains.mps.smodel.language.LanguageRuntime;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModule;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
+import sampleFacet.plugin.FacetAspectDescriptor;
 
 public class Language extends LanguageRuntime {
   public static String MODULE_REF = "411cfb96-468d-4c3f-accc-a13ad135b216(sampleFacet)";
@@ -30,6 +32,9 @@ public class Language extends LanguageRuntime {
 
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
+    if (descriptorClass == MakeAspectDescriptor.class) {
+      return (T) new FacetAspectDescriptor();
+    }
     return super.createAspectDescriptor(descriptorClass);
   }
 }

@@ -125,6 +125,14 @@ public class QueriesGenerated {
     return aspectModel.getReference().equals(((SModelReference) _context.getVariable("modelRef")));
   }
 
+  public static boolean baseMappingRule_Condition_1783365356166362826(final BaseMappingRuleContext _context) {
+    SModel aspectModel = LanguageAspect.PLUGIN.get(((Language) _context.getVariable("langModule")));
+    if (aspectModel == null || ListSequence.fromList(SModelOperations.getRoots(((SModel) aspectModel), "jetbrains.mps.make.facet.structure.FacetDeclaration")).isEmpty()) {
+      return false;
+    }
+    return aspectModel.getReference().equals(((SModelReference) _context.getVariable("modelRef")));
+  }
+
   public static Object propertyMacro_GetPropertyValue_9020561928507315549(final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "language", true), "virtual_getModuleReference_9020561928507315628", new Object[]{});
   }
@@ -209,6 +217,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_2343938651365094251(final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "qualifiedName") + ".TypesystemDescriptor";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1783365356166407863(final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "qualifiedName") + ".FacetAspectDescriptor";
   }
 
   public static Object referenceMacro_GetReferent_5554116809065233210(final ReferenceMacroContext _context) {
@@ -330,7 +342,7 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_3829836699771395556(final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "model", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return eq_x583g4_a0a0a0a0a0a0a0jc(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
+        return eq_x583g4_a0a0a0a0a0a0a0lc(SPropertyOperations.getString(it, "stereotype"), SModelStereotype.GENERATOR);
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -400,7 +412,7 @@ public class QueriesGenerated {
     return str == null || str.length() == 0;
   }
 
-  private static boolean eq_x583g4_a0a0a0a0a0a0a0jc(Object a, Object b) {
+  private static boolean eq_x583g4_a0a0a0a0a0a0a0lc(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
 }
