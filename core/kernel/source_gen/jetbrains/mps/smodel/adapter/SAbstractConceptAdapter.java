@@ -280,7 +280,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       myConceptId = new SConceptId(lang.getId(), IdHelper.getNodeId((jetbrains.mps.smodel.SNode) concept));
     } else {
       Language lang = new SLanguageAdapter(myConceptId.getLanguageId()).getSourceModule();
-      myConceptName = LanguageAspect.STRUCTURE.get(lang).getNode(new Regular(myConceptId.getConceptId())).getName();
+      myConceptName = NameUtil.nodeFQName(LanguageAspect.STRUCTURE.get(lang).getNode(new Regular(myConceptId.getConceptId())));
     }
   }
 
