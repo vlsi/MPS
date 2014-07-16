@@ -39,6 +39,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -52,6 +53,7 @@ import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
+import java.util.UUID;
 
 public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.SNode {
   private static final Logger LOG = Logger.wrap(LogManager.getLogger(SNode.class));
@@ -1843,6 +1845,8 @@ public class SNode extends SNodeBase implements org.jetbrains.mps.openapi.model.
   }
 
   private SPropertyId name2pid(String name) {
+    //this is needed to prevent infinite recursion when getProperty("name") on top of meta-ids
+    if (name.equals("name")) return SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001");
     return IdUtil.getPropId(myConceptId, name);
   }
 
