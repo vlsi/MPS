@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRuntime;
+import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Collections;
 
@@ -57,7 +58,7 @@ public class FacetRegistry {
     if (langReg != null) {
       LanguageRuntime lr = langReg.getLanguage(fn.getNamespace());
       if (lr != null) {
-        IFacetManifest fm = lr.getFacetProvider().getDescriptor(null).getManifest();
+        IFacetManifest fm = lr.getAspect(MakeAspectDescriptor.class).getManifest();
         IFacet fct = fm.lookup(fn);
         if (fct != null) {
           return fct;

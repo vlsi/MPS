@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.lang.typesystem.runtime.IHelginsDescriptor;
+import jetbrains.mps.make.facet.IFacetManifest;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -24,6 +25,7 @@ import jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor;
 import jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor;
 import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
 import jetbrains.mps.smodel.runtime.LanguageAspectDescriptor;
+import jetbrains.mps.smodel.runtime.MakeAspectDescriptor;
 import jetbrains.mps.smodel.runtime.StructureAspectDescriptor;
 import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
@@ -59,8 +61,6 @@ import static jetbrains.mps.smodel.structure.DescriptorUtils.getObjectByClassNam
  * Language runtime keeps track of aspects queried (instantiates them lazily).
  */
 public abstract class LanguageRuntime {
-  private DescriptorProvider<FacetDescriptor> facetDescriptor;
-
   private final Map<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor> myAspectDescriptors =
       new HashMap<Class<? extends LanguageAspectDescriptor>, LanguageAspectDescriptor>();
   private final List<LanguageRuntime> myExtendingLanguages = new LinkedList<LanguageRuntime>();
@@ -99,10 +99,14 @@ public abstract class LanguageRuntime {
 
   public abstract Collection<? extends GeneratorRuntime> getGenerators();
 
+  /**
+   * @deprecated use {@link #getAspect(Class) getAspect(MakeAspectDescriptor.class)} instead
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public DescriptorProvider<FacetDescriptor> getFacetProvider() {
-    if (facetDescriptor == null) {
-      facetDescriptor = getObjectByClassNameForLanguage(getNamespace() + ".plugin.FacetAspectDescriptor", DescriptorProvider.class, getLanguage());
-    }
+    DescriptorProvider<FacetDescriptor> facetDescriptor =
+        getObjectByClassNameForLanguage(getNamespace() + ".plugin.FacetAspectDescriptor", DescriptorProvider.class, getLanguage());
     return facetDescriptor == null ? new InterpretedFacetProvider() : facetDescriptor;
   }
 
@@ -225,6 +229,19 @@ public abstract class LanguageRuntime {
     }
     if (descriptorInterface == FindUsageAspectDescriptor.class) {
       return (T) getFindUsages();
+    }
+    if (descriptorInterface == MakeAspectDescriptor.class) {
+      final DescriptorProvider<FacetDescriptor> fp = getFacetProvider();
+      if (MakeAspectDescriptor.class.isInstance(fp)) {
+        return (T) fp;
+      }
+      final IFacetManifest fm = fp.getDescriptor(null).getManifest();
+      return (T) new MakeAspectDescriptor() {
+        @Override
+        public IFacetManifest getManifest() {
+          return fm;
+        }
+      };
     }
     return null;
   }
