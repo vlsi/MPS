@@ -54,7 +54,7 @@ public class SLanguageAdapter implements SLanguage {
 
   @Override
   public String getQualifiedName() {
-    return myLanguage != null ? MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(myLanguage) : myLanguageFqName;
+    return myLanguageFqName != null ? myLanguageFqName : MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(myLanguage);
   }
 
   @Override
