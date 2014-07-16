@@ -81,7 +81,7 @@ public class SPropertyAdapter implements SProperty {
     return true;
   }
 
-  protected final SNode getPropertyNode() {
+  public final SNode getPropertyNode() {
     fillBothIds();
     SConceptAdapter adapter = new SConceptAdapter(myPropertyId.getConceptId());
     SModel model = adapter.getConceptDeclarationNode().getModel();
@@ -97,8 +97,7 @@ public class SPropertyAdapter implements SProperty {
       SNode propNode = scope.getPropertyDeclarationByName(propertyName);
       myPropertyId = new SPropertyId(cid, IdHelper.getNodeId((jetbrains.mps.smodel.SNode) propNode));
     } else {
-      //there might be an interface declaring this property, but this code still works well
-      SConceptAdapter adapter = new SConceptAdapter(myPropertyId.getConceptId());
+      SAbstractConceptAdapter adapter = new SAbstractConceptAdapter(myPropertyId.getConceptId());
       conceptName = adapter.getQualifiedName();
       SModel model = adapter.getConceptDeclarationNode().getModel();
       propertyName = model.getNode(new Regular(myPropertyId.getPropertyId())).getName();

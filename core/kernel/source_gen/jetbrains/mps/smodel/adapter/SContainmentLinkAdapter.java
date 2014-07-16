@@ -72,8 +72,7 @@ public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SCo
       SNode linkNode = scope.getLinkDeclarationByRole(role);
       myRoleId = new SContainmentLinkId(cid, IdHelper.getNodeId((jetbrains.mps.smodel.SNode) linkNode));
     } else {
-      //there might be an interface declaring this link, but this code still works well
-      SConceptAdapter adapter = new SConceptAdapter(myRoleId.getConceptId());
+      SAbstractConceptAdapter adapter = new SAbstractConceptAdapter(myRoleId.getConceptId());
       conceptName = adapter.getQualifiedName();
       SModel model = adapter.getConceptDeclarationNode().getModel();
       role = model.getNode(new Regular(myRoleId.getContainmentLinkId())).getProperty("role");

@@ -173,7 +173,7 @@ public class ModelWriter9 implements IModelWriter {
         for (SPropertyId pid : n.getPropertyIds()) {
           SPropertyAdapter propId = new SPropertyAdapter(pid);
           SConceptId propConceptId = pid.getConceptId();
-          SNode propNode = propId.getPropNode();
+          SNode propNode = propId.getPropertyNode();
           String propName;
           if (propNode != null) {
             SNode propConcept = propNode.getContainingRoot();

@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.adapter.SAbstractConceptAdapter;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.smodel.adapter.SInterfaceConceptAdapter;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
@@ -28,12 +29,14 @@ import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
 import org.jetbrains.mps.openapi.language.SEnumeration;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -55,7 +58,7 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
 
   @Override
   public SAbstractConcept getConcept(@NotNull SConceptId conceptId) {
-    ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(conceptId);
+    ConceptDescriptor desc = ConceptRegistry.getInstance().getConceptDescriptor(new SAbstractConceptAdapter(conceptId).getQualifiedName());
     if (desc instanceof IllegalConceptDescriptor) return null;
 
     return desc.isInterfaceConcept() ? new SInterfaceConceptAdapter(conceptId) : new SConceptAdapter(conceptId);
@@ -114,8 +117,13 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     }
 
     @Override
-    public org.jetbrains.mps.openapi.language.SReferenceLink getReferenceLink(SReferenceLinkId id) {
-      return target.getReferenceLink(id);
+    public Iterable<SReferenceLink> getReferences() {
+      return target.getReferences();
+    }
+
+    @Override
+    public Iterable<SContainmentLink> getChildren() {
+      return target.getChildren();
     }
 
     @Override
@@ -126,11 +134,6 @@ public class ConceptRepository extends SConceptRepository implements CoreCompone
     @Override
     public Iterable<SAbstractLink> getLinks() {
       return target.getLinks();
-    }
-
-    @Override
-    public SProperty getProperty(SPropertyId id) {
-      return target.getProperty(id);
     }
 
     @Override
