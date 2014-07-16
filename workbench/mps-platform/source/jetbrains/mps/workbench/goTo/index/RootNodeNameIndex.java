@@ -65,22 +65,22 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
 
     if (model == null) {
       String ext = FileUtil.getExtension(inputData.getFileName());
-      if(MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(inputData.getFile().getFileType())) {
+      if (MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(inputData.getFile().getFileType())) {
         ext = MPSFileTypeFactory.MPS_HEADER_FILE_TYPE.getDefaultExtension();
       }
       ModelFactory factory = PersistenceFacade.getInstance().getModelFactory(ext);
       if (factory == null) {
         return null;
       }
-      if(factory instanceof FolderModelFactory) {
+      if (factory instanceof FolderModelFactory) {
         model = PersistenceUtil.loadModel(VirtualFileUtils.toIFile(
-          MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(inputData.getFile().getFileType())
-            ?  inputData.getFile().getParent().findChild(MPSExtentions.DOT_MODEL_HEADER) : inputData.getFile())
+                MPSFileTypeFactory.MPS_ROOT_FILE_TYPE.equals(inputData.getFile().getFileType())
+                    ? inputData.getFile().getParent().findChild(MPSExtentions.DOT_MODEL_HEADER) : inputData.getFile())
         );
       } else {
         model = factory.isBinary()
-          ? PersistenceUtil.loadModel(inputData.getContent(), ext)
-          : PersistenceUtil.loadModel(inputData.getContentAsText().toString(), ext);
+            ? PersistenceUtil.loadModel(inputData.getContent(), ext)
+            : PersistenceUtil.loadModel(inputData.getContentAsText().toString(), ext);
       }
       if (model == null) {
         return null;
@@ -155,26 +155,21 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
     @Override
     protected List<SNodeDescriptor> computeValue(@NotNull final FileContent inputData) {
       final List<SNodeDescriptor> descriptors = new ArrayList<SNodeDescriptor>();
-      ModelAccess.instance().runIndexing(new Runnable() {
-        @Override
-        public void run() {
-          try {
-            SModel model = doModelParsing(inputData);
+      try {
+        SModel model = doModelParsing(inputData);
 
-            for (final SNode node : getRootsToIterate(model)) {
-              String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
-              String nodeName = (persistentName == null) ? "null" : persistentName;
-              String conceptFqName = node.getConcept().getQualifiedName();
-              SModelReference modelRef = model.getReference();
-              SNodeId id = node.getNodeId();
-              SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
-              descriptors.add(value);
-            }
-          } catch (Exception e) {
-            LOG.error("Cannot index model file " + inputData.getFileName() + "; " + e.getMessage());
-          }
+        for (final SNode node : getRootsToIterate(model)) {
+          String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
+          String nodeName = (persistentName == null) ? "null" : persistentName;
+          String conceptFqName = node.getConcept().getQualifiedName();
+          SModelReference modelRef = model.getReference();
+          SNodeId id = node.getNodeId();
+          SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
+          descriptors.add(value);
         }
-      });
+      } catch (Exception e) {
+        LOG.error("Cannot index model file " + inputData.getFileName() + "; " + e.getMessage());
+      }
       return descriptors;
     }
   }
