@@ -58,24 +58,27 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
   public SAbstractConceptAdapter(@NotNull String conceptName) {
     myConceptName = conceptName;
     List<SConceptId> ids = ourNames.getKeysByValue(myConceptName);
-    if (ids!=null && !ids.isEmpty()){
+    if (ids != null && !ids.isEmpty()) {
       myConceptId = ids.get(0);
     }
   }
 
   public SAbstractConceptAdapter(@NotNull SConceptId conceptId) {
     myConceptId = conceptId;
-    myConceptName  = ourNames.get(myConceptId);
+    myConceptName = ourNames.get(myConceptId);
   }
 
   @Override
   public SConceptId getId() {
+    if (myConceptId != null) return myConceptId;
     fillBothIds();
     return myConceptId;
   }
 
   @Override
   public String getQualifiedName() {
+    if (myConceptName != null) return myConceptName;
+
     fillBothIds();
     //todo here we should obtain name from a concept node, but since we now having code which doesn't work by id and therefore obtains the name
     //todo frequently, we get a huge slowdown if obtaining name from a node here
@@ -291,7 +294,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       Language lang = new SLanguageAdapter(myConceptId.getLanguageId()).getSourceModule();
       myConceptName = NameUtil.nodeFQName(LanguageAspect.STRUCTURE.get(lang).getNode(new Regular(myConceptId.getConceptId())));
     }
-    ourNames.put(myConceptId,myConceptName);
+    ourNames.put(myConceptId, myConceptName);
   }
 
   protected static Logger LOG = LogManager.getLogger(SAbstractConceptAdapter.class);
