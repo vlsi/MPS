@@ -405,12 +405,6 @@ class GenerationSession {
         break;
       }
 
-      if (++secondaryMappingRepeatCount > 10) {
-        // TODO I'm not quite sure present log+GenericException is better than SpecificExceptionWithData and handling outside
-        logTenMinorStepsCountReached(realOutputModel);
-        throw new GenerationFailureException("failed to generate output after 10 repeated mappings");
-      }
-
       // next iteration ...
       mySessionContext.clearTransientObjects();
       isPrimary = false;
@@ -432,6 +426,13 @@ class GenerationSession {
         // in fact, can reuse output model here, but it's task to solve together with tracer (and how it would live with startTracing(same models)
         recycleWasteModel(currentOutputModel, true);
       }
+
+      if (++secondaryMappingRepeatCount > 10) {
+        // TODO I'm not quite sure present log+GenericException is better than SpecificExceptionWithData and handling outside
+        logTenMinorStepsCountReached(realOutputModel);
+        throw new GenerationFailureException("failed to generate output after 10 repeated mappings");
+      }
+
       currentOutputModel = createTransientModel();
     }
 
