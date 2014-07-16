@@ -45,27 +45,7 @@ public class CommonChoosers {
                                                                         boolean multiSelection) {
     ModuleChooserDialog dialog = new ModuleChooserDialog(project, modules, nonProjectModules, entityString, multiSelection);
     dialog.show();
-    List<SModuleReference> result = new ArrayList<SModuleReference>();
-    for (SModuleReference reference : dialog.getResult()) {
-      result.add((SModuleReference)reference);
-    }
-    return result;
-  }
-
-  @Deprecated
-  public static SNode showDialogNodeChooser(final Component parent, final List<SNode> values) {
-    Component uparent = UIUtil.findUltimateParent(parent);
-    Project project = null;
-    if (uparent instanceof IdeFrame) {
-      project = ((IdeFrame) uparent).getProject();
-    }
-    if (project == null) {
-      project = PlatformDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext(uparent));
-    }
-    if (project == null) throw new IllegalStateException("Project not found");
-    NodeChooserDialog dialog = new NodeChooserDialog(project, values);
-    dialog.show();
-    return dialog.getResultNode();
+    return new ArrayList<SModuleReference>(dialog.getResult());
   }
 
   public static List<SModelReference> showDialogModelCollectionChooser(Project project, List<SModelReference> models, @Nullable List<SModelReference> nonProjectModels) {
