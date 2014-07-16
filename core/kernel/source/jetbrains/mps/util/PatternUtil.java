@@ -24,98 +24,66 @@ import java.util.List;
  * evgeny, 11/18/11
  */
 public class PatternUtil {
-  public static StringBuilder getExactItemPatternBuilder(String text, boolean useDots) {
+  public static StringBuilder getExactItemPatternBuilder(String text, boolean useDots, boolean useStarAndQuestionMark) {
     StringBuilder b = new StringBuilder();
     int state = 0;
     for (int i = 0; i < text.length(); i++) {
       char c = text.charAt(i);
-
-      switch (state) {
-        case 0: // no quoting
-          if (c == '*') {
-            b.append(".*");
-          } else if (c == '?') {
-            b.append(".");
-          } else if (c == '.') {
-            if (useDots) {
-              b.append("[^\\.]*\\.");
-            } else {
-              b.append("\\.");
-            }
-          } else if (c == '@') {
-            b.append("[^\\@\\.]*\\@");
-          } else if (Character.isLetterOrDigit(c) || c == '_') {
-            b.append(c);
-            state = 2;
-          } else {
-            b.append("\\Q");
-            b.append(c);
-            state = 1;
-          }
-          break;
-        case 1: // quoting
-          if (c == '*') {
-            b.append("\\E");
-            b.append(".*");
-            state = 0;
-          } else if (c == '?') {
-            b.append("\\E");
-            b.append(".");
-            state = 0;
-          } else if (c == '.') {
-            if (useDots) {
-              b.append("\\E");
-              b.append("[^\\.]*\\.");
-            } else {
-              b.append("\\.");
-            }
-            state = 0;
-          } else if (c == '@') {
-            b.append("\\E");
-            b.append("[^\\@\\.]*\\@");
-            state = 0;
-          } else if (Character.isLetterOrDigit(c) || c == '_') {
-            b.append("\\E");
-            b.append(c);
-            state = 2;
-          } else {
-            b.append(c);
-          }
-          break;
-        case 2: // Sequence of letters, digits and underscores
-          if (c == '*') {
-            b.append(".*");
-            state = 0;
-          } else if (c == '?') {
-            b.append(".");
-            state = 0;
-          } else if (c == '.') {
-            if (useDots) {
-              b.append("[^\\.]*\\.");
-            } else {
-              b.append("\\.");
-            }
-            state = 0;
-          } else if (c == '@') {
-            b.append("[^\\@\\.]*\\@");
-            state = 0;
-          } else if (Character.isUpperCase(c)) {
-            b.append("[a-z0-9_]*");
-            b.append(c);
-          } else if (Character.isLetterOrDigit(c) || c == '_') {
-            b.append(c);
-          } else {
-            b.append("\\Q");
-            b.append(c);
-            state = 1;
-          }
-          break;
-      }
+      state = appendNextChar(c, state, b, useDots, useStarAndQuestionMark);
     }
     if (state == 1) {
       b.append("\\E");
     }
     return b;
+  }
+
+  private static int appendNextChar(char c, int state, StringBuilder b, boolean useDots, boolean useStarAndQuestionMark) {
+    if (state == 2 && Character.isUpperCase(c)) {
+      b.append("[a-z0-9_]*");
+      b.append(c);
+      return 2;
+    }
+    if (c == '*' || c == '?' || c == '.'  || c == '@' || Character.isLetterOrDigit(c) || c == '_') {
+      if (state == 1) {
+        b.append("\\E");
+      }
+    } else {
+      if (state != 1) {
+        b.append("\\Q");
+      }
+    }
+
+    if (c == '*') {
+      if (useStarAndQuestionMark) {
+        b.append(".*");
+      } else {
+        b.append("\\*");
+      }
+      return 0;
+    } else if (c == '?') {
+      if (useStarAndQuestionMark) {
+        b.append(".");
+      } else {
+        b.append("\\?");
+      }
+      return 0;
+    } else if (c == '.') {
+      if (useDots) {
+        b.append("[^\\.]*\\.");
+      } else {
+        b.append("\\.");
+      }
+      return 0;
+    } else if (c == '@') {
+      b.append("[^\\@\\.]*\\@");
+      return 0;
+    } else if (Character.isLetterOrDigit(c) || c == '_') {
+      b.append(c);
+      return 2;
+    } else {
+      b.append(c);
+      return 1;
+    }
   }
 
   public static List<Integer> getIndexes(@NotNull String pattern, boolean useDots, @NotNull String matchingText) {
