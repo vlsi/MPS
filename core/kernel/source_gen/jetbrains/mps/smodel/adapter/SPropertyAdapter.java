@@ -49,7 +49,10 @@ public class SPropertyAdapter implements SProperty {
   @Override
   public String getName() {
     fillBothIds();
-    return getPropertyNode().getName();
+    //todo here we should obtain name from a concept node, but since we now having code which doesn't work by id and therefore obtains the name
+    //todo frequently, we get a huge slowdown if obtaining name from a node here
+    //todo in 3.2, it is supposed that we either remove most accesses to this method or we'll return conceptName here and clear it in all propertyIds when renaming prop in IDE
+    return propertyName;
   }
 
   @Override

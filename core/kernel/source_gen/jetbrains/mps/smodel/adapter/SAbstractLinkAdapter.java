@@ -36,7 +36,11 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
   @Override
   @Deprecated
   public String getRole() {
-    return getLinkNode().getProperty("role");
+    fillBothIds();
+    //todo here we should obtain name from a concept node, but since we now having code which doesn't work by id and therefore obtains the name
+    //todo frequently, we get a huge slowdown if obtaining name from a node here
+    //todo in 3.2, it is supposed that we either remove most accesses to this method or we'll return role here and clear it in all concepts when renaming role in IDE
+    return role;
   }
 
   @Override
@@ -63,4 +67,6 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
   }
 
   public abstract SNode getLinkNode();
+
+  protected abstract void fillBothIds();
 }

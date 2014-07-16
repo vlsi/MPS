@@ -53,7 +53,10 @@ public class SLanguageAdapter implements SLanguage {
   @Override
   public String getQualifiedName() {
     fillBothIds();
-    return getSourceModule().getModuleName();
+    //todo here we should obtain name from a concept node, but since we now having code which doesn't work by id and therefore obtains the name
+    //todo frequently, we get a huge slowdown if obtaining name from a node here
+    //todo in 3.2, it is supposed that we either remove most accesses to this method or we'll return conceptName here and clear it in all languageIds when renaming language in IDE
+    return myLanguageFqName;
   }
 
   @Override
