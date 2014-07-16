@@ -188,30 +188,7 @@ public class ModuleRepositoryFacade implements CoreComponent {
     if (registered == module) {
       // we can't do it in AbstractModule#attach because we need module without models in SRepositoryListener#moduleAdded event
       registered.reloadAfterDescriptorChange();
-      fillDebugRegistry(module);
     }
     return registered;
-  }
-
-  private static <T extends AbstractModule> void fillDebugRegistry(T module) {
-    //todo: remove after 3.2
-    //this is needed as long as we haven't fully migrated to ids
-    //that's why we may need conceptId by name when we don't have it in
-    //e.g. when we get a hierarchy for some concept (need to convert generated parent names into ids)
-    if (module instanceof Language) {
-      Language l = ((Language) module);
-      MPSModuleRepository.getInstance().getDebugRegistry().addLanguageName(IdUtil.getLanguageId(l),module.getModuleName());
-      for (org.jetbrains.mps.openapi.model.SModel m : l.getModels()) {
-        if (!m.getReference().getModelName().endsWith(".structure")) continue;
-
-        for (org.jetbrains.mps.openapi.model.SNode root :m.getRootNodes()){
-          //we won't filter out non-concept just because this is a temporary code
-          String pval = root.getProperty(SPropertyId.deserialize("ceab5195-25ea-4f22-9b92-103b95ca8c0c/1169194658468/1169194664001"));
-          if (pval==null) continue;
-          MPSModuleRepository.getInstance().getDebugRegistry().addConceptName(IdUtil.getConceptId(root), pval);
-        }
-        break;
-      }
-    }
   }
 }
