@@ -67,14 +67,12 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
   @Override
   public String getQualifiedName() {
-    fillBothIds();
-    Language lang = new SLanguageAdapter(myConceptId.getLanguageId()).getSourceModule();
-    return LanguageAspect.STRUCTURE.get(lang).getNode(new Regular(myConceptId.getConceptId())).getName();
+    return NameUtil.nodeFQName(getConceptDeclarationNode());
   }
 
   @Override
   public String getName() {
-    return NameUtil.shortNameFromLongName(getQualifiedName());
+    return getConceptDeclarationNode().getName();
   }
 
   @Override
