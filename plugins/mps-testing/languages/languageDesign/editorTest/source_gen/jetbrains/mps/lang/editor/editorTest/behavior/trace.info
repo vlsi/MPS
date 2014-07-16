@@ -1,12 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="AttractsFocusBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.AttractsFocusBlock_BehaviorDescriptor" />
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BinaryExpression_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.BinaryExpression_BehaviorDescriptor" />
   <unitInfo fileName="BracesBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.BracesBlock_BehaviorDescriptor" />
   <unitInfo fileName="BracesStubBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.BracesStubBlock_BehaviorDescriptor" />
   <unitInfo fileName="ClassReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.ClassReference_BehaviorDescriptor" />
   <unitInfo fileName="Composition_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.Composition_BehaviorDescriptor" />
+  <unitInfo fileName="DelTestAbstractChild_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.DelTestAbstractChild_BehaviorDescriptor" />
+  <unitInfo fileName="DelTestChild1_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.DelTestChild1_BehaviorDescriptor" />
+  <unitInfo fileName="DeleteTestChildContainer_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.DeleteTestChildContainer_BehaviorDescriptor" />
   <unitInfo fileName="IBaseTestBlock_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.IBaseTestBlock_BehaviorDescriptor" />
   <unitInfo fileName="InspectorBlock_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.InspectorBlock_BehaviorDescriptor" />
   <unitInfo fileName="IntegerLiteral_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.lang.editor.editorTest.behavior.IntegerLiteral_BehaviorDescriptor" />

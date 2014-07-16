@@ -12,48 +12,54 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
 
   public BehaviorDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
-      case 15:
+      case 18:
         return new TestBlockList_BehaviorDescriptor();
       case 1:
         return new BracesBlock_BehaviorDescriptor();
-      case 14:
+      case 17:
         return new StubBlock_BehaviorDescriptor();
-      case 18:
+      case 21:
         return new VerticalLayoutBlockList_BehaviorDescriptor();
       case 2:
         return new BracesStubBlock_BehaviorDescriptor();
-      case 5:
+      case 8:
         return new InspectorBlock_BehaviorDescriptor();
-      case 10:
+      case 13:
         return new ReferenceAnnotataion_BehaviorDescriptor();
-      case 11:
+      case 14:
         return new SideTranformWrapper_BehaviorDescriptor();
-      case 6:
-        return new IntegerLiteral_BehaviorDescriptor();
       case 9:
+        return new IntegerLiteral_BehaviorDescriptor();
+      case 12:
         return new PlusExpression_BehaviorDescriptor();
       case 0:
         return new AttractsFocusBlock_BehaviorDescriptor();
-      case 16:
+      case 19:
         return new VariableDeclarationBlock_BehaviorDescriptor();
-      case 17:
+      case 20:
         return new VariableDeclarationReference_BehaviorDescriptor();
-      case 7:
+      case 10:
         return new NonEmptyProperty_BehaviorDescriptor();
-      case 8:
+      case 11:
         return new NotEditableVaraileReference_BehaviorDescriptor();
       case 3:
         return new ClassReference_BehaviorDescriptor();
-      case 13:
+      case 16:
         return new SimplePropertyContainer_BehaviorDescriptor();
-      case 12:
+      case 15:
         return new SimplePropertyAttribute_BehaviorDescriptor();
       case 4:
         return new Composition_BehaviorDescriptor();
+      case 7:
+        return new DeleteTestChildContainer_BehaviorDescriptor();
+      case 5:
+        return new DelTestAbstractChild_BehaviorDescriptor();
+      case 6:
+        return new DelTestChild1_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.ClassReference", "jetbrains.mps.lang.editor.editorTest.structure.Composition", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.PlusExpression", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", "jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", "jetbrains.mps.lang.editor.editorTest.structure.ClassReference", "jetbrains.mps.lang.editor.editorTest.structure.Composition", "jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild", "jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1", "jetbrains.mps.lang.editor.editorTest.structure.DeleteTestChildContainer", "jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", "jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", "jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", "jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", "jetbrains.mps.lang.editor.editorTest.structure.PlusExpression", "jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", "jetbrains.mps.lang.editor.editorTest.structure.SideTranformWrapper", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute", "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyContainer", "jetbrains.mps.lang.editor.editorTest.structure.StubBlock", "jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", "jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", "jetbrains.mps.lang.editor.editorTest.structure.VerticalLayoutBlockList"};
 }
