@@ -49,6 +49,12 @@ public class SLanguageAdapter implements SLanguage {
   }
 
   @Override
+  public SLanguageId getId() {
+    fillBothIds();
+    return myLanguage;
+  }
+
+  @Override
   public String getQualifiedName() {
     fillBothIds();
     return getSourceModule().getModuleName();
@@ -79,7 +85,7 @@ public class SLanguageAdapter implements SLanguage {
       }
     }).select(new ISelector<SNode, SInterfaceConceptAdapter>() {
       public SInterfaceConceptAdapter select(SNode it) {
-          return new SInterfaceConceptAdapter(IdUtil.getConceptId(it));
+        return new SInterfaceConceptAdapter(IdUtil.getConceptId(it));
       }
     }));
     return c;
@@ -120,11 +126,11 @@ public class SLanguageAdapter implements SLanguage {
   }
 
   private void fillBothIds() {
-    if (myLanguageFqName!=null && myLanguage!=null) return;
-    if (myLanguage==null){
+    if (myLanguageFqName != null && myLanguage != null) return;
+    if (myLanguage == null) {
       myLanguage = IdUtil.getLanguageId(ModuleRepositoryFacade.getInstance().getModule(myLanguageFqName, Language.class));
-      assert myLanguage!=null;
-    }else{
+      assert myLanguage != null;
+    } else {
       myLanguageFqName = ModuleRepositoryFacade.getInstance().getModule(IdUtil.getModuleReference(myLanguage)).getModuleName();
     }
   }
