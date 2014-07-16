@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.util.containers.BidirectionalMap;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.NotNull;
@@ -22,6 +23,7 @@ import java.util.Collections;
 
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 
+import java.util.List;
 import java.util.Set;
 
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -47,16 +49,23 @@ import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 public class SAbstractConceptAdapter implements SAbstractConcept {
+  private static BidirectionalMap<SConceptId, String> ourNames = new BidirectionalMap<SConceptId, String>();
+
   protected SConceptId myConceptId;
   protected String myConceptName;
 
   @Deprecated
   public SAbstractConceptAdapter(@NotNull String conceptName) {
     myConceptName = conceptName;
+    List<SConceptId> ids = ourNames.getKeysByValue(myConceptName);
+    if (ids!=null && !ids.isEmpty()){
+      myConceptId = ids.get(0);
+    }
   }
 
   public SAbstractConceptAdapter(@NotNull SConceptId conceptId) {
     myConceptId = conceptId;
+    myConceptName  = ourNames.get(myConceptId);
   }
 
   @Override
@@ -282,6 +291,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       Language lang = new SLanguageAdapter(myConceptId.getLanguageId()).getSourceModule();
       myConceptName = NameUtil.nodeFQName(LanguageAspect.STRUCTURE.get(lang).getNode(new Regular(myConceptId.getConceptId())));
     }
+    ourNames.put(myConceptId,myConceptName);
   }
 
   protected static Logger LOG = LogManager.getLogger(SAbstractConceptAdapter.class);
