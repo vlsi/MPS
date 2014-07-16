@@ -36,6 +36,7 @@ public interface SAbstractLink {
   /**
    * True for references, false for containment relationships.
    */
+  @Deprecated
   boolean isReference();
 
   /**
