@@ -46,15 +46,12 @@ public class SLanguageAdapter implements SLanguage {
   @Deprecated
   public SLanguageAdapter(@NotNull String language) {
     this.myLanguageFqName = language;
-    Language module = ModuleRepositoryFacade.getInstance().getModule(language, Language.class);
-    if (module!=null){
-      myLanguage = IdUtil.getLanguageId(module);
-    }
   }
 
   @Override
   public String getQualifiedName() {
-    return myLanguageFqName != null ? myLanguageFqName : MPSModuleRepository.getInstance().getDebugRegistry().getLanguageName(myLanguage);
+    fillBothIds();
+    return getSourceModule().getModuleName();
   }
 
   @Override
@@ -64,7 +61,7 @@ public class SLanguageAdapter implements SLanguage {
       return Collections.emptySet();
     }
 
-    // TODO rewrite using LanguageRuntime 
+    // TODO rewrite using LanguageRuntime
     Iterable<SNode> roots = (Iterable<SNode>) LanguageAspect.STRUCTURE.get(getSourceModule()).getRootNodes();
     List<SAbstractConcept> c = ListSequence.fromList(new ArrayList<SAbstractConcept>());
     ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
@@ -82,11 +79,7 @@ public class SLanguageAdapter implements SLanguage {
       }
     }).select(new ISelector<SNode, SInterfaceConceptAdapter>() {
       public SInterfaceConceptAdapter select(SNode it) {
-        if (myLanguage != null) {
           return new SInterfaceConceptAdapter(IdUtil.getConceptId(it));
-        } else {
-          return new SInterfaceConceptAdapter(NameUtil.nodeFQName(it));
-        }
       }
     }));
     return c;
@@ -122,10 +115,17 @@ public class SLanguageAdapter implements SLanguage {
 
   @Override
   public Language getSourceModule() {
-    if (myLanguage != null) {
-      return (Language) ModuleRepositoryFacade.getInstance().getModule(new ModuleReference("", ModuleId.regular(myLanguage.getId())));
-    } else {
-      return (Language) ModuleRepositoryFacade.getInstance().getModule(PersistenceFacade.getInstance().createModuleReference(myLanguageFqName));
+    fillBothIds();
+    return (Language) IdUtil.getModuleReference(myLanguage).resolve(MPSModuleRepository.getInstance());
+  }
+
+  private void fillBothIds() {
+    if (myLanguageFqName!=null && myLanguage!=null) return;
+    if (myLanguage==null){
+      myLanguage = IdUtil.getLanguageId(ModuleRepositoryFacade.getInstance().getModule(myLanguageFqName, Language.class));
+      assert myLanguage!=null;
+    }else{
+      myLanguageFqName = ModuleRepositoryFacade.getInstance().getModule(IdUtil.getModuleReference(myLanguage)).getModuleName();
     }
   }
 
