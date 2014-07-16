@@ -98,26 +98,31 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
     @Override
     public Map<GlobalSNodeId, List<GlobalSNodeId>> map(final FileContent inputData) {
       final Map<GlobalSNodeId, List<GlobalSNodeId>> result = MapSequence.fromMap(new HashMap<GlobalSNodeId, List<GlobalSNodeId>>());
-      SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
-      for (final SNode nextNode : SNodeUtil.getDescendants(sModel)) {
-        if (isInstanceOfClassConcept(nextNode)) {
-          SNode classNode = (SNode) nextNode;
-          if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {
-            safeMap(result, SLinkOperations.getTarget(classNode, "superclass", true), classNode);
-          }
-          for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(classNode, "implementedInterface", true))) {
-            safeMap(result, implementedInterface, classNode);
-          }
-          if (isInstanceOfAnonymousClassConcept(classNode)) {
-            safeMap(result, classNode.getReference("classifier"), classNode);
-          }
-        } else if (isInstanceOfInterfaceConcept(nextNode)) {
-          SNode interfaceNode = (SNode) nextNode;
-          for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(interfaceNode, "extendedInterface", true))) {
-            safeMap(result, extendedInterface, interfaceNode);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        @Override
+        public void run() {
+          SModel sModel = RootNodeNameIndex.doModelParsing(inputData);
+          for (final SNode nextNode : SNodeUtil.getDescendants(sModel)) {
+            if (isInstanceOfClassConcept(nextNode)) {
+              SNode classNode = (SNode) nextNode;
+              if (SLinkOperations.getTarget(classNode, "superclass", true) != null) {
+                safeMap(result, SLinkOperations.getTarget(classNode, "superclass", true), classNode);
+              }
+              for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(classNode, "implementedInterface", true))) {
+                safeMap(result, implementedInterface, classNode);
+              }
+              if (isInstanceOfAnonymousClassConcept(classNode)) {
+                safeMap(result, classNode.getReference("classifier"), classNode);
+              }
+            } else if (isInstanceOfInterfaceConcept(nextNode)) {
+              SNode interfaceNode = (SNode) nextNode;
+              for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(interfaceNode, "extendedInterface", true))) {
+                safeMap(result, extendedInterface, interfaceNode);
+              }
+            }
           }
         }
-      }
+      });
       return result;
     }
 
