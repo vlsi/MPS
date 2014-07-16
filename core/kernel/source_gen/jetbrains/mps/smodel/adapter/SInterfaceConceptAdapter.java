@@ -20,6 +20,7 @@ import java.util.ArrayList;
 
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 
 public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements SInterfaceConcept {
   public SInterfaceConceptAdapter(@NotNull SConceptId conceptId) {
@@ -43,12 +44,12 @@ public class SInterfaceConceptAdapter extends SAbstractConceptAdapter implements
   }
 
   @Override
-  public SAbstractLink getLink(SAbstractLinkId id) {
+  public org.jetbrains.mps.openapi.language.SReferenceLink getReferenceLink(SReferenceLinkId id) {
     String name = MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(id);
     if (SNodeUtil.link_BaseConcept_smodelAttribute.equals(name)) {
       return new SContainmentLinkAdapter(id);
     }
-    return super.getLink(id);
+    return super.getReferenceLink(id);
   }
 
   @Override

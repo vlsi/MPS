@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodeId.Regular;
+import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.annotations.NotNull;
@@ -27,6 +28,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SAbstractLinkId;
 import org.jetbrains.mps.openapi.language.SConceptId;
+import org.jetbrains.mps.openapi.language.SContainmentLink;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SLanguage;
 
@@ -36,6 +39,8 @@ import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.language.SReferenceLink;
+import org.jetbrains.mps.openapi.language.SReferenceLinkId;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -56,137 +61,139 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
   @Override
   public SConceptId getId() {
+    fillBothIds();
     return myConceptId;
   }
 
   @Override
   public String getQualifiedName() {
-    return myConceptId != null ? IdUtil.getConceptFqName(myConceptId) : myConceptName;
+    fillBothIds();
+    Language lang = new SLanguageAdapter(myConceptId.getLanguageId()).getSourceModule();
+    return LanguageAspect.STRUCTURE.get(lang).getNode(new Regular(myConceptId.getConceptId())).getName();
   }
-
 
   @Override
   public String getName() {
     return NameUtil.shortNameFromLongName(getQualifiedName());
   }
 
-
   @Override
-  @Deprecated
-  public SAbstractLink getLink(String role) {
-    ConceptDescriptor d = myConceptId != null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
-        ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
-    if (d instanceof IllegalConceptDescriptor) {
-      illegalConceptDescriptorWarning();
-      return null;
-    }
-
-    if (d.hasChild(role)) {
-      return myConceptId != null ? new SContainmentLinkAdapter(IdUtil.getContainmentLinkId(myConceptId, role)) : new SContainmentLinkAdapter(myConceptName, role);
-    } else if (d.hasReference(role)) {
-      return myConceptId != null ? new SReferenceLinkAdapter(IdUtil.getReferenceLinkId(myConceptId, role)) : new SReferenceLinkAdapter(myConceptName, role);
-    }
-    return null;
-  }
-
-  @Override
-  public SAbstractLink getLink(SAbstractLinkId id) {
-    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptId);
-    if (d instanceof IllegalConceptDescriptor) {
-      illegalConceptDescriptorWarning();
-      return null;
-    }
-
-    String role = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkName(id);
-    if (d.hasChild(role)) {
-      return new SContainmentLinkAdapter(((SAbstractLinkId) id));
-    } else if (d.hasReference(role)) {
-      return new SReferenceLinkAdapter(((SAbstractLinkId) id));
-    }
-    return null;
-  }
-
-
-  @Override
-  public Iterable<SAbstractLink> getLinks() {
-    ConceptDescriptor d = myConceptId != null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
-        ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+  public Iterable<SReferenceLink> getReferences() {
+    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(getQualifiedName());
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
       return Collections.emptyList();
     }
 
-    Iterable<SAbstractLink> seq = SetSequence.fromSet(((Set<String>) d.getChildrenNames())).select(new ISelector<String, SAbstractLink>() {
-      public SAbstractLink select(String it) {
-        SAbstractLinkId id = IdUtil.getContainmentLinkId(myConceptId, it);
-        if (myConceptId != null) {
-          return (SAbstractLink) new SContainmentLinkAdapter(id);
-        } else {
-          return (SAbstractLink) (new SContainmentLinkAdapter(myConceptName, it));
-        }
+    final ConceptAndSuperConceptsScope scope = new ConceptAndSuperConceptsScope(getConceptDeclarationNode());
+
+    return SetSequence.fromSet(((Set<String>) d.getReferenceNames())).select(new ISelector<String, SReferenceLink>() {
+      public SReferenceLink select(String it) {
+        SNode linkNode = scope.getLinkDeclarationByRole(it);
+        if (linkNode == null) return null;
+        return new SReferenceLinkAdapter(IdHelper.getRefRoleId((jetbrains.mps.smodel.SNode) linkNode));
       }
     });
-    return Sequence.fromIterable(seq).concat(SetSequence.fromSet(((Set<String>) d.getReferenceNames())).select(new ISelector<String, SReferenceLinkAdapter>() {
-      public SReferenceLinkAdapter select(String it) {
-        SAbstractLinkId id = IdUtil.getReferenceLinkId(myConceptId, it);
-        if (myConceptId != null) {
-          return new SReferenceLinkAdapter(id);
-        } else {
-          return new SReferenceLinkAdapter(myConceptName, it);
-        }
-      }
-    }));
   }
 
+  @Override
+  public Iterable<SContainmentLink> getChildren() {
+    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(getQualifiedName());
+    if (d instanceof IllegalConceptDescriptor) {
+      illegalConceptDescriptorWarning();
+      return Collections.emptyList();
+    }
+
+    final ConceptAndSuperConceptsScope scope = new ConceptAndSuperConceptsScope(getConceptDeclarationNode());
+
+    return SetSequence.fromSet(((Set<String>) d.getChildrenNames())).select(new ISelector<String, SContainmentLink>() {
+      public SContainmentLink select(String it) {
+        SNode linkNode = scope.getLinkDeclarationByRole(it);
+        if (linkNode == null) return null;
+        return new SContainmentLinkAdapter(IdHelper.getNodeRoleId((jetbrains.mps.smodel.SNode) linkNode));
+      }
+    });
+  }
 
   @Override
-  public SProperty getProperty(SPropertyId id) {
-    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(myConceptId);
+  @Deprecated
+  public SAbstractLink getLink(String role) {
+    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(getQualifiedName());
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
       return null;
     }
 
-    String name = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyName(id);
-    return (d.hasProperty(name) ? new SPropertyAdapter(((SPropertyId) id)) : null);
+    SNode linkNode = new ConceptAndSuperConceptsScope(getConceptDeclarationNode()).getLinkDeclarationByRole(role);
+    if (linkNode == null) return null;
+
+    if (d.hasChild(role)) {
+      return new SContainmentLinkAdapter(IdHelper.getNodeRoleId((jetbrains.mps.smodel.SNode) linkNode));
+    } else if (d.hasReference(role)) {
+      return new SReferenceLinkAdapter(IdHelper.getRefRoleId((jetbrains.mps.smodel.SNode) linkNode));
+    }
+    return null;
+  }
+
+  @Override
+  public Iterable<SAbstractLink> getLinks() {
+    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(getQualifiedName());
+    if (d instanceof IllegalConceptDescriptor) {
+      illegalConceptDescriptorWarning();
+      return Collections.emptyList();
+    }
+
+    final ConceptAndSuperConceptsScope scope = new ConceptAndSuperConceptsScope(getConceptDeclarationNode());
+
+    Iterable<SAbstractLink> seq = SetSequence.fromSet(((Set<String>) d.getChildrenNames())).select(new ISelector<String, SAbstractLink>() {
+      public SAbstractLink select(String it) {
+        SNode linkNode = scope.getLinkDeclarationByRole(it);
+        if (linkNode == null) return null;
+        return new SContainmentLinkAdapter(IdHelper.getNodeRoleId((jetbrains.mps.smodel.SNode) linkNode));
+      }
+    });
+    return Sequence.fromIterable(seq).concat(SetSequence.fromSet(((Set<String>) d.getReferenceNames())).select(new ISelector<String, SReferenceLinkAdapter>() {
+      public SReferenceLinkAdapter select(String it) {
+        SNode linkNode = scope.getLinkDeclarationByRole(it);
+        if (linkNode == null) return null;
+        return new SReferenceLinkAdapter(IdHelper.getRefRoleId((jetbrains.mps.smodel.SNode) linkNode));
+      }
+    }));
   }
 
   @Override
   @Deprecated
   public SProperty getProperty(String name) {
-    ConceptDescriptor d = myConceptId != null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
-        ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(getQualifiedName());
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
       return null;
     }
 
-    if (myConceptId != null) {
-      SPropertyId pid = IdUtil.getPropId(myConceptId, name);
-      return (d.hasProperty(name) ? new SPropertyAdapter(pid) : null);
-    } else {
-      return (d.hasProperty(name) ? new SPropertyAdapter(myConceptName, name) : null);
-    }
+    final ConceptAndSuperConceptsScope scope = new ConceptAndSuperConceptsScope(getConceptDeclarationNode());
+
+    SNode propNode = scope.getPropertyDeclarationByName(name);
+    if (!d.hasProperty(name)) return null;
+    SPropertyId id = IdHelper.getPropId((jetbrains.mps.smodel.SNode) propNode);
+    return new SPropertyAdapter(id);
   }
 
 
   @Override
   public Iterable<SProperty> getProperties() {
-    ConceptDescriptor d = myConceptId != null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
-        ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(getQualifiedName());
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
       return Collections.emptyList();
     }
 
+    final ConceptAndSuperConceptsScope scope = new ConceptAndSuperConceptsScope(getConceptDeclarationNode());
+
     return SetSequence.fromSet(((Set<String>) d.getPropertyNames())).select(new ISelector<String, SProperty>() {
       public SProperty select(String it) {
-        if (myConceptId != null) {
-          SPropertyId id = IdUtil.getPropId(myConceptId, it);
-          return (SProperty) new SPropertyAdapter(id);
-        } else {
-          return (SProperty) (new SPropertyAdapter(myConceptName, it));
-        }
+        SNode propNode = scope.getPropertyDeclarationByName(it);
+        if (propNode == null) return null;
+        return new SPropertyAdapter(IdHelper.getPropId((jetbrains.mps.smodel.SNode) propNode));
       }
     });
   }
@@ -200,8 +207,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
       return true;
     }
 
-    ConceptDescriptor d = myConceptId != null ? ConceptRegistry.getInstance().getConceptDescriptor(myConceptId) :
-        ConceptRegistry.getInstance().getConceptDescriptor(myConceptName);
+    ConceptDescriptor d = ConceptRegistry.getInstance().getConceptDescriptor(getQualifiedName());
     if (d instanceof IllegalConceptDescriptor) {
       illegalConceptDescriptorWarning();
       return false;
@@ -213,9 +219,9 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
   @Override
   public SLanguage getLanguage() {
-    return myConceptId != null ? new SLanguageAdapter(myConceptId.getLanguageId()) : new SLanguageAdapter(NameUtil.namespaceFromConceptFQName(myConceptName));
+    fillBothIds();
+    return new SLanguageAdapter(myConceptId.getLanguageId());
   }
-
 
   @Override
   public int hashCode() {
@@ -238,26 +244,42 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
 
 
   protected void illegalConceptDescriptorWarning() {
-    String languageName = myConceptId != null ? getLanguage().getQualifiedName() : NameUtil.namespaceFromConceptFQName(myConceptName);
+    fillBothIds();
+    String languageName = getLanguage().getQualifiedName();
     // report each language only once 
     if (reportedLanguages.contains(languageName)) {
       return;
     }
     reportedLanguages.add(languageName);
     if (LOG.isEnabledFor(Level.WARN)) {
-      LOG.warn("No concept found for id " + myConceptId.serialize() + ". Please check the language " + languageName + " is built and compiled.", new Throwable());
+      LOG.warn("No concept found for id " + myConceptId.serialize() + ". Please check the language " + languageName + " is built and compiled.",
+          new Throwable());
     }
   }
 
   @Nullable
   @Override
   public SNode getConceptDeclarationNode() {
-    SModuleReference moduleRef = IdUtil.getModuleReference(myConceptId.getLanguageId());
+    fillBothIds();
+    SModuleReference moduleRef = IdHelper.getModuleReference(myConceptId.getLanguageId());
     SModule module = moduleRef.resolve(MPSModuleRepository.getInstance());
     if (!(module instanceof Language)) return null;
     SModel strucModel = LanguageAspect.STRUCTURE.get(((Language) module));
     if (strucModel == null) return null;
     return strucModel.getNode(new Regular(myConceptId.getConceptId()));
+  }
+
+  private void fillBothIds() {
+    if (myConceptName != null && myConceptId != null) return;
+    if (myConceptId == null) {
+      String langName = NameUtil.namespaceFromConceptFQName(myConceptName);
+      SLanguageAdapter lang = new SLanguageAdapter(langName);
+      SNode concept = lang.getSourceModule().findConceptDeclaration(myConceptName);
+      myConceptId = new SConceptId(lang.getId(), IdHelper.getNodeId((jetbrains.mps.smodel.SNode) concept));
+    } else {
+      Language lang = new SLanguageAdapter(myConceptId.getLanguageId()).getSourceModule();
+      myConceptName = LanguageAspect.STRUCTURE.get(lang).getNode(new Regular(myConceptId.getConceptId())).getName();
+    }
   }
 
   protected static Logger LOG = LogManager.getLogger(SAbstractConceptAdapter.class);

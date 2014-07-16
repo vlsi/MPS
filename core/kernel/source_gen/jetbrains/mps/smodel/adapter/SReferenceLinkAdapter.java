@@ -19,7 +19,7 @@ public class SReferenceLinkAdapter extends SAbstractLinkAdapter implements SRefe
     super(conceptName, role);
   }
 
-  public SReferenceLinkAdapter(SAbstractLinkId roleId) {
+  public SReferenceLinkAdapter(SReferenceLinkId roleId) {
     super(roleId);
   }
 

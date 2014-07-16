@@ -22,10 +22,10 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.DevkitDescriptorPersistence;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.smodel.IdUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.language.SLanguageId;
@@ -114,7 +114,7 @@ public class DevKit extends AbstractModule {
     Set<SLanguageId> result = new HashSet<SLanguageId>();
     for (DevKit dk : getAllExtendedDevkits()) {
       for (SModuleReference l : dk.myDescriptor.getExportedLanguages()) {
-        SLanguageId lang = IdUtil.getLanguageId(l.getModuleId());
+        SLanguageId lang = IdHelper.getLanguageId(l.getModuleId());
         if (!result.contains(lang)) {
           result.add(lang);
         }

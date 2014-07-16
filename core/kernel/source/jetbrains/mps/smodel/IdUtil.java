@@ -15,25 +15,19 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.ModuleId.Regular;
-import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.smodel.adapter.SConceptAdapter;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
 import org.jetbrains.mps.openapi.language.SAbstractLinkId;
-import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptUtil;
 import org.jetbrains.mps.openapi.language.SContainmentLinkId;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.language.SPropertyId;
 import org.jetbrains.mps.openapi.language.SReferenceLinkId;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.DebugRegistry;
-import org.jetbrains.mps.openapi.module.SModuleId;
-import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.UUID;
 
@@ -44,9 +38,10 @@ import java.util.UUID;
 //todo: remove after 3.2
 
 public abstract class IdUtil {
-  private static final SPropertyId UNKNOWN_PROPERTY_ID = new SPropertyId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
-  private static final SReferenceLinkId UNKNOWN_REFERENCE_ID = new SReferenceLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
-  private static final SContainmentLinkId UNKNOWN_LINK_ID = new SContainmentLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
+
+  public static final SPropertyId UNKNOWN_PROPERTY_ID = new SPropertyId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
+  public static final SReferenceLinkId UNKNOWN_REFERENCE_ID = new SReferenceLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
+  public static final SContainmentLinkId UNKNOWN_LINK_ID = new SContainmentLinkId(new SConceptId(new SLanguageId(new UUID(0, 0)), 0), 0);
 
   public static String getConceptFqName(SConceptId id) {
     DebugRegistry dr = MPSModuleRepository.getInstance().getDebugRegistry();
@@ -94,48 +89,4 @@ public abstract class IdUtil {
     return UNKNOWN_REFERENCE_ID;
   }
 
-  public static SLanguageId getLanguageId(Language l) {
-    return getLanguageId(l.getModuleReference().getModuleId());
-  }
-
-  public static SLanguageId getLanguageId(SModuleId moduleId) {
-    assert moduleId instanceof Regular;
-    return new SLanguageId(((Regular) moduleId).getUUID());
-  }
-
-  public static SModuleReference getModuleReference(SLanguageId id) {
-    return new ModuleReference(null, ModuleId.regular(id.getId()));
-  }
-
-  //node must be a concept
-  public static SConceptId getConceptId(org.jetbrains.mps.openapi.model.SNode c) {
-    org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
-    assert nodeId instanceof SNodeId.Regular;
-    long id =  ((SNodeId.Regular) nodeId).getId();
-    return new SConceptId(getLanguageId(((Language) c.getModel().getModule())), id);
-  }
-
-  //node must be a containment link declaration
-  public static SContainmentLinkId getNodeRoleId(SNode c) {
-    org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
-    assert nodeId instanceof SNodeId.Regular;
-    long id =  ((SNodeId.Regular) nodeId).getId();
-    return new SContainmentLinkId(getConceptId(c.getContainingRoot()), id);
-  }
-
-  //node must be a ref link declaration
-  public static SReferenceLinkId getRefRoleId(SNode c) {
-    org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
-    assert nodeId instanceof SNodeId.Regular;
-    long id =  ((SNodeId.Regular) nodeId).getId();
-    return new SReferenceLinkId(getConceptId(c.getContainingRoot()), id);
-  }
-
-  //node must be a property declaration
-  public static SPropertyId getPropId(SNode c) {
-    org.jetbrains.mps.openapi.model.SNodeId nodeId = c.getNodeId();
-    assert nodeId instanceof SNodeId.Regular;
-    long id =  ((SNodeId.Regular) nodeId).getId();
-    return new SPropertyId(getConceptId(c.getContainingRoot()), id);
-  }
 }

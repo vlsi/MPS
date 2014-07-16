@@ -17,7 +17,7 @@ public class SContainmentLinkAdapter extends SAbstractLinkAdapter implements SCo
   }
 
 
-  public SContainmentLinkAdapter(SAbstractLinkId roleId) {
+  public SContainmentLinkAdapter(SContainmentLinkId roleId) {
     super(roleId);
   }
 

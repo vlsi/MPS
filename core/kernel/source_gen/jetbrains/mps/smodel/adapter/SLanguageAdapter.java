@@ -8,9 +8,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.IdUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -27,7 +24,6 @@ import org.jetbrains.mps.openapi.language.SLanguage;
 import org.jetbrains.mps.openapi.language.SLanguageId;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.module.SModuleReference;
-import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -85,7 +81,7 @@ public class SLanguageAdapter implements SLanguage {
       }
     }).select(new ISelector<SNode, SInterfaceConceptAdapter>() {
       public SInterfaceConceptAdapter select(SNode it) {
-        return new SInterfaceConceptAdapter(IdUtil.getConceptId(it));
+        return new SInterfaceConceptAdapter(IdHelper.getConceptId(it));
       }
     }));
     return c;
@@ -122,16 +118,16 @@ public class SLanguageAdapter implements SLanguage {
   @Override
   public Language getSourceModule() {
     fillBothIds();
-    return (Language) IdUtil.getModuleReference(myLanguage).resolve(MPSModuleRepository.getInstance());
+    return (Language) IdHelper.getModuleReference(myLanguage).resolve(MPSModuleRepository.getInstance());
   }
 
   private void fillBothIds() {
     if (myLanguageFqName != null && myLanguage != null) return;
     if (myLanguage == null) {
-      myLanguage = IdUtil.getLanguageId(ModuleRepositoryFacade.getInstance().getModule(myLanguageFqName, Language.class));
+      myLanguage = IdHelper.getLanguageId(ModuleRepositoryFacade.getInstance().getModule(myLanguageFqName, Language.class));
       assert myLanguage != null;
     } else {
-      myLanguageFqName = ModuleRepositoryFacade.getInstance().getModule(IdUtil.getModuleReference(myLanguage)).getModuleName();
+      myLanguageFqName = ModuleRepositoryFacade.getInstance().getModule(IdHelper.getModuleReference(myLanguage)).getModuleName();
     }
   }
 

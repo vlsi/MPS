@@ -23,6 +23,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.SModel.ImportElement;
+import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.smodel.adapter.SLanguageAdapter;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -90,7 +91,7 @@ public class SModelOperations {
         }
 
         usedLanguages.add(ref);
-        ((jetbrains.mps.smodel.SModelInternal) model).addLanguageId(IdUtil.getLanguageId(ref.getModuleId()), version);
+        ((jetbrains.mps.smodel.SModelInternal) model).addLanguageId(IdHelper.getLanguageId(ref.getModuleId()), version);
       }
 
       for (SReference reference : node.getReferences()) {
@@ -415,7 +416,7 @@ public class SModelOperations {
           }
 
           usedLanguages.add(ref);
-          model.addLanguage(IdUtil.getLanguageId(ref.getModuleId()), version);
+          model.addLanguage(IdHelper.getLanguageId(ref.getModuleId()), version);
         }
 
         for (SReference reference : node.getReferences()) {

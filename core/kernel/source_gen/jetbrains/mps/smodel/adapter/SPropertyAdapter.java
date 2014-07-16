@@ -30,7 +30,7 @@ public class SPropertyAdapter implements SProperty {
 
     SNode concept = SModelUtil.findConceptDeclaration(conceptName);
     if (concept != null) {
-      SConceptId cid = IdUtil.getConceptId(concept);
+      SConceptId cid = IdHelper.getConceptId(concept);
       myPropertyId = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(cid, name);
     }
   }

@@ -30,7 +30,6 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.BootstrapLanguages;
-import jetbrains.mps.smodel.IdUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -38,6 +37,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelInternal;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.adapter.IdHelper;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -197,7 +197,7 @@ public class ImportHelper {
           for (Language l : langs) {
             if (myModel != null) {
               Collection<SLanguageId> impLangs = ((SModelInternal) myModel).getModelDepsManager().getAllImportedLanguagesIds();
-              if (impLangs.contains(IdUtil.getLanguageId(l))) continue;
+              if (impLangs.contains(IdHelper.getLanguageId(l))) continue;
             }
             importCandidates.add(l.getModuleReference());
           }

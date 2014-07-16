@@ -102,11 +102,6 @@ public class ConceptRegistry implements CoreComponent, LanguageRegistryListener 
     conceptsInLoading.get().remove(new Pair<String, LanguageAspect>(fqName, aspect));
   }
 
-  @NotNull
-  public ConceptDescriptor getConceptDescriptor(@NotNull SConceptId id) {
-    return getConceptDescriptor(IdUtil.getConceptFqName(id));
-  }
-
   @Deprecated
   @NotNull
   public ConceptDescriptor getConceptDescriptor(@NotNull String fqName) {

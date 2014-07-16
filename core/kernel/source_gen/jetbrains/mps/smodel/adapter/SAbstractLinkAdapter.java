@@ -30,7 +30,7 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
 
     SNode concept = SModelUtil.findConceptDeclaration(conceptName);
     if (concept!=null){
-      SConceptId cid = IdUtil.getConceptId(concept);
+      SConceptId cid = IdHelper.getConceptId(concept);
       roleId = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(cid,role);
     }
   }
@@ -69,7 +69,7 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
     }
     SNode t = SLinkOperations.getTarget(link, "target", false);
     SInterfaceConceptAdapter res =
-        IdUtil.getConceptId(t) != null ? new SInterfaceConceptAdapter(IdUtil.getConceptId(t)) : new SInterfaceConceptAdapter(NameUtil.nodeFQName(t));
+        IdHelper.getConceptId(t) != null ? new SInterfaceConceptAdapter(IdHelper.getConceptId(t)) : new SInterfaceConceptAdapter(NameUtil.nodeFQName(t));
     return (SNodeOperations.isInstanceOf(t, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") ? res :
         SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(t)));
   }

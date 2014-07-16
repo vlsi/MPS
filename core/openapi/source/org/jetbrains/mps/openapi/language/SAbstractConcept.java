@@ -31,12 +31,6 @@ public interface SAbstractConcept {
   SConceptId getId();
 
   /**
-   * The qualified name of the concept.
-   */
-  @Deprecated
-  String getQualifiedName();
-
-  /**
    * The user visible name of the concept
    */
   String getName();
@@ -46,20 +40,9 @@ public interface SAbstractConcept {
    */
   SLanguage getLanguage();
 
-  /**
-   * Retrieves an associated link identified by the given role.
-   */
-  SAbstractLink getLink(SAbstractLinkId id);
+  Iterable<SReferenceLink> getReferences();
 
-  /**
-   * Retrieves all links associated with the concept.
-   */
-  Iterable<SAbstractLink> getLinks();
-
-  /**
-   * Finds a concept's property by name
-   */
-  SProperty getProperty(SPropertyId id);
+  Iterable<SContainmentLink> getChildren();
 
   /**
    * All properties
@@ -77,9 +60,14 @@ public interface SAbstractConcept {
   //----------deprecated------------
 
   @Deprecated
+  String getQualifiedName();
+
+  @Deprecated
+  Iterable<SAbstractLink> getLinks();
+
+  @Deprecated
   SProperty getProperty(String name);
 
   @Deprecated
   SAbstractLink getLink(String role);
-
 }
