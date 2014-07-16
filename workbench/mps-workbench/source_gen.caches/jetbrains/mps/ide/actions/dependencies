@@ -1575,6 +1575,7 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="javax.swing.Icon" />
@@ -1617,6 +1618,7 @@
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToAction_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToFile_Action" />
+    <classNode dependClassName="jetbrains.mps.ide.actions.GoToRootNode_Action" />
     <classNode dependClassName="jetbrains.mps.plugins.actions.LabelledAnchor" />
     <classNode dependClassName="org.apache.log4j.LogManager" />
     <classNode dependClassName="org.apache.log4j.Logger" />
@@ -1766,7 +1768,6 @@
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToModel_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToModule_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToNode_Action" />
-    <classNode dependClassName="jetbrains.mps.ide.actions.GoToRootNode_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.GoToRule_Action" />
     <classNode dependClassName="jetbrains.mps.ide.actions.Goto_ActionGroup" />
     <classNode dependClassName="jetbrains.mps.ide.actions.HighlightInstances_Action" />

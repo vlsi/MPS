@@ -23,9 +23,11 @@ import org.apache.log4j.LogManager;
 
 public class GoToRootNode_Action extends BaseAction {
   private static final Icon ICON = null;
+  private String savedText;
 
-  public GoToRootNode_Action() {
+  public GoToRootNode_Action(String savedText_par) {
     super("Go to Root Node", "", ICON);
+    this.savedText = savedText_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -61,11 +63,12 @@ public class GoToRootNode_Action extends BaseAction {
       assert project != null;
 
       RootChooseModel chooseSNodeResult = new RootChooseModel(project, new RootNodeNameIndex());
-      ChooseByNamePopup popup = MpsPopupFactory.createNodePopupWithParentAction(project, chooseSNodeResult, GoToRootNode_Action.this);
+      final ChooseByNamePopup popup = MpsPopupFactory.createNodePopup(project, chooseSNodeResult, GoToRootNode_Action.this.savedText, GoToRootNode_Action.this);
 
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
         @Override
         public void onClose() {
+          GoToRootNode_Action.this.savedText = popup.getEnteredText();
         }
 
         @Override
@@ -78,6 +81,20 @@ public class GoToRootNode_Action extends BaseAction {
         LOG.error("User's action execute method failed. Action:" + "GoToRootNode", t);
       }
     }
+  }
+
+  @NotNull
+  public String getActionId() {
+    StringBuilder res = new StringBuilder();
+    res.append(super.getActionId());
+    res.append("#");
+    res.append(savedText_State((String) this.savedText));
+    res.append("!");
+    return res.toString();
+  }
+
+  public static String savedText_State(String object) {
+    return "";
   }
 
   protected static Logger LOG = LogManager.getLogger(GoToRootNode_Action.class);
