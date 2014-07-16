@@ -7,14 +7,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IdUtil;
 import jetbrains.mps.smodel.DebugRegistryImpl;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SDataType;
 import org.jetbrains.mps.openapi.language.SPrimitiveDataType;
 import org.jetbrains.mps.openapi.language.SProperty;
 import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public class SPropertyAdapter implements SProperty {
@@ -27,12 +32,6 @@ public class SPropertyAdapter implements SProperty {
   public SPropertyAdapter(String conceptName, String name) {
     this.conceptName = conceptName;
     this.propertyName = name;
-
-    SNode concept = SModelUtil.findConceptDeclaration(conceptName);
-    if (concept != null) {
-      SConceptId cid = IdHelper.getConceptId(concept);
-      myPropertyId = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getPropertyId(cid, name);
-    }
   }
 
 
@@ -43,12 +42,14 @@ public class SPropertyAdapter implements SProperty {
 
   @Override
   public SPropertyId getId() {
+    fillBothIds();
     return myPropertyId;
   }
 
   @Override
   public String getName() {
-    return myPropertyId != null ? MPSModuleRepository.getInstance().getDebugRegistry().getPropertyName(myPropertyId) : propertyName;
+    fillBothIds();
+    return getPropertyNode().getName();
   }
 
   @Override
@@ -81,38 +82,26 @@ public class SPropertyAdapter implements SProperty {
   }
 
   protected final SNode getPropertyNode() {
-    SNode concept;
-    String name;
-
-    if (myPropertyId != null) {
-      concept = SModelUtil.findConceptDeclaration(IdUtil.getConceptFqName(myPropertyId.getConceptId()));
-      name = getName();
-    } else {
-      concept = SModelUtil.findConceptDeclaration(conceptName);
-      name = propertyName;
-    }
-
-    if ((concept == null)) {
-      return null;
-    }
-    return (SNode) new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(name);
+    fillBothIds();
+    SConceptAdapter adapter = new SConceptAdapter(myPropertyId.getConceptId());
+    SModel model = adapter.getConceptDeclarationNode().getModel();
+    return model.getNode(new Regular(myPropertyId.getPropertyId()));
   }
 
-
-  public SNode getPropNode() {
-    String cname;
-    String propName;
-    if (myPropertyId != null) {
-      cname = IdUtil.getConceptFqName(myPropertyId.getConceptId());
-      propName = getName();
+  public void fillBothIds() {
+    if (myPropertyId != null && propertyName != null) return;
+    if (myPropertyId == null) {
+      SNode concept = SModelUtil.findConceptDeclaration(conceptName);
+      SConceptId cid = IdHelper.getConceptId((jetbrains.mps.smodel.SNode) concept);
+      final ConceptAndSuperConceptsScope scope = new ConceptAndSuperConceptsScope(concept);
+      SNode propNode = scope.getPropertyDeclarationByName(propertyName);
+      myPropertyId = new SPropertyId(cid, IdHelper.getNodeId((jetbrains.mps.smodel.SNode) propNode));
     } else {
-      cname = conceptName;
-      propName = this.propertyName;
+      //there might be an interface declaring this property, but this code still works well
+      SConceptAdapter adapter = new SConceptAdapter(myPropertyId.getConceptId());
+      conceptName = adapter.getQualifiedName();
+      SModel model = adapter.getConceptDeclarationNode().getModel();
+      propertyName = model.getNode(new Regular(myPropertyId.getPropertyId())).getName();
     }
-    SNode concept = SModelUtil.findConceptDeclaration(cname);
-    if ((concept == null)) {
-      return null;
-    }
-    return (SNode) new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propName);
   }
 }
