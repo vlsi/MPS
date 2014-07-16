@@ -269,7 +269,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     return strucModel.getNode(new Regular(myConceptId.getConceptId()));
   }
 
-  private void fillBothIds() {
+  protected void fillBothIds() {
     if (myConceptName != null && myConceptId != null) return;
     if (myConceptId == null) {
       String langName = NameUtil.namespaceFromConceptFQName(myConceptName);

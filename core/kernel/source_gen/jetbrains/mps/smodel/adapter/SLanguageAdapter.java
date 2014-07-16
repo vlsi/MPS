@@ -81,7 +81,7 @@ public class SLanguageAdapter implements SLanguage {
       }
     }).select(new ISelector<SNode, SInterfaceConceptAdapter>() {
       public SInterfaceConceptAdapter select(SNode it) {
-        return new SInterfaceConceptAdapter(IdHelper.getConceptId(it));
+        return new SInterfaceConceptAdapter(IdHelper.getConceptId((jetbrains.mps.smodel.SNode) it));
       }
     }));
     return c;
