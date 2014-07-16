@@ -56,13 +56,6 @@ public class GoToModule_Action extends BaseAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    return true;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Project project = event.getData(PlatformDataKeys.PROJECT);

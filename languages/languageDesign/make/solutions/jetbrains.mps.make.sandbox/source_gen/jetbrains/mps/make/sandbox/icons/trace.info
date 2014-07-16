@@ -31,48 +31,38 @@
       <node id="4176072814906255307" at="30,9,31,43" concept="2" />
       <node id="4176072814906255307" at="33,42,34,86" concept="2" />
       <node id="4176072814906255307" at="35,7,36,44" concept="2" />
-      <node id="4176072814906255307" at="41,53,42,19" concept="5" />
-      <node id="4176072814906255307" at="43,5,44,16" concept="5" />
-      <node id="4176072814906255307" at="50,42,51,85" concept="2" />
-      <node id="4176072814906255307" at="56,0,57,0" concept="6" trace="LOG" />
+      <node id="4176072814906255307" at="43,42,44,85" concept="2" />
+      <node id="4176072814906255307" at="49,0,50,0" concept="6" trace="LOG" />
       <node id="4176072814906255307" at="32,27,35,7" concept="0" />
       <node id="4176072814906255307" at="32,27,35,7" concept="3" />
-      <node id="4176072814906255307" at="40,95,43,5" concept="3" />
-      <node id="4176072814906255307" at="49,27,52,7" concept="0" />
-      <node id="4176072814906255307" at="49,27,52,7" concept="3" />
+      <node id="4176072814906255307" at="42,27,45,7" concept="0" />
+      <node id="4176072814906255307" at="42,27,45,7" concept="3" />
       <node id="4176072814906255307" at="24,0,28,0" concept="4" trace="isDumbAware#()Z" />
       <node id="4176072814906255307" at="18,0,23,0" concept="1" trace="DummyAction_Action#()V" />
-      <node id="4176072814906255307" at="40,0,46,0" concept="4" trace="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
-      <node id="4176072814906255307" at="47,96,53,5" concept="8" />
+      <node id="4176072814906255307" at="40,96,46,5" concept="8" />
       <node id="4176072814906255307" at="29,89,37,5" concept="8" />
-      <node id="4176072814906255307" at="47,0,55,0" concept="4" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+      <node id="4176072814906255307" at="40,0,48,0" concept="4" trace="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
       <node id="4176072814906255307" at="29,0,39,0" concept="4" trace="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-      <scope id="4176072814906255307" at="48,9,48,9" />
+      <scope id="4176072814906255307" at="41,9,41,9" />
       <scope id="4176072814906255307" at="25,32,26,16" />
       <scope id="4176072814906255307" at="30,9,31,43" />
       <scope id="4176072814906255307" at="33,42,34,86" />
-      <scope id="4176072814906255307" at="41,53,42,19" />
-      <scope id="4176072814906255307" at="50,42,51,85" />
+      <scope id="4176072814906255307" at="43,42,44,85" />
       <scope id="4176072814906255307" at="18,31,21,41" />
       <scope id="4176072814906255307" at="32,27,35,7" />
-      <scope id="4176072814906255307" at="49,0,52,7">
+      <scope id="4176072814906255307" at="42,0,45,7">
         <var name="t" id="4176072814906255307" />
       </scope>
-      <scope id="4176072814906255307" at="49,27,52,7" />
+      <scope id="4176072814906255307" at="42,27,45,7" />
       <scope id="4176072814906255307" at="24,0,28,0" />
       <scope id="4176072814906255307" at="32,0,36,44">
         <var name="t" id="4176072814906255307" />
       </scope>
       <scope id="4176072814906255307" at="32,27,36,44" />
-      <scope id="4176072814906255307" at="40,95,44,16" />
       <scope id="4176072814906255307" at="18,0,23,0" />
-      <scope id="4176072814906255307" at="40,0,46,0">
-        <var name="_params" id="4176072814906255307" />
-        <var name="event" id="4176072814906255307" />
-      </scope>
-      <scope id="4176072814906255307" at="47,96,53,5" />
+      <scope id="4176072814906255307" at="40,96,46,5" />
       <scope id="4176072814906255307" at="29,89,37,5" />
-      <scope id="4176072814906255307" at="47,0,55,0">
+      <scope id="4176072814906255307" at="40,0,48,0">
         <var name="_params" id="4176072814906255307" />
         <var name="event" id="4176072814906255307" />
       </scope>
@@ -80,7 +70,7 @@
         <var name="_params" id="4176072814906255307" />
         <var name="event" id="4176072814906255307" />
       </scope>
-      <unit id="4176072814906255307" at="15,0,58,0" name="jetbrains.mps.make.sandbox.icons.DummyAction_Action" />
+      <unit id="4176072814906255307" at="15,0,51,0" name="jetbrains.mps.make.sandbox.icons.DummyAction_Action" />
     </file>
   </root>
 </debug-info>
