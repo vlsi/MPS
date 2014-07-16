@@ -9,6 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.IdUtil;
 import jetbrains.mps.smodel.DebugRegistryImpl;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SNodeId.Regular;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SAbstractConcept;
@@ -16,10 +18,12 @@ import org.jetbrains.mps.openapi.language.SAbstractLink;
 import org.jetbrains.mps.openapi.language.SAbstractLinkId;
 import org.jetbrains.mps.openapi.language.SConceptId;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.language.SContainmentLinkId;
+import org.jetbrains.mps.openapi.language.SPropertyId;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SAbstractLinkAdapter implements SAbstractLink {
-  protected SAbstractLinkId roleId;
   protected String conceptName;
   protected String role;
 
@@ -27,27 +31,12 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
   public SAbstractLinkAdapter(String conceptName, String role) {
     this.conceptName = conceptName;
     this.role = role;
-
-    SNode concept = SModelUtil.findConceptDeclaration(conceptName);
-    if (concept!=null){
-      SConceptId cid = IdHelper.getConceptId(concept);
-      roleId = ((DebugRegistryImpl) MPSModuleRepository.getInstance().getDebugRegistry()).getLinkId(cid,role);
-    }
-  }
-
-  public SAbstractLinkAdapter(SAbstractLinkId roleId) {
-    this.roleId = roleId;
-  }
-
-  @Override
-  public SAbstractLinkId getRoleId() {
-    return roleId;
   }
 
   @Override
   @Deprecated
   public String getRole() {
-    return role == null ? MPSModuleRepository.getInstance().getDebugRegistry().getLinkName(roleId) : role;
+    return getLinkNode().getProperty("role");
   }
 
   @Override
@@ -68,52 +57,10 @@ public abstract class SAbstractLinkAdapter implements SAbstractLink {
       return null;
     }
     SNode t = SLinkOperations.getTarget(link, "target", false);
-    SInterfaceConceptAdapter res =
-        IdHelper.getConceptId(t) != null ? new SInterfaceConceptAdapter(IdHelper.getConceptId(t)) : new SInterfaceConceptAdapter(NameUtil.nodeFQName(t));
-    return (SNodeOperations.isInstanceOf(t, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") ? res :
-        SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(t)));
+    SConceptId id = IdHelper.getConceptId((jetbrains.mps.smodel.SNode) t);
+    boolean isConcept = t.getConcept().getQualifiedName().equals(SNodeUtil.concept_ConceptDeclaration);
+    return isConcept ? new SConceptAdapter(id) : new SInterfaceConceptAdapter(id);
   }
 
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-
-    SAbstractLinkAdapter that = (SAbstractLinkAdapter) o;
-
-    if (roleId != null) {
-      return roleId.equals(that.roleId);
-    } else {
-      String my = "" + conceptName + "#" + role;
-      String theirs = "" + that.conceptName + "#" + that.role;
-      return my.equals(theirs);
-    }
-  }
-
-  @Override
-  public int hashCode() {
-    if (roleId != null) {
-      return roleId.hashCode();
-    } else {
-      return ("" + conceptName + "#" + role).hashCode();
-    }
-  }
-
-  public final SNode getLinkNode() {
-    String cname;
-    String linkRole;
-    if (roleId != null) {
-      cname = IdUtil.getConceptFqName(roleId.getConceptId());
-      linkRole = getRole();
-    } else {
-      cname = conceptName;
-      linkRole = this.role;
-    }
-    SNode concept = SModelUtil.findConceptDeclaration(cname);
-    if ((concept == null)) {
-      return null;
-    }
-    return (SNode) new ConceptAndSuperConceptsScope(concept).getLinkDeclarationByRole(linkRole);
-  }
+  public abstract SNode getLinkNode();
 }
