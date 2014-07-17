@@ -286,12 +286,12 @@
     <nodeInfo nodeId="5291886463459989068" fileName="EditorBasedReferenceResolverUtils.java" startLine="38" startPosition="35" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5447047924422106504" fileName="EditorBasedReferenceResolverUtils.java" startLine="42" startPosition="29" endLine="43" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5447047924422106506" fileName="EditorBasedReferenceResolverUtils.java" startLine="44" startPosition="9" endLine="45" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5447047924422106510" fileName="EditorBasedReferenceResolverUtils.java" startLine="47" startPosition="5" endLine="48" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5447047924422106510" fileName="EditorBasedReferenceResolverUtils.java" startLine="47" startPosition="5" endLine="48" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5447047924422123397" fileName="EditorBasedReferenceResolverUtils.java" startLine="15" startPosition="94" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8201985028522911955" fileName="EditorBasedReferenceResolverUtils.java" startLine="23" startPosition="67" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8201985028522911967" fileName="EditorBasedReferenceResolverUtils.java" startLine="27" startPosition="145" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5447047924422106499" fileName="EditorBasedReferenceResolverUtils.java" startLine="41" startPosition="50" endLine="44" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5447047924422106493" fileName="EditorBasedReferenceResolverUtils.java" startLine="40" startPosition="117" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5447047924422106493" fileName="EditorBasedReferenceResolverUtils.java" startLine="40" startPosition="118" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5447047924422119107" fileName="EditorBasedReferenceResolverUtils.java" startLine="14" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="resolveInEditor#(Ljetbrains/mps/nodeEditor/EditorComponent;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Z" />
     <nodeInfo nodeId="5447047924422106485" fileName="EditorBasedReferenceResolverUtils.java" startLine="39" startPosition="39" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8201985028522869468" fileName="EditorBasedReferenceResolverUtils.java" startLine="22" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="substituteCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
@@ -304,7 +304,7 @@
     <scopeInfo nodeId="5447047924422119110" fileName="EditorBasedReferenceResolverUtils.java" startLine="14" startPosition="134" endLine="19" endPosition="89">
       <varInfo nodeId="5447047924422123390" varName="cellWithRole" />
     </scopeInfo>
-    <scopeInfo nodeId="5447047924422106492" fileName="EditorBasedReferenceResolverUtils.java" startLine="40" startPosition="117" endLine="46" endPosition="7" />
+    <scopeInfo nodeId="5447047924422106492" fileName="EditorBasedReferenceResolverUtils.java" startLine="40" startPosition="118" endLine="46" endPosition="7" />
     <scopeInfo nodeId="5447047924422119107" fileName="EditorBasedReferenceResolverUtils.java" startLine="14" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="5447047924422124169" varName="editorComponent" />
       <varInfo nodeId="5447047924422144896" varName="referenceRole" />
@@ -318,7 +318,7 @@
       <varInfo nodeId="8201985028522911962" varName="applicableSubstituteAction" />
       <varInfo nodeId="8201985028522911950" varName="substituteInfo" />
     </scopeInfo>
-    <scopeInfo nodeId="5447047924422106480" fileName="EditorBasedReferenceResolverUtils.java" startLine="37" startPosition="116" endLine="48" endPosition="18">
+    <scopeInfo nodeId="5447047924422106480" fileName="EditorBasedReferenceResolverUtils.java" startLine="37" startPosition="116" endLine="48" endPosition="89">
       <varInfo nodeId="5447047924422106482" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="8201985028522869468" fileName="EditorBasedReferenceResolverUtils.java" startLine="22" startPosition="0" endLine="34" endPosition="0">

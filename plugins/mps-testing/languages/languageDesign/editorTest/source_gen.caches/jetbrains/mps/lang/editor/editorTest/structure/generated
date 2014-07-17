@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-3tc927gkvau4o9ccrj4vlp4qo0haaem">
+<dependencies version="2" modelHash="-5z2q7d4mu6j2c0p9wfpxeheoesutg79">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-2hubvwh7bwismm0eld02cqmdefvj5by" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="3otemgxrqqsrxqupfy08xh1flhnd0ja" />
@@ -28,6 +28,10 @@
     <dep root="5633355289409839142" />
     <dep root="6859592652550843066" />
     <dep root="7658393498702771296" />
+    <dep root="7803854675610223138" />
+    <dep root="7803854675610223687" />
+    <dep root="7803854675610223744" />
+    <dep root="7803854675610450426" />
     <dep root="8497577741385080308" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.runtime.impl(MPS.Core/jetbrains.mps.smodel.runtime.impl@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -59,5 +63,9 @@
   <source id="3195708693940803614" name="SimplePropertyContainer" hash="-4j1310txosz6ht1zsh7sv66py75v9t6" />
   <source id="3195708693940868525" name="SimplePropertyAttribute" hash="3jwcsrb5v8i7c30q2sfp0pfz1hphxnx" />
   <source id="3447504547918837138" name="Composition" hash="2fd6gqfg46fzvwzsfafxm78fjdgejkw" />
+  <source id="7803854675610223138" name="DelTestChildContainer" hash="-76hwgekn0h346nqavdd7bb6239m70j3" />
+  <source id="7803854675610223687" name="DelTestAbstractChild" hash="b1tm182r811q0b0atvv4ymccj50ysef" />
+  <source id="7803854675610223744" name="DelTestChild1" hash="-cz2emtywp34jmtcebjzz4wfancdo6m9" />
+  <source id="7803854675610450426" name="DelTestRoot" hash="6wb0mlb2jgloufahi2ybzf3dnlzwd6p" />
 </dependencies>
 
