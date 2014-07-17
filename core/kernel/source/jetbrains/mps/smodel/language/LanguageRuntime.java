@@ -265,14 +265,12 @@ public abstract class LanguageRuntime {
     visitedLanguages.add(getNamespace());
     while (!extendedLanguageIDs.isEmpty()) {
       String nextLanguageID = extendedLanguageIDs.remove();
-      if (visitedLanguages.contains(nextLanguageID)) {
-        continue;
-      }
-      visitedLanguages.add(nextLanguageID);
-      LanguageRuntime extendedLanguage = registry.getLanguage(nextLanguageID);
-      if (extendedLanguage != null) {
-        extendedLanguage.registerExtendingLanguage(this);
-        extendedLanguageIDs.addAll(Arrays.asList(extendedLanguage.getExtendedLanguageIDs()));
+      if (visitedLanguages.add(nextLanguageID)) {
+        LanguageRuntime extendedLanguage = registry.getLanguage(nextLanguageID);
+        if (extendedLanguage != null) {
+          extendedLanguage.registerExtendingLanguage(this);
+          extendedLanguageIDs.addAll(Arrays.asList(extendedLanguage.getExtendedLanguageIDs()));
+        }
       }
     }
   }
