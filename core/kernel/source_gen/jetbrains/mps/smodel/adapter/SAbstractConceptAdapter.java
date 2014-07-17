@@ -168,16 +168,16 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
     }
     final ConceptAndSuperConceptsScope scope = new ConceptAndSuperConceptsScope(getConceptDeclarationNode());
 
-    Iterable<SContainmentLinkAdapter> seq = SetSequence.fromSet(((Set<String>) d.getChildrenNames())).select(new ISelector<String, SContainmentLinkAdapter>() {
-      public SContainmentLinkAdapter select(String it) {
+    Iterable<SAbstractLink> seq = SetSequence.fromSet(((Set<String>) d.getChildrenNames())).select(new ISelector<String, SAbstractLink>() {
+      public SAbstractLink select(String it) {
         SNode linkNode = scope.getLinkDeclarationByRole(it);
         if (linkNode == null) {
           return null;
         }
-        return new SContainmentLinkAdapter(IdHelper.getNodeRoleId((jetbrains.mps.smodel.SNode) linkNode));
+        return (SAbstractLink) new SContainmentLinkAdapter(IdHelper.getNodeRoleId((jetbrains.mps.smodel.SNode) linkNode));
       }
     });
-    return Sequence.fromIterable(seq).concat(SetSequence.fromSet(((Set<String>) d.getReferenceNames())).select(new ISelector<String, SAbstractLink>() {
+    Sequence.fromIterable(seq).concat(SetSequence.fromSet(((Set<String>) d.getReferenceNames())).select(new ISelector<String, SAbstractLink>() {
       public SAbstractLink select(String it) {
         SNode linkNode = scope.getLinkDeclarationByRole(it);
         if (linkNode == null) {
@@ -186,6 +186,7 @@ public class SAbstractConceptAdapter implements SAbstractConcept {
         return ((SAbstractLink) new SReferenceLinkAdapter(IdHelper.getRefRoleId((jetbrains.mps.smodel.SNode) linkNode)));
       }
     }));
+    return seq;
   }
 
 

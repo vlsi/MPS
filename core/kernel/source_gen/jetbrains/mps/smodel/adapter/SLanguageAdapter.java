@@ -69,7 +69,8 @@ public class SLanguageAdapter implements SLanguage {
 
   @Override
   public Iterable<SAbstractConcept> getConcepts() {
-    LanguageRuntime runtime = LanguageRegistry.getInstance().getLanguage(myLanguageFqName);
+    fillBothIds();
+    LanguageRuntime runtime = LanguageRegistry.getInstance().getLanguage(myLanguage);
     if (runtime == null) {
       return Collections.<SAbstractConcept>emptySet();
     }
