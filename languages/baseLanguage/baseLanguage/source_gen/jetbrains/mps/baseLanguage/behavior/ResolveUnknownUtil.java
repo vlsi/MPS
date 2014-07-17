@@ -412,15 +412,13 @@ public class ResolveUnknownUtil {
 
   public static void reattachMethodArguments(SNode from, SNode to) {
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(from, "actualArgument", true))) {
-      SNodeOperations.detachNode(arg);
-      ListSequence.fromList(SLinkOperations.getTargets(to, "actualArgument", true)).addElement(arg);
+      ListSequence.fromList(SLinkOperations.getTargets(to, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
     }
   }
 
   public static void reattachTypeArguments(SNode from, SNode to) {
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(from, "typeArgument", true))) {
-      SNodeOperations.detachNode(arg);
-      ListSequence.fromList(SLinkOperations.getTargets(to, "typeArgument", true)).addElement(arg);
+      ListSequence.fromList(SLinkOperations.getTargets(to, "typeArgument", true)).addElement(SNodeOperations.copyNode(arg));
     }
   }
 
