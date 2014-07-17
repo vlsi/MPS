@@ -65,7 +65,6 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
   private SModelHeader fieldheader;
   private DefaultSModel fieldmodel;
   private ReadHelper9 fieldhelper;
-  private boolean fieldhasSkippedNodes;
 
   public ModelReader9Handler(boolean interfaceOnly, boolean stripImplementation, SModelHeader header) {
     fieldinterfaceOnly = interfaceOnly;
@@ -181,12 +180,11 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     protected ModelLoadResult createObject(Attributes attrs) throws SAXException {
       SModelReference ref = PersistenceFacade.getInstance().createModelReference(attrs.getValue("ref"));
       fieldmodel = new DefaultSModel(ref);
-      fieldhasSkippedNodes = true;
       fieldmodel.setPersistenceVersion(9);
       fieldmodel.getSModelHeader().updateDefaults(fieldheader);
       fieldhelper = new ReadHelper9(fieldmodel.getReference());
       ModelLoadResult result = new ModelLoadResult(fieldmodel, ModelLoadingState.NOT_LOADED);
-      result.setState((fieldhasSkippedNodes ? ((fieldinterfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.NO_IMPLEMENTATION)) : ModelLoadingState.FULLY_LOADED));
+      result.setState((fieldinterfaceOnly ? ModelLoadingState.INTERFACE_LOADED : ModelLoadingState.NO_IMPLEMENTATION));
       return result;
     }
 
@@ -680,7 +678,6 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
           fieldmodel.addRootNode(new jetbrains.mps.smodel.SNode(stubConcept));
         }
       }
-      fieldhasSkippedNodes = true;
     }
   }
 
@@ -804,7 +801,6 @@ public class ModelReader9Handler extends XMLSAXHandler<ModelLoadResult> {
     private void handleChild_7167172773708890694(Object resultObject, Object value) throws SAXException {
       Tuples._2<SNode, SContainmentLinkId> result = (Tuples._2<SNode, SContainmentLinkId>) resultObject;
       Tuples._3<SContainmentLinkId, SConceptId, String> child = (Tuples._3<SContainmentLinkId, SConceptId, String>) value;
-      fieldhasSkippedNodes = true;
       if (fieldstripImplementation && fieldhelper.isImplementationWithStubNode(child._2())) {
         SConceptId stubConcept = fieldhelper.getStubConcept(child._1());
         if (stubConcept != null) {
