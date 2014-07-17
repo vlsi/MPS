@@ -53,6 +53,8 @@ public class ModuleClassLoader extends ClassLoader {
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
 
+  // FIXME we cannot use this method because of PluginReloader#schedulePluginsReload
+  // It forces us to use the objects of classes with disposed classloaders
   private void checkNotDisposed() {
     if (myDisposed)
       throw new AssertionError("MPS ClassLoader is disposed and not operable!");

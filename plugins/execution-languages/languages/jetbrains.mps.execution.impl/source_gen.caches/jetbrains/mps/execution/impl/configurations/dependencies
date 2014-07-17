@@ -2,8 +2,8 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager" file="RunConfigurationsStateManager.java">
     <classNode dependClassName="com.intellij.execution.ExecutionManager" />
+    <classNode dependClassName="com.intellij.execution.RunManagerAdapter" />
     <classNode dependClassName="com.intellij.execution.RunManagerEx" />
-    <classNode dependClassName="com.intellij.execution.RunManagerListener" />
     <classNode dependClassName="com.intellij.execution.RunnerAndConfigurationSettings" />
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationType" />
     <classNode dependClassName="com.intellij.execution.configurations.RunConfiguration" />

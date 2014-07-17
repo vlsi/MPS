@@ -33,7 +33,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jdom.Element;
-import com.intellij.execution.RunManagerListener;
+import com.intellij.execution.RunManagerAdapter;
 import com.intellij.execution.RunnerAndConfigurationSettings;
 import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.util.WriteExternalException;
@@ -95,6 +95,11 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
 
 
 
+  /**
+   * not saving state at dispose, because we do not have the valid classes at this time
+   * see @PluginReloader#schedulePluginsReload()
+   * instead of that we have to saveState ocassionally using RunManagerListener (see below)
+   */
   public void disposeRunConfigurations() {
     assert !(myProject.isDisposed());
     disposeRunContentDescriptors();
@@ -236,21 +241,22 @@ public class RunConfigurationsStateManager implements ProjectComponent, PluginRe
 
 
     public RunConfigurationsState(RunManagerEx runManager) {
-      runManager.addRunManagerListener(new RunManagerListener() {
+      runManager.addRunManagerListener(new RunManagerAdapter() {
+        @Override
         public void runConfigurationSelected() {
           saveState();
         }
 
+
+
+        @Override
         public void beforeRunTasksChanged() {
           saveState();
         }
 
-        public void runConfigurationAdded(@NotNull RunnerAndConfigurationSettings p0) {
-        }
 
-        public void runConfigurationRemoved(@NotNull RunnerAndConfigurationSettings p0) {
-        }
 
+        @Override
         public void runConfigurationChanged(@NotNull RunnerAndConfigurationSettings p0) {
           saveState();
         }
