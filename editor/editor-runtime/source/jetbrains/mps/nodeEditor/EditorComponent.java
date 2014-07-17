@@ -2842,7 +2842,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void clearNodesCellDependsOn(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorManager editorManager) {
-    if (editorManager == EditorManager.getInstanceFromContext(getCurrentProject())) {
+    if (editorManager == EditorManager.getInstanceFromContext(getEditorContext())) {
       myCellsToNodesToDependOnMap.remove(cell);
       myCellsToRefTargetsToDependOnMap.remove(cell);
       if (myRootCell == cell) {
@@ -2852,7 +2852,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   void registerAsBigCell(jetbrains.mps.openapi.editor.cells.EditorCell cell, EditorManager manager) {
-    if (manager == EditorManager.getInstanceFromContext(getCurrentProject())) {
+    if (manager == EditorManager.getInstanceFromContext(getEditorContext())) {
       myNodesToBigCellsMap.put(cell.getSNode(), new WeakReference<jetbrains.mps.openapi.editor.cells.EditorCell>(cell));
     }
   }
