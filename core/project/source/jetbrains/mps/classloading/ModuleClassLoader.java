@@ -53,6 +53,13 @@ public class ModuleClassLoader extends ClassLoader {
   @SuppressWarnings({"UnusedDeclaration", "FieldCanBeLocal"})
   private boolean myDisposed;
 
+  // FIXME we cannot use this method because of PluginReloader#schedulePluginsReload
+  // It forces us to use the objects of classes with disposed classloaders
+  private void checkNotDisposed() {
+    if (myDisposed)
+      throw new AssertionError("MPS ClassLoader is disposed and not operable!");
+  }
+
   public ModuleClassLoader(ClassLoaderManager manager, ModuleClassLoaderSupport classLoaderSupport) {
     super(getParentPluginClassLoader(classLoaderSupport.getModule()));
     myManager = manager;
@@ -61,6 +68,7 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
+//    checkNotDisposed();
     if (name.startsWith("java.")) {
       return Class.forName(name, false, BOOTSTRAP_CLASSLOADER);
     }
@@ -99,6 +107,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private Class<?> getClassFromCache(String name) throws ClassNotFoundException {
+//    checkNotDisposed();
     if (myLoadedClasses.contains(name)) {
       Class cl = myClasses.get(name);
       if (cl == null) throw new ClassNotFoundException(name);
@@ -108,6 +117,7 @@ public class ModuleClassLoader extends ClassLoader {
   }
 
   private Class<?> loadFromSelf(String name) {
+//    checkNotDisposed();
     Class c = findLoadedClass(name);
     if (c != null) return c;
 
@@ -163,6 +173,7 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected URL findResource(String name) {
+//    checkNotDisposed();
     for (ClassLoader dep : getDependencyClassLoaders()) {
       if (dep instanceof ModuleClassLoader) {
         URL res = ((ModuleClassLoader) dep).mySupport.findResource(name);
@@ -177,6 +188,7 @@ public class ModuleClassLoader extends ClassLoader {
 
   @Override
   protected Enumeration<URL> findResources(String name) throws IOException {
+//    checkNotDisposed();
     ArrayList<URL> result = new ArrayList<URL>();
     for (ClassLoader dep : getDependencyClassLoaders()) {
       if (dep instanceof ModuleClassLoader) {
