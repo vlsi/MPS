@@ -23,7 +23,6 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
@@ -109,15 +108,6 @@ public class SubstituteActionUtil {
       return 0;
     }
 
-    private int compareByStartsWith(SubstituteAction i1, SubstituteAction i2) {
-      boolean startsWith1 = getVisibleMatchingText(i1).startsWith(myPattern);
-      boolean startsWith2 = getVisibleMatchingText(i2).startsWith(myPattern);
-      if (startsWith1 != startsWith2) {
-        return startsWith1 ? -1 : 1;
-      }
-      return 0;
-    }
-
     private int compareByNodeSortPriority(SubstituteAction i1, SubstituteAction i2) {
       int p1 = getNodeSortPriority(i1);
       int p2 = getNodeSortPriority(i2);
@@ -127,9 +117,6 @@ public class SubstituteActionUtil {
     @Override
     public int compare(SubstituteAction i1, SubstituteAction i2) {
       int result = compareByStrictly(i1, i2);
-      if (result != 0) return result;
-
-      result = compareByStartsWith(i1, i2);
       if (result != 0) return result;
 
       result = compareByNodeSortPriority(i1, i2);
@@ -159,12 +146,11 @@ public class SubstituteActionUtil {
       if (pattern == null || pattern.isEmpty()) {
         return CANT_SUBSTITUTE;
       }
-      String visibleMatchingText = action.getVisibleMatchingText(pattern);
-      if (visibleMatchingText == null || visibleMatchingText.isEmpty()) {
+      String matchingText = action.getMatchingText(pattern);
+      if (matchingText == null || matchingText.isEmpty()) {
         return CANT_SUBSTITUTE;
       }
-      String matchingText = action.getMatchingText(pattern);
-      if (action.canSubstitute(matchingText) && visibleMatchingText.toLowerCase().contains(pattern.toLowerCase())) {
+      if (action.canSubstitute(matchingText) && matchingText.toLowerCase().contains(pattern.toLowerCase())) {
         return CAN_SUBSTITUTE_VIA_SEARCH;
       }
       return CANT_SUBSTITUTE;

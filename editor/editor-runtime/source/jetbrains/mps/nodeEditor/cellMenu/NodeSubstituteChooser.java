@@ -79,10 +79,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Author: Sergey Dmitriev.
@@ -378,37 +375,31 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     if (keyEvent.getKeyCode() == KeyEvent.VK_UP) {
       getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - 1);
       repaintPopupMenu();
-      updatePatternEditor();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_DOWN) {
       getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + 1);
       repaintPopupMenu();
-      updatePatternEditor();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_UP) {
       getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() - getPageSize());
       repaintPopupMenu();
-      updatePatternEditor();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_PAGE_DOWN) {
       getPopupWindow().setSelectionIndex(getPopupWindow().getSelectionIndex() + getPageSize());
       repaintPopupMenu();
-      updatePatternEditor();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_HOME) {
       getPopupWindow().setSelectionIndex(0);
       repaintPopupMenu();
-      updatePatternEditor();
       return true;
     }
     if (keyEvent.getKeyCode() == KeyEvent.VK_END) {
       getPopupWindow().setSelectionIndex(mySubstituteActions.size() - 1);
       repaintPopupMenu();
-      updatePatternEditor();
       return true;
     }
 
@@ -440,16 +431,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   public void doSubstituteSelection(String pattern, int index) {
     List<SubstituteAction> actions = getMatchingActions(pattern, false);
     actions.get(index).substitute(myEditorComponent.getEditorContext(), pattern);
-  }
-
-  private void updatePatternEditor() {
-    if (!myMenuEmpty) {
-      int oldPosition = myPatternEditor.getCaretPosition();
-      String oldPattern = myPatternEditor.getPattern();
-      String newText = getPopupWindow().getSelectedText(oldPattern);
-//      myPatternEditor.setText(newText);
-      myPatternEditor.setCaretPosition(Math.min(newText.length(), oldPosition));
-    }
   }
 
   private void repaintPopupMenu() {
@@ -552,12 +533,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
         @Override
         public void mousePressed(MouseEvent e) {
           repaintPopupMenu();
-          ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              updatePatternEditor();
-            }
-          });
         }
 
         @Override
@@ -719,6 +694,10 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     private JLabel myRight = new JLabel("", JLabel.RIGHT);
     private static final int HORIZONTAL_GAP = 10;
     private boolean myLightweightMode = false;
+    private final Color HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? new Color(217, 149, 219) : new Color(189, 55, 186);
+    private final Color SELECTION_HIGHLIGHT_COLOR = UIUtil.isUnderDarcula() ? HIGHLIGHT_COLOR : new Color(250, 239, 215);
+    private final String STRING_HIGHLIGHT_COLOR = colorToHtml(HIGHLIGHT_COLOR);
+    private final String STRING_SELECTION_HIGHLIGHT_COLOR = colorToHtml(SELECTION_HIGHLIGHT_COLOR);
 
     private NodeItemCellRenderer() {
       setLayout(new BorderLayout(HORIZONTAL_GAP / 2, 0));
@@ -786,9 +765,9 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
       try {
         if (!isSelected) {
-          myLeft.setText(SubstituteActionUtil.createText(action, pattern,colorToHtml(Color.BLUE)));
+          myLeft.setText(SubstituteActionUtil.createText(action, pattern, STRING_HIGHLIGHT_COLOR));
         } else {
-          myLeft.setText(action.getVisibleMatchingText(pattern));
+          myLeft.setText(SubstituteActionUtil.createText(action, pattern, STRING_SELECTION_HIGHLIGHT_COLOR));
         }
       } catch (Throwable t) {
         myLeft.setText("!Exception was thrown!");
