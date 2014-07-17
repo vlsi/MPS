@@ -119,6 +119,9 @@ public class SubstituteActionUtil {
       int result = compareByStrictly(i1, i2);
       if (result != 0) return result;
 
+      result = compareByRate(i1, i2);
+      if (result != 0) return result;
+
       result = compareByNodeSortPriority(i1, i2);
       if (result != 0) return result;
 
@@ -131,8 +134,6 @@ public class SubstituteActionUtil {
       if (null_s1) return 1;
       if (null_s2) return -1;
 
-      result = compareByRate(i1, i2);
-      if (result != 0) return result;
 
       return s1.compareTo(s2);
     }
