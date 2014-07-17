@@ -4,6 +4,15 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import org.junit.runner.Request;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.module.SModuleReference;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 public class NodeWrappersTestsContributor implements TestsContributor {
   private final Iterable<? extends ITestNodeWrapper> myTestNodes;
@@ -23,6 +32,43 @@ public class NodeWrappersTestsContributor implements TestsContributor {
 
   @Override
   public Iterable<Request> gatherTests() throws Exception {
-    return new TestLightExtractor(myTestClassStorage).extractTests(myTestNodes);
+    final Exception[] ex = new Exception[1];
+    final List<Request> requestList = new ArrayList<Request>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        try {
+          for (ITestNodeWrapper<?> testNode : myTestNodes) {
+            String fqName = testNode.getFqName();
+            final SModule module = getModuleByNode(testNode.getNode());
+            if (testNode.isTestCase()) {
+              final Class<?> aClass = myTestClassStorage.loadTestClass(fqName, module);
+              requestList.add(Request.aClass(aClass));
+            } else {
+              int index = fqName.lastIndexOf('.');
+              String testFqName = fqName.substring(0, index);
+              final Class aClass = myTestClassStorage.loadTestClass(testFqName, module);
+              String method = fqName.substring(index + 1);
+              requestList.add(Request.method(aClass, method));
+            }
+          }
+        } catch (ClassNotFoundException e) {
+          ex[0] = e;
+        }
+      }
+    });
+    if (ex[0] != null) {
+      throw ex[0];
+    }
+    return requestList;
   }
+
+
+
+  private SModule getModuleByNode(SNode testNode) {
+    final SModel model = SNodeOperations.getModel(testNode);
+    final SModuleReference moduleReference = model.getModule().getModuleReference();
+    return ModuleRepositoryFacade.getInstance().getModule(moduleReference);
+  }
+
+
 }

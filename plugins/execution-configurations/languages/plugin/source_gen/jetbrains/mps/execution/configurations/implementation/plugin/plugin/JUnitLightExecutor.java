@@ -20,10 +20,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitLightExecutor {
+  public static final String LIGHT_EXEC_FLAG = "mps.light.execution";
+
   private final Iterable<ITestNodeWrapper> myNodes;
   private final Project myProject;
   private final Filter<ITestNodeWrapper> myFilter = new JUnitLightExecutor.DefaultFilter();
-  private static boolean ourRunInProgress = false;
+  private static volatile boolean ourRunInProgress = false;
 
 
   public JUnitLightExecutor(Iterable<ITestNodeWrapper> testNodeWrappers, Project project) {
@@ -35,9 +37,10 @@ public class JUnitLightExecutor {
 
   public synchronized boolean accept() {
     // allowing only one instance to be light-executed 
-    if (isRunInProgress()) {
+    if (ourRunInProgress) {
       return false;
     }
+    System.setProperty(LIGHT_EXEC_FLAG, "true");
     boolean result = myFilter.accept(myNodes);
     if (result) {
       init();
@@ -51,11 +54,6 @@ public class JUnitLightExecutor {
     ourRunInProgress = true;
   }
 
-
-
-  public static boolean isRunInProgress() {
-    return ourRunInProgress;
-  }
 
 
 

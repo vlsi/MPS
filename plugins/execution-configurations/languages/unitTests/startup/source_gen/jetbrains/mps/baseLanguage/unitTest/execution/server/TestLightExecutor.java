@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.unitTest.execution.server;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import jetbrains.mps.lang.test.util.TestLightRunState;
-import jetbrains.mps.util.test.TestRunStorage;
 import jetbrains.mps.lang.test.util.TestLightRunStateEnum;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
@@ -38,7 +37,6 @@ public class TestLightExecutor extends AbstractTestExecutor {
     if (LOG.isInfoEnabled()) {
       LOG.info("Initializing TestLightExecutor");
     }
-    TestRunStorage.putUserObject(Thread.currentThread().getId(), myTestRunState);
     getRunState().advance(TestLightRunStateEnum.INITIALIZED);
   }
 
@@ -55,12 +53,7 @@ public class TestLightExecutor extends AbstractTestExecutor {
     assert getRunState().isInitialized();
     waitWhileNotReady();
     getRunState().advance(TestLightRunStateEnum.RUNNING);
-    for (Request request : requests) {
-      if (getRunState().isTerminating()) {
-        return;
-      }
-      core.run(request);
-    }
+    super.doExecute(core, requests);
   }
 
 

@@ -935,6 +935,7 @@
     <orderEntry type="module" module-name="typesystemIntegration" />
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="library" name="JetPad" level="project" />
+    <orderEntry type="module" module-name="execution-configurations-plugin" />
   </component>
 </module>
 

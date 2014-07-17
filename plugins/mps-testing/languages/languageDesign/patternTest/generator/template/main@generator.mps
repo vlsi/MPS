@@ -38,11 +38,11 @@
     <property name="topPriorityGroup" nameId="tpf8.1184950341882" value="true" />
     <node role="rootMappingRule" roleId="tpf8.1167514678247" type="tpf8.Root_MappingRule" typeId="tpf8.1167514355419" id="8707387027762063598" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="pnao.8707387027762047752" resolveInfo="PatternTest" />
-      <link role="template" roleId="tpf8.1167514355421" targetNodeId="815823070325289636" resolveInfo="PatternTestImpl" />
+      <link role="template" roleId="tpf8.1167514355421" targetNodeId="815823070325289636" resolveInfo="PatternTestName" />
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="815823070325289636" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="PatternTestImpl" />
+    <property name="name" nameId="tpck.1169194664001" value="PatternTestName" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="815823070325289637" nodeInfo="nn" />
     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.RootTemplateAnnotation" typeId="tpf8.1168619357332" id="815823070325289642" nodeInfo="ng">
       <link role="applicableConcept" roleId="tpf8.1168619429071" targetNodeId="pnao.8707387027762047752" resolveInfo="PatternTest" />

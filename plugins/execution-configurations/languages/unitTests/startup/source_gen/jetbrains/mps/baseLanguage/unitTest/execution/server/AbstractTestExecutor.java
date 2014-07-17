@@ -8,6 +8,9 @@ import org.apache.log4j.Level;
 import jetbrains.mps.RuntimeFlags;
 import org.jetbrains.annotations.NotNull;
 import org.junit.runner.notification.RunListener;
+import org.junit.runner.Runner;
+import org.junit.runner.notification.RunNotifier;
+import org.junit.runner.Description;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
@@ -29,24 +32,63 @@ public abstract class AbstractTestExecutor implements TestExecutor {
     }
   }
 
+
+
   protected JUnitCore prepareJUnitCore(Iterable<Request> requests) {
     JUnitCore core = new JUnitCore();
     core.addListener(createListener(requests));
     return core;
   }
 
+
+
   protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
     for (Request request : requests) {
-      core.run(request);
+      core.run(new AbstractTestExecutor.StoppableRunner(request.getRunner()));
     }
   }
+
+
 
   @NotNull
   protected abstract TestsContributor createTestsContributor();
 
+
+
   @NotNull
   protected abstract RunListener createListener(Iterable<Request> requests);
 
+
+
+  private class StoppableRunner extends Runner {
+    private final Runner myRunner;
+    private RunNotifier myNotifier = null;
+
+
+    public StoppableRunner(Runner runner) {
+      myRunner = runner;
+    }
+
+
+
+    public Description getDescription() {
+      return myRunner.getDescription();
+    }
+
+
+
+    public void run(RunNotifier notifier) {
+      myNotifier = notifier;
+      myRunner.run(notifier);
+    }
+
+
+
+    public void pleaseStop() {
+      assert myNotifier != null;
+      myNotifier.pleaseStop();
+    }
+  }
 
   protected static Logger LOG = LogManager.getLogger(AbstractTestExecutor.class);
 }
