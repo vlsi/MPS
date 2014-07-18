@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="g0cpj3rkev0o4k9z4nl1wc82bsgwgg">
+<dependencies version="2" modelHash="6refo8rzc8og2m0bxfkvde3tig74awq">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.intentions(MPS.Editor/jetbrains.mps.intentions@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
@@ -39,7 +39,7 @@
   <dep model="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)" hash="98hq3soytbwrno4ly9m7gkc1pa8puli" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="5g3rtdo35mi5yfu1kii2pegdk4kei4n" />
-  <common hash="8iu104mrftju4uz0aokoyk421uk16v7" dependsOnNodes="true">
+  <common hash="-696lyfc4e09i2iar7cirqc1dj6df67z" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="1215078243118" name="NodeDataFlowCheckerUtil" hash="2i9tfwgm77m72nu6iemsmqpozun89cj">
@@ -73,7 +73,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BaseTestBody.java" />
   </source>
-  <source id="1225981767950" name="BaseEditorTestBody" hash="3zizu6pb5coy90fw61yzgla0ekrkkn4">
+  <source id="1225981767950" name="BaseEditorTestBody" hash="b453mah4q02v5lasrmevwodtev7rlso">
     <dep root="1221569991485" />
     <dep root="1226949310940" />
     <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.intentions(MPS.Editor/jetbrains.mps.intentions@java_stub)" />

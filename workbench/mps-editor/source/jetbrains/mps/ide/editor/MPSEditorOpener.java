@@ -77,7 +77,7 @@ public class MPSEditorOpener {
         if (!org.jetbrains.mps.openapi.model.SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return;
 
         ModuleContext context = new ModuleContext(node.getModel().getModule(), ProjectHelper.toMPSProject(myProject));
-        openNode(node, context, true, !(node.getModel() != null && node.getParent() == null), true);
+        openNode(node, context, true, !(node.getModel() != null && node.getParent() == null));
       }
     });
   }
@@ -87,28 +87,27 @@ public class MPSEditorOpener {
    */
   @Deprecated
   public Editor editNode(@NotNull final SNode node, final IOperationContext context) {
-    return openNode(node, context, true, !(node.getModel() != null && node.getParent() == null), true);
+    return openNode(node, context, true, !(node.getModel() != null && node.getParent() == null));
   }
 
   /*
    * Requires: model write, EDT.
    */
-  public Editor openNode(@NotNull final SNode node, final IOperationContext context, final boolean focus, final boolean select, boolean show) {
+  public Editor openNode(@NotNull final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
     ThreadUtils.assertEDT();
     ModelAccess.assertLegalWrite();
 
     final jetbrains.mps.project.Project mpsProject = context.getProject();
-    if (show)
-      mpsProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
+    mpsProject.getComponent(IdeDocumentHistory.class).includeCurrentCommandAsNavigation();
     /* TODO use SNodeReference instead of SNode */
-    return doOpenNode(node, context, focus, select, show);
+    return doOpenNode(node, context, focus, select);
   }
 
-  private Editor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select, boolean show) {
+  private Editor doOpenNode(final SNode node, IOperationContext context, final boolean focus, boolean select) {
     assert node.getModel() != null : "You can't edit unregistered node";
 
     if (!SNodeUtil.isAccessible(node, MPSModuleRepository.getInstance())) return null;
-    final Editor nodeEditor = openEditor(node.getContainingRoot(), context, false, show);
+    final Editor nodeEditor = openEditor(node.getContainingRoot(), context, false);
 
     //restore inspector state for opened editor (if exists)
     if (!restorePrevSelectionInInspector(nodeEditor, nodeEditor.getOperationContext(), getInspector())) {
@@ -143,7 +142,7 @@ public class MPSEditorOpener {
     return nodeCell != null && nodeCell != inspector.getRootCell();
   }
 
-  private Editor openEditor(final SNode root, IOperationContext context, boolean focus, boolean show) {
+  private Editor openEditor(final SNode root, IOperationContext context, boolean focus) {
     SNode baseNode = null;
 
     for (EditorOpenHandler handler : EditorOpenHandler.EP_OPEN_HANDLERS.getExtensions()) {
@@ -155,7 +154,6 @@ public class MPSEditorOpener {
       baseNode = root;
     }
 
-
     checkBaseNodeIsValid(root, baseNode); // assertions for MPS-7792
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(baseNode);
     checkVirtualFileBaseNode(baseNode, file); // assertion for MPS-9753
@@ -163,14 +161,10 @@ public class MPSEditorOpener {
     FileEditorManager editorManager = FileEditorManager.getInstance(myProject);
     file.putUserData(FileEditorProvider.KEY, ApplicationManager.getApplication().getComponent(MPSFileNodeEditorProvider.class));
 
-    Editor nodeEditor;
-    if (show) {
-      FileEditor fileEditor = editorManager.openFile(file, focus, true)[0];
-      MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
-      nodeEditor = fileNodeEditor.getNodeEditor();
-    } else {
-      nodeEditor = new MPSFileNodeEditor(myProject, file).getNodeEditor();
-    }
+    FileEditor fileEditor = editorManager.openFile(file, focus, true)[0];
+    MPSFileNodeEditor fileNodeEditor = (MPSFileNodeEditor) fileEditor;
+    Editor nodeEditor = fileNodeEditor.getNodeEditor();
+//    nodeEditor = new MPSFileNodeEditor(myProject, file).getNodeEditor();
 
     if (nodeEditor != null && nodeEditor.isTabbed()) {
       nodeEditor.showNode(root, false);

@@ -122,7 +122,7 @@ public abstract class CurrentLinePositionComponentEx<S> {
             SNode node = newPainter.getSNode();
             if (node != null) {
               if (visible && focus) {
-                EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(node, new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false, true).getCurrentEditorComponent();
+                EditorComponent currentEditorComponent = (EditorComponent) new MPSEditorOpener(myProject).openNode(node, new ProjectOperationContext(ProjectHelper.toMPSProject(myProject)), true, false).getCurrentEditorComponent();
                 currentEditorComponent = EditorComponentUtil.scrollToNode(node, currentEditorComponent, myFileEditorManager);
                 if (currentEditorComponent != null) {
                   attach(newPainter, currentEditorComponent);
