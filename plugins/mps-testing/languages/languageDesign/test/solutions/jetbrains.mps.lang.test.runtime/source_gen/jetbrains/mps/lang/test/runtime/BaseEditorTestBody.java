@@ -237,7 +237,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
 
   public static Editor openEditor(Project project, SModel model, SNode node) {
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
-    return new MPSFileNodeEditor(project, file).getNodeEditor();
+    return new MPSFileNodeEditor(ProjectHelper.toIdeaProject(project), file).getNodeEditor();
   }
 
 
