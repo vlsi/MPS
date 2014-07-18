@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.extapi.model.SModelBase;
+import jetbrains.mps.nodeEditor.SubstituteActionUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.cells.SubstituteAction;
@@ -144,7 +145,7 @@ public abstract class AbstractNodeSubstituteInfo implements SubstituteInfo {
         List<SubstituteAction> actionsFromCache = getActionsFromCache(pattern, strictMatching);
         ArrayList<SubstituteAction> result = new ArrayList<SubstituteAction>(actionsFromCache.size());
         for (SubstituteAction item : actionsFromCache) {
-          if (strictMatching ? item.canSubstituteStrictly(pattern) : item.canSubstitute(pattern)) {
+          if (strictMatching ? item.canSubstituteStrictly(pattern) : SubstituteActionUtil.canSubstitute(item, pattern)) {
             result.add(item);
           }
         }

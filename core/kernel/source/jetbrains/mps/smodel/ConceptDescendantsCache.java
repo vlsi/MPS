@@ -134,7 +134,7 @@ public class ConceptDescendantsCache implements CoreComponent {
     org.jetbrains.mps.openapi.model.SModel structureModel = language.getStructureModelDescriptor();
     if (structureModel == null) return Collections.emptySet();
 
-    StructureAspectDescriptor structureDescriptor = languageRuntime.getStructureAspectDescriptor();
+    StructureAspectDescriptor structureDescriptor = languageRuntime.getAspect(StructureAspectDescriptor.class);
 
     Set<ConceptDescriptor> result = new LinkedHashSet<ConceptDescriptor>();
     SAbstractConcept abstractConceptDeclaration = SConceptRepository.getInstance().getConcept(SNodeUtil.concept_AbstractConceptDeclaration);

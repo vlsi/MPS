@@ -16,13 +16,11 @@
 package jetbrains.mps.generator.impl.reference;
 
 import jetbrains.mps.generator.IGeneratorLogger;
-import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SAbstractLink;
@@ -115,15 +113,5 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
   @Nullable
   protected SNodeReference getMacroNodeRef() {
     return myResolver.getTemplateNode();
-  }
-
-  @Override
-  protected ProblemDescription[] getErrorDescriptions() {
-    SNode inputNode = getInputNode();
-    SNode macroNode = getMacroNodeRef() == null ? null : getMacroNodeRef().resolve(MPSModuleRepository.getInstance());
-    return new ProblemDescription[]{
-      GeneratorUtil.describe(inputNode, "input node"),
-      GeneratorUtil.describeIfExists(macroNode, "reference macro")
-    };
   }
 }

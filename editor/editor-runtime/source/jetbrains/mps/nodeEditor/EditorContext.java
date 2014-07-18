@@ -143,12 +143,20 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     return ProjectHelper.toMainFrame(project);
   }
 
+  /**
+   * @deprecated Since MPS 3.1 not used anymore. Use createRootCell()/createInspectedCell() instead
+   */
+  @Deprecated
   public void resetModelEvents() {
     myModelModifications = null;
   }
 
+  /**
+   * @deprecated Since MPS 3.1 not used anymore. Use createRootCell()/createInspectedCell() instead
+   */
+  @Deprecated
   public void setModelEvents(List<SModelEvent> modelEvents) {
-    myModelModifications = EditorManager.convert(modelEvents);
+    myModelModifications = new SModelModificationsCollector(modelEvents).getModifications();
   }
 
   private EditorCell createNodeCell(List<Pair<SNode, SNodeReference>> modifications) {
@@ -156,18 +164,18 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   }
 
   public jetbrains.mps.nodeEditor.cells.EditorCell createRootCell(SNode node, java.util.List<SModelEvent> events) {
-    myModelModifications = EditorManager.convert(events);
+    myModelModifications = new SModelModificationsCollector(events).getModifications();
     initializeRefContext(node);
-    EditorCell result = getOperationContext().getComponent(EditorManager.class).createRootCell(this, node, events);
+    EditorCell result = getOperationContext().getComponent(EditorManager.class).createRootEditorCell(this, node, myModelModifications);
     resetCurrentRefContext();
     myModelModifications = null;
     return (jetbrains.mps.nodeEditor.cells.EditorCell) result;
   }
 
   public jetbrains.mps.nodeEditor.cells.EditorCell createInspectedCell(SNode node, java.util.List<SModelEvent> events) {
-    myModelModifications = EditorManager.convert(events);
+    myModelModifications = new SModelModificationsCollector(events).getModifications();
     initializeRefContext(node);
-    EditorCell result = getOperationContext().getComponent(EditorManager.class).createInspectedCell(this, node, events);
+    EditorCell result = getOperationContext().getComponent(EditorManager.class).createInspectedCell(this, node, myModelModifications);
     resetCurrentRefContext();
     myModelModifications = null;
     return (jetbrains.mps.nodeEditor.cells.EditorCell) result;

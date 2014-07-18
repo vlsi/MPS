@@ -2,13 +2,19 @@
 <dependencies version="2" modelHash="-cckicv7wkgjsd4o2rx62xy0ot6g6u5d">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:6aa6f228-56c3-4d3a-b03e-4204df10c967(jetbrains.mps.samples.KajaAndOr.editor)" hash="2brz9rg6zvc673jbye59u8rklisgpnc" />
+  <dep model="r:6fbadff6-71c3-43f7-8664-f726f0905ebc(jetbrains.mps.samples.KajaAndOr.constraints)" hash="5bslrmy41w7lz52nzurdmbsi6lrniuh" />
+  <dep model="r:95c64ded-19ca-44d7-9e0e-1d6b23955171(jetbrains.mps.samples.KajaAndOr.behavior)" hash="4swu0uajqbrvj1t6fv6wjqs5gga0kcw" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)" hash="cjwxl4yatpicjsbqyqttaj8tzcv3atk" />
   <dep model="r:dbe0b701-addc-4f0f-9c68-6c511dfcc57c(jetbrains.mps.samples.KajaAndOr.typesystem)" hash="1aje3yq560w8cnbi7eaii4yd8jdbg85" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:6aa6f228-56c3-4d3a-b03e-4204df10c967(jetbrains.mps.samples.KajaAndOr.editor)" />
+    <dep model="r:6fbadff6-71c3-43f7-8664-f726f0905ebc(jetbrains.mps.samples.KajaAndOr.constraints)" />
+    <dep model="r:95c64ded-19ca-44d7-9e0e-1d6b23955171(jetbrains.mps.samples.KajaAndOr.behavior)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:d3eab93d-0231-40c7-b095-39bdf7a89e92(jetbrains.mps.samples.KajaAndOr.structure)" />
     <dep model="r:dbe0b701-addc-4f0f-9c68-6c511dfcc57c(jetbrains.mps.samples.KajaAndOr.typesystem)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Language.java" />

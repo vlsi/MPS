@@ -164,7 +164,6 @@ public class TestRunState {
   private void endTest() {
     synchronized (lock) {
       this.myCompletedTests++;
-      checkConsistency();
       this.updateView();
       this.myCurrentClass = null;
       this.myCurrentMethod = null;

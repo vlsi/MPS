@@ -57,7 +57,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModelName_Action");
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeModelImports_Action");
-      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddMissingImports_Action");
+      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FixModuleImports_Action");
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ConvertToBinaryPersistence_Action");
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ConvertToFilePerRootPersistence_Action");
       ModelActions_ActionGroup.this.addSeparator();

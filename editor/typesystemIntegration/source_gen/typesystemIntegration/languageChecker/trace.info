@@ -308,12 +308,12 @@
       <node id="5291886463459989068" at="38,35,39,39" concept="4" />
       <node id="5447047924422106504" at="42,29,43,22" concept="10" />
       <node id="5447047924422106506" at="44,9,45,28" concept="4" />
-      <node id="5447047924422106510" at="47,5,48,18" concept="10" />
+      <node id="5447047924422106510" at="47,5,48,89" concept="10" />
       <node id="5447047924422123397" at="15,94,18,5" concept="7" />
       <node id="8201985028522911955" at="23,67,26,5" concept="7" />
       <node id="8201985028522911967" at="27,145,30,5" concept="7" />
       <node id="5447047924422106499" at="41,50,44,9" concept="7" />
-      <node id="5447047924422106493" at="40,117,46,7" concept="7" />
+      <node id="5447047924422106493" at="40,118,46,7" concept="7" />
       <node id="5447047924422119107" at="14,0,21,0" concept="14" trace="resolveInEditor#(Ljetbrains/mps/nodeEditor/EditorComponent;Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljava/lang/String;)Z" />
       <node id="5447047924422106485" at="39,39,47,5" concept="6" />
       <node id="8201985028522869468" at="22,0,34,0" concept="14" trace="substituteCell#(Ljetbrains/mps/openapi/editor/cells/EditorCell;Ljava/lang/String;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
@@ -326,7 +326,7 @@
       <scope id="5447047924422119110" at="14,134,19,89">
         <var name="cellWithRole" id="5447047924422123390" />
       </scope>
-      <scope id="5447047924422106492" at="40,117,46,7" />
+      <scope id="5447047924422106492" at="40,118,46,7" />
       <scope id="5447047924422119107" at="14,0,21,0">
         <var name="editorComponent" id="5447047924422124169" />
         <var name="referenceRole" id="5447047924422144896" />
@@ -340,7 +340,7 @@
         <var name="applicableSubstituteAction" id="8201985028522911962" />
         <var name="substituteInfo" id="8201985028522911950" />
       </scope>
-      <scope id="5447047924422106480" at="37,116,48,18">
+      <scope id="5447047924422106480" at="37,116,48,89">
         <var name="result" id="5447047924422106482" />
       </scope>
       <scope id="8201985028522869468" at="22,0,34,0">

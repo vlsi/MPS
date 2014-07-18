@@ -37,7 +37,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 10:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.ListPattern").super_("jetbrains.mps.lang.pattern.structure.AsPattern").parents("jetbrains.mps.lang.pattern.structure.AsPattern").alias("*", "list pattern").create();
       case 11:
-        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.OrPattern").super_("jetbrains.mps.lang.pattern.structure.Pattern").parents("jetbrains.mps.lang.pattern.structure.Pattern").children(new String[]{"clause", "variable"}, new boolean[]{true, true}).alias("[|]", "").create();
+        return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.OrPattern").super_("jetbrains.mps.lang.pattern.structure.Pattern").parents("jetbrains.mps.lang.pattern.structure.Pattern", "jetbrains.mps.lang.core.structure.ISuppressErrors").children(new String[]{"clause", "variable"}, new boolean[]{true, true}).alias("[|]", "").create();
       case 12:
         return new ConceptDescriptorBuilder("jetbrains.mps.lang.pattern.structure.OrPatternClause").super_("jetbrains.mps.lang.pattern.structure.PatternExpression").parents("jetbrains.mps.lang.pattern.structure.PatternExpression").children(new String[]{"expression"}, new boolean[]{false}).staticScope(StaticScope.NONE).create();
       case 13:

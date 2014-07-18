@@ -99,7 +99,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
       throw new IOException("modelName is not provided");
     }
     SModelReference ref = PersistenceFacade.getInstance().createModelReference(null, jetbrains.mps.smodel.SModelId.generate(), modelName);
-    return new DefaultSModelDescriptor((StreamDataSource) dataSource, ref, new SModelHeader());
+    return new DefaultSModelDescriptor((StreamDataSource) dataSource, ref, SModelHeader.create(ModelPersistence.LAST_VERSION));
   }
 
   @Override

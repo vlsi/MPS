@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
-import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -84,16 +82,6 @@ public class ReferenceInfo_Template extends ReferenceInfo {
     }
     return null;
   }
-
-  @Override
-  protected ProblemDescription[] getErrorDescriptions() {
-    SNode inputNode = getInputNode();
-    return new ProblemDescription[]{
-      GeneratorUtil.describe(inputNode, "input node"),
-      GeneratorUtil.describe(myTemplateSourceNode.resolve(MPSModuleRepository.getInstance()), "original reference")
-    };
-  }
-
 
   private void checkCrossRootTemplateReference(@NotNull SNode outputTarget, TemplateGenerator generator) {
     if (!generator.isStrict() || !generator.isIncremental()) {

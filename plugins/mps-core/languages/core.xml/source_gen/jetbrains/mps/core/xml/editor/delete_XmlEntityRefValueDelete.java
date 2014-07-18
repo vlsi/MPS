@@ -13,12 +13,31 @@ import jetbrains.mps.core.xml.actions.AttributeUtil;
 public class delete_XmlEntityRefValueDelete {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new delete_XmlEntityRefValueDelete.delete_XmlEntityRefValueDelete_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new delete_XmlEntityRefValueDelete.delete_XmlEntityRefValueDelete_BACKSPACE(node));
   }
 
   public static class delete_XmlEntityRefValueDelete_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public delete_XmlEntityRefValueDelete_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode pnode = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.core.xml.structure.XmlAttribute");
+      SNodeOperations.deleteNode(node);
+      AttributeUtil.updateValue(pnode, editorContext);
+    }
+  }
+
+  public static class delete_XmlEntityRefValueDelete_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public delete_XmlEntityRefValueDelete_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

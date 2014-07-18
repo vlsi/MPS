@@ -16,6 +16,9 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
+import jetbrains.mps.openapi.editor.cells.SubstituteAction;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
@@ -26,6 +29,9 @@ import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAction {
   private static final Logger LOG = LogManager.getLogger(AbstractNodeSubstituteAction.class);
@@ -135,16 +141,17 @@ public abstract class AbstractNodeSubstituteAction implements INodeSubstituteAct
     } catch (Exception e) {
       LOG.error(null, e);
     }
-    if (matchingText == null || matchingText.length() == 0) return false;
-    // first char must be the same
-    if (matchingText.charAt(0) != pattern.charAt(0)) return false;
-
-    if (matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false).toString() + ".*")) {
-      return true;
+    if (matchingText == null || matchingText.length() == 0) {
+      return false;
     }
-
-    return matchingText.startsWith(pattern);
+    if (matchingText.charAt(0) != pattern.charAt(0)) return false;
+    return matches(pattern, matchingText);
   }
+  private boolean matches(String pattern, String matchingText) {
+    return matchingText.startsWith(pattern) || matchingText.matches(PatternUtil.getExactItemPatternBuilder(pattern, false, false).toString() + ".*");
+  }
+
+
 
   @Override
   public final SNode substitute(@Nullable final EditorContext context, final String pattern) {

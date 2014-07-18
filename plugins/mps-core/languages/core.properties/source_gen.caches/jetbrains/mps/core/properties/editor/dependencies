@@ -33,8 +33,8 @@
   <dependency className="jetbrains.mps.core.properties.editor.PropertiesDeclaration_Editor" file="PropertiesDeclaration_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.core.properties.constraints.PropEscapeUtil" />
     <classNode dependClassName="jetbrains.mps.core.properties.editor.properiesSS_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.core.properties.util.PropEscapeUtil" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.cells.EmptyCellAction" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleAttributes" />
     <classNode dependClassName="jetbrains.mps.editor.runtime.style.StyleImpl" />

@@ -91,6 +91,7 @@ public class JavaImport_Editor extends DefaultNodeEditor {
   private EditorCell createEmpty_cbnorm_a2a(EditorContext editorContext, SNode node) {
     EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
     editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(editorCell.getSNode()));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(editorCell.getSNode()));
     editorCell.setCellId("Empty_cbnorm_a2a");
     return editorCell;
   }

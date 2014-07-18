@@ -180,9 +180,11 @@ public class VisibleArtifacts {
       if (parentMap.containsKey(node) && SNodeOperations.isInstanceOf(node, "jetbrains.mps.build.structure.BuildLayout_PathElement")) {
         return SNodeOperations.cast(node, "jetbrains.mps.build.structure.BuildLayout_PathElement");
       }
+      node = toOriginalNode(node);
       if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
         throw new IllegalArgumentException("findArtifact() cannot be called for transient nodes: " + node);
       }
+      id = node;
     }
     if (dependenciesHelper == null) {
       throw new IllegalStateException("findArtifact() should be called in generation context only: ");

@@ -14,7 +14,7 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <concept fqn="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-  <root nodeRef="r:2b3a069e-e3c3-42b0-a488-e42c2c3e5ae0(jetbrains.mps.core.properties.constraints)/6896005762093561042">
+  <root nodeRef="r:80707f28-3b7c-4b73-a8b1-d14317e73516(jetbrains.mps.core.properties.util)/6896005762093561042">
     <file name="PropEscapeUtil.java">
       <node id="6896005762093561423" at="7,0,8,0" concept="11" trace="hexDigit" />
       <node id="6896005762093561585" at="12,47,13,58" concept="8" />
@@ -61,7 +61,7 @@
       <node id="6896005762093561523" at="80,48,81,0" concept="10" />
       <node id="6896005762093561161" at="82,18,83,36" concept="4" />
       <node id="6896005762093561324" at="86,5,87,32" concept="8" />
-      <node id="6896005762093561416" at="90,41,91,35" concept="8" />
+      <node id="6896005762093561416" at="90,41,91,50" concept="8" />
       <node id="6896005762093568112" at="94,51,95,28" concept="7" />
       <node id="6896005762093568118" at="95,28,96,25" concept="7" />
       <node id="6896005762093568129" at="97,21,98,33" concept="4" />
@@ -116,7 +116,7 @@
       <scope id="6896005762093561302" at="65,17,66,27" />
       <scope id="6896005762093561307" at="67,17,68,27" />
       <scope id="6896005762093561160" at="82,18,83,36" />
-      <scope id="6896005762093561415" at="90,41,91,35" />
+      <scope id="6896005762093561415" at="90,41,91,50" />
       <scope id="6896005762093568128" at="97,21,98,33" />
       <scope id="6896005762093568210" at="129,18,130,36" />
       <scope id="6896005762093561044" at="9,0,11,0" />
@@ -175,7 +175,7 @@
         <var name="escapeUnicode" id="6896005762093561059" />
         <var name="text" id="6896005762093561053" />
       </scope>
-      <unit id="6896005762093561042" at="6,0,137,0" name="jetbrains.mps.core.properties.constraints.PropEscapeUtil" />
+      <unit id="6896005762093561042" at="6,0,137,0" name="jetbrains.mps.core.properties.util.PropEscapeUtil" />
     </file>
   </root>
 </debug-info>

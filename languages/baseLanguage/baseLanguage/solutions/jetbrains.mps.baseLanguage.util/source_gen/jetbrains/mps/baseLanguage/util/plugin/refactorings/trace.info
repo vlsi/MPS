@@ -50,20 +50,20 @@
     </file>
   </root>
   <root nodeRef="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)/1514868709970875555">
-    <file name="RenameUtil.java">
+    <file name="MethodRefactoringUtil.java">
       <node id="1514868709970875562" at="14,121,15,116" concept="12" />
       <node id="1514868709970875569" at="16,5,17,163" concept="12" />
-      <node id="1514868709970875577" at="10,0,12,0" concept="3" trace="RenameUtil#()V" />
+      <node id="1514868709970875577" at="10,0,12,0" concept="3" trace="MethodRefactoringUtil#()V" />
       <node id="1514868709970875560" at="13,70,16,5" concept="9" />
       <node id="1514868709970875556" at="13,0,19,0" concept="16" trace="getMethodDeclaration#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <scope id="1514868709970875579" at="10,23,10,23" />
+      <scope id="1514868709970875579" at="10,34,10,34" />
       <scope id="1514868709970875561" at="14,121,15,116" />
       <scope id="1514868709970875577" at="10,0,12,0" />
       <scope id="1514868709970875559" at="13,70,17,163" />
       <scope id="1514868709970875556" at="13,0,19,0">
         <var name="methodOrMethodCall" id="1514868709970875574" />
       </scope>
-      <unit id="1514868709970875555" at="9,0,20,0" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.RenameUtil" />
+      <unit id="1514868709970875555" at="9,0,20,0" name="jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtil" />
     </file>
   </root>
   <root nodeRef="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)/1769066237347579005">

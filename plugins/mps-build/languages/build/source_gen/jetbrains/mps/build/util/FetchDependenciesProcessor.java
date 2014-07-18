@@ -69,8 +69,12 @@ public class FetchDependenciesProcessor {
 
     @Override
     public void add(SNode node, Object artifactId) {
-      if (!(check(node)) || !(checkArtifactId(artifactId))) {
+      if (!(check(node))) {
         return;
+      }
+      if (!(checkArtifactId(artifactId))) {
+        // false is possible only when artifactId is SNode from transient model 
+        artifactId = artifacts.toOriginalNode((SNode) artifactId);
       }
       helper.add(node, false, artifactId);
     }
@@ -83,7 +87,7 @@ public class FetchDependenciesProcessor {
       helper.add(node, true, null);
     }
 
-    protected boolean check(SNode node) {
+    private boolean check(SNode node) {
       if (SNodeOperations.getModel(node).getModule() instanceof TransientModelsModule) {
         genContext.showErrorMessage(dep, "returned dependency in transient model: " + jetbrains.mps.util.SNodeOperations.getDebugText(node));
         return false;
@@ -95,9 +99,10 @@ public class FetchDependenciesProcessor {
       return true;
     }
 
-    protected boolean checkArtifactId(Object artifactId) {
+    private boolean checkArtifactId(Object artifactId) {
       if (artifactId instanceof SNode && ((SNode) artifactId).getModel().getModule() instanceof TransientModelsModule) {
-        genContext.showErrorMessage(dep, "cannot register artifact in transient model " + jetbrains.mps.util.SNodeOperations.getDebugText(((SNode) artifactId)));
+        // <node> 
+        genContext.showWarningMessage(dep, "FIXME registering artifact from transient model");
         return false;
       }
       return true;

@@ -202,6 +202,7 @@ public class ExtensionPointExpression_Editor extends DefaultNodeEditor {
         }
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_hr8njl_a0b0");
       return editorCell;
     }

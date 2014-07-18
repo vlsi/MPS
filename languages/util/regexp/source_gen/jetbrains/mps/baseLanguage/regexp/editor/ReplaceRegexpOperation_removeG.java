@@ -14,12 +14,32 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class ReplaceRegexpOperation_removeG {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new ReplaceRegexpOperation_removeG.ReplaceRegexpOperation_removeG_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new ReplaceRegexpOperation_removeG.ReplaceRegexpOperation_removeG_BACKSPACE(node));
   }
 
   public static class ReplaceRegexpOperation_removeG_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public ReplaceRegexpOperation_removeG_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      EditorCell current = editorContext.getSelectedCell();
+      EditorCell toSelect = CellTraversalUtil.getPrevLeaf(current, CellConditions.SELECTABLE);
+      SPropertyOperations.set(node, "globalReplace", "" + (false));
+      editorContext.getEditorComponent().changeSelection(toSelect);
+    }
+  }
+
+  public static class ReplaceRegexpOperation_removeG_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public ReplaceRegexpOperation_removeG_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

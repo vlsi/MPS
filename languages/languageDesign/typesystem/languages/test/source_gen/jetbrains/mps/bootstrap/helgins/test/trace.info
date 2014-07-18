@@ -2,7 +2,7 @@
 <debug-info>
   <root>
     <file name="Language.java">
-      <unit at="14,0,59,0" name="jetbrains.mps.bootstrap.helgins.test.Language" />
+      <unit at="14,0,49,0" name="jetbrains.mps.bootstrap.helgins.test.Language" />
     </file>
   </root>
 </debug-info>

@@ -39,6 +39,7 @@ public class ShortDescriptionEditorComponent implements ConceptEditorComponent {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_37ao6w_a");
     return editorCell;
   }

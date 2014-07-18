@@ -124,7 +124,7 @@ public class ConceptEditorHintSettingsComponent implements PersistentStateCompon
 
   private void updateHintsFromLanguages(final Iterable<LanguageRuntime> languages) {
     for (LanguageRuntime language : languages) {
-      EditorAspectDescriptor editorDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
+      EditorAspectDescriptor editorDescriptor = language.getAspect(EditorAspectDescriptor.class);
       if (!(editorDescriptor instanceof EditorHintsProvider) || ((EditorHintsProvider) editorDescriptor).getHints().isEmpty()) {
         continue;
       }

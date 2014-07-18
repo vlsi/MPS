@@ -27451,7 +27451,7 @@
     </node>
   </root>
   <root type="tpee.ClassConcept" typeId="tpee.1068390468198" id="1514868709970875555" nodeInfo="ig">
-    <property name="name" nameId="tpck.1169194664001" value="RenameUtil" />
+    <property name="name" nameId="tpck.1169194664001" value="MethodRefactoringUtil" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="1514868709970875577" nodeInfo="igu">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1514868709970875580" nodeInfo="nn" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="1514868709970875579" nodeInfo="sn" />

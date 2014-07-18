@@ -15,12 +15,44 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class CellModel_Collection_Actions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new CellModel_Collection_Actions.CellModel_Collection_Actions_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellModel_Collection_Actions.CellModel_Collection_Actions_BACKSPACE(node));
   }
 
   public static class CellModel_Collection_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public CellModel_Collection_Actions_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public String getDescriptionText() {
+      return "Delete collection and copy its content to the parent collection";
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection")) {
+        SNode p = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
+        List<SNode> children = SLinkOperations.getTargets(node, "childCellModel", true);
+        for (SNode child : ListSequence.fromList(children)) {
+          SNodeOperations.insertPrevSiblingChild(node, child);
+        }
+      } else if (ListSequence.fromList(SLinkOperations.getTargets(node, "childCellModel", true)).count() == 1) {
+        SNode cell = ListSequence.fromList(SLinkOperations.getTargets(node, "childCellModel", true)).first();
+        SNodeOperations.replaceWithAnother(node, cell);
+        return;
+      }
+      SNodeOperations.deleteNode(node);
+    }
+  }
+
+  public static class CellModel_Collection_Actions_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public CellModel_Collection_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

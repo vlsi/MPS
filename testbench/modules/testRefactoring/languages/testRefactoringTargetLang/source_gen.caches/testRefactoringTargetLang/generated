@@ -2,11 +2,15 @@
 <dependencies version="2" modelHash="8566rkymywidlg2rni423ert1s8a70z">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:00000000-0000-4000-0000-011c8a4661d2(testRefactoringTargetLang.editor)" hash="210dw36micf5r2tr9fxxh5ee1jyaq3a" />
+  <dep model="r:00000000-0000-4000-0000-011c8a4661d3(testRefactoringTargetLang.structure)" hash="1ngzplvfstuhe3bksszlif6xff2plyc" />
+  <dep model="r:979f4621-f280-4732-a689-50b95c98b812(testRefactoringTargetLang.behavior)" hash="b8x2jigoy5bw6livmr33gfixjxmgx30" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:00000000-0000-4000-0000-011c8a4661d2(testRefactoringTargetLang.editor)" />
+    <dep model="r:00000000-0000-4000-0000-011c8a4661d3(testRefactoringTargetLang.structure)" />
+    <dep model="r:979f4621-f280-4732-a689-50b95c98b812(testRefactoringTargetLang.behavior)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Language.java" />

@@ -25,18 +25,14 @@ import jetbrains.mps.classloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
-import jetbrains.mps.project.dependency.VisibilityUtil;
 import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelStereotype;
-import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
@@ -57,7 +53,6 @@ import org.jetbrains.mps.openapi.module.SearchScope;
 import org.jetbrains.mps.openapi.persistence.NavigationParticipant.NavigationTarget;
 import org.jetbrains.mps.util.Condition;
 
-import javax.swing.JOptionPane;
 import java.awt.Frame;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -73,7 +68,7 @@ public class ImportHelper {
     BaseModelModel goToModelModel = new BaseModelModel(project) {
       @Override
       public NavigationItem doGetNavigationItem(final SModelReference modelReference) {
-        return new AddModelItem(project, model, modelReference, module);
+        return new AddModelItem(project, model, modelReference);
       }
 
       @Override
@@ -256,7 +251,7 @@ public class ImportHelper {
           @Override
           public void navigate(boolean requestFocus) {
             ModelAccess.assertLegalRead();
-            new AddModelItem(project, model, object.getNodeReference().getModelReference(), contextModule).navigate(requestFocus);
+            new AddModelItem(project, model, object.getNodeReference().getModelReference()).navigate(requestFocus);
           }
         };
       }
@@ -292,13 +287,11 @@ public class ImportHelper {
   private static class AddModelItem extends BaseModelItem {
     private Project myProject;
     private SModel myModel;
-    private SModule myModule;
 
-    public AddModelItem(Project project, SModel model, SModelReference modelToAdd, SModule currentModule) {
-      super(modelToAdd);
+    public AddModelItem(Project project, SModel model, SModelReference modelToImport) {
+      super(modelToImport);
       myProject = project;
       myModel = model;
-      myModule = currentModule;
     }
 
     public Frame getFrame() {
@@ -307,66 +300,8 @@ public class ImportHelper {
 
     @Override
     public void navigate(boolean requestFocus) {
-      final SModuleReference[] module = {null};
-      final boolean[] dependency = {true};
-
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          SModelReference mrefToImport = getModelReference();
-          SModel modelToImport = SModelRepository.getInstance().getModelDescriptor(mrefToImport);
-          SModule moduleToImport = modelToImport.getModule();
-
-          if (moduleToImport instanceof Language &&
-              myModule instanceof Solution &&
-              ((Language) moduleToImport).isAccessoryModel(mrefToImport)
-              ) {
-            dependency[0] = false;
-          }
-
-          if (!VisibilityUtil.isVisible(myModule, modelToImport)) {
-            module[0] = moduleToImport.getModuleReference();
-          }
-        }
-      });
-
-      if (module[0] != null) {
-        int res;
-        if (TemporaryModels.isTemporary(myModel)) {
-          res = JOptionPane.YES_OPTION;
-        } else {
-          res = JOptionPane.showConfirmDialog(getFrame(),
-              "<html>Model <b>" + getModelReference().getModelName() + "</b> is owned by module <b>" + module[0].getModuleName() +
-                  "</b> which is not imported.</html>\n\n" +
-
-                  "Importing the module will take some time.\n" +
-                  "Do you want to automatically import the module?",
-              "Module import", JOptionPane.YES_NO_OPTION);
-        }
-        if (res == JOptionPane.YES_OPTION) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            @Override
-            public void run() {
-              if (dependency[0]) {
-                ((AbstractModule) myModule).addDependency(module[0], false);
-                ((jetbrains.mps.smodel.SModelInternal) myModel).addModelImport(getModelReference(), false);
-              } else {
-                ((AbstractModule) myModule).addUsedLanguage(module[0]);
-                ((jetbrains.mps.smodel.SModelInternal) myModel).addLanguage(module[0]);
-              }
-              ClassLoaderManager.getInstance().unloadClasses(Arrays.asList(myModule), new EmptyProgressMonitor());
-              ClassLoaderManager.getInstance().loadAllPossibleClasses(new EmptyProgressMonitor());
-            }
-          });
-        }
-      } else {
-        ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-          @Override
-          public void run() {
-            ((jetbrains.mps.smodel.SModelInternal) myModel).addModelImport(getModelReference(), false);
-          }
-        });
-      }
+      SModelReference modelToImport = getModelReference();
+      new ModelImporter(myModel, getFrame()).execute(modelToImport);
     }
   }
 

@@ -7,7 +7,7 @@ import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.lang.core.refactorings.Rename;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.RenameUtil;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -22,7 +22,6 @@ import jetbrains.mps.project.GlobalScope;
 public class RenameMethod extends BaseRefactoring {
   public RenameMethod() {
     this.addTransientParameter("newName");
-    this.addTransientParameter("refactorOverriding");
   }
 
   public IRefactoringTarget getRefactoringTarget() {
@@ -38,11 +37,9 @@ public class RenameMethod extends BaseRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    SNode method = RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
-    if (((Boolean) refactoringContext.getParameter("refactorOverriding"))) {
-      for (SNode node : ListSequence.fromList(MethodRefactoringUtils.findOverridingMethods(method, new EmptyProgressMonitor()))) {
-        SPropertyOperations.set(node, "name", ((String) refactoringContext.getParameter("newName")));
-      }
+    SNode method = MethodRefactoringUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
+    for (SNode node : ListSequence.fromList(MethodRefactoringUtils.findOverridingMethods(method, new EmptyProgressMonitor()))) {
+      SPropertyOperations.set(node, "name", ((String) refactoringContext.getParameter("newName")));
     }
     SPropertyOperations.set(method, "name", ((String) refactoringContext.getParameter("newName")));
   }
@@ -52,11 +49,11 @@ public class RenameMethod extends BaseRefactoring {
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
-    SNode method = RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
+    SNode method = MethodRefactoringUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
     if (SNodeOperations.isInstanceOf(method, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration")) {
       return FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder", "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");
     } else {
-      return (((Boolean) refactoringContext.getParameter("refactorOverriding")) != null && ((Boolean) refactoringContext.getParameter("refactorOverriding")) ? FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder") : FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder"));
+      return FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.BaseMethodUsages_Finder");
     }
   }
 }

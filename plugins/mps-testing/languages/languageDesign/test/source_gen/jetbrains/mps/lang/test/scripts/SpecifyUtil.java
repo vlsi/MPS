@@ -39,7 +39,7 @@ public class SpecifyUtil {
       NodeOperationsContainer_Behavior.call_createNodeAndAttachReference_428590876657265140(operationsContainer, ruleNode, reporter);
       SpecifyUtil.addModelImports(operationsContainer, ruleNode);
     }
-    MissingDependenciesFixer.fixDependencies(SNodeOperations.getModel(operationsContainer), true);
+    new MissingDependenciesFixer(SNodeOperations.getModel(operationsContainer)).fixAllDependencies();
   }
 
 

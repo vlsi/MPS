@@ -58,6 +58,7 @@ public class ConceptFunction_Component implements ConceptEditorComponent {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_trik0f_a0");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_MethodName(style, editorCell);

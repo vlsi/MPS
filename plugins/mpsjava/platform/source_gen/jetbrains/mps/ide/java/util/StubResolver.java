@@ -102,7 +102,7 @@ public class StubResolver {
       }
     });
     if (Sequence.fromIterable(modelsToAdd).isNotEmpty()) {
-      MissingDependenciesFixer.fixDependencies(model);
+      new MissingDependenciesFixer(model).fixModuleDependencies();
     }
 
     int cnt = StubResolver.resolveReferences(toResolve, models, context);

@@ -16,8 +16,6 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteReference;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.CellActionType;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -37,14 +35,12 @@ public class RefNodeCellProvider extends AbstractReferentCellProvider {
     } else {
       editorCell = context.createReferentCell(getSNode(), referencedNode, myGenuineRole);
     }
-    if (myIsCardinality1) {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
-    }
-    if (myIsAggregation) {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(referencedNode));
-    } else {
-      editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteReference(node, myGenuineRole));
-    }
+    // TODO: refactor: This class should be always called with:
+    // - myIsCardinality1
+    // - myIsAggregation
+    // so we should add corresponding assertions & modify generator in accordance
+    editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
+    editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteSmart(node, myLinkDeclaration, referencedNode));
     return editorCell;
   }
 }

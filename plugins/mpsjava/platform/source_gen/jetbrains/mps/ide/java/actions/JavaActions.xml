@@ -74,6 +74,9 @@
       <keyboard-shortcut first-keystroke="shift F6" keymap="$default" />
     </action>
     <action id="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action" class="jetbrains.mps.ide.java.actions.ResolveStubReferencesToMPS_Action"></action>
+    <action id="jetbrains.mps.ide.java.actions.SafeDeleteConceptMethod_Action" class="jetbrains.mps.ide.java.actions.SafeDeleteConceptMethod_Action">
+      <keyboard-shortcut first-keystroke="alt DELETE" keymap="$default" />
+    </action>
     <action id="jetbrains.mps.ide.java.actions.ShowMembers_Action" class="jetbrains.mps.ide.java.actions.ShowMembers_Action">
       <keyboard-shortcut first-keystroke="ctrl F12" keymap="$default" />
     </action>
@@ -98,6 +101,7 @@
       <reference ref="jetbrains.mps.ide.java.actions.MoveStaticMethod_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.RenameMethod_Action" />
       <reference ref="jetbrains.mps.ide.java.actions.RenameVariable_Action" />
+      <reference ref="jetbrains.mps.ide.java.actions.SafeDeleteConceptMethod_Action" />
       <add-to-group group-id="jetbrains.mps.ide.platform.actions.NodeRefactoring_ActionGroup" anchor="last" />
     </group>
     <group id="jetbrains.mps.ide.java.actions.ModelActions_ActionGroup">

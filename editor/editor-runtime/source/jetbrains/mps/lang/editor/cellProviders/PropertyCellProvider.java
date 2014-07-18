@@ -68,8 +68,10 @@ public class PropertyCellProvider extends CellProviderWithRole {
     editorCell.setDefaultText(myNoTargetText);
     if (!myReadOnly) {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeletePropertyOrNode(getSNode(), myPropertyName));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeletePropertyOrNode(getSNode(), myPropertyName));
     } else {
       editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteEasily(getSNode()));
+      editorCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteEasily(getSNode()));
     }
     return editorCell;
   }

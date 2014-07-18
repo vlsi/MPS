@@ -16,16 +16,14 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.project.AbstractModule;
-import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.util.IterableUtil;
-import org.jetbrains.mps.openapi.model.SModel;
-
 import jetbrains.mps.project.DevKit;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
+import jetbrains.mps.project.dependency.modules.LanguageDependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
@@ -182,7 +180,9 @@ public abstract class DefaultScope extends BaseScope {
 
       ModuleDescriptor moduleDescriptor = ((AbstractModule) m).getModuleDescriptor();
       if (moduleDescriptor != null && moduleDescriptor.getUsedDevkits() != null) {
-        for (DevKit dk : ModuleUtil.refsToDevkits(moduleDescriptor.getUsedDevkits())) {
+        for (SModuleReference ref : moduleDescriptor.getUsedDevkits()) {
+          DevKit dk = ModuleRepositoryFacade.getInstance().getModule(ref, DevKit.class);
+          if (dk == null) continue;
           myUsedDevkits.add(dk);
           myUsedDevkits.addAll(dk.getAllExtendedDevkits());
         }

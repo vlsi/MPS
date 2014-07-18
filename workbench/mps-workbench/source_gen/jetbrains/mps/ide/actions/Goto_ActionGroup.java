@@ -31,7 +31,7 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
       }
       Goto_ActionGroup.this.addSeparator();
       Goto_ActionGroup.this.addParameterizedAction(new GoToFile_Action(new GotoFileAction()), PluginId.getId("jetbrains.mps.ide"), new GotoFileAction());
-      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRootNode_Action");
+      Goto_ActionGroup.this.addParameterizedAction(new GoToRootNode_Action(""), PluginId.getId("jetbrains.mps.ide"), "");
       Goto_ActionGroup.this.addSeparator();
       {
         LabelledAnchor action = new LabelledAnchor(Goto_ActionGroup.LABEL_ID_gotoConceptAspects);

@@ -34,7 +34,7 @@ public class check_ModulesImport_NonTypesystemRule extends AbstractNonTypesystem
       return;
     }
 
-    VisibleModules visible = new VisibleModules(buildProject, null);
+    VisibleModules visible = new VisibleModules(buildProject);
     visible.collect();
 
     PathConverter pathConverter = new PathConverter(buildProject);

@@ -51,13 +51,6 @@ public class CopyValueAction_Action extends BaseAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    return true;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final IValue value = VariablesTree.MPS_DEBUGGER_VALUE.getData(event.getDataContext());

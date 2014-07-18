@@ -917,27 +917,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable<SNode> sourceNodesQuery_2303926226081111354(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "sources", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource");
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource");
-      }
-    });
+    return SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "sources", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource");
   }
 
   public static Iterable<SNode> sourceNodesQuery_2389279258789752324(final SourceSubstituteMacroNodesContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "sources", true)).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource");
-      }
-    }).select(new ISelector<SNode, SNode>() {
-      public SNode select(SNode it) {
-        return SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource");
-      }
-    });
+    return SNodeOperations.ofConcept(SLinkOperations.getTargets(_context.getNode(), "sources", true), "jetbrains.mps.build.mps.structure.BuildMps_ModuleTestSource");
   }
 
   public static Iterable<SNode> sourceNodesQuery_4267986820121149056(final SourceSubstituteMacroNodesContext _context) {
@@ -961,7 +945,11 @@ public class QueriesGenerated {
   public static Iterable<SNode> sourceNodesQuery_7259033139236497711(final SourceSubstituteMacroNodesContext _context) {
     MPSModulesClosure.RequiredJavaModules requiredAndReexp = ((MPSModulesClosure) _context.getVariable("var:mdeps")).getRequiredJava();
     List<SNode> result = new ArrayList<SNode>();
-    for (SNode mod : requiredAndReexp.getModules()) {
+    for (SNode mod : Sequence.fromIterable(requiredAndReexp.getModules()).sort(new ISelector<SNode, String>() {
+      public String select(SNode it) {
+        return SPropertyOperations.getString(it, "name");
+      }
+    }, true)) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.build.structure.GeneratorInternal_BuildSource_JavaModule");
       SLinkOperations.setTarget(loopnode, "targetModule", mod, false);
       SPropertyOperations.set(loopnode, "targetReexport", "" + (requiredAndReexp.isReexported(mod)));
@@ -1117,7 +1105,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable<SNode> sourceNodesQuery_4643216374596368654(final SourceSubstituteMacroNodesContext _context) {
-    return Sequence.fromIterable(new MPSModulesClosure(_context, SLinkOperations.getTarget(_context.getNode(), "module", false)).runtimeDependencies().getModules()).sort(new ISelector<SNode, String>() {
+    return Sequence.fromIterable(new MPSModulesClosure(SLinkOperations.getTarget(_context.getNode(), "module", false)).runtimeDependencies().getModules()).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");
       }
@@ -1437,7 +1425,7 @@ public class QueriesGenerated {
       }
       PathConverter pathConverter = new PathConverter(originalProject);
 
-      VisibleModules visibleModules = new VisibleModules(project, _context);
+      VisibleModules visibleModules = new VisibleModules(project);
       visibleModules.collect();
 
       ModuleChecker.Reporter reporter = new ModuleChecker.Reporter(_context);
@@ -1482,7 +1470,7 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_4267986820121148965(final TemplateQueryContext _context) {
-    return new MPSModulesClosure(_context, _context.getNode()).closure();
+    return new MPSModulesClosure(_context.getNode()).closure();
   }
 
   public static Object insertMacro_varValue_609978641554543025(final TemplateQueryContext _context) {
@@ -1700,7 +1688,7 @@ public class QueriesGenerated {
   }
 
   public static Object insertMacro_varValue_5970181360963001549(final TemplateQueryContext _context) {
-    MPSModulesPartitioner partitioner = new MPSModulesPartitioner(_context, _context.getNode());
+    MPSModulesPartitioner partitioner = new MPSModulesPartitioner(_context.getNode());
     partitioner.buildChunks();
     partitioner.buildExternalDependencies();
     if (ListSequence.fromList(partitioner.getChunks()).any(new IWhereFilter<MPSModulesPartitioner.Chunk>() {

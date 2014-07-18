@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.test;
 
 import com.intellij.openapi.application.PathManager;
-import jetbrains.mps.MPSCore;
 import jetbrains.mps.RuntimeFlags;
 import jetbrains.mps.testbench.junit.runners.MpsTestsSupport;
 import jetbrains.mps.tool.environment.ActiveEnvironment;

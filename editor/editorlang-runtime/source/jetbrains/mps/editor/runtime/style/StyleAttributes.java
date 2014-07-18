@@ -119,7 +119,7 @@ public class StyleAttributes {
     if (ourLanguageAttributes.get(language).containsKey(attributeName)) {
       return ourLanguageAttributes.get(language).get(attributeName);
     } else {
-      EditorAspectDescriptor editorAspectDescriptor = language.getAspectDescriptor(EditorAspectDescriptor.class);
+      EditorAspectDescriptor editorAspectDescriptor = language.getAspect(EditorAspectDescriptor.class);
       if (!(editorAspectDescriptor instanceof StyleAttributeProvider)) {
         throw new IllegalArgumentException("language does not contain editor descriptor: " + languageName);
       }

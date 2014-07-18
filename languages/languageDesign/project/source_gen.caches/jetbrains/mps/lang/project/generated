@@ -3,14 +3,20 @@
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:0f9ddbb6-f761-4bd7-8dde-1e5300bd28c2(jetbrains.mps.lang.project.editor)" hash="tixlt5yl1i1aled74nfjq9ckcic7tv" />
   <dep model="r:5dca7517-c76f-4f7c-ac4c-697af2c10641(jetbrains.mps.lang.project.typesystem)" hash="83njlgx21v0sc71khg82esaio2vs0w2" />
+  <dep model="r:6b933bd4-3712-4b1d-8046-c244bf51a0fc(jetbrains.mps.lang.project.constraints)" hash="-6retdog7d2qwu49uiux4w5955ijebxa" />
+  <dep model="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" hash="-cjgl6o5s5xmj52f1987nyqkopevhqs8" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
+  <dep model="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)" hash="-qwfgohxtjdokg3zt3xsqz5t65nsx72" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:0f9ddbb6-f761-4bd7-8dde-1e5300bd28c2(jetbrains.mps.lang.project.editor)" />
     <dep model="r:5dca7517-c76f-4f7c-ac4c-697af2c10641(jetbrains.mps.lang.project.typesystem)" />
+    <dep model="r:6b933bd4-3712-4b1d-8046-c244bf51a0fc(jetbrains.mps.lang.project.constraints)" />
+    <dep model="r:aa31e43e-9240-4f4d-b6db-5c1c9a86c59e(jetbrains.mps.lang.project.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <dep model="r:f29914af-ae14-4589-b53d-f60c6018b368(jetbrains.mps.lang.project.behavior)" />
     <file name="Language.java" />
   </common>
 </dependencies>

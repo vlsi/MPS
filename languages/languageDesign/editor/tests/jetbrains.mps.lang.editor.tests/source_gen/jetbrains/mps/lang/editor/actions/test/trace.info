@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debug-info>
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" />
+  <concept fqn="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/7803854675609827855">
+    <file name="DelOnChild1ReplaceItWithLinkTarget_Test.java">
+      <node id="7803854675609827855" at="18,74,19,115" concept="1" />
+      <node id="7803854675609827855" at="19,115,20,129" concept="1" />
+      <node id="7803854675609827855" at="29,51,30,99" concept="3" />
+      <node id="7803854675609827855" at="30,99,31,93" concept="3" />
+      <node id="7803854675610518852" at="31,93,32,105" concept="1" />
+      <node id="7803854675609827855" at="14,0,16,0" concept="0" trace="DelOnChild1ReplaceItWithLinkTarget_Test#()V" />
+      <node id="7803854675609827855" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="7803854675609827855" at="17,0,22,0" concept="2" trace="test_DelOnChild1ReplaceItWithLinkTarget#()V" />
+      <node id="7803854675609827855" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7803854675609827855" at="14,52,14,52" />
+      <scope id="7803854675609827855" at="25,23,25,23" />
+      <scope id="7803854675609827855" at="14,0,16,0" />
+      <scope id="7803854675609827855" at="18,74,20,129" />
+      <scope id="7803854675609827855" at="25,0,27,0" />
+      <scope id="7803854675609827855" at="29,51,32,105">
+        <var name="editor" id="7803854675609827855" />
+        <var name="editorComponent" id="7803854675609827855" />
+      </scope>
+      <scope id="7803854675609827855" at="17,0,22,0" />
+      <scope id="7803854675609827855" at="28,0,34,0" />
+      <unit id="7803854675609827855" at="23,0,35,0" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1ReplaceItWithLinkTarget_Test$TestBody" />
+      <unit id="7803854675609827855" at="12,0,36,0" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1ReplaceItWithLinkTarget_Test" />
+    </file>
+  </root>
+  <root nodeRef="r:c44f4b8c-137c-4225-8bd9-38d232a9b736(jetbrains.mps.lang.editor.actions.test)/7803854675610520166">
+    <file name="DelOnChild1DeleteParent_Test.java">
+      <node id="7803854675610520166" at="18,63,19,115" concept="1" />
+      <node id="7803854675610520166" at="19,115,20,118" concept="1" />
+      <node id="7803854675610520166" at="29,51,30,99" concept="3" />
+      <node id="7803854675610520166" at="30,99,31,93" concept="3" />
+      <node id="7803854675610520176" at="31,93,32,105" concept="1" />
+      <node id="7803854675610520166" at="14,0,16,0" concept="0" trace="DelOnChild1DeleteParent_Test#()V" />
+      <node id="7803854675610520166" at="25,0,27,0" concept="0" trace="TestBody#()V" />
+      <node id="7803854675610520166" at="17,0,22,0" concept="2" trace="test_DelOnChild1DeleteParent#()V" />
+      <node id="7803854675610520166" at="28,0,34,0" concept="2" trace="testMethodImpl#()V" />
+      <scope id="7803854675610520166" at="14,41,14,41" />
+      <scope id="7803854675610520166" at="25,23,25,23" />
+      <scope id="7803854675610520166" at="14,0,16,0" />
+      <scope id="7803854675610520166" at="18,63,20,118" />
+      <scope id="7803854675610520166" at="25,0,27,0" />
+      <scope id="7803854675610520166" at="29,51,32,105">
+        <var name="editor" id="7803854675610520166" />
+        <var name="editorComponent" id="7803854675610520166" />
+      </scope>
+      <scope id="7803854675610520166" at="17,0,22,0" />
+      <scope id="7803854675610520166" at="28,0,34,0" />
+      <unit id="7803854675610520166" at="23,0,35,0" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1DeleteParent_Test$TestBody" />
+      <unit id="7803854675610520166" at="12,0,36,0" name="jetbrains.mps.lang.editor.actions.test.DelOnChild1DeleteParent_Test" />
+    </file>
+  </root>
+</debug-info>
+

@@ -40,13 +40,6 @@ public class AddWatchAction_Action extends BaseAction {
     }
   }
 
-  protected boolean collectActionData(AnActionEvent event, final Map<String, Object> _params) {
-    if (!(super.collectActionData(event, _params))) {
-      return false;
-    }
-    return true;
-  }
-
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       IEvaluationProvider evaluationProvider = DebugActionsUtil.getEvaluationProvider(event);

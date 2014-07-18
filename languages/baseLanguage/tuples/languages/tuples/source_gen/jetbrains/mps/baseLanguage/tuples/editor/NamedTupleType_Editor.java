@@ -102,6 +102,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_LeftBracket(style, editorCell);
@@ -168,6 +169,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         }
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0b0a");
       Style style = new StyleImpl();
       style.set(StyleAttributes.EDITABLE, false);
@@ -190,6 +192,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_c0a");
     Style style = new StyleImpl();
     BaseLanguageStyle_StyleSheet.apply_RightBracket(style, editorCell);
@@ -226,6 +229,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, new BasicCellContext(node), new SubstituteInfoPartExt[]{new NamedTupleType_Editor.ReplaceWith_NamedTupleType_cellMenu_2ojjgh_a0a1a()}));
     editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a1a");
     return editorCell;
@@ -305,6 +309,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
         if (elementNode != null) {
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.setAction(CellActionType.BACKSPACE, new CellAction_DeleteNode(elementNode));
           elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, ","));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
@@ -556,6 +561,7 @@ public class NamedTupleType_Editor extends DefaultNodeEditor {
         }
       }, node);
       editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+      editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
       editorCell.setCellId("ReadOnlyModelAccessor_2ojjgh_a0b1a");
       return editorCell;
     }

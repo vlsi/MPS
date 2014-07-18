@@ -29,7 +29,7 @@ public class SubstitudeAmbigousActions_Test extends BaseTransformationTest {
     public void testMethodImpl() throws Exception {
       final Editor editor = TestBody.this.initEditor("4439253381394558444", "4439253381394559643");
       EditorComponent editorComponent = (EditorComponent) editor.getCurrentEditorComponent();
-      BaseEditorTestBody.typeString(editorComponent, "method");
+      BaseEditorTestBody.typeString(editorComponent, "method1");
     }
   }
 }

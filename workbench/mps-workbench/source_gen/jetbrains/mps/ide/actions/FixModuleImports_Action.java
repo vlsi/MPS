@@ -14,11 +14,11 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 
-public class AddMissingImports_Action extends BaseAction {
+public class FixModuleImports_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public AddMissingImports_Action() {
-    super("Add Missing Imports", "", ICON);
+  public FixModuleImports_Action() {
+    super("Fix Module Imports", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(true);
   }
@@ -33,7 +33,7 @@ public class AddMissingImports_Action extends BaseAction {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action doUpdate method failed. Action:" + "AddMissingImports", t);
+        LOG.error("User's action doUpdate method failed. Action:" + "FixModuleImports", t);
       }
       this.disable(event.getPresentation());
     }
@@ -52,13 +52,13 @@ public class AddMissingImports_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      MissingDependenciesFixer.fixDependencies(((SModel) MapSequence.fromMap(_params).get("model")));
+      new MissingDependenciesFixer(((SModel) MapSequence.fromMap(_params).get("model"))).fixModuleDependencies();
     } catch (Throwable t) {
       if (LOG.isEnabledFor(Level.ERROR)) {
-        LOG.error("User's action execute method failed. Action:" + "AddMissingImports", t);
+        LOG.error("User's action execute method failed. Action:" + "FixModuleImports", t);
       }
     }
   }
 
-  protected static Logger LOG = LogManager.getLogger(AddMissingImports_Action.class);
+  protected static Logger LOG = LogManager.getLogger(FixModuleImports_Action.class);
 }

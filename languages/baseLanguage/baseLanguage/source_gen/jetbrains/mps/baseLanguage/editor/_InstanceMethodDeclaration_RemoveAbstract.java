@@ -12,12 +12,29 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class _InstanceMethodDeclaration_RemoveAbstract {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new _InstanceMethodDeclaration_RemoveAbstract._InstanceMethodDeclaration_RemoveAbstract_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new _InstanceMethodDeclaration_RemoveAbstract._InstanceMethodDeclaration_RemoveAbstract_BACKSPACE(node));
   }
 
   public static class _InstanceMethodDeclaration_RemoveAbstract_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public _InstanceMethodDeclaration_RemoveAbstract_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SPropertyOperations.set(node, "isAbstract", "" + (false));
+    }
+  }
+
+  public static class _InstanceMethodDeclaration_RemoveAbstract_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public _InstanceMethodDeclaration_RemoveAbstract_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

@@ -77,6 +77,7 @@ public class DefaultSModelDescriptor extends LazyEditableSModelBase implements G
     if (!source.isReadOnly() && source.getTimestamp() == -1) {
       // no file on disk
       DefaultSModel model = new DefaultSModel(dsmRef, new RegularNodeIdMap());
+      model.setPersistenceVersion(getPersistenceVersion());
       return new ModelLoadResult(model, ModelLoadingState.FULLY_LOADED);
     }
 

@@ -90,7 +90,7 @@ public class BuildMPSPlugin_Behavior {
     }
 
     // fetch gentest language 
-    VisibleModules visibleModules = new VisibleModules(artifacts.getProject(), artifacts.getGenContext());
+    VisibleModules visibleModules = new VisibleModules(artifacts.getProject());
     visibleModules.collect();
     SNode gentest = visibleModules.resolve("jetbrains.mps.tool.gentest", "3ba7b7cf-6a5a-4981-ba0b-3302e59ffef7");
     if ((gentest != null)) {

@@ -12,12 +12,29 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class TargetDeclaration_makeRequired {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new TargetDeclaration_makeRequired.TargetDeclaration_makeRequired_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new TargetDeclaration_makeRequired.TargetDeclaration_makeRequired_BACKSPACE(node));
   }
 
   public static class TargetDeclaration_makeRequired_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public TargetDeclaration_makeRequired_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SPropertyOperations.set(node, "optional", "" + (false));
+    }
+  }
+
+  public static class TargetDeclaration_makeRequired_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public TargetDeclaration_makeRequired_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

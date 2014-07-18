@@ -211,7 +211,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
       });
     } else if (selectedCellsSize == 1) {
       EditorCell nodeCell = getFirstCell();
-      final CellAction action = nodeCell.getAction(CellActionType.DELETE);
+      final CellAction action = nodeCell.getAction(type);
       if (action == null) return;
 
       if (!ModelAccess.instance().runReadAction(new Computable<Boolean>() {

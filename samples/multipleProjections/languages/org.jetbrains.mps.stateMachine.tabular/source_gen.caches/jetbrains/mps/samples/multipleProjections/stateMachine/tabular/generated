@@ -2,14 +2,20 @@
 <dependencies version="2" modelHash="190gwtqa4t27776oolito852o2eb7xd">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
   <dep model="r:13232651-7f9c-48ad-b7ea-67f933cdf1b0(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor)" hash="e3bhdb3e2zrhjgaluz3euoh38w32nr3" />
+  <dep model="r:6e7c10db-d700-4e02-a6b2-759da83a915e(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.behavior)" hash="at0mi9oi3f5gw9r2rnazv01nr7jvqmb" />
   <dep model="r:995e083b-5cc3-4bb5-be6c-dcb076136b05(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.typesystem)" hash="-3hpucw3deesdr87c15wv8xip8r0r9te" />
+  <dep model="r:ad28332d-4f2f-44e3-a5cc-8828525ac9ee(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.structure)" hash="-44obhg5w6o4zl4gg26gfalp8r0lfrzj" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
+  <dep model="r:ddcd73de-d749-471a-9bd9-ef50cd3c67c2(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.constraints)" hash="deq3pu8t4faini5ablqigka2q6kghb6" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:13232651-7f9c-48ad-b7ea-67f933cdf1b0(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.editor)" />
+    <dep model="r:6e7c10db-d700-4e02-a6b2-759da83a915e(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.behavior)" />
     <dep model="r:995e083b-5cc3-4bb5-be6c-dcb076136b05(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.typesystem)" />
+    <dep model="r:ad28332d-4f2f-44e3-a5cc-8828525ac9ee(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:ddcd73de-d749-471a-9bd9-ef50cd3c67c2(jetbrains.mps.samples.multipleProjections.stateMachine.tabular.constraints)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Language.java" />
   </common>

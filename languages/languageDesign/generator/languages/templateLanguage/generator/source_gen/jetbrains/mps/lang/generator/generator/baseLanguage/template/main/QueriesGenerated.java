@@ -3008,7 +3008,7 @@ public class QueriesGenerated {
     return SNodeOperations.getParent(_context.getNode());
   }
 
-  public static SNode sourceNodeQuery_238835255331767421(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2488797604450286133(final SourceSubstituteMacroNodeContext _context) {
     return ((Iterator<SNode>) _context.getVariable("var:argsIterator")).next();
   }
 
@@ -3020,7 +3020,7 @@ public class QueriesGenerated {
     return SNodeOperations.getParent(_context.getNode());
   }
 
-  public static SNode sourceNodeQuery_238835255332430262(final SourceSubstituteMacroNodeContext _context) {
+  public static SNode sourceNodeQuery_2488797604450489437(final SourceSubstituteMacroNodeContext _context) {
     return ((Iterator<SNode>) _context.getVariable("var:argsIterator")).next();
   }
 

@@ -43,6 +43,7 @@ public class _OpenTag implements ConceptEditorComponent {
       }
     }, node);
     editorCell.setAction(CellActionType.DELETE, EmptyCellAction.getInstance());
+    editorCell.setAction(CellActionType.BACKSPACE, EmptyCellAction.getInstance());
     editorCell.setCellId("ReadOnlyModelAccessor_mtiojs_a");
     Style style = new StyleImpl();
     Styles_StyleSheet.apply_bordered(style, editorCell);

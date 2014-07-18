@@ -18,7 +18,7 @@ package jetbrains.mps.ide.findusages;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
-import jetbrains.mps.smodel.language.FindUsageDescriptor;
+import jetbrains.mps.smodel.runtime.FindUsageAspectDescriptor;
 import org.apache.log4j.Logger;
 import org.apache.log4j.LogManager;
 import org.jetbrains.mps.openapi.module.SModuleReference;
@@ -168,7 +168,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
 
   private void initFindersDescriptor(LanguageRuntime language) {
     try {
-      FindUsageDescriptor descr = language.getFindUsages();
+      FindUsageAspectDescriptor descr = language.getAspect(FindUsageAspectDescriptor.class);
       if (descr instanceof BaseFindUsagesDescriptor) {
         ((BaseFindUsagesDescriptor) descr).init();
       }

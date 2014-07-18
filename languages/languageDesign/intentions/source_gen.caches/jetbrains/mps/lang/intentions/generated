@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="-2ezh3s9svi00p07l8n862bepd1clogo">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)" hash="-9d2plpt2r05jmlgw31d7xd6smzrb0hi" />
+  <dep model="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" hash="-cz5imvnisz8tnikoad2jhdign9sye6k" />
   <dep model="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)" hash="5w6a7jd1x2pm8k7hn09pmja5s9cmbus" />
   <dep model="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)" hash="-9wnv35s0955ciwomqcxee5xhqth89x4" />
+  <dep model="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" hash="7em77rbt2zb3icarp3kxkvaqsekal4i" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c89590350(jetbrains.mps.lang.intentions.editor)" />
     <dep model="r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590353(jetbrains.mps.lang.intentions.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Language.java" />

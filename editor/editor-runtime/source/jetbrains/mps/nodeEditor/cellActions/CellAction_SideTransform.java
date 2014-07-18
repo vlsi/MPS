@@ -18,7 +18,6 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.editor.runtime.cells.AbstractCellAction;
 import jetbrains.mps.editor.runtime.style.SideTransformTagUtils;
 import jetbrains.mps.nodeEditor.CellSide;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellFinderUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
@@ -52,7 +51,8 @@ public class CellAction_SideTransform extends AbstractCellAction {
     return ModelActions.canCreateSideTransformHintSubstituteActions(node, mySide, anchorTag, editorContext.getOperationContext());
   }
 
-  private jetbrains.mps.openapi.editor.cells.EditorCell getSideTransformHintAnchorCell(jetbrains.mps.openapi.editor.cells.EditorCell selectedCell, CellSide side) {
+  private jetbrains.mps.openapi.editor.cells.EditorCell getSideTransformHintAnchorCell(jetbrains.mps.openapi.editor.cells.EditorCell selectedCell,
+      CellSide side) {
     final SNode node = selectedCell.getSNode();
     jetbrains.mps.openapi.editor.cells.EditorCell anchorCell = null;
     String anchorTag = ((EditorCell) selectedCell).getRightTransformAnchorTag();
@@ -109,9 +109,14 @@ public class CellAction_SideTransform extends AbstractCellAction {
 
     jetbrains.mps.openapi.editor.EditorComponent editorComponent = context.getEditorComponent();
     jetbrains.mps.openapi.editor.cells.EditorCell updatedAnchorCell = editorComponent.findCellWithId(node, anchorCellId);
-    assert updatedAnchorCell != null : "Can't find updated anchor cell. Node: " + node + ", anchorCellID: " + anchorCellId;
+    assert
+        updatedAnchorCell != null :
+        "Can't find updated anchor cell. Node: " + node + " (concept: " + node.getConcept().getQualifiedName() + " )" + ", anchorCellID: " + anchorCellId;
     jetbrains.mps.openapi.editor.cells.EditorCell sideTransformHintCell = ((EditorCell) updatedAnchorCell).getSTHintCell();
-    assert sideTransformHintCell != null : "STHint cell was not created. Node: " + node + ", anchorCellID: " + anchorCellId + ", tag: " + anchorTag;
+    assert
+        sideTransformHintCell != null :
+        "STHint cell was not created. Node: " + node + " (concept: " + node.getConcept().getQualifiedName() + " )" + ", anchorCellID: " + anchorCellId +
+            ", tag: " + anchorTag;
     editorComponent.changeSelection(sideTransformHintCell);
   }
 }

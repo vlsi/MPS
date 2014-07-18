@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="9t1dx13ffsdj318mo7dukz9yuzyilg7">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
+  <dep model="r:0305b770-140c-4492-809c-8fad4cbadc02(jetbrains.mps.lang.traceable.operations.behavior)" hash="-6bviifo4rdnknmw02uivpr24k55mu9x" />
+  <dep model="r:16afdd21-f72c-462f-ae60-d54c89cad9d3(jetbrains.mps.lang.traceable.operations.constraints)" hash="aj1znfr0jjx1evln3g8lej17qw9xh2n" />
+  <dep model="r:1e4195e3-e1e5-4a37-8e8b-eab96753b17f(jetbrains.mps.lang.traceable.operations.structure)" hash="2gzbkis2npvpvknc2ek8soz36jq0e90" />
   <dep model="r:8456500c-6587-4a83-9f3b-ee95eb04cd7e(jetbrains.mps.lang.traceable.operations.typesystem)" hash="-5thjwmlryqczp3nqqrvvvgtu9bigl7n" />
   <dep model="r:a19c7a5e-cab0-460e-b601-6f59c58fe5ce(jetbrains.mps.lang.traceable.operations.editor)" hash="-54g4nt8dzrd3msedagwqvymeynppiak" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:0305b770-140c-4492-809c-8fad4cbadc02(jetbrains.mps.lang.traceable.operations.behavior)" />
+    <dep model="r:16afdd21-f72c-462f-ae60-d54c89cad9d3(jetbrains.mps.lang.traceable.operations.constraints)" />
+    <dep model="r:1e4195e3-e1e5-4a37-8e8b-eab96753b17f(jetbrains.mps.lang.traceable.operations.structure)" />
     <dep model="r:8456500c-6587-4a83-9f3b-ee95eb04cd7e(jetbrains.mps.lang.traceable.operations.typesystem)" />
     <dep model="r:a19c7a5e-cab0-460e-b601-6f59c58fe5ce(jetbrains.mps.lang.traceable.operations.editor)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />

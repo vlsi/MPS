@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.core.properties.textGen.PropertiesComment_TextGen" file="PropertiesComment_TextGen.java">
-    <classNode dependClassName="jetbrains.mps.core.properties.constraints.PropEscapeUtil" />
+    <classNode dependClassName="jetbrains.mps.core.properties.util.PropEscapeUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
   <dependency className="jetbrains.mps.core.properties.textGen.PropertiesDeclaration_TextGen" file="PropertiesDeclaration_TextGen.java">
-    <classNode dependClassName="jetbrains.mps.core.properties.constraints.PropEscapeUtil" />
+    <classNode dependClassName="jetbrains.mps.core.properties.util.PropEscapeUtil" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />

@@ -56,13 +56,8 @@ public class MethodRenameContributor implements RenameRefactoringContributor {
 
     MPSProject mpsProject = project.getComponent(MPSProject.class);
     String oldName = node.getName();
-    PsiMethod psiMethod = (PsiMethod) MPSPsiProvider.getInstance(project).getPsi(node);
 
-    boolean thereAreMpsOverrides = !MethodRefactoringUtils.findOverridingMethods(node, new EmptyProgressMonitor()).isEmpty();
-    boolean thereArePsiOverrides = OverridingMethodsSearch.search(psiMethod, false).iterator().hasNext();
-    boolean overridden = thereAreMpsOverrides || thereArePsiOverrides;
-
-    final RenameMethodDialog d = new RenameMethodDialog(project, oldName, overridden);
+    final RenameMethodDialog d = new RenameMethodDialog(project, oldName);
     d.show();
 
     final String newName = d.getName();
@@ -75,12 +70,12 @@ public class MethodRenameContributor implements RenameRefactoringContributor {
       return;
     }
 
-    IRefactoring psiAwareRefactoring = new PsiMethodRenameRefactoringWrapper(d.getOverriding());
+    IRefactoring psiAwareRefactoring = new PsiMethodRenameRefactoringWrapper();
 
     RefactoringAccess.getInstance().getRefactoringFacade().execute(RefactoringContext.createRefactoringContext(
       psiAwareRefactoring,
       Arrays.asList("newName", "refactorOverriding"),
-      Arrays.asList(newName, d.getOverriding()),
+      Arrays.asList(newName),
       node,
       mpsProject));
   }

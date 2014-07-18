@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="87nlgyl149vymmlvpuny1y9b8jstm20">
+<dependencies version="2" modelHash="-bplax8d1d2gj5fkapc4glqq4df3vnyh">
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
-  <dep model="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)" hash="-k0g0axhg9ubnsh8fu83eg3y2f9rwme" />
+  <dep model="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)" hash="-9zugvakkk5eqklojaco9t3qb6n4lcuh" />
+  <dep model="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" hash="dlpm4j82547zca6sw214z5l5l69mtnx" />
+  <dep model="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)" hash="-9o8wprx9pd2g38sn6rna63knwgzcdoa" />
   <dep model="r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)" hash="-yp5pkr8i98h7rio1fzsmytw65x6guq" />
+  <dep model="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" hash="-7gq9jgdrgbqksddjk6km3d673ncttsh" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="-bkuyiekmoekvx4wtv4qejtruxiwtg50" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="8cdjk2e5d2y2u9lult1ptgxxrttxv07" />
   <common dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590306(jetbrains.mps.lang.constraints.behavior)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" />
     <dep model="r:00000000-0000-4000-0000-011c89590308(jetbrains.mps.lang.constraints.editor)" />
     <dep model="r:00000000-0000-4000-0000-011c89590309(jetbrains.mps.lang.constraints.typesystem)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="Language.java" />

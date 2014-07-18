@@ -63,7 +63,7 @@ public class IdeaPluginDependenciesHelper {
       buildVisible();
     }
     if (SNodeOperations.isInstanceOf(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
-      MPSModulesClosure runtimeDependencies = new MPSModulesClosure(null, SNodeOperations.cast(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")).runtimeClosure();
+      MPSModulesClosure runtimeDependencies = new MPSModulesClosure(SNodeOperations.cast(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")).runtimeClosure();
       Iterable<SNode> seq = Sequence.fromIterable(runtimeDependencies.getAllModules()).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(visible.contains(it));

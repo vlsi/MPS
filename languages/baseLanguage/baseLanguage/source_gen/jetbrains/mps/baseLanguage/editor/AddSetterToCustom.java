@@ -14,6 +14,7 @@ public class AddSetterToCustom {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.INSERT, new AddSetterToCustom.AddSetterToCustom_INSERT(node));
     editorCell.setAction(CellActionType.DELETE, new AddSetterToCustom.AddSetterToCustom_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new AddSetterToCustom.AddSetterToCustom_BACKSPACE(node));
   }
 
   public static class AddSetterToCustom_INSERT extends AbstractCellAction {
@@ -38,6 +39,23 @@ public class AddSetterToCustom {
     /*package*/ SNode myNode;
 
     public AddSetterToCustom_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNode replacingNode = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.CustomSetterPropertyImplementation");
+      SLinkOperations.setTarget(replacingNode, "setAccessor", SLinkOperations.getTarget(node, "setAccessor", true), true);
+    }
+  }
+
+  public static class AddSetterToCustom_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public AddSetterToCustom_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

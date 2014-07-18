@@ -13,12 +13,29 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class deleteUpperIndex {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new deleteUpperIndex.deleteUpperIndex_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new deleteUpperIndex.deleteUpperIndex_BACKSPACE(node));
   }
 
   public static class deleteUpperIndex_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public deleteUpperIndex_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expr", true));
+    }
+  }
+
+  public static class deleteUpperIndex_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public deleteUpperIndex_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

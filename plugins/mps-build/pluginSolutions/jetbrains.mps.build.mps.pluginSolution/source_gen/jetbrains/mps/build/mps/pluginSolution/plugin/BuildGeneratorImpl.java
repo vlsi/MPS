@@ -298,7 +298,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SModelOperations.addRootNode(targetModelDescriptor, buildProject);
 
     PathConverter pathConverter = new PathConverter(buildProject);
-    VisibleModules visible = new VisibleModules(buildProject, null);
+    VisibleModules visible = new VisibleModules(buildProject);
     visible.collect();
     for (SNode module : ListSequence.fromList(SNodeOperations.getDescendants(buildProject, "jetbrains.mps.build.mps.structure.BuildMps_Module", false, new String[]{}))) {
       try {

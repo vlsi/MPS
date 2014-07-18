@@ -16,12 +16,37 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class StaticFieldReference_DeleteDot {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.DELETE, new StaticFieldReference_DeleteDot.StaticFieldReference_DeleteDot_DELETE(node));
+    editorCell.setAction(CellActionType.BACKSPACE, new StaticFieldReference_DeleteDot.StaticFieldReference_DeleteDot_BACKSPACE(node));
   }
 
   public static class StaticFieldReference_DeleteDot_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
 
     public StaticFieldReference_DeleteDot_DELETE(SNode node) {
+      this.myNode = node;
+    }
+
+    public void execute(EditorContext editorContext) {
+      this.execute_internal(editorContext, this.myNode);
+    }
+
+    public void execute_internal(EditorContext editorContext, SNode node) {
+      SNodeOperations.replaceWithAnother(node, _quotation_createNode_65e73j_a0a0a0a(SLinkOperations.getTarget(node, "classifier", false)));
+    }
+
+    private static SNode _quotation_createNode_65e73j_a0a0a0a(Object parameter_1) {
+      PersistenceFacade facade = PersistenceFacade.getInstance();
+      SNode quotedNode_2 = null;
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", null, null, false);
+      SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
+      return quotedNode_2;
+    }
+  }
+
+  public static class StaticFieldReference_DeleteDot_BACKSPACE extends AbstractCellAction {
+    /*package*/ SNode myNode;
+
+    public StaticFieldReference_DeleteDot_BACKSPACE(SNode node) {
       this.myNode = node;
     }
 

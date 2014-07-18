@@ -15,23 +15,16 @@
  */
 package jetbrains.mps.generator.impl.reference;
 
-import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
-import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator;
-import jetbrains.mps.generator.impl.RoleValidation.Status;
 import jetbrains.mps.generator.impl.TemplateGenerator;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
-import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.model.SReference;
 
 /**
@@ -103,38 +96,4 @@ public abstract class ReferenceInfo {
   protected final SReference createStaticReference(@NotNull SNode target) {
     return jetbrains.mps.smodel.SReference.create(getReferenceRole(), getOutputSourceNode(), target);
   }
-
-
-  protected abstract ProblemDescription[] getErrorDescriptions();
-
-  // XXX in fact, the only use is in ReferenceInfo_CopiedInputNode, might be worth moving there
-  protected final boolean checkResolvedTarget(AbstractTemplateGenerator generator, SNode outputTargetNode) {
-    Status status = generator.getReferentRoleValidator(myOutputSourceNode, myReferenceRole).validate(outputTargetNode);
-    if (status != null) {
-      generator.getLogger().error(myOutputSourceNode.getReference(), status.getMessage(getClass().getSimpleName()), getErrorDescriptions());
-      return false;
-    }
-
-    SModel referentNodeModel = outputTargetNode.getModel();
-    if (referentNodeModel != myOutputSourceNode.getModel()) {
-      if (SModelStereotype.isGeneratorModel(referentNodeModel)) {
-        // references to template nodes are not acceptable
-        String msg = "bad reference, cannot refer to a generator model: %s for role '%s' in %s";
-        generator.getLogger().error(myOutputSourceNode.getReference(), String.format(msg,
-            SNodeUtil.getDebugText(outputTargetNode), myReferenceRole, SNodeUtil.getDebugText(myOutputSourceNode)),
-            getErrorDescriptions());
-        return false;
-      }
-      if (referentNodeModel .getModule() instanceof TransientModelsModule) {
-        // references to transient nodes are not acceptable
-        String msg = "bad reference, cannot refer to a transient model: %s  for role '%s' in %s";
-        generator.getLogger().error(myOutputSourceNode.getReference(), String.format(msg,
-            SNodeUtil.getDebugText(outputTargetNode), myReferenceRole, SNodeUtil.getDebugText(myOutputSourceNode)),
-            getErrorDescriptions());
-        return false;
-      }
-    }
-    return true;
-  }
-
 }
