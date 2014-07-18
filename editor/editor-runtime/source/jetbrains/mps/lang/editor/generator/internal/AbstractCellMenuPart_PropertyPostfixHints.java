@@ -164,7 +164,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     }
 
     private Pattern getItemPattern(String text) {
-      final StringBuilder exactItemPatternBuilder = PatternUtil.getExactItemPatternBuilder(text, true);
+      final StringBuilder exactItemPatternBuilder = PatternUtil.getExactItemPatternBuilder(text, true, true);
       final String itemPattern = exactItemPatternBuilder.append(".*").toString();
       return Pattern.compile(itemPattern);
     }

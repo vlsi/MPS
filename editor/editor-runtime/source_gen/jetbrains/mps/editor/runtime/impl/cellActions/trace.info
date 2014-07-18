@@ -79,45 +79,48 @@
     <nodeInfo nodeId="2298389068003808764" fileName="CellAction_DeleteSmart.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="mySource" />
     <nodeInfo nodeId="2298389068003808767" fileName="CellAction_DeleteSmart.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLink" />
     <nodeInfo nodeId="2298389068003808770" fileName="CellAction_DeleteSmart.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTarget" />
-    <nodeInfo nodeId="2298389068003808783" fileName="CellAction_DeleteSmart.java" startLine="19" startPosition="73" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2298389068003808787" fileName="CellAction_DeleteSmart.java" startLine="20" startPosition="22" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2298389068003808791" fileName="CellAction_DeleteSmart.java" startLine="21" startPosition="18" endLine="22" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6655597586176291926" fileName="CellAction_DeleteSmart.java" startLine="26" startPosition="52" endLine="27" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6698371907327626625" fileName="CellAction_DeleteSmart.java" startLine="27" startPosition="51" endLine="28" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5835009996014921659" fileName="CellAction_DeleteSmart.java" startLine="29" startPosition="202" endLine="30" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6655597586176220820" fileName="CellAction_DeleteSmart.java" startLine="31" startPosition="5" endLine="32" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2298389068003819350" fileName="CellAction_DeleteSmart.java" startLine="36" startPosition="46" endLine="37" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2298389068003820080" fileName="CellAction_DeleteSmart.java" startLine="37" startPosition="80" endLine="38" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2298389068004278098" fileName="CellAction_DeleteSmart.java" startLine="39" startPosition="97" endLine="40" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3395068133255634675" fileName="CellAction_DeleteSmart.java" startLine="40" startPosition="161" endLine="41" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5835009996014790591" fileName="CellAction_DeleteSmart.java" startLine="28" startPosition="80" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2298389068003820088" fileName="CellAction_DeleteSmart.java" startLine="38" startPosition="41" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2298389068003808773" fileName="CellAction_DeleteSmart.java" startLine="19" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellAction_DeleteSmart#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="2298389068003808795" fileName="CellAction_DeleteSmart.java" startLine="25" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="2298389068003808803" fileName="CellAction_DeleteSmart.java" startLine="35" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <scopeInfo nodeId="5835009996014790594" fileName="CellAction_DeleteSmart.java" startLine="29" startPosition="202" endLine="30" endPosition="19" />
-    <scopeInfo nodeId="2298389068003820089" fileName="CellAction_DeleteSmart.java" startLine="39" startPosition="97" endLine="41" endPosition="126">
+    <nodeInfo nodeId="6020129713119394457" fileName="CellAction_DeleteSmart.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCanBeNull" />
+    <nodeInfo nodeId="6020129713119481414" fileName="CellAction_DeleteSmart.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myEnabled" />
+    <nodeInfo nodeId="6020129713119587282" fileName="CellAction_DeleteSmart.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRole" />
+    <nodeInfo nodeId="2298389068003808783" fileName="CellAction_DeleteSmart.java" startLine="22" startPosition="73" endLine="23" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2298389068003808787" fileName="CellAction_DeleteSmart.java" startLine="23" startPosition="22" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2298389068003808791" fileName="CellAction_DeleteSmart.java" startLine="24" startPosition="18" endLine="25" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6020129713119384812" fileName="CellAction_DeleteSmart.java" startLine="25" startPosition="22" endLine="26" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6020129713119590272" fileName="CellAction_DeleteSmart.java" startLine="26" startPosition="80" endLine="27" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6655597586176291926" fileName="CellAction_DeleteSmart.java" startLine="27" startPosition="75" endLine="28" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6020129713119491974" fileName="CellAction_DeleteSmart.java" startLine="28" startPosition="51" endLine="29" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6020129713119398431" fileName="CellAction_DeleteSmart.java" startLine="29" startPosition="295" endLine="30" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6020129713119571530" fileName="CellAction_DeleteSmart.java" startLine="31" startPosition="25" endLine="32" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6020129713119560790" fileName="CellAction_DeleteSmart.java" startLine="37" startPosition="52" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2298389068003820080" fileName="CellAction_DeleteSmart.java" startLine="42" startPosition="46" endLine="43" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2298389068004278098" fileName="CellAction_DeleteSmart.java" startLine="44" startPosition="25" endLine="45" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3395068133255634675" fileName="CellAction_DeleteSmart.java" startLine="45" startPosition="161" endLine="46" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6020129713119570126" fileName="CellAction_DeleteSmart.java" startLine="30" startPosition="108" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2298389068003808795" fileName="CellAction_DeleteSmart.java" startLine="36" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="2298389068003820088" fileName="CellAction_DeleteSmart.java" startLine="43" startPosition="41" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2298389068003808803" fileName="CellAction_DeleteSmart.java" startLine="41" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2298389068003808773" fileName="CellAction_DeleteSmart.java" startLine="22" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CellAction_DeleteSmart#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <scopeInfo nodeId="6020129713119570129" fileName="CellAction_DeleteSmart.java" startLine="31" startPosition="25" endLine="32" endPosition="133" />
+    <scopeInfo nodeId="2298389068003808800" fileName="CellAction_DeleteSmart.java" startLine="37" startPosition="52" endLine="38" endPosition="21" />
+    <scopeInfo nodeId="2298389068003820089" fileName="CellAction_DeleteSmart.java" startLine="44" startPosition="25" endLine="46" endPosition="71">
       <varInfo nodeId="2298389068004278099" varName="defaultTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="2298389068003808782" fileName="CellAction_DeleteSmart.java" startLine="19" startPosition="73" endLine="22" endPosition="22" />
-    <scopeInfo nodeId="2298389068003808773" fileName="CellAction_DeleteSmart.java" startLine="19" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="2298389068003808795" fileName="CellAction_DeleteSmart.java" startLine="36" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="2298389068003808798" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="2298389068003808808" fileName="CellAction_DeleteSmart.java" startLine="42" startPosition="46" endLine="47" endPosition="5" />
+    <scopeInfo nodeId="2298389068003808803" fileName="CellAction_DeleteSmart.java" startLine="41" startPosition="0" endLine="49" endPosition="0">
+      <varInfo nodeId="2298389068003808806" varName="context" />
+    </scopeInfo>
+    <scopeInfo nodeId="2298389068003808782" fileName="CellAction_DeleteSmart.java" startLine="22" startPosition="73" endLine="33" endPosition="5">
+      <varInfo nodeId="6020129713119384813" varName="genuineLinkDeclaration" />
+    </scopeInfo>
+    <scopeInfo nodeId="2298389068003808773" fileName="CellAction_DeleteSmart.java" startLine="22" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="2298389068003808778" varName="link" />
       <varInfo nodeId="2298389068003808776" varName="source" />
       <varInfo nodeId="2298389068003808780" varName="target" />
     </scopeInfo>
-    <scopeInfo nodeId="2298389068003808800" fileName="CellAction_DeleteSmart.java" startLine="26" startPosition="52" endLine="32" endPosition="290">
-      <varInfo nodeId="6698371907327626626" varName="genuineLinkDeclaration" />
-    </scopeInfo>
-    <scopeInfo nodeId="2298389068003808808" fileName="CellAction_DeleteSmart.java" startLine="36" startPosition="46" endLine="42" endPosition="5">
-      <varInfo nodeId="2298389068003819351" varName="genuineLinkDeclaration" />
-    </scopeInfo>
-    <scopeInfo nodeId="2298389068003808795" fileName="CellAction_DeleteSmart.java" startLine="25" startPosition="0" endLine="34" endPosition="0">
-      <varInfo nodeId="2298389068003808798" varName="context" />
-    </scopeInfo>
-    <scopeInfo nodeId="2298389068003808803" fileName="CellAction_DeleteSmart.java" startLine="35" startPosition="0" endLine="44" endPosition="0">
-      <varInfo nodeId="2298389068003808806" varName="context" />
-    </scopeInfo>
-    <unitInfo nodeId="2298389068003808761" fileName="CellAction_DeleteSmart.java" startLine="14" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
+    <unitInfo nodeId="2298389068003808761" fileName="CellAction_DeleteSmart.java" startLine="14" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.editor.runtime.impl.cellActions.CellAction_DeleteSmart" />
   </root>
 </debugInfo>
 
