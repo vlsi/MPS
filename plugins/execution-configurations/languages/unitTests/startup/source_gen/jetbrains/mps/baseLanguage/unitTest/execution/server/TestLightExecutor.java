@@ -8,6 +8,7 @@ import jetbrains.mps.lang.test.util.TestLightRunState;
 import jetbrains.mps.lang.test.util.TestLightRunStateEnum;
 import org.junit.runner.JUnitCore;
 import org.junit.runner.Request;
+import org.junit.runner.notification.StoppedByUserException;
 import com.intellij.util.WaitFor;
 import com.intellij.execution.process.ProcessOutputTypes;
 import org.jetbrains.annotations.NotNull;
@@ -53,7 +54,12 @@ public class TestLightExecutor extends AbstractTestExecutor {
     assert getRunState().isInitialized();
     waitWhileNotReady();
     getRunState().advance(TestLightRunStateEnum.RUNNING);
-    super.doExecute(core, requests);
+    System.setProperty(TestLightRunState.LIGHT_EXEC_FLAG, "true");
+    try {
+      super.doExecute(core, requests);
+    } catch (StoppedByUserException exception) {
+      terminateProcess(TERMINATION_CODE);
+    }
   }
 
 
@@ -70,18 +76,27 @@ public class TestLightExecutor extends AbstractTestExecutor {
 
 
   public void terminateRun() {
-    terminateProcess(TERMINATION_CODE);
+    if (getRunState().isTerminated()) {
+      return;
+    }
+    stopRun();
   }
 
 
 
   /*package*/ void terminateProcess(int code) {
-    if (getRunState().isTerminated()) {
-      return;
-    }
     getRunState().advance(TestLightRunStateEnum.TERMINATING);
+    stopRun();
     myDispatcher.onSimpleTextAvailable("Process finished with exit code " + code, ProcessOutputTypes.STDOUT);
     myDispatcher.onProcessTerminated("Process finished with exit code " + code);
+  }
+
+
+
+  private void stopRun() {
+    AbstractTestExecutor.StoppableRunner currentRunner = this.getCurrentRunner();
+    assert currentRunner != null;
+    currentRunner.pleaseStop();
   }
 
 

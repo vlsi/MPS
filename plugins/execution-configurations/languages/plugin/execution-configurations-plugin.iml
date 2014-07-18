@@ -36,6 +36,7 @@
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Beansbinding" level="project" />
+    <orderEntry type="module" module-name="mps-testing" />
   </component>
 </module>
 

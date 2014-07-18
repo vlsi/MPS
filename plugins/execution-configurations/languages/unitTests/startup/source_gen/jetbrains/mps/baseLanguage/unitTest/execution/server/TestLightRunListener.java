@@ -111,6 +111,19 @@ public class TestLightRunListener extends RunListener {
 
 
   @Override
+  public void testStarted(Description description) throws Exception {
+    if (isTerminating()) {
+      return;
+    }
+    if (LOG.isInfoEnabled()) {
+      LOG.info(TestEvent.START_TEST_PREFIX + description.getDisplayName());
+    }
+    onTestEvent(TestEvent.START_TEST_PREFIX, description);
+  }
+
+
+
+  @Override
   public void testFinished(Description description) throws Exception {
     if (isTerminating()) {
       return;

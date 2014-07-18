@@ -15,6 +15,16 @@ import com.intellij.openapi.util.InvalidDataException;
 import java.util.List;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters;
+import jetbrains.mps.util.test.CachesUtil;
+import jetbrains.mps.baseLanguage.unitTest.execution.tool.UnitTestViewComponent;
+import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
+import com.intellij.execution.process.ProcessHandler;
+import com.intellij.execution.ui.ConsoleView;
+import jetbrains.mps.execution.api.configurations.ConsoleCreator;
+import jetbrains.mps.ide.actions.StandaloneMPSStackTraceFilter;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import org.apache.log4j.Level;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
@@ -93,6 +103,30 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
 
   public List<SNodeReference> getTestsToMake() {
     return this.getJUnitSettings().getTestsToMake(ProjectHelper.toMPSProject(this.getProject()));
+  }
+
+  public JavaRunParameters prepareJavaParamsForTests(int runId) {
+    String runIdString = "-D" + CachesUtil.PROPERTY_RUN_ID + "=\"" + runId + "\"";
+    JavaRunParameters_Configuration javaRunParams = this.getJavaRunParameters();
+    JavaRunParameters parameters = javaRunParams.getJavaRunParameters().clone();
+    String vmFromJava = javaRunParams.getJavaRunParameters().getVmOptions();
+    if (vmFromJava == null) {
+      vmFromJava = "";
+    }
+    parameters.setVmOptions(vmFromJava + " " + runIdString);
+    return parameters;
+  }
+
+  public UnitTestViewComponent createTestViewComponent(TestRunState runState, final ProcessHandler process) {
+    ConsoleView console = ConsoleCreator.createConsoleView(this.getProject(), false);
+    console.addMessageFilter(new StandaloneMPSStackTraceFilter(this.getProject()));
+    return new UnitTestViewComponent(this.getProject(), new ProjectOperationContext(ProjectHelper.toMPSProject(this.getProject())), console, runState, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        if (process != null) {
+          process.destroyProcess();
+        }
+      }
+    });
   }
 
   @Override
