@@ -5,6 +5,8 @@ package jetbrains.mps.lang.test.util;
 import org.jetbrains.annotations.NotNull;
 
 public class TestLightRunState implements Comparable<TestLightRunState> {
+  public static final String LIGHT_EXEC_FLAG = "mps.light.execution";
+
   private TestLightRunStateEnum myValue;
 
   private TestLightRunState() {

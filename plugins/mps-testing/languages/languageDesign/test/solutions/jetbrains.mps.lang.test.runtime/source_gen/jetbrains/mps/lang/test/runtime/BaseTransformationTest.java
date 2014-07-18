@@ -4,14 +4,13 @@ package jetbrains.mps.lang.test.runtime;
 
 import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
-import jetbrains.mps.execution.configurations.implementation.plugin.plugin.JUnitLightExecutor;
+import jetbrains.mps.lang.test.util.TestLightRunState;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.tempmodel.TemporaryModels;
 import jetbrains.mps.smodel.tempmodel.TempModuleOptions;
 import jetbrains.mps.generator.impl.CloneUtil;
 
 public abstract class BaseTransformationTest implements TransformationTest {
-
   private Project myProject;
   private SModel myModel;
 
@@ -20,7 +19,7 @@ public abstract class BaseTransformationTest implements TransformationTest {
 
 
   public boolean isExecutionInProcess() {
-    return check_c18na_a0a7(System.getProperty(JUnitLightExecutor.LIGHT_EXEC_FLAG));
+    return check_c18na_a0a6(System.getProperty(TestLightRunState.LIGHT_EXEC_FLAG));
   }
 
 
@@ -121,7 +120,7 @@ public abstract class BaseTransformationTest implements TransformationTest {
     myProject = project;
   }
 
-  private static boolean check_c18na_a0a7(String checkedDotOperand) {
+  private static boolean check_c18na_a0a6(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals("true");
     }

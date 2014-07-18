@@ -4,6 +4,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.lang.test.util.TestLightRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestEventsDispatcher;
 import jetbrains.mps.baseLanguage.unitTest.execution.server.TestLightExecutor;
@@ -20,7 +21,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitLightExecutor {
-  public static final String LIGHT_EXEC_FLAG = "mps.light.execution";
 
   private final Iterable<ITestNodeWrapper> myNodes;
   private final Project myProject;
@@ -29,29 +29,20 @@ public class JUnitLightExecutor {
 
 
   public JUnitLightExecutor(Iterable<ITestNodeWrapper> testNodeWrappers, Project project) {
+    ourRunInProgress = true;
     myNodes = testNodeWrappers;
     myProject = project;
   }
 
 
 
-  public synchronized boolean accept() {
+  public static synchronized boolean accept(Iterable<ITestNodeWrapper> nodes) {
     // allowing only one instance to be light-executed 
     if (ourRunInProgress) {
       return false;
     }
-    System.setProperty(LIGHT_EXEC_FLAG, "true");
-    boolean result = myFilter.accept(myNodes);
-    if (result) {
-      init();
-    }
-    return result;
-  }
-
-
-
-  private void init() {
-    ourRunInProgress = true;
+    System.setProperty(TestLightRunState.LIGHT_EXEC_FLAG, "true");
+    return new JUnitLightExecutor.DefaultFilter().accept(nodes);
   }
 
 

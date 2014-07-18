@@ -55,11 +55,10 @@ public class JUnitTests_Configuration_RunProfileState implements RunProfileState
   @Nullable
   public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
     Project project = myEnvironment.getProject();
-
     List<ITestNodeWrapper> nodeWrappers = myRunConfiguration.getJUnitSettings().getTests(ProjectHelper.toMPSProject(project));
     JUnitProcessPack processPack;
-    JUnitLightExecutor lightExecutor = new JUnitLightExecutor(nodeWrappers, project);
-    if (myRunConfiguration.getJUnitSettings().getLightExec() && lightExecutor.accept()) {
+    if (myRunConfiguration.getJUnitSettings().getLightExec() && JUnitLightExecutor.accept(nodeWrappers)) {
+      JUnitLightExecutor lightExecutor = new JUnitLightExecutor(nodeWrappers, project);
       processPack = lightExecutor.execute();
     } else {
       TestRunState runState = new TestRunState(nodeWrappers);
@@ -69,7 +68,11 @@ public class JUnitTests_Configuration_RunProfileState implements RunProfileState
       String runIdString = "-D" + CachesUtil.PROPERTY_RUN_ID + "=\"" + runId + "\"";
       JavaRunParameters_Configuration javaRunParams = myRunConfiguration.getJavaRunParameters();
       JavaRunParameters parameters = javaRunParams.getJavaRunParameters().clone();
-      parameters.setVmOptions(javaRunParams.getJavaRunParameters().getVmOptions() + " " + runIdString);
+      String vmFromJava = javaRunParams.getJavaRunParameters().getVmOptions();
+      if (vmFromJava == null) {
+        vmFromJava = "";
+      }
+      parameters.setVmOptions(vmFromJava + " " + runIdString);
       ProcessHandler process = new Junit_Command().createProcess(nodeWrappers, parameters);
       process.addProcessListener(new ProcessAdapter() {
         @Override

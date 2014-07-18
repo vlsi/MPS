@@ -10,12 +10,12 @@
     <dep root="12077399789561873" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="PropertiesTest_Test.java" />
   </source>
   <source id="12077399789561873" name="TestClass" hash="777e8mkcn2xv8x1grvb8bvfvznxsgqy">
     <dep root="7319542056806110576" />
     <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
-    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TestClass.java" />
   </source>
   <source id="7319542056806110576" name="BaseTestClass" hash="29elvzw2p83g5lbfhrax8krl2j656kr">
