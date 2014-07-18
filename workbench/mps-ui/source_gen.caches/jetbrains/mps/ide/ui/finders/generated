@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7ud9wszu1zi096f5jf40xafmrm7igor">
+<dependencies version="2" modelHash="-8kp3ojsezx14u0nlk5msuxx3g9q7zw7">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model.scopes(MPS.Core/jetbrains.mps.ide.findusages.model.scopes@java_stub)" />
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" hash="-5guu3hjwnpnfynbad2ytblvm5de60j1" />
@@ -8,7 +8,10 @@
   <common hash="-ej6u8ichwj0787qfm0efgeyb0l5qaaf" dependsOnNodes="true">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="4132059805486520986" name="ModuleUsagesFinder" hash="-69ag0igrascruh75h215fa26uuca76n">
+  <source id="4132059805486520986" name="ModuleUsagesFinder" hash="dufscko9z223l9ms5r0sygktla3adft">
+    <dep model="r:00000000-0000-4000-0000-011c895902cd(jetbrains.mps.baseLanguage.generator.java.main@generator)" />
+    <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="ModuleUsagesFinder.java" />
   </source>
   <source id="4132059805486521473" name="ModelUsagesFinder" hash="9zatpc6u92w3vv1r8jjtv93umpyzin8">

@@ -19,6 +19,10 @@ import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
+import jetbrains.mps.util.annotation.ToRemove;
+import org.jetbrains.mps.openapi.module.SDependency;
+import org.jetbrains.mps.openapi.module.SDependencyScope;
+import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import jetbrains.mps.smodel.Generator;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -68,13 +72,23 @@ public class TemplateModuleInterpreted implements TemplateModule {
     return Collections.unmodifiableCollection(models);
   }
 
+  /**
+   * @deprecated Existence of API method that returns dependency information as two string with "/" delimiter could be hardly justified.
+   */
   @Override
+  @Deprecated
+  @ToRemove(version = 3.2)
   public Collection<String> getReferencedModules() {
-    List<Generator> referencedGenerators = generator.getReferencedGenerators();
-    List<String> result = new ArrayList<String>(referencedGenerators.size());
-    for (Generator referencedGenerator : referencedGenerators) {
-      String moduleId = referencedGenerator.getSourceLanguage().getModuleName() + "/" + referencedGenerator.getModuleName();
-      result.add(moduleId);
+    List<String> result = new ArrayList<String>(2);
+    for (SDependency dep : generator.getDeclaredDependencies()) {
+      if (dep.getScope() != SDependencyScope.EXTENDS) {
+        continue;
+      }
+      SModule referencedGenerator = dep.getTarget();
+      if (referencedGenerator instanceof Generator) {
+        String moduleId = ((Generator) referencedGenerator).getSourceLanguage().getModuleName() + "/" + referencedGenerator.getModuleName();
+        result.add(moduleId);
+      }
     }
     return result;
   }

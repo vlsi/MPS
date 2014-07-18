@@ -28,6 +28,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
 import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.annotation.ToRemove;
 import jetbrains.mps.vfs.IFile;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -185,6 +186,13 @@ public class Generator extends AbstractModule {
     return new ArrayList<SModuleReference>(myGeneratorDescriptor.getDepGenerators());
   }
 
+  /**
+   * @deprecated Vague name (at the moment, these are extended generators), unclear resolution scope (global at the moment).
+   * {@link #getDeclaredDependencies()} will replace this method once all dependencies are represented with SDependency,
+   * meanwhile use {@link #getReferencedGeneratorUIDs()}
+   */
+  @Deprecated
+  @ToRemove(version = 3.2)
   public List<Generator> getReferencedGenerators() {
     List<Generator> result = new ArrayList<Generator>();
     for (SModuleReference guid : getReferencedGeneratorUIDs()) {

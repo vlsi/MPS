@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.util.IStatus;
 import jetbrains.mps.util.Status;
 import org.apache.log4j.LogManager;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,9 +50,12 @@ public class DeleteGeneratorHelper {
 
   public IStatus canDelete(Generator generator) {
     if (mySafeDelete) {
+      final SModuleReference generatorModule = generator.getModuleReference();
       List<Generator> dependant = new ArrayList<Generator>();
+      // FIXME basically, need to find any module that depends on generatorModule, can live without Generator instances here
+      // Besides, would nice to benefit from a generic find usages code here
       for (Generator gen : ModuleRepositoryFacade.getInstance().getAllModules(Generator.class)) {
-        if (gen.getReferencedGenerators().contains(generator)) {
+        if (gen.getReferencedGeneratorUIDs().contains(generatorModule)) {
           dependant.add(gen);
         }
       }
