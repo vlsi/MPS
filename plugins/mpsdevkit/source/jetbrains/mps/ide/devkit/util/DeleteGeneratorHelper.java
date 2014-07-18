@@ -15,73 +15,77 @@
  */
 package jetbrains.mps.ide.devkit.util;
 
-import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.IStatus;
+import jetbrains.mps.util.Status;
 import org.apache.log4j.LogManager;
-import org.apache.log4j.Logger;
 
-import javax.swing.SwingUtilities;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DeleteGeneratorHelper {
-  private static final Logger LOG = LogManager.getLogger(DeleteGeneratorHelper.class);
+  private final Project myProject;
+  private boolean myDeleteFiles;
+  private boolean mySafeDelete;
 
-  public static void deleteGenerator(Project project, Language sourceLanguage, Generator generator, GeneratorDescriptor generatorDescriptor,
-      boolean safeDelete, boolean deleteFiles) {
-    if (safeDelete) {
-      safeDelete(project, sourceLanguage, generator, generatorDescriptor, deleteFiles);
-    } else {
-      delete(sourceLanguage, generatorDescriptor, deleteFiles);
-    }
+  public DeleteGeneratorHelper(Project project) {
+    myProject = project;
   }
 
-  public static void delete(Language sourceLanguage, GeneratorDescriptor generatorDescriptor, boolean deleteFiles) {
+  public DeleteGeneratorHelper safeDelete(boolean safeDelete) {
+    mySafeDelete = safeDelete;
+    return this;
+  }
+
+  public DeleteGeneratorHelper deleteFiles(boolean deleteFiles) {
+    myDeleteFiles = deleteFiles;
+    return this;
+  }
+
+  public IStatus canDelete(Generator generator) {
+    if (mySafeDelete) {
+      List<Generator> dependant = new ArrayList<Generator>();
+      for (Generator gen : ModuleRepositoryFacade.getInstance().getAllModules(Generator.class)) {
+        if (gen.getReferencedGenerators().contains(generator)) {
+          dependant.add(gen);
+        }
+      }
+      if (!dependant.isEmpty()) {
+        final StringBuilder report = new StringBuilder();
+        report.append("Can't delete generator ").append(generator.getModuleName()).append(".\n");
+        report.append("The following generators depend on it:\n\n");
+        for (Generator gen : dependant) {
+          report.append(gen.getModuleName()).append("\n");
+        }
+        return new Status.ERROR(report.toString());
+      }
+    }
+    return new Status.OK();
+  }
+
+  public IStatus delete(Generator generator) {
+    IStatus canDelete = canDelete(generator);
+    if (!canDelete.isOk()) {
+      return canDelete;
+    }
+    delete(generator.getSourceLanguage(), generator.getModuleDescriptor());
+    return new Status.OK();
+  }
+
+  private void delete(Language sourceLanguage, GeneratorDescriptor generatorDescriptor) {
     LanguageDescriptor languageDescriptor = sourceLanguage.getModuleDescriptor();
     languageDescriptor.getGenerators().remove(generatorDescriptor);
     sourceLanguage.setLanguageDescriptor(languageDescriptor, true);
     sourceLanguage.save();
-  }
-
-  private static void safeDelete(final Project project, Language sourceLanguage, final Generator generator, GeneratorDescriptor generatorDescriptor,
-      boolean deleteFiles) {
-    List<Generator> dependant = new ArrayList<Generator>();
-    for (Generator gen : (List<Generator>) ModuleRepositoryFacade.getInstance().getAllModules(Generator.class)) {
-      if (gen.getReferencedGenerators().contains(generator)) {
-        dependant.add(gen);
-      }
-    }
-    if (!dependant.isEmpty()) {
-      final StringBuilder report = new StringBuilder();
-      report.append("Can't delete generator ").append(generator.getModuleName()).append(".\n");
-      report.append("The following generators depend on it:\n\n");
-      for (Generator gen : dependant) {
-        report.append(gen.getModuleName()).append("\n");
-      }
-
-      SwingUtilities.invokeLater(new Runnable() {
-        @Override
-        public void run() {
-          Messages.showErrorDialog(ProjectHelper.toIdeaProject(project), report.toString(), "Deleting Generator");
-        }
-      });
-      return;
-    }
-
-    LanguageDescriptor languageDescriptor = sourceLanguage.getModuleDescriptor();
-    languageDescriptor.getGenerators().remove(generator.getModuleDescriptor());
-    sourceLanguage.setLanguageDescriptor(languageDescriptor, true);
-    if (deleteFiles) {
-      LOG.error("DELETE GENERATOR FILES - NOT IMPLEMENTED", new Throwable());
+    if (myDeleteFiles) {
+      LogManager.getLogger(DeleteGeneratorHelper.class).error("DELETE GENERATOR FILES - NOT IMPLEMENTED", new Throwable());
       //todo
     }
-    sourceLanguage.save();
   }
 }
 
