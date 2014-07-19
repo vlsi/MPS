@@ -19,68 +19,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertClassCreatorToAnonimous_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ConvertClassCreatorToAnonimous_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassCreator";
   }
-
   public String getPresentation() {
     return "ConvertClassCreatorToAnonimous";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ConvertClassCreatorToAnonimous_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) != null;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1214431614908");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertClassCreatorToAnonimous_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Convert to Anonymous";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode anonimousClassCreator = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
       SLinkOperations.setTarget(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "classifier", SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
@@ -91,7 +76,6 @@ public class ConvertClassCreatorToAnonimous_Intention implements IntentionFactor
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", true)).addElement(typeParm);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return ConvertClassCreatorToAnonimous_Intention.this;
     }

@@ -12,182 +12,145 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 
 public class NullLinkedListSequence<T> extends NullListSequence<T> implements ILinkedListSequence<T>, ILinkedList<T> {
   private static final NullLinkedListSequence<Object> INSTANCE = new NullLinkedListSequence<Object>();
-
   protected NullLinkedListSequence() {
   }
-
   @Override
   public void addFirst(T t) {
   }
-
   @Override
   public void addLast(T t) {
   }
-
   @Override
   public boolean offerFirst(T t) {
     return false;
   }
-
   @Override
   public boolean offerLast(T t) {
     return false;
   }
-
   @Override
   public T removeFirst() {
     return null;
   }
-
   @Override
   public T removeLast() {
     return null;
   }
-
   @Override
   public T addLastElement(T t) {
     return null;
   }
-
   @Override
   public T pollLast() {
     return null;
   }
-
   @Override
   public T removeFirstElement() {
     return null;
   }
-
   @Override
   public T getFirst() {
     return null;
   }
-
   @Override
   public T getLast() {
     return null;
   }
-
   @Override
   public Queue<T> toQueue() {
     return this;
   }
-
   @Override
   public T peekFirst() {
     return null;
   }
-
   @Override
   public T addFirstElement(T t) {
     return null;
   }
-
   @Override
   public T peekLast() {
     return null;
   }
-
   @Override
   public boolean removeFirstOccurrence(Object o) {
     return false;
   }
-
   @Override
   public T peekElement() {
     return null;
   }
-
   @Override
   public boolean removeLastOccurrence(Object o) {
     return false;
   }
-
   @Override
   public T pushElement(T t) {
     return null;
   }
-
   @Override
   public Deque<T> toDeque() {
     return this;
   }
-
   @Override
   public boolean offer(T t) {
     return false;
   }
-
   @Override
   public T remove() {
     return null;
   }
-
   @Override
   public T poll() {
     return null;
   }
-
   @Override
   public T element() {
     return null;
   }
-
   @Override
   public T peek() {
     return null;
   }
-
   @Override
   public void push(T t) {
   }
-
   @Override
   public T pop() {
     return null;
   }
-
   @Override
   public Iterator<T> descendingIterator() {
     return new NullSequence.EmptyIterator<T>();
   }
-
   @Override
   public T pollFirst() {
     return null;
   }
-
   @Override
   public T popElement() {
     return null;
   }
-
   @Override
   public ILinkedListSequence<T> asSynchronized() {
     return this;
   }
-
   @Override
   public ILinkedListSequence<T> asUnmodifiable() {
     return this;
   }
-
   @Override
   public ILinkedListSequence<T> removeWhere(_FunctionTypes._return_P1_E0<? extends Boolean, ? super T> tiWhereFilter) {
     return this;
   }
-
   @Override
   public ILinkedListSequence<T> addSequence(ISequence<? extends T> seq) {
     return this;
   }
-
   @Override
   public ILinkedListSequence<T> removeSequence(ISequence<? extends T> seq) {
     return this;
   }
-
   @SuppressWarnings(value = "unchecked")
   public static <U> NullLinkedListSequence<U> instance() {
     return (NullLinkedListSequence<U>) INSTANCE;

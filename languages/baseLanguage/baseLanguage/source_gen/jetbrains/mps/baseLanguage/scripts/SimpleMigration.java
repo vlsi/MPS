@@ -8,22 +8,18 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public abstract class SimpleMigration extends AbstractMigrationRefactoring {
   private final SNode applicableConcept;
-
   public SimpleMigration(SNode applicableConcept) {
     super(null);
     this.applicableConcept = applicableConcept;
   }
-
   @Override
   public boolean isShowAsIntention() {
     return false;
   }
-
   @Override
   public String getFqNameOfConceptToSearchInstances() {
     return BehaviorReflection.invokeVirtual(String.class, applicableConcept, "virtual_getFqName_1213877404258", new Object[]{});
   }
-
   @Override
   public String getAdditionalInfo() {
     return getName();

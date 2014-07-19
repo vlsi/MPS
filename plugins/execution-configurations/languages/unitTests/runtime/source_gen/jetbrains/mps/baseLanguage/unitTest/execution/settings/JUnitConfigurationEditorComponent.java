@@ -42,7 +42,6 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
   private SModule myModule;
   private SModel myModel;
 
-
   public JUnitConfigurationEditorComponent(Project project) {
     super(new GridBagLayout());
     final JBPanel kindPanel = new JBPanel();
@@ -149,8 +148,6 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     add(myLightExecCheckBox, LayoutUtil.createFieldConstraints(2));
   }
 
-
-
   private void setModuleValue(final String moduleName) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -158,8 +155,6 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
       }
     });
   }
-
-
 
   private void setModelValue(final String modelName) {
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -169,14 +164,10 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     });
   }
 
-
-
   public void attachJavaComponent(final JavaConfigurationEditorComponent javaEditorComponent) {
     myLightExecCheckBox.registerJavaComp(javaEditorComponent);
     myLightExecCheckBox.update(javaEditorComponent);
   }
-
-
 
   private void updatePanels() {
     Sequence.fromIterable(Sequence.fromArray(myPanels)).visitAll(new IVisitor<JComponent>() {
@@ -186,8 +177,6 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     });
     myPanels[myRunKind.ordinal()].setVisible(true);
   }
-
-
 
   public void apply(final JUnitSettings_Configuration configuration) {
     final List<ITestNodeWrapper> classes = ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
@@ -227,8 +216,6 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     configuration.setModule(module.value);
     configuration.setLightExec(myLightExecCheckBox.isSelected());
   }
-
-
 
   public void reset(final JUnitSettings_Configuration configuration) {
     if (configuration.getRunType() != null) {
@@ -297,8 +284,6 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
     updatePanels();
   }
 
-
-
   public void resetEditorModelWith(final String modelName) {
     setModelValue(modelName);
     if (myModel != null && myModel.getModule() != null) {
@@ -312,8 +297,6 @@ public class JUnitConfigurationEditorComponent extends JBPanel {
       });
     }
   }
-
-
 
   public void dispose() {
     myModuleChooser.dispose();

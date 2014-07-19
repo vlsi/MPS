@@ -16,15 +16,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class IfNotNullAll extends DataFlowConstructor {
   public IfNotNullAll() {
   }
-
   public boolean isApplicable(SNode node) {
     return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
   }
-
   public String getApplicableConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.IfStatement";
   }
-
   public void performActions(Program o, SNode node) {
     List<SNode> conditions = NullableUtil.getAndConditions(node);
     for (SNode condition : conditions) {

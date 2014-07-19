@@ -13,11 +13,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class MakeStaticFieldNotStatic_QuickFix extends QuickFix_Runtime {
   public MakeStaticFieldNotStatic_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Make '" + SPropertyOperations.getString(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), "name") + "' not static";
   }
-
   public void execute(SNode node) {
     SNode fieldDeclaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
     SPropertyOperations.set(fieldDeclaration, "name", SPropertyOperations.getString(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), "name"));

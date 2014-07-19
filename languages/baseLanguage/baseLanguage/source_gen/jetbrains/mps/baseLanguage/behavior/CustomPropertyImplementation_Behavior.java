@@ -7,9 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CustomPropertyImplementation_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static boolean virtual_hasSetter_1213877430658(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "setAccessor", true) != null);
-  };;
-;}
+  }
+}

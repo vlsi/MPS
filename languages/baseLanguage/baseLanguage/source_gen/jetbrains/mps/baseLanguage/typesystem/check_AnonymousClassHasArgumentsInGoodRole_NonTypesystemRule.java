@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_AnonymousClassHasArgumentsInGoodRole_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_AnonymousClassHasArgumentsInGoodRole_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode anonymousClass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "parameter", true)).isNotEmpty()) {
       {
@@ -33,18 +32,15 @@ public class check_AnonymousClassHasArgumentsInGoodRole_NonTypesystemRule extend
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.AnonymousClass";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

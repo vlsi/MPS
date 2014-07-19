@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class Arrays_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public Arrays_InequationReplacementRule() {
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
       {
@@ -35,7 +34,6 @@ public class Arrays_InequationReplacementRule extends AbstractInequationReplacem
       }
     }
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "componentType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType"))) {
@@ -45,29 +43,24 @@ public class Arrays_InequationReplacementRule extends AbstractInequationReplacem
     }
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayType";
   }

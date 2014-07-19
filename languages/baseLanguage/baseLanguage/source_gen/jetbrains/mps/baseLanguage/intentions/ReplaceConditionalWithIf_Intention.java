@@ -19,68 +19,53 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ReplaceConditionalWithIf_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ReplaceConditionalWithIf_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression";
   }
-
   public String getPresentation() {
     return "ReplaceConditionalWithIf";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ReplaceConditionalWithIf_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return (SNodeOperations.cast(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false), "jetbrains.mps.baseLanguage.structure.Statement") != null);
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199561300578");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ReplaceConditionalWithIf_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace Conditional with If";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       // variable initialization case - split or you'll loose this var from scope 
       SNode stmtNode = SNodeOperations.cast(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Statement", false, false), "jetbrains.mps.baseLanguage.structure.Statement");
@@ -115,7 +100,6 @@ public class ReplaceConditionalWithIf_Intention implements IntentionFactory {
       SLinkOperations.setTarget(ifNode, "ifFalseStatement", falseBlockStmt, true);
       SNodeOperations.replaceWithAnother(stmtNode, ifNode);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ReplaceConditionalWithIf_Intention.this;
     }

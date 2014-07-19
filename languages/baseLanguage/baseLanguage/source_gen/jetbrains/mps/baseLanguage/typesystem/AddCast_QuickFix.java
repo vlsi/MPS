@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class AddCast_QuickFix extends QuickFix_Runtime {
   public AddCast_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     String text = "expression";
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression")) {
@@ -26,7 +25,6 @@ public class AddCast_QuickFix extends QuickFix_Runtime {
     }
     return "Cast " + text + " to " + ((SNodeOperations.isInstanceOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0]), "jetbrains.mps.baseLanguage.structure.Type") ? ((SNode) AddCast_QuickFix.this.getField("desiredType")[0]) : BehaviorReflection.invokeVirtual(String.class, TypeChecker.getInstance().getTypeOf(((SNode) AddCast_QuickFix.this.getField("desiredType")[0])), "virtual_getPresentation_1213877396640", new Object[]{})));
   }
-
   public void execute(SNode node) {
     if (!(SNodeOperations.isInstanceOf(((SNode) AddCast_QuickFix.this.getField("expression")[0]), "jetbrains.mps.baseLanguage.structure.Expression"))) {
       return;

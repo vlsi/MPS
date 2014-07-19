@@ -18,7 +18,6 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_q0ga01_a(editorContext, node);
   }
-
   private EditorCell createComponent_q0ga01_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.lang.core.editor.alias");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);
@@ -33,7 +32,6 @@ public class ConceptFunctionParameter_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private static boolean _StyleParameter_QueryFunction_q0ga01_a1a(EditorContext editorContext, SNode node) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.getConceptDeclaration(node), "virtual_isDeprecated_1224609060727", new Object[]{});
   }

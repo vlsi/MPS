@@ -32,7 +32,6 @@ import org.apache.log4j.LogManager;
 public class JUnitSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
   private JUnitSettings_Configuration.MyState myState = new JUnitSettings_Configuration.MyState();
-
   public void checkConfiguration() throws RuntimeConfigurationException {
     if (this.getRunType() == null) {
       throw new RuntimeConfigurationException("Type of test not selected.");
@@ -48,12 +47,10 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       }
     }
   }
-
   @Override
   public void writeExternal(Element element) throws WriteExternalException {
     element.addContent(XmlSerializer.serialize(myState));
   }
-
   @Override
   public void readExternal(Element element) throws InvalidDataException {
     if (element == null) {
@@ -61,55 +58,42 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     }
     XmlSerializer.deserializeInto(myState, (Element) element.getChildren().get(0));
   }
-
   public String getModel() {
     return myState.myModel;
   }
-
   public String getModule() {
     return myState.myModule;
   }
-
   public boolean getLightExec() {
     return myState.myLightExec;
   }
-
   public ClonableList<String> getTestCases() {
     return myState.myTestCases;
   }
-
   public ClonableList<String> getTestMethods() {
     return myState.myTestMethods;
   }
-
   public JUnitRunTypes getRunType() {
     return myState.myRunType;
   }
-
   public void setModel(String value) {
     myState.myModel = value;
   }
-
   public void setModule(String value) {
     myState.myModule = value;
   }
-
   public void setLightExec(boolean value) {
     myState.myLightExec = value;
   }
-
   public void setTestCases(ClonableList<String> value) {
     myState.myTestCases = value;
   }
-
   public void setTestMethods(ClonableList<String> value) {
     myState.myTestMethods = value;
   }
-
   public void setRunType(JUnitRunTypes value) {
     myState.myRunType = value;
   }
-
   public boolean canLightExecute(Iterable<ITestNodeWrapper> testNodes) {
     if (this.getLightExec() && !(JUnitLightExecutor.isLightRunInProgress())) {
       if (new LightExecutionFilter().accept(testNodes)) {
@@ -118,7 +102,6 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     }
     return false;
   }
-
   public List<ITestNodeWrapper> getTests(final Project project) {
     if (this.getRunType() == null) {
       return null;
@@ -130,7 +113,6 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
 
     return Sequence.fromIterable(testNodes).toListSequence();
   }
-
   public boolean hasTests(final Project project) {
     final boolean[] hasTests = {true};
     final JUnitSettings_Configuration settings = this;
@@ -143,14 +125,12 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     }
     return hasTests[0];
   }
-
   public List<ITestNodeWrapper> getTestsUnderProgress(final Project project) {
     if (this.getRunType() == null) {
       return ListSequence.fromList(new ArrayList<ITestNodeWrapper>());
     }
     return Sequence.fromIterable(this.getRunType().collect(this, project, true)).toListSequence();
   }
-
   public List<SNodeReference> getTestsToMake(final Project project) {
     final List<ITestNodeWrapper>[] stuffToTest = (List<ITestNodeWrapper>[]) new List[1];
     ApplicationManager.getApplication().invokeAndWait(new Runnable() {
@@ -165,7 +145,6 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       }
     }).toListSequence();
   }
-
   @Override
   public JUnitSettings_Configuration clone() {
     JUnitSettings_Configuration clone = null;
@@ -180,7 +159,6 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     }
     return clone;
   }
-
   public class MyState {
     public String myModel;
     public String myModule;
@@ -188,10 +166,8 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
     public ClonableList<String> myTestCases = new ClonableList<String>();
     public ClonableList<String> myTestMethods = new ClonableList<String>();
     public JUnitRunTypes myRunType = JUnitRunTypes.PROJECT;
-
     public MyState() {
     }
-
     @Override
     public Object clone() throws CloneNotSupportedException {
       JUnitSettings_Configuration.MyState state = new JUnitSettings_Configuration.MyState();
@@ -208,31 +184,24 @@ public class JUnitSettings_Configuration implements IPersistentConfiguration, IT
       return state;
     }
   }
-
   public JUnitSettings_Configuration(com.intellij.openapi.project.Project project) {
     myProject = project;
   }
-
   private final com.intellij.openapi.project.Project myProject;
   private SettingsEditorEx<JUnitSettings_Configuration> myEditorEx;
-
   public JUnitSettings_Configuration createCloneTemplate() {
     return new JUnitSettings_Configuration(myProject);
   }
-
   public JUnitSettings_Configuration_Editor getEditor() {
     return new JUnitSettings_Configuration_Editor(myProject);
   }
-
   public SettingsEditorEx<JUnitSettings_Configuration> getEditorEx() {
     if (myEditorEx == null) {
       myEditorEx = getEditor();
     }
     return myEditorEx;
   }
-
   protected static Logger LOG = LogManager.getLogger(JUnitSettings_Configuration.class);
-
   private static boolean eq_jtq3ac_a0c0b0a0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

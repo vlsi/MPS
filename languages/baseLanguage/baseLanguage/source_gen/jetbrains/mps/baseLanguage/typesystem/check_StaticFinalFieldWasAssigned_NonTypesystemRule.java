@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_StaticFinalFieldWasAssigned_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_StaticFinalFieldWasAssigned_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode field, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SPropertyOperations.getBoolean(field, "isFinal"))) {
       return;
@@ -50,18 +49,15 @@ public class check_StaticFinalFieldWasAssigned_NonTypesystemRule extends Abstrac
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(field, "Variable '" + SPropertyOperations.getString(field, "name") + "' might not have been initialized", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "843236768047680817", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

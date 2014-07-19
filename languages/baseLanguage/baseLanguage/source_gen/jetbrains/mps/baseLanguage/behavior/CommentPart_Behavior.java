@@ -6,9 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class CommentPart_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static boolean virtual_isToDo_7236590470026152831(SNode thisNode) {
     return false;
-  };;
-;}
+  }
+}

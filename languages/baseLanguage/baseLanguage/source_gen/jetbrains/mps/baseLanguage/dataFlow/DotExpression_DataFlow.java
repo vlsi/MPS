@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class DotExpression_DataFlow extends DataFlowBuilder {
   public DotExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "operand", true));
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "operation", true));

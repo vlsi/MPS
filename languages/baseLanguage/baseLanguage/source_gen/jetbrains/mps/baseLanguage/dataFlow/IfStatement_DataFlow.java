@@ -14,7 +14,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 public class IfStatement_DataFlow extends DataFlowBuilder {
   public IfStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "condition", true));
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {

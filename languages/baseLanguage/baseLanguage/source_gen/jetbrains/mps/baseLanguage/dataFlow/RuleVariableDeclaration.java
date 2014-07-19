@@ -15,15 +15,12 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 public class RuleVariableDeclaration extends DataFlowConstructor {
   public RuleVariableDeclaration() {
   }
-
   public boolean isApplicable(SNode node) {
     return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
   }
-
   public String getApplicableConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
   }
-
   public void performActions(Program o, SNode node) {
     if (SLinkOperations.getTargets(node, "annotation", true) != null) {
       for (SNode annotation : SLinkOperations.getTargets(node, "annotation", true)) {

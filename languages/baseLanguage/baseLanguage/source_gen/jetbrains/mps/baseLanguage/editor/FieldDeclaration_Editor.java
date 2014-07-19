@@ -31,11 +31,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2sbeba_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2sbeba_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_2sbeba_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2sbeba_a");
@@ -60,22 +58,18 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_2sbeba_j0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_2sbeba_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._DeprecatedPart");
     return editorCell;
   }
-
   private EditorCell createComponent_2sbeba_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.HasAnnotation_AnnotationComponent");
     return editorCell;
   }
-
   private EditorCell createComponent_2sbeba_c0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor._Component_Visibility");
     return editorCell;
   }
-
   private EditorCell createConstant_2sbeba_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "final");
     editorCell.setCellId("Constant_2sbeba_d0");
@@ -86,11 +80,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_2sbeba_a3a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isFinal");
   }
-
   private EditorCell createConstant_2sbeba_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transient");
     editorCell.setCellId("Constant_2sbeba_e0");
@@ -101,11 +93,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_2sbeba_a4a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isTransient");
   }
-
   private EditorCell createConstant_2sbeba_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile");
     editorCell.setCellId("Constant_2sbeba_f0");
@@ -116,11 +106,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_2sbeba_a5a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isVolatile");
   }
-
   private EditorCell createRefNode_2sbeba_g0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("type");
@@ -140,7 +128,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_2sbeba_h0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.VariableDeclaration_NameCellComponent");
     Style style = new StyleImpl();
@@ -148,7 +135,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private EditorCell createCollection_2sbeba_i0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2sbeba_i0");
@@ -159,11 +145,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNode_2sbeba_b8a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_2sbeba_a8a(SNode node, EditorContext editorContext) {
     return SLinkOperations.getTarget(node, "initializer", true) != null;
   }
-
   private EditorCell createConstant_2sbeba_a8a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "=");
     editorCell.setCellId("Constant_2sbeba_a8a");
@@ -173,7 +157,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_2sbeba_b8a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("initializer");
@@ -196,7 +179,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_2sbeba_j0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_2sbeba_j0");
@@ -208,7 +190,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_2sbeba_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2sbeba_a_0");
@@ -221,7 +202,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_2sbeba_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_2sbeba_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "annotations:");
     editorCell.setCellId("Constant_2sbeba_a0");
@@ -231,7 +211,6 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_2sbeba_b0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new FieldDeclaration_Editor.annotationListHandler_2sbeba_b0(node, "annotation", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -242,30 +221,25 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class annotationListHandler_2sbeba_b0 extends RefNodeListHandler {
     public annotationListHandler_2sbeba_b0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -279,14 +253,12 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
       }
     }
   }
-
   private EditorCell createConstant_2sbeba_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "volatile");
     editorCell.setCellId("Constant_2sbeba_c0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_2sbeba_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isVolatile");
@@ -307,14 +279,12 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_2sbeba_e0_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transient");
     editorCell.setCellId("Constant_2sbeba_e0_0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_2sbeba_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("isTransient");

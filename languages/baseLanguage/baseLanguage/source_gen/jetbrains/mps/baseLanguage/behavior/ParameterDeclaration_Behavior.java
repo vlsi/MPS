@@ -13,14 +13,12 @@ import jetbrains.mps.baseLanguage.util.CodeStyleSettingsRegistry;
 
 public class ParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static SNode virtual_createReference_1213877517482(SNode thisNode) {
     SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(ref, "variableDeclaration", thisNode, false);
     return ref;
-  };;
-;
+  }
   public static boolean virtual_isCanBeUnused_1223985713603(SNode thisNode) {
     SNode method = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
 
@@ -28,24 +26,21 @@ public class ParameterDeclaration_Behavior {
       return true;
     }
     return false;
-  };;
-;
+  }
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
       return "";
     }
     return (settings.getParameterSuffix() == null ? "" : settings.getParameterSuffix());
-  };;
-;
+  }
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
       return "";
     }
     return (settings.getParameterPrefix() == null ? "" : settings.getParameterPrefix());
-  };;
-;
+  }
   public static boolean call_hasAnnotation_5499146221535981742(SNode thisNode, SNode annotation) {
     for (SNode annotationInstance : SLinkOperations.getTargets(thisNode, "annotation", true)) {
       if (SLinkOperations.getTarget(annotationInstance, "annotation", false) == annotation) {
@@ -53,9 +48,8 @@ public class ParameterDeclaration_Behavior {
       }
     }
     return false;
-  };;
-;
+  }
   public static SNode virtual_getValue_1224857430232(SNode thisNode) {
     throw new UnsupportedOperationException();
-  };;
-;}
+  }
+}

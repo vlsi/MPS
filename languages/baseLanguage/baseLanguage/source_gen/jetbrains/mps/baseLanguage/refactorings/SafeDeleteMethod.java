@@ -12,12 +12,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class SafeDeleteMethod {
   private SNode myMethod;
 
-
   public SafeDeleteMethod(SNode method) {
     myMethod = method;
   }
-
-
 
   public void doRefactor() {
     for (SNode method : ListSequence.fromList(MethodRefactoringUtils.findOverridingMethods(myMethod, new EmptyProgressMonitor()))) {
@@ -28,8 +25,6 @@ public class SafeDeleteMethod {
     }
     SNodeOperations.deleteNode(myMethod);
   }
-
-
 
   private SNode getNewOverriddenMethod(SNode methodDecl) {
     return SLinkOperations.getTarget(methodDecl, "overriddenMethod", false);

@@ -10,17 +10,14 @@ import org.jetbrains.mps.openapi.module.SModule;
 public class FloatingPointFloatConstant_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public FloatingPointFloatConstant_BehaviorDescriptor() {
   }
-
   public boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
     return FloatingPointFloatConstant_Behavior.virtual_constant_1262430001741498050(thisConcept);
-  };;
-;
+  }
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return FloatingPointFloatConstant_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
-  };;
-;
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant";
-  };;
-;}
+  }
+}

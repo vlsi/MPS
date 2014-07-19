@@ -9,21 +9,18 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class IContainsStatementList_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static SNode call_getStatementList_1237545932619(SNode thisNode) {
     return SNodeOperations.cast(ListSequence.fromList(SNodeOperations.getChildren(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StatementList");
-      };;
-;    }).first(), "jetbrains.mps.baseLanguage.structure.StatementList");
-  };;
-;
+      }
+    }).first(), "jetbrains.mps.baseLanguage.structure.StatementList");
+  }
   public static boolean virtual_isStatementListCompactable_1237546012856(SNode thisNode) {
     return false;
-  };;
-;
+  }
   public static boolean virtual_isStatementListCompact_1237546693016(SNode thisNode) {
     return StatementList_Behavior.call_isOneLiner_1237538811451(IContainsStatementList_Behavior.call_getStatementList_1237545932619(thisNode));
-  };;
-;}
+  }
+}

@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class UnknownLocalCall_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static _FunctionTypes._return_P0_E0<? extends SNode> virtual_evaluateSubst_8136348407761606764(SNode thisNode) {
     return ResolveUnknownUtil.resolveLocalCall(thisNode);
-  };;
-;}
+  }
+}

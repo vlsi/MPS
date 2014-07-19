@@ -17,25 +17,20 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class AllMethodUsages_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.AllMethodUsages_Finder");
-
   public AllMethodUsages_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "All Method Usages";
   }
-
   @Override
   public String getLongDescription() {
     return "Usages of this method, overriding methods and implementing methods";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   }
-
   @Override
   public boolean isApplicable(SNode node) {
     if (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Interface", false, false) == null) {
@@ -46,7 +41,6 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
     }
     return true;
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     try {
@@ -81,7 +75,6 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     List<SNode> methodDeclarations = new ArrayList<SNode>();
@@ -98,7 +91,6 @@ public class AllMethodUsages_Finder extends GeneratedFinder {
       ListSequence.fromList(_results).addElement(methodDeclaration);
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Overriden And Implemented methods";

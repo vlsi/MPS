@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class MatchVisibility_QuickFix extends QuickFix_Runtime {
   public MatchVisibility_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Set visibility to " + (((((SNode) MatchVisibility_QuickFix.this.getField("visibility")[0]) == null) ? "Paclage-local" : ((SNode) MatchVisibility_QuickFix.this.getField("visibility")[0])));
   }
-
   public void execute(SNode node) {
     SLinkOperations.setTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "visibility", SNodeOperations.copyNode(((SNode) MatchVisibility_QuickFix.this.getField("visibility")[0])), true);
   }

@@ -21,7 +21,6 @@ public class CustomSetterPropertyImplementation_Editor extends DefaultNodeEditor
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_c9bxgq_a(editorContext, node);
   }
-
   private EditorCell createCollection_c9bxgq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_c9bxgq_a");
@@ -35,7 +34,6 @@ public class CustomSetterPropertyImplementation_Editor extends DefaultNodeEditor
     }
     return editorCell;
   }
-
   private EditorCell createRefNode_c9bxgq_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("getAccessor");
@@ -59,7 +57,6 @@ public class CustomSetterPropertyImplementation_Editor extends DefaultNodeEditor
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_c9bxgq_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_c9bxgq_b0");
@@ -72,11 +69,9 @@ public class CustomSetterPropertyImplementation_Editor extends DefaultNodeEditor
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private static boolean renderingCondition_c9bxgq_a1a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "setAccessor", true) == null);
   }
-
   private EditorCell createRefNode_c9bxgq_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("setAccessor");
@@ -100,7 +95,6 @@ public class CustomSetterPropertyImplementation_Editor extends DefaultNodeEditor
     } else
     return editorCell;
   }
-
   private static boolean renderingCondition_c9bxgq_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "setAccessor", true) != null);
   }

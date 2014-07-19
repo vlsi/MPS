@@ -7,8 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class RemarkStatement_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static boolean call_isTodo_1213877427548(SNode thisNode) {
     String v = SPropertyOperations.getString(thisNode, "value");
     boolean isToDo = false;
@@ -16,5 +15,5 @@ public class RemarkStatement_Behavior {
       isToDo = v.startsWith("TODO:") || v.startsWith("FIX:") || v.startsWith("todo:");
     }
     return isToDo;
-  };;
-;}
+  }
+}

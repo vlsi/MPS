@@ -23,32 +23,27 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
   public Interface_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.Interface");
   }
-
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
-  };;
-;
+  }
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseScopeProvider() {
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_y7fug_a0a0a0a0a2;
-      };;
-;
+      }
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         return ClassifierScopes.getVisibleInterfacesScope(_context.getContextNode());
-      };;
-;    };
-  };;
-;
+      }
+    };
+  }
   @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
-  };;
-;
+  }
   @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
@@ -58,16 +53,14 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
     }
 
     return result;
-  };;
-;
+  }
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
       SNode memberConcept = (SNode) childConcept;
       return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(memberConcept)), "virtual_canBeInterfaceMember_2949815620938109095", new Object[]{});
     }
     return true;
-  };;
-;
+  }
   private static SNodePointer breakingNode_y7fug_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137248");
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2949815620934480594");
 }

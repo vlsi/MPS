@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class MakeClassAbstract_QuickFix extends QuickFix_Runtime {
   public MakeClassAbstract_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Make " + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "name") + " abstract";
   }
-
   public void execute(SNode node) {
     SPropertyOperations.set(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass", "" + (true));
   }

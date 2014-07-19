@@ -16,10 +16,8 @@ public abstract class Sequence<T> extends AbstractSequence<T> implements ISequen
   public static final boolean NULL_WHEN_EMPTY = true;
   public static final boolean NULL_ARRAY_IS_SINGLETON = true;
   protected static final Object[] ARRAY_WITH_NULL = new Object[]{null};
-
   public Sequence() {
   }
-
   @Override
   public String toString() {
     Iterable<T> iterable = toIterable();
@@ -35,16 +33,13 @@ public abstract class Sequence<T> extends AbstractSequence<T> implements ISequen
     sb.append("]");
     return sb.toString();
   }
-
   @SuppressWarnings(value = "unchecked")
   protected static <U> U[] nullSingletonArray() {
     return (U[]) ARRAY_WITH_NULL;
   }
-
   public static <U> ISequence<U> emptySequence() {
     return NullSetSequence.instance();
   }
-
   public static <U> ISequence<U> fromArray(U... array) {
     if (USE_NULL_SEQUENCE) {
       if (array == null) {
@@ -53,11 +48,9 @@ public abstract class Sequence<T> extends AbstractSequence<T> implements ISequen
     }
     return new BasicSequence<U>(Arrays.asList(array));
   }
-
   public static <U> ISequence<U> fromClosure(@AdapterClass(value = "ISequenceClosure") _FunctionTypes._return_P0_E0<? extends Iterable<U>> cls) {
     return Sequence.fromIterable(cls.invoke());
   }
-
   public static <U> ISequence<U> fromIterable(Iterable<U> iterable) {
     if (USE_NULL_SEQUENCE) {
       if (iterable == null) {
@@ -69,7 +62,6 @@ public abstract class Sequence<T> extends AbstractSequence<T> implements ISequen
     }
     return new BasicSequence<U>(iterable);
   }
-
   public static <U> ISequence<U> singleton(U value) {
     if (IGNORE_NULL_VALUES) {
       if (value == null) {

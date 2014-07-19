@@ -17,22 +17,17 @@ public class DotExpression_Actions_DeleteOperation {
     editorCell.setAction(CellActionType.DELETE, new DotExpression_Actions_DeleteOperation.DotExpression_Actions_DeleteOperation_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new DotExpression_Actions_DeleteOperation.DotExpression_Actions_DeleteOperation_BACKSPACE(node));
   }
-
   public static class DotExpression_Actions_DeleteOperation_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DotExpression_Actions_DeleteOperation_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Delete operation";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "operation", true)), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractOperation")))) {
         SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "operand", true));
@@ -41,22 +36,17 @@ public class DotExpression_Actions_DeleteOperation {
       }
     }
   }
-
   public static class DotExpression_Actions_DeleteOperation_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DotExpression_Actions_DeleteOperation_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Delete operation";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "operation", true)), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractOperation")))) {
         SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "operand", true));

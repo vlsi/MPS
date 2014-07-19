@@ -10,11 +10,9 @@ import jetbrains.mps.baseLanguage.behavior.ParenthesisUtil;
 public class BinaryExpressionPriority_QuickFix extends QuickFix_Runtime {
   public BinaryExpressionPriority_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Fix syntax tree operation priorities.";
   }
-
   public void execute(SNode node) {
     if (SLinkOperations.getTarget(((SNode) BinaryExpressionPriority_QuickFix.this.getField("parent")[0]), "leftExpression", true) == ((SNode) BinaryExpressionPriority_QuickFix.this.getField("child")[0])) {
       ParenthesisUtil.rotateTree(((SNode) BinaryExpressionPriority_QuickFix.this.getField("child")[0]), ((SNode) BinaryExpressionPriority_QuickFix.this.getField("parent")[0]), false);

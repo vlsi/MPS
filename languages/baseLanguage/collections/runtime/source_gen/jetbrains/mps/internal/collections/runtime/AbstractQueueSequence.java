@@ -11,45 +11,36 @@ import java.util.Collection;
 public abstract class AbstractQueueSequence<T> extends AbstractCollectionSequence<T> implements Queue<T>, IQueueSequence<T>, Serializable {
   private static final long serialVersionUID = 7547609132841411843L;
   private Queue<T> queue;
-
   protected AbstractQueueSequence(Queue<T> queue) {
     setQueue(queue);
   }
-
   protected AbstractQueueSequence() {
   }
-
   @Override
   public T element() {
     return getQueue().element();
   }
-
   @Override
   public boolean offer(T o) {
     return getQueue().offer(o);
   }
-
   @Override
   public T peek() {
     return getQueue().peek();
   }
-
   @Override
   public T poll() {
     return getQueue().poll();
   }
-
   @Override
   public T remove() {
     return getQueue().remove();
   }
-
   @Override
   public T addLastElement(T t) {
     getQueue().add(t);
     return t;
   }
-
   @Override
   public T first() {
     if (Sequence.NULL_WHEN_EMPTY) {
@@ -57,7 +48,6 @@ public abstract class AbstractQueueSequence<T> extends AbstractCollectionSequenc
     }
     return getQueue().element();
   }
-
   @Override
   public T removeFirstElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
@@ -65,49 +55,39 @@ public abstract class AbstractQueueSequence<T> extends AbstractCollectionSequenc
     }
     return getQueue().remove();
   }
-
   @Override
   public IQueueSequence<T> addSequence(ISequence<? extends T> seq) {
     return (IQueueSequence<T>) super.addSequence(seq);
   }
-
   @Override
   public IQueueSequence<T> removeSequence(ISequence<? extends T> seq) {
     return (IQueueSequence<T>) super.removeSequence(seq);
   }
-
   @Override
   public IQueueSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return (IQueueSequence<T>) super.removeWhere(filter);
   }
-
   @Override
   public IQueueSequence<T> asUnmodifiable() {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public IQueueSequence<T> asSynchronized() {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public Queue<T> toQueue() {
     return this;
   }
-
   @Override
   protected Collection<T> getCollection() {
     return queue;
   }
-
   protected Queue<T> getQueue() {
     return queue;
   }
-
   private void setQueue(Queue<T> queue) {
     this.queue = queue;
   }
-
 
 }

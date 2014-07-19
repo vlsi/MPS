@@ -21,10 +21,8 @@ import jetbrains.mps.smodel.LanguageAspect;
 
 public class MembersMigrationUtil {
   /*package*/ static final Map<SNode, SNode> OLD_LINK_TO_NEW_BEHAVIOR_METHOD = MapSequence.fromMap(new HashMap<SNode, SNode>());
-
   private MembersMigrationUtil() {
   }
-
   private static void putMapping(String oldLinkName, String newMethodName) {
     SNode oldLink = findOldLinkDeclaration(oldLinkName);
     SNode newMethod = findNewBehaviorMethod(newMethodName);
@@ -33,7 +31,6 @@ public class MembersMigrationUtil {
     }
     MapSequence.fromMap(OLD_LINK_TO_NEW_BEHAVIOR_METHOD).put(oldLink, newMethod);
   }
-
   private static SNode findOldLinkDeclaration(final String linkName) {
     List<SNode> links = ListSequence.fromListWithValues(new ArrayList<SNode>(), Sequence.fromIterable(classifierConcepts()).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
@@ -46,7 +43,6 @@ public class MembersMigrationUtil {
     }));
     return (ListSequence.fromList(links).count() == 1 ? ListSequence.fromList(links).getElement(0) : null);
   }
-
   private static SNode findNewBehaviorMethod(final String methodName) {
     List<SNode> methods = ListSequence.fromListWithValues(new ArrayList<SNode>(), Sequence.fromIterable(classifierConcepts()).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
@@ -63,11 +59,9 @@ public class MembersMigrationUtil {
     }));
     return (ListSequence.fromList(methods).count() == 1 ? ListSequence.fromList(methods).getElement(0) : null);
   }
-
   private static Iterable<SNode> classifierConcepts() {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1107461130800"), SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068390468198"));
   }
-
   static {
     // todo: node<> in static fields is not ok - think about read/write actions 
     // Classifier 

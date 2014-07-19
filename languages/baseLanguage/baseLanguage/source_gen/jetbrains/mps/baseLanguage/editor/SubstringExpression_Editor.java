@@ -19,7 +19,6 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_vmnbe9_a(editorContext, node);
   }
-
   private EditorCell createCollection_vmnbe9_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vmnbe9_a");
@@ -32,7 +31,6 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_vmnbe9_f0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_vmnbe9_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("operand");
@@ -52,7 +50,6 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_vmnbe9_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "[");
     editorCell.setCellId("Constant_vmnbe9_b0");
@@ -62,7 +59,6 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_vmnbe9_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("startIndex");
@@ -82,14 +78,12 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_vmnbe9_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
     editorCell.setCellId("Constant_vmnbe9_d0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_vmnbe9_e0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("endIndex");
@@ -109,7 +103,6 @@ public class SubstringExpression_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_vmnbe9_f0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "]");
     editorCell.setCellId("Constant_vmnbe9_f0");

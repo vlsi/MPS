@@ -13,26 +13,21 @@ import jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior;
 public class Statement_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ILocalVariableElement_BehaviorDescriptor, TraceableConcept_BehaviorDescriptor, ICanSuppressErrors_BehaviorDescriptor {
   public Statement_BehaviorDescriptor() {
   }
-
   public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     Statement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
-  };;
-;
+  }
   public SNode virtual_getLocalVariableDeclaration_1238803857389(SNode thisNode) {
     return ILocalVariableElement_Behavior.virtual_getLocalVariableDeclaration_1238803857389(thisNode);
-  };;
-;
+  }
   @Nullable
   public String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
     return TraceableConcept_Behavior.virtual_getTraceableProperty_5067982036267369901(thisNode);
-  };;
-;
+  }
   public boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     return Statement_Behavior.virtual_isGuardClauseStatement_1237547327995(thisNode);
-  };;
-;
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.Statement";
-  };;
-;}
+  }
+}

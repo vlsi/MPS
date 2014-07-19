@@ -11,11 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class AddExceptionToMethodSignature_QuickFix extends QuickFix_Runtime {
   public AddExceptionToMethodSignature_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Add Exception To Method Signature";
   }
-
   public void execute(SNode node) {
     if (!(SNodeOperations.isInstanceOf(((SNode) AddExceptionToMethodSignature_QuickFix.this.getField("throwableType")[0]), "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       return;

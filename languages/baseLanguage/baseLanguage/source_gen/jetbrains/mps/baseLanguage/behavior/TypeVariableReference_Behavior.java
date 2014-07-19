@@ -23,8 +23,7 @@ import jetbrains.mps.smodel.SReference;
 
 public class TypeVariableReference_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode decl = SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false);
     if (ListSequence.fromList(SNodeOperations.getAncestors(thisNode, null, false)).contains(decl)) {
@@ -34,15 +33,13 @@ public class TypeVariableReference_Behavior {
       return "@" + BehaviorReflection.invokeVirtual(String.class, decl, "virtual_getPresentation_1213877396640", new Object[]{});
     }
     return "?typevar_ref?";
-  };;
-;
+  }
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true) != null)) {
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true), "virtual_getErasure_702942408396803226", new Object[]{});
     }
     return _quotation_createNode_6i211a_a1a1();
-  };;
-;
+  }
   public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypeVariableReferences) {
     SNode bound = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true);
     if ((bound != null) && !(SetSequence.fromSet(visitedTypeVariableReferences).contains(thisNode))) {
@@ -55,8 +52,7 @@ public class TypeVariableReference_Behavior {
       return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null);
     }
 
-  };;
-;
+  }
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false))) {
       return;
@@ -66,15 +62,14 @@ public class TypeVariableReference_Behavior {
     } else {
       BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
     }
-  };;
-;
+  }
   public static SNode virtual_expandGenerics_4122274986016348613(final SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false))) {
       if (ListSequence.fromList(expTrace).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return MatchingUtil.matchNodes(thisNode, it);
-        };;
-;      })) {
+        }
+      })) {
         return thisNode;
       }
       SNode exp = MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false));
@@ -85,8 +80,7 @@ public class TypeVariableReference_Behavior {
       return exp;
     }
     return thisNode;
-  };;
-;
+  }
   public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
     SNode myResolvedType = thisNode;
     SNode resolvedT = t;
@@ -114,13 +108,12 @@ public class TypeVariableReference_Behavior {
       return supersetOf;
     }
 
-  };;
-;
+  }
   private static SNode _quotation_createNode_6i211a_a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
-  };;
-;}
+  }
+}

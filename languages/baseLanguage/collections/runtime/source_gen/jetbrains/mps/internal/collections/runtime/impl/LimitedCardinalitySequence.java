@@ -10,7 +10,6 @@ import java.util.NoSuchElementException;
 public class LimitedCardinalitySequence<U> extends Sequence<U> {
   private final AbstractSequence<U> input;
   private final int maxCardinality;
-
   public LimitedCardinalitySequence(AbstractSequence<U> input, int maxCardinality) {
     if (input == null) {
       throw new NullPointerException();
@@ -18,21 +17,17 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
     this.input = input;
     this.maxCardinality = maxCardinality;
   }
-
   @Override
   public Iterator<U> iterator() {
     return new LimitedCardinalitySequence.LimitedCardinalityIterator();
   }
-
   private class LimitedCardinalityIterator implements Iterator<U> {
     private Iterator<U> inputIt;
     private CardinalityMap<U> cardMap;
     private U next;
     private HasNextState hasNext = HasNextState.UNKNOWN;
-
     public LimitedCardinalityIterator() {
     }
-
     @Override
     public boolean hasNext() {
       if (inputIt == null) {
@@ -43,7 +38,6 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
       }
       return hasNext.hasNext();
     }
-
     @Override
     public U next() {
       if (inputIt == null) {
@@ -57,12 +51,10 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
       }
       return clearNext();
     }
-
     @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }
-
     private void moveToNext() {
       next = null;
       hasNext = HasNextState.AT_END;
@@ -76,14 +68,12 @@ public class LimitedCardinalitySequence<U> extends Sequence<U> {
       }
       cardMap.clear();
     }
-
     private U clearNext() {
       U tmp = next;
       next = null;
       hasNext = HasNextState.UNKNOWN;
       return tmp;
     }
-
     private void init() {
       inputIt = input.iterator();
       cardMap = new CardinalityMap<U>();

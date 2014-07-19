@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class BLBottomType_BehaviorDescriptor extends Type_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public BLBottomType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.BLBottomType";
-  };;
-;}
+  }
+}

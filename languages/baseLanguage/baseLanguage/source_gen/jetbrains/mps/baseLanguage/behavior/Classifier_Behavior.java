@@ -49,39 +49,34 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 public class Classifier_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.setNewChild(thisNode, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
-  };;
-;
+  }
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
     if ((SNodeOperations.getParent(thisNode) != null) && Classifier_Behavior.call_isStatic_521412098689998668(thisNode)) {
       markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     }
     return markIcons;
-  };;
-;
+  }
   @Deprecated
   public static Scope virtual_getVisibleMembers_8083692786967356611(SNode thisNode, SNode contextNode, SNode kind) {
     return MemberScopes.visibleClassifierMembers(thisNode, kind, contextNode);
-  };;
-;
+  }
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
     SNode parentClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (parentClassifier != null) {
       return BehaviorReflection.invokeVirtual(String.class, parentClassifier, "virtual_getFqName_1213877404258", new Object[]{}) + "." + SPropertyOperations.getString(thisNode, "name");
     }
     return BehaviorReflection.invokeSuper(String.class, thisNode, "jetbrains.mps.baseLanguage.structure.GenericDeclaration", "virtual_getFqName_1213877404258", new Object[]{});
-  };;
-;
+  }
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = new ArrayList<SNode>();
     ListSequence.fromList(members).addSequence(Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept");
-      };;
-;    }));
+      }
+    }));
     return members;
-  };;
-;
+  }
   @Deprecated
   public static Scope virtual_getMembers_2201875424515824604(SNode thisNode, final SNode kind) {
     // use sequence<node<IClassifierMember> getMembers() instead 
@@ -90,26 +85,25 @@ public class Classifier_Behavior {
     Iterable<SNode> members = Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(thisType)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
-      };;
-;    });
+      }
+    });
 
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       return new MethodsScope(thisType, Sequence.fromIterable(members).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-        };;
-;      }));
+        }
+      }));
     } else if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.lang.core.structure.INamedConcept")) {
       return new NamedElementsScope(Sequence.fromIterable(members).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
-        };;
-;      }));
+        }
+      }));
     } else {
       return new EmptyScope();
     }
-  };;
-;
+  }
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(final SNode thisNode) {
     // todo: maybe use typesystem instead of this method??? 
     // <node> 
@@ -117,16 +111,14 @@ public class Classifier_Behavior {
     // <node> 
 
     return new ArrayList<SNode>();
-  };;
-;
+  }
   public static Set<SNode> call_getAllExtendedClassifiers_2907982978864985482(SNode thisNode) {
     // should be cached // based on extended classifiers 
     // without cyclic dependencies checking 
     Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
     Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985509(thisNode, result);
     return result;
-  };;
-;
+  }
   public static void call_getAllExtendedClassifiers_2907982978864985509(SNode thisNode, Set<SNode> nodes) {
     if (SetSequence.fromSet(nodes).contains(thisNode)) {
       return;
@@ -135,20 +127,16 @@ public class Classifier_Behavior {
     for (SNode extended : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{})) {
       Classifier_Behavior.call_getAllExtendedClassifiers_2907982978864985509(SLinkOperations.getTarget(extended, "classifier", false), nodes);
     }
-  };;
-;
+  }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "nestedName");
-  };;
-;
+  }
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
     return Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(thisNode)).isNotEmpty();
-  };;
-;
+  }
   public static String virtual_getNestedName_8540045600162184125(SNode thisNode) {
     return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(thisNode, null);
-  };;
-;
+  }
   public static String call_getNestedNameInContext_8540045600162183880(SNode thisNode, SNode context) {
     List<SNode> containers = ListSequence.fromList(SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).reversedList();
     List<SNode> contextContainers = SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true);
@@ -188,38 +176,31 @@ public class Classifier_Behavior {
       result.append(SPropertyOperations.getString(c, "name"));
     }
     return result.toString();
-  };;
-;
+  }
   @Deprecated
   public static boolean call_isStatic_521412098689998668(SNode thisNode) {
     // use virtual method instead 
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_7405920559687241224", new Object[]{});
-  };;
-;
+  }
   public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Interface")) {
       return true;
     }
     // ignore the value of nonStatic for top-level classes 
     return SNodeOperations.getParent(thisNode) == null || !(SPropertyOperations.getBoolean(thisNode, "nonStatic"));
-  };;
-;
+  }
   public static boolean call_isInner_521412098689998677(SNode thisNode) {
     return SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier");
-  };;
-;
+  }
   public static boolean virtual_checkLoops_3980490811621705344(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_checkLoops_3980490811621705349", new Object[]{SetSequence.fromSet(new HashSet<SNode>())});
-  };;
-;
+  }
   public static boolean virtual_isDescendant_7165541881557222913(SNode thisNode, SNode nodeToCompare) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isDescendant_checkLoops_7165541881557222950", new Object[]{nodeToCompare, SetSequence.fromSet(new HashSet<SNode>())});
-  };;
-;
+  }
   public static boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
     return false;
-  };;
-;
+  }
   public static boolean call_isSame_4855996797771684010(SNode thisNode, SNode that) {
     if (SNodeOperations.getConceptDeclaration(thisNode) != SNodeOperations.getConceptDeclaration(that)) {
       return false;
@@ -230,12 +211,10 @@ public class Classifier_Behavior {
       return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{}).equals(BehaviorReflection.invokeVirtual(String.class, that, "virtual_getFqName_1213877404258", new Object[]{}));
     }
     return thisNode == that;
-  };;
-;
+  }
   public static boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     return false;
-  };;
-;
+  }
   public static boolean call_canInstantiateIn_6935810692634457550(SNode thisNode, SNode context) {
     List<SNode> contextClassifiers = Classifier_Behavior.call_getNonStaticContextClassifiers_6775591514230482802(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), context);
     List<SNode> required = Classifier_Behavior.call_getNonStaticContextClassifiers_6775591514230482802(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), thisNode);
@@ -244,24 +223,21 @@ public class Classifier_Behavior {
       if (!(ListSequence.fromList(contextClassifiers).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode cl) {
           return BehaviorReflection.invokeVirtual(Boolean.TYPE, cl, "virtual_isDescendant_7165541881557222913", new Object[]{req});
-        };;
-;      }))) {
+        }
+      }))) {
         return false;
       }
     }
     return true;
-  };;
-;
+  }
   public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(thisNode)));
     return result;
-  };;
-;
+  }
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
-  };;
-;
+  }
   public static SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(result, "classifier", thisNode, false);
@@ -271,8 +247,7 @@ public class Classifier_Behavior {
       ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(reference);
     }
     return result;
-  };;
-;
+  }
   public static SNode call_getWithResolvedTypevars_3305065273710852527(SNode thisNode, SNode t, SNode ancestor, SNode method, SNode baseMethod) {
     SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_3305065273710880775", new Object[]{}), new Classifier_Behavior.Pattern_qw8l7c_a1a0a0a52(ancestor), true);
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
@@ -287,8 +262,7 @@ public class Classifier_Behavior {
       }
       return result;
     }
-  };;
-;
+  }
   public static SNode call_getResolvedVar_3305065273710881245(SNode thisNode, SNode reference, SNode ancestor, SNode coercedType, SNode method, SNode baseMethod) {
     SNode decl = SLinkOperations.getTarget(reference, "typeVariableDeclaration", false);
     int i = ListSequence.fromList(SLinkOperations.getTargets(ancestor, "typeVariableDeclaration", true)).indexOf(decl);
@@ -305,8 +279,7 @@ public class Classifier_Behavior {
       resolvedVar = TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091509920(decl);
     }
     return resolvedVar;
-  };;
-;
+  }
   public static SNode call_getResolvedMethodVar_836080658851951996(SNode thisNode, SNode reference, SNode method, SNode baseMethod) {
     int i = ListSequence.fromList(SLinkOperations.getTargets(baseMethod, "typeVariableDeclaration", true)).indexOf(SLinkOperations.getTarget(reference, "typeVariableDeclaration", false));
     if (i >= 0 && i <= ListSequence.fromList(SLinkOperations.getTargets(method, "typeVariableDeclaration", true)).count()) {
@@ -315,8 +288,7 @@ public class Classifier_Behavior {
       return varRef;
     }
     return null;
-  };;
-;
+  }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, final SNode kind, SNode child) {
     while (SNodeOperations.getParent(child) != thisNode && child != null) {
       child = SNodeOperations.getParent(child);
@@ -333,12 +305,12 @@ public class Classifier_Behavior {
         public boolean accept(SNode it) {
           // add instance fields + static fields 
           return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration") || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") && !(isStaticContext));
-        };;
-;      }).select(new ISelector<SNode, SNode>() {
+        }
+      }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
-        };;
-;      }).concat(Sequence.fromIterable(staticImportedFields));
+        }
+      }).concat(Sequence.fromIterable(staticImportedFields));
       // todo: name clashing? 
       return Scopes.forVariables(kind, variables, ScopeUtils.lazyParentScope(thisNode, kind));
     }
@@ -352,12 +324,12 @@ public class Classifier_Behavior {
         public boolean accept(SNode it) {
           // add instance methods + static methods + static imported methods 
           return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || (SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && !(isStaticContext));
-        };;
-;      }).select(new ISelector<SNode, SNode>() {
+        }
+      }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.MethodDeclaration");
-        };;
-;      }).concat(Sequence.fromIterable(staticImportedMethods));
+        }
+      }).concat(Sequence.fromIterable(staticImportedMethods));
 
       // todo: name clashing 
       return Scopes.forMethods(kind, new MethodsScope(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_7405920559687254782", new Object[]{}), methods), ScopeUtils.lazyParentScope(thisNode, kind));
@@ -382,39 +354,39 @@ public class Classifier_Behavior {
           Iterable<SNode> staticMethods = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-            };;
-;          });
+            }
+          });
           if (!(isStaticContext)) {
             Iterable<SNode> instanceMethods = ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877531970", new Object[]{})).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-              };;
-;            });
+              }
+            });
             Set<String> filteredNames = SetSequence.fromSet(new HashSet<String>());
             SetSequence.fromSet(filteredNames).addSequence(Sequence.fromIterable(instanceMethods).select(new ISelector<SNode, String>() {
               public String select(SNode it) {
                 return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "name");
-              };;
-;            }));
+              }
+            }));
             SetSequence.fromSet(filteredNames).addSequence(Sequence.fromIterable(staticMethods).select(new ISelector<SNode, String>() {
               public String select(SNode it) {
                 return SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "name");
-              };;
-;            }));
+              }
+            }));
 
             Scope methodScope = new ListScope((SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") ? staticMethods : instanceMethods)) {
               public String getName(SNode child) {
                 return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
-              };;
-;            };
+              }
+            };
 
             return Scopes.forMethods(kind, methodScope, new FilteringByNameScope(filteredNames, ScopeUtils.lazyParentScope(thisNode, kind)));
           } else {
             return Scopes.forMethods(kind, new ListScope(staticMethods) {
               public String getName(SNode child) {
                 return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
-              };;
-;            }, ScopeUtils.lazyParentScope(thisNode, kind));
+              }
+            }, ScopeUtils.lazyParentScope(thisNode, kind));
           }
 
         }
@@ -439,12 +411,12 @@ public class Classifier_Behavior {
             Iterable<SNode> members = ListSequence.fromList(SNodeOperations.getChildren(thisNode)).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept") && SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(kind));
-              };;
-;            }).select(new ISelector<SNode, SNode>() {
+              }
+            }).select(new ISelector<SNode, SNode>() {
               public SNode select(SNode it) {
                 return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
-              };;
-;            });
+              }
+            });
             addition = new NamedElementsScope(members);
           } else {
             if (!(isStaticContext) && child != null) {
@@ -457,24 +429,19 @@ public class Classifier_Behavior {
     }
 
     return ScopeUtils.lazyParentScope(thisNode, kind);
-  };;
-;
+  }
   public static Iterable<SNode> virtual_getTypeVariables_7405920559687237503(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true);
-  };;
-;
+  }
   public static Iterable<SNode> virtual_getSuperTypes_7405920559687237523(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getExtendedClassifierTypes_2201875424516179426", new Object[]{});
-  };;
-;
+  }
   public static SNode virtual_getThisType_7405920559687254782(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getThisType_3305065273710880775", new Object[]{});
-  };;
-;
+  }
   public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     // do nothing by default 
-  };;
-;
+  }
   public static Iterable<SNode> call_members_1465982738252129704(SNode thisNode) {
     // todo: change on .members 
     List<SNode> members = ListSequence.fromList(new ArrayList<SNode>());
@@ -498,48 +465,43 @@ public class Classifier_Behavior {
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "member", true)));
 
     return members;
-  };;
-;
+  }
   public static Iterable<SNode> call_nestedClassifiers_5292274854859193142(SNode thisNode) {
     return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");
-      };;
-;    }).select(new ISelector<SNode, SNode>() {
+      }
+    }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
-      };;
-;    });
-  };;
-;
+      }
+    });
+  }
   public static Iterable<SNode> call_staticFields_5292274854859223538(SNode thisNode) {
     return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-      };;
-;    }).select(new ISelector<SNode, SNode>() {
+      }
+    }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-      };;
-;    });
-  };;
-;
+      }
+    });
+  }
   public static Iterable<SNode> call_methods_5292274854859311639(SNode thisNode) {
     return Sequence.fromIterable(Classifier_Behavior.call_members_1465982738252129704(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      };;
-;    }).select(new ISelector<SNode, SNode>() {
+      }
+    }).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
         return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      };;
-;    });
-  };;
-;
+      }
+    });
+  }
   public static boolean virtual_canBeInterfaceMember_2949815620938109095(SAbstractConcept thisConcept) {
     return true;
-  };;
-;
+  }
   public static List<SNode> call_getNonStaticContextClassifiers_6775591514230482802(SAbstractConcept thisConcept, SNode context) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode current : ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.Classifier", true))) {
@@ -559,16 +521,14 @@ public class Classifier_Behavior {
       }
     }
     return result;
-  };;
-;
+  }
   public static SNode call_getContextClassifier_6172562527426750080(SAbstractConcept thisConcept, SNode expr) {
     SNode concept = ClassConcept_Behavior.call_getContextClass_8008512149545173402(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))), expr);
     if (concept != null) {
       return concept;
     }
     return SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-  };;
-;
+  }
   @Deprecated
   public static List<SNode> call_getAccessibleMembers_669019847198843527(SAbstractConcept thisConcept, SNode contextNode, int constraint) {
     SNode classifier = ClassConcept_Behavior.call_getContextClass_8008512149545173402(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept"))), contextNode);
@@ -577,8 +537,8 @@ public class Classifier_Behavior {
       ListSequence.fromList(result).addSequence(Sequence.fromIterable(IClassifiersSearchScopeAdapter.filterMembers(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classifier, "virtual_getThisType_7405920559687254782", new Object[]{}), contextNode), constraint)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.ClassifierMember");
-        };;
-;      }));
+        }
+      }));
       if (!(Classifier_Behavior.call_isStatic_521412098689998668(classifier)) || (constraint & IClassifiersSearchScope.STATIC_MEMBER) != 0) {
         classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       } else {
@@ -586,17 +546,14 @@ public class Classifier_Behavior {
       }
     }
     return result;
-  };;
-;
+  }
   public static class Pattern_qw8l7c_a1a0a0a52 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_l;
     /*package*/ SNode patternVar_foo;
     /*package*/ Object AntiquotationField_qw8l7c_a0a0a0a0a42;
-
     public Pattern_qw8l7c_a1a0a0a52(Object parameter_qw8l7c_a0a0a0a0a42) {
       this.AntiquotationField_qw8l7c_a0a0a0a0a42 = parameter_qw8l7c_a0a0a0a0a42;
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_qw8l7c_a0a0a0a42 = nodeToMatch;
@@ -621,19 +578,16 @@ public class Classifier_Behavior {
         }
       }
       return true;
-    };;
-;
+    }
     public boolean hasAntiquotations() {
       return true;
-    };;
-;
+    }
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_l = (List<SNode>) pattern.getFieldValue("patternVar_l");
         patternVar_foo = (SNode) pattern.getFieldValue("patternVar_foo");
       }
-    };;
-;
+    }
     public Object getFieldValue(String fieldName) {
       if ("patternVar_l".equals(fieldName)) {
         return patternVar_l;
@@ -642,9 +596,8 @@ public class Classifier_Behavior {
         return patternVar_foo;
       }
       return null;
-    };;
-;
+    }
     public void performActions(Object o) {
-    };;
-;  }
+    }
+  }
 }

@@ -12,7 +12,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class PostfixDecrementExpression_DataFlow extends DataFlowBuilder {
   public PostfixDecrementExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "expression", true), "jetbrains.mps.baseLanguage.structure.VariableReference")) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));

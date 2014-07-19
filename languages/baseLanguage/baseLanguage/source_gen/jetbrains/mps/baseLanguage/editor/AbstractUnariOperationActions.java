@@ -15,42 +15,32 @@ public class AbstractUnariOperationActions {
     editorCell.setAction(CellActionType.DELETE, new AbstractUnariOperationActions.AbstractUnariOperationActions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new AbstractUnariOperationActions.AbstractUnariOperationActions_BACKSPACE(node));
   }
-
   public static class AbstractUnariOperationActions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public AbstractUnariOperationActions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Delete decrement";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
     }
   }
-
   public static class AbstractUnariOperationActions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public AbstractUnariOperationActions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Delete decrement";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
     }

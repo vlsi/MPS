@@ -11,10 +11,8 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 public class MPS9808 {
   private List<_FunctionTypes._void_P2_E0<? super String, ? super Object[]>> beforeListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P2_E0<? super String, ? super Object[]>>());
   private List<_FunctionTypes._void_P2_E0<? super String, ? super Object[]>> afterListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P2_E0<? super String, ? super Object[]>>());
-
   public MPS9808() {
   }
-
   protected void fireBefore(final String command, final Object[] params) {
     ListSequence.fromList(beforeListeners).visitAll(new IVisitor<_FunctionTypes._void_P2_E0<? super String, ? super Object[]>>() {
       public void visit(_FunctionTypes._void_P2_E0<? super String, ? super Object[]> it) {
@@ -22,7 +20,6 @@ public class MPS9808 {
       }
     });
   }
-
   protected void fireAfter(final String command, final Object[] params) {
     ListSequence.fromList(afterListeners).visitAll(new IVisitor<_FunctionTypes._void_P2_E0<? super String, ? super Object[]>>() {
       public void visit(_FunctionTypes._void_P2_E0<? super String, ? super Object[]> it) {

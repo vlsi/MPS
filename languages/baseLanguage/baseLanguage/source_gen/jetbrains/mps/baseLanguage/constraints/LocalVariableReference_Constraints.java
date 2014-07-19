@@ -22,7 +22,6 @@ public class LocalVariableReference_Constraints extends BaseConstraintsDescripto
   public LocalVariableReference_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.LocalVariableReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -30,8 +29,7 @@ public class LocalVariableReference_Constraints extends BaseConstraintsDescripto
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      };;
-;
+      }
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -39,17 +37,15 @@ public class LocalVariableReference_Constraints extends BaseConstraintsDescripto
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_obnwhp_a0a0a0a0a1a0b0a1a1;
-          };;
-;
+          }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return MigrationScopes.forVariables(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), _context.getContextNode(), _context.getContextRole(), _context.getPosition());
-          };;
-;        };
-      };;
-;    });
+          }
+        };
+      }
+    });
     return references;
-  };;
-;
+  }
   private static SNodePointer breakingNode_obnwhp_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "304895491241626257");
 }

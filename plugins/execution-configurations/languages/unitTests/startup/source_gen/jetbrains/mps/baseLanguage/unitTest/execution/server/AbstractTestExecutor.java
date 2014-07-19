@@ -18,13 +18,10 @@ import org.apache.log4j.LogManager;
 public abstract class AbstractTestExecutor implements TestExecutor {
   private AbstractTestExecutor.StoppableRunner myCurrentRunner = null;
 
-
   @Nullable
   public AbstractTestExecutor.StoppableRunner getCurrentRunner() {
     return myCurrentRunner;
   }
-
-
 
   @Override
   public void execute() {
@@ -43,15 +40,11 @@ public abstract class AbstractTestExecutor implements TestExecutor {
     }
   }
 
-
-
   protected JUnitCore prepareJUnitCore(Iterable<Request> requests) {
     JUnitCore core = new JUnitCore();
     core.addListener(createListener(requests));
     return core;
   }
-
-
 
   protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
     for (Request request : requests) {
@@ -60,47 +53,33 @@ public abstract class AbstractTestExecutor implements TestExecutor {
     }
   }
 
-
-
   @NotNull
   protected abstract TestsContributor createTestsContributor();
 
-
-
   @NotNull
   protected abstract RunListener createListener(Iterable<Request> requests);
-
-
 
   protected static class StoppableRunner extends Runner {
     private final Runner myRunner;
     private RunNotifier myNotifier = null;
 
-
     public StoppableRunner(Runner runner) {
       myRunner = runner;
     }
 
-
-
     public Description getDescription() {
       return myRunner.getDescription();
     }
-
-
 
     public void run(RunNotifier notifier) {
       myNotifier = notifier;
       myRunner.run(notifier);
     }
 
-
-
     public void pleaseStop() {
       assert myNotifier != null;
       myNotifier.pleaseStop();
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(AbstractTestExecutor.class);
 }

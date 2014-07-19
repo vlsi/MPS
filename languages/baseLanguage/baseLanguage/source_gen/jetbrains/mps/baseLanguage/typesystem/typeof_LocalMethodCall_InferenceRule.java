@@ -29,7 +29,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_LocalMethodCall_InferenceRule() {
   }
-
   public void applyRule(final SNode methodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"))) {
       TypeVariableMatchUtil.calculateTypesForStaticMethod(typeCheckingContext, methodCall);
@@ -143,22 +142,18 @@ public class typeof_LocalMethodCall_InferenceRule extends AbstractInferenceRule_
 
     TypeVariableMatchUtil.checkTypeParametersMatchingTypeArguments(typeCheckingContext, mdecl, methodCall, subs);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.LocalMethodCall";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_v9rubd_a0a1a0a31a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

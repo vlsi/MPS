@@ -23,31 +23,26 @@ public class SortedSet_Test extends Util_Test {
     Assert.assertSame(1, SortedSetSequence.fromSet(set).first());
     Assert.assertSame(5, SortedSetSequence.fromSet(set).last());
   }
-
   public void test_multiOrder() throws Exception {
     SortedSet<Integer> set = SortedSetSequence.fromSetAndArray(new TreeSet<Integer>(), 2, 1, 2, 5, 4, 3, 1, 5, 3, 2, 3, 1);
     this.assertIterableEquals(this.input5(), set);
     Assert.assertSame(1, SortedSetSequence.fromSet(set).first());
     Assert.assertSame(5, SortedSetSequence.fromSet(set).last());
   }
-
   public void test_headSet() throws Exception {
     SortedSet<String> set = SortedSetSequence.fromSetWithValues(new TreeSet<String>(), this.inputABCDEF());
     this.assertIterableEquals(Arrays.asList("A", "B"), SortedSetSequence.fromSet(set).headSet("C"));
     this.assertIterableEquals(Arrays.asList("A", "B", "C"), SortedSetSequence.fromSet(set).headSet("C\0"));
   }
-
   public void test_tailSet() throws Exception {
     SortedSet<String> set = SortedSetSequence.fromSetWithValues(new TreeSet<String>(), this.inputABCDEF());
     this.assertIterableEquals(Arrays.asList("C", "D", "E", "F"), SortedSetSequence.fromSet(set).tailSet("C"));
   }
-
   public void test_subSet() throws Exception {
     SortedSet<String> set = SortedSetSequence.fromSetWithValues(new TreeSet<String>(), this.inputABCDEF());
     this.assertIterableEquals(Arrays.asList("C", "D"), SortedSetSequence.fromSet(set).subSet("C", "E"));
     this.assertIterableEquals(Arrays.asList("C", "D", "E"), SortedSetSequence.fromSet(set).subSet("C", "E\0"));
   }
-
   public void test_comparator() throws Exception {
     SortedSet<String> sset = SortedSetSequence.fromSet(new TreeSet<String>(new Comparator<String>() {
       public int compare(String a, String b) {
@@ -57,7 +52,6 @@ public class SortedSet_Test extends Util_Test {
     SortedSetSequence.fromSet(sset).addSequence(Sequence.fromIterable(Sequence.fromArray(new String[]{"b", "d", "c", "a"})));
     this.assertIterableEquals(Sequence.fromArray(new String[]{"d", "c", "b", "a"}), sset);
   }
-
   public void test_collection() throws Exception {
     SortedSet<String> ts = SortedSetSequence.fromSetAndArray(new TreeSet<String>(), "a", "b");
     Collection<String> cs = ts;
@@ -65,7 +59,6 @@ public class SortedSet_Test extends Util_Test {
     SortedSetSequence.fromSet(ts).addElement("c");
     Assert.assertEquals("a b c", IterableUtils.join(CollectionSequence.fromCollection(cs), " "));
   }
-
   public void test_unmodifiable() throws Exception {
     SortedSet<String> ts = SortedSetSequence.fromSetAndArray(new TreeSet<String>(), "a", "b", "c");
     SortedSetSequence.fromSet(ts).addElement("d");
@@ -87,7 +80,6 @@ public class SortedSet_Test extends Util_Test {
       // expected exception 
     }
   }
-
   public SortedSet_Test() {
   }
 }

@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class EnumValueOfExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public EnumValueOfExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression";
-  };;
-;}
+  }
+}

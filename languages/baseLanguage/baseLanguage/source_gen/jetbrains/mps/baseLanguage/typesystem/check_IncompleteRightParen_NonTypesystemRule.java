@@ -15,25 +15,21 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_IncompleteRightParen_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_IncompleteRightParen_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode incompleteRightParen, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(incompleteRightParen, "Unmatched right paren", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2329139813954049743", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.IncompleteRightParen";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

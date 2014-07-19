@@ -23,8 +23,7 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class InstanceMethodCallOperation_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     String variableExpectedName = null;
     if ((SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false) != null)) {
@@ -39,28 +38,24 @@ public class InstanceMethodCallOperation_Behavior {
       }
     }
     return NameUtil.decapitalize(variableExpectedName);
-  };;
-;
+  }
   public static SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     return TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(IOperation_Behavior.call_getOperand_1213877410070(thisNode)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
-  };;
-;
+  }
   public static Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
     SNode instanceType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getInstanceType_8008512149545154471", new Object[]{});
     if ((SLinkOperations.getTarget(instanceType, "classifier", false) == null)) {
       return Collections.emptyMap();
     }
     return MethodResolveUtil.getTypesByTypeVars(SLinkOperations.getTarget(instanceType, "classifier", false), SLinkOperations.getTargets(instanceType, "parameter", true));
-  };;
-;
+  }
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, final String methodName) {
     return Sequence.fromIterable(Members.visibleInstanceMethods(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getInstanceType_8008512149545154471", new Object[]{}), thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_xykbjj_a0a0a0a0a0a0a4(SPropertyOperations.getString(it, "name"), methodName);
-      };;
-;    }).toListSequence();
-  };;
-;
+      }
+    }).toListSequence();
+  }
   public static boolean call_canBeConvertedToLocal_5311267937735225328(SNode thisNode) {
     if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
       return false;
@@ -86,26 +81,22 @@ public class InstanceMethodCallOperation_Behavior {
       classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }
     return true;
-  };;
-;
+  }
   public static void call_convertToLocal_5311267937735269230(SNode thisNode) {
     SNode methodCall = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.LocalMethodCall");
     SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), false);
     ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)));
     ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeArgument", true)));
-  };;
-;
+  }
   public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
     SNode de = SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression");
     SNode methodAnc = SNodeOperations.getAncestor(de, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
     return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "rValue", true) == de || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true) == de || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true) == de || ((methodAnc != null) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodAnc, "virtual_getLastStatement_1239354409446", new Object[]{}) == SNodeOperations.as(SNodeOperations.getParent(de), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
-  };;
-;
+  }
   public static boolean virtual_substituteInAmbigousPosition_1262430001741498020(SAbstractConcept thisConcept) {
     return true;
-  };;
-;
+  }
   private static boolean eq_xykbjj_a0a0a0a0a0a0a4(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;}
+  }
+}

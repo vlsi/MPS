@@ -26,7 +26,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_PropertyNameUniqueness_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_PropertyNameUniqueness_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode property, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     Iterable<SNode> visibleMembers = Sequence.fromIterable(IClassifierType_Behavior.call_getVisibleMembers_6145907390641297279(check_5f44vd_a0a0a0b(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), property)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -86,41 +85,33 @@ public class check_PropertyNameUniqueness_NonTypesystemRule extends AbstractNonT
 
 
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.Property";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode check_5f44vd_a0a0a0b(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), checkedDotOperand, "virtual_getThisType_3305065273710880775", new Object[]{});
     }
     return null;
   }
-
   private static boolean neq_5f44vd_a0a0a0a0a0a0a1(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean eq_5f44vd_a0a0a0a0a0a2a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_5f44vd_a0a1a0a0a0a0h0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }
-
   private static boolean eq_5f44vd_a0a0b0a0a0a0a0a01a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

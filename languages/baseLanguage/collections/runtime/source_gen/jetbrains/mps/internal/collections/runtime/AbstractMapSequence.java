@@ -11,121 +11,97 @@ import java.util.Iterator;
 public abstract class AbstractMapSequence<U, V> extends AbstractSequence<IMapping<U, V>> implements IMapSequence<U, V>, Map<U, V>, Serializable {
   private static final long serialVersionUID = -1214142666318630447L;
   private Map<U, V> map;
-
   protected AbstractMapSequence(Map<U, V> map) {
     this.map = map;
   }
-
   protected AbstractMapSequence() {
   }
-
   @Override
   public void clear() {
     map.clear();
   }
-
   @Override
   public boolean containsKey(Object key) {
     return map.containsKey(key);
   }
-
   @Override
   public boolean containsValue(Object value) {
     return map.containsValue(value);
   }
-
   @Override
   public Set<Map.Entry<U, V>> entrySet() {
     return map.entrySet();
   }
-
   @Override
   public boolean equals(Object o) {
     return map.equals(o);
   }
-
   @Override
   public V get(Object key) {
     return map.get(key);
   }
-
   @Override
   public int hashCode() {
     return map.hashCode();
   }
-
   @Override
   public boolean isEmpty() {
     return map.isEmpty();
   }
-
   @Override
   public Set<U> keySet() {
     return map.keySet();
   }
-
   @Override
   public V put(U key, V value) {
     return map.put(key, value);
   }
-
   @Override
   public void putAll(Map<? extends U, ? extends V> m) {
     map.putAll(m);
   }
-
   @Override
   public V remove(Object key) {
     return map.remove(key);
   }
-
   @Override
   public int size() {
     return map.size();
   }
-
   @Override
   public Collection<V> values() {
     return map.values();
   }
-
   @Override
   public boolean contains(Object o) {
     V v = map.get(((IMapping<U, V>) o).key());
     return eq(v, ((IMapping<U, V>) o).value());
   }
-
   @Override
   public int count() {
     return map.size();
   }
-
   @Override
   public ISequence<IMapping<U, V>> distinct() {
     return this;
   }
-
   @Override
   public boolean isNotEmpty() {
     return !((map.isEmpty()));
   }
-
   @Override
   public Iterator<IMapping<U, V>> iterator() {
     return new AbstractMapSequence.MappingIterator();
   }
-
   @Override
   public IMapSequence<U, V> putAll(IMapSequence<? extends U, ? extends V> map) {
     getMap().putAll(map);
     return this;
   }
-
   @Override
   public V removeKey(U u) {
     return getMap().remove(u);
   }
-
   @Override
   public V putValue(U key, V value) {
     if (Sequence.IGNORE_NULL_VALUES) {
@@ -136,81 +112,64 @@ public abstract class AbstractMapSequence<U, V> extends AbstractSequence<IMappin
     getMap().put(key, value);
     return value;
   }
-
   @Override
   public Map<U, V> toMap() {
     return this;
   }
-
   @SuppressWarnings(value = "unchecked")
   @Override
   public ISetSequence<IMapping<U, V>> mappingsSet() {
     return (ISetSequence<IMapping<U, V>>) new AbstractMapSequence.MappingsSetSequence();
   }
-
   protected Map<U, V> getMap() {
     return map;
   }
-
   private boolean eq(Object a, Object b) {
     return (a == b) || (((a != null) ? a.equals(b) : false));
   }
-
   private class MappingIterator implements Iterator<IMapping<U, V>> {
     private Iterator<Map.Entry<U, V>> entriesIt;
-
     public MappingIterator() {
       entriesIt = entrySet().iterator();
     }
-
     @Override
     public boolean hasNext() {
       return entriesIt.hasNext();
     }
-
     @Override
     public IMapping<U, V> next() {
       return new AbstractMapSequence.EntryMapping<U, V>(entriesIt.next());
     }
-
     @Override
     public void remove() {
       entriesIt.remove();
     }
   }
-
   private static class EntryMapping<F, S> implements IMapping<F, S> {
     private final Map.Entry<F, S> entry;
-
     public EntryMapping(Map.Entry<F, S> entry) {
       this.entry = entry;
     }
-
     @Override
     public F key() {
       return entry.getKey();
     }
-
     @Override
     public S value() {
       return entry.getValue();
     }
-
     @Override
     public S value(S newValue) {
       return entry.setValue(newValue);
     }
-
     @Override
     public Map.Entry<F, S> toEntry() {
       return entry;
     }
-
     @Override
     public int hashCode() {
       return entry.hashCode();
     }
-
     @SuppressWarnings(value = "unchecked")
     @Override
     public boolean equals(Object that) {
@@ -225,32 +184,26 @@ public abstract class AbstractMapSequence<U, V> extends AbstractSequence<IMappin
       }
       return false;
     }
-
     @Override
     public String toString() {
       return key() + "=" + value();
     }
-
     private boolean eq(Object a, Object b) {
       return (a == b) || (((a != null) ? a.equals(b) : false));
     }
   }
-
   @SuppressWarnings(value = "unchecked")
   private class MappingsSetSequence extends AbstractCollectionSequence<IMapping<U, V>> implements ISetSequence<IMapping<U, V>>, Set<IMapping<U, V>> {
     private MappingsSetSequence() {
     }
-
     @Override
     public IMapping<U, V> addElement(IMapping<U, V> t) {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public ISetSequence<IMapping<U, V>> addSequence(ISequence<? extends IMapping<U, V>> seq) {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public IMapping<U, V> removeElement(IMapping<U, V> t) {
       if (map.entrySet().remove(((IMapping<U, V>) t).toEntry())) {
@@ -258,7 +211,6 @@ public abstract class AbstractMapSequence<U, V> extends AbstractSequence<IMappin
       }
       return null;
     }
-
     @Override
     public ISetSequence<IMapping<U, V>> removeSequence(ISequence<? extends IMapping<U, V>> seq) {
       if (Sequence.USE_NULL_SEQUENCE) {
@@ -271,12 +223,10 @@ public abstract class AbstractMapSequence<U, V> extends AbstractSequence<IMappin
       }
       return this;
     }
-
     @Override
     public boolean contains(Object o) {
       return map.entrySet().contains(((IMapping<U, V>) o).toEntry());
     }
-
     @Override
     public IMapping<U, V>[] toGenericArray() {
       IMapping<U, V>[] result = (IMapping<U, V>[]) ArrayUtils.newArrayInstance(IMapping.class, size());
@@ -286,38 +236,31 @@ public abstract class AbstractMapSequence<U, V> extends AbstractSequence<IMappin
       }
       return result;
     }
-
     @Override
     public IMapping<U, V>[] toGenericArray(Class runtimeClass) {
       IMapping<U, V>[] arr = (IMapping<U, V>[]) ArrayUtils.newArrayInstance(runtimeClass, size());
       return toArray(arr);
     }
-
     @Override
     public Set toSet() {
       return this;
     }
-
     @Override
     public Iterator iterator() {
       return AbstractMapSequence.this.iterator();
     }
-
     @Override
     public boolean add(IMapping<U, V> o) {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public boolean addAll(Collection c) {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public void clear() {
       map.entrySet().clear();
     }
-
     @Override
     public boolean containsAll(Collection c) {
       for (Iterator it = c.iterator(); it.hasNext();) {
@@ -327,12 +270,10 @@ public abstract class AbstractMapSequence<U, V> extends AbstractSequence<IMappin
       }
       return true;
     }
-
     @Override
     public boolean remove(Object o) {
       return map.entrySet().remove((IMapping<U, V>) o);
     }
-
     @Override
     public boolean removeAll(Collection c) {
       boolean modified = false;
@@ -344,7 +285,6 @@ public abstract class AbstractMapSequence<U, V> extends AbstractSequence<IMappin
       }
       return modified;
     }
-
     @Override
     public boolean retainAll(Collection c) {
       boolean modified = false;
@@ -356,17 +296,14 @@ public abstract class AbstractMapSequence<U, V> extends AbstractSequence<IMappin
       }
       return modified;
     }
-
     @Override
     public int size() {
       return map.entrySet().size();
     }
-
     @Override
     public Object[] toArray() {
       return toGenericArray();
     }
-
     public IMapping<U, V>[] toArray(IMapping<U, V>[] arr) {
       int size = size();
       if (arr.length < size) {
@@ -381,17 +318,14 @@ public abstract class AbstractMapSequence<U, V> extends AbstractSequence<IMappin
       }
       return arr;
     }
-
     @Override
     public ISetSequence<IMapping<U, V>> asUnmodifiable() {
       throw new UnsupportedOperationException();
     }
-
     @Override
     public ISetSequence<IMapping<U, V>> asSynchronized() {
       throw new UnsupportedOperationException();
     }
-
     @Override
     protected Collection getCollection() {
       return map.entrySet();

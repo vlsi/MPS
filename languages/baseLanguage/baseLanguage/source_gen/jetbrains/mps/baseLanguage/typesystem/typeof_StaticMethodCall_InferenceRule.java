@@ -12,22 +12,18 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_StaticMethodCall_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_StaticMethodCall_InferenceRule() {
   }
-
   public void applyRule(final SNode staticMethodCall, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     TypeVariableMatchUtil.calculateTypesForStaticMethod(typeCheckingContext, staticMethodCall);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.StaticMethodCall";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }

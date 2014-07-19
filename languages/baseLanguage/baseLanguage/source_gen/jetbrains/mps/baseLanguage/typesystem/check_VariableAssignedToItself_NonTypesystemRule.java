@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_VariableAssignedToItself_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_VariableAssignedToItself_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode assignmentExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SLinkOperations.getTarget(assignmentExpression, "lValue", true) == null || SLinkOperations.getTarget(assignmentExpression, "rValue", true) == null) {
       return;
@@ -30,18 +29,15 @@ public class check_VariableAssignedToItself_NonTypesystemRule extends AbstractNo
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.AssignmentExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

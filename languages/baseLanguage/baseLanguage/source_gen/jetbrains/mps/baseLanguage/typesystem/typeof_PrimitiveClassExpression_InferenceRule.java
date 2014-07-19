@@ -19,7 +19,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeof_PrimitiveClassExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_PrimitiveClassExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode primitiveClassExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode unboxedType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(primitiveClassExpression, "primitiveType", true), "virtual_getBoxedType_1213877337320", new Object[]{});
     if (SNodeOperations.isInstanceOf(unboxedType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
@@ -30,22 +29,18 @@ public class typeof_PrimitiveClassExpression_InferenceRule extends AbstractInfer
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_im3uqe_a0a0b0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

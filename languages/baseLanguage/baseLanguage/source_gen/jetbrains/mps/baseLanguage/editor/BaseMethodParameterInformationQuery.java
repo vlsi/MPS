@@ -14,21 +14,17 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class BaseMethodParameterInformationQuery implements ParametersInformation<SNode> {
   public BaseMethodParameterInformationQuery() {
   }
-
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     SNode selectedActualArgument = this.getSelectedActualArgument(editorContext);
     SNode methodCall = (selectedActualArgument != null ? SNodeOperations.cast(SNodeOperations.getParent(selectedActualArgument), "jetbrains.mps.baseLanguage.structure.IMethodCall") : node);
     return BaseMethodParameterInformationQueryUtil.getMethodsToShow(methodCall);
   }
-
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     BaseMethodParameterInformationQueryUtil.fillPresentation(parameterObject, this.getSelectedActualArgument(editorContext), styledText);
   }
-
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == parameterObject;
   }
-
   private SNode getSelectedActualArgument(EditorContext editorContext) {
     SNode selectedNode = editorContext.getSelectedNode();
     if (selectedNode == null) {

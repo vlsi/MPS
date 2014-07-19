@@ -15,46 +15,38 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptFunctionParameter_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static boolean virtual_getFromParameterObject_1213877522908(SNode thisNode) {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isParameterObjectUsed_1213877522926", new Object[]{}))) {
       return false;
     }
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, ConceptFunctionParameter_Behavior.call_findConceptFunction_1213877522934(thisNode), "virtual_usesParameterObjectFor_1213877374432", new Object[]{thisNode});
-  };;
-;
+  }
   public static boolean virtual_isParameterObjectUsed_1213877522926(SNode thisNode) {
     return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_dontUseParameterObject_1262430001741498340", new Object[]{}));
-  };;
-;
+  }
   public static SNode call_findConceptFunction_1213877522934(SNode thisNode) {
     List<SNode> functions = SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction", false);
     final SNode ourConcept = SNodeOperations.getConceptDeclaration(thisNode);
     return ListSequence.fromList(functions).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return ListSequence.fromList(BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), it, "virtual_getParameters_1213877374450", new Object[]{})).contains(ourConcept);
-      };;
-;    }).first();
-  };;
-;
+      }
+    }).first();
+  }
   public static String virtual_getParameterName_1225280611056(SNode thisNode) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
-  };;
-;
+  }
   public static SNode virtual_getDeclaration_1225282371351(SNode thisNode) {
     return SNodeOperations.getConceptDeclaration(thisNode);
-  };;
-;
+  }
   public static boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
     return true;
-  };;
-;
+  }
   public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return null;
-  };;
-;
+  }
   public static boolean virtual_dontUseParameterObject_1262430001741498340(SAbstractConcept thisConcept) {
     return false;
-  };;
-;}
+  }
+}

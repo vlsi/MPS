@@ -9,54 +9,53 @@ public enum BLElementType {
   TYPE() {
     public boolean accept(SNode target) {
       return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.Classifier");
-    };;
-;
+    }
+
   },
   FIELD() {
     public boolean accept(SNode target) {
       return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") || SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
-    };;
-;
+    }
+
   },
   METHOD() {
     public boolean accept(SNode target) {
       return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
-    };;
-;
+    }
+
   },
   PARAMETER() {
     public boolean accept(SNode target) {
       return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
-    };;
-;
+    }
+
   },
   CONSTRUCTOR() {
     public boolean accept(SNode target) {
       return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
-    };;
-;
+    }
+
   },
   LOCAL_VARIABLE() {
     public boolean accept(SNode target) {
       return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-    };;
-;
+    }
+
   },
   ANNOTATION_TYPE() {
     public boolean accept(SNode target) {
       return SNodeOperations.isInstanceOf(target, "jetbrains.mps.baseLanguage.structure.Annotation");
-    };;
-;
+    }
+
   },
   PACKAGE() {
     public boolean accept(SNode target) {
       return false;
-    };;
-;
+    }
+
   };
 
   BLElementType() {
   }
-
   public abstract boolean accept(SNode target);
 }

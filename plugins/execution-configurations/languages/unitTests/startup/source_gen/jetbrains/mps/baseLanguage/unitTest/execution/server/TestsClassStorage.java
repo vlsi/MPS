@@ -14,8 +14,6 @@ public class TestsClassStorage {
     return aClass;
   }
 
-
-
   public Class<?> loadTestClass(String fqName, SModule module) throws ClassNotFoundException {
     final Class<?> aClass = tryLoadTestClass(fqName, module);
     return aClass;

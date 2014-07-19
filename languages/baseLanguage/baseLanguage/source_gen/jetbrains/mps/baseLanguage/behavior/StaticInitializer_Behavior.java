@@ -11,19 +11,16 @@ import jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior;
 
 public class StaticInitializer_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.core.structure.BaseConcept", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     return markIcons;
-  };;
-;
+  }
   public static boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
     return false;
-  };;
-;
+  }
   public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return true;
-  };;
-;}
+  }
+}

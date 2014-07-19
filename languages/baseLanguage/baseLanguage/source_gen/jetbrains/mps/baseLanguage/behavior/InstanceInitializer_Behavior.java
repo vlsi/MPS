@@ -7,9 +7,8 @@ import javax.swing.Icon;
 
 public class InstanceInitializer_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
-  };;
-;}
+  }
+}

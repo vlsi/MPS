@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class LocalVariableDeclaration_DataFlow extends DataFlowBuilder {
   public LocalVariableDeclaration_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitNop("r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206990208534");
     if ((SLinkOperations.getTarget(_context.getNode(), "initializer", true) != null)) {

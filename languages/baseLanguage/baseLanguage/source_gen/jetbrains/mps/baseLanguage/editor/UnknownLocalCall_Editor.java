@@ -22,7 +22,6 @@ public class UnknownLocalCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_cj1ely_a(editorContext, node);
   }
-
   private EditorCell createCollection_cj1ely_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_cj1ely_a");
@@ -31,7 +30,6 @@ public class UnknownLocalCall_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_cj1ely_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createProperty_cj1ely_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("callee");
@@ -53,7 +51,6 @@ public class UnknownLocalCall_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_cj1ely_b0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     return editorCell;

@@ -14,19 +14,15 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class BaseMethodParameterInformationQueryRestricted implements ParametersInformation<SNode> {
   public BaseMethodParameterInformationQueryRestricted() {
   }
-
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     return BaseMethodParameterInformationQueryUtil.getMethodsToShow(node);
   }
-
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     BaseMethodParameterInformationQueryUtil.fillPresentation(parameterObject, this.getSelectedActualArgument(editorContext, node), styledText);
   }
-
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return SLinkOperations.getTarget(node, "baseMethodDeclaration", false) == parameterObject;
   }
-
   private SNode getSelectedActualArgument(EditorContext editorContext, final SNode methodCall) {
     SNode selectedNode = editorContext.getSelectedNode();
     if (selectedNode == null) {

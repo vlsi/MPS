@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode genericNewExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final Wrappers._T<SNode> target = new Wrappers._T<SNode>();
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(genericNewExpression, "creator", true), "jetbrains.mps.baseLanguage.structure.DefaultClassCreator")) {
@@ -53,22 +52,18 @@ public class check_GenericNewExpression_PointingToNonStaticFromStatic_NonTypesys
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.GenericNewExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_r95zp5_a0a0a0a0a0a3a1(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

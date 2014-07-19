@@ -16,7 +16,6 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 public class ThrowStatement_DataFlow extends DataFlowBuilder {
   public ThrowStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "throwable", true));
     SNode interrupt = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.IControlFlowInterrupter", false, false);

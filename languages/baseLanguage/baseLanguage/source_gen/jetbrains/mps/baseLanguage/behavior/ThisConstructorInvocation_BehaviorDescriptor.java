@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ThisConstructorInvocation_BehaviorDescriptor extends ConstructorInvocationStatement_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ThisConstructorInvocation_BehaviorDescriptor() {
   }
-
   public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return ThisConstructorInvocation_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
-  };;
-;
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation";
-  };;
-;}
+  }
+}

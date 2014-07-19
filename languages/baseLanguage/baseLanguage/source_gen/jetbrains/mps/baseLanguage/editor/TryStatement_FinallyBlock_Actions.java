@@ -17,22 +17,17 @@ public class TryStatement_FinallyBlock_Actions {
     editorCell.setAction(CellActionType.DELETE, new TryStatement_FinallyBlock_Actions.TryStatement_FinallyBlock_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new TryStatement_FinallyBlock_Actions.TryStatement_FinallyBlock_Actions_BACKSPACE(node));
   }
-
   public static class TryStatement_FinallyBlock_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TryStatement_FinallyBlock_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "remove finally ";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "catchClause", true)).isNotEmpty()) {
         SNode tryCatchStatement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
@@ -43,22 +38,17 @@ public class TryStatement_FinallyBlock_Actions {
       }
     }
   }
-
   public static class TryStatement_FinallyBlock_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TryStatement_FinallyBlock_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "remove finally ";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "catchClause", true)).isNotEmpty()) {
         SNode tryCatchStatement = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.TryCatchStatement");

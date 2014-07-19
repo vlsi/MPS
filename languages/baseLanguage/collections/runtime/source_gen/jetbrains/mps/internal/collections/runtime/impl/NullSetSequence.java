@@ -10,112 +10,90 @@ import jetbrains.mps.internal.collections.runtime.ISequence;
 public class NullSetSequence<T> extends NullCollectionSequence<T> implements ISetSequence<T>, Set<T> {
   private static Object[] EMPTY_ARRAY = new Object[0];
   private static final NullSetSequence<Object> INSTANCE = new NullSetSequence<Object>();
-
   protected NullSetSequence() {
   }
-
   @Override
   public boolean add(T e) {
     return false;
   }
-
   @Override
   public boolean addAll(Collection<? extends T> c) {
     return false;
   }
-
   @Override
   public void clear() {
   }
-
   @Override
   public boolean contains(Object t) {
     return false;
   }
-
   @Override
   public boolean containsAll(Collection<?> c) {
     return false;
   }
-
   @Override
   public boolean remove(Object o) {
     return false;
   }
-
   @Override
   public boolean removeAll(Collection<?> c) {
     return false;
   }
-
   @Override
   public boolean retainAll(Collection<?> c) {
     return false;
   }
-
   @Override
   public int size() {
     return 0;
   }
-
   @Override
   public Object[] toArray() {
     return EMPTY_ARRAY;
   }
-
   @SuppressWarnings(value = "unchecked")
   @Override
   public <U> U[] toArray(U[] a) {
     return (U[]) EMPTY_ARRAY;
   }
-
   @Override
   public T addElement(T t) {
     return null;
   }
-
   @Override
   public ISetSequence<T> addSequence(ISequence<? extends T> seq) {
     return this;
   }
-
   @Override
   public T removeElement(T t) {
     return null;
   }
-
   @Override
   public ISetSequence<T> removeSequence(ISequence<? extends T> seq) {
     return this;
   }
-
   @SuppressWarnings(value = "unchecked")
   @Override
   public T[] toGenericArray() {
     return (T[]) EMPTY_ARRAY;
   }
-
   @SuppressWarnings(value = "unchecked")
   @Override
   public T[] toGenericArray(Class<T> runtimeClass) {
     return (T[]) EMPTY_ARRAY;
   }
-
   @Override
   public Set<T> toSet() {
     return this;
   }
-
   @Override
   public ISetSequence<T> asSynchronized() {
     return this;
   }
-
   @Override
   public ISetSequence<T> asUnmodifiable() {
     return this;
   }
-
   @SuppressWarnings(value = "unchecked")
   public static <U> NullSetSequence<U> instance() {
     return (NullSetSequence<U>) INSTANCE;

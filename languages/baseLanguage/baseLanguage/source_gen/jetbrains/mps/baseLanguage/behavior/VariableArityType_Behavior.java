@@ -15,12 +15,10 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class VariableArityType_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + "...";
-  };;
-;
+  }
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromList(new ArrayList<String>());
     if ((SLinkOperations.getTarget(thisNode, "componentType", true) != null)) {
@@ -37,16 +35,13 @@ public class VariableArityType_Behavior {
       }
     }
     return variableSuffixes;
-  };;
-;
+  }
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     return _quotation_createNode_mwp9ln_a0a2(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getErasure_702942408396803226", new Object[]{}));
-  };;
-;
+  }
   public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "componentType", true), "virtual_getErasureSignature_1213877337313", new Object[]{}) + "...";
-  };;
-;
+  }
   private static SNode _quotation_createNode_mwp9ln_a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -57,5 +52,5 @@ public class VariableArityType_Behavior {
       quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
-  };;
-;}
+  }
+}

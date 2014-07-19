@@ -17,25 +17,21 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_PrefixDecrementExpression_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_PrefixDecrementExpression_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode prefixDecrementExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(prefixDecrementExpression, "expression", true), "virtual_isLValue_1213877519786", new Object[]{}))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(prefixDecrementExpression, "expression", true), "variable expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7528226091632211481", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

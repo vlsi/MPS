@@ -9,17 +9,13 @@ import java.awt.Color;
 
 public class MPS13933<T> {
   public List<T> myList = ListSequence.fromList(new ArrayList<T>());
-
   public MPS13933() {
   }
-
   public void addRow(List<T> list) {
     ListSequence.fromList(myList).addSequence(ListSequence.fromList(list));
   }
-
   public void doSmth() {
   }
-
   public static void main() {
     new MPS13933<Color>() {
       @Override

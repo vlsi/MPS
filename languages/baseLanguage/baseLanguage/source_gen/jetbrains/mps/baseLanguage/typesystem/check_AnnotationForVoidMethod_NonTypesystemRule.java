@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_AnnotationForVoidMethod_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_AnnotationForVoidMethod_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode annotationInstance, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(annotationInstance), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       SNode annotation = SLinkOperations.getTarget(annotationInstance, "annotation", false);
@@ -29,18 +28,15 @@ public class check_AnnotationForVoidMethod_NonTypesystemRule extends AbstractNon
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.AnnotationInstance";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

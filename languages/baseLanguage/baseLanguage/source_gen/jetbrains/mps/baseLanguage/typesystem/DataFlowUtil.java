@@ -24,15 +24,12 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 
 public class DataFlowUtil {
   private static int maxProgramSize = 400;
-
   public DataFlowUtil() {
   }
-
   @CheckingMethod
   public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, SNode statementList) {
     checkDataFlow(typeCheckingContext, statementList, false);
   }
-
   @CheckingMethod
   public static void checkDataFlow(final TypeCheckingContext typeCheckingContext, SNode statementList, boolean checkReturns) {
     if (statementList == null) {
@@ -62,8 +59,6 @@ public class DataFlowUtil {
     }
   }
 
-
-
   @CheckingMethod
   public static void checkReturns(final TypeCheckingContext typeCheckingContext, Program program) {
     Set<SNode> expectedReturns = DataFlow.getExpectedReturns(program);
@@ -87,14 +82,10 @@ public class DataFlowUtil {
     }
   }
 
-
-
   @CheckingMethod
   public static void checkReturns(final TypeCheckingContext typeCheckingContext, SNode node) {
     checkReturns(typeCheckingContext, DataFlow.buildProgram(node));
   }
-
-
 
   @CheckingMethod
   private static void checkUnreachable(final TypeCheckingContext typeCheckingContext, Program program) {
@@ -107,8 +98,6 @@ public class DataFlowUtil {
       return;
     }
   }
-
-
 
   @CheckingMethod
   private static void checkUninitializedReads(final TypeCheckingContext typeCheckingContext, Program program) {
@@ -132,8 +121,6 @@ public class DataFlowUtil {
       }
     }
   }
-
-
 
   @CheckingMethod
   private static void checkUnusedAssignments(final TypeCheckingContext typeCheckingContext, Program program) {
@@ -200,8 +187,6 @@ public class DataFlowUtil {
     }
   }
 
-
-
   @CheckingMethod
   public static void checkUnusedVariables(final TypeCheckingContext typeCheckingContext, @NotNull SNode statementList, Program program) {
     Set<SNode> usedVariables = DataFlow.getUsedVariables(program, statementList);
@@ -219,8 +204,6 @@ public class DataFlowUtil {
       }
     }
   }
-
-
 
   public static boolean tooComplex(Program program) {
     return program.size() > DataFlowUtil.maxProgramSize;

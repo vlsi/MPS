@@ -21,7 +21,6 @@ public class ExternalReferences_Test extends TestCase {
     }.invoke();
     Assert.assertEquals(foo.value, bar);
   }
-
   public void test_alteredLocalvariable() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
     for (int i = 1; i <= 5; i++) {
@@ -34,7 +33,6 @@ public class ExternalReferences_Test extends TestCase {
     res.value = res.value - 5;
     Assert.assertEquals(0, res.value);
   }
-
   public void test_alteredLocalVariable2() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
     for (int i = 1; i <= 5; i++) {
@@ -44,7 +42,6 @@ public class ExternalReferences_Test extends TestCase {
             public Iterator<Integer> iterator() {
               return new YieldingIterator<Integer>() {
                 private int __CP__ = 0;
-
                 protected boolean moveToNext() {
 __loop__:
                   do {
@@ -77,7 +74,6 @@ __switch__:
     res.value = res.value - 5;
     Assert.assertEquals(0, res.value);
   }
-
   public void test_lvdsWithYieldFromNestedClosure() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
     int x = Sequence.fromIterable(new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
@@ -86,7 +82,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -115,7 +110,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _3_local;
             };
           }
@@ -125,7 +119,6 @@ __switch__:
     Assert.assertEquals(10, res.value);
     Assert.assertEquals(12, x);
   }
-
   public void test_lvdsNoYieldFromNestedClosure() throws Exception {
     final Wrappers._int res = new Wrappers._int(0);
     int x = new _FunctionTypes._return_P0_E0<Integer>() {
@@ -142,7 +135,6 @@ __switch__:
     Assert.assertEquals(11, res.value);
     Assert.assertEquals(12, x);
   }
-
   public void test_alteredLocalVariable3() throws Exception {
     final Wrappers._T<byte[]> bytes = new Wrappers._T<byte[]>(new byte[1]);
     new _FunctionTypes._return_P0_E0<byte[]>() {
@@ -153,7 +145,6 @@ __switch__:
     }.invoke();
     Assert.assertSame(3, bytes.value.length);
   }
-
   public void test_methodParameter() throws Exception {
     Worker wrk = new Worker() {
       @Override
@@ -167,7 +158,6 @@ __switch__:
     };
     Assert.assertEquals("Done: 1234", wrk.doWork(1234));
   }
-
   public void test_methodParameter2() throws Exception {
     Worker wrk = new Worker() {
       @Override
@@ -183,12 +173,10 @@ __switch__:
     };
     Assert.assertEquals("Done: 2468", wrk.doWork(1234));
   }
-
   public void test_field() throws Exception {
     Worker wrk = new Worker() {
       public int field;
       public int foo;
-
       @Override
       public String doWork(Integer foo) {
         this.foo = foo;
@@ -202,7 +190,6 @@ __switch__:
     };
     Assert.assertEquals("Done: 4321", wrk.doWork(4321));
   }
-
   public void test_mps4102() throws Exception {
     int a;
     for (final Wrappers._int i = new Wrappers._int(0); i.value < 10; i.value++) {
@@ -213,7 +200,6 @@ __switch__:
       }.invoke();
     }
   }
-
   public void test_mps7432() throws Exception {
     String res = MPS7432.<String>aaaa(new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {
@@ -222,7 +208,6 @@ __switch__:
     });
     Assert.assertEquals("fubar", res);
   }
-
   public void test_mps10242() throws Exception {
     int num = 0;
     int res = mps10242_helper(num, new _FunctionTypes._return_P1_E0<Integer, Integer>() {
@@ -232,7 +217,6 @@ __switch__:
     });
     Assert.assertSame(42, res);
   }
-
   public void test_mps12286() throws Exception {
     final String foo;
     if (true == false) {
@@ -248,10 +232,8 @@ __switch__:
     Assert.assertEquals("42bar", f);
     Assert.assertTrue((foo).getClass() == String.class);
   }
-
   public ExternalReferences_Test() {
   }
-
   public <T> T mps10242_helper(T t, final _FunctionTypes._return_P1_E0<? extends T, ? super T> fun) {
     final Wrappers._T<T> _t = new Wrappers._T<T>(t);
     new _FunctionTypes._return_P0_E0<T>() {

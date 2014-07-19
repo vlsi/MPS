@@ -12,15 +12,12 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class ReplaceAlwaysTrueFalseWithLiteral_QuickFix extends QuickFix_Runtime {
   public ReplaceAlwaysTrueFalseWithLiteral_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Simplify expression to " + ((Boolean) ReplaceAlwaysTrueFalseWithLiteral_QuickFix.this.getField("value")[0]);
   }
-
   public void execute(SNode node) {
     SNodeOperations.replaceWithAnother(node, _quotation_createNode_ndr37f_a0a0a0(((Boolean) ReplaceAlwaysTrueFalseWithLiteral_QuickFix.this.getField("value")[0]).toString()));
   }
-
   private static SNode _quotation_createNode_ndr37f_a0a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

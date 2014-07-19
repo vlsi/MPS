@@ -15,12 +15,10 @@ public class ArrayLiteral_Constraints extends BaseConstraintsDescriptor {
   public ArrayLiteral_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.ArrayLiteral");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
-  };;
-;
+  }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,8 +28,7 @@ public class ArrayLiteral_Constraints extends BaseConstraintsDescriptor {
     }
 
     return result;
-  };;
-;
+  }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     if (SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       SNode variableDeclaration = SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
@@ -47,7 +44,6 @@ public class ArrayLiteral_Constraints extends BaseConstraintsDescriptor {
       return true;
     }
     return false;
-  };;
-;
+  }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "5536314641534779167");
 }

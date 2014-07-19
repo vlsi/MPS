@@ -18,22 +18,17 @@ public class BinaryOperation_Symbol_Actions {
     editorCell.setAction(CellActionType.DELETE, new BinaryOperation_Symbol_Actions.BinaryOperation_Symbol_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new BinaryOperation_Symbol_Actions.BinaryOperation_Symbol_Actions_BACKSPACE(node));
   }
-
   public static class BinaryOperation_Symbol_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public BinaryOperation_Symbol_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "delete";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode newExpression = SLinkOperations.getTarget(node, "rightExpression", true);
       if (newExpression == null) {
@@ -52,22 +47,17 @@ public class BinaryOperation_Symbol_Actions {
       }
     }
   }
-
   public static class BinaryOperation_Symbol_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public BinaryOperation_Symbol_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "delete";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode newExpression = SLinkOperations.getTarget(node, "rightExpression", true);
       if (newExpression == null) {

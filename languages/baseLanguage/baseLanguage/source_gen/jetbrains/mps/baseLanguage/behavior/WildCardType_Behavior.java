@@ -7,25 +7,20 @@ import java.util.Map;
 
 public class WildCardType_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return "?";
-  };;
-;
+  }
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     return true;
-  };;
-;
+  }
   public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
     return true;
-  };;
-;
+  }
   public static boolean virtual_isValueType_4836112446988592019(SNode thisNode) {
     return false;
-  };;
-;
+  }
   public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
     return false;
-  };;
-;}
+  }
+}

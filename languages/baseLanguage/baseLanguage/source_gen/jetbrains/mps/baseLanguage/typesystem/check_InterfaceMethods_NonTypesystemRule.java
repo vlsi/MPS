@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_InterfaceMethods_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_InterfaceMethods_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode interfaceDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     ListSequence.fromList(SLinkOperations.getTargets(interfaceDeclaration, "member", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -46,18 +45,15 @@ public class check_InterfaceMethods_NonTypesystemRule extends AbstractNonTypesys
       }
     });
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.Interface";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

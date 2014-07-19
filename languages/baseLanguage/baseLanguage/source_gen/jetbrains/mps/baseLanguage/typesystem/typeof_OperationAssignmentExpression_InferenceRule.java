@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_OperationAssignmentExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_OperationAssignmentExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     {
       final SNode leftType = typeCheckingContext.typeOf(SLinkOperations.getTarget(operation, "lValue", true), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4957392803029437247", true);
@@ -53,18 +52,15 @@ public class typeof_OperationAssignmentExpression_InferenceRule extends Abstract
       }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4957392803029437214", false, false);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.OperationAssignmentExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }

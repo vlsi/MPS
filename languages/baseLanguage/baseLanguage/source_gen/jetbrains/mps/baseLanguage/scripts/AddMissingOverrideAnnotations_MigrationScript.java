@@ -25,15 +25,12 @@ public class AddMissingOverrideAnnotations_MigrationScript extends BaseMigration
       public String getName() {
         return "add @Override annotations";
       }
-
       public String getAdditionalInfo() {
         return "add @Override annotations";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.ClassConcept";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         List<SNode> instanceMethods = Sequence.fromIterable(OverridingMethodsFinder.getInstanceMethods(node)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -50,7 +47,6 @@ public class AddMissingOverrideAnnotations_MigrationScript extends BaseMigration
         OverridingMethodsFinder finder = new OverridingMethodsFinder(node, instanceMethods);
         return SetSequence.fromSet(finder.getOverridingMethods()).isNotEmpty();
       }
-
       public void doUpdateInstanceNode(SNode node) {
         List<SNode> instanceMethods = Sequence.fromIterable(OverridingMethodsFinder.getInstanceMethods(node)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -66,13 +62,11 @@ public class AddMissingOverrideAnnotations_MigrationScript extends BaseMigration
           ListSequence.fromList(SLinkOperations.getTargets(meth, "annotation", true)).addElement(createAnnotationInstance_eltaeh_a0a0a2a0a());
         }
       }
-
       public boolean isShowAsIntention() {
         return true;
       }
     });
   }
-
   private static SNode createAnnotationInstance_eltaeh_a0a0a2a0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, false);

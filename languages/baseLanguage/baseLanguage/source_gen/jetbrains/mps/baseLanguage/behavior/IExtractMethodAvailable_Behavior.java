@@ -9,9 +9,8 @@ import jetbrains.mps.baseLanguage.util.plugin.refactorings.AbstractExtractMethod
 
 public class IExtractMethodAvailable_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToExtract) {
     return new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToExtract);
-  };;
-;}
+  }
+}

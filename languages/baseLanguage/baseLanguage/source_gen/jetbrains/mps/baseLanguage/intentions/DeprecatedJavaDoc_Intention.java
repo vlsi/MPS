@@ -17,57 +17,44 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class DeprecatedJavaDoc_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public DeprecatedJavaDoc_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.IBLDeprecatable";
   }
-
   public String getPresentation() {
     return "DeprecatedJavaDoc";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.DeprecatedJavaDoc_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1223648378225");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new DeprecatedJavaDoc_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, node, "virtual_isDeprecated_1224609060727", new Object[]{})) {
         return "Remove Deprecated javadoc";
@@ -75,7 +62,6 @@ public class DeprecatedJavaDoc_Intention implements IntentionFactory {
         return "Add Deprecated javadoc";
       }
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       if (SPropertyOperations.getBoolean(node, "isDeprecated")) {
         SPropertyOperations.set(node, "isDeprecated", "" + (false));
@@ -83,7 +69,6 @@ public class DeprecatedJavaDoc_Intention implements IntentionFactory {
         SPropertyOperations.set(node, "isDeprecated", "" + (true));
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return DeprecatedJavaDoc_Intention.this;
     }

@@ -10,8 +10,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ILocalDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static boolean virtual_isReferencedInClosure_3262277503800823422(SNode thisNode) {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     {
@@ -34,8 +33,7 @@ public class ILocalDeclaration_Behavior {
       }
     }
     return false;
-  };;
-;
+  }
   public static boolean virtual_isReferencedInControlFlowInterrupter_1644061362849513751(SNode thisNode) {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.StatementList", false, false);
     {
@@ -52,5 +50,5 @@ public class ILocalDeclaration_Behavior {
       }
     }
     return false;
-  };;
-;}
+  }
+}

@@ -25,41 +25,32 @@ import jetbrains.mps.smodel.SReference;
 
 public class AddRuntimeExceptionToMethodSignature_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddRuntimeExceptionToMethodSignature_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ThrowStatement";
   }
-
   public String getPresentation() {
     return "AddRuntimeExceptionToMethodSignature";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.AddRuntimeExceptionToMethodSignature_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     // check that this is done in a method 
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
@@ -89,40 +80,32 @@ public class AddRuntimeExceptionToMethodSignature_Intention implements Intention
     }
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199627248517");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddRuntimeExceptionToMethodSignature_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Runtime Exception to Method Signature";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
       ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).addElement(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)), "jetbrains.mps.baseLanguage.structure.Type"));
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddRuntimeExceptionToMethodSignature_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_7gg82q_a0a0a0j0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

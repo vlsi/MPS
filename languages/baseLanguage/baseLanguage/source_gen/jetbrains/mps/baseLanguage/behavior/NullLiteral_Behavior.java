@@ -8,17 +8,14 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class NullLiteral_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return null;
-  };;
-;
+  }
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return null;
-  };;
-;
+  }
   public static boolean virtual_constant_1262430001741498050(SAbstractConcept thisConcept) {
     return true;
-  };;
-;}
+  }
+}

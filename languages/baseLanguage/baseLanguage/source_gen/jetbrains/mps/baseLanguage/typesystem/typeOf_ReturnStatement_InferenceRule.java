@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeOf_ReturnStatement_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_ReturnStatement_InferenceRule() {
   }
-
   public void applyRule(final SNode returnStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SLinkOperations.getTarget(returnStatement, "expression", true) != null) {
       {
@@ -26,18 +25,15 @@ public class typeOf_ReturnStatement_InferenceRule extends AbstractInferenceRule_
     }
     typeCheckingContext.typeOf(SNodeOperations.getAncestor(returnStatement, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false), "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8658296822748110720", true);
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ReturnStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

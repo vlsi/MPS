@@ -21,7 +21,6 @@ public class LinkedMap_Test extends Util_Test {
     MapSequence.fromMap(map).put(6, "F");
     this.assertIterableEquals(this.inputABCDEF(), MapSequence.fromMap(map).values());
   }
-
   public void test_accessOrder() throws Exception {
     Map<String, Integer> map = MapSequence.<String, Integer>fromMapAndKeysArray(new LinkedHashMap<String, Integer>(16, (float) 0.75, true), "A", "B", "C", "D", "E").withValues(1, 2, 3, 4, 5);
     this.assertIterableEquals(this.input5(), MapSequence.fromMap(map).values());
@@ -32,7 +31,6 @@ public class LinkedMap_Test extends Util_Test {
     Assert.assertSame(1, MapSequence.fromMap(map).get("A"));
     this.assertIterableEquals(Arrays.asList(5, 4, 3, 2, 1), MapSequence.fromMap(map).values());
   }
-
   public LinkedMap_Test() {
   }
 }

@@ -23,7 +23,6 @@ public class ThisConstructorInvocation_Constraints extends BaseConstraintsDescri
   public ThisConstructorInvocation_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -31,8 +30,7 @@ public class ThisConstructorInvocation_Constraints extends BaseConstraintsDescri
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      };;
-;
+      }
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -40,20 +38,18 @@ public class ThisConstructorInvocation_Constraints extends BaseConstraintsDescri
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_b9bub5_a0a0a0a0a1a0b0a1a1;
-          };;
-;
+          }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisConstructorKind"));
               return (scope == null ? new EmptyScope() : scope);
             }
-          };;
-;        };
-      };;
-;    });
+          }
+        };
+      }
+    });
     return references;
-  };;
-;
+  }
   private static SNodePointer breakingNode_b9bub5_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137647");
 }

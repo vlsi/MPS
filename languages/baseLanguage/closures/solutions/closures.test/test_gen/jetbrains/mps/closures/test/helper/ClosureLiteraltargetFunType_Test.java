@@ -25,7 +25,6 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)");
     this.runTest("jetbrains.mps.closures.test.helper.ClosureLiteraltargetFunType_Test$TestBody", "test_throwsOrder", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_throwsOrder() throws Exception {
@@ -37,16 +36,13 @@ public class ClosureLiteraltargetFunType_Test extends BaseTransformationTest {
       new ClosureLiteralTarget(genContext).setTarget(literal, FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(funtype));
       this.assertLiteralTarget(genContext, literal, _quotation_createNode_as9vne_c0a4a0());
     }
-
     public TemplateQueryContext getContext() {
       return (TemplateQueryContext) new MockTemplateQueryContext();
     }
-
     public void assertLiteralTarget(TemplateQueryContext gencontext, SNode literal, SNode expected) {
       SNode target = (SNode) Values.LITERAL_TARGET.get(gencontext, literal);
       Assert.assertTrue(MatchingUtil.matchNodes(expected, target));
     }
-
     private static SNode _quotation_createNode_as9vne_c0a4a0() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;

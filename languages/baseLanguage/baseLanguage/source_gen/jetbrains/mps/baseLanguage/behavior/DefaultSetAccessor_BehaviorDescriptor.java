@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class DefaultSetAccessor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public DefaultSetAccessor_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.DefaultSetAccessor";
-  };;
-;}
+  }
+}

@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class SubstringExpression_DataFlow extends DataFlowBuilder {
   public SubstringExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "operand", true));
     if (SLinkOperations.getTarget(_context.getNode(), "startIndex", true) != null) {

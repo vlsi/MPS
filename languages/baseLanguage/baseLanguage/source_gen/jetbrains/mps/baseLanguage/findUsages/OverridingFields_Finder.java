@@ -21,25 +21,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OverridingFields_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.OverridingFields_Finder");
-
   public OverridingFields_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Overriding Fields";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.VariableDeclaration";
   }
-
   @Override
   public boolean isApplicable(SNode node) {
     if (SNodeOperations.getParent(node) == null || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
@@ -50,7 +45,6 @@ public class OverridingFields_Finder extends GeneratedFinder {
     }
     return true;
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
@@ -72,7 +66,6 @@ public class OverridingFields_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Overriding Fields";

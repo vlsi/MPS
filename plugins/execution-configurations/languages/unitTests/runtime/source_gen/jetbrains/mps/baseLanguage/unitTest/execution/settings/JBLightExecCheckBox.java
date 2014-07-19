@@ -13,8 +13,6 @@ public class JBLightExecCheckBox extends JBCheckBox {
     super(text, selected);
   }
 
-
-
   public void registerJavaComp(final JavaConfigurationEditorComponent javaEditorComponent) {
     this.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
@@ -22,8 +20,6 @@ public class JBLightExecCheckBox extends JBCheckBox {
       }
     });
   }
-
-
 
   public void update(final JavaConfigurationEditorComponent javaEditorComponent) {
     final boolean vmOptionsEnabled = !(this.isSelected());

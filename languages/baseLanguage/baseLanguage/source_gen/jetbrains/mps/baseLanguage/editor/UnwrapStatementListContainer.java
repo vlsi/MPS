@@ -19,18 +19,14 @@ public class UnwrapStatementListContainer {
     editorCell.setAction(CellActionType.DELETE, new UnwrapStatementListContainer.UnwrapStatementListContainer_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new UnwrapStatementListContainer.UnwrapStatementListContainer_BACKSPACE(node));
   }
-
   public static class UnwrapStatementListContainer_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public UnwrapStatementListContainer_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, final SNode node) {
       List<SNode> statements = SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(node), "statement", true);
       ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {
@@ -41,18 +37,14 @@ public class UnwrapStatementListContainer {
       SNodeOperations.deleteNode(node);
     }
   }
-
   public static class UnwrapStatementListContainer_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public UnwrapStatementListContainer_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, final SNode node) {
       List<SNode> statements = SLinkOperations.getTargets(IContainsStatementList_Behavior.call_getStatementList_1237545932619(node), "statement", true);
       ListSequence.fromList(statements).visitAll(new IVisitor<SNode>() {

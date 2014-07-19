@@ -13,7 +13,6 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 public class TypeVariableReference_compatibleWith_otherType_ComparisonRule extends ComparisonRule_Runtime {
   public TypeVariableReference_compatibleWith_otherType_ComparisonRule() {
   }
-
   public boolean areComparable(SNode node1, SNode node2, IsApplicable2Status status) {
     SNode bound = SLinkOperations.getTarget(SLinkOperations.getTarget(node1, "typeVariableDeclaration", false), "bound", true);
     if ((bound == null)) {
@@ -42,29 +41,24 @@ public class TypeVariableReference_compatibleWith_otherType_ComparisonRule exten
       }
     }
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableConceptFQName2());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableConceptFQName1() {
     return "jetbrains.mps.baseLanguage.structure.TypeVariableReference";
   }
-
   public String getApplicableConceptFQName2() {
     return "jetbrains.mps.baseLanguage.structure.Type";
   }

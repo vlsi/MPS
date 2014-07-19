@@ -18,18 +18,15 @@ public class NodeWrappersTestsContributor implements TestsContributor {
   private final Iterable<? extends ITestNodeWrapper> myTestNodes;
   private boolean initialized = false;
   private final TestsClassStorage myTestClassStorage;
-
   public NodeWrappersTestsContributor(Iterable<? extends ITestNodeWrapper> testNodes, TestsClassStorage testClassStorage) {
     myTestNodes = testNodes;
     myTestClassStorage = testClassStorage;
     initialized = true;
   }
-
   @Override
   public boolean isInitialized() {
     return initialized;
   }
-
   @Override
   public Iterable<Request> gatherTests() throws Exception {
     final Exception[] ex = new Exception[1];
@@ -62,13 +59,10 @@ public class NodeWrappersTestsContributor implements TestsContributor {
     return requestList;
   }
 
-
-
   private SModule getModuleByNode(SNode testNode) {
     final SModel model = SNodeOperations.getModel(testNode);
     final SModuleReference moduleReference = model.getModule().getModuleReference();
     return ModuleRepositoryFacade.getInstance().getModule(moduleReference);
   }
-
 
 }

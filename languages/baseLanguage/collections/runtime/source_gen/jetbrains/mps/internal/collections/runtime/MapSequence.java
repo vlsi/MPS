@@ -9,20 +9,16 @@ import jetbrains.mps.internal.collections.runtime.impl.NullMapSequence;
 
 public class MapSequence<U, V> extends AbstractMapSequence<U, V> implements IMapSequence<U, V>, Map<U, V>, Serializable {
   private static final long serialVersionUID = -3900727585622019317L;
-
   protected MapSequence(Map<U, V> map) {
     super(map);
   }
-
   public static <P, Q> MapSequence.MapSequenceInitializer<P, Q> fromKeysArray(P... keys) {
     Map<P, Q> map = new HashMap<P, Q>();
     return new MapSequence.MapSequenceInitializer<P, Q>(new MapSequence<P, Q>(map), keys);
   }
-
   public static <P, Q> MapSequence.MapSequenceInitializer<P, Q> fromMapAndKeysArray(Map<P, Q> map, P... keys) {
     return new MapSequence.MapSequenceInitializer<P, Q>(new MapSequence<P, Q>(map), keys);
   }
-
   public static <P, Q> IMapSequence<P, Q> fromArray(IMapping<P, Q>... mappings) {
     Map<P, Q> map = new HashMap<P, Q>();
     for (IMapping<P, Q> mp : mappings) {
@@ -30,7 +26,6 @@ public class MapSequence<U, V> extends AbstractMapSequence<U, V> implements IMap
     }
     return new MapSequence<P, Q>(map);
   }
-
   @SuppressWarnings(value = "unchecked")
   public static <P, Q> IMapSequence<P, Q> fromIterable(Iterable<IMapping<P, Q>> iterable) {
     if (iterable instanceof IMapSequence) {
@@ -42,7 +37,6 @@ public class MapSequence<U, V> extends AbstractMapSequence<U, V> implements IMap
     }
     return new MapSequence<P, Q>(map);
   }
-
   public static <P, Q> IMapSequence<P, Q> fromMap(Map<P, Q> map) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (map == null) {
@@ -54,16 +48,13 @@ public class MapSequence<U, V> extends AbstractMapSequence<U, V> implements IMap
     }
     return new MapSequence<P, Q>(map);
   }
-
   public static class MapSequenceInitializer<P, Q> {
     private final P[] keys;
     private final IMapSequence<P, Q> mapSeq;
-
     protected MapSequenceInitializer(IMapSequence<P, Q> mapSeq, P... keys) {
       this.mapSeq = mapSeq;
       this.keys = keys;
     }
-
     public IMapSequence<P, Q> withValues(Q... values) {
       for (int i = 0; i < keys.length && i < values.length; i++) {
         mapSeq.put(keys[i], values[i]);

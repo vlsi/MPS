@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 public class MPS9760 {
   public MPS9760() {
   }
-
   public String bar() {
     return new _FunctionTypes._return_P0_E0<String>() {
       public String invoke() {

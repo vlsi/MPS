@@ -14,15 +14,12 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 public class ForLoopNotNull extends DataFlowConstructor {
   public ForLoopNotNull() {
   }
-
   public boolean isApplicable(SNode node) {
     return SModelUtil_new.isAssignableConcept(BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{}), getApplicableConceptFqName());
   }
-
   public String getApplicableConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ForStatement";
   }
-
   public void performActions(Program o, SNode node) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.NotEqualsExpression")) {
       SNode notEquals = SNodeOperations.cast(SLinkOperations.getTarget(node, "condition", true), "jetbrains.mps.baseLanguage.structure.NotEqualsExpression");

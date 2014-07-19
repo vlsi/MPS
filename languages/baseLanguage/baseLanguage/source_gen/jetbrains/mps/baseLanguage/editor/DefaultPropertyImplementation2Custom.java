@@ -13,18 +13,14 @@ public class DefaultPropertyImplementation2Custom {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.INSERT, new DefaultPropertyImplementation2Custom.DefaultPropertyImplementation2Custom_INSERT(node));
   }
-
   public static class DefaultPropertyImplementation2Custom_INSERT extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DefaultPropertyImplementation2Custom_INSERT(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.CustomPropertyImplementation");
     }

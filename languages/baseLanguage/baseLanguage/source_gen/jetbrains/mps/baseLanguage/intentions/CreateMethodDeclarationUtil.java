@@ -15,11 +15,9 @@ import jetbrains.mps.smodel.SModelStereotype;
 public class CreateMethodDeclarationUtil {
   public CreateMethodDeclarationUtil() {
   }
-
   public static boolean isApplicable(EditorContext editorContext, SNode node) {
     return CreateMethodDeclarationUtil.getMethodName(editorContext) != null;
   }
-
   public static String getMethodName(EditorContext editorContext) {
     EditorCell selectedCell = editorContext.getSelectedCell();
     if (!(selectedCell instanceof EditorCell_Label)) {
@@ -38,7 +36,6 @@ public class CreateMethodDeclarationUtil {
     }
     return name;
   }
-
   public static SNode getClassifier(SNode node) {
     SNode operandType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (!(SNodeOperations.isInstanceOf(operandType, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {

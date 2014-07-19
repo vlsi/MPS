@@ -23,7 +23,6 @@ public class UnknownDotCall_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_hkcaw7_a(editorContext, node);
   }
-
   private EditorCell createCollection_hkcaw7_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_hkcaw7_a");
@@ -34,19 +33,16 @@ public class UnknownDotCall_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createComponent_hkcaw7_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createComponent_hkcaw7_a0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.UnknownQualifiedName");
     return editorCell;
   }
-
   private EditorCell createConstant_hkcaw7_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_hkcaw7_b0");
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_hkcaw7_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("callee");
@@ -68,7 +64,6 @@ public class UnknownDotCall_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createComponent_hkcaw7_d0(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.IMethodCall_actualArguments");
     return editorCell;

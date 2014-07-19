@@ -7,9 +7,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class PlaceholderMember_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static boolean virtual_canBeInterfaceMember_2949815620938109095(SAbstractConcept thisConcept) {
     return true;
-  };;
-;}
+  }
+}

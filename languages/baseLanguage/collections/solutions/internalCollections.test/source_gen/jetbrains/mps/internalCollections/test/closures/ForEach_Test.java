@@ -18,7 +18,6 @@ public class ForEach_Test extends Util_Test {
     }
     this.assertIterableEquals(this.expectEven10(), res);
   }
-
   public void test_iterateArray() throws Exception {
     int[] arr = new int[]{1, 2, 3, 4, 5};
     Iterable<Integer> exp = this.input5();
@@ -31,7 +30,6 @@ public class ForEach_Test extends Util_Test {
       Assert.assertTrue(Sequence.fromIterable(exp2).contains(s));
     }
   }
-
   public void test_noWrapperForGNE() throws Exception {
     Iterable<Integer> exp = this.input5();
     for (int i : new int[]{1, 2, 3, 4, 5}) {
@@ -39,7 +37,6 @@ public class ForEach_Test extends Util_Test {
       this.accept(i);
     }
   }
-
   public void test_noWrapperForArray() throws Exception {
     Iterable<Integer> exp = this.input5();
     int[] arr = new int[]{1, 2, 3, 4, 5};
@@ -48,7 +45,6 @@ public class ForEach_Test extends Util_Test {
       this.accept(i);
     }
   }
-
   public void test_mps14282() throws Exception {
     List<int[]> lints = ListSequence.fromListAndArray(new ArrayList<int[]>(), new int[]{1001}, new int[]{1001, 1002}, new int[]{1001, 1002, 1003});
     int sum = 0;
@@ -61,7 +57,6 @@ public class ForEach_Test extends Util_Test {
     }
     Assert.assertEquals(6010, sum);
   }
-
   public void test_mps10737() throws Exception {
     //  testing compilation only 
     IFoo foo = new IFoo() {
@@ -75,10 +70,8 @@ public class ForEach_Test extends Util_Test {
     for (IBar.Bar bars : Sequence.fromIterable(new IFoo.Foo().get())) {
     }
   }
-
   private void accept(int valid) {
   }
-
   private void accept(Object invalid) {
     Assert.assertTrue(false);
   }

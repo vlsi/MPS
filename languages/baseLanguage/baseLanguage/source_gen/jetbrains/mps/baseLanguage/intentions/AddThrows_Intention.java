@@ -18,73 +18,57 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddThrows_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public AddThrows_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   }
-
   public String getPresentation() {
     return "AddThrows";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.AddThrows_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).isEmpty();
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1231930815009");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddThrows_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Add Throws";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNodeFactoryOperations.addNewChild(node, "throwsItem", "jetbrains.mps.baseLanguage.structure.Type");
       editorContext.select(ListSequence.fromList(SLinkOperations.getTargets(node, "throwsItem", true)).last());
     }
-
     public IntentionDescriptor getDescriptor() {
       return AddThrows_Intention.this;
     }

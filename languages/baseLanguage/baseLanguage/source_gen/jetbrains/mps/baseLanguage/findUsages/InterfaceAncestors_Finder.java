@@ -16,34 +16,27 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 
 public class InterfaceAncestors_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder");
-
   public InterfaceAncestors_Finder() {
   }
-
   public boolean isVisible(SNode node, SearchScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "extendedInterface", true)).isNotEmpty();
   }
-
   @Override
   public boolean isVisible(SNode node) {
     return isVisible(node, new ModelsScope(node.getModel()));
   }
-
   @Override
   public String getDescription() {
     return "Interface Ancestors";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Interface";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
@@ -63,7 +56,6 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Ancestor";

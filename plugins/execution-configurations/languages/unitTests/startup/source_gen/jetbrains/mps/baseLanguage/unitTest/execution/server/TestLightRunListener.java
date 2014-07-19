@@ -23,12 +23,9 @@ public class TestLightRunListener extends RunListener {
   private final TestLightRunListener.TestEventFactory myFactory;
   private int currentRequest;
 
-
   private boolean isTerminating() {
     return myTestRunState.isTerminating();
   }
-
-
 
   public TestLightRunListener(TestLightExecutor executor, int requestCount) {
     myExecutor = executor;
@@ -38,16 +35,12 @@ public class TestLightRunListener extends RunListener {
     myFactory = new TestLightRunListener.TestEventFactory();
   }
 
-
-
   private String getStackTrace(Failure failure) {
     StringWriter sw = new StringWriter();
     PrintWriter pw = new PrintWriter(sw);
     failure.getException().printStackTrace(pw);
     return sw.toString();
   }
-
-
 
   @Override
   public void testRunFinished(Result result) throws Exception {
@@ -67,8 +60,6 @@ public class TestLightRunListener extends RunListener {
     }
   }
 
-
-
   private void onTestErrorEvent(String startToken, String endToken, Failure failure) {
     myDispatcher.onTestEvent(myFactory.create(startToken, failure.getDescription()));
     final String text = getStackTrace(failure);
@@ -76,13 +67,9 @@ public class TestLightRunListener extends RunListener {
     myDispatcher.onTestEvent(myFactory.create(endToken, failure.getDescription()));
   }
 
-
-
   private void onTestEvent(String token, Description description) throws Exception {
     myDispatcher.onTestEvent(myFactory.create(token, description));
   }
-
-
 
   @Override
   public void testFailure(Failure failure) throws Exception {
@@ -95,8 +82,6 @@ public class TestLightRunListener extends RunListener {
     onTestErrorEvent(TestEvent.ERROR_TEST_PREFIX, TestEvent.ERROR_TEST_SUFFIX, failure);
   }
 
-
-
   @Override
   public void testAssumptionFailure(Failure failure) {
     if (isTerminating()) {
@@ -107,8 +92,6 @@ public class TestLightRunListener extends RunListener {
     }
     onTestErrorEvent(TestEvent.FAILURE_TEST_PREFIX, TestEvent.FAILURE_TEST_SUFFIX, failure);
   }
-
-
 
   @Override
   public void testStarted(Description description) throws Exception {
@@ -121,8 +104,6 @@ public class TestLightRunListener extends RunListener {
     onTestEvent(TestEvent.START_TEST_PREFIX, description);
   }
 
-
-
   @Override
   public void testFinished(Description description) throws Exception {
     if (isTerminating()) {
@@ -134,8 +115,6 @@ public class TestLightRunListener extends RunListener {
     onTestEvent(TestEvent.END_TEST_PREFIX, description);
   }
 
-
-
   private class TestEventFactory {
     public TestEvent create(String token, Description description) {
       String fqName = description.getClassName();
@@ -146,7 +125,6 @@ public class TestLightRunListener extends RunListener {
       return new TestEvent(token, fqName, methodName, memory, time);
     }
   }
-
 
   protected static Logger LOG = LogManager.getLogger(TestLightRunListener.class);
 }

@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class JavaImport_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements Tokens_BehaviorDescriptor {
   public JavaImport_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.JavaImport";
-  };;
-;}
+  }
+}

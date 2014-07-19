@@ -26,7 +26,6 @@ public class Generics_Test extends TestCase {
     o2.doSmth();
     Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList<Integer>(), 333, 444), o2.myList);
   }
-
   public void test_mps13933_raw() throws Exception {
     MPS13933 o1 = new MPS13933() {
       @Override
@@ -37,7 +36,6 @@ public class Generics_Test extends TestCase {
     o1.doSmth();
     Assert.assertEquals(ListSequence.fromListAndArray(new ArrayList(), "foo", "bar"), o1.myList);
   }
-
   public Generics_Test() {
   }
 }

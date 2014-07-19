@@ -15,23 +15,18 @@ public class ReplacePlaceholderMethodDeclaration_MigrationScript extends BaseMig
       public String getName() {
         return "Find and replace empty lines in Interfaces represented by PlaceholderMethodDeclaration";
       }
-
       public String getAdditionalInfo() {
         return "Find and replace empty lines in Interfaces represented by PlaceholderMethodDeclaration";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         return SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.Interface");
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.PlaceholderMember");
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

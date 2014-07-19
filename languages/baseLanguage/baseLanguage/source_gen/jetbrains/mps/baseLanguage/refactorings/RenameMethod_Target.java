@@ -9,19 +9,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class RenameMethod_Target implements IRefactoringTarget {
   public RenameMethod_Target() {
   }
-
   public IRefactoringTarget.TargetType getTarget() {
     return IRefactoringTarget.TargetType.NODE;
   }
-
   public boolean allowMultipleTargets() {
     return false;
   }
-
   public boolean isApplicableToEntityType(Object entity) {
     return true;
   }
-
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;

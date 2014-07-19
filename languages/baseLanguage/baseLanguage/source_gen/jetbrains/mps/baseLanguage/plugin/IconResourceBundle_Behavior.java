@@ -16,18 +16,14 @@ public class IconResourceBundle_Behavior implements IconResourceBundle {
       put("RUNNABLEMARK", IconContainer.ICON_a2);
     }
   };
-
   public IconResourceBundle_Behavior() {
   }
-
   public Iterable<String> getKeys() {
     return icons.keySet();
   }
-
   public Icon getResource(String key) {
     return icons.get(key);
   }
-
   public static IconResourceBundle_Behavior getInstance() {
     return IconResourceBundle_Behavior.INSTANCE;
   }

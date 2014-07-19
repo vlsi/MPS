@@ -6,9 +6,8 @@ package jetbrains.mps.baseLanguage.behavior;
 public abstract class BaseVariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public BaseVariableReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.BaseVariableReference";
-  };;
-;}
+  }
+}

@@ -40,7 +40,6 @@ public class FunctionTypes_Test extends TestCase {
       }
     });
   }
-
   public void test_exceptions() throws Exception {
     _FunctionTypes._void_P0_E1<? extends Exception> throwsException = new _FunctionTypes._void_P0_E1<Exception>() {
       public void invoke() throws Exception {
@@ -73,7 +72,6 @@ public class FunctionTypes_Test extends TestCase {
       */
     }
   }
-
   public void test_exceptionsYield() throws Exception {
     /*
       _FunctionTypes._return_P0_E0<? extends Iterable<Integer>> throwsOne = new _FunctionTypes._return_P0_E0<Iterable<Integer>>() {
@@ -82,7 +80,6 @@ public class FunctionTypes_Test extends TestCase {
             public Iterator<Integer> iterator() {
               return new YieldingIterator<Integer>() {
                 private int __CP__ = 0;
-
                 protected boolean moveToNext() {
 __loop__:
                   do {
@@ -126,7 +123,6 @@ __switch__:
             public Iterator<Integer> iterator() {
               return new YieldingIterator<Integer>() {
                 private int __CP__ = 0;
-
                 protected boolean moveToNext() {
 __loop__:
                   do {
@@ -188,7 +184,6 @@ __switch__:
                   } while (true);
                   return false;
                 }
-
                 private int _2_i;
               };
             }
@@ -202,7 +197,6 @@ __switch__:
       */
     }
   }
-
   public void test_functionTypeAdapter_complex() throws Exception {
     _FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> fun1 = new _FunctionTypes._return_P1_E0<Integer, Integer>() {
       public Integer invoke(Integer i) {
@@ -267,7 +261,6 @@ __switch__:
     this.accept_Number_from_String(fun3);
     this.accept_Number_from_String(fun4);
   }
-
   public void test_return_null() throws Exception {
     final Wrappers._boolean b = new Wrappers._boolean(true);
     _FunctionTypes._return_P0_E0<? extends String> ret_string = new _FunctionTypes._return_P0_E0<String>() {
@@ -289,7 +282,6 @@ __switch__:
     };
     Assert.assertNull(ret_string.invoke());
   }
-
   public void test_specifiedInterface() throws Exception {
     _FunctionTypes._return_P1_E0<? extends Integer, ? super Boolean> ssdf = new _FunctionTypes._return_P1_E0<Integer, Boolean>() {
       public Integer invoke(Boolean b) {
@@ -297,31 +289,22 @@ __switch__:
       }
     };
   }
-
   public FunctionTypes_Test() {
   }
-
   public void accept_int(_FunctionTypes._return_P0_E0<? extends Integer> fun) {
   }
-
   public void accept_Integer(_FunctionTypes._return_P0_E0<? extends Integer> fun) {
   }
-
   public void accept_Number(_FunctionTypes._return_P0_E0<? extends Number> fun) {
   }
-
   public void accept_int_from_int(_FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> fun) {
   }
-
   public void accept_int_from_Integer(_FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> fun) {
   }
-
   public void accept_Integer_from_int(_FunctionTypes._return_P1_E0<? extends Integer, ? super Integer> fun) {
   }
-
   public void accept_Integer_from_Object(_FunctionTypes._return_P1_E0<? extends Integer, ? super Object> fun) {
   }
-
   public void accept_Number_from_String(_FunctionTypes._return_P1_E0<? extends Number, ? super String> fun) {
   }
 }

@@ -28,11 +28,9 @@ public class HasAnnotation_AnnotationComponent implements ConceptEditorComponent
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createAlternation_85xxz0_a(editorContext, node);
   }
-
   private EditorCell createAlternation_85xxz0_a(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = HasAnnotation_AnnotationComponent.renderingCondition_85xxz0_a0(node, editorContext);
@@ -44,11 +42,9 @@ public class HasAnnotation_AnnotationComponent implements ConceptEditorComponent
     }
     return editorCell;
   }
-
   private static boolean renderingCondition_85xxz0_a0(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).isNotEmpty();
   }
-
   private EditorCell createRefNodeList_85xxz0_a0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new HasAnnotation_AnnotationComponent.annotationListHandler_85xxz0_a0(node, "annotation", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -62,30 +58,25 @@ public class HasAnnotation_AnnotationComponent implements ConceptEditorComponent
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class annotationListHandler_85xxz0_a0 extends RefNodeListHandler {
     public annotationListHandler_85xxz0_a0(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -99,7 +90,6 @@ public class HasAnnotation_AnnotationComponent implements ConceptEditorComponent
       }
     }
   }
-
   private EditorCell createConstant_85xxz0_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@{...}");
     editorCell.setCellId("Constant_85xxz0_a0a");
@@ -109,7 +99,6 @@ public class HasAnnotation_AnnotationComponent implements ConceptEditorComponent
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_85xxz0_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_85xxz0_a0");

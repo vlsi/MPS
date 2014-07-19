@@ -16,22 +16,17 @@ public class SingleLineCommentActions {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
     editorCell.setAction(CellActionType.INSERT, new SingleLineCommentActions.SingleLineCommentActions_INSERT(node));
   }
-
   public static class SingleLineCommentActions_INSERT extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public SingleLineCommentActions_INSERT(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Facilitate familiar comment editing experience: add newline if enter in the end of comment line";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
 
       SNode selectedNode = editorContext.getSelectedNode();

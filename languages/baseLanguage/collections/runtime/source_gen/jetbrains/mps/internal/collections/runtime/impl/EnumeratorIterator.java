@@ -10,53 +10,44 @@ public class EnumeratorIterator<T> implements IEnumerator.Iterator<T> {
   private final java.util.Iterator<T> delegate;
   private T current;
   private boolean hasCurrent = false;
-
   private EnumeratorIterator(java.util.Iterator<T> iterator) {
     if (iterator == null) {
       throw new NullPointerException();
     }
     delegate = iterator;
   }
-
   @Override
   public boolean hasNext() {
     return delegate.hasNext();
   }
-
   @Override
   public T next() {
     primMoveNext();
     return primCurrent();
   }
-
   @Override
   public void remove() {
     delegate.remove();
   }
-
   @Override
   public T current() {
     return primCurrent();
   }
-
   @Override
   public boolean moveNext() {
     return primMoveNext();
   }
-
   private T primCurrent() {
     if (!(hasCurrent)) {
       throw new NoSuchElementException();
     }
     return current;
   }
-
   private boolean primMoveNext() {
     hasCurrent = delegate.hasNext();
     current = (hasCurrent ? delegate.next() : null);
     return hasCurrent;
   }
-
   public static <U> IEnumerator.Iterator<U> fromIterator(java.util.Iterator<U> itr) {
     if (Sequence.IGNORE_NULL_VALUES) {
       if (itr == null) {
@@ -68,38 +59,30 @@ public class EnumeratorIterator<T> implements IEnumerator.Iterator<T> {
     }
     return new EnumeratorIterator<U>(itr);
   }
-
   protected static class Empty<U> implements IEnumerator.Iterator<U> {
     private static EnumeratorIterator.Empty<Object> INSTANCE = new EnumeratorIterator.Empty<Object>();
-
     protected Empty() {
     }
-
     @Override
     public U current() {
       throw new NoSuchElementException();
     }
-
     @Override
     public boolean hasNext() {
       return false;
     }
-
     @Override
     public boolean moveNext() {
       return false;
     }
-
     @Override
     public U next() {
       throw new NoSuchElementException();
     }
-
     @Override
     public void remove() {
       throw new UnsupportedOperationException();
     }
-
     @SuppressWarnings(value = "unchecked")
     public static <V> EnumeratorIterator.Empty<V> instance() {
       return (EnumeratorIterator.Empty<V>) INSTANCE;

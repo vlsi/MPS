@@ -24,14 +24,11 @@ public class TestLightExecutor extends AbstractTestExecutor {
   private final TestsClassStorage myTestClassStorage = new TestsClassStorage();
   private boolean myReadyFlag = false;
   private final TestLightRunState myTestRunState;
-
   public TestLightExecutor(TestEventsDispatcher dispatcher, Iterable<? extends ITestNodeWrapper> nodes) {
     myTestRunState = TestLightRunState.create();
     myDispatcher = dispatcher;
     myNodes = nodes;
   }
-
-
 
   @Override
   public void init() {
@@ -41,13 +38,9 @@ public class TestLightExecutor extends AbstractTestExecutor {
     getRunState().advance(TestLightRunStateEnum.INITIALIZED);
   }
 
-
-
   public void setReady() {
     myReadyFlag = true;
   }
-
-
 
   @Override
   protected void doExecute(JUnitCore core, Iterable<Request> requests) throws Throwable {
@@ -62,8 +55,6 @@ public class TestLightExecutor extends AbstractTestExecutor {
     }
   }
 
-
-
   private void waitWhileNotReady() {
     new WaitFor() {
       @Override
@@ -73,16 +64,12 @@ public class TestLightExecutor extends AbstractTestExecutor {
     };
   }
 
-
-
   public void terminateRun() {
     if (getRunState().isTerminated()) {
       return;
     }
     stopRun();
   }
-
-
 
   /*package*/ void terminateProcess(int code) {
     getRunState().advance(TestLightRunStateEnum.TERMINATING);
@@ -91,22 +78,16 @@ public class TestLightExecutor extends AbstractTestExecutor {
     myDispatcher.onProcessTerminated("Process finished with exit code " + code);
   }
 
-
-
   private void stopRun() {
     AbstractTestExecutor.StoppableRunner currentRunner = this.getCurrentRunner();
     assert currentRunner != null;
     currentRunner.pleaseStop();
   }
 
-
-
   @Override
   public void dispose() {
     getRunState().advance(TestLightRunStateEnum.TERMINATED);
   }
-
-
 
   @NotNull
   @Override
@@ -114,26 +95,19 @@ public class TestLightExecutor extends AbstractTestExecutor {
     return new NodeWrappersTestsContributor(myNodes, myTestClassStorage);
   }
 
-
-
   @NotNull
   @Override
   protected RunListener createListener(Iterable<Request> requests) {
     return new TestLightRunListener(this, ListSequence.fromIterable(requests).size());
   }
 
-
-
   public TestEventsDispatcher getDispatcher() {
     return myDispatcher;
   }
 
-
-
   public TestLightRunState getRunState() {
     return myTestRunState;
   }
-
 
   protected static Logger LOG = LogManager.getLogger(TestLightExecutor.class);
 }

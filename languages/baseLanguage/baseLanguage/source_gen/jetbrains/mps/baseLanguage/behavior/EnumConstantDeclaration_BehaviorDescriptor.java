@@ -18,113 +18,86 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 public class EnumConstantDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IValidIdentifier_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor, ClassifierMember_BehaviorDescriptor, IMethodCall_BehaviorDescriptor, InterfacePart_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public EnumConstantDeclaration_BehaviorDescriptor() {
   }
-
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return HasAnnotation_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
-  };;
-;
+  }
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
     return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
-  };;
-;
+  }
   public SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     return IMethodCall_Behavior.virtual_deriveType_1213877435747(thisNode, expression);
-  };;
-;
+  }
   public SNode virtual_deriveType_4555537781928374706(SNode thisNode, SNode expression, SNode link) {
     return TypeDerivable_Behavior.virtual_deriveType_4555537781928374706(thisNode, expression, link);
-  };;
-;
+  }
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return EnumConstantDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
-  };;
-;
+  }
   public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return EnumConstantDeclaration_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
-  };;
-;
+  }
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return HasAnnotation_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
-  };;
-;
+  }
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return EnumConstantDeclaration_Behavior.virtual_getFqName_1213877404258(thisNode);
-  };;
-;
+  }
   public SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getInstanceType_8008512149545154471(thisNode);
-  };;
-;
+  }
   public List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     return EnumConstantDeclaration_Behavior.virtual_getMarkIcons_3923831204883340393(thisNode);
-  };;
-;
+  }
   public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return EnumConstantDeclaration_Behavior.virtual_getMembers_1213877531970(thisNode);
-  };;
-;
+  }
   public List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     return EnumConstantDeclaration_Behavior.virtual_getMethodsToImplement_5418393554803775106(thisNode);
-  };;
-;
+  }
   public List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
     return EnumConstantDeclaration_Behavior.virtual_getMethodsToOverride_5418393554803767537(thisNode);
-  };;
-;
+  }
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return EnumConstantDeclaration_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
-  };;
-;
+  }
   public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
-  };;
-;
+  }
   public SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getTypeAnnotation_1233920952262(thisNode);
-  };;
-;
+  }
   public Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
     return IMethodCall_Behavior.virtual_getTypesByTypeVars_851115533308208851(thisNode);
-  };;
-;
+  }
   public boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
     return IMethodCall_Behavior.virtual_isInTypeInferenceContext_4837286298388660615(thisNode);
-  };;
-;
+  }
   public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
-  };;
-;
+  }
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return EnumConstantDeclaration_Behavior.virtual_isStatic_8986964027630462944(thisNode);
-  };;
-;
+  }
   public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
-  };;
-;
+  }
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return EnumConstantDeclaration_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
-  };;
-;
+  }
   public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_needsEmptyLineAfter_641490355014298838(thisNode);
-  };;
-;
+  }
   public boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_needsEmptyLineBefore_641490355014296733(thisNode);
-  };;
-;
+  }
   public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     EnumConstantDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
-  };;
-;
+  }
   public boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
     return IMethodCall_Behavior.virtual_useScopesForMethodDeclarationFixer_66132694723287898(thisNode);
-  };;
-;
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";
-  };;
-;}
+  }
+}

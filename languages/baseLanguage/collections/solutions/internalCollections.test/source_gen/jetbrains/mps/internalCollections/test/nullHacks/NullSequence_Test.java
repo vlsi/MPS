@@ -28,7 +28,6 @@ public class NullSequence_Test extends Util_Test {
       this.assertIterableEquals(this.expect5(), list5);
     }
   }
-
   public void test_nullCompareOperations() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       Iterable<Integer> input = this.input5();
@@ -39,7 +38,6 @@ public class NullSequence_Test extends Util_Test {
       this.assertIterableEquals(this.expect5(), Sequence.fromIterable(input).subtract(null));
     }
   }
-
   public void test_nullTranslate() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       Iterable<Integer> input = this.input5();
@@ -52,7 +50,6 @@ public class NullSequence_Test extends Util_Test {
       Assert.assertEquals(0, Sequence.fromIterable(nullSeq).count());
     }
   }
-
   public void test_nullList() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       List<Integer> nullList = null;
@@ -65,14 +62,12 @@ public class NullSequence_Test extends Util_Test {
       Assert.assertEquals(0, ListSequence.fromList(nullList).count());
     }
   }
-
   public void test_forEach() throws Exception {
     if (Sequence.USE_NULL_SEQUENCE) {
       for (Object foo : Sequence.emptySequence()) {
       }
     }
   }
-
   public void test_nullArray() throws Exception {
     int[] arr = null;
     for (int i : ArrayUtils.fromIntegerArray(arr)) {

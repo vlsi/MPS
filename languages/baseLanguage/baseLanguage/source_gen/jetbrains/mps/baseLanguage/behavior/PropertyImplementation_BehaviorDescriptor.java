@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class PropertyImplementation_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public PropertyImplementation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.PropertyImplementation";
-  };;
-;
+  }
   public abstract boolean virtual_hasSetter_1213877430658(SNode thisNode);
 }

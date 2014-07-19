@@ -36,16 +36,14 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class ClassifierType_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
     if (classifier == null) {
       return "?no classifier?";
     }
     return ClassifierType_Behavior.call_getPresentation_2354269628709783609(thisNode, SPropertyOperations.getString(classifier, "name"));
-  };;
-;
+  }
   public static String call_getPresentation_2354269628709783609(SNode thisNode, String name) {
     String result = name;
     List<SNode> parms = SLinkOperations.getTargets(thisNode, "parameter", true);
@@ -60,30 +58,26 @@ public class ClassifierType_Behavior {
       result = result + "<" + parmsText + ">";
     }
     return result;
-  };;
-;
+  }
   public static String virtual_getDetailedPresentation_2354269628709769373(SNode thisNode) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
     if (classifier == null) {
       return "?no classifier?";
     }
     return ClassifierType_Behavior.call_getPresentation_2354269628709783609(thisNode, BehaviorReflection.invokeVirtual(String.class, classifier, "virtual_getFqName_1213877404258", new Object[]{}));
-  };;
-;
+  }
   public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
     if (classifier == null) {
       return "?no classifier?";
     }
     return BehaviorReflection.invokeVirtual(String.class, classifier, "virtual_getFqName_1213877404258", new Object[]{});
-  };;
-;
+  }
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     SNode classifierType = SNodeOperations.copyNode(thisNode);
     ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).clear();
     return classifierType;
-  };;
-;
+  }
   @Deprecated
   public static boolean call_isRawType_702942408396828337(SNode thisNode) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
@@ -97,8 +91,7 @@ public class ClassifierType_Behavior {
       return false;
     }
     return true;
-  };;
-;
+  }
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     String classifierName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "classifier", false), "name");
     if (classifierName == null) {
@@ -106,12 +99,10 @@ public class ClassifierType_Behavior {
     }
     String shortName = NameUtil.shortNameFromLongName(classifierName);
     return ((List<String>) NameUtil.splitByCamels(NameUtil.decapitalize(shortName)));
-  };;
-;
+  }
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return _quotation_createNode_hz3823_a0a7(SLinkOperations.getTarget(thisNode, "classifier", false));
-  };;
-;
+  }
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
@@ -125,8 +116,7 @@ public class ClassifierType_Behavior {
       }
     }
     return null;
-  };;
-;
+  }
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       {
@@ -170,8 +160,7 @@ public class ClassifierType_Behavior {
       }
     }
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.Type", "virtual_isSupersetOf_1220438914705", new Object[]{t});
-  };;
-;
+  }
   public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       {
@@ -242,16 +231,13 @@ public class ClassifierType_Behavior {
       }
     }
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.Type", "virtual_isSupersetOf_9029841626175335449", new Object[]{t, substitutions});
-  };;
-;
+  }
   public static SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
     return _quotation_createNode_hz3823_a0a11();
-  };;
-;
+  }
   public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count();
-  };;
-;
+  }
   public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
     SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(classifierType, "classifier", SLinkOperations.getTarget(thisNode, "classifier", false), false);
@@ -259,8 +245,7 @@ public class ClassifierType_Behavior {
       ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), typeParam, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes}));
     }
     return classifierType;
-  };;
-;
+  }
   public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
     String fqName = check_hz3823_a0b0o(classifier);
@@ -269,8 +254,7 @@ public class ClassifierType_Behavior {
     }
     String preparedFQName = fqName.replace('.', '/');
     return "L" + preparedFQName + ";";
-  };;
-;
+  }
   public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
     if (!(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty())) {
       for (SNode parameter : SLinkOperations.getTargets(thisNode, "parameter", true)) {
@@ -280,16 +264,13 @@ public class ClassifierType_Behavior {
       }
     }
     return true;
-  };;
-;
+  }
   public static SNode virtual_getClassifier_7405920559687237513(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "classifier", false);
-  };;
-;
+  }
   public static Iterable<SNode> virtual_getTypeParameters_7405920559687237518(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "parameter", true);
-  };;
-;
+  }
   public static SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
       return thisNode;
@@ -298,16 +279,14 @@ public class ClassifierType_Behavior {
       return thisNode;
     }
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenericDescendants_4107091686347838550", new Object[]{SNodeOperations.copyNode(thisNode), substitutions, expTrace});
-  };;
-;
+  }
   public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
     SNode copy = SNodeOperations.copyNode(thisNode);
     for (SNode c : ListSequence.fromList(SNodeOperations.getChildren(copy)).toListSequence()) {
       SNodeOperations.deleteNode(c);
     }
     return copy;
-  };;
-;
+  }
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, final Map<SNode, SNode> substitutions) {
     // recursion guard 
     if (MapSequence.fromMap(substitutions).containsKey(SLinkOperations.getTarget(thisNode, "classifier", false))) {
@@ -319,16 +298,16 @@ public class ClassifierType_Behavior {
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return MapSequence.fromMap(substitutions).containsKey(it);
-      };;
-;    })) {
+      }
+    })) {
       return;
     }
     final Set<SNode> tvds = SetSequence.fromSetWithValues(new HashSet<SNode>(), SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "classifier", false), "typeVariableDeclaration", true));
     if (Sequence.fromIterable(MapSequence.fromMap(substitutions).values()).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SetSequence.fromSet(tvds).contains(SLinkOperations.getTarget(SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false));
-      };;
-;    })) {
+      }
+    })) {
       return;
     }
 
@@ -384,19 +363,16 @@ public class ClassifierType_Behavior {
         BehaviorReflection.invokeVirtual(Void.class, etype, "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
       }
     }
-  };;
-;
+  }
   public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
     if ("jetbrains.mps.baseLanguage.structure.ArrayType".equals(conceptFqName)) {
       return SLinkOperations.getTarget(thisNode, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_hz3823_a0a0a0a0v_0(), "classifier", false) || SLinkOperations.getTarget(thisNode, "classifier", false) == SLinkOperations.getTarget(_quotation_createNode_hz3823_a0a0a0a0v(), "classifier", false);
     }
     return true;
-  };;
-;
+  }
   public static class Pattern_hz3823_a0a1a1a0a0a01 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_hz3823_a0a1a1a0a0a01() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_hz3823_a0a0a0a0j = nodeToMatch;
@@ -411,32 +387,25 @@ public class ClassifierType_Behavior {
         }
       }
       return true;
-    };;
-;
+    }
     public boolean hasAntiquotations() {
       return false;
-    };;
-;
+    }
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-    };;
-;
+    }
     public Object getFieldValue(String fieldName) {
       return null;
-    };;
-;
+    }
     public void performActions(Object o) {
-    };;
-;  }
-
+    }
+  }
   public static class Pattern_hz3823_a0a0a1a01 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_l;
     /*package*/ SNode patternVar_ignored;
     /*package*/ Object AntiquotationField_hz3823_a0a0a1a9;
-
     public Pattern_hz3823_a0a0a1a01(Object parameter_hz3823_a0a0a1a9) {
       this.AntiquotationField_hz3823_a0a0a1a9 = parameter_hz3823_a0a0a1a9;
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_hz3823_a0a1a9 = nodeToMatch;
@@ -461,19 +430,16 @@ public class ClassifierType_Behavior {
         }
       }
       return true;
-    };;
-;
+    }
     public boolean hasAntiquotations() {
       return true;
-    };;
-;
+    }
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_l = (List<SNode>) pattern.getFieldValue("patternVar_l");
         patternVar_ignored = (SNode) pattern.getFieldValue("patternVar_ignored");
       }
-    };;
-;
+    }
     public Object getFieldValue(String fieldName) {
       if ("patternVar_l".equals(fieldName)) {
         return patternVar_l;
@@ -482,16 +448,13 @@ public class ClassifierType_Behavior {
         return patternVar_ignored;
       }
       return null;
-    };;
-;
+    }
     public void performActions(Object o) {
-    };;
-;  }
-
+    }
+  }
   public static class Pattern_hz3823_a0a1a1a0a0a11 extends GeneratedMatchingPattern implements IMatchingPattern {
     public Pattern_hz3823_a0a1a1a0a0a11() {
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_hz3823_a0a0a0a0k = nodeToMatch;
@@ -506,32 +469,25 @@ public class ClassifierType_Behavior {
         }
       }
       return true;
-    };;
-;
+    }
     public boolean hasAntiquotations() {
       return false;
-    };;
-;
+    }
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-    };;
-;
+    }
     public Object getFieldValue(String fieldName) {
       return null;
-    };;
-;
+    }
     public void performActions(Object o) {
-    };;
-;  }
-
+    }
+  }
   public static class Pattern_hz3823_a0a0a1a11 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_l;
     /*package*/ SNode patternVar_ignored;
     /*package*/ Object AntiquotationField_hz3823_a0a0a1a01;
-
     public Pattern_hz3823_a0a0a1a11(Object parameter_hz3823_a0a0a1a01) {
       this.AntiquotationField_hz3823_a0a0a1a01 = parameter_hz3823_a0a0a1a01;
     }
-
     public boolean match(SNode nodeToMatch) {
       {
         SNode nodeToMatch_hz3823_a0a1a01 = nodeToMatch;
@@ -556,19 +512,16 @@ public class ClassifierType_Behavior {
         }
       }
       return true;
-    };;
-;
+    }
     public boolean hasAntiquotations() {
       return true;
-    };;
-;
+    }
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_l = (List<SNode>) pattern.getFieldValue("patternVar_l");
         patternVar_ignored = (SNode) pattern.getFieldValue("patternVar_ignored");
       }
-    };;
-;
+    }
     public Object getFieldValue(String fieldName) {
       if ("patternVar_l".equals(fieldName)) {
         return patternVar_l;
@@ -577,58 +530,50 @@ public class ClassifierType_Behavior {
         return patternVar_ignored;
       }
       return null;
-    };;
-;
+    }
     public void performActions(Object o) {
-    };;
-;  }
-
+    }
+  }
   private static SNode _quotation_createNode_hz3823_a0a7(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
-  };;
-;
+  }
   private static SNode _quotation_createNode_hz3823_a0a11() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, false);
     return quotedNode_1;
-  };;
-;
+  }
   private static String check_hz3823_a0b0o(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtual(String.class, checkedDotOperand, "virtual_getFqName_1213877404258", new Object[]{});
     }
     return null;
-  };;
-;
+  }
   private static SNode _quotation_createNode_hz3823_a0a0a1a31a02() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
-  };;
-;
+  }
   private static SNode _quotation_createNode_hz3823_a0a0a0a0v() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
-  };;
-;
+  }
   private static SNode _quotation_createNode_hz3823_a0a0a0a0v_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)"), facade.createNodeId("~Array")));
     return quotedNode_1;
-  };;
-;
+  }
   private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0b0a0a0a0b0b0a0a0k = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
   private static SNodePointer SNODE_POINTER_hz3823_a0a0a0a0b0b0a0a0a0b0b0a0a0l = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object");
 }

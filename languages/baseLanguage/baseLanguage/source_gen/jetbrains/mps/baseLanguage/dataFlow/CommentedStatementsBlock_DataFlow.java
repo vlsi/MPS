@@ -9,7 +9,6 @@ import jetbrains.mps.lang.dataFlow.DataFlowBuilderContext;
 public class CommentedStatementsBlock_DataFlow extends DataFlowBuilder {
   public CommentedStatementsBlock_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitMayBeUnreachable(new Runnable() {
       public void run() {

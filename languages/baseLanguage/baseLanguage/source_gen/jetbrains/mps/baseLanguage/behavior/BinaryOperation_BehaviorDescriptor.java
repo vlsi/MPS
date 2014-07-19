@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public abstract class BinaryOperation_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public BinaryOperation_BehaviorDescriptor() {
   }
-
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return BinaryOperation_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  };;
-;
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.BinaryOperation";
-  };;
-;}
+  }
+}

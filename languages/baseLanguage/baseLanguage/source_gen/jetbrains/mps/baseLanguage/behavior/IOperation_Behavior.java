@@ -12,33 +12,26 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class IOperation_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static SNode call_getOperand_1213877410070(SNode thisNode) {
     return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-  };;
-;
+  }
   public static SNode call_getDotExpression_1224687669172(SNode thisNode) {
     return SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression");
-  };;
-;
+  }
   public static boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_lvalue_1262430001741498364", new Object[]{});
-  };;
-;
+  }
   public static boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
     return false;
-  };;
-;
+  }
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return null;
-  };;
-;
+  }
   public static boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
     return true;
-  };;
-;
+  }
   public static boolean virtual_lvalue_1262430001741498364(SAbstractConcept thisConcept) {
     return false;
-  };;
-;}
+  }
+}

@@ -12,8 +12,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class ReturnStatement_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static List<SNode> call_getFinallyBlocks_1213877501572(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     SNode current = thisNode;
@@ -30,8 +29,7 @@ public class ReturnStatement_Behavior {
       }
     }
     return result;
-  };;
-;
+  }
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     SNode type = null;
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.ReturnStatement", "expression")) {
@@ -46,20 +44,18 @@ public class ReturnStatement_Behavior {
       }
     }
     return type;
-  };;
-;
+  }
   public static SNode call_getReturnJumpTarget_1229351767970(SNode thisNode) {
     SNode container = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer", false, false);
     if (BehaviorReflection.invokeVirtual(Boolean.TYPE, container, "virtual_isExecuteSynchronous_1230212745736", new Object[]{})) {
       return SLinkOperations.getTarget(SNodeOperations.cast(container, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true);
     }
     return null;
-  };;
-;
+  }
   public static boolean virtual_isGuardClauseStatement_1237547327995(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "expression", true), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
       return false;
     }
     return true;
-  };;
-;}
+  }
+}

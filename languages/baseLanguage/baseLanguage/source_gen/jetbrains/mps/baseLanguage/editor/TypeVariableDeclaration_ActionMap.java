@@ -19,34 +19,26 @@ public class TypeVariableDeclaration_ActionMap {
     editorCell.setAction(CellActionType.DELETE, new TypeVariableDeclaration_ActionMap.TypeVariableDeclaration_ActionMap_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new TypeVariableDeclaration_ActionMap.TypeVariableDeclaration_ActionMap_BACKSPACE(node));
   }
-
   public static class TypeVariableDeclaration_ActionMap_RIGHT_TRANSFORM extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TypeVariableDeclaration_ActionMap_RIGHT_TRANSFORM(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeFactoryOperations.setNewChild(node, "bound", "jetbrains.mps.baseLanguage.structure.Type");
     }
   }
-
   public static class TypeVariableDeclaration_ActionMap_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TypeVariableDeclaration_ActionMap_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.GenericDeclaration");
       if (ListSequence.fromList(SLinkOperations.getTargets(parent, "typeVariableDeclaration", true)).isEmpty()) {
@@ -54,18 +46,14 @@ public class TypeVariableDeclaration_ActionMap {
       }
     }
   }
-
   public static class TypeVariableDeclaration_ActionMap_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TypeVariableDeclaration_ActionMap_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode parent = SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.GenericDeclaration");
       if (ListSequence.fromList(SLinkOperations.getTargets(parent, "typeVariableDeclaration", true)).isEmpty()) {

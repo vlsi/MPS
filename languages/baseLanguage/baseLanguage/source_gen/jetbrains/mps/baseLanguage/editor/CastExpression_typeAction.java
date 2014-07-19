@@ -15,18 +15,14 @@ public class CastExpression_typeAction {
     editorCell.setAction(CellActionType.DELETE, new CastExpression_typeAction.CastExpression_typeAction_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new CastExpression_typeAction.CastExpression_typeAction_BACKSPACE(node));
   }
-
   public static class CastExpression_typeAction_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public CastExpression_typeAction_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if ((SLinkOperations.getTarget(node, "type", true) == null)) {
         SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
@@ -35,18 +31,14 @@ public class CastExpression_typeAction {
       }
     }
   }
-
   public static class CastExpression_typeAction_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public CastExpression_typeAction_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if ((SLinkOperations.getTarget(node, "type", true) == null)) {
         SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));

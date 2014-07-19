@@ -38,11 +38,9 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_91bvrs_a(editorContext, node);
   }
-
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_91bvrs_a_0(editorContext, node);
   }
-
   private EditorCell createCollection_91bvrs_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_91bvrs_a");
@@ -53,7 +51,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     }
     return editorCell;
   }
-
   private EditorCell createRefCell_91bvrs_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("classifier");
@@ -78,27 +75,22 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class _Inline_91bvrs_a0a extends InlineCellProvider {
     public _Inline_91bvrs_a0a() {
       super();
     }
-
     public EditorCell createEditorCell(EditorContext editorContext) {
       return this.createEditorCell(editorContext, this.getSNode());
     }
-
     public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
       return this.createReferencePresentation_91bvrs_a0a0(editorContext, node);
     }
-
     private EditorCell createReferencePresentation_91bvrs_a0a0(EditorContext editorContext, SNode node) {
       EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), "classifier");
       editorCell.setCellId("ReferencePresentation_91bvrs_a0a0");
       return editorCell;
     }
   }
-
   private EditorCell createCollection_91bvrs_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_91bvrs_b0");
@@ -112,11 +104,9 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_91bvrs_c1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_91bvrs_a1a(SNode node, EditorContext editorContext) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty();
   }
-
   private EditorCell createConstant_91bvrs_a1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<");
     editorCell.setCellId("Constant_91bvrs_a1a");
@@ -128,7 +118,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNodeList_91bvrs_b1a(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new ClassifierType_Editor.parameterListHandler_91bvrs_b1a(node, "parameter", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -136,30 +125,25 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setRole(handler.getElementRole());
     return editorCell;
   }
-
   private static class parameterListHandler_91bvrs_b1a extends RefNodeListHandler {
     public parameterListHandler_91bvrs_b1a(SNode ownerNode, String childRole, EditorContext context) {
       super(ownerNode, childRole, context, false);
     }
-
     public SNode createNodeToInsert(EditorContext editorContext) {
       SNode listOwner = super.getOwner();
       return NodeFactoryManager.createNode(listOwner, editorContext, super.getElementRole());
     }
-
     public EditorCell createNodeCell(EditorContext editorContext, SNode elementNode) {
       EditorCell elementCell = super.createNodeCell(editorContext, elementNode);
       this.installElementCellActions(this.getOwner(), elementNode, elementCell, editorContext);
       return elementCell;
     }
-
     public EditorCell createEmptyCell(EditorContext editorContext) {
       EditorCell emptyCell = null;
       emptyCell = super.createEmptyCell(editorContext);
       this.installElementCellActions(super.getOwner(), null, emptyCell, editorContext);
       return emptyCell;
     }
-
     public void installElementCellActions(SNode listOwner, SNode elementNode, EditorCell elementCell, EditorContext editorContext) {
       if (elementCell.getUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET) == null) {
         elementCell.putUserObject(AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET, AbstractCellListHandler.ELEMENT_CELL_ACTIONS_SET);
@@ -173,7 +157,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
         }
       }
     }
-
     @Override
     public EditorCell createSeparatorCell(EditorContext editorContext, SNode prevNode, SNode nextNode) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), ",");
@@ -187,7 +170,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       return editorCell;
     }
   }
-
   private EditorCell createConstant_91bvrs_c1a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ">");
     editorCell.setCellId("Constant_91bvrs_c1a");
@@ -198,7 +180,6 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_91bvrs_a_0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_91bvrs_a_0");
@@ -206,16 +187,13 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createReadOnlyModelAccessor_91bvrs_a0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createReadOnlyModelAccessor_91bvrs_a0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
         return ((SLinkOperations.getTarget(node, "classifier", false) != null) ? BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(node, "classifier", false), "virtual_getFqName_1213877404258", new Object[]{}) : "<unknown>");
       }
-
       public void setText(String s) {
       }
-
       public boolean isValidText(String s) {
         return EqualUtil.equals(s, getText());
       }

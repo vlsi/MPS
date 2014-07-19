@@ -12,22 +12,16 @@ public class TransformationTestExecutor extends BTestExecutor {
     super(args);
   }
 
-
-
   @Override
   public void init() {
     CachesUtil.setupCaches();
     super.init();
   }
 
-
-
   public void dispose() {
     TransformationTestExecutor.exitApp();
     super.dispose();
   }
-
-
 
   public static void main(String[] args) {
     TransformationTestExecutor executor = new TransformationTestExecutor(args);
@@ -41,8 +35,6 @@ public class TransformationTestExecutor extends BTestExecutor {
     }
     System.exit(0);
   }
-
-
 
   private static void exitApp() {
     try {

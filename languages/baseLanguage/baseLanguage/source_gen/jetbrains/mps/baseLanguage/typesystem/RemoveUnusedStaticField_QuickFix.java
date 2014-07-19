@@ -9,11 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class RemoveUnusedStaticField_QuickFix extends QuickFix_Runtime {
   public RemoveUnusedStaticField_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Remove static field";
   }
-
   public void execute(SNode node) {
     SNodeOperations.detachNode(node);
   }

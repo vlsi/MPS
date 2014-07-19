@@ -6,9 +6,8 @@ package jetbrains.mps.baseLanguage.behavior;
 public class ProtectedVisibility_BehaviorDescriptor extends Visibility_BehaviorDescriptor {
   public ProtectedVisibility_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ProtectedVisibility";
-  };;
-;}
+  }
+}

@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_SynchronizedStatement_NonFinalFields_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_SynchronizedStatement_NonFinalFields_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode synchronizedStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode expression = SLinkOperations.getTarget(synchronizedStatement, "expression", true);
     SNode field = null;
@@ -34,18 +33,15 @@ public class check_SynchronizedStatement_NonFinalFields_NonTypesystemRule extend
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.SynchronizedStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

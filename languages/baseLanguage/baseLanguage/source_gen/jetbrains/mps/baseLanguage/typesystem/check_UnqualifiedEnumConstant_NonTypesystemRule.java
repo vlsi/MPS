@@ -30,7 +30,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_UnqualifiedEnumConstant_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode varRef, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     // Q: is there a better way for this? 
     if (!(SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(varRef), "jetbrains.mps.baseLanguage.structure.VariableReference"))) {
@@ -139,18 +138,15 @@ public class check_UnqualifiedEnumConstant_NonTypesystemRule extends AbstractNon
 
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.VariableReference";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

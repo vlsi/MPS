@@ -7,7 +7,6 @@ public class ClassUtils {
   public static boolean isInstance(Class<?> cls, Object obj) {
     return cls.isInstance(obj);
   }
-
   public static <T> T cast(Class<T> cls, Object obj) {
     return cls.cast(obj);
   }

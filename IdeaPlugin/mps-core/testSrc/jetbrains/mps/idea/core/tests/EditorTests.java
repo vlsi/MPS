@@ -161,7 +161,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
               final ProjectOperationContext context = new ProjectOperationContext(
                 ProjectHelper.toMPSProject(myModule.getProject()));
 
-              new MPSEditorOpener(myModule.getProject()).openNode(myRoot, context, true, true, true);
+              new MPSEditorOpener(myModule.getProject()).openNode(myRoot, context, true, true);
 
               btt.setModelDescriptor(myRoot.getModel());
               btt.setProject(ProjectHelper.toMPSProject(myModule.getProject()));

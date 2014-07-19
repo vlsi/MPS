@@ -25,7 +25,6 @@ public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
   public StaticMethodCall_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -33,8 +32,7 @@ public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      };;
-;
+      }
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -42,8 +40,7 @@ public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_8qp2eq_a0a0a0a0a1a0b0a1a1;
-          };;
-;
+          }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             if (!(SNodeOperations.isInstanceOf(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"))) {
@@ -53,12 +50,11 @@ public class StaticMethodCall_Constraints extends BaseConstraintsDescriptor {
               return new EmptyScope();
             }
             return new MethodsScope(Members.visibleStaticMethods(SLinkOperations.getTarget(SNodeOperations.cast(_context.getContextNode(), "jetbrains.mps.baseLanguage.structure.StaticMethodCall"), "classConcept", false), _context.getContextNode()));
-          };;
-;        };
-      };;
-;    });
+          }
+        };
+      }
+    });
     return references;
-  };;
-;
+  }
   private static SNodePointer breakingNode_8qp2eq_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137643");
 }

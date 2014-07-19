@@ -26,7 +26,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_CaughtWasThrown_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode catchClause, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode caughtType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
     if (SNodeOperations.isInstanceOf(caughtType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
@@ -75,22 +74,18 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.CatchClause";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_r5g8rc_b0a0a0b0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -98,7 +93,6 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~RuntimeException")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_r5g8rc_b0a0a0b0b0b_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -106,7 +100,6 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Error")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_r5g8rc_a0a0a0a0a0d0a1a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -114,7 +107,6 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_r5g8rc_b0a0a0a0a0d0a1a1a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class genericArrayCreatorsAreIllegal_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public genericArrayCreatorsAreIllegal_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode arrayCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode componentType = SLinkOperations.getTarget(arrayCreator, "componentType", true);
     if ((SNodeOperations.getConceptDeclaration(componentType) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType") || SNodeOperations.getConceptDeclaration(componentType) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType")) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(componentType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).isNotEmpty()) {
@@ -62,18 +61,15 @@ public class genericArrayCreatorsAreIllegal_NonTypesystemRule extends AbstractNo
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

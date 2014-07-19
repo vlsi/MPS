@@ -8,13 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public abstract class SModelMethodMigration extends SimpleMigration {
   private final SNode sourceConcept;
   private final SNode smodelFunctionConcept;
-
   public SModelMethodMigration(SNode smodelFunctionConcept, MigrationConfig config) {
     super(smodelFunctionConcept);
     this.sourceConcept = config.sourceConcept;
     this.smodelFunctionConcept = smodelFunctionConcept;
   }
-
   @Override
   public String getName() {
     return "Migrate " + SPropertyOperations.getString(sourceConcept, "name") + " usages";

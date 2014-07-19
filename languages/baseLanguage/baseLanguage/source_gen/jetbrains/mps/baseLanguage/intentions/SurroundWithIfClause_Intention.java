@@ -20,75 +20,59 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SurroundWithIfClause_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public SurroundWithIfClause_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Expression";
   }
-
   public String getPresentation() {
     return "SurroundWithIfClause";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.SurroundWithIfClause_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return editorContext.getSelectedNodes().size() == 1 && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.BooleanType");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "2990635952104560718");
   }
-
   public boolean isSurroundWith() {
     return true;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SurroundWithIfClause_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "if (expr) {...}";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode ifStatement = SNodeFactoryOperations.replaceWithNewChild(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IfStatement");
       SLinkOperations.setTarget(ifStatement, "condition", node, true);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).clear();
       editorContext.select(SLinkOperations.getTarget(ifStatement, "ifTrue", true));
     }
-
     public IntentionDescriptor getDescriptor() {
       return SurroundWithIfClause_Intention.this;
     }

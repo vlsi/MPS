@@ -20,15 +20,12 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
       public String getName() {
         return "Migrate .field.add usages (use member role instead of field role)";
       }
-
       public String getAdditionalInfo() {
         return "Migrate .field.add usages (use member role instead of field role)";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
           return false;
@@ -38,11 +35,9 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
         }
         return NonMigratableUsagesFinder.isThisForSimpleAddOperation(node);
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "link", SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"), false);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -52,15 +47,12 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
       public String getName() {
         return "Migrate LinkList_AddNewChildOperation";
       }
-
       public String getAdditionalInfo() {
         return "Migrate LinkList_AddNewChildOperation";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
           return false;
@@ -70,7 +62,6 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
         }
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent((SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation");
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent((SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"))), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation");
         if ((SLinkOperations.getTarget(operation, "concept", false) == null)) {
@@ -78,7 +69,6 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
         }
         SLinkOperations.setTarget(node, "link", SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", "member"), false);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }
@@ -87,15 +77,12 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
       public String getName() {
         return "Use .fields() etc operation where it possible (replace for sequence access)";
       }
-
       public String getAdditionalInfo() {
         return "Use .fields() etc operation where it possible (replace for sequence access)";
       }
-
       public String getFqNameOfConceptToSearchInstances() {
         return "jetbrains.mps.lang.smodel.structure.SLinkListAccess";
       }
-
       public boolean isApplicableInstanceNode(SNode node) {
         if (!(SetSequence.fromSet(MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).keySet()).contains(SLinkOperations.getTarget(node, "link", false)))) {
           return false;
@@ -108,13 +95,11 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
         // not migrate usages with node attributes (for example generator macroses)! 
         return ListSequence.fromList(SLinkOperations.getTargets(node, "smodelAttribute", true)).isEmpty();
       }
-
       public void doUpdateInstanceNode(SNode node) {
         SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
         SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).get(SLinkOperations.getTarget(node, "link", false)), false);
         SNodeOperations.replaceWithAnother(node, methodCall);
       }
-
       public boolean isShowAsIntention() {
         return false;
       }

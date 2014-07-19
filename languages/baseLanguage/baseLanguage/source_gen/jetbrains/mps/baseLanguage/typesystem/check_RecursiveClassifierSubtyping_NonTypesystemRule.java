@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_RecursiveClassifierSubtyping_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_RecursiveClassifierSubtyping_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNodeOperations.getReferences(classifier);
     if (ClassifierScopeUtils.isHierarchyCyclic(classifier)) {
@@ -29,18 +28,15 @@ public class check_RecursiveClassifierSubtyping_NonTypesystemRule extends Abstra
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.Classifier";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

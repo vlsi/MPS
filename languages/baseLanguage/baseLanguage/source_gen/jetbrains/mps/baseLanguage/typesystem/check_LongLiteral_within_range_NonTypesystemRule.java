@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_LongLiteral_within_range_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_LongLiteral_within_range_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode longLiteral, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     String value = SPropertyOperations.getString(longLiteral, "value");
     if (value == null) {
@@ -31,18 +30,15 @@ public class check_LongLiteral_within_range_NonTypesystemRule extends AbstractNo
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.LongLiteral";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

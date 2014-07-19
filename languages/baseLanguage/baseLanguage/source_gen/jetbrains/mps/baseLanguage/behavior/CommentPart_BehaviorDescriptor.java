@@ -10,17 +10,14 @@ import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
 public abstract class CommentPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ISuppressErrors_BehaviorDescriptor {
   public CommentPart_BehaviorDescriptor() {
   }
-
   public boolean virtual_isToDo_7236590470026152831(SNode thisNode) {
     return CommentPart_Behavior.virtual_isToDo_7236590470026152831(thisNode);
-  };;
-;
+  }
   public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  };;
-;
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.CommentPart";
-  };;
-;}
+  }
+}

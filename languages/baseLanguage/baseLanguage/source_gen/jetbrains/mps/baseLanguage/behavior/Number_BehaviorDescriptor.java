@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class Number_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public Number_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.Number";
-  };;
-;}
+  }
+}

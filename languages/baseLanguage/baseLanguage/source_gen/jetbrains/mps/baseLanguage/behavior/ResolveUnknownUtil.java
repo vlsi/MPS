@@ -25,10 +25,8 @@ import java.util.List;
 
 public class ResolveUnknownUtil {
   private static Logger LOG = LogManager.getLogger(ResolveUnknownUtil.class);
-
   public ResolveUnknownUtil() {
   }
-
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveQualNameRef(SNode x) {
     final SNode result = ResolveUnknownUtil.resolveTokens(x);
 
@@ -42,21 +40,20 @@ public class ResolveUnknownUtil {
           SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
           SLinkOperations.setTarget(fieldRef, "classifier", SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.Classifier"), false);
           return fieldRef;
-        };;
-;      };
+        }
+      };
     }
 
     if (SNodeOperations.isInstanceOf(result, "jetbrains.mps.baseLanguage.structure.Expression")) {
       return new _FunctionTypes._return_P0_E0<SNode>() {
         public SNode invoke() {
           return result;
-        };;
-;      };
+        }
+      };
     }
 
     return null;
-  };;
-;
+  }
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveConsCall(final SNode x) {
     SNode enclosingClass = SNodeOperations.getAncestor(x, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if ((enclosingClass == null)) {
@@ -74,10 +71,9 @@ public class ResolveUnknownUtil {
         reattachMethodArguments(x, result);
         SLinkOperations.setTarget(result, "baseMethodDeclaration", foundCons, false);
         return result;
-      };;
-;    };
-  };;
-;
+      }
+    };
+  }
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveLocalCall(final SNode x) {
     final Wrappers._T<SNode> call = new Wrappers._T<SNode>(null);
 
@@ -113,10 +109,9 @@ public class ResolveUnknownUtil {
       public SNode invoke() {
         reattachMethodArguments(x, call.value);
         return call.value;
-      };;
-;    };
-  };;
-;
+      }
+    };
+  }
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveNew(final SNode x) {
     final SNode typ = findClass(x, SPropertyOperations.getString(x, "className"));
     if ((typ == null)) {
@@ -167,10 +162,9 @@ public class ResolveUnknownUtil {
 
         SLinkOperations.setTarget(result, "creator", creator, true);
         return result;
-      };;
-;    };
-  };;
-;
+      }
+    };
+  }
   public static _FunctionTypes._return_P0_E0<? extends SNode> resolveDotCall(final SNode x) {
     final SNode operand = ResolveUnknownUtil.resolveTokens(x);
 
@@ -200,8 +194,8 @@ public class ResolveUnknownUtil {
           reattachMethodArguments(x, call);
           reattachTypeArguments(x, call);
           return call;
-        };;
-;      };
+        }
+      };
 
     } else if (SNodeOperations.isInstanceOf(operand, "jetbrains.mps.baseLanguage.structure.Expression")) {
       // operand is some other expression. it's supposed to be an instance method call then 
@@ -220,16 +214,15 @@ public class ResolveUnknownUtil {
           reattachMethodArguments(x, call);
           reattachTypeArguments(x, call);
           return dotExpr;
-        };;
-;      };
+        }
+      };
 
     } else {
       return null;
 
     }
 
-  };;
-;
+  }
   public static SNode resolveTokens(SNode x) {
     // returns either node<Expression> with a normal baseLanguage expression 
     // or node<Classifier> if all tokens form a name class 
@@ -272,8 +265,8 @@ public class ResolveUnknownUtil {
           mbEnumConst = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
               return memberName.equals(SPropertyOperations.getString(it, "name"));
-            };;
-;          }).first();
+            }
+          }).first();
         }
 
         if (mbEnumConst != null) {
@@ -307,8 +300,7 @@ public class ResolveUnknownUtil {
     }
 
     return operand;
-  };;
-;
+  }
   public static SNode makeFieldDotExpression(SNode holder, String fieldName) {
     SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
     SLinkOperations.setTarget(dotExpr, "operand", holder, true);
@@ -317,8 +309,7 @@ public class ResolveUnknownUtil {
     SReference sref = new DynamicReference("fieldDeclaration", fieldRef, null, fieldName);
     fieldRef.setReference(sref.getRole(), sref);
     return dotExpr;
-  };;
-;
+  }
   public static SNode tryFirstTokenAsVarRef(SNode x) {
     Scope scope = Scope.getScope(SNodeOperations.getParent(x), x, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration"));
     if (scope == null) {
@@ -340,8 +331,7 @@ public class ResolveUnknownUtil {
     } else {
       return null;
     }
-  };;
-;
+  }
   public static Tuples._2<SNode, Integer> tryFindClass(SNode x) {
     StringBuilder sb = new StringBuilder();
     String[] tokens = SPropertyOperations.getString(x, "tokens").split("\\.");
@@ -372,8 +362,7 @@ public class ResolveUnknownUtil {
     }
 
     return null;
-  };;
-;
+  }
   public static SNode findClass(SNode from, String className) {
     SNode res = null;
 
@@ -389,8 +378,7 @@ public class ResolveUnknownUtil {
     }
 
     return SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.Classifier");
-  };;
-;
+  }
   public static SNode findConstructor(SNode claz, List<SNode> args) {
     SNode result;
     Iterable<SNode> conss = ClassConcept_Behavior.call_constructors_5292274854859503373(claz);
@@ -403,25 +391,22 @@ public class ResolveUnknownUtil {
       Iterable<SNode> subset = Sequence.fromIterable(conss).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == argCount;
-        };;
-;      });
+        }
+      });
       result = Sequence.fromIterable(subset).first();
     }
     return result;
-  };;
-;
+  }
   public static void reattachMethodArguments(SNode from, SNode to) {
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(from, "actualArgument", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(to, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
     }
-  };;
-;
+  }
   public static void reattachTypeArguments(SNode from, SNode to) {
     for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(from, "typeArgument", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(to, "typeArgument", true)).addElement(SNodeOperations.copyNode(arg));
     }
-  };;
-;
+  }
 
-;;;  protected static Logger LOG_180675533 = LogManager.getLogger(ResolveUnknownUtil.class);
+  protected static Logger LOG_180675533 = LogManager.getLogger(ResolveUnknownUtil.class);
 }

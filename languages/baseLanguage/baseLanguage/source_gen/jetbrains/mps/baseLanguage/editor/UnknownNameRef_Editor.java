@@ -12,7 +12,6 @@ public class UnknownNameRef_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createComponent_19tet3_a(editorContext, node);
   }
-
   private EditorCell createComponent_19tet3_a(EditorContext editorContext, SNode node) {
     EditorCell editorCell = editorContext.getCellFactory().createEditorComponentCell(node, "jetbrains.mps.baseLanguage.editor.UnknownQualifiedName");
     EditorCell bigCell = BigCellUtil.findBigCell(editorCell, node);

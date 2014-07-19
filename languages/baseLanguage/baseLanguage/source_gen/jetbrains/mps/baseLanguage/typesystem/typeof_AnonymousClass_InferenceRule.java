@@ -32,7 +32,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_AnonymousClass_InferenceRule() {
   }
-
   public void applyRule(final SNode anonymousClass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode cdecl = SLinkOperations.getTarget(anonymousClass, "baseMethodDeclaration", false);
     if (cdecl == null) {
@@ -114,22 +113,18 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5449655299304749843", true), (SNode) newType, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.AnonymousClass";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_fj2vg7_a1a0a0a7a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -137,7 +132,6 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), facade.createNodeId("1196683941620")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_fj2vg7_a0m0b(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

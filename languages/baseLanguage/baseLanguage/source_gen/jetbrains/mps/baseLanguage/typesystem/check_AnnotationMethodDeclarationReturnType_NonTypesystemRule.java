@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_AnnotationMethodDeclarationReturnType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_AnnotationMethodDeclarationReturnType_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode annotationMethodDeclaration, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode returnType = SLinkOperations.getTarget(annotationMethodDeclaration, "returnType", true);
     if (!(AnnotationMethodDeclaration_Behavior.call_isGoodReturnType_6624237184120289968(annotationMethodDeclaration, returnType))) {
@@ -25,18 +24,15 @@ public class check_AnnotationMethodDeclarationReturnType_NonTypesystemRule exten
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(returnType, "invalid type for annotation member", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6624237184120343376", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

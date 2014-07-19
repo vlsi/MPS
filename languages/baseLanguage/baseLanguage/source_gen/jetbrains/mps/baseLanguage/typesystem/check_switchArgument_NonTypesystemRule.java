@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_switchArgument_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_switchArgument_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode switchStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode arg = SLinkOperations.getTarget(switchStatement, "expression", true);
     if (arg == null) {
@@ -51,18 +50,15 @@ public class check_switchArgument_NonTypesystemRule extends AbstractNonTypesyste
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(arg, "Argument of switch should be enum of primitive", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3306910260423168223", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.SwitchStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -15,34 +15,26 @@ public class AsExpression_Delete {
     editorCell.setAction(CellActionType.DELETE, new AsExpression_Delete.AsExpression_Delete_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new AsExpression_Delete.AsExpression_Delete_BACKSPACE(node));
   }
-
   public static class AsExpression_Delete_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public AsExpression_Delete_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
     }
   }
-
   public static class AsExpression_Delete_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public AsExpression_Delete_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "expression", true));
     }

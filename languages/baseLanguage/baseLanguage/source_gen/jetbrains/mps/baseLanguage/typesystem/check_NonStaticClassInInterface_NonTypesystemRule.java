@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_NonStaticClassInInterface_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_NonStaticClassInInterface_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode innerClass, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(Classifier_Behavior.call_isStatic_521412098689998668(innerClass)) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(innerClass), "jetbrains.mps.baseLanguage.structure.Interface")) {
       {
@@ -26,18 +25,15 @@ public class check_NonStaticClassInInterface_NonTypesystemRule extends AbstractN
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

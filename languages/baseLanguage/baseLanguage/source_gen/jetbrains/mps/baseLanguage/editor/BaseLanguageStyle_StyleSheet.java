@@ -23,7 +23,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_CompactKeyWord(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -32,7 +31,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_Comment(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -40,7 +38,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 1);
     }
   }
-
   public static void apply_TODO(Style style, EditorCell editorCell) {
     if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0d((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       {
@@ -50,7 +47,6 @@ public class BaseLanguageStyle_StyleSheet {
       }
     }
   }
-
   public static void apply_BlockComment(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -58,7 +54,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 1);
     }
   }
-
   public static void apply_JavaDoc(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -66,7 +61,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_JavaDocTag(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -74,7 +68,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_Field(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -82,7 +75,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_LocalVariable(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -90,7 +82,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_Parameter(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -98,7 +89,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_StaticField(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -107,7 +97,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_StringLiteral(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -115,7 +104,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_NumericLiteral(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -123,7 +111,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_EmptyCell(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -131,10 +118,8 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_InstanceMethod(Style style, EditorCell editorCell) {
   }
-
   public static void apply_StaticMethod(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -142,7 +127,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_Annotation(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -150,7 +134,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_Operator(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -158,12 +141,10 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_AnyBracket(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.INDENT_LAYOUT_NO_WRAP, 0, true);
     style.set(StyleAttributes.FONT_STYLE, 0, MPSFonts.PLAIN);
   }
-
   public static void apply_Parenthesis(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -178,7 +159,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     style.set(StyleAttributes.MATCHING_LABEL, 0, "parenthesis");
   }
-
   public static void apply_LeftParen(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -188,7 +168,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
-
   public static void apply_LeftParenAfterName(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -198,7 +177,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
-
   public static void apply_RightParen(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -208,7 +186,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
-
   public static void apply_Brace(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -223,7 +200,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     style.set(StyleAttributes.MATCHING_LABEL, 0, "brace");
   }
-
   public static void apply_LeftBrace(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -232,7 +208,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_RightBrace(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -241,7 +216,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_Bracket(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -256,7 +230,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     style.set(StyleAttributes.MATCHING_LABEL, 0, "bracket");
   }
-
   public static void apply_LeftBracket(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -266,7 +239,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
-
   public static void apply_RightBracket(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -276,7 +248,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
-
   public static void apply_AngleBracket(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -286,7 +257,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     style.set(StyleAttributes.MATCHING_LABEL, 0, "angleBracket");
   }
-
   public static void apply_LeftAngleBracket(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -296,7 +266,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
-
   public static void apply_RightAngleBracket(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -307,7 +276,6 @@ public class BaseLanguageStyle_StyleSheet {
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
   }
-
   public static void apply_MethodName(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -315,7 +283,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_MPSMethodCall(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -330,7 +297,6 @@ public class BaseLanguageStyle_StyleSheet {
       }
     }
   }
-
   public static void apply_VariableName(Style style, EditorCell editorCell) {
     if (BaseLanguageStyle_StyleSheet._StyleParameter_QueryFunction_the604_a0ib((editorCell == null ? null : editorCell.getContext()), (editorCell == null ? null : editorCell.getSNode()))) {
       {
@@ -361,7 +327,6 @@ public class BaseLanguageStyle_StyleSheet {
       }
     }
   }
-
   public static void apply_ClassName(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -370,7 +335,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_ConceptName(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -378,7 +342,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_Semicolon(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -388,7 +351,6 @@ public class BaseLanguageStyle_StyleSheet {
     style.set(StyleAttributes.EDITABLE, 0, false);
     style.set(StyleAttributes.PUNCTUATION_LEFT, 0, true);
   }
-
   public static void apply_Dot(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -399,15 +361,12 @@ public class BaseLanguageStyle_StyleSheet {
     style.set(StyleAttributes.PUNCTUATION_RIGHT, 0, true);
     style.set(StyleAttributes.SELECTABLE, 0, false);
   }
-
   public static void apply_BaseAngleBracket(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.MATCHING_LABEL, 0, "AngleBracket");
   }
-
   public static void apply_Matching(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.MATCHING_LABEL, 0, "matching");
   }
-
   public static void apply_FoldedCell(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -415,7 +374,6 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_Url(Style style, EditorCell editorCell) {
     {
       Style styleToPut;
@@ -423,33 +381,25 @@ public class BaseLanguageStyle_StyleSheet {
       style.putAll(styleToPut, 0);
     }
   }
-
   public static void apply_Label(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.DARK_GREEN));
   }
-
   public static void apply_FirstLevel(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.darkGray));
   }
-
   public static void apply_SecondLevel(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.gray));
   }
-
   public static void apply_ThirdLevel(Style style, EditorCell editorCell) {
     style.set(StyleAttributes.TEXT_COLOR, 0, StyleRegistry.getInstance().getSimpleColor(MPSColors.lightGray));
   }
 
-
-
   private static boolean _StyleParameter_QueryFunction_the604_a0d(EditorContext editorContext, SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.TextCommentPart") && BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.as(node, "jetbrains.mps.baseLanguage.structure.TextCommentPart"), "virtual_isToDo_7236590470026152831", new Object[]{});
   }
-
   private static boolean _StyleParameter_QueryFunction_the604_a1hb(EditorContext editorContext, SNode node) {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
   }
-
   private static boolean _StyleParameter_QueryFunction_the604_a0ib(EditorContext editorContext, SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_7405920559687241224", new Object[]{})) {
@@ -460,7 +410,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     return false;
   }
-
   private static boolean _StyleParameter_QueryFunction_the604_a1ib(EditorContext editorContext, SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_7405920559687241224", new Object[]{})) {
@@ -471,7 +420,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     return false;
   }
-
   private static boolean _StyleParameter_QueryFunction_the604_a2ib(EditorContext editorContext, SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
       if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_7405920559687241224", new Object[]{}))) {
@@ -480,7 +428,6 @@ public class BaseLanguageStyle_StyleSheet {
     }
     return false;
   }
-
   private static boolean _StyleParameter_QueryFunction_the604_a3ib(EditorContext editorContext, SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember"))) {
       return true;

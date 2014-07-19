@@ -9,21 +9,18 @@ import jetbrains.mps.smodel.SReference;
 
 public class VoidType_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static SNode virtual_getBoxedType_1213877337320(SNode thisNode) {
     return _quotation_createNode_s71av5_a0a0();
-  };;
-;
+  }
   public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
     return "V";
-  };;
-;
+  }
   private static SNode _quotation_createNode_s71av5_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Void")));
     return quotedNode_1;
-  };;
-;}
+  }
+}

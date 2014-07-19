@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class Migrations {
   private Migrations() {
   }
-
   public static List<AbstractMigrationRefactoring> migrateConcept(MigrationConfig config) {
     List<AbstractMigrationRefactoring> migrations = ListSequence.fromList(new ArrayList<AbstractMigrationRefactoring>());
 
@@ -52,19 +51,16 @@ public class Migrations {
 
     return migrations;
   }
-
   public static AbstractMigrationRefactoring migrateIntentionCondition(final MigrationConfig config) {
     return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionDeclaration")) {
       @Override
       public String getName() {
         return "Migrate intentions condition for " + config.getName();
       }
-
       @Override
       public boolean isApplicableInstanceNode(SNode intention) {
         return SLinkOperations.getTarget(intention, "forConcept", false) == config.sourceConcept;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode intention) {
         SLinkOperations.setTarget(intention, "forConcept", config.targetConcept, false);
@@ -78,19 +74,16 @@ public class Migrations {
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateMigrationScriptPart(final MigrationConfig config) {
     return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance")) {
       @Override
       public String getName() {
         return "Migrate migration script condition for " + config.getName();
       }
-
       @Override
       public boolean isApplicableInstanceNode(SNode script) {
         return SLinkOperations.getTarget(script, "affectedInstanceConcept", false) == config.sourceConcept;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode script) {
         SLinkOperations.setTarget(script, "affectedInstanceConcept", config.targetConcept, false);
@@ -104,32 +97,27 @@ public class Migrations {
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrgetateNodeAttributes(final MigrationConfig config) {
     return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
       @Override
       public String getName() {
         return "Migrate node attributes for " + config.getName();
       }
-
       @Override
       public boolean isApplicableInstanceNode(SNode conceptDeclaration) {
         return false;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode conceptDeclaration) {
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateInstanceOf(final MigrationConfig config) {
     return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation"), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "conceptArgument", true), "jetbrains.mps.lang.smodel.structure.RefConcept_Reference"), "conceptDeclaration", false) == config.sourceConcept;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode condition = config.createCondition(_quotation_createNode_b5gojm_a0a0a0b0a0a0f(config.targetConcept, IOperation_Behavior.call_getOperand_1213877410070(node)));
@@ -139,7 +127,6 @@ public class Migrations {
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateGetDescendant(final MigrationConfig config) {
     return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation"), config) {
       @Override
@@ -155,7 +142,6 @@ public class Migrations {
           }
         });
       }
-
       @Override
       public void doUpdateInstanceNode(SNode node) {
         Iterable<SNode> parameters = ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).select(new ISelector<SNode, SNode>() {
@@ -178,19 +164,16 @@ public class Migrations {
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateCheckingRuleCondition(final MigrationConfig config) {
     return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.typesystem.structure.NonTypesystemRule")) {
       @Override
       public String getName() {
         return "Migrate checking rules condition for " + config.getName();
       }
-
       @Override
       public boolean isApplicableInstanceNode(SNode rule) {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference") && SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false) == config.sourceConcept;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode rule) {
         SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", config.targetConcept, false);
@@ -200,114 +183,97 @@ public class Migrations {
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateSNodeType(final MigrationConfig config) {
     return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType")) {
       @Override
       public String getName() {
         return "Migrate all SNodeTypes with " + SPropertyOperations.getString(config.sourceConcept, "name");
       }
-
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, "concept", false) == config.sourceConcept;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "concept", config.targetConcept, false);
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateSNodeListType(final MigrationConfig config) {
     return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType")) {
       @Override
       public String getName() {
         return "Migrate all SNodeListTypes with " + SPropertyOperations.getString(config.sourceConcept, "name");
       }
-
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, "elementConcept", false) == config.sourceConcept;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "elementConcept", config.targetConcept, false);
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateReplaceWithNewOperation(final MigrationConfig config) {
     return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation"), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, "concept", false) == config.sourceConcept;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "concept", config.targetConcept, false);
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateCreateNewNodeOperation(final MigrationConfig config) {
     return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation"), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, "concept", false) == config.sourceConcept;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "concept", config.targetConcept, false);
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateAddNewChildOperation(final MigrationConfig config) {
     return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation"), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, "concept", false) == config.sourceConcept;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "concept", config.targetConcept, false);
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateSNodeTypeCastExpression(final MigrationConfig config) {
     return new SModelMethodMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), config) {
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         return SLinkOperations.getTarget(node, "concept", false) == config.sourceConcept;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode node) {
         SLinkOperations.setTarget(node, "concept", config.targetConcept, false);
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateMappingRuleCondition(final MigrationConfig config) {
     return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.BaseMappingRule")) {
       @Override
       public String getName() {
         return "Migrate mapping rules condition for " + config.getName();
       }
-
       @Override
       public boolean isApplicableInstanceNode(SNode rule) {
         // todo: !(rule.applyToConceptInheritors) is needed or not? 
         return SLinkOperations.getTarget(rule, "applicableConcept", false) == config.sourceConcept && !(SPropertyOperations.getBoolean(rule, "applyToConceptInheritors"));
       }
-
       @Override
       public void doUpdateInstanceNode(SNode rule) {
         SLinkOperations.setTarget(rule, "applicableConcept", config.targetConcept, false);
@@ -323,33 +289,28 @@ public class Migrations {
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateGeneratorTemplateDeclaration(final MigrationConfig config) {
     return new SimpleMigration(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
       @Override
       public String getName() {
         return "Migrate generator template declarations for " + config.getName();
       }
-
       @Override
       public boolean isApplicableInstanceNode(SNode template) {
         return SLinkOperations.getTarget(template, "applicableConcept", false) == config.sourceConcept;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode template) {
         SLinkOperations.setTarget(template, "applicableConcept", config.targetConcept, false);
       }
     };
   }
-
   public static AbstractMigrationRefactoring migrateInstanceNodes(final MigrationConfig config) {
     return new SimpleMigration(config.sourceConcept) {
       @Override
       public String getName() {
         return "Migrate instances of " + SPropertyOperations.getString(config.sourceConcept, "name") + " to " + SPropertyOperations.getString(config.targetConcept, "name");
       }
-
       @Override
       public boolean isApplicableInstanceNode(SNode node) {
         if (SNodeOperations.getConceptDeclaration(node) != config.sourceConcept) {
@@ -365,7 +326,6 @@ public class Migrations {
 
         return true;
       }
-
       @Override
       public void doUpdateInstanceNode(SNode node) {
         SNode result = config.migrateInstanceNode(node);
@@ -373,7 +333,6 @@ public class Migrations {
       }
     };
   }
-
   private static SNode _quotation_createNode_b5gojm_a0a0a2a2a0a0a2(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -398,7 +357,6 @@ public class Migrations {
     quotedNode_2.addChild("condition", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_b5gojm_a0a0c0c0a0a0c(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -416,7 +374,6 @@ public class Migrations {
     quotedNode_2.addChild("body", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_b5gojm_a0a0a2a2a0a0a3(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -441,7 +398,6 @@ public class Migrations {
     quotedNode_2.addChild("condition", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_b5gojm_a0a0c0c0a0a0d(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -459,7 +415,6 @@ public class Migrations {
     quotedNode_2.addChild("body", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_b5gojm_a0a0a0b0a0a0f(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -475,7 +430,6 @@ public class Migrations {
     quotedNode_3.addChild("expression", quotedNode_4);
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_b5gojm_a0b0b0a0a0f(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -508,7 +462,6 @@ public class Migrations {
     quotedNode_4.addChild("expression", quotedNode_5);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_b5gojm_a0a0a0a0a0a1a0a0a6(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -519,7 +472,6 @@ public class Migrations {
     quotedNode_2.addChild("conceptArgument", quotedNode_3);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_b5gojm_a0d0b0a0a0g(Object parameter_1, Object parameter_2, Object parameter_3) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_4 = null;
@@ -574,7 +526,6 @@ public class Migrations {
     SNodeAccessUtil.setReferenceTarget(quotedNode_17, "variableDeclaration", quotedNode_13);
     return quotedNode_4;
   }
-
   private static SNode _quotation_createNode_b5gojm_a0a0b0c0a0a0h(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -582,7 +533,6 @@ public class Migrations {
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "applicableNode", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_b5gojm_a0c0c0a0a0h(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -603,7 +553,6 @@ public class Migrations {
     quotedNode_2.addChild("condition", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_b5gojm_a0b0d0c0a0a0o(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -621,7 +570,6 @@ public class Migrations {
     quotedNode_2.addChild("statement", quotedNode_4);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_b5gojm_a0a0a3a2a0a0a41(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -646,14 +594,12 @@ public class Migrations {
     quotedNode_2.addChild("condition", quotedNode_4);
     return quotedNode_2;
   }
-
   private static String check_b5gojm_a0a0e0b0a0a0q(SModelReference checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelName();
     }
     return null;
   }
-
   private static SModelReference check_b5gojm_a0a0a4a1a0a0a61(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getReference();

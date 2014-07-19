@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_AnonymousClassCreator_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_AnonymousClassCreator_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode anonymousClassCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(anonymousClassCreator, "cls", true), "typeParameter", true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
@@ -32,18 +31,15 @@ public class check_AnonymousClassCreator_NonTypesystemRule extends AbstractNonTy
       }
     });
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

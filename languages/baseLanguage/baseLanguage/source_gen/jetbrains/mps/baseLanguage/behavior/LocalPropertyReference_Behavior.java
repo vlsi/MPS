@@ -7,9 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class LocalPropertyReference_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return Property_Behavior.call_hasSetter_1213877383224(SLinkOperations.getTarget(thisNode, "property", false));
-  };;
-;}
+  }
+}

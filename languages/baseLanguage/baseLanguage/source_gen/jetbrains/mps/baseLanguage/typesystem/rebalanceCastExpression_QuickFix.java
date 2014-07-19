@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class rebalanceCastExpression_QuickFix extends QuickFix_Runtime {
   public rebalanceCastExpression_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Rebalance the cast expression";
   }
-
   public void execute(SNode node) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(((SNode) rebalanceCastExpression_QuickFix.this.getField("castExpression")[0]), "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
       SNode replacing = SNodeOperations.cast(SLinkOperations.getTarget(((SNode) rebalanceCastExpression_QuickFix.this.getField("castExpression")[0]), "expression", true), "jetbrains.mps.baseLanguage.structure.BinaryOperation");

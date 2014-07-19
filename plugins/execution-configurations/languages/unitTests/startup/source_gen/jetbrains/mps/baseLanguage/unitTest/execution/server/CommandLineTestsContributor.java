@@ -13,11 +13,9 @@ import org.junit.runner.Request;
 
 public class CommandLineTestsContributor implements TestsContributor {
   private String[] myArgs;
-
   public CommandLineTestsContributor(String[] args) throws IOException {
     myArgs = inlineFilesContents(args);
   }
-
   private String[] inlineFilesContents(String[] args) throws IOException {
     List<String> newArgs = new LinkedList<String>();
     for (int num = 0; num < args.length; ++num) {
@@ -32,7 +30,6 @@ public class CommandLineTestsContributor implements TestsContributor {
     }
     return newArgs.toArray(new String[1]);
   }
-
   private List<String> parseRequestFromFile(String filename) throws IOException {
     new File(filename).deleteOnExit();
     LineNumberReader reader = new LineNumberReader(new FileReader(filename));
@@ -49,12 +46,10 @@ public class CommandLineTestsContributor implements TestsContributor {
     }
     return fileContents;
   }
-
   @Override
   public boolean isInitialized() {
     return true;
   }
-
   @Override
   public Iterable<Request> gatherTests() throws IOException, ClassNotFoundException {
     List<Request> requests = new LinkedList<Request>();
@@ -72,17 +67,14 @@ public class CommandLineTestsContributor implements TestsContributor {
     }
     return requests;
   }
-
   private void parseRequestFromMethod(List<Request> requests, String s) throws ClassNotFoundException {
     int index = s.lastIndexOf('.');
     String testCase = s.substring(0, index);
     String method = s.substring(index + 1);
     requests.add(Request.method(Class.forName(testCase), method));
   }
-
   private Request parseRequestFromClass(String className) throws ClassNotFoundException {
     return Request.aClass(Class.forName(className));
   }
-
 
 }

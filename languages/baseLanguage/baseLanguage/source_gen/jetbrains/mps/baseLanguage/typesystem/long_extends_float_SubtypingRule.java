@@ -13,26 +13,21 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class long_extends_float_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public long_extends_float_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode longType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_gbknn_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.LongType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_gbknn_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

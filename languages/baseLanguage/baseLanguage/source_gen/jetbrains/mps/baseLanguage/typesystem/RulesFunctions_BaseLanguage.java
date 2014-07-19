@@ -45,7 +45,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class RulesFunctions_BaseLanguage {
   public RulesFunctions_BaseLanguage() {
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */
@@ -72,7 +71,6 @@ public class RulesFunctions_BaseLanguage {
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1203512292516", true), (SNode) _quotation_createNode_5ahx9e_a0c0b(), _info_12389875345);
     }
   }
-
   public static Iterable<SNode> collectReturnStatements(SNode node) {
     Iterable<SNode> returnStatements = ListSequence.fromList(SNodeOperations.getChildren(node)).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode it) {
@@ -80,7 +78,6 @@ public class RulesFunctions_BaseLanguage {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -157,7 +154,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private SNode _11_returnStmt;
               private Iterator<SNode> _11_returnStmt_it;
             };
@@ -167,7 +163,6 @@ __switch__:
     });
     return returnStatements;
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */
@@ -180,7 +175,6 @@ __switch__:
     RulesFunctions_BaseLanguage.inference_matchConcreteTypesWithMethodTypeVariables(typeCheckingContext, imco, mmap);
     RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */
@@ -189,7 +183,6 @@ __switch__:
   public static void inference_matchConcreteTypesWithTypeVariables(final TypeCheckingContext typeCheckingContext, SNode genericClassifier, SNode instanceType, Map<SNode, List<SNode>> mmap) {
     inference_matchConcreteTypesWithTypeVariablesInternal(typeCheckingContext, genericClassifier, instanceType, mmap, null);
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */
@@ -219,7 +212,6 @@ __switch__:
     }
     match_forInnerClassifiers(typeCheckingContext, genericClassifier, instanceType, mmap);
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */
@@ -245,7 +237,6 @@ __switch__:
     }
     inference_matchConcreteTypesWithTypeVariables(typeCheckingContext, parentFC, constructedType, mmap);
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */
@@ -274,7 +265,6 @@ __switch__:
       }
     }
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */
@@ -386,7 +376,6 @@ __switch__:
       }
     }
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */
@@ -406,7 +395,6 @@ __switch__:
       }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5380162141339274295", false, false);
     }
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */
@@ -426,7 +414,6 @@ __switch__:
       }
     }
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */
@@ -449,7 +436,6 @@ __switch__:
       }
     }
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */
@@ -467,7 +453,6 @@ __switch__:
     }
     return resType;
   }
-
   @CheckingMethod
   @Deprecated
   private static void inference_mapTypeVariables(final TypeCheckingContext typeCheckingContext, SNode type, Map<SNode, List<SNode>> mmap) {
@@ -483,12 +468,10 @@ __switch__:
       }
     }
   }
-
   @Deprecated
   private static void inference_mapTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {
     putTypeVariable(tvd, tvar, mmap);
   }
-
   @Deprecated
   private static void putTypeVariable(SNode tvd, SNode tvar, Map<SNode, List<SNode>> mmap) {
     List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
@@ -498,7 +481,6 @@ __switch__:
     }
     ListSequence.fromList(nodes).addElement(tvar);
   }
-
   /**
    * @deprecated to be removed at some point after 3.0
    */
@@ -533,7 +515,6 @@ __switch__:
     }
     return false;
   }
-
   @CheckingMethod
   public static void checkDuplicates(final TypeCheckingContext typeCheckingContext, SNode ownMethod, SNode classifier, List<SNode> namesakes) {
     String erasureSignature = null;
@@ -562,12 +543,10 @@ __switch__:
       }
     }
   }
-
   @CheckingMethod
   public static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode) {
     check(typeCheckingContext, throwables, mainNode, "uncaught exceptions:");
   }
-
   @CheckingMethod
   /*package*/ static void check(final TypeCheckingContext typeCheckingContext, Set<SNode> throwables, SNode mainNode, String message) {
     List<SNode> throwTypes = ListSequence.fromListWithValues(new ArrayList<SNode>(), throwables);
@@ -703,7 +682,6 @@ __switch__:
       }
     }
   }
-
   public static SNode concretifyType(SNode typeWithVars, Map<SNode, SNode> typeParamsToArgs) {
     if (SNodeOperations.isInstanceOf(typeWithVars, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       SNode variableDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(typeWithVars, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false);
@@ -722,11 +700,9 @@ __switch__:
       return result;
     }
   }
-
   public static boolean typesAreComparable(SNode t1, SNode t2) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(t1, t2) || TypeChecker.getInstance().getSubtypingManager().isSubtype(t2, t1) || SNodeOperations.isInstanceOf(t1, "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(t2, "jetbrains.mps.baseLanguage.structure.Interface");
   }
-
   public static SNode getVariableDeclaration(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
@@ -737,8 +713,6 @@ __switch__:
     return null;
   }
 
-
-
   public static SNode getProperty(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.LocalPropertyReference")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.LocalPropertyReference"), "property", false);
@@ -748,7 +722,6 @@ __switch__:
     }
     return null;
   }
-
   @CheckingMethod
   public static void checkReturningExpression(final TypeCheckingContext typeCheckingContext, SNode expression, SNode statement, Program program, AnalysisResult<Map<SNode, NullableState>> result) {
     if (SNodeOperations.isInstanceOf(expression, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
@@ -769,7 +742,6 @@ __switch__:
       }
     }
   }
-
   private static SNode _quotation_createNode_5ahx9e_a0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -777,7 +749,6 @@ __switch__:
     quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), facade.createNodeId("1196683729865")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_5ahx9e_a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -785,14 +756,12 @@ __switch__:
     quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), facade.createNodeId("1196683729865")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_5ahx9e_a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, false);
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_5ahx9e_a0c0a0f(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -807,7 +776,6 @@ __switch__:
     }
     return quotedNode_3;
   }
-
   private static SNode _quotation_createNode_5ahx9e_a0f0g(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -815,7 +783,6 @@ __switch__:
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_5ahx9e_a0c0a0i() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -823,7 +790,6 @@ __switch__:
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_5ahx9e_b0a0a0a0a1a91() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -831,7 +797,6 @@ __switch__:
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Error")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_5ahx9e_b0a0a0a0a1a91_0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

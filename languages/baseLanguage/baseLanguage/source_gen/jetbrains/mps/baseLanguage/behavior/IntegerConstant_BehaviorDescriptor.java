@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.module.SModule;
 public class IntegerConstant_BehaviorDescriptor extends IntegerLiteral_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public IntegerConstant_BehaviorDescriptor() {
   }
-
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return IntegerConstant_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
-  };;
-;
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.IntegerConstant";
-  };;
-;}
+  }
+}

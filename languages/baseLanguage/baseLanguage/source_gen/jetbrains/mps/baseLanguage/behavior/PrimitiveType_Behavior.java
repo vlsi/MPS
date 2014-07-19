@@ -11,25 +11,20 @@ import java.util.ArrayList;
 
 public class PrimitiveType_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
-  };;
-;
+  }
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     return ListSequence.fromListAndArray(new ArrayList<String>(), SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias").substring(0, 1));
-  };;
-;
+  }
   public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
-  };;
-;
+  }
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     return thisNode;
-  };;
-;
+  }
   public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {
     return thisNode;
-  };;
-;}
+  }
+}

@@ -15,35 +15,27 @@ public class TypeVariableDeclaration_deleteBound {
     editorCell.setAction(CellActionType.DELETE, new TypeVariableDeclaration_deleteBound.TypeVariableDeclaration_deleteBound_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new TypeVariableDeclaration_deleteBound.TypeVariableDeclaration_deleteBound_BACKSPACE(node));
   }
-
   public static class TypeVariableDeclaration_deleteBound_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TypeVariableDeclaration_deleteBound_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "auxBounds", true)).clear();
       SLinkOperations.setTarget(node, "bound", null, true);
     }
   }
-
   public static class TypeVariableDeclaration_deleteBound_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public TypeVariableDeclaration_deleteBound_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       ListSequence.fromList(SLinkOperations.getTargets(node, "auxBounds", true)).clear();
       SLinkOperations.setTarget(node, "bound", null, true);

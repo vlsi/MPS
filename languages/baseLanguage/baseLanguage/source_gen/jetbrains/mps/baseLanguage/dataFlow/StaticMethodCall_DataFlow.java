@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class StaticMethodCall_DataFlow extends DataFlowBuilder {
   public StaticMethodCall_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode arg : SLinkOperations.getTargets(_context.getNode(), "actualArgument", true)) {
       _context.getBuilder().build((SNode) arg);

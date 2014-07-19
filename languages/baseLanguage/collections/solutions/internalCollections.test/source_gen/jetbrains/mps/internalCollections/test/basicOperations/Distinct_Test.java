@@ -19,12 +19,10 @@ public class Distinct_Test extends Util_Test {
     ISequence<Integer> input = Sequence.fromArray(1, 2, 3, 2, 1, 3);
     this.assertIterableEquals(Arrays.asList(1, 2, 3), input.distinct());
   }
-
   public void test_distinctOperation() throws Exception {
     Iterable<Integer> input = Arrays.asList(1, 2, 3, 2, 1, 3);
     this.assertIterableEquals(Arrays.asList(1, 2, 3), Sequence.fromIterable(input).distinct());
   }
-
   public void test_nextWithoutHasNext() throws Exception {
     Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 2, 3)).distinct().iterator();
     Assert.assertSame(1, it.next());
@@ -38,7 +36,6 @@ public class Distinct_Test extends Util_Test {
       // expected exception 
     }
   }
-
   public void test_distinctLazy() throws Exception {
     Iterable<Integer> seq = Sequence.fromClosure(new ISequenceClosure<Integer>() {
       public Iterable<Integer> iterable() {
@@ -46,7 +43,6 @@ public class Distinct_Test extends Util_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -111,7 +107,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _7_i;
               private int _2_j;
             };

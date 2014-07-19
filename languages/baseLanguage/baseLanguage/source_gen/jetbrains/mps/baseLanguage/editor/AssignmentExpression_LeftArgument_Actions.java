@@ -17,22 +17,17 @@ public class AssignmentExpression_LeftArgument_Actions {
     editorCell.setAction(CellActionType.DELETE, new AssignmentExpression_LeftArgument_Actions.AssignmentExpression_LeftArgument_Actions_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new AssignmentExpression_LeftArgument_Actions.AssignmentExpression_LeftArgument_Actions_BACKSPACE(node));
   }
-
   public static class AssignmentExpression_LeftArgument_Actions_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public AssignmentExpression_LeftArgument_Actions_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Delete left argument";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "lValue", true)), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression")))) {
         SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "rValue", true));
@@ -41,22 +36,17 @@ public class AssignmentExpression_LeftArgument_Actions {
       }
     }
   }
-
   public static class AssignmentExpression_LeftArgument_Actions_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public AssignmentExpression_LeftArgument_Actions_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "Delete left argument";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "lValue", true)), NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression")))) {
         SNodeOperations.replaceWithAnother(node, SLinkOperations.getTarget(node, "rValue", true));

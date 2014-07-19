@@ -17,12 +17,10 @@ public class BaseStringOperation_Constraints extends BaseConstraintsDescriptor {
   public BaseStringOperation_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.BaseStringOperation");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
-  };;
-;
+  }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -32,11 +30,9 @@ public class BaseStringOperation_Constraints extends BaseConstraintsDescriptor {
     }
 
     return result;
-  };;
-;
+  }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression") && TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.StringType"), true) != null;
-  };;
-;
+  }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "1225271316037");
 }

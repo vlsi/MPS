@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 /*package*/ class MySequence<T> {
   public MySequence() {
   }
-
   /*package*/ Iterable<T> get() {
     return Sequence.fromClosure(new ISequenceClosure<T>() {
       public Iterable<T> iterable() {
@@ -18,7 +17,6 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
           public Iterator<T> iterator() {
             return new YieldingIterator<T>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -71,7 +69,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private T _7_next;
             };
           }
@@ -79,7 +76,6 @@ __switch__:
       }
     });
   }
-
   /*package*/ T getNext() {
     return null;
   }

@@ -17,24 +17,19 @@ import jetbrains.mps.project.GlobalScope;
 public class SafeDeleteConceptMethod extends BaseRefactoring {
   public SafeDeleteConceptMethod() {
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new SafeDeleteConceptMethod_Target();
   }
-
   public String getUserFriendlyName() {
     return "Safe Delete Concept Method";
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     SNode method = refactoringContext.getSelectedNode();
     new SafeDeleteMethod(method).doRefactor();
   }
-
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {
     return (List<SModel>) refactoringContext.getModelsFromUsages(refactoringContext.getSelectedModel());
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SNode method = SNodeOperations.cast(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
     return FindUtils.getSearchResults(new EmptyProgressMonitor(), method, GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder", "jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder");

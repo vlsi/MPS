@@ -16,22 +16,17 @@ public class UncommentSingleLineComment {
     editorCell.setAction(CellActionType.DELETE, new UncommentSingleLineComment.UncommentSingleLineComment_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new UncommentSingleLineComment.UncommentSingleLineComment_BACKSPACE(node));
   }
-
   public static class UncommentSingleLineComment_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public UncommentSingleLineComment_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "If delete comes from end of previos single-line comment (due to the nature editor distributes notification), merge comments. Otherwise, unwrap commented statement, if any";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode selected = editorContext.getSelectedNode();
       if (SNodeOperations.isInstanceOf(selected, "jetbrains.mps.baseLanguage.structure.CommentPart") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment") && !(ListSequence.fromList(SLinkOperations.getTargets(node, "commentPart", true)).contains(SNodeOperations.cast(selected, "jetbrains.mps.baseLanguage.structure.CommentPart")))) {
@@ -54,22 +49,17 @@ public class UncommentSingleLineComment {
       }
     }
   }
-
   public static class UncommentSingleLineComment_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public UncommentSingleLineComment_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public String getDescriptionText() {
       return "If delete comes from end of previos single-line comment (due to the nature editor distributes notification), merge comments. Otherwise, unwrap commented statement, if any";
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode selected = editorContext.getSelectedNode();
       if (SNodeOperations.isInstanceOf(selected, "jetbrains.mps.baseLanguage.structure.CommentPart") && SNodeOperations.isInstanceOf(SNodeOperations.getParent(selected), "jetbrains.mps.baseLanguage.structure.SingleLineComment") && !(ListSequence.fromList(SLinkOperations.getTargets(node, "commentPart", true)).contains(SNodeOperations.cast(selected, "jetbrains.mps.baseLanguage.structure.CommentPart")))) {

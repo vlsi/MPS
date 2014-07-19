@@ -6,9 +6,8 @@ package jetbrains.mps.baseLanguage.behavior;
 public class DoWhileStatement_BehaviorDescriptor extends AbstractLoopStatement_BehaviorDescriptor {
   public DoWhileStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.DoWhileStatement";
-  };;
-;}
+  }
+}

@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class BooleanConstant_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return SPropertyOperations.getBoolean(thisNode, "value");
-  };;
-;
+  }
   public static boolean virtual_constant_1262430001741498050(SAbstractConcept thisConcept) {
     return true;
-  };;
-;}
+  }
+}

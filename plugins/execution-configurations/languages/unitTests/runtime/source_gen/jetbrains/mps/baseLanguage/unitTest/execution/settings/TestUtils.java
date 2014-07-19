@@ -28,7 +28,6 @@ import org.jetbrains.mps.openapi.util.SubProgressKind;
 public class TestUtils {
   public TestUtils() {
   }
-
   @NotNull
   public static Iterable<ITestNodeWrapper> wrapPointerStrings(@Nullable final Iterable<String> strings) {
     if (strings == null) {
@@ -40,7 +39,6 @@ public class TestUtils {
           public Iterator<ITestNodeWrapper> iterator() {
             return new YieldingIterator<ITestNodeWrapper>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -97,7 +95,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private String _2_pointerString;
               private Iterator<String> _2_pointerString_it;
               private SNode _6_node;
@@ -109,8 +106,6 @@ __switch__:
     });
   }
 
-
-
   @Nullable
   public static SModel getModel(@Nls String modelName) {
     if ((modelName == null || modelName.length() == 0)) {
@@ -120,8 +115,6 @@ __switch__:
     return SModelRepository.getInstance().getModelDescriptor(modelName);
   }
 
-
-
   @Nullable
   public static SModule getModule(@Nls String moduleName) {
     if ((moduleName == null || moduleName.length() == 0)) {
@@ -129,8 +122,6 @@ __switch__:
     }
     return MPSModuleRepository.getInstance().getModuleByFqName(moduleName);
   }
-
-
 
   public static Iterable<ITestNodeWrapper> getModelTests(@NotNull SModel model, ProgressMonitor monitor, boolean breakOnFirstFound) {
     Iterable<ITestNodeWrapper> result = Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
@@ -156,8 +147,6 @@ __switch__:
     return result;
   }
 
-
-
   public static Iterable<ITestNodeWrapper> getModuleTests(@NotNull SModule module, ProgressMonitor monitor, boolean breakOnFirstFound) {
     Iterable<ITestNodeWrapper> result = Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
     Iterable<SModel> models = module.getModels();
@@ -182,8 +171,6 @@ __switch__:
     return result;
   }
 
-
-
   public static Iterable<ITestNodeWrapper> getProjectTests(@NotNull Project project, ProgressMonitor monitor, boolean breakOnFirstFound) {
     Iterable<ITestNodeWrapper> result = Sequence.fromIterable(Collections.<ITestNodeWrapper>emptyList());
 
@@ -207,7 +194,6 @@ __switch__:
     }
     return result;
   }
-
   private static SNode check_6qi07j_a0a0a0a0a1a1(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.resolve(MPSModuleRepository.getInstance());

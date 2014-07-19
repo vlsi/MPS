@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 public class JavaImports_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public JavaImports_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.JavaImports";
-  };;
-;}
+  }
+}

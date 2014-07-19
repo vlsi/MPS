@@ -20,7 +20,6 @@ public class CatchClause_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_5rb7wh_a(editorContext, node);
   }
-
   private EditorCell createCollection_5rb7wh_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_5rb7wh_a");
@@ -34,7 +33,6 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_5rb7wh_g0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_5rb7wh_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "catch");
     editorCell.setCellId("Constant_5rb7wh_a0");
@@ -44,7 +42,6 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_5rb7wh_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "(");
     editorCell.setCellId("Constant_5rb7wh_b0");
@@ -54,7 +51,6 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_5rb7wh_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("throwable");
@@ -74,7 +70,6 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_5rb7wh_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ")");
     editorCell.setCellId("Constant_5rb7wh_d0");
@@ -84,7 +79,6 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_5rb7wh_e0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_5rb7wh_e0");
@@ -95,7 +89,6 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_5rb7wh_f0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("catchBody");
@@ -120,7 +113,6 @@ public class CatchClause_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_5rb7wh_g0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_5rb7wh_g0");

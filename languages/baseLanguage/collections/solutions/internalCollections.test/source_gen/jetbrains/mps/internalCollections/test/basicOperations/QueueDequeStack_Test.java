@@ -27,7 +27,6 @@ public class QueueDequeStack_Test extends TestCase {
     Assert.assertSame(3, QueueSequence.fromQueue(q).removeFirstElement());
     Assert.assertTrue(QueueSequence.fromQueue(q).isEmpty());
   }
-
   public void test_priorityQueue() throws Exception {
     Queue<Integer> q = QueueSequence.fromQueue(new PriorityQueue<Integer>());
     QueueSequence.fromQueue(q).addLastElement(3);
@@ -41,7 +40,6 @@ public class QueueDequeStack_Test extends TestCase {
     Assert.assertSame(3, QueueSequence.fromQueue(q).removeFirstElement());
     Assert.assertTrue(QueueSequence.fromQueue(q).isEmpty());
   }
-
   public void test_stack() throws Exception {
     Deque<Integer> s = DequeSequence.fromDeque(new LinkedList<Integer>());
     DequeSequence.fromDeque(s).addFirstElement(1);
@@ -55,7 +53,6 @@ public class QueueDequeStack_Test extends TestCase {
     Assert.assertSame(1, DequeSequence.fromDeque(s).removeFirstElement());
     Assert.assertTrue(DequeSequence.fromDeque(s).isEmpty());
   }
-
   public void test_stackClassic() throws Exception {
     Deque<Integer> s = DequeSequence.fromDeque(new LinkedList<Integer>());
     DequeSequence.fromDeque(s).pushElement(1);
@@ -71,7 +68,6 @@ public class QueueDequeStack_Test extends TestCase {
     Assert.assertSame(1, DequeSequence.fromDeque(s).popElement());
     Assert.assertTrue(DequeSequence.fromDeque(s).isEmpty());
   }
-
   public void test_deque() throws Exception {
     Deque<Integer> d = DequeSequence.fromDeque(new LinkedList<Integer>());
     DequeSequence.fromDeque(d).addFirstElement(1);
@@ -97,10 +93,8 @@ public class QueueDequeStack_Test extends TestCase {
     Assert.assertSame(5, DequeSequence.fromDeque(d).removeLastElement());
     Assert.assertTrue(DequeSequence.fromDeque(d).isEmpty());
   }
-
   public QueueDequeStack_Test() {
   }
-
   private static boolean eq_5js43w_a0a5a0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

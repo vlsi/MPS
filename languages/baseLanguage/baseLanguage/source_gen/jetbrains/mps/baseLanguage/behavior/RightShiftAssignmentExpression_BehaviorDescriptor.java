@@ -6,9 +6,8 @@ package jetbrains.mps.baseLanguage.behavior;
 public class RightShiftAssignmentExpression_BehaviorDescriptor extends OperationAssignmentExpression_BehaviorDescriptor {
   public RightShiftAssignmentExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.RightShiftAssignmentExpression";
-  };;
-;}
+  }
+}

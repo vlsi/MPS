@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SReference;
 public class check_ExceptionWasNotCaught_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ExceptionWasNotCaught_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode iTryCatchStatement, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> caughtExceptions = new ArrayList<SNode>();
     for (SNode catchClause : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), iTryCatchStatement, "virtual_getCatchClauses_3718132079121388582", new Object[]{})) {
@@ -40,22 +39,18 @@ public class check_ExceptionWasNotCaught_NonTypesystemRule extends AbstractNonTy
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ITryCatchStatement";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_6gl2l4_b0a1a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

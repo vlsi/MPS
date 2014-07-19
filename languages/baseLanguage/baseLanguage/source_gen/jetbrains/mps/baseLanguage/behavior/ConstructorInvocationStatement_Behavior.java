@@ -17,8 +17,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConstructorInvocationStatement_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     SNode concept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     List<SNode> typeVarRefs = new ArrayList<SNode>();
@@ -26,20 +25,17 @@ public class ConstructorInvocationStatement_Behavior {
       ListSequence.fromList(typeVarRefs).addElement(_quotation_createNode_teq92u_a0a0a2a0(tvd));
     }
     return _quotation_createNode_teq92u_a3a0(typeVarRefs, concept);
-  };;
-;
+  }
   public static Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
     return new HashMap<SNode, SNode>();
-  };;
-;
+  }
   private static SNode _quotation_createNode_teq92u_a0a0a2a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
-  };;
-;
+  }
   private static SNode _quotation_createNode_teq92u_a3a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -53,5 +49,5 @@ public class ConstructorInvocationStatement_Behavior {
       }
     }
     return quotedNode_3;
-  };;
-;}
+  }
+}

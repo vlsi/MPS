@@ -22,10 +22,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeFactoryUtil {
   private static final Logger LOG = LogManager.getLogger(NodeFactoryUtil.class);
-
   public NodeFactoryUtil() {
   }
-
   public static List<SNode> getApplicableNodeFactories(final SNode concept, Language language) {
     SModel actionsModelDescriptor = LanguageAspect.ACTIONS.get(language);
     if (actionsModelDescriptor == null) {
@@ -41,7 +39,6 @@ public class NodeFactoryUtil {
       }
     }).toListSequence();
   }
-
   public static void invokeNodeSetupFunction(SNode factory, SNode newNode, SNode sampleNode, SNode enclosingNode, SModel model) {
     if (SLinkOperations.getTarget(factory, "setupFunction", true) == null) {
       return;

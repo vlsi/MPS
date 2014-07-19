@@ -13,33 +13,24 @@ import org.junit.runner.notification.Failure;
 public class BTestExecutor extends AbstractTestExecutor {
   private final String[] myArgs;
   private final CommandOutputStream myOutStream;
-
   public BTestExecutor(String[] args) {
     myArgs = args;
     myOutStream = new CommandOutputStream(System.out);
   }
 
-
-
   public void init() {
     System.setOut(new PrintStream(myOutStream));
   }
 
-
-
   public void dispose() {
     System.setOut(myOutStream.getOldStream());
   }
-
-
 
   @NotNull
   @Override
   protected RunListener createListener(Iterable<Request> iterable) {
     return new BTestExecutor.BTestRunListener(myOutStream);
   }
-
-
 
   @NotNull
   @Override
@@ -50,8 +41,6 @@ public class BTestExecutor extends AbstractTestExecutor {
       throw new RuntimeException(e);
     }
   }
-
-
 
 
   public static void main(String[] args) throws ClassNotFoundException, IOException {
@@ -66,21 +55,16 @@ public class BTestExecutor extends AbstractTestExecutor {
     }
   }
 
-
-
   private static class BTestRunListener extends RunListener {
     private final CommandOutputStream myOutput;
-
     public BTestRunListener(CommandOutputStream out) {
       myOutput = out;
     }
-
     @Override
     public void testFinished(Description description) throws Exception {
       this.printSyncToken(("<END_TEST>"), description);
       super.testFinished(description);
     }
-
     @Override
     public void testFailure(Failure failure) throws Exception {
       this.printSyncToken(("<TEST_ERROR_BEGIN>"), failure.getDescription());
@@ -88,7 +72,6 @@ public class BTestExecutor extends AbstractTestExecutor {
       this.printSyncToken(("<TEST_ERROR_END>"), failure.getDescription());
       super.testFailure(failure);
     }
-
     @Override
     public void testAssumptionFailure(Failure failure) {
       this.printSyncToken(("<TEST_FAILURE_BEGIN>"), failure.getDescription());
@@ -96,13 +79,11 @@ public class BTestExecutor extends AbstractTestExecutor {
       this.printSyncToken(("<TEST_FAILURE_END>"), failure.getDescription());
       super.testAssumptionFailure(failure);
     }
-
     @Override
     public void testStarted(Description description) throws Exception {
       printSyncToken(("<START_TEST>"), description);
       super.testStarted(description);
     }
-
     private void printSyncToken(String tokenPrefix, Description description) {
       StringBuilder builder = new StringBuilder();
       builder.append(tokenPrefix);

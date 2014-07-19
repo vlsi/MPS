@@ -16,25 +16,20 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DerivedInterfaces_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.DerivedInterfaces_Finder");
-
   public DerivedInterfaces_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Derived Interfaces";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Interface";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 1);
@@ -59,7 +54,6 @@ public class DerivedInterfaces_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Derived Interfaces";

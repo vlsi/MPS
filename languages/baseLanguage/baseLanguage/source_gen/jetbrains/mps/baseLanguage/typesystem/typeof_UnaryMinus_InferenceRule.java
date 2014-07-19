@@ -20,7 +20,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_UnaryMinus_InferenceRule() {
   }
-
   public void applyRule(final SNode minus, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode expressionType_typevar_7602524515424797598 = typeCheckingContext.createNewRuntimeTypesVariable();
     {
@@ -54,22 +53,18 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
       }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3860149536565525509", false, false);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.UnaryMinus";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_2vfzm_c0a0a0c0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

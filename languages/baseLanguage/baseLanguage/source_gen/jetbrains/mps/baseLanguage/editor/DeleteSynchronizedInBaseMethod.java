@@ -14,34 +14,26 @@ public class DeleteSynchronizedInBaseMethod {
     editorCell.setAction(CellActionType.DELETE, new DeleteSynchronizedInBaseMethod.DeleteSynchronizedInBaseMethod_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new DeleteSynchronizedInBaseMethod.DeleteSynchronizedInBaseMethod_BACKSPACE(node));
   }
-
   public static class DeleteSynchronizedInBaseMethod_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteSynchronizedInBaseMethod_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "isSynchronized", "" + (false));
     }
   }
-
   public static class DeleteSynchronizedInBaseMethod_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteSynchronizedInBaseMethod_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SPropertyOperations.set(node, "isSynchronized", "" + (false));
     }

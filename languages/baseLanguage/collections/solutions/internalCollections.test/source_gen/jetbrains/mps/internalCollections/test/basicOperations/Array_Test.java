@@ -19,7 +19,6 @@ public class Array_Test extends Util_Test {
     }
     this.assertIterableEquals(this.expect5(), test);
   }
-
   public void test_iterateArrayYield() throws Exception {
     final int[] arr = new int[]{1, 2, 3, 4, 5};
     Iterable<Integer> test = Sequence.fromClosure(new ISequenceClosure<Integer>() {
@@ -28,7 +27,6 @@ public class Array_Test extends Util_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -63,7 +61,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
               private int _2_i_idx;
             };
@@ -78,7 +75,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -113,7 +109,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
               private int _2_i_idx;
             };
@@ -129,7 +124,6 @@ __switch__:
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -164,7 +158,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private String _2_s;
               private int _2_s_idx;
             };
@@ -179,7 +172,6 @@ __switch__:
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -214,7 +206,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private String _2_s;
               private int _2_s_idx;
             };
@@ -224,7 +215,6 @@ __switch__:
     });
     this.assertIterableEquals(this.inputABC(), test4);
   }
-
   public Array_Test() {
   }
 }

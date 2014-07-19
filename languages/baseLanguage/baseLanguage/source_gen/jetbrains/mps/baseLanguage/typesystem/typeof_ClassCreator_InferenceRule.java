@@ -32,7 +32,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ClassCreator_InferenceRule() {
   }
-
   public void applyRule(final SNode creator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode cdecl = SLinkOperations.getTarget(creator, "baseMethodDeclaration", false);
     if (cdecl == null) {
@@ -148,22 +147,18 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
       typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2062135263152102075", true), (SNode) newType, _info_12389875345);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_4w0o2k_a1a0a0a9a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -171,7 +166,6 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     quotedNode_1.setReference("descriptor", SReference.create("descriptor", quotedNode_1, facade.createModelReference("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), facade.createNodeId("1196683941620")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4w0o2k_a0a0a0m0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -179,7 +173,6 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_4w0o2k_a0a0r0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -187,7 +180,6 @@ public class typeof_ClassCreator_InferenceRule extends AbstractInferenceRule_Run
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_4w0o2k_a0c0a71a1(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

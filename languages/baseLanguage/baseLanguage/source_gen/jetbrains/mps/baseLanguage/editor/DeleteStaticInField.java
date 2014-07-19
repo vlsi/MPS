@@ -20,18 +20,14 @@ public class DeleteStaticInField {
     editorCell.setAction(CellActionType.DELETE, new DeleteStaticInField.DeleteStaticInField_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new DeleteStaticInField.DeleteStaticInField_BACKSPACE(node));
   }
-
   public static class DeleteStaticInField_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteStaticInField_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       final SNode field = SNodeFactoryOperations.insertNewNextSiblingChild(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
       SLinkOperations.setTarget(field, "type", SLinkOperations.getTarget(node, "type", true), true);
@@ -45,18 +41,14 @@ public class DeleteStaticInField {
       SNodeOperations.deleteNode(node);
     }
   }
-
   public static class DeleteStaticInField_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public DeleteStaticInField_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       final SNode field = SNodeFactoryOperations.insertNewNextSiblingChild(node, "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
       SLinkOperations.setTarget(field, "type", SLinkOperations.getTarget(node, "type", true), true);

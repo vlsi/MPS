@@ -16,25 +16,21 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_PropertyReferenceNotUsedInUnaryNumericOperations_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_PropertyReferenceNotUsedInUnaryNumericOperations_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode propertyReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!((SNodeOperations.getAncestorWhereConceptInList(propertyReference, new String[]{"jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PrefixIncrementExpression", "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", "jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression"}, false, false) == null))) {
       MessageTarget errorTarget = new NodeMessageTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(propertyReference, "variable expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6861608246278154966", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.PropertyReference";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

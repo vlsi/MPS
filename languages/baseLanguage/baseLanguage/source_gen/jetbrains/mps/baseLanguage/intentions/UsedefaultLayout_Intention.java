@@ -16,73 +16,57 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class UsedefaultLayout_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public UsedefaultLayout_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.IfStatement";
   }
-
   public String getPresentation() {
     return "UsedefaultLayout";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.UsedefaultLayout_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "forceMultiLine") || SPropertyOperations.getBoolean(node, "forceOneLine");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "4467513934995351531");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new UsedefaultLayout_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Use Default Layout";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "forceMultiLine", "" + (false));
       SPropertyOperations.set(node, "forceOneLine", "" + (false));
     }
-
     public IntentionDescriptor getDescriptor() {
       return UsedefaultLayout_Intention.this;
     }

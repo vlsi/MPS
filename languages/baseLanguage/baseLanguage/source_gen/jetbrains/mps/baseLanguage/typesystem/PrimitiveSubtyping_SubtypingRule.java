@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class PrimitiveSubtyping_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public PrimitiveSubtyping_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode primitiveTypeDescriptor, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode ref : SLinkOperations.getTargets(primitiveTypeDescriptor, "extends", true)) {
@@ -24,18 +23,15 @@ public class PrimitiveSubtyping_SubtypingRule extends SubtypingRule_Runtime impl
     }
     return result;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeDescriptor";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }

@@ -7,9 +7,9 @@ import com.intellij.ide.impl.DataManagerImpl;
 import jetbrains.mps.openapi.editor.Editor;
 import com.intellij.openapi.command.impl.UndoManagerImpl;
 import org.jetbrains.mps.openapi.model.SNode;
+import javax.swing.SwingUtilities;
 import com.intellij.openapi.command.undo.UndoManager;
 import jetbrains.mps.ide.project.ProjectHelper;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.command.impl.CurrentEditorProvider;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -69,14 +69,13 @@ import jetbrains.mps.nodeEditor.EditorCell_WithComponent;
 public abstract class BaseEditorTestBody extends BaseTestBody {
   private static DataManager DATA_MANAGER = new DataManagerImpl();
   public Editor myEditor;
-  private final UndoManagerImpl undoManager;
+  private UndoManagerImpl undoManager;
   private SNode myBefore;
   private SNode myResult;
   protected CellReference myStart;
   protected CellReference myFinish;
 
   public BaseEditorTestBody() {
-    undoManager = (UndoManagerImpl) UndoManager.getInstance(ProjectHelper.toIdeaProject(myProject));
   }
 
   public Editor initEditor(final String before, final String after) throws Exception {
@@ -114,6 +113,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
           BaseEditorTestBody.this.myFinish = BaseEditorTestBody.this.findCellReference(BaseEditorTestBody.this.getRealNodeById(after));
         }
         BaseEditorTestBody.this.myEditor = BaseEditorTestBody.openEditor(BaseEditorTestBody.this.myProject, BaseEditorTestBody.this.myModel, BaseEditorTestBody.this.myBefore);
+        undoManager = (UndoManagerImpl) UndoManager.getInstance(ProjectHelper.toIdeaProject(myProject));
         hackUndoManager(BaseEditorTestBody.this.myEditor);
         if (BaseEditorTestBody.this.myEditor.getCurrentEditorComponent() instanceof EditorComponent) {
           EditorComponent component = ((EditorComponent) BaseEditorTestBody.this.myEditor.getCurrentEditorComponent());
@@ -181,6 +181,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     try {
       this.testMethodImpl();
       this.checkAssertion();
+
     } finally {
       SwingUtilities.invokeAndWait(new Runnable() {
         @Override
@@ -237,6 +238,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
     processKeyEvents(editorComponent, events);
   }
+
   private static void processKeyEvents(final EditorComponent editorComponent, final Iterable<KeyEvent> events) throws InterruptedException, InvocationTargetException {
     final Component eventTargetComponent = getKeyEventTargetComponent(editorComponent);
     final Method processKeyEventMethod = getProcessKeyEventMethod(eventTargetComponent);
@@ -271,6 +273,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
     Assert.assertTrue("Keyboard events were not passed to corresponding component", eventsWerePassed[0]);
   }
+
   private static Component getKeyEventTargetComponent(EditorComponent editorComponent) {
     EditorCell selectedCell = editorComponent.getSelectedCell();
     if (selectedCell == null) {
@@ -287,6 +290,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     }
     return eventTarget;
   }
+
   private static Method getProcessKeyEventMethod(Component eventTargetComponent) {
     if (eventTargetComponent == null) {
       return null;
@@ -305,6 +309,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     Assert.fail("Cannot find processKeyEvent method in " + eventTargetComponent.getClass() + "class");
     return null;
   }
+
   public static void pressKeys(Editor editor, List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
     BaseEditorTestBody.pressKeys((EditorComponent) editor.getCurrentEditorComponent(), keyStrokes);
   }
@@ -368,9 +373,11 @@ __switch__:
     });
     processKeyEvents(editorComponent, events);
   }
+
   public static void invokeAction(Editor editor, String actionId) throws InvocationTargetException, InterruptedException {
     invokeAction((EditorComponent) editor.getCurrentEditorComponent(), actionId);
   }
+
   public static void invokeAction(final EditorComponent editorComponent, final String actionId) throws InvocationTargetException, InterruptedException {
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
@@ -402,6 +409,7 @@ __switch__:
     });
     ModelAccess.instance().flushEventQueue();
   }
+
   public static Component processMouseEvent(final EditorComponent editorComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
     assert editorComponent.getRootCell() != null;
 
@@ -433,6 +441,7 @@ __switch__:
     });
     return targetComponent.value;
   }
+
   public static void processSecondaryMouseEvent(final Component targetComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
     final MouseEvent e = createMouseEvent(targetComponent, eventType, x, y);
     SwingUtilities.invokeAndWait(new Runnable() {
@@ -441,6 +450,7 @@ __switch__:
       }
     });
   }
+
   private static JComponent getEventTargetComponent(EditorCell currentCell, EditorComponent editorComponent) {
     while (currentCell != null) {
       if (currentCell instanceof EditorCell_WithComponent) {
@@ -450,6 +460,7 @@ __switch__:
     }
     return editorComponent;
   }
+
   private static MouseEvent createMouseEvent(Component targetComponent, int id, int x, int y) {
     return new MouseEvent(targetComponent, id, System.currentTimeMillis(), 0, x, y, x, y, 1, false, MouseEvent.BUTTON1);
   }

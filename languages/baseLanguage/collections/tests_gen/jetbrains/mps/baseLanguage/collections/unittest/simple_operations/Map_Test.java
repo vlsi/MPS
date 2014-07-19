@@ -15,7 +15,6 @@ public class Map_Test extends TestCase {
     Assert.assertEquals("value1", MapSequence.fromMap(map).get("key1"));
     Assert.assertTrue(MapSequence.fromMap(map).containsKey("key1"));
   }
-
   public void test__null() throws Exception {
     /*
       Map<String, String> map = null;
@@ -24,7 +23,6 @@ public class Map_Test extends TestCase {
       Assert.assertFalse(MapSequence.fromMap(map).containsKey("key1"));
     */
   }
-
   public void test_initializer() throws Exception {
     Map<String, String> map = MapSequence.<String, String>fromMapAndKeysArray(new HashMap<String, String>(), "key1").withValues("value1");
     Assert.assertEquals("value1", MapSequence.fromMap(map).get("key1"));

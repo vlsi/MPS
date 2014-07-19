@@ -10,7 +10,6 @@ import jetbrains.mps.baseLanguage.behavior.ContinueStatement_Behavior;
 public class ContinueStatement_DataFlow extends DataFlowBuilder {
   public ContinueStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if ((ContinueStatement_Behavior.call_getLoop_1213877346346(_context.getNode()) != null)) {
       _context.getBuilder().emitJump(_context.getBuilder().before(ContinueStatement_Behavior.call_getLoop_1213877346346(_context.getNode())), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/1206465288371");

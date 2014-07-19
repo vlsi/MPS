@@ -20,21 +20,17 @@ public class ChangeMethodSignature extends BaseRefactoring {
   public ChangeMethodSignature() {
     this.addTransientParameter("myRefactorings");
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new ChangeMethodSignature_Target();
   }
-
   public String getUserFriendlyName() {
     return "Change Method Signature";
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     for (ChangeMethodSignatureRefactoring ref : ListSequence.fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings")))) {
       ref.doRefactoring();
     }
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     SearchResults<SNode> allResults = new SearchResults();
     for (ChangeMethodSignatureRefactoring ref : ListSequence.fromList(((List<ChangeMethodSignatureRefactoring>) refactoringContext.getParameter("myRefactorings")))) {

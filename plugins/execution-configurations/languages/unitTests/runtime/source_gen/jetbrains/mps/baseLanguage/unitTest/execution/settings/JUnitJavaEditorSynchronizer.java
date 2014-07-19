@@ -12,14 +12,11 @@ public class JUnitJavaEditorSynchronizer implements Synchronizer {
   private final JavaConfigurationEditorComponent myJavaEditorComponent;
   private final JBCheckBox myLightCheckBox;
 
-
   public JUnitJavaEditorSynchronizer(JBCheckBox lightCheckBox, JavaConfigurationEditorComponent javaEditorComponent) {
     this.myLightCheckBox = lightCheckBox;
     this.myJavaEditorComponent = javaEditorComponent;
     update();
   }
-
-
 
   @Override
   public void sync() {
@@ -30,15 +27,12 @@ public class JUnitJavaEditorSynchronizer implements Synchronizer {
     });
   }
 
-
-
   public void update() {
     final boolean selected = myLightCheckBox.isSelected();
     for (Component comp : myJavaEditorComponent.getComponents()) {
       comp.setEnabled(!(selected));
     }
   }
-
 
 
 }

@@ -7508,25 +7508,13 @@
                                         </node>
                                       </node>
                                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="607988455141841271" nodeInfo="nn">
-                                        <node role="expression" roleId="tpee.1068581517676" type="tpee.OrExpression" typeId="tpee.1080223426719" id="607988455141841272" nodeInfo="nn">
-                                          <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="607988455141841273" nodeInfo="nn">
-                                            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="607988455141841274" nodeInfo="nn">
-                                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="607988455141841264" resolveInfo="root" />
-                                            </node>
-                                            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="607988455141841275" nodeInfo="nn">
-                                              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="607988455141841276" nodeInfo="nn">
-                                                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tp5g.1229187653856" resolveInfo="EditorTestCase" />
-                                              </node>
-                                            </node>
+                                        <node role="expression" roleId="tpee.1068581517676" type="tpee.DotExpression" typeId="tpee.1197027756228" id="607988455141841273" nodeInfo="nn">
+                                          <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="607988455141841274" nodeInfo="nn">
+                                            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="607988455141841264" resolveInfo="root" />
                                           </node>
-                                          <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="607988455141841277" nodeInfo="nn">
-                                            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="607988455141841278" nodeInfo="nn">
-                                              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="607988455141841264" resolveInfo="root" />
-                                            </node>
-                                            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="607988455141841279" nodeInfo="nn">
-                                              <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="607988455141841280" nodeInfo="nn">
-                                                <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tp5g.1216913645126" resolveInfo="NodesTestCase" />
-                                              </node>
+                                          <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_IsInstanceOfOperation" typeId="tp25.1139621453865" id="607988455141841275" nodeInfo="nn">
+                                            <node role="conceptArgument" roleId="tp25.1177027386292" type="tp25.RefConcept_Reference" typeId="tp25.1177026924588" id="607988455141841276" nodeInfo="nn">
+                                              <link role="conceptDeclaration" roleId="tp25.1177026940964" targetNodeId="tp5g.1229187653856" resolveInfo="EditorTestCase" />
                                             </node>
                                           </node>
                                         </node>

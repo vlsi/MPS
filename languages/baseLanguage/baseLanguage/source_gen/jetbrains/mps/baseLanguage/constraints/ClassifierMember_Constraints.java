@@ -16,7 +16,6 @@ public class ClassifierMember_Constraints extends BaseConstraintsDescriptor {
   public ClassifierMember_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.ClassifierMember");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -24,8 +23,7 @@ public class ClassifierMember_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnGetter() {
         return true;
-      };;
-;
+      }
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";
@@ -36,8 +34,8 @@ public class ClassifierMember_Constraints extends BaseConstraintsDescriptor {
           }
           return NodePresentationUtil.getRoleInParentOrConceptName(node) + " (?declaring classifier?)";
         }
-      };;
-;    });
+      }
+    });
     return properties;
-  };;
-;}
+  }
+}

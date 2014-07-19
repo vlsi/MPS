@@ -23,7 +23,6 @@ public class LocalMethodCall_Constraints extends BaseConstraintsDescriptor {
   public LocalMethodCall_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.LocalMethodCall");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -31,8 +30,7 @@ public class LocalMethodCall_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      };;
-;
+      }
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -40,20 +38,18 @@ public class LocalMethodCall_Constraints extends BaseConstraintsDescriptor {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_9kc5io_a0a0a0a0a1a0b0a1a1;
-          };;
-;
+          }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.MethodDeclaration"));
               return (scope == null ? new EmptyScope() : scope);
             }
-          };;
-;        };
-      };;
-;    });
+          }
+        };
+      }
+    });
     return references;
-  };;
-;
+  }
   private static SNodePointer breakingNode_9kc5io_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7812454656619472118");
 }

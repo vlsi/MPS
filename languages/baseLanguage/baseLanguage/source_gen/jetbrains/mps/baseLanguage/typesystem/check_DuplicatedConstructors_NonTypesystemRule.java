@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_DuplicatedConstructors_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_DuplicatedConstructors_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> constructors = Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept)).toListSequence();
     if (ListSequence.fromList(constructors).count() > 1) {
@@ -25,18 +24,15 @@ public class check_DuplicatedConstructors_NonTypesystemRule extends AbstractNonT
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

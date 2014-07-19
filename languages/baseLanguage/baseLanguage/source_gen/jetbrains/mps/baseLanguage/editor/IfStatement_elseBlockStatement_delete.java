@@ -18,18 +18,14 @@ public class IfStatement_elseBlockStatement_delete {
     editorCell.setAction(CellActionType.DELETE, new IfStatement_elseBlockStatement_delete.IfStatement_elseBlockStatement_delete_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new IfStatement_elseBlockStatement_delete.IfStatement_elseBlockStatement_delete_BACKSPACE(node));
   }
-
   public static class IfStatement_elseBlockStatement_delete_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public IfStatement_elseBlockStatement_delete_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode statement;
       SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);
@@ -42,18 +38,14 @@ public class IfStatement_elseBlockStatement_delete {
       SNodeOperations.replaceWithAnother(ifFalseStatement, statement);
     }
   }
-
   public static class IfStatement_elseBlockStatement_delete_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public IfStatement_elseBlockStatement_delete_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode statement;
       SNode ifFalseStatement = SLinkOperations.getTarget(node, "ifFalseStatement", true);

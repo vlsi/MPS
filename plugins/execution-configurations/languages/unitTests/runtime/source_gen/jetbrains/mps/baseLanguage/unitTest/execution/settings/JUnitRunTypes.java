@@ -169,13 +169,9 @@ public enum JUnitRunTypes {
   JUnitRunTypes() {
   }
 
-
-
   public Iterable<ITestNodeWrapper> collect(JUnitSettings_Configuration configuration, Project project) {
     return collect(configuration, project, false);
   }
-
-
 
   public final Iterable<ITestNodeWrapper> collect(final JUnitSettings_Configuration configuration, final Project project, boolean recollect) {
     if (recollect || cachedTests == null) {
@@ -194,20 +190,13 @@ public enum JUnitRunTypes {
     return cachedTests;
   }
 
-
-
   protected abstract Iterable<ITestNodeWrapper> doCollect(JUnitSettings_Configuration configuration, Project project, ProgressMonitor monitor);
-
-
 
   public abstract boolean hasTests(JUnitSettings_Configuration configuration, Project project);
 
-
   private Iterable<ITestNodeWrapper> cachedTests = null;
 
-
   public abstract String check(JUnitSettings_Configuration configuration, Project project);
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

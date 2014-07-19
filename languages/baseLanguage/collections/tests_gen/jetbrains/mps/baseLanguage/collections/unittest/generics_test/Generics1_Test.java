@@ -13,7 +13,6 @@ public class Generics1_Test extends TestCase {
       Assert.assertTrue(bool.booleanValue());
     }
   }
-
   public void test_test2() throws Exception {
     IntegerSequence ints = new IntegerSequence();
     int count = 0;

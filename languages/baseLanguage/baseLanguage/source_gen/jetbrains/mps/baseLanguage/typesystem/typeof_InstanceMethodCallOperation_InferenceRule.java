@@ -31,7 +31,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_InstanceMethodCallOperation_InferenceRule() {
   }
-
   public void applyRule(final SNode mcallop, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     final SNode mdecl = SLinkOperations.getTarget(mcallop, "baseMethodDeclaration", false);
     if (mdecl == null) {
@@ -197,22 +196,18 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
       }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4107091686347739849", false, false);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return true;
   }
-
   private static SNode _quotation_createNode_ecn83h_a0h0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -220,7 +215,6 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
-
   private static SNode _quotation_createNode_ecn83h_a0a1a0a7a31a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

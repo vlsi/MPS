@@ -14,7 +14,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class typeof_LocalPropertyReference_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_LocalPropertyReference_InferenceRule() {
   }
-
   public void applyRule(final SNode propertyReference, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode property = SLinkOperations.getTarget(propertyReference, "property", false);
     if ((property != null)) {
@@ -25,18 +24,15 @@ public class typeof_LocalPropertyReference_InferenceRule extends AbstractInferen
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.LocalPropertyReference";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

@@ -8,14 +8,12 @@ import java.util.Iterator;
 
 public class BasicSequence<U> extends Sequence<U> implements Iterable<U>, Serializable {
   private final Iterable<U> input;
-
   public BasicSequence(Iterable<U> input) {
     if (input == null) {
       throw new NullPointerException();
     }
     this.input = input;
   }
-
   @Override
   public Iterator<U> iterator() {
     return input.iterator();

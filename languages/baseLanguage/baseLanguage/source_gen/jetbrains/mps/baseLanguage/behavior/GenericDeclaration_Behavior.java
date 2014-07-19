@@ -11,12 +11,11 @@ import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 
 public class GenericDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration")) {
       return Scopes.forTypeVariables(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true), ScopeUtils.lazyParentScope(thisNode, kind));
     }
     return null;
-  };;
-;}
+  }
+}

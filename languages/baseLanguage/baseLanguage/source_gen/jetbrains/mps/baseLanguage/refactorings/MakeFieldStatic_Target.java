@@ -10,19 +10,15 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class MakeFieldStatic_Target implements IRefactoringTarget {
   public MakeFieldStatic_Target() {
   }
-
   public IRefactoringTarget.TargetType getTarget() {
     return IRefactoringTarget.TargetType.NODE;
   }
-
   public boolean allowMultipleTargets() {
     return false;
   }
-
   public boolean isApplicableToEntityType(Object entity) {
     return true;
   }
-
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;

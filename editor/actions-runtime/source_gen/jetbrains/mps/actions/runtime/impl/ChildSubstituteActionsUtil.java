@@ -36,10 +36,8 @@ import jetbrains.mps.smodel.action.NodeSubstitutePreconditionContext;
 
 public class ChildSubstituteActionsUtil {
   private static final Logger LOG = LogManager.getLogger(ChildSubstituteActionsUtil.class);
-
   public ChildSubstituteActionsUtil() {
   }
-
   public static SNode getRefinedChildConcept(SNode currentChild) {
     SNode childConcept = SNodeOperations.getConceptDeclaration(currentChild);
     SNode baseConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
@@ -52,7 +50,6 @@ public class ChildSubstituteActionsUtil {
     }
     return childConcept;
   }
-
   public static List<SNode> getActionsBuilders(SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
     SNode link = null;
     if (childSetter instanceof DefaultChildNodeSetter) {
@@ -75,7 +72,6 @@ public class ChildSubstituteActionsUtil {
     }
     return allBuilders;
   }
-
   public static boolean containsRemoveDefaults(List<SNode> builders) {
     return ListSequence.fromList(builders).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -87,7 +83,6 @@ public class ChildSubstituteActionsUtil {
       }
     });
   }
-
   public static List<SubstituteAction> invokeActionFactory(SNode builder, SNode parentNode, SNode currentChild, SNode childConcept, IChildNodeSetter childSetter, IOperationContext context) {
 
     String methodName = BehaviorReflection.invokeNonVirtual(String.class, builder, "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", "call_getBuilderQueryMethodName_1220278926652", new Object[]{});
@@ -98,7 +93,6 @@ public class ChildSubstituteActionsUtil {
       return Collections.emptyList();
     }
   }
-
   public static List<SubstituteAction> applyActionFilter(SNode builder, List<SubstituteAction> actions, SNode parentNode, SNode currentChild, SNode childConcept, IOperationContext context) {
 
     // remove banned concepts 
@@ -136,7 +130,6 @@ public class ChildSubstituteActionsUtil {
 
     return actions;
   }
-
   private static List<SNode> getAllActionsBuilders(List<Language> languages) {
     List<SNode> result = new ArrayList<SNode>();
     for (Language language : ListSequence.fromList(languages)) {
@@ -153,7 +146,6 @@ public class ChildSubstituteActionsUtil {
     }
     return result;
   }
-
   private static boolean satisfiesPrecondition(SNode actionsBuilder, SNode parentNode, SNode concept, SNode link, SNode currentTarget, boolean wrapped, IOperationContext context) {
 
     SNode precondition = SLinkOperations.getTarget(actionsBuilder, "precondition", true);

@@ -17,7 +17,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_CastExpression_InferenceRule() {
   }
-
   public void applyRule(final SNode castExpression, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if ((SLinkOperations.getTarget(castExpression, "type", true) != null)) {
       SNode castType = SLinkOperations.getTarget(castExpression, "type", true);
@@ -37,22 +36,18 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.CastExpression";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_sr53ct_a0a0d0a0b(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class DimensionExpression_DataFlow extends DataFlowBuilder {
   public DimensionExpression_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (SLinkOperations.getTarget(_context.getNode(), "expression", true) != null) {
       _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));

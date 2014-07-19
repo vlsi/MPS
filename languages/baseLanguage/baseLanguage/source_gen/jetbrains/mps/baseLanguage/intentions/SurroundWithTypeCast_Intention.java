@@ -24,68 +24,53 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SurroundWithTypeCast_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public SurroundWithTypeCast_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Expression";
   }
-
   public String getPresentation() {
     return "SurroundWithTypeCast";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.SurroundWithTypeCast_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return editorContext.getSelectedNodes().size() == 1;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "418779379561917490");
   }
-
   public boolean isSurroundWith() {
     return true;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SurroundWithTypeCast_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "(Type) expr";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode expectedType = ExpectedType_FactoryUtil.createExpectedType(node);
       SNode parenthesisedCastExpression = _quotation_createNode_3zfq0u_a0b0a(SNodeOperations.copyNode(node), expectedType);
@@ -104,12 +89,10 @@ public class SurroundWithTypeCast_Intention implements IntentionFactory {
         SelectionUtil.selectLabelCellAnSetCaret(editorContext, castExpression, "leftParen", -1);
       }
     }
-
     public IntentionDescriptor getDescriptor() {
       return SurroundWithTypeCast_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_3zfq0u_a0b0a(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;

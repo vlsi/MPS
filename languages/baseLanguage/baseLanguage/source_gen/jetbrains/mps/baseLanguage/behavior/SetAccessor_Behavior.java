@@ -10,17 +10,14 @@ import java.util.ArrayList;
 
 public class SetAccessor_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)", "1068581517677");
-  };;
-;
+  }
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "statementList", true);
-  };;
-;
+  }
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return new ArrayList<SNode>();
-  };;
-;}
+  }
+}

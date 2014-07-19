@@ -13,7 +13,6 @@ import jetbrains.mps.lang.dataFlow.framework.InstructionUtil;
 public class TryCatchStatement_DataFlow extends DataFlowBuilder {
   public TryCatchStatement_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode catchClause : SLinkOperations.getTargets(_context.getNode(), "catchClause", true)) {
       _context.getBuilder().emitIfJump(_context.getBuilder().before(catchClause), "r:00000000-0000-4000-0000-011c895902c2(jetbrains.mps.baseLanguage.dataFlow)/7970753809667931499");

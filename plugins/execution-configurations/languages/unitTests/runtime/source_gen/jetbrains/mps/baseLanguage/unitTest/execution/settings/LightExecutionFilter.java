@@ -20,8 +20,6 @@ public class LightExecutionFilter implements Filter<ITestNodeWrapper> {
     // <node> 
   }
 
-
-
   @Override
   public Iterable<ITestNodeWrapper> filter(final Iterable<ITestNodeWrapper> ts) {
     final List<ITestNodeWrapper> seq = ListSequence.fromList(new LinkedList<ITestNodeWrapper>());
@@ -31,7 +29,7 @@ public class LightExecutionFilter implements Filter<ITestNodeWrapper> {
         ListSequence.fromList(seq).addSequence(Sequence.fromIterable(ts).where(new IWhereFilter<ITestNodeWrapper>() {
           public boolean accept(ITestNodeWrapper it) {
             SNode root = SNodeOperations.getContainingRoot(it.getNode());
-            return SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.test.structure.NodesTestCase") || SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.test.structure.EditorTestCase");
+            return SNodeOperations.isInstanceOf(root, "jetbrains.mps.lang.test.structure.EditorTestCase");
           }
         }));
       }

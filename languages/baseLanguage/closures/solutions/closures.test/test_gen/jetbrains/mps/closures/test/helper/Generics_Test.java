@@ -17,7 +17,6 @@ public class Generics_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)");
     this.runTest("jetbrains.mps.closures.test.helper.Generics_Test$TestBody", "test_ErrorMessagesCheck5419091611223712729", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ErrorMessagesCheck5419091611223712729() throws Exception {

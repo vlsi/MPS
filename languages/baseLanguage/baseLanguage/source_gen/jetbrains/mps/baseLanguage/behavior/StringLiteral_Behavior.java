@@ -8,12 +8,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class StringLiteral_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return SPropertyOperations.getString(thisNode, "value");
-  };;
-;
+  }
   public static boolean call_isCorrect_1221565233201(SNode thisNode) {
     boolean isEscapeMode = false;
     boolean isUnicodeMode = false;
@@ -66,13 +64,12 @@ public class StringLiteral_Behavior {
       return false;
     }
     return true;
-  };;
-;
+  }
   public static boolean call_isHexChar_1221565869792(SNode thisNode, char ch) {
     if (Character.isDigit(ch)) {
       return true;
     }
     char lc = Character.toLowerCase(ch);
     return lc >= 'a' && lc <= 'f';
-  };;
-;}
+  }
+}

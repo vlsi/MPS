@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ShiftRightUnsignedExpression_BehaviorDescriptor extends BinaryBitwiseOperation_BehaviorDescriptor {
   public ShiftRightUnsignedExpression_BehaviorDescriptor() {
   }
-
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return ShiftRightUnsignedExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  };;
-;
+  }
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ShiftRightUnsignedExpression";
-  };;
-;}
+  }
+}

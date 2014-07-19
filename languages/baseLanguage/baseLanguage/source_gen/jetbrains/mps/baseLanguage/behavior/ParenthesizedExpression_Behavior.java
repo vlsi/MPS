@@ -9,9 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ParenthesizedExpression_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return BehaviorReflection.invokeVirtual(Object.class, SLinkOperations.getTarget(thisNode, "expression", true), "virtual_eval_1213877519769", new Object[]{module});
-  };;
-;}
+  }
+}

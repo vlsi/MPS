@@ -20,7 +20,6 @@ public class FloatingPointFloatConstant_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_z93rdn_a(editorContext, node);
   }
-
   private EditorCell createProperty_z93rdn_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");

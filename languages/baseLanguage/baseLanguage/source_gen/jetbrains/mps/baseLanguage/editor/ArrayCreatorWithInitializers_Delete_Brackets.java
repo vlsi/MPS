@@ -16,18 +16,14 @@ public class ArrayCreatorWithInitializers_Delete_Brackets {
     editorCell.setAction(CellActionType.DELETE, new ArrayCreatorWithInitializers_Delete_Brackets.ArrayCreatorWithInitializers_Delete_Brackets_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new ArrayCreatorWithInitializers_Delete_Brackets.ArrayCreatorWithInitializers_Delete_Brackets_BACKSPACE(node));
   }
-
   public static class ArrayCreatorWithInitializers_Delete_Brackets_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ArrayCreatorWithInitializers_Delete_Brackets_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode componentType = SLinkOperations.getTarget(node, "componentType", true);
       if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
@@ -40,18 +36,14 @@ public class ArrayCreatorWithInitializers_Delete_Brackets {
       }
     }
   }
-
   public static class ArrayCreatorWithInitializers_Delete_Brackets_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ArrayCreatorWithInitializers_Delete_Brackets_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode componentType = SLinkOperations.getTarget(node, "componentType", true);
       if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {

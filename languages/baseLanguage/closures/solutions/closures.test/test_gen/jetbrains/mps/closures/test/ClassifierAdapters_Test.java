@@ -38,7 +38,6 @@ public class ClassifierAdapters_Test extends TestCase {
       */
     }
   }
-
   public void test_functionTypeAsInterface() throws Exception {
     _FunctionTypes._return_P1_E0<? extends String, ? super Integer> cls = new _FunctionTypes._return_P1_E0<String, Integer>() {
       public String invoke(Integer foo) {
@@ -53,7 +52,6 @@ public class ClassifierAdapters_Test extends TestCase {
       */
     }
   }
-
   public void test_closureLiteralAsInterface() throws Exception {
     Worker wrk = new Worker() {
       public String doWork(Integer foo) {
@@ -62,7 +60,6 @@ public class ClassifierAdapters_Test extends TestCase {
     };
     Assert.assertEquals("Done: 4321", wrk.doWork(4321));
   }
-
   public void test_yieldClosureLiteralAsInterface() throws Exception {
     NumberGenerator ng = new NumberGenerator() {
       public Iterable<Integer> generate() {
@@ -70,7 +67,6 @@ public class ClassifierAdapters_Test extends TestCase {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -112,7 +108,6 @@ __switch__:
       i++;
     }
   }
-
   public void test_genericInterfaceAdapter() throws Exception {
     Generator<Integer> g = new Generator<Integer>() {
       public Iterable<Integer> generate() {
@@ -120,7 +115,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -162,7 +156,6 @@ __switch__:
     }
     Assert.assertEquals(exp, (Integer) 4);
   }
-
   public void test_instanceMethodCall() throws Exception {
     Assert.assertEquals("1234", this.makeWork(new Worker() {
       public String doWork(Integer i) {
@@ -175,7 +168,6 @@ __switch__:
       }
     }, 4321));
   }
-
   public void test_exceptions() throws Exception {
     try {
       this.process(new Processor() {
@@ -191,7 +183,6 @@ __switch__:
       // expected exception 
     }
   }
-
   public void test_closureLiteralAsComparator() throws Exception {
     List<Integer> list = ListSequence.fromList(new ArrayList<Integer>());
     ListSequence.fromList(list).addSequence(ListSequence.fromList(Arrays.asList(new Integer[]{4, 3, 5, 1, 2})));
@@ -209,7 +200,6 @@ __switch__:
     });
     Assert.assertEquals(Arrays.asList(new Integer[]{1, 2, 3, 4, 5}), list);
   }
-
   public void test_closureLiteralAsParameterToConstructor() throws Exception {
     final Wrappers._int foo = new Wrappers._int(-1);
     Thread trd = new Thread(new Runnable() {
@@ -224,7 +214,6 @@ __switch__:
       Assert.assertEquals(42, foo.value);
     }
   }
-
   public void test_closureLiteralAsParameterToAnonymousClass() throws Exception {
     final Wrappers._int foo = new Wrappers._int(-1);
     Thread trd = new Thread(new Runnable() {
@@ -239,7 +228,6 @@ __switch__:
       Assert.assertEquals(42, foo.value);
     }
   }
-
   public void test_wrongParametersNumber() throws Exception {
     this.acceptWorker(new Worker() {
       public String doWork(Integer i) {
@@ -247,11 +235,9 @@ __switch__:
       }
     });
   }
-
   public void test__returnWorker() throws Exception {
     Worker wrk = this.returnWorker();
   }
-
   public void test__returnProcessor() throws Exception {
     Processor prc = this.returnProcessor();
     try {
@@ -261,7 +247,6 @@ __switch__:
       // expected exception 
     }
   }
-
   public void test_mps5315() throws Exception {
     /*
       _FunctionTypes._void_P2_E0<? super Integer, ? super String> cls = new _FunctionTypes._void_P2_E0<Integer, String>() {
@@ -271,13 +256,11 @@ __switch__:
       cls.invoke();
     */
   }
-
   public void test_mps5316() throws Exception {
     /*
       this.acceptWorker();
     */
   }
-
   public void test_compactInvoke() throws Exception {
     final Wrappers._int count = new Wrappers._int(0);
     _FunctionTypes._return_P0_E0<? extends Integer> cl = new _FunctionTypes._return_P0_E0<Integer>() {
@@ -351,7 +334,6 @@ __switch__:
           public Iterator<Object> iterator() {
             return new YieldingIterator<Object>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -379,12 +361,10 @@ __switch__:
       }
     }.invoke();
   }
-
   public void test_mps7619() throws Exception {
     IFilter flt = this.filter();
     Assert.assertFalse(flt.filter(null));
   }
-
   public void test_translate() throws Exception {
     Iterable<_FunctionTypes._return_P0_E0<? extends String>> seq = Sequence.fromClosure(new ISequenceClosure<_FunctionTypes._return_P0_E0<? extends String>>() {
       public Iterable<_FunctionTypes._return_P0_E0<? extends String>> iterable() {
@@ -392,7 +372,6 @@ __switch__:
           public Iterator<_FunctionTypes._return_P0_E0<? extends String>> iterator() {
             return new YieldingIterator<_FunctionTypes._return_P0_E0<? extends String>>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -431,7 +410,6 @@ __switch__:
     Assert.assertSame(1, Sequence.fromIterable(res).count());
     Assert.assertEquals("ABC", Sequence.fromIterable(res).first());
   }
-
   public void test_mps9190() throws Exception {
     try {
       this.acceptFunction(new _FunctionTypes._return_P1_E0<Object, String>() {
@@ -447,24 +425,18 @@ __switch__:
       // expected exception 
     }
   }
-
   public ClassifierAdapters_Test() {
   }
-
   public void acceptWorker(Worker one, Worker two) {
   }
-
   public void acceptWorker(Worker one) {
   }
-
   public String makeWork(Worker wrk, Integer i) {
     return wrk.doWork(i);
   }
-
   public int process(Processor prc, String instr) throws ProcessingException {
     return prc.process(instr);
   }
-
   public Worker returnWorker() {
     return new Worker() {
       public String doWork(Integer i) {
@@ -472,7 +444,6 @@ __switch__:
       }
     };
   }
-
   public Processor returnProcessor() {
     return new Processor() {
       public int process(String str) throws ProcessingException {
@@ -480,7 +451,6 @@ __switch__:
       }
     };
   }
-
   public IFilter filter() {
     return new IFilter() {
       public boolean filter(String name) {
@@ -488,7 +458,6 @@ __switch__:
       }
     };
   }
-
   public Object acceptFunction(_FunctionTypes._return_P1_E0<? extends Object, ? super String> fff) {
     return fff.invoke("foo");
   }

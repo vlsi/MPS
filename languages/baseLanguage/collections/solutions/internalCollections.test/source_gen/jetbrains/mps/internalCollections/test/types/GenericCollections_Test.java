@@ -17,7 +17,6 @@ public class GenericCollections_Test extends BaseTransformationTest {
     this.initTest("${mps_home}/languages/baseLanguage/collections/solutions/internalCollections.test/internalCollections.test.mpr", "r:3b93a80b-8267-4154-a2f6-29cf728da0a5(jetbrains.mps.internalCollections.test.types)");
     this.runTest("jetbrains.mps.internalCollections.test.types.GenericCollections_Test$TestBody", "test_ErrorMessagesCheck6699137465481874845", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_ErrorMessagesCheck6699137465481874845() throws Exception {

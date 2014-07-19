@@ -20,7 +20,6 @@ public class StaticInitializer_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_3tqrto_a(editorContext, node);
   }
-
   private EditorCell createCollection_3tqrto_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3tqrto_a");
@@ -31,7 +30,6 @@ public class StaticInitializer_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_3tqrto_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_3tqrto_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "static");
     editorCell.setCellId("Constant_3tqrto_a0");
@@ -41,7 +39,6 @@ public class StaticInitializer_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_3tqrto_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_3tqrto_b0");
@@ -52,7 +49,6 @@ public class StaticInitializer_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createRefNode_3tqrto_c0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("statementList");
@@ -76,7 +72,6 @@ public class StaticInitializer_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_3tqrto_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
     editorCell.setCellId("Constant_3tqrto_d0");

@@ -16,36 +16,28 @@ public class ClassifierClassExpression_DeleteClass {
     editorCell.setAction(CellActionType.DELETE, new ClassifierClassExpression_DeleteClass.ClassifierClassExpression_DeleteClass_DELETE(node));
     editorCell.setAction(CellActionType.BACKSPACE, new ClassifierClassExpression_DeleteClass.ClassifierClassExpression_DeleteClass_BACKSPACE(node));
   }
-
   public static class ClassifierClassExpression_DeleteClass_DELETE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ClassifierClassExpression_DeleteClass_DELETE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode ref = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
       SLinkOperations.setTarget(ref, "classifier", SLinkOperations.getTarget(node, "classifier", false), false);
       SNodeOperations.replaceWithAnother(node, ref);
     }
   }
-
   public static class ClassifierClassExpression_DeleteClass_BACKSPACE extends AbstractCellAction {
     /*package*/ SNode myNode;
-
     public ClassifierClassExpression_DeleteClass_BACKSPACE(SNode node) {
       this.myNode = node;
     }
-
     public void execute(EditorContext editorContext) {
       this.execute_internal(editorContext, this.myNode);
     }
-
     public void execute_internal(EditorContext editorContext, SNode node) {
       SNode ref = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
       SLinkOperations.setTarget(ref, "classifier", SLinkOperations.getTarget(node, "classifier", false), false);

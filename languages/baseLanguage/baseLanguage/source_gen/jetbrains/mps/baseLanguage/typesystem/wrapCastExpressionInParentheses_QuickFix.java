@@ -11,11 +11,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class wrapCastExpressionInParentheses_QuickFix extends QuickFix_Runtime {
   public wrapCastExpressionInParentheses_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Wrap expression with parentheses";
   }
-
   public void execute(SNode node) {
     SNode parens = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
     SNodeOperations.replaceWithAnother(((SNode) wrapCastExpressionInParentheses_QuickFix.this.getField("expression")[0]), parens);

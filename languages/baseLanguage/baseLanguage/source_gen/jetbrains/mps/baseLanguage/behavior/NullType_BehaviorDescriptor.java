@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class NullType_BehaviorDescriptor extends PrimitiveType_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public NullType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.NullType";
-  };;
-;}
+  }
+}

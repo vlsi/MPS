@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_ClassDoesNotExtendFinalClass_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ClassDoesNotExtendFinalClass_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode superclass = SLinkOperations.getTarget(classConcept, "superclass", true);
     if ((superclass != null)) {
@@ -30,18 +29,15 @@ public class check_ClassDoesNotExtendFinalClass_NonTypesystemRule extends Abstra
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

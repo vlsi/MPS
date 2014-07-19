@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 public class IntentionUtils {
   private IntentionUtils() {
   }
-
   /*package*/ static SNode optimizeNode(SNode node) {
     {
       SNode matchedNode_k79hya_a0b = node;
@@ -62,11 +61,9 @@ public class IntentionUtils {
       }
     }
   }
-
   /*package*/ static boolean canBeConvertedToTernary(SNode statement1, SNode statement2) {
     return getAppreciateDiffNodes(statement1, statement2) != null;
   }
-
   /*package*/ static SNode convertToTernary(SNode statement1, SNode statement2, SNode condition) {
     Tuples._2<SNode, SNode> diff = getAppreciateDiffNodes(statement1, statement2);
     if (diff == null) {
@@ -81,7 +78,6 @@ public class IntentionUtils {
     SNodeOperations.replaceWithAnother(diff._0(), ternaryOperator);
     return statement1;
   }
-
   @Nullable
   /*package*/ static Tuples._2<SNode, SNode> getAppreciateDiffNodes(SNode node1, SNode node2) {
     Tuples._2<SNode, SNode> currentDiff = getDiffNodes(node1, node2);
@@ -98,7 +94,6 @@ public class IntentionUtils {
 
     return (isDiffCanBeConvertedToTernary(currentDiff) ? currentDiff : null);
   }
-
   /*package*/ static boolean isDiffCanBeConvertedToTernary(Tuples._2<SNode, SNode> diff) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(diff._0()), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
       return false;
@@ -107,7 +102,6 @@ public class IntentionUtils {
     SNode linkDeclaration = SNodeOperations.as(new ConceptAndSuperConceptsScope(SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(diff._0()))).getLinkDeclarationByRole(diff._0().getRoleInParent()), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     return SConceptOperations.isSuperConceptOf(SLinkOperations.getTarget(linkDeclaration, "target", false), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
   }
-
   @Nullable
   /*package*/ static Tuples._2<SNode, SNode> getDiffNodes(SNode node1, SNode node2) {
     if (neq_k79hya_a0a0g(SNodeOperations.getConceptDeclaration(node1), SNodeOperations.getConceptDeclaration(node2))) {
@@ -168,8 +162,6 @@ public class IntentionUtils {
     return currentResult;
   }
 
-
-
   public static SNode negateBooleanNodes(SNode node) {
     SNode clone = SNodeOperations.copyNode(node);
     if (SNodeOperations.isInstanceOf(clone, "jetbrains.mps.baseLanguage.structure.BooleanConstant")) {
@@ -210,11 +202,9 @@ public class IntentionUtils {
     SLinkOperations.setTarget(notNode, "expression", clone, true);
     return notNode;
   }
-
   private static boolean neq_k79hya_a0a0g(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }
-
   private static boolean neq_k79hya_a0b0e0g(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
   }

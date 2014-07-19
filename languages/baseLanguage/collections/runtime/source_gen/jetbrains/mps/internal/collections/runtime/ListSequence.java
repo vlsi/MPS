@@ -13,47 +13,38 @@ import java.util.Collection;
 public class ListSequence<T> extends AbstractListSequence<T> implements IListSequence<T>, List<T>, Serializable {
   private static final long serialVersionUID = 7823717404349215342L;
   private List<T> list;
-
   protected ListSequence(List<T> list) {
     super(list);
   }
-
   protected ListSequence(ListSequence<T> other) {
     super(other);
   }
-
   @Override
   public IListSequence<T> reversedList() {
     ListSequence<T> reversed = new ListSequence<T>(this);
     reversed._reverse();
     return reversed;
   }
-
   @Override
   public IListSequence<T> subListSequence(int fromIdx, int upToIdx) {
     return new ListSequence<T>(getList().subList(fromIdx, upToIdx));
   }
-
   @Override
   public IListSequence<T> headListSequence(int upToIdx) {
     return new ListSequence<T>(getList().subList(0, upToIdx));
   }
-
   @Override
   public IListSequence<T> tailListSequence(int fromIdx) {
     return new ListSequence<T>(getList().subList(fromIdx, getList().size()));
   }
-
   @Override
   public IListSequence<T> asUnmodifiable() {
     return new ListSequence<T>(Collections.unmodifiableList(getList()));
   }
-
   @Override
   public IListSequence<T> asSynchronized() {
     return new ListSequence<T>(CollectionUtils.synchronizedList(getList()));
   }
-
   public static <U> IListSequence<U> fromArray(U... array) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (array == null) {
@@ -62,7 +53,6 @@ public class ListSequence<T> extends AbstractListSequence<T> implements IListSeq
     }
     return ListSequence.fromListAndArray(new ArrayList<U>(), array);
   }
-
   public static <U> IListSequence<U> fromList(List<U> list) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (list == null) {
@@ -74,7 +64,6 @@ public class ListSequence<T> extends AbstractListSequence<T> implements IListSeq
     }
     return new ListSequence<U>(list);
   }
-
   public static <U> IListSequence<U> fromListAndArray(List<U> list, U... array) {
     if (Sequence.NULL_ARRAY_IS_SINGLETON) {
       if (array == null) {
@@ -110,7 +99,6 @@ public class ListSequence<T> extends AbstractListSequence<T> implements IListSeq
     }
     return new ListSequence<U>(list);
   }
-
   public static <U> IListSequence<U> fromIterable(Iterable<U> it) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (it == null) {
@@ -137,7 +125,6 @@ public class ListSequence<T> extends AbstractListSequence<T> implements IListSeq
     }
     return new ListSequence<U>(list);
   }
-
   public static <U> IListSequence<U> fromListWithValues(List<U> list, Iterable<? extends U> it) {
     List<U> tmp = list;
     if (Sequence.USE_NULL_SEQUENCE) {

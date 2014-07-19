@@ -24,13 +24,11 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
     this.initTest("${mps_home}", "r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)");
     this.runTest("jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody", "test_baz", true);
   }
-
   @Test
   public void test_baz2() throws Throwable {
     this.initTest("${mps_home}", "r:1ec34e97-b5da-4226-87b0-e15ce1eda255(jetbrains.mps.closures.test.helper@tests)");
     this.runTest("jetbrains.mps.closures.test.helper.ClosureLiteraltargetIface_Test$TestBody", "test_baz2", true);
   }
-
   @MPSLaunch
   public static class TestBody extends BaseTestBody {
     public void test_baz() throws Exception {
@@ -41,7 +39,6 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       new ClosureLiteralTarget(genContext).setTarget(literal, _quotation_createNode_d9e2q8_b0a2a0());
       this.assertLiteralTarget(genContext, literal, _quotation_createNode_d9e2q8_c0a3a0());
     }
-
     public void test_baz2() throws Exception {
       this.addNodeById("7178287329507546170");
       this.addNodeById("7178287329507578878");
@@ -50,16 +47,13 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       new ClosureLiteralTarget(genContext).setTarget(literal, _quotation_createNode_d9e2q8_b0a2a1());
       this.assertLiteralTarget(genContext, literal, _quotation_createNode_d9e2q8_c0a3a1());
     }
-
     public TemplateQueryContext getContext() {
       return (TemplateQueryContext) new MockTemplateQueryContext();
     }
-
     public void assertLiteralTarget(TemplateQueryContext gencontext, SNode literal, SNode expected) {
       SNode target = (SNode) Values.LITERAL_TARGET.get(gencontext, literal);
       Assert.assertTrue(MatchingUtil.matchNodes(expected, target));
     }
-
     private static SNode _quotation_createNode_d9e2q8_b0a2a0() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
@@ -87,7 +81,6 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       quotedNode_1.addChild("parameter", quotedNode_3);
       return quotedNode_1;
     }
-
     private static SNode _quotation_createNode_d9e2q8_c0a3a0() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
@@ -115,7 +108,6 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       quotedNode_1.addChild("parameter", quotedNode_3);
       return quotedNode_1;
     }
-
     private static SNode _quotation_createNode_d9e2q8_b0a2a1() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;
@@ -134,7 +126,6 @@ public class ClosureLiteraltargetIface_Test extends BaseTransformationTest {
       quotedNode_1.addChild("parameter", quotedNode_3);
       return quotedNode_1;
     }
-
     private static SNode _quotation_createNode_d9e2q8_c0a3a1() {
       PersistenceFacade facade = PersistenceFacade.getInstance();
       SNode quotedNode_1 = null;

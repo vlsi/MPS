@@ -22,7 +22,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_OverrideNullAnnotations_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_OverrideNullAnnotations_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode method, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode superMethod = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), method, "virtual_getNearestOverriddenMethod_5358895268254685434", new Object[]{});
     if ((superMethod == null)) {
@@ -58,18 +57,15 @@ public class check_OverrideNullAnnotations_NonTypesystemRule extends AbstractNon
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

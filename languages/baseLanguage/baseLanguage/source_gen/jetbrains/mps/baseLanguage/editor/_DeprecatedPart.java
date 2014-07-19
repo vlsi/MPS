@@ -19,11 +19,9 @@ public class _DeprecatedPart implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_uc5iyq_a(editorContext, node);
   }
-
   private EditorCell createCollection_uc5iyq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uc5iyq_a");
@@ -35,7 +33,6 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     }
     return editorCell;
   }
-
   private EditorCell createCollection_uc5iyq_a0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_uc5iyq_a0");
@@ -51,11 +48,9 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     editorCell.addEditorCell(this.createConstant_uc5iyq_d0a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_uc5iyq_a0a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.getBoolean(node, "isDeprecated");
   }
-
   private EditorCell createConstant_uc5iyq_a0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**");
     editorCell.setCellId("Constant_uc5iyq_a0a");
@@ -67,7 +62,6 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_uc5iyq_b0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " * ");
     editorCell.setCellId("Constant_uc5iyq_b0a");
@@ -77,7 +71,6 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_uc5iyq_c0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "@deprecated");
     editorCell.setCellId("Constant_uc5iyq_c0a");
@@ -88,7 +81,6 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_uc5iyq_d0a(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " */");
     editorCell.setCellId("Constant_uc5iyq_d0a");
@@ -99,7 +91,6 @@ public class _DeprecatedPart implements ConceptEditorComponent {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createConstant_uc5iyq_a0a_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "/**...*/");
     editorCell.setCellId("Constant_uc5iyq_a0a_0");

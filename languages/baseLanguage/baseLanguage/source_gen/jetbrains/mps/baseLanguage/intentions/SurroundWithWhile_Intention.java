@@ -20,61 +20,47 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class SurroundWithWhile_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public SurroundWithWhile_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Statement";
   }
-
   public String getPresentation() {
     return "SurroundWithWhile";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.SurroundWithWhile_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "3366354716707714383");
   }
-
   public boolean isSurroundWith() {
     return true;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SurroundWithWhile_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "While";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode whileStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WhileStatement", null);
       List<SNode> selectedNodes = editorContext.getSelectedNodes();
@@ -84,7 +70,6 @@ public class SurroundWithWhile_Intention implements IntentionFactory {
       }
       editorContext.select(SLinkOperations.getTarget(whileStatement, "condition", true));
     }
-
     public IntentionDescriptor getDescriptor() {
       return SurroundWithWhile_Intention.this;
     }

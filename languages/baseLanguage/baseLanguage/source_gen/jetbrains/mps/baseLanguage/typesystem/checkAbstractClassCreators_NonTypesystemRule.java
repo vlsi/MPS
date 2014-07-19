@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class checkAbstractClassCreators_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public checkAbstractClassCreators_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode classCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode classConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(classCreator, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     if (!(!(SPropertyOperations.getBoolean(classConcept, "abstractClass")))) {
@@ -26,18 +25,15 @@ public class checkAbstractClassCreators_NonTypesystemRule extends AbstractNonTyp
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classCreator, "can't instantiate abstract class", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5091709661844003008", null, errorTarget);
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassCreator";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

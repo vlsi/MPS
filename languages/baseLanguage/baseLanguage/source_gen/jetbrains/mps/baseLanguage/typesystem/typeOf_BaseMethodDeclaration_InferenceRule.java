@@ -23,7 +23,6 @@ import jetbrains.mps.smodel.SReference;
 public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_BaseMethodDeclaration_InferenceRule() {
   }
-
   public void applyRule(final SNode bmd, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     for (SNode throwsItem : SLinkOperations.getTargets(bmd, "throwsItem", true)) {
       if (!(typeCheckingContext.isSingleTypeComputation())) {
@@ -94,22 +93,18 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_ifzhbs_a0a0a0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

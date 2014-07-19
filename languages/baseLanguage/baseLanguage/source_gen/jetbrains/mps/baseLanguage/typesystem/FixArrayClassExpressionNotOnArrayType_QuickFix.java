@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class FixArrayClassExpressionNotOnArrayType_QuickFix extends QuickFix_Runtime {
   public FixArrayClassExpressionNotOnArrayType_QuickFix() {
   }
-
   public void execute(SNode node) {
     if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ArrayClassExpression"))) {
       return;

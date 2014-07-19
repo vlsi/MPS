@@ -22,28 +22,22 @@ public class ParenthesisUtil {
   public ParenthesisUtil() {
   }
 
-
-;;;
   public static SNode createUnmatchedLeftParenthesis(@NotNull SNode leftExpression) {
     return createUnmatchedParenthesis(leftExpression, false);
-  };;
-;
+  }
 
-;;;
   public static SNode createUnmatchedRightParenthesis(@NotNull SNode rightExpression) {
     return createUnmatchedParenthesis(rightExpression, true);
-  };;
-;
+  }
 
-;;;
   private static SNode createUnmatchedParenthesis(@NotNull SNode myExpression, final boolean completingByRightParen) {
     List<SNode> myParentPath = parentPath(myExpression);
     SNode topExp = ListSequence.fromList(myParentPath).last();
     List<SNode> otherParentedNodes = ListSequence.fromList(SNodeOperations.getDescendants(topExp, "jetbrains.mps.baseLanguage.structure.Expression", true, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (completingByRightParen && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen")) != null)) || (!(completingByRightParen) && (AttributeOperations.getAttribute(it, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen")) != null));
-      };;
-;    }).toListSequence();
+      }
+    }).toListSequence();
 
     if (!(completingByRightParen)) {
       otherParentedNodes = ListSequence.fromList(otherParentedNodes).reversedList();
@@ -70,8 +64,8 @@ public class ParenthesisUtil {
         firstCommon = ListSequence.fromList(myParentPath).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return ListSequence.fromList(otherParentPath.value).contains(it);
-          };;
-;        });
+          }
+        });
         assert firstCommon != null;
 
         if ((eq_a65dpo_a0a0a5a3a11a6_0(firstCommon, otherExpression) || eq_a65dpo_a0a0a5a3a11a6(firstCommon, myExpression)) && SNodeOperations.isInstanceOf(firstCommon, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
@@ -139,10 +133,8 @@ public class ParenthesisUtil {
 
       return ParenthesisUtil.rebalance(leftTurn, firstCommon, rightTurn);
     }
-  };;
-;
+  }
 
-;;;
   private static SNode rebalance(SNode leftTurn, SNode firstCommon, SNode rightTurn) {
     SNode leftAccumulator;
     SNode rightAccumulator;
@@ -228,41 +220,31 @@ public class ParenthesisUtil {
     }
     SLinkOperations.setTarget(parens, "expression", firstCommon, true);
     return parens;
-  };;
-;
+  }
 
-;;;
   private static SNode findBottomMostTernary(SNode bottomMostTernary) {
     while (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(bottomMostTernary, "ifFalse", true), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression")) {
       bottomMostTernary = SNodeOperations.cast(SLinkOperations.getTarget(bottomMostTernary, "ifFalse", true), "jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression");
     }
     return bottomMostTernary;
-  };;
-;
+  }
 
-;;;
   private static void clearIncompleteParens(SNode otherExpression, boolean completingByRightParen) {
     if (completingByRightParen) {
       AttributeOperations.setAttribute(otherExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteLeftParen"), null);
     } else {
       AttributeOperations.setAttribute(otherExpression, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.baseLanguage.structure.IncompleteRightParen"), null);
     }
-  };;
-;
+  }
 
-;;;
   private static SNode findLeftTurn(SNode leaf, SNode stopNode) {
     return findTurn(leaf, stopNode, true);
-  };;
-;
+  }
 
-;;;
   private static SNode findRightTurn(SNode leaf, SNode stopNode) {
     return findTurn(leaf, stopNode, false);
-  };;
-;
+  }
 
-;;;
   private static SNode findTurn(SNode leaf, SNode stopNode, boolean leftTurn) {
     SNode currentNode = SNodeOperations.getParent(leaf);
     SNode previous = leaf;
@@ -279,10 +261,8 @@ public class ParenthesisUtil {
       currentNode = SNodeOperations.getParent(currentNode);
     }
     return stopNode;
-  };;
-;
+  }
 
-;;;
   private static List<SNode> parentPath(SNode leaf) {
     SNode currentNode = SNodeOperations.getParent(leaf);
     List<SNode> path = new ArrayList<SNode>();
@@ -302,16 +282,13 @@ public class ParenthesisUtil {
       }
     }
     return path;
-  };;
-;
+  }
 
-;;;
   public static void checkOperationWRTPriority(SNode binOp) {
     checkOperationChildWRTPriority(binOp, false);
     checkOperationChildWRTPriority(binOp, true);
     checkOpeartionParentWRTPriority(binOp);
-  };;
-;
+  }
   private static void checkOperationChildWRTPriority(SNode node, boolean isRight) {
     SNode sideExpr = (isRight ? SLinkOperations.getTarget(node, "rightExpression", true) : SLinkOperations.getTarget(node, "leftExpression", true));
     if (SNodeOperations.isInstanceOf(sideExpr, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
@@ -321,8 +298,7 @@ public class ParenthesisUtil {
         checkOperationWRTPriority(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BinaryOperation"));
       }
     }
-  };;
-;
+  }
   private static void checkOpeartionParentWRTPriority(SNode node) {
     if (SNodeOperations.getParent(node) == null) {
       return;
@@ -346,8 +322,7 @@ public class ParenthesisUtil {
       SNodeOperations.replaceWithAnother(parent, node);
       SLinkOperations.setTarget(node, "leftExpression", parent, true);
     }
-  };;
-;
+  }
   public static SNode getBinOp(SNode expr, boolean toRight) {
     SNode parent = SNodeOperations.getParent(expr);
     if (!(SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.BinaryOperation"))) {
@@ -360,8 +335,7 @@ public class ParenthesisUtil {
       return parentOp;
     }
     return getBinOp(parentOp, toRight);
-  };;
-;
+  }
   public static void rotateTree(SNode child, SNode op, boolean isRight) {
     SNode backsideExpr = (isRight ? SLinkOperations.getTarget(child, "leftExpression", true) : SLinkOperations.getTarget(child, "rightExpression", true));
     SNodeOperations.detachNode(child);
@@ -372,105 +346,80 @@ public class ParenthesisUtil {
     } else {
       SLinkOperations.setTarget(op, "leftExpression", backsideExpr, true);
     }
-  };;
-;
+  }
   public static boolean isBadPriority(SNode child, SNode parent, boolean isRight) {
     return BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{}) || (isRight && ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(child))), "virtual_getPriority_1262430001741497858", new Object[]{})) == ((int) BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497858", new Object[]{})));
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0d0l0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0a5a3a11a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0a5a3a11a6_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0a1a9a3a11a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0a0b0j0d0l0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0b0j0d0l0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0a1a9a3a11a6_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0a1a0j0d0l0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0b0a9a3a11a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0a1a0j0d0l0g_0(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0a0b0a9a3a11a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0d0l0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0c0t0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0c0t0g(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0g0a91a6(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0a4a2a8(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean neq_a65dpo_a0e0c0i(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
-  };;
-;
+  }
   private static boolean neq_a65dpo_a0c0i(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0a4a4a8(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean neq_a65dpo_a0a4a4a8(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
-  };;
-;
+  }
   private static boolean neq_a65dpo_a0e0i(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a0a0a2a81(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_a65dpo_a0a1a0a2a81(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean neq_a65dpo_a0c0s(Object a, Object b) {
     return !((a != null ? a.equals(b) : a == b));
-  };;
-;}
+  }
+}

@@ -15,7 +15,6 @@ import jetbrains.mps.baseLanguage.behavior.ExpressionStatement_Behavior;
 public class StatementList_DataFlow extends DataFlowBuilder {
   public StatementList_DataFlow() {
   }
-
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       SNode bmd = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");

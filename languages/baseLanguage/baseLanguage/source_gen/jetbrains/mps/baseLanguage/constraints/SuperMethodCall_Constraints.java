@@ -24,12 +24,10 @@ public class SuperMethodCall_Constraints extends BaseConstraintsDescriptor {
   public SuperMethodCall_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.SuperMethodCall");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
-  };;
-;
+  }
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -39,8 +37,7 @@ public class SuperMethodCall_Constraints extends BaseConstraintsDescriptor {
     }
 
     return result;
-  };;
-;
+  }
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -48,8 +45,7 @@ public class SuperMethodCall_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      };;
-;
+      }
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -57,25 +53,22 @@ public class SuperMethodCall_Constraints extends BaseConstraintsDescriptor {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_9k34e0_a0a0a0a0a1a0b0a1a3;
-          };;
-;
+          }
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperMethodKind"));
               return (scope == null ? new EmptyScope() : scope);
             }
-          };;
-;        };
-      };;
-;    });
+          }
+        };
+      }
+    });
     return references;
-  };;
-;
+  }
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return ConstraintsUtil.isInNonStaticClasssifierContext(parentNode);
-  };;
-;
+  }
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2043122710974594130");
   private static SNodePointer breakingNode_9k34e0_a0a0a0a0a1a0b0a1a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137646");
 }

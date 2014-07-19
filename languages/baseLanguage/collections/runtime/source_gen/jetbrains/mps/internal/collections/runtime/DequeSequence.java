@@ -15,102 +15,82 @@ import java.util.Arrays;
 
 public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<T>, IDequeSequence<T>, Serializable {
   private static final long serialVersionUID = 6994676498844479086L;
-
   protected DequeSequence(Deque<T> deque) {
     super(deque);
   }
-
   @Override
   public void addFirst(T t) {
     getDeque().addFirst(t);
   }
-
   @Override
   public void addLast(T t) {
     getDeque().addLast(t);
   }
-
   @Override
   public Iterator<T> descendingIterator() {
     return getDeque().descendingIterator();
   }
-
   @Override
   public T getFirst() {
     return getDeque().getFirst();
   }
-
   @Override
   public T getLast() {
     return getDeque().getLast();
   }
-
   @Override
   public boolean offerFirst(T t) {
     return getDeque().offerFirst(t);
   }
-
   @Override
   public boolean offerLast(T t) {
     return getDeque().offerLast(t);
   }
-
   @Override
   public T peekFirst() {
     return getDeque().peekFirst();
   }
-
   @Override
   public T peekLast() {
     return getDeque().peekLast();
   }
-
   @Override
   public T pollFirst() {
     return getDeque().pollFirst();
   }
-
   @Override
   public T pollLast() {
     return getDeque().pollLast();
   }
-
   @Override
   public T pop() {
     return getDeque().pop();
   }
-
   @Override
   public void push(T t) {
     getDeque().push(t);
   }
-
   @Override
   public T removeFirst() {
     return getDeque().removeFirst();
   }
-
   @Override
   public boolean removeFirstOccurrence(Object o) {
     return getDeque().removeFirstOccurrence(o);
   }
-
   @Override
   public T removeLast() {
     return getDeque().removeLast();
   }
-
   @Override
   public boolean removeLastOccurrence(Object o) {
     return getDeque().removeLastOccurrence(o);
   }
-
   @Override
   public T addFirstElement(T t) {
     getDeque().addFirst(t);
     return t;
   }
-
   @Override
   public T removeLastElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
@@ -120,7 +100,6 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
     }
     return getDeque().removeLast();
   }
-
   @Override
   public T peekElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
@@ -130,7 +109,6 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
     }
     return getDeque().peek();
   }
-
   @Override
   public T popElement() {
     if (Sequence.NULL_WHEN_EMPTY) {
@@ -140,47 +118,38 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
     }
     return getDeque().pop();
   }
-
   @Override
   public T pushElement(T t) {
     getDeque().push(t);
     return t;
   }
-
   @Override
   public IDequeSequence<T> addSequence(ISequence<? extends T> seq) {
     return (IDequeSequence<T>) super.addSequence(seq);
   }
-
   @Override
   public IDequeSequence<T> removeSequence(ISequence<? extends T> seq) {
     return (IDequeSequence<T>) super.removeSequence(seq);
   }
-
   @Override
   public IDequeSequence<T> removeWhere(@AdapterClass(value = "IWhereFilter") _FunctionTypes._return_P1_E0<? extends Boolean, ? super T> filter) {
     return (IDequeSequence<T>) super.removeWhere(filter);
   }
-
   @Override
   public IDequeSequence<T> asUnmodifiable() {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public IDequeSequence<T> asSynchronized() {
     throw new UnsupportedOperationException();
   }
-
   @Override
   public Deque<T> toDeque() {
     return this;
   }
-
   protected Deque<T> getDeque() {
     return (Deque<T>) getQueue();
   }
-
   public static <U> IDequeSequence<U> fromDeque(Deque<U> deque) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (deque == null) {
@@ -192,7 +161,6 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
     }
     return new DequeSequence<U>(deque);
   }
-
   public static <U> IDequeSequence<U> fromIterable(Iterable<U> it) {
     if (Sequence.USE_NULL_SEQUENCE) {
       if (it == null) {
@@ -219,7 +187,6 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
     }
     return new DequeSequence<U>(deque);
   }
-
   public static <U> IDequeSequence<U> fromDequeAndArray(Deque<U> deque, U... array) {
     if (Sequence.NULL_ARRAY_IS_SINGLETON) {
       if (array == null) {
@@ -255,7 +222,6 @@ public class DequeSequence<T> extends AbstractQueueSequence<T> implements Deque<
     }
     return new DequeSequence<U>(deque);
   }
-
   public static <U> IDequeSequence<U> fromDequeWithValues(Deque<U> deque, Iterable<? extends U> it) {
     Deque<U> tmp = deque;
     if (Sequence.USE_NULL_SEQUENCE) {

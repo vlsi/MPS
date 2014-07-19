@@ -23,53 +23,43 @@ import jetbrains.mps.scope.CompositeScope;
 
 public class EnumConstantDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     SNode enumClass = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
     return ClassConcept_Behavior.call_constructors_5292274854859503373(enumClass);
-  };;
-;
+  }
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.lang.core.structure.BaseConcept", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("FINALMARK"));
     return markIcons;
-  };;
-;
+  }
   public static boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return true;
-  };;
-;
+  }
   public static boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return true;
-  };;
-;
+  }
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
-  };;
-;
+  }
   public static String virtual_getFqName_1213877404258(SNode thisNode) {
     SNode containingEnum = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.EnumClass", false, false);
     return (containingEnum != null ? EnumConstantDeclaration_Behavior.call_getEnumConstantDeclarationPresentation_8767021959483237039(thisNode) + BehaviorReflection.invokeVirtual(String.class, containingEnum, "virtual_getFqName_1213877404258", new Object[]{}) : BehaviorReflection.invokeVirtual(String.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.core.structure.INamedConcept"), "virtual_getFqName_1213877404258", new Object[]{}));
-  };;
-;
+  }
   public static String call_getEnumConstantDeclarationPresentation_8767021959483237039(SNode thisNode) {
     return "Enum constant '" + SPropertyOperations.getString(thisNode, "name") + "' in ";
-  };;
-;
+  }
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     if (SPropertyOperations.getString(thisNode, "name") == null) {
       return;
     }
     context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
     context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
-  };;
-;
+  }
   public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "method", true);
-  };;
-;
+  }
   public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(final SNode thisNode) {
     if ((SNodeOperations.getParent(thisNode) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
       return null;
@@ -80,20 +70,19 @@ public class EnumConstantDeclaration_Behavior {
     ListSequence.fromList(methodsToImplement).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "isAbstract");
-      };;
-;    }));
+      }
+    }));
     ListSequence.fromList(methods).addSequence(ListSequence.fromList(methodsToImplement).where(new IWhereFilter<SNode>() {
       public boolean accept(final SNode method) {
         return !(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode constantBelongingMethod) {
             return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(constantBelongingMethod, method);
-          };;
-;        }));
-      };;
-;    }));
+          }
+        }));
+      }
+    }));
     return methods;
-  };;
-;
+  }
   public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(final SNode thisNode) {
     if ((SNodeOperations.getParent(thisNode) == null) || !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
       return null;
@@ -104,35 +93,34 @@ public class EnumConstantDeclaration_Behavior {
     ListSequence.fromList(methodsToOverride).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(SPropertyOperations.getBoolean(it, "isAbstract")) && !(SPropertyOperations.getBoolean(it, "isFinal")) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
-      };;
-;    }));
+      }
+    }));
     ListSequence.fromList(methods).addSequence(ListSequence.fromList(methodsToOverride).where(new IWhereFilter<SNode>() {
       public boolean accept(final SNode method) {
         return !(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode constantBelongingMethod) {
             return BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(constantBelongingMethod, method);
-          };;
-;        }));
-      };;
-;    }));
+          }
+        }));
+      }
+    }));
     return methods;
-  };;
-;
+  }
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isSubConceptOf(kind, "jetbrains.mps.baseLanguage.structure.SuperMethodKind")) {
       Scope visibleMembers = BehaviorReflection.invokeVirtual(Scope.class, SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"), "virtual_getVisibleMembers_8083692786967356611", new Object[]{child, kind});
       Iterable<SNode> methods = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.EnumClass"))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isAbstract_1232982539764", new Object[]{})) && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility"));
-        };;
-;      });
+        }
+      });
       Scope visibleEumMembers = new ListScope(methods) {
         public String getName(SNode child) {
           return SPropertyOperations.getString(SNodeOperations.cast(child, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
-        };;
-;      };
+        }
+      };
       return new CompositeScope(visibleMembers, visibleEumMembers);
     }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.lang.core.structure.ScopeProvider", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
-  };;
-;}
+  }
+}

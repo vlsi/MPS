@@ -9,19 +9,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MoveStaticField_Target implements IRefactoringTarget {
   public MoveStaticField_Target() {
   }
-
   public IRefactoringTarget.TargetType getTarget() {
     return IRefactoringTarget.TargetType.NODE;
   }
-
   public boolean allowMultipleTargets() {
     return false;
   }
-
   public boolean isApplicableToEntityType(final Object entity) {
     return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
   }
-
   public boolean isApplicable(final Object entity) {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;

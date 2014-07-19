@@ -20,7 +20,6 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public EnumsAreEnum_SubtypingRule() {
   }
-
   public List<SNode> getSubOrSuperTypes(SNode classifierType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> result = new ArrayList<SNode>();
     SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
@@ -29,22 +28,18 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
     }
     return result;
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_b0gd6z_a0a0a2a1(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;

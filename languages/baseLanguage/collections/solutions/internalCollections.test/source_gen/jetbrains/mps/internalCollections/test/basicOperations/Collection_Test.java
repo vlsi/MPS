@@ -18,7 +18,6 @@ public class Collection_Test extends Util_Test {
     Collection<String> cs = CS;
     assertIterableEquals(Sequence.fromArray(new String[]{"FOO", "BAR"}), cs);
   }
-
   public void test_create() throws Exception {
     List<String> list = ListSequence.fromListAndArray(new ArrayList<String>(), "a", "b", "c");
     Collection<String> cs = CollectionSequence.fromCollectionWithValues(new ArrayList<String>(), list);
@@ -27,19 +26,16 @@ public class Collection_Test extends Util_Test {
     CollectionSequence.fromCollection(cs).addElement("d");
     assertIterableEquals(Sequence.fromArray(new String[]{"a", "b", "c", "d"}), cs);
   }
-
   public void test_add() throws Exception {
     Collection<String> cs = CollectionSequence.fromCollectionAndArray(new ArrayList<String>(), "foo");
     CollectionSequence.fromCollection(cs).addElement("bar");
     assertIterableEquals(Sequence.fromArray(new String[]{"foo", "bar"}), cs);
   }
-
   public void test_remove() throws Exception {
     Collection<String> cs = CollectionSequence.fromCollectionAndArray(new ArrayList<String>(), "foo", "bar", "qux");
     CollectionSequence.fromCollection(cs).removeElement("bar");
     assertIterableEquals(Sequence.fromArray(new String[]{"foo", "qux"}), cs);
   }
-
   public Collection_Test() {
   }
 }

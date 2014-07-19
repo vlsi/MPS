@@ -6,9 +6,8 @@ package jetbrains.mps.baseLanguage.behavior;
 public class ArrayClassExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ArrayClassExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayClassExpression";
-  };;
-;}
+  }
+}

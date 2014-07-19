@@ -20,34 +20,27 @@ import jetbrains.mps.baseLanguage.scopes.MethodSignature;
 
 public class InstanceMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static boolean virtual_isDataFlowChecked_1227714048980(SNode thisNode) {
     return !(SPropertyOperations.getBoolean(thisNode, "isAbstract"));
-  };;
-;
+  }
   public static boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return true;
-  };;
-;
+  }
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
-  };;
-;
+  }
   public static boolean virtual_isAbstract_1232982539764(SNode thisNode) {
     return SPropertyOperations.getBoolean(thisNode, "isAbstract");
-  };;
-;
+  }
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.MethodDeclaration", "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
-  };;
-;
+  }
   public static boolean virtual_canBeInterfaceMember_2949815620938109095(SAbstractConcept thisConcept) {
     return true;
-  };;
-;
+  }
   public static SNode virtual_getImplementedInterfaceMethod_8302934035201331324(SNode thisNode) {
     SNode containingClassifier = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if ((containingClassifier == null)) {
@@ -57,15 +50,14 @@ public class InstanceMethodDeclaration_Behavior {
     for (SNode method : ListSequence.fromList(((List<SNode>) scope.getNodes())).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode it) {
         return Classifier_Behavior.call_methods_5292274854859311639(it);
-      };;
-;    })) {
+      }
+    })) {
       if (eq_4b3xw6_a0a0a0d0h(SPropertyOperations.getString(method, "name"), SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() && BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(method, thisNode)) {
         return method;
       }
     }
     return null;
-  };;
-;
+  }
   public static SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
     SNode parent = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
@@ -83,8 +75,7 @@ public class InstanceMethodDeclaration_Behavior {
       }
     }
     return null;
-  };;
-;
+  }
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     if (!((context.isElementVisible(thisNode)))) {
       return;
@@ -92,13 +83,11 @@ public class InstanceMethodDeclaration_Behavior {
     MethodSignature signature = new MethodSignature(thisNode, context.getTypeByTypeVariableMapping());
     context.addMember(thisNode, signature);
     context.hideMembers(signature);
-  };;
-;
+  }
   private static boolean eq_4b3xw6_a0a0a0d0h(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;
+  }
   private static boolean eq_4b3xw6_a0a0a0e0i(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  };;
-;}
+  }
+}

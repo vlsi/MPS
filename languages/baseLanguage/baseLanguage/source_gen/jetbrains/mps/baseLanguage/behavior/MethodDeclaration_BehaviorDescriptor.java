@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 public abstract class MethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements IResolveInfo_BehaviorDescriptor {
   public MethodDeclaration_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.MethodDeclaration";
-  };;
-;}
+  }
+}

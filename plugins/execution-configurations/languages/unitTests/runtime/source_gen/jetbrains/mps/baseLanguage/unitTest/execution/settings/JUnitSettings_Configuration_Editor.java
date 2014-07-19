@@ -10,27 +10,21 @@ import com.intellij.openapi.util.Factory;
 
 public class JUnitSettings_Configuration_Editor extends SettingsEditorEx<JUnitSettings_Configuration> {
   private JUnitConfigurationEditorComponent myEditor;
-
   public void disposeEditor() {
     myEditor.dispose();
   }
-
   @NotNull
   public JUnitConfigurationEditorComponent createEditor() {
     myEditor = new JUnitConfigurationEditorComponent(myProject);
     return myEditor;
   }
-
   public void applyEditorTo(final JUnitSettings_Configuration configuration) throws ConfigurationException {
     myEditor.apply(configuration);
   }
-
   public void resetEditorFrom(final JUnitSettings_Configuration configuration) {
     myEditor.reset(configuration);
   }
-
   private Project myProject;
-
   public JUnitSettings_Configuration_Editor(final Project project) {
     super(new Factory<JUnitSettings_Configuration>() {
       public JUnitSettings_Configuration create() {

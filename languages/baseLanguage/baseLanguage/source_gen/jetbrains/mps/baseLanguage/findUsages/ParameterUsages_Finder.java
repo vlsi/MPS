@@ -17,30 +17,24 @@ import jetbrains.mps.progress.EmptyProgressMonitor;
 
 public class ParameterUsages_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.ParameterUsages_Finder");
-
   public ParameterUsages_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Parameter Usages";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ParameterDeclaration";
   }
-
   @Override
   public boolean isApplicable(SNode node) {
     return (SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false) != null);
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 2);
@@ -60,7 +54,6 @@ public class ParameterUsages_Finder extends GeneratedFinder {
       monitor.done();
     }
   }
-
   @Override
   public void getSearchedNodes(SNode node, SearchScope scope, List<SNode> _results) {
     SNode nodeParentMethod = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"}, false, false);
@@ -72,7 +65,6 @@ public class ParameterUsages_Finder extends GeneratedFinder {
       ListSequence.fromList(_results).addElement(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(methodNode, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).getElement(SNodeOperations.getIndexInParent(node)));
     }
   }
-
   @Override
   public String getNodeCategory(SNode node) {
     return "Parameter Usages";

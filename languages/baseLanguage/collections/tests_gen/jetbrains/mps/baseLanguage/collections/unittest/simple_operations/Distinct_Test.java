@@ -40,7 +40,6 @@ public class Distinct_Test extends TestCase {
       c++;
     }
   }
-
   public void test_distinct2() throws Exception {
     Iterable<Integer> source;
     source = Sequence.fromClosure(new ISequenceClosure<Integer>() {
@@ -49,7 +48,6 @@ public class Distinct_Test extends TestCase {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -123,7 +121,6 @@ __switch__:
       c++;
     }
   }
-
   public void test__null() throws Exception {
     Iterable<Integer> source = null;
     source = Sequence.fromIterable(source).distinct();

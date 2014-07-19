@@ -19,7 +19,6 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_zedcwq_a(editorContext, node);
   }
-
   private EditorCell createCollection_zedcwq_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_zedcwq_a");
@@ -28,7 +27,6 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_zedcwq_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createRefNode_zedcwq_a0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("expression");
@@ -49,7 +47,6 @@ public class ExpressionStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_zedcwq_b0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_zedcwq_b0");

@@ -14,19 +14,15 @@ import jetbrains.mps.project.GlobalScope;
 public class MakeFieldFinal extends BaseRefactoring {
   public MakeFieldFinal() {
   }
-
   public IRefactoringTarget getRefactoringTarget() {
     return new MakeFieldFinal_Target();
   }
-
   public String getUserFriendlyName() {
     return "Make Field Final";
   }
-
   public void refactor(final RefactoringContext refactoringContext) {
     SPropertyOperations.set(refactoringContext.getSelectedNode(), "isFinal", "" + (true));
   }
-
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
     return FindUtils.getSearchResults(new EmptyProgressMonitor(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.baseLanguage.findUsages.FieldUsages_Finder");
 

@@ -10,7 +10,6 @@ public class ThisExpression_Test extends TestCase {
   public void test_anonymousClass() throws Exception {
     Runnable run = new Runnable() {
       private Integer foo = 0;
-
       @Override
       public void run() {
         new _FunctionTypes._return_P0_E0<Integer>() {
@@ -23,12 +22,10 @@ public class ThisExpression_Test extends TestCase {
     };
     run.run();
   }
-
   public void test_topLevelClass() throws Exception {
     ThisProvider tp = new ThisProvider();
     tp.testThisExpression();
   }
-
   public ThisExpression_Test() {
   }
 }

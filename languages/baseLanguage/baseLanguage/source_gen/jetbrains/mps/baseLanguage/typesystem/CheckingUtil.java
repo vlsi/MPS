@@ -17,7 +17,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class CheckingUtil {
   public CheckingUtil() {
   }
-
   public static boolean isAssigned(SNode node) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation") && !(SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.UnaryMinus")) && SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation"), "expression", true) == node) {
       return true;
@@ -36,12 +35,9 @@ public class CheckingUtil {
     }
     return false;
   }
-
   public static boolean isAssignedIllegaly(SNode node) {
     return CheckingUtil.isAssigned(node) && ((SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", false, false) == null && SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceInitializer", false, false) == null) || refersToDeclarationWithInitializer(node));
   }
-
-
 
   private static boolean refersToDeclarationWithInitializer(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
@@ -51,8 +47,6 @@ public class CheckingUtil {
     }
     return false;
   }
-
-
 
   public static boolean isFieldDuplicated(final SNode fieldDecl) {
     final String name = SPropertyOperations.getString(fieldDecl, "name");

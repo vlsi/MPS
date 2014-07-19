@@ -36,7 +36,6 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_NullableStates_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode iMethodLike, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SNodeOperations.getModel(iMethodLike).getModule() instanceof TransientModelsModule) {
       return;
@@ -196,22 +195,18 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.IMethodLike";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static boolean eq_7kkp52_a0c0e0a0e0k0g0b(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
   }

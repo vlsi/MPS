@@ -13,26 +13,21 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class short_extends_int_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public short_extends_int_SubtypingRule() {
   }
-
   public SNode getSubOrSuperType(SNode shortType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     return _quotation_createNode_q77eql_a0a1();
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ShortType";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean isWeak() {
     return false;
   }
-
   private static SNode _quotation_createNode_q77eql_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

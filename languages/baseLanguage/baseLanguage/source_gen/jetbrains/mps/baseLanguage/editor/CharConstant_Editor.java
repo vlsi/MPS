@@ -21,7 +21,6 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_d77dl_a(editorContext, node);
   }
-
   private EditorCell createCollection_d77dl_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_d77dl_a");
@@ -31,7 +30,6 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_d77dl_c0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_d77dl_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "'");
     editorCell.setCellId("Constant_d77dl_a0");
@@ -41,7 +39,6 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createAlternation_d77dl_b0(EditorContext editorContext, SNode node) {
     boolean alternationCondition = true;
     alternationCondition = CharConstant_Editor.renderingCondition_d77dl_a1a(node, editorContext);
@@ -56,11 +53,9 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     editorCell.getStyle().putAll(style);
     return editorCell;
   }
-
   private static boolean renderingCondition_d77dl_a1a(SNode node, EditorContext editorContext) {
     return SPropertyOperations.hasValue(node, "charConstant", null) || !(SPropertyOperations.getString(node, "charConstant").startsWith("\\"));
   }
-
   private EditorCell createProperty_d77dl_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("charConstant");
@@ -81,7 +76,6 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createProperty_d77dl_a1a_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("charConstant");
@@ -102,7 +96,6 @@ public class CharConstant_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_d77dl_c0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "'");
     editorCell.setCellId("Constant_d77dl_c0");

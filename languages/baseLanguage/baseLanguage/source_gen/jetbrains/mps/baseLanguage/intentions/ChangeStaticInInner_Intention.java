@@ -18,72 +18,56 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ChangeStaticInInner_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ChangeStaticInInner_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.Classifier";
   }
-
   public String getPresentation() {
     return "ChangeStaticInInner";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ChangeStaticInInner_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return Classifier_Behavior.call_isInner_521412098689998677(node) && (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Interface") || SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "521412098689817330");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ChangeStaticInInner_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Make " + ((Classifier_Behavior.call_isStatic_521412098689998668(node) ? "Non" : "")) + " Static";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "nonStatic", "" + (!(SPropertyOperations.getBoolean(node, "nonStatic"))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return ChangeStaticInInner_Intention.this;
     }

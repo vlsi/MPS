@@ -26,7 +26,6 @@ public class NullEmpty_Test extends Util_Test {
       Assert.assertNull(ListSequence.fromList(emptyList).getElement(-1));
     }
   }
-
   public void test_nullAddAll() throws Exception {
     List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     List<Integer> nullList = null;

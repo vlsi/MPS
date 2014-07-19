@@ -25,7 +25,6 @@ public class Where_Test extends Util_Test {
     });
     this.assertIterableEquals(this.expectOdd5(), test.toIterable());
   }
-
   public void test_whereFilterVar() throws Exception {
     ISequence<Integer> seq = Sequence.fromIterable(this.input5());
     IWhereFilter<Integer> filter = new IWhereFilter<Integer>() {
@@ -36,7 +35,6 @@ public class Where_Test extends Util_Test {
     ISequence<Integer> test = seq.where(filter);
     this.assertIterableEquals(this.expectOdd5(), test.toIterable());
   }
-
   public void test_whereOperation() throws Exception {
     Iterable<Integer> seq = this.input5();
     Iterable<Integer> expected = Arrays.asList(1, 3, 5);
@@ -52,7 +50,6 @@ public class Where_Test extends Util_Test {
     };
     this.assertIterableEquals(expected, Sequence.fromIterable(seq).where(cl));
   }
-
   public void test_nextWithoutHasNext() throws Exception {
     Iterator<Integer> it = ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6)).where(new IWhereFilter<Integer>() {
       public boolean accept(Integer i) {
@@ -70,7 +67,6 @@ public class Where_Test extends Util_Test {
       // expected exception 
     }
   }
-
   public void test_whereAdvancesTooEarly() throws Exception {
     final List<Integer> test = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5, 6, 7, 8, 9);
     final List<Integer> odd = ListSequence.fromList(new ArrayList<Integer>());

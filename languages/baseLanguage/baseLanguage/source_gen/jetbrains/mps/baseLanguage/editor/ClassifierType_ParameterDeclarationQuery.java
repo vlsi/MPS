@@ -15,7 +15,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class ClassifierType_ParameterDeclarationQuery implements ParametersInformation<SNode> {
   public ClassifierType_ParameterDeclarationQuery() {
   }
-
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "classifier", false), "typeVariableDeclaration", true)).isNotEmpty()) {
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(node, "classifier", false));
@@ -23,7 +22,6 @@ public class ClassifierType_ParameterDeclarationQuery implements ParametersInfor
       return ListSequence.fromList(new ArrayList<SNode>());
     }
   }
-
   public void getStyledMethodPresentation(SNode node, EditorContext editorContext, SNode parameterObject, StyledTextPrinter styledText) {
     if (ListSequence.fromList(SLinkOperations.getTargets(parameterObject, "typeVariableDeclaration", true)).isNotEmpty()) {
       SNode argument = editorContext.getSelectedNode();
@@ -42,7 +40,6 @@ public class ClassifierType_ParameterDeclarationQuery implements ParametersInfor
       }
     }
   }
-
   public boolean isMethodCurrent(SNode node, EditorContext editorContext, SNode parameterObject) {
     return false;
   }

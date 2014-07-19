@@ -22,68 +22,53 @@ import jetbrains.mps.smodel.SReference;
 
 public class ReplaceAssertWithIf_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public ReplaceAssertWithIf_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.AssertStatement";
   }
-
   public String getPresentation() {
     return "ReplaceAssertWithIf";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.ReplaceAssertWithIf_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return false;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return true;
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1199622460250");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ReplaceAssertWithIf_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Replace Assert with If";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       // produce throw statement 
       SNode throwStatement = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThrowStatement", null);
@@ -98,12 +83,10 @@ public class ReplaceAssertWithIf_Intention implements IntentionFactory {
       // replace assert with if 
       SNodeOperations.replaceWithAnother(node, ifStatement);
     }
-
     public IntentionDescriptor getDescriptor() {
       return ReplaceAssertWithIf_Intention.this;
     }
   }
-
   private static SNode _quotation_createNode_a1x6vi_a0c0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

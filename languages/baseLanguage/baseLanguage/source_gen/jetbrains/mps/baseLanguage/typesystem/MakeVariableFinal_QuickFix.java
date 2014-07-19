@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class MakeVariableFinal_QuickFix extends QuickFix_Runtime {
   public MakeVariableFinal_QuickFix() {
   }
-
   public String getDescription(SNode node) {
     return "Make Variable Final";
   }
-
   public void execute(SNode node) {
     SPropertyOperations.set(SLinkOperations.getTarget(((SNode) MakeVariableFinal_QuickFix.this.getField("varRef")[0]), "variableDeclaration", false), "isFinal", "" + (true));
   }

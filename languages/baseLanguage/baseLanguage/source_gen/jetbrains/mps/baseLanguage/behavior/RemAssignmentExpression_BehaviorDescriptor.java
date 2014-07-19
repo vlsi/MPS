@@ -6,9 +6,8 @@ package jetbrains.mps.baseLanguage.behavior;
 public class RemAssignmentExpression_BehaviorDescriptor extends OperationAssignmentExpression_BehaviorDescriptor {
   public RemAssignmentExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.RemAssignmentExpression";
-  };;
-;}
+  }
+}

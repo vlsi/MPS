@@ -15,25 +15,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class Potentially_not_migratable_usages_Finder extends GeneratedFinder {
   private static Logger LOG = LogManager.getLogger("jetbrains.mps.baseLanguage.findUsages.Potentially_not_migratable_usages_Finder");
-
   public Potentially_not_migratable_usages_Finder() {
   }
-
   @Override
   public String getDescription() {
     return "Potentially not migratable usages";
   }
-
   @Override
   public String getLongDescription() {
     return "";
   }
-
   @Override
   public String getConcept() {
     return "jetbrains.mps.lang.structure.structure.LinkDeclaration";
   }
-
   @Override
   protected void doFind(SNode node, SearchScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);

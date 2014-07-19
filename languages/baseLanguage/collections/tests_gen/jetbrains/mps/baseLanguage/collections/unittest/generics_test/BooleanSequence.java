@@ -5,10 +5,8 @@ package jetbrains.mps.baseLanguage.collections.unittest.generics_test;
 
 /*package*/ class BooleanSequence extends MySequence<Boolean> {
   /*package*/ int myCount = 0;
-
   /*package*/ BooleanSequence() {
   }
-
   @Override
   /*package*/ Boolean getNext() {
     if (this.myCount < 5) {

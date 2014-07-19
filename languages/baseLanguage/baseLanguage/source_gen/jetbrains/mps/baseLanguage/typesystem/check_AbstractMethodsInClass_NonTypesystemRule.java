@@ -17,7 +17,6 @@ import jetbrains.mps.errors.IErrorReporter;
 public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_AbstractMethodsInClass_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode method, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SPropertyOperations.getBoolean(method, "isAbstract")) {
       SNode classifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
@@ -52,18 +51,15 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }

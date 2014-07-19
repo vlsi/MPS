@@ -15,28 +15,23 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class LowerBoundType_Behavior {
   public static void init(SNode thisNode) {
-  };;
-;
+  }
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     if (SLinkOperations.getTarget(thisNode, "bound", true) != null) {
       return "? super " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "bound", true), "virtual_getPresentation_1213877396640", new Object[]{});
     } else {
       return "? super ???";
     }
-  };;
-;
+  }
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     return _quotation_createNode_kcjgm5_a0a1();
-  };;
-;
+  }
   public static boolean virtual_isValueType_4836112446988592019(SNode thisNode) {
     return false;
-  };;
-;
+  }
   public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
     return false;
-  };;
-;
+  }
   public static SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType")) {
       SNode expBound = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
@@ -46,14 +41,12 @@ public class LowerBoundType_Behavior {
       return _quotation_createNode_kcjgm5_a2a0a4(expBound);
     }
     return BehaviorReflection.invokeSuper((Class<SNode>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.IGenericType", "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, expTrace});
-  };;
-;
+  }
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType")) {
       BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "bound", true), "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
     }
-  };;
-;
+  }
   public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
 
@@ -62,16 +55,14 @@ public class LowerBoundType_Behavior {
       return false;
     }
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, t, "virtual_isSupersetOf_9029841626175335449", new Object[]{SLinkOperations.getTarget(thisNode, "bound", true), substitutions});
-  };;
-;
+  }
   private static SNode _quotation_createNode_kcjgm5_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
-  };;
-;
+  }
   private static SNode _quotation_createNode_kcjgm5_a2a0a4(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
@@ -82,5 +73,5 @@ public class LowerBoundType_Behavior {
       quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
-  };;
-;}
+  }
+}

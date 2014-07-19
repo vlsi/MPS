@@ -13,18 +13,14 @@ public class DelayedException extends RuntimeException {
    * * 
    */
   private static final long serialVersionUID = 1L;
-
   public DelayedException() {
   }
-
   public DelayedException(String message) {
     super(message);
   }
-
   public DelayedException(String message, Throwable cause) {
     super(message, cause);
   }
-
   public DelayedException(Throwable cause) {
     super(cause);
   }

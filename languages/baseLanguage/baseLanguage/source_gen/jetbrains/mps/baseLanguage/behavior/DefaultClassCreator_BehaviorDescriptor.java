@@ -6,9 +6,8 @@ package jetbrains.mps.baseLanguage.behavior;
 public class DefaultClassCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public DefaultClassCreator_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.DefaultClassCreator";
-  };;
-;}
+  }
+}

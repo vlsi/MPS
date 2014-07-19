@@ -37,11 +37,9 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
   public Collection<String> getContextHints() {
     return Collections.emptyList();
   }
-
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createProperty_rqmr32_a(editorContext, node);
   }
-
   private EditorCell createProperty_rqmr32_a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("tokens");
@@ -63,11 +61,9 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
     } else
     return editorCell;
   }
-
   public static class UnknownNameRef_generic_cellMenu_rqmr32_a0a extends AbstractCellMenuPart_Generic_Group {
     public UnknownNameRef_generic_cellMenu_rqmr32_a0a() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
 
       Scope moduleScope = ClassifierScopes.getVisibleClassifiersScope(node, false);
@@ -78,11 +74,9 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
       }).toListSequence();
 
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((SNode) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SNode chosen = parameterObject;
       String className = BehaviorReflection.invokeVirtual(String.class, chosen, "virtual_getNestedName_8540045600162184125", new Object[]{});
@@ -118,7 +112,6 @@ public class UnknownQualifiedName implements ConceptEditorComponent {
       SPropertyOperations.set(node, "tokens", className);
 
     }
-
     public boolean isReferentPresentation() {
       return false;
     }

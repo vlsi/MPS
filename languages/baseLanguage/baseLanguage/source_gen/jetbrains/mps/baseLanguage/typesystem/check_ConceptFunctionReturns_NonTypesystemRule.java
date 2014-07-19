@@ -25,7 +25,6 @@ import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ConceptFunctionReturns_NonTypesystemRule() {
   }
-
   public void applyRule(final SNode func, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode expectedRetType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), func, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
     boolean noReturnExpected = ((expectedRetType == null) || TypeChecker.getInstance().getSubtypingManager().isSubtype(expectedRetType, _quotation_createNode_rs2pxi_b0a0a0b0b()));
@@ -58,22 +57,18 @@ public class check_ConceptFunctionReturns_NonTypesystemRule extends AbstractNonT
       }
     }
   }
-
   public String getApplicableConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.ConceptFunction";
   }
-
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getQualifiedName(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public boolean overrides() {
     return false;
   }
-
   private static SNode _quotation_createNode_rs2pxi_b0a0a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

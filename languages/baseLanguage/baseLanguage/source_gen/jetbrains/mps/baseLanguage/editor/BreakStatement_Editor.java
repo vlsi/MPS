@@ -33,7 +33,6 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xk0l2m_a(editorContext, node);
   }
-
   private EditorCell createCollection_xk0l2m_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xk0l2m_a");
@@ -48,7 +47,6 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_xk0l2m_d0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_xk0l2m_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "break");
     editorCell.setCellId("Constant_xk0l2m_a0");
@@ -59,7 +57,6 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createCollection_xk0l2m_b0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xk0l2m_b0");
@@ -69,11 +66,9 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_xk0l2m_a1a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_xk0l2m_a1a(SNode node, EditorContext editorContext) {
     return !(SPropertyOperations.hasValue(node, "label", null));
   }
-
   private EditorCell createProperty_xk0l2m_a1a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("label");
@@ -97,11 +92,9 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   public static class BreakStatement_generic_cellMenu_xk0l2m_a0a1a extends AbstractCellMenuPart_Generic_Group {
     public BreakStatement_generic_cellMenu_xk0l2m_a0a1a() {
     }
-
     public List<?> createParameterObjects(SNode node, IOperationContext operationContext, EditorContext editorContext) {
       return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, String>() {
         public Iterable<String> translate(final SNode it) {
@@ -109,7 +102,6 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
             public Iterator<String> iterator() {
               return new YieldingIterator<String>() {
                 private int __CP__ = 0;
-
                 protected boolean moveToNext() {
 __loop__:
                   do {
@@ -147,20 +139,16 @@ __switch__:
         }
       }).toListSequence();
     }
-
     protected void handleAction(Object parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       this.handleAction_impl((String) parameterObject, node, model, operationContext, editorContext);
     }
-
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IOperationContext operationContext, EditorContext editorContext) {
       SPropertyOperations.set(node, "label", parameterObject);
     }
-
     public boolean isReferentPresentation() {
       return false;
     }
   }
-
   private EditorCell createCollection_xk0l2m_c0(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_xk0l2m_c0");
@@ -170,11 +158,9 @@ __switch__:
     editorCell.addEditorCell(this.createRefNode_xk0l2m_a2a(editorContext, node));
     return editorCell;
   }
-
   private static boolean renderingCondition_xk0l2m_a2a(SNode node, EditorContext editorContext) {
     return (SLinkOperations.getTarget(node, "loopLabelReference", true) != null);
   }
-
   private EditorCell createRefNode_xk0l2m_a2a(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("loopLabelReference");
@@ -197,7 +183,6 @@ __switch__:
     } else
     return editorCell;
   }
-
   private EditorCell createConstant_xk0l2m_d0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ";");
     editorCell.setCellId("Constant_xk0l2m_d0");

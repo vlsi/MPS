@@ -18,11 +18,9 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class any_type_supertypeof_nulltype_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   public any_type_supertypeof_nulltype_InequationReplacementRule() {
   }
-
   public boolean isApplicableCustom(SNode subtype, SNode supertype, IsApplicable2Status status) {
     return !(SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable"));
   }
-
   public void processInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, final TypeCheckingContext typeCheckingContext, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.NullType")) {
       return;
@@ -35,7 +33,6 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Abs
       }
     }
   }
-
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
     if (SNodeOperations.isInstanceOf(supertype, "jetbrains.mps.baseLanguage.structure.NullType")) {
@@ -46,29 +43,24 @@ public class any_type_supertypeof_nulltype_InequationReplacementRule extends Abs
     }
     return result_14532009;
   }
-
   public boolean isWeak() {
     return true;
   }
-
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
       boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getQualifiedName(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
-
   public String getApplicableSubtypeConceptFQName() {
     return "jetbrains.mps.baseLanguage.structure.NullType";
   }
-
   public String getApplicableSupertypeConceptFQName() {
     return "jetbrains.mps.lang.core.structure.BaseConcept";
   }

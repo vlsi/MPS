@@ -25,7 +25,6 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_2kc2ry_a(editorContext, node);
   }
-
   private EditorCell createCollection_2kc2ry_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_2kc2ry_a");
@@ -34,7 +33,6 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createProperty_2kc2ry_b0(editorContext, node));
     return editorCell;
   }
-
   private EditorCell createConstant_2kc2ry_a0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "//");
     editorCell.setCellId("Constant_2kc2ry_a0");
@@ -45,7 +43,6 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     editorCell.setDefaultText("");
     return editorCell;
   }
-
   private EditorCell createProperty_2kc2ry_b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
     provider.setRole("value");
@@ -67,7 +64,6 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
     } else
     return editorCell;
   }
-
   private static int _StyleParameter_QueryFunction_2kc2ry_a0b0(EditorContext editorContext, SNode node) {
     if (RemarkStatement_Behavior.call_isTodo_1213877427548(node)) {
       return MPSFonts.BOLD_ITALIC;
@@ -75,7 +71,6 @@ public class RemarkStatement_Editor extends DefaultNodeEditor {
       return MPSFonts.ITALIC;
     }
   }
-
   private static Color _StyleParameter_QueryFunction_2kc2ry_a1b0(EditorContext editorContext, SNode node) {
     if (RemarkStatement_Behavior.call_isTodo_1213877427548(node)) {
       return Color.BLUE;

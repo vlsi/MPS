@@ -17,34 +17,26 @@ import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class MakeClassAbstract_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
-
   public MakeClassAbstract_Intention() {
   }
-
   public String getConcept() {
     return "jetbrains.mps.baseLanguage.structure.ClassConcept";
   }
-
   public String getPresentation() {
     return "MakeClassAbstract";
   }
-
   public String getPersistentStateKey() {
     return "jetbrains.mps.baseLanguage.intentions.MakeClassAbstract_Intention";
   }
-
   public String getLanguageFqName() {
     return "jetbrains.mps.baseLanguage";
   }
-
   public IntentionType getType() {
     return IntentionType.NORMAL;
   }
-
   public boolean isAvailableInChildNodes() {
     return true;
   }
-
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(isApplicableToNode(node, editorContext))) {
       return false;
@@ -54,42 +46,33 @@ public class MakeClassAbstract_Intention implements IntentionFactory {
     }
     return true;
   }
-
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.EnumClass"));
   }
-
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
     return SNodeOperations.hasRole(childNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", "visibility");
   }
-
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "1227519137253");
   }
-
   public boolean isSurroundWith() {
     return false;
   }
-
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeClassAbstract_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
-
     public String getDescription(final SNode node, final EditorContext editorContext) {
       return "Make" + ((SPropertyOperations.getBoolean(node, "abstractClass") ? " Non" : "")) + " Abstract";
     }
-
     public void execute(final SNode node, final EditorContext editorContext) {
       SPropertyOperations.set(node, "abstractClass", "" + (!(SPropertyOperations.getBoolean(node, "abstractClass"))));
     }
-
     public IntentionDescriptor getDescriptor() {
       return MakeClassAbstract_Intention.this;
     }
