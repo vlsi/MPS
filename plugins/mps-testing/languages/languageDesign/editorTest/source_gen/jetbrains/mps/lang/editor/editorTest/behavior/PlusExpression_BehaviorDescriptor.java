@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.editorTest.behavior;
 public class PlusExpression_BehaviorDescriptor extends BinaryExpression_BehaviorDescriptor {
   public PlusExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.editorTest.structure.PlusExpression";

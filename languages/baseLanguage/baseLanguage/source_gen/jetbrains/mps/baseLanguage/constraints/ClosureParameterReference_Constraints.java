@@ -31,8 +31,8 @@ public class ClosureParameterReference_Constraints extends BaseConstraintsDescri
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      }
-
+      };;
+;
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -40,20 +40,20 @@ public class ClosureParameterReference_Constraints extends BaseConstraintsDescri
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_j093wa_a0a0a0a0a1a0b0a1a1;
-          }
-
+          };;
+;
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
               Scope scope = Scope.getScope(_context.getContextNode(), _context.getContextRole(), _context.getPosition(), (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClosureParameter"));
               return (scope == null ? new EmptyScope() : scope);
             }
-          }
-        };
-      }
-    });
+          };;
+;        };
+      };;
+;    });
     return references;
-  }
-
+  };;
+;
   private static SNodePointer breakingNode_j093wa_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948136869");
 }

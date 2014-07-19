@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.editorTest.behavior;
 public class DelTestChild1_BehaviorDescriptor extends DelTestAbstractChild_BehaviorDescriptor {
   public DelTestChild1_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.editorTest.structure.DelTestChild1";

@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ScriptKindClassItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public ScriptKindClassItem_BehaviorDescriptor() {
   }
-
   public boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     return ScriptKindClassItem_Behavior.virtual_isApplicableTo_1214304723440(thisNode, cellModel);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ScriptKindClassItem";
-  }
-}
+  };;
+;}

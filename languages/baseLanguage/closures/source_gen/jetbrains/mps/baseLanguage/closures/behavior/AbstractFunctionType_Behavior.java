@@ -8,9 +8,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AbstractFunctionType_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+  };;
+;  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuffer sb = new StringBuffer("{");
     String sep = "";
     for (SNode pt : SLinkOperations.getTargets(thisNode, "parameterType", true)) {
@@ -19,5 +18,5 @@ public class AbstractFunctionType_Behavior {
     }
     sb.append("~~>").append(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "resultType", true), "virtual_getPresentation_1213877396640", new Object[]{}));
     return sb.append("}").toString();
-  }
-}
+  };;
+;}

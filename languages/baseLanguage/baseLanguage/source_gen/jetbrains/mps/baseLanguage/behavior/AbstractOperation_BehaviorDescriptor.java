@@ -12,26 +12,26 @@ public abstract class AbstractOperation_BehaviorDescriptor extends BaseConcept_B
 
   public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return IOperation_Behavior.virtual_getVariableExpectedName_1213877410087(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
     return IOperation_Behavior.virtual_isDotExpressionLegalAsStatement_1239212437413(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_isLValue_1213877410080(SNode thisNode) {
     return IOperation_Behavior.virtual_isLValue_1213877410080(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
     return IOperation_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
-  }
-
+  };;
+;
   public boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
     return IOperation_Behavior.virtual_operandCanBeNull_323410281720656291(thisNode);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AbstractOperation";
-  }
-}
+  };;
+;}

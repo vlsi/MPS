@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ConceptSwitchStatementCase_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ConceptSwitchStatementCase_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.ConceptSwitchStatementCase";
-  }
-}
+  };;
+;}

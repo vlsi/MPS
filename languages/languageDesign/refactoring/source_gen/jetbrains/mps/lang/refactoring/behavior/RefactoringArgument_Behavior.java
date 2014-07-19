@@ -11,7 +11,6 @@ import org.jetbrains.mps.openapi.model.SReference;
 public class RefactoringArgument_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_isTransient_478744034994716004(SNode thisNode) {
     SNode refactoring = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring", false, false);
     if (!(Refactoring_Behavior.call_isLoggable_1347577327951509202(refactoring))) {

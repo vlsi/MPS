@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class BootstrapActionReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getActionId_1101347953350122762(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "actionId");
   }

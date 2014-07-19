@@ -7,9 +7,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class Node_GetPrevSiblingOperation_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
     return true;
-  }
-}
+  };;
+;}

@@ -10,5 +10,5 @@ public class UnaryMinus_BehaviorDescriptor extends AbstractUnaryNumberOperation_
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.UnaryMinus";
-  }
-}
+  };;
+;}

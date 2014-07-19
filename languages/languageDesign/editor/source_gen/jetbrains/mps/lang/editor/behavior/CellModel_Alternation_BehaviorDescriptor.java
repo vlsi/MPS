@@ -7,21 +7,17 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CellModel_Alternation_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor {
   public CellModel_Alternation_BehaviorDescriptor() {
   }
-
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
     return CellModel_Alternation_Behavior.virtual_getClosingText_1220339738643(thisNode);
-  }
-
-  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
+  };;
+;  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
     return CellModel_Alternation_Behavior.virtual_getOpeningText_1220339714057(thisNode);
-  }
-
-  public boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
+  };;
+;  public boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return CellModel_Alternation_Behavior.virtual_isCellIdInitialized_1229948571177(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_Alternation";
-  }
-}
+  };;
+;}

@@ -45,6 +45,5 @@ public class PlaceholderMethodDeclaration_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(PlaceholderMethodDeclaration_TextGen.class);
 }

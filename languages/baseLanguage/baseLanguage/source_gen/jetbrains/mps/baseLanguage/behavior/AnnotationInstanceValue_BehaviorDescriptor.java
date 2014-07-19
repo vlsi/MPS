@@ -11,5 +11,5 @@ public class AnnotationInstanceValue_BehaviorDescriptor extends BaseConcept_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue";
-  }
-}
+  };;
+;}

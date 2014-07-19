@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class AttributeQualifier_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public AttributeQualifier_BehaviorDescriptor() {
   }
-
   public SNode virtual_getTargetConcept_6407023681583066586(SNode thisNode) {
     return AttributeQualifier_Behavior.virtual_getTargetConcept_6407023681583066586(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.AttributeQualifier";
-  }
-}
+  };;
+;}

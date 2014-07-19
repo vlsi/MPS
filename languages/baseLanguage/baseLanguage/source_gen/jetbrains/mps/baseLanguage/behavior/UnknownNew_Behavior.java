@@ -12,17 +12,17 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class UnknownNew_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static _FunctionTypes._return_P0_E0<? extends SNode> virtual_evaluateSubst_8136348407761606764(SNode thisNode) {
     return ResolveUnknownUtil.resolveNew(thisNode);
-  }
-
+  };;
+;
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     SNode claz = ResolveUnknownUtil.findClass(thisNode, SPropertyOperations.getString(thisNode, "className"));
     if ((claz == null)) {
       return ListSequence.fromList(new ArrayList<SNode>());
     }
     return SNodeOperations.ofConcept(SLinkOperations.getTargets(claz, "member", true), "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
-  }
-}
+  };;
+;}

@@ -10,5 +10,5 @@ public class WhileStatement_BehaviorDescriptor extends AbstractLoopStatement_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.WhileStatement";
-  }
-}
+  };;
+;}

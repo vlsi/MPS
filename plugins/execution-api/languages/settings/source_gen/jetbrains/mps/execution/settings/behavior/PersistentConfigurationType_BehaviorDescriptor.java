@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class PersistentConfigurationType_BehaviorDescriptor extends BaseClassifierType_BehaviorDescriptor {
   public PersistentConfigurationType_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
     return PersistentConfigurationType_Behavior.virtual_getMembers_1213877402148(thisNode, contextNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.settings.structure.PersistentConfigurationType";

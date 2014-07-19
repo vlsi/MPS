@@ -12,10 +12,10 @@ public class StringLiteral_BehaviorDescriptor extends Expression_BehaviorDescrip
 
   public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return StringLiteral_Behavior.virtual_eval_1213877519769(thisNode, module);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.StringLiteral";
-  }
-}
+  };;
+;}

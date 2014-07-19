@@ -13,22 +13,19 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class FilenameFunction_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
+  };;
+;  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> rv = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(rv).addElement(SNodeOperations.getNode("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1233748055915"));
     return rv;
-  }
-
-  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  };;
+;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_fevao9_a0a1();
-  }
-
-  private static SNode _quotation_createNode_fevao9_a0a1() {
+  };;
+;  private static SNode _quotation_createNode_fevao9_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);
     return quotedNode_1;
-  }
-}
+  };;
+;}

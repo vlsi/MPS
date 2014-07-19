@@ -6,9 +6,8 @@ package jetbrains.mps.lang.editor.behavior;
 public class ApplyStyleClassCondition_BehaviorDescriptor extends ApplyStyleClass_BehaviorDescriptor {
   public ApplyStyleClassCondition_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.ApplyStyleClassCondition";
-  }
-}
+  };;
+;}

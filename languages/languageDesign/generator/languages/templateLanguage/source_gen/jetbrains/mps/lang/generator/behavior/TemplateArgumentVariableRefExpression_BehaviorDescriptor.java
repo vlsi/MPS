@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class TemplateArgumentVariableRefExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public TemplateArgumentVariableRefExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.TemplateArgumentVariableRefExpression";
-  }
-}
+  };;
+;}

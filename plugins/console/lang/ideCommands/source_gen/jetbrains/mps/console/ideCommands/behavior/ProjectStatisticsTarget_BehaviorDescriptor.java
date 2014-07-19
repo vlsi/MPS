@@ -10,15 +10,12 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 public class ProjectStatisticsTarget_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IStatisticsTarget_BehaviorDescriptor, INodeSetReference_BehaviorDescriptor {
   public ProjectStatisticsTarget_BehaviorDescriptor() {
   }
-
   public Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
     return ProjectStatisticsTarget_Behavior.virtual_getNodes_5207260697411458163(thisNode, context);
   }
-
   public Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
     return ProjectStatisticsTarget_Behavior.virtual_getStat_7490254719527247609(thisNode, context);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.ProjectStatisticsTarget";

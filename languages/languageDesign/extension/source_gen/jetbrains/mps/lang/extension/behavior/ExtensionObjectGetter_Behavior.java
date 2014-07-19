@@ -9,11 +9,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class ExtensionObjectGetter_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", false, false), "extensionPoint", false), "objectType", true);
   }
-
   public static SNode call_getReturnClassifierType_7261386713308443934(SNode thisNode) {
     return ExtensionPointDeclaration_Behavior.call_getObjectClassifierType_6778078592468845406(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.extension.structure.ExtensionDeclaration", false, false), "extensionPoint", false));
   }

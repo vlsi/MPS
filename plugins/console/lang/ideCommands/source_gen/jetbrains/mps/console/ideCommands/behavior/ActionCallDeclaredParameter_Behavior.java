@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ActionCallDeclaredParameter_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getParameterDeclaration_5582028874769074473(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "declaration", false), "virtual_getFieldDeclaration_1171743928471867409", new Object[]{});
   }

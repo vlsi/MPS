@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class StyleAttributeReferenceExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public StyleAttributeReferenceExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleAttributeReferenceExpression";
-  }
-}
+  };;
+;}

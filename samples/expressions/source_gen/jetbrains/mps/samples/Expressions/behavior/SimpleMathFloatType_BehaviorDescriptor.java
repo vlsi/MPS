@@ -6,7 +6,6 @@ package jetbrains.mps.samples.Expressions.behavior;
 public class SimpleMathFloatType_BehaviorDescriptor extends SimpleMathType_BehaviorDescriptor {
   public SimpleMathFloatType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.Expressions.structure.SimpleMathFloatType";

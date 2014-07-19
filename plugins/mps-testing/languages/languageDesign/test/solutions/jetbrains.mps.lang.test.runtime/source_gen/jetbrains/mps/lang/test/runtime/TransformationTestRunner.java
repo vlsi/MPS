@@ -41,17 +41,12 @@ public class TransformationTestRunner implements TestRunner {
   private static final String PATH_MACRO_PREFIX = "path.macro.";
   private static final StringSelection EMPTY_CLIPBOARD_CONTENT = new StringSelection("");
 
-
   public TransformationTestRunner() {
   }
-
-
 
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName) throws Exception {
     initTest(test, projectPath, modelName, false, false);
   }
-
-
 
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean uiTest, boolean reopenProject) throws Exception {
     // todo: create configuration pack for TransformationTest 
@@ -63,8 +58,6 @@ public class TransformationTestRunner implements TestRunner {
     ModelAccess.instance().flushEventQueue();
   }
 
-
-
   private void startMps() {
     RuntimeFlags.setTestMode(true);
     MpsTestsSupport.initEnv(true);
@@ -72,8 +65,6 @@ public class TransformationTestRunner implements TestRunner {
     clearSystemClipboard();
     readSystemMacro();
   }
-
-
 
   protected void doInitTest(@NotNull final TransformationTest test, final Project testProject, final String modelName) throws InterruptedException, InvocationTargetException {
     test.setProject(testProject);
@@ -83,15 +74,11 @@ public class TransformationTestRunner implements TestRunner {
         initialize(test, modelName);
       }
 
-
-
       private void initialize(final TransformationTest test, final String modelName) {
         SModel modelDescriptor = findModel(modelName);
         test.setModelDescriptor(modelDescriptor);
         test.init();
       }
-
-
 
       private SModel findModel(final String modelName) {
         SModel modelDescriptor = SModelRepository.getInstance().getModelDescriptor(PersistenceFacade.getInstance().createModelReference(modelName));
@@ -108,8 +95,6 @@ public class TransformationTestRunner implements TestRunner {
       }
     });
   }
-
-
 
   protected Project openTestProject(String projectPathName, boolean reopenProject) {
     String expandedProjectPath = MacrosFactory.getGlobal().expandPath(projectPathName);
@@ -136,8 +121,6 @@ public class TransformationTestRunner implements TestRunner {
     }
   }
 
-
-
   private Project anyOpenedProject() {
     for (Project project : ProjectManager.getInstance().getOpenProjects()) {
       if (project != null && !(project.isDisposed())) {
@@ -147,8 +130,6 @@ public class TransformationTestRunner implements TestRunner {
     Assert.fail("MPS Project was not specified in the test class, no opened project was found.");
     return null;
   }
-
-
 
   public void runTest(@NotNull final TransformationTest projectTest, final String className, final String methodName, boolean runInCommand) throws Throwable {
     if (LOG.isInfoEnabled()) {
@@ -188,8 +169,6 @@ public class TransformationTestRunner implements TestRunner {
     }
   }
 
-
-
   private void dispose(final TransformationTest projectTest) {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -198,8 +177,6 @@ public class TransformationTestRunner implements TestRunner {
     });
   }
 
-
-
   private static void clearSystemClipboard() {
     if (GraphicsEnvironment.isHeadless()) {
       return;
@@ -207,8 +184,6 @@ public class TransformationTestRunner implements TestRunner {
     Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
     clipboard.setContents(EMPTY_CLIPBOARD_CONTENT, EMPTY_CLIPBOARD_CONTENT);
   }
-
-
 
   /**
    * to enable such macros as ${charisma}; see MPS-10568
@@ -232,8 +207,6 @@ public class TransformationTestRunner implements TestRunner {
     return provider;
   }
 
-
-
   private Throwable tryToRunTest(Class clazz, String methodName, Object obj) {
     Throwable exception = null;
     try {
@@ -247,9 +220,7 @@ public class TransformationTestRunner implements TestRunner {
     }
     return exception;
   }
-
   protected static Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
-
   private static ClassLoader check_ovzmet_a0b0a0a2a71(Class checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassLoader();

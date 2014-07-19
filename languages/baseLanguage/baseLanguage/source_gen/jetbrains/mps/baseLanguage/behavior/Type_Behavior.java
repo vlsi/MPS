@@ -28,20 +28,20 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Type_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
     for (String s : NameUtil.splitByCamels(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{}))) {
       ListSequence.fromList(result).addElement(s);
     }
     return result;
-  }
-
+  };;
+;
   public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
     return false;
-  }
-
+  };;
+;
   public static String virtual_getErasureSignature_1213877337313(SNode thisNode) {
     SNode javaType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getErasure_702942408396803226", new Object[]{});
     if ((javaType == null)) {
@@ -51,34 +51,34 @@ public class Type_Behavior {
       return BehaviorReflection.invokeVirtual(String.class, javaType, "virtual_getPresentation_1213877396640", new Object[]{});
     }
     return BehaviorReflection.invokeVirtual(String.class, javaType, "virtual_getErasureSignature_1213877337313", new Object[]{});
-  }
-
+  };;
+;
   public static SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     // all 'JavaType's should have getErasure() implemented 
     SNode javaType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getJavaType_1213877337345", new Object[]{});
     return ((javaType == null) ? null : BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), javaType, "virtual_getErasure_702942408396803226", new Object[]{}));
-  }
-
+  };;
+;
   public static boolean virtual_isReifiable_2817265908000464118(SNode thisNode) {
     return true;
-  }
-
+  };;
+;
   public static boolean virtual_isValueType_4836112446988592019(SNode thisNode) {
     return true;
-  }
-
+  };;
+;
   public static SNode virtual_getBoxedType_1213877337320(SNode thisNode) {
     return SNodeOperations.copyNode(thisNode);
-  }
-
+  };;
+;
   public static Class call_getClass_1213877337327(SNode thisNode, SModule module) {
     return ReflectionUtil.forName(module, SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false));
-  }
-
+  };;
+;
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     return null;
-  }
-
+  };;
+;
   public static List<SNode> virtual_getAbstractCreators_1226945293888(SNode thisNode) {
     List<SNode> creators = new ArrayList<SNode>();
     SNode ac = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getAbstractCreator_1213877337340", new Object[]{});
@@ -86,20 +86,20 @@ public class Type_Behavior {
       ListSequence.fromList(creators).addElement(ac);
     }
     return creators;
-  }
-
+  };;
+;
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getAbstractCreators_1226945293888", new Object[]{});
-  }
-
+  };;
+;
   public static SNode virtual_getJavaType_1213877337345(SNode thisNode) {
     return TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
-  }
-
+  };;
+;
   public static boolean virtual_selectOnVariableCreation_1213877337352(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_hasMissingParameters_3508583411997314206", new Object[]{});
-  }
-
+  };;
+;
   @Deprecated
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     {
@@ -111,8 +111,8 @@ public class Type_Behavior {
         throw new UnsupportedOperationException();
       }
     }
-  }
-
+  };;
+;
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     {
       GeneratedMatchingPattern pattern_smb55n_a0o = new Type_Behavior.Pattern_smb55n_a0a0a0a51(thisNode);
@@ -123,8 +123,8 @@ public class Type_Behavior {
       }
     }
     return false;
-  }
-
+  };;
+;
   public static boolean virtual_isSupersetOf_9029841626175335449(SNode thisNode, SNode t, Map<SNode, SNode> substitutions) {
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
       t = SNodeOperations.cast(MapSequence.fromMap(substitutions).get(SLinkOperations.getTarget(SNodeOperations.cast(t, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Type");
@@ -134,32 +134,32 @@ public class Type_Behavior {
     }
 
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isSupersetOf_1220438914705", new Object[]{t});
-  }
-
+  };;
+;
   public static SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
     return null;
-  }
-
+  };;
+;
   public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
     return false;
-  }
-
+  };;
+;
   public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
     SNode looseType = SNodeOperations.copyNode(thisNode);
     for (SNode varRef : SNodeOperations.getDescendants(looseType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})) {
       SNodeOperations.replaceWithAnother(varRef, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), varRef, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes}));
     }
     return looseType;
-  }
-
+  };;
+;
   public static String virtual_jniSignature_8847328628797633411(SNode thisNode) {
     return null;
-  }
-
+  };;
+;
   public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
     return true;
-  }
-
+  };;
+;
   public static class Pattern_smb55n_a0a0a0a51 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ Object AntiquotationField_smb55n_a0a0a0a41;
 
@@ -175,22 +175,22 @@ public class Type_Behavior {
         }
       }
       return true;
-    }
-
+    };;
+;
     public boolean hasAntiquotations() {
       return true;
-    }
-
+    };;
+;
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-    }
-
+    };;
+;
     public Object getFieldValue(String fieldName) {
       return null;
-    }
-
+    };;
+;
     public void performActions(Object o) {
-    }
-  }
+    };;
+;  }
 
   private static SNode _quotation_createNode_smb55n_a0a2a0a31(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -198,5 +198,5 @@ public class Type_Behavior {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
-  }
-}
+  };;
+;}

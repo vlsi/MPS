@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ActionCallGlobalParameter_BehaviorDescriptor extends ActionCallParameter_BehaviorDescriptor {
   public ActionCallGlobalParameter_BehaviorDescriptor() {
   }
-
   public SNode virtual_getParameterDeclaration_5582028874769074473(SNode thisNode) {
     return ActionCallGlobalParameter_Behavior.virtual_getParameterDeclaration_5582028874769074473(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.ActionCallGlobalParameter";

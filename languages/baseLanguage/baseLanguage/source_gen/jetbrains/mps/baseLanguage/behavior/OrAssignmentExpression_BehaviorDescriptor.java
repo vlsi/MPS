@@ -10,5 +10,5 @@ public class OrAssignmentExpression_BehaviorDescriptor extends OperationAssignme
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.OrAssignmentExpression";
-  }
-}
+  };;
+;}

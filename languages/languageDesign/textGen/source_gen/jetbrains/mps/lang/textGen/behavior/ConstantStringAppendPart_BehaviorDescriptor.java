@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ConstantStringAppendPart_BehaviorDescriptor extends AbstractAppendPart_BehaviorDescriptor {
   public ConstantStringAppendPart_BehaviorDescriptor() {
   }
-
   public boolean virtual_withIndent_1237466287046(SNode thisNode) {
     return ConstantStringAppendPart_Behavior.virtual_withIndent_1237466287046(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart";
-  }
-}
+  };;
+;}

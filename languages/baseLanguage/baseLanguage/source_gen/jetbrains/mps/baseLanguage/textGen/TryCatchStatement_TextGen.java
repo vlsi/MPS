@@ -43,6 +43,5 @@ public class TryCatchStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(TryCatchStatement_TextGen.class);
 }

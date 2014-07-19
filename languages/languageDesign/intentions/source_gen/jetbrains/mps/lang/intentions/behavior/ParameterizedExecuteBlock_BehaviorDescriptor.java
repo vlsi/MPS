@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ParameterizedExecuteBlock_BehaviorDescriptor extends ExecuteBlock_BehaviorDescriptor {
   public ParameterizedExecuteBlock_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return ParameterizedExecuteBlock_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock";
-  }
-}
+  };;
+;}

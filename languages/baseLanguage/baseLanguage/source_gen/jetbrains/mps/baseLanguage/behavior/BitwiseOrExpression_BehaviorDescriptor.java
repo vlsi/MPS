@@ -10,10 +10,10 @@ public class BitwiseOrExpression_BehaviorDescriptor extends BinaryBitwiseOperati
 
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return BitwiseOrExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression";
-  }
-}
+  };;
+;}

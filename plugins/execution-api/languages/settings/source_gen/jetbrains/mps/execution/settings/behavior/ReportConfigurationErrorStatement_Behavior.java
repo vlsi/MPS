@@ -14,12 +14,10 @@ import jetbrains.mps.smodel.SReference;
 public class ReportConfigurationErrorStatement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.Statement", "virtual_collectUncaughtMethodThrowables_5412515780383134223", new Object[]{throwables, ignoreMayBeThrowables});
     SetSequence.fromSet(throwables).addElement(SLinkOperations.getTarget(_quotation_createNode_3gtax0_a0a0b0a(), "classifier", false));
   }
-
   private static SNode _quotation_createNode_3gtax0_a0a0b0a() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

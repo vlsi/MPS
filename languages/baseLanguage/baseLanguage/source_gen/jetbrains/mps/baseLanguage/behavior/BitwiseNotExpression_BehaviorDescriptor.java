@@ -10,5 +10,5 @@ public class BitwiseNotExpression_BehaviorDescriptor extends Expression_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.BitwiseNotExpression";
-  }
-}
+  };;
+;}

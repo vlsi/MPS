@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class TransactionPropertyHandler_oldValue_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public TransactionPropertyHandler_oldValue_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_oldValue";
-  }
-}
+  };;
+;}

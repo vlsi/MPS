@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public abstract class MatrixExponentialOperation_BehaviorDescriptor extends ExponentialOperation_BehaviorDescriptor {
   public MatrixExponentialOperation_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getAllowedSubstituends_3044950653914716992(SConcept thisConcept) {
     return MatrixExponentialOperation_Behavior.virtual_getAllowedSubstituends_3044950653914716992(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation";

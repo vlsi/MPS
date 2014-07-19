@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class UtilityMethodCall_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public UtilityMethodCall_BehaviorDescriptor() {
   }
-
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return UtilityMethodCall_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.UtilityMethodCall";
-  }
-}
+  };;
+;}

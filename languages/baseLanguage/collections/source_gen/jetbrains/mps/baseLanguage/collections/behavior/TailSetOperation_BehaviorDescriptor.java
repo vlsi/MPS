@@ -6,9 +6,8 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class TailSetOperation_BehaviorDescriptor extends SortedSetOperation_BehaviorDescriptor {
   public TailSetOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.TailSetOperation";
-  }
-}
+  };;
+;}

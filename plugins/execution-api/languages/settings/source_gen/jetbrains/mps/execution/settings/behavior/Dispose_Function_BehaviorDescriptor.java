@@ -8,19 +8,15 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class Dispose_Function_BehaviorDescriptor extends EditorOperationDeclaration_BehaviorDescriptor {
   public Dispose_Function_BehaviorDescriptor() {
   }
-
   public SNode virtual_getJavaMethod_946964771156066991(SNode thisNode) {
     return Dispose_Function_Behavior.virtual_getJavaMethod_946964771156066991(thisNode);
   }
-
   public SNode virtual_getPublicJavaMethod_203908296139519011(SNode thisNode) {
     return Dispose_Function_Behavior.virtual_getPublicJavaMethod_203908296139519011(thisNode);
   }
-
   public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return Dispose_Function_Behavior.virtual_showName_1262430001741498082(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.settings.structure.Dispose_Function";

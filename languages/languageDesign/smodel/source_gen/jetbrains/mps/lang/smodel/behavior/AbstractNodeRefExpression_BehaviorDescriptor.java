@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class AbstractNodeRefExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public AbstractNodeRefExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.AbstractNodeRefExpression";
-  }
-
-  public abstract SNode virtual_getTargetNode_3575813534625153815(SNode thisNode);
+  };;
+;  public abstract SNode virtual_getTargetNode_3575813534625153815(SNode thisNode);
 }

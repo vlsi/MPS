@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class RemoveGenSources_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
     return "delete source_gen and source_gen.caches directories";
   }

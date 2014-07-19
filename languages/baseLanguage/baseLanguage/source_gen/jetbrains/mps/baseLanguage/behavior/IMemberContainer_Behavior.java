@@ -8,13 +8,13 @@ import java.util.ArrayList;
 
 public class IMemberContainer_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static List<SNode> virtual_getMethodsToOverride_5418393554803767537(SNode thisNode) {
     return new ArrayList<SNode>();
-  }
-
+  };;
+;
   public static List<SNode> virtual_getMethodsToImplement_5418393554803775106(SNode thisNode) {
     return new ArrayList<SNode>();
-  }
-}
+  };;
+;}

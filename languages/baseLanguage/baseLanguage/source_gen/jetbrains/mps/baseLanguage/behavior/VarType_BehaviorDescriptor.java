@@ -10,5 +10,5 @@ public class VarType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.VarType";
-  }
-}
+  };;
+;}

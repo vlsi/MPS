@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class InternalSuperMethodCallOperation_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public InternalSuperMethodCallOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
     return InternalSuperMethodCallOperation_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalSuperMethodCallOperation";
-  }
-}
+  };;
+;}

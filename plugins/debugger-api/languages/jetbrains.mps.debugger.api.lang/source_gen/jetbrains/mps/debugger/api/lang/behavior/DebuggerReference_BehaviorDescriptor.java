@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class DebuggerReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public DebuggerReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.api.lang.structure.DebuggerReference";

@@ -14,9 +14,8 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class ConstraintFunction_PropertyGetter_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  };;
+;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode propertyConstraint = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", false, false);
     SNode property = SLinkOperations.getTarget(propertyConstraint, "applicableProperty", false);
     SNode dataType = SLinkOperations.getTarget(property, "dataType", false);
@@ -24,18 +23,16 @@ public class ConstraintFunction_PropertyGetter_Behavior {
       return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), dataType, "virtual_toBaseLanguageType_1213877229718", new Object[]{});
     }
     return _quotation_createNode_25x9xv_a4a0();
-  }
-
-  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
+  };;
+;  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)", "1147468365020"));
     return result;
-  }
-
-  private static SNode _quotation_createNode_25x9xv_a4a0() {
+  };;
+;  private static SNode _quotation_createNode_25x9xv_a4a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);
     return quotedNode_1;
-  }
-}
+  };;
+;}

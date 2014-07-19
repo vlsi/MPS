@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class MovingAverage_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public MovingAverage_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "org.jetbrains.mps.samples.Money.structure.MovingAverage";

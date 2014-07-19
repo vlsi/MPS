@@ -61,6 +61,5 @@ public class BlockStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(BlockStatement_TextGen.class);
 }

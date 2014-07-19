@@ -11,5 +11,5 @@ public abstract class MethodDeclaration_BehaviorDescriptor extends BaseMethodDec
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.MethodDeclaration";
-  }
-}
+  };;
+;}

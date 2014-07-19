@@ -14,7 +14,6 @@ public class CustomContainerDeclaration_Constraints extends BaseConstraintsDescr
   public CustomContainerDeclaration_Constraints() {
     super("jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -22,9 +21,8 @@ public class CustomContainerDeclaration_Constraints extends BaseConstraintsDescr
       @Override
       public boolean hasOwnValidator() {
         return true;
-      }
-
-      @Override
+      };;
+;      @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
         for (int i = 0; i < (SPropertyOperations.getString(propertyValue)).length(); i++) {
@@ -34,8 +32,8 @@ public class CustomContainerDeclaration_Constraints extends BaseConstraintsDescr
           }
         }
         return true;
-      }
-    });
+      };;
+;    });
     return properties;
-  }
-}
+  };;
+;}

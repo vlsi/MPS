@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class PaddingTopStyleClassItem_BehaviorDescriptor extends AbstractPaddingStyleClassItem_BehaviorDescriptor {
   public PaddingTopStyleClassItem_BehaviorDescriptor() {
   }
-
   public boolean virtual_canUseSpaces_1226492824000(SNode thisNode) {
     return PaddingTopStyleClassItem_Behavior.virtual_canUseSpaces_1226492824000(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.PaddingTopStyleClassItem";
-  }
-}
+  };;
+;}

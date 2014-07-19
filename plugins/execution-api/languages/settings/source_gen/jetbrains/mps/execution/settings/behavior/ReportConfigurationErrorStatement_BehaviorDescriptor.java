@@ -9,11 +9,9 @@ import java.util.Set;
 public class ReportConfigurationErrorStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public ReportConfigurationErrorStatement_BehaviorDescriptor() {
   }
-
   public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     ReportConfigurationErrorStatement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.settings.structure.ReportConfigurationErrorStatement";

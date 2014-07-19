@@ -6,9 +6,8 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class AddAllSetElementsOperation_BehaviorDescriptor extends AbstractSetOperation_BehaviorDescriptor {
   public AddAllSetElementsOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation";
-  }
-}
+  };;
+;}

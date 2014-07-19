@@ -10,13 +10,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ExtractStatementListExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements ILocalVariableElementList_BehaviorDescriptor {
   public ExtractStatementListExpression_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     return ExtractStatementListExpression_Behavior.virtual_getLocalVariableElements_1238805763253(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.ExtractStatementListExpression";
-  }
-}
+  };;
+;}

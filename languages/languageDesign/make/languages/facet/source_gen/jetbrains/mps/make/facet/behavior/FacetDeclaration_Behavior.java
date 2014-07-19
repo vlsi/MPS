@@ -21,7 +21,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 public class FacetDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<SNode> call_allExtends_7854369758457864780(SNode thisNode) {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
     Queue<SNode> queue = QueueSequence.fromQueueAndArray(new LinkedList<SNode>(), thisNode);
@@ -38,7 +37,6 @@ public class FacetDeclaration_Behavior {
     }
     return result;
   }
-
   public static Iterable<SNode> call_allRelated_8351679702044331818(SNode thisNode) {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
     Queue<SNode> queue = QueueSequence.fromQueueAndArray(new LinkedList<SNode>(), thisNode);
@@ -60,11 +58,9 @@ public class FacetDeclaration_Behavior {
     }
     return result;
   }
-
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
   }
-
   public static String call_getFacetFqName_1919086248986828221(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SModelOperations.getModuleStub(SNodeOperations.getModel(thisNode)), "virtual_getFqName_1213877404258", new Object[]{}) + "." + SPropertyOperations.getString(thisNode, "name");
   }

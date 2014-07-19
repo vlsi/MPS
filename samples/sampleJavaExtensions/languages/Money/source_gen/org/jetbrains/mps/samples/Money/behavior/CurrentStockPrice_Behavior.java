@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class CurrentStockPrice_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Money call_getCurrentPrice_4001135958233293105(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "symbol", true) == null)) {
       return new Money(BigDecimal.ZERO, "USD");

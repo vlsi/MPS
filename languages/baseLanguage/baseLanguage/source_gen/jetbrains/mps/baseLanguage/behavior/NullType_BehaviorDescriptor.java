@@ -11,5 +11,5 @@ public class NullType_BehaviorDescriptor extends PrimitiveType_BehaviorDescripto
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.NullType";
-  }
-}
+  };;
+;}

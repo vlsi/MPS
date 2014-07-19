@@ -10,5 +10,5 @@ public class UnsignedRightShiftAssignmentExpression_BehaviorDescriptor extends O
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.UnsignedRightShiftAssignmentExpression";
-  }
-}
+  };;
+;}

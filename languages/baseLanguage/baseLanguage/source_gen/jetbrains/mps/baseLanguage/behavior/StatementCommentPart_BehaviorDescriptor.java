@@ -10,5 +10,5 @@ public class StatementCommentPart_BehaviorDescriptor extends CommentPart_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.StatementCommentPart";
-  }
-}
+  };;
+;}

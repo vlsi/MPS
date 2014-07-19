@@ -10,17 +10,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class OverloadedOpIsApplicableFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public OverloadedOpIsApplicableFunction_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return OverloadedOpIsApplicableFunction_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  }
-
-  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  };;
+;  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return OverloadedOpIsApplicableFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.OverloadedOpIsApplicableFunction";
-  }
-}
+  };;
+;}

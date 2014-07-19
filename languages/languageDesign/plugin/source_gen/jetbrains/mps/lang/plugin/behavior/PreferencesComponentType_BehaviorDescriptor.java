@@ -9,17 +9,14 @@ import java.util.List;
 public class PreferencesComponentType_BehaviorDescriptor extends BaseClassifierType_BehaviorDescriptor {
   public PreferencesComponentType_BehaviorDescriptor() {
   }
-
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return PreferencesComponentType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
-  }
-
-  public List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
+  };;
+;  public List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
     return PreferencesComponentType_Behavior.virtual_getMembers_1213877402148(thisNode, contextNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.PreferencesComponentType";
-  }
-}
+  };;
+;}

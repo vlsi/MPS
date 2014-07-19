@@ -6,7 +6,6 @@ package jetbrains.mps.console.base.behavior;
 public class OutputConsoleRoot_BehaviorDescriptor extends ConsoleRoot_BehaviorDescriptor {
   public OutputConsoleRoot_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.OutputConsoleRoot";

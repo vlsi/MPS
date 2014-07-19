@@ -16,9 +16,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ExtractStaticMethod_CallExpression_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
+  };;
+;  public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode bmd : ExtractStaticMethod_CallExpression_Behavior.call_getMethods_5857910569715993654(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethod_CallExpression"))), thisNode)) {
       String name = SPropertyOperations.getString(SNodeOperations.cast(bmd, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), "name");
@@ -27,26 +26,23 @@ public class ExtractStaticMethod_CallExpression_Behavior {
       }
     }
     return result;
-  }
-
-  public static SNode call_getContainingExtractExpr_8881995820265485533(SNode thisNode) {
+  };;
+;  public static SNode call_getContainingExtractExpr_8881995820265485533(SNode thisNode) {
     for (SNode es : SNodeOperations.getAncestors(thisNode, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", false)) {
       if (SLinkOperations.getTarget(es, "method", true) == SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false)) {
         return es;
       }
     }
     return null;
-  }
-
-  public static boolean virtual_substituteInAmbigousPosition_1262430001741498020(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_substituteInAmbigousPosition_1262430001741498020(SAbstractConcept thisConcept) {
     return true;
-  }
-
-  public static List<SNode> call_getMethods_5857910569715993654(SAbstractConcept thisConcept, SNode context) {
+  };;
+;  public static List<SNode> call_getMethods_5857910569715993654(SAbstractConcept thisConcept, SNode context) {
     List<SNode> smd = new ArrayList<SNode>();
     for (SNode es : SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression", true)) {
       ListSequence.fromList(smd).addElement(SLinkOperations.getTarget(es, "method", true));
     }
     return smd;
-  }
-}
+  };;
+;}

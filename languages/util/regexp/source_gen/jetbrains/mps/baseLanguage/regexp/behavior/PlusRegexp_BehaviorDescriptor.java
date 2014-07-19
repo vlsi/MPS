@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 public class PlusRegexp_BehaviorDescriptor extends UnaryRegexp_BehaviorDescriptor {
   public PlusRegexp_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp";

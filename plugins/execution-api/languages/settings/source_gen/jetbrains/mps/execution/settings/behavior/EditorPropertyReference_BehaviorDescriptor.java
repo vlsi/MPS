@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class EditorPropertyReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public EditorPropertyReference_BehaviorDescriptor() {
   }
-
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return EditorPropertyReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.settings.structure.EditorPropertyReference";

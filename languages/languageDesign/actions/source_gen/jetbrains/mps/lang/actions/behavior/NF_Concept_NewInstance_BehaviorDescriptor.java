@@ -8,17 +8,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class NF_Concept_NewInstance_BehaviorDescriptor extends Concept_NewInstance_BehaviorDescriptor {
   public NF_Concept_NewInstance_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
     return NF_Concept_NewInstance_Behavior.virtual_applicableToConcept_1262430001741498358(thisConcept);
-  }
-
-  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
+  };;
+;  public boolean virtual_applicableToLink_1262430001741498352(SConcept thisConcept) {
     return NF_Concept_NewInstance_Behavior.virtual_applicableToLink_1262430001741498352(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NF_Concept_NewInstance";
-  }
-}
+  };;
+;}

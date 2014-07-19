@@ -18,83 +18,67 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class SNodeOperation_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode call_getLeftExpression_1213877508894(SNode thisNode) {
+  };;
+;  public static SNode call_getLeftExpression_1213877508894(SNode thisNode) {
     SNode parent = SNodeOperations.getParent(thisNode);
     return SLinkOperations.getTarget(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-  }
-
-  public static SNode call_getLeftExpressionLeftExpression_1213877508920(SNode thisNode) {
+  };;
+;  public static SNode call_getLeftExpressionLeftExpression_1213877508920(SNode thisNode) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode);
     if (!(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return null;
     }
     return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-  }
-
-  public static SNode call_getLeftExpressionOperation_1213877508946(SNode thisNode) {
+  };;
+;  public static SNode call_getLeftExpressionOperation_1213877508946(SNode thisNode) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(thisNode);
     if (!(SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
       return null;
     }
     return SLinkOperations.getTarget(SNodeOperations.cast(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true);
-  }
-
-  public static SNode call_getParameter_1213877508972(SNode thisNode, final SNode parameterConcept) {
+  };;
+;  public static SNode call_getParameter_1213877508972(SNode thisNode, final SNode parameterConcept) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, NameUtil.nodeFQName(parameterConcept));
-      }
-    }).first();
-  }
-
-  public static boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
+      };;
+;    }).first();
+  };;
+;  public static boolean virtual_operandCanBeNull_323410281720656291(SNode thisNode) {
     return true;
-  }
-
-  public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
+  };;
+;  public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     String variableExpectedName = NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias"));
     return variableExpectedName;
-  }
-
-  public static boolean virtual_applicableToModel_1262430001741492322(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToModel_1262430001741492322(SAbstractConcept thisConcept) {
     return false;
-  }
-
-  public static boolean virtual_applicableToConceptProperty_1262430001741497945(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToConceptProperty_1262430001741497945(SAbstractConcept thisConcept) {
     return false;
-  }
-
-  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
     return false;
-  }
-
-  public static boolean virtual_applicableToSimpleProperty_1262430001741498100(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToSimpleProperty_1262430001741498100(SAbstractConcept thisConcept) {
     return false;
-  }
-
-  public static boolean virtual_applicableToEnumProperty_1262430001741498259(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToEnumProperty_1262430001741498259(SAbstractConcept thisConcept) {
     return false;
-  }
-
-  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return false;
-  }
-
-  public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
     return false;
-  }
-
-  public static boolean virtual_applicableToLinkList_1262430001741498382(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToLinkList_1262430001741498382(SAbstractConcept thisConcept) {
     return false;
-  }
-
-  public static List<SNode> virtual_getApplicableParameter_3044950653914717056(SAbstractConcept thisConcept) {
+  };;
+;  public static List<SNode> virtual_getApplicableParameter_3044950653914717056(SAbstractConcept thisConcept) {
     return ListSequence.fromList(new ArrayList<SNode>());
-  }
-
-  public static SNode call_getLeftNodeConcept_1213877508847(SAbstractConcept thisConcept, SNode parent) {
+  };;
+;  public static SNode call_getLeftNodeConcept_1213877508847(SAbstractConcept thisConcept, SNode parent) {
     SNode operand = SLinkOperations.getTarget(parent, "operand", true);
     SNode result = SModelLanguageUtil.getConcept(operand);
     if ((result != null)) {
@@ -103,5 +87,5 @@ public class SNodeOperation_Behavior {
     SNode operandType = TypeChecker.getInstance().getTypeOf(operand);
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(operandType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
     return ((SLinkOperations.getTarget(nodeType, "concept", false) != null) ? SLinkOperations.getTarget(nodeType, "concept", false) : SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"));
-  }
-}
+  };;
+;}

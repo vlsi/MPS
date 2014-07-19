@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ImmediateSupertypesExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ImmediateSupertypesExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ImmediateSupertypesExpression";
-  }
-}
+  };;
+;}

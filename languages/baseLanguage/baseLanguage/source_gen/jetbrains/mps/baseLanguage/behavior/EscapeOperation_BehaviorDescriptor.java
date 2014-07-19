@@ -10,5 +10,5 @@ public class EscapeOperation_BehaviorDescriptor extends BaseStringOperation_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.EscapeOperation";
-  }
-}
+  };;
+;}

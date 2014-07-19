@@ -20,19 +20,16 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class IClassifier_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_createType_1213877527970(SNode thisNode) {
+  };;
+;  public static SNode virtual_createType_1213877527970(SNode thisNode) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierType", null);
     SLinkOperations.setTarget(result, "classifier", thisNode, false);
     return result;
-  }
-
-  public static SNode virtual_createSuperType_1217433657148(SNode thisNode) {
+  };;
+;  public static SNode virtual_createSuperType_1217433657148(SNode thisNode) {
     return null;
-  }
-
-  public static List<SNode> virtual_getParts_1213877527988(SNode thisNode) {
+  };;
+;  public static List<SNode> virtual_getParts_1213877527988(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode part : SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart")) {
       if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), part, "virtual_getMainClassifier_1213877255428", new Object[]{}) == thisNode) {
@@ -40,9 +37,8 @@ public class IClassifier_Behavior {
       }
     }
     return result;
-  }
-
-  public static List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
+  };;
+;  public static List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode member : BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getMembers_1213877528124", new Object[]{})) {
       if (BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), member, "virtual_getVisiblity_1213877352965", new Object[]{}) == null && SNodeOperations.getModel(member) == SNodeOperations.getModel(contextNode)) {
@@ -62,9 +58,8 @@ public class IClassifier_Behavior {
       }
     }
     return result;
-  }
-
-  public static List<SNode> virtual_getMembers_1213877528124(SNode thisNode) {
+  };;
+;  public static List<SNode> virtual_getMembers_1213877528124(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode child : SNodeOperations.getChildren(thisNode)) {
       if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.classifiers.structure.IMember")) {
@@ -75,16 +70,14 @@ public class IClassifier_Behavior {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(IClassifierPart_Behavior.call_getMembers_1213877255431(part)));
     }
     return result;
-  }
-
-  public static IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
+  };;
+;  public static IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
     return new AbstractExtractMethodRefactoringProcessor(thisNode, nodesToRefactor) {
       @Override
       public SNode createNewMethod() {
         return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", null);
-      }
-
-      @Override
+      };;
+;      @Override
       public SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres) {
         SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", null);
         SLinkOperations.setTarget(call, "member", SNodeOperations.cast(methodDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration"), false);
@@ -93,15 +86,14 @@ public class IClassifier_Behavior {
         SLinkOperations.setTarget(result, "operand", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression", null), true);
         SLinkOperations.setTarget(result, "operation", call, true);
         return result;
-      }
-    };
-  }
-
-  public static SNode call_getContextClassifier_1213877527940(SAbstractConcept thisConcept, SNode contextNode) {
+      };;
+;    };
+  };;
+;  public static SNode call_getContextClassifier_1213877527940(SAbstractConcept thisConcept, SNode contextNode) {
     SNode classifier = SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifier", true, false);
     if (classifier != null) {
       return classifier;
     }
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart", true, false), "virtual_getMainClassifier_1213877255428", new Object[]{});
-  }
-}
+  };;
+;}

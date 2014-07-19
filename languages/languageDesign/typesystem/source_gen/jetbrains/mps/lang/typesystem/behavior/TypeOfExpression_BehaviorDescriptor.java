@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class TypeOfExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public TypeOfExpression_BehaviorDescriptor() {
   }
-
   public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
     return TypeOfExpression_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.TypeOfExpression";
-  }
-}
+  };;
+;}

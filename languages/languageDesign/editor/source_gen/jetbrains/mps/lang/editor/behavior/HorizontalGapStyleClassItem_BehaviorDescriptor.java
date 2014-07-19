@@ -6,9 +6,8 @@ package jetbrains.mps.lang.editor.behavior;
 public class HorizontalGapStyleClassItem_BehaviorDescriptor extends AbstractPaddingStyleClassItem_BehaviorDescriptor {
   public HorizontalGapStyleClassItem_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem";
-  }
-}
+  };;
+;}

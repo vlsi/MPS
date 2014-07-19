@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class NTimesRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     String s = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_getString_1222432436326", new Object[]{vars});
     return ((UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(thisNode) ? Regexp_Behavior.call_par_1222433790846(thisNode, s) : s)) + "{" + SPropertyOperations.getInteger(thisNode, "n") + "}";

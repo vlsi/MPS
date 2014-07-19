@@ -6,9 +6,8 @@ package jetbrains.mps.lang.generator.behavior;
 public class TraceMacro_BehaviorDescriptor extends NodeMacro_BehaviorDescriptor {
   public TraceMacro_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.TraceMacro";
-  }
-}
+  };;
+;}

@@ -15,9 +15,8 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class CellMenuPart_ReplaceChild_Item_Create_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  };;
+;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     if (thisNode == null) {
       return null;
     }
@@ -25,9 +24,8 @@ public class CellMenuPart_ReplaceChild_Item_Create_Behavior {
     SNode editedLink = CellMenuPart_Abstract_Behavior.call_getEditedLink_1219409839992(hostMenuPart);
     SNode conceptOfChild = SLinkOperations.getTarget(editedLink, "target", false);
     return _quotation_createNode_jf8h0a_a4a0(conceptOfChild);
-  }
-
-  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
+  };;
+;  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1162497113192"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1162498275506"));
@@ -35,13 +33,12 @@ public class CellMenuPart_ReplaceChild_Item_Create_Behavior {
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1161622665029"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)", "1163613822479"));
     return result;
-  }
-
-  private static SNode _quotation_createNode_jf8h0a_a4a0(Object parameter_1) {
+  };;
+;  private static SNode _quotation_createNode_jf8h0a_a4a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
-  }
-}
+  };;
+;}

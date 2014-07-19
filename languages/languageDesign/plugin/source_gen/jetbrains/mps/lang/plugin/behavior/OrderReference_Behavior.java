@@ -8,13 +8,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class OrderReference_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static boolean virtual_presents_1499919975383879508(SNode thisNode, SNode tab) {
+  };;
+;  public static boolean virtual_presents_1499919975383879508(SNode thisNode, SNode tab) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "order", false), "virtual_presents_1499919975383879508", new Object[]{tab});
-  }
-
-  public static SNode virtual_getOrder_3038738109029048953(SNode thisNode) {
+  };;
+;  public static SNode virtual_getOrder_3038738109029048953(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "order", false);
-  }
-}
+  };;
+;}

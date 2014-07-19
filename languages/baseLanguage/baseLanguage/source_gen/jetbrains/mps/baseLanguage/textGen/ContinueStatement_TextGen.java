@@ -44,6 +44,5 @@ public class ContinueStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ContinueStatement_TextGen.class);
 }

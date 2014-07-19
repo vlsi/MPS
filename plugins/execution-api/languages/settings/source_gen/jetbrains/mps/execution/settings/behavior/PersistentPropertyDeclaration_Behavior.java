@@ -18,35 +18,28 @@ import jetbrains.mps.smodel.SModelUtil_new;
 public class PersistentPropertyDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_isTemplate_946964771156066860(SNode thisNode) {
     return TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), _quotation_createNode_ex141d_b0a0a0());
   }
-
   public static String call_getAccessorName_946964771156066871(SNode thisNode) {
     String name = PersistentPropertyDeclaration_Behavior.call_removeMyPrefixInternal_946964771156066931(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"))), SPropertyOperations.getString(thisNode, "name"));
     return name.substring(0, 1).toUpperCase() + name.substring(1);
   }
-
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return true;
   }
-
   public static String call_getTypeFqName_946964771156066903(SNode thisNode) {
     SNode template = PersistentPropertyDeclaration_Behavior.call_getTemplate_946964771156066964(thisNode);
     return BehaviorReflection.invokeVirtual(String.class, template, "virtual_getFullName_946964771156905503", new Object[]{});
   }
-
   public static String call_getTypeEditorFqName_946964771156066917(SNode thisNode) {
     SNode template = PersistentPropertyDeclaration_Behavior.call_getTemplate_946964771156066964(thisNode);
     return PersistentConfiguration_Behavior.call_getFullEditorName_946964771156066491(template);
   }
-
   public static SNode call_getTemplate_946964771156066964(SNode thisNode) {
     assert PersistentPropertyDeclaration_Behavior.call_isTemplate_946964771156066860(thisNode);
     return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(thisNode, "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.execution.settings.structure.TemplatePersistentConfigurationType"), true), "persistentConfiguration", false);
   }
-
   public static String call_addMyPrefix_6314556899428615272(SAbstractConcept thisConcept, String name) {
     String prefix = "my";
     if (name.length() > 2) {
@@ -58,7 +51,6 @@ public class PersistentPropertyDeclaration_Behavior {
     }
     return name;
   }
-
   public static String call_removeMyPrefixInternal_946964771156066931(SAbstractConcept thisConcept, String name) {
     String prefix = "my";
     if (name.startsWith(prefix) && name.length() > 2) {
@@ -66,12 +58,10 @@ public class PersistentPropertyDeclaration_Behavior {
     }
     return name;
   }
-
   public static String call_removeMyPrefix_946964771156066836(SAbstractConcept thisConcept, String name) {
     name = PersistentPropertyDeclaration_Behavior.call_removeMyPrefixInternal_946964771156066931(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentPropertyDeclaration"))), name);
     return name.substring(0, 1).toLowerCase() + name.substring(1);
   }
-
   private static SNode _quotation_createNode_ex141d_b0a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

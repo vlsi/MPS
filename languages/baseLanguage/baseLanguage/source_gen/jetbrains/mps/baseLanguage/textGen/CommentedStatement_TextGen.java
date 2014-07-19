@@ -38,6 +38,5 @@ public class CommentedStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CommentedStatement_TextGen.class);
 }

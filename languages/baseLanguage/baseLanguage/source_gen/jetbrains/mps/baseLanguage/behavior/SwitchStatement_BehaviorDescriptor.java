@@ -14,18 +14,18 @@ public class SwitchStatement_BehaviorDescriptor extends Statement_BehaviorDescri
 
   public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     SwitchStatement_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
-  }
-
+  };;
+;
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return SwitchStatement_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
-  }
-
+  };;
+;
   public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.SwitchStatement";
-  }
-}
+  };;
+;}

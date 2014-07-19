@@ -12,8 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class UsingStatement_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     if (!(ignoreMayBeThrowables)) {
       for (SNode e : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "resource", true))) {
@@ -21,5 +21,5 @@ public class UsingStatement_Behavior {
       }
     }
     StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "body", true), throwables, ignoreMayBeThrowables);
-  }
-}
+  };;
+;}

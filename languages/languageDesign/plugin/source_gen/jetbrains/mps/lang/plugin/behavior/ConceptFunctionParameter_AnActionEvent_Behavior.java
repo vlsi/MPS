@@ -9,17 +9,15 @@ import jetbrains.mps.smodel.SReference;
 
 public class ConceptFunctionParameter_AnActionEvent_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
+  };;
+;  public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return _quotation_createNode_nbugoo_a0a0();
-  }
-
-  private static SNode _quotation_createNode_nbugoo_a0a0() {
+  };;
+;  private static SNode _quotation_createNode_nbugoo_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#498d89d2-c2e9-11e2-ad49-6cf049e62fe5#com.intellij.openapi.actionSystem(MPS.IDEA/com.intellij.openapi.actionSystem@java_stub)"), facade.createNodeId("~AnActionEvent")));
     return quotedNode_1;
-  }
-}
+  };;
+;}

@@ -7,9 +7,9 @@ import java.util.Set;
 
 public class CommentedStatement_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     // doing nothing 
-  }
-}
+  };;
+;}

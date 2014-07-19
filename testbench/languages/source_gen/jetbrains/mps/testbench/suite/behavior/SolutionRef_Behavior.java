@@ -10,11 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class SolutionRef_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SModuleReference virtual_moduleReference_1280144168199513544(SNode thisNode) {
     return new ModuleReference(SPropertyOperations.getString(thisNode, "moduleFQName"), SPropertyOperations.getString(thisNode, "moduleID"));
   }
-
   public static String virtual_presentation_1280144168199745474(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "moduleFQName");
   }

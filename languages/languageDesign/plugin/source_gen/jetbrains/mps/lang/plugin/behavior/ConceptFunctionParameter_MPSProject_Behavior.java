@@ -9,17 +9,15 @@ import jetbrains.mps.smodel.SReference;
 
 public class ConceptFunctionParameter_MPSProject_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
+  };;
+;  public static SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return _quotation_createNode_mrte6h_a0a0();
-  }
-
-  private static SNode _quotation_createNode_mrte6h_a0a0() {
+  };;
+;  private static SNode _quotation_createNode_mrte6h_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.project(MPS.Platform/jetbrains.mps.project@java_stub)"), facade.createNodeId("~MPSProject")));
     return quotedNode_1;
-  }
-}
+  };;
+;}

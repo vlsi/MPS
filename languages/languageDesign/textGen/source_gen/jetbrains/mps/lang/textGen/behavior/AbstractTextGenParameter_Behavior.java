@@ -8,9 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractTextGenParameter_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String virtual_getGetterName_1234885318469(SNode thisNode) {
+  };;
+;  public static String virtual_getGetterName_1234885318469(SNode thisNode) {
     String alias = SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
     StringBuilder builder = new StringBuilder("get");
     for (int i = 0; i < alias.length(); i++) {
@@ -22,13 +21,11 @@ public class AbstractTextGenParameter_Behavior {
       }
     }
     return builder.toString();
-  }
-
-  public static boolean call_inLangConcept_1236168601263(SNode thisNode) {
+  };;
+;  public static boolean call_inLangConcept_1236168601263(SNode thisNode) {
     return SNodeOperations.isInstanceOf((SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", false, false)), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration");
-  }
-
-  public static boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
+  };;
+;  public static boolean virtual_needConceptFunction_1236687728308(SNode thisNode) {
     return false;
-  }
-}
+  };;
+;}

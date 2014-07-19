@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ConceptReference_BehaviorDescriptor extends ApplicableNodeCondition_BehaviorDescriptor {
   public ConceptReference_BehaviorDescriptor() {
   }
-
   public SNode virtual_getApplicableConcept_1213877307633(SNode thisNode) {
     return ConceptReference_Behavior.virtual_getApplicableConcept_1213877307633(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ConceptReference";
-  }
-}
+  };;
+;}

@@ -31,13 +31,11 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
   public NamedTupleComponentAccessOperation_Constraints() {
     super("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
-  }
-
-  @Override
+  };;
+;  @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
 
@@ -46,36 +44,32 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
     }
 
     return result;
-  }
-
-  @Override
+  };;
+;  @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
     properties.put("alias", new BasePropertyConstraintsDescriptor("alias", this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
-      }
-
-      @Override
+      };;
+;      @Override
       public Object getValue(SNode node) {
         String propertyName = "alias";
         return SPropertyOperations.getString(SLinkOperations.getTarget(node, "component", false), "name");
-      }
-    });
+      };;
+;    });
     return properties;
-  }
-
-  @Override
+  };;
+;  @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
     references.put("component", new BaseReferenceConstraintsDescriptor("component", this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      }
-
-      @Nullable
+      };;
+;      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseReferenceScopeProvider() {
@@ -85,24 +79,21 @@ public class NamedTupleComponentAccessOperation_Constraints extends BaseConstrai
             return ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(SLinkOperations.getTarget(ntt, "classifier", false))).reversedList().translate(new ITranslator2<SNode, SNode>() {
               public Iterable<SNode> translate(SNode ntd) {
                 return SLinkOperations.getTargets(ntd, "component", true);
-              }
-            });
-          }
-
-          @Override
+              };;
+;            });
+          };;
+;          @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_snq09y_a0a1a0a0a1a0b0a1a4;
-          }
-        };
-      }
-    });
+          };;
+;        };
+      };;
+;    });
     return references;
-  }
-
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  };;
+;  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), false) != null);
-  }
-
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576963984");
+  };;
+;  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576963984");
   private static SNodePointer breakingNode_snq09y_a0a1a0a0a1a0b0a1a4 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "1239576899058");
 }

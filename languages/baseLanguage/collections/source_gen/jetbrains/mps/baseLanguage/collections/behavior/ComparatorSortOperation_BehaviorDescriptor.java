@@ -6,9 +6,8 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class ComparatorSortOperation_BehaviorDescriptor extends InternalSequenceOperation_BehaviorDescriptor {
   public ComparatorSortOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation";
-  }
-}
+  };;
+;}

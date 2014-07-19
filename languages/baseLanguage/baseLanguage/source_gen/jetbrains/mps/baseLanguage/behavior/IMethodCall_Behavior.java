@@ -23,16 +23,16 @@ import jetbrains.mps.smodel.SReference;
 
 public class IMethodCall_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static Object[] call_getActualArguments_1219275428261(SNode thisNode, final SModule module) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)).select(new ISelector<SNode, Object>() {
       public Object select(SNode it) {
         return BehaviorReflection.invokeVirtual(Object.class, it, "virtual_eval_1213877519769", new Object[]{module});
-      }
-    }).toGenericArray(Object.class);
-  }
-
+      };;
+;    }).toGenericArray(Object.class);
+  };;
+;
   public static SNode virtual_deriveType_1213877435747(SNode thisNode, SNode expression) {
     // is 'experssion' an actual argument in this method call? 
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall", "actualArgument")) {
@@ -68,8 +68,8 @@ public class IMethodCall_Behavior {
       }
     }
     return null;
-  }
-
+  };;
+;
   public static SNode call_getConcreteType_8008512149545161843(SNode thisNode, SNode typeVariableReference, SNode coercedClt, SNode methodClassifier) {
     List<SNode> parameters = SLinkOperations.getTargets(coercedClt, "parameter", true);
     if (ListSequence.fromList(parameters).isEmpty()) {
@@ -83,16 +83,16 @@ public class IMethodCall_Behavior {
       concreteType = _quotation_createNode_fq0410_a0a0a4a2();
     }
     return concreteType;
-  }
-
+  };;
+;
   public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "virtual_getTypeAnnotation_1233920952262", new Object[]{});
-  }
-
+  };;
+;
   public static SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     return null;
-  }
-
+  };;
+;
   public static Map<SNode, SNode> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
     SNode instanceType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getInstanceType_8008512149545154471", new Object[]{});
     HashMap<SNode, SNode> result = new HashMap<SNode, SNode>();
@@ -105,22 +105,22 @@ public class IMethodCall_Behavior {
       result.put(typeVars.next(), typeParms.next());
     }
     return result;
-  }
-
+  };;
+;
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return new ArrayList<SNode>();
-  }
-
+  };;
+;
   public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
     SNode methodAnc = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodLike", false, false);
     return SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "rValue", true) == thisNode || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "initializer", true) == thisNode || SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ReturnStatement"), "expression", true) == thisNode || ((methodAnc != null) && BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), methodAnc, "virtual_getLastStatement_1239354409446", new Object[]{}) == SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
-  }
-
+  };;
+;
   public static boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
     // todo: use something better here. check usages of getAvailableMethodDeclarations in charisma etc 
     return false;
-  }
-
+  };;
+;
   public static class Pattern_fq0410_a0a0a5a2a1a2 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> patternVar_param;
     /*package*/ SNode patternVar_ignore;
@@ -154,19 +154,19 @@ public class IMethodCall_Behavior {
         }
       }
       return true;
-    }
-
+    };;
+;
     public boolean hasAntiquotations() {
       return true;
-    }
-
+    };;
+;
     public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
       if (pattern != null && pattern.getClass() == this.getClass()) {
         patternVar_param = (List<SNode>) pattern.getFieldValue("patternVar_param");
         patternVar_ignore = (SNode) pattern.getFieldValue("patternVar_ignore");
       }
-    }
-
+    };;
+;
     public Object getFieldValue(String fieldName) {
       if ("patternVar_param".equals(fieldName)) {
         return patternVar_param;
@@ -175,11 +175,11 @@ public class IMethodCall_Behavior {
         return patternVar_ignore;
       }
       return null;
-    }
-
+    };;
+;
     public void performActions(Object o) {
-    }
-  }
+    };;
+;  }
 
   private static SNode _quotation_createNode_fq0410_a0a1a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
@@ -187,13 +187,13 @@ public class IMethodCall_Behavior {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
-  }
-
+  };;
+;
   private static SNode _quotation_createNode_fq0410_a0a0a4a2() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
-  }
-}
+  };;
+;}

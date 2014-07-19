@@ -11,5 +11,5 @@ public class ValueParameter_BehaviorDescriptor extends Expression_BehaviorDescri
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ValueParameter";
-  }
-}
+  };;
+;}

@@ -16,18 +16,18 @@ public class CatchClause_BehaviorDescriptor extends BaseConcept_BehaviorDescript
 
   public List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
     return CatchClause_Behavior.virtual_getScopeVariables_5067982036267369894(thisNode);
-  }
-
+  };;
+;
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return CatchClause_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
-  }
-
+  };;
+;
   public Scope virtual_getScope_7722139651431880752(SNode thisNode, SNode kind, String role, int index) {
     return ScopeProvider_Behavior.virtual_getScope_7722139651431880752(thisNode, kind, role, index);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.CatchClause";
-  }
-}
+  };;
+;}

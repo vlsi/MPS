@@ -8,15 +8,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class InternalMode_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return true;
   }
-
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return true;
   }
-
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
     return "access to IDE internal mode variable";
   }

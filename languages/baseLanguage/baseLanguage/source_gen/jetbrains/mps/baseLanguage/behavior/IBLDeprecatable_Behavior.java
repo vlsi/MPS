@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class IBLDeprecatable_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     if (SPropertyOperations.getBoolean(thisNode, "isDeprecated")) {
       return true;
@@ -28,12 +28,12 @@ public class IBLDeprecatable_Behavior {
       }
     }
     return false;
-  }
-
+  };;
+;
   public static String virtual_getMessage_1225207468592(SNode thisNode) {
     StringBuilder result = new StringBuilder();
     result.append(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getPresentation_1213877396640", new Object[]{}));
     result.append(" is deprecated");
     return result.toString();
-  }
-}
+  };;
+;}

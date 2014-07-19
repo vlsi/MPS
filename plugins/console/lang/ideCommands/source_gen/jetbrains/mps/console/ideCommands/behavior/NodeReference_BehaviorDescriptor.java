@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.behavior.NodeRefExpression_BehaviorDescriptor;
 public class NodeReference_BehaviorDescriptor extends NodeRefExpression_BehaviorDescriptor {
   public NodeReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.NodeReference";

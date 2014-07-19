@@ -10,10 +10,10 @@ public class MulExpression_BehaviorDescriptor extends BinaryOperation_BehaviorDe
 
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return MulExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.MulExpression";
-  }
-}
+  };;
+;}

@@ -16,14 +16,11 @@ public class CheckErrorMessagesAction implements Runnable {
   private boolean allowsWarnings;
   private boolean allowsErrors;
 
-
   public CheckErrorMessagesAction(SNode node, boolean allowsWarnings, boolean allowsErrors) {
     this.node = node;
     this.allowsWarnings = allowsWarnings;
     this.allowsErrors = allowsErrors;
   }
-
-
 
   @Override
   public void run() {
@@ -41,8 +38,6 @@ public class CheckErrorMessagesAction implements Runnable {
     }
   }
 
-
-
   private static boolean hasErrorOrWarningCheckOperationTag(SNode node) {
     if (AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.test.structure.NodeOperationsContainer")) == null) {
       return false;
@@ -56,23 +51,17 @@ public class CheckErrorMessagesAction implements Runnable {
     return false;
   }
 
-
-
   private void checkWarnings(IErrorReporter reporter, String warningMsg) {
     if (!(allowsWarnings)) {
       Assert.assertTrue(warningMsg, reporter.getMessageStatus() != MessageStatus.WARNING);
     }
   }
 
-
-
   private void checkErrors(IErrorReporter reporter, String errorMsg) {
     if (!(allowsErrors)) {
       Assert.assertTrue(errorMsg, reporter.getMessageStatus() != MessageStatus.ERROR);
     }
   }
-
-
 
   private String getErrorString(IErrorReporter reporter, SNode node) {
     return reporter.reportError() + ". Node '" + NodeCheckerUtil.nodeWithIdToString(node) + "'";

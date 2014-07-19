@@ -21,8 +21,8 @@ import org.apache.log4j.LogManager;
 
 public class Interface_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static boolean virtual_isDescendant_checkLoops_7165541881557222950(SNode thisNode, SNode nodeToCompare, Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(thisNode)) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -41,8 +41,8 @@ public class Interface_Behavior {
       }
     }
     return false;
-  }
-
+  };;
+;
   public static boolean virtual_checkLoops_3980490811621705349(SNode thisNode, Set<SNode> visited) {
     if (SetSequence.fromSet(visited).contains(thisNode)) {
       if (LOG.isEnabledFor(Level.ERROR)) {
@@ -58,8 +58,8 @@ public class Interface_Behavior {
       }
     }
     return true;
-  }
-
+  };;
+;
   public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {
     String fqName = BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getFqName_1213877404258", new Object[]{});
     if (SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == null) {
@@ -70,21 +70,21 @@ public class Interface_Behavior {
       return fqName;
     }
     return fqName.substring(0, index) + "$" + fqName.substring(index + 1);
-  }
-
+  };;
+;
   public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
     Iterable<SNode> extendedClassifiers = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (SLinkOperations.getTarget(it, "classifier", false) != null);
-      }
-    });
+      };;
+;    });
     if (Sequence.fromIterable(extendedClassifiers).isEmpty()) {
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "virtual_getThisType_3305065273710880775", new Object[]{}));
     } else {
       return ListSequence.fromListWithValues(new ArrayList<SNode>(), extendedClassifiers);
     }
-  }
-
+  };;
+;
   public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     // populate own members 
     for (SNode member : SNodeOperations.getChildren(thisNode)) {
@@ -97,8 +97,8 @@ public class Interface_Behavior {
     for (SNode extendedInterface : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "extendedInterface", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (it != null);
-      }
-    })) {
+      };;
+;    })) {
       IClassifierType_Behavior.call_populateMembers_7405920559687241253(extendedInterface, context, classifierType);
     }
 
@@ -108,11 +108,11 @@ public class Interface_Behavior {
         IClassifierType_Behavior.call_populateMembers_7405920559687241253(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Object"), "virtual_getThisType_7405920559687254782", new Object[]{}), context, classifierType);
       }
     }
-  }
-
+  };;
+;
   public static boolean call_canBeStatic_3190746170685014638(SNode thisNode) {
     return Classifier_Behavior.call_isInner_521412098689998677(thisNode) && !(BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_7405920559687241224", new Object[]{}));
-  }
-
+  };;
+;
   protected static Logger LOG = LogManager.getLogger(Interface_Behavior.class);
 }

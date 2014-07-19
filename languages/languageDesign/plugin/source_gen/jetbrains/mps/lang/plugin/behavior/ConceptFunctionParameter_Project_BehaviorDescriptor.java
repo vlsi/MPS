@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ConceptFunctionParameter_Project_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ConceptFunctionParameter_Project_BehaviorDescriptor() {
   }
-
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConceptFunctionParameter_Project_Behavior.virtual_getType_2443692612523876968(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project";
-  }
-}
+  };;
+;}

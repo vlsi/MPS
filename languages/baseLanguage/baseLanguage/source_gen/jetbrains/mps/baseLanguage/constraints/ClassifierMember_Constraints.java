@@ -24,8 +24,8 @@ public class ClassifierMember_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnGetter() {
         return true;
-      }
-
+      };;
+;
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";
@@ -36,8 +36,8 @@ public class ClassifierMember_Constraints extends BaseConstraintsDescriptor {
           }
           return NodePresentationUtil.getRoleInParentOrConceptName(node) + " (?declaring classifier?)";
         }
-      }
-    });
+      };;
+;    });
     return properties;
-  }
-}
+  };;
+;}

@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class IsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public IsReplacementRuleApplicable_ConceptFunction_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return IsReplacementRuleApplicable_ConceptFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction";
-  }
-}
+  };;
+;}

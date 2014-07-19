@@ -11,5 +11,5 @@ public abstract class Modifier_BehaviorDescriptor extends BaseConcept_BehaviorDe
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.Modifier";
-  }
-}
+  };;
+;}

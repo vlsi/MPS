@@ -6,9 +6,8 @@ package jetbrains.mps.lang.smodel.behavior;
 public class AllAttributeQualifier_BehaviorDescriptor extends AttributeQualifier_BehaviorDescriptor {
   public AllAttributeQualifier_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier";
-  }
-}
+  };;
+;}

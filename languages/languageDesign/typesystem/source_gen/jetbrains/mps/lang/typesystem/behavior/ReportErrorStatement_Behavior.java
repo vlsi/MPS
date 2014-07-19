@@ -11,14 +11,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ReportErrorStatement_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static void virtual_attachNewMessageAnnotation_8489045168661849665(SNode thisNode) {
+  };;
+;  public static void virtual_attachNewMessageAnnotation_8489045168661849665(SNode thisNode) {
     SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation", null);
     AttributeOperations.setAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation"), newAnnotation);
-  }
-
-  public static String virtual_getName_1597542831856389237(SNode thisNode) {
+  };;
+;  public static String virtual_getName_1597542831856389237(SNode thisNode) {
     if ((AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")) != null)) {
       return SPropertyOperations.getString(AttributeOperations.getAttribute(thisNode, new IAttributeDescriptor.NodeAttribute("jetbrains.mps.lang.typesystem.structure.MessageStatementAnnotation")), "name");
     } else {
@@ -28,5 +26,5 @@ public class ReportErrorStatement_Behavior {
       }
       return "UnnamedError";
     }
-  }
-}
+  };;
+;}

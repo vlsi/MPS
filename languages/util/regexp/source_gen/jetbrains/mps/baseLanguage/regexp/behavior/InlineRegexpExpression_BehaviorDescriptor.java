@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 public class InlineRegexpExpression_BehaviorDescriptor extends RegexpExpression_BehaviorDescriptor {
   public InlineRegexpExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression";

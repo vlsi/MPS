@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ConstraintsFunctionParameter_node_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ConstraintsFunctionParameter_node_BehaviorDescriptor() {
   }
-
   public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
     return ConstraintsFunctionParameter_node_Behavior.virtual_dontUseParameterObject_1262430001741498340(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node";
-  }
-}
+  };;
+;}

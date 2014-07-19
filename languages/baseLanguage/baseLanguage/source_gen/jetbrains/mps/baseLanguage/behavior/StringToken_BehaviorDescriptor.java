@@ -12,5 +12,5 @@ public abstract class StringToken_BehaviorDescriptor extends BaseConcept_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.StringToken";
-  }
-}
+  };;
+;}

@@ -14,13 +14,11 @@ public class AddStatement_Constraints extends BaseConstraintsDescriptor {
   public AddStatement_Constraints() {
     super("jetbrains.mps.lang.plugin.structure.AddStatement");
   }
-
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
-  }
-
-  @Override
+  };;
+;  @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
 
@@ -29,14 +27,12 @@ public class AddStatement_Constraints extends BaseConstraintsDescriptor {
     }
 
     return result;
-  }
-
-  @Override
+  };;
+;  @Override
   public boolean hasOwnCanBeParentMethod() {
     return true;
-  }
-
-  @Override
+  };;
+;  @Override
   public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
 
@@ -45,16 +41,13 @@ public class AddStatement_Constraints extends BaseConstraintsDescriptor {
     }
 
     return result;
-  }
-
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  };;
+;  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.getAncestorWhereConceptInList(parentNode, new String[]{"jetbrains.mps.lang.plugin.structure.BuildGroupBlock", "jetbrains.mps.lang.plugin.structure.UpdateGroupFunction"}, true, false) != null;
-  }
-
-  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
+  };;
+;  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     return !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration")) && !(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.plugin.structure.GroupAnchor"));
-  }
-
-  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1227013118716");
+  };;
+;  private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1227013118716");
   private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "1227014460147");
 }

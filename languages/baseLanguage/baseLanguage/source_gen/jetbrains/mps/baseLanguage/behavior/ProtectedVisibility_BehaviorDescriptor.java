@@ -10,5 +10,5 @@ public class ProtectedVisibility_BehaviorDescriptor extends Visibility_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ProtectedVisibility";
-  }
-}
+  };;
+;}

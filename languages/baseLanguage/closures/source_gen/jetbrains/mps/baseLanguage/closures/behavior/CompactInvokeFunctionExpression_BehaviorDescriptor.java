@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class CompactInvokeFunctionExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public CompactInvokeFunctionExpression_BehaviorDescriptor() {
   }
-
   public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
     return CompactInvokeFunctionExpression_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression";
-  }
-}
+  };;
+;}

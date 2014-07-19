@@ -8,16 +8,14 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class QueryFunction_FontStyle_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  };;
+;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_w20w5j_a0a0();
-  }
-
-  private static SNode _quotation_createNode_w20w5j_a0a0() {
+  };;
+;  private static SNode _quotation_createNode_w20w5j_a0a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, false);
     return quotedNode_1;
-  }
-}
+  };;
+;}

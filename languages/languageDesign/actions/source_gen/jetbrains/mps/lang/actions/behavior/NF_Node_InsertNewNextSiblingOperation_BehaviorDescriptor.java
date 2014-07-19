@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class NF_Node_InsertNewNextSiblingOperation_BehaviorDescriptor extends Node_InsertNewNextSiblingOperation_BehaviorDescriptor {
   public NF_Node_InsertNewNextSiblingOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
     return NF_Node_InsertNewNextSiblingOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NF_Node_InsertNewNextSiblingOperation";
-  }
-}
+  };;
+;}

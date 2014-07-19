@@ -11,10 +11,10 @@ public class LocalInstanceMethodCall_BehaviorDescriptor extends LocalMethodCall_
 
   public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept thisConcept) {
     return LocalInstanceMethodCall_Behavior.virtual_substituteInAmbigousPosition_1262430001741498020(thisConcept);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall";
-  }
-}
+  };;
+;}

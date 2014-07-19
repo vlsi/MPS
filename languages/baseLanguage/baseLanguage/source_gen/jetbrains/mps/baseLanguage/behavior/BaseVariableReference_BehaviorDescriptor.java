@@ -10,5 +10,5 @@ public abstract class BaseVariableReference_BehaviorDescriptor extends Expressio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.BaseVariableReference";
-  }
-}
+  };;
+;}

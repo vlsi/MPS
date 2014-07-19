@@ -36,8 +36,8 @@ public class FieldReferenceOperation_Constraints extends BaseConstraintsDescript
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      }
-
+      };;
+;
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -45,8 +45,8 @@ public class FieldReferenceOperation_Constraints extends BaseConstraintsDescript
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_dv0ljq_a0a0a0a0a1a0b0a1a1;
-          }
-
+          };;
+;
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -58,12 +58,12 @@ public class FieldReferenceOperation_Constraints extends BaseConstraintsDescript
               }
               return new NamedElementsScope(Members.visibleInstanceFields(classifierType, _context.getContextNode()));
             }
-          }
-        };
-      }
-    });
+          };;
+;        };
+      };;
+;    });
     return references;
-  }
-
+  };;
+;
   private static SNodePointer breakingNode_dv0ljq_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137096");
 }

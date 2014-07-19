@@ -10,5 +10,5 @@ public class RightShiftAssignmentExpression_BehaviorDescriptor extends Operation
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.RightShiftAssignmentExpression";
-  }
-}
+  };;
+;}

@@ -30,8 +30,8 @@ public class LocalInstanceMethodCall_Constraints extends BaseConstraintsDescript
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      }
-
+      };;
+;
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -39,17 +39,17 @@ public class LocalInstanceMethodCall_Constraints extends BaseConstraintsDescript
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_z8dgx7_a0a0a0a0a1a0b0a1a1;
-          }
-
+          };;
+;
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return MigrationScopes.forMethods(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), _context.getContextNode(), _context.getContextRole(), _context.getPosition());
-          }
-        };
-      }
-    });
+          };;
+;        };
+      };;
+;    });
     return references;
-  }
-
+  };;
+;
   private static SNodePointer breakingNode_z8dgx7_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "575279248907340046");
 }

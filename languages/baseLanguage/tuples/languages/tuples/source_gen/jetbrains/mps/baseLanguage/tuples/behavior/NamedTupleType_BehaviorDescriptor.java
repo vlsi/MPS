@@ -13,29 +13,23 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class NamedTupleType_BehaviorDescriptor extends ClassifierType_BehaviorDescriptor implements IGenericType_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public NamedTupleType_BehaviorDescriptor() {
   }
-
   public void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     NamedTupleType_Behavior.virtual_collectGenericSubstitutions_4107091686347010321(thisNode, substitutions);
-  }
-
-  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
+  };;
+;  public SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     return NamedTupleType_Behavior.virtual_expandGenerics_4122274986016348613(thisNode, substitutions, expTrace);
-  }
-
-  public String virtual_getLeftBracket_1262430001741497792(SConcept thisConcept) {
+  };;
+;  public String virtual_getLeftBracket_1262430001741497792(SConcept thisConcept) {
     return NamedTupleType_Behavior.virtual_getLeftBracket_1262430001741497792(thisConcept);
-  }
-
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+  };;
+;  public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return NamedTupleType_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
-  public String virtual_getRightBracket_1262430001741497990(SConcept thisConcept) {
+  };;
+;  public String virtual_getRightBracket_1262430001741497990(SConcept thisConcept) {
     return NamedTupleType_Behavior.virtual_getRightBracket_1262430001741497990(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType";
-  }
-}
+  };;
+;}

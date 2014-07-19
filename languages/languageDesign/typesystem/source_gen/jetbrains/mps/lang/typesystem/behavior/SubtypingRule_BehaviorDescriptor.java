@@ -6,9 +6,8 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class SubtypingRule_BehaviorDescriptor extends AbstractSubtypingRule_BehaviorDescriptor implements IRuleWithOneNode_BehaviorDescriptor {
   public SubtypingRule_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.SubtypingRule";
-  }
-}
+  };;
+;}

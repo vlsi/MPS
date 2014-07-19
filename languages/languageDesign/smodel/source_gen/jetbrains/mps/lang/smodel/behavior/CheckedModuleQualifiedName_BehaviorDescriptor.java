@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class CheckedModuleQualifiedName_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public CheckedModuleQualifiedName_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.CheckedModuleQualifiedName";
-  }
-}
+  };;
+;}

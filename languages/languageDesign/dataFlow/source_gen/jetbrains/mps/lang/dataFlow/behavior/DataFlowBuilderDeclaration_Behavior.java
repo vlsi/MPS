@@ -8,11 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class DataFlowBuilderDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "conceptDeclaration", false);
   }
-
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SLinkOperations.setTarget(thisNode, "conceptDeclaration", baseConcept, false);
   }

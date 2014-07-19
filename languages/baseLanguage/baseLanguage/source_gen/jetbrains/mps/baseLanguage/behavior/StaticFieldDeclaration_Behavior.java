@@ -25,69 +25,69 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class StaticFieldDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static List<Icon> virtual_getMarkIcons_3923831204883340393(SNode thisNode) {
     List<Icon> markIcons = new ArrayList<Icon>(BehaviorReflection.invokeSuper((Class<List<Icon>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "virtual_getMarkIcons_3923831204883340393", new Object[]{}));
     markIcons.add(IconResourceBundle_Behavior.getInstance().getResource("STATICMARK"));
     return markIcons;
-  }
-
+  };;
+;
   public static boolean virtual_isInitializable_1213877517488(SNode thisNode) {
     return true;
-  }
-
+  };;
+;
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     List<SNode> result = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", "virtual_getChildrenToDisplayIntention_4025276038182319200", new Object[]{});
     ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "visibility", true));
     return result;
-  }
-
+  };;
+;
   public static boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return true;
-  }
-
+  };;
+;
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return IVisible_Behavior.call_getVisibilityIcon_5017341185733869581(thisNode);
-  }
-
+  };;
+;
   public static boolean virtual_canBeInterfaceMember_2949815620938109095(SAbstractConcept thisConcept) {
     return true;
-  }
-
+  };;
+;
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
       return "";
     }
     return (settings.getStaticFieldSuffix() == null ? "" : settings.getStaticFieldSuffix());
-  }
-
+  };;
+;
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettingsRegistry.getSettings(project);
     if (settings == null) {
       return "";
     }
     return (settings.getStaticFieldPrefix() == null ? "" : settings.getStaticFieldPrefix());
-  }
-
+  };;
+;
   @Nullable
   public static String virtual_getTraceableProperty_5067982036267369901(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name");
-  }
-
+  };;
+;
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     if (!(context.isElementVisible(thisNode)) || SPropertyOperations.getString(thisNode, "name") == null) {
       return;
     }
     context.addMember(thisNode, new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
     context.hideMembers(new FieldSignature(SPropertyOperations.getString(thisNode, "name")));
-  }
-
+  };;
+;
   public static SNode virtual_getQualifiedReference_4598334504606213641(SNode thisNode) {
     return _quotation_createNode_ge0l0h_a0a01(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.Classifier"), thisNode);
-  }
-
+  };;
+;
   private static SNode _quotation_createNode_ge0l0h_a0a01(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
@@ -95,5 +95,5 @@ public class StaticFieldDeclaration_Behavior {
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
     SNodeAccessUtil.setReferenceTarget(quotedNode_3, "variableDeclaration", (SNode) parameter_2);
     return quotedNode_3;
-  }
-}
+  };;
+;}

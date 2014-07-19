@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class ModelReference_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SModel call_getModel_7057947030098579394(SNode thisNode) {
     return SModelRepository.getInstance().getModelDescriptor(SPropertyOperations.getString(thisNode, "fqName"));
   }

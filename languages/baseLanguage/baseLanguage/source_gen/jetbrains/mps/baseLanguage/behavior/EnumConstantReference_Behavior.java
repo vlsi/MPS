@@ -16,8 +16,8 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 public class EnumConstantReference_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     SNode enumClass = SLinkOperations.getTarget(thisNode, "enumClass", false);
     SNode e = SLinkOperations.getTarget(thisNode, "enumConstantDeclaration", false);
@@ -34,16 +34,16 @@ public class EnumConstantReference_Behavior {
       }
     }
     return ReflectionUtil.getEnum(module, enumClass, SPropertyOperations.getString(e, "name"));
-  }
-
+  };;
+;
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return ((SLinkOperations.getTarget(thisNode, "enumClass", false) != null) ? new NamedElementsScope(Members.visibleEnumConstants(SLinkOperations.getTarget(thisNode, "enumClass", false))) : new EmptyScope());
-  }
-
+  };;
+;
   private static SModule check_p8mh91_a0c0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
-  }
-}
+  };;
+;}

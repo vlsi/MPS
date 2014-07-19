@@ -6,9 +6,8 @@ package jetbrains.mps.lang.textGen.behavior;
 public class IndentBufferOperation_BehaviorDescriptor extends SimpleTextGenOperation_BehaviorDescriptor {
   public IndentBufferOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.IndentBufferOperation";
-  }
-}
+  };;
+;}

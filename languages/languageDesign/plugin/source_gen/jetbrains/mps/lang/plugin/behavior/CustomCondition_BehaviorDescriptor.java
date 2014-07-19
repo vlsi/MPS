@@ -10,17 +10,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class CustomCondition_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements ActionParameterCondition_BehaviorDescriptor {
   public CustomCondition_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return CustomCondition_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  }
-
-  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  };;
+;  public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return CustomCondition_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.CustomCondition";
-  }
-}
+  };;
+;}

@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class InequationReplacementRule_BehaviorDescriptor extends AbstractSubtypingRule_BehaviorDescriptor implements IRuleWithTwoNodes_BehaviorDescriptor {
   public InequationReplacementRule_BehaviorDescriptor() {
   }
-
   public SNode virtual_getSecondNodeCondition_4484478261143583672(SNode thisNode) {
     return InequationReplacementRule_Behavior.virtual_getSecondNodeCondition_4484478261143583672(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.InequationReplacementRule";
-  }
-}
+  };;
+;}

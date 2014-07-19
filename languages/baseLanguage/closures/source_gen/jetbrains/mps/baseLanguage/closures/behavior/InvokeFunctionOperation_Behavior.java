@@ -11,13 +11,12 @@ import java.util.ArrayList;
 
 public class InvokeFunctionOperation_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> call_getParameters_418758558327452981(SNode thisNode) {
+  };;
+;  public static List<SNode> call_getParameters_418758558327452981(SNode thisNode) {
     SNode type = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true));
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")) {
       return SLinkOperations.getTargets(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.closures.structure.FunctionType"), "parameterType", true);
     }
     return new ArrayList<SNode>();
-  }
-}
+  };;
+;}

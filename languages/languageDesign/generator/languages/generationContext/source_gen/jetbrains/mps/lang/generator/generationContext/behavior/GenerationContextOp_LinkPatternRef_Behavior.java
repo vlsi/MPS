@@ -7,13 +7,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GenerationContextOp_LinkPatternRef_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getTarget_1758784108620114792(SNode thisNode) {
+  };;
+;  public static SNode virtual_getTarget_1758784108620114792(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "linkPatternVar", false);
-  }
-
-  public static void virtual_setTarget_1758784108620254533(SNode thisNode, SNode target) {
+  };;
+;  public static void virtual_setTarget_1758784108620254533(SNode thisNode, SNode target) {
     SLinkOperations.setTarget(thisNode, "linkPatternVar", null, false);
-  }
-}
+  };;
+;}

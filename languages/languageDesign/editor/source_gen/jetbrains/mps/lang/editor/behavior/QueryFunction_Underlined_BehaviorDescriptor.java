@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class QueryFunction_Underlined_BehaviorDescriptor extends QueryFunction_StyleParameter_BehaviorDescriptor {
   public QueryFunction_Underlined_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return QueryFunction_Underlined_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.QueryFunction_Underlined";
-  }
-}
+  };;
+;}

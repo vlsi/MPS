@@ -10,12 +10,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ExtractStatementListExpression_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
+  };;
+;  public static List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     List<SNode> elems = new ArrayList<SNode>();
     ListSequence.fromList(elems).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "stmts", true), "statement", true)));
     ListSequence.fromList(elems).addElement(SLinkOperations.getTarget(thisNode, "innerExpr", true));
     return elems;
-  }
-}
+  };;
+;}

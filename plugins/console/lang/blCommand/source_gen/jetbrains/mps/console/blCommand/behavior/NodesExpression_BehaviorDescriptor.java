@@ -8,15 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class NodesExpression_BehaviorDescriptor extends QueryExpression_BehaviorDescriptor {
   public NodesExpression_BehaviorDescriptor() {
   }
-
   public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
     return NodesExpression_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
-
   public Iterable<SNode> virtual_getSupportedParameters_4307205004146936444(SConcept thisConcept) {
     return NodesExpression_Behavior.virtual_getSupportedParameters_4307205004146936444(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.blCommand.structure.NodesExpression";

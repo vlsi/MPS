@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.collections.behavior.SequenceOperation_Behavio
 public class OfConceptOperation_BehaviorDescriptor extends SequenceOperation_BehaviorDescriptor {
   public OfConceptOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.OfConceptOperation";
-  }
-}
+  };;
+;}

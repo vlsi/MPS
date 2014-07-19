@@ -11,5 +11,5 @@ public class StubStatementList_BehaviorDescriptor extends StatementList_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.StubStatementList";
-  }
-}
+  };;
+;}

@@ -6,7 +6,6 @@ package jetbrains.mps.samples.complex.behavior;
 public class AbsExpression_BehaviorDescriptor extends SingleComplexExpression_BehaviorDescriptor {
   public AbsExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.complex.structure.AbsExpression";

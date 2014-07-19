@@ -11,5 +11,5 @@ public class UndefinedType_BehaviorDescriptor extends Type_BehaviorDescriptor im
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.UndefinedType";
-  }
-}
+  };;
+;}

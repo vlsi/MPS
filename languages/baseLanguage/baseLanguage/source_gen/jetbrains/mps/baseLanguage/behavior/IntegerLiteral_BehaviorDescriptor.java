@@ -10,10 +10,10 @@ public abstract class IntegerLiteral_BehaviorDescriptor extends Expression_Behav
 
   public boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
     return IntegerLiteral_Behavior.virtual_constant_1262430001741498050(thisConcept);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.IntegerLiteral";
-  }
-}
+  };;
+;}

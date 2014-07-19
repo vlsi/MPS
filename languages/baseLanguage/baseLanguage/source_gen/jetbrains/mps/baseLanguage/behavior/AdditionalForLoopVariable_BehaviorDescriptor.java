@@ -10,5 +10,5 @@ public class AdditionalForLoopVariable_BehaviorDescriptor extends LocalVariableD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable";
-  }
-}
+  };;
+;}

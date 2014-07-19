@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class TemplateFunctionParameter_mainContextNode_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public TemplateFunctionParameter_mainContextNode_BehaviorDescriptor() {
   }
-
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return TemplateFunctionParameter_mainContextNode_Behavior.virtual_getType_2443692612523876968(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode";
-  }
-}
+  };;
+;}

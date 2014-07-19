@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CellModel_AttributedPropertyCell_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor {
   public CellModel_AttributedPropertyCell_BehaviorDescriptor() {
   }
-
   public boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return CellModel_AttributedPropertyCell_Behavior.virtual_isCellIdInitialized_1229948571177(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell";
-  }
-}
+  };;
+;}

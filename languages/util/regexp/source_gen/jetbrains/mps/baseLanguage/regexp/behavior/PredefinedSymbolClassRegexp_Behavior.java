@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class PredefinedSymbolClassRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "symbolClass", false), "name");
   }

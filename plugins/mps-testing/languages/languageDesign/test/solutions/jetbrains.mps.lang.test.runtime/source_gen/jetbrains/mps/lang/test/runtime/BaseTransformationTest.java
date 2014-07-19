@@ -17,12 +17,9 @@ public abstract class BaseTransformationTest implements TransformationTest {
   private SModel myTransientModel;
   private TestRunner myRunner;
 
-
   public boolean isExecutionInProcess() {
     return check_c18na_a0a6(System.getProperty(TestLightRunState.LIGHT_EXEC_FLAG));
   }
-
-
 
   private void initTestRunner() {
     if (isExecutionInProcess()) {
@@ -32,13 +29,9 @@ public abstract class BaseTransformationTest implements TransformationTest {
     }
   }
 
-
-
   public BaseTransformationTest() {
     initTestRunner();
   }
-
-
 
   public BaseTransformationTest(Project project, SModel modelDescriptor) {
     this();
@@ -46,39 +39,27 @@ public abstract class BaseTransformationTest implements TransformationTest {
     myModel = modelDescriptor;
   }
 
-
-
   @Override
   public void setTestRunner(TestRunner runner) {
     myRunner = runner;
   }
-
-
 
   @Override
   public TestRunner getTestRunner() {
     return myRunner;
   }
 
-
-
   public void initTest(@NotNull String projectName, final String model) throws Exception {
     initTest(projectName, model, false, false);
   }
-
-
 
   public void initTest(@NotNull String projectName, final String model, boolean uiTest, boolean reOpenProject) throws Exception {
     myRunner.initTest(this, projectName, model, uiTest, reOpenProject);
   }
 
-
-
   public void runTest(String className, final String methodName, final boolean runInCommand) throws Throwable {
     myRunner.runTest(this, className, methodName, runInCommand);
   }
-
-
 
   @Override
   public void init() {
@@ -86,39 +67,31 @@ public abstract class BaseTransformationTest implements TransformationTest {
     new CloneUtil(this.myModel, this.myTransientModel).cloneModelWithAllImports();
   }
 
-
-
   @Override
   public void dispose() {
     TemporaryModels.getInstance().dispose(myTransientModel);
     myTransientModel = null;
   }
-
   @Override
   public SModel getModelDescriptor() {
     return myModel;
   }
-
   @Override
   public void setModelDescriptor(SModel descriptor) {
     myModel = descriptor;
   }
-
   @Override
   public SModel getTransientModelDescriptor() {
     return myTransientModel;
   }
-
   @Override
   public Project getProject() {
     return myProject;
   }
-
   @Override
   public void setProject(Project project) {
     myProject = project;
   }
-
   private static boolean check_c18na_a0a6(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.equals("true");

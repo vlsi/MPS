@@ -13,42 +13,42 @@ public abstract class Expression_BehaviorDescriptor extends BaseConcept_Behavior
 
   public boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
     return Expression_Behavior.virtual_constant_1262430001741498050(thisConcept);
-  }
-
+  };;
+;
   public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return Expression_Behavior.virtual_eval_1213877519769(thisNode, module);
-  }
-
+  };;
+;
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return Expression_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
-  }
-
+  };;
+;
   public String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
     return Expression_Behavior.virtual_getVariableExpectedName_1213877519781(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_isCompileTimeConstant_1238860258777(SNode thisNode) {
     return Expression_Behavior.virtual_isCompileTimeConstant_1238860258777(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return Expression_Behavior.virtual_isLValue_1213877519786(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return Expression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
     return Expression_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
-  }
-
+  };;
+;
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return Expression_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.Expression";
-  }
-}
+  };;
+;}

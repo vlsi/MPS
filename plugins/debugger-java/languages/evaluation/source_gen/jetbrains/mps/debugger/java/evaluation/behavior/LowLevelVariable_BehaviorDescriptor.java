@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.BaseVariableDeclaration_BehaviorDescr
 public class LowLevelVariable_BehaviorDescriptor extends BaseVariableDeclaration_BehaviorDescriptor {
   public LowLevelVariable_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariable";

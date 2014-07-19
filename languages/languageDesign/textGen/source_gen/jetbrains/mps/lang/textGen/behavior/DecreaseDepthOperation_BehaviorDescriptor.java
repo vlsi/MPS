@@ -6,9 +6,8 @@ package jetbrains.mps.lang.textGen.behavior;
 public class DecreaseDepthOperation_BehaviorDescriptor extends SimpleTextGenOperation_BehaviorDescriptor {
   public DecreaseDepthOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation";
-  }
-}
+  };;
+;}

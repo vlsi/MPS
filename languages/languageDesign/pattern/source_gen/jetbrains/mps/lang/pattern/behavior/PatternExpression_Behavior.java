@@ -14,13 +14,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class PatternExpression_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
+  };;
+;  public static int virtual_getMetaLevelChange_201537367881074474(SNode thisNode) {
     return -1;
-  }
-
-  public static List<SNode> call_getVariables_4855904478357072957(SNode thisNode) {
+  };;
+;  public static List<SNode> call_getVariables_4855904478357072957(SNode thisNode) {
     List<SNode> variables = new ArrayList<SNode>();
     ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration", false, new String[]{})));
     ListSequence.fromList(variables).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(thisNode, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", false, new String[]{})));
@@ -31,9 +29,8 @@ public class PatternExpression_Behavior {
       }
     */
     return variables;
-  }
-
-  public static List<SNode> call_getUniqueVariables_4855904478357073018(SNode thisNode) {
+  };;
+;  public static List<SNode> call_getUniqueVariables_4855904478357073018(SNode thisNode) {
     List<SNode> variables = PatternExpression_Behavior.call_getVariables_4855904478357072957(thisNode);
     List<SNode> result = new ArrayList<SNode>();
     Set<String> names = new HashSet();
@@ -44,9 +41,8 @@ public class PatternExpression_Behavior {
       }
     }
     return result;
-  }
-
-  public static List<SNode> call_getOwnVariables_8288845019109059987(SNode thisNode) {
+  };;
+;  public static List<SNode> call_getOwnVariables_8288845019109059987(SNode thisNode) {
     List<SNode> variables = PatternExpression_Behavior.call_getVariables_4855904478357072957(thisNode);
     List<SNode> result = new ArrayList<SNode>();
     for (SNode var : variables) {
@@ -55,9 +51,8 @@ public class PatternExpression_Behavior {
       }
     }
     return result;
-  }
-
-  public static boolean call_hasVariable_4855904478357073120(SNode thisNode) {
+  };;
+;  public static boolean call_hasVariable_4855904478357073120(SNode thisNode) {
     return false;
-  }
-}
+  };;
+;}

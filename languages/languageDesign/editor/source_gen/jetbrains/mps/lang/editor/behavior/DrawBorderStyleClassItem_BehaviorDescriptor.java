@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class DrawBorderStyleClassItem_BehaviorDescriptor extends BooleanStyleSheetItem_BehaviorDescriptor {
   public DrawBorderStyleClassItem_BehaviorDescriptor() {
   }
-
   public StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode) {
     return DrawBorderStyleClassItem_Behavior.virtual_getStyleAttribute_3639065570239132541(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem";
-  }
-}
+  };;
+;}

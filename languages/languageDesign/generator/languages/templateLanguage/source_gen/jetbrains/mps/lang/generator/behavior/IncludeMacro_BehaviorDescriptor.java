@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class IncludeMacro_BehaviorDescriptor extends SourceSubstituteMacro_BehaviorDescriptor {
   public IncludeMacro_BehaviorDescriptor() {
   }
-
   public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     return IncludeMacro_Behavior.virtual_getInputNodeTypeInsideOfMacro_1213877290799(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.IncludeMacro";
-  }
-}
+  };;
+;}

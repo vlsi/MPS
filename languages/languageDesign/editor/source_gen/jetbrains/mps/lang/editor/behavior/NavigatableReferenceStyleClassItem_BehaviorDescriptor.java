@@ -6,9 +6,8 @@ package jetbrains.mps.lang.editor.behavior;
 public class NavigatableReferenceStyleClassItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public NavigatableReferenceStyleClassItem_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem";
-  }
-}
+  };;
+;}

@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class InlineSwitch_RuleConsequence_BehaviorDescriptor extends RuleConsequence_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public InlineSwitch_RuleConsequence_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.InlineSwitch_RuleConsequence";
-  }
-}
+  };;
+;}

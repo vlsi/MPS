@@ -14,18 +14,18 @@ public class CommentedStatementsBlock_BehaviorDescriptor extends Statement_Behav
 
   public void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     CommentedStatementsBlock_Behavior.virtual_collectUncaughtMethodThrowables_5412515780383134223(thisNode, throwables, ignoreMayBeThrowables);
-  }
-
+  };;
+;
   public List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     return CommentedStatementsBlock_Behavior.virtual_getLocalVariableElements_1238805763253(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     return ISuppressErrors_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock";
-  }
-}
+  };;
+;}

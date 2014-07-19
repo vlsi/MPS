@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MPSPluginDependency_BehaviorDescriptor extends PluginDependency_BehaviorDescriptor {
   public MPSPluginDependency_BehaviorDescriptor() {
   }
-
   public String virtual_getPluginId_5864553086652219131(SNode thisNode) {
     return MPSPluginDependency_Behavior.virtual_getPluginId_5864553086652219131(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.MPSPluginDependency";
-  }
-}
+  };;
+;}

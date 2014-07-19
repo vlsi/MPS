@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ThisExtensionExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ThisExtensionExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression";
-  }
-}
+  };;
+;}

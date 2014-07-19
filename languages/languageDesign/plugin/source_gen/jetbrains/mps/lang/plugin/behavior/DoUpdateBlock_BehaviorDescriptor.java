@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class DoUpdateBlock_BehaviorDescriptor extends UpdateBlock_BehaviorDescriptor {
   public DoUpdateBlock_BehaviorDescriptor() {
   }
-
   public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return DoUpdateBlock_Behavior.virtual_showName_1262430001741498082(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.DoUpdateBlock";
-  }
-}
+  };;
+;}

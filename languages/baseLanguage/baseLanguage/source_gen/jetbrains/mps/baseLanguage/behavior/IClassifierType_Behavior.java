@@ -22,8 +22,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class IClassifierType_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static Iterable<SNode> call_getMembers_7405920559687277275(final SNode thisNode) {
     if (thisNode == null) {
       // todo: this in virtual methods cannot be null but in non-virtual can be. think about it 
@@ -47,20 +47,20 @@ public class IClassifierType_Behavior {
         return Sequence.fromIterable(scope.getMembers()).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.IClassifierMember");
-          }
-        });
-      }
-    });
-  }
-
+          };;
+;        });
+      };;
+;    });
+  };;
+;
   public static Iterable<SNode> call_getVisibleMembers_6145907390641297279(final SNode thisNode, final SNode contextNode) {
     return Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isVisible_6145907390641297352", new Object[]{thisNode, contextNode});
-      }
-    });
-  }
-
+      };;
+;    });
+  };;
+;
   public static void call_populateMembers_7405920559687241253(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     SNode thisClassifier = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getClassifier_7405920559687237513", new Object[]{});
 
@@ -73,5 +73,5 @@ public class IClassifierType_Behavior {
         }
       }
     }
-  }
-}
+  };;
+;}

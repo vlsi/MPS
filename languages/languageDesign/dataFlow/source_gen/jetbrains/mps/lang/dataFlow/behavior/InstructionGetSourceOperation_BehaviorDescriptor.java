@@ -6,7 +6,6 @@ package jetbrains.mps.lang.dataFlow.behavior;
 public class InstructionGetSourceOperation_BehaviorDescriptor extends BaseInstructionOperation_BehaviorDescriptor {
   public InstructionGetSourceOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.structure.InstructionGetSourceOperation";

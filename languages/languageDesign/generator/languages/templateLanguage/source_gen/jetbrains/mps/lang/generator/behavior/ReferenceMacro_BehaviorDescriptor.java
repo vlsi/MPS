@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ReferenceMacro_BehaviorDescriptor extends LinkAttribute_BehaviorDescriptor implements AbstractMacro_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {
   public ReferenceMacro_BehaviorDescriptor() {
   }
-
   public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     return ReferenceMacro_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.ReferenceMacro";
-  }
-}
+  };;
+;}

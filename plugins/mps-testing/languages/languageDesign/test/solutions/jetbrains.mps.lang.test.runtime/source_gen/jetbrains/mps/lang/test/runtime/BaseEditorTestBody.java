@@ -75,12 +75,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
   protected CellReference myStart;
   protected CellReference myFinish;
 
-
   public BaseEditorTestBody() {
     undoManager = (UndoManagerImpl) UndoManager.getInstance(ProjectHelper.toIdeaProject(myProject));
   }
-
-
 
   public Editor initEditor(final String before, final String after) throws Exception {
     final Exception[] exception = new Exception[1];
@@ -99,8 +96,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     }
     return this.myEditor;
   }
-
-
 
   private void initEditor_internal(final String before, final String after) throws Exception {
     this.addNodeById(before);
@@ -130,8 +125,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-
-
   private void hackUndoManager(final Editor editor) {
     undoManager.setEditorProvider(new CurrentEditorProvider() {
       public FileEditor getCurrentEditor() {
@@ -140,8 +133,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
       }
     });
   }
-
-
 
   private void unhackUndoManager() {
     // the dirtiest hack : copy of the platform's FocusBasedCurrentEditorProvider 
@@ -153,8 +144,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-
-
   private CellReference findCellReference(SNode node) {
     List<SNode> annotations = SNodeOperations.getDescendants(node, "jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", false, new String[]{});
     if (ListSequence.fromList(annotations).isEmpty()) {
@@ -162,8 +151,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     }
     return new CellReference(this.getNodeById(SNodeOperations.getParent(ListSequence.fromList(annotations).first()).getNodeId().toString()), ListSequence.fromList(annotations).first(), this.myMap);
   }
-
-
 
   public void checkAssertion() throws Throwable {
     final Wrappers._T<Throwable> throwable = new Wrappers._T<Throwable>(null);
@@ -190,8 +177,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     }
   }
 
-
-
   public void testMethod() throws Throwable {
     try {
       this.testMethodImpl();
@@ -206,11 +191,7 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     }
   }
 
-
-
   public abstract void testMethodImpl() throws Exception;
-
-
 
   public void invokeIntention(final String name, final Editor editor, final SNode node) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
@@ -233,14 +214,10 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
-
-
   public static Editor openEditor(Project project, SModel model, SNode node) {
     MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(node);
     return new MPSFileNodeEditor(ProjectHelper.toIdeaProject(project), file).getNodeEditor();
   }
-
-
 
   public void closeEditor() {
     unhackUndoManager();
@@ -248,13 +225,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     editorManager.closeFile(MPSNodesVirtualFileSystem.getInstance().getFileFor(myBefore));
   }
 
-
-
   public static void typeString(Editor editor, String text) throws InterruptedException, InvocationTargetException {
     typeString((EditorComponent) editor.getCurrentEditorComponent(), text);
   }
-
-
 
   public static void typeString(final EditorComponent editorComponent, final String text) throws InterruptedException, InvocationTargetException {
     Iterable<KeyEvent> events = Sequence.fromIterable(ArrayUtils.fromCharacterArray(text.toCharArray())).select(new ISelector<Character, KeyEvent>() {
@@ -264,7 +237,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
     processKeyEvents(editorComponent, events);
   }
-
   private static void processKeyEvents(final EditorComponent editorComponent, final Iterable<KeyEvent> events) throws InterruptedException, InvocationTargetException {
     final Component eventTargetComponent = getKeyEventTargetComponent(editorComponent);
     final Method processKeyEventMethod = getProcessKeyEventMethod(eventTargetComponent);
@@ -299,7 +271,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     });
     Assert.assertTrue("Keyboard events were not passed to corresponding component", eventsWerePassed[0]);
   }
-
   private static Component getKeyEventTargetComponent(EditorComponent editorComponent) {
     EditorCell selectedCell = editorComponent.getSelectedCell();
     if (selectedCell == null) {
@@ -316,7 +287,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     }
     return eventTarget;
   }
-
   private static Method getProcessKeyEventMethod(Component eventTargetComponent) {
     if (eventTargetComponent == null) {
       return null;
@@ -335,12 +305,9 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
     Assert.fail("Cannot find processKeyEvent method in " + eventTargetComponent.getClass() + "class");
     return null;
   }
-
   public static void pressKeys(Editor editor, List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
     BaseEditorTestBody.pressKeys((EditorComponent) editor.getCurrentEditorComponent(), keyStrokes);
   }
-
-
 
   public static void pressKeys(final EditorComponent editorComponent, final List<String> keyStrokes) throws InterruptedException, InvocationTargetException {
     Iterable<KeyEvent> events = ListSequence.fromList(keyStrokes).translate(new ITranslator2<String, KeyEvent>() {
@@ -349,7 +316,6 @@ public abstract class BaseEditorTestBody extends BaseTestBody {
           public Iterator<KeyEvent> iterator() {
             return new YieldingIterator<KeyEvent>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -392,7 +358,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private KeyStroke _3_stroke;
               private int _4_keyCode;
               private char _5_keyChar;
@@ -403,11 +368,9 @@ __switch__:
     });
     processKeyEvents(editorComponent, events);
   }
-
   public static void invokeAction(Editor editor, String actionId) throws InvocationTargetException, InterruptedException {
     invokeAction((EditorComponent) editor.getCurrentEditorComponent(), actionId);
   }
-
   public static void invokeAction(final EditorComponent editorComponent, final String actionId) throws InvocationTargetException, InterruptedException {
     SwingUtilities.invokeAndWait(new Runnable() {
       @Override
@@ -419,8 +382,6 @@ __switch__:
     });
     flushEventQueueAfterAction();
   }
-
-
 
   protected static void flushEventQueueAfterAction() throws InvocationTargetException, InterruptedException {
     // flush queue 
@@ -441,7 +402,6 @@ __switch__:
     });
     ModelAccess.instance().flushEventQueue();
   }
-
   public static Component processMouseEvent(final EditorComponent editorComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
     assert editorComponent.getRootCell() != null;
 
@@ -473,7 +433,6 @@ __switch__:
     });
     return targetComponent.value;
   }
-
   public static void processSecondaryMouseEvent(final Component targetComponent, int x, int y, int eventType) throws InvocationTargetException, InterruptedException {
     final MouseEvent e = createMouseEvent(targetComponent, eventType, x, y);
     SwingUtilities.invokeAndWait(new Runnable() {
@@ -482,7 +441,6 @@ __switch__:
       }
     });
   }
-
   private static JComponent getEventTargetComponent(EditorCell currentCell, EditorComponent editorComponent) {
     while (currentCell != null) {
       if (currentCell instanceof EditorCell_WithComponent) {
@@ -492,7 +450,6 @@ __switch__:
     }
     return editorComponent;
   }
-
   private static MouseEvent createMouseEvent(Component targetComponent, int id, int x, int y) {
     return new MouseEvent(targetComponent, id, System.currentTimeMillis(), 0, x, y, x, y, 1, false, MouseEvent.BUTTON1);
   }

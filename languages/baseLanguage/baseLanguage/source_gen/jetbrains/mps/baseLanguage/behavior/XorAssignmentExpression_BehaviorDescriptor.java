@@ -10,5 +10,5 @@ public class XorAssignmentExpression_BehaviorDescriptor extends OperationAssignm
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.XorAssignmentExpression";
-  }
-}
+  };;
+;}

@@ -20,8 +20,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class StaticMethodCall_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static Object virtual_eval_1213877519769(SNode thisNode, @NotNull SModule module) {
     if (module instanceof TransientModelsModule) {
       module = ((TransientModelsModule) module).getOriginalModule();
@@ -29,22 +29,22 @@ public class StaticMethodCall_Behavior {
     Method method = BaseMethodDeclaration_Behavior.call_getMethod_1213877350393(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), module);
     Object[] actualArguments = BaseMethodCall_Behavior.call_getActualArguments_1213877339153(thisNode, module);
     return ReflectionUtil.staticInvoke(method, actualArguments);
-  }
-
+  };;
+;
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, final String methodName) {
     return Sequence.fromIterable(Members.visibleStaticMethods(SLinkOperations.getTarget(thisNode, "classConcept", false), thisNode)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_8wxa2a_a0a0a0a0a0a0a2(SPropertyOperations.getString(it, "name"), methodName);
-      }
-    }).toListSequence();
-  }
-
+      };;
+;    }).toListSequence();
+  };;
+;
   public static boolean call_canBeConvertedToLocal_3299924278393499101(SNode thisNode) {
     SNode classConcept1 = SLinkOperations.getTarget(thisNode, "classConcept", false);
     SNode classConcept2 = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     return classConcept1 == classConcept2;
-  }
-
+  };;
+;
   public static void call_convertToLocal_3299924278393509387(SNode thisNode) {
     SNode localStaticMethodCall = SNodeFactoryOperations.replaceWithNewChild(thisNode, "jetbrains.mps.baseLanguage.structure.LocalMethodCall");
     SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), false);
@@ -54,13 +54,13 @@ public class StaticMethodCall_Behavior {
     for (SNode actualTypeArgument : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeArgument", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "typeArgument", true)).addElement(actualTypeArgument);
     }
-  }
-
+  };;
+;
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "classConcept", false), "virtual_getPresentation_1213877396640", new Object[]{}) + "." + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "virtual_getPresentation_1213877396640", new Object[]{});
-  }
-
+  };;
+;
   private static boolean eq_8wxa2a_a0a0a0a0a0a0a2(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  }
-}
+  };;
+;}

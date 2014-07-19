@@ -42,7 +42,6 @@ public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
       this.appendWithIndent("}");
     }
   }
-
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
   }

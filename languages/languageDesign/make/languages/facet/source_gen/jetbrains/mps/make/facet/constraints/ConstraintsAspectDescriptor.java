@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
   public ConstraintsAspectDescriptor() {
   }
-
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 8:
@@ -39,6 +38,5 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new BaseConstraintsDescriptor(fqName);
     }
   }
-
   private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.make.facet.structure.ExtendsFacetReference", "jetbrains.mps.make.facet.structure.FacetDeclaration", "jetbrains.mps.make.facet.structure.FacetReference", "jetbrains.mps.make.facet.structure.ForeignParametersExpression", "jetbrains.mps.make.facet.structure.NamedFacetReference", "jetbrains.mps.make.facet.structure.RelatedFacetReference", "jetbrains.mps.make.facet.structure.ResourceClassifierType", "jetbrains.mps.make.facet.structure.ResourceTypeDeclaration", "jetbrains.mps.make.facet.structure.TargetDeclaration", "jetbrains.mps.make.facet.structure.TargetDependency", "jetbrains.mps.make.facet.structure.TargetReferenceExpression"};
 }

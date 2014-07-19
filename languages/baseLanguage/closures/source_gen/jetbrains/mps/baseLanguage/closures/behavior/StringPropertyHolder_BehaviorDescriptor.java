@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class StringPropertyHolder_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public StringPropertyHolder_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder";
-  }
-}
+  };;
+;}

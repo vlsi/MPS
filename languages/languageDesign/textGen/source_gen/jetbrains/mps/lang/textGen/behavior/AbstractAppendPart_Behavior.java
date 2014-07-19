@@ -6,9 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class AbstractAppendPart_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static boolean virtual_withIndent_1237466287046(SNode thisNode) {
+  };;
+;  public static boolean virtual_withIndent_1237466287046(SNode thisNode) {
     return false;
-  }
-}
+  };;
+;}

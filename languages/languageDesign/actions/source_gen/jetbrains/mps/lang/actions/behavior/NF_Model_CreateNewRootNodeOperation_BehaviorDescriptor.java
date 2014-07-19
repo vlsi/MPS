@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class NF_Model_CreateNewRootNodeOperation_BehaviorDescriptor extends Model_CreateNewRootNodeOperation_BehaviorDescriptor {
   public NF_Model_CreateNewRootNodeOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToModel_1262430001741492322(SConcept thisConcept) {
     return NF_Model_CreateNewRootNodeOperation_Behavior.virtual_applicableToModel_1262430001741492322(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NF_Model_CreateNewRootNodeOperation";
-  }
-}
+  };;
+;}

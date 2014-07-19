@@ -19,11 +19,11 @@ public class ConstraintsUtil {
     return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.ClassifierMember", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return !(BehaviorReflection.invokeVirtual(Boolean.TYPE, it, "virtual_isStatic_8986964027630462944", new Object[]{}));
-      }
-    }).isNotEmpty();
-  }
-
+      };;
+;    }).isNotEmpty();
+  };;
+;
   public static boolean isInsideOfClassifier(SNode node) {
     return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", true, false) != null);
-  }
-}
+  };;
+;}

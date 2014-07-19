@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class AnalyzerFunParameterProgramState_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public AnalyzerFunParameterProgramState_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.analyzers.structure.AnalyzerFunParameterProgramState";

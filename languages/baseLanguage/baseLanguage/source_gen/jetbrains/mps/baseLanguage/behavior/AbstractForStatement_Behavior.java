@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class AbstractForStatement_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
       if (ScopeUtils.comeFrom("body", thisNode, child)) {
@@ -23,5 +23,5 @@ public class AbstractForStatement_Behavior {
       }
     }
     return BehaviorReflection.invokeSuper(Scope.class, thisNode, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", "virtual_getScope_3734116213129936182", new Object[]{kind, child});
-  }
-}
+  };;
+;}

@@ -29,7 +29,6 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
   public CustomMapCreator_Constraints() {
     super("jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -37,27 +36,24 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnGetter() {
         return true;
-      }
-
-      @Override
+      };;
+;      @Override
       public Object getValue(SNode node) {
         String propertyName = "alias";
         return SPropertyOperations.getString(SLinkOperations.getTarget(node, "containerDeclaration", false), "name");
-      }
-    });
+      };;
+;    });
     return properties;
-  }
-
-  @Override
+  };;
+;  @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
     references.put("containerDeclaration", new BaseReferenceConstraintsDescriptor("containerDeclaration", this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      }
-
-      @Nullable
+      };;
+;      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseReferenceScopeProvider() {
@@ -65,17 +61,15 @@ public class CustomMapCreator_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             SNode expr = SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.Expression");
             return ((expr != null) ? CustomContainersUtil.containerDeclarations(SNodeOperations.getModel(expr), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.as(SNodeOperations.getParent(expr), "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", new Object[]{expr})) : Sequence.fromIterable(Collections.<SNode>emptyList()));
-          }
-
-          @Override
+          };;
+;          @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_rduypo_a0a1a0a0a1a0b0a1a2;
-          }
-        };
-      }
-    });
+          };;
+;        };
+      };;
+;    });
     return references;
-  }
-
-  private static SNodePointer breakingNode_rduypo_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628290362");
+  };;
+;  private static SNodePointer breakingNode_rduypo_a0a1a0a0a1a0b0a1a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)", "9034802358628290362");
 }

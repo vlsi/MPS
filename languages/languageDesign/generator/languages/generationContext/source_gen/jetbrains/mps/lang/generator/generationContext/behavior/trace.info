@@ -8,185 +8,185 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_ShowErrorMessage_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowErrorMessage_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowErrorMessage_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_DirtyNode_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_DirtyNode_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_DirtyNode_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GenParameterRef_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GenParameterRef_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GenParameterRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_VarRef_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_VarRef_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_VarRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_StepObjectAccess_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOutputListByLabelAndInput_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputListByLabelAndInput_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputListByLabelAndInput_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetTemplateNode_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetTemplateNode_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetTemplateNode_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_PropertyPatternRef_BehaviorDescriptor.java">
-      <unit at="7,0,24,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PropertyPatternRef_BehaviorDescriptor" />
+      <unit at="7,0,21,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PropertyPatternRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetScope_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetScope_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetScope_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOriginalInputModel_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOriginalInputModel_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOriginalInputModel_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetCopiedOutputByInput_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetCopiedOutputByInput_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetCopiedOutputByInput_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_Base_BehaviorDescriptor.java">
-      <unit at="12,0,41,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_Base_BehaviorDescriptor" />
+      <unit at="12,0,35,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_Base_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetPrevInputByLabel_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,80,0" name="jetbrains.mps.lang.generator.generationContext.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,78,0" name="jetbrains.mps.lang.generator.generationContext.behavior.BehaviorAspectDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOutputByLabelAndInput_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabelAndInput_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabelAndInput_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_PatternRef_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef_BehaviorDescriptor" />
+      <unit at="7,0,17,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_SessionObjectAccess_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_ShowInfoMessage_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowInfoMessage_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowInfoMessage_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextType_BehaviorDescriptor.java">
-      <unit at="7,0,16,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextType_BehaviorDescriptor" />
+      <unit at="7,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextType_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOutputByLabel_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabel_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabel_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_LinkPatternRef_BehaviorDescriptor.java">
-      <unit at="7,0,24,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef_BehaviorDescriptor" />
+      <unit at="7,0,21,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_NodePatternRef_BehaviorDescriptor.java">
-      <unit at="7,0,24,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_NodePatternRef_BehaviorDescriptor" />
+      <unit at="7,0,21,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_NodePatternRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetInputModel_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetInputModel_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetInputModel_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOriginalCopiedInputByOutput_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOriginalCopiedInputByOutput_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOriginalCopiedInputByOutput_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_ShowWarningMessage_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowWarningMessage_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowWarningMessage_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetInvocationContext_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetInvocationContext_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetInvocationContext_BehaviorDescriptor" />
     </file>
     <file name="TemplateFunctionParameter_generationContext_BehaviorDescriptor.java">
-      <unit at="9,0,22,0" name="jetbrains.mps.lang.generator.generationContext.behavior.TemplateFunctionParameter_generationContext_BehaviorDescriptor" />
+      <unit at="9,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.TemplateFunctionParameter_generationContext_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_ParameterRef_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ParameterRef_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ParameterRef_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_TransientObjectAccess_BehaviorDescriptor.java">
-      <unit at="7,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess_BehaviorDescriptor" />
+      <unit at="7,0,18,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_CreateUniqueName_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CreateUniqueName_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_CreateUniqueName_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_ShowMessageBase_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowMessageBase_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_ShowMessageBase_BehaviorDescriptor" />
     </file>
     <file name="GenerationContextOp_GetOutputModel_BehaviorDescriptor.java">
-      <unit at="6,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputModel_BehaviorDescriptor" />
+      <unit at="6,0,14,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_GetOutputModel_BehaviorDescriptor" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1217892542812">
     <file name="GenerationContextOp_UserObjectAccessBase_Behavior.java">
-      <node id="1217892577742" at="13,81,14,91" concept="3" />
-      <node id="1217892577754" at="16,193,17,20" concept="4" />
-      <node id="1217892577768" at="19,5,20,17" concept="4" />
-      <node id="1217892542812" at="10,0,12,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1217892577752" at="15,117,18,7" concept="2" />
-      <node id="1217892577750" at="14,91,19,5" concept="2" />
-      <node id="1217892542812" at="13,0,22,0" concept="5" trace="call_isLValueInAssignment_1217892546644#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="1217892577742" at="12,82,13,91" concept="3" />
+      <node id="1217892577754" at="15,193,16,20" concept="4" />
+      <node id="1217892577768" at="18,5,19,17" concept="4" />
+      <node id="1217892542812" at="10,0,12,1" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1217892577752" at="14,117,17,7" concept="2" />
+      <node id="1217892577750" at="13,91,18,5" concept="2" />
+      <node id="1217892542812" at="12,1,21,1" concept="5" trace="call_isLValueInAssignment_1217892546644#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
       <scope id="1217892542814" at="10,43,10,43" />
-      <scope id="1217892577753" at="16,193,17,20" />
-      <scope id="1217892542812" at="10,0,12,0">
+      <scope id="1217892577753" at="15,193,16,20" />
+      <scope id="1217892542812" at="10,0,12,1">
         <var name="thisNode" id="1217892542812" />
       </scope>
-      <scope id="1217892577751" at="15,117,18,7" />
-      <scope id="1217892546646" at="13,81,20,17">
+      <scope id="1217892577751" at="14,117,17,7" />
+      <scope id="1217892546646" at="12,82,19,17">
         <var name="mayBeAssignment" id="1217892577743" />
       </scope>
-      <scope id="1217892542812" at="13,0,22,0">
+      <scope id="1217892542812" at="12,1,21,1">
         <var name="thisNode" id="1217892542812" />
       </scope>
-      <unit id="1217892542812" at="9,0,23,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase_Behavior" />
+      <unit id="1217892542812" at="9,0,22,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_UserObjectAccessBase_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1262430001741641975">
     <file name="GenerationContextOp_TransientObjectAccess_Behavior.java">
-      <node id="1262430001741641973" at="12,90,13,16" concept="4" />
-      <node id="1262430001741641975" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1262430001741641975" at="12,0,15,0" concept="5" trace="virtual_lvalue_1262430001741498364#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="1262430001741641973" at="11,91,12,16" concept="4" />
+      <node id="1262430001741641975" at="9,0,11,1" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741641975" at="11,1,14,1" concept="5" trace="virtual_lvalue_1262430001741498364#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
       <scope id="1262430001741641977" at="9,43,9,43" />
-      <scope id="1262430001741641972" at="12,90,13,16" />
-      <scope id="1262430001741641975" at="9,0,11,0">
+      <scope id="1262430001741641972" at="11,91,12,16" />
+      <scope id="1262430001741641975" at="9,0,11,1">
         <var name="thisNode" id="1262430001741641975" />
       </scope>
-      <scope id="1262430001741641975" at="12,0,15,0">
+      <scope id="1262430001741641975" at="11,1,14,1">
         <var name="thisConcept" id="1262430001741641975" />
       </scope>
-      <unit id="1262430001741641975" at="8,0,16,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess_Behavior" />
+      <unit id="1262430001741641975" at="8,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_TransientObjectAccess_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1262430001741647490">
     <file name="GenerationContextOp_StepObjectAccess_Behavior.java">
-      <node id="1262430001741647488" at="12,90,13,16" concept="4" />
-      <node id="1262430001741647490" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1262430001741647490" at="12,0,15,0" concept="5" trace="virtual_lvalue_1262430001741498364#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="1262430001741647488" at="11,91,12,16" concept="4" />
+      <node id="1262430001741647490" at="9,0,11,1" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741647490" at="11,1,14,1" concept="5" trace="virtual_lvalue_1262430001741498364#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
       <scope id="1262430001741647492" at="9,43,9,43" />
-      <scope id="1262430001741647487" at="12,90,13,16" />
-      <scope id="1262430001741647490" at="9,0,11,0">
+      <scope id="1262430001741647487" at="11,91,12,16" />
+      <scope id="1262430001741647490" at="9,0,11,1">
         <var name="thisNode" id="1262430001741647490" />
       </scope>
-      <scope id="1262430001741647490" at="12,0,15,0">
+      <scope id="1262430001741647490" at="11,1,14,1">
         <var name="thisConcept" id="1262430001741647490" />
       </scope>
-      <unit id="1262430001741647490" at="8,0,16,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess_Behavior" />
+      <unit id="1262430001741647490" at="8,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_StepObjectAccess_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1262430001741718763">
     <file name="GenerationContextOp_SessionObjectAccess_Behavior.java">
-      <node id="1262430001741718761" at="12,90,13,16" concept="4" />
-      <node id="1262430001741718763" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1262430001741718763" at="12,0,15,0" concept="5" trace="virtual_lvalue_1262430001741498364#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
+      <node id="1262430001741718761" at="11,91,12,16" concept="4" />
+      <node id="1262430001741718763" at="9,0,11,1" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1262430001741718763" at="11,1,14,1" concept="5" trace="virtual_lvalue_1262430001741498364#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Z" />
       <scope id="1262430001741718765" at="9,43,9,43" />
-      <scope id="1262430001741718760" at="12,90,13,16" />
-      <scope id="1262430001741718763" at="9,0,11,0">
+      <scope id="1262430001741718760" at="11,91,12,16" />
+      <scope id="1262430001741718763" at="9,0,11,1">
         <var name="thisNode" id="1262430001741718763" />
       </scope>
-      <scope id="1262430001741718763" at="12,0,15,0">
+      <scope id="1262430001741718763" at="11,1,14,1">
         <var name="thisConcept" id="1262430001741718763" />
       </scope>
-      <unit id="1262430001741718763" at="8,0,16,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess_Behavior" />
+      <unit id="1262430001741718763" at="8,0,15,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_SessionObjectAccess_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1758784108620114789">
     <file name="GenerationContextOp_PatternRef_Behavior.java">
-      <node id="1758784108620114789" at="8,0,10,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1758784108620114789" at="8,0,10,1" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1758784108620114791" at="8,43,8,43" />
-      <scope id="1758784108620114789" at="8,0,10,0">
+      <scope id="1758784108620114789" at="8,0,10,1">
         <var name="thisNode" id="1758784108620114789" />
       </scope>
       <unit id="1758784108620114789" at="7,0,11,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PatternRef_Behavior" />
@@ -194,100 +194,100 @@
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1758784108620115398">
     <file name="GenerationContextOp_LinkPatternRef_Behavior.java">
-      <node id="1758784108620115427" at="12,77,13,72" concept="4" />
-      <node id="1758784108620254546" at="16,90,17,71" concept="1" />
-      <node id="1758784108620115398" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1758784108620115398" at="12,0,15,0" concept="5" trace="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1758784108620115398" at="16,0,19,0" concept="5" trace="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1758784108620115427" at="11,78,12,72" concept="4" />
+      <node id="1758784108620254546" at="14,91,15,71" concept="1" />
+      <node id="1758784108620115398" at="9,0,11,1" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1758784108620115398" at="11,1,14,1" concept="5" trace="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1758784108620115398" at="14,1,17,1" concept="5" trace="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1758784108620115400" at="9,43,9,43" />
-      <scope id="1758784108620115403" at="12,77,13,72" />
-      <scope id="1758784108620254542" at="16,90,17,71" />
-      <scope id="1758784108620115398" at="9,0,11,0">
+      <scope id="1758784108620115403" at="11,78,12,72" />
+      <scope id="1758784108620254542" at="14,91,15,71" />
+      <scope id="1758784108620115398" at="9,0,11,1">
         <var name="thisNode" id="1758784108620115398" />
       </scope>
-      <scope id="1758784108620115398" at="12,0,15,0">
+      <scope id="1758784108620115398" at="11,1,14,1">
         <var name="thisNode" id="1758784108620115398" />
       </scope>
-      <scope id="1758784108620115398" at="16,0,19,0">
+      <scope id="1758784108620115398" at="14,1,17,1">
         <var name="target" id="1758784108620254543" />
         <var name="thisNode" id="1758784108620115398" />
       </scope>
-      <unit id="1758784108620115398" at="8,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef_Behavior" />
+      <unit id="1758784108620115398" at="8,0,18,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_LinkPatternRef_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1758784108620115413">
     <file name="GenerationContextOp_NodePatternRef_Behavior.java">
-      <node id="1758784108620115420" at="12,77,13,72" concept="4" />
-      <node id="1758784108620254563" at="16,90,17,71" concept="1" />
-      <node id="1758784108620115413" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1758784108620115413" at="12,0,15,0" concept="5" trace="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1758784108620115413" at="16,0,19,0" concept="5" trace="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1758784108620115420" at="11,78,12,72" concept="4" />
+      <node id="1758784108620254563" at="14,91,15,71" concept="1" />
+      <node id="1758784108620115413" at="9,0,11,1" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1758784108620115413" at="11,1,14,1" concept="5" trace="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1758784108620115413" at="14,1,17,1" concept="5" trace="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1758784108620115415" at="9,43,9,43" />
-      <scope id="1758784108620115418" at="12,77,13,72" />
-      <scope id="1758784108620254559" at="16,90,17,71" />
-      <scope id="1758784108620115413" at="9,0,11,0">
+      <scope id="1758784108620115418" at="11,78,12,72" />
+      <scope id="1758784108620254559" at="14,91,15,71" />
+      <scope id="1758784108620115413" at="9,0,11,1">
         <var name="thisNode" id="1758784108620115413" />
       </scope>
-      <scope id="1758784108620115413" at="12,0,15,0">
+      <scope id="1758784108620115413" at="11,1,14,1">
         <var name="thisNode" id="1758784108620115413" />
       </scope>
-      <scope id="1758784108620115413" at="16,0,19,0">
+      <scope id="1758784108620115413" at="14,1,17,1">
         <var name="target" id="1758784108620254560" />
         <var name="thisNode" id="1758784108620115413" />
       </scope>
-      <unit id="1758784108620115413" at="8,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_NodePatternRef_Behavior" />
+      <unit id="1758784108620115413" at="8,0,18,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_NodePatternRef_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/1758784108620115429">
     <file name="GenerationContextOp_PropertyPatternRef_Behavior.java">
-      <node id="1758784108620115436" at="12,77,13,76" concept="4" />
-      <node id="1758784108620254584" at="16,90,17,75" concept="1" />
-      <node id="1758784108620115429" at="9,0,11,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="1758784108620115429" at="12,0,15,0" concept="5" trace="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="1758784108620115429" at="16,0,19,0" concept="5" trace="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1758784108620115436" at="11,78,12,76" concept="4" />
+      <node id="1758784108620254584" at="14,91,15,75" concept="1" />
+      <node id="1758784108620115429" at="9,0,11,1" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="1758784108620115429" at="11,1,14,1" concept="5" trace="virtual_getTarget_1758784108620114792#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="1758784108620115429" at="14,1,17,1" concept="5" trace="virtual_setTarget_1758784108620254533#(Lorg/jetbrains/mps/openapi/model/SNode;Lorg/jetbrains/mps/openapi/model/SNode;)V" />
       <scope id="1758784108620115431" at="9,43,9,43" />
-      <scope id="1758784108620115434" at="12,77,13,76" />
-      <scope id="1758784108620254580" at="16,90,17,75" />
-      <scope id="1758784108620115429" at="9,0,11,0">
+      <scope id="1758784108620115434" at="11,78,12,76" />
+      <scope id="1758784108620254580" at="14,91,15,75" />
+      <scope id="1758784108620115429" at="9,0,11,1">
         <var name="thisNode" id="1758784108620115429" />
       </scope>
-      <scope id="1758784108620115429" at="12,0,15,0">
+      <scope id="1758784108620115429" at="11,1,14,1">
         <var name="thisNode" id="1758784108620115429" />
       </scope>
-      <scope id="1758784108620115429" at="16,0,19,0">
+      <scope id="1758784108620115429" at="14,1,17,1">
         <var name="target" id="1758784108620254581" />
         <var name="thisNode" id="1758784108620115429" />
       </scope>
-      <unit id="1758784108620115429" at="8,0,20,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PropertyPatternRef_Behavior" />
+      <unit id="1758784108620115429" at="8,0,18,0" name="jetbrains.mps.lang.generator.generationContext.behavior.GenerationContextOp_PropertyPatternRef_Behavior" />
     </file>
   </root>
   <root nodeRef="r:00000000-0000-4000-0000-011c895902ed(jetbrains.mps.lang.generator.generationContext.behavior)/5452844340287052613">
     <file name="TemplateFunctionParameter_generationContext_Behavior.java">
-      <node id="5452844340287052764" at="13,75,14,47" concept="4" />
-      <node id="5452844340287052760" at="17,60,18,63" concept="3" />
-      <node id="5452844340287052760" at="18,63,19,30" concept="3" />
-      <node id="5452844340287052760" at="19,30,20,165" concept="0" />
-      <node id="5452844340287052760" at="19,30,20,165" concept="0" />
-      <node id="5452844340287052760" at="19,30,20,165" concept="1" />
-      <node id="5452844340287052760" at="20,165,21,24" concept="4" />
-      <node id="5452844340287052613" at="10,0,12,0" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5452844340287052613" at="13,0,16,0" concept="5" trace="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-      <node id="5452844340287052760" at="17,0,23,0" concept="5" trace="_quotation_createNode_fkq6n5_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5452844340287052764" at="12,76,13,47" concept="4" />
+      <node id="5452844340287052760" at="15,61,16,63" concept="3" />
+      <node id="5452844340287052760" at="16,63,17,30" concept="3" />
+      <node id="5452844340287052760" at="17,30,18,165" concept="0" />
+      <node id="5452844340287052760" at="17,30,18,165" concept="0" />
+      <node id="5452844340287052760" at="17,30,18,165" concept="1" />
+      <node id="5452844340287052760" at="18,165,19,24" concept="4" />
+      <node id="5452844340287052613" at="10,0,12,1" concept="5" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+      <node id="5452844340287052613" at="12,1,15,1" concept="5" trace="virtual_getType_2443692612523876968#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+      <node id="5452844340287052760" at="15,1,21,1" concept="5" trace="_quotation_createNode_fkq6n5_a0a0#()Lorg/jetbrains/mps/openapi/model/SNode;" />
       <scope id="5452844340287052615" at="10,43,10,43" />
-      <scope id="5452844340287052763" at="13,75,14,47" />
-      <scope id="5452844340287052760" at="19,30,20,165" />
-      <scope id="5452844340287052613" at="10,0,12,0">
+      <scope id="5452844340287052763" at="12,76,13,47" />
+      <scope id="5452844340287052760" at="17,30,18,165" />
+      <scope id="5452844340287052613" at="10,0,12,1">
         <var name="thisNode" id="5452844340287052613" />
       </scope>
-      <scope id="5452844340287052613" at="13,0,16,0">
+      <scope id="5452844340287052613" at="12,1,15,1">
         <var name="thisNode" id="5452844340287052613" />
       </scope>
-      <scope id="5452844340287052760" at="17,60,21,24">
+      <scope id="5452844340287052760" at="15,61,19,24">
         <var name="facade" id="5452844340287052760" />
         <var name="quotedNode_1" id="5452844340287052760" />
       </scope>
-      <scope id="5452844340287052760" at="17,0,23,0" />
-      <unit id="5452844340287052613" at="9,0,24,0" name="jetbrains.mps.lang.generator.generationContext.behavior.TemplateFunctionParameter_generationContext_Behavior" />
+      <scope id="5452844340287052760" at="15,1,21,1" />
+      <unit id="5452844340287052613" at="9,0,22,0" name="jetbrains.mps.lang.generator.generationContext.behavior.TemplateFunctionParameter_generationContext_Behavior" />
     </file>
   </root>
 </debug-info>

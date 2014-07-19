@@ -16,7 +16,6 @@ import org.apache.log4j.LogManager;
 
 public class TransformationTestLightRunner extends TransformationTestRunner {
 
-
   @Override
   public void initTest(@NotNull final TransformationTest test, @NotNull String projectPath, String modelName, boolean uiTest, boolean reopenProject) throws Exception {
     final Project testProject = findProject(projectPath);
@@ -25,14 +24,10 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
     ModelAccess.instance().flushEventQueue();
   }
 
-
-
   @Override
   public void runTest(@NotNull final TransformationTest projectTest, String className, final String methodName, boolean runInCommand) throws Throwable {
     super.runTest(projectTest, className, methodName, runInCommand);
   }
-
-
 
   @Nullable
   private Project findProject(@NotNull String projectPath) {
@@ -45,8 +40,6 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
     }
     return null;
   }
-
-
 
   private static boolean projectHasPath(Project project, File path) {
     File projectFile = project.getProjectFile();
@@ -64,7 +57,6 @@ public class TransformationTestLightRunner extends TransformationTestRunner {
     }
     return false;
   }
-
 
   protected static Logger LOG = LogManager.getLogger(TransformationTestLightRunner.class);
 }

@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 public class ModelStatisticsTarget_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
     int references = 0;
     int properties = 0;
@@ -36,7 +35,6 @@ public class ModelStatisticsTarget_Behavior {
 
     return result;
   }
-
   public static Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
     return SModelOperations.getNodes(ModelReference_Behavior.call_getModel_7057947030098579394(SLinkOperations.getTarget(thisNode, "target", true)), null);
   }

@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class IndexedTupleMemberAccessExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public IndexedTupleMemberAccessExpression_BehaviorDescriptor() {
   }
-
   public boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return IndexedTupleMemberAccessExpression_Behavior.virtual_isLValue_1213877519786(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression";
-  }
-}
+  };;
+;}

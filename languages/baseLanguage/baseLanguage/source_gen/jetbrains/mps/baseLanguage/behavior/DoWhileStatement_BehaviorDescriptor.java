@@ -10,5 +10,5 @@ public class DoWhileStatement_BehaviorDescriptor extends AbstractLoopStatement_B
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.DoWhileStatement";
-  }
-}
+  };;
+;}

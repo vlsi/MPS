@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class GridBagConstraints_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public GridBagConstraints_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.settings.structure.GridBagConstraints";

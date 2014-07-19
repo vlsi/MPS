@@ -13,23 +13,18 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class QueryDefinition_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IWillBeClassifier_BehaviorDescriptor {
   public QueryDefinition_BehaviorDescriptor() {
   }
-
   public SNode virtual_baseClassifier_4125795553993767872(SNode thisNode) {
     return IWillBeClassifier_Behavior.virtual_baseClassifier_4125795553993767872(thisNode);
   }
-
   public String virtual_classifierName_4609636120081351397(SNode thisNode) {
     return QueryDefinition_Behavior.virtual_classifierName_4609636120081351397(thisNode);
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public SNode virtual_resolve_4609636120081469956(SNode thisNode, SModel targetModel) {
     return IWillBeClassifier_Behavior.virtual_resolve_4609636120081469956(thisNode, targetModel);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.make.script.structure.QueryDefinition";

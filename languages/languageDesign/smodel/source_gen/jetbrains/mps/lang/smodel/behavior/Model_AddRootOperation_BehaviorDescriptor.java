@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class Model_AddRootOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Model_AddRootOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToModel_1262430001741492322(SConcept thisConcept) {
     return Model_AddRootOperation_Behavior.virtual_applicableToModel_1262430001741492322(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Model_AddRootOperation";
-  }
-}
+  };;
+;}

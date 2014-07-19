@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ContextParameter_BehaviorDescriptor extends AbstractTextGenParameter_BehaviorDescriptor {
   public ContextParameter_BehaviorDescriptor() {
   }
-
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ContextParameter_Behavior.virtual_getType_2443692612523876968(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.ContextParameter";
-  }
-}
+  };;
+;}

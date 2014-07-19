@@ -32,7 +32,6 @@ import org.apache.log4j.LogManager;
 public class HelpCommand_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
     if ((SLinkOperations.getTarget(thisNode, "target", true) == null)) {
       Iterable<SNode> constructions = ListSequence.fromList(SConceptOperations.getAllSubConcepts(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.base.structure.ConsoleHelpProvider"), context.getConsoleTab().getConsoleModel())).where(new IWhereFilter<SNode>() {
@@ -123,38 +122,31 @@ public class HelpCommand_Behavior {
       }
     }
   }
-
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
     return "display this help or command help";
   }
-
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
     return "When called without arguments, prints common help.\nWhen command is specified, prints help about the command.";
   }
-
   protected static Logger LOG = LogManager.getLogger(HelpCommand_Behavior.class);
-
   private static String check_x46ur7_a0a0c0a0a(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(checkedDotOperand)), "virtual_getGroup_6928665434441162387", new Object[]{});
     }
     return null;
   }
-
   private static int check_x46ur7_a0a0b0f0a0a(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.length();
     }
     return 0;
   }
-
   private static int check_x46ur7_a0a0b0a0i0a0a(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.length();
     }
     return 0;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

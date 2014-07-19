@@ -6,7 +6,6 @@ package jetbrains.mps.console.blCommand.behavior;
 public class PrintSequenceExpression_BehaviorDescriptor extends AbstractPrintExpression_BehaviorDescriptor {
   public PrintSequenceExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.blCommand.structure.PrintSequenceExpression";

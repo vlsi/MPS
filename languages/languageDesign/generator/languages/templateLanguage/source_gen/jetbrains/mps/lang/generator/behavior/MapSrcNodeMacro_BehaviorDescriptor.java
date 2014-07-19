@@ -6,9 +6,8 @@ package jetbrains.mps.lang.generator.behavior;
 public class MapSrcNodeMacro_BehaviorDescriptor extends SourceSubstituteMacro_BehaviorDescriptor {
   public MapSrcNodeMacro_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.MapSrcNodeMacro";
-  }
-}
+  };;
+;}

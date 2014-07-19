@@ -6,9 +6,8 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class CutOperation_BehaviorDescriptor extends ChunkOperation_BehaviorDescriptor {
   public CutOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.CutOperation";
-  }
-}
+  };;
+;}

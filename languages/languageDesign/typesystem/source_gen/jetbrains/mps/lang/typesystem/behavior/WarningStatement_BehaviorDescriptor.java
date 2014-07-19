@@ -8,17 +8,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class WarningStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements MessageStatement_BehaviorDescriptor {
   public WarningStatement_BehaviorDescriptor() {
   }
-
   public void virtual_attachNewMessageAnnotation_8489045168661849665(SNode thisNode) {
     WarningStatement_Behavior.virtual_attachNewMessageAnnotation_8489045168661849665(thisNode);
-  }
-
-  public String virtual_getName_1597542831856389237(SNode thisNode) {
+  };;
+;  public String virtual_getName_1597542831856389237(SNode thisNode) {
     return WarningStatement_Behavior.virtual_getName_1597542831856389237(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.WarningStatement";
-  }
-}
+  };;
+;}

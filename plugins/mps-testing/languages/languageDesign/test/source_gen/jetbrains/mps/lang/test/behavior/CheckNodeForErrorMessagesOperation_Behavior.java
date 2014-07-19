@@ -10,17 +10,14 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class CheckNodeForErrorMessagesOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     final SNode nodeToCheck = node;
     final SNode operation = thisNode;
     NodeCheckerUtil.checkNodeForErrorMessages(node, SPropertyOperations.getBoolean(thisNode, "allowWarnings"), SPropertyOperations.getBoolean(thisNode, "allowErrors"));
   }
-
   public static String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return "ErrorMessagesCheck";
   }
-
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getTestName_1216136419751", new Object[]{});
   }

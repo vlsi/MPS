@@ -12,18 +12,18 @@ public class NullLiteral_BehaviorDescriptor extends Expression_BehaviorDescripto
 
   public boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
     return NullLiteral_Behavior.virtual_constant_1262430001741498050(thisConcept);
-  }
-
+  };;
+;
   public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return NullLiteral_Behavior.virtual_eval_1213877519769(thisNode, module);
-  }
-
+  };;
+;
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return NullLiteral_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.NullLiteral";
-  }
-}
+  };;
+;}

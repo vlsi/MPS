@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class AbstractAppendPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public AbstractAppendPart_BehaviorDescriptor() {
   }
-
   public boolean virtual_withIndent_1237466287046(SNode thisNode) {
     return AbstractAppendPart_Behavior.virtual_withIndent_1237466287046(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.AbstractAppendPart";
-  }
-}
+  };;
+;}

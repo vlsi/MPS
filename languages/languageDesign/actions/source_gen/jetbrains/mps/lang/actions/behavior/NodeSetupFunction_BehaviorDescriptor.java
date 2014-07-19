@@ -10,17 +10,14 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class NodeSetupFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public NodeSetupFunction_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return NodeSetupFunction_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
-  }
-
-  public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
+  };;
+;  public boolean virtual_usesParameterObject_1262430001741497984(SConcept thisConcept) {
     return NodeSetupFunction_Behavior.virtual_usesParameterObject_1262430001741497984(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NodeSetupFunction";
-  }
-}
+  };;
+;}

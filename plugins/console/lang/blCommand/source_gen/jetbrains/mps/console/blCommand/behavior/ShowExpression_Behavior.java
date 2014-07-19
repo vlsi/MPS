@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class ShowExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_legalAsStatement_1262430001741498032(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
     return "show sequence of nodes/references/models/modules in usages view";
   }

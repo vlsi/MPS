@@ -12,10 +12,10 @@ public class ForeachStatement_BehaviorDescriptor extends AbstractForStatement_Be
 
   public List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
     return ForeachStatement_Behavior.virtual_getScopeVariables_5067982036267369894(thisNode);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ForeachStatement";
-  }
-}
+  };;
+;}

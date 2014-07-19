@@ -27,7 +27,6 @@ public class FacetsScope extends SimpleScope {
   public FacetsScope(SNode contextNode) {
     super(getAvailableFacets(contextNode));
   }
-
   public static Iterable<SNode> getAvailableFacets(SNode contextNode) {
     SModule contextModule = contextNode.getModel().getModule();
 
@@ -71,7 +70,6 @@ public class FacetsScope extends SimpleScope {
 
     return facets;
   }
-
   @Nullable
   @Override
   public String getReferenceText(@NotNull SNode target) {

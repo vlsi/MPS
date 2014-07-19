@@ -6,7 +6,6 @@ package jetbrains.mps.lang.refactoring.behavior;
 public class MoveNodeToNodeExpression_BehaviorDescriptor extends AbstractMoveNodeExpression_BehaviorDescriptor {
   public MoveNodeToNodeExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.refactoring.structure.MoveNodeToNodeExpression";

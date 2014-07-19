@@ -11,7 +11,6 @@ public class ExpectedOption_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "defaultOption", "" + (-1));
   }
-
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
     return NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
   }

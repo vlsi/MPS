@@ -6,9 +6,8 @@ package jetbrains.mps.lang.pattern.behavior;
 public class InsertAfterPosition_BehaviorDescriptor extends InsertPosition_BehaviorDescriptor {
   public InsertAfterPosition_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.InsertAfterPosition";
-  }
-}
+  };;
+;}

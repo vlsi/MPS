@@ -12,12 +12,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ThisExpression_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static List<SNode> call_getPossibleClassifiers_1215682129821(SNode thisNode) {
     return Classifier_Behavior.call_getNonStaticContextClassifiers_6775591514230482802(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"))), thisNode);
-  }
-
+  };;
+;
   public static SNode call_getContextClassifierMember_6516287307421538194(SNode thisNode) {
     SNode classConcept = SLinkOperations.getTarget(thisNode, "classConcept", false);
     if ((classConcept != null)) {
@@ -31,5 +31,5 @@ public class ThisExpression_Behavior {
       SNode classifierMember = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember", false, false);
       return classifierMember;
     }
-  }
-}
+  };;
+;}

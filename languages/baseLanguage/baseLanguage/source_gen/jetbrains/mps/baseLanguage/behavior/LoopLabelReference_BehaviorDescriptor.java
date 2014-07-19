@@ -11,5 +11,5 @@ public class LoopLabelReference_BehaviorDescriptor extends BaseConcept_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LoopLabelReference";
-  }
-}
+  };;
+;}

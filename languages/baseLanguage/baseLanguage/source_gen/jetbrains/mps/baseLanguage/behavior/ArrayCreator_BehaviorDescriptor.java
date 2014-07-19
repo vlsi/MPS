@@ -10,5 +10,5 @@ public class ArrayCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDes
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayCreator";
-  }
-}
+  };;
+;}

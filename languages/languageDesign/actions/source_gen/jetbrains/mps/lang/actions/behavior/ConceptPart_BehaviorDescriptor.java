@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class ConceptPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ConceptPart_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptPart";
-  }
-}
+  };;
+;}

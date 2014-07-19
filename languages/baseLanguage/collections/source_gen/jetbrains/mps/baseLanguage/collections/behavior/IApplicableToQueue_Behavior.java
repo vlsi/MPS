@@ -12,15 +12,13 @@ import jetbrains.mps.smodel.SModelUtil_new;
 
 public class IApplicableToQueue_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> virtual_getApplicableTypes_5994574781955586127(SAbstractConcept thisConcept) {
+  };;
+;  public static List<SNode> virtual_getApplicableTypes_5994574781955586127(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.collections.structure.IApplicableToDeque", "virtual_getApplicableTypes_5994574781955586127", new Object[]{});
     ListSequence.fromList(result).addElement(_quotation_createNode_sbaz2p_a0a1a0());
     return result;
-  }
-
-  private static SNode _quotation_createNode_sbaz2p_a0a1a0() {
+  };;
+;  private static SNode _quotation_createNode_sbaz2p_a0a1a0() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -28,5 +26,5 @@ public class IApplicableToQueue_Behavior {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", null, null, false);
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
-  }
-}
+  };;
+;}

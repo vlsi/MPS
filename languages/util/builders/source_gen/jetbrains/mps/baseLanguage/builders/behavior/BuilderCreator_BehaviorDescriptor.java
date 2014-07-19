@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BuilderCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor implements BuilderContainer_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor {
   public BuilderCreator_BehaviorDescriptor() {
   }
-
   public boolean virtual_isLeaf_932644095877881871(SNode thisNode) {
     return BuilderContainer_Behavior.virtual_isLeaf_932644095877881871(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.builders.structure.BuilderCreator";

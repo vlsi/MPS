@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class FigureParameterAttribute_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements FigureParameter_BehaviorDescriptor {
   public FigureParameterAttribute_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.figures.structure.FigureParameterAttribute";
   }
-
   public abstract SNode virtual_getParameterMember_5422656561931910498(SNode thisNode);
 }

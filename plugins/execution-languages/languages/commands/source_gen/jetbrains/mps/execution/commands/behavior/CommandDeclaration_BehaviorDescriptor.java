@@ -17,52 +17,40 @@ import org.jetbrains.annotations.NonNls;
 public class CommandDeclaration_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, IClassifier_BehaviorDescriptor, IGeneratedToClass_BehaviorDescriptor {
   public CommandDeclaration_BehaviorDescriptor() {
   }
-
   public SNode virtual_createSuperType_1217433657148(SNode thisNode) {
     return IClassifier_Behavior.virtual_createSuperType_1217433657148(thisNode);
   }
-
   public SNode virtual_createType_1213877527970(SNode thisNode) {
     return CommandDeclaration_Behavior.virtual_createType_1213877527970(thisNode);
   }
-
   public String virtual_getBaseName_4366236229294148974(SNode thisNode) {
     return IGeneratedToClass_Behavior.virtual_getBaseName_4366236229294148974(thisNode);
   }
-
   public IExtractMethodRefactoringProcessor virtual_getExtractMethodRefactoringProcessor_1221393367929(SNode thisNode, List<SNode> nodesToRefactor) {
     return IClassifier_Behavior.virtual_getExtractMethodRefactoringProcessor_1221393367929(thisNode, nodesToRefactor);
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   public String virtual_getFullName_946964771156905503(SNode thisNode) {
     return IGeneratedToClass_Behavior.virtual_getFullName_946964771156905503(thisNode);
   }
-
   public String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {
     return IGeneratedToClass_Behavior.virtual_getGeneratedClassName_946964771156905488(thisNode);
   }
-
   public List<SNode> virtual_getMembers_1213877528020(SNode thisNode, SNode contextNode) {
     return IClassifier_Behavior.virtual_getMembers_1213877528020(thisNode, contextNode);
   }
-
   public List<SNode> virtual_getMembers_1213877528124(SNode thisNode) {
     return IClassifier_Behavior.virtual_getMembers_1213877528124(thisNode);
   }
-
   public List<SNode> virtual_getParts_1213877527988(SNode thisNode) {
     return IClassifier_Behavior.virtual_getParts_1213877527988(thisNode);
   }
-
   @NonNls
   public String virtual_getSuffix_946964771156905483(SNode thisNode) {
     return CommandDeclaration_Behavior.virtual_getSuffix_946964771156905483(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.CommandDeclaration";

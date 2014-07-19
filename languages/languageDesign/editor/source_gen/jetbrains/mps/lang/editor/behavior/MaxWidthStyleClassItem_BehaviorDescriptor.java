@@ -6,9 +6,8 @@ package jetbrains.mps.lang.editor.behavior;
 public class MaxWidthStyleClassItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public MaxWidthStyleClassItem_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.MaxWidthStyleClassItem";
-  }
-}
+  };;
+;}

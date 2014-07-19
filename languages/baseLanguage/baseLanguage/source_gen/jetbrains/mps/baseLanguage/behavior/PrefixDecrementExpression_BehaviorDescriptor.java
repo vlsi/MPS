@@ -10,10 +10,10 @@ public class PrefixDecrementExpression_BehaviorDescriptor extends AbstractUnaryN
 
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return PrefixDecrementExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.PrefixDecrementExpression";
-  }
-}
+  };;
+;}

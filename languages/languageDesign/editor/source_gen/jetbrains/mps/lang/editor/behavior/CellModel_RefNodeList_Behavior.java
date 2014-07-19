@@ -10,27 +10,23 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CellModel_RefNodeList_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
+  };;
+;  public static String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
     return CellIdManager.createRefNodeListId(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role"));
-  }
-
-  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
+  };;
+;  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) {
       return "(-";
     }
     return "(>";
-  }
-
-  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
+  };;
+;  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Indent")) {
       return "-)";
     }
     return "<)";
-  }
-
-  public static String virtual_getRoleForCell_1216377898846(SNode thisNode) {
+  };;
+;  public static String virtual_getRoleForCell_1216377898846(SNode thisNode) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "role");
-  }
-}
+  };;
+;}

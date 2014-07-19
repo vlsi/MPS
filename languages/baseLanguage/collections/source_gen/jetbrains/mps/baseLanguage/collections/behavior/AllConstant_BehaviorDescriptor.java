@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class AllConstant_BehaviorDescriptor extends IntegerLiteral_BehaviorDescriptor {
   public AllConstant_BehaviorDescriptor() {
   }
-
   public boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
     return AllConstant_Behavior.virtual_constant_1262430001741498050(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.AllConstant";
-  }
-}
+  };;
+;}

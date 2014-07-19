@@ -6,9 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class DefaultPropertyImplementation_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static boolean virtual_hasSetter_1213877430658(SNode thisNode) {
     return true;
-  }
-}
+  };;
+;}

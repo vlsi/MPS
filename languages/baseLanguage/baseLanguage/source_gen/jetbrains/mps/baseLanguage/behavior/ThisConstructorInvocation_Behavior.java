@@ -7,10 +7,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ThisConstructorInvocation_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     return ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept);
-  }
-}
+  };;
+;}

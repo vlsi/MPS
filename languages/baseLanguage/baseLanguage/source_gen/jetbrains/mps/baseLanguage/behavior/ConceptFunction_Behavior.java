@@ -20,32 +20,32 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptFunction_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
     return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_usesParameterObject_1262430001741497984", new Object[]{});
-  }
-
+  };;
+;
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return null;
-  }
-
+  };;
+;
   public static List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return ListSequence.fromList(new ArrayList<SNode>());
-  }
-
+  };;
+;
   public static boolean virtual_isImplementation_1319728274783152230(SNode thisNode, SNode child) {
     return SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.StatementList");
-  }
-
+  };;
+;
   public static SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getExpectedReturnType_1213877374441", new Object[]{});
-  }
-
+  };;
+;
   public static SNode virtual_getBody_1239354440022(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "body", true);
-  }
-
+  };;
+;
   public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     if (thisNode == null) {
       return ListSequence.fromList(new ArrayList<SNode>());
@@ -53,20 +53,20 @@ public class ConceptFunction_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{})));
     return (List<SNode>) result;
-  }
-
+  };;
+;
   public static boolean call_isReturnOnly_3745452943050787634(SNode thisNode) {
     if (!(StatementList_Behavior.call_isOneLiner_1237538811451(SLinkOperations.getTarget(thisNode, "body", true)))) {
       return false;
     }
     SNode stmt = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "body", true), "statement", true)).first();
     return SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") || SNodeOperations.isInstanceOf(stmt, "jetbrains.mps.baseLanguage.structure.ReturnStatement");
-  }
-
+  };;
+;
   public static String virtual_getName_1216468837268(SNode thisNode) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
-  }
-
+  };;
+;
   public static String call_getHeader_2866018809101862250(SNode thisNode) {
     StringBuilder result = new StringBuilder();
     // by default 'alias' is not shown. 
@@ -76,13 +76,13 @@ public class ConceptFunction_Behavior {
       result.append(BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getName_1216468837268", new Object[]{}));
     }
     return ConceptFunction_Behavior.call_appendHeader_2866018809101869378(thisNode, result);
-  }
-
+  };;
+;
   public static String call_getHeaderForAliasedEditor_2866018809101869089(SNode thisNode) {
     StringBuilder result = new StringBuilder();
     return ConceptFunction_Behavior.call_appendHeader_2866018809101869378(thisNode, result);
-  }
-
+  };;
+;
   public static String call_appendHeader_2866018809101869378(SNode thisNode, StringBuilder result) {
     result.append("(");
     List<SNode> parameters = BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), thisNode, "virtual_getParameters_1213877374450", new Object[]{});
@@ -113,8 +113,8 @@ public class ConceptFunction_Behavior {
       }
     }
     return result.toString();
-  }
-
+  };;
+;
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     // todo: rewrite using filtering scope 
     {
@@ -128,17 +128,17 @@ public class ConceptFunction_Behavior {
       }
     }
     return ScopeUtils.lazyParentScope(thisNode, kind);
-  }
-
+  };;
+;
   public static boolean virtual_usesParameterObject_1262430001741497984(SAbstractConcept thisConcept) {
     return false;
-  }
-
+  };;
+;
   public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return false;
-  }
-
+  };;
+;
   public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     return ListSequence.fromList(new ArrayList<SNode>());
-  }
-}
+  };;
+;}

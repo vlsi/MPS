@@ -10,9 +10,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ForeachStatement_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static List<SNode> virtual_getScopeVariables_5067982036267369894(SNode thisNode) {
     return ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(thisNode, "variable", true));
-  }
-}
+  };;
+;}

@@ -10,5 +10,5 @@ public class PlusAssignmentExpression_BehaviorDescriptor extends OperationAssign
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression";
-  }
-}
+  };;
+;}

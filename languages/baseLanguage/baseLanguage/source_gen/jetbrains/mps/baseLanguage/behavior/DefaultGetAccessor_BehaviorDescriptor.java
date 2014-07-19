@@ -11,5 +11,5 @@ public class DefaultGetAccessor_BehaviorDescriptor extends BaseConcept_BehaviorD
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.DefaultGetAccessor";
-  }
-}
+  };;
+;}

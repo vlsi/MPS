@@ -8,7 +8,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class FalseFlow_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getTitle_1262430001741498056(SAbstractConcept thisConcept) {
     return "otherwise";
   }

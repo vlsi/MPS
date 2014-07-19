@@ -11,5 +11,5 @@ public class BLBottomType_BehaviorDescriptor extends Type_BehaviorDescriptor imp
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.BLBottomType";
-  }
-}
+  };;
+;}

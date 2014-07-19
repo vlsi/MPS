@@ -11,15 +11,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class InitBlock_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_showName_1262430001741498082(SAbstractConcept thisConcept) {
     return true;
-  }
-
-  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
+  };;
+;  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "1213888797251"));
     return result;
-  }
-}
+  };;
+;}

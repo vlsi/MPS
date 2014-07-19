@@ -10,15 +10,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ControlAbstractionContainer_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
+  };;
+;  public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     List<SNode> members = BehaviorReflection.invokeSuper((Class<List<SNode>>) ((Class) Object.class), thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", "virtual_getMembers_1213877531970", new Object[]{});
     ListSequence.fromList(members).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "controlAbstraction", true)));
     return members;
-  }
-
-  public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
+  };;
+;  public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
     return true;
-  }
-}
+  };;
+;}

@@ -7,9 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class AbstractMethodSpecification_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode call_getPullUpMethod_2291767839160328420(SNode thisNode) {
+  };;
+;  public static SNode call_getPullUpMethod_2291767839160328420(SNode thisNode) {
     return SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.script.structure.PullUpMethod");
-  }
-}
+  };;
+;}

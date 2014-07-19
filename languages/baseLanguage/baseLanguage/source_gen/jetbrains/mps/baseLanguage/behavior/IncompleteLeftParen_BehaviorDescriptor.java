@@ -11,5 +11,5 @@ public class IncompleteLeftParen_BehaviorDescriptor extends NodeAttribute_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.IncompleteLeftParen";
-  }
-}
+  };;
+;}

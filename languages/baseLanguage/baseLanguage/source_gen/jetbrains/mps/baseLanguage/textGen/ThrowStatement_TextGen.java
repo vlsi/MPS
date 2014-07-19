@@ -35,6 +35,5 @@ public class ThrowStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ThrowStatement_TextGen.class);
 }

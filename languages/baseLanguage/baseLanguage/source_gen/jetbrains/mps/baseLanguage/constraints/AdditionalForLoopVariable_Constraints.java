@@ -19,8 +19,8 @@ public class AdditionalForLoopVariable_Constraints extends BaseConstraintsDescri
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
-  }
-
+  };;
+;
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -30,11 +30,11 @@ public class AdditionalForLoopVariable_Constraints extends BaseConstraintsDescri
     }
 
     return result;
-  }
-
+  };;
+;
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.ForStatement") && (SLinkOperations.getTarget(SNodeOperations.cast(parentNode, "jetbrains.mps.baseLanguage.structure.ForStatement"), "variable", true) != null);
-  }
-
+  };;
+;
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "6791390962478915904");
 }

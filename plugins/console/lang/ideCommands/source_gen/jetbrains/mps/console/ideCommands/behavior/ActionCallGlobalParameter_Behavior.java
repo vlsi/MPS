@@ -8,7 +8,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class ActionCallGlobalParameter_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static SNode virtual_getParameterDeclaration_5582028874769074473(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "declaration", false);
   }

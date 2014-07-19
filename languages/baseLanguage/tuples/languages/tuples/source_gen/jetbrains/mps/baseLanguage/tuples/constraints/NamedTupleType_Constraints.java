@@ -21,7 +21,6 @@ public class NamedTupleType_Constraints extends BaseConstraintsDescriptor {
   public NamedTupleType_Constraints() {
     super("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -29,26 +28,23 @@ public class NamedTupleType_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      }
-
-      @Nullable
+      };;
+;      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseScopeProvider() {
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_rcfzhs_a0a0a0a0a1a0b0a1a1;
-          }
-
-          @Override
+          };;
+;          @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ClassifierScopes.getVisibleClassifiersScope(((_context.getReferenceNode() == null) ? _context.getEnclosingNode() : _context.getReferenceNode()), false);
-          }
-        };
-      }
-    });
+          };;
+;        };
+      };;
+;    });
     return references;
-  }
-
-  private static SNodePointer breakingNode_rcfzhs_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "4443326012737938966");
+  };;
+;  private static SNodePointer breakingNode_rcfzhs_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:3d04bd03-b6d9-4be1-8a52-d7b756e1d85b(jetbrains.mps.baseLanguage.tuples.constraints)", "4443326012737938966");
 }

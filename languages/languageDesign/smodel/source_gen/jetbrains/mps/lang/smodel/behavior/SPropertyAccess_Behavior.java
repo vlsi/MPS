@@ -9,25 +9,20 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class SPropertyAccess_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
+  };;
+;  public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "property", false), "name");
-  }
-
-  public static boolean virtual_lvalue_1262430001741498364(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_lvalue_1262430001741498364(SAbstractConcept thisConcept) {
     return true;
-  }
-
-  public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToConcept_1262430001741498358(SAbstractConcept thisConcept) {
     return true;
-  }
-
-  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToLink_1262430001741498352(SAbstractConcept thisConcept) {
     return true;
-  }
-
-  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToNode_1262430001741498076(SAbstractConcept thisConcept) {
     return true;
-  }
-}
+  };;
+;}

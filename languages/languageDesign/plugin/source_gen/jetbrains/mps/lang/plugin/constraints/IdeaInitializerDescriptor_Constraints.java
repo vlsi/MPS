@@ -14,7 +14,6 @@ public class IdeaInitializerDescriptor_Constraints extends BaseConstraintsDescri
   public IdeaInitializerDescriptor_Constraints() {
     super("jetbrains.mps.lang.plugin.structure.IdeaInitializerDescriptor");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -22,14 +21,13 @@ public class IdeaInitializerDescriptor_Constraints extends BaseConstraintsDescri
       @Override
       public boolean hasOwnGetter() {
         return true;
-      }
-
-      @Override
+      };;
+;      @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";
         return SPropertyOperations.getString(node, "id");
-      }
-    });
+      };;
+;    });
     return properties;
-  }
-}
+  };;
+;}

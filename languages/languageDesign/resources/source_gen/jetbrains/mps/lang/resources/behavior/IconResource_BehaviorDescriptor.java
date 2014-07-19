@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class IconResource_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements Resource_BehaviorDescriptor {
   public IconResource_BehaviorDescriptor() {
   }
-
   public void virtual_generate_8974276187400030152(SNode thisNode) {
     IconResource_Behavior.virtual_generate_8974276187400030152(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.resources.structure.IconResource";
-  }
-}
+  };;
+;}

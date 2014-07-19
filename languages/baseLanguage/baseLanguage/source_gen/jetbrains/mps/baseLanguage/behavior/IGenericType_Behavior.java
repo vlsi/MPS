@@ -16,24 +16,24 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public class IGenericType_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     // do nothing by default 
-  }
-
+  };;
+;
   public static SNode virtual_expandGenerics_4107091686347199582(SNode thisNode, Map<SNode, SNode> substitutions) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenerics_4122274986016348613", new Object[]{substitutions, new ArrayList<SNode>()});
-  }
-
+  };;
+;
   public static SNode virtual_eraseGenerics_5089784887112634594(SNode thisNode) {
     return thisNode;
-  }
-
+  };;
+;
   public static SNode virtual_expandGenerics_4122274986016348613(SNode thisNode, Map<SNode, SNode> substitutions, List<SNode> expTrace) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_expandGenericDescendants_4107091686347838550", new Object[]{SNodeOperations.copyNode(thisNode), substitutions, expTrace});
-  }
-
+  };;
+;
   public static SNode virtual_expandGenericDescendants_4107091686347838550(SNode thisNode, SNode expanded, final Map<SNode, SNode> substitutions, final List<SNode> expTrace) {
     IGenericType_Behavior.call_walkDescendants_8203593308483669984(thisNode, expanded, new _FunctionTypes._return_P2_E0<Boolean, SNode, Queue<SNode>>() {
       public Boolean invoke(SNode desc, Queue<SNode> queue) {
@@ -46,11 +46,11 @@ public class IGenericType_Behavior {
           return false;
         }
         return true;
-      }
-    });
+      };;
+;    });
     return expanded;
-  }
-
+  };;
+;
   public static void call_walkDescendants_8203593308483669984(SNode thisNode, SNode node, _FunctionTypes._return_P2_E0<? extends Boolean, ? super SNode, ? super Queue<SNode>> walker) {
     Queue<SNode> queue = QueueSequence.fromQueueWithValues(new LinkedList<SNode>(), SNodeOperations.getChildren(node));
     while (QueueSequence.fromQueue(queue).isNotEmpty()) {
@@ -59,5 +59,5 @@ public class IGenericType_Behavior {
         QueueSequence.fromQueue(queue).addSequence(ListSequence.fromList(SNodeOperations.getChildren(child)));
       }
     }
-  }
-}
+  };;
+;}

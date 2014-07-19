@@ -7,17 +7,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class GenerationContextOp_LinkPatternRef_BehaviorDescriptor extends GenerationContextOp_PatternRef_BehaviorDescriptor {
   public GenerationContextOp_LinkPatternRef_BehaviorDescriptor() {
   }
-
   public SNode virtual_getTarget_1758784108620114792(SNode thisNode) {
     return GenerationContextOp_LinkPatternRef_Behavior.virtual_getTarget_1758784108620114792(thisNode);
-  }
-
-  public void virtual_setTarget_1758784108620254533(SNode thisNode, SNode target) {
+  };;
+;  public void virtual_setTarget_1758784108620254533(SNode thisNode, SNode target) {
     GenerationContextOp_LinkPatternRef_Behavior.virtual_setTarget_1758784108620254533(thisNode, target);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_LinkPatternRef";
-  }
-}
+  };;
+;}

@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class LinkPatternVariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public LinkPatternVariableReference_BehaviorDescriptor() {
   }
-
   public void virtual_abxcdef_1225210740874(SNode thisNode, @Deprecated Object o) {
     LinkPatternVariableReference_Behavior.virtual_abxcdef_1225210740874(thisNode, o);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.LinkPatternVariableReference";
-  }
-}
+  };;
+;}

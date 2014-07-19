@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class InternalStaticFieldReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public InternalStaticFieldReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference";
-  }
-}
+  };;
+;}

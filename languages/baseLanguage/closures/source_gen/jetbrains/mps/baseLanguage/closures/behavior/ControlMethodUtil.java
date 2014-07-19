@@ -14,12 +14,10 @@ import jetbrains.mps.lang.pattern.util.MatchingUtil;
 public class ControlMethodUtil {
   public ControlMethodUtil() {
   }
-
   public static boolean isControlMethod(SNode smd) {
     return ControlMethodUtil.analyze(smd) != null;
-  }
-
-  public static ControlMethodUtil.Info analyze(SNode smd) {
+  };;
+;  public static ControlMethodUtil.Info analyze(SNode smd) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(smd, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       List<SNode> params = SLinkOperations.getTargets(smd, "parameter", true);
       //  0..k-1 : control function parameters, k..l-1 : control closure parameter declarations (closures), l..m-1 : control closures 
@@ -79,62 +77,51 @@ public class ControlMethodUtil {
       return (inf.isInitialized() ? inf : null);
     }
     return null;
-  }
-
-  public static class Info {
+  };;
+;  public static class Info {
     private List<SNode> controlClosures;
     private List<SNode> initClosures;
     private List<SNode> functionParams;
     private boolean initialized = false;
-
     public Info() {
     }
-
     public boolean isInitialized() {
       return this.initialized;
-    }
-
-    public void addControlClosureType(SNode cct) {
+    };;
+;    public void addControlClosureType(SNode cct) {
       this.init();
       ListSequence.fromList(this.controlClosures).addElement(cct);
-    }
-
-    public void addInitClosureType(SNode ict) {
+    };;
+;    public void addInitClosureType(SNode ict) {
       this.init();
       ListSequence.fromList(this.initClosures).addElement(ict);
-    }
-
-    public void addFunctionParameterType(SNode fpt) {
+    };;
+;    public void addFunctionParameterType(SNode fpt) {
       this.init();
       ListSequence.fromList(this.functionParams).addElement(fpt);
-    }
-
-    public List<SNode> getControlClosureTypes() {
+    };;
+;    public List<SNode> getControlClosureTypes() {
       return this.ensureNotNull(this.controlClosures);
-    }
-
-    public List<SNode> getInitClosureTypes() {
+    };;
+;    public List<SNode> getInitClosureTypes() {
       return this.ensureNotNull(this.initClosures);
-    }
-
-    public List<SNode> getFunctionParamTypes() {
+    };;
+;    public List<SNode> getFunctionParamTypes() {
       return this.ensureNotNull(this.functionParams);
-    }
-
-    public List<SNode> ensureNotNull(List<SNode> list) {
+    };;
+;    public List<SNode> ensureNotNull(List<SNode> list) {
       if (list == null) {
         return ListSequence.fromList(new ArrayList<SNode>());
       }
       return list;
-    }
-
-    private void init() {
+    };;
+;    private void init() {
       if (!(this.initialized)) {
         this.controlClosures = ListSequence.fromList(new ArrayList<SNode>());
         this.initClosures = ListSequence.fromList(new ArrayList<SNode>());
         this.functionParams = ListSequence.fromList(new ArrayList<SNode>());
         this.initialized = true;
       }
-    }
-  }
+    };;
+;  }
 }

@@ -7,21 +7,17 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class IdeaInitializerDescriptor_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String call_getGeneratedFileName_4015626213814045644(SNode thisNode) {
+  };;
+;  public static String call_getGeneratedFileName_4015626213814045644(SNode thisNode) {
     return IdeaInitializerDescriptor_Behavior.call_getGeneratedFileShortName_4015626213814118717(thisNode) + "." + IdeaInitializerDescriptor_Behavior.call_getGeneratesFileExtension_4015626213814118724(thisNode);
-  }
-
-  public static String call_getGeneratedFileShortName_4015626213814118717(SNode thisNode) {
+  };;
+;  public static String call_getGeneratedFileShortName_4015626213814118717(SNode thisNode) {
     return "plugin";
-  }
-
-  public static String call_getGeneratesFileExtension_4015626213814118724(SNode thisNode) {
+  };;
+;  public static String call_getGeneratesFileExtension_4015626213814118724(SNode thisNode) {
     return "xml";
-  }
-
-  public static String call_getLibrariesResourceName_7967031338862798704(SAbstractConcept thisConcept) {
+  };;
+;  public static String call_getLibrariesResourceName_7967031338862798704(SAbstractConcept thisConcept) {
     return "libraries";
-  }
-}
+  };;
+;}

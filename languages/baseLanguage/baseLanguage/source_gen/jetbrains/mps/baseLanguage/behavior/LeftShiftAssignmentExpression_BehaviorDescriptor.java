@@ -10,5 +10,5 @@ public class LeftShiftAssignmentExpression_BehaviorDescriptor extends OperationA
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LeftShiftAssignmentExpression";
-  }
-}
+  };;
+;}

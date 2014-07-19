@@ -7,8 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Tokens_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static String call_firstToken_1296023605441710627(SNode thisNode) {
     if (SPropertyOperations.getString(thisNode, "tokens") == null) {
       return null;
@@ -20,8 +20,8 @@ public class Tokens_Behavior {
     } else {
       return SPropertyOperations.getString(thisNode, "tokens").substring(0, firstDot);
     }
-  }
-
+  };;
+;
   public static String call_lastToken_1296023605440030462(SNode thisNode) {
     if (SPropertyOperations.getString(thisNode, "tokens") == null) {
       return null;
@@ -33,8 +33,8 @@ public class Tokens_Behavior {
     } else {
       return SPropertyOperations.getString(thisNode, "tokens").substring(lastDot + 1);
     }
-  }
-
+  };;
+;
   public static String call_withoutLastToken_6148840541591441572(SNode thisNode) {
     if (SPropertyOperations.getString(thisNode, "tokens") == null) {
       return null;
@@ -46,5 +46,5 @@ public class Tokens_Behavior {
     } else {
       return SPropertyOperations.getString(thisNode, "tokens").substring(0, lastDot);
     }
-  }
-}
+  };;
+;}

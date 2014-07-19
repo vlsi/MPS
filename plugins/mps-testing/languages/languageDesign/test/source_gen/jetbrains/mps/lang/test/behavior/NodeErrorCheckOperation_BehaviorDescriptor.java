@@ -7,19 +7,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class NodeErrorCheckOperation_BehaviorDescriptor extends AbstractNodeErrorCheckOperation_BehaviorDescriptor {
   public NodeErrorCheckOperation_BehaviorDescriptor() {
   }
-
   public void virtual_attachReference_2893471348147987863(SNode thisNode, SNode reference) {
     NodeErrorCheckOperation_Behavior.virtual_attachReference_2893471348147987863(thisNode, reference);
   }
-
   public boolean virtual_canAttachReference_2893471348147804024(SNode thisNode, SNode reference) {
     return NodeErrorCheckOperation_Behavior.virtual_canAttachReference_2893471348147804024(thisNode, reference);
   }
-
   public SNode virtual_getReference_8333855927540237654(SNode thisNode) {
     return NodeErrorCheckOperation_Behavior.virtual_getReference_8333855927540237654(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.NodeErrorCheckOperation";

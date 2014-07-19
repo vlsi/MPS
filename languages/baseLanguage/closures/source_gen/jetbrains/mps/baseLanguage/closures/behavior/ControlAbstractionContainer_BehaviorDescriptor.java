@@ -10,17 +10,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ControlAbstractionContainer_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ControlAbstractionContainer_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return ControlAbstractionContainer_Behavior.virtual_getMembers_1213877531970(thisNode);
-  }
-
-  public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
+  };;
+;  public boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
     return ControlAbstractionContainer_Behavior.virtual_hasStaticMemebers_1214840444586(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer";
-  }
-}
+  };;
+;}

@@ -32,14 +32,14 @@ public class AnnotationUtil {
       return false;
     }
 
-  }
-
+  };;
+;
   public static boolean acceptKind(SNode targetKind, SNode hasAnnotation) {
     SNode enumConst = SLinkOperations.getTarget(targetKind, "enumConstantDeclaration", false);
     BLElementType blElementType = MapSequence.fromMap(ourMap).get(enumConst);
     return blElementType != null && blElementType.accept(hasAnnotation);
-  }
-
+  };;
+;
   static {
     MapSequence.fromMap(ourMap).put(SLinkOperations.getTarget(_quotation_createNode_3nvpiw_a0a0a0e(), "enumConstantDeclaration", false), BLElementType.TYPE);
     MapSequence.fromMap(ourMap).put(SLinkOperations.getTarget(_quotation_createNode_3nvpiw_a0a0b0e(), "enumConstantDeclaration", false), BLElementType.FIELD);
@@ -58,8 +58,8 @@ public class AnnotationUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType.TYPE")));
     quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType")));
     return quotedNode_1;
-  }
-
+  };;
+;
   private static SNode _quotation_createNode_3nvpiw_a0a0b0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -67,8 +67,8 @@ public class AnnotationUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType.FIELD")));
     quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType")));
     return quotedNode_1;
-  }
-
+  };;
+;
   private static SNode _quotation_createNode_3nvpiw_a0a0c0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -76,8 +76,8 @@ public class AnnotationUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType.METHOD")));
     quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType")));
     return quotedNode_1;
-  }
-
+  };;
+;
   private static SNode _quotation_createNode_3nvpiw_a0a0d0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -85,8 +85,8 @@ public class AnnotationUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType.PARAMETER")));
     quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType")));
     return quotedNode_1;
-  }
-
+  };;
+;
   private static SNode _quotation_createNode_3nvpiw_a0a0e0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -94,8 +94,8 @@ public class AnnotationUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType.CONSTRUCTOR")));
     quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType")));
     return quotedNode_1;
-  }
-
+  };;
+;
   private static SNode _quotation_createNode_3nvpiw_a0a0f0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -103,8 +103,8 @@ public class AnnotationUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType.LOCAL_VARIABLE")));
     quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType")));
     return quotedNode_1;
-  }
-
+  };;
+;
   private static SNode _quotation_createNode_3nvpiw_a0a0g0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -112,8 +112,8 @@ public class AnnotationUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType.ANNOTATION_TYPE")));
     quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType")));
     return quotedNode_1;
-  }
-
+  };;
+;
   private static SNode _quotation_createNode_3nvpiw_a0a0h0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -121,5 +121,5 @@ public class AnnotationUtil {
     quotedNode_1.setReference("enumConstantDeclaration", SReference.create("enumConstantDeclaration", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType.PACKAGE")));
     quotedNode_1.setReference("enumClass", SReference.create("enumClass", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.annotation(JDK/java.lang.annotation@java_stub)"), facade.createNodeId("~ElementType")));
     return quotedNode_1;
-  }
-}
+  };;
+;}

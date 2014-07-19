@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ReplacementRuleReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public ReplacementRuleReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ReplacementRuleReference";
-  }
-}
+  };;
+;}

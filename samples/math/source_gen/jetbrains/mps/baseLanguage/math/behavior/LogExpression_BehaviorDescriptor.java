@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.math.behavior;
 public class LogExpression_BehaviorDescriptor extends MathFuncExpression_BehaviorDescriptor {
   public LogExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.LogExpression";

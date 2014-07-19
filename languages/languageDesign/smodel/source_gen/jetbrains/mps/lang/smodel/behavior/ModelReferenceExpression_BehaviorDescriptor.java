@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ModelReferenceExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ModelReferenceExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.ModelReferenceExpression";
-  }
-}
+  };;
+;}

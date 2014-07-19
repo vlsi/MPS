@@ -18,7 +18,6 @@ import jetbrains.mps.scope.EmptyScope;
 public class ExternalViewFigure_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (SConceptOperations.isExactly(kind, "jetbrains.mps.baseLanguage.structure.FieldDeclaration") && SLinkOperations.getTarget(thisNode, "classifier", false) != null) {
       return Scopes.forVariables(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration"), Sequence.fromIterable(IClassifierType_Behavior.call_getMembers_7405920559687277275(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "classifier", false), "virtual_getThisType_7405920559687254782", new Object[]{}))).where(new IWhereFilter<SNode>() {

@@ -6,9 +6,8 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class ReportErrorStatementAnnotation_BehaviorDescriptor extends MessageStatementAnnotation_BehaviorDescriptor {
   public ReportErrorStatementAnnotation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ReportErrorStatementAnnotation";
-  }
-}
+  };;
+;}

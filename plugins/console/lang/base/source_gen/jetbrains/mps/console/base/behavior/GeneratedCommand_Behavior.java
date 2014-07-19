@@ -20,7 +20,6 @@ import org.apache.log4j.LogManager;
 public class GeneratedCommand_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_execute_6854397602732226506(SNode thisNode, final ConsoleContext context, final ConsoleStream console, final Runnable beforeCallback, final Runnable afterCallback) {
     ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
       public void run() {
@@ -66,6 +65,5 @@ public class GeneratedCommand_Behavior {
       }
     });
   }
-
   protected static Logger LOG = LogManager.getLogger(GeneratedCommand_Behavior.class);
 }

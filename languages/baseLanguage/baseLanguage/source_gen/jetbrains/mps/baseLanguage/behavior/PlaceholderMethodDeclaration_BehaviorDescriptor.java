@@ -11,5 +11,5 @@ public class PlaceholderMethodDeclaration_BehaviorDescriptor extends InstanceMet
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.PlaceholderMethodDeclaration";
-  }
-}
+  };;
+;}

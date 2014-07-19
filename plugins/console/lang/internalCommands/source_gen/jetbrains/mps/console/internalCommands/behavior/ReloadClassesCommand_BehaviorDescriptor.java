@@ -11,15 +11,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ReloadClassesCommand_BehaviorDescriptor extends InterpretedCommand_BehaviorDescriptor {
   public ReloadClassesCommand_BehaviorDescriptor() {
   }
-
   public void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
     ReloadClassesCommand_Behavior.virtual_doExecute_3321948346081469500(thisNode, context, console);
   }
-
   public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
     return ReloadClassesCommand_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.internalCommands.structure.ReloadClassesCommand";

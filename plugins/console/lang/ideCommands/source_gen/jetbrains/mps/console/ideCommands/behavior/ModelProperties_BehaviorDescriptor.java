@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ModelProperties_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ModelProperties_BehaviorDescriptor() {
   }
-
   public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
     return ModelProperties_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.ModelProperties";

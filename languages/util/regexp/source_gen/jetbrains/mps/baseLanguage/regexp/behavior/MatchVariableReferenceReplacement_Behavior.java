@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 public class MatchVariableReferenceReplacement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_toString_3796137614137538905(SNode thisNode, SNode search) {
     List<SNode> vars = new ArrayList<SNode>();
     BehaviorReflection.invokeVirtual(String.class, search, "virtual_getString_1222432436326", new Object[]{vars});

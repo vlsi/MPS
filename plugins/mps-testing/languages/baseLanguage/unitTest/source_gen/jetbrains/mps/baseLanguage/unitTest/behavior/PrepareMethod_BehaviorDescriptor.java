@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 public abstract class PrepareMethod_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public PrepareMethod_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.unitTest.structure.PrepareMethod";

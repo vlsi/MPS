@@ -10,5 +10,5 @@ public class InstanceOfExpression_BehaviorDescriptor extends Expression_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.InstanceOfExpression";
-  }
-}
+  };;
+;}

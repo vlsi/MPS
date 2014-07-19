@@ -13,14 +13,14 @@ public class BooleanConstant_BehaviorDescriptor extends Expression_BehaviorDescr
 
   public boolean virtual_constant_1262430001741498050(SConcept thisConcept) {
     return BooleanConstant_Behavior.virtual_constant_1262430001741498050(thisConcept);
-  }
-
+  };;
+;
   public Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, SModule module) {
     return BooleanConstant_Behavior.virtual_getCompileTimeConstantValue_1238860310638(thisNode, module);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.BooleanConstant";
-  }
-}
+  };;
+;}

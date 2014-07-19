@@ -10,10 +10,10 @@ public class LocalPropertyReference_BehaviorDescriptor extends Expression_Behavi
 
   public boolean virtual_isLValue_1213877519786(SNode thisNode) {
     return LocalPropertyReference_Behavior.virtual_isLValue_1213877519786(thisNode);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LocalPropertyReference";
-  }
-}
+  };;
+;}

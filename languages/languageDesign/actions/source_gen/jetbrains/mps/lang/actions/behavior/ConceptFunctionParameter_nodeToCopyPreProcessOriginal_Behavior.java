@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode call_getPreProcessor_5948027493682405583(SNode thisNode) {
+  };;
+;  public static SNode call_getPreProcessor_5948027493682405583(SNode thisNode) {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.CopyPreProcessor", false, false);
-  }
-
-  public static boolean virtual_dontUseParameterObject_1262430001741498340(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_dontUseParameterObject_1262430001741498340(SAbstractConcept thisConcept) {
     return true;
-  }
-}
+  };;
+;}

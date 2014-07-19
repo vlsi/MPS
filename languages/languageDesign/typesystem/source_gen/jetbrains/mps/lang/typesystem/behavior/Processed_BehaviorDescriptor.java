@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 public class Processed_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public Processed_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.Processed";
-  }
-}
+  };;
+;}

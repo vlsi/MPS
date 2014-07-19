@@ -38,6 +38,5 @@ public class ReturnStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ReturnStatement_TextGen.class);
 }

@@ -6,9 +6,8 @@ package jetbrains.mps.lang.editor.behavior;
 public class CellLayout_Flow_BehaviorDescriptor extends CellLayout_BehaviorDescriptor {
   public CellLayout_Flow_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellLayout_Flow";
-  }
-}
+  };;
+;}

@@ -6,9 +6,8 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class AssertStatement_BehaviorDescriptor extends ReportErrorStatement_BehaviorDescriptor {
   public AssertStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.AssertStatement";
-  }
-}
+  };;
+;}

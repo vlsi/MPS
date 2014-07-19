@@ -26,28 +26,24 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class EditorCellIdScope extends FilteringScope {
   private SNode myConceptDeclaration;
-
   public EditorCellIdScope(SModel model, SNode conceptDeclaration) {
     super(new ModelsScope(getModels(model), false, "jetbrains.mps.lang.editor.structure.EditorCellId"));
     myConceptDeclaration = conceptDeclaration;
   }
 
-
-
-  private static Iterable<SModel> getModels(SModel model) {
+;;;  private static Iterable<SModel> getModels(SModel model) {
     Iterable<Language> depLanguages = Sequence.fromIterable(((Iterable<SModule>) new GlobalModuleDependenciesManager(model.getModule()).getModules(GlobalModuleDependenciesManager.Deptype.VISIBLE))).ofType(Language.class);
     return Sequence.fromIterable(withExtendedLanguages(depLanguages, model.getRepository())).select(new ISelector<Language, SModel>() {
       public SModel select(Language it) {
         return ((SModel) LanguageAspect.EDITOR.get(it));
-      }
-    }).where(new IWhereFilter<SModel>() {
+      };;
+;    }).where(new IWhereFilter<SModel>() {
       public boolean accept(SModel it) {
         return it != null;
-      }
-    });
-  }
-
-  private static Iterable<Language> withExtendedLanguages(Iterable<Language> languages, SRepository repository) {
+      };;
+;    });
+  };;
+;  private static Iterable<Language> withExtendedLanguages(Iterable<Language> languages, SRepository repository) {
     Set<Language> result = SetSequence.fromSet(new HashSet<Language>());
     for (Language language : Sequence.fromIterable(languages)) {
       SetSequence.fromSet(result).addElement(language);
@@ -59,17 +55,15 @@ public class EditorCellIdScope extends FilteringScope {
       }
     }
     return result;
-  }
-
-  @Override
+  };;
+;  @Override
   public String getReferenceText(SNode contextNode, SNode node) {
     if (isExcluded(node)) {
       return null;
     }
     return SPropertyOperations.getString(SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.EditorCellId"), "name");
-  }
-
-  @Override
+  };;
+;  @Override
   public boolean isExcluded(SNode node) {
     SNode editorCellId = SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.EditorCellId");
     if (editorCellId == null) {
@@ -77,5 +71,5 @@ public class EditorCellIdScope extends FilteringScope {
     }
     SNode conceptAspect = SNodeOperations.getAncestor(editorCellId, "jetbrains.mps.lang.structure.structure.IConceptAspect", false, false);
     return conceptAspect == null || !(SConceptOperations.isSubConceptOf(myConceptDeclaration, NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), conceptAspect, "virtual_getBaseConcept_2621449412040133768", new Object[]{}))));
-  }
-}
+  };;
+;}

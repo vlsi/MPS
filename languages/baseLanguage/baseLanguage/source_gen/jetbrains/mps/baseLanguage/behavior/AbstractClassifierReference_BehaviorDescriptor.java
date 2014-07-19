@@ -10,5 +10,5 @@ public class AbstractClassifierReference_BehaviorDescriptor extends Expression_B
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AbstractClassifierReference";
-  }
-}
+  };;
+;}

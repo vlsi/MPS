@@ -25,7 +25,6 @@ public class ExtendsFacetReference_Constraints extends BaseConstraintsDescriptor
   public ExtendsFacetReference_Constraints() {
     super("jetbrains.mps.make.facet.structure.ExtendsFacetReference");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -34,7 +33,6 @@ public class ExtendsFacetReference_Constraints extends BaseConstraintsDescriptor
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -52,7 +50,6 @@ public class ExtendsFacetReference_Constraints extends BaseConstraintsDescriptor
               }
             });
           }
-
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_3m3hc2_a0a1a0a0a1a0b0a1a1;
@@ -62,6 +59,5 @@ public class ExtendsFacetReference_Constraints extends BaseConstraintsDescriptor
     });
     return references;
   }
-
   private static SNodePointer breakingNode_3m3hc2_a0a1a0a0a1a0b0a1a1 = new SNodePointer("r:6df86908-c97f-4644-97f0-5eff375e8e15(jetbrains.mps.make.facet.constraints)", "6447445394688555036");
 }

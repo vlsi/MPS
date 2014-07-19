@@ -15,24 +15,21 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueueType_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
+  };;
+;  public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> res = new ArrayList<SNode>();
     ListSequence.fromList(res).addElement(_quotation_createNode_1g15wz_a0a1a0(SLinkOperations.getTarget(thisNode, "elementType", true)));
     ListSequence.fromList(res).addElement(_quotation_createNode_1g15wz_a0a2a0(SLinkOperations.getTarget(thisNode, "elementType", true)));
     ListSequence.fromList(res).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return res;
-  }
-
-  public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
+  };;
+;  public static boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
     if ("jetbrains.mps.baseLanguage.collections.structure.LinkedListType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.ListType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.StackType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.SetType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.SortedSetType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.MapType".equals(conceptFqName) || "jetbrains.mps.baseLanguage.collections.structure.SortedMapType".equals(conceptFqName)) {
       return false;
     }
     return true;
-  }
-
-  private static SNode _quotation_createNode_1g15wz_a0a1a0(Object parameter_1) {
+  };;
+;  private static SNode _quotation_createNode_1g15wz_a0a1a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -42,9 +39,8 @@ public class QueueType_Behavior {
       quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_1g15wz_a0a2a0(Object parameter_1) {
+  };;
+;  private static SNode _quotation_createNode_1g15wz_a0a2a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -54,5 +50,5 @@ public class QueueType_Behavior {
       quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
-  }
-}
+  };;
+;}

@@ -11,10 +11,10 @@ public class ThisConstructorInvocation_BehaviorDescriptor extends ConstructorInv
 
   public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return ThisConstructorInvocation_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation";
-  }
-}
+  };;
+;}

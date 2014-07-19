@@ -11,14 +11,14 @@ public class LocalMethodCall_BehaviorDescriptor extends BaseMethodCall_BehaviorD
 
   public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept thisConcept) {
     return LocalMethodCall_Behavior.virtual_substituteInAmbigousPosition_1262430001741498020(thisConcept);
-  }
-
+  };;
+;
   public boolean virtual_useScopesForMethodDeclarationFixer_66132694723287898(SNode thisNode) {
     return LocalMethodCall_Behavior.virtual_useScopesForMethodDeclarationFixer_66132694723287898(thisNode);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LocalMethodCall";
-  }
-}
+  };;
+;}

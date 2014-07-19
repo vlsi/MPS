@@ -23,14 +23,14 @@ public class IValidIdentifier_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnValidator() {
         return true;
-      }
-
+      };;
+;
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
         return (SPropertyOperations.getString(propertyValue)).matches("[a-zA-Z$[_]][a-zA-Z0-9$[_]]*") && !(IdentifierConstraintsUtil.isJavaReserved((SPropertyOperations.getString(propertyValue))));
-      }
-    });
+      };;
+;    });
     return properties;
-  }
-}
+  };;
+;}

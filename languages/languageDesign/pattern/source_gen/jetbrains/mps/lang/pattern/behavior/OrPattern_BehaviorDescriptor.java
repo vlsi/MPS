@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class OrPattern_BehaviorDescriptor extends Pattern_BehaviorDescriptor implements ISuppressErrors_BehaviorDescriptor {
   public OrPattern_BehaviorDescriptor() {
   }
-
   public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     return OrPattern_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.OrPattern";
-  }
-}
+  };;
+;}

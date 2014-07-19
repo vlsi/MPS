@@ -8,9 +8,8 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class CellActionMapItem_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public CellActionMapItem_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellActionMapItem";
-  }
-}
+  };;
+;}

@@ -22,26 +22,26 @@ public class Property_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnGetter() {
         return true;
-      }
-
+      };;
+;
       @Override
       public Object getValue(SNode node) {
         String propertyName = "alias";
         return SPropertyOperations.getString(node, "propertyName");
-      }
-    });
+      };;
+;    });
     properties.put("name", new BasePropertyConstraintsDescriptor("name", this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
-      }
-
+      };;
+;
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
         return SPropertyOperations.getString(node, "propertyName");
-      }
-    });
+      };;
+;    });
     return properties;
-  }
-}
+  };;
+;}

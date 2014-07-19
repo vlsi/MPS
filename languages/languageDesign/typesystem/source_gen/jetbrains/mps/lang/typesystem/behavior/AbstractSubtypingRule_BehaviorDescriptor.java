@@ -10,33 +10,26 @@ import java.util.List;
 public abstract class AbstractSubtypingRule_BehaviorDescriptor extends AbstractRule_BehaviorDescriptor implements IMethodLike_BehaviorDescriptor {
   public AbstractSubtypingRule_BehaviorDescriptor() {
   }
-
   public SNode virtual_getBody_1239354440022(SNode thisNode) {
     return AbstractSubtypingRule_Behavior.virtual_getBody_1239354440022(thisNode);
-  }
-
-  public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
+  };;
+;  public SNode virtual_getExpectedRetType_1239354342632(SNode thisNode) {
     return AbstractSubtypingRule_Behavior.virtual_getExpectedRetType_1239354342632(thisNode);
-  }
-
-  public SNode virtual_getLastStatement_1239354409446(SNode thisNode) {
+  };;
+;  public SNode virtual_getLastStatement_1239354409446(SNode thisNode) {
     return IMethodLike_Behavior.virtual_getLastStatement_1239354409446(thisNode);
-  }
-
-  public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
+  };;
+;  public List<SNode> virtual_getThrowableTypes_6204026822016975623(SNode thisNode) {
     return AbstractSubtypingRule_Behavior.virtual_getThrowableTypes_6204026822016975623(thisNode);
-  }
-
-  public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
+  };;
+;  public boolean virtual_implicitThrows_4989157187872658723(SNode thisNode) {
     return IMethodLike_Behavior.virtual_implicitThrows_4989157187872658723(thisNode);
-  }
-
-  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
+  };;
+;  public boolean virtual_supportsCheckedExceptions_8510677279630867629(SNode thisNode) {
     return IMethodLike_Behavior.virtual_supportsCheckedExceptions_8510677279630867629(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule";
-  }
-}
+  };;
+;}

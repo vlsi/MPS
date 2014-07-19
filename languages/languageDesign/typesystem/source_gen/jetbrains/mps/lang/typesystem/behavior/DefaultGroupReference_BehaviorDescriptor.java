@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class DefaultGroupReference_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public DefaultGroupReference_BehaviorDescriptor() {
   }
-
   public String virtual_createGeneratedNodeId_7342618720440051599(SNode thisNode) {
     return DefaultGroupReference_Behavior.virtual_createGeneratedNodeId_7342618720440051599(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.DefaultGroupReference";
-  }
-}
+  };;
+;}

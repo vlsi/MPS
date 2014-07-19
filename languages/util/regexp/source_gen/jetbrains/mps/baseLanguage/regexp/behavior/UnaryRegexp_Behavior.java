@@ -12,12 +12,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class UnaryRegexp_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getString_1222432436326(SNode thisNode, List<SNode> vars) {
     String s = BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_getString_1222432436326", new Object[]{vars});
     return ((UnaryRegexp_Behavior.call_inParentheses_1353467374623956744(thisNode) ? Regexp_Behavior.call_par_1222433790846(thisNode, s) : s)) + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
   }
-
   public static boolean call_inParentheses_1353467374623956744(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "regexp", true) != null ? BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "regexp", true), "virtual_needParentheses_1353467374623880338", new Object[]{}) : true);
   }

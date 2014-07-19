@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.AbstractCreator_BehaviorDescriptor;
 public class SequenceCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public SequenceCreator_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.SequenceCreator";
-  }
-}
+  };;
+;}

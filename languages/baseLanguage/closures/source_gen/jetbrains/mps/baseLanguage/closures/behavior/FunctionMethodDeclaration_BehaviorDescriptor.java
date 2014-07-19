@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class FunctionMethodDeclaration_BehaviorDescriptor extends InstanceMethodDeclaration_BehaviorDescriptor {
   public FunctionMethodDeclaration_BehaviorDescriptor() {
   }
-
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
     return FunctionMethodDeclaration_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration";
-  }
-}
+  };;
+;}

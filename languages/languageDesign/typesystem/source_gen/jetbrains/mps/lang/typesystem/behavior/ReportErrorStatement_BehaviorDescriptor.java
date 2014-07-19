@@ -8,17 +8,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ReportErrorStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements MessageStatement_BehaviorDescriptor {
   public ReportErrorStatement_BehaviorDescriptor() {
   }
-
   public void virtual_attachNewMessageAnnotation_8489045168661849665(SNode thisNode) {
     ReportErrorStatement_Behavior.virtual_attachNewMessageAnnotation_8489045168661849665(thisNode);
-  }
-
-  public String virtual_getName_1597542831856389237(SNode thisNode) {
+  };;
+;  public String virtual_getName_1597542831856389237(SNode thisNode) {
     return ReportErrorStatement_Behavior.virtual_getName_1597542831856389237(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ReportErrorStatement";
-  }
-}
+  };;
+;}

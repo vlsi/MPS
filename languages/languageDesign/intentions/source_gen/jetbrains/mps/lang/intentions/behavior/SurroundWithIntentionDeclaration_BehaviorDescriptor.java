@@ -6,9 +6,8 @@ package jetbrains.mps.lang.intentions.behavior;
 public class SurroundWithIntentionDeclaration_BehaviorDescriptor extends BaseIntentionDeclaration_BehaviorDescriptor {
   public SurroundWithIntentionDeclaration_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration";
-  }
-}
+  };;
+;}

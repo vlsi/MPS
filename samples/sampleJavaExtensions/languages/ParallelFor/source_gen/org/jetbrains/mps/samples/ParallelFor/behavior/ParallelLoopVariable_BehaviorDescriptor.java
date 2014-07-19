@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.LocalVariableDeclaration_BehaviorDesc
 public class ParallelLoopVariable_BehaviorDescriptor extends LocalVariableDeclaration_BehaviorDescriptor {
   public ParallelLoopVariable_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "org.jetbrains.mps.samples.ParallelFor.structure.ParallelLoopVariable";

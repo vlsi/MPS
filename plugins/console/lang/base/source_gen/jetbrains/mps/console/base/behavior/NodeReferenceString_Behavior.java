@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class NodeReferenceString_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getTextWhenBroken_328850564593858078(SNode thisNode) {
     return "(deleted node)";
   }

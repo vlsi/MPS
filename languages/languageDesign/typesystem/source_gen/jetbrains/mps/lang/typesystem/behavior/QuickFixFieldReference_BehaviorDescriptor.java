@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class QuickFixFieldReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public QuickFixFieldReference_BehaviorDescriptor() {
   }
-
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return QuickFixFieldReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.QuickFixFieldReference";
-  }
-}
+  };;
+;}

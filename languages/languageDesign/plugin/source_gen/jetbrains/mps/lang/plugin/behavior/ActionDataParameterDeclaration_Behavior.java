@@ -17,47 +17,42 @@ import jetbrains.mps.smodel.SReference;
 
 public class ActionDataParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getType_1171743928471337193(SNode thisNode) {
+  };;
+;  public static SNode virtual_getType_1171743928471337193(SNode thisNode) {
     return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "key", false), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).first();
-  }
-
-  public static SNode virtual_getFieldDeclaration_1171743928471867409(SNode thisNode) {
+  };;
+;  public static SNode virtual_getFieldDeclaration_1171743928471867409(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "key", false);
-  }
-
-  public static List<SNode> virtual_getOperationConcept_3044950653914717125(SAbstractConcept thisConcept) {
+  };;
+;  public static List<SNode> virtual_getOperationConcept_3044950653914717125(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.classifiers.structure.IMember", "virtual_getOperationConcept_3044950653914717125", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)", "1217252428768"));
     return result;
-  }
-
-  public static String call_getDescription_47694270442103157(SAbstractConcept thisConcept, SNode parameterObject) {
+  };;
+;  public static String call_getDescription_47694270442103157(SAbstractConcept thisConcept, SNode parameterObject) {
     SNode annotation = ListSequence.fromList(SLinkOperations.getTargets(parameterObject, "annotation", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(SLinkOperations.getTarget(it, "annotation", false), "name").equals(SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_6xp2og_a0a0a0a0a0a0a0a3(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Annotation"), "name"));
-      }
-    }).first();
+      };;
+;    }).first();
     if (annotation == null) {
       return "";
     }
     SNode value = ListSequence.fromList(SLinkOperations.getTargets(annotation, "value", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(SLinkOperations.getTarget(it, "key", false), "name").equals("description");
-      }
-    }).first();
+      };;
+;    }).first();
     if (value == null) {
       return "";
     }
     return SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(value, "value", true), "jetbrains.mps.baseLanguage.structure.StringLiteral"), "value");
-  }
-
-  private static SNode _quotation_createNode_6xp2og_a0a0a0a0a0a0a0a3() {
+  };;
+;  private static SNode _quotation_createNode_6xp2og_a0a0a0a0a0a0a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)"), facade.createNodeId("~MPSCommonDataKeys$Description")));
     return quotedNode_1;
-  }
-}
+  };;
+;}

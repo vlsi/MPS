@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class BigProdExpression_BehaviorDescriptor extends ArithmSymbol_BehaviorDescriptor {
   public BigProdExpression_BehaviorDescriptor() {
   }
-
   public String virtual_getOpName_1262430001741497894(SConcept thisConcept) {
     return BigProdExpression_Behavior.virtual_getOpName_1262430001741497894(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.BigProdExpression";

@@ -19,13 +19,11 @@ public class ActionConstructionParameterDeclaration_Constraints extends BaseCons
   public ActionConstructionParameterDeclaration_Constraints() {
     super("jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration");
   }
-
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
-  }
-
-  @Override
+  };;
+;  @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseReferenceScopeProvider() {
       @Override
@@ -35,21 +33,18 @@ public class ActionConstructionParameterDeclaration_Constraints extends BaseCons
           return null;
         }
         return SLinkOperations.getTargets(action, "constructionParameter", true);
-      }
-
-      @Override
+      };;
+;      @Override
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_846svb_a0a1a0a0a2;
-      }
-    };
-  }
-
-  @Override
+      };;
+;    };
+  };;
+;  @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
-  }
-
-  @Override
+  };;
+;  @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
 
@@ -58,12 +53,10 @@ public class ActionConstructionParameterDeclaration_Constraints extends BaseCons
     }
 
     return result;
-  }
-
-  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
+  };;
+;  public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.lang.plugin.structure.ActionDeclaration");
-  }
-
-  private static SNodePointer breakingNode_846svb_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "7043625615963660229");
+  };;
+;  private static SNodePointer breakingNode_846svb_a0a1a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "7043625615963660229");
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)", "4448365440079928961");
 }

@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class RuntimeErrorType_BehaviorDescriptor extends RuntimeTypeVariable_BehaviorDescriptor {
   public RuntimeErrorType_BehaviorDescriptor() {
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return RuntimeErrorType_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.RuntimeErrorType";
-  }
-}
+  };;
+;}

@@ -40,6 +40,5 @@ public class AssertStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(AssertStatement_TextGen.class);
 }

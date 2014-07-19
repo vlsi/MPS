@@ -10,7 +10,6 @@ public class CommandHolder_Behavior {
   public static void init(SNode thisNode) {
     SPropertyOperations.set(thisNode, "name", "CommandHolder");
   }
-
   public static SNode virtual_getCommandToEdit_691634242167796942(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "command", true);
   }

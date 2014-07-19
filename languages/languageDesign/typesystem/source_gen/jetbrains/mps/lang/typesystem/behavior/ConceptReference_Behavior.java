@@ -7,9 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptReference_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getApplicableConcept_1213877307633(SNode thisNode) {
+  };;
+;  public static SNode virtual_getApplicableConcept_1213877307633(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "concept", false);
-  }
-}
+  };;
+;}

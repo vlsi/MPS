@@ -8,33 +8,26 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class EditorCellModel_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ICellStyle_BehaviorDescriptor {
   public EditorCellModel_BehaviorDescriptor() {
   }
-
   public String virtual_getClosingText_1220339738643(SNode thisNode) {
     return EditorCellModel_Behavior.virtual_getClosingText_1220339738643(thisNode);
-  }
-
-  public String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
+  };;
+;  public String virtual_getDefaultCellId_4539255030934103845(SNode thisNode) {
     return EditorCellModel_Behavior.virtual_getDefaultCellId_4539255030934103845(thisNode);
-  }
-
-  public int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
+  };;
+;  public int virtual_getDefaultFontStyle_1221472292001(SNode thisNode) {
     return EditorCellModel_Behavior.virtual_getDefaultFontStyle_1221472292001(thisNode);
-  }
-
-  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
+  };;
+;  public String virtual_getOpeningText_1220339714057(SNode thisNode) {
     return EditorCellModel_Behavior.virtual_getOpeningText_1220339714057(thisNode);
-  }
-
-  public SNode virtual_getParent_1219419981626(SNode thisNode) {
+  };;
+;  public SNode virtual_getParent_1219419981626(SNode thisNode) {
     return EditorCellModel_Behavior.virtual_getParent_1219419981626(thisNode);
-  }
-
-  public boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
+  };;
+;  public boolean virtual_isCellIdInitialized_1229948571177(SNode thisNode) {
     return EditorCellModel_Behavior.virtual_isCellIdInitialized_1229948571177(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.EditorCellModel";
-  }
-}
+  };;
+;}

@@ -8,9 +8,8 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class AddElementStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public AddElementStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.AddElementStatement";
-  }
-}
+  };;
+;}

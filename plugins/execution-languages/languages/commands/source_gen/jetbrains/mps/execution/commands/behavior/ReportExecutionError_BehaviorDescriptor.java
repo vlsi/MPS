@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ReportExecutionError_BehaviorDescriptor extends ReportErrorStatement_BehaviorDescriptor {
   public ReportExecutionError_BehaviorDescriptor() {
   }
-
   public SNode virtual_getException_856705193941282181(SNode thisNode) {
     return ReportExecutionError_Behavior.virtual_getException_856705193941282181(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.commands.structure.ReportExecutionError";

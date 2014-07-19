@@ -51,6 +51,5 @@ public class DoWhileStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(DoWhileStatement_TextGen.class);
 }

@@ -11,5 +11,5 @@ public class AnonymousClassCreator_BehaviorDescriptor extends AbstractCreator_Be
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator";
-  }
-}
+  };;
+;}

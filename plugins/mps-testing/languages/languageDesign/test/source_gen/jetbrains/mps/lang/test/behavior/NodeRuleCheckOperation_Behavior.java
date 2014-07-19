@@ -11,7 +11,6 @@ import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 public class NodeRuleCheckOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_hasExpectedRuleMessage_5348336190814877000(SNode thisNode, Iterable<IErrorReporter> errorReporters) {
     if (Sequence.fromIterable(errorReporters).isEmpty()) {
       return false;

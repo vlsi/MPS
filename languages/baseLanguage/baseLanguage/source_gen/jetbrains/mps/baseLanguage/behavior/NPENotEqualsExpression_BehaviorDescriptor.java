@@ -10,10 +10,10 @@ public class NPENotEqualsExpression_BehaviorDescriptor extends BinaryOperation_B
 
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return NPENotEqualsExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.NPENotEqualsExpression";
-  }
-}
+  };;
+;}

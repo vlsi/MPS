@@ -16,9 +16,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class AbstractNodeRefExpression_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static Iterable<SNode> call_getPossibleTargetNodes_5207260697408415741(SNode thisNode) {
+  };;
+;  public static Iterable<SNode> call_getPossibleTargetNodes_5207260697408415741(SNode thisNode) {
     List<SNode> thisList = new ArrayList<SNode>();
     ListSequence.fromList(thisList).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getTargetNode_3575813534625153815", new Object[]{}));
     Iterable<SNode> children = thisList;
@@ -27,23 +26,23 @@ public class AbstractNodeRefExpression_Behavior {
       children = Sequence.fromIterable(children).translate(new ITranslator2<SNode, SNode>() {
         public Iterable<SNode> translate(SNode it) {
           return SNodeOperations.getChildren(it);
-        }
-      });
+        };;
+;      });
       result = Sequence.fromIterable(result).concat(Sequence.fromIterable(children).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept");
-        }
-      }).select(new ISelector<SNode, SNode>() {
+        };;
+;      }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode it) {
           return SNodeOperations.cast(it, "jetbrains.mps.lang.core.structure.INamedConcept");
-        }
-      }));
+        };;
+;      }));
       children = Sequence.fromIterable(children).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.core.structure.INamedConcept"));
-        }
-      });
+        };;
+;      });
     }
     return result;
-  }
-}
+  };;
+;}

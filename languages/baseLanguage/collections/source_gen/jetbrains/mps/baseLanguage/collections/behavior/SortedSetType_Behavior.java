@@ -16,20 +16,17 @@ import jetbrains.mps.smodel.SReference;
 
 public class SortedSetType_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
+  };;
+;  public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addElement(_quotation_createNode_7p913d_a0a1a0(SLinkOperations.getTarget(thisNode, "elementType", true)));
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return result;
-  }
-
-  public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+  };;
+;  public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return _quotation_createNode_7p913d_a0a1();
-  }
-
-  private static SNode _quotation_createNode_7p913d_a0a1a0(Object parameter_1) {
+  };;
+;  private static SNode _quotation_createNode_7p913d_a0a1a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -39,13 +36,12 @@ public class SortedSetType_Behavior {
       quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_7p913d_a0a1() {
+  };;
+;  private static SNode _quotation_createNode_7p913d_a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~SortedSet")));
     return quotedNode_1;
-  }
-}
+  };;
+;}

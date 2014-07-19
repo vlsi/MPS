@@ -28,18 +28,18 @@ public class Language extends LanguageRuntime {
   @Override
   public String getNamespace() {
     return "jetbrains.mps.baseLanguage";
-  }
-
+  };;
+;
   @Override
   protected String[] getExtendedLanguageIDs() {
     return new String[]{"jetbrains.mps.baseLanguage.blTypes", "jetbrains.mps.lang.core", "jetbrains.mps.lang.traceable"};
-  }
-
+  };;
+;
   @Override
   public Collection<TemplateModule> getGenerators() {
     return TemplateUtil.<TemplateModule>asCollection(TemplateUtil.createInterpretedGenerator(this, "985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)"));
-  }
-
+  };;
+;
   @Override
   protected <T extends LanguageAspectDescriptor> T createAspectDescriptor(Class<T> descriptorClass) {
     if (descriptorClass == BehaviorAspectDescriptor.class) {
@@ -64,5 +64,5 @@ public class Language extends LanguageRuntime {
       return (T) new TypesystemDescriptor();
     }
     return super.createAspectDescriptor(descriptorClass);
-  }
-}
+  };;
+;}

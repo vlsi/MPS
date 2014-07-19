@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class PropertyRefExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public PropertyRefExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.checkedName.structure.PropertyRefExpression";
-  }
-}
+  };;
+;}

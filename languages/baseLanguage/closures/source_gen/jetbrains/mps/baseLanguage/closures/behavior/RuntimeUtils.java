@@ -21,19 +21,15 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class RuntimeUtils {
   private static Map<String, SNode> RUNTIME_CLASSIFIERS = null;
   private static Map<String, SNode> STATIC_RUNTIME_CLASSIFIERS = null;
-
   public RuntimeUtils() {
   }
-
   public static SModel getRuntimeModel() {
     return SNodeOperations.getModel(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)", "~_UnrestrictedClosures"));
-  }
-
-  public static SModel getStaticRuntimeModel() {
+  };;
+;  public static SModel getStaticRuntimeModel() {
     return SNodeOperations.getModel(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.baseLanguage.closures.runtime(MPS.Core/jetbrains.mps.baseLanguage.closures.runtime@java_stub)", "~_FunctionTypes"));
-  }
-
-  public static Map<String, SNode> getRuntimeClassifiersMap() {
+  };;
+;  public static Map<String, SNode> getRuntimeClassifiersMap() {
     synchronized (RuntimeUtils.class) {
       if (RUNTIME_CLASSIFIERS == null) {
         RUNTIME_CLASSIFIERS = MapSequence.fromMap(new HashMap<String, SNode>());
@@ -47,30 +43,29 @@ public class RuntimeUtils {
               RuntimeUtils.RUNTIME_CLASSIFIERS = null;
             }
             ClassLoaderManager.getInstance().removeReloadHandler(this);
-          }
-        });
+          };;
+;        });
       }
     }
     return RUNTIME_CLASSIFIERS;
-  }
-
-  public static Map<String, SNode> getStaticRuntimeClassifier() {
+  };;
+;  public static Map<String, SNode> getStaticRuntimeClassifier() {
     synchronized (RuntimeUtils.class) {
       if (STATIC_RUNTIME_CLASSIFIERS == null) {
         STATIC_RUNTIME_CLASSIFIERS = MapSequence.fromMap(new HashMap<String, SNode>());
         for (SNode cls : ListSequence.fromList(SModelOperations.getRoots(getStaticRuntimeModel(), "jetbrains.mps.baseLanguage.structure.Classifier")).translate(new ITranslator2<SNode, SNode>() {
           public Iterable<SNode> translate(SNode it) {
             return SLinkOperations.getTargets(it, "member", true);
-          }
-        }).where(new IWhereFilter<SNode>() {
+          };;
+;        }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.Classifier");
-          }
-        }).select(new ISelector<SNode, SNode>() {
+          };;
+;        }).select(new ISelector<SNode, SNode>() {
           public SNode select(SNode it) {
             return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
-          }
-        })) {
+          };;
+;        })) {
           MapSequence.fromMap(STATIC_RUNTIME_CLASSIFIERS).put(SPropertyOperations.getString(cls, "nestedName"), cls);
         }
         ClassLoaderManager.getInstance().addReloadHandler(new ReloadAdapter() {
@@ -80,10 +75,10 @@ public class RuntimeUtils {
               STATIC_RUNTIME_CLASSIFIERS = null;
             }
             ClassLoaderManager.getInstance().removeReloadHandler(this);
-          }
-        });
+          };;
+;        });
       }
     }
     return STATIC_RUNTIME_CLASSIFIERS;
-  }
-}
+  };;
+;}

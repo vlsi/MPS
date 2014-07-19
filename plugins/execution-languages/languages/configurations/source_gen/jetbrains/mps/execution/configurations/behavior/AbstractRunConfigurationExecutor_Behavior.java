@@ -14,16 +14,13 @@ public class AbstractRunConfigurationExecutor_Behavior {
     SPropertyOperations.set(thisNode, "canRun", "" + (true));
     SPropertyOperations.set(thisNode, "configurationName", "myRunConfiguration");
   }
-
   public static String call_getCanExecuteMethodName_7806358006983616236(SNode thisNode) {
     return "canExecute";
   }
-
   @NonNls
   public static String virtual_getSuffix_946964771156905483(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "configuration", false), "virtual_getSuffix_946964771156905483", new Object[]{}) + "_RunProfileState";
   }
-
   public static String virtual_getGeneratedClassName_946964771156905488(SNode thisNode) {
     return IGeneratedToClass_Behavior.call_getGeneratedClassName_946964771156905516(thisNode, SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "configuration", false), "name"));
   }

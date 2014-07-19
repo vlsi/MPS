@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class QueryDefinition_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {
     return NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_" + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias");
   }

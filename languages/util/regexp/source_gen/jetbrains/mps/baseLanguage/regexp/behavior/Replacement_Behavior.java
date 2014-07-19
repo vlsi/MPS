@@ -7,7 +7,6 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class Replacement_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_toString_3796137614137538905(SNode thisNode, SNode search) {
     return "";
   }

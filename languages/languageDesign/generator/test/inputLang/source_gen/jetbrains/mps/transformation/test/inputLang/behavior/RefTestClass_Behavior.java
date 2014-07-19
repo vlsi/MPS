@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class RefTestClass_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     if (kind == SConceptOperations.findConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.RefTestMethod")) {
       return CompositeScope.createComposite(SimpleRoleScope.forNamedElements(thisNode, SLinkOperations.findLinkDeclaration("jetbrains.mps.transformation.test.inputLang.structure.RefTestClass", "methods")), (SLinkOperations.getTarget(thisNode, "extends", false) != null ? BehaviorReflection.invokeVirtual(Scope.class, SLinkOperations.getTarget(thisNode, "extends", false), "virtual_getScope_3734116213129936182", new Object[]{kind, thisNode}) : null));

@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ConstraintFunctionParameter_inEditor_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ConstraintFunctionParameter_inEditor_BehaviorDescriptor() {
   }
-
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return ConstraintFunctionParameter_inEditor_Behavior.virtual_getType_2443692612523876968(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor";
-  }
-}
+  };;
+;}

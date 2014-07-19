@@ -20,20 +20,20 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class FieldReferenceOperation_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {
     String expectedName = null;
     if ((SLinkOperations.getTarget(thisNode, "fieldDeclaration", false) != null)) {
       expectedName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), "name");
     }
     return expectedName;
-  }
-
+  };;
+;
   public static boolean virtual_isDotExpressionLegalAsStatement_1239212437413(SNode thisNode) {
     return false;
-  }
-
+  };;
+;
   public static boolean call_canBeConvertedToLocal_5311267937735160942(SNode thisNode) {
     if (!(SNodeOperations.isInstanceOf(IOperation_Behavior.call_getOperand_1213877410070(thisNode), "jetbrains.mps.baseLanguage.structure.ThisExpression"))) {
       return false;
@@ -74,14 +74,14 @@ public class FieldReferenceOperation_Behavior {
       classifier = SNodeOperations.getAncestor(classifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     }
     return true;
-  }
-
+  };;
+;
   public static void call_convertToLocal_5311267937735269195(SNode thisNode) {
     SNode fieldReference = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.structure.VariableReference");
     SLinkOperations.setTarget(fieldReference, "variableDeclaration", SLinkOperations.getTarget(thisNode, "fieldDeclaration", false), false);
-  }
-
+  };;
+;
   public static boolean virtual_lvalue_1262430001741498364(SAbstractConcept thisConcept) {
     return true;
-  }
-}
+  };;
+;}

@@ -10,8 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SuperConstructorInvocation_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     SNode classConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     SNode superclassType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), classConcept, "virtual_getSuperclass_1240936569950", new Object[]{});
@@ -27,5 +27,5 @@ public class SuperConstructorInvocation_Behavior {
 
     SNode superclass = SNodeOperations.cast(superClassifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     return ClassConcept_Behavior.call_constructors_5292274854859503373(superclass);
-  }
-}
+  };;
+;}

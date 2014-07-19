@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class SideTransformVariableReference_BehaviorDescriptor extends VariableReference_BehaviorDescriptor {
   public SideTransformVariableReference_BehaviorDescriptor() {
   }
-
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return SideTransformVariableReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.SideTransformVariableReference";
-  }
-}
+  };;
+;}

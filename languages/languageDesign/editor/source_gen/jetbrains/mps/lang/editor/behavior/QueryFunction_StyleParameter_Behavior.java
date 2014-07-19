@@ -14,9 +14,8 @@ import jetbrains.mps.smodel.SReference;
 
 public class QueryFunction_StyleParameter_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
+  };;
+;  public static List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext"));
     ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node"));
@@ -25,33 +24,28 @@ public class QueryFunction_StyleParameter_Behavior {
       ListSequence.fromList(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_nextNode"));
     }
     return result;
-  }
-
-  public static boolean call_isSeparatorStyleQuery_7991857262598847349(SNode thisNode) {
+  };;
+;  public static boolean call_isSeparatorStyleQuery_7991857262598847349(SNode thisNode) {
     return QueryFunction_StyleParameter_Behavior.call_getContainingCellModelRefNodeList_4310268853340642392(thisNode) != null;
-  }
-
-  public static SNode call_getContainingCellModelRefNodeList_4310268853340642392(SNode thisNode) {
+  };;
+;  public static SNode call_getContainingCellModelRefNodeList_4310268853340642392(SNode thisNode) {
     SNode styleContainer = StyleClassItem_Behavior.call_getStyleContainer_7991857262599637608(QueryFunction_StyleParameter_Behavior.call_getStyleClassItem_7991857262599017464(thisNode));
     if (styleContainer == null) {
       return null;
     }
     return SNodeOperations.as(SNodeOperations.getParent(styleContainer), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList");
-  }
-
-  public static SNode call_getStyleClassItem_7991857262599017464(SNode thisNode) {
+  };;
+;  public static SNode call_getStyleClassItem_7991857262599017464(SNode thisNode) {
     return SNodeOperations.as(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.editor.structure.StyleClassItem");
-  }
-
-  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  };;
+;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return _quotation_createNode_evejyl_a0a4();
-  }
-
-  private static SNode _quotation_createNode_evejyl_a0a4() {
+  };;
+;  private static SNode _quotation_createNode_evejyl_a0a4() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
-  }
-}
+  };;
+;}

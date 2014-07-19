@@ -6,9 +6,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class ILocalVariableElement_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static SNode virtual_getLocalVariableDeclaration_1238803857389(SNode thisNode) {
     return null;
-  }
-}
+  };;
+;}

@@ -8,7 +8,6 @@ import org.jetbrains.mps.samples.money.runtime.StockPriceDownloader;
 public class StockSymbol_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean call_isValidSymbol_4001135958235787610(SNode thisNode, String symbol) {
     if ((symbol == null || symbol.length() == 0)) {
       return false;

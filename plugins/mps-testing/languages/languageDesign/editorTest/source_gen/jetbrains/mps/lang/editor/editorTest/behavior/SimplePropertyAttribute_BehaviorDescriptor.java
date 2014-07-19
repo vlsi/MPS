@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor;
 public class SimplePropertyAttribute_BehaviorDescriptor extends PropertyAttribute_BehaviorDescriptor {
   public SimplePropertyAttribute_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.editorTest.structure.SimplePropertyAttribute";

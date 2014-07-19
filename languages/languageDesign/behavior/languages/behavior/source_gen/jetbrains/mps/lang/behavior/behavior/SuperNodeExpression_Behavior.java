@@ -10,9 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class SuperNodeExpression_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode call_getSuperConcept_7448026190102457310(SNode thisNode) {
+  };;
+;  public static SNode call_getSuperConcept_7448026190102457310(SNode thisNode) {
     SNode result;
     if ((SLinkOperations.getTarget(thisNode, "superConcept", false) != null)) {
       result = SLinkOperations.getTarget(thisNode, "superConcept", false);
@@ -28,14 +27,12 @@ public class SuperNodeExpression_Behavior {
       }
     }
     return result;
-  }
-
-  public static SNode call_getSuperMethod_5527038142169086661(SNode thisNode) {
+  };;
+;  public static SNode call_getSuperMethod_5527038142169086661(SNode thisNode) {
     return SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false);
-  }
-
-  public static boolean call_isSuperMethodStatic_5212852298298945349(SNode thisNode) {
+  };;
+;  public static boolean call_isSuperMethodStatic_5212852298298945349(SNode thisNode) {
     SNode method = SuperNodeExpression_Behavior.call_getSuperMethod_5527038142169086661(thisNode);
     return method != null && SPropertyOperations.getBoolean(method, "isStatic");
-  }
-}
+  };;
+;}

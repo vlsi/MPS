@@ -11,5 +11,5 @@ public class JavaImport_BehaviorDescriptor extends BaseConcept_BehaviorDescripto
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.JavaImport";
-  }
-}
+  };;
+;}

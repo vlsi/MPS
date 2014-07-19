@@ -7,9 +7,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class NF_Model_CreateNewRootNodeOperation_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static boolean virtual_applicableToModel_1262430001741492322(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_applicableToModel_1262430001741492322(SAbstractConcept thisConcept) {
     return true;
-  }
-}
+  };;
+;}

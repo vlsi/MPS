@@ -27,7 +27,6 @@ public class ExternalViewFigureParameter_Constraints extends BaseConstraintsDesc
   public ExternalViewFigureParameter_Constraints() {
     super("jetbrains.mps.lang.editor.figures.structure.ExternalViewFigureParameter");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -36,7 +35,6 @@ public class ExternalViewFigureParameter_Constraints extends BaseConstraintsDesc
       public boolean hasOwnGetter() {
         return true;
       }
-
       @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
@@ -45,7 +43,6 @@ public class ExternalViewFigureParameter_Constraints extends BaseConstraintsDesc
     });
     return properties;
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -54,7 +51,6 @@ public class ExternalViewFigureParameter_Constraints extends BaseConstraintsDesc
       public boolean hasOwnScopeProvider() {
         return true;
       }
-
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -63,7 +59,6 @@ public class ExternalViewFigureParameter_Constraints extends BaseConstraintsDesc
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_87ttue_a0a0a0a0a1a0b0a1a2;
           }
-
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -76,6 +71,5 @@ public class ExternalViewFigureParameter_Constraints extends BaseConstraintsDesc
     });
     return references;
   }
-
   private static SNodePointer breakingNode_87ttue_a0a0a0a0a1a0b0a1a2 = new SNodePointer("r:e4768f3d-85b6-458a-8b3f-9ef490bdf2d0(jetbrains.mps.lang.editor.figures.constraints)", "5422656561918010336");
 }

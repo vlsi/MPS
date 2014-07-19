@@ -10,5 +10,5 @@ public class ClosureParameterReference_BehaviorDescriptor extends Expression_Beh
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ClosureParameterReference";
-  }
-}
+  };;
+;}

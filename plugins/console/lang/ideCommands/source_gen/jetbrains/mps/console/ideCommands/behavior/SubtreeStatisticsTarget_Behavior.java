@@ -17,7 +17,6 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 public class SubtreeStatisticsTarget_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static Iterable<Tuples._2<String, Integer>> virtual_getStat_7490254719527247609(SNode thisNode, ConsoleContext context) {
     SNode targetNode = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "target", true), "virtual_getTargetNode_3575813534625153815", new Object[]{});
     List<SNode> subNodes = SNodeOperations.getDescendants(targetNode, null, false, new String[]{});
@@ -34,7 +33,6 @@ public class SubtreeStatisticsTarget_Behavior {
 
     return result;
   }
-
   public static Iterable<SNode> virtual_getNodes_5207260697411458163(SNode thisNode, ConsoleContext context) {
     return SNodeOperations.getDescendants(SLinkOperations.getTarget(thisNode, "target", true), null, false, new String[]{});
   }

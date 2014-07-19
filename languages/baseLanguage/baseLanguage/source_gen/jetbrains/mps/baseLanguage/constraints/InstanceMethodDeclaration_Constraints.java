@@ -16,5 +16,5 @@ public class InstanceMethodDeclaration_Constraints extends BaseConstraintsDescri
       return "${language_descriptor}/icons/abstractMethod.png";
     }
     return null;
-  }
-}
+  };;
+;}

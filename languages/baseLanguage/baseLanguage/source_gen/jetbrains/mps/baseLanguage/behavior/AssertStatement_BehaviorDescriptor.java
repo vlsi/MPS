@@ -10,5 +10,5 @@ public class AssertStatement_BehaviorDescriptor extends Statement_BehaviorDescri
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AssertStatement";
-  }
-}
+  };;
+;}

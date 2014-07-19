@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.constructors.behavior;
 public class ListParameterReference_BehaviorDescriptor extends CustomConstructorParameterReference_BehaviorDescriptor {
   public ListParameterReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.constructors.structure.ListParameterReference";

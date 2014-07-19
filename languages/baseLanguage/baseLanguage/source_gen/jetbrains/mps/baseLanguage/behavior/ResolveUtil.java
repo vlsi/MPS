@@ -58,8 +58,8 @@ public class ResolveUtil {
       }
     }
     return result;
-  }
-
+  };;
+;
   public static SNode getConcreteClassifierType(SNode typeWithVars, SNode classifierSubtype) {
     SNode result = SNodeOperations.copyNode(typeWithVars);
     List<SNode> varRefs = SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
@@ -73,8 +73,8 @@ public class ResolveUtil {
       }
     }
     return result;
-  }
-
+  };;
+;
   public static SNode getConcreteSuperClassifierType(List<SNode> frontier, SNode classifier) {
     SNode concreteMethodClassifierType = null;
     while (!(ListSequence.fromList(frontier).isEmpty())) {
@@ -102,8 +102,8 @@ public class ResolveUtil {
       }
     }
     return concreteMethodClassifierType;
-  }
-
+  };;
+;
   public static SNode processMethodToImplement(SNode enclosingClassifier, SNode method) {
     SNode declaringClassifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
     SNode result = SNodeOperations.copyNode(method);
@@ -155,8 +155,8 @@ public class ResolveUtil {
       }
     }
     return result;
-  }
-
+  };;
+;
   public static boolean goodArguments(Iterable<SNode> parameterTypes, List<SNode> arguments) {
     if (SNodeOperations.isInstanceOf(Sequence.fromIterable(parameterTypes).last(), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {
       if (Sequence.fromIterable(parameterTypes).count() - 1 > ListSequence.fromList(arguments).count()) {
@@ -215,13 +215,13 @@ public class ResolveUtil {
     } else {
       return false;
     }
-  }
-
+  };;
+;
   private static SNode _quotation_createNode_txu8l3_a0a0a0b0c0a0k0e() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), facade.createNodeId("~Object")));
     return quotedNode_1;
-  }
-}
+  };;
+;}

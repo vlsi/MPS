@@ -22,7 +22,6 @@ public class ExtractToConstantRefExpression_Constraints extends BaseConstraintsD
   public ExtractToConstantRefExpression_Constraints() {
     super("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantRefExpression");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -30,36 +29,31 @@ public class ExtractToConstantRefExpression_Constraints extends BaseConstraintsD
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      }
-
-      @Nullable
+      };;
+;      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseReferenceScopeProvider() {
           @Override
           public boolean hasPresentation() {
             return true;
-          }
-
-          @Override
+          };;
+;          @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             return SPropertyOperations.getString(_context.getParameterNode(), "fieldName");
-          }
-
-          @Override
+          };;
+;          @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return SNodeOperations.getDescendants(SNodeOperations.getContainingRoot(_context.getEnclosingNode()), "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", false, new String[]{});
-          }
-
-          @Override
+          };;
+;          @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_o7daap_a0a3a0a0a1a0b0a1a1;
-          }
-        };
-      }
-    });
+          };;
+;        };
+      };;
+;    });
     return references;
-  }
-
-  private static SNodePointer breakingNode_o7daap_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "99767819676013261");
+  };;
+;  private static SNodePointer breakingNode_o7daap_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "99767819676013261");
 }

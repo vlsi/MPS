@@ -8,9 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueryFunction_AttributeStyleParameter_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  };;
+;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.editor.structure.AttributeStyleClassItem", false, false), "attribute", false), "valueType", true);
-  }
-}
+  };;
+;}

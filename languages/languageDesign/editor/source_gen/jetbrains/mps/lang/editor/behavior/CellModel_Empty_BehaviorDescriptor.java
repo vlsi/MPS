@@ -6,9 +6,8 @@ package jetbrains.mps.lang.editor.behavior;
 public class CellModel_Empty_BehaviorDescriptor extends EditorCellModel_BehaviorDescriptor {
   public CellModel_Empty_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellModel_Empty";
-  }
-}
+  };;
+;}

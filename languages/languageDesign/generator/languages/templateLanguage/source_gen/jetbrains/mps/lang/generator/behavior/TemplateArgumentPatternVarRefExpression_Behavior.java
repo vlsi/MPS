@@ -8,9 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TemplateArgumentPatternVarRefExpression_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String virtual_getVariableName_2902001550281937661(SNode thisNode) {
+  };;
+;  public static String virtual_getVariableName_2902001550281937661(SNode thisNode) {
     return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(thisNode, "patternVarDecl", false));
-  }
-}
+  };;
+;}

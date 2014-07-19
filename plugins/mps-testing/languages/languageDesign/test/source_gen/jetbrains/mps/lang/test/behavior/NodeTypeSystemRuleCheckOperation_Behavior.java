@@ -9,7 +9,6 @@ import jetbrains.mps.lang.test.runtime.NodeCheckerUtil;
 public class NodeTypeSystemRuleCheckOperation_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_hasExpectedRuleMessage_5348336190814877000(SNode thisNode, Iterable<IErrorReporter> errorReporters) {
     for (IErrorReporter errorReport : errorReporters) {
       SNode ruleNode = NodeCheckerUtil.getRuleNodeFromReporter(errorReport);

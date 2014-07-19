@@ -91,6 +91,5 @@ public class ForStatement_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ForStatement_TextGen.class);
 }

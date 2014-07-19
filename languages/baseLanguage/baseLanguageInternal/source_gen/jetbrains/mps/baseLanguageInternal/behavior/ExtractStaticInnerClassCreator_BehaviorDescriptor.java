@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.ClassCreator_BehaviorDescriptor;
 public class ExtractStaticInnerClassCreator_BehaviorDescriptor extends ClassCreator_BehaviorDescriptor {
   public ExtractStaticInnerClassCreator_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator";
-  }
-}
+  };;
+;}

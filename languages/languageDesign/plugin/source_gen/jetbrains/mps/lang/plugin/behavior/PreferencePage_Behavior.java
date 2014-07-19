@@ -10,15 +10,13 @@ import jetbrains.mps.checkedName.PropertyReference;
 
 public class PreferencePage_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String call_getGeneratedName_1217679829877(SNode thisNode) {
+  };;
+;  public static String call_getGeneratedName_1217679829877(SNode thisNode) {
     String componentName = SPropertyOperations.getString(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", false, false), "name");
     String pageName = NameUtil.toValidCamelIdentifier(SPropertyOperations.getString(thisNode, "name"));
     return componentName + "_" + pageName + "_PreferencesPage";
-  }
-
-  public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
+  };;
+;  public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
     return new PropertyReference(thisNode, "name");
-  }
-}
+  };;
+;}

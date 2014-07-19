@@ -21,26 +21,19 @@ public class TestsErrorsChecker {
   private SNode myNode;
   private static TestsErrorsChecker.ModelErrorsHolder<IErrorReporter> modelErrorsHolder = new TestsErrorsChecker.ModelErrorsHolder();
 
-
   public TestsErrorsChecker(SNode node) {
     this.myNode = node;
   }
-
-
 
   private Iterable<IErrorReporter> getTypeSystemErrors() {
     INodeChecker checker = new TypesystemChecker();
     return checker.getErrors(SNodeOperations.getContainingRoot(myNode), null);
   }
 
-
-
   private Iterable<IErrorReporter> getConstraintsErrors() {
     INodeChecker checker = new LanguageChecker();
     return checker.getErrors(SNodeOperations.getContainingRoot(myNode), null);
   }
-
-
 
   private Iterable<IErrorReporter> filterReportersByNode(final Iterable<IErrorReporter> errors, final SNode node) {
     return Sequence.fromIterable(errors).where(new IWhereFilter<IErrorReporter>() {
@@ -50,14 +43,10 @@ public class TestsErrorsChecker {
     });
   }
 
-
-
   public Iterable<IErrorReporter> getErrors() {
     Iterable<IErrorReporter> result = getModelErrors();
     return filterReportersByNode(result, myNode);
   }
-
-
 
   private Iterable<IErrorReporter> getModelErrors() {
     Set<IErrorReporter> cachedErrors = modelErrorsHolder.get(SNodeOperations.getModel(myNode));
@@ -69,8 +58,6 @@ public class TestsErrorsChecker {
     return result;
   }
 
-
-
   private Set<IErrorReporter> collectModelErrors() {
     Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
     SetSequence.fromSet(result).addSequence(Sequence.fromIterable(getTypeSystemErrors()));
@@ -78,8 +65,6 @@ public class TestsErrorsChecker {
     modelErrorsHolder.set(SNodeOperations.getModel(myNode), result);
     return result;
   }
-
-
 
   public Iterable<IErrorReporter> getErrorsSpecificType(final MessageStatus errorType) {
     Set<IErrorReporter> result = SetSequence.fromSet(new HashSet<IErrorReporter>());
@@ -91,12 +76,9 @@ public class TestsErrorsChecker {
     return result;
   }
 
-
-
   private static class ModelErrorsHolder<T> {
     private Set<T> cachedErrors;
     private SModel actualModel;
-
 
     @Nullable
     public Set<T> get(SModel model) {
@@ -106,14 +88,11 @@ public class TestsErrorsChecker {
       return null;
     }
 
-
-
     public void set(SModel model, Set<T> errors) {
       actualModel = model;
       cachedErrors = SetSequence.fromSet(new HashSet<T>());
       SetSequence.fromSet(cachedErrors).addSequence(SetSequence.fromSet(errors));
     }
   }
-
 
 }

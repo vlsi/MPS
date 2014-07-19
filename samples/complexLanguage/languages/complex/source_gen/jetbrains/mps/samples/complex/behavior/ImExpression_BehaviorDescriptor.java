@@ -6,7 +6,6 @@ package jetbrains.mps.samples.complex.behavior;
 public class ImExpression_BehaviorDescriptor extends SingleComplexExpression_BehaviorDescriptor {
   public ImExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.complex.structure.ImExpression";

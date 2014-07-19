@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class BeforeTest_BehaviorDescriptor extends PrepareMethod_BehaviorDescriptor {
   public BeforeTest_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return BeforeTest_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.unitTest.structure.BeforeTest";

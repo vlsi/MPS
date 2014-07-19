@@ -25,10 +25,8 @@ public class PerformUtil {
     Assert.assertTrue(errorString, BehaviorReflection.invokeVirtual(Boolean.TYPE, operation, "virtual_hasExpectedRuleMessage_5348336190814877000", new Object[]{errorReporters}));
   }
 
-
-
-
-  public static void checkNodeHasWarning(SNode operation) {
+;;;
+;;;  public static void checkNodeHasWarning(SNode operation) {
     final SNode nodeToCheck = NodeCheckOperation_Behavior.call_getAnnotatedNode_2912288420882528229(operation);
     TestsErrorsChecker checker = new TestsErrorsChecker(nodeToCheck);
     final Iterable<IErrorReporter> errorReporters = checker.getErrorsSpecificType(MessageStatus.WARNING);
@@ -38,9 +36,7 @@ public class PerformUtil {
     Assert.assertTrue(errorString, BehaviorReflection.invokeVirtual(Boolean.TYPE, operation, "virtual_hasExpectedRuleMessage_5348336190814877000", new Object[]{errorReporters}));
   }
 
-
-
-  public static void checkNodeWithTypeCheckingAction(final SNode node, ITypechecking.Action checkingAction) {
+;;;  public static void checkNodeWithTypeCheckingAction(final SNode node, ITypechecking.Action checkingAction) {
     ITypeContextOwner owner = new DefaultTypecheckingContextOwner();
     SNode containingRoot = node.getContainingRoot();
     TypeContextManager.getInstance().runTypeCheckingAction(owner, containingRoot, checkingAction);

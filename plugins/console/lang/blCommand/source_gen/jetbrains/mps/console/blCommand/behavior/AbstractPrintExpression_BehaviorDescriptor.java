@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public abstract class AbstractPrintExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public AbstractPrintExpression_BehaviorDescriptor() {
   }
-
   public boolean virtual_legalAsStatement_1262430001741498032(SConcept thisConcept) {
     return AbstractPrintExpression_Behavior.virtual_legalAsStatement_1262430001741498032(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.blCommand.structure.AbstractPrintExpression";

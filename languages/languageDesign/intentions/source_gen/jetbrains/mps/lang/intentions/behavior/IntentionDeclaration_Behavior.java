@@ -11,13 +11,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IntentionDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String call_getConceptName_1213877237638(SNode thisNode) {
+  };;
+;  public static String call_getConceptName_1213877237638(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "forConcept", false), "virtual_getFqName_1213877404258", new Object[]{});
-  }
-
-  public static SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
+  };;
+;  public static SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
     if (!(ConceptFunction_Behavior.call_isReturnOnly_3745452943050787634(SLinkOperations.getTarget(thisNode, "descriptionFunction", true)))) {
       return null;
     }
@@ -32,9 +30,8 @@ public class IntentionDeclaration_Behavior {
       return null;
     }
     return SNodeOperations.cast(expr, "jetbrains.mps.baseLanguage.structure.StringLiteral");
-  }
-
-  public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
+  };;
+;  public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "forConcept", false);
-  }
-}
+  };;
+;}

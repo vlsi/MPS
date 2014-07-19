@@ -6,9 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class NodeParameter_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String virtual_getGetterName_1234885318469(SNode thisNode) {
+  };;
+;  public static String virtual_getGetterName_1234885318469(SNode thisNode) {
     return "getSNode";
-  }
-}
+  };;
+;}

@@ -6,7 +6,6 @@ package jetbrains.mps.lang.test.behavior;
 public abstract class AbstractNodeRuleCheckOperation_BehaviorDescriptor extends NodeCheckOperation_BehaviorDescriptor implements IChecksRules_BehaviorDescriptor {
   public AbstractNodeRuleCheckOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.AbstractNodeRuleCheckOperation";

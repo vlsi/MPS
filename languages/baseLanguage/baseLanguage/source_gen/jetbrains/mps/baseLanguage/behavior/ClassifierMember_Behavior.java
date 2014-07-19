@@ -23,12 +23,12 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class ClassifierMember_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return false;
-  }
-
+  };;
+;
   public static boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     final Wrappers._T<SNode> _contextClassifier = new Wrappers._T<SNode>(contextClassifier);
     if (SNodeOperations.isInstanceOf(thisNode, "jetbrains.mps.baseLanguage.structure.StaticKind")) {
@@ -61,8 +61,8 @@ public class ClassifierMember_Behavior {
       Iterable<SNode> possibleClassifiers = ListSequence.fromList(SNodeOperations.getAncestors(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier", true)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return SetSequence.fromSet(ClassifierScopeUtils.getExtendedClassifiers(it)).contains(_contextClassifier.value);
-        }
-      });
+        };;
+;      });
       if (!(SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.baseLanguage.structure.DotExpression"))) {
         // 1 
         return Sequence.fromIterable(possibleClassifiers).isNotEmpty();
@@ -73,43 +73,43 @@ public class ClassifierMember_Behavior {
         return Sequence.fromIterable(possibleClassifiers).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SetSequence.fromSet(extendedClassifiers).contains(it);
-          }
-        });
+          };;
+;        });
       }
     }
 
     return false;
-  }
-
+  };;
+;
   public static void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     // do nothing by default 
-  }
-
+  };;
+;
   public static boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isVisible_8083692786967482069", new Object[]{SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), contextClassifierType, "virtual_getClassifier_7405920559687237513", new Object[]{}), "jetbrains.mps.baseLanguage.structure.Classifier"), contextNode});
-  }
-
+  };;
+;
   public static boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(Boolean.TYPE, thisNode, "virtual_isStatic_8986964027630462944", new Object[]{});
-  }
-
+  };;
+;
   public static boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
     return false;
-  }
-
+  };;
+;
   public static boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
     return false;
-  }
-
+  };;
+;
   public static boolean virtual_canBeInterfaceMember_2949815620938109095(SAbstractConcept thisConcept) {
     return false;
-  }
-
+  };;
+;
   private static boolean eq_i8o263_a0a0l0c(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  }
-
+  };;
+;
   private static boolean eq_i8o263_a0a0n0c(Object a, Object b) {
     return (a != null ? a.equals(b) : a == b);
-  }
-}
+  };;
+;}

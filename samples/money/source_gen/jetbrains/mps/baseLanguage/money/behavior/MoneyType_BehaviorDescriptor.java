@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MoneyType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public MoneyType_BehaviorDescriptor() {
   }
-
   public SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     return MoneyType_Behavior.virtual_getAbstractCreator_1213877337340(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.money.structure.MoneyType";

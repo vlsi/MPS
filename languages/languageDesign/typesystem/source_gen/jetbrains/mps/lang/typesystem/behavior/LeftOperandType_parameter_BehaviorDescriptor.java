@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class LeftOperandType_parameter_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public LeftOperandType_parameter_BehaviorDescriptor() {
   }
-
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return LeftOperandType_parameter_Behavior.virtual_getType_2443692612523876968(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter";
-  }
-}
+  };;
+;}

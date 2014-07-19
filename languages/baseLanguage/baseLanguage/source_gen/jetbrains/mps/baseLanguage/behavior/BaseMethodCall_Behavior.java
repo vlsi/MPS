@@ -13,16 +13,16 @@ import jetbrains.mps.util.NameUtil;
 
 public class BaseMethodCall_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static Object[] call_getActualArguments_1213877339153(SNode thisNode, final SModule module) {
     return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actualArgument", true)).select(new ISelector<SNode, Object>() {
       public Object select(SNode it) {
         return BehaviorReflection.invokeVirtual(Object.class, it, "virtual_eval_1213877519769", new Object[]{module});
-      }
-    }).toGenericArray(Object.class);
-  }
-
+      };;
+;    }).toGenericArray(Object.class);
+  };;
+;
   public static String virtual_getVariableExpectedName_1213877519781(SNode thisNode) {
     String variableExpectedName = null;
     if ((SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false) != null)) {
@@ -37,13 +37,13 @@ public class BaseMethodCall_Behavior {
       }
     }
     return NameUtil.decapitalize(variableExpectedName);
-  }
-
+  };;
+;
   public static boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return true;
-  }
-
+  };;
+;
   public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {
     return BehaviorReflection.invokeSuper(Boolean.TYPE, thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall", "virtual_isInTypeInferenceContext_4837286298388660615", new Object[]{});
-  }
-}
+  };;
+;}

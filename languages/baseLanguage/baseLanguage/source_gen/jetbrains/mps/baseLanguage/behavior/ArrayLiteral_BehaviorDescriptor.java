@@ -11,5 +11,5 @@ public class ArrayLiteral_BehaviorDescriptor extends Expression_BehaviorDescript
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayLiteral";
-  }
-}
+  };;
+;}

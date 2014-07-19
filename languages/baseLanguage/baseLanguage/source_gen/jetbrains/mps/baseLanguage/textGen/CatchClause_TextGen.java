@@ -39,6 +39,5 @@ public class CatchClause_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(CatchClause_TextGen.class);
 }

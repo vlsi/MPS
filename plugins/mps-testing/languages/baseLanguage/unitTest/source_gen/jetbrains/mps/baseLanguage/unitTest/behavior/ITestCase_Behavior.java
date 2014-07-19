@@ -12,15 +12,12 @@ import java.util.ArrayList;
 public class ITestCase_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_getClassName_1216136193905(SNode thisNode) {
     return SNodeOperations.getModelLongName(thisNode.getModel()) + "." + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getSimpleClassName_1229278847513", new Object[]{});
   }
-
   public static String virtual_getSimpleClassName_1229278847513(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "name") + "_Test";
   }
-
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
     return new ArrayList<SNode>();
   }

@@ -15,35 +15,27 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 public class CommandParameterDeclaration_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_generateField_8478830098674441876(SNode thisNode) {
     return true;
   }
-
   public static String call_getSetterName_7327337331549086044(SNode thisNode) {
     return "set" + CommandParameterDeclaration_Behavior.call_getUpperCaseName_7327337331549086061(thisNode);
   }
-
   public static String call_getSetterLongName_3754131050835964459(SNode thisNode) {
     return CommandParameterDeclaration_Behavior.call_getSetterName_7327337331549086044(thisNode) + "_" + CommandParameterDeclaration_Behavior.call_getTypeSuffix_3754131050835992327(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"))), SLinkOperations.getTarget(thisNode, "type", true));
   }
-
   public static String call_getUpperCaseName_7327337331549086061(SNode thisNode) {
     return CommandParameterDeclaration_Behavior.call_getUpperCaseName_7327337331549086070(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"))), SPropertyOperations.getString(thisNode, "name"));
   }
-
   public static String call_getFieldName_7327337331549117850(SNode thisNode) {
     return CommandParameterDeclaration_Behavior.call_getFieldName_7327337331549086089(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"))), SPropertyOperations.getString(thisNode, "name")) + "_" + CommandParameterDeclaration_Behavior.call_getTypeSuffix_3754131050835992327(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"))), SLinkOperations.getTarget(thisNode, "type", true));
   }
-
   public static String call_getFieldName_7327337331549086089(SAbstractConcept thisConcept, String name) {
     return "my" + CommandParameterDeclaration_Behavior.call_getUpperCaseName_7327337331549086070(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterDeclaration"))), name);
   }
-
   public static String call_getTypeSuffix_3754131050835992327(SAbstractConcept thisConcept, SNode type) {
     return IGeneratedToClass_Behavior.call_getValidClassName_3754131050835940481(SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.execution.common.structure.IGeneratedToClass"))), BehaviorReflection.invokeVirtual(String.class, type, "virtual_getPresentation_1213877396640", new Object[]{}));
   }
-
   public static String call_getUpperCaseName_7327337331549086070(SAbstractConcept thisConcept, String name) {
     return name.substring(0, 1).toUpperCase() + name.substring(1);
   }

@@ -23,7 +23,6 @@ public abstract class BaseClassConceptTextGen {
       textGen.append("{}");
     }
   }
-
   public static void members(SNode classifier, final SNodeTextGen textGen) {
     // just for first element 
     boolean isWrappedElementBefore = true;
@@ -51,11 +50,9 @@ public abstract class BaseClassConceptTextGen {
       textGen.appendNewLine();
     }
   }
-
   public static void body(SNode concept, final SNodeTextGen textGen) {
     BaseClassConceptTextGen.members(concept, textGen);
   }
-
   public static void innerClassifiers(SNode concept, final SNodeTextGen textGen) {
     SNode last = Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(concept)).last();
     for (SNode classifier : Classifier_Behavior.call_nestedClassifiers_5292274854859193142(concept)) {
@@ -65,7 +62,6 @@ public abstract class BaseClassConceptTextGen {
       }
     }
   }
-
   public static void collection(Iterable<SNode> nodes, final SNodeTextGen textGen) {
     {
       Iterable<SNode> collection = nodes;

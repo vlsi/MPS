@@ -10,13 +10,11 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class UnrestrictedClosureLiteral_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
+  };;
+;  public static SNode virtual_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
     return _quotation_createNode_8me3g4_a0a0(paramTypes, termType, returnType, throwsTypes);
-  }
-
-  private static SNode _quotation_createNode_8me3g4_a0a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+  };;
+;  private static SNode _quotation_createNode_8me3g4_a0a0(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
@@ -45,5 +43,5 @@ public class UnrestrictedClosureLiteral_Behavior {
       }
     }
     return quotedNode_5;
-  }
-}
+  };;
+;}

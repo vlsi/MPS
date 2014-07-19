@@ -15,22 +15,19 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class FunctionMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode call_functionType_2857237956452412451(SNode thisNode) {
+  };;
+;  public static SNode call_functionType_2857237956452412451(SNode thisNode) {
     List<SNode> params = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode pd) {
         return SNodeOperations.copyNode(SLinkOperations.getTarget(pd, "type", true));
-      }
-    }).toListSequence();
+      };;
+;    }).toListSequence();
     return _quotation_createNode_c7xn2w_a1a0(params, SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "returnType", true)));
-  }
-
-  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_canBeInterfaceMember_2949815620938109095(SAbstractConcept thisConcept) {
     return false;
-  }
-
-  private static SNode _quotation_createNode_c7xn2w_a1a0(Object parameter_1, Object parameter_2) {
+  };;
+;  private static SNode _quotation_createNode_c7xn2w_a1a0(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -47,5 +44,5 @@ public class FunctionMethodDeclaration_Behavior {
       quotedNode_3.addChild("resultType", HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
-  }
-}
+  };;
+;}

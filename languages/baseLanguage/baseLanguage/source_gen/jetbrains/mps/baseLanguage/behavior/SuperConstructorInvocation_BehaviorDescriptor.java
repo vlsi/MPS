@@ -11,10 +11,10 @@ public class SuperConstructorInvocation_BehaviorDescriptor extends ConstructorIn
 
   public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return SuperConstructorInvocation_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation";
-  }
-}
+  };;
+;}

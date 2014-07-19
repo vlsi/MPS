@@ -13,18 +13,15 @@ import java.util.ArrayList;
 
 public class EditorTab_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String call_getGeneratedName_3743831881070611776(SNode thisNode) {
+  };;
+;  public static String call_getGeneratedName_3743831881070611776(SNode thisNode) {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name")) + "_TabDescriptor";
-  }
-
-  public static String call_getGeneratedClassFQName_3743831881070611787(SNode thisNode) {
+  };;
+;  public static String call_getGeneratedClassFQName_3743831881070611787(SNode thisNode) {
     return SNodeOperations.getModelLongName(jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.getModel(thisNode)) + "." + EditorTab_Behavior.call_getGeneratedName_3743831881070611776(thisNode);
-  }
-
-  public static List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
+  };;
+;  public static List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
     List<PropertyReference> props = ListSequence.fromList(new ArrayList<PropertyReference>());
     return props;
-  }
-}
+  };;
+;}

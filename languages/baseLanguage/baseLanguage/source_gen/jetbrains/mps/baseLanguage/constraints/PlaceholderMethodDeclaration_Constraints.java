@@ -23,8 +23,8 @@ public class PlaceholderMethodDeclaration_Constraints extends BaseConstraintsDes
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
-  }
-
+  };;
+;
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -34,8 +34,8 @@ public class PlaceholderMethodDeclaration_Constraints extends BaseConstraintsDes
     }
 
     return result;
-  }
-
+  };;
+;
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -43,24 +43,24 @@ public class PlaceholderMethodDeclaration_Constraints extends BaseConstraintsDes
       @Override
       public boolean hasOwnValidator() {
         return true;
-      }
-
+      };;
+;
       @Override
       public boolean validateValue(SNode node, String propertyValue) {
         String propertyName = "name";
         return isEmptyString((SPropertyOperations.getString(propertyValue)));
-      }
-    });
+      };;
+;    });
     return properties;
-  }
-
+  };;
+;
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.baseLanguage.structure.Interface");
-  }
-
+  };;
+;
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "4898614932449980392");
 
   private static boolean isEmptyString(String str) {
     return str == null || str.length() == 0;
-  }
-}
+  };;
+;}

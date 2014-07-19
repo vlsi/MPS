@@ -6,9 +6,8 @@ package jetbrains.mps.lang.typesystem.behavior;
 public class IsStrongSubtypeExpression_BehaviorDescriptor extends IsSubtypeExpression_BehaviorDescriptor {
   public IsStrongSubtypeExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.IsStrongSubtypeExpression";
-  }
-}
+  };;
+;}

@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class DecimalMinusExpression_BehaviorDescriptor extends DecimalBinaryOperation_BehaviorDescriptor {
   public DecimalMinusExpression_BehaviorDescriptor() {
   }
-
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return DecimalMinusExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression";

@@ -6,7 +6,6 @@ package jetbrains.mps.samples.complex.behavior;
 public class DegreeComplexExpression_BehaviorDescriptor extends SingleComplexExpression_BehaviorDescriptor {
   public DegreeComplexExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.complex.structure.DegreeComplexExpression";

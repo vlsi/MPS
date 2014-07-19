@@ -11,31 +11,27 @@ import jetbrains.mps.checkedName.PropertyReference;
 
 public class ICheckedNamePolicy_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> virtual_getDescendantsToCheck_4844813484172611413(SNode thisNode) {
+  };;
+;  public static List<SNode> virtual_getDescendantsToCheck_4844813484172611413(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     SNode dsc = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getDescendantToCheck_4844813484172611439", new Object[]{});
     if (dsc != null) {
       ListSequence.fromList(result).addElement(dsc);
     }
     return result;
-  }
-
-  public static SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
+  };;
+;  public static SNode virtual_getDescendantToCheck_4844813484172611439(SNode thisNode) {
     return null;
-  }
-
-  public static List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
+  };;
+;  public static List<PropertyReference> virtual_getPropertiesToCheck_4844813484172611445(SNode thisNode) {
     List<PropertyReference> result = ListSequence.fromList(new ArrayList<PropertyReference>());
     PropertyReference property = BehaviorReflection.invokeVirtual((Class<PropertyReference>) ((Class) Object.class), thisNode, "virtual_getPropertyToCheck_4844813484172611473", new Object[]{});
     if (property != null) {
       ListSequence.fromList(result).addElement(property);
     }
     return result;
-  }
-
-  public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
+  };;
+;  public static PropertyReference virtual_getPropertyToCheck_4844813484172611473(SNode thisNode) {
     return null;
-  }
-}
+  };;
+;}

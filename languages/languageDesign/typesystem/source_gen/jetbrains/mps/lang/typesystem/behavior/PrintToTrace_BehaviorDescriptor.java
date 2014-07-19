@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class PrintToTrace_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public PrintToTrace_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.PrintToTrace";
-  }
-}
+  };;
+;}

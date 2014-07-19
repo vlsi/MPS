@@ -10,10 +10,10 @@ public class LessThanExpression_BehaviorDescriptor extends BinaryCompareOperatio
 
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return LessThanExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LessThanExpression";
-  }
-}
+  };;
+;}

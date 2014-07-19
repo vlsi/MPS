@@ -14,11 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class QueryExpression_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static boolean virtual_legalAsStatement_1262430001741498032(SAbstractConcept thisConcept) {
     return true;
   }
-
   public static String virtual_getHelpPage_7006261637493125297(SAbstractConcept thisConcept) {
     String result = "";
     if (Sequence.fromIterable(BehaviorReflection.invokeVirtualStatic((Class<Iterable<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration(thisConcept.getQualifiedName()))), "virtual_getSupportedParameters_4307205004146936444", new Object[]{})).contains(SConceptOperations.findConceptDeclaration("jetbrains.mps.console.blCommand.structure.QueryParameterScope"))) {

@@ -10,27 +10,21 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class HelpCommand_BehaviorDescriptor extends InterpretedCommand_BehaviorDescriptor implements ConsoleHelpProvider_BehaviorDescriptor {
   public HelpCommand_BehaviorDescriptor() {
   }
-
   public void virtual_doExecute_3321948346081469500(SNode thisNode, ConsoleContext context, ConsoleStream console) {
     HelpCommand_Behavior.virtual_doExecute_3321948346081469500(thisNode, context, console);
   }
-
   public String virtual_getDisplayString_7006261637493126103(SConcept thisConcept) {
     return ConsoleHelpProvider_Behavior.virtual_getDisplayString_7006261637493126103(thisConcept);
   }
-
   public String virtual_getGroup_6928665434441162387(SConcept thisConcept) {
     return ConsoleHelpProvider_Behavior.virtual_getGroup_6928665434441162387(thisConcept);
   }
-
   public String virtual_getHelpPage_7006261637493125297(SConcept thisConcept) {
     return HelpCommand_Behavior.virtual_getHelpPage_7006261637493125297(thisConcept);
   }
-
   public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
     return HelpCommand_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.base.structure.HelpCommand";

@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class GeneratorInternal_PropertyDescriptor_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public GeneratorInternal_PropertyDescriptor_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor";
-  }
-}
+  };;
+;}

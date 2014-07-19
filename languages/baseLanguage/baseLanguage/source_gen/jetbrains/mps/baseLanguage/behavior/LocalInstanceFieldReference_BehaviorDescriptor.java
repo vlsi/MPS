@@ -11,10 +11,10 @@ public class LocalInstanceFieldReference_BehaviorDescriptor extends VariableRefe
 
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return LocalInstanceFieldReference_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference";
-  }
-}
+  };;
+;}

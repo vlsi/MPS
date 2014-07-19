@@ -21,14 +21,14 @@ public class EnumValueOfExpression_Constraints extends BaseConstraintsDescriptor
       @Override
       public boolean hasOwnGetter() {
         return true;
-      }
-
+      };;
+;
       @Override
       public Object getValue(SNode node) {
         String propertyName = "shortDescription";
         return "value by name";
-      }
-    });
+      };;
+;    });
     return properties;
-  }
-}
+  };;
+;}

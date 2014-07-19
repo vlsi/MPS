@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ApplicableNodeReference_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ApplicableNodeReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference";
-  }
-}
+  };;
+;}

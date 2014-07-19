@@ -9,9 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GroupType_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
+  };;
+;  public static List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
     return BehaviorReflection.invokeVirtual((Class<List<SNode>>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "actionGroup", false), "virtual_getMembers_1213877528020", new Object[]{contextNode});
-  }
-}
+  };;
+;}

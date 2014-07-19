@@ -10,5 +10,5 @@ public abstract class BinaryCompareOperation_BehaviorDescriptor extends BinaryOp
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.BinaryCompareOperation";
-  }
-}
+  };;
+;}

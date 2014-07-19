@@ -10,8 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class IVisible_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static Icon call_getVisibilityIcon_5017341185733869581(SNode thisNode) {
     Icon defaultIcon = IconResourceBundle_Visibility.getInstance().getResource("PACKAGE_LOCAL");
     SNode visibility = SLinkOperations.getTarget(thisNode, "visibility", true);
@@ -25,5 +25,5 @@ public class IVisible_Behavior {
       return IconResourceBundle_Visibility.getInstance().getResource("PROTECTED");
     }
     return defaultIcon;
-  }
-}
+  };;
+;}

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.pattern.behavior.ActionStatement_BehaviorDescriptor;
 public class EmitInstruction_BehaviorDescriptor extends ActionStatement_BehaviorDescriptor {
   public EmitInstruction_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.dataFlow.analyzers.structure.EmitInstruction";

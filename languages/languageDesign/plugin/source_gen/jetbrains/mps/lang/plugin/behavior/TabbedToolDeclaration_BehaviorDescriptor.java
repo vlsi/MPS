@@ -6,9 +6,8 @@ package jetbrains.mps.lang.plugin.behavior;
 public class TabbedToolDeclaration_BehaviorDescriptor extends BaseToolDeclaration_BehaviorDescriptor {
   public TabbedToolDeclaration_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration";
-  }
-}
+  };;
+;}

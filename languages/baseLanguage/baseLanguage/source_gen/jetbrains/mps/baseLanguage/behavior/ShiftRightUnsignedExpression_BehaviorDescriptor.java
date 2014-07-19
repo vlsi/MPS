@@ -10,10 +10,10 @@ public class ShiftRightUnsignedExpression_BehaviorDescriptor extends BinaryBitwi
 
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return ShiftRightUnsignedExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ShiftRightUnsignedExpression";
-  }
-}
+  };;
+;}

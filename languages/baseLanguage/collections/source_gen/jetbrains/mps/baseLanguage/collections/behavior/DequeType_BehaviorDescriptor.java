@@ -10,17 +10,14 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class DequeType_BehaviorDescriptor extends QueueType_BehaviorDescriptor implements IGenericType_BehaviorDescriptor {
   public DequeType_BehaviorDescriptor() {
   }
-
   public boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
     return DequeType_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
-  }
-
-  public List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
+  };;
+;  public List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     return DequeType_Behavior.virtual_getAbstractCreators_7602110602933317830(thisNode, targetModel);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.DequeType";
-  }
-}
+  };;
+;}

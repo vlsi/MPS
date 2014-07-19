@@ -10,15 +10,12 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
     return GetHighLevelValuePresentation_ConceptFunction_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return GetHighLevelValuePresentation_ConceptFunction_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.java.customViewers.structure.GetHighLevelValuePresentation_ConceptFunction";

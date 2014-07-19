@@ -10,5 +10,5 @@ public class DefaultClassCreator_BehaviorDescriptor extends AbstractCreator_Beha
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.DefaultClassCreator";
-  }
-}
+  };;
+;}

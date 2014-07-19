@@ -16,17 +16,15 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  };;
+;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode target = SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint", false, false), "applicableLink", false), "target", false);
     if ((target == null)) {
       target = SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.constraints.structure.ConceptConstraints", false, false), "concept", false);
     }
     return _quotation_createNode_q6xvx3_a2a0(target);
-  }
-
-  public static boolean call_isNodeSequenceReturned_2990203945683056978(SNode thisNode) {
+  };;
+;  public static boolean call_isNodeSequenceReturned_2990203945683056978(SNode thisNode) {
     if ((SLinkOperations.getTarget(thisNode, "body", true) == null)) {
       return false;
     }
@@ -41,17 +39,14 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
       return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(lastStmt, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)), sequenceType);
     }
     return true;
-  }
-
-  public static boolean call_isValidatorGenerated_522233044824082130(SNode thisNode) {
+  };;
+;  public static boolean call_isValidatorGenerated_522233044824082130(SNode thisNode) {
     return (ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_getValidator_2990203945683058946(thisNode) != null) && ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isNodeSequenceReturned_2990203945683056978(thisNode);
-  }
-
-  public static SNode call_getValidator_2990203945683058946(SNode thisNode) {
+  };;
+;  public static SNode call_getValidator_2990203945683058946(SNode thisNode) {
     return (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope") ? SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope"), "validator", true) : (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint") ? SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.constraints.structure.NodeReferentConstraint"), "validator", true) : null));
-  }
-
-  private static SNode _quotation_createNode_q6xvx3_a2a0(Object parameter_1) {
+  };;
+;  private static SNode _quotation_createNode_q6xvx3_a2a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -67,9 +62,8 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
     quotedNode_4.addChild("elementType", quotedNode_5);
     quotedNode_2.addChild("argument", quotedNode_4);
     return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_q6xvx3_a0b0b() {
+  };;
+;  private static SNode _quotation_createNode_q6xvx3_a0b0b() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
@@ -77,5 +71,5 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     quotedNode_1.addChild("elementType", quotedNode_2);
     return quotedNode_1;
-  }
-}
+  };;
+;}

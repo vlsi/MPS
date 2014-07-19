@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class LinkList_AddNewChildOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public LinkList_AddNewChildOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToLinkList_1262430001741498382(SConcept thisConcept) {
     return LinkList_AddNewChildOperation_Behavior.virtual_applicableToLinkList_1262430001741498382(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation";
-  }
-}
+  };;
+;}

@@ -9,41 +9,32 @@ import java.util.List;
 public class SNodeType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public SNodeType_BehaviorDescriptor() {
   }
-
   public boolean virtual_canBeCoerced_6321644624958501287(SNode thisNode, String conceptFqName) {
     return SNodeType_Behavior.virtual_canBeCoerced_6321644624958501287(thisNode, conceptFqName);
-  }
-
-  public SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
+  };;
+;  public SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
     return SNodeType_Behavior.virtual_getAbstractCreator_1213877337340(thisNode);
-  }
-
-  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+  };;
+;  public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return SNodeType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
-  }
-
-  public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
+  };;
+;  public SNode virtual_getErasure_702942408396803226(SNode thisNode) {
     return SNodeType_Behavior.virtual_getErasure_702942408396803226(thisNode);
-  }
-
-  public SNode virtual_getJavaType_1213877337345(SNode thisNode) {
+  };;
+;  public SNode virtual_getJavaType_1213877337345(SNode thisNode) {
     return SNodeType_Behavior.virtual_getJavaType_1213877337345(thisNode);
-  }
-
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+  };;
+;  public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SNodeType_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
-  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
+  };;
+;  public List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     return SNodeType_Behavior.virtual_getVariableSuffixes_1213877337304(thisNode);
-  }
-
-  public boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
+  };;
+;  public boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
     return SNodeType_Behavior.virtual_hasMissingParameters_3508583411997314206(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.SNodeType";
-  }
-}
+  };;
+;}

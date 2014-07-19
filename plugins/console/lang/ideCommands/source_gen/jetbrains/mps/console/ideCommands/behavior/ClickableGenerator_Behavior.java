@@ -24,7 +24,6 @@ import org.jetbrains.mps.openapi.module.SRepository;
 public class ClickableGenerator_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_execute_8517397753922085153(SNode thisNode, final Project project) {
     final SModule module = check_cte1s_a0a0a0(ProjectHelper.toMPSProject(project)).getModule(ModuleId.fromString(SPropertyOperations.getString(thisNode, "moduleId")));
 
@@ -35,7 +34,6 @@ public class ClickableGenerator_Behavior {
           public Iterator<Tab> iterator() {
             return new YieldingIterator<Tab>() {
               private int __CP__ = 0;
-
               protected boolean moveToNext() {
 __loop__:
                 do {
@@ -73,7 +71,6 @@ __switch__:
                 } while (true);
                 return false;
               }
-
               private int _2_i;
             };
           }
@@ -98,18 +95,15 @@ __switch__:
       }
     });
   }
-
   public static boolean virtual_canExecute_3282455643657932881(SNode thisNode) {
     return isNotEmptyString(SPropertyOperations.getString(thisNode, "moduleId"));
   }
-
   private static SRepository check_cte1s_a0a0a0(jetbrains.mps.project.Project checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRepository();
     }
     return null;
   }
-
   private static boolean isNotEmptyString(String str) {
     return str != null && str.length() > 0;
   }

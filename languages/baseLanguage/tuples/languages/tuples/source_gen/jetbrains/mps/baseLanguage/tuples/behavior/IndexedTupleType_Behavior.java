@@ -16,9 +16,8 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class IndexedTupleType_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+  };;
+;  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
     sb.append(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getLeftBracket_1262430001741497978", new Object[]{}));
     String sep = "";
@@ -28,9 +27,8 @@ public class IndexedTupleType_Behavior {
     }
     sb.append(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getRightBracket_1262430001741498044", new Object[]{}));
     return sb.toString();
-  }
-
-  public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
+  };;
+;  public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> suffixes = ListSequence.fromList(new ArrayList<String>());
     switch (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "componentType", true)).count()) {
       case 0:
@@ -52,21 +50,18 @@ public class IndexedTupleType_Behavior {
         ListSequence.fromList(suffixes).addElement("_" + Integer.valueOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "componentType", true)).count()) + "tuple");
     }
     return suffixes;
-  }
-
-  public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
+  };;
+;  public static void virtual_collectGenericSubstitutions_4107091686347010321(SNode thisNode, Map<SNode, SNode> substitutions) {
     for (SNode ct : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "componentType", true))) {
       if (SNodeOperations.isInstanceOf(ct, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
         BehaviorReflection.invokeVirtual(Void.class, SNodeOperations.cast(ct, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_collectGenericSubstitutions_4107091686347010321", new Object[]{substitutions});
       }
     }
-  }
-
-  public static String virtual_getLeftBracket_1262430001741497978(SAbstractConcept thisConcept) {
+  };;
+;  public static String virtual_getLeftBracket_1262430001741497978(SAbstractConcept thisConcept) {
     return "[";
-  }
-
-  public static String virtual_getRightBracket_1262430001741498044(SAbstractConcept thisConcept) {
+  };;
+;  public static String virtual_getRightBracket_1262430001741498044(SAbstractConcept thisConcept) {
     return "]";
-  }
-}
+  };;
+;}

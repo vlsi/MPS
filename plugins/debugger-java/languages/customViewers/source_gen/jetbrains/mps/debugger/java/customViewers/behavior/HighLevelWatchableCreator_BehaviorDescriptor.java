@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.AbstractCreator_BehaviorDescriptor;
 public class HighLevelWatchableCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public HighLevelWatchableCreator_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.java.customViewers.structure.HighLevelWatchableCreator";

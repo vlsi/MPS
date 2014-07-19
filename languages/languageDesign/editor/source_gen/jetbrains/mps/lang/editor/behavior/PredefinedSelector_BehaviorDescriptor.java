@@ -6,9 +6,8 @@ package jetbrains.mps.lang.editor.behavior;
 public class PredefinedSelector_BehaviorDescriptor extends AbstractCellSelector_BehaviorDescriptor {
   public PredefinedSelector_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.PredefinedSelector";
-  }
-}
+  };;
+;}

@@ -9,17 +9,14 @@ import java.util.List;
 public class ToolType_BehaviorDescriptor extends BaseClassifierType_BehaviorDescriptor {
   public ToolType_BehaviorDescriptor() {
   }
-
   public SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return ToolType_Behavior.virtual_getClassExpression_1213877337357(thisNode);
-  }
-
-  public List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
+  };;
+;  public List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode) {
     return ToolType_Behavior.virtual_getMembers_1213877402148(thisNode, contextNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ToolType";
-  }
-}
+  };;
+;}

@@ -22,11 +22,9 @@ import jetbrains.mps.smodel.SReference;
 public class JUnit4TestCaseRef_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_fqClassName_2956932267233324537(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "klass", false), "virtual_getUnitName_5067982036267369911", new Object[]{});
   }
-
   public static Iterable<String> virtual_testNames_4089647634160960707(SNode thisNode) {
     final SNode testAnn = SLinkOperations.getTarget(_quotation_createNode_856esj_a0a0a1(), "annotation", false);
     final SNode ignoreAnn = SLinkOperations.getTarget(_quotation_createNode_856esj_a0a1a1(), "annotation", false);
@@ -49,7 +47,6 @@ public class JUnit4TestCaseRef_Behavior {
       }
     });
   }
-
   public static Iterable<SNode> call_getTestClassesForModule_1514755338276096458(SAbstractConcept thisConcept, SNode module) {
     return Sequence.fromIterable(ModuleSuite_Behavior.call_models_1280144168199531863(module)).translate(new ITranslator2<SModel, SNode>() {
       public Iterable<SNode> translate(SModel it) {
@@ -69,7 +66,6 @@ public class JUnit4TestCaseRef_Behavior {
       }
     });
   }
-
   private static SNode _quotation_createNode_856esj_a0a0a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -77,7 +73,6 @@ public class JUnit4TestCaseRef_Behavior {
     quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Test")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_856esj_a0a1a1() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
@@ -85,7 +80,6 @@ public class JUnit4TestCaseRef_Behavior {
     quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, facade.createModelReference("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), facade.createNodeId("~Ignore")));
     return quotedNode_1;
   }
-
   private static SNode _quotation_createNode_856esj_a0a0a0a0a0a0a0a0a0a0c() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;

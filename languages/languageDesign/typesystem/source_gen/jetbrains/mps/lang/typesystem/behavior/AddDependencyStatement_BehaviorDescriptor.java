@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class AddDependencyStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor {
   public AddDependencyStatement_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.typesystem.structure.AddDependencyStatement";
-  }
-}
+  };;
+;}

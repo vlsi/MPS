@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ConceptFunctionParameter_strictly_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ConceptFunctionParameter_strictly_BehaviorDescriptor() {
   }
-
   public boolean virtual_isParameterObjectUsed_1213877522926(SNode thisNode) {
     return ConceptFunctionParameter_strictly_Behavior.virtual_isParameterObjectUsed_1213877522926(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly";
-  }
-}
+  };;
+;}

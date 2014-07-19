@@ -10,17 +10,15 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ExtensionMethodDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode call_getThisType_8022092943109893938(SNode thisNode) {
+  };;
+;  public static SNode call_getThisType_8022092943109893938(SNode thisNode) {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension")) {
       return SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"), "type", true);
     } else {
       return SLinkOperations.getTarget(thisNode, "extendedType", true);
     }
-  }
-
-  public static SNode call_getClassifier_7685333756920241018(SNode thisNode) {
+  };;
+;  public static SNode call_getClassifier_7685333756920241018(SNode thisNode) {
     SNode type = ExtensionMethodDeclaration_Behavior.call_getThisType_8022092943109893938(thisNode);
     SNode classifierType;
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
@@ -32,5 +30,5 @@ public class ExtensionMethodDeclaration_Behavior {
       return null;
     }
     return SLinkOperations.getTarget(classifierType, "classifier", false);
-  }
-}
+  };;
+;}

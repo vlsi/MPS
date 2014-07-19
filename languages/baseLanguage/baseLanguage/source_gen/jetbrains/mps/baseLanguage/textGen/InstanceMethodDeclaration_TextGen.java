@@ -113,6 +113,5 @@ public class InstanceMethodDeclaration_TextGen extends SNodeTextGen {
       }
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(InstanceMethodDeclaration_TextGen.class);
 }

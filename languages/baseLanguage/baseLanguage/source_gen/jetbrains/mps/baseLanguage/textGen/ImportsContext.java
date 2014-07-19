@@ -22,7 +22,6 @@ public class ImportsContext {
   private final Set<String> packageSimpleNames;
   private final Map<String, String> bindings;
   private ContextClassifiersInRoot contextClassifiers;
-
   private ImportsContext(TextGenBuffer buffer, SNode rootNode) {
     this.buffer = buffer;
     this.packageName = SModelStereotype.withoutStereotype(SNodeOperations.getModel(rootNode).getReference().getModelName());
@@ -38,7 +37,6 @@ public class ImportsContext {
       packageSimpleNames.add(SPropertyOperations.getString(classifier, "name"));
     }
   }
-
   public String getClassifierRefText(String packageName, String fqName, SNode contextNode) {
     // main invariant: use always nested names, import only root classifiers 
     String nestedName = JavaNameUtil.nestedClassName(packageName, fqName);
@@ -49,7 +47,6 @@ public class ImportsContext {
 
     return getRootClassifierRefText(packageName, rootClassifierName, contextNode) + nestedPart;
   }
-
   private String getRootClassifierRefText(String packageName, String className, SNode contextNode) {
     assert !(className.contains("."));
 
@@ -93,7 +90,6 @@ public class ImportsContext {
 
     return className;
   }
-
   private void addImport(String fqName) {
     int currPartId = buffer.selectPart(TextGenBuffer.TOP);
 
@@ -104,7 +100,6 @@ public class ImportsContext {
 
     buffer.selectPart(currPartId);
   }
-
   public static ImportsContext getInstance(TextGenBuffer buffer) {
     ImportsContext instance = (ImportsContext) buffer.getUserObject(USER_OBJECT_KEY);
     if (instance == null) {

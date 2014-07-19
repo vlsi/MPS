@@ -8,17 +8,14 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class CopySrcListMacro_BehaviorDescriptor extends SourceSubstituteMacro_BehaviorDescriptor implements ISuppressErrors_BehaviorDescriptor {
   public CopySrcListMacro_BehaviorDescriptor() {
   }
-
   public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     return CopySrcListMacro_Behavior.virtual_getInputNodeTypeInsideOfMacro_1213877290799(thisNode);
-  }
-
-  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
+  };;
+;  public boolean virtual_suppress_3393165121846091591(SNode thisNode, SNode child) {
     return CopySrcListMacro_Behavior.virtual_suppress_3393165121846091591(thisNode, child);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.CopySrcListMacro";
-  }
-}
+  };;
+;}

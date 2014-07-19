@@ -6,7 +6,6 @@ package jetbrains.mps.lang.editor.diagram.behavior;
 public abstract class ActionReference_BehaviorDescriptor extends PaletteElement_BehaviorDescriptor {
   public ActionReference_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.ActionReference";

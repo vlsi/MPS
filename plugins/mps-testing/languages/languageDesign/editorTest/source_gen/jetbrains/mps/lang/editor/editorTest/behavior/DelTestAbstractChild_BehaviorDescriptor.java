@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class DelTestAbstractChild_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public DelTestAbstractChild_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.editorTest.structure.DelTestAbstractChild";

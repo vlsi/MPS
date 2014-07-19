@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class RemoveDefaultsPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements NodeSubstituteMenuBuilderPart_BehaviorDescriptor {
   public RemoveDefaultsPart_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.RemoveDefaultsPart";
-  }
-}
+  };;
+;}

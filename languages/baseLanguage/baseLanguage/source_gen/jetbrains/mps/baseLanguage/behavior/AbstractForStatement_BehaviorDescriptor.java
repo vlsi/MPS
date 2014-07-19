@@ -11,10 +11,10 @@ public abstract class AbstractForStatement_BehaviorDescriptor extends AbstractLo
 
   public Scope virtual_getScope_3734116213129936182(SNode thisNode, SNode kind, SNode child) {
     return AbstractForStatement_Behavior.virtual_getScope_3734116213129936182(thisNode, kind, child);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AbstractForStatement";
-  }
-}
+  };;
+;}

@@ -11,5 +11,5 @@ public class EnumValueOfExpression_BehaviorDescriptor extends Expression_Behavio
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.EnumValueOfExpression";
-  }
-}
+  };;
+;}

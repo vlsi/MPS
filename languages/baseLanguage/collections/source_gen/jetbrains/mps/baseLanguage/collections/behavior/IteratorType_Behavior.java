@@ -17,13 +17,11 @@ import jetbrains.mps.smodel.SReference;
 
 public class IteratorType_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+  };;
+;  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(thisNode), "conceptAlias") + "<" + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_getPresentation_1213877396640", new Object[]{}) + ">";
-  }
-
-  public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
+  };;
+;  public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> variableSuffixes = ListSequence.fromListAndArray(new ArrayList<String>(), "itr");
     if ((SLinkOperations.getTarget(thisNode, "elementType", true) != null)) {
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "elementType", true), "virtual_hasPluralVariableSuffixes_1447667470349154499", new Object[]{})) {
@@ -39,21 +37,18 @@ public class IteratorType_Behavior {
       }
     }
     return variableSuffixes;
-  }
-
-  public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
+  };;
+;  public static boolean virtual_hasPluralVariableSuffixes_1447667470349154499(SNode thisNode) {
     return true;
-  }
-
-  public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
+  };;
+;  public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     return _quotation_createNode_cgg16c_a0a3();
-  }
-
-  private static SNode _quotation_createNode_cgg16c_a0a3() {
+  };;
+;  private static SNode _quotation_createNode_cgg16c_a0a3() {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, facade.createModelReference("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), facade.createNodeId("~Iterator")));
     return quotedNode_1;
-  }
-}
+  };;
+;}

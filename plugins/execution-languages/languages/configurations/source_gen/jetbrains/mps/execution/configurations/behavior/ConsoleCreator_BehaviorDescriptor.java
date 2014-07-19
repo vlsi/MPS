@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.AbstractCreator_BehaviorDescriptor;
 public class ConsoleCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public ConsoleCreator_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.execution.configurations.structure.ConsoleCreator";

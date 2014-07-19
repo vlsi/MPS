@@ -20,22 +20,22 @@ public class Annotation_Constraints extends BaseConstraintsDescriptor {
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
-  }
-
+  };;
+;
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseScopeProvider() {
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_9e1z83_a0a0a0a0a2;
-      }
-
+      };;
+;
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         return ClassifierScopes.getAnnotationClassifiersScope(_context.getContextNode());
-      }
-    };
-  }
-
+      };;
+;    };
+  };;
+;
   private static SNodePointer breakingNode_9e1z83_a0a0a0a0a2 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948133146");
 }

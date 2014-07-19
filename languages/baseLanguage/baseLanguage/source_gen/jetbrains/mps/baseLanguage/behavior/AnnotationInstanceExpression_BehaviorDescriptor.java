@@ -11,5 +11,5 @@ public class AnnotationInstanceExpression_BehaviorDescriptor extends Expression_
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression";
-  }
-}
+  };;
+;}

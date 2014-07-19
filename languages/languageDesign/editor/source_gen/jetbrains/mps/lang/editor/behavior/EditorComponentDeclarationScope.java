@@ -22,16 +22,13 @@ import jetbrains.mps.util.NameUtil;
 
 /*package*/ class EditorComponentDeclarationScope extends FilteringScope {
   private SNode myConceptDeclaration;
-
   private EditorComponentDeclarationScope(final SModel model, SNode conceptDeclaration) {
     super(new ModelsScope(getModels(model), false, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration"));
     myConceptDeclaration = conceptDeclaration;
   }
-
   /*package*/ EditorComponentDeclarationScope(SNode editorComponent) {
     this(SNodeOperations.getModel(editorComponent), BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}));
   }
-
   private static Collection<SModel> getModels(SModel model) {
     Set<SModel> editorModels = SetSequence.fromSet(new HashSet<SModel>());
     if (model.getModule() instanceof Language) {
@@ -45,11 +42,10 @@ import jetbrains.mps.util.NameUtil;
       }
     }
     return editorModels;
-  }
-
-  @Override
+  };;
+;  @Override
   public boolean isExcluded(SNode node) {
     SNode editorComponent = SNodeOperations.as(node, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration");
     return editorComponent == null || SLinkOperations.getTarget(editorComponent, "overridenEditorComponent", true) != null || !(SConceptOperations.isSuperConceptOf(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), editorComponent, "virtual_getConceptDeclaration_7055725856388417603", new Object[]{}), NameUtil.nodeFQName(myConceptDeclaration)));
-  }
-}
+  };;
+;}

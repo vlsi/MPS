@@ -25,23 +25,21 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class NamedTupleDeclaration_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+  };;
+;  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getLeftBracket_1262430001741497804", new Object[]{}));
     String sep = "";
     for (SNode cmp : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(thisNode)).reversedList().translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode ntd) {
         return SLinkOperations.getTargets(ntd, "component", true);
-      }
-    })) {
+      };;
+;    })) {
       sb.append(sep).append(SPropertyOperations.getString(cmp, "name"));
       sep = ", ";
     }
     return sb.append(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getRightBracket_1262430001741498115", new Object[]{})).append(" ").append(SPropertyOperations.getString(thisNode, "nestedName")).toString();
-  }
-
-  public static List<SNode> call_allExtends_3142843783245461132(SNode thisNode) {
+  };;
+;  public static List<SNode> call_allExtends_3142843783245461132(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     SNode ntd = thisNode;
     while ((ntd != null) && !(ListSequence.fromList(result).contains(ntd))) {
@@ -49,9 +47,8 @@ public class NamedTupleDeclaration_Behavior {
       ntd = SLinkOperations.getTarget(SLinkOperations.getTarget(ntd, "extended", true), "classifier", false);
     }
     return result;
-  }
-
-  public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
+  };;
+;  public static List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(thisNode, "extended", true) != null)) {
       ListSequence.fromList(result).addElement(SLinkOperations.getTarget(thisNode, "extended", true));
@@ -60,18 +57,16 @@ public class NamedTupleDeclaration_Behavior {
     }
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implements", true)));
     return result;
-  }
-
-  public static SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
+  };;
+;  public static SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
     _FunctionTypes._return_P1_E0<? extends SNode, ? super SNode> tvd2tvr = new _FunctionTypes._return_P1_E0<SNode, SNode>() {
       public SNode invoke(SNode tvr) {
         return _quotation_createNode_ds5lpv_a0a0a0a3(tvr);
-      }
-    };
+      };;
+;    };
     return _quotation_createNode_ds5lpv_a1a3(thisNode, ListSequence.fromList(SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)).select(tvd2tvr).toListSequence());
-  }
-
-  public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
+  };;
+;  public static void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     // populate own members 
     for (SNode method : SLinkOperations.getTargets(thisNode, "method", true)) {
       BehaviorReflection.invokeVirtual(Void.class, method, "virtual_populateMember_7405920559687254644", new Object[]{context, classifierType});
@@ -87,31 +82,27 @@ public class NamedTupleDeclaration_Behavior {
     for (SNode implementedInterface : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "implements", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return (it != null);
-      }
-    })) {
+      };;
+;    })) {
       IClassifierType_Behavior.call_populateMembers_7405920559687241253(implementedInterface, context, classifierType);
     }
 
     BehaviorReflection.invokeSuper(Void.class, thisNode, "jetbrains.mps.baseLanguage.structure.Classifier", "virtual_populateMembers_7405920559687241403", new Object[]{context, classifierType});
-  }
-
-  public static String virtual_getLeftBracket_1262430001741497804(SAbstractConcept thisConcept) {
+  };;
+;  public static String virtual_getLeftBracket_1262430001741497804(SAbstractConcept thisConcept) {
     return "(";
-  }
-
-  public static String virtual_getRightBracket_1262430001741498115(SAbstractConcept thisConcept) {
+  };;
+;  public static String virtual_getRightBracket_1262430001741498115(SAbstractConcept thisConcept) {
     return ")";
-  }
-
-  private static SNode _quotation_createNode_ds5lpv_a0a0a0a3(Object parameter_1) {
+  };;
+;  private static SNode _quotation_createNode_ds5lpv_a0a0a0a3(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_ds5lpv_a1a3(Object parameter_1, Object parameter_2) {
+  };;
+;  private static SNode _quotation_createNode_ds5lpv_a1a3(Object parameter_1, Object parameter_2) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -124,5 +115,5 @@ public class NamedTupleDeclaration_Behavior {
       }
     }
     return quotedNode_3;
-  }
-}
+  };;
+;}

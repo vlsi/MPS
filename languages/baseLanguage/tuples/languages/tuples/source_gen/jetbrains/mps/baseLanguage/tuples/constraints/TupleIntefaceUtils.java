@@ -20,12 +20,10 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 public class TupleIntefaceUtils {
   public TupleIntefaceUtils() {
   }
-
   public static boolean isTupleInterface(SNode ifc) {
     return ListSequence.fromList(analyzeTupleInterface(ifc)).isNotEmpty();
-  }
-
-  public static List<Property> analyzeTupleInterface(SNode ifc) {
+  };;
+;  public static List<Property> analyzeTupleInterface(SNode ifc) {
     List<Property> accessors = ListSequence.fromList(new ArrayList<Property>());
     List<Property> mutators = ListSequence.fromList(new ArrayList<Property>());
     int ignored = 0;
@@ -44,13 +42,13 @@ public class TupleIntefaceUtils {
     IEnumerator<Property> ait = ListSequence.fromList(accessors).sort(new ISelector<Property, String>() {
       public String select(Property p) {
         return p.name();
-      }
-    }, true).enumerator();
+      };;
+;    }, true).enumerator();
     IEnumerator<Property> mit = ListSequence.fromList(mutators).sort(new ISelector<Property, String>() {
       public String select(Property p) {
         return p.name();
-      }
-    }, true).enumerator();
+      };;
+;    }, true).enumerator();
     boolean hasMutators = mit.moveNext();
     while (ait.moveNext()) {
       if (result == null) {
@@ -71,44 +69,35 @@ public class TupleIntefaceUtils {
       return null;
     }
     return result;
-  }
-
-  public static class Property extends MultiTuple._3<Boolean, String, SNode> {
+  };;
+;  public static class Property extends MultiTuple._3<Boolean, String, SNode> {
     public Property() {
       super();
     }
-
     public Property(Boolean isfinal, String name, SNode type) {
       super(isfinal, name, type);
     }
-
     public Boolean isfinal(Boolean value) {
       return super._0(value);
-    }
-
-    public String name(String value) {
+    };;
+;    public String name(String value) {
       return super._1(value);
-    }
-
-    public SNode type(SNode value) {
+    };;
+;    public SNode type(SNode value) {
       return super._2(value);
-    }
-
-    public Boolean isfinal() {
+    };;
+;    public Boolean isfinal() {
       return super._0();
-    }
-
-    public String name() {
+    };;
+;    public String name() {
       return super._1();
-    }
-
-    public SNode type() {
+    };;
+;    public SNode type() {
       return super._2();
-    }
-
-    @SuppressWarnings(value = "unchecked")
+    };;
+;    @SuppressWarnings(value = "unchecked")
     public TupleIntefaceUtils.Property assignFrom(Tuples._3<Boolean, String, SNode> from) {
       return (TupleIntefaceUtils.Property) super.assign(from);
-    }
-  }
+    };;
+;  }
 }

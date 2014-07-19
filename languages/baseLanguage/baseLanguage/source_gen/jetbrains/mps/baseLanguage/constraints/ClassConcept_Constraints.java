@@ -36,28 +36,28 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
       return "${language_descriptor}/icons/abstractClass.png";
     }
     return null;
-  }
-
+  };;
+;
   @Override
   public boolean hasOwnDefaultScopeProvider() {
     return true;
-  }
-
+  };;
+;
   @Override
   public ReferenceScopeProvider getDefaultScopeProvider() {
     return new BaseScopeProvider() {
       @Override
       public SNodeReference getSearchScopeValidatorNode() {
         return breakingNode_3muhb7_a0a0a0a0a3;
-      }
-
+      };;
+;
       @Override
       public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
         return ClassifierScopes.getVisibleClassesScope(_context.getContextNode());
-      }
-    };
-  }
-
+      };;
+;    };
+  };;
+;
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -65,27 +65,27 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnGetter() {
         return true;
-      }
-
+      };;
+;
       @Override
       public Object getValue(SNode node) {
         String propertyName = "isStatic";
         return !(SPropertyOperations.getBoolean(node, "nonStatic"));
-      }
-
+      };;
+;
       @Override
       public boolean hasOwnSetter() {
         return true;
-      }
-
+      };;
+;
       @Override
       public void setValue(SNode node, String propertyValue) {
         String propertyName = "isStatic";
         SPropertyOperations.set(node, "nonStatic", "" + (!((SPropertyOperations.getBoolean(propertyValue)))));
-      }
-    });
+      };;
+;    });
     return properties;
-  }
-
+  };;
+;
   private static SNodePointer breakingNode_3muhb7_a0a0a0a0a3 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948133172");
 }

@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 public class AssertInNotNull_BehaviorDescriptor extends Statement_BehaviorDescriptor implements MessageHolder_BehaviorDescriptor {
   public AssertInNotNull_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull";

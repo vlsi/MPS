@@ -11,5 +11,5 @@ public class Number_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.Number";
-  }
-}
+  };;
+;}

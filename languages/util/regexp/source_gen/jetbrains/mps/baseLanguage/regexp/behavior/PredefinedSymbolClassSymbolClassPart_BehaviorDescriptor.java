@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor extends SymbolClassPart_BehaviorDescriptor {
   public PredefinedSymbolClassSymbolClassPart_BehaviorDescriptor() {
   }
-
   public String virtual_getRepresentation_8173814113624650482(SNode thisNode) {
     return PredefinedSymbolClassSymbolClassPart_Behavior.virtual_getRepresentation_8173814113624650482(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart";

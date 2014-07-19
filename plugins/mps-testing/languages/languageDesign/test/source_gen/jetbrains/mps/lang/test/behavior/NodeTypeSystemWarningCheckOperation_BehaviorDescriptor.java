@@ -7,15 +7,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class NodeTypeSystemWarningCheckOperation_BehaviorDescriptor extends NodeTypeSystemRuleCheckOperation_BehaviorDescriptor {
   public NodeTypeSystemWarningCheckOperation_BehaviorDescriptor() {
   }
-
   public String virtual_getDefaultName_8578280453511146306(SNode thisNode) {
     return NodeTypeSystemWarningCheckOperation_Behavior.virtual_getDefaultName_8578280453511146306(thisNode);
   }
-
   public void virtual_perform_245688835340859348(SNode thisNode, SNode node) {
     NodeTypeSystemWarningCheckOperation_Behavior.virtual_perform_245688835340859348(thisNode, node);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.NodeTypeSystemWarningCheckOperation";

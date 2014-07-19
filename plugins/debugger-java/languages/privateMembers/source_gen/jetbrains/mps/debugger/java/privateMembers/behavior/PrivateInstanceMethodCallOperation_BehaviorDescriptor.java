@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class PrivateInstanceMethodCallOperation_BehaviorDescriptor extends InstanceMethodCallOperation_BehaviorDescriptor {
   public PrivateInstanceMethodCallOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_substituteInAmbigousPosition_1262430001741498020(SConcept thisConcept) {
     return PrivateInstanceMethodCallOperation_Behavior.virtual_substituteInAmbigousPosition_1262430001741498020(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.debugger.java.privateMembers.structure.PrivateInstanceMethodCallOperation";

@@ -10,15 +10,12 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 public class CustomConstructor_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public CustomConstructor_BehaviorDescriptor() {
   }
-
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     return CustomConstructor_Behavior.virtual_getExpectedReturnType_1213877374441(thisNode);
   }
-
   public String virtual_getFqName_1213877404258(SNode thisNode) {
     return INamedConcept_Behavior.virtual_getFqName_1213877404258(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.constructors.structure.CustomConstructor";

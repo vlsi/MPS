@@ -6,9 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class AbstractPaddingStyleClassItem_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static boolean virtual_canUseSpaces_1226492824000(SNode thisNode) {
+  };;
+;  public static boolean virtual_canUseSpaces_1226492824000(SNode thisNode) {
     return true;
-  }
-}
+  };;
+;}

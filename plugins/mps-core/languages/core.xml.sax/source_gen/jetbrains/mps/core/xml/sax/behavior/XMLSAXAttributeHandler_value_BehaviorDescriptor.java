@@ -8,11 +8,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class XMLSAXAttributeHandler_value_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public XMLSAXAttributeHandler_value_BehaviorDescriptor() {
   }
-
   public SNode virtual_getType_2443692612523876968(SNode thisNode) {
     return XMLSAXAttributeHandler_value_Behavior.virtual_getType_2443692612523876968(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXAttributeHandler_value";

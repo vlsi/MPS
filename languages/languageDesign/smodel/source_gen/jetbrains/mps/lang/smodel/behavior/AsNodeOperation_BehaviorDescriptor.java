@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class AsNodeOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public AsNodeOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToConcept_1262430001741498358(SConcept thisConcept) {
     return AsNodeOperation_Behavior.virtual_applicableToConcept_1262430001741498358(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.AsNodeOperation";
-  }
-}
+  };;
+;}

@@ -9,11 +9,9 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class BaseClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public BaseClassifierType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType";
-  }
-
-  public abstract List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode);
+  };;
+;  public abstract List<SNode> virtual_getMembers_1213877402148(SNode thisNode, SNode contextNode);
 }

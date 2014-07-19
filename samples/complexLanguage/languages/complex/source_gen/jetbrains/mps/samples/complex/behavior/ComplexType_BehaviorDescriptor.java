@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.PrimitiveType_BehaviorDescriptor;
 public class ComplexType_BehaviorDescriptor extends PrimitiveType_BehaviorDescriptor {
   public ComplexType_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.samples.complex.structure.ComplexType";

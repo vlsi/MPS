@@ -13,7 +13,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class MathSymbol_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void call_getVisibleIndices_1236440390782(SNode thisNode, SNode sender, List<SNode> indices) {
     SNode sI = SNodeOperations.getAncestor(sender, "jetbrains.mps.baseLanguage.math.structure.AbstractIndex", true, false);
     if (sI != SLinkOperations.getTarget(thisNode, "var", true)) {
@@ -24,11 +23,9 @@ public class MathSymbol_Behavior {
       MathSymbol_Behavior.call_getVisibleIndices_1236440390782(ms, thisNode, indices);
     }
   }
-
   public static List<SNode> call_getEmptyIndexList_1237828382992(SNode thisNode) {
     return new ArrayList<SNode>();
   }
-
   public static String virtual_getOpName_1262430001741497894(SAbstractConcept thisConcept) {
     return null;
   }

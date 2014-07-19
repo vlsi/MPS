@@ -30,7 +30,6 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
   public ConstantValue_Constraints() {
     super("jetbrains.mps.baseLanguageInternal.structure.ConstantValue");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -38,27 +37,24 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
       @Override
       public boolean hasOwnGetter() {
         return true;
-      }
-
-      @Override
+      };;
+;      @Override
       public Object getValue(SNode node) {
         String propertyName = "className";
         return SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(SLinkOperations.getTarget(node, "constant", false)), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
-      }
-    });
+      };;
+;    });
     return properties;
-  }
-
-  @Override
+  };;
+;  @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
     references.put("constant", new BaseReferenceConstraintsDescriptor("constant", this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      }
-
-      @Nullable
+      };;
+;      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseReferenceScopeProvider() {
@@ -67,28 +63,25 @@ public class ConstantValue_Constraints extends BaseConstraintsDescriptor {
             return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
                 return (SLinkOperations.getTarget(it, "initializer", true) != null) && SPropertyOperations.getBoolean(it, "isFinal");
-              }
-            });
-          }
-
-          @Override
+              };;
+;            });
+          };;
+;          @Override
           public ISearchScope createSearchScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return new ProviderGeneratedSearchScope(this, operationContext, _context) {
               public boolean isInScope(SNode checkedNode) {
                 return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getReferenceNode(), "constant", false), "initializer", true) != null) && SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getReferenceNode(), "constant", false), "isFinal");
-              }
-            };
-          }
-
-          @Override
+              };;
+;            };
+          };;
+;          @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_r7ripe_a0a2a0a0a1a0b0a1a2;
-          }
-        };
-      }
-    });
+          };;
+;        };
+      };;
+;    });
     return references;
-  }
-
-  private static SNodePointer breakingNode_r7ripe_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "1585405235656398265");
+  };;
+;  private static SNodePointer breakingNode_r7ripe_a0a2a0a0a1a0b0a1a2 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "1585405235656398265");
 }

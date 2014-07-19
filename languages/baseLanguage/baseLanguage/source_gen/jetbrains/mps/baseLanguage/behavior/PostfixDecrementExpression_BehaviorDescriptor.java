@@ -10,10 +10,10 @@ public class PostfixDecrementExpression_BehaviorDescriptor extends AbstractUnary
 
   public boolean virtual_isLegalAsStatement_1239211900844(SNode thisNode) {
     return PostfixDecrementExpression_Behavior.virtual_isLegalAsStatement_1239211900844(thisNode);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression";
-  }
-}
+  };;
+;}

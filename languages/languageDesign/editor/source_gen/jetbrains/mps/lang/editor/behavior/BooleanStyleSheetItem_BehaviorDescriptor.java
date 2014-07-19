@@ -8,15 +8,12 @@ import jetbrains.mps.openapi.editor.style.StyleAttribute;
 public abstract class BooleanStyleSheetItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public BooleanStyleSheetItem_BehaviorDescriptor() {
   }
-
   public boolean virtual_useQuery_1223387362946(SNode thisNode) {
     return BooleanStyleSheetItem_Behavior.virtual_useQuery_1223387362946(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem";
-  }
-
-  public abstract StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode);
+  };;
+;  public abstract StyleAttribute<Boolean> virtual_getStyleAttribute_3639065570239132541(SNode thisNode);
 }

@@ -8,9 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class GenerationContextOp_UserObjectAccessBase_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static boolean call_isLValueInAssignment_1217892546644(SNode thisNode) {
+  };;
+;  public static boolean call_isLValueInAssignment_1217892546644(SNode thisNode) {
     SNode mayBeAssignment = SNodeOperations.getParent(SNodeOperations.getParent(thisNode));
     if (SNodeOperations.isInstanceOf(mayBeAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
       if (SNodeOperations.getParent(thisNode) == SLinkOperations.getTarget(SNodeOperations.cast(mayBeAssignment, "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true)) {
@@ -18,5 +17,5 @@ public class GenerationContextOp_UserObjectAccessBase_Behavior {
       }
     }
     return false;
-  }
-}
+  };;
+;}

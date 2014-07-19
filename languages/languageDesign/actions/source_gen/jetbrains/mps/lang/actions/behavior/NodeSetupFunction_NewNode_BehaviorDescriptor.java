@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDesc
 public class NodeSetupFunction_NewNode_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public NodeSetupFunction_NewNode_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode";
-  }
-}
+  };;
+;}

@@ -6,9 +6,8 @@ package jetbrains.mps.lang.textGen.behavior;
 public class NewLineAppendPart_BehaviorDescriptor extends AbstractAppendPart_BehaviorDescriptor {
   public NewLineAppendPart_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.textGen.structure.NewLineAppendPart";
-  }
-}
+  };;
+;}

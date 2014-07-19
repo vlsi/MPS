@@ -8,9 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class BaseExtensionMethodContainer_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
+  };;
+;  public static List<SNode> virtual_getMembers_1213877531970(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "methods", true);
-  }
-}
+  };;
+;}

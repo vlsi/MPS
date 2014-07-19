@@ -19,7 +19,6 @@ import org.apache.log4j.LogManager;
 public class ContextClassifiersInRoot {
   private SimpleCache<Tuples._2<SNode, String>, Map<String, String>> contextClassifiersCache;
   private SimpleCache<SNode, Map<String, String>> nestedClassifiersCache;
-
   public ContextClassifiersInRoot(SNode rootNode) {
     contextClassifiersCache = new SimpleCache<Tuples._2<SNode, String>, Map<String, String>>() {
       @Override
@@ -34,7 +33,6 @@ public class ContextClassifiersInRoot {
       }
     };
   }
-
   public Map<String, String> getContextClassifiers(SNode contextNode) {
     // only AnonymousClass has Classifier as reference 
     // todo: make it clearer 
@@ -62,7 +60,6 @@ public class ContextClassifiersInRoot {
 
     return contextClassifiersCache.get(MultiTuple.<SNode,String>from(SNodeOperations.cast(contextNode, "jetbrains.mps.baseLanguage.structure.Classifier"), sourceChildRole));
   }
-
   private Map<String, String> getContextClassifiers(SNode contextNode, String sourceChildRole) {
     Map<String, String> bindings = new HashMap<String, String>();
 
@@ -101,7 +98,6 @@ public class ContextClassifiersInRoot {
 
     return bindings;
   }
-
   private static Map<String, String> getNestedClassifiers(SNode classifier) {
     // returns map from simpleName to fqName 
     Map<String, String> nestedClassifiers = new HashMap<String, String>();
@@ -115,7 +111,6 @@ public class ContextClassifiersInRoot {
 
     return nestedClassifiers;
   }
-
   private static void addClassifierToBindingMap(Map<String, String> bindings, SNode classifier) {
     String simpleName = SPropertyOperations.getString(classifier, "name");
     String fqName = BehaviorReflection.invokeVirtual(String.class, classifier, "virtual_getFqName_1213877404258", new Object[]{});
@@ -124,6 +119,5 @@ public class ContextClassifiersInRoot {
       bindings.put(simpleName, fqName);
     }
   }
-
   protected static Logger LOG = LogManager.getLogger(ContextClassifiersInRoot.class);
 }

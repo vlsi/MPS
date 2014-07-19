@@ -8,9 +8,8 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class PropertyMacro_BehaviorDescriptor extends PropertyAttribute_BehaviorDescriptor implements AbstractMacro_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public PropertyMacro_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.PropertyMacro";
-  }
-}
+  };;
+;}

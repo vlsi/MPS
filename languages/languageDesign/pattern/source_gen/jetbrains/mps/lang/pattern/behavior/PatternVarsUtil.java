@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 public class PatternVarsUtil {
   public PatternVarsUtil() {
   }
-
   public static String getFieldName(SNode patternVar) {
     String prefix = "patternVar_";
     if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration")) {
@@ -22,13 +21,11 @@ public class PatternVarsUtil {
       return prefix + SPropertyOperations.getString(SNodeOperations.cast(patternVar, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration"), "varName");
     }
     return null;
-  }
-
-  public static boolean fieldTypeHasParameter(SNode patternVar) {
+  };;
+;  public static boolean fieldTypeHasParameter(SNode patternVar) {
     return SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.ListPattern");
-  }
-
-  public static SNode getFieldTypeReference(SNode patternVar) {
+  };;
+;  public static SNode getFieldTypeReference(SNode patternVar) {
     if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.ListPattern")) {
       return SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)", "~List");
     }
@@ -42,5 +39,5 @@ public class PatternVarsUtil {
       return SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~String");
     }
     return null;
-  }
-}
+  };;
+;}

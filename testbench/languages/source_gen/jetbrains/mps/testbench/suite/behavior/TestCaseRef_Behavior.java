@@ -13,11 +13,9 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 public class TestCaseRef_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static String virtual_fqClassName_2956932267233324537(SNode thisNode) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "testCase", false), "virtual_getClassName_1216136193905", new Object[]{});
   }
-
   public static Iterable<String> virtual_testNames_4089647634160960707(SNode thisNode) {
     List<SNode> testMethods;
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "testCase", false), "jetbrains.mps.lang.test.structure.NodesTestCase")) {

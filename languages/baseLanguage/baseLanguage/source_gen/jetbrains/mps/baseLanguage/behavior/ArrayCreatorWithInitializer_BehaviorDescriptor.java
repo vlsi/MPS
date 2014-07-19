@@ -10,5 +10,5 @@ public class ArrayCreatorWithInitializer_BehaviorDescriptor extends AbstractCrea
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer";
-  }
-}
+  };;
+;}

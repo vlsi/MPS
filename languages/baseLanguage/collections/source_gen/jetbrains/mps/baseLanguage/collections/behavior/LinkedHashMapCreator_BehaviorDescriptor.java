@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class LinkedHashMapCreator_BehaviorDescriptor extends HashMapCreator_BehaviorDescriptor {
   public LinkedHashMapCreator_BehaviorDescriptor() {
   }
-
   public boolean virtual_hasInitSize_1262430001741497996(SConcept thisConcept) {
     return LinkedHashMapCreator_Behavior.virtual_hasInitSize_1262430001741497996(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator";
-  }
-}
+  };;
+;}

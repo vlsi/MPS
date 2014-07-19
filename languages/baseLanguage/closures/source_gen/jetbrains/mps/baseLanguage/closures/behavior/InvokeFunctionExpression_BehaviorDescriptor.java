@@ -11,17 +11,14 @@ import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 public class InvokeFunctionExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDeprecatable_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public InvokeFunctionExpression_BehaviorDescriptor() {
   }
-
   public String virtual_getMessage_1225207468592(SNode thisNode) {
     return IDeprecatable_Behavior.virtual_getMessage_1225207468592(thisNode);
-  }
-
-  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
+  };;
+;  public boolean virtual_isDeprecated_1224609060727(SNode thisNode) {
     return InvokeFunctionExpression_Behavior.virtual_isDeprecated_1224609060727(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression";
-  }
-}
+  };;
+;}

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 public class ThreadSafe_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {
   public ThreadSafe_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "org.jetbrains.mps.samples.ParallelFor.structure.ThreadSafe";

@@ -20,8 +20,8 @@ public class AnnotationInstance_Constraints extends BaseConstraintsDescriptor {
   @Override
   public boolean hasOwnCanBeChildMethod() {
     return true;
-  }
-
+  };;
+;
   @Override
   public boolean canBeChild(@Nullable SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext, @Nullable final CheckingNodeContext checkingNodeContext) {
     boolean result = static_canBeAChild(node, parentNode, link, childConcept, operationContext);
@@ -31,14 +31,14 @@ public class AnnotationInstance_Constraints extends BaseConstraintsDescriptor {
     }
 
     return result;
-  }
-
+  };;
+;
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
     if (SLinkOperations.getTarget(link, "target", false) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
       return true;
     }
     return (SNodeOperations.getAncestor(parentNode, "jetbrains.mps.baseLanguage.structure.AnnotationInstance", true, false) != null);
-  }
-
+  };;
+;
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2030079436469605453");
 }

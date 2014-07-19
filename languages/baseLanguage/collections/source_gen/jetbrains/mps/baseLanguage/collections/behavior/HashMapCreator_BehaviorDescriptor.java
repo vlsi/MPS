@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class HashMapCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
   public HashMapCreator_BehaviorDescriptor() {
   }
-
   public boolean virtual_hasInitSize_1262430001741497996(SConcept thisConcept) {
     return HashMapCreator_Behavior.virtual_hasInitSize_1262430001741497996(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.HashMapCreator";
-  }
-}
+  };;
+;}

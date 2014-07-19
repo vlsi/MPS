@@ -9,13 +9,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class MapElement_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public MapElement_BehaviorDescriptor() {
   }
-
   public boolean virtual_lvalue_1262430001741497939(SConcept thisConcept) {
     return MapElement_Behavior.virtual_lvalue_1262430001741497939(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.MapElement";
-  }
-}
+  };;
+;}

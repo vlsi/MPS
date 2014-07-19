@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ListenBlock_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public ListenBlock_BehaviorDescriptor() {
   }
-
   public boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return ListenBlock_Behavior.virtual_showName_1262430001741498082(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ListenBlock";
-  }
-}
+  };;
+;}

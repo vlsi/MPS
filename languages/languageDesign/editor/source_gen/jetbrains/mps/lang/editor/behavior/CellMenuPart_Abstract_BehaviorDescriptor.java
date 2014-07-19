@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public abstract class CellMenuPart_Abstract_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public CellMenuPart_Abstract_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract";
-  }
-}
+  };;
+;}

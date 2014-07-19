@@ -12,14 +12,14 @@ public class PlusExpression_BehaviorDescriptor extends BinaryOperation_BehaviorD
 
   public Object virtual_eval_1213877519769(SNode thisNode, SModule module) {
     return PlusExpression_Behavior.virtual_eval_1213877519769(thisNode, module);
-  }
-
+  };;
+;
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return PlusExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.PlusExpression";
-  }
-}
+  };;
+;}

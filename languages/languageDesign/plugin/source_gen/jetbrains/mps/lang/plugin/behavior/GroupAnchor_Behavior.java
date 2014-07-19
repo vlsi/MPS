@@ -9,13 +9,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class GroupAnchor_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String call_getId_1213877276567(SNode thisNode) {
+  };;
+;  public static String call_getId_1213877276567(SNode thisNode) {
     return NameUtil.toValidIdentifier(SPropertyOperations.getString(thisNode, "name"));
-  }
-
-  public static String call_getActionId_5495648829643890225(SNode thisNode) {
+  };;
+;  public static String call_getActionId_5495648829643890225(SNode thisNode) {
     return ActionGroupDeclaration_Behavior.call_getGeneratedName_1213877494274(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(thisNode)), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration")) + GroupAnchor_Behavior.call_getId_1213877276567(thisNode);
-  }
-}
+  };;
+;}

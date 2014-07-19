@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ThisEditorNodeExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ThisEditorNodeExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.ThisEditorNodeExpression";

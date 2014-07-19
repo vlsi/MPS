@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor extends TemplateArgumentPatternRef_BehaviorDescriptor {
   public TemplateArgumentLinkPatternRefExpression_BehaviorDescriptor() {
   }
-
   public String virtual_getVariableName_2902001550281937661(SNode thisNode) {
     return TemplateArgumentLinkPatternRefExpression_Behavior.virtual_getVariableName_2902001550281937661(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.TemplateArgumentLinkPatternRefExpression";
-  }
-}
+  };;
+;}

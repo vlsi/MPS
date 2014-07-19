@@ -35,8 +35,8 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      }
-
+      };;
+;
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -44,8 +44,8 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_amrbnf_a0a0a0a0a1a0b0a1a1;
-          }
-
+          };;
+;
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             {
@@ -55,16 +55,16 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
               }
               return new NamedElementsScope(Members.visibleStaticFields(classifier, _context.getContextNode()));
             }
-          }
-        };
-      }
-    });
+          };;
+;        };
+      };;
+;    });
     references.put("classifier", new BaseReferenceConstraintsDescriptor("classifier", this) {
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      }
-
+      };;
+;
       @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
@@ -72,18 +72,18 @@ public class StaticFieldReference_Constraints extends BaseConstraintsDescriptor 
           @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_amrbnf_a0a0a0a0a1a0b0a2a1;
-          }
-
+          };;
+;
           @Override
           public Scope createScope(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ClassifierScopes.getClassesForStaticFieldReference(_context.getContextNode());
-          }
-        };
-      }
-    });
+          };;
+;        };
+      };;
+;    });
     return references;
-  }
-
+  };;
+;
   private static SNodePointer breakingNode_amrbnf_a0a0a0a0a1a0b0a1a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137439");
   private static SNodePointer breakingNode_amrbnf_a0a0a0a0a1a0b0a2a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137459");
 }

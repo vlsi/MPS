@@ -7,9 +7,8 @@ import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 public class ParentScope_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public ParentScope_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.scopes.structure.ParentScope";
-  }
-}
+  };;
+;}

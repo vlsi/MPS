@@ -7,7 +7,6 @@ import jetbrains.mps.baseLanguage.behavior.BaseVariableDeclaration_BehaviorDescr
 public class XMLSAXNodeRuleParam_BehaviorDescriptor extends BaseVariableDeclaration_BehaviorDescriptor {
   public XMLSAXNodeRuleParam_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.core.xml.sax.structure.XMLSAXNodeRuleParam";

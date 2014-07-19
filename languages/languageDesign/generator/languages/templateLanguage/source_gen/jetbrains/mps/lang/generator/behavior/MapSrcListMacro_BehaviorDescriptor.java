@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class MapSrcListMacro_BehaviorDescriptor extends SourceSubstituteMacro_BehaviorDescriptor {
   public MapSrcListMacro_BehaviorDescriptor() {
   }
-
   public SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     return MapSrcListMacro_Behavior.virtual_getInputNodeTypeInsideOfMacro_1213877290799(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.MapSrcListMacro";
-  }
-}
+  };;
+;}

@@ -11,5 +11,5 @@ public class ElsifClause_BehaviorDescriptor extends BaseConcept_BehaviorDescript
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.ElsifClause";
-  }
-}
+  };;
+;}

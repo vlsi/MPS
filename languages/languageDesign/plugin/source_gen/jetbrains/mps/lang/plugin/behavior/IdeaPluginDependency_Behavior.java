@@ -7,9 +7,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class IdeaPluginDependency_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String virtual_getPluginId_5864553086652219131(SNode thisNode) {
+  };;
+;  public static String virtual_getPluginId_5864553086652219131(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "pluginId");
-  }
-}
+  };;
+;}

@@ -10,5 +10,5 @@ public abstract class StringBooleanOperation_BehaviorDescriptor extends BaseStri
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.StringBooleanOperation";
-  }
-}
+  };;
+;}

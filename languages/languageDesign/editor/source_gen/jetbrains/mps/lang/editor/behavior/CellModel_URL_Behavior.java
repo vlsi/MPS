@@ -8,17 +8,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class CellModel_URL_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static String virtual_getRoleForCell_1216377898846(SNode thisNode) {
+  };;
+;  public static String virtual_getRoleForCell_1216377898846(SNode thisNode) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "relationDeclaration", false), "name");
-  }
-
-  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
+  };;
+;  public static String virtual_getOpeningText_1220339714057(SNode thisNode) {
     return "{";
-  }
-
-  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
+  };;
+;  public static String virtual_getClosingText_1220339738643(SNode thisNode) {
     return "}";
-  }
-}
+  };;
+;}

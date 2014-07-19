@@ -6,9 +6,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 
 public class RuleConsequence_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getTemplateType_7933327286924651185(SNode thisNode) {
+  };;
+;  public static SNode virtual_getTemplateType_7933327286924651185(SNode thisNode) {
     return null;
-  }
-}
+  };;
+;}

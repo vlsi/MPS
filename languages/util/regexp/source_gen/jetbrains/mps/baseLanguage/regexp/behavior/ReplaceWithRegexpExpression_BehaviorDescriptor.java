@@ -8,7 +8,6 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public class ReplaceWithRegexpExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements RegexpUsingConstruction_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public ReplaceWithRegexpExpression_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression";

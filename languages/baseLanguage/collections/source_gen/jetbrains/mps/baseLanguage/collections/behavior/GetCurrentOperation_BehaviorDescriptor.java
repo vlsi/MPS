@@ -6,9 +6,8 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 public class GetCurrentOperation_BehaviorDescriptor extends AbstractEnumeratorOperation_BehaviorDescriptor {
   public GetCurrentOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.collections.structure.GetCurrentOperation";
-  }
-}
+  };;
+;}

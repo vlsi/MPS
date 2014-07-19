@@ -7,9 +7,9 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 
 public class LocalInstanceFieldReference_Behavior {
   public static void init(SNode thisNode) {
-  }
-
+  };;
+;
   public static boolean virtual_lvalue_1262430001741497939(SAbstractConcept thisConcept) {
     return true;
-  }
-}
+  };;
+;}

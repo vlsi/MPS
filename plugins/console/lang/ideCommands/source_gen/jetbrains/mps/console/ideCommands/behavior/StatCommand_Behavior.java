@@ -15,7 +15,6 @@ import org.jetbrains.mps.openapi.language.SAbstractConcept;
 public class StatCommand_Behavior {
   public static void init(SNode thisNode) {
   }
-
   public static void virtual_doExecute_3321948346081469500(final SNode thisNode, final ConsoleContext context, final ConsoleStream console) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -24,7 +23,6 @@ public class StatCommand_Behavior {
     });
 
   }
-
   public static String virtual_getShortHelp_473081947982699339(SAbstractConcept thisConcept) {
     return "display some AST statistics";
   }

@@ -12,18 +12,18 @@ public class StaticMethodCall_BehaviorDescriptor extends BaseMethodCall_Behavior
 
   public Object virtual_eval_1213877519769(SNode thisNode, @NotNull SModule module) {
     return StaticMethodCall_Behavior.virtual_eval_1213877519769(thisNode, module);
-  }
-
+  };;
+;
   public Iterable<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
     return StaticMethodCall_Behavior.virtual_getAvailableMethodDeclarations_5776618742611315379(thisNode, methodName);
-  }
-
+  };;
+;
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return StaticMethodCall_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.StaticMethodCall";
-  }
-}
+  };;
+;}

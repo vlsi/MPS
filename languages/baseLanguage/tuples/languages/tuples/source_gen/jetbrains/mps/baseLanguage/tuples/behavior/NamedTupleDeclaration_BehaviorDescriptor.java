@@ -11,33 +11,26 @@ import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 public class NamedTupleDeclaration_BehaviorDescriptor extends Classifier_BehaviorDescriptor {
   public NamedTupleDeclaration_BehaviorDescriptor() {
   }
-
   public List<SNode> virtual_getExtendedClassifierTypes_2201875424516179426(SNode thisNode) {
     return NamedTupleDeclaration_Behavior.virtual_getExtendedClassifierTypes_2201875424516179426(thisNode);
-  }
-
-  public String virtual_getLeftBracket_1262430001741497804(SConcept thisConcept) {
+  };;
+;  public String virtual_getLeftBracket_1262430001741497804(SConcept thisConcept) {
     return NamedTupleDeclaration_Behavior.virtual_getLeftBracket_1262430001741497804(thisConcept);
-  }
-
-  public String virtual_getPresentation_1213877396640(SNode thisNode) {
+  };;
+;  public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return NamedTupleDeclaration_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
-  public String virtual_getRightBracket_1262430001741498115(SConcept thisConcept) {
+  };;
+;  public String virtual_getRightBracket_1262430001741498115(SConcept thisConcept) {
     return NamedTupleDeclaration_Behavior.virtual_getRightBracket_1262430001741498115(thisConcept);
-  }
-
-  public SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
+  };;
+;  public SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
     return NamedTupleDeclaration_Behavior.virtual_getThisType_3305065273710880775(thisNode);
-  }
-
-  public void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
+  };;
+;  public void virtual_populateMembers_7405920559687241403(SNode thisNode, MembersPopulatingContext context, SNode classifierType) {
     NamedTupleDeclaration_Behavior.virtual_populateMembers_7405920559687241403(thisNode, context, classifierType);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration";
-  }
-}
+  };;
+;}

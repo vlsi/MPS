@@ -10,10 +10,10 @@ public class NotEqualsExpression_BehaviorDescriptor extends BinaryOperation_Beha
 
   public int virtual_getPriority_1262430001741497858(SConcept thisConcept) {
     return NotEqualsExpression_Behavior.virtual_getPriority_1262430001741497858(thisConcept);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.NotEqualsExpression";
-  }
-}
+  };;
+;}

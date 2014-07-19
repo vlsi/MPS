@@ -10,5 +10,5 @@ public class IsNotEmptyOperation_BehaviorDescriptor extends StringBooleanOperati
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation";
-  }
-}
+  };;
+;}

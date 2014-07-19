@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class ConceptFunctionParameter_nodeToPastePostProcess_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor {
   public ConceptFunctionParameter_nodeToPastePostProcess_BehaviorDescriptor() {
   }
-
   public boolean virtual_dontUseParameterObject_1262430001741498340(SConcept thisConcept) {
     return ConceptFunctionParameter_nodeToPastePostProcess_Behavior.virtual_dontUseParameterObject_1262430001741498340(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess";
-  }
-}
+  };;
+;}

@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class Property_HasValue_Simple_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Property_HasValue_Simple_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToSimpleProperty_1262430001741498100(SConcept thisConcept) {
     return Property_HasValue_Simple_Behavior.virtual_applicableToSimpleProperty_1262430001741498100(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple";
-  }
-}
+  };;
+;}

@@ -13,7 +13,6 @@ public class FunctionMethodDeclaration_Constraints extends BaseConstraintsDescri
   public FunctionMethodDeclaration_Constraints() {
     super("jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -21,26 +20,24 @@ public class FunctionMethodDeclaration_Constraints extends BaseConstraintsDescri
       @Override
       public boolean hasOwnGetter() {
         return true;
-      }
-
-      @Override
+      };;
+;      @Override
       public Object getValue(SNode node) {
         String propertyName = "name";
         return "invoke";
-      }
-    });
+      };;
+;    });
     properties.put("isAbstract", new BasePropertyConstraintsDescriptor("isAbstract", this) {
       @Override
       public boolean hasOwnGetter() {
         return true;
-      }
-
-      @Override
+      };;
+;      @Override
       public Object getValue(SNode node) {
         String propertyName = "isAbstract";
         return false;
-      }
-    });
+      };;
+;    });
     return properties;
-  }
-}
+  };;
+;}

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.plugin.behavior.BaseProjectOperation_BehaviorDescripto
 public class GetPreferencesComponentInProjectOperation_BehaviorDescriptor extends BaseProjectOperation_BehaviorDescriptor {
   public GetPreferencesComponentInProjectOperation_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.standalone.structure.GetPreferencesComponentInProjectOperation";

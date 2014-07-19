@@ -15,25 +15,21 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class HashSetCreator_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_createType_1237722437229(SNode thisNode) {
+  };;
+;  public static SNode virtual_createType_1237722437229(SNode thisNode) {
     return _quotation_createNode_4sjjrg_a0a0(SLinkOperations.getTarget(thisNode, "elementType", true));
-  }
-
-  public static boolean virtual_hasInitSize_1262430001741498238(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_hasInitSize_1262430001741498238(SAbstractConcept thisConcept) {
     return true;
-  }
-
-  public static List<SNode> virtual_getAvailableFor_3044950653914717035(SAbstractConcept thisConcept) {
+  };;
+;  public static List<SNode> virtual_getAvailableFor_3044950653914717035(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", "virtual_getAvailableFor_3044950653914717035", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1226511727824"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "7125221305512719026"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)", "1151689724996"));
     return result;
-  }
-
-  private static SNode _quotation_createNode_4sjjrg_a0a0(Object parameter_1) {
+  };;
+;  private static SNode _quotation_createNode_4sjjrg_a0a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -43,5 +39,5 @@ public class HashSetCreator_Behavior {
       quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode_3));
     }
     return quotedNode_2;
-  }
-}
+  };;
+;}

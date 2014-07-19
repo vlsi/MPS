@@ -9,15 +9,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class SolutionRef_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IModuleRef_BehaviorDescriptor {
   public SolutionRef_BehaviorDescriptor() {
   }
-
   public SModuleReference virtual_moduleReference_1280144168199513544(SNode thisNode) {
     return SolutionRef_Behavior.virtual_moduleReference_1280144168199513544(thisNode);
   }
-
   public String virtual_presentation_1280144168199745474(SNode thisNode) {
     return SolutionRef_Behavior.virtual_presentation_1280144168199745474(thisNode);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.testbench.suite.structure.SolutionRef";

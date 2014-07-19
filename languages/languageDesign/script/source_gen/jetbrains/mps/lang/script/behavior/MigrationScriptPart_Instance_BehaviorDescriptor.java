@@ -6,9 +6,8 @@ package jetbrains.mps.lang.script.behavior;
 public class MigrationScriptPart_Instance_BehaviorDescriptor extends MigrationScriptPart_BehaviorDescriptor {
   public MigrationScriptPart_Instance_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance";
-  }
-}
+  };;
+;}

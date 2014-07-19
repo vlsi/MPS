@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class StyleKey_BehaviorDescriptor extends StringLiteral_BehaviorDescriptor implements IStyle_BehaviorDescriptor {
   public StyleKey_BehaviorDescriptor() {
   }
-
   public String virtual_getPresentation_1213877396640(SNode thisNode) {
     return StyleKey_Behavior.virtual_getPresentation_1213877396640(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.StyleKey";
-  }
-}
+  };;
+;}

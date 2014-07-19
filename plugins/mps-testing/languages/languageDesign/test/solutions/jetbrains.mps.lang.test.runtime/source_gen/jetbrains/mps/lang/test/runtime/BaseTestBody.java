@@ -20,12 +20,10 @@ public class BaseTestBody {
   public Project myProject;
   protected Map<SNode, SNode> myMap;
   private List<SNode> myCopies;
-
   public BaseTestBody() {
     this.myMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
     this.myCopies = ListSequence.fromList(new ArrayList<SNode>());
   }
-
   public void addNodeById(final String id) throws Exception {
     myProject.getModelAccess().executeCommand(new Runnable() {
       public void run() {
@@ -39,11 +37,9 @@ public class BaseTestBody {
       }
     });
   }
-
   public SNode getNodeById(String id) {
     return MapSequence.fromMap(this.myMap).get(this.myModel.getNode(SNodeId.fromString(id)));
   }
-
   public SNode getRealNodeById(String id) {
     return this.myModel.getNode(SNodeId.fromString(id));
   }

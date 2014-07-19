@@ -7,11 +7,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class RemoveGenSources_BehaviorDescriptor extends AbsractMake_BehaviorDescriptor {
   public RemoveGenSources_BehaviorDescriptor() {
   }
-
   public String virtual_getShortHelp_473081947982699339(SConcept thisConcept) {
     return RemoveGenSources_Behavior.virtual_getShortHelp_473081947982699339(thisConcept);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.console.ideCommands.structure.RemoveGenSources";

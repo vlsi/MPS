@@ -31,7 +31,6 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
   public ExtractStaticInnerClassCreator_Constraints() {
     super("jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator");
   }
-
   @Override
   protected Map<String, ReferenceConstraintsDescriptor> getNotDefaultReferences() {
     Map<String, ReferenceConstraintsDescriptor> references = new HashMap();
@@ -39,18 +38,16 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
       @Override
       public boolean hasOwnScopeProvider() {
         return true;
-      }
-
-      @Nullable
+      };;
+;      @Nullable
       @Override
       public ReferenceScopeProvider getScopeProvider() {
         return new BaseReferenceScopeProvider() {
           @Override
           public boolean hasPresentation() {
             return true;
-          }
-
-          @Override
+          };;
+;          @Override
           public String getPresentation(final IOperationContext operationContext, final ReferencePresentationContext _context) {
             if (_context.getInEditor()) {
               return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SNodeOperations.cast(SNodeOperations.getParent(_context.getParameterNode()), "jetbrains.mps.baseLanguage.structure.Classifier"), _context.getEnclosingNode());
@@ -60,9 +57,8 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
             } else {
               return SPropertyOperations.getString(_context.getParameterNode(), "name");
             }
-          }
-
-          @Override
+          };;
+;          @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> res = new ArrayList<SNode>();
             SNode context = ((_context.getReferenceNode() != null) ? _context.getReferenceNode() : _context.getEnclosingNode());
@@ -72,17 +68,15 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
               }
             }
             return res;
-          }
-
-          @Override
+          };;
+;          @Override
           public SNodeReference getSearchScopeValidatorNode() {
             return breakingNode_4gp7p5_a0a3a0a0a1a0b0a1a1;
-          }
-        };
-      }
-    });
+          };;
+;        };
+      };;
+;    });
     return references;
-  }
-
-  private static SNodePointer breakingNode_4gp7p5_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "5822086619725599108");
+  };;
+;  private static SNodePointer breakingNode_4gp7p5_a0a3a0a0a1a0b0a1a1 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "5822086619725599108");
 }

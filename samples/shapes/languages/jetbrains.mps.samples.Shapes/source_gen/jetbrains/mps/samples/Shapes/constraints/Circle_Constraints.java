@@ -14,7 +14,6 @@ public class Circle_Constraints extends BaseConstraintsDescriptor {
   public Circle_Constraints() {
     super("jetbrains.mps.samples.Shapes.structure.Circle");
   }
-
   @Override
   protected Map<String, PropertyConstraintsDescriptor> getNotDefaultProperties() {
     Map<String, PropertyConstraintsDescriptor> properties = new HashMap();
@@ -23,7 +22,6 @@ public class Circle_Constraints extends BaseConstraintsDescriptor {
       public boolean hasOwnSetter() {
         return true;
       }
-
       @Override
       public void setValue(SNode node, String propertyValue) {
         String propertyName = "radius";

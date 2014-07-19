@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class GenerationContextOp_SessionObjectAccess_BehaviorDescriptor extends GenerationContextOp_UserObjectAccessBase_BehaviorDescriptor {
   public GenerationContextOp_SessionObjectAccess_BehaviorDescriptor() {
   }
-
   public boolean virtual_lvalue_1262430001741498364(SConcept thisConcept) {
     return GenerationContextOp_SessionObjectAccess_Behavior.virtual_lvalue_1262430001741498364(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess";
-  }
-}
+  };;
+;}

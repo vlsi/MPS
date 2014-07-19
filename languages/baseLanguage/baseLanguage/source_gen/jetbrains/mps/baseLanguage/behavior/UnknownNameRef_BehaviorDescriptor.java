@@ -12,10 +12,10 @@ public abstract class UnknownNameRef_BehaviorDescriptor extends Expression_Behav
 
   public _FunctionTypes._return_P0_E0<? extends SNode> virtual_evaluateSubst_8136348407761606764(SNode thisNode) {
     return UnknownNameRef_Behavior.virtual_evaluateSubst_8136348407761606764(thisNode);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.UnknownNameRef";
-  }
-}
+  };;
+;}

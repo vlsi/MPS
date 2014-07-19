@@ -5,111 +5,111 @@
   <concept fqn="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" />
   <root>
     <file name="ReloadClassesCommand_BehaviorDescriptor.java">
-      <unit at="11,0,28,0" name="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_BehaviorDescriptor" />
+      <unit at="11,0,25,0" name="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_BehaviorDescriptor" />
     </file>
     <file name="ConsoleModelExpression_BehaviorDescriptor.java">
-      <unit at="10,0,27,0" name="jetbrains.mps.console.internalCommands.behavior.ConsoleModelExpression_BehaviorDescriptor" />
+      <unit at="10,0,24,0" name="jetbrains.mps.console.internalCommands.behavior.ConsoleModelExpression_BehaviorDescriptor" />
     </file>
     <file name="ShowRepositoryCommand_BehaviorDescriptor.java">
-      <unit at="11,0,24,0" name="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_BehaviorDescriptor" />
+      <unit at="11,0,22,0" name="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_BehaviorDescriptor" />
     </file>
     <file name="InternalMode_BehaviorDescriptor.java">
-      <unit at="12,0,49,0" name="jetbrains.mps.console.internalCommands.behavior.InternalMode_BehaviorDescriptor" />
+      <unit at="12,0,41,0" name="jetbrains.mps.console.internalCommands.behavior.InternalMode_BehaviorDescriptor" />
     </file>
     <file name="BehaviorAspectDescriptor.java">
-      <unit at="9,0,28,0" name="jetbrains.mps.console.internalCommands.behavior.BehaviorAspectDescriptor" />
+      <unit at="9,0,26,0" name="jetbrains.mps.console.internalCommands.behavior.BehaviorAspectDescriptor" />
     </file>
   </root>
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/5582028874770305521">
     <file name="ConsoleModelExpression_Behavior.java">
-      <node id="5582028874770305527" at="12,114,13,16" concept="1" />
-      <node id="7185170375692949481" at="16,94,17,76" concept="1" />
+      <node id="5582028874770305527" at="11,114,12,16" concept="1" />
+      <node id="7185170375692949481" at="14,94,15,76" concept="1" />
       <node id="5582028874770305521" at="9,0,11,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="5582028874770305521" at="12,0,15,0" concept="2" trace="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
-      <node id="5582028874770305521" at="16,0,19,0" concept="2" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="5582028874770305521" at="11,0,14,0" concept="2" trace="virtual_getSupportedParameters_4307205004146936444#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/Iterable;" />
+      <node id="5582028874770305521" at="14,0,17,0" concept="2" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="5582028874770305523" at="9,43,9,43" />
-      <scope id="5582028874770305526" at="12,114,13,16" />
-      <scope id="7185170375692949386" at="16,94,17,76" />
+      <scope id="5582028874770305526" at="11,114,12,16" />
+      <scope id="7185170375692949386" at="14,94,15,76" />
       <scope id="5582028874770305521" at="9,0,11,0">
         <var name="thisNode" id="5582028874770305521" />
       </scope>
-      <scope id="5582028874770305521" at="12,0,15,0">
+      <scope id="5582028874770305521" at="11,0,14,0">
         <var name="thisConcept" id="5582028874770305521" />
       </scope>
-      <scope id="5582028874770305521" at="16,0,19,0">
+      <scope id="5582028874770305521" at="14,0,17,0">
         <var name="thisConcept" id="5582028874770305521" />
       </scope>
-      <unit id="5582028874770305521" at="8,0,20,0" name="jetbrains.mps.console.internalCommands.behavior.ConsoleModelExpression_Behavior" />
+      <unit id="5582028874770305521" at="8,0,18,0" name="jetbrains.mps.console.internalCommands.behavior.ConsoleModelExpression_Behavior" />
     </file>
   </root>
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/6224631407134007787">
     <file name="ReloadClassesCommand_Behavior.java">
-      <node id="6224631407134009998" at="16,123,17,75" concept="0" />
-      <node id="351968380915546369" at="17,75,18,40" concept="0" />
-      <node id="748410583119876768" at="21,94,22,43" concept="1" />
+      <node id="6224631407134009998" at="15,123,16,75" concept="0" />
+      <node id="351968380915546369" at="16,75,17,40" concept="0" />
+      <node id="748410583119876768" at="19,94,20,43" concept="1" />
       <node id="6224631407134007787" at="13,0,15,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6224631407134007787" at="21,0,24,0" concept="2" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
-      <node id="6224631407134007787" at="16,0,20,0" concept="2" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
+      <node id="6224631407134007787" at="19,0,22,0" concept="2" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="6224631407134007787" at="15,0,19,0" concept="2" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
       <scope id="6224631407134007949" at="13,43,13,43" />
-      <scope id="748410583119698313" at="21,94,22,43" />
+      <scope id="748410583119698313" at="19,94,20,43" />
       <scope id="6224631407134007787" at="13,0,15,0">
         <var name="thisNode" id="6224631407134007787" />
       </scope>
-      <scope id="6224631407134009978" at="16,123,18,40" />
-      <scope id="6224631407134007787" at="21,0,24,0">
+      <scope id="6224631407134009978" at="15,123,17,40" />
+      <scope id="6224631407134007787" at="19,0,22,0">
         <var name="thisConcept" id="6224631407134007787" />
       </scope>
-      <scope id="6224631407134007787" at="16,0,20,0">
+      <scope id="6224631407134007787" at="15,0,19,0">
         <var name="console" id="3321948346082885075" />
         <var name="context" id="3321948346082885073" />
         <var name="thisNode" id="6224631407134007787" />
       </scope>
-      <unit id="6224631407134007787" at="12,0,25,0" name="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_Behavior" />
+      <unit id="6224631407134007787" at="12,0,23,0" name="jetbrains.mps.console.internalCommands.behavior.ReloadClassesCommand_Behavior" />
     </file>
   </root>
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/6224631407134025051">
     <file name="ShowRepositoryCommand_Behavior.java">
       <node id="6224631407134025051" at="10,0,12,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="6224631407134025051" at="13,0,15,0" concept="2" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
+      <node id="6224631407134025051" at="12,0,14,0" concept="2" trace="virtual_doExecute_3321948346081469500#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/console/tool/ConsoleContext;Ljetbrains/mps/console/tool/ConsoleStream;)V" />
       <scope id="6224631407134025053" at="10,43,10,43" />
-      <scope id="6224631407134025062" at="13,123,13,123" />
+      <scope id="6224631407134025062" at="12,123,12,123" />
       <scope id="6224631407134025051" at="10,0,12,0">
         <var name="thisNode" id="6224631407134025051" />
       </scope>
-      <scope id="6224631407134025051" at="13,0,15,0">
+      <scope id="6224631407134025051" at="12,0,14,0">
         <var name="console" id="3321948346082885466" />
         <var name="context" id="3321948346082885464" />
         <var name="thisNode" id="6224631407134025051" />
       </scope>
-      <unit id="6224631407134025051" at="9,0,16,0" name="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_Behavior" />
+      <unit id="6224631407134025051" at="9,0,15,0" name="jetbrains.mps.console.internalCommands.behavior.ShowRepositoryCommand_Behavior" />
     </file>
   </root>
   <root nodeRef="r:501a4d59-b3ad-4463-b233-4ace4135f380(jetbrains.mps.console.internalCommands.behavior)/8829647120617318761">
     <file name="InternalMode_Behavior.java">
-      <node id="8829647120617324524" at="12,72,13,16" concept="1" />
-      <node id="8829647120617324563" at="16,82,17,16" concept="1" />
-      <node id="748410583119698921" at="20,94,21,50" concept="1" />
+      <node id="8829647120617324524" at="11,72,12,16" concept="1" />
+      <node id="8829647120617324563" at="14,82,15,16" concept="1" />
+      <node id="748410583119698921" at="17,94,18,50" concept="1" />
       <node id="8829647120617318761" at="9,0,11,0" concept="2" trace="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-      <node id="8829647120617318761" at="12,0,15,0" concept="2" trace="virtual_isLValue_1213877519786#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="8829647120617318761" at="16,0,19,0" concept="2" trace="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-      <node id="8829647120617318761" at="20,0,23,0" concept="2" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
+      <node id="8829647120617318761" at="11,0,14,0" concept="2" trace="virtual_isLValue_1213877519786#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8829647120617318761" at="14,0,17,0" concept="2" trace="virtual_isLegalAsStatement_1239211900844#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+      <node id="8829647120617318761" at="17,0,20,0" concept="2" trace="virtual_getShortHelp_473081947982699339#(Lorg/jetbrains/mps/openapi/language/SAbstractConcept;)Ljava/lang/String;" />
       <scope id="8829647120617318914" at="9,43,9,43" />
-      <scope id="8829647120617319091" at="12,72,13,16" />
-      <scope id="8829647120617324541" at="16,82,17,16" />
-      <scope id="748410583119698902" at="20,94,21,50" />
+      <scope id="8829647120617319091" at="11,72,12,16" />
+      <scope id="8829647120617324541" at="14,82,15,16" />
+      <scope id="748410583119698902" at="17,94,18,50" />
       <scope id="8829647120617318761" at="9,0,11,0">
         <var name="thisNode" id="8829647120617318761" />
       </scope>
-      <scope id="8829647120617318761" at="12,0,15,0">
+      <scope id="8829647120617318761" at="11,0,14,0">
         <var name="thisNode" id="8829647120617318761" />
       </scope>
-      <scope id="8829647120617318761" at="16,0,19,0">
+      <scope id="8829647120617318761" at="14,0,17,0">
         <var name="thisNode" id="8829647120617318761" />
       </scope>
-      <scope id="8829647120617318761" at="20,0,23,0">
+      <scope id="8829647120617318761" at="17,0,20,0">
         <var name="thisConcept" id="8829647120617318761" />
       </scope>
-      <unit id="8829647120617318761" at="8,0,24,0" name="jetbrains.mps.console.internalCommands.behavior.InternalMode_Behavior" />
+      <unit id="8829647120617318761" at="8,0,21,0" name="jetbrains.mps.console.internalCommands.behavior.InternalMode_Behavior" />
     </file>
   </root>
 </debug-info>

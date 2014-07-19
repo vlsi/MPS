@@ -10,5 +10,5 @@ public class NotExpression_BehaviorDescriptor extends Expression_BehaviorDescrip
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.NotExpression";
-  }
-}
+  };;
+;}

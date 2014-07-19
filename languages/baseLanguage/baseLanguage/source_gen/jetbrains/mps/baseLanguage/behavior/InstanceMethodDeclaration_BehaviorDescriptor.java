@@ -15,66 +15,66 @@ public class InstanceMethodDeclaration_BehaviorDescriptor extends MethodDeclarat
 
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return InstanceMethodDeclaration_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
     return InstanceMethodDeclaration_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
-  }
-
+  };;
+;
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
     return InstanceMethodDeclaration_Behavior.virtual_getAdditionalIcon_5017341185733863694(thisNode);
-  }
-
+  };;
+;
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
     return InstanceMethodDeclaration_Behavior.virtual_getChildrenToDisplayIntention_4025276038182319200(thisNode);
-  }
-
+  };;
+;
   public SNode virtual_getImplementedInterfaceMethod_8302934035201331324(SNode thisNode) {
     return InstanceMethodDeclaration_Behavior.virtual_getImplementedInterfaceMethod_8302934035201331324(thisNode);
-  }
-
+  };;
+;
   public SNode virtual_getNearestOverriddenMethod_5358895268254685434(SNode thisNode) {
     return InstanceMethodDeclaration_Behavior.virtual_getNearestOverriddenMethod_5358895268254685434(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_isAbstract_1232982539764(SNode thisNode) {
     return InstanceMethodDeclaration_Behavior.virtual_isAbstract_1232982539764(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_isDataFlowChecked_1227714048980(SNode thisNode) {
     return InstanceMethodDeclaration_Behavior.virtual_isDataFlowChecked_1227714048980(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_isStatic_7405920559687241224(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_isStatic_7405920559687241224(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_isStatic_8986964027630462944(SNode thisNode) {
     return ClassifierMember_Behavior.virtual_isStatic_8986964027630462944(thisNode);
-  }
-
+  };;
+;
   public boolean virtual_isVisible_6145907390641297352(SNode thisNode, SNode contextClassifierType, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_6145907390641297352(thisNode, contextClassifierType, contextNode);
-  }
-
+  };;
+;
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
-  }
-
+  };;
+;
   public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
-    return InstanceMethodDeclaration_Behavior.virtual_needsEmptyLineAfter_641490355014298838(thisNode);
-  }
-
+    return ClassifierMember_Behavior.virtual_needsEmptyLineAfter_641490355014298838(thisNode);
+  };;
+;
   public boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
-    return InstanceMethodDeclaration_Behavior.virtual_needsEmptyLineBefore_641490355014296733(thisNode);
-  }
-
+    return ClassifierMember_Behavior.virtual_needsEmptyLineBefore_641490355014296733(thisNode);
+  };;
+;
   public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {
     InstanceMethodDeclaration_Behavior.virtual_populateMember_7405920559687254644(thisNode, context, classifier);
-  }
-
+  };;
+;
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration";
-  }
-}
+  };;
+;}

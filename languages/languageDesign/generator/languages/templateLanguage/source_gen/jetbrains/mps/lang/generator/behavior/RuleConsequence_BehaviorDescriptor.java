@@ -8,13 +8,11 @@ import org.jetbrains.mps.openapi.model.SNode;
 public abstract class RuleConsequence_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public RuleConsequence_BehaviorDescriptor() {
   }
-
   public SNode virtual_getTemplateType_7933327286924651185(SNode thisNode) {
     return RuleConsequence_Behavior.virtual_getTemplateType_7933327286924651185(thisNode);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.generator.structure.RuleConsequence";
-  }
-}
+  };;
+;}

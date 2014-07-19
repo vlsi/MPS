@@ -12,7 +12,7 @@ public abstract class PropertyImplementation_BehaviorDescriptor extends BaseConc
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.PropertyImplementation";
-  }
-
+  };;
+;
   public abstract boolean virtual_hasSetter_1213877430658(SNode thisNode);
 }

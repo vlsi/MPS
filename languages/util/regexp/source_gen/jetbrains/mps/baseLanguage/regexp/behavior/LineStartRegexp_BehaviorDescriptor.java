@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 public class LineStartRegexp_BehaviorDescriptor extends Regexp_BehaviorDescriptor {
   public LineStartRegexp_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp";

@@ -18,9 +18,8 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ReferenceMacro_GetReferent_Behavior {
   public static void init(SNode thisNode) {
-  }
-
-  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
+  };;
+;  public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode referenceMacro = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.generator.structure.ReferenceMacro", false, false);
     SNode attributedNode = SNodeOperations.getParent(referenceMacro);
     String linkRole = AttributeOperations.getLinkRole(referenceMacro);
@@ -33,30 +32,26 @@ public class ReferenceMacro_GetReferent_Behavior {
       return _quotation_createNode_mxwyp3_a0a8a0(targetConcept);
     }
     return expectedNodeType;
-  }
-
-  public static boolean virtual_usesParameterObject_1262430001741497984(SAbstractConcept thisConcept) {
+  };;
+;  public static boolean virtual_usesParameterObject_1262430001741497984(SAbstractConcept thisConcept) {
     return true;
-  }
-
-  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
+  };;
+;  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SAbstractConcept thisConcept) {
     List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.generator.structure.TemplateQueryBase", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "1184690432998"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)", "1216860049635"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)", "1161622753914"));
     ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)", "1167169188348"));
     return result;
-  }
-
-  private static SNode _quotation_createNode_mxwyp3_a0g0a(Object parameter_1) {
+  };;
+;  private static SNode _quotation_createNode_mxwyp3_a0g0a(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_mxwyp3_a0a8a0(Object parameter_1) {
+  };;
+;  private static SNode _quotation_createNode_mxwyp3_a0a8a0(Object parameter_1) {
     PersistenceFacade facade = PersistenceFacade.getInstance();
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -68,5 +63,5 @@ public class ReferenceMacro_GetReferent_Behavior {
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, false);
     quotedNode_2.addChild("argument", quotedNode_4);
     return quotedNode_2;
-  }
-}
+  };;
+;}

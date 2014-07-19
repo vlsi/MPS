@@ -66,10 +66,8 @@ public class Interface_TextGen extends SNodeTextGen {
       }
     }
   }
-
   public String getExtension(SNode node) {
     return "java";
   }
-
   protected static Logger LOG = LogManager.getLogger(Interface_TextGen.class);
 }

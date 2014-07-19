@@ -11,5 +11,5 @@ public class LongLiteral_BehaviorDescriptor extends Expression_BehaviorDescripto
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.LongLiteral";
-  }
-}
+  };;
+;}

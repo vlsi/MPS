@@ -7,9 +7,8 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 public class ConceptCondition_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ActionParameterCondition_BehaviorDescriptor {
   public ConceptCondition_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.plugin.structure.ConceptCondition";
-  }
-}
+  };;
+;}

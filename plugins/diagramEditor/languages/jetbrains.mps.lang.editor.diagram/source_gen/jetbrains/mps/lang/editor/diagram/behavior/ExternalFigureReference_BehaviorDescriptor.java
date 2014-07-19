@@ -8,15 +8,12 @@ import org.jetbrains.mps.openapi.model.SNode;
 public class ExternalFigureReference_BehaviorDescriptor extends AbstractFigureReference_BehaviorDescriptor {
   public ExternalFigureReference_BehaviorDescriptor() {
   }
-
   public List<String> virtual_getFigureParameterNames_1491555030356445722(SNode thisNode) {
     return ExternalFigureReference_Behavior.virtual_getFigureParameterNames_1491555030356445722(thisNode);
   }
-
   public SNode virtual_getFigureParameter_1491555030357120840(SNode thisNode, String name) {
     return ExternalFigureReference_Behavior.virtual_getFigureParameter_1491555030357120840(thisNode, name);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.diagram.structure.ExternalFigureReference";

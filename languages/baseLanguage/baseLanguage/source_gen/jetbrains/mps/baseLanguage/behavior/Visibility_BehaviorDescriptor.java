@@ -11,5 +11,5 @@ public abstract class Visibility_BehaviorDescriptor extends BaseConcept_Behavior
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.Visibility";
-  }
-}
+  };;
+;}

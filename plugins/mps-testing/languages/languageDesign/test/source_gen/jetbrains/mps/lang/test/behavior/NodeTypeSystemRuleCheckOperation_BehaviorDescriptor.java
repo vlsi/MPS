@@ -8,11 +8,9 @@ import jetbrains.mps.errors.IErrorReporter;
 public abstract class NodeTypeSystemRuleCheckOperation_BehaviorDescriptor extends AbstractNodeRuleCheckOperation_BehaviorDescriptor {
   public NodeTypeSystemRuleCheckOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_hasExpectedRuleMessage_5348336190814877000(SNode thisNode, Iterable<IErrorReporter> errorReporters) {
     return NodeTypeSystemRuleCheckOperation_Behavior.virtual_hasExpectedRuleMessage_5348336190814877000(thisNode, errorReporters);
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.test.structure.NodeTypeSystemRuleCheckOperation";

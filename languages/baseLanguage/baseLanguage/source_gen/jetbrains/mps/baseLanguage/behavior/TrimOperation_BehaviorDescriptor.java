@@ -10,5 +10,5 @@ public class TrimOperation_BehaviorDescriptor extends BaseStringOperation_Behavi
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.structure.TrimOperation";
-  }
-}
+  };;
+;}

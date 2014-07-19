@@ -6,7 +6,6 @@ package jetbrains.mps.baseLanguage.unitTest.behavior;
 public class AssertSame_BehaviorDescriptor extends BinaryAssert_BehaviorDescriptor {
   public AssertSame_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.unitTest.structure.AssertSame";

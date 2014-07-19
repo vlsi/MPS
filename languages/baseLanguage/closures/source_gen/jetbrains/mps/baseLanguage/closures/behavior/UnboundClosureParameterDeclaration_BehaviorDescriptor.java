@@ -8,9 +8,8 @@ import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescrip
 public abstract class UnboundClosureParameterDeclaration_BehaviorDescriptor extends ParameterDeclaration_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public UnboundClosureParameterDeclaration_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration";
-  }
-}
+  };;
+;}

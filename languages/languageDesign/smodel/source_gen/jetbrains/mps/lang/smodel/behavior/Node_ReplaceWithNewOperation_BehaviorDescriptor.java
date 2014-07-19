@@ -7,13 +7,11 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class Node_ReplaceWithNewOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Node_ReplaceWithNewOperation_BehaviorDescriptor() {
   }
-
   public boolean virtual_applicableToNode_1262430001741498076(SConcept thisConcept) {
     return Node_ReplaceWithNewOperation_Behavior.virtual_applicableToNode_1262430001741498076(thisConcept);
-  }
-
-  @Override
+  };;
+;  @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation";
-  }
-}
+  };;
+;}

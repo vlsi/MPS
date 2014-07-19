@@ -6,9 +6,8 @@ package jetbrains.mps.lang.editor.behavior;
 public class PreDefinedStyleClassItem_BehaviorDescriptor extends StyleClassItem_BehaviorDescriptor {
   public PreDefinedStyleClassItem_BehaviorDescriptor() {
   }
-
   @Override
   public String getConceptFqName() {
     return "jetbrains.mps.lang.editor.structure.PreDefinedStyleClassItem";
-  }
-}
+  };;
+;}
