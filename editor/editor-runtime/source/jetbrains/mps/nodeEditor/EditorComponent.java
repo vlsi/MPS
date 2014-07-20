@@ -387,7 +387,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public EditorComponent(@NotNull SRepository repository, boolean showErrorsGutter, boolean rightToLeft) {
     setLayout(new EditorComponentLayoutManager(this));
     myRepository = repository;
-    setEditorContext(new EditorContext(this, null, repository));
+    setEditorContext(null, repository);
 
     //TODO: fix problem with NPE
     setBackground(StyleRegistry.getInstance() == null ? Color.white : StyleRegistry.getInstance().getEditorBackground());
@@ -1049,12 +1049,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           myVirtualFile = !myNoVirtualFile ? MPSNodesVirtualFileSystem.getInstance().getFileFor(node) : null;
           SModel model = node.getModel();
           assert model != null : "Can't edit a node that is not registered in a model";
-          setEditorContext(new EditorContext(EditorComponent.this, model, myRepository));
+          setEditorContext(model, myRepository);
           myReadOnly = model.isReadOnly();
         } else {
           myNodePointer = null;
           myVirtualFile = null;
-          setEditorContext(new EditorContext(EditorComponent.this, null, myRepository));
+          setEditorContext(null, myRepository);
           myReadOnly = true;
         }
 
@@ -1338,6 +1338,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected void popCellContext() {
     getEditorContext().getCellFactory().popCellContext();
   }
+
   protected abstract EditorCell createRootCell(List<SModelEvent> events);
 
   public void setFolded(EditorCell cell, boolean folded) {
@@ -1402,7 +1403,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myLeftHighlighter.dispose();
     myMessagesGutter.dispose();
 
-    setEditorContext(null);
+    myEditorContext = null;
 
     if (myNodeSubstituteChooser != null) {
       myNodeSubstituteChooser.dispose();
@@ -2749,7 +2750,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return runRead(new Computable<List<SubstituteAction>>() {
       @Override
       public List<SubstituteAction> compute() {
-        final ITypeContextOwner contextOwner = isSmart ? new NonReusableTypecheckingContextOwner(): getTypecheckingContextOwner();
+        final ITypeContextOwner contextOwner = isSmart ? new NonReusableTypecheckingContextOwner() : getTypecheckingContextOwner();
         return TypeContextManager.getInstance().runTypeCheckingComputation(contextOwner, myNode,
             new Computation<List<SubstituteAction>>() {
               @Override
@@ -2898,6 +2899,25 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return toSelect;
   }
 
+  public final void setEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
+    setEditorContext(createEditorContext(model, repository));
+  }
+
+  /**
+   * This method is called from the constructor, so you cannot use local variables and any other
+   * EditorComponent state here!
+   *
+   * @param model
+   * @param repository
+   */
+  protected EditorContext createEditorContext(@Nullable SModel model, @NotNull SRepository repository) {
+    return new EditorContext(this, model, repository);
+  }
+
+  /**
+   * @deprecated since MPS 3.1 use setEditorContext(EditorComponent editorComponent, @Nullable SModel model, @NotNull SRepository repository)
+   */
+  @Deprecated
   protected void setEditorContext(EditorContext editorContext) {
     assert editorContext == null || myRepository == editorContext.getRepository();
     myEditorContext = editorContext;
@@ -3435,6 +3455,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void setUseCustomHints(boolean useDefaultsHints) {
     myUseCustomHints = useDefaultsHints;
   }
+
   public boolean getUseCustomHints() {
     return myUseCustomHints;
   }

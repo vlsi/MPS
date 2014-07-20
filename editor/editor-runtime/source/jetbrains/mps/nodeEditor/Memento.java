@@ -22,9 +22,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.selection.SelectionInfoImpl;
 import jetbrains.mps.openapi.editor.selection.SelectionInfo;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
+import org.jdom.Attribute;
 import org.jdom.Element;
 import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.awt.Point;
 import java.util.ArrayList;
@@ -62,15 +65,19 @@ class Memento {
   private Point myViewPosition;
   private Set<String> myEnabledHints;
   private boolean myUseCustomHints;
+  private SNodeReference myEditedNodeReference;
 
   private Memento() {
   }
 
-  Memento(jetbrains.mps.openapi.editor.EditorContext context, boolean full) {
+  Memento(jetbrains.mps.openapi.editor.EditorContext context, boolean saveEditedNode) {
     EditorComponent nodeEditor = (EditorComponent) context.getEditorComponent();
     SNode editedNode = nodeEditor.getEditedNode();
     if (editedNode == null || (!jetbrains.mps.util.SNodeOperations.isDisposed(editedNode) && editedNode.getModel() != null &&
         !jetbrains.mps.util.SNodeOperations.isModelDisposed(editedNode.getModel()))) {
+      if (saveEditedNode && editedNode != null) {
+        myEditedNodeReference = editedNode.getReference();
+      }
       mySelectionStack = nodeEditor.getSelectionManager().getSelectionInfoStack();
       ArrayList<EditorCell> foldedCells = new ArrayList<EditorCell>(nodeEditor.getFoldedCells());
       Collections.sort(foldedCells, FOLDED_CELLS_COMPARATOR);
@@ -81,9 +88,7 @@ class Memento {
         myCollectionsWithEnabledBraces.add(bracesEnabledCell.getCellInfo());
       }
 
-      if (full) {
-        collectErrors(nodeEditor);
-      }
+      collectErrors(nodeEditor);
     }
 
     myViewPosition = nodeEditor.getViewport().getViewPosition();
@@ -103,6 +108,14 @@ class Memento {
   }
 
   void restore(EditorComponent editor) {
+    if (myEditedNodeReference != null && editor.getEditorContext() != null) {
+      SNode newEditedNode = myEditedNodeReference.resolve(editor.getEditorContext().getRepository());
+      if (newEditedNode != null) {
+        editor.editNode(newEditedNode);
+        editor.flushEvents();
+      }
+    }
+
     editor.clearFoldedCells();
     editor.clearBracesEnabledCells();
 
@@ -156,9 +169,9 @@ class Memento {
     if (object == this) return true;
     if (object instanceof Memento) {
       Memento m = (Memento) object;
-      if (EqualUtil.equals(mySelectionStack, m.mySelectionStack) &&
-          EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
-          EqualUtil.equals(myFolded, m.myFolded) && EqualUtil.equals(myEnabledHints, m.myEnabledHints) && myUseCustomHints == m.myUseCustomHints) {
+      if (EqualUtil.equals(mySelectionStack, m.mySelectionStack) && EqualUtil.equals(myCollectionsWithEnabledBraces, m.myCollectionsWithEnabledBraces) &&
+          EqualUtil.equals(myFolded, m.myFolded) && EqualUtil.equals(myEnabledHints, m.myEnabledHints) && myUseCustomHints == m.myUseCustomHints &&
+          EqualUtil.equals(myEditedNodeReference, m.myEditedNodeReference)) {
 
         return true;
       }
@@ -177,6 +190,7 @@ class Memento {
         "  foldedCells = " + myFolded + "\n" +
         "  enabledHints = " + myEnabledHints + "\n" +
         "  useCustomHints = " + myUseCustomHints + "\n" +
+        "  editedNodeReference = " + myEditedNodeReference + "\n" +
         "]\n";
   }
 
@@ -193,8 +207,13 @@ class Memento {
   private static final String ERROR_LABELS = "errorLabels";
   private static final String ERROR_LABEL = "errorLabel";
   private static final String ERROR_TEXT = "errorText";
+  private static final String EDITED_NODE = "currentlyEditedNode";
 
   public void save(Element e) {
+    if (myEditedNodeReference != null) {
+      e.setAttribute(EDITED_NODE, SNodePointer.serialize(myEditedNodeReference));
+    }
+
     Element selectionStack = new Element(SELECTION_STACK);
     e.addContent(selectionStack);
     for (SelectionInfo selectionInfo : mySelectionStack) {
@@ -243,6 +262,11 @@ class Memento {
 
   public static Memento load(Element e) {
     Memento memento = new Memento();
+    Attribute editedNodeAttribute = e.getAttribute(EDITED_NODE);
+    if (editedNodeAttribute != null) {
+      memento.myEditedNodeReference = SNodePointer.deserialize(editedNodeAttribute.getValue());
+    }
+
     Element selectionStack = e.getChild(SELECTION_STACK);
     if (selectionStack != null) {
       List children = selectionStack.getChildren(STACK_ELEMENT);
