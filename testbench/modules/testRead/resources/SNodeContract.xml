@@ -26,6 +26,9 @@
    <string>public abstract java.lang.Iterable&lt;java.lang.String&gt; org.jetbrains.mps.openapi.model.SNode.getPropertyNames()</string>
   </void>
   <void method="add">
+   <string>public abstract java.lang.Iterable&lt;org.jetbrains.mps.openapi.language.SPropertyId&gt; org.jetbrains.mps.openapi.model.SNode.getPropertyIds()</string>
+  </void>
+  <void method="add">
    <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getPrevSibling()</string>
   </void>
   <void method="add">
